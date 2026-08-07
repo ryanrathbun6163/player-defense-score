@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment files
+.env
+
+# Raw / copyrighted video
+data/raw/
+data/clips/
+
+# Generated outputs
+data/outputs/
+
+# Large processed data
+*.parquet
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/
