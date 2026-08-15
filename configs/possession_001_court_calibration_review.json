@@ -1,0 +1,36 @@
+{
+  "source_calibration": "configs/possession_001_court_calibration.json",
+  "review_status": "approved_with_corrections",
+  "coordinate_interpretation": {
+    "issue": "The selected upper and lower court points were geometrically consistent, but the far and near labels were interpreted opposite to the stored coordinate convention.",
+    "resolution": "Reassign the mirrored landmark identities without changing any selected image coordinates.",
+    "final_convention": "x=0 at the right baseline and increases toward midcourt; y=0 at the far bench-side sideline and increases toward the near sideline."
+  },
+  "landmark_reassignments": {
+    "free_throw_far_lane_corner": "free_throw_near_lane_corner",
+    "free_throw_near_lane_corner": "free_throw_far_lane_corner",
+    "baseline_far_lane_corner": "baseline_near_lane_corner",
+    "baseline_near_lane_corner": "baseline_far_lane_corner",
+    "baseline_far_three_point_intersection": "baseline_near_three_point_intersection",
+    "baseline_near_three_point_intersection": "baseline_far_three_point_intersection"
+  },
+  "fit_landmark_ids": [
+    "free_throw_far_lane_corner",
+    "free_throw_near_lane_corner",
+    "baseline_near_lane_corner",
+    "arc_tangent_toward_midcourt",
+    "baseline_far_three_point_intersection"
+  ],
+  "excluded_landmarks": {
+    "baseline_far_lane_corner": "The original UI point 4 was substantially covered by a player. It is retained as a validation point but not used to solve the homography.",
+    "baseline_near_three_point_intersection": "The original UI point 6 was outside the visible frame. It is retained as an approximate validation point but not used to solve the homography."
+  },
+  "visual_review": {
+    "lane_alignment": "accepted",
+    "free_throw_circle_alignment": "accepted",
+    "three_point_arc_alignment": "accepted",
+    "far_sideline_alignment": "approximate",
+    "far_sideline_note": "The bench-side boundary is outside the fitted landmark region and is therefore an extrapolation. It should not be used as the primary accuracy measure for player positions inside the three-point area."
+  },
+  "next_validation": "Propagate the reviewed reference homography through the moving-camera frames and inspect projected court markings at multiple timestamps before exporting player coordinates."
+}
