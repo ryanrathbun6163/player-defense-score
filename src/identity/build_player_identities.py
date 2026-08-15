@@ -23,6 +23,10 @@ IDENTITY_REVIEW_CONFIG_PATH = Path(
     "configs/possession_001_identity_review.json"
 )
 
+SEQUENTIAL_IDENTITY_REVIEW_CONFIG_PATH = Path(
+    "configs/possession_001_sequential_identity_review.json"
+)
+
 OUTPUT_DIR = Path(
     "data/outputs/identity"
 )
@@ -824,6 +828,273 @@ def apply_identity_review(
     )
 
 
+def apply_sequential_identity_review(
+    identities,
+    player_id_by_segment,
+    segment_by_id,
+    assignment_bounds,
+    segment_row_counts,
+    raw_rows,
+    row_segment_ids,
+    review_config,
+):
+    identity_by_id = {
+        identity["player_id"]: identity
+        for identity in identities
+    }
+    player_ids = set(identity_by_id)
+    expected_count = review_config.get(
+        "expected_presequential_identity_cluster_count"
+    )
+
+    if (
+        expected_count is not None
+        and int(expected_count) != len(identities)
+    ):
+        raise ValueError(
+            "Sequential review config expects "
+            f"{expected_count} pre-sequential clusters, but "
+            f"the builder produced {len(identities)}."
+        )
+
+    expected_player_ids = set(
+        review_config.get(
+            "expected_presequential_player_ids",
+            player_ids,
+        )
+    )
+
+    if expected_player_ids != player_ids:
+        raise ValueError(
+            "Sequential review config does not match the "
+            "current pre-sequential player IDs. Missing from "
+            "config: "
+            f"{sorted(player_ids - expected_player_ids)}; "
+            "unexpected in config: "
+            f"{sorted(expected_player_ids - player_ids)}"
+        )
+
+    frames_by_player_id = defaultdict(set)
+
+    for row, segment_id in zip(raw_rows, row_segment_ids):
+        player_id = player_id_by_segment.get(segment_id)
+
+        if player_id is not None:
+            frames_by_player_id[player_id].add(
+                int(row["frame_index"])
+            )
+
+    accepted_merges = review_config.get(
+        "accepted_identity_merges",
+        [],
+    )
+    rejected_merges = review_config.get(
+        "rejected_identity_merges",
+        [],
+    )
+    accepted_pairs = set()
+    rejected_pairs = set()
+
+    def validate_pair(record, decision):
+        first_player_id = record["first_player_id"]
+        second_player_id = record["second_player_id"]
+
+        for player_id in (first_player_id, second_player_id):
+            if player_id not in identity_by_id:
+                raise ValueError(
+                    f"Unknown {decision} sequential identity: "
+                    f"{player_id}"
+                )
+
+        if first_player_id == second_player_id:
+            raise ValueError(
+                "A sequential review pair cannot contain the "
+                f"same identity twice: {first_player_id}"
+            )
+
+        return tuple(sorted((first_player_id, second_player_id)))
+
+    for record in accepted_merges:
+        pair = validate_pair(record, "accepted")
+
+        if pair in accepted_pairs:
+            raise ValueError(
+                f"Duplicate accepted sequential pair: {pair}"
+            )
+
+        accepted_pairs.add(pair)
+
+    for record in rejected_merges:
+        pair = validate_pair(record, "rejected")
+
+        if pair in rejected_pairs:
+            raise ValueError(
+                f"Duplicate rejected sequential pair: {pair}"
+            )
+
+        if pair in accepted_pairs:
+            raise ValueError(
+                "A sequential pair cannot be both accepted and "
+                f"rejected: {pair}"
+            )
+
+        rejected_pairs.add(pair)
+
+    disjoint_set = DisjointSet(player_ids)
+
+    for first_player_id, second_player_id in accepted_pairs:
+        if (
+            frames_by_player_id[first_player_id]
+            & frames_by_player_id[second_player_id]
+        ):
+            raise ValueError(
+                "Sequential merge identities co-occur in at "
+                "least one frame: "
+                f"{first_player_id} -> {second_player_id}"
+            )
+
+        disjoint_set.union(first_player_id, second_player_id)
+
+    groups = defaultdict(list)
+
+    for player_id in player_ids:
+        groups[disjoint_set.find(player_id)].append(player_id)
+
+    for group_player_ids in groups.values():
+        for first_player_id in group_player_ids:
+            for second_player_id in group_player_ids:
+                if first_player_id >= second_player_id:
+                    continue
+
+                pair = (first_player_id, second_player_id)
+
+                if pair in rejected_pairs:
+                    raise ValueError(
+                        "A rejected sequential pair was "
+                        "reconnected transitively: "
+                        f"{first_player_id} -> {second_player_id}"
+                    )
+
+                if (
+                    frames_by_player_id[first_player_id]
+                    & frames_by_player_id[second_player_id]
+                ):
+                    raise ValueError(
+                        "Sequential merges transitively joined "
+                        "identities that co-occur: "
+                        f"{first_player_id} -> {second_player_id}"
+                    )
+
+    sequential_components = []
+
+    for presequential_player_ids in groups.values():
+        presequential_player_ids = sorted(
+            presequential_player_ids
+        )
+        source_player_ids = sorted(
+            {
+                source_player_id
+                for player_id in presequential_player_ids
+                for source_player_id in identity_by_id[player_id][
+                    "source_player_ids"
+                ]
+            }
+        )
+        segment_ids = sorted(
+            {
+                segment_id
+                for player_id in presequential_player_ids
+                for segment_id in identity_by_id[player_id][
+                    "segment_ids"
+                ]
+            }
+        )
+        known_teams = {
+            identity_by_id[player_id]["team_label"]
+            for player_id in presequential_player_ids
+            if identity_by_id[player_id]["team_label"]
+            in {"white", "dark"}
+        }
+
+        if len(known_teams) > 1:
+            raise ValueError(
+                "Sequential identity merges joined opposing "
+                f"teams: {presequential_player_ids} -> "
+                f"{sorted(known_teams)}"
+            )
+
+        team_label = (
+            next(iter(known_teams))
+            if known_teams
+            else "unknown"
+        )
+        raw_track_ids = sorted(
+            {
+                int(segment_by_id[segment_id]["track_id"])
+                for segment_id in segment_ids
+            }
+        )
+        sequential_components.append(
+            {
+                "team_label": team_label,
+                "source_player_ids": source_player_ids,
+                "presequential_player_ids": (
+                    presequential_player_ids
+                ),
+                "segment_ids": segment_ids,
+                "raw_track_ids": raw_track_ids,
+                "first_frame": min(
+                    assignment_bounds[segment_id][0]
+                    for segment_id in segment_ids
+                ),
+                "last_frame": max(
+                    assignment_bounds[segment_id][1]
+                    for segment_id in segment_ids
+                ),
+                "row_count": sum(
+                    segment_row_counts[segment_id]
+                    for segment_id in segment_ids
+                ),
+            }
+        )
+
+    sequential_components.sort(
+        key=lambda component: (
+            TEAM_ORDER[component["team_label"]],
+            component["first_frame"],
+            component["raw_track_ids"],
+            component["segment_ids"],
+        )
+    )
+    team_counters = Counter()
+    final_player_id_by_segment = {}
+
+    for component in sequential_components:
+        team_label = component["team_label"]
+        team_counters[team_label] += 1
+        component["player_id"] = (
+            f"{team_label}_p{team_counters[team_label]}"
+        )
+
+        for segment_id in component["segment_ids"]:
+            final_player_id_by_segment[segment_id] = component[
+                "player_id"
+            ]
+
+    return (
+        sequential_components,
+        final_player_id_by_segment,
+        {
+            "accepted_sequential_identity_merge_count": len(
+                accepted_merges
+            ),
+            "rejected_sequential_identity_merge_count": len(
+                rejected_merges
+            ),
+        },
+    )
+
+
 def write_csv(path, fieldnames, rows):
     path.parent.mkdir(
         parents=True,
@@ -932,6 +1203,7 @@ def main():
         SEGMENTS_REPORT_PATH,
         MATCH_REPORT_PATH,
         IDENTITY_REVIEW_CONFIG_PATH,
+        SEQUENTIAL_IDENTITY_REVIEW_CONFIG_PATH,
     ]
 
     for path in required_paths:
@@ -953,6 +1225,9 @@ def main():
     )
     identity_review_config = load_json(
         IDENTITY_REVIEW_CONFIG_PATH
+    )
+    sequential_identity_review_config = load_json(
+        SEQUENTIAL_IDENTITY_REVIEW_CONFIG_PATH
     )
 
     if match_report.get(
@@ -1002,8 +1277,8 @@ def main():
     )
 
     (
-        identities,
-        player_id_by_segment,
+        reviewed_identities,
+        reviewed_player_id_by_segment,
         excluded_identities,
         excluded_reason_by_segment,
         identity_review_summary,
@@ -1014,6 +1289,21 @@ def main():
         assignment_bounds,
         segment_row_counts,
         identity_review_config,
+    )
+
+    (
+        identities,
+        player_id_by_segment,
+        sequential_identity_review_summary,
+    ) = apply_sequential_identity_review(
+        reviewed_identities,
+        reviewed_player_id_by_segment,
+        segment_by_id,
+        assignment_bounds,
+        segment_row_counts,
+        raw_rows,
+        row_segment_ids,
+        sequential_identity_review_config,
     )
 
     team_by_player_id = {
@@ -1237,6 +1527,9 @@ def main():
         "identity_review_config": str(
             IDENTITY_REVIEW_CONFIG_PATH
         ),
+        "sequential_identity_review_config": str(
+            SEQUENTIAL_IDENTITY_REVIEW_CONFIG_PATH
+        ),
         "summary": {
             "raw_row_count": len(raw_rows),
             "sampled_segment_count": len(
@@ -1257,6 +1550,9 @@ def main():
             "baseline_identity_cluster_count": len(
                 baseline_identities
             ),
+            "residual_reviewed_identity_cluster_count": len(
+                reviewed_identities
+            ),
             "identity_cluster_count": len(
                 identities
             ),
@@ -1267,6 +1563,7 @@ def main():
                 excluded_identities
             ),
             **identity_review_summary,
+            **sequential_identity_review_summary,
             "identity_counts_by_team": dict(
                 identity_counts_by_team
             ),
@@ -1300,6 +1597,7 @@ def main():
             ),
         },
         "baseline_identities": baseline_identities,
+        "residual_reviewed_identities": reviewed_identities,
         "identities": identities,
         "excluded_identities": excluded_identities,
         "segment_mapping": mapping_records,
@@ -1340,7 +1638,19 @@ def main():
         f"{len(baseline_identities)}"
     )
     print(
-        f"Reviewed active identity clusters: "
+        f"Residual-reviewed active identity clusters: "
+        f"{len(reviewed_identities)}"
+    )
+    print(
+        "Sequential identity merges applied: "
+        f"{sequential_identity_review_summary['accepted_sequential_identity_merge_count']}"
+    )
+    print(
+        "Sequential identity merges rejected: "
+        f"{sequential_identity_review_summary['rejected_sequential_identity_merge_count']}"
+    )
+    print(
+        f"Final active identity clusters: "
         f"{len(identities)}"
     )
     print(
