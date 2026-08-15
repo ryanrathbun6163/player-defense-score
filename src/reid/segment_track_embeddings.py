@@ -94,6 +94,28 @@ manual_split_after_frames = {
     ).items()
 }
 
+manual_segment_team_overrides = {
+    str(segment_id): str(team_label)
+    for segment_id, team_label in review_config.get(
+        "manual_segment_team_overrides",
+        {},
+    ).items()
+}
+
+invalid_team_overrides = {
+    segment_id: team_label
+    for segment_id, team_label in (
+        manual_segment_team_overrides.items()
+    )
+    if team_label not in {"white", "dark", "unknown"}
+}
+
+if invalid_team_overrides:
+    raise ValueError(
+        "Invalid manual segment team overrides: "
+        f"{invalid_team_overrides}"
+    )
+
 
 # ---------------------------------------------------------
 # Load embeddings
@@ -519,6 +541,7 @@ segment_team_labels = []
 segment_sample_counts = []
 
 segment_number_by_track = Counter()
+applied_team_override_ids = set()
 
 for segment in temporal_segments:
     track_id = segment["track_id"]
@@ -548,9 +571,17 @@ for segment in temporal_segments:
         for index in embedding_indices
     )
 
-    team_label = (
+    sampled_team_label = (
         team_votes.most_common(1)[0][0]
     )
+
+    team_label = manual_segment_team_overrides.get(
+        segment_id,
+        sampled_team_label,
+    )
+
+    if segment_id in manual_segment_team_overrides:
+        applied_team_override_ids.add(segment_id)
 
     prototype = normalized_mean(
         embeddings[embedding_indices]
@@ -576,6 +607,10 @@ for segment in temporal_segments:
         "segment_id": segment_id,
         "track_id": track_id,
         "team_label": team_label,
+        "sampled_team_label": sampled_team_label,
+        "team_override_applied": (
+            segment_id in manual_segment_team_overrides
+        ),
         "start_frame": min(frames),
         "end_frame": max(frames),
         "sample_count": len(
@@ -623,6 +658,18 @@ for segment in temporal_segments:
     )
     segment_sample_counts.append(
         len(embedding_indices)
+    )
+
+
+unused_team_override_ids = (
+    set(manual_segment_team_overrides)
+    - applied_team_override_ids
+)
+
+if unused_team_override_ids:
+    raise ValueError(
+        "Manual team overrides refer to segments that were not "
+        f"generated: {sorted(unused_team_override_ids)}"
     )
 
 
@@ -706,6 +753,13 @@ report = {
         manual_breaks
     ),
     "manual_breaks": manual_breaks,
+    "manual_segment_team_override_count": len(
+        applied_team_override_ids
+    ),
+    "manual_segment_team_overrides": {
+        segment_id: manual_segment_team_overrides[segment_id]
+        for segment_id in sorted(applied_team_override_ids)
+    },
     "appearance_candidate_count": len(
         appearance_candidates
     ),
@@ -765,6 +819,10 @@ print(
     f"candidates: "
     f"{len(unresolved_appearance_candidates)}"
 )
+print(
+    "Reviewed segment team overrides: "
+    f"{len(applied_team_override_ids)}"
+)
 
 if temporal_breaks:
     print("\nTemporal breaks:")
@@ -789,6 +847,21 @@ if manual_breaks:
             f"(samples "
             f"{item['before_sample_frame']} -> "
             f"{item['after_sample_frame']})"
+        )
+
+if applied_team_override_ids:
+    print("\nReviewed segment team overrides:")
+
+    for segment_id in sorted(applied_team_override_ids):
+        record = next(
+            segment
+            for segment in segment_records
+            if segment["segment_id"] == segment_id
+        )
+        print(
+            f"  {segment_id}: "
+            f"{record['sampled_team_label']} -> "
+            f"{record['team_label']}"
         )
 
 if appearance_candidates:

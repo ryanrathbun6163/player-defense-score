@@ -1,0 +1,82 @@
+{
+  "review_source": "data/outputs/identity/cross_track_switch_review/possession_001_cross_track_switch_candidates.json",
+  "reviewed_boundaries": [
+    270,
+    312,
+    452
+  ],
+  "reviewed_switches": [
+    {
+      "boundary": 270,
+      "before_track_id": 7,
+      "after_track_id": 19,
+      "identity_cue": "white jersey number 34",
+      "decision": "same_identity"
+    },
+    {
+      "boundary": 270,
+      "before_track_id": 19,
+      "after_track_id": 7,
+      "identity_cue": "dark Hawks jersey number 23",
+      "decision": "same_identity"
+    },
+    {
+      "boundary": 312,
+      "before_track_id": 8,
+      "after_track_id": 19,
+      "identity_cue": "dark Hawks jersey number 13",
+      "decision": "same_identity"
+    },
+    {
+      "boundary": 312,
+      "before_track_id": 19,
+      "after_track_id": 8,
+      "identity_cue": "white jersey number 34",
+      "decision": "same_identity"
+    },
+    {
+      "boundary": 452,
+      "before_track_id": 7,
+      "after_track_id": 8,
+      "identity_cue": "dark Hawks jersey number 23",
+      "decision": "same_identity"
+    },
+    {
+      "boundary": 452,
+      "before_track_id": 8,
+      "after_track_id": 7,
+      "identity_cue": "white jersey number 34",
+      "decision": "same_identity"
+    }
+  ],
+  "applied_corrections": {
+    "manual_split_after_frames": {
+      "7": [
+        270,
+        452
+      ],
+      "8": [
+        312,
+        452
+      ],
+      "19": [
+        270,
+        312
+      ]
+    },
+    "manual_segment_team_overrides": {
+      "t7_s2": "dark",
+      "t8_s2": "white",
+      "t19_s4": "white"
+    }
+  },
+  "validation": {
+    "final_cross_track_candidate_count": 0,
+    "final_identity_cluster_count": 10,
+    "final_team_counts": {
+      "white": 5,
+      "dark": 5
+    }
+  },
+  "review_conclusion": "The three boundaries form a reviewed identity rotation among white number 34, dark number 23, and dark number 13. Segment-level splits and links preserve each player across the tracker-ID exchanges; the final cross-track audit has zero remaining switch candidates."
+}

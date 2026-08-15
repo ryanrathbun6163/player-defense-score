@@ -1,25 +1,24 @@
 {
   "manual_split_after_frames": {
+    "7": [
+      270,
+      452
+    ],
     "8": [
+      312,
       452
     ],
     "19": [
+      270,
       312
     ]
   },
+  "manual_segment_team_overrides": {
+    "t7_s2": "dark",
+    "t8_s2": "white",
+    "t19_s4": "white"
+  },
   "reviewed_false_positive_boundaries": [
-    {
-      "track_id": 8,
-      "before_last_frame": 300,
-      "after_first_frame": 310,
-      "reason": "Same player remains associated with the target box through the occlusion."
-    },
-    {
-      "track_id": 19,
-      "before_last_frame": 270,
-      "after_first_frame": 275,
-      "reason": "Same player remains associated with the target box; the embedding change is caused by overlap and crop contamination."
-    },
     {
       "track_id": 22,
       "before_last_frame": 390,
@@ -46,17 +45,34 @@
         "reason": "Same player continues through the overlapping handoff before the reviewed T19 switch."
       },
       {
-        "source_segment_id": "t19_s4",
+        "source_segment_id": "t19_s5",
         "target_segment_id": "t33_s1",
         "reason": "Same player is duplicated during the end-of-track handoff."
+      },
+      {
+        "source_segment_id": "t19_s4",
+        "target_segment_id": "t8_s2",
+        "allow_outside_candidate": true,
+        "reason": "Both reviewed phases show white jersey number 34. Appearance distance is 0.040 and the adjacent endpoint miss is caused by the three-player ID rotation at frame 312."
+      },
+      {
+        "source_segment_id": "t8_s2",
+        "target_segment_id": "t7_s3",
+        "allow_outside_candidate": true,
+        "reason": "Both reviewed phases show white jersey number 34. The adjacent boxes have IoU 0.651; appearance distance 0.187 is only slightly above the automatic threshold."
+      },
+      {
+        "source_segment_id": "t7_s3",
+        "target_segment_id": "t29_s1",
+        "allow_outside_candidate": true,
+        "reason": "T7 and T29 duplicate white jersey number 34 across 12 shared frames with median IoU 0.518; the short T7 segment is temporally contained inside T29."
+      },
+      {
+        "source_segment_id": "t6_s1",
+        "target_segment_id": "t8_s1",
+        "reason": "T6 frame 7 continues into T8 frame 8 with 20.5-pixel floor displacement and 0.585 box IoU. T6's frame-5 appearance distance to T8 is 0.167. Its low-confidence rows at frames 9 through 12 are duplicate mixed crops and are removed during within-identity deduplication."
       }
     ],
-    "reject": [
-      {
-        "source_segment_id": "t8_s1",
-        "target_segment_id": "t8_s2",
-        "reason": "Visual review confirms that ByteTrack reused T8 for a different player after frame 452."
-      }
-    ]
+    "reject": []
   }
 }

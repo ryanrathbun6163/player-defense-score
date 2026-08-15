@@ -1,0 +1,17 @@
+{
+  "review_source": "data/outputs/identity/team_balance_review/possession_001_team_balance_candidates.json",
+  "reviewed_frame_interval": [
+    1,
+    498
+  ],
+  "reviewed_ten_player_frame_count": 419,
+  "imbalanced_ten_player_frame_count": 0,
+  "candidate_decisions": [],
+  "applied_identity_team_overrides": {},
+  "applied_segment_team_overrides": {
+    "t7_s2": "dark",
+    "t8_s2": "white",
+    "t19_s4": "white"
+  },
+  "review_conclusion": "After splitting T7, T8, and T19 at the three reviewed switch boundaries, every ten-player frame contains exactly five white and five dark identities. No whole-identity team override remains necessary."
+}

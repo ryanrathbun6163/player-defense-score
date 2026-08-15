@@ -225,16 +225,20 @@ match_decisions = review_config.get(
     {},
 )
 
-manual_accept_pairs = {
+manual_accept_records_by_pair = {
     (
         item["source_segment_id"],
         item["target_segment_id"],
-    )
+    ): item
     for item in match_decisions.get(
         "accept",
         [],
     )
 }
+
+manual_accept_pairs = set(
+    manual_accept_records_by_pair
+)
 
 manual_reject_pairs = {
     (
@@ -720,6 +724,199 @@ for source in segment_records:
             }
         )
 
+
+# ---------------------------------------------------------
+# Add explicitly reviewed accepts outside auto thresholds
+# ---------------------------------------------------------
+
+segment_by_id = {
+    segment["segment_id"]: segment
+    for segment in segment_records
+}
+generated_candidate_pairs = {
+    (
+        candidate["source_segment_id"],
+        candidate["target_segment_id"],
+    )
+    for candidate in candidates
+}
+
+for pair, decision_record in (
+    manual_accept_records_by_pair.items()
+):
+    if pair in generated_candidate_pairs:
+        continue
+
+    if not decision_record.get(
+        "allow_outside_candidate",
+        False,
+    ):
+        continue
+
+    source_id, target_id = pair
+
+    if source_id not in segment_by_id:
+        raise ValueError(
+            "Reviewed outside-candidate accept refers to an "
+            f"unknown source segment: {source_id}"
+        )
+
+    if target_id not in segment_by_id:
+        raise ValueError(
+            "Reviewed outside-candidate accept refers to an "
+            f"unknown target segment: {target_id}"
+        )
+
+    source = segment_by_id[source_id]
+    target = segment_by_id[target_id]
+    source_rows = segment_rows.get(source_id, [])
+    target_rows = segment_rows.get(target_id, [])
+
+    if not source_rows or not target_rows:
+        raise ValueError(
+            "Reviewed outside-candidate accept has no assigned "
+            f"rows: {source_id} -> {target_id}"
+        )
+
+    if not teams_are_compatible(
+        source["team_label"],
+        target["team_label"],
+    ):
+        raise ValueError(
+            "Reviewed outside-candidate accepts require "
+            "compatible corrected segment teams: "
+            f"{source_id} ({source['team_label']}) -> "
+            f"{target_id} ({target['team_label']})"
+        )
+
+    source_end = source_rows[-1]
+    target_start = target_rows[0]
+    frame_delta = (
+        target_start["frame_index"]
+        - source_end["frame_index"]
+    )
+    appearance_distance = cosine_distance(
+        prototype_by_segment[source_id],
+        prototype_by_segment[target_id],
+    )
+    endpoint_distance = floor_distance(
+        source_end,
+        target_start,
+    )
+    endpoint_iou = bounding_box_iou(
+        source_end,
+        target_start,
+    )
+    source_rows_by_frame = {
+        row["frame_index"]: row
+        for row in source_rows
+    }
+    target_rows_by_frame = {
+        row["frame_index"]: row
+        for row in target_rows
+    }
+    common_frames = sorted(
+        set(source_rows_by_frame)
+        & set(target_rows_by_frame)
+    )
+    duplicate_median_iou = None
+    duplicate_median_distance = None
+
+    if common_frames:
+        duplicate_median_iou = float(
+            np.median(
+                [
+                    bounding_box_iou(
+                        source_rows_by_frame[frame_index],
+                        target_rows_by_frame[frame_index],
+                    )
+                    for frame_index in common_frames
+                ]
+            )
+        )
+        duplicate_median_distance = float(
+            np.median(
+                [
+                    floor_distance(
+                        source_rows_by_frame[frame_index],
+                        target_rows_by_frame[frame_index],
+                    )
+                    for frame_index in common_frames
+                ]
+            )
+        )
+
+        if (
+            duplicate_median_iou
+            < MIN_DUPLICATE_MEDIAN_IOU
+            and duplicate_median_distance
+            > MAX_DUPLICATE_MEDIAN_DISTANCE
+        ):
+            raise ValueError(
+                "Reviewed outside-candidate duplicate lacks "
+                "overlap evidence: "
+                f"{source_id} -> {target_id}"
+            )
+
+        match_type = "reviewed_duplicate_overlap"
+        matching_distance = duplicate_median_distance
+        matching_iou = duplicate_median_iou
+        score = (
+            appearance_distance * 100.0
+            + matching_distance
+            - matching_iou * 40.0
+        )
+    else:
+        if (
+            frame_delta < 0
+            or frame_delta > MAX_SEGMENT_GAP_FRAMES
+        ):
+            raise ValueError(
+                "Reviewed outside-candidate handoff is not "
+                "temporally adjacent: "
+                f"{source_id} -> {target_id} "
+                f"(frame delta {frame_delta})"
+            )
+
+        match_type = "reviewed_sequential_handoff"
+        matching_distance = endpoint_distance
+        matching_iou = endpoint_iou
+        score = (
+            appearance_distance * 100.0
+            + endpoint_distance
+            + abs(frame_delta) * 3.0
+            - endpoint_iou * 40.0
+        )
+
+    candidates.append(
+        {
+            "source_segment_id": source_id,
+            "target_segment_id": target_id,
+            "source_track_id": int(source["track_id"]),
+            "target_track_id": int(target["track_id"]),
+            "source_team": source["team_label"],
+            "target_team": target["team_label"],
+            "match_type": match_type,
+            "strict_accept": False,
+            "forced_manual_accept": True,
+            "manual_review_reason": decision_record["reason"],
+            "source_end_frame": source_end["frame_index"],
+            "target_start_frame": target_start["frame_index"],
+            "frame_delta": frame_delta,
+            "appearance_distance": appearance_distance,
+            "endpoint_floor_distance": endpoint_distance,
+            "endpoint_box_iou": endpoint_iou,
+            "overlapping_frame_count": len(common_frames),
+            "duplicate_median_iou": duplicate_median_iou,
+            "duplicate_median_distance": (
+                duplicate_median_distance
+            ),
+            "matching_floor_distance": matching_distance,
+            "matching_box_iou": matching_iou,
+            "score": score,
+        }
+    )
+
 candidates.sort(
     key=lambda candidate: (
         not candidate["strict_accept"],
@@ -778,6 +975,7 @@ for candidate in candidates:
         candidate["review_decision"] = (
             "rejected_manual"
         )
+
         manually_rejected_candidates.append(
             candidate
         )
