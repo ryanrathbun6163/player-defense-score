@@ -27,6 +27,10 @@ OUTPUT_PATH = Path(
     "possession_001_segment_match_candidates.json"
 )
 
+REVIEW_CONFIG_PATH = Path(
+    "configs/possession_001_reid_review.json"
+)
+
 
 MAX_SEGMENT_OVERLAP_FRAMES = 30
 MAX_SEGMENT_GAP_FRAMES = 30
@@ -204,6 +208,59 @@ segment_records = segment_report[
 
 
 # ---------------------------------------------------------
+# Load reviewed match decisions
+# ---------------------------------------------------------
+
+review_config = {}
+
+if REVIEW_CONFIG_PATH.exists():
+    with REVIEW_CONFIG_PATH.open(
+        "r",
+        encoding="utf-8",
+    ) as input_file:
+        review_config = json.load(input_file)
+
+match_decisions = review_config.get(
+    "manual_match_decisions",
+    {},
+)
+
+manual_accept_pairs = {
+    (
+        item["source_segment_id"],
+        item["target_segment_id"],
+    )
+    for item in match_decisions.get(
+        "accept",
+        [],
+    )
+}
+
+manual_reject_pairs = {
+    (
+        item["source_segment_id"],
+        item["target_segment_id"],
+    )
+    for item in match_decisions.get(
+        "reject",
+        [],
+    )
+}
+
+conflicting_decisions = (
+    manual_accept_pairs
+    & manual_reject_pairs
+)
+
+if conflicting_decisions:
+    raise ValueError(
+        "Match pairs cannot be both accepted "
+        "and rejected: "
+        f"{sorted(conflicting_decisions)}"
+    )
+
+
+# ---------------------------------------------------------
 # Load matching segment prototypes
 # ---------------------------------------------------------
 
@@ -273,12 +330,45 @@ for track_id, track_segments in (
         track_segments,
         track_segments[1:],
     ):
-        boundary = (
-            int(first_segment["end_frame"])
-            + int(
-                second_segment["start_frame"]
+        first_end_override = (
+            first_segment.get(
+                "raw_end_frame_override"
             )
-        ) // 2
+        )
+        second_start_override = (
+            second_segment.get(
+                "raw_start_frame_override"
+            )
+        )
+
+        if (
+            first_end_override is not None
+            and second_start_override is not None
+            and int(second_start_override)
+            != int(first_end_override) + 1
+        ):
+            raise ValueError(
+                "Conflicting reviewed raw-frame "
+                "segment boundaries: "
+                f"{first_segment['segment_id']} -> "
+                f"{second_segment['segment_id']}"
+            )
+
+        if first_end_override is not None:
+            boundary = int(
+                first_end_override
+            )
+        elif second_start_override is not None:
+            boundary = (
+                int(second_start_override) - 1
+            )
+        else:
+            boundary = (
+                int(first_segment["end_frame"])
+                + int(
+                    second_segment["start_frame"]
+                )
+            ) // 2
 
         boundaries.append(boundary)
 
@@ -518,12 +608,31 @@ for source in segment_records:
                 ] += 1
                 continue
 
-        score = (
-            appearance_distance * 100.0
-            + endpoint_distance
-            + abs(frame_delta) * 3.0
-            - endpoint_iou * 40.0
-        )
+        if common_frames:
+            matching_distance = (
+                duplicate_median_distance
+            )
+            matching_iou = (
+                duplicate_median_iou
+            )
+
+            score = (
+                appearance_distance * 100.0
+                + matching_distance
+                - matching_iou * 40.0
+            )
+        else:
+            matching_distance = (
+                endpoint_distance
+            )
+            matching_iou = endpoint_iou
+
+            score = (
+                appearance_distance * 100.0
+                + endpoint_distance
+                + abs(frame_delta) * 3.0
+                - endpoint_iou * 40.0
+            )
 
         if common_frames:
             strict_accept = (
@@ -601,6 +710,12 @@ for source in segment_records:
                 "duplicate_median_distance": (
                     duplicate_median_distance
                 ),
+                "matching_floor_distance": (
+                    matching_distance
+                ),
+                "matching_box_iou": (
+                    matching_iou
+                ),
                 "score": score,
             }
         )
@@ -624,6 +739,66 @@ review_candidates = [
     if not candidate["strict_accept"]
 ]
 
+candidate_pairs = {
+    (
+        candidate["source_segment_id"],
+        candidate["target_segment_id"],
+    )
+    for candidate in candidates
+}
+
+configured_decision_pairs = (
+    manual_accept_pairs
+    | manual_reject_pairs
+)
+
+missing_decision_pairs = (
+    configured_decision_pairs
+    - candidate_pairs
+)
+
+if missing_decision_pairs:
+    raise ValueError(
+        "Reviewed match decisions no longer "
+        "correspond to generated candidates: "
+        f"{sorted(missing_decision_pairs)}"
+    )
+
+accepted_candidates = []
+manually_rejected_candidates = []
+unresolved_review_candidates = []
+
+for candidate in candidates:
+    candidate_pair = (
+        candidate["source_segment_id"],
+        candidate["target_segment_id"],
+    )
+
+    if candidate_pair in manual_reject_pairs:
+        candidate["review_decision"] = (
+            "rejected_manual"
+        )
+        manually_rejected_candidates.append(
+            candidate
+        )
+    elif candidate["strict_accept"]:
+        candidate["review_decision"] = (
+            "accepted_strict"
+        )
+        accepted_candidates.append(candidate)
+    elif candidate_pair in manual_accept_pairs:
+        candidate["review_decision"] = (
+            "accepted_manual"
+        )
+        accepted_candidates.append(candidate)
+    else:
+        candidate["review_decision"] = (
+            "review_required"
+        )
+        unresolved_review_candidates.append(
+            candidate
+        )
+
 
 # ---------------------------------------------------------
 # Save candidate report
@@ -644,6 +819,9 @@ output_report = {
     "segment_prototypes": str(
         SEGMENT_PROTOTYPES_PATH
     ),
+    "review_config": str(
+        REVIEW_CONFIG_PATH
+    ),
     "strict_candidate_count": len(
         strict_candidates
     ),
@@ -655,6 +833,24 @@ output_report = {
     ),
     "review_candidates": (
         review_candidates
+    ),
+    "accepted_candidate_count": len(
+        accepted_candidates
+    ),
+    "accepted_candidates": (
+        accepted_candidates
+    ),
+    "manually_rejected_candidate_count": len(
+        manually_rejected_candidates
+    ),
+    "manually_rejected_candidates": (
+        manually_rejected_candidates
+    ),
+    "unresolved_review_candidate_count": len(
+        unresolved_review_candidates
+    ),
+    "unresolved_review_candidates": (
+        unresolved_review_candidates
     ),
     "rejection_counts": dict(
         rejections
@@ -693,6 +889,18 @@ print(
     f"Review candidates: "
     f"{len(review_candidates)}"
 )
+print(
+    f"Accepted candidates: "
+    f"{len(accepted_candidates)}"
+)
+print(
+    f"Manually rejected candidates: "
+    f"{len(manually_rejected_candidates)}"
+)
+print(
+    f"Unresolved review candidates: "
+    f"{len(unresolved_review_candidates)}"
+)
 
 print("\nStrict candidates:")
 
@@ -708,9 +916,11 @@ for candidate in strict_candidates:
         f"appearance="
         f"{candidate['appearance_distance']:.3f} | "
         f"distance="
-        f"{candidate['endpoint_floor_distance']:.1f}px | "
+        f"{candidate['matching_floor_distance']:.1f}px | "
         f"IoU="
-        f"{candidate['endpoint_box_iou']:.3f}"
+        f"{candidate['matching_box_iou']:.3f} | "
+        f"decision="
+        f"{candidate['review_decision']}"
     )
 
 print("\nTop review candidates:")
@@ -727,9 +937,11 @@ for candidate in review_candidates[:10]:
         f"appearance="
         f"{candidate['appearance_distance']:.3f} | "
         f"distance="
-        f"{candidate['endpoint_floor_distance']:.1f}px | "
+        f"{candidate['matching_floor_distance']:.1f}px | "
         f"IoU="
-        f"{candidate['endpoint_box_iou']:.3f}"
+        f"{candidate['matching_box_iou']:.3f} | "
+        f"decision="
+        f"{candidate['review_decision']}"
     )
 
 print(

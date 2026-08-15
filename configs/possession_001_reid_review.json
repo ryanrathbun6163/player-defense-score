@@ -1,0 +1,62 @@
+{
+  "manual_split_after_frames": {
+    "8": [
+      452
+    ],
+    "19": [
+      312
+    ]
+  },
+  "reviewed_false_positive_boundaries": [
+    {
+      "track_id": 8,
+      "before_last_frame": 300,
+      "after_first_frame": 310,
+      "reason": "Same player remains associated with the target box through the occlusion."
+    },
+    {
+      "track_id": 19,
+      "before_last_frame": 270,
+      "after_first_frame": 275,
+      "reason": "Same player remains associated with the target box; the embedding change is caused by overlap and crop contamination."
+    },
+    {
+      "track_id": 22,
+      "before_last_frame": 390,
+      "after_first_frame": 395,
+      "reason": "Continuous player identity and trajectory."
+    },
+    {
+      "track_id": 22,
+      "before_last_frame": 475,
+      "after_first_frame": 480,
+      "reason": "Continuous player identity and trajectory."
+    }
+  ],
+  "manual_match_decisions": {
+    "accept": [
+      {
+        "source_segment_id": "t4_s1",
+        "target_segment_id": "t12_s1",
+        "reason": "T12 is a low-confidence duplicate that overlaps both T4 segments."
+      },
+      {
+        "source_segment_id": "t13_s1",
+        "target_segment_id": "t19_s3",
+        "reason": "Same player continues through the overlapping handoff before the reviewed T19 switch."
+      },
+      {
+        "source_segment_id": "t19_s4",
+        "target_segment_id": "t33_s1",
+        "reason": "Same player is duplicated during the end-of-track handoff."
+      }
+    ],
+    "reject": [
+      {
+        "source_segment_id": "t8_s1",
+        "target_segment_id": "t8_s2",
+        "reason": "Visual review confirms that ByteTrack reused T8 for a different player after frame 452."
+      }
+    ]
+  }
+}

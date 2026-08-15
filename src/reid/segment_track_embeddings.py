@@ -20,6 +20,10 @@ PROTOTYPES_OUTPUT_PATH = Path(
     "possession_001_reid_segment_prototypes.npz"
 )
 
+REVIEW_CONFIG_PATH = Path(
+    "configs/possession_001_reid_review.json"
+)
+
 
 # Embeddings are normally sampled every five frames.
 # A gap above 15 frames indicates unreliable continuity.
@@ -64,6 +68,31 @@ if not EMBEDDINGS_PATH.exists():
     raise FileNotFoundError(
         f"Embeddings not found: {EMBEDDINGS_PATH}"
     )
+
+
+# ---------------------------------------------------------
+# Load possession-specific reviewed split boundaries
+# ---------------------------------------------------------
+
+review_config = {}
+
+if REVIEW_CONFIG_PATH.exists():
+    with REVIEW_CONFIG_PATH.open(
+        "r",
+        encoding="utf-8",
+    ) as input_file:
+        review_config = json.load(input_file)
+
+manual_split_after_frames = {
+    int(track_id): sorted(
+        int(frame_index)
+        for frame_index in split_frames
+    )
+    for track_id, split_frames in review_config.get(
+        "manual_split_after_frames",
+        {},
+    ).items()
+}
 
 
 # ---------------------------------------------------------
@@ -120,11 +149,13 @@ for embedding_indices in (
 
 
 # ---------------------------------------------------------
-# Split tracks only at substantial temporal gaps
+# Split tracks at temporal gaps and reviewed boundaries
 # ---------------------------------------------------------
 
 temporal_segments = []
 temporal_breaks = []
+manual_breaks = []
+used_manual_boundaries = set()
 
 for track_id in sorted(indices_by_track):
     track_embedding_indices = (
@@ -134,6 +165,7 @@ for track_id in sorted(indices_by_track):
     current_segment = [
         track_embedding_indices[0]
     ]
+    current_raw_start_override = None
 
     for previous_index, current_index in zip(
         track_embedding_indices,
@@ -150,32 +182,101 @@ for track_id in sorted(indices_by_track):
             current_frame - previous_frame
         )
 
-        if frame_gap > MAX_SAMPLE_FRAME_GAP:
+        matching_manual_boundaries = [
+            boundary
+            for boundary in (
+                manual_split_after_frames.get(
+                    track_id,
+                    [],
+                )
+            )
+            if (
+                previous_frame
+                <= boundary
+                < current_frame
+            )
+        ]
+
+        if len(matching_manual_boundaries) > 1:
+            raise ValueError(
+                "Multiple manual boundaries fall "
+                "between the same embedding samples: "
+                f"T{track_id} {previous_frame} -> "
+                f"{current_frame}: "
+                f"{matching_manual_boundaries}"
+            )
+
+        manual_boundary = (
+            matching_manual_boundaries[0]
+            if matching_manual_boundaries
+            else None
+        )
+
+        temporal_gap = (
+            frame_gap > MAX_SAMPLE_FRAME_GAP
+        )
+
+        if manual_boundary is not None or temporal_gap:
             temporal_segments.append(
                 {
                     "track_id": track_id,
                     "embedding_indices": (
                         current_segment
                     ),
+                    "raw_start_frame_override": (
+                        current_raw_start_override
+                    ),
+                    "raw_end_frame_override": (
+                        manual_boundary
+                    ),
                 }
             )
 
-            temporal_breaks.append(
-                {
-                    "track_id": track_id,
-                    "previous_frame": (
-                        previous_frame
-                    ),
-                    "next_frame": (
-                        current_frame
-                    ),
-                    "frame_gap": frame_gap,
-                }
-            )
+            if manual_boundary is not None:
+                used_manual_boundaries.add(
+                    (track_id, manual_boundary)
+                )
+
+                manual_breaks.append(
+                    {
+                        "track_id": track_id,
+                        "split_after_frame": (
+                            manual_boundary
+                        ),
+                        "before_sample_frame": (
+                            previous_frame
+                        ),
+                        "after_sample_frame": (
+                            current_frame
+                        ),
+                    }
+                )
+
+                next_raw_start_override = (
+                    manual_boundary + 1
+                )
+            else:
+                temporal_breaks.append(
+                    {
+                        "track_id": track_id,
+                        "previous_frame": (
+                            previous_frame
+                        ),
+                        "next_frame": (
+                            current_frame
+                        ),
+                        "frame_gap": frame_gap,
+                    }
+                )
+
+                next_raw_start_override = None
 
             current_segment = [
                 current_index
             ]
+            current_raw_start_override = (
+                next_raw_start_override
+            )
 
         else:
             current_segment.append(
@@ -188,7 +289,32 @@ for track_id in sorted(indices_by_track):
             "embedding_indices": (
                 current_segment
             ),
+            "raw_start_frame_override": (
+                current_raw_start_override
+            ),
+            "raw_end_frame_override": None,
         }
+    )
+
+
+configured_manual_boundaries = {
+    (track_id, boundary)
+    for track_id, boundaries in (
+        manual_split_after_frames.items()
+    )
+    for boundary in boundaries
+}
+
+unused_manual_boundaries = (
+    configured_manual_boundaries
+    - used_manual_boundaries
+)
+
+if unused_manual_boundaries:
+    raise ValueError(
+        "Manual split boundaries did not fall "
+        "between sampled embeddings: "
+        f"{sorted(unused_manual_boundaries)}"
     )
 
 
@@ -325,6 +451,59 @@ appearance_candidates.sort(
     )
 )
 
+reviewed_false_positive_keys = {
+    (
+        int(item["track_id"]),
+        int(item["before_last_frame"]),
+        int(item["after_first_frame"]),
+    )
+    for item in review_config.get(
+        "reviewed_false_positive_boundaries",
+        [],
+    )
+}
+
+matched_false_positive_keys = set()
+
+for candidate in appearance_candidates:
+    candidate_key = (
+        int(candidate["track_id"]),
+        int(candidate["before_last_frame"]),
+        int(candidate["after_first_frame"]),
+    )
+
+    if candidate_key in reviewed_false_positive_keys:
+        candidate["review_decision"] = (
+            "keep_continuous"
+        )
+        matched_false_positive_keys.add(
+            candidate_key
+        )
+    else:
+        candidate["review_decision"] = (
+            "review_required"
+        )
+
+unused_false_positive_keys = (
+    reviewed_false_positive_keys
+    - matched_false_positive_keys
+)
+
+if unused_false_positive_keys:
+    raise ValueError(
+        "Reviewed false-positive boundaries "
+        "were not generated as appearance "
+        "candidates: "
+        f"{sorted(unused_false_positive_keys)}"
+    )
+
+unresolved_appearance_candidates = [
+    candidate
+    for candidate in appearance_candidates
+    if candidate["review_decision"]
+    == "review_required"
+]
+
 
 # ---------------------------------------------------------
 # Build segment prototypes and report records
@@ -404,6 +583,16 @@ for segment in temporal_segments:
         ),
         "average_confidence": (
             average_confidence
+        ),
+        "raw_start_frame_override": (
+            segment.get(
+                "raw_start_frame_override"
+            )
+        ),
+        "raw_end_frame_override": (
+            segment.get(
+                "raw_end_frame_override"
+            )
         ),
         "appearance_change_candidates": (
             matching_candidates
@@ -487,6 +676,9 @@ report = {
         EMBEDDINGS_PATH
     ),
     "settings": {
+        "review_config": str(
+            REVIEW_CONFIG_PATH
+        ),
         "maximum_sample_frame_gap": (
             MAX_SAMPLE_FRAME_GAP
         ),
@@ -510,8 +702,18 @@ report = {
         temporal_breaks
     ),
     "temporal_breaks": temporal_breaks,
+    "manual_break_count": len(
+        manual_breaks
+    ),
+    "manual_breaks": manual_breaks,
     "appearance_candidate_count": len(
         appearance_candidates
+    ),
+    "reviewed_false_positive_count": (
+        len(matched_false_positive_keys)
+    ),
+    "unresolved_appearance_candidate_count": (
+        len(unresolved_appearance_candidates)
     ),
     "appearance_change_candidates": (
         appearance_candidates
@@ -550,9 +752,18 @@ print(
     f"{len(temporal_breaks)}"
 )
 print(
+    f"Reviewed manual breaks: "
+    f"{len(manual_breaks)}"
+)
+print(
     "Persistent appearance-change "
     f"candidates: "
     f"{len(appearance_candidates)}"
+)
+print(
+    "Unresolved appearance-change "
+    f"candidates: "
+    f"{len(unresolved_appearance_candidates)}"
 )
 
 if temporal_breaks:
@@ -565,6 +776,19 @@ if temporal_breaks:
             f"{item['previous_frame']} -> "
             f"{item['next_frame']} "
             f"(gap {item['frame_gap']})"
+        )
+
+if manual_breaks:
+    print("\nReviewed manual breaks:")
+
+    for item in manual_breaks:
+        print(
+            "  "
+            f"T{item['track_id']}: split after "
+            f"frame {item['split_after_frame']} "
+            f"(samples "
+            f"{item['before_sample_frame']} -> "
+            f"{item['after_sample_frame']})"
         )
 
 if appearance_candidates:
@@ -581,7 +805,9 @@ if appearance_candidates:
             f"{candidate['before_last_frame']} -> "
             f"{candidate['after_first_frame']} | "
             f"distance="
-            f"{candidate['appearance_distance']:.3f}"
+            f"{candidate['appearance_distance']:.3f} | "
+            f"decision="
+            f"{candidate['review_decision']}"
         )
 
 print(
