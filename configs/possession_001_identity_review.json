@@ -1,0 +1,194 @@
+{
+  "review_source": "data/outputs/identity/residual_identity_review/possession_001_residual_identity_candidates.json",
+  "expected_active_player_count": 10,
+  "expected_baseline_identity_cluster_count": 27,
+  "expected_baseline_player_ids": [
+    "white_p1",
+    "white_p2",
+    "white_p3",
+    "white_p4",
+    "white_p5",
+    "dark_p1",
+    "dark_p2",
+    "dark_p3",
+    "dark_p4",
+    "dark_p5",
+    "dark_p6",
+    "dark_p7",
+    "dark_p8",
+    "dark_p9",
+    "dark_p10",
+    "unknown_p1",
+    "unknown_p2",
+    "unknown_p3",
+    "unknown_p4",
+    "unknown_p5",
+    "unknown_p6",
+    "unknown_p7",
+    "unknown_p8",
+    "unknown_p9",
+    "unknown_p10",
+    "unknown_p11",
+    "unknown_p12"
+  ],
+  "accepted_identity_merges": [
+    {
+      "first_player_id": "unknown_p2",
+      "second_player_id": "white_p5",
+      "reason": "Frame 69 contains two boxes on the same white-uniform player."
+    },
+    {
+      "first_player_id": "unknown_p3",
+      "second_player_id": "white_p3",
+      "reason": "T15 duplicates T5 across all 12 shared frames with median IoU 0.675 and median floor distance 3.6 pixels."
+    },
+    {
+      "first_player_id": "unknown_p5",
+      "second_player_id": "dark_p3",
+      "reason": "T12 segment 2 duplicates the dark_p3 component across six overloaded frames; the white_p2 overlap is caused by adjacent players."
+    },
+    {
+      "first_player_id": "dark_p5",
+      "second_player_id": "dark_p6",
+      "reason": "T9 to T11 is a short-overlap handoff with appearance distance 0.104 and removes the three-frame overcount at frames 41 through 43."
+    }
+  ],
+  "rejected_identity_merges": [
+    {
+      "first_player_id": "unknown_p5",
+      "second_player_id": "white_p2",
+      "reason": "The boxes overlap because white_p2 is adjacent to the dark_p3 duplicate; they are visibly different players."
+    },
+    {
+      "first_player_id": "dark_p4",
+      "second_player_id": "unknown_p1",
+      "reason": "The montage shows two adjacent dark-uniform players."
+    },
+    {
+      "first_player_id": "dark_p5",
+      "second_player_id": "unknown_p1",
+      "reason": "The montage shows two adjacent dark-uniform players."
+    },
+    {
+      "first_player_id": "dark_p4",
+      "second_player_id": "dark_p5",
+      "reason": "The players remain distinct across the longer overlap despite occasional box collisions."
+    },
+    {
+      "first_player_id": "dark_p6",
+      "second_player_id": "dark_p8",
+      "reason": "dark_p8 is a boundary-hugging non-player box, not the active dark_p6 player."
+    }
+  ],
+  "excluded_identities": [
+    {
+      "player_id": "dark_p7",
+      "reason": "T19 segment 1 is a short partial box along the far baseline boundary rather than an active on-court player."
+    },
+    {
+      "player_id": "dark_p8",
+      "reason": "T19 segment 2 continues the short partial baseline-boundary detection rather than an active on-court player."
+    },
+    {
+      "player_id": "unknown_p4",
+      "reason": "T16 tracks a partial person or bench-area detection whose floor point hugs the far court boundary."
+    },
+    {
+      "player_id": "unknown_p6",
+      "reason": "T17 is a three-frame partial bench or baseline detection, not a full active player track."
+    },
+    {
+      "player_id": "unknown_p7",
+      "reason": "T18 is a two-frame partial bench or baseline detection, not a full active player track."
+    },
+    {
+      "player_id": "unknown_p8",
+      "reason": "T23 is a three-frame upper-body box inside a crowded stack and does not represent an additional active player."
+    },
+    {
+      "player_id": "unknown_p9",
+      "reason": "T25 follows a person along the far boundary for 58 rows and is outside the active ten-player set."
+    },
+    {
+      "player_id": "unknown_p10",
+      "reason": "T27 follows a far-boundary person rather than an active on-court player."
+    },
+    {
+      "player_id": "unknown_p11",
+      "reason": "T31 is a one-frame partial box produced inside an occluded player pair."
+    },
+    {
+      "player_id": "unknown_p12",
+      "reason": "T32 is an unstable two-frame partial box that overlaps several nearby players."
+    }
+  ],
+  "team_overrides": {},
+  "retained_for_sequential_review": [
+    {
+      "player_id": "unknown_p1",
+      "reason": "T6 is a real dark-uniform player fragment, but its later identity cannot be established from the simultaneous-overlap review."
+    }
+  ],
+  "candidate_decisions": [
+    {
+      "candidate_id": "residual_001",
+      "decision": "same_identity"
+    },
+    {
+      "candidate_id": "residual_002",
+      "decision": "same_identity"
+    },
+    {
+      "candidate_id": "residual_003",
+      "decision": "same_identity"
+    },
+    {
+      "candidate_id": "residual_004",
+      "decision": "different_identity"
+    },
+    {
+      "candidate_id": "residual_005",
+      "decision": "exclude_first"
+    },
+    {
+      "candidate_id": "residual_006",
+      "decision": "exclude_second"
+    },
+    {
+      "candidate_id": "residual_007",
+      "decision": "different_identity"
+    },
+    {
+      "candidate_id": "residual_008",
+      "decision": "exclude_first"
+    },
+    {
+      "candidate_id": "residual_009",
+      "decision": "different_identity"
+    },
+    {
+      "candidate_id": "residual_010",
+      "decision": "different_identity"
+    },
+    {
+      "candidate_id": "residual_011",
+      "decision": "same_identity"
+    },
+    {
+      "candidate_id": "residual_012",
+      "decision": "exclude_both"
+    },
+    {
+      "candidate_id": "residual_013",
+      "decision": "exclude_second"
+    },
+    {
+      "candidate_id": "residual_014",
+      "decision": "exclude_second"
+    },
+    {
+      "candidate_id": "residual_015",
+      "decision": "exclude_first"
+    }
+  ]
+}

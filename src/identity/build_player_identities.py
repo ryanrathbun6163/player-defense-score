@@ -19,6 +19,10 @@ MATCH_REPORT_PATH = Path(
     "possession_001_segment_match_candidates.json"
 )
 
+IDENTITY_REVIEW_CONFIG_PATH = Path(
+    "configs/possession_001_identity_review.json"
+)
+
 OUTPUT_DIR = Path(
     "data/outputs/identity"
 )
@@ -540,6 +544,286 @@ def assign_player_ids(
     )
 
 
+def apply_identity_review(
+    baseline_identities,
+    baseline_player_id_by_segment,
+    segment_by_id,
+    assignment_bounds,
+    segment_row_counts,
+    review_config,
+):
+    baseline_by_id = {
+        identity["player_id"]: identity
+        for identity in baseline_identities
+    }
+    baseline_player_ids = set(baseline_by_id)
+    expected_count = review_config.get(
+        "expected_baseline_identity_cluster_count"
+    )
+
+    if (
+        expected_count is not None
+        and int(expected_count) != len(baseline_identities)
+    ):
+        raise ValueError(
+            "Identity review config expects "
+            f"{expected_count} baseline clusters, but "
+            f"the builder produced {len(baseline_identities)}."
+        )
+
+    expected_player_ids = set(
+        review_config.get(
+            "expected_baseline_player_ids",
+            baseline_player_ids,
+        )
+    )
+
+    if expected_player_ids != baseline_player_ids:
+        raise ValueError(
+            "Identity review config does not match the "
+            "current baseline player IDs. Missing from "
+            "config: "
+            f"{sorted(baseline_player_ids - expected_player_ids)}; "
+            "unexpected in config: "
+            f"{sorted(expected_player_ids - baseline_player_ids)}"
+        )
+
+    excluded_records = review_config.get(
+        "excluded_identities",
+        [],
+    )
+    excluded_reason_by_player_id = {}
+
+    for record in excluded_records:
+        player_id = record["player_id"]
+
+        if player_id not in baseline_by_id:
+            raise ValueError(
+                f"Unknown excluded baseline identity: {player_id}"
+            )
+
+        if player_id in excluded_reason_by_player_id:
+            raise ValueError(
+                f"Duplicate excluded identity: {player_id}"
+            )
+
+        excluded_reason_by_player_id[player_id] = record[
+            "reason"
+        ]
+
+    accepted_merges = review_config.get(
+        "accepted_identity_merges",
+        [],
+    )
+    rejected_merges = review_config.get(
+        "rejected_identity_merges",
+        [],
+    )
+    disjoint_set = DisjointSet(baseline_player_ids)
+
+    for record in accepted_merges:
+        first_player_id = record["first_player_id"]
+        second_player_id = record["second_player_id"]
+
+        for player_id in (
+            first_player_id,
+            second_player_id,
+        ):
+            if player_id not in baseline_by_id:
+                raise ValueError(
+                    "Unknown reviewed merge identity: "
+                    f"{player_id}"
+                )
+
+            if player_id in excluded_reason_by_player_id:
+                raise ValueError(
+                    "An excluded identity cannot also be "
+                    f"merged: {player_id}"
+                )
+
+        disjoint_set.union(
+            first_player_id,
+            second_player_id,
+        )
+
+    for record in rejected_merges:
+        first_player_id = record["first_player_id"]
+        second_player_id = record["second_player_id"]
+
+        for player_id in (
+            first_player_id,
+            second_player_id,
+        ):
+            if player_id not in baseline_by_id:
+                raise ValueError(
+                    "Unknown rejected merge identity: "
+                    f"{player_id}"
+                )
+
+        if (
+            disjoint_set.find(first_player_id)
+            == disjoint_set.find(second_player_id)
+        ):
+            raise ValueError(
+                "A rejected identity pair was reconnected "
+                "transitively: "
+                f"{first_player_id} -> {second_player_id}"
+            )
+
+    team_overrides = review_config.get(
+        "team_overrides",
+        {},
+    )
+
+    for player_id, team_label in team_overrides.items():
+        if player_id not in baseline_by_id:
+            raise ValueError(
+                f"Unknown team-override identity: {player_id}"
+            )
+
+        if team_label not in TEAM_ORDER:
+            raise ValueError(
+                "Invalid reviewed team label for "
+                f"{player_id}: {team_label}"
+            )
+
+    active_groups = defaultdict(list)
+
+    for player_id in baseline_player_ids:
+        if player_id in excluded_reason_by_player_id:
+            continue
+
+        active_groups[
+            disjoint_set.find(player_id)
+        ].append(player_id)
+
+    reviewed_components = []
+
+    for source_player_ids in active_groups.values():
+        source_player_ids = sorted(source_player_ids)
+        segment_ids = sorted(
+            {
+                segment_id
+                for player_id in source_player_ids
+                for segment_id in baseline_by_id[player_id][
+                    "segment_ids"
+                ]
+            }
+        )
+        reviewed_teams = {
+            team_overrides.get(
+                player_id,
+                baseline_by_id[player_id]["team_label"],
+            )
+            for player_id in source_player_ids
+            if team_overrides.get(
+                player_id,
+                baseline_by_id[player_id]["team_label"],
+            )
+            in {"white", "dark"}
+        }
+
+        if len(reviewed_teams) > 1:
+            raise ValueError(
+                "Reviewed identity merges joined opposing "
+                "teams without a resolving override: "
+                f"{source_player_ids} -> "
+                f"{sorted(reviewed_teams)}"
+            )
+
+        team_label = (
+            next(iter(reviewed_teams))
+            if reviewed_teams
+            else "unknown"
+        )
+        raw_track_ids = sorted(
+            {
+                int(segment_by_id[segment_id]["track_id"])
+                for segment_id in segment_ids
+            }
+        )
+        first_frame = min(
+            assignment_bounds[segment_id][0]
+            for segment_id in segment_ids
+        )
+        last_frame = max(
+            assignment_bounds[segment_id][1]
+            for segment_id in segment_ids
+        )
+        row_count = sum(
+            segment_row_counts[segment_id]
+            for segment_id in segment_ids
+        )
+
+        reviewed_components.append(
+            {
+                "team_label": team_label,
+                "source_player_ids": source_player_ids,
+                "segment_ids": segment_ids,
+                "raw_track_ids": raw_track_ids,
+                "first_frame": first_frame,
+                "last_frame": last_frame,
+                "row_count": row_count,
+            }
+        )
+
+    reviewed_components.sort(
+        key=lambda component: (
+            TEAM_ORDER[component["team_label"]],
+            component["first_frame"],
+            component["raw_track_ids"],
+            component["segment_ids"],
+        )
+    )
+    team_counters = Counter()
+    player_id_by_segment = {}
+
+    for component in reviewed_components:
+        team_label = component["team_label"]
+        team_counters[team_label] += 1
+        player_id = (
+            f"{team_label}_p"
+            f"{team_counters[team_label]}"
+        )
+        component["player_id"] = player_id
+
+        for segment_id in component["segment_ids"]:
+            player_id_by_segment[segment_id] = player_id
+
+    excluded_identities = []
+    excluded_reason_by_segment = {}
+
+    for player_id in sorted(excluded_reason_by_player_id):
+        baseline_identity = baseline_by_id[player_id]
+        reason = excluded_reason_by_player_id[player_id]
+        excluded_identity = dict(baseline_identity)
+        excluded_identity["baseline_player_id"] = player_id
+        excluded_identity["exclusion_reason"] = reason
+        excluded_identities.append(excluded_identity)
+
+        for segment_id in baseline_identity["segment_ids"]:
+            excluded_reason_by_segment[segment_id] = reason
+
+    return (
+        reviewed_components,
+        player_id_by_segment,
+        excluded_identities,
+        excluded_reason_by_segment,
+        {
+            "accepted_identity_merge_count": len(
+                accepted_merges
+            ),
+            "rejected_identity_merge_count": len(
+                rejected_merges
+            ),
+            "excluded_identity_count": len(
+                excluded_identities
+            ),
+            "team_override_count": len(team_overrides),
+        },
+    )
+
+
 def write_csv(path, fieldnames, rows):
     path.parent.mkdir(
         parents=True,
@@ -579,6 +863,9 @@ def build_reconciled_rows(annotated_rows):
     rows_by_player_frame = defaultdict(list)
 
     for row in annotated_rows:
+        if row["identity_status"] != "active":
+            continue
+
         key = (
             int(row["frame_index"]),
             row["player_id"],
@@ -644,6 +931,7 @@ def main():
         CLASSIFIED_TRACKS_PATH,
         SEGMENTS_REPORT_PATH,
         MATCH_REPORT_PATH,
+        IDENTITY_REVIEW_CONFIG_PATH,
     ]
 
     for path in required_paths:
@@ -662,6 +950,9 @@ def main():
     )
     match_report = load_json(
         MATCH_REPORT_PATH
+    )
+    identity_review_config = load_json(
+        IDENTITY_REVIEW_CONFIG_PATH
     )
 
     if match_report.get(
@@ -701,13 +992,28 @@ def main():
     )
 
     (
-        identities,
-        player_id_by_segment,
+        baseline_identities,
+        baseline_player_id_by_segment,
     ) = assign_player_ids(
         components,
         segment_by_id,
         assignment_bounds,
         segment_row_counts,
+    )
+
+    (
+        identities,
+        player_id_by_segment,
+        excluded_identities,
+        excluded_reason_by_segment,
+        identity_review_summary,
+    ) = apply_identity_review(
+        baseline_identities,
+        baseline_player_id_by_segment,
+        segment_by_id,
+        assignment_bounds,
+        segment_row_counts,
+        identity_review_config,
     )
 
     team_by_player_id = {
@@ -723,18 +1029,38 @@ def main():
         raw_rows,
         row_segment_ids,
     ):
-        player_id = (
-            player_id_by_segment[segment_id]
+        baseline_player_id = (
+            baseline_player_id_by_segment[
+                segment_id
+            ]
         )
-
         annotated_row = dict(row)
-        annotated_row["segment_id"] = (
-            segment_id
-        )
-        annotated_row["player_id"] = player_id
-        annotated_row["reconciled_team"] = (
-            team_by_player_id[player_id]
-        )
+        annotated_row["segment_id"] = segment_id
+        annotated_row[
+            "baseline_player_id"
+        ] = baseline_player_id
+
+        if segment_id in excluded_reason_by_segment:
+            annotated_row["player_id"] = ""
+            annotated_row["reconciled_team"] = "excluded"
+            annotated_row[
+                "identity_status"
+            ] = "excluded_non_player"
+            annotated_row[
+                "identity_review_reason"
+            ] = excluded_reason_by_segment[segment_id]
+        else:
+            player_id = player_id_by_segment[segment_id]
+            annotated_row["player_id"] = player_id
+            annotated_row["reconciled_team"] = (
+                team_by_player_id[player_id]
+            )
+            annotated_row[
+                "identity_status"
+            ] = "active"
+            annotated_row[
+                "identity_review_reason"
+            ] = ""
 
         annotated_rows.append(annotated_row)
 
@@ -746,8 +1072,11 @@ def main():
         input_fieldnames
         + [
             "segment_id",
+            "baseline_player_id",
             "player_id",
             "reconciled_team",
+            "identity_status",
+            "identity_review_reason",
         ]
     )
     reconciled_fieldnames = (
@@ -774,6 +1103,14 @@ def main():
         identity["team_label"]
         for identity in identities
     )
+    excluded_annotated_row_count = sum(
+        row["identity_status"] != "active"
+        for row in annotated_rows
+    )
+    active_annotated_row_count = (
+        len(annotated_rows)
+        - excluded_annotated_row_count
+    )
     identities_per_frame = Counter()
 
     for row in reconciled_rows:
@@ -787,6 +1124,20 @@ def main():
                 identities_per_frame.values()
             ).items()
         )
+    )
+    expected_active_player_count = int(
+        identity_review_config.get(
+            "expected_active_player_count",
+            10,
+        )
+    )
+    frames_above_expected_count = sum(
+        count > expected_active_player_count
+        for count in identities_per_frame.values()
+    )
+    frames_at_expected_count = sum(
+        count == expected_active_player_count
+        for count in identities_per_frame.values()
     )
 
     fallback_segments = [
@@ -809,6 +1160,20 @@ def main():
         ),
     ):
         segment_id = segment["segment_id"]
+        baseline_player_id = (
+            baseline_player_id_by_segment[
+                segment_id
+            ]
+        )
+        is_excluded = (
+            segment_id
+            in excluded_reason_by_segment
+        )
+        player_id = (
+            None
+            if is_excluded
+            else player_id_by_segment[segment_id]
+        )
 
         mapping_records.append(
             {
@@ -837,17 +1202,24 @@ def main():
                         segment_id
                     ]
                 ),
-                "player_id": (
-                    player_id_by_segment[
-                        segment_id
-                    ]
+                "baseline_player_id": (
+                    baseline_player_id
                 ),
+                "player_id": player_id,
                 "reconciled_team": (
-                    team_by_player_id[
-                        player_id_by_segment[
-                            segment_id
-                        ]
-                    ]
+                    None
+                    if is_excluded
+                    else team_by_player_id[player_id]
+                ),
+                "identity_status": (
+                    "excluded_non_player"
+                    if is_excluded
+                    else "active"
+                ),
+                "identity_review_reason": (
+                    excluded_reason_by_segment.get(
+                        segment_id
+                    )
                 ),
             }
         )
@@ -861,6 +1233,9 @@ def main():
         ),
         "match_report": str(
             MATCH_REPORT_PATH
+        ),
+        "identity_review_config": str(
+            IDENTITY_REVIEW_CONFIG_PATH
         ),
         "summary": {
             "raw_row_count": len(raw_rows),
@@ -879,27 +1254,54 @@ def main():
                     [],
                 )
             ),
+            "baseline_identity_cluster_count": len(
+                baseline_identities
+            ),
             "identity_cluster_count": len(
                 identities
             ),
+            "active_identity_cluster_count": len(
+                identities
+            ),
+            "excluded_identity_cluster_count": len(
+                excluded_identities
+            ),
+            **identity_review_summary,
             "identity_counts_by_team": dict(
                 identity_counts_by_team
             ),
             "identity_annotated_row_count": len(
                 annotated_rows
             ),
+            "active_annotated_row_count": (
+                active_annotated_row_count
+            ),
+            "excluded_annotated_row_count": (
+                excluded_annotated_row_count
+            ),
             "reconciled_row_count": len(
                 reconciled_rows
             ),
             "duplicate_rows_removed": (
-                len(annotated_rows)
+                active_annotated_row_count
                 - len(reconciled_rows)
             ),
             "frame_identity_count_distribution": (
                 frame_identity_count_distribution
             ),
+            "expected_active_player_count": (
+                expected_active_player_count
+            ),
+            "frames_at_expected_count": (
+                frames_at_expected_count
+            ),
+            "frames_above_expected_count": (
+                frames_above_expected_count
+            ),
         },
+        "baseline_identities": baseline_identities,
         "identities": identities,
+        "excluded_identities": excluded_identities,
         "segment_mapping": mapping_records,
     }
 
@@ -934,8 +1336,20 @@ def main():
         f"{len(match_report.get('accepted_candidates', []))}"
     )
     print(
-        f"Identity clusters: "
+        f"Baseline identity clusters: "
+        f"{len(baseline_identities)}"
+    )
+    print(
+        f"Reviewed active identity clusters: "
         f"{len(identities)}"
+    )
+    print(
+        f"Excluded non-player identity clusters: "
+        f"{len(excluded_identities)}"
+    )
+    print(
+        "Reviewed identity merges applied: "
+        f"{identity_review_summary['accepted_identity_merge_count']}"
     )
     print(
         "Identity clusters by team: "
@@ -945,15 +1359,27 @@ def main():
         f"Original rows: {len(annotated_rows)}"
     )
     print(
+        "Excluded non-player rows: "
+        f"{excluded_annotated_row_count}"
+    )
+    print(
         f"Reconciled rows: {len(reconciled_rows)}"
     )
     print(
         "Duplicate rows removed: "
-        f"{len(annotated_rows) - len(reconciled_rows)}"
+        f"{active_annotated_row_count - len(reconciled_rows)}"
     )
     print(
         "Frame identity-count distribution: "
         f"{frame_identity_count_distribution}"
+    )
+    print(
+        f"Frames at {expected_active_player_count} active players: "
+        f"{frames_at_expected_count}"
+    )
+    print(
+        f"Frames above {expected_active_player_count} active players: "
+        f"{frames_above_expected_count}"
     )
     print(
         f"\nMapping saved to: "
