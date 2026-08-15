@@ -45,6 +45,9 @@ EXPECTED_COORDINATE_STATUS = (
 EXPECTED_REFINEMENT_STATUS = (
     "refined_player_court_trajectories_pending_visual_review"
 )
+EXPECTED_GAP_INTERPOLATION_STATUS = (
+    "interpolated_internal_player_coordinate_gaps_pending_visual_review"
+)
 
 OPTIONAL_REFINEMENT_FIELDS = {
     "raw_court_x_ft",
@@ -57,6 +60,17 @@ OPTIONAL_REFINEMENT_FIELDS = {
     "trajectory_anchor_frames",
     "trajectory_trusted_path_observation",
     "trajectory_raw_jump_candidate",
+}
+
+OPTIONAL_GAP_INTERPOLATION_FIELDS = {
+    "source_observation_available",
+    "trajectory_observation_kind",
+    "trajectory_gap_fill_applied",
+    "trajectory_gap_fill_method",
+    "trajectory_gap_fill_reason",
+    "trajectory_gap_anchor_frames",
+    "trajectory_gap_size_observations",
+    "trajectory_gap_endpoint_speed_ft_sec",
 }
 
 WHITE_PALETTE = [
@@ -85,6 +99,7 @@ WARNING_COLOR = (0, 205, 255)
 OUTSIDE_COLOR = (40, 40, 255)
 REFINED_COLOR = (255, 255, 255)
 RAW_GHOST_COLOR = (150, 150, 150)
+GAP_INTERPOLATION_COLOR = (255, 255, 0)
 
 
 def parse_args():
@@ -125,6 +140,16 @@ def parse_args():
         help=(
             "Optional trajectory-refinement report used to validate "
             "refined coordinates and select correction checkpoints."
+        ),
+    )
+    parser.add_argument(
+        "--gap-report",
+        type=Path,
+        default=None,
+        help=(
+            "Optional internal-gap interpolation report used to "
+            "validate synthesized coordinates and select gap "
+            "checkpoints."
         ),
     )
     parser.add_argument(
@@ -354,6 +379,22 @@ def load_coordinate_rows(path):
             )
 
         has_refinement = bool(present_refinement_fields)
+        present_gap_fields = fieldnames.intersection(
+            OPTIONAL_GAP_INTERPOLATION_FIELDS
+        )
+
+        if present_gap_fields and (
+            present_gap_fields != OPTIONAL_GAP_INTERPOLATION_FIELDS
+        ):
+            missing_gap_fields = sorted(
+                OPTIONAL_GAP_INTERPOLATION_FIELDS - present_gap_fields
+            )
+            raise ValueError(
+                "Gap-interpolated coordinate CSV has an incomplete "
+                f"audit schema: {missing_gap_fields}"
+            )
+
+        has_gap_interpolation = bool(present_gap_fields)
 
         for row_number, raw_row in enumerate(reader, 2):
             row = dict(raw_row)
@@ -431,6 +472,47 @@ def load_coordinate_rows(path):
                 row["trajectory_trusted_path_observation"] = True
                 row["trajectory_raw_jump_candidate"] = False
 
+            if has_gap_interpolation:
+                for field_name in (
+                    "source_observation_available",
+                    "trajectory_gap_fill_applied",
+                ):
+                    row[field_name] = parse_bool(
+                        raw_row[field_name], field_name, row_number
+                    )
+
+                row["trajectory_gap_size_observations"] = parse_int(
+                    raw_row["trajectory_gap_size_observations"],
+                    "trajectory_gap_size_observations",
+                    row_number,
+                )
+                row["trajectory_gap_endpoint_speed_ft_sec"] = (
+                    parse_float(
+                        raw_row[
+                            "trajectory_gap_endpoint_speed_ft_sec"
+                        ],
+                        "trajectory_gap_endpoint_speed_ft_sec",
+                        row_number,
+                    )
+                )
+
+                for field_name in (
+                    "trajectory_observation_kind",
+                    "trajectory_gap_fill_method",
+                    "trajectory_gap_fill_reason",
+                    "trajectory_gap_anchor_frames",
+                ):
+                    row[field_name] = raw_row[field_name].strip()
+            else:
+                row["source_observation_available"] = True
+                row["trajectory_observation_kind"] = "observed"
+                row["trajectory_gap_fill_applied"] = False
+                row["trajectory_gap_fill_method"] = "not_applicable"
+                row["trajectory_gap_fill_reason"] = ""
+                row["trajectory_gap_anchor_frames"] = ""
+                row["trajectory_gap_size_observations"] = 0
+                row["trajectory_gap_endpoint_speed_ft_sec"] = 0.0
+
             row["player_id"] = raw_row["player_id"].strip()
             row["reconciled_team"] = raw_row[
                 "reconciled_team"
@@ -459,9 +541,57 @@ def load_coordinate_rows(path):
                     f"{row['identity_status']!r}"
                 )
 
-            if row["x2"] <= row["x1"] or row["y2"] <= row["y1"]:
+            if row["source_observation_available"] and (
+                row["x2"] <= row["x1"]
+                or row["y2"] <= row["y1"]
+            ):
                 raise ValueError(
                     f"Invalid bounding box at CSV row {row_number}"
+                )
+
+            gap_applied = row["trajectory_gap_fill_applied"]
+            source_available = row["source_observation_available"]
+
+            if gap_applied == source_available:
+                raise ValueError(
+                    "Gap-fill and source-observation flags disagree at "
+                    f"CSV row {row_number}"
+                )
+
+            if gap_applied:
+                if row["trajectory_observation_kind"] != (
+                    "interpolated_internal_gap"
+                ):
+                    raise ValueError(
+                        "Gap-filled coordinate has an unexpected "
+                        f"observation kind at CSV row {row_number}"
+                    )
+
+                synthetic_detection_values = (
+                    row["track_id"],
+                    row["x1"],
+                    row["y1"],
+                    row["x2"],
+                    row["y2"],
+                    row["floor_x"],
+                    row["floor_y"],
+                )
+
+                if any(value != -1 for value in synthetic_detection_values):
+                    raise ValueError(
+                        "Gap-filled coordinate fabricates source "
+                        f"detection geometry at CSV row {row_number}"
+                    )
+
+                if row["trajectory_gap_size_observations"] <= 0:
+                    raise ValueError(
+                        "Gap-filled coordinate has a non-positive gap "
+                        f"size at CSV row {row_number}"
+                    )
+            elif row["trajectory_observation_kind"] != "observed":
+                raise ValueError(
+                    "Source coordinate has an unexpected observation "
+                    f"kind at CSV row {row_number}"
                 )
 
             previous_team = team_by_player.setdefault(
@@ -520,7 +650,7 @@ def load_coordinate_rows(path):
 def validate_coordinate_contract(
     rows_by_frame,
     team_by_player,
-    row_count,
+    observed_row_count,
     coordinate_report,
 ):
     if coordinate_report.get("status") != EXPECTED_COORDINATE_STATUS:
@@ -531,10 +661,11 @@ def validate_coordinate_contract(
 
     validation = coordinate_report.get("validation", {})
 
-    if int(validation.get("row_count", -1)) != row_count:
+    if int(validation.get("row_count", -1)) != observed_row_count:
         raise ValueError(
-            "Coordinate report row count does not match the CSV: "
-            f"{validation.get('row_count')} != {row_count}"
+            "Coordinate report row count does not match the source "
+            "observations represented in the CSV: "
+            f"{validation.get('row_count')} != {observed_row_count}"
         )
 
     if int(validation.get("unique_player_count", -1)) != len(
@@ -569,10 +700,11 @@ def validate_coordinate_contract(
             f"{dict(sorted(team_counts.items()))}"
         )
 
-    outside_count = sum(
+    observed_outside_count = sum(
         not row["court_position_in_half_court"]
         for rows in rows_by_frame.values()
         for row in rows
+        if row["source_observation_available"]
     )
     reported_outside_count = int(
         coordinate_report.get("court_position_audit", {}).get(
@@ -580,10 +712,11 @@ def validate_coordinate_contract(
         )
     )
 
-    if reported_outside_count != outside_count:
+    if reported_outside_count != observed_outside_count:
         raise ValueError(
-            "Coordinate report outside-row count does not match the CSV: "
-            f"{reported_outside_count} != {outside_count}"
+            "Coordinate report outside-row count does not match the "
+            "source observations represented in the CSV: "
+            f"{reported_outside_count} != {observed_outside_count}"
         )
 
     for frame_index, rows in rows_by_frame.items():
@@ -774,6 +907,16 @@ def validate_refined_coordinate_audit(rows_by_frame, dimensions):
 
             applied = row["trajectory_refinement_applied"]
 
+            if (
+                not row["source_observation_available"]
+                and applied
+            ):
+                raise ValueError(
+                    "Synthetic gap coordinate cannot also be marked as "
+                    "trajectory-refined at frame "
+                    f"{row['frame_index']} for {row['player_id']}"
+                )
+
             if applied != (expected_distance > 1e-9):
                 raise ValueError(
                     "Refinement-applied flag disagrees at frame "
@@ -831,9 +974,10 @@ def validate_refinement_report_contract(
 
     if int(
         boundary.get("refined_outside_observation_count", -1)
-    ) != int(coordinate_analysis["outside_row_count"]):
+    ) != int(coordinate_analysis["observed_outside_row_count"]):
         raise ValueError(
-            "Trajectory-refinement outside count does not match review"
+            "Trajectory-refinement outside count does not match the "
+            "observed review coordinates"
         )
 
     checkpoint_frames = [
@@ -857,6 +1001,145 @@ def validate_refinement_report_contract(
     return checkpoint_frames
 
 
+def validate_gap_report_contract(
+    gap_report,
+    row_count,
+    observed_row_count,
+    frame_count,
+    coordinate_analysis,
+):
+    if gap_report.get("status") != EXPECTED_GAP_INTERPOLATION_STATUS:
+        raise ValueError(
+            "Trajectory-gap report has an unexpected status: "
+            f"{gap_report.get('status')!r}"
+        )
+
+    validation = gap_report.get("validation", {})
+    coverage = gap_report.get("coverage_audit", {})
+    gap_audit = gap_report.get("gap_audit", {})
+    motion = gap_report.get("motion_audit", {})
+    boundary = gap_report.get("boundary_audit", {})
+    gap_analysis = coordinate_analysis["trajectory_gap_interpolation"]
+
+    expected_validation_counts = {
+        "input_observed_row_count": observed_row_count,
+        "output_coordinate_row_count": row_count,
+        "interpolated_row_count": gap_analysis["filled_row_count"],
+        "frame_count": frame_count,
+    }
+
+    for field_name, expected in expected_validation_counts.items():
+        if int(validation.get(field_name, -1)) != int(expected):
+            raise ValueError(
+                "Trajectory-gap report validation mismatch for "
+                f"{field_name}: {validation.get(field_name)} != "
+                f"{expected}"
+            )
+
+    for field_name in (
+        "source_refinement_contract_verified",
+        "all_observed_rows_preserved_exactly",
+        "no_source_detection_fields_fabricated",
+        "output_player_frame_pairs_unique",
+    ):
+        if validation.get(field_name) is not True:
+            raise ValueError(
+                "Trajectory-gap report did not verify required "
+                f"contract: {field_name}"
+            )
+
+    if coverage.get("output_frame_player_count_distribution") != (
+        coordinate_analysis["frame_player_count_distribution"]
+    ):
+        raise ValueError(
+            "Trajectory-gap frame-count distribution does not match "
+            "the review coordinates"
+        )
+
+    if int(coverage.get("output_frames_with_all_ten_players", -1)) != int(
+        coordinate_analysis["frames_with_all_ten_players"]
+    ):
+        raise ValueError(
+            "Trajectory-gap complete-frame count does not match review"
+        )
+
+    if int(gap_audit.get("filled_observation_count", -1)) != int(
+        gap_analysis["filled_row_count"]
+    ):
+        raise ValueError(
+            "Trajectory-gap filled-coordinate count does not match CSV"
+        )
+
+    if int(gap_audit.get("filled_internal_gap_count", -1)) != int(
+        gap_analysis["filled_gap_count"]
+    ):
+        raise ValueError(
+            "Trajectory-gap filled-gap count does not match CSV"
+        )
+
+    gap_motion = motion.get("gap_interpolated", {})
+
+    if int(gap_motion.get("candidate_count", -1)) != int(
+        coordinate_analysis["jump_candidate_count"]
+    ):
+        raise ValueError(
+            "Trajectory-gap motion count does not match review"
+        )
+
+    expected_boundary_counts = {
+        "observed_outside_coordinate_count": coordinate_analysis[
+            "observed_outside_row_count"
+        ],
+        "interpolated_outside_coordinate_count": coordinate_analysis[
+            "interpolated_outside_row_count"
+        ],
+        "output_outside_coordinate_count": coordinate_analysis[
+            "outside_row_count"
+        ],
+    }
+
+    for field_name, expected in expected_boundary_counts.items():
+        if int(boundary.get(field_name, -1)) != int(expected):
+            raise ValueError(
+                "Trajectory-gap boundary count mismatch for "
+                f"{field_name}: {boundary.get(field_name)} != {expected}"
+            )
+
+    if boundary.get(
+        "observed_outside_coordinates_preserved_exactly"
+    ) is not True:
+        raise ValueError(
+            "Trajectory-gap report did not preserve observed outside "
+            "coordinates exactly"
+        )
+
+    if boundary.get("interpolated_boundary_states_stable") is not True:
+        raise ValueError(
+            "Trajectory-gap report did not verify stable interpolated "
+            "boundary states"
+        )
+
+    checkpoint_frames = [
+        int(frame_index)
+        for frame_index in gap_audit.get(
+            "recommended_checkpoint_frames", []
+        )
+    ]
+    invalid_frames = [
+        frame_index
+        for frame_index in checkpoint_frames
+        if not 0 <= frame_index < frame_count
+    ]
+
+    if invalid_frames:
+        raise ValueError(
+            "Trajectory-gap report has invalid checkpoints: "
+            f"{invalid_frames}"
+        )
+
+    return checkpoint_frames
+
+
 def analyze_coordinates(
     rows_by_frame,
     rows_by_player,
@@ -865,23 +1148,47 @@ def analyze_coordinates(
     jump_speed_threshold,
     dimensions,
 ):
+    all_rows = [
+        row
+        for rows in rows_by_frame.values()
+        for row in rows
+    ]
+    observed_rows = [
+        row for row in all_rows if row["source_observation_available"]
+    ]
+    gap_filled_rows = [
+        row for row in all_rows if row["trajectory_gap_fill_applied"]
+    ]
     frame_count_distribution = Counter(
         len(rows_by_frame.get(frame_index, []))
         for frame_index in range(frame_count)
     )
+    source_frame_count_distribution = Counter(
+        sum(
+            row["source_observation_available"]
+            for row in rows_by_frame.get(frame_index, [])
+        )
+        for frame_index in range(frame_count)
+    )
     outside_rows = [
-        row
-        for rows in rows_by_frame.values()
-        for row in rows
+        row for row in all_rows
         if not row["court_position_in_half_court"]
+    ]
+    observed_outside_rows = [
+        row
+        for row in outside_rows
+        if row["source_observation_available"]
+    ]
+    interpolated_outside_rows = [
+        row
+        for row in outside_rows
+        if row["trajectory_gap_fill_applied"]
     ]
     outside_by_player = Counter(
         row["player_id"] for row in outside_rows
     )
     corrected_rows = [
-        row
-        for rows in rows_by_frame.values()
-        for row in rows
+        row for row in all_rows
         if row["trajectory_refinement_applied"]
     ]
     corrected_by_player = Counter(
@@ -890,6 +1197,16 @@ def analyze_coordinates(
     corrected_by_method = Counter(
         row["trajectory_refinement_method"] for row in corrected_rows
     )
+    gap_filled_by_player = Counter(
+        row["player_id"] for row in gap_filled_rows
+    )
+    gap_filled_by_method = Counter(
+        row["trajectory_gap_fill_method"] for row in gap_filled_rows
+    )
+    filled_gap_keys = {
+        (row["player_id"], row["trajectory_gap_anchor_frames"])
+        for row in gap_filled_rows
+    }
     jump_candidates = []
     per_player = {}
 
@@ -929,6 +1246,12 @@ def analyze_coordinates(
         per_player[player_id] = {
             "team": rows[0]["reconciled_team"],
             "row_count": len(rows),
+            "source_observed_row_count": sum(
+                row["source_observation_available"] for row in rows
+            ),
+            "interpolated_gap_row_count": sum(
+                row["trajectory_gap_fill_applied"] for row in rows
+            ),
             "first_frame": rows[0]["frame_index"],
             "last_frame": rows[-1]["frame_index"],
             "outside_row_count": outside_by_player.get(player_id, 0),
@@ -973,10 +1296,48 @@ def analyze_coordinates(
             {
                 "frame_index": row["frame_index"],
                 "player_id": row["player_id"],
+                "source_observation_available": row[
+                    "source_observation_available"
+                ],
+                "observation_kind": row[
+                    "trajectory_observation_kind"
+                ],
                 "boundary": boundary,
                 "outside_distance_ft": round(outside_distance, 4),
                 "court_x_ft": round(court_x, 4),
                 "court_y_ft": round(court_y, 4),
+            }
+        )
+
+    gap_filled_records = []
+
+    for row in sorted(
+        gap_filled_rows,
+        key=lambda item: (
+            -item["trajectory_gap_size_observations"],
+            item["frame_index"],
+            player_sort_key(item["player_id"]),
+        ),
+    ):
+        gap_filled_records.append(
+            {
+                "frame_index": row["frame_index"],
+                "player_id": row["player_id"],
+                "court_x_ft": round(row["court_x_ft"], 4),
+                "court_y_ft": round(row["court_y_ft"], 4),
+                "inside_half_court": row[
+                    "court_position_in_half_court"
+                ],
+                "method": row["trajectory_gap_fill_method"],
+                "anchor_frames": row[
+                    "trajectory_gap_anchor_frames"
+                ],
+                "gap_size_observations": row[
+                    "trajectory_gap_size_observations"
+                ],
+                "endpoint_speed_ft_sec": round(
+                    row["trajectory_gap_endpoint_speed_ft_sec"], 4
+                ),
             }
         )
 
@@ -1015,8 +1376,20 @@ def analyze_coordinates(
             str(count): frame_count_distribution[count]
             for count in sorted(frame_count_distribution)
         },
+        "source_frame_player_count_distribution": {
+            str(count): source_frame_count_distribution[count]
+            for count in sorted(source_frame_count_distribution)
+        },
         "frames_with_all_ten_players": frame_count_distribution.get(10, 0),
+        "source_frames_with_all_ten_players": (
+            source_frame_count_distribution.get(10, 0)
+        ),
+        "source_observed_row_count": len(observed_rows),
         "outside_row_count": len(outside_rows),
+        "observed_outside_row_count": len(observed_outside_rows),
+        "interpolated_outside_row_count": len(
+            interpolated_outside_rows
+        ),
         "outside_rows_by_player": dict(sorted(outside_by_player.items())),
         "outside_rows": outside_records,
         "jump_speed_threshold_ft_sec": jump_speed_threshold,
@@ -1035,6 +1408,21 @@ def analyze_coordinates(
                 sorted(corrected_by_method.items())
             ),
             "corrected_rows": corrected_records,
+        },
+        "trajectory_gap_interpolation": {
+            "present": bool(gap_filled_rows),
+            "filled_gap_count": len(filled_gap_keys),
+            "filled_row_count": len(gap_filled_rows),
+            "filled_by_player": dict(
+                sorted(
+                    gap_filled_by_player.items(),
+                    key=lambda item: player_sort_key(item[0]),
+                )
+            ),
+            "filled_by_method": dict(
+                sorted(gap_filled_by_method.items())
+            ),
+            "filled_rows": gap_filled_records,
         },
         "per_player": per_player,
     }
@@ -1102,6 +1490,9 @@ def draw_source_annotations(frame, frame_index, fps, rows, colors):
     annotated = frame.copy()
 
     for row in rows:
+        if not row["source_observation_available"]:
+            continue
+
         color = colors[row["player_id"]]
         x1 = max(0, int(round(row["x1"])))
         y1 = max(0, int(round(row["y1"])))
@@ -1188,6 +1579,12 @@ def draw_source_annotations(frame, frame_index, fps, rows, colors):
     refined_count = sum(
         row["trajectory_refinement_applied"] for row in rows
     )
+    observed_count = sum(
+        row["source_observation_available"] for row in rows
+    )
+    gap_filled_count = sum(
+        row["trajectory_gap_fill_applied"] for row in rows
+    )
     frame_flags = {
         row["camera_raw_transform_accepted"] for row in rows
     }
@@ -1219,9 +1616,10 @@ def draw_source_annotations(frame, frame_index, fps, rows, colors):
     draw_text(
         annotated,
         (
-            f"Players {player_count}/10 | "
-            f"white {team_counts.get('white', 0)}/5 | "
-            f"dark {team_counts.get('dark', 0)}/5 | "
+            f"Coordinates {player_count}/10 | "
+            f"source {observed_count} | gap {gap_filled_count} | "
+            f"W {team_counts.get('white', 0)}/5 | "
+            f"D {team_counts.get('dark', 0)}/5 | "
             f"refined {refined_count} | {motion_label}"
         ),
         (28, 82),
@@ -1516,6 +1914,14 @@ def draw_legend(panel, colors, team_by_player, footer_top):
             scale=0.38,
         )
 
+    draw_text(
+        panel,
+        "* refined | ~ bracketed gap | red ring outside",
+        (22, footer_top + 108),
+        color=COURT_LABEL_COLOR,
+        scale=0.34,
+    )
+
 
 def draw_top_down_panel(
     panel_width,
@@ -1540,6 +1946,12 @@ def draw_top_down_panel(
     refined_count = sum(
         row["trajectory_refinement_applied"] for row in rows
     )
+    observed_count = sum(
+        row["source_observation_available"] for row in rows
+    )
+    gap_filled_count = sum(
+        row["trajectory_gap_fill_applied"] for row in rows
+    )
     status_color = (
         GOOD_COLOR if player_count == EXPECTED_PLAYER_COUNT else WARNING_COLOR
     )
@@ -1552,17 +1964,20 @@ def draw_top_down_panel(
     )
     draw_text(
         panel,
-        f"Frame {frame_index} | {frame_index / fps:.2f}s",
+        (
+            f"Frame {frame_index} | {frame_index / fps:.2f}s | "
+            f"src {observed_count} | gap {gap_filled_count} | "
+            f"ref {refined_count}"
+        ),
         (20, 54),
-        scale=0.50,
+        scale=0.45,
     )
     draw_text(
         panel,
         (
-            f"Players {player_count}/10 | "
+            f"Coordinates {player_count}/10 | "
             f"W {team_counts.get('white', 0)}/5 | "
-            f"D {team_counts.get('dark', 0)}/5 | "
-            f"refined {refined_count}"
+            f"D {team_counts.get('dark', 0)}/5"
         ),
         (20, 76),
         color=status_color,
@@ -1621,6 +2036,25 @@ def draw_top_down_panel(
                 panel, point, 13, REFINED_COLOR, 2, cv2.LINE_AA
             )
 
+        if row["trajectory_gap_fill_applied"]:
+            diamond = np.array(
+                [
+                    (point[0], point[1] - 15),
+                    (point[0] + 15, point[1]),
+                    (point[0], point[1] + 15),
+                    (point[0] - 15, point[1]),
+                ],
+                dtype=np.int32,
+            )
+            cv2.polylines(
+                panel,
+                [diamond],
+                True,
+                GAP_INTERPOLATION_COLOR,
+                3,
+                cv2.LINE_AA,
+            )
+
         if not row["court_position_in_half_court"]:
             cv2.circle(
                 panel, point, 14, OUTSIDE_COLOR, 3, cv2.LINE_AA
@@ -1630,6 +2064,9 @@ def draw_top_down_panel(
 
         if row["trajectory_refinement_applied"]:
             label += "*"
+
+        if row["trajectory_gap_fill_applied"]:
+            label += "~"
         text_size = cv2.getTextSize(
             label, cv2.FONT_HERSHEY_SIMPLEX, 0.42, 1
         )[0]
@@ -1687,6 +2124,13 @@ def build_checkpoint_indices(
                 break
 
     refinement = coordinate_analysis["trajectory_refinement"]
+    gap_interpolation = coordinate_analysis[
+        "trajectory_gap_interpolation"
+    ]
+    gap_frames = [
+        record["frame_index"]
+        for record in gap_interpolation["filled_rows"]
+    ]
     correction_frames = [
         record["frame_index"]
         for record in refinement["corrected_rows"]
@@ -1706,7 +2150,27 @@ def build_checkpoint_indices(
         for candidate in coordinate_analysis["jump_candidates"]
     ]
 
-    if correction_frames:
+    if gap_frames:
+        gap_limit = min(
+            len(gap_frames),
+            (maximum_event_checkpoints + 2) // 3,
+        )
+        remaining_limit = maximum_event_checkpoints - gap_limit
+        correction_limit = min(
+            len(correction_frames),
+            (remaining_limit + 1) // 2,
+        )
+        remaining_limit -= correction_limit
+        outside_limit = min(
+            len(outside_frames),
+            (remaining_limit + 1) // 2,
+        )
+        jump_limit = remaining_limit - outside_limit
+        add_spaced_events(gap_frames, gap_limit)
+        add_spaced_events(correction_frames, correction_limit)
+        add_spaced_events(outside_frames, outside_limit)
+        add_spaced_events(jump_frames, jump_limit)
+    elif correction_frames:
         correction_limit = min(
             len(correction_frames),
             (maximum_event_checkpoints + 1) // 2,
@@ -1733,7 +2197,10 @@ def build_checkpoint_indices(
             maximum_event_checkpoints - len(selected_event_frames)
         )
         add_spaced_events(
-            correction_frames + outside_frames + jump_frames,
+            gap_frames
+            + correction_frames
+            + outside_frames
+            + jump_frames,
             remaining_limit,
         )
 
@@ -1977,12 +2444,14 @@ def build_report(
     calibration,
     metadata,
     row_count,
+    observed_row_count,
     team_by_player,
     team_counts,
     coordinate_analysis,
     checkpoint_indices,
     render_metadata,
     refinement_report_verified,
+    gap_report_verified,
 ):
     court_model = calibration["court_model"]
     return {
@@ -1994,6 +2463,9 @@ def build_report(
             None
             if args.refinement_report is None
             else str(args.refinement_report)
+        ),
+        "source_gap_interpolation_report": (
+            None if args.gap_report is None else str(args.gap_report)
         ),
         "source_calibration": str(args.calibration),
         "review_video": None if args.report_only else str(args.output),
@@ -2023,6 +2495,7 @@ def build_report(
         },
         "validation": {
             "coordinate_row_count": row_count,
+            "source_observed_coordinate_row_count": observed_row_count,
             "video_metadata": metadata,
             "identity_count": len(team_by_player),
             "identities": sorted(team_by_player, key=player_sort_key),
@@ -2032,6 +2505,9 @@ def build_report(
             "refined_coordinate_audit_verified": True,
             "refinement_report_contract_verified": (
                 refinement_report_verified
+            ),
+            "gap_interpolation_report_contract_verified": (
+                gap_report_verified
             ),
         },
         "coordinate_analysis": coordinate_analysis,
@@ -2054,6 +2530,10 @@ def build_report(
                 "and connector with the white-ringed refined marker."
             ),
             (
+                "Inspect cyan diamond-ringed markers as bracketed "
+                "interpolations with no fabricated source detection box."
+            ),
+            (
                 "Inspect orange player-count warnings as missing "
                 "detections rather than newly unresolved identities."
             ),
@@ -2071,6 +2551,7 @@ def build_report(
 
 def print_summary(
     row_count,
+    observed_row_count,
     team_by_player,
     team_counts,
     coordinate_analysis,
@@ -2081,6 +2562,9 @@ def print_summary(
 ):
     print("\nPlayer court-coordinate visualization complete.")
     print(f"Validated coordinate rows: {row_count}")
+
+    if observed_row_count != row_count:
+        print(f"Validated source-observed rows: {observed_row_count}")
     print(
         f"Validated player identities: {len(team_by_player)} "
         f"({team_counts})"
@@ -2089,10 +2573,18 @@ def print_summary(
         "Frame player-count distribution: "
         f"{coordinate_analysis['frame_player_count_distribution']}"
     )
-    print(
-        "Outside-court rows preserved: "
-        f"{coordinate_analysis['outside_row_count']}"
-    )
+    if coordinate_analysis["interpolated_outside_row_count"]:
+        print(
+            "Outside-court coordinates (observed/interpolated): "
+            f"{coordinate_analysis['observed_outside_row_count']} / "
+            f"{coordinate_analysis['interpolated_outside_row_count']} "
+            f"({coordinate_analysis['outside_row_count']} total)"
+        )
+    else:
+        print(
+            "Outside-court rows preserved: "
+            f"{coordinate_analysis['outside_row_count']}"
+        )
     print(
         "Motion jump review candidates: "
         f"{coordinate_analysis['jump_candidate_count']} "
@@ -2100,12 +2592,23 @@ def print_summary(
         "ft/s"
     )
     refinement = coordinate_analysis["trajectory_refinement"]
+    gap_interpolation = coordinate_analysis[
+        "trajectory_gap_interpolation"
+    ]
 
     if refinement["present"]:
         print(
             "Trajectory-refined observations: "
             f"{refinement['corrected_row_count']} "
             f"({refinement['corrected_by_method']})"
+        )
+
+    if gap_interpolation["present"]:
+        print(
+            "Bracketed internal-gap coordinates: "
+            f"{gap_interpolation['filled_row_count']} across "
+            f"{gap_interpolation['filled_gap_count']} gaps "
+            f"({gap_interpolation['filled_by_method']})"
         )
 
     if report_only:
@@ -2139,10 +2642,16 @@ def main():
         args.coordinate_report, "Coordinate report"
     )
     refinement_report = None
+    gap_report = None
 
     if args.refinement_report is not None:
         refinement_report = load_json(
             args.refinement_report, "Trajectory-refinement report"
+        )
+
+    if args.gap_report is not None:
+        gap_report = load_json(
+            args.gap_report, "Trajectory-gap interpolation report"
         )
 
     (
@@ -2151,10 +2660,15 @@ def main():
         team_by_player,
         row_count,
     ) = load_coordinate_rows(args.coordinates)
+    observed_row_count = sum(
+        row["source_observation_available"]
+        for rows in rows_by_frame.values()
+        for row in rows
+    )
     team_counts = validate_coordinate_contract(
         rows_by_frame,
         team_by_player,
-        row_count,
+        observed_row_count,
         coordinate_report,
     )
     capture, metadata = open_video(args.video)
@@ -2177,13 +2691,34 @@ def main():
             args.jump_speed_threshold_ft_sec,
             dimensions,
         )
-        recommended_checkpoint_frames = []
+        recommended_checkpoint_frames = set()
 
         if refinement_report is not None:
-            recommended_checkpoint_frames = (
+            recommended_checkpoint_frames.update(
                 validate_refinement_report_contract(
                     refinement_report,
+                    observed_row_count,
+                    metadata["frame_count"],
+                    coordinate_analysis,
+                )
+            )
+
+        gap_interpolation_present = coordinate_analysis[
+            "trajectory_gap_interpolation"
+        ]["present"]
+
+        if gap_interpolation_present and gap_report is None:
+            raise ValueError(
+                "Gap-interpolated coordinates require --gap-report for "
+                "audit validation"
+            )
+
+        if gap_report is not None:
+            recommended_checkpoint_frames.update(
+                validate_gap_report_contract(
+                    gap_report,
                     row_count,
+                    observed_row_count,
                     metadata["frame_count"],
                     coordinate_analysis,
                 )
@@ -2229,16 +2764,19 @@ def main():
         calibration,
         metadata,
         row_count,
+        observed_row_count,
         team_by_player,
         team_counts,
         coordinate_analysis,
         checkpoint_indices,
         render_metadata,
         refinement_report is not None,
+        gap_report is not None,
     )
     write_json_atomic(args.report, report)
     print_summary(
         row_count,
+        observed_row_count,
         team_by_player,
         team_counts,
         coordinate_analysis,
