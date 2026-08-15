@@ -42,6 +42,22 @@ EXPECTED_TEAM_COUNTS = {"white": 5, "dark": 5}
 EXPECTED_COORDINATE_STATUS = (
     "validated_player_court_coordinates_exported"
 )
+EXPECTED_REFINEMENT_STATUS = (
+    "refined_player_court_trajectories_pending_visual_review"
+)
+
+OPTIONAL_REFINEMENT_FIELDS = {
+    "raw_court_x_ft",
+    "raw_court_y_ft",
+    "raw_court_position_in_half_court",
+    "trajectory_refinement_applied",
+    "trajectory_refinement_method",
+    "trajectory_refinement_reason",
+    "trajectory_correction_distance_ft",
+    "trajectory_anchor_frames",
+    "trajectory_trusted_path_observation",
+    "trajectory_raw_jump_candidate",
+}
 
 WHITE_PALETTE = [
     (255, 255, 0),
@@ -67,6 +83,8 @@ TEXT_COLOR = (245, 245, 245)
 GOOD_COLOR = (90, 230, 90)
 WARNING_COLOR = (0, 205, 255)
 OUTSIDE_COLOR = (40, 40, 255)
+REFINED_COLOR = (255, 255, 255)
+RAW_GHOST_COLOR = (150, 150, 150)
 
 
 def parse_args():
@@ -99,6 +117,15 @@ def parse_args():
         type=Path,
         default=DEFAULT_CALIBRATION_PATH,
         help="Reviewed court calibration JSON.",
+    )
+    parser.add_argument(
+        "--refinement-report",
+        type=Path,
+        default=None,
+        help=(
+            "Optional trajectory-refinement report used to validate "
+            "refined coordinates and select correction checkpoints."
+        ),
     )
     parser.add_argument(
         "--output",
@@ -311,6 +338,23 @@ def load_coordinate_rows(path):
                 f"{missing_fields}"
             )
 
+        present_refinement_fields = (
+            fieldnames.intersection(OPTIONAL_REFINEMENT_FIELDS)
+        )
+
+        if present_refinement_fields and (
+            present_refinement_fields != OPTIONAL_REFINEMENT_FIELDS
+        ):
+            missing_refinement_fields = sorted(
+                OPTIONAL_REFINEMENT_FIELDS - present_refinement_fields
+            )
+            raise ValueError(
+                "Refined coordinate CSV has an incomplete audit schema: "
+                f"{missing_refinement_fields}"
+            )
+
+        has_refinement = bool(present_refinement_fields)
+
         for row_number, raw_row in enumerate(reader, 2):
             row = dict(raw_row)
             row["frame_index"] = parse_int(
@@ -344,6 +388,48 @@ def load_coordinate_rows(path):
                 row[field_name] = parse_bool(
                     raw_row[field_name], field_name, row_number
                 )
+
+            if has_refinement:
+                for field_name in (
+                    "raw_court_x_ft",
+                    "raw_court_y_ft",
+                    "trajectory_correction_distance_ft",
+                ):
+                    row[field_name] = parse_float(
+                        raw_row[field_name], field_name, row_number
+                    )
+
+                for field_name in (
+                    "raw_court_position_in_half_court",
+                    "trajectory_refinement_applied",
+                    "trajectory_trusted_path_observation",
+                    "trajectory_raw_jump_candidate",
+                ):
+                    row[field_name] = parse_bool(
+                        raw_row[field_name], field_name, row_number
+                    )
+
+                for field_name in (
+                    "trajectory_refinement_method",
+                    "trajectory_refinement_reason",
+                    "trajectory_anchor_frames",
+                ):
+                    row[field_name] = raw_row[field_name].strip()
+            else:
+                row["raw_court_x_ft"] = row["court_x_ft"]
+                row["raw_court_y_ft"] = row["court_y_ft"]
+                row["raw_court_position_in_half_court"] = row[
+                    "court_position_in_half_court"
+                ]
+                row["trajectory_refinement_applied"] = False
+                row["trajectory_refinement_method"] = (
+                    "unrefined_source_coordinate"
+                )
+                row["trajectory_refinement_reason"] = ""
+                row["trajectory_correction_distance_ft"] = 0.0
+                row["trajectory_anchor_frames"] = ""
+                row["trajectory_trusted_path_observation"] = True
+                row["trajectory_raw_jump_candidate"] = False
 
             row["player_id"] = raw_row["player_id"].strip()
             row["reconciled_team"] = raw_row[
@@ -650,6 +736,127 @@ def validate_coordinate_bounds_flags(rows_by_frame, dimensions):
         )
 
 
+def validate_refined_coordinate_audit(rows_by_frame, dimensions):
+    half_length = dimensions["half_court_length_ft"]
+    court_width = dimensions["court_width_ft"]
+    corrected_count = 0
+
+    for rows in rows_by_frame.values():
+        for row in rows:
+            raw_inside = (
+                0.0 <= row["raw_court_x_ft"] <= half_length
+                and 0.0 <= row["raw_court_y_ft"] <= court_width
+            )
+
+            if raw_inside != row[
+                "raw_court_position_in_half_court"
+            ]:
+                raise ValueError(
+                    "Raw refinement boundary flag disagrees at frame "
+                    f"{row['frame_index']} for {row['player_id']}"
+                )
+
+            expected_distance = math.hypot(
+                row["court_x_ft"] - row["raw_court_x_ft"],
+                row["court_y_ft"] - row["raw_court_y_ft"],
+            )
+
+            if not math.isclose(
+                expected_distance,
+                row["trajectory_correction_distance_ft"],
+                rel_tol=0.0,
+                abs_tol=2e-6,
+            ):
+                raise ValueError(
+                    "Refinement correction distance disagrees at frame "
+                    f"{row['frame_index']} for {row['player_id']}"
+                )
+
+            applied = row["trajectory_refinement_applied"]
+
+            if applied != (expected_distance > 1e-9):
+                raise ValueError(
+                    "Refinement-applied flag disagrees at frame "
+                    f"{row['frame_index']} for {row['player_id']}"
+                )
+
+            corrected_count += int(applied)
+
+    return corrected_count
+
+
+def validate_refinement_report_contract(
+    refinement_report,
+    row_count,
+    frame_count,
+    coordinate_analysis,
+):
+    if refinement_report.get("status") != EXPECTED_REFINEMENT_STATUS:
+        raise ValueError(
+            "Trajectory-refinement report has an unexpected status: "
+            f"{refinement_report.get('status')!r}"
+        )
+
+    validation = refinement_report.get("validation", {})
+    trusted = refinement_report.get("trusted_path_audit", {})
+    motion = refinement_report.get("motion_audit", {})
+    boundary = refinement_report.get("boundary_audit", {})
+    refinement = coordinate_analysis["trajectory_refinement"]
+
+    if int(validation.get("row_count", -1)) != row_count:
+        raise ValueError(
+            "Trajectory-refinement report row count does not match CSV"
+        )
+
+    if int(validation.get("frame_count", -1)) != frame_count:
+        raise ValueError(
+            "Trajectory-refinement report frame count does not match video"
+        )
+
+    if int(trusted.get("corrected_observation_count", -1)) != int(
+        refinement["corrected_row_count"]
+    ):
+        raise ValueError(
+            "Trajectory-refinement corrected count does not match CSV"
+        )
+
+    refined_motion = motion.get("refined", {})
+
+    if int(refined_motion.get("candidate_count", -1)) != int(
+        coordinate_analysis["jump_candidate_count"]
+    ):
+        raise ValueError(
+            "Trajectory-refinement motion count does not match review"
+        )
+
+    if int(
+        boundary.get("refined_outside_observation_count", -1)
+    ) != int(coordinate_analysis["outside_row_count"]):
+        raise ValueError(
+            "Trajectory-refinement outside count does not match review"
+        )
+
+    checkpoint_frames = [
+        int(frame_index)
+        for frame_index in trusted.get(
+            "recommended_checkpoint_frames", []
+        )
+    ]
+    invalid_frames = [
+        frame_index
+        for frame_index in checkpoint_frames
+        if not 0 <= frame_index < frame_count
+    ]
+
+    if invalid_frames:
+        raise ValueError(
+            "Trajectory-refinement report has invalid checkpoints: "
+            f"{invalid_frames}"
+        )
+
+    return checkpoint_frames
+
+
 def analyze_coordinates(
     rows_by_frame,
     rows_by_player,
@@ -670,6 +877,18 @@ def analyze_coordinates(
     ]
     outside_by_player = Counter(
         row["player_id"] for row in outside_rows
+    )
+    corrected_rows = [
+        row
+        for rows in rows_by_frame.values()
+        for row in rows
+        if row["trajectory_refinement_applied"]
+    ]
+    corrected_by_player = Counter(
+        row["player_id"] for row in corrected_rows
+    )
+    corrected_by_method = Counter(
+        row["trajectory_refinement_method"] for row in corrected_rows
     )
     jump_candidates = []
     per_player = {}
@@ -761,6 +980,36 @@ def analyze_coordinates(
             }
         )
 
+    corrected_records = []
+
+    for row in sorted(
+        corrected_rows,
+        key=lambda item: (
+            -item["trajectory_correction_distance_ft"],
+            item["frame_index"],
+            player_sort_key(item["player_id"]),
+        ),
+    ):
+        corrected_records.append(
+            {
+                "frame_index": row["frame_index"],
+                "player_id": row["player_id"],
+                "raw_court_x_ft": round(
+                    row["raw_court_x_ft"], 4
+                ),
+                "raw_court_y_ft": round(
+                    row["raw_court_y_ft"], 4
+                ),
+                "refined_court_x_ft": round(row["court_x_ft"], 4),
+                "refined_court_y_ft": round(row["court_y_ft"], 4),
+                "correction_distance_ft": round(
+                    row["trajectory_correction_distance_ft"], 4
+                ),
+                "method": row["trajectory_refinement_method"],
+                "anchor_frames": row["trajectory_anchor_frames"],
+            }
+        )
+
     return {
         "frame_player_count_distribution": {
             str(count): frame_count_distribution[count]
@@ -773,6 +1022,20 @@ def analyze_coordinates(
         "jump_speed_threshold_ft_sec": jump_speed_threshold,
         "jump_candidate_count": len(jump_candidates),
         "jump_candidates": jump_candidates,
+        "trajectory_refinement": {
+            "present": bool(corrected_rows),
+            "corrected_row_count": len(corrected_rows),
+            "corrected_by_player": dict(
+                sorted(
+                    corrected_by_player.items(),
+                    key=lambda item: player_sort_key(item[0]),
+                )
+            ),
+            "corrected_by_method": dict(
+                sorted(corrected_by_method.items())
+            ),
+            "corrected_rows": corrected_records,
+        },
         "per_player": per_player,
     }
 
@@ -865,10 +1128,28 @@ def draw_source_annotations(frame, frame_index, fps, rows, colors):
         cv2.circle(
             annotated, floor_point, 5, color, -1, cv2.LINE_AA
         )
+
+        if row["trajectory_refinement_applied"]:
+            cv2.circle(
+                annotated,
+                floor_point,
+                10,
+                REFINED_COLOR,
+                2,
+                cv2.LINE_AA,
+            )
+
         label = (
             f"{row['player_id']} | "
             f"({row['court_x_ft']:.1f}, {row['court_y_ft']:.1f})ft"
         )
+
+        if row["trajectory_refinement_applied"]:
+            label += (
+                " | refined "
+                f"{row['trajectory_correction_distance_ft']:.1f}ft"
+            )
+
         label_size = cv2.getTextSize(
             label, cv2.FONT_HERSHEY_SIMPLEX, 0.52, 2
         )[0]
@@ -904,6 +1185,9 @@ def draw_source_annotations(frame, frame_index, fps, rows, colors):
 
     team_counts = Counter(row["reconciled_team"] for row in rows)
     player_count = len(rows)
+    refined_count = sum(
+        row["trajectory_refinement_applied"] for row in rows
+    )
     frame_flags = {
         row["camera_raw_transform_accepted"] for row in rows
     }
@@ -920,7 +1204,8 @@ def draw_source_annotations(frame, frame_index, fps, rows, colors):
     status_color = (
         GOOD_COLOR if player_count == EXPECTED_PLAYER_COUNT else WARNING_COLOR
     )
-    blend_panel(annotated, (15, 15), (800, 105))
+    header_right = min(annotated.shape[1] - 15, 990)
+    blend_panel(annotated, (15, 15), (header_right, 105))
     draw_text(
         annotated,
         (
@@ -936,7 +1221,8 @@ def draw_source_annotations(frame, frame_index, fps, rows, colors):
         (
             f"Players {player_count}/10 | "
             f"white {team_counts.get('white', 0)}/5 | "
-            f"dark {team_counts.get('dark', 0)}/5 | {motion_label}"
+            f"dark {team_counts.get('dark', 0)}/5 | "
+            f"refined {refined_count} | {motion_label}"
         ),
         (28, 82),
         color=status_color,
@@ -1251,6 +1537,9 @@ def draw_top_down_panel(
     draw_court_model(panel, layout, dimensions)
     team_counts = Counter(row["reconciled_team"] for row in rows)
     player_count = len(rows)
+    refined_count = sum(
+        row["trajectory_refinement_applied"] for row in rows
+    )
     status_color = (
         GOOD_COLOR if player_count == EXPECTED_PLAYER_COUNT else WARNING_COLOR
     )
@@ -1272,7 +1561,8 @@ def draw_top_down_panel(
         (
             f"Players {player_count}/10 | "
             f"W {team_counts.get('white', 0)}/5 | "
-            f"D {team_counts.get('dark', 0)}/5"
+            f"D {team_counts.get('dark', 0)}/5 | "
+            f"refined {refined_count}"
         ),
         (20, 76),
         color=status_color,
@@ -1298,8 +1588,38 @@ def draw_top_down_panel(
             layout,
             dimensions,
         )
+
+        if row["trajectory_refinement_applied"]:
+            raw_point = court_to_pixel(
+                row["raw_court_x_ft"],
+                row["raw_court_y_ft"],
+                layout,
+                dimensions,
+            )
+            cv2.line(
+                panel,
+                raw_point,
+                point,
+                RAW_GHOST_COLOR,
+                2,
+                cv2.LINE_AA,
+            )
+            cv2.circle(
+                panel,
+                raw_point,
+                7,
+                RAW_GHOST_COLOR,
+                2,
+                cv2.LINE_AA,
+            )
+
         cv2.circle(panel, point, 11, (0, 0, 0), -1, cv2.LINE_AA)
         cv2.circle(panel, point, 8, color, -1, cv2.LINE_AA)
+
+        if row["trajectory_refinement_applied"]:
+            cv2.circle(
+                panel, point, 13, REFINED_COLOR, 2, cv2.LINE_AA
+            )
 
         if not row["court_position_in_half_court"]:
             cv2.circle(
@@ -1307,6 +1627,9 @@ def draw_top_down_panel(
             )
 
         label = short_player_label(player_id)
+
+        if row["trajectory_refinement_applied"]:
+            label += "*"
         text_size = cv2.getTextSize(
             label, cv2.FONT_HERSHEY_SIMPLEX, 0.42, 1
         )[0]
@@ -1363,11 +1686,11 @@ def build_checkpoint_indices(
             if added >= limit:
                 break
 
-    outside_limit = min(
-        len(coordinate_analysis["outside_rows"]),
-        (maximum_event_checkpoints + 1) // 2,
-    )
-    jump_limit = maximum_event_checkpoints - outside_limit
+    refinement = coordinate_analysis["trajectory_refinement"]
+    correction_frames = [
+        record["frame_index"]
+        for record in refinement["corrected_rows"]
+    ]
     outside_frames = [
         record["frame_index"]
         for record in sorted(
@@ -1382,14 +1705,37 @@ def build_checkpoint_indices(
         candidate["to_frame"]
         for candidate in coordinate_analysis["jump_candidates"]
     ]
-    add_spaced_events(outside_frames, outside_limit)
-    add_spaced_events(jump_frames, jump_limit)
+
+    if correction_frames:
+        correction_limit = min(
+            len(correction_frames),
+            (maximum_event_checkpoints + 1) // 2,
+        )
+        remaining_limit = maximum_event_checkpoints - correction_limit
+        outside_limit = min(
+            len(outside_frames), (remaining_limit + 1) // 2
+        )
+        jump_limit = remaining_limit - outside_limit
+        add_spaced_events(correction_frames, correction_limit)
+        add_spaced_events(outside_frames, outside_limit)
+        add_spaced_events(jump_frames, jump_limit)
+    else:
+        outside_limit = min(
+            len(outside_frames),
+            (maximum_event_checkpoints + 1) // 2,
+        )
+        jump_limit = maximum_event_checkpoints - outside_limit
+        add_spaced_events(outside_frames, outside_limit)
+        add_spaced_events(jump_frames, jump_limit)
 
     if len(selected_event_frames) < maximum_event_checkpoints:
         remaining_limit = (
             maximum_event_checkpoints - len(selected_event_frames)
         )
-        add_spaced_events(outside_frames + jump_frames, remaining_limit)
+        add_spaced_events(
+            correction_frames + outside_frames + jump_frames,
+            remaining_limit,
+        )
 
     indices.update(selected_event_frames)
     return sorted(indices)
@@ -1636,6 +1982,7 @@ def build_report(
     coordinate_analysis,
     checkpoint_indices,
     render_metadata,
+    refinement_report_verified,
 ):
     court_model = calibration["court_model"]
     return {
@@ -1643,6 +1990,11 @@ def build_report(
         "source_video": str(args.video),
         "source_coordinates": str(args.coordinates),
         "source_coordinate_report": str(args.coordinate_report),
+        "source_refinement_report": (
+            None
+            if args.refinement_report is None
+            else str(args.refinement_report)
+        ),
         "source_calibration": str(args.calibration),
         "review_video": None if args.report_only else str(args.output),
         "coordinate_system": {
@@ -1677,6 +2029,10 @@ def build_report(
             "identity_counts_by_team": team_counts,
             "coordinate_report_contract_verified": True,
             "video_calibration_contract_verified": True,
+            "refined_coordinate_audit_verified": True,
+            "refinement_report_contract_verified": (
+                refinement_report_verified
+            ),
         },
         "coordinate_analysis": coordinate_analysis,
         "checkpoint_indices": checkpoint_indices,
@@ -1692,6 +2048,10 @@ def build_report(
             (
                 "Confirm player trails are locally continuous and do not "
                 "teleport across the court."
+            ),
+            (
+                "On corrected observations, compare each gray raw ghost "
+                "and connector with the white-ringed refined marker."
             ),
             (
                 "Inspect orange player-count warnings as missing "
@@ -1739,6 +2099,14 @@ def print_summary(
         f"above {coordinate_analysis['jump_speed_threshold_ft_sec']:.1f} "
         "ft/s"
     )
+    refinement = coordinate_analysis["trajectory_refinement"]
+
+    if refinement["present"]:
+        print(
+            "Trajectory-refined observations: "
+            f"{refinement['corrected_row_count']} "
+            f"({refinement['corrected_by_method']})"
+        )
 
     if report_only:
         print("Video rendering skipped because --report-only was supplied.")
@@ -1770,6 +2138,13 @@ def main():
     coordinate_report = load_json(
         args.coordinate_report, "Coordinate report"
     )
+    refinement_report = None
+
+    if args.refinement_report is not None:
+        refinement_report = load_json(
+            args.refinement_report, "Trajectory-refinement report"
+        )
+
     (
         rows_by_frame,
         rows_by_player,
@@ -1793,6 +2168,7 @@ def main():
         )
         _, dimensions = load_court_model(calibration)
         validate_coordinate_bounds_flags(rows_by_frame, dimensions)
+        validate_refined_coordinate_audit(rows_by_frame, dimensions)
         coordinate_analysis = analyze_coordinates(
             rows_by_frame,
             rows_by_player,
@@ -1801,11 +2177,28 @@ def main():
             args.jump_speed_threshold_ft_sec,
             dimensions,
         )
+        recommended_checkpoint_frames = []
+
+        if refinement_report is not None:
+            recommended_checkpoint_frames = (
+                validate_refinement_report_contract(
+                    refinement_report,
+                    row_count,
+                    metadata["frame_count"],
+                    coordinate_analysis,
+                )
+            )
+
         checkpoint_indices = build_checkpoint_indices(
             metadata["frame_count"],
             args.sample_count,
             args.maximum_event_checkpoints,
             coordinate_analysis,
+        )
+        checkpoint_indices = sorted(
+            set(checkpoint_indices).union(
+                recommended_checkpoint_frames
+            )
         )
         render_metadata = None
 
@@ -1841,6 +2234,7 @@ def main():
         coordinate_analysis,
         checkpoint_indices,
         render_metadata,
+        refinement_report is not None,
     )
     write_json_atomic(args.report, report)
     print_summary(
