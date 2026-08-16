@@ -1,0 +1,247 @@
+{
+  "review_source": "data/outputs/identity/residual_identity_review/possession_002_residual_identity_candidates.json; post-migration identity and team-balance evidence reviewed",
+  "expected_active_player_count": 10,
+  "accepted_identity_merges": [
+    {
+      "first_player_id": "dark_p5",
+      "second_player_id": "unknown_p18",
+      "reason": "Same active dark player under a partial duplicate box"
+    },
+    {
+      "first_player_id": "dark_p10",
+      "second_player_id": "unknown_p13",
+      "reason": "Same active dark player under a partial duplicate box"
+    },
+    {
+      "first_player_id": "dark_p2",
+      "second_player_id": "unknown_p12",
+      "reason": "One-frame partial duplicate of the active dark player"
+    },
+    {
+      "first_player_id": "dark_p2",
+      "second_player_id": "unknown_p8",
+      "reason": "Two-frame partial duplicate of the active dark player"
+    },
+    {
+      "first_player_id": "dark_p6",
+      "second_player_id": "dark_p18",
+      "reason": "Same dark jersey 1 player; T15 and T39 are duplicate overlapping detections in the crowded late frames"
+    },
+    {
+      "first_player_id": "dark_p24",
+      "second_player_id": "white_p6",
+      "reason": "Same white jersey 23 player; T41 after the reviewed frame-430 switch is an overlapping duplicate/continuation of T28"
+    },
+    {
+      "first_player_id": "white_p6",
+      "second_player_id": "white_p8",
+      "reason": "Same white jersey 23 player; T43 overlaps T41 after the reviewed switch and continues the T28 lineage"
+    },
+    {
+      "first_player_id": "white_p3",
+      "second_player_id": "white_p7",
+      "reason": "Same white jersey 21 player; T30_s2 overlaps T23 after the reviewed T30 switch and continues that lineage"
+    }
+  ],
+  "rejected_identity_merges": [
+    {
+      "first_player_id": "dark_p10",
+      "second_player_id": "dark_p6",
+      "reason": "Different simultaneously visible active players"
+    }
+  ],
+  "excluded_identities": [
+    {
+      "player_id": "dark_p9",
+      "reason": "Referee"
+    },
+    {
+      "player_id": "dark_p11",
+      "reason": "Bench player outside the active five"
+    },
+    {
+      "player_id": "dark_p13",
+      "reason": "Bench player outside the active five"
+    },
+    {
+      "player_id": "dark_p14",
+      "reason": "Bench player outside the active five"
+    },
+    {
+      "player_id": "dark_p15",
+      "reason": "Bench player outside the active five"
+    },
+    {
+      "player_id": "dark_p16",
+      "reason": "Bench player outside the active five"
+    },
+    {
+      "player_id": "dark_p17",
+      "reason": "Referee"
+    },
+    {
+      "player_id": "dark_p20",
+      "reason": "Bench player outside the active five"
+    },
+    {
+      "player_id": "dark_p25",
+      "reason": "Bench player outside the active five"
+    },
+    {
+      "player_id": "dark_p26",
+      "reason": "Referee"
+    },
+    {
+      "player_id": "unknown_p6",
+      "reason": "Unstable partial detection spanning adjacent players"
+    },
+    {
+      "player_id": "unknown_p7",
+      "reason": "Referee"
+    },
+    {
+      "player_id": "unknown_p9",
+      "reason": "Referee"
+    },
+    {
+      "player_id": "unknown_p10",
+      "reason": "Coach or bench personnel outside the active possession"
+    },
+    {
+      "player_id": "unknown_p11",
+      "reason": "Referee"
+    },
+    {
+      "player_id": "unknown_p15",
+      "reason": "Bench personnel outside the active possession"
+    },
+    {
+      "player_id": "unknown_p16",
+      "reason": "Bench personnel outside the active possession"
+    },
+    {
+      "player_id": "unknown_p17",
+      "reason": "Bench personnel outside the active possession"
+    },
+    {
+      "player_id": "unknown_p19",
+      "reason": "Bench personnel with a late track switch"
+    },
+    {
+      "player_id": "dark_p12",
+      "reason": "School mascot or sideline performer outside the active five (T31 before the reviewed boundary)"
+    },
+    {
+      "player_id": "dark_p19",
+      "reason": "School mascot or sideline performer outside the active five (reviewed T31/T40/T41 fragments)"
+    },
+    {
+      "player_id": "dark_p21",
+      "reason": "Short duplicate school-mascot fragment at the reviewed T41 boundary"
+    },
+    {
+      "player_id": "dark_p22",
+      "reason": "School mascot or sideline performer outside the active five (T40 middle fragment)"
+    },
+    {
+      "player_id": "dark_p23",
+      "reason": "School mascot or sideline performer outside the active five (T35 late fragment)"
+    },
+    {
+      "player_id": "unknown_p3",
+      "reason": "Identity-contaminated T5 switches from a dark player to a white player and is redundant with clean active tracks"
+    }
+  ],
+  "team_overrides": {
+    "unknown_p1": "white",
+    "unknown_p2": "white",
+    "unknown_p4": "white",
+    "unknown_p5": "dark",
+    "unknown_p14": "dark",
+    "dark_p24": "white"
+  },
+  "retained_for_sequential_review": [],
+  "candidate_decisions": [
+    {
+      "candidate_id": "residual_001",
+      "decision": "same_identity"
+    },
+    {
+      "candidate_id": "residual_002",
+      "decision": "exclude_second"
+    },
+    {
+      "candidate_id": "residual_003",
+      "decision": "different_identity"
+    },
+    {
+      "candidate_id": "residual_004",
+      "decision": "different_identity"
+    },
+    {
+      "candidate_id": "residual_005",
+      "decision": "different_identity"
+    },
+    {
+      "candidate_id": "residual_006",
+      "decision": "different_identity"
+    }
+  ],
+  "review_conclusion": "Post-migration review confirms dark_p6 and dark_p18 are duplicate detections of dark jersey 1 and excludes identity-contaminated T5 (unknown_p3). Prior reviewed merges, exclusions, and team overrides remain.",
+  "expected_baseline_identity_cluster_count": 53,
+  "expected_baseline_player_ids": [
+    "dark_p1",
+    "dark_p10",
+    "dark_p11",
+    "dark_p12",
+    "dark_p13",
+    "dark_p14",
+    "dark_p15",
+    "dark_p16",
+    "dark_p17",
+    "dark_p18",
+    "dark_p19",
+    "dark_p2",
+    "dark_p20",
+    "dark_p21",
+    "dark_p22",
+    "dark_p23",
+    "dark_p24",
+    "dark_p25",
+    "dark_p26",
+    "dark_p3",
+    "dark_p4",
+    "dark_p5",
+    "dark_p6",
+    "dark_p7",
+    "dark_p8",
+    "dark_p9",
+    "unknown_p1",
+    "unknown_p10",
+    "unknown_p11",
+    "unknown_p12",
+    "unknown_p13",
+    "unknown_p14",
+    "unknown_p15",
+    "unknown_p16",
+    "unknown_p17",
+    "unknown_p18",
+    "unknown_p19",
+    "unknown_p2",
+    "unknown_p3",
+    "unknown_p4",
+    "unknown_p5",
+    "unknown_p6",
+    "unknown_p7",
+    "unknown_p8",
+    "unknown_p9",
+    "white_p1",
+    "white_p2",
+    "white_p3",
+    "white_p4",
+    "white_p5",
+    "white_p6",
+    "white_p7",
+    "white_p8"
+  ]
+}

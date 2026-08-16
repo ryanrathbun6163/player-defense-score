@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "possession_id": "possession_001",
+  "video_path": "data/clips/possession_001.mp4",
+  "reference_frame_index": 249,
+  "expected_player_count": 10,
+  "expected_team_counts": {
+    "white": 5,
+    "dark": 5
+  },
+  "court": {
+    "ruleset": "NFHS_high_school",
+    "coordinate_scope": "right_half_court",
+    "ideal_full_court_length_ft": 84.0,
+    "half_court_length_ft": 42.0,
+    "court_width_ft": 50.0,
+    "lane_width_ft": 12.0,
+    "baseline_to_free_throw_line_ft": 19.0,
+    "basket_center_from_baseline_ft": 5.25,
+    "three_point_radius_ft": 19.75
+  },
+  "overrides": {
+    "tracking": {
+      "detector_threshold": 0.15,
+      "track_activation_threshold": 0.35,
+      "high_confidence_threshold": 0.35,
+      "lost_track_buffer": 30,
+      "minimum_consecutive_frames": 2,
+      "minimum_iou_threshold": 0.1
+    },
+    "tracking_audit": {
+      "track_count_tolerance": 1,
+      "short_track_max_frames": 30,
+      "max_handoff_overlap_frames": 10,
+      "max_handoff_gap_frames": 30,
+      "max_handoff_distance_pixels": 150.0,
+      "min_handoff_track_length": 20
+    },
+    "classification": {
+      "sample_every_n_frames": 5,
+      "feature_min_track_detections": 20,
+      "bright_value_threshold": 160,
+      "bright_saturation_max": 110,
+      "dark_value_threshold": 90,
+      "classifier_min_track_detections": 35,
+      "min_feature_samples": 5,
+      "min_texture_std": 35.0,
+      "white_min_bright_fraction": 0.55,
+      "white_max_dark_fraction": 0.2,
+      "white_min_value": 170.0,
+      "dark_min_dark_fraction": 0.22,
+      "dark_max_bright_fraction": 0.5,
+      "dark_max_value": 150.0
+    },
+    "reid": {
+      "sample_every_n_frames": 5,
+      "minimum_confidence": 0.2,
+      "minimum_box_width": 20,
+      "minimum_box_height": 50,
+      "extractor_batch_size": 64,
+      "max_sample_frame_gap": 15,
+      "appearance_window_size": 3,
+      "appearance_change_threshold": 0.25,
+      "min_candidate_separation_samples": 3,
+      "max_segment_overlap_frames": 30,
+      "max_segment_gap_frames": 30,
+      "max_appearance_distance": 0.18,
+      "max_endpoint_floor_distance": 120.0,
+      "min_endpoint_box_iou": 0.15,
+      "min_duplicate_median_iou": 0.45,
+      "max_duplicate_median_distance": 45.0,
+      "strict_max_appearance_distance": 0.14,
+      "strict_max_frame_gap": 10,
+      "strict_max_floor_distance": 90.0,
+      "strict_min_box_iou": 0.2
+    },
+    "identity": {
+      "review_boundaries": [
+        270,
+        312,
+        452
+      ],
+      "trail_length": 12,
+      "boundary_window": 3,
+      "cross_track_team": "dark"
+    },
+    "camera_motion": {
+      "sample_count": 7,
+      "max_features": 6000,
+      "review_width": 1280,
+      "smoothing_window": 11,
+      "extra_checkpoint_frames": [
+        244,
+        291,
+        294,
+        339,
+        469,
+        470,
+        475,
+        479,
+        494,
+        498
+      ]
+    },
+    "trajectory_refinement": {
+      "maximum_speed_ft_sec": 45.0,
+      "maximum_extrapolation_observations": 2,
+      "extrapolation_anchor_count": 5
+    },
+    "gap_interpolation": {
+      "maximum_gap_observations": 10,
+      "maximum_endpoint_speed_ft_sec": 45.0
+    },
+    "visualization": {
+      "review_height": 720,
+      "source_width": 1280,
+      "court_panel_width": 560,
+      "trail_length": 20,
+      "jump_speed_threshold_ft_sec": 45.0,
+      "sample_count": 12,
+      "maximum_event_checkpoints": 8
+    }
+  }
+}

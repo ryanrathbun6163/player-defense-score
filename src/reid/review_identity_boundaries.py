@@ -1,63 +1,118 @@
+import argparse
 import csv
+import json
 from collections import defaultdict
 from pathlib import Path
 
-import cv2
 import numpy as np
 
-
-VIDEO_PATH = Path("data/clips/possession_001.mp4")
-TRACKS_PATH = Path(
-    "data/outputs/classification/"
-    "possession_001_team_classified_tracks.csv"
-)
-OUTPUT_DIR = Path(
-    "data/outputs/reid/identity_boundary_review"
-)
+try:
+    import cv2
+except ModuleNotFoundError:
+    cv2 = None
 
 
-# Each case includes the strongest raw-frame motion boundary
-# associated with an appearance-change candidate. Controls are
-# included so strong switches can be compared with likely pose,
-# scale, or crop-quality changes.
-REVIEW_CASES = [
-    {
-        "name": "t19_switch_270_271",
-        "track_id": 19,
-        "frames": [268, 270, 271, 273],
-        "description": "T19: ReID change 0.254",
-    },
-    {
-        "name": "t19_switch_312_313",
-        "track_id": 19,
-        "frames": [310, 312, 313, 315],
-        "description": "T19: ReID change 0.349",
-    },
-    {
-        "name": "t8_switch_452_453",
-        "track_id": 8,
-        "frames": [450, 452, 453, 455],
-        "description": "T8: ReID change 0.322",
-    },
-    {
-        "name": "t8_control_303_304",
-        "track_id": 8,
-        "frames": [300, 303, 304, 310],
-        "description": "T8 control: ReID change 0.294",
-    },
-    {
-        "name": "t22_control_391_392",
-        "track_id": 22,
-        "frames": [390, 391, 392, 395],
-        "description": "T22 control: ReID change 0.258",
-    },
-    {
-        "name": "t22_control_477_478",
-        "track_id": 22,
-        "frames": [475, 477, 478, 480],
-        "description": "T22 control: ReID change 0.254",
-    },
-]
+VIDEO_PATH: Path
+TRACKS_PATH: Path
+OUTPUT_DIR: Path
+REVIEW_CASES: list[dict]
+
+
+def parse_args(argv=None):
+    parser = argparse.ArgumentParser(
+        description=(
+            "Render player crops around generated ReID appearance-change "
+            "boundaries."
+        )
+    )
+    parser.add_argument("--video", type=Path, required=True)
+    parser.add_argument("--tracks", type=Path, required=True)
+    parser.add_argument("--segments-report", type=Path, required=True)
+    parser.add_argument("--review-config", type=Path, required=True)
+    parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument(
+        "--context-frames",
+        type=int,
+        default=2,
+        help="Frames sampled on either side of each boundary.",
+    )
+    args = parser.parse_args(argv)
+
+    if args.context_frames < 1:
+        parser.error("--context-frames must be positive")
+
+    return args
+
+
+def load_json(path, required):
+    if not path.exists():
+        if required:
+            raise FileNotFoundError(f"Required JSON not found: {path}")
+
+        return {}
+
+    with path.open("r", encoding="utf-8") as input_file:
+        return json.load(input_file)
+
+
+def build_review_cases(segment_report, review_config, context_frames):
+    cases = {}
+
+    for candidate in segment_report.get(
+        "appearance_change_candidates",
+        [],
+    ):
+        track_id = int(candidate["track_id"])
+        before = int(candidate["before_last_frame"])
+        after = int(candidate["after_first_frame"])
+        key = (track_id, before, after)
+        distance = float(candidate["appearance_distance"])
+        cases[key] = {
+            "name": f"t{track_id}_boundary_{before}_{after}",
+            "track_id": track_id,
+            "frames": sorted(
+                {
+                    max(0, before - context_frames),
+                    before,
+                    after,
+                    after + context_frames,
+                }
+            ),
+            "description": (
+                f"T{track_id}: ReID change {distance:.3f} | "
+                f"{candidate.get('review_decision', 'review_required')}"
+            ),
+        }
+
+    for raw_track_id, boundaries in review_config.get(
+        "manual_split_after_frames",
+        {},
+    ).items():
+        track_id = int(raw_track_id)
+
+        for raw_boundary in boundaries:
+            boundary = int(raw_boundary)
+            key = (track_id, boundary, boundary + 1)
+            cases.setdefault(
+                key,
+                {
+                    "name": f"t{track_id}_manual_{boundary}_{boundary + 1}",
+                    "track_id": track_id,
+                    "frames": sorted(
+                        {
+                            max(0, boundary - context_frames),
+                            boundary,
+                            boundary + 1,
+                            boundary + 1 + context_frames,
+                        }
+                    ),
+                    "description": (
+                        f"T{track_id}: reviewed split after frame {boundary}"
+                    ),
+                },
+            )
+
+    return [cases[key] for key in sorted(cases)]
 
 
 FULL_TILE_SIZE = (460, 270)
@@ -425,6 +480,26 @@ def create_montage(
 
 
 def main():
+    global VIDEO_PATH
+    global TRACKS_PATH
+    global OUTPUT_DIR
+    global REVIEW_CASES
+
+    args = parse_args()
+    VIDEO_PATH = args.video
+    TRACKS_PATH = args.tracks
+    OUTPUT_DIR = args.output_dir
+    REVIEW_CASES = build_review_cases(
+        load_json(args.segments_report, required=True),
+        load_json(args.review_config, required=False),
+        args.context_frames,
+    )
+
+    if cv2 is None:
+        raise ModuleNotFoundError(
+            "OpenCV is required to render identity-boundary montages."
+        )
+
     if not VIDEO_PATH.exists():
         raise FileNotFoundError(
             f"Video not found: {VIDEO_PATH}"
@@ -436,6 +511,10 @@ def main():
         )
 
     rows_by_frame = load_tracks()
+
+    if not REVIEW_CASES:
+        print("No ReID appearance boundaries require visual review.")
+        return
 
     requested_frames = {
         frame_index

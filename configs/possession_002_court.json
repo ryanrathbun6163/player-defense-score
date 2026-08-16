@@ -1,0 +1,32 @@
+{
+  "video": "data\\clips\\possession_002.mp4",
+  "video_width": 1920,
+  "video_height": 1080,
+  "reference_frame_index": 249,
+  "polygon": [
+    {
+      "x": 4,
+      "y": 352
+    },
+    {
+      "x": 1074,
+      "y": 192
+    },
+    {
+      "x": 1919,
+      "y": 518
+    },
+    {
+      "x": 1917,
+      "y": 797
+    },
+    {
+      "x": 1137,
+      "y": 1077
+    },
+    {
+      "x": 7,
+      "y": 1077
+    }
+  ]
+}

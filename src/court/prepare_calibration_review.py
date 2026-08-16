@@ -3,14 +3,21 @@ import json
 import math
 from pathlib import Path
 
-import cv2
-import numpy as np
+try:
+    import cv2
+    import numpy as np
+except ModuleNotFoundError:
+    cv2 = None
+    np = None
 
 
 DEFAULT_VIDEO_PATH = Path("data/clips/possession_001.mp4")
 DEFAULT_COURT_CONFIG_PATH = Path("configs/possession_001_court.json")
 DEFAULT_OUTPUT_DIR = Path(
     "data/outputs/court/possession_001_calibration_review"
+)
+DEFAULT_REPORT_PATH = (
+    DEFAULT_OUTPUT_DIR / "possession_001_calibration_review.json"
 )
 
 DEFAULT_SAMPLE_COUNT = 7
@@ -23,7 +30,7 @@ THUMBNAIL_HEIGHT = 360
 CONTACT_SHEET_COLUMNS = 2
 
 
-def parse_args():
+def parse_args(argv=None):
     parser = argparse.ArgumentParser(
         description=(
             "Extract clean court-calibration frames and measure "
@@ -52,6 +59,12 @@ def parse_args():
         help="Directory for review frames and the JSON report.",
     )
     parser.add_argument(
+        "--report",
+        type=Path,
+        default=DEFAULT_REPORT_PATH,
+        help="Calibration-preparation JSON report path.",
+    )
+    parser.add_argument(
         "--sample-count",
         type=int,
         default=DEFAULT_SAMPLE_COUNT,
@@ -66,7 +79,7 @@ def parse_args():
         default=DEFAULT_MAX_FEATURES,
         help="Maximum ORB features detected per sampled frame.",
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     if args.sample_count < 3:
         parser.error("--sample-count must be at least 3")
@@ -585,6 +598,11 @@ def write_report(
 
 def main():
     args = parse_args()
+
+    if cv2 is None or np is None:
+        raise ModuleNotFoundError(
+            "OpenCV and NumPy are required for calibration preparation."
+        )
     court_config = load_court_config(args.court_config)
     capture, metadata = open_video(args.video)
     validate_dimensions(metadata, court_config)
@@ -675,10 +693,8 @@ def main():
         )
 
     motion_summary = summarize_motion(pair_records)
-    report_path = (
-        args.output_dir
-        / "possession_001_calibration_review.json"
-    )
+    report_path = args.report
+    report_path.parent.mkdir(parents=True, exist_ok=True)
     write_report(
         report_path,
         args.video,

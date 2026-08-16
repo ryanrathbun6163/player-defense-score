@@ -48,7 +48,7 @@ PANEL_COLOR = (15, 15, 15)
 BOUNDARY_COLOR = (0, 235, 255)
 
 
-def parse_args():
+def parse_args(argv=None):
     parser = argparse.ArgumentParser(
         description=(
             "Render the final reconciled player identities onto "
@@ -95,6 +95,29 @@ def parse_args():
         ),
     )
     parser.add_argument(
+        "--expected-player-count",
+        type=int,
+        default=EXPECTED_PLAYER_COUNT,
+        help="Expected number of active player identities.",
+    )
+    parser.add_argument(
+        "--expected-white-count",
+        type=int,
+        default=EXPECTED_TEAM_COUNTS["white"],
+    )
+    parser.add_argument(
+        "--expected-dark-count",
+        type=int,
+        default=EXPECTED_TEAM_COUNTS["dark"],
+    )
+    parser.add_argument(
+        "--review-boundaries",
+        type=int,
+        nargs="*",
+        default=DEFAULT_REVIEW_BOUNDARIES,
+        help="Reviewed identity-boundary frame indices to annotate.",
+    )
+    parser.add_argument(
         "--hide-raw-track-ids",
         action="store_true",
         help="Hide raw tracker IDs from player labels.",
@@ -112,13 +135,31 @@ def parse_args():
             "report without opening or rendering the video."
         ),
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     if args.trail_length < 0:
         parser.error("--trail-length cannot be negative")
 
     if args.boundary_window < 0:
         parser.error("--boundary-window cannot be negative")
+
+    if args.expected_player_count < 1:
+        parser.error("--expected-player-count must be positive")
+
+    if args.expected_white_count < 1 or args.expected_dark_count < 1:
+        parser.error("Expected team counts must be positive")
+
+    if (
+        args.expected_white_count + args.expected_dark_count
+        != args.expected_player_count
+    ):
+        parser.error("Expected team counts must sum to player count")
+
+    if args.review_boundaries != sorted(set(args.review_boundaries)):
+        parser.error("--review-boundaries must be sorted and unique")
+
+    if any(frame < 0 for frame in args.review_boundaries):
+        parser.error("--review-boundaries cannot contain negative frames")
 
     return args
 
@@ -945,7 +986,17 @@ def print_summary(input_summary, report_path, output_path, report_only):
 
 
 def main():
+    global DEFAULT_REVIEW_BOUNDARIES
+    global EXPECTED_PLAYER_COUNT
+    global EXPECTED_TEAM_COUNTS
+
     args = parse_args()
+    DEFAULT_REVIEW_BOUNDARIES = list(args.review_boundaries)
+    EXPECTED_PLAYER_COUNT = args.expected_player_count
+    EXPECTED_TEAM_COUNTS = {
+        "white": args.expected_white_count,
+        "dark": args.expected_dark_count,
+    }
 
     if not args.report_only and cv2 is None:
         raise ModuleNotFoundError(

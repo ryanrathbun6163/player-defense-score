@@ -1,50 +1,56 @@
+import argparse
 import csv
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
 
 
-CLASSIFIED_TRACKS_PATH = Path(
-    "data/outputs/classification/"
-    "possession_001_team_classified_tracks.csv"
-)
+CLASSIFIED_TRACKS_PATH: Path
+SEGMENTS_REPORT_PATH: Path
+MATCH_REPORT_PATH: Path
+IDENTITY_REVIEW_CONFIG_PATH: Path
+SEQUENTIAL_IDENTITY_REVIEW_CONFIG_PATH: Path
+OUTPUT_DIR: Path
+MAPPING_OUTPUT_PATH: Path
+ANNOTATED_OUTPUT_PATH: Path
+RECONCILED_OUTPUT_PATH: Path
 
-SEGMENTS_REPORT_PATH = Path(
-    "data/outputs/reid/"
-    "possession_001_reid_segments.json"
-)
 
-MATCH_REPORT_PATH = Path(
-    "data/outputs/reid/"
-    "possession_001_segment_match_candidates.json"
-)
+def build_parser():
+    parser = argparse.ArgumentParser(
+        description=(
+            "Build reviewed player identities from classified tracks and "
+            "resolved ReID decisions."
+        )
+    )
+    parser.add_argument("--classified-tracks", type=Path, required=True)
+    parser.add_argument("--segments", type=Path, required=True)
+    parser.add_argument("--matches", type=Path, required=True)
+    parser.add_argument("--identity-review-config", type=Path, required=True)
+    parser.add_argument(
+        "--sequential-review-config", type=Path, required=True
+    )
+    parser.add_argument("--output-mapping", type=Path, required=True)
+    parser.add_argument(
+        "--output-annotated-tracks", type=Path, required=True
+    )
+    parser.add_argument(
+        "--output-reconciled-tracks", type=Path, required=True
+    )
+    parser.add_argument(
+        "--expected-player-count", type=int, required=True
+    )
+    return parser
 
-IDENTITY_REVIEW_CONFIG_PATH = Path(
-    "configs/possession_001_identity_review.json"
-)
 
-SEQUENTIAL_IDENTITY_REVIEW_CONFIG_PATH = Path(
-    "configs/possession_001_sequential_identity_review.json"
-)
+def parse_args(argv=None):
+    parser = build_parser()
+    args = parser.parse_args(argv)
 
-OUTPUT_DIR = Path(
-    "data/outputs/identity"
-)
+    if args.expected_player_count < 1:
+        parser.error("--expected-player-count must be positive")
 
-MAPPING_OUTPUT_PATH = (
-    OUTPUT_DIR
-    / "possession_001_segment_player_mapping.json"
-)
-
-ANNOTATED_OUTPUT_PATH = (
-    OUTPUT_DIR
-    / "possession_001_identity_annotated_tracks.csv"
-)
-
-RECONCILED_OUTPUT_PATH = (
-    OUTPUT_DIR
-    / "possession_001_reconciled_tracks.csv"
-)
+    return args
 
 
 TEAM_ORDER = {
@@ -1197,7 +1203,28 @@ def build_reconciled_rows(annotated_rows):
     return reconciled_rows
 
 
-def main():
+def run(args):
+    global CLASSIFIED_TRACKS_PATH
+    global SEGMENTS_REPORT_PATH
+    global MATCH_REPORT_PATH
+    global IDENTITY_REVIEW_CONFIG_PATH
+    global SEQUENTIAL_IDENTITY_REVIEW_CONFIG_PATH
+    global OUTPUT_DIR
+    global MAPPING_OUTPUT_PATH
+    global ANNOTATED_OUTPUT_PATH
+    global RECONCILED_OUTPUT_PATH
+
+    CLASSIFIED_TRACKS_PATH = args.classified_tracks
+    SEGMENTS_REPORT_PATH = args.segments
+    MATCH_REPORT_PATH = args.matches
+    IDENTITY_REVIEW_CONFIG_PATH = args.identity_review_config
+    SEQUENTIAL_IDENTITY_REVIEW_CONFIG_PATH = (
+        args.sequential_review_config
+    )
+    MAPPING_OUTPUT_PATH = args.output_mapping
+    ANNOTATED_OUTPUT_PATH = args.output_annotated_tracks
+    RECONCILED_OUTPUT_PATH = args.output_reconciled_tracks
+    OUTPUT_DIR = MAPPING_OUTPUT_PATH.parent
     required_paths = [
         CLASSIFIED_TRACKS_PATH,
         SEGMENTS_REPORT_PATH,
@@ -1228,6 +1255,25 @@ def main():
     )
     sequential_identity_review_config = load_json(
         SEQUENTIAL_IDENTITY_REVIEW_CONFIG_PATH
+    )
+
+    configured_player_count = int(
+        identity_review_config.get(
+            "expected_active_player_count",
+            args.expected_player_count,
+        )
+    )
+
+    if configured_player_count != args.expected_player_count:
+        raise ValueError(
+            "Identity review config expected_active_player_count "
+            f"({configured_player_count}) does not match the pipeline "
+            f"manifest ({args.expected_player_count})."
+        )
+
+    identity_review_config.setdefault(
+        "expected_active_player_count",
+        args.expected_player_count,
     )
 
     if match_report.get(
@@ -1703,6 +1749,10 @@ def main():
         f"Reconciled tracks saved to: "
         f"{RECONCILED_OUTPUT_PATH}"
     )
+
+
+def main():
+    run(parse_args())
 
 
 if __name__ == "__main__":

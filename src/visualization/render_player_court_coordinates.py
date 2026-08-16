@@ -701,7 +701,7 @@ def validate_coordinate_contract(
         )
 
     observed_outside_count = sum(
-        not row["court_position_in_half_court"]
+        not row["raw_court_position_in_half_court"]
         for rows in rows_by_frame.values()
         for row in rows
         if row["source_observation_available"]

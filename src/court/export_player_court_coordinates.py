@@ -415,6 +415,19 @@ def validate_contract(
             f"{motion_reference} != {reference_frame_index}"
         )
 
+    geometry_validation = (
+        motion_report.get("tracking_summary", {})
+        .get("smoothing", {})
+        .get("geometry_validation", {})
+    )
+
+    if geometry_validation.get("status") != "passed":
+        raise ValueError(
+            "Motion report does not contain a passed smoothed-camera "
+            "geometry validation. Rerun camera_motion with the current "
+            "propagation code before exporting player coordinates."
+        )
+
     invalid_frames = sorted(
         {
             row["frame_index"]

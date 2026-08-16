@@ -8,35 +8,18 @@ from pathlib import Path
 
 import numpy as np
 
-import review_residual_identities as residual
+from . import review_residual_identities as residual
 
 
-VIDEO_PATH = Path("data/clips/possession_001.mp4")
-RECONCILED_TRACKS_PATH = Path(
-    "data/outputs/identity/"
-    "possession_001_reconciled_tracks.csv"
-)
-MAPPING_PATH = Path(
-    "data/outputs/identity/"
-    "possession_001_segment_player_mapping.json"
-)
-PROTOTYPES_PATH = Path(
-    "data/outputs/reid/"
-    "possession_001_reid_segment_prototypes.npz"
-)
-REID_REVIEW_PATH = Path(
-    "configs/possession_001_reid_review.json"
-)
-OUTPUT_DIR = Path(
-    "data/outputs/identity/"
-    "sequential_identity_review"
-)
-REPORT_PATH = (
-    OUTPUT_DIR
-    / "possession_001_sequential_identity_candidates.json"
-)
-CANDIDATE_MONTAGE_DIR = OUTPUT_DIR / "candidate_pairs"
-BLOCKED_MONTAGE_DIR = OUTPUT_DIR / "blocked_controls"
+VIDEO_PATH: Path
+RECONCILED_TRACKS_PATH: Path
+MAPPING_PATH: Path
+PROTOTYPES_PATH: Path
+REID_REVIEW_PATH: Path
+OUTPUT_DIR: Path
+REPORT_PATH: Path
+CANDIDATE_MONTAGE_DIR: Path
+BLOCKED_MONTAGE_DIR: Path
 
 
 MAX_REVIEW_APPEARANCE_DISTANCE = 0.30
@@ -56,13 +39,20 @@ BLOCKED_COLOR = (40, 40, 255)
 TEXT_COLOR = (255, 255, 255)
 
 
-def parse_args():
+def parse_args(argv=None):
     parser = argparse.ArgumentParser(
         description=(
             "Generate evidence for identity fragments that occur "
             "in separate time windows."
         )
     )
+    parser.add_argument("--video", type=Path, required=True)
+    parser.add_argument("--reconciled-tracks", type=Path, required=True)
+    parser.add_argument("--mapping", type=Path, required=True)
+    parser.add_argument("--prototypes", type=Path, required=True)
+    parser.add_argument("--reid-review", type=Path, required=True)
+    parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--report", type=Path, required=True)
     parser.add_argument(
         "--report-only",
         action="store_true",
@@ -71,7 +61,7 @@ def parse_args():
             "video or creating montages."
         ),
     )
-    return parser.parse_args()
+    return parser.parse_args(argv)
 
 
 def load_json(path):
@@ -941,7 +931,26 @@ def print_candidate(record):
 
 
 def main():
+    global VIDEO_PATH
+    global RECONCILED_TRACKS_PATH
+    global MAPPING_PATH
+    global PROTOTYPES_PATH
+    global REID_REVIEW_PATH
+    global OUTPUT_DIR
+    global REPORT_PATH
+    global CANDIDATE_MONTAGE_DIR
+    global BLOCKED_MONTAGE_DIR
+
     args = parse_args()
+    VIDEO_PATH = args.video
+    RECONCILED_TRACKS_PATH = args.reconciled_tracks
+    MAPPING_PATH = args.mapping
+    PROTOTYPES_PATH = args.prototypes
+    REID_REVIEW_PATH = args.reid_review
+    OUTPUT_DIR = args.output_dir
+    REPORT_PATH = args.report
+    CANDIDATE_MONTAGE_DIR = OUTPUT_DIR / "candidate_pairs"
+    BLOCKED_MONTAGE_DIR = OUTPUT_DIR / "blocked_controls"
     required_paths = [
         RECONCILED_TRACKS_PATH,
         MAPPING_PATH,

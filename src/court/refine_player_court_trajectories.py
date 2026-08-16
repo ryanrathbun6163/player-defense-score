@@ -612,11 +612,7 @@ def select_trusted_path(rows, fps, maximum_speed):
                 "raw_x",
                 "raw_y",
             )
-            protected_edge = (
-                not previous_row["raw_inside"] or not row["raw_inside"]
-            )
-
-            if speed > maximum_speed and not protected_edge:
+            if speed > maximum_speed:
                 continue
 
             previous_state = states[previous_index]
@@ -648,20 +644,6 @@ def select_trusted_path(rows, fps, maximum_speed):
     while current is not None:
         trusted_indices.add(current)
         current = states[current]["previous"]
-
-    protected_indices = {
-        index for index, row in enumerate(rows) if not row["raw_inside"]
-    }
-
-    if not protected_indices.issubset(trusted_indices):
-        missing_frames = [
-            rows[index]["frame_index"]
-            for index in sorted(protected_indices - trusted_indices)
-        ]
-        raise RuntimeError(
-            "Trusted path discarded protected outside observations: "
-            f"{missing_frames}"
-        )
 
     return trusted_indices
 
@@ -714,23 +696,26 @@ def mark_raw_jump_rows(raw_motion):
 
 def initialize_refinement_fields(rows, trusted_indices, raw_jump_rows):
     for index, row in enumerate(rows):
-        protected = not row["raw_inside"]
+        trusted = index in trusted_indices
         row["refined_x"] = row["raw_x"]
         row["refined_y"] = row["raw_y"]
+        row["refined_inside"] = row["raw_inside"]
         row["refinement_applied"] = False
         row["refinement_method"] = (
-            "protected_raw_boundary_observation"
-            if protected
+            "trusted_raw_boundary_observation"
+            if trusted and not row["raw_inside"]
             else "trusted_raw_observation"
+            if trusted
+            else "unreviewed_path_outlier"
         )
         row["refinement_reason"] = (
-            "physical_outside_position_preserved"
-            if protected
-            else "maximum_speed_path_retained"
+            "maximum_speed_path_retained"
+            if trusted
+            else "pending_path_outlier_correction"
         )
         row["correction_distance"] = 0.0
         row["anchor_frames"] = ""
-        row["trusted_path"] = index in trusted_indices
+        row["trusted_path"] = trusted
         row["raw_jump_candidate"] = (
             row["player_id"], row["frame_index"]
         ) in raw_jump_rows
@@ -746,15 +731,9 @@ def apply_candidate_correction(
     half_length,
     court_width,
 ):
-    refined_inside = position_inside_half_court(
+    row["refined_inside"] = position_inside_half_court(
         refined_x, refined_y, half_length, court_width
     )
-
-    if refined_inside != row["raw_inside"]:
-        row["refinement_method"] = "raw_observation_preserved"
-        row["refinement_reason"] = "boundary_state_change_rejected"
-        row["anchor_frames"] = anchor_frames
-        return False
 
     row["refined_x"] = refined_x
     row["refined_y"] = refined_y
@@ -922,12 +901,12 @@ def validate_refined_boundaries(rows, half_length, court_width):
             court_width,
         )
 
-        if refined_inside != row["raw_inside"]:
+        if refined_inside != row["refined_inside"]:
             mismatches.append((row["frame_index"], row["player_id"]))
 
     if mismatches:
         raise RuntimeError(
-            "Refinement changed protected boundary states: "
+            "Refined boundary flags disagree with refined coordinates: "
             f"{mismatches[:20]}"
         )
 
@@ -1048,7 +1027,7 @@ def write_refined_csv(path, rows, original_fields):
             output_row["court_x_ft"] = f"{row['refined_x']:.6f}"
             output_row["court_y_ft"] = f"{row['refined_y']:.6f}"
             output_row["court_position_in_half_court"] = bool_text(
-                row["raw_inside"]
+                row["refined_inside"]
             )
             output_row["raw_court_x_ft"] = f"{row['raw_x']:.6f}"
             output_row["raw_court_y_ft"] = f"{row['raw_y']:.6f}"
@@ -1180,24 +1159,29 @@ def build_report(
     corrected_by_method = Counter(
         row["refinement_method"] for row in corrected_rows
     )
-    protected_outside_rows = [
+    raw_outside_rows = [
         row for row in rows if not row["raw_inside"]
+    ]
+    refined_outside_rows = [
+        row for row in rows if not row["refined_inside"]
+    ]
+    boundary_state_changed_rows = [
+        row
+        for row in rows
+        if row["raw_inside"] != row["refined_inside"]
     ]
     unresolved_rows = [
         row
         for row in discarded_rows
         if not row["refinement_applied"]
     ]
-    non_boundary_remaining = [
-        candidate
-        for candidate in refined_motion["candidates"]
-        if not candidate["touches_protected_outside_observation"]
-    ]
+    remaining_candidates = refined_motion["candidates"]
 
-    if non_boundary_remaining:
+    if remaining_candidates:
         raise RuntimeError(
-            "Refinement left non-boundary speed candidates: "
-            f"{non_boundary_remaining[:20]}"
+            "Refinement left speed candidates after correcting raw path "
+            "outliers: "
+            f"{remaining_candidates[:20]}"
         )
 
     corrected_records = []
@@ -1239,7 +1223,12 @@ def build_report(
             "extrapolation_anchor_count": (
                 args.extrapolation_anchor_count
             ),
-            "protect_raw_outside_observations": True,
+            "protect_raw_outside_observations": False,
+            "boundary_policy": (
+                "Outside observations are retained when they belong to "
+                "the maximum-speed trusted path; isolated implausible "
+                "boundary samples may be corrected without clipping."
+            ),
             "half_court_length_ft": args.half_court_length_ft,
             "court_width_ft": args.court_width_ft,
         },
@@ -1310,18 +1299,30 @@ def build_report(
             )
             if raw_motion["candidate_count"]
             else 0.0,
-            "remaining_candidates_are_boundary_protected": (
-                not non_boundary_remaining
-            ),
+            "remaining_candidate_count": len(remaining_candidates),
+            "remaining_candidates_are_boundary_protected": False,
         },
         "boundary_audit": {
             "raw_outside_observation_count": len(
-                protected_outside_rows
+                raw_outside_rows
             ),
             "refined_outside_observation_count": len(
-                protected_outside_rows
+                refined_outside_rows
             ),
-            "outside_observation_count_preserved": True,
+            "boundary_state_changed_observation_count": len(
+                boundary_state_changed_rows
+            ),
+            "raw_outside_corrected_to_inside_count": sum(
+                not row["raw_inside"] and row["refined_inside"]
+                for row in boundary_state_changed_rows
+            ),
+            "raw_inside_corrected_to_outside_count": sum(
+                row["raw_inside"] and not row["refined_inside"]
+                for row in boundary_state_changed_rows
+            ),
+            "outside_observation_count_preserved": (
+                len(raw_outside_rows) == len(refined_outside_rows)
+            ),
             "outside_coordinates_preserved_exactly": all(
                 math.isclose(
                     row["raw_x"],
@@ -1335,7 +1336,7 @@ def build_report(
                     rel_tol=0.0,
                     abs_tol=0.0,
                 )
-                for row in protected_outside_rows
+                for row in raw_outside_rows
             ),
         },
         "missing_observation_audit": gap_audit,
@@ -1349,12 +1350,13 @@ def build_report(
                 "teleports without changing player identities."
             ),
             (
-                "Confirm all red-ringed outside observations remain at "
-                "their original raw coordinates."
+                "Inspect raw-to-refined boundary-state corrections and "
+                "confirm isolated false outside samples were removed "
+                "without clipping credible physical outside positions."
             ),
             (
-                "Treat remaining speed candidates as protected boundary "
-                "transitions rather than silently modifying them."
+                "Confirm the refined motion audit contains no remaining "
+                "speed candidates above the reviewed threshold."
             ),
             (
                 "Missing player observations remain unfilled and require "
@@ -1382,12 +1384,17 @@ def print_summary(report, output_path, audit_path, report_path):
         f"{motion['refined']['candidate_count']} refined"
     )
     print(
-        "Remaining candidates boundary-protected: "
-        f"{motion['remaining_candidates_are_boundary_protected']}"
+        "Remaining motion candidates: "
+        f"{motion['remaining_candidate_count']}"
     )
     print(
-        "Outside observations preserved exactly: "
-        f"{boundary['raw_outside_observation_count']}"
+        "Outside observations (raw -> refined): "
+        f"{boundary['raw_outside_observation_count']} -> "
+        f"{boundary['refined_outside_observation_count']}"
+    )
+    print(
+        "Boundary-state corrections: "
+        f"{boundary['boundary_state_changed_observation_count']}"
     )
     print(
         "Missing observations preserved/unfilled: "

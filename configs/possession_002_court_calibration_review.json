@@ -1,0 +1,32 @@
+{
+    "source_calibration":  "configs/possession_002_court_calibration.json",
+    "review_status":  "approved_with_corrections",
+    "coordinate_interpretation":  {
+                                      "issue":  "The initial pass reversed FAR and NEAR labels; the reviewed rerun selected them according to the stored convention.",
+                                      "resolution":  "Use the six accurately visible corrected landmarks and omit the off-screen near three-point intersection.",
+                                      "final_convention":  "x=0 at the right baseline and increases toward midcourt; y=0 at the far bench-side sideline and increases toward the near camera-side sideline."
+                                  },
+    "landmark_reassignments":  {
+
+                               },
+    "fit_landmark_ids":  [
+                             "free_throw_far_lane_corner",
+                             "free_throw_near_lane_corner",
+                             "baseline_far_lane_corner",
+                             "baseline_near_lane_corner",
+                             "arc_tangent_toward_midcourt",
+                             "baseline_far_three_point_intersection"
+                         ],
+    "excluded_landmarks":  {
+                               "baseline_near_three_point_intersection":  "The near camera-side baseline/three-point intersection is outside the visible frame and was omitted rather than estimated."
+                           },
+    "visual_review":  {
+                          "lane_alignment":  "accepted",
+                          "free_throw_circle_alignment":  "accepted",
+                          "three_point_arc_alignment":  "accepted_with_extrapolation",
+                          "near_three_point_arc_note":  "The visible arc alignment is accepted; its off-screen near endpoint remains an extrapolation."
+                      },
+    "next_validation":  "Propagate the reviewed reference homography through the moving-camera frames and inspect projected court markings at multiple timestamps before exporting player coordinates.",
+    "selected_landmark_count":  6,
+    "maximum_selected_point_error_ft":  0.2741
+}
