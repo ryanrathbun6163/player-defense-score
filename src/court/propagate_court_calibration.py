@@ -3,8 +3,15 @@ import json
 from collections import Counter
 from pathlib import Path
 
-import cv2
-import numpy as np
+try:
+    import cv2
+except ModuleNotFoundError:
+    cv2 = None
+
+try:
+    import numpy as np
+except ModuleNotFoundError:
+    np = None
 
 try:
     from scipy.signal import savgol_filter
@@ -19,6 +26,15 @@ DEFAULT_CALIBRATION_PATH = Path(
 DEFAULT_COURT_CONFIG_PATH = Path("configs/possession_001_court.json")
 DEFAULT_OUTPUT_DIR = Path(
     "data/outputs/court/possession_001_motion_review"
+)
+DEFAULT_OUTPUT_VIDEO_PATH = (
+    DEFAULT_OUTPUT_DIR / "possession_001_court_motion_review.mp4"
+)
+DEFAULT_HOMOGRAPHIES_PATH = (
+    DEFAULT_OUTPUT_DIR / "possession_001_camera_homographies.npz"
+)
+DEFAULT_REPORT_PATH = (
+    DEFAULT_OUTPUT_DIR / "possession_001_court_motion_review.json"
 )
 
 DEFAULT_SAMPLE_COUNT = 7
@@ -49,9 +65,28 @@ ROBUST_BASELINE_RADIUS = 30
 ROBUST_REFIT_RADIUS = 35
 MAX_ROBUST_MEDIAN_RESIDUAL_PX = 12.0
 MAX_ROBUST_POINT_RESIDUAL_PX = 50.0
+GEOMETRY_FALLBACK_MEDIAN_WINDOW = 21
+GEOMETRY_FALLBACK_SAVGOL_WINDOW = 31
+MIN_NORMALIZED_PROJECTION_DENOMINATOR = 0.01
+MAX_ABSOLUTE_CONTROL_COORDINATE_FRAME_MULTIPLIER = 4.0
+MIN_CONTROL_SPAN_FRAME_FRACTION = 0.02
+MAX_CONTROL_SPAN_FRAME_MULTIPLIER = 4.0
+MAX_CONTROL_STEP_DIAGONAL_FRACTION = 0.35
+MAX_CONTROL_ACCELERATION_DIAGONAL_FRACTION = 0.50
+MAX_REFERENCE_ANCHOR_ERROR_PX = 0.5
 TERMINAL_SEARCH_FRAME_COUNT = 60
 TERMINAL_REJECTED_RUN_TRIGGER = 5
 TERMINAL_MIN_REJECTED_SUFFIX_FRACTION = 0.70
+TERMINAL_MOTION_MIN_ACCEPTED_FRAMES = 6
+TERMINAL_MOTION_MIN_ACCEPTED_SPAN_FRACTION = 0.60
+TERMINAL_MOTION_MAX_FINAL_ACCEPTED_GAP_FRAMES = 5
+TERMINAL_MOTION_REQUIRED_TEMPORAL_BINS = 3
+TERMINAL_MOTION_MIN_DISPLACEMENT_PX = 24.0
+TERMINAL_MOTION_MAX_MEDIAN_SUPPORT_ERROR_PX = 8.0
+TERMINAL_MOTION_MAX_P90_SUPPORT_ERROR_PX = 12.0
+TERMINAL_MOTION_MAX_FINAL_SUPPORT_ERROR_PX = 18.0
+TERMINAL_MOTION_MIN_TIME_CORRELATION = 0.80
+TERMINAL_MOTION_MIN_MONOTONIC_STEP_FRACTION = 0.60
 
 COURT_MODEL_COLOR = (0, 235, 255)
 FIT_REGION_COLOR = (70, 230, 70)
@@ -60,7 +95,7 @@ ERROR_COLOR = (30, 30, 230)
 TEXT_COLOR = (255, 255, 255)
 
 
-def parse_args():
+def parse_args(argv=None):
     parser = argparse.ArgumentParser(
         description=(
             "Propagate a reviewed reference court homography "
@@ -91,6 +126,24 @@ def parse_args():
         type=Path,
         default=DEFAULT_OUTPUT_DIR,
         help="Directory for motion-review outputs.",
+    )
+    parser.add_argument(
+        "--output-video",
+        type=Path,
+        default=DEFAULT_OUTPUT_VIDEO_PATH,
+        help="Moving-court validation MP4 path.",
+    )
+    parser.add_argument(
+        "--output-homographies",
+        type=Path,
+        default=DEFAULT_HOMOGRAPHIES_PATH,
+        help="Per-frame camera homography NPZ path.",
+    )
+    parser.add_argument(
+        "--report",
+        type=Path,
+        default=DEFAULT_REPORT_PATH,
+        help="Camera-motion validation JSON path.",
     )
     parser.add_argument(
         "--sample-count",
@@ -126,7 +179,7 @@ def parse_args():
             "checkpoint overlays."
         ),
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     if args.sample_count < 3:
         parser.error("--sample-count must be at least 3")
@@ -317,9 +370,17 @@ def normalize_homography(homography):
 
 
 def project_points(points, homography):
-    array = np.asarray(points, dtype=np.float32).reshape(-1, 1, 2)
-    projected = cv2.perspectiveTransform(array, homography)
-    return projected.reshape(-1, 2)
+    array = np.asarray(points, dtype=np.float64).reshape(-1, 2)
+    homogeneous = np.column_stack(
+        [array, np.ones(len(array), dtype=np.float64)]
+    )
+    projected = homogeneous @ np.asarray(
+        homography,
+        dtype=np.float64,
+    ).T
+
+    with np.errstate(divide="ignore", invalid="ignore"):
+        return projected[:, :2] / projected[:, 2:3]
 
 
 def polygon_area(points):
@@ -626,15 +687,509 @@ def interpolate_missing(values, valid_mask):
 
 
 def centered_median_filter(values, window_length):
+    if window_length < 1 or window_length % 2 == 0:
+        raise ValueError("Median-filter window must be a positive odd integer")
+
     radius = window_length // 2
     output = np.empty_like(values)
+    padding = [(radius, radius)] + [
+        (0, 0) for _ in range(values.ndim - 1)
+    ]
+    padded = np.pad(values, padding, mode="edge")
 
     for index in range(len(values)):
-        start = max(0, index - radius)
-        end = min(len(values), index + radius + 1)
-        output[index] = np.median(values[start:end], axis=0)
+        output[index] = np.median(
+            padded[index : index + window_length],
+            axis=0,
+        )
 
     return output
+
+
+def effective_odd_window(requested_window, frame_count):
+    effective_window = min(requested_window, frame_count)
+
+    if effective_window % 2 == 0:
+        effective_window -= 1
+
+    return max(1, effective_window)
+
+
+def numeric_distribution(values):
+    finite = np.asarray(values, dtype=float)
+    finite = finite[np.isfinite(finite)]
+
+    if not len(finite):
+        return {
+            "minimum": None,
+            "median": None,
+            "p90": None,
+            "p99": None,
+            "maximum": None,
+        }
+
+    return {
+        "minimum": round(float(np.min(finite)), 4),
+        "median": round(float(np.median(finite)), 4),
+        "p90": round(float(np.percentile(finite, 90)), 4),
+        "p99": round(float(np.percentile(finite, 99)), 4),
+        "maximum": round(float(np.max(finite)), 4),
+    }
+
+
+def control_trajectories_from_transforms(transforms, control_points):
+    trajectories = np.full(
+        (len(transforms), len(control_points), 2),
+        np.nan,
+        dtype=float,
+    )
+    normalized_denominators = np.full(
+        (len(transforms), len(control_points)),
+        np.nan,
+        dtype=float,
+    )
+    valid_mask = np.zeros(len(transforms), dtype=bool)
+    homogeneous = np.column_stack(
+        [
+            np.asarray(control_points, dtype=np.float64),
+            np.ones(len(control_points), dtype=np.float64),
+        ]
+    )
+
+    for index, transform in enumerate(transforms):
+        if transform is None:
+            continue
+
+        try:
+            reference_to_frame = np.linalg.inv(transform)
+        except np.linalg.LinAlgError:
+            continue
+
+        projected = homogeneous @ reference_to_frame.T
+        denominators = projected[:, 2]
+        denominator_scale = float(np.max(np.abs(denominators)))
+
+        if denominator_scale < 1e-12:
+            continue
+
+        with np.errstate(divide="ignore", invalid="ignore"):
+            points = projected[:, :2] / denominators[:, None]
+
+        if not np.all(np.isfinite(points)):
+            continue
+
+        trajectories[index] = points
+        normalized_denominators[index] = (
+            denominators / denominator_scale
+        )
+        valid_mask[index] = True
+
+    return trajectories, normalized_denominators, valid_mask
+
+
+def fit_transforms_from_control_trajectory(
+    trajectory,
+    control_points,
+    reference_frame_index,
+):
+    if cv2 is None:
+        raise ModuleNotFoundError(
+            "OpenCV is required to fit smoothed camera transforms."
+        )
+
+    smoothed_transforms = []
+
+    for index, frame_control_points in enumerate(trajectory):
+        transform, _ = cv2.findHomography(
+            np.asarray(frame_control_points, dtype=np.float32),
+            np.asarray(control_points, dtype=np.float32),
+            method=0,
+        )
+        transform = normalize_homography(transform)
+
+        if transform is None:
+            raise RuntimeError(
+                f"Smoothed transform invalid at frame {index}"
+            )
+
+        smoothed_transforms.append(transform)
+
+    reference_adjustment = normalize_homography(
+        np.linalg.inv(smoothed_transforms[reference_frame_index])
+    )
+
+    if reference_adjustment is None:
+        raise RuntimeError("Could not re-anchor smoothed camera trajectory")
+
+    smoothed_transforms = [
+        normalize_homography(reference_adjustment @ transform)
+        for transform in smoothed_transforms
+    ]
+
+    if any(transform is None for transform in smoothed_transforms):
+        raise RuntimeError("Re-anchored camera trajectory is invalid")
+
+    return smoothed_transforms
+
+
+def _geometry_issue(code, frame_indices, message):
+    return {
+        "code": code,
+        "frame_count": len(frame_indices),
+        "sample_frames": [int(value) for value in frame_indices[:20]],
+        "message": message,
+    }
+
+
+def validate_smoothed_camera_geometry(
+    transforms,
+    width,
+    height,
+    reference_control_points,
+    reference_frame_index,
+):
+    control_points = np.asarray(
+        reference_control_points,
+        dtype=np.float64,
+    )
+    trajectories, denominators, valid_mask = (
+        control_trajectories_from_transforms(
+            transforms,
+            control_points,
+        )
+    )
+    frame_count = len(transforms)
+    issues = []
+    invalid_frames = np.flatnonzero(~valid_mask).tolist()
+
+    if invalid_frames:
+        issues.append(
+            _geometry_issue(
+                "non_finite_control_projection",
+                invalid_frames,
+                "One or more reviewed control points could not be projected.",
+            )
+        )
+
+    valid_denominators = denominators[valid_mask]
+    crossing_frames = []
+    low_margin_frames = []
+
+    for frame_index in np.flatnonzero(valid_mask):
+        row = denominators[frame_index]
+
+        if float(np.min(row)) < 0.0 < float(np.max(row)):
+            crossing_frames.append(int(frame_index))
+
+        if (
+            float(np.min(np.abs(row)))
+            < MIN_NORMALIZED_PROJECTION_DENOMINATOR
+        ):
+            low_margin_frames.append(int(frame_index))
+
+    if crossing_frames:
+        issues.append(
+            _geometry_issue(
+                "vanishing_line_crosses_control_region",
+                crossing_frames,
+                "The projective vanishing line crosses the reviewed control region.",
+            )
+        )
+
+    if low_margin_frames:
+        issues.append(
+            _geometry_issue(
+                "near_singular_control_projection",
+                low_margin_frames,
+                "A control point approaches a projective singularity.",
+            )
+        )
+
+    finite_trajectory = trajectories[valid_mask]
+    absolute_limit = (
+        MAX_ABSOLUTE_CONTROL_COORDINATE_FRAME_MULTIPLIER
+        * max(width, height)
+    )
+    excessive_coordinate_frames = []
+    collapsed_span_frames = []
+    excessive_span_frames = []
+    spans = np.empty((0, 2), dtype=float)
+
+    if len(finite_trajectory):
+        per_frame_absolute = np.max(
+            np.abs(finite_trajectory),
+            axis=(1, 2),
+        )
+        valid_indices = np.flatnonzero(valid_mask)
+        excessive_coordinate_frames = valid_indices[
+            per_frame_absolute > absolute_limit
+        ].tolist()
+        spans = np.ptp(finite_trajectory, axis=1)
+        minimum_spans = np.asarray(
+            [
+                MIN_CONTROL_SPAN_FRAME_FRACTION * width,
+                MIN_CONTROL_SPAN_FRAME_FRACTION * height,
+            ],
+            dtype=float,
+        )
+        maximum_spans = np.asarray(
+            [
+                MAX_CONTROL_SPAN_FRAME_MULTIPLIER * width,
+                MAX_CONTROL_SPAN_FRAME_MULTIPLIER * height,
+            ],
+            dtype=float,
+        )
+        collapsed_span_frames = valid_indices[
+            np.any(spans < minimum_spans, axis=1)
+        ].tolist()
+        excessive_span_frames = valid_indices[
+            np.any(spans > maximum_spans, axis=1)
+        ].tolist()
+
+    if excessive_coordinate_frames:
+        issues.append(
+            _geometry_issue(
+                "control_region_leaves_safe_image_extent",
+                excessive_coordinate_frames,
+                "The smoothed control region diverges far beyond the image.",
+            )
+        )
+
+    if collapsed_span_frames:
+        issues.append(
+            _geometry_issue(
+                "control_region_collapses",
+                collapsed_span_frames,
+                "The smoothed control region collapses toward a line or point.",
+            )
+        )
+
+    if excessive_span_frames:
+        issues.append(
+            _geometry_issue(
+                "control_region_expands_excessively",
+                excessive_span_frames,
+                "The smoothed control region expands beyond a safe image extent.",
+            )
+        )
+
+    steps = np.full((max(0, frame_count - 1), len(control_points)), np.nan)
+    accelerations = np.full(
+        (max(0, frame_count - 2), len(control_points)),
+        np.nan,
+    )
+
+    if frame_count >= 2:
+        steps = np.linalg.norm(np.diff(trajectories, axis=0), axis=2)
+
+    if frame_count >= 3:
+        accelerations = np.linalg.norm(
+            np.diff(trajectories, n=2, axis=0),
+            axis=2,
+        )
+
+    image_diagonal = float(np.hypot(width, height))
+    step_limit = MAX_CONTROL_STEP_DIAGONAL_FRACTION * image_diagonal
+    acceleration_limit = (
+        MAX_CONTROL_ACCELERATION_DIAGONAL_FRACTION * image_diagonal
+    )
+    excessive_step_frames = (
+        np.flatnonzero(np.any(steps > step_limit, axis=1)) + 1
+    ).tolist()
+    excessive_acceleration_frames = (
+        np.flatnonzero(
+            np.any(accelerations > acceleration_limit, axis=1)
+        )
+        + 2
+    ).tolist()
+
+    if excessive_step_frames:
+        issues.append(
+            _geometry_issue(
+                "implausible_control_point_step",
+                excessive_step_frames,
+                "The smoothed camera path contains an implausible one-frame step.",
+            )
+        )
+
+    if excessive_acceleration_frames:
+        issues.append(
+            _geometry_issue(
+                "implausible_control_point_acceleration",
+                excessive_acceleration_frames,
+                "The smoothed camera path contains an implausible acceleration spike.",
+            )
+        )
+
+    anchor_error = None
+
+    if valid_mask[reference_frame_index]:
+        anchor_error = float(
+            np.max(
+                np.linalg.norm(
+                    trajectories[reference_frame_index] - control_points,
+                    axis=1,
+                )
+            )
+        )
+
+        if anchor_error > MAX_REFERENCE_ANCHOR_ERROR_PX:
+            issues.append(
+                _geometry_issue(
+                    "reference_frame_not_anchored",
+                    [reference_frame_index],
+                    "The reviewed reference frame no longer maps to itself.",
+                )
+            )
+
+    minimum_denominator_margin = (
+        np.min(np.abs(valid_denominators), axis=1)
+        if len(valid_denominators)
+        else np.asarray([], dtype=float)
+    )
+
+    return {
+        "status": "passed" if not issues else "failed",
+        "issue_count": len(issues),
+        "issues": issues,
+        "thresholds": {
+            "minimum_normalized_projection_denominator": (
+                MIN_NORMALIZED_PROJECTION_DENOMINATOR
+            ),
+            "maximum_absolute_control_coordinate_px": round(
+                float(absolute_limit),
+                4,
+            ),
+            "minimum_control_span_px": {
+                "x": round(MIN_CONTROL_SPAN_FRAME_FRACTION * width, 4),
+                "y": round(MIN_CONTROL_SPAN_FRAME_FRACTION * height, 4),
+            },
+            "maximum_control_span_px": {
+                "x": round(MAX_CONTROL_SPAN_FRAME_MULTIPLIER * width, 4),
+                "y": round(MAX_CONTROL_SPAN_FRAME_MULTIPLIER * height, 4),
+            },
+            "maximum_control_point_step_px": round(step_limit, 4),
+            "maximum_control_point_acceleration_px": round(
+                acceleration_limit,
+                4,
+            ),
+            "maximum_reference_anchor_error_px": (
+                MAX_REFERENCE_ANCHOR_ERROR_PX
+            ),
+        },
+        "metrics": {
+            "valid_frame_count": int(np.count_nonzero(valid_mask)),
+            "invalid_frame_count": int(frame_count - np.count_nonzero(valid_mask)),
+            "control_coordinate_absolute_px": numeric_distribution(
+                np.abs(finite_trajectory).reshape(-1)
+                if len(finite_trajectory)
+                else []
+            ),
+            "control_span_x_px": numeric_distribution(
+                spans[:, 0] if len(spans) else []
+            ),
+            "control_span_y_px": numeric_distribution(
+                spans[:, 1] if len(spans) else []
+            ),
+            "control_point_step_px": numeric_distribution(steps.reshape(-1)),
+            "control_point_acceleration_px": numeric_distribution(
+                accelerations.reshape(-1)
+            ),
+            "normalized_projection_denominator_margin": (
+                numeric_distribution(minimum_denominator_margin)
+            ),
+            "vanishing_line_crossing_frame_count": len(crossing_frames),
+            "reference_anchor_maximum_error_px": (
+                None if anchor_error is None else round(anchor_error, 6)
+            ),
+        },
+    }
+
+
+def build_geometry_safe_fallback_trajectory(
+    trajectories,
+    valid_mask,
+    requested_smoothing_window,
+    reference_frame_index,
+):
+    flattened = np.asarray(trajectories, dtype=float).reshape(
+        len(trajectories),
+        -1,
+    )
+    filled = interpolate_missing(flattened, valid_mask)
+    median_window = effective_odd_window(
+        GEOMETRY_FALLBACK_MEDIAN_WINDOW,
+        len(flattened),
+    )
+    local_median = centered_median_filter(filled, median_window)
+    differences = (flattened - local_median).reshape(
+        len(flattened),
+        -1,
+        2,
+    )
+    point_residuals = np.linalg.norm(differences, axis=2)
+    median_residuals = np.full(len(flattened), np.nan, dtype=float)
+    maximum_residuals = np.full(len(flattened), np.nan, dtype=float)
+    median_residuals[valid_mask] = np.median(
+        point_residuals[valid_mask],
+        axis=1,
+    )
+    maximum_residuals[valid_mask] = np.max(
+        point_residuals[valid_mask],
+        axis=1,
+    )
+    accepted_mask = (
+        valid_mask
+        & (median_residuals <= MAX_ROBUST_MEDIAN_RESIDUAL_PX)
+        & (maximum_residuals <= MAX_ROBUST_POINT_RESIDUAL_PX)
+    )
+    accepted_mask[reference_frame_index] = valid_mask[
+        reference_frame_index
+    ]
+    cleaned = filled.copy()
+    cleaned[~accepted_mask] = local_median[~accepted_mask]
+    median_filtered = centered_median_filter(cleaned, 3)
+    smoothing_window = effective_odd_window(
+        max(
+            requested_smoothing_window,
+            GEOMETRY_FALLBACK_SAVGOL_WINDOW,
+        ),
+        len(flattened),
+    )
+
+    if savgol_filter is not None and smoothing_window >= 3:
+        smoothed = savgol_filter(
+            median_filtered,
+            window_length=smoothing_window,
+            polyorder=2,
+            axis=0,
+            mode="interp",
+        )
+        method = (
+            f"geometry_safe_local_median_{median_window}_"
+            f"plus_median_3_plus_savgol_{smoothing_window}"
+        )
+    else:
+        smoothed = centered_median_filter(
+            median_filtered,
+            smoothing_window,
+        )
+        method = (
+            f"geometry_safe_local_median_{median_window}_"
+            f"plus_stacked_centered_median_{smoothing_window}"
+        )
+
+    return (
+        smoothed.reshape(np.asarray(trajectories).shape),
+        accepted_mask,
+        median_residuals,
+        maximum_residuals,
+        {
+            "method": method,
+            "median_window_length": median_window,
+            "smoothing_window_length": smoothing_window,
+        },
+    )
 
 
 def transform_quality_weights(frame_records):
@@ -765,10 +1320,275 @@ def contiguous_false_runs(mask):
     return runs
 
 
+def summarize_terminal_motion_evidence(
+    smoothed,
+    observed,
+    accepted_mask,
+    terminal_start,
+):
+    """Measure whether rejected-tail motion has independent support.
+
+    The terminal hold is intentionally conservative, but a rejection-heavy
+    suffix can still contain enough robust observations to prove that the
+    camera is continuing to move. Require accepted observations throughout
+    the suffix, agreement with the candidate smooth trajectory, and coherent
+    temporal progress before allowing that motion to survive.
+    """
+    summary = {
+        "evaluated": observed is not None,
+        "passed": False,
+        "reason": "observed_trajectory_unavailable",
+        "accepted_frame_count": 0,
+        "accepted_frames": [],
+        "accepted_span_fraction": None,
+        "covered_temporal_bin_count": 0,
+        "required_temporal_bin_count": (
+            TERMINAL_MOTION_REQUIRED_TEMPORAL_BINS
+        ),
+        "last_accepted_frame": None,
+        "final_accepted_gap_frames": None,
+        "observed_displacement_px": None,
+        "median_support_error_px": None,
+        "p90_support_error_px": None,
+        "final_support_error_px": None,
+        "time_progress_correlation": None,
+        "monotonic_step_fraction": None,
+        "criteria": {},
+    }
+
+    if observed is None:
+        return summary
+
+    smoothed_array = np.asarray(smoothed, dtype=float)
+    observed_array = np.asarray(observed, dtype=float)
+
+    if smoothed_array.ndim == 2:
+        if smoothed_array.shape[1] % 2:
+            raise ValueError(
+                "Flattened smoothed trajectory must contain x/y pairs"
+            )
+        smoothed_points = smoothed_array.reshape(
+            len(smoothed_array),
+            -1,
+            2,
+        )
+    elif smoothed_array.ndim == 3 and smoothed_array.shape[2] == 2:
+        smoothed_points = smoothed_array
+    else:
+        raise ValueError("Smoothed trajectory must contain 2D points")
+
+    if observed_array.ndim == 2:
+        if observed_array.shape[1] % 2:
+            raise ValueError(
+                "Flattened observed trajectory must contain x/y pairs"
+            )
+        observed_points = observed_array.reshape(
+            len(observed_array),
+            -1,
+            2,
+        )
+    elif observed_array.ndim == 3 and observed_array.shape[2] == 2:
+        observed_points = observed_array
+    else:
+        raise ValueError("Observed trajectory must contain 2D points")
+
+    if observed_points.shape != smoothed_points.shape:
+        raise ValueError(
+            "Observed and smoothed trajectories must have matching shapes"
+        )
+
+    frame_count = len(smoothed_points)
+    accepted_indices = (
+        np.flatnonzero(np.asarray(accepted_mask)[terminal_start:])
+        + terminal_start
+    )
+    finite_support = np.asarray(
+        [
+            np.all(np.isfinite(observed_points[index]))
+            and np.all(np.isfinite(smoothed_points[index]))
+            for index in accepted_indices
+        ],
+        dtype=bool,
+    )
+    accepted_indices = accepted_indices[finite_support]
+    accepted_count = len(accepted_indices)
+    summary["accepted_frame_count"] = int(accepted_count)
+    summary["accepted_frames"] = [
+        int(value) for value in accepted_indices
+    ]
+
+    if not accepted_count:
+        summary["reason"] = "no_finite_accepted_observations"
+        return summary
+
+    first_accepted = int(accepted_indices[0])
+    last_accepted = int(accepted_indices[-1])
+    suffix_span = max(1, frame_count - 1 - terminal_start)
+    accepted_span_fraction = (
+        last_accepted - first_accepted
+    ) / float(suffix_span)
+    final_accepted_gap = frame_count - 1 - last_accepted
+
+    temporal_bin_indices = np.floor(
+        (
+            (accepted_indices - terminal_start)
+            * TERMINAL_MOTION_REQUIRED_TEMPORAL_BINS
+        )
+        / max(1, frame_count - terminal_start)
+    ).astype(int)
+    temporal_bin_indices = np.clip(
+        temporal_bin_indices,
+        0,
+        TERMINAL_MOTION_REQUIRED_TEMPORAL_BINS - 1,
+    )
+    covered_temporal_bins = len(np.unique(temporal_bin_indices))
+
+    supported_observed = observed_points[accepted_indices]
+    supported_smoothed = smoothed_points[accepted_indices]
+    support_errors = np.median(
+        np.linalg.norm(
+            supported_observed - supported_smoothed,
+            axis=2,
+        ),
+        axis=1,
+    )
+    median_support_error = float(np.median(support_errors))
+    p90_support_error = float(np.percentile(support_errors, 90))
+    final_support_error = float(support_errors[-1])
+
+    observed_displacement = float(
+        np.median(
+            np.linalg.norm(
+                observed_points[last_accepted]
+                - observed_points[first_accepted],
+                axis=1,
+            )
+        )
+    )
+    flattened_observed = supported_observed.reshape(accepted_count, -1)
+    direction = flattened_observed[-1] - flattened_observed[0]
+    direction_norm = float(np.linalg.norm(direction))
+    time_progress_correlation = None
+    monotonic_step_fraction = None
+
+    if accepted_count >= 2 and direction_norm > 1e-9:
+        unit_direction = direction / direction_norm
+        progress = (
+            flattened_observed - flattened_observed[0]
+        ) @ unit_direction
+        progress_differences = np.diff(progress)
+        monotonic_step_fraction = float(
+            np.mean(progress_differences >= 0.0)
+        )
+
+        if float(np.std(progress)) > 1e-9:
+            time_progress_correlation = float(
+                np.corrcoef(
+                    accepted_indices.astype(float),
+                    progress,
+                )[0, 1]
+            )
+
+    criteria = {
+        "minimum_accepted_frames": (
+            accepted_count >= TERMINAL_MOTION_MIN_ACCEPTED_FRAMES
+        ),
+        "minimum_accepted_span_fraction": (
+            accepted_span_fraction
+            >= TERMINAL_MOTION_MIN_ACCEPTED_SPAN_FRACTION
+        ),
+        "maximum_final_accepted_gap": (
+            final_accepted_gap
+            <= TERMINAL_MOTION_MAX_FINAL_ACCEPTED_GAP_FRAMES
+        ),
+        "required_temporal_bins": (
+            covered_temporal_bins
+            >= TERMINAL_MOTION_REQUIRED_TEMPORAL_BINS
+        ),
+        "minimum_observed_displacement": (
+            observed_displacement
+            >= TERMINAL_MOTION_MIN_DISPLACEMENT_PX
+        ),
+        "maximum_median_support_error": (
+            median_support_error
+            <= TERMINAL_MOTION_MAX_MEDIAN_SUPPORT_ERROR_PX
+        ),
+        "maximum_p90_support_error": (
+            p90_support_error
+            <= TERMINAL_MOTION_MAX_P90_SUPPORT_ERROR_PX
+        ),
+        "maximum_final_support_error": (
+            final_support_error
+            <= TERMINAL_MOTION_MAX_FINAL_SUPPORT_ERROR_PX
+        ),
+        "minimum_time_progress_correlation": (
+            time_progress_correlation is not None
+            and time_progress_correlation
+            >= TERMINAL_MOTION_MIN_TIME_CORRELATION
+        ),
+        "minimum_monotonic_step_fraction": (
+            monotonic_step_fraction is not None
+            and monotonic_step_fraction
+            >= TERMINAL_MOTION_MIN_MONOTONIC_STEP_FRACTION
+        ),
+    }
+    passed = all(criteria.values())
+    summary.update(
+        {
+            "passed": bool(passed),
+            "reason": (
+                "coherent_terminal_motion_supported"
+                if passed
+                else "coherent_terminal_motion_not_supported"
+            ),
+            "accepted_span_fraction": round(
+                float(accepted_span_fraction),
+                4,
+            ),
+            "covered_temporal_bin_count": int(
+                covered_temporal_bins
+            ),
+            "last_accepted_frame": last_accepted,
+            "final_accepted_gap_frames": int(final_accepted_gap),
+            "observed_displacement_px": round(
+                observed_displacement,
+                4,
+            ),
+            "median_support_error_px": round(
+                median_support_error,
+                4,
+            ),
+            "p90_support_error_px": round(
+                p90_support_error,
+                4,
+            ),
+            "final_support_error_px": round(
+                final_support_error,
+                4,
+            ),
+            "time_progress_correlation": (
+                None
+                if time_progress_correlation is None
+                else round(time_progress_correlation, 4)
+            ),
+            "monotonic_step_fraction": (
+                None
+                if monotonic_step_fraction is None
+                else round(monotonic_step_fraction, 4)
+            ),
+            "criteria": {
+                key: bool(value) for key, value in criteria.items()
+            },
+        }
+    )
+    return summary
+
+
 def stabilize_terminal_trajectory(
     smoothed,
     accepted_mask,
     reference_frame_index,
+    observed=None,
 ):
     """Prevent unreliable end-of-clip samples from bending the trajectory.
 
@@ -776,8 +1596,10 @@ def stabilize_terminal_trajectory(
     sustained run of rejected raw transforms begins near the end, later small
     islands of falsely accepted transforms can bend the fitted homography well
     before the final frame. Search the tail for the first sufficiently long
-    rejected run whose remaining suffix is dominated by rejected transforms,
-    then hold the last reliable pre-run transform through the end of the clip.
+    rejected run whose remaining suffix is dominated by rejected transforms.
+    Preserve the candidate trajectory when distributed robust observations
+    independently support coherent ongoing motion; otherwise hold the last
+    reliable pre-run transform through the end of the clip.
     """
     frame_count = len(smoothed)
     search_start = max(
@@ -798,9 +1620,16 @@ def stabilize_terminal_trajectory(
             TERMINAL_MIN_REJECTED_SUFFIX_FRACTION
         ),
         "trigger_run_frame_count": None,
+        "trigger_start_frame": None,
         "trigger_suffix_frame_count": None,
         "trigger_suffix_rejected_frame_count": None,
         "trigger_suffix_rejected_fraction": None,
+        "decision": "no_instability_trigger",
+        "motion_evidence": {
+            "evaluated": False,
+            "passed": False,
+            "reason": "no_instability_trigger",
+        },
     }
 
     run_start = None
@@ -836,6 +1665,7 @@ def stabilize_terminal_trajectory(
         summary.update(
             {
                 "trigger_run_frame_count": int(run_length),
+                "trigger_start_frame": int(run_start),
                 "trigger_suffix_frame_count": int(suffix_frame_count),
                 "trigger_suffix_rejected_frame_count": int(
                     suffix_rejected_count
@@ -851,6 +1681,18 @@ def stabilize_terminal_trajectory(
     if terminal_start is None:
         return smoothed, summary
 
+    motion_evidence = summarize_terminal_motion_evidence(
+        smoothed,
+        observed,
+        accepted_mask,
+        terminal_start,
+    )
+    summary["motion_evidence"] = motion_evidence
+
+    if motion_evidence["passed"]:
+        summary["decision"] = "preserved_coherent_terminal_motion"
+        return smoothed, summary
+
     anchor_index = terminal_start - 1
     stabilized = smoothed.copy()
     stabilized[terminal_start:] = stabilized[anchor_index]
@@ -861,6 +1703,7 @@ def stabilize_terminal_trajectory(
             "start_frame": int(terminal_start),
             "end_frame": int(frame_count - 1),
             "anchor_frame": int(anchor_index),
+            "decision": "applied_anchor_hold",
         }
     )
     return stabilized, summary
@@ -886,32 +1729,13 @@ def smooth_camera_transforms(
             "required for robust camera smoothing"
         )
 
-    trajectories = np.full(
-        (len(transforms), len(control_points) * 2),
-        np.nan,
-        dtype=float,
-    )
-    valid_mask = np.zeros(len(transforms), dtype=bool)
-
-    for index, transform in enumerate(transforms):
-        if transform is None:
-            continue
-
-        try:
-            reference_to_frame = np.linalg.inv(transform)
-        except np.linalg.LinAlgError:
-            continue
-
-        projected = project_points(
+    control_trajectories, _, valid_mask = (
+        control_trajectories_from_transforms(
+            transforms,
             control_points,
-            reference_to_frame,
         )
-
-        if not np.all(np.isfinite(projected)):
-            continue
-
-        trajectories[index] = projected.reshape(-1)
-        valid_mask[index] = True
+    )
+    trajectories = control_trajectories.reshape(len(transforms), -1)
 
     quality_weights = transform_quality_weights(frame_records)
     first_baseline = fit_local_robust_baseline(
@@ -942,7 +1766,9 @@ def smooth_camera_transforms(
         & (median_residuals <= MAX_ROBUST_MEDIAN_RESIDUAL_PX)
         & (maximum_residuals <= MAX_ROBUST_POINT_RESIDUAL_PX)
     )
-    accepted_mask[reference_frame_index] = True
+    accepted_mask[reference_frame_index] = valid_mask[
+        reference_frame_index
+    ]
     second_baseline = fit_local_robust_baseline(
         trajectories,
         quality_weights,
@@ -959,15 +1785,12 @@ def smooth_camera_transforms(
         )
 
     median_filtered = centered_median_filter(cleaned, 3)
-    effective_window = min(smoothing_window, len(transforms))
+    effective_window = effective_odd_window(
+        smoothing_window,
+        len(transforms),
+    )
 
-    if effective_window % 2 == 0:
-        effective_window -= 1
-
-    if effective_window < 3:
-        effective_window = 3
-
-    if savgol_filter is not None and len(transforms) >= effective_window:
+    if savgol_filter is not None and effective_window >= 3:
         smoothed = savgol_filter(
             median_filtered,
             window_length=effective_window,
@@ -990,46 +1813,120 @@ def smooth_camera_transforms(
         smoothed,
         accepted_mask,
         reference_frame_index,
+        observed=trajectories,
     )
 
     if terminal_stabilization["applied"]:
         smoothing_method += "_plus_terminal_anchor_hold"
 
-    smoothed_transforms = []
+    primary_trajectory = smoothed.reshape(control_trajectories.shape)
 
-    for index, row in enumerate(smoothed):
-        frame_control_points = row.reshape(-1, 2).astype(np.float32)
-        transform, _ = cv2.findHomography(
-            frame_control_points,
+    try:
+        smoothed_transforms = fit_transforms_from_control_trajectory(
+            primary_trajectory,
             control_points,
-            method=0,
+            reference_frame_index,
         )
-        transform = normalize_homography(transform)
+        primary_geometry_validation = (
+            validate_smoothed_camera_geometry(
+                smoothed_transforms,
+                width,
+                height,
+                control_points,
+                reference_frame_index,
+            )
+        )
+    except (RuntimeError, ValueError, np.linalg.LinAlgError) as error:
+        smoothed_transforms = None
+        primary_geometry_validation = {
+            "status": "failed",
+            "issue_count": 1,
+            "issues": [
+                {
+                    "code": "smoothed_homography_fit_failed",
+                    "frame_count": None,
+                    "sample_frames": [],
+                    "message": str(error),
+                }
+            ],
+            "thresholds": {},
+            "metrics": {},
+        }
 
-        if transform is None:
-            raise RuntimeError(
-                f"Smoothed transform invalid at frame {index}"
+    geometry_fallback = {
+        "applied": False,
+        "triggered_by_issue_codes": [],
+        "method": None,
+        "median_window_length": None,
+        "smoothing_window_length": None,
+    }
+    geometry_validation = primary_geometry_validation
+    residual_reference = "bidirectional_robust_quadratic"
+
+    if primary_geometry_validation["status"] != "passed":
+        (
+            fallback_trajectory,
+            accepted_mask,
+            median_residuals,
+            maximum_residuals,
+            fallback_summary,
+        ) = build_geometry_safe_fallback_trajectory(
+            control_trajectories,
+            valid_mask,
+            smoothing_window,
+            reference_frame_index,
+        )
+        fallback_trajectory, terminal_stabilization = (
+            stabilize_terminal_trajectory(
+                fallback_trajectory,
+                accepted_mask,
+                reference_frame_index,
+                observed=control_trajectories,
+            )
+        )
+
+        if terminal_stabilization["applied"]:
+            fallback_summary["method"] += (
+                "_plus_terminal_anchor_hold"
             )
 
-        smoothed_transforms.append(transform)
+        smoothed_transforms = fit_transforms_from_control_trajectory(
+            fallback_trajectory,
+            control_points,
+            reference_frame_index,
+        )
+        geometry_validation = validate_smoothed_camera_geometry(
+            smoothed_transforms,
+            width,
+            height,
+            control_points,
+            reference_frame_index,
+        )
+        geometry_fallback = {
+            "applied": True,
+            "triggered_by_issue_codes": [
+                issue["code"]
+                for issue in primary_geometry_validation["issues"]
+            ],
+            **fallback_summary,
+        }
+        smoothing_method = fallback_summary["method"]
+        effective_window = fallback_summary[
+            "smoothing_window_length"
+        ]
+        residual_reference = (
+            f"local_median_{fallback_summary['median_window_length']}"
+        )
 
-    # Smoothing can move the reference trajectory a fraction of a pixel.
-    # Re-anchor the entire trajectory so the reviewed reference frame still
-    # maps to itself exactly, without changing relative camera motion.
-    reference_adjustment = normalize_homography(
-        np.linalg.inv(smoothed_transforms[reference_frame_index])
-    )
-
-    if reference_adjustment is None:
-        raise RuntimeError("Could not re-anchor smoothed camera trajectory")
-
-    smoothed_transforms = [
-        normalize_homography(reference_adjustment @ transform)
-        for transform in smoothed_transforms
-    ]
-
-    if any(transform is None for transform in smoothed_transforms):
-        raise RuntimeError("Re-anchored camera trajectory is invalid")
+    if geometry_validation["status"] != "passed":
+        issue_codes = [
+            issue["code"] for issue in geometry_validation["issues"]
+        ]
+        raise RuntimeError(
+            "Camera smoothing failed geometry validation after the "
+            "geometry-safe fallback; coordinate export is blocked. "
+            f"Issues: {issue_codes}"
+        )
 
     center = np.asarray(
         [[width / 2.0, height / 2.0]],
@@ -1074,7 +1971,11 @@ def smooth_camera_transforms(
                 MAX_ROBUST_POINT_RESIDUAL_PX
             ),
         },
+        "robust_residual_reference": residual_reference,
         "terminal_stabilization": terminal_stabilization,
+        "primary_geometry_validation": primary_geometry_validation,
+        "geometry_fallback": geometry_fallback,
+        "geometry_validation": geometry_validation,
         "raw_to_robust_baseline_residual_px": {
             "median": round(float(np.nanmedian(median_residuals)), 4),
             "p90": round(
@@ -1293,6 +2194,7 @@ def build_sample_indices(frame_count, sample_count, reference_frame):
 def render_motion_review(
     video_path,
     output_dir,
+    output_video,
     metadata,
     reference_to_court,
     smoothed_frame_to_reference,
@@ -1306,7 +2208,7 @@ def render_motion_review(
 ):
     frames_dir = output_dir / "checkpoint_overlays"
     frames_dir.mkdir(parents=True, exist_ok=True)
-    output_video = output_dir / "possession_001_court_motion_review.mp4"
+    output_video.parent.mkdir(parents=True, exist_ok=True)
     review_height = int(
         round(metadata["height"] * review_width / metadata["width"])
     )
@@ -1443,7 +2345,20 @@ def summarize_tracking(frame_records, smoothing_summary):
         direct / non_reference_frames if non_reference_frames else 1.0
     )
 
-    if unresolved:
+    geometry_validation = smoothing_summary.get(
+        "geometry_validation",
+        {},
+    )
+    geometry_fallback = smoothing_summary.get(
+        "geometry_fallback",
+        {},
+    )
+
+    if geometry_validation.get("status") != "passed":
+        quality = "invalid_smoothed_camera_geometry"
+    elif geometry_fallback.get("applied"):
+        quality = "usable_with_geometry_safe_fallback_review"
+    elif unresolved:
         quality = "needs_review_unresolved_frames"
     elif direct_fraction >= 0.95 and fallback <= 10:
         quality = "strong_direct_registration"
@@ -1589,6 +2504,36 @@ def write_report(
             "terminal_minimum_rejected_suffix_fraction": (
                 TERMINAL_MIN_REJECTED_SUFFIX_FRACTION
             ),
+            "terminal_motion_minimum_accepted_frames": (
+                TERMINAL_MOTION_MIN_ACCEPTED_FRAMES
+            ),
+            "terminal_motion_minimum_accepted_span_fraction": (
+                TERMINAL_MOTION_MIN_ACCEPTED_SPAN_FRACTION
+            ),
+            "terminal_motion_maximum_final_accepted_gap_frames": (
+                TERMINAL_MOTION_MAX_FINAL_ACCEPTED_GAP_FRAMES
+            ),
+            "terminal_motion_required_temporal_bins": (
+                TERMINAL_MOTION_REQUIRED_TEMPORAL_BINS
+            ),
+            "terminal_motion_minimum_displacement_px": (
+                TERMINAL_MOTION_MIN_DISPLACEMENT_PX
+            ),
+            "terminal_motion_maximum_median_support_error_px": (
+                TERMINAL_MOTION_MAX_MEDIAN_SUPPORT_ERROR_PX
+            ),
+            "terminal_motion_maximum_p90_support_error_px": (
+                TERMINAL_MOTION_MAX_P90_SUPPORT_ERROR_PX
+            ),
+            "terminal_motion_maximum_final_support_error_px": (
+                TERMINAL_MOTION_MAX_FINAL_SUPPORT_ERROR_PX
+            ),
+            "terminal_motion_minimum_time_correlation": (
+                TERMINAL_MOTION_MIN_TIME_CORRELATION
+            ),
+            "terminal_motion_minimum_monotonic_step_fraction": (
+                TERMINAL_MOTION_MIN_MONOTONIC_STEP_FRACTION
+            ),
             "extra_checkpoint_frames": args.extra_checkpoint_frames,
         },
         "tracking_summary": tracking_summary,
@@ -1655,6 +2600,21 @@ def print_summary(
         f"{smoothing['robust_accepted_frame_count']}/"
         f"{smoothing['robust_replaced_frame_count']}"
     )
+    geometry = smoothing["geometry_validation"]
+    print(
+        "Smoothed camera geometry validation: "
+        f"{geometry['status']} ({geometry['issue_count']} issue(s))"
+    )
+    geometry_fallback = smoothing["geometry_fallback"]
+
+    if geometry_fallback["applied"]:
+        print(
+            "Geometry-safe smoothing fallback: applied using "
+            f"{geometry_fallback['method']}"
+        )
+    else:
+        print("Geometry-safe smoothing fallback: not required")
+
     terminal = smoothing["terminal_stabilization"]
 
     if terminal["applied"]:
@@ -1671,6 +2631,25 @@ def print_summary(
             f"{terminal['trigger_suffix_frame_count']} "
             f"({terminal['trigger_suffix_rejected_fraction']:.1%})"
         )
+    elif (
+        terminal.get("decision")
+        == "preserved_coherent_terminal_motion"
+    ):
+        evidence = terminal["motion_evidence"]
+        print(
+            "Terminal trajectory stabilization: skipped; coherent "
+            "camera motion is supported by "
+            f"{evidence['accepted_frame_count']} robust observations "
+            f"through frame {evidence['last_accepted_frame']}"
+        )
+        print(
+            "Terminal motion evidence: displacement="
+            f"{evidence['observed_displacement_px']:.1f}px | "
+            "time correlation="
+            f"{evidence['time_progress_correlation']:.3f} | "
+            "monotonic steps="
+            f"{evidence['monotonic_step_fraction']:.1%}"
+        )
     else:
         print("Terminal trajectory stabilization: not required")
 
@@ -1686,6 +2665,11 @@ def print_summary(
 
 def main():
     args = parse_args()
+
+    if cv2 is None or np is None:
+        raise ModuleNotFoundError(
+            "OpenCV and NumPy are required for camera-motion propagation."
+        )
     calibration = load_json(args.calibration)
     court_config = load_json(args.court_config)
     capture, metadata = open_video(args.video)
@@ -1761,9 +2745,12 @@ def main():
         set(sample_indices).union(args.extra_checkpoint_frames)
     )
     args.output_dir.mkdir(parents=True, exist_ok=True)
+    args.output_homographies.parent.mkdir(parents=True, exist_ok=True)
+    args.report.parent.mkdir(parents=True, exist_ok=True)
     output_video, sample_paths = render_motion_review(
         args.video,
         args.output_dir,
+        args.output_video,
         metadata,
         reference_to_court,
         smoothed_transforms,
@@ -1779,10 +2766,7 @@ def main():
         frame_records,
         smoothing_summary,
     )
-    transform_artifact_path = (
-        args.output_dir
-        / "possession_001_camera_homographies.npz"
-    )
+    transform_artifact_path = args.output_homographies
     save_transform_artifact(
         transform_artifact_path,
         raw_transforms,
@@ -1792,10 +2776,7 @@ def main():
         robust_residuals,
         reference_frame_index,
     )
-    report_path = (
-        args.output_dir
-        / "possession_001_court_motion_review.json"
-    )
+    report_path = args.report
     write_report(
         report_path,
         args,

@@ -1,0 +1,84 @@
+{
+    "manual_split_after_frames":  {
+                                      "8":  [
+                                                50
+                                            ],
+                                      "26":  [
+                                                 410
+                                             ],
+                                      "30":  [
+                                                 360
+                                             ],
+                                      "31":  [
+                                                 415
+                                             ],
+                                      "40":  [
+                                                 410,
+                                                 455
+                                             ],
+                                      "41":  [
+                                                 410,
+                                                 430
+                                             ]
+                                  },
+    "manual_segment_team_overrides":  {
+
+                                      },
+    "reviewed_false_positive_boundaries":  [
+                                               {
+                                                   "track_id":  26,
+                                                   "before_last_frame":  445,
+                                                   "after_first_frame":  450
+                                               }
+                                           ],
+    "manual_match_decisions":  {
+                                   "accept":  [
+                                                  {
+                                                      "source_segment_id":  "t11_s1",
+                                                      "target_segment_id":  "t11_s2"
+                                                  },
+                                                  {
+                                                      "source_segment_id":  "t12_s1",
+                                                      "target_segment_id":  "t12_s2"
+                                                  },
+                                                  {
+                                                      "source_segment_id":  "t14_s1",
+                                                      "target_segment_id":  "t23_s1"
+                                                  },
+                                                  {
+                                                      "source_segment_id":  "t17_s1",
+                                                      "target_segment_id":  "t26_s2"
+                                                  },
+                                                  {
+                                                      "source_segment_id":  "t20_s1",
+                                                      "target_segment_id":  "t22_s1"
+                                                  },
+                                                  {
+                                                      "source_segment_id":  "t22_s1",
+                                                      "target_segment_id":  "t30_s1"
+                                                  },
+                                                  {
+                                                      "source_segment_id":  "t30_s1",
+                                                      "target_segment_id":  "t34_s1"
+                                                  }
+                                              ],
+                                   "reject":  [
+                                                  {
+                                                      "source_segment_id":  "t25_s1",
+                                                      "target_segment_id":  "t40_s3"
+                                                  },
+                                                  {
+                                                      "source_segment_id":  "t26_s1",
+                                                      "target_segment_id":  "t26_s2"
+                                                  },
+                                                  {
+                                                      "source_segment_id":  "t31_s1",
+                                                      "target_segment_id":  "t31_s2"
+                                                  },
+                                                  {
+                                                      "source_segment_id":  "t37_s1",
+                                                      "target_segment_id":  "t35_s3"
+                                                  }
+                                              ]
+                               }
+}

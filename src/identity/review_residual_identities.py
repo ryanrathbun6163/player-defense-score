@@ -14,29 +14,14 @@ except ModuleNotFoundError:
     cv2 = None
 
 
-VIDEO_PATH = Path("data/clips/possession_001.mp4")
-RECONCILED_TRACKS_PATH = Path(
-    "data/outputs/identity/"
-    "possession_001_reconciled_tracks.csv"
-)
-MAPPING_PATH = Path(
-    "data/outputs/identity/"
-    "possession_001_segment_player_mapping.json"
-)
-PROTOTYPES_PATH = Path(
-    "data/outputs/reid/"
-    "possession_001_reid_segment_prototypes.npz"
-)
-OUTPUT_DIR = Path(
-    "data/outputs/identity/"
-    "residual_identity_review"
-)
-REPORT_PATH = (
-    OUTPUT_DIR
-    / "possession_001_residual_identity_candidates.json"
-)
-CANDIDATE_MONTAGE_DIR = OUTPUT_DIR / "candidate_pairs"
-EPISODE_MONTAGE_DIR = OUTPUT_DIR / "overcount_episodes"
+VIDEO_PATH: Path
+RECONCILED_TRACKS_PATH: Path
+MAPPING_PATH: Path
+PROTOTYPES_PATH: Path
+OUTPUT_DIR: Path
+REPORT_PATH: Path
+CANDIDATE_MONTAGE_DIR: Path
+EPISODE_MONTAGE_DIR: Path
 
 
 EXPECTED_PLAYER_COUNT = 10
@@ -68,12 +53,23 @@ TEAM_COLORS = {
 }
 
 
-def parse_args():
+def parse_args(argv=None):
     parser = argparse.ArgumentParser(
         description=(
             "Generate residual player-identity candidates and "
             "visual review montages."
         )
+    )
+    parser.add_argument("--video", type=Path, required=True)
+    parser.add_argument("--reconciled-tracks", type=Path, required=True)
+    parser.add_argument("--mapping", type=Path, required=True)
+    parser.add_argument("--prototypes", type=Path, required=True)
+    parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--report", type=Path, required=True)
+    parser.add_argument(
+        "--expected-player-count",
+        type=int,
+        default=EXPECTED_PLAYER_COUNT,
     )
     parser.add_argument(
         "--report-only",
@@ -83,7 +79,12 @@ def parse_args():
             "the source video or creating images."
         ),
     )
-    return parser.parse_args()
+    args = parser.parse_args(argv)
+
+    if args.expected_player_count < 1:
+        parser.error("--expected-player-count must be positive")
+
+    return args
 
 
 def load_json(path):
@@ -1048,7 +1049,26 @@ def generate_montages(
 
 
 def main():
+    global VIDEO_PATH
+    global RECONCILED_TRACKS_PATH
+    global MAPPING_PATH
+    global PROTOTYPES_PATH
+    global OUTPUT_DIR
+    global REPORT_PATH
+    global CANDIDATE_MONTAGE_DIR
+    global EPISODE_MONTAGE_DIR
+    global EXPECTED_PLAYER_COUNT
+
     args = parse_args()
+    VIDEO_PATH = args.video
+    RECONCILED_TRACKS_PATH = args.reconciled_tracks
+    MAPPING_PATH = args.mapping
+    PROTOTYPES_PATH = args.prototypes
+    OUTPUT_DIR = args.output_dir
+    REPORT_PATH = args.report
+    CANDIDATE_MONTAGE_DIR = OUTPUT_DIR / "candidate_pairs"
+    EPISODE_MONTAGE_DIR = OUTPUT_DIR / "overcount_episodes"
+    EXPECTED_PLAYER_COUNT = args.expected_player_count
     required_paths = [
         RECONCILED_TRACKS_PATH,
         MAPPING_PATH,

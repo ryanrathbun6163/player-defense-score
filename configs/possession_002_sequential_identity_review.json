@@ -1,0 +1,267 @@
+{
+  "review_source": "Stage-19 identity audit plus prior sequential, residual, and team-balance evidence",
+  "accepted_identity_merges": [
+    {
+      "first_player_id": "white_p5",
+      "second_player_id": "white_p6",
+      "reason": "Same white jersey 21 player across non-overlapping tracks T9, T14, and T23"
+    },
+    {
+      "first_player_id": "dark_p3",
+      "second_player_id": "dark_p7",
+      "reason": "Same active dark player across non-overlapping tracks"
+    },
+    {
+      "first_player_id": "white_p4",
+      "second_player_id": "white_p9",
+      "reason": "Same white jersey 23 player across the early T8 track and the reviewed T28/T41/T43 component"
+    },
+    {
+      "first_player_id": "dark_p4",
+      "second_player_id": "dark_p8",
+      "reason": "Same dark jersey 13 player across non-overlapping tracks"
+    },
+    {
+      "first_player_id": "dark_p1",
+      "second_player_id": "dark_p6",
+      "reason": "Same dark jersey 23 player across non-overlapping tracks"
+    },
+    {
+      "first_player_id": "white_p3",
+      "second_player_id": "white_p8",
+      "reason": "Same white jersey 50 player across non-overlapping tracks"
+    },
+    {
+      "first_player_id": "dark_p2",
+      "second_player_id": "dark_p11",
+      "reason": "Direct late handoff with consistent endpoint position and appearance"
+    },
+    {
+      "first_player_id": "white_p2",
+      "second_player_id": "white_p7",
+      "reason": "Same white jersey 34 player across non-overlapping tracks"
+    },
+    {
+      "first_player_id": "dark_p5",
+      "second_player_id": "dark_p10",
+      "reason": "Same dark jersey 0 player; retain the later portion for switch auditing"
+    },
+    {
+      "first_player_id": "dark_p9",
+      "second_player_id": "dark_p10",
+      "reason": "Same dark jersey 0 player: clean T18 ends before the reviewed T26/T42 continuation begins"
+    }
+  ],
+  "rejected_identity_merges": [
+    {
+      "first_player_id": "white_p5",
+      "second_player_id": "white_p9",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p7",
+      "second_player_id": "dark_p11",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p5",
+      "second_player_id": "dark_p7",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "white_p4",
+      "second_player_id": "white_p6",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "white_p6",
+      "second_player_id": "white_p9",
+      "reason": "Visual evidence shows different players or is insufficient for a safe sequential merge"
+    },
+    {
+      "first_player_id": "white_p3",
+      "second_player_id": "white_p6",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "white_p4",
+      "second_player_id": "white_p8",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "white_p3",
+      "second_player_id": "white_p9",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p4",
+      "second_player_id": "dark_p7",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p4",
+      "second_player_id": "dark_p6",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "white_p5",
+      "second_player_id": "white_p8",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p3",
+      "second_player_id": "dark_p10",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p1",
+      "second_player_id": "dark_p8",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p3",
+      "second_player_id": "dark_p11",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "white_p2",
+      "second_player_id": "white_p8",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "white_p4",
+      "second_player_id": "white_p7",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p5",
+      "second_player_id": "dark_p8",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "white_p3",
+      "second_player_id": "white_p7",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p9",
+      "second_player_id": "dark_p7",
+      "reason": "Visual evidence shows different players or is insufficient for a safe sequential merge"
+    },
+    {
+      "first_player_id": "dark_p5",
+      "second_player_id": "dark_p6",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p4",
+      "second_player_id": "dark_p9",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p4",
+      "second_player_id": "dark_p10",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p3",
+      "second_player_id": "dark_p6",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "white_p5",
+      "second_player_id": "white_p7",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p3",
+      "second_player_id": "dark_p8",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p3",
+      "second_player_id": "dark_p9",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "white_p2",
+      "second_player_id": "white_p9",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p4",
+      "second_player_id": "dark_p5",
+      "reason": "Visual evidence shows different players or is insufficient for a safe sequential merge"
+    },
+    {
+      "first_player_id": "dark_p1",
+      "second_player_id": "dark_p7",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p5",
+      "second_player_id": "dark_p11",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p1",
+      "second_player_id": "dark_p9",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "white_p2",
+      "second_player_id": "white_p6",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p1",
+      "second_player_id": "dark_p5",
+      "reason": "Visual evidence shows different players or is insufficient for a safe sequential merge"
+    },
+    {
+      "first_player_id": "dark_p8",
+      "second_player_id": "dark_p11",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p4",
+      "second_player_id": "dark_p11",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p1",
+      "second_player_id": "dark_p10",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    },
+    {
+      "first_player_id": "dark_p9",
+      "second_player_id": "dark_p11",
+      "reason": "Conflicts with a stronger accepted handoff or would join overlapping identities; defer duplicate resolution to cross-track review"
+    }
+  ],
+  "confirmed_blocked_controls": [],
+  "review_conclusion": "T30 is split after frame 360. Overlapping duplicate/continuation fragments are resolved during identity review: T30_s2 joins the white jersey 21 T14/T23 component, while T28/T41_s3/T43 form the white jersey 23 component. Sequential review then joins those corrected components to their earlier T9 and T8 tracks respectively. T30_s1 remains in the white jersey 50 component. All other prior decisions remain migrated by exact segment lineage.",
+  "expected_presequential_identity_cluster_count": 20,
+  "expected_presequential_player_ids": [
+    "dark_p1",
+    "dark_p2",
+    "dark_p3",
+    "dark_p4",
+    "dark_p5",
+    "dark_p6",
+    "dark_p7",
+    "dark_p8",
+    "dark_p9",
+    "dark_p10",
+    "dark_p11",
+    "white_p1",
+    "white_p2",
+    "white_p3",
+    "white_p4",
+    "white_p5",
+    "white_p6",
+    "white_p7",
+    "white_p8",
+    "white_p9"
+  ]
+}

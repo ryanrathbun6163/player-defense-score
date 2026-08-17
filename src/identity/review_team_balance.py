@@ -5,29 +5,18 @@ from pathlib import Path
 
 import numpy as np
 
-import review_cross_track_switches as cross
-import review_residual_identities as residual
-import review_sequential_identities as sequential
+from . import review_cross_track_switches as cross
+from . import review_residual_identities as residual
+from . import review_sequential_identities as sequential
 
 
-VIDEO_PATH = Path("data/clips/possession_001.mp4")
-RECONCILED_TRACKS_PATH = Path(
-    "data/outputs/identity/"
-    "possession_001_reconciled_tracks.csv"
-)
-MAPPING_PATH = Path(
-    "data/outputs/identity/"
-    "possession_001_segment_player_mapping.json"
-)
-OUTPUT_DIR = Path(
-    "data/outputs/identity/team_balance_review"
-)
-REPORT_PATH = (
-    OUTPUT_DIR
-    / "possession_001_team_balance_candidates.json"
-)
-CONTEXT_PATH = OUTPUT_DIR / "team_balance_context.jpg"
-IDENTITY_GRID_PATH = OUTPUT_DIR / "team_balance_identities.jpg"
+VIDEO_PATH: Path
+RECONCILED_TRACKS_PATH: Path
+MAPPING_PATH: Path
+OUTPUT_DIR: Path
+REPORT_PATH: Path
+CONTEXT_PATH: Path
+IDENTITY_GRID_PATH: Path
 
 EXPECTED_TEAM_COUNT = 5
 EXPECTED_ACTIVE_COUNT = 10
@@ -36,12 +25,27 @@ IDENTITY_TILE_SIZE = (360, 320)
 TEXT_COLOR = (255, 255, 255)
 
 
-def parse_args():
+def parse_args(argv=None):
     parser = argparse.ArgumentParser(
         description=(
             "Generate clean identity evidence for frames whose "
             "reviewed team counts are not five versus five."
         )
+    )
+    parser.add_argument("--video", type=Path, required=True)
+    parser.add_argument("--reconciled-tracks", type=Path, required=True)
+    parser.add_argument("--mapping", type=Path, required=True)
+    parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--report", type=Path, required=True)
+    parser.add_argument(
+        "--expected-team-count",
+        type=int,
+        default=EXPECTED_TEAM_COUNT,
+    )
+    parser.add_argument(
+        "--expected-active-count",
+        type=int,
+        default=EXPECTED_ACTIVE_COUNT,
     )
     parser.add_argument(
         "--report-only",
@@ -51,7 +55,15 @@ def parse_args():
             "video or creating montages."
         ),
     )
-    return parser.parse_args()
+    args = parser.parse_args(argv)
+
+    if args.expected_team_count < 1 or args.expected_active_count < 1:
+        parser.error("Expected player counts must be positive")
+
+    if args.expected_team_count * 2 != args.expected_active_count:
+        parser.error("Expected team count must be half the active count")
+
+    return args
 
 
 def team_counts(rows):
@@ -343,7 +355,10 @@ def generate_montages(report, rows_by_frame):
         for identity in report["review_identities"]
         for review_frame in identity["clean_review_frames"]
     )
-    frames = cross.read_frames(requested_frames)
+    frames = cross.read_frames(
+        requested_frames,
+        VIDEO_PATH,
+    )
     player_ids = sorted(
         identity["player_id"]
         for identity in report["review_identities"]
@@ -371,7 +386,26 @@ def generate_montages(report, rows_by_frame):
 
 
 def main():
+    global VIDEO_PATH
+    global RECONCILED_TRACKS_PATH
+    global MAPPING_PATH
+    global OUTPUT_DIR
+    global REPORT_PATH
+    global CONTEXT_PATH
+    global IDENTITY_GRID_PATH
+    global EXPECTED_TEAM_COUNT
+    global EXPECTED_ACTIVE_COUNT
+
     args = parse_args()
+    VIDEO_PATH = args.video
+    RECONCILED_TRACKS_PATH = args.reconciled_tracks
+    MAPPING_PATH = args.mapping
+    OUTPUT_DIR = args.output_dir
+    REPORT_PATH = args.report
+    CONTEXT_PATH = OUTPUT_DIR / "team_balance_context.jpg"
+    IDENTITY_GRID_PATH = OUTPUT_DIR / "team_balance_identities.jpg"
+    EXPECTED_TEAM_COUNT = args.expected_team_count
+    EXPECTED_ACTIVE_COUNT = args.expected_active_count
     required_paths = [RECONCILED_TRACKS_PATH, MAPPING_PATH]
 
     for path in required_paths:

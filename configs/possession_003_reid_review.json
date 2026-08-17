@@ -1,0 +1,59 @@
+{
+  "manual_split_after_frames": {
+    "5": [
+      310
+    ],
+    "15": [
+      355
+    ],
+    "21": [
+      375
+    ],
+    "1": [
+      265
+    ]
+  },
+  "manual_segment_team_overrides": {
+    "t5_s2": "dark",
+    "t15_s2": "dark",
+    "t21_s2": "dark",
+    "t1_s1": "dark",
+    "t1_s2": "white"
+  },
+  "reviewed_false_positive_boundaries": [
+    {
+      "track_id": 7,
+      "before_last_frame": 40,
+      "after_first_frame": 45
+    },
+    {
+      "track_id": 21,
+      "before_last_frame": 460,
+      "after_first_frame": 465
+    },
+    {
+      "track_id": 5,
+      "before_last_frame": 355,
+      "after_first_frame": 360
+    },
+    {
+      "track_id": 0,
+      "before_last_frame": 85,
+      "after_first_frame": 90
+    },
+    {
+      "track_id": 3,
+      "before_last_frame": 170,
+      "after_first_frame": 175
+    }
+  ],
+  "manual_match_decisions": {
+    "accept": [
+      {
+        "source_segment_id": "t25_s1",
+        "target_segment_id": "t29_s1"
+      }
+    ],
+    "reject": []
+  }
+}

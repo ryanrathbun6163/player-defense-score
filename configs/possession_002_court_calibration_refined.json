@@ -1,0 +1,226 @@
+{
+  "source_video": "data\\clips\\possession_002.mp4",
+  "source_court_polygon_config": "configs\\possession_002_court.json",
+  "video_metadata": {
+    "fps": 25.0,
+    "frame_count": 499,
+    "width": 1920,
+    "height": 1080
+  },
+  "reference_frame_index": 249,
+  "reference_timestamp_sec": 9.96,
+  "court_model": {
+    "ruleset": "NFHS_high_school",
+    "coordinate_scope": "right_half_court",
+    "ideal_full_court_length_ft": 84.0,
+    "half_court_length_ft": 42.0,
+    "court_width_ft": 50.0,
+    "lane_width_ft": 12.0,
+    "baseline_to_free_throw_line_ft": 19.0,
+    "basket_center_from_baseline_ft": 5.25,
+    "three_point_radius_ft": 19.75,
+    "coordinate_convention": "Coordinate convention: x=0 at the RIGHT baseline and increases toward midcourt; y=0 at the FAR bench-side sideline (upper video edge) and increases toward the near camera-side sideline (lower video edge).",
+    "note": "The reference transform uses standardized basket-area markings. Full-court length does not affect the selected reference correspondences."
+  },
+  "correspondences": [
+    {
+      "landmark_id": "free_throw_far_lane_corner",
+      "label": "Free-throw line x FAR bench-side lane edge",
+      "image_xy_px": [
+        852.0,
+        396.0
+      ],
+      "court_xy_ft": [
+        19.0,
+        19.0
+      ],
+      "used_for_fit": true,
+      "selection_confidence": "reviewed_visible",
+      "review_note": null,
+      "source_landmark_id": "free_throw_far_lane_corner",
+      "court_reprojection_error_ft": 0.308735,
+      "model_predicted_image_xy_px": null,
+      "image_validation_delta_px": null
+    },
+    {
+      "landmark_id": "free_throw_near_lane_corner",
+      "label": "Free-throw line x NEAR camera-side lane edge",
+      "image_xy_px": [
+        1072.0,
+        538.0
+      ],
+      "court_xy_ft": [
+        19.0,
+        31.0
+      ],
+      "used_for_fit": true,
+      "selection_confidence": "reviewed_visible",
+      "review_note": null,
+      "source_landmark_id": "free_throw_near_lane_corner",
+      "court_reprojection_error_ft": 0.058977,
+      "model_predicted_image_xy_px": null,
+      "image_validation_delta_px": null
+    },
+    {
+      "landmark_id": "baseline_far_lane_corner",
+      "label": "Baseline x FAR bench-side lane edge",
+      "image_xy_px": [
+        1359.0,
+        304.0
+      ],
+      "court_xy_ft": [
+        0.0,
+        19.0
+      ],
+      "used_for_fit": true,
+      "selection_confidence": "reviewed_visible",
+      "review_note": null,
+      "source_landmark_id": "baseline_far_lane_corner",
+      "court_reprojection_error_ft": 0.212325,
+      "model_predicted_image_xy_px": null,
+      "image_validation_delta_px": null
+    },
+    {
+      "landmark_id": "baseline_near_lane_corner",
+      "label": "Baseline x NEAR camera-side lane edge",
+      "image_xy_px": [
+        1647.0,
+        411.0
+      ],
+      "court_xy_ft": [
+        0.0,
+        31.0
+      ],
+      "used_for_fit": true,
+      "selection_confidence": "reviewed_visible",
+      "review_note": null,
+      "source_landmark_id": "baseline_near_lane_corner",
+      "court_reprojection_error_ft": 0.156791,
+      "model_predicted_image_xy_px": null,
+      "image_validation_delta_px": null
+    },
+    {
+      "landmark_id": "arc_tangent_toward_midcourt",
+      "label": "FT-circle/3-point-arc tangent toward midcourt",
+      "image_xy_px": [
+        734.0,
+        503.0
+      ],
+      "court_xy_ft": [
+        25.0,
+        25.0
+      ],
+      "used_for_fit": true,
+      "selection_confidence": "reviewed_visible",
+      "review_note": null,
+      "source_landmark_id": "arc_tangent_toward_midcourt",
+      "court_reprojection_error_ft": 0.177039,
+      "model_predicted_image_xy_px": null,
+      "image_validation_delta_px": null
+    },
+    {
+      "landmark_id": "baseline_far_three_point_intersection",
+      "label": "Baseline x FAR bench-side three-point arc",
+      "image_xy_px": [
+        1133.0,
+        213.0
+      ],
+      "court_xy_ft": [
+        0.0,
+        5.960567235340228
+      ],
+      "used_for_fit": true,
+      "selection_confidence": "reviewed_visible",
+      "review_note": null,
+      "source_landmark_id": "baseline_far_three_point_intersection",
+      "court_reprojection_error_ft": 0.056936,
+      "model_predicted_image_xy_px": null,
+      "image_validation_delta_px": null
+    }
+  ],
+  "image_to_court_homography": [
+    [
+      -0.047352272755,
+      0.121577568873,
+      27.745724187093
+    ],
+    [
+      0.025544651728,
+      0.190297343675,
+      -60.814886618566
+    ],
+    [
+      -2.5120641e-05,
+      0.002325705833,
+      1.0
+    ]
+  ],
+  "fit_metrics": {
+    "fit_landmark_count": 6,
+    "mean_fit_reprojection_error_ft": 0.1618,
+    "maximum_fit_reprojection_error_ft": 0.308734
+  },
+  "review_outputs": {
+    "reference_frame": "data\\outputs\\court\\possession_002_calibration_final_review\\reference_frame.jpg",
+    "reviewed_projected_model_overlay": "data\\outputs\\court\\possession_002_calibration_final_review\\reviewed_reference_homography_overlay.jpg",
+    "boundary_reference_frame": "data\\outputs\\court\\possession_002_boundary_refinement\\reference_frame.jpg",
+    "boundary_refinement_overlay": "data\\outputs\\court\\possession_002_boundary_refinement\\boundary_refinement_overlay.jpg"
+  },
+  "status": "reference_fit_reviewed",
+  "source_pending_calibration": "configs\\possession_002_court_calibration.json",
+  "source_review_decisions": "configs\\possession_002_court_calibration_review.json",
+  "review_summary": {
+    "review_status": "approved_with_corrections",
+    "coordinate_interpretation": {
+      "issue": "The initial pass reversed FAR and NEAR labels; the reviewed rerun selected them according to the stored convention.",
+      "resolution": "Use the six accurately visible corrected landmarks and omit the off-screen near three-point intersection.",
+      "final_convention": "x=0 at the right baseline and increases toward midcourt; y=0 at the far bench-side sideline and increases toward the near camera-side sideline."
+    },
+    "visual_review": {
+      "lane_alignment": "accepted",
+      "free_throw_circle_alignment": "accepted",
+      "three_point_arc_alignment": "accepted_with_extrapolation",
+      "near_three_point_arc_note": "The visible arc alignment is accepted; its off-screen near endpoint remains an extrapolation.",
+      "near_camera_side_sideline_alignment": "refined_with_reviewed_line_constraint"
+    },
+    "fit_landmark_ids": [
+      "free_throw_far_lane_corner",
+      "free_throw_near_lane_corner",
+      "baseline_far_lane_corner",
+      "baseline_near_lane_corner",
+      "arc_tangent_toward_midcourt",
+      "baseline_far_three_point_intersection"
+    ],
+    "excluded_landmarks": {
+      "baseline_near_three_point_intersection": "The near camera-side baseline/three-point intersection is outside the visible frame and was omitted rather than estimated."
+    },
+    "next_validation": "Re-run temporally guarded camera-motion propagation and inspect the complete overlay video."
+  },
+  "source_reference_calibration": "configs\\possession_002_court_calibration_final.json",
+  "boundary_refinement": {
+    "boundary_id": "near_camera_side_sideline",
+    "court_constraint": "y=50.0 ft",
+    "selected_image_points_px": [
+      [
+        1161.6,
+        1076.571
+      ],
+      [
+        1899.429,
+        809.143
+      ]
+    ],
+    "constraint_weight": 2.0,
+    "metrics": {
+      "fit_landmark_count": 6,
+      "boundary_point_count": 2,
+      "original_mean_landmark_error_ft": 0.157813,
+      "refined_mean_landmark_error_ft": 0.1618,
+      "refined_maximum_landmark_error_ft": 0.308734,
+      "original_mean_boundary_error_ft": 0.631322,
+      "refined_mean_boundary_error_ft": 0.004552,
+      "optimizer_cost": 0.10165175
+    },
+    "interpretation": "The two selected image points constrain only the camera-side sideline equation. Their along-line court coordinates are intentionally not assumed."
+  }
+}
