@@ -117,3 +117,20 @@ python -m src.pipeline.verify_existing_player_identity --config configs/possessi
 
 The GPU embedding extraction is deliberately not rerun by this check; the
 reviewed existing embedding archive is its input.
+
+
+## Possession 003 empirical validation
+
+Possession 003 completed all 21 stages against frozen source commit 8bd9486. The reviewed evidence records:
+
+- 500/500 decoded frames with a camera homography (100.00%);
+- 4,921/5,000 player-frame coordinates (98.42%);
+- 431/500 complete ten-player frames (86.20%);
+- 10 final identities with five white and five dark players;
+- zero unresolved reviews, coordinate-key violations, motion jumps, or final outside-court positions;
+- synchronized visual review through the final frame;
+- generated data and media remaining uncommitted.
+
+Evidence: configs/possession_003_generalization_evidence.json.
+
+The empirical multi-possession gate passed, so ball tracking is unlocked.

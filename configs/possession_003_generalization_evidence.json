@@ -1,0 +1,14 @@
+{
+    "possession_id":  "possession_003",
+    "source_edits_required":  false,
+    "all_stages_completed":  true,
+    "review_gates_completed":  true,
+    "homography_coverage_ratio":  1,
+    "coordinate_coverage_ratio":  0.9842,
+    "complete_player_frame_ratio":  0.862,
+    "unresolved_review_count":  0,
+    "coordinate_key_violation_count":  0,
+    "outside_court_positions_audited":  true,
+    "visual_review_through_final_frame":  true,
+    "generated_outputs_uncommitted":  true
+}
