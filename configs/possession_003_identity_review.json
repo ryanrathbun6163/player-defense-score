@@ -1,0 +1,129 @@
+{
+  "review_source": "Corrected possession 003 review after visually confirmed T1 split",
+  "expected_active_player_count": 10,
+  "expected_baseline_identity_cluster_count": 32,
+  "expected_baseline_player_ids": [
+    "white_p1",
+    "white_p2",
+    "white_p3",
+    "white_p4",
+    "white_p5",
+    "white_p6",
+    "white_p7",
+    "white_p8",
+    "white_p9",
+    "dark_p1",
+    "dark_p2",
+    "dark_p3",
+    "dark_p4",
+    "dark_p5",
+    "dark_p6",
+    "dark_p7",
+    "dark_p8",
+    "dark_p9",
+    "dark_p10",
+    "dark_p11",
+    "dark_p12",
+    "dark_p13",
+    "dark_p14",
+    "dark_p15",
+    "dark_p16",
+    "dark_p17",
+    "unknown_p1",
+    "unknown_p2",
+    "unknown_p3",
+    "unknown_p4",
+    "unknown_p5",
+    "unknown_p6"
+  ],
+  "accepted_identity_merges": [
+    {
+      "first_player_id": "white_p1",
+      "second_player_id": "white_p7",
+      "reason": "T0 and post-split T1_s2 both track white 24"
+    },
+    {
+      "first_player_id": "dark_p11",
+      "second_player_id": "dark_p4",
+      "reason": "Same active dark player"
+    },
+    {
+      "first_player_id": "dark_p14",
+      "second_player_id": "dark_p4",
+      "reason": "Same active dark player"
+    },
+    {
+      "first_player_id": "unknown_p4",
+      "second_player_id": "white_p5",
+      "reason": "T20 and the T15/T26/T32 component both track white 41"
+    },
+    {
+      "first_player_id": "dark_p12",
+      "second_player_id": "dark_p4",
+      "reason": "Same active dark player"
+    },
+    {
+      "first_player_id": "dark_p16",
+      "second_player_id": "dark_p3",
+      "reason": "Same active dark player"
+    },
+    {
+      "first_player_id": "dark_p14",
+      "second_player_id": "dark_p17",
+      "reason": "Same active dark player"
+    }
+  ],
+  "rejected_identity_merges": [],
+  "excluded_identities": [
+    {
+      "player_id": "dark_p5",
+      "reason": "Bench player T8 first segment"
+    },
+    {
+      "player_id": "dark_p6",
+      "reason": "Bench player T9"
+    },
+    {
+      "player_id": "dark_p7",
+      "reason": "Bench player T10"
+    },
+    {
+      "player_id": "dark_p9",
+      "reason": "Bench player T12"
+    },
+    {
+      "player_id": "dark_p10",
+      "reason": "Bench player T13"
+    },
+    {
+      "player_id": "dark_p13",
+      "reason": "Coach or team personnel T14 second segment"
+    },
+    {
+      "player_id": "dark_p15",
+      "reason": "Referee T24"
+    },
+    {
+      "player_id": "unknown_p1",
+      "reason": "Referee T16"
+    },
+    {
+      "player_id": "unknown_p2",
+      "reason": "One-frame partial detection T17"
+    },
+    {
+      "player_id": "unknown_p5",
+      "reason": "Coach or team personnel T27"
+    },
+    {
+      "player_id": "unknown_p6",
+      "reason": "One-frame coach detection T30"
+    }
+  ],
+  "team_overrides": {
+    "unknown_p3": "white"
+  },
+  "retained_for_sequential_review": [],
+  "candidate_decisions": [],
+  "review_conclusion": "Corrected residual graph preserves active white 23 and separates the T1 switch before sequential continuity review."
+}

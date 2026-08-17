@@ -77,6 +77,16 @@ MAX_REFERENCE_ANCHOR_ERROR_PX = 0.5
 TERMINAL_SEARCH_FRAME_COUNT = 60
 TERMINAL_REJECTED_RUN_TRIGGER = 5
 TERMINAL_MIN_REJECTED_SUFFIX_FRACTION = 0.70
+TERMINAL_MOTION_MIN_ACCEPTED_FRAMES = 6
+TERMINAL_MOTION_MIN_ACCEPTED_SPAN_FRACTION = 0.60
+TERMINAL_MOTION_MAX_FINAL_ACCEPTED_GAP_FRAMES = 5
+TERMINAL_MOTION_REQUIRED_TEMPORAL_BINS = 3
+TERMINAL_MOTION_MIN_DISPLACEMENT_PX = 24.0
+TERMINAL_MOTION_MAX_MEDIAN_SUPPORT_ERROR_PX = 8.0
+TERMINAL_MOTION_MAX_P90_SUPPORT_ERROR_PX = 12.0
+TERMINAL_MOTION_MAX_FINAL_SUPPORT_ERROR_PX = 18.0
+TERMINAL_MOTION_MIN_TIME_CORRELATION = 0.80
+TERMINAL_MOTION_MIN_MONOTONIC_STEP_FRACTION = 0.60
 
 COURT_MODEL_COLOR = (0, 235, 255)
 FIT_REGION_COLOR = (70, 230, 70)
@@ -1310,10 +1320,275 @@ def contiguous_false_runs(mask):
     return runs
 
 
+def summarize_terminal_motion_evidence(
+    smoothed,
+    observed,
+    accepted_mask,
+    terminal_start,
+):
+    """Measure whether rejected-tail motion has independent support.
+
+    The terminal hold is intentionally conservative, but a rejection-heavy
+    suffix can still contain enough robust observations to prove that the
+    camera is continuing to move. Require accepted observations throughout
+    the suffix, agreement with the candidate smooth trajectory, and coherent
+    temporal progress before allowing that motion to survive.
+    """
+    summary = {
+        "evaluated": observed is not None,
+        "passed": False,
+        "reason": "observed_trajectory_unavailable",
+        "accepted_frame_count": 0,
+        "accepted_frames": [],
+        "accepted_span_fraction": None,
+        "covered_temporal_bin_count": 0,
+        "required_temporal_bin_count": (
+            TERMINAL_MOTION_REQUIRED_TEMPORAL_BINS
+        ),
+        "last_accepted_frame": None,
+        "final_accepted_gap_frames": None,
+        "observed_displacement_px": None,
+        "median_support_error_px": None,
+        "p90_support_error_px": None,
+        "final_support_error_px": None,
+        "time_progress_correlation": None,
+        "monotonic_step_fraction": None,
+        "criteria": {},
+    }
+
+    if observed is None:
+        return summary
+
+    smoothed_array = np.asarray(smoothed, dtype=float)
+    observed_array = np.asarray(observed, dtype=float)
+
+    if smoothed_array.ndim == 2:
+        if smoothed_array.shape[1] % 2:
+            raise ValueError(
+                "Flattened smoothed trajectory must contain x/y pairs"
+            )
+        smoothed_points = smoothed_array.reshape(
+            len(smoothed_array),
+            -1,
+            2,
+        )
+    elif smoothed_array.ndim == 3 and smoothed_array.shape[2] == 2:
+        smoothed_points = smoothed_array
+    else:
+        raise ValueError("Smoothed trajectory must contain 2D points")
+
+    if observed_array.ndim == 2:
+        if observed_array.shape[1] % 2:
+            raise ValueError(
+                "Flattened observed trajectory must contain x/y pairs"
+            )
+        observed_points = observed_array.reshape(
+            len(observed_array),
+            -1,
+            2,
+        )
+    elif observed_array.ndim == 3 and observed_array.shape[2] == 2:
+        observed_points = observed_array
+    else:
+        raise ValueError("Observed trajectory must contain 2D points")
+
+    if observed_points.shape != smoothed_points.shape:
+        raise ValueError(
+            "Observed and smoothed trajectories must have matching shapes"
+        )
+
+    frame_count = len(smoothed_points)
+    accepted_indices = (
+        np.flatnonzero(np.asarray(accepted_mask)[terminal_start:])
+        + terminal_start
+    )
+    finite_support = np.asarray(
+        [
+            np.all(np.isfinite(observed_points[index]))
+            and np.all(np.isfinite(smoothed_points[index]))
+            for index in accepted_indices
+        ],
+        dtype=bool,
+    )
+    accepted_indices = accepted_indices[finite_support]
+    accepted_count = len(accepted_indices)
+    summary["accepted_frame_count"] = int(accepted_count)
+    summary["accepted_frames"] = [
+        int(value) for value in accepted_indices
+    ]
+
+    if not accepted_count:
+        summary["reason"] = "no_finite_accepted_observations"
+        return summary
+
+    first_accepted = int(accepted_indices[0])
+    last_accepted = int(accepted_indices[-1])
+    suffix_span = max(1, frame_count - 1 - terminal_start)
+    accepted_span_fraction = (
+        last_accepted - first_accepted
+    ) / float(suffix_span)
+    final_accepted_gap = frame_count - 1 - last_accepted
+
+    temporal_bin_indices = np.floor(
+        (
+            (accepted_indices - terminal_start)
+            * TERMINAL_MOTION_REQUIRED_TEMPORAL_BINS
+        )
+        / max(1, frame_count - terminal_start)
+    ).astype(int)
+    temporal_bin_indices = np.clip(
+        temporal_bin_indices,
+        0,
+        TERMINAL_MOTION_REQUIRED_TEMPORAL_BINS - 1,
+    )
+    covered_temporal_bins = len(np.unique(temporal_bin_indices))
+
+    supported_observed = observed_points[accepted_indices]
+    supported_smoothed = smoothed_points[accepted_indices]
+    support_errors = np.median(
+        np.linalg.norm(
+            supported_observed - supported_smoothed,
+            axis=2,
+        ),
+        axis=1,
+    )
+    median_support_error = float(np.median(support_errors))
+    p90_support_error = float(np.percentile(support_errors, 90))
+    final_support_error = float(support_errors[-1])
+
+    observed_displacement = float(
+        np.median(
+            np.linalg.norm(
+                observed_points[last_accepted]
+                - observed_points[first_accepted],
+                axis=1,
+            )
+        )
+    )
+    flattened_observed = supported_observed.reshape(accepted_count, -1)
+    direction = flattened_observed[-1] - flattened_observed[0]
+    direction_norm = float(np.linalg.norm(direction))
+    time_progress_correlation = None
+    monotonic_step_fraction = None
+
+    if accepted_count >= 2 and direction_norm > 1e-9:
+        unit_direction = direction / direction_norm
+        progress = (
+            flattened_observed - flattened_observed[0]
+        ) @ unit_direction
+        progress_differences = np.diff(progress)
+        monotonic_step_fraction = float(
+            np.mean(progress_differences >= 0.0)
+        )
+
+        if float(np.std(progress)) > 1e-9:
+            time_progress_correlation = float(
+                np.corrcoef(
+                    accepted_indices.astype(float),
+                    progress,
+                )[0, 1]
+            )
+
+    criteria = {
+        "minimum_accepted_frames": (
+            accepted_count >= TERMINAL_MOTION_MIN_ACCEPTED_FRAMES
+        ),
+        "minimum_accepted_span_fraction": (
+            accepted_span_fraction
+            >= TERMINAL_MOTION_MIN_ACCEPTED_SPAN_FRACTION
+        ),
+        "maximum_final_accepted_gap": (
+            final_accepted_gap
+            <= TERMINAL_MOTION_MAX_FINAL_ACCEPTED_GAP_FRAMES
+        ),
+        "required_temporal_bins": (
+            covered_temporal_bins
+            >= TERMINAL_MOTION_REQUIRED_TEMPORAL_BINS
+        ),
+        "minimum_observed_displacement": (
+            observed_displacement
+            >= TERMINAL_MOTION_MIN_DISPLACEMENT_PX
+        ),
+        "maximum_median_support_error": (
+            median_support_error
+            <= TERMINAL_MOTION_MAX_MEDIAN_SUPPORT_ERROR_PX
+        ),
+        "maximum_p90_support_error": (
+            p90_support_error
+            <= TERMINAL_MOTION_MAX_P90_SUPPORT_ERROR_PX
+        ),
+        "maximum_final_support_error": (
+            final_support_error
+            <= TERMINAL_MOTION_MAX_FINAL_SUPPORT_ERROR_PX
+        ),
+        "minimum_time_progress_correlation": (
+            time_progress_correlation is not None
+            and time_progress_correlation
+            >= TERMINAL_MOTION_MIN_TIME_CORRELATION
+        ),
+        "minimum_monotonic_step_fraction": (
+            monotonic_step_fraction is not None
+            and monotonic_step_fraction
+            >= TERMINAL_MOTION_MIN_MONOTONIC_STEP_FRACTION
+        ),
+    }
+    passed = all(criteria.values())
+    summary.update(
+        {
+            "passed": bool(passed),
+            "reason": (
+                "coherent_terminal_motion_supported"
+                if passed
+                else "coherent_terminal_motion_not_supported"
+            ),
+            "accepted_span_fraction": round(
+                float(accepted_span_fraction),
+                4,
+            ),
+            "covered_temporal_bin_count": int(
+                covered_temporal_bins
+            ),
+            "last_accepted_frame": last_accepted,
+            "final_accepted_gap_frames": int(final_accepted_gap),
+            "observed_displacement_px": round(
+                observed_displacement,
+                4,
+            ),
+            "median_support_error_px": round(
+                median_support_error,
+                4,
+            ),
+            "p90_support_error_px": round(
+                p90_support_error,
+                4,
+            ),
+            "final_support_error_px": round(
+                final_support_error,
+                4,
+            ),
+            "time_progress_correlation": (
+                None
+                if time_progress_correlation is None
+                else round(time_progress_correlation, 4)
+            ),
+            "monotonic_step_fraction": (
+                None
+                if monotonic_step_fraction is None
+                else round(monotonic_step_fraction, 4)
+            ),
+            "criteria": {
+                key: bool(value) for key, value in criteria.items()
+            },
+        }
+    )
+    return summary
+
+
 def stabilize_terminal_trajectory(
     smoothed,
     accepted_mask,
     reference_frame_index,
+    observed=None,
 ):
     """Prevent unreliable end-of-clip samples from bending the trajectory.
 
@@ -1321,8 +1596,10 @@ def stabilize_terminal_trajectory(
     sustained run of rejected raw transforms begins near the end, later small
     islands of falsely accepted transforms can bend the fitted homography well
     before the final frame. Search the tail for the first sufficiently long
-    rejected run whose remaining suffix is dominated by rejected transforms,
-    then hold the last reliable pre-run transform through the end of the clip.
+    rejected run whose remaining suffix is dominated by rejected transforms.
+    Preserve the candidate trajectory when distributed robust observations
+    independently support coherent ongoing motion; otherwise hold the last
+    reliable pre-run transform through the end of the clip.
     """
     frame_count = len(smoothed)
     search_start = max(
@@ -1343,9 +1620,16 @@ def stabilize_terminal_trajectory(
             TERMINAL_MIN_REJECTED_SUFFIX_FRACTION
         ),
         "trigger_run_frame_count": None,
+        "trigger_start_frame": None,
         "trigger_suffix_frame_count": None,
         "trigger_suffix_rejected_frame_count": None,
         "trigger_suffix_rejected_fraction": None,
+        "decision": "no_instability_trigger",
+        "motion_evidence": {
+            "evaluated": False,
+            "passed": False,
+            "reason": "no_instability_trigger",
+        },
     }
 
     run_start = None
@@ -1381,6 +1665,7 @@ def stabilize_terminal_trajectory(
         summary.update(
             {
                 "trigger_run_frame_count": int(run_length),
+                "trigger_start_frame": int(run_start),
                 "trigger_suffix_frame_count": int(suffix_frame_count),
                 "trigger_suffix_rejected_frame_count": int(
                     suffix_rejected_count
@@ -1396,6 +1681,18 @@ def stabilize_terminal_trajectory(
     if terminal_start is None:
         return smoothed, summary
 
+    motion_evidence = summarize_terminal_motion_evidence(
+        smoothed,
+        observed,
+        accepted_mask,
+        terminal_start,
+    )
+    summary["motion_evidence"] = motion_evidence
+
+    if motion_evidence["passed"]:
+        summary["decision"] = "preserved_coherent_terminal_motion"
+        return smoothed, summary
+
     anchor_index = terminal_start - 1
     stabilized = smoothed.copy()
     stabilized[terminal_start:] = stabilized[anchor_index]
@@ -1406,6 +1703,7 @@ def stabilize_terminal_trajectory(
             "start_frame": int(terminal_start),
             "end_frame": int(frame_count - 1),
             "anchor_frame": int(anchor_index),
+            "decision": "applied_anchor_hold",
         }
     )
     return stabilized, summary
@@ -1515,6 +1813,7 @@ def smooth_camera_transforms(
         smoothed,
         accepted_mask,
         reference_frame_index,
+        observed=trajectories,
     )
 
     if terminal_stabilization["applied"]:
@@ -1582,6 +1881,7 @@ def smooth_camera_transforms(
                 fallback_trajectory,
                 accepted_mask,
                 reference_frame_index,
+                observed=control_trajectories,
             )
         )
 
@@ -2204,6 +2504,36 @@ def write_report(
             "terminal_minimum_rejected_suffix_fraction": (
                 TERMINAL_MIN_REJECTED_SUFFIX_FRACTION
             ),
+            "terminal_motion_minimum_accepted_frames": (
+                TERMINAL_MOTION_MIN_ACCEPTED_FRAMES
+            ),
+            "terminal_motion_minimum_accepted_span_fraction": (
+                TERMINAL_MOTION_MIN_ACCEPTED_SPAN_FRACTION
+            ),
+            "terminal_motion_maximum_final_accepted_gap_frames": (
+                TERMINAL_MOTION_MAX_FINAL_ACCEPTED_GAP_FRAMES
+            ),
+            "terminal_motion_required_temporal_bins": (
+                TERMINAL_MOTION_REQUIRED_TEMPORAL_BINS
+            ),
+            "terminal_motion_minimum_displacement_px": (
+                TERMINAL_MOTION_MIN_DISPLACEMENT_PX
+            ),
+            "terminal_motion_maximum_median_support_error_px": (
+                TERMINAL_MOTION_MAX_MEDIAN_SUPPORT_ERROR_PX
+            ),
+            "terminal_motion_maximum_p90_support_error_px": (
+                TERMINAL_MOTION_MAX_P90_SUPPORT_ERROR_PX
+            ),
+            "terminal_motion_maximum_final_support_error_px": (
+                TERMINAL_MOTION_MAX_FINAL_SUPPORT_ERROR_PX
+            ),
+            "terminal_motion_minimum_time_correlation": (
+                TERMINAL_MOTION_MIN_TIME_CORRELATION
+            ),
+            "terminal_motion_minimum_monotonic_step_fraction": (
+                TERMINAL_MOTION_MIN_MONOTONIC_STEP_FRACTION
+            ),
             "extra_checkpoint_frames": args.extra_checkpoint_frames,
         },
         "tracking_summary": tracking_summary,
@@ -2300,6 +2630,25 @@ def print_summary(
             f"{terminal['trigger_suffix_rejected_frame_count']}/"
             f"{terminal['trigger_suffix_frame_count']} "
             f"({terminal['trigger_suffix_rejected_fraction']:.1%})"
+        )
+    elif (
+        terminal.get("decision")
+        == "preserved_coherent_terminal_motion"
+    ):
+        evidence = terminal["motion_evidence"]
+        print(
+            "Terminal trajectory stabilization: skipped; coherent "
+            "camera motion is supported by "
+            f"{evidence['accepted_frame_count']} robust observations "
+            f"through frame {evidence['last_accepted_frame']}"
+        )
+        print(
+            "Terminal motion evidence: displacement="
+            f"{evidence['observed_displacement_px']:.1f}px | "
+            "time correlation="
+            f"{evidence['time_progress_correlation']:.3f} | "
+            "monotonic steps="
+            f"{evidence['monotonic_step_fraction']:.1%}"
         )
     else:
         print("Terminal trajectory stabilization: not required")

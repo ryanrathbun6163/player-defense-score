@@ -1,0 +1,29 @@
+{
+  "source_calibration": "configs/possession_003_court_calibration.json",
+  "review_status": "approved",
+  "coordinate_interpretation": {
+    "issue": "No coordinate-axis or landmark-label issue identified.",
+    "resolution": "Retain all seven selected landmarks without reassignment.",
+    "final_convention": "x=0 at the right baseline and increases toward midcourt; y=0 at the far bench-side sideline and increases toward the near camera-side sideline."
+  },
+  "landmark_reassignments": {},
+  "fit_landmark_ids": [
+    "free_throw_far_lane_corner",
+    "free_throw_near_lane_corner",
+    "baseline_far_lane_corner",
+    "baseline_near_lane_corner",
+    "arc_tangent_toward_midcourt",
+    "baseline_far_three_point_intersection",
+    "baseline_near_three_point_intersection"
+  ],
+  "excluded_landmarks": {},
+  "visual_review": {
+    "lane_alignment": "accepted",
+    "free_throw_circle_alignment": "accepted",
+    "three_point_arc_alignment": "accepted",
+    "baseline_alignment": "accepted"
+  },
+  "next_validation": "Propagate the reviewed reference homography through the possession and inspect projected court markings at multiple timestamps before exporting coordinates.",
+  "selected_landmark_count": 7,
+  "maximum_selected_point_error_ft": 0.4539
+}

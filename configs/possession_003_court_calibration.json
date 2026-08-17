@@ -1,0 +1,140 @@
+{
+  "source_video": "data\\clips\\possession_003.mp4",
+  "source_court_polygon_config": "configs\\possession_003_court.json",
+  "video_metadata": {
+    "fps": 25.0,
+    "frame_count": 500,
+    "width": 1920,
+    "height": 1080
+  },
+  "reference_frame_index": 250,
+  "reference_timestamp_sec": 10.0,
+  "court_model": {
+    "ruleset": "NFHS_high_school",
+    "coordinate_scope": "right_half_court",
+    "ideal_full_court_length_ft": 84.0,
+    "half_court_length_ft": 42.0,
+    "court_width_ft": 50.0,
+    "lane_width_ft": 12.0,
+    "baseline_to_free_throw_line_ft": 19.0,
+    "basket_center_from_baseline_ft": 5.25,
+    "three_point_radius_ft": 19.75,
+    "coordinate_convention": "Coordinate convention: x=0 at the RIGHT baseline and increases toward midcourt; y=0 at the FAR bench-side sideline (upper video edge) and increases toward the near camera-side sideline (lower video edge).",
+    "note": "The reference transform uses standardized basket-area markings. Full-court length does not affect the selected reference correspondences."
+  },
+  "correspondences": [
+    {
+      "landmark_id": "free_throw_far_lane_corner",
+      "label": "Free-throw line x FAR lane edge (upper/bench side in video)",
+      "image_xy_px": [
+        517.0,
+        424.0
+      ],
+      "court_xy_ft": [
+        19.0,
+        19.0
+      ]
+    },
+    {
+      "landmark_id": "free_throw_near_lane_corner",
+      "label": "Free-throw line x NEAR lane edge (lower/camera side in video)",
+      "image_xy_px": [
+        739.0,
+        565.0
+      ],
+      "court_xy_ft": [
+        19.0,
+        31.0
+      ]
+    },
+    {
+      "landmark_id": "baseline_far_lane_corner",
+      "label": "Baseline x FAR lane edge (upper/bench side in video)",
+      "image_xy_px": [
+        1033.0,
+        311.0
+      ],
+      "court_xy_ft": [
+        0.0,
+        19.0
+      ]
+    },
+    {
+      "landmark_id": "baseline_near_lane_corner",
+      "label": "Baseline x NEAR lane edge (lower/camera side in video)",
+      "image_xy_px": [
+        1315.0,
+        407.0
+      ],
+      "court_xy_ft": [
+        0.0,
+        31.0
+      ]
+    },
+    {
+      "landmark_id": "arc_tangent_toward_midcourt",
+      "label": "FT-circle/3-point-arc tangent toward midcourt",
+      "image_xy_px": [
+        388.0,
+        555.0
+      ],
+      "court_xy_ft": [
+        25.0,
+        25.0
+      ]
+    },
+    {
+      "landmark_id": "baseline_far_three_point_intersection",
+      "label": "Baseline x FAR three-point arc (upper/bench side in video)",
+      "image_xy_px": [
+        787.0,
+        233.0
+      ],
+      "court_xy_ft": [
+        0.0,
+        5.960567
+      ]
+    },
+    {
+      "landmark_id": "baseline_near_three_point_intersection",
+      "label": "Baseline x NEAR three-point arc (lower/camera side in video)",
+      "image_xy_px": [
+        1718.0,
+        549.0
+      ],
+      "court_xy_ft": [
+        0.0,
+        44.039433
+      ]
+    }
+  ],
+  "image_to_court_homography": [
+    [
+      -0.05161613902,
+      0.151411904801,
+      5.879003951339
+    ],
+    [
+      0.036544592072,
+      0.232085952436,
+      -72.887144782262
+    ],
+    [
+      -6.4247707e-05,
+      0.003237873538,
+      1.0
+    ]
+  ],
+  "fit_metrics": {
+    "selected_point_count": 7.0,
+    "inlier_count": 7.0,
+    "mean_reprojection_error_ft": 0.302099,
+    "maximum_reprojection_error_ft": 0.45389
+  },
+  "review_outputs": {
+    "reference_frame": "data\\outputs\\court\\possession_003_landmark_review\\reference_frame.jpg",
+    "projected_model_overlay": "data\\outputs\\court\\possession_003_landmark_review\\reference_homography_overlay.jpg",
+    "landmark_guide": "data\\outputs\\court\\possession_003_landmark_review\\nfhs_landmark_guide.jpg"
+  },
+  "status": "pending_visual_review"
+}

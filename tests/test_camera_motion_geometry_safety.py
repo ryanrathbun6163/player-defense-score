@@ -5,6 +5,7 @@ import numpy as np
 from src.court.export_player_court_coordinates import validate_contract
 from src.court.propagate_court_calibration import (
     build_geometry_safe_fallback_trajectory,
+    stabilize_terminal_trajectory,
     summarize_tracking,
     validate_smoothed_camera_geometry,
 )
@@ -109,6 +110,110 @@ class CameraGeometryValidationTests(unittest.TestCase):
         self.assertTrue(np.all(np.isfinite(smoothed)))
         self.assertEqual(summary["median_window_length"], 21)
         self.assertEqual(summary["smoothing_window_length"], 31)
+
+
+class TerminalTrajectoryStabilizationTests(unittest.TestCase):
+    def _moving_trajectory(self):
+        trajectory = np.repeat(
+            CONTROL_POINTS[None, :, :],
+            100,
+            axis=0,
+        )
+
+        for frame_index in range(70, 100):
+            trajectory[frame_index, :, 0] += (
+                frame_index - 69
+            ) * 2.0
+
+        return trajectory
+
+    def test_sparse_unreliable_tail_is_held_at_last_anchor(self):
+        smoothed = self._moving_trajectory()
+        observed = smoothed.copy()
+        accepted_mask = np.ones(100, dtype=bool)
+        accepted_mask[70:] = False
+        accepted_mask[[80, 90, 99]] = True
+
+        stabilized, summary = stabilize_terminal_trajectory(
+            smoothed,
+            accepted_mask,
+            20,
+            observed=observed,
+        )
+
+        self.assertTrue(summary["applied"])
+        self.assertEqual(summary["start_frame"], 70)
+        self.assertEqual(summary["anchor_frame"], 69)
+        self.assertEqual(summary["decision"], "applied_anchor_hold")
+        self.assertFalse(summary["motion_evidence"]["passed"])
+        expected_hold = np.repeat(
+            smoothed[69][None, :, :],
+            30,
+            axis=0,
+        )
+        np.testing.assert_allclose(stabilized[70:], expected_hold)
+
+    def test_distributed_coherent_motion_bypasses_anchor_hold(self):
+        smoothed = self._moving_trajectory()
+        observed = smoothed.copy()
+        accepted_mask = np.ones(100, dtype=bool)
+        accepted_mask[70:] = False
+        accepted_mask[
+            [75, 76, 80, 82, 88, 90, 94, 97, 99]
+        ] = True
+
+        stabilized, summary = stabilize_terminal_trajectory(
+            smoothed,
+            accepted_mask,
+            20,
+            observed=observed,
+        )
+
+        self.assertFalse(summary["applied"])
+        self.assertEqual(
+            summary["decision"],
+            "preserved_coherent_terminal_motion",
+        )
+        evidence = summary["motion_evidence"]
+        self.assertTrue(evidence["passed"])
+        self.assertEqual(evidence["accepted_frame_count"], 9)
+        self.assertEqual(evidence["covered_temporal_bin_count"], 3)
+        self.assertEqual(evidence["last_accepted_frame"], 99)
+        np.testing.assert_allclose(stabilized, smoothed)
+
+    def test_incoherent_observations_do_not_bypass_anchor_hold(self):
+        smoothed = self._moving_trajectory()
+        observed = smoothed.copy()
+        accepted_frames = [75, 76, 80, 82, 88, 90, 94, 97, 99]
+        accepted_mask = np.ones(100, dtype=bool)
+        accepted_mask[70:] = False
+        accepted_mask[accepted_frames] = True
+
+        for sequence_index, frame_index in enumerate(accepted_frames):
+            observed[frame_index, :, 0] += (
+                80.0 if sequence_index % 2 else -80.0
+            )
+
+        stabilized, summary = stabilize_terminal_trajectory(
+            smoothed,
+            accepted_mask,
+            20,
+            observed=observed,
+        )
+
+        self.assertTrue(summary["applied"])
+        self.assertFalse(summary["motion_evidence"]["passed"])
+        self.assertFalse(
+            summary["motion_evidence"]["criteria"][
+                "maximum_median_support_error"
+            ]
+        )
+        expected_hold = np.repeat(
+            smoothed[69][None, :, :],
+            30,
+            axis=0,
+        )
+        np.testing.assert_allclose(stabilized[70:], expected_hold)
 
 
 class CameraGeometryContractTests(unittest.TestCase):
