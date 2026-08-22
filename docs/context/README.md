@@ -27,4 +27,4 @@ When a historical detail matters, locate it through `source_map.md`, then verify
 - User attachments accounted for: 119 of 119
 - Separate browser Sources: none
 - Local ignored data files hashed: 856 of 856
-- Repository changed by migration: no
+- Repository context migration: merged through PR #7 at `1f086ba`
