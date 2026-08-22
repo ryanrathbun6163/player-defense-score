@@ -4,19 +4,17 @@ Snapshot date: 2026-08-22 (America/Phoenix)
 
 ## Repository checkpoint
 
-The local checkout under the user's OneDrive Desktop was inspected read-only.
-
-At inspection time:
+At final migration verification:
 
 - branch: `main`;
-- local HEAD: `1954053` (`Merge pull request #5 from .../pipeline-generalization`);
+- local HEAD and `origin/main`: `1f086ba` (merged PR #7, **Add durable desktop project context**);
+- PR #6's thorough README update is included;
+- the local and remote `docs/desktop-context-migration` feature refs are deleted;
 - worktree: clean;
-- locally recorded `origin/main`: `1954053`;
+- all eight durable context files match the reviewed migration proposal;
 - full test suite: 56 tests passed using the desktop app's bundled Python, with bytecode writing disabled.
 
-GitHub is one merge ahead of the local checkout. PR #6, **Document player-defense pipeline and roadmap**, was merged on 2026-08-18. Its merge commit is `2cb98b4`; it changes only `README.md`. The local checkout has not been fetched or fast-forwarded during this migration.
-
-Do not treat the stale local `origin/main` reference as proof that the remote is unchanged. Before development, perform a normal read-only status check, fetch, review the incoming README-only change, then fast-forward local `main` with Ryan's approval.
+Future work should still begin by checking the current branch, HEAD, worktree, and remote state rather than assuming this snapshot remains current.
 
 ## Completed technical foundation
 
