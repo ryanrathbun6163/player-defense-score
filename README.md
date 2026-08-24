@@ -294,7 +294,8 @@ The gate validates structural generalization, completed stages and reviews, homo
 
 - [x] Define an auditable ball-center annotation and evaluation protocol
 - [x] Label and visually review a 75-frame pilot across three possessions
-- [ ] Precommit new contiguous representative, challenge, and holdout pools
+- [x] Precommit new contiguous representative, challenge, and holdout pools
+- [x] Implement the frozen image-only detector adapter and guarded runner
 - [ ] Evaluate and select a small-object basketball detector
 - [ ] Track the ball through motion blur, occlusion, passes, shots, and rebounds
 - [ ] Fuse detections temporally and preserve uncertainty
@@ -378,7 +379,15 @@ That means:
 - generated data remains reproducible from committed code and configuration;
 - each new phase must generalize before the next analytical layer is trusted.
 
-The immediate next task is a precommitted, label-blind, image-only ball-detector
-baseline that preserves raw candidates before scoring. Once reliable player and
-court trajectories and time-aligned ball observations coexist, the project can
-begin reasoning about possession state, matchups, defensive actions, and outcomes.
+The first label-blind, image-only ball-detector experiment is now precommitted:
+its RF-DETR Medium runtime contract, raw-candidate export behavior, scoring grid,
+three reviewed pilot windows, and nine prediction-embargoed evaluation windows
+are frozen in code and configuration. The selection method is documented in
+`docs/ball_detector_baseline_selection.md`. The immediate next operational task
+is a clean preflight followed by descriptive inference on only the three reviewed
+pilot windows. No operating point or quality gate has been selected, and the nine
+evaluation windows must remain prediction-blind until their declared release
+conditions are met; v0.1 cannot be toggled in place, so release requires a
+reviewed, versioned schema/manifest transition. Once reliable player and court
+trajectories and time-aligned ball observations coexist, the project can begin
+reasoning about possession state, matchups, defensive actions, and outcomes.

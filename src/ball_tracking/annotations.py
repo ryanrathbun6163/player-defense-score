@@ -1028,11 +1028,11 @@ def load_annotations(path: Path) -> BallAnnotationSet:
     return BallAnnotationSet.from_mapping(payload)
 
 
-def verify_source_video(
-    annotation_set: BallAnnotationSet,
+def verify_source_video_contract(
+    source_video: SourceVideo,
     repository_root: Path,
 ) -> dict[str, Any]:
-    """Verify declared source bytes and decoded metadata against the clip."""
+    """Verify one declared source-video contract against repository bytes."""
 
     root = repository_root.resolve()
 
@@ -1041,9 +1041,7 @@ def verify_source_video(
             f"Repository root does not exist: {root}"
         )
 
-    source_path = root.joinpath(
-        *annotation_set.source_video.path.parts
-    ).resolve()
+    source_path = root.joinpath(*source_video.path.parts).resolve()
 
     try:
         source_path.relative_to(root)
@@ -1065,10 +1063,10 @@ def verify_source_video(
 
     actual_sha256 = source_hash.hexdigest()
 
-    if actual_sha256 != annotation_set.source_video.sha256:
+    if actual_sha256 != source_video.sha256:
         raise AnnotationValidationError(
-            "Source video SHA-256 does not match annotation metadata: "
-            f"expected {annotation_set.source_video.sha256}, "
+            "Source video SHA-256 does not match declared metadata: "
+            f"expected {source_video.sha256}, "
             f"received {actual_sha256}"
         )
 
@@ -1087,14 +1085,44 @@ def verify_source_video(
         )
 
     try:
-        actual_width_px = int(capture.get(cv2.CAP_PROP_FRAME_WIDTH))
-        actual_height_px = int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        raw_width_px = float(capture.get(cv2.CAP_PROP_FRAME_WIDTH))
+        raw_height_px = float(capture.get(cv2.CAP_PROP_FRAME_HEIGHT))
         actual_fps = float(capture.get(cv2.CAP_PROP_FPS))
-        actual_frame_count = int(capture.get(cv2.CAP_PROP_FRAME_COUNT))
+        raw_frame_count = float(capture.get(cv2.CAP_PROP_FRAME_COUNT))
     finally:
         capture.release()
 
-    declared = annotation_set.source_video
+    integer_metadata = {
+        "width_px": raw_width_px,
+        "height_px": raw_height_px,
+        "frame_count": raw_frame_count,
+    }
+    invalid_integer_metadata = [
+        label
+        for label, value in integer_metadata.items()
+        if not math.isfinite(value) or value <= 0.0 or not value.is_integer()
+    ]
+
+    if invalid_integer_metadata:
+        raise AnnotationValidationError(
+            "Source video backend returned invalid positive-integer metadata: "
+            + ", ".join(
+                f"{label}={integer_metadata[label]!r}"
+                for label in invalid_integer_metadata
+            )
+        )
+
+    if not math.isfinite(actual_fps) or actual_fps <= 0.0:
+        raise AnnotationValidationError(
+            "Source video backend returned invalid positive fps: "
+            f"{actual_fps!r}"
+        )
+
+    actual_width_px = int(raw_width_px)
+    actual_height_px = int(raw_height_px)
+    actual_frame_count = int(raw_frame_count)
+
+    declared = source_video
     mismatches = []
 
     if actual_width_px != declared.width_px:
@@ -1126,7 +1154,7 @@ def verify_source_video(
 
     if mismatches:
         raise AnnotationValidationError(
-            "Source video metadata does not match annotation metadata: "
+            "Source video metadata does not match declared metadata: "
             + "; ".join(mismatches)
         )
 
@@ -1139,3 +1167,15 @@ def verify_source_video(
         "fps": actual_fps,
         "frame_count": actual_frame_count,
     }
+
+
+def verify_source_video(
+    annotation_set: BallAnnotationSet,
+    repository_root: Path,
+) -> dict[str, Any]:
+    """Verify an annotation set's declared source bytes and metadata."""
+
+    return verify_source_video_contract(
+        annotation_set.source_video,
+        repository_root,
+    )

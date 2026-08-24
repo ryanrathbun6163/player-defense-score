@@ -4,16 +4,29 @@ Snapshot date: 2026-08-23 (America/Phoenix)
 
 ## Repository checkpoint
 
-At the current ball-annotation checkpoint:
+At the current ball-detector precommit checkpoint:
 
-- branch: `codex/ball-annotation-foundation`;
-- development base: `1e11295e42991676566d180f7b2272916e497f23`;
-- the ball-annotation and detection-evaluation foundation is implemented and
-  validated as one feature milestone;
-- strict source verification passes for the reviewed Possession 001, 002, and
-  003 ball labels;
-- focused ball-foundation tests: 44 passed;
-- full test suite: 176 passed with bytecode writing disabled.
+- branch: `codex/ball-detector-baseline`;
+- development base: `51c084c6dc8a11df883db6780a9a024d9506e5bf`
+  (`feat(ball-tracking): add reviewed annotation foundation`);
+- the strict RF-DETR Medium image-only adapter, resumable inference runner,
+  experiment-manifest contract, source verification refactor, and regression
+  coverage are implemented;
+- Ryan approved nine prediction-blind evaluation windows across the same three
+  possessions, and their reproducible selection record is frozen in
+  `docs/ball_detector_baseline_selection.md`;
+- only the three reviewed protocol pilots are marked `ready_for_inference`;
+  all nine new windows remain `annotation_pending_prediction_embargo`;
+- focused ball source/detector tests: 129 passed, with one Windows
+  symlink-capability skip;
+- full test suite: 264 passed, with the same one skip and bytecode writing
+  disabled;
+- no manifest-authorized baseline run or prediction on any of the nine approved
+  evaluation windows has been generated; the quarantined historical exploratory
+  prediction at Possession 001 frame 150 remains explicitly excluded.
+- the real installed RF-DETR class mapping and a non-inference construction of
+  the frozen CUDA model both pass the adapter contract; no video frame was
+  supplied.
 
 The preceding durable migration checkpoint was:
 
@@ -40,10 +53,16 @@ Future work should still begin by checking the current branch, HEAD, worktree, a
 - Configuration-driven, possession-scoped, resumable 21-stage orchestration.
 - Explicit identity and calibration review gates.
 - Multi-possession empirical generalization gate passed on Possession 003.
+- Reviewed ball-center annotations for three 25-frame protocol pilots, plus a
+  strict raw-detection and evaluation data contract.
+- A precommitted, label-blind RF-DETR Medium ball-detector baseline contract with
+  exact runtime provenance, raw-candidate preservation, resumability, and
+  prediction embargoes.
 
 ## Not complete
 
-- ball detection/tracking and its quality gate;
+- real ball-detector inference, scoring, temporal tracking, and their quality
+  gates;
 - automatic possession segmentation and broadcast-cut handling;
 - ball-handler and event inference;
 - mapping visual identities to NBA rosters;
@@ -53,21 +72,24 @@ Future work should still begin by checking the current branch, HEAD, worktree, a
 
 ## Immediate next task
 
-The three-window annotation and raw-detection evaluation-contract foundation is
-complete. The next task is to precommit and run the first image-only detector
-experiment:
+The annotation contract, detector adapter/runner, experiment contract, scoring
+grid, and prediction-blind window selection are complete. The next operational
+sequence is:
 
-1. preselect new contiguous windows and freeze their representative, challenge,
-   and holdout roles before viewing model predictions; the existing 75-frame
-   protocol pilot is not retroactively assigned to those pools;
-2. freeze the candidate detector, exact weights/provenance, low raw-candidate
-   export floor, and confidence/localization-radius comparison grid;
-3. add a strict inference adapter and runner that writes complete
-   `BallDetectionRun` JSON without temporal selection or hidden-ball guesses;
-4. run the first baseline over the three reviewed windows and preserve every
-   exported `sports ball` candidate;
-5. score the fixed operating-point grid and render candidate-versus-truth
-   review evidence before proposing a tracker experiment or quality gate.
+1. from a clean committed snapshot, run the runner's read-only preflight and
+   confirm the exact source clips,
+   RF-DETR package, official weight bytes, CUDA runtime, ignored outputs, and
+   three authorized pilot windows;
+2. run the first descriptive baseline over only the three reviewed pilot
+   windows, preserving every exported COCO `sports ball` candidate at or above
+   the frozen `0.01` export floor;
+3. inspect and score the fixed confidence/localization grid on those pilots;
+4. annotate and review the six representative/challenge windows, then use a
+   reviewed, versioned schema/manifest release instead of toggling v0.1 in
+   place; freeze an operating point before separately releasing the three test
+   holdouts;
+5. render candidate-versus-truth evidence before proposing a temporal tracker
+   experiment or any detector quality gate.
 
 No ball-tracking implementation was started in chats 01–06. The prior blocker was intentionally removed only after Possession 003 passed the generalization gate.
 
@@ -92,9 +114,10 @@ No ball-tracking implementation was started in chats 01–06. The prior blocker 
 - Duplicate or independent annotation is not a prerequisite for review or the
   current milestone. It remains optional for a specifically declared
   inter-rater or intra-rater reproducibility study.
-- The protocol-declared synthetic evaluator cases pass. The next code task is
-  the first raw, image-only detector export harness and its precommitted
-  experiment manifest—not temporal tracking yet.
+- The protocol-declared synthetic evaluator cases pass. The raw, image-only
+  detector export harness and precommitted experiment manifest are implemented.
+  The next runtime task is the clean preflight and three-pilot descriptive run,
+  not temporal tracking yet.
 
 ## Local data checkpoint
 

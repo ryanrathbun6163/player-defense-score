@@ -5,8 +5,10 @@ from .annotations import (
     BallAnnotationSet,
     BallGeometry,
     FrameAnnotation,
+    SourceVideo,
     load_annotations,
     verify_source_video,
+    verify_source_video_contract,
 )
 from .detections import (
     BallDetectionRun,
@@ -27,9 +29,11 @@ __all__ = [
     "DetectionEvaluationError",
     "DetectionRunValidationError",
     "FrameAnnotation",
+    "SourceVideo",
     "aggregate_evaluation_reports",
     "evaluate_detections",
     "load_annotations",
     "load_detection_run",
     "verify_source_video",
+    "verify_source_video_contract",
 ]

@@ -16,12 +16,14 @@ Status: complete for curated possessions and empirically generalized.
 ## Phase 2 — Ball tracking
 
 Status: in progress. The v0.1 protocol, three-window reviewed annotation pilot,
-and detection-evaluation contract are complete; real detector benchmarking and
-temporal tracking are not.
+detection-evaluation contract, first detector adapter/runner, and prediction-
+blind evaluation-window precommit are complete; real detector inference,
+benchmarking, and temporal tracking are not.
 
 - [x] define the ball annotation and detection-evaluation protocol;
 - [x] label and visually review a 75-frame pilot spanning three possessions;
-- [ ] precommit new contiguous representative, challenge, and holdout pools;
+- [x] precommit new contiguous representative, challenge, and holdout pools;
+- [x] implement the frozen image-only detector adapter and guarded runner;
 - [ ] compare small-object basketball detectors;
 - [ ] associate detections through blur, occlusion, passes, shots, and rebounds;
 - [ ] preserve uncertainty and missing observations;

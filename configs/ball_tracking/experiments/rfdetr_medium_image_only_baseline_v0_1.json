@@ -1,0 +1,364 @@
+{
+  "schema_version": "ball_detector_experiment/v0.1",
+  "experiment_id": "rfdetr_medium_image_only_baseline_v0_1",
+  "experiment_purpose": "image_only_ball_detector_baseline",
+  "protocol_reference": "docs/ball_tracking_annotation_protocol.md",
+  "precommit": {
+    "recorded_at_utc": "2026-08-24T02:57:41Z",
+    "decision_owner": "ryan_codex_joint",
+    "window_selection_rule": "Select three prediction-blind 25-frame evaluation windows per possession before detector inference: a robust representative from raw-frame descriptors, a challenge composite from same-game raw frame-difference, optical-flow, sharpness, brightness-variability, and histogram-change descriptors, and a holdout chosen by deterministic SHA-256 ordering from remaining raw-only candidates. Challenge coverage is limited to those same-game signals and does not claim exhaustive rim interaction or broadcast-cut coverage.",
+    "detector_selection_rule": "Run one untuned official RF-DETR Medium COCO image-only baseline descriptively before defining a quality gate or operating point.",
+    "selected_window_predictions_viewed_before_precommit": false,
+    "quality_gate_defined": false
+  },
+  "window_selection": {
+    "window_length_frames": 25,
+    "required_evaluation_purposes": [
+      "representative_evaluation",
+      "challenge_evaluation",
+      "test_holdout"
+    ],
+    "same_source_overlap_policy": "forbid",
+    "minimum_intervening_frames": 25,
+    "pilot_exclusions": [
+      {
+        "annotation_set_id": "possession_001_frames_0375_0399_protocol_adjudication_v0_1",
+        "possession_id": "possession_001",
+        "source_video_sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "start_frame_index": 375,
+        "end_frame_index": 399
+      },
+      {
+        "annotation_set_id": "possession_002_frames_0318_0342_protocol_adjudication_v0_1",
+        "possession_id": "possession_002",
+        "source_video_sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "start_frame_index": 318,
+        "end_frame_index": 342
+      },
+      {
+        "annotation_set_id": "possession_003_frames_0416_0440_protocol_adjudication_v0_1",
+        "possession_id": "possession_003",
+        "source_video_sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "start_frame_index": 416,
+        "end_frame_index": 440
+      }
+    ],
+    "prior_prediction_exclusions": [
+      {
+        "possession_id": "possession_001",
+        "source_video_sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "known_prediction_frame_index": 150,
+        "excluded_start_frame_index": 125,
+        "excluded_end_frame_index": 199,
+        "reason_code": "historical_exploratory_prediction_viewed_before_precommit"
+      }
+    ]
+  },
+  "leakage_controls": {
+    "input_modality": "single_rgb_frame",
+    "temporal_context_frames": 0,
+    "annotation_content_access": false,
+    "annotation_paths_present": false,
+    "player_track_access": false,
+    "court_geometry_access": false,
+    "candidate_postselection": "none",
+    "holdout_prediction_review_before_operating_point_freeze": false
+  },
+  "detector": {
+    "adapter_id": "rfdetr_medium_coco_v0_1",
+    "model_name": "RF-DETR Medium COCO",
+    "package_name": "rfdetr",
+    "package_version": "1.9.1",
+    "weights_identifier": "rf-detr-medium.pth",
+    "weights_sha256": "749ff6071828aaffac63e204c4f4135ed3d6cdae4d702e086c360edc3b5768c8",
+    "device_type": "cuda",
+    "precision": "float32",
+    "compile_enabled": false,
+    "batch_size": 1,
+    "input_width_px": 576,
+    "input_height_px": 576,
+    "resize_mode": "direct RGB bilinear resize to 576x576 without letterboxing or padding; antialias disabled; ImageNet channel normalization",
+    "tiling_enabled": false,
+    "model_query_count": 300,
+    "model_logit_slot_count": 91,
+    "num_select": 27300,
+    "model_candidate_policy": "all_query_class_pairs_before_target_class_filter",
+    "predict_threshold": 0.0,
+    "predict_threshold_policy": "zero_then_adapter_inclusive_export_floor",
+    "target_class_id": 37,
+    "target_class_name": "sports ball",
+    "export_confidence_floor": 0.01,
+    "candidate_ordering": "confidence_desc_then_bbox_xyxy_lexicographic_then_raw_index",
+    "postprocessing_description": "RF-DETR sigmoid scores with all 300 query x 91 logit pairs selected (num_select=27300); source-pixel box scaling and clipping; raw COCO class ID 37/name 'sports ball' filtering; adapter-side inclusive confidence-floor filtering; deterministic ordering; no NMS, ROI/court filter, tiling, temporal logic, deduplication, or top-one selection",
+    "code_commit_policy": "require_clean_git_head"
+  },
+  "scoring_grid": {
+    "confidence_thresholds": [
+      0.01,
+      0.03,
+      0.05,
+      0.10,
+      0.15,
+      0.20,
+      0.25,
+      0.35,
+      0.50
+    ],
+    "localization_radii_px": [
+      5.0,
+      10.0,
+      15.0,
+      20.0,
+      30.0
+    ],
+    "calibration_selection_purposes": [
+      "representative_evaluation",
+      "challenge_evaluation"
+    ],
+    "holdout_selection_purpose": "test_holdout",
+    "holdout_release_rule": "after_detector_and_operating_point_are_frozen",
+    "quality_gate": null
+  },
+  "windows": [
+    {
+      "window_id": "possession_001_frames_0375_0399_protocol_adjudication",
+      "annotation_set_id": "possession_001_frames_0375_0399_protocol_adjudication_v0_1",
+      "detection_run_id": "possession_001_frames_0375_0399_rfdetr_medium_image_only_v0_1",
+      "possession_id": "possession_001",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 375,
+      "end_frame_index": 399,
+      "selection_purpose": "protocol_adjudication",
+      "execution_status": "ready_for_inference",
+      "selection_rationale": "Existing reviewed protocol-adjudication pilot, retained as the only currently runnable descriptive baseline window for P001.",
+      "output_path": "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_001_frames_0375_0399_rfdetr_medium_image_only_v0_1.json"
+    },
+    {
+      "window_id": "possession_002_frames_0318_0342_protocol_adjudication",
+      "annotation_set_id": "possession_002_frames_0318_0342_protocol_adjudication_v0_1",
+      "detection_run_id": "possession_002_frames_0318_0342_rfdetr_medium_image_only_v0_1",
+      "possession_id": "possession_002",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 318,
+      "end_frame_index": 342,
+      "selection_purpose": "protocol_adjudication",
+      "execution_status": "ready_for_inference",
+      "selection_rationale": "Existing reviewed protocol-adjudication pilot, retained as the only currently runnable descriptive baseline window for P002.",
+      "output_path": "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_002_frames_0318_0342_rfdetr_medium_image_only_v0_1.json"
+    },
+    {
+      "window_id": "possession_003_frames_0416_0440_protocol_adjudication",
+      "annotation_set_id": "possession_003_frames_0416_0440_protocol_adjudication_v0_1",
+      "detection_run_id": "possession_003_frames_0416_0440_rfdetr_medium_image_only_v0_1",
+      "possession_id": "possession_003",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "start_frame_index": 416,
+      "end_frame_index": 440,
+      "selection_purpose": "protocol_adjudication",
+      "execution_status": "ready_for_inference",
+      "selection_rationale": "Existing reviewed protocol-adjudication pilot, retained as the only currently runnable descriptive baseline window for P003.",
+      "output_path": "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_003_frames_0416_0440_rfdetr_medium_image_only_v0_1.json"
+    },
+    {
+      "window_id": "possession_001_frames_0050_0074_representative_evaluation",
+      "annotation_set_id": "possession_001_frames_0050_0074_representative_evaluation_v0_1",
+      "detection_run_id": "possession_001_frames_0050_0074_rfdetr_medium_image_only_v0_1",
+      "possession_id": "possession_001",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 50,
+      "end_frame_index": 74,
+      "selection_purpose": "representative_evaluation",
+      "execution_status": "annotation_pending_prediction_embargo",
+      "selection_rationale": "Robust representative candidate selected from raw-only same-game descriptors after excluding the historical frame-150 prediction guard and recomputing eligible-candidate normalization and ranks; prediction remains embargoed pending annotation.",
+      "output_path": "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_001_frames_0050_0074_rfdetr_medium_image_only_v0_1.json"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation",
+      "annotation_set_id": "possession_001_frames_0200_0224_challenge_evaluation_v0_1",
+      "detection_run_id": "possession_001_frames_0200_0224_rfdetr_medium_image_only_v0_1",
+      "possession_id": "possession_001",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 200,
+      "end_frame_index": 224,
+      "selection_purpose": "challenge_evaluation",
+      "execution_status": "annotation_pending_prediction_embargo",
+      "selection_rationale": "Challenge composite selected from raw-only same-game frame-difference, optical-flow, sharpness, brightness-variability, and histogram-change descriptors. Source-only visual review additionally observed player or hand congestion, which was not a ranking input. The window does not claim exhaustive rim-interaction or broadcast-cut coverage, and prediction remains embargoed pending annotation.",
+      "output_path": "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_001_frames_0200_0224_rfdetr_medium_image_only_v0_1.json"
+    },
+    {
+      "window_id": "possession_001_frames_0300_0324_test_holdout",
+      "annotation_set_id": "possession_001_frames_0300_0324_test_holdout_v0_1",
+      "detection_run_id": "possession_001_frames_0300_0324_rfdetr_medium_image_only_v0_1",
+      "possession_id": "possession_001",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 300,
+      "end_frame_index": 324,
+      "selection_purpose": "test_holdout",
+      "execution_status": "annotation_pending_prediction_embargo",
+      "selection_rationale": "Prediction-blind holdout selected by deterministic SHA-256 ordering among eligible raw-only candidates; it remains embargoed through annotation and operating-point freeze.",
+      "output_path": "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_001_frames_0300_0324_rfdetr_medium_image_only_v0_1.json"
+    },
+    {
+      "window_id": "possession_002_frames_0250_0274_representative_evaluation",
+      "annotation_set_id": "possession_002_frames_0250_0274_representative_evaluation_v0_1",
+      "detection_run_id": "possession_002_frames_0250_0274_rfdetr_medium_image_only_v0_1",
+      "possession_id": "possession_002",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 250,
+      "end_frame_index": 274,
+      "selection_purpose": "representative_evaluation",
+      "execution_status": "annotation_pending_prediction_embargo",
+      "selection_rationale": "Robust representative candidate selected from raw-only same-game descriptors before model output; prediction remains embargoed pending annotation.",
+      "output_path": "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_002_frames_0250_0274_rfdetr_medium_image_only_v0_1.json"
+    },
+    {
+      "window_id": "possession_002_frames_0025_0049_challenge_evaluation",
+      "annotation_set_id": "possession_002_frames_0025_0049_challenge_evaluation_v0_1",
+      "detection_run_id": "possession_002_frames_0025_0049_rfdetr_medium_image_only_v0_1",
+      "possession_id": "possession_002",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 25,
+      "end_frame_index": 49,
+      "selection_purpose": "challenge_evaluation",
+      "execution_status": "annotation_pending_prediction_embargo",
+      "selection_rationale": "Challenge composite selected from raw-only same-game frame-difference, optical-flow, sharpness, brightness-variability, and histogram-change descriptors. Source-only visual review additionally observed player or hand congestion, which was not a ranking input. The window does not claim exhaustive rim-interaction or broadcast-cut coverage, and prediction remains embargoed pending annotation.",
+      "output_path": "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_002_frames_0025_0049_rfdetr_medium_image_only_v0_1.json"
+    },
+    {
+      "window_id": "possession_002_frames_0200_0224_test_holdout",
+      "annotation_set_id": "possession_002_frames_0200_0224_test_holdout_v0_1",
+      "detection_run_id": "possession_002_frames_0200_0224_rfdetr_medium_image_only_v0_1",
+      "possession_id": "possession_002",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 200,
+      "end_frame_index": 224,
+      "selection_purpose": "test_holdout",
+      "execution_status": "annotation_pending_prediction_embargo",
+      "selection_rationale": "Prediction-blind holdout selected by deterministic SHA-256 ordering among eligible raw-only candidates; it remains embargoed through annotation and operating-point freeze.",
+      "output_path": "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_002_frames_0200_0224_rfdetr_medium_image_only_v0_1.json"
+    },
+    {
+      "window_id": "possession_003_frames_0300_0324_representative_evaluation",
+      "annotation_set_id": "possession_003_frames_0300_0324_representative_evaluation_v0_1",
+      "detection_run_id": "possession_003_frames_0300_0324_rfdetr_medium_image_only_v0_1",
+      "possession_id": "possession_003",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "start_frame_index": 300,
+      "end_frame_index": 324,
+      "selection_purpose": "representative_evaluation",
+      "execution_status": "annotation_pending_prediction_embargo",
+      "selection_rationale": "Robust representative candidate selected from raw-only same-game descriptors before model output; prediction remains embargoed pending annotation.",
+      "output_path": "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_003_frames_0300_0324_rfdetr_medium_image_only_v0_1.json"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation",
+      "annotation_set_id": "possession_003_frames_0150_0174_challenge_evaluation_v0_1",
+      "detection_run_id": "possession_003_frames_0150_0174_rfdetr_medium_image_only_v0_1",
+      "possession_id": "possession_003",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "start_frame_index": 150,
+      "end_frame_index": 174,
+      "selection_purpose": "challenge_evaluation",
+      "execution_status": "annotation_pending_prediction_embargo",
+      "selection_rationale": "Challenge composite selected from raw-only same-game frame-difference, optical-flow, sharpness, brightness-variability, and histogram-change descriptors. Source-only visual review additionally observed player or hand congestion, which was not a ranking input. The window does not claim exhaustive rim-interaction or broadcast-cut coverage, and prediction remains embargoed pending annotation.",
+      "output_path": "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_003_frames_0150_0174_rfdetr_medium_image_only_v0_1.json"
+    },
+    {
+      "window_id": "possession_003_frames_0250_0274_test_holdout",
+      "annotation_set_id": "possession_003_frames_0250_0274_test_holdout_v0_1",
+      "detection_run_id": "possession_003_frames_0250_0274_rfdetr_medium_image_only_v0_1",
+      "possession_id": "possession_003",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "start_frame_index": 250,
+      "end_frame_index": 274,
+      "selection_purpose": "test_holdout",
+      "execution_status": "annotation_pending_prediction_embargo",
+      "selection_rationale": "Prediction-blind holdout selected by deterministic SHA-256 ordering among eligible raw-only candidates; it remains embargoed through annotation and operating-point freeze.",
+      "output_path": "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_003_frames_0250_0274_rfdetr_medium_image_only_v0_1.json"
+    }
+  ]
+}

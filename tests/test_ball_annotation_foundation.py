@@ -5,8 +5,10 @@ import math
 import subprocess
 import sys
 import tempfile
+import types
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from src.ball_tracking.annotations import (
     AnnotationValidationError,
@@ -1554,6 +1556,66 @@ class BallSourceVerificationTests(unittest.TestCase):
         self.assertEqual(verification["width_px"], 64)
         self.assertEqual(verification["height_px"], 48)
         self.assertEqual(verification["frame_count"], 3)
+
+    def test_invalid_backend_metadata_is_rejected_as_annotation_error(self):
+        class FakeCapture:
+            def __init__(self, values):
+                self.values = values
+
+            def isOpened(self):
+                return True
+
+            def get(self, property_id):
+                return self.values[property_id]
+
+            def release(self):
+                return None
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            video_path = root / "data" / "clips" / "metadata.avi"
+            video_path.parent.mkdir(parents=True)
+            video_path.write_bytes(b"source bytes for metadata contract")
+            source_sha256 = hashlib.sha256(video_path.read_bytes()).hexdigest()
+            annotation_set = parse_annotations(
+                [observed_frame(0)],
+                source_sha256=source_sha256,
+                source_path="data/clips/metadata.avi",
+            )
+            invalid_cases = (
+                (float("nan"), 1080.0, 25.0, 499.0),
+                (1920.5, 1080.0, 25.0, 499.0),
+                (1920.0, 1080.0, 0.0, 499.0),
+                (1920.0, 1080.0, 25.0, float("inf")),
+            )
+
+            for width, height, fps, frame_count in invalid_cases:
+                with self.subTest(
+                    width=width,
+                    height=height,
+                    fps=fps,
+                    frame_count=frame_count,
+                ):
+                    fake_cv2 = types.SimpleNamespace(
+                        CAP_PROP_FRAME_WIDTH=1,
+                        CAP_PROP_FRAME_HEIGHT=2,
+                        CAP_PROP_FPS=3,
+                        CAP_PROP_FRAME_COUNT=4,
+                        VideoCapture=lambda _path: FakeCapture(
+                            {
+                                1: width,
+                                2: height,
+                                3: fps,
+                                4: frame_count,
+                            }
+                        ),
+                    )
+                    with patch.dict(sys.modules, {"cv2": fake_cv2}):
+                        with self.assertRaisesRegex(
+                            AnnotationValidationError,
+                            "invalid positive",
+                        ):
+                            verify_source_video(annotation_set, root)
 
 
 class BallAnnotationCliTests(unittest.TestCase):

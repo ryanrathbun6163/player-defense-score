@@ -108,3 +108,47 @@ negatives, and one visible ambiguous frame intentionally excluded from
 localization scoring. These are suitable for initial detector experiments but
 remain a curated one-game protocol pilot, not an unbiased benchmark,
 cross-game validation set, or completed ball-tracking quality gate.
+
+## Ball detector — label-blind baseline precommit
+
+On 2026-08-23 America/Phoenix, before any selected-window detector prediction
+was generated or viewed, Ryan approved three 25-frame evaluation windows per
+possession:
+
+| Possession | Representative | Challenge | Holdout |
+| --- | ---: | ---: | ---: |
+| `possession_001` | `50..74` | `200..224` | `300..324` |
+| `possession_002` | `250..274` | `25..49` | `200..224` |
+| `possession_003` | `300..324` | `150..174` | `250..274` |
+
+The selection used only verified source pixels and metadata. It applied fixed
+edge, pilot, historical-prediction, and between-split separation guards; a
+deterministic SHA-256 holdout rule; robust raw-video representative metrics; and
+a frozen motion/blur/variability challenge score. Prediction-free 5-by-5 source
+contact sheets confirmed uninterrupted live play and no cuts or corruption.
+Post-selection congestion observations did not enter the numeric ranking. The
+complete reproducibility record and the P001 stale temporary-sheet
+reconciliation are in `docs/ball_detector_baseline_selection.md`.
+
+The accompanying feature foundation freezes RF-DETR Medium 1.9.1, the official
+weight filename and SHA-256 with package-resolved absolute-path verification,
+CUDA FP32 uncompiled inference at 576 by 576,
+the raw COCO `sports ball` candidate contract, an inclusive `0.01` export floor,
+strict source/Git/runtime provenance, atomic resumability, and an unselected
+confidence/localization-radius scoring grid. Focused source/detector validation
+passed 129 tests; the full repository suite passed 264 tests. One Windows-only
+directory-symlink capability test was skipped in both runs. Bytecode writing was
+disabled and formatting checks passed.
+
+The installed RF-DETR 1.9.1 package's real sparse 80-class mapping passed the
+adapter contract, and a non-inference construction loaded the frozen weights on
+CUDA with the declared 576-pixel resolution, 300 queries, 90 detector classes,
+and `num_select=27300`. No source or synthetic frame was supplied. RF-DETR
+reported that the older checkpoint lacks `_kp_active_mask`; package source
+defines that item as a deterministic keypoint-schema buffer rather than a
+learned ball-detection weight.
+
+Only the three reviewed protocol pilots are ready for inference. The nine new
+windows remain `annotation_pending_prediction_embargo`, the detector output
+directory is absent, and no operating point or ball-detector quality gate has
+been selected.

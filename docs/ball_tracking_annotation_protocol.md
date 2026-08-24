@@ -34,6 +34,33 @@ count, frame index, and window form the join contract. Ball annotations must
 not be inner-joined to the existing player-coordinate CSV rows because those
 CSVs can legitimately omit a frame that the source video contains.
 
+## Precommitted detector-evaluation windows
+
+On 2026-08-23 America/Phoenix, Ryan approved nine additional prediction-blind,
+25-frame windows for the first image-only detector experiment:
+
+| Possession | Representative evaluation | Challenge evaluation | Test holdout |
+| --- | ---: | ---: | ---: |
+| `possession_001` | `50..74` | `200..224` | `300..324` |
+| `possession_002` | `250..274` | `25..49` | `200..224` |
+| `possession_003` | `300..324` | `150..174` | `250..274` |
+
+The exact raw-video selection formulas, candidate guards, hashes, tie rules,
+visual checks, limitations, and P001 intermediate-artifact reconciliation are
+frozen in `docs/ball_detector_baseline_selection.md`. The executable contract
+is `configs/ball_tracking/experiments/rfdetr_medium_image_only_baseline_v0_1.json`.
+
+Approval freezes the ranges; it does not make them reviewed ground truth. All
+nine remain annotation-pending and prediction-embargoed. The representative and
+challenge labels must be complete and reviewed before their predictions are
+released. Holdout predictions remain sealed until the detector and operating
+point are frozen. The v0.1 experiment schema intentionally cannot toggle a
+non-pilot window to runnable in place; lifting an embargo requires reviewed code
+and a new versioned schema/manifest that preserves this precommit's history. The
+original three pilot windows retain
+`protocol_adjudication`; they are not retroactively relabeled as evaluation
+splits.
+
 ## Complete-ball-center rule
 
 The only v0.1 geometry target is the center of the complete game ball in the
@@ -405,7 +432,7 @@ Each detection has exactly:
 ```json
 {
   "candidate_index": 0,
-  "class_id": 32,
+  "class_id": 37,
   "class_name": "sports ball",
   "confidence": 0.73,
   "bbox_xyxy_px": [1020.0, 590.0, 1062.0, 633.0],
@@ -509,18 +536,19 @@ recall, per-possession source hashes/counts, and explicit
 `macro_precision_possession_count` and `macro_recall_possession_count` values
 so undefined possessions are not hidden from the denominator.
 
-This protocol deliberately sets no detector confidence threshold,
-localization radius, pass/fail boundary, or model winner. Any later score/radius
-sweep and quality gate must be predeclared after the pilot schema and labels
-are reviewed, then applied identically across candidates.
+This protocol and the baseline precommit deliberately select no operating
+confidence threshold, localization radius, pass/fail boundary, or model winner.
+The score/radius comparison grid is now predeclared in the experiment manifest
+and must be applied identically. Any later operating-point choice or quality
+gate must be justified from reviewed evidence and frozen before holdout release.
 
 ## Explicit non-goals of this checkpoint
 
 This checkpoint does not:
 
 - claim that the 75 frames are a benchmark or quality gate;
-- select RF-DETR, YOLO, or another detector;
-- define benchmark thresholds or tune a model;
+- claim that RF-DETR is the winning or production detector;
+- select an operating point, define a pass/fail threshold, or tune a model;
 - add temporal association, interpolation, or hidden-ball hallucination;
 - project the ball center through the player/court homography;
 - infer dribbles, passes, shots, rebounds, handlers, or possession state;
@@ -537,8 +565,10 @@ This checkpoint does not:
    makes it useful.
 3. **Complete:** exercise the evaluator with synthetic positive, negative,
    duplicate, uncertain, and missing-frame cases before using model output.
-4. **Next:** precommit the representative, challenge, and holdout sampling plan
-   and the detector operating-point comparison.
-5. **Pending:** run the first image-only detector baseline, preserve every raw
+4. **Complete:** precommit the representative, challenge, and holdout sampling
+   plan, detector/runtime contract, and operating-point comparison grid; add the
+   strict image-only adapter and guarded runner.
+5. **Next:** run the first image-only detector baseline on only the three
+   reviewed pilots, preserve every raw
    candidate, render synchronized review evidence, and only then propose
    empirical thresholds or a temporal-association experiment.
