@@ -1,0 +1,39 @@
+{
+  "schema_version": "ball_detection_visual_review_plan/v0.1",
+  "review_id": "rfdetr_medium_pilot_candidate_comparison_v0_1",
+  "experiment_id": "rfdetr_medium_image_only_baseline_v0_1",
+  "scoring_report_path": "data/outputs/ball_tracking/evaluations/rfdetr_medium_image_only_baseline_v0_1/protocol_adjudication_grid_v0_1.json",
+  "purpose": "descriptive_protocol_pilot_candidate_comparison",
+  "views": [
+    {
+      "view_id": "confidence_035_radius_10_diagnostic",
+      "confidence_threshold": 0.35,
+      "localization_radius_px": 10.0,
+      "role": "higher_precision_descriptive_pilot_view_not_selected"
+    },
+    {
+      "view_id": "confidence_020_radius_10_tracker_candidate",
+      "confidence_threshold": 0.20,
+      "localization_radius_px": 10.0,
+      "role": "higher_recall_tracker_candidate_view_not_selected"
+    }
+  ],
+  "render_scope": {
+    "selection_purpose": "protocol_adjudication",
+    "all_authorized_pilots": true,
+    "all_frames_including_final": true,
+    "full_resolution_overlays": true,
+    "synchronized_comparison": true,
+    "truth_region_zoom": true,
+    "category_contact_sheets": true,
+    "metric_heatmaps": true
+  },
+  "interpretation": {
+    "selected_operating_point": null,
+    "quality_gate": null,
+    "model_winner_claimed": false,
+    "generalization_claimed": false,
+    "holdout_evidence_included": false,
+    "decision_statement": "Compare the descriptive 0.35/10 px pilot F1 region with a higher-recall 0.20/10 px candidate-generator view before temporal tracking design; neither view is an operating-point selection or quality gate."
+  }
+}
