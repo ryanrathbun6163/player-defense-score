@@ -16,6 +16,7 @@ These are durable project decisions, not incidental properties of one possession
 3. **Only bracketed internal gaps are interpolated.** Leading observations without a left anchor remain missing; this was explicitly preserved in the Possession 001 baseline.
 4. **Outside-court observations are not silently clamped.** They are retained and audited unless a separately justified correction applies.
 5. **Generated artifacts are reproducible evidence, not source.** Videos, crops, embeddings, CSV/NPZ outputs, ZIP review packages, and copyrighted footage stay ignored by Git.
+6. **Ball-label review defaults to honest single-annotator visual review.** A second person or duplicate labeling pass is not a routine gate. Small point-placement variation is represented by annotation uncertainty and later scoring tolerances. Independent or same-person repeats are optional reproducibility studies, must be described accurately, and must never use a fabricated reviewer identity.
 
 ## Pipeline architecture decisions
 

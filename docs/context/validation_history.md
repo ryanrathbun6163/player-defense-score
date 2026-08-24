@@ -48,3 +48,63 @@ Sources: `configs/possession_003_generalization_evidence.json`; `docs/pipeline_g
 ## Migration-time regression
 
 On 2026-08-22, the clean local checkout at `1954053` passed all 56 discovered unit/regression/safety tests with bytecode writing disabled. This verifies the preserved checkout, not GitHub's later README-only merge.
+
+## Ball annotation — Possession 001 pilot reference
+
+On 2026-08-23, Ryan completed and visually reviewed all 25 approved source
+frames (`375..399`) from Possession 001. The set contains 25 labeled rows, 25
+geometry points, and no unlabeled or excluded rows. The approved review evidence
+is bound to the exact source video and draft annotation hashes; finalization
+changes only `review.status`, `review.reviewer_id`, and
+`review.reviewed_at_utc`. No ball coordinate or frame-level semantic decision
+changes during that transition.
+
+The reference set uses the approved single-annotator review path. It is suitable
+for the protocol pilot and initial detector experiments, but it does not claim
+inter-rater agreement, unbiased benchmark sampling, cross-game generalization,
+or a completed ball-tracking quality gate.
+
+## Ball annotation — Possession 002 pilot reference
+
+On 2026-08-23 America/Phoenix (`2026-08-24T00:30:19Z`), Ryan completed and
+visually approved all 25 source frames (`318..342`) from Possession 002. The set
+contains 17 partially visible geometry estimates and eight reviewed
+`not_visible` occlusions. Sixteen geometry points are localization eligible;
+frame 335 preserves an ambiguous visible estimate for audit context but excludes
+it from localization scoring.
+
+The reviewed sequence preserves an internal no-geometry gap at frame 330 and a
+trailing no-geometry interval at frames 336–342. No hidden-ball coordinate is
+interpolated or invented. The approved review package reaches frame 342 and is
+bound to the exact source, neutral bundle, draft annotation, generator, and
+manifest hashes. Finalization changes only `review.status`,
+`review.reviewer_id`, and `review.reviewed_at_utc`.
+
+Like Possession 001, this is a single-annotator pilot reference suitable for
+initial detector experiments. It does not claim inter-rater agreement,
+unbiased benchmark sampling, cross-game generalization, or a completed
+ball-tracking quality gate.
+
+## Ball annotation — Possession 003 pilot reference
+
+On 2026-08-23 America/Phoenix (`2026-08-24T01:05:50Z`), Ryan completed and
+visually approved all 25 source frames (`416..440`) from Possession 003. The set
+contains five fully visible observed centers and 20 partially visible amodal
+center estimates. All 25 identities are `certain`, all 25 geometry points are
+localization eligible, and no geometry gap, interpolation, excluded row, or
+unlabeled row remains.
+
+The annotation has geometry on every frame, and the center sequence is visually
+continuous through final frame 440. Visual review explicitly included the
+motion slowdown around frames 432–434 and the overlap-heavy final frames. The
+approved package is bound to the exact source, neutral bundle, draft annotation,
+generator, and manifest hashes. Finalization changes only `review.status`,
+`review.reviewer_id`, and `review.reviewed_at_utc`; the frame-level decision
+payload is unchanged.
+
+The three reviewed pilot references now total 75 labeled frames, 67 geometry
+points, 66 localization-eligible positives, eight reviewed `not_visible`
+negatives, and one visible ambiguous frame intentionally excluded from
+localization scoring. These are suitable for initial detector experiments but
+remain a curated one-game protocol pilot, not an unbiased benchmark,
+cross-game validation set, or completed ball-tracking quality gate.

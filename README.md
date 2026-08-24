@@ -290,10 +290,12 @@ The gate validates structural generalization, completed stages and reviews, homo
 - [x] Resumable configuration-driven orchestration
 - [x] Multi-possession empirical generalization gate
 
-### Phase 2 — Ball tracking (next)
+### Phase 2 — Ball tracking (in progress)
 
+- [x] Define an auditable ball-center annotation and evaluation protocol
+- [x] Label and visually review a 75-frame pilot across three possessions
+- [ ] Precommit new contiguous representative, challenge, and holdout pools
 - [ ] Evaluate and select a small-object basketball detector
-- [ ] Create labeled ball-detection and tracking evaluation clips
 - [ ] Track the ball through motion blur, occlusion, passes, shots, and rebounds
 - [ ] Fuse detections temporally and preserve uncertainty
 - [ ] Render synchronized ball and player trajectories
@@ -352,7 +354,8 @@ The gate validates structural generalization, completed stages and reviews, homo
 - Player identity and court calibration still include human-review gates.
 - Current validated court manifests use an NFHS right-half-court model.
 - Team labels are visual categories (`white`, `dark`, `unknown`), not NBA roster identities.
-- Ball tracking and basketball event recognition have not yet been integrated.
+- Ball detection/tracking and basketball event recognition have not yet been
+  integrated; the 75-frame annotation/evaluator pilot is complete.
 - Defensive assignments and the final defender score have not yet been implemented.
 - Broadcast footage and generated outputs are not included in the repository.
 
@@ -375,4 +378,7 @@ That means:
 - generated data remains reproducible from committed code and configuration;
 - each new phase must generalize before the next analytical layer is trusted.
 
-The immediate next milestone is a similarly auditable ball-tracking foundation. Once reliable player and ball trajectories coexist in court coordinates, the project can begin reasoning about possession state, matchups, defensive actions, and outcomes.
+The immediate next task is a precommitted, label-blind, image-only ball-detector
+baseline that preserves raw candidates before scoring. Once reliable player and
+court trajectories and time-aligned ball observations coexist, the project can
+begin reasoning about possession state, matchups, defensive actions, and outcomes.

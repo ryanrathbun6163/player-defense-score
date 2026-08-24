@@ -15,16 +15,19 @@ Status: complete for curated possessions and empirically generalized.
 
 ## Phase 2 — Ball tracking
 
-Status: next.
+Status: in progress. The v0.1 protocol, three-window reviewed annotation pilot,
+and detection-evaluation contract are complete; real detector benchmarking and
+temporal tracking are not.
 
-- define ball annotation and evaluation protocol;
-- select representative clips and failure modes;
-- compare small-object basketball detectors;
-- associate detections through blur, occlusion, passes, shots, and rebounds;
-- preserve uncertainty and missing observations;
-- map ball observations into court/time context where defensible;
-- render synchronized ball/player review output;
-- pass a multi-possession quality gate.
+- [x] define the ball annotation and detection-evaluation protocol;
+- [x] label and visually review a 75-frame pilot spanning three possessions;
+- [ ] precommit new contiguous representative, challenge, and holdout pools;
+- [ ] compare small-object basketball detectors;
+- [ ] associate detections through blur, occlusion, passes, shots, and rebounds;
+- [ ] preserve uncertainty and missing observations;
+- [ ] map ball observations into court/time context where defensible;
+- [ ] render synchronized ball/player review output;
+- [ ] pass a multi-possession quality gate.
 
 ## Phase 3 — Possession and event understanding
 
