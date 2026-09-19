@@ -1,0 +1,14 @@
+{
+  "schema_version": "ball_tiled_experiment_approval/v0.1",
+  "experiment_spec_sha256": "3384a930d8633b202b689857de2bea4939277a2d2f0c3da483c2c48e9e9ef023",
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_tiled_development_comparison_v0_1.json",
+    "sha256": "2732e69b19e746b96af7d76e214b08281b5a8f4a58b8f28b494890973f846535"
+  },
+  "approved_by": "ryan",
+  "statement": "yes i approve",
+  "recorded_at_utc": "2026-09-19T06:46:50.901479+00:00",
+  "timestamp_semantics": "Receipt creation time; authorization is the user's response to the linked fixed-crop proposal.",
+  "scope": "six_development_windows_four_fixed_crops_all_declared_comparisons",
+  "git_mutations_authorized": false
+}

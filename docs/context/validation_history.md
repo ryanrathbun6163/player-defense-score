@@ -206,3 +206,78 @@ prediction paths were reverified. No real temporal outputs exist yet. Staging
 and committing the documented 13-file scope remain separately authorized steps
 before execution at a clean checkpoint. The three holdouts remain sealed, and
 operating-point and quality-gate selections remain unset.
+
+## Ball temporal association — execution and inspected evidence
+
+Ryan separately authorized the 13-file implementation commit with "yes commit".
+Commit `6769e07476da09d858fa42f82aace024d21f7735` then ran the already approved
+experiment at a clean checkpoint: 324 saved-detection observation files,
+1,620 per-window reports, two separate 270-cell aggregate pools, and 12 review
+clips. All 270 raw-control reports reproduce the earlier detector metrics and
+per-frame outcomes, excluding the intentionally different derived input count.
+All 2,412 bound review assets verified; 12 original videos and their 12 H.264
+playback copies fully decoded through their 25th frame. The agent inspected
+the 12 final-frame closeup sheets without claiming all-frame visual inspection.
+
+Ryan then stated "inspected. please move forward" in response to the linked
+temporal review package. The new
+`configs/ball_tracking/reviews/rfdetr_medium_temporal_association_visual_review_record_v0_1.json`
+binds that statement to the exact 12 clips and review artifacts. Its timestamp
+records receipt creation, not an invented event time. This completes the
+requested inspection; it does not select a tracker or approve a quality gate.
+The original execution record and visual manifest retain their historical
+pending-review state. All source media and generated outputs remain ignored.
+
+A read-only closeout over all saved cells found that 63 representative and
+29 challenge tracklet cells gain correct matches versus same-cell top-one;
+every gain also adds false guesses. The 360 comparisons and 270 raw miss
+decompositions are recorded in
+`data/outputs/ball_tracking/temporal_closeout/6769e07476da/diagnostic.json`,
+SHA-256 `845dc1d7e7ead0ec952c27985595878c3e13488af54c1dc1f946ae207d6cce77`.
+These are descriptive correlated comparisons, not independent trials.
+At the two displayed confidence settings/radius, every tracklet variant loses
+correct matches in both pools. The diagnostic also identifies detector and
+confidence-filter losses that association cannot recover with unchanged centers.
+
+Receipt creation rehashed the review assets, playback clips, observations,
+reports, six annotations/raw detections, and 59 protected files. All bindings
+matched; all nine original prediction output paths remain absent. No new
+production code or detector inference was introduced during closeout, so no
+new full-suite result is claimed. The next fixed-crop comparison is a concrete
+proposal awaiting its own experiment approval, not an executed result. All
+three holdouts stay sealed; operating-point and quality-gate fields stay null.
+
+## Ball detector crop comparison — approval and implementation
+
+Ryan approved the linked fixed-crop experiment with "yes i approve". Its new
+approval receipt binds the unchanged proposal to executable specification
+`3384a930d8633b202b689857de2bea4939277a2d2f0c3da483c2c48e9e9ef023`.
+Separate candidate, inference/resume, scoring, and review modules preserve the
+existing whole-frame detector contract. Crop geometry is independent of labels;
+both coordinate systems, duplicates, original candidate references, timing,
+and CUDA peak allocated bytes are recorded. The existing player pipeline and
+the approved temporal design/manifest remain unchanged.
+
+Final focused validation passed 18 synthetic tests in 74.915 seconds. Coverage
+includes all 600 model calls, exact and interrupted resume, whole-frame control
+parity across every cell, all 1,080 per-window scores, 12 fully decoded review
+videos, every final frame, and 1,950 supporting images. It also checks dirty-Git
+refusal, label-blind loading, all nine original embargo paths, changed input
+scope/provenance, and tampering. The first focused run found a sidebar-width
+rendering mismatch and a synthetic class-ID fixture mismatch; both were fixed.
+
+Real-input preflight passed against the source clips, frozen RF-DETR package
+and weights, and installed RTX 5070 CUDA runtime. No model prediction ran.
+Agent visual inspection covered synthetic comparison and closeup previews only.
+The final full suite ran 342 tests in 223.084 seconds: 341 passed and one
+existing directory-symlink capability test skipped. Bytecode writing was
+disabled. Formatting, new-file syntax/whitespace, and exact 15-file scope
+checks passed. The final audit reverified 59 protected files, six raw
+predictions, all reviewed labels, the immutable proposal, and the nine absent
+embargo outputs. Logs, synthetic previews, and hash/Git-blob validation records
+remain ignored under `data/outputs/ball_tracking/tiled_implementation_validation/`.
+
+Separate staging and commit approval are still needed for the documented
+15-file implementation checkpoint. The already approved experiment may run
+after that clean checkpoint, with human visual review afterward. No operating
+point or quality gate is selected, and all three test holdouts remain sealed.

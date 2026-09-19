@@ -17,12 +17,16 @@ Status: complete for curated possessions and empirically generalized.
 
 Status: in progress. The protocol, three-window annotation pilot, six reviewed
 development windows, frozen image-only detector execution, separate-pool scoring,
-and detector-comparison visual review are complete. Temporal tracking and its
-quality gate are not complete. The current reviewed evidence and exact Git
-checkpoint are in `current_state.md`. The first temporal-association experiment
-has approved design and synthetic-tested implementation support; real execution
-awaits a separately authorized clean Git checkpoint. See
-`../ball_temporal_association_implementation.md`.
+and detector-comparison visual review are complete. The first temporal
+experiment also completed execution, scoring, and Ryan's visual inspection.
+It exposed losses of valid observations; it does not establish a selected
+tracker or a quality gate. The current Git checkpoint is in `current_state.md`;
+the all-grid closeout is in `../ball_temporal_association_results.md`.
+Ryan approved the fixed overlapping-crop comparison on the same six windows.
+Separate inference/scoring/review support is implemented; focused tests, the
+full suite, and real-input dry-run passed. A separately authorized clean Git
+checkpoint precedes new inference. See
+`../ball_detector_tiled_comparison_implementation.md`. New inference has not run.
 
 - [x] define the ball annotation and detection-evaluation protocol;
 - [x] label and visually review a 75-frame pilot spanning three possessions;
@@ -30,6 +34,7 @@ awaits a separately authorized clean Git checkpoint. See
 - [x] implement the frozen image-only detector adapter and guarded runner;
 - [x] annotate, approve, and finalize all six development windows;
 - [x] execute the approved 150-frame development baseline and review its six clips;
+- [x] compare saved detections with causal tracklets and inspect all 12 temporal clips;
 - [ ] compare small-object basketball detectors;
 - [ ] associate detections through blur, occlusion, passes, shots, and rebounds;
 - [ ] preserve uncertainty and missing observations;

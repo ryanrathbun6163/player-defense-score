@@ -1,0 +1,19 @@
+{
+  "schema_version": "ball_tiled_experiment/v0.1",
+  "experiment_id": "rfdetr_medium_tiled_development_comparison_v0_1",
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_tiled_development_comparison_v0_1.json",
+    "sha256": "2732e69b19e746b96af7d76e214b08281b5a8f4a58b8f28b494890973f846535"
+  },
+  "temporal_baseline": {
+    "path": "configs/ball_tracking/temporal_experiments/rfdetr_medium_temporal_association_v0_1.json",
+    "sha256": "a695be0bde8437ed3c7c1d9767d8894262a66cdaed75d743581a1fb0cc4c3f2c"
+  },
+  "output_root": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1",
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_tiled_development_comparison_approval_v0_1.json",
+    "sha256": "4775f3bb605773dfe35d9b0a1202b3fce81095a70e4d31d06d3aa891b850c2b5"
+  },
+  "selected_operating_point": null,
+  "quality_gate": null
+}

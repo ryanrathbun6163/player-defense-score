@@ -1,0 +1,344 @@
+{
+  "schema_version": "ball_tiled_development_comparison_proposal/v0.1",
+  "proposal_id": "rfdetr_medium_tiled_development_comparison_v0_1",
+  "status": "proposal_not_authorized_not_executable",
+  "prepared_at_utc": "2026-09-19T06:40:01.221794+00:00",
+  "design": {
+    "path": "docs/ball_detector_tiled_comparison_proposal.md",
+    "sha256": "a56f4456f25cff2f301b82eed2297dc10a9edc508d0ab522f0a7a0cd5a80daa9"
+  },
+  "rationale": {
+    "path": "docs/ball_temporal_association_results.md",
+    "sha256": "74bd96f05f3f6bf24983fdedf41d36af36ee729d0320cb7dd799a724446ce656"
+  },
+  "temporal_review_receipt": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_temporal_association_visual_review_record_v0_1.json",
+    "sha256": "c90aab1535c359e50069fbff5149d26040fd1bc9d1696a1009edf89993cf63a7"
+  },
+  "diagnostic": {
+    "path": "data/outputs/ball_tracking/temporal_closeout/6769e07476da/diagnostic.json",
+    "sha256": "845dc1d7e7ead0ec952c27985595878c3e13488af54c1dc1f946ae207d6cce77"
+  },
+  "saved_control_manifest": {
+    "path": "configs/ball_tracking/experiments/rfdetr_medium_development_evaluation_v0_2.json",
+    "sha256": "3a78cf26686c0624c1a45dec5c47e7bad182cc7d5cd658b639e11d47c0d75489"
+  },
+  "frozen_detector_contract_source": {
+    "path": "configs/ball_tracking/experiments/rfdetr_medium_development_evaluation_v0_2.json",
+    "sha256": "3a78cf26686c0624c1a45dec5c47e7bad182cc7d5cd658b639e11d47c0d75489"
+  },
+  "per_view_contract": "Reuse the bound detector model, weights, class mapping, export floor, and per-call preprocessing. Multi-view composition requires a separate tiled-output provenance contract.",
+  "model": {
+    "model_name": "RF-DETR Medium COCO",
+    "package_name": "rfdetr",
+    "package_version": "1.9.1",
+    "weights_identifier": "rf-detr-medium.pth",
+    "weights_sha256": "749ff6071828aaffac63e204c4f4135ed3d6cdae4d702e086c360edc3b5768c8",
+    "device_type": "cuda",
+    "precision": "float32",
+    "compile_enabled": false,
+    "batch_size": 1,
+    "input_width_px": 576,
+    "input_height_px": 576,
+    "resize_mode": "direct RGB bilinear resize to 576x576 without letterboxing or padding; antialias disabled; ImageNet channel normalization",
+    "model_query_count": 300,
+    "model_logit_slot_count": 91,
+    "num_select": 27300,
+    "predict_threshold": 0.0,
+    "target_class_id": 37,
+    "target_class_name": "sports ball",
+    "export_confidence_floor": 0.01
+  },
+  "windows": [
+    {
+      "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+      "purpose": "representative_evaluation",
+      "possession_id": "possession_001",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 50,
+      "end_frame_index": 74,
+      "detection_run_id": "possession_001_frames_0050_0074_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_001_frames_0050_0074_representative_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_001_frames_0050_0074_rfdetr_medium_development_v0_2.json",
+        "sha256": "c7a9963c6d0d33ca9faede512bbdced48f744f40ff803b68d55d1f97bae043c8"
+      }
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "purpose": "challenge_evaluation",
+      "possession_id": "possession_001",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 200,
+      "end_frame_index": 224,
+      "detection_run_id": "possession_001_frames_0200_0224_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_001_frames_0200_0224_challenge_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_001_frames_0200_0224_rfdetr_medium_development_v0_2.json",
+        "sha256": "4101f8b890138e25f2301b03f06791a9de3bdec66a84ab32c8dda16ffa22c656"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+      "purpose": "representative_evaluation",
+      "possession_id": "possession_002",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 250,
+      "end_frame_index": 274,
+      "detection_run_id": "possession_002_frames_0250_0274_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_002_frames_0250_0274_representative_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_002_frames_0250_0274_rfdetr_medium_development_v0_2.json",
+        "sha256": "8159041a0ffd707f5823081f52cf8012ba10a8af9fbc26809426310f5d9dceec"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+      "purpose": "challenge_evaluation",
+      "possession_id": "possession_002",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 25,
+      "end_frame_index": 49,
+      "detection_run_id": "possession_002_frames_0025_0049_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_002_frames_0025_0049_challenge_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_002_frames_0025_0049_rfdetr_medium_development_v0_2.json",
+        "sha256": "dcbb1c88ab70c7ee938944e890e3e22773b8e01cd792a32591ce91fc8cf3bee6"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+      "purpose": "representative_evaluation",
+      "possession_id": "possession_003",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "start_frame_index": 300,
+      "end_frame_index": 324,
+      "detection_run_id": "possession_003_frames_0300_0324_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_003_frames_0300_0324_representative_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_003_frames_0300_0324_rfdetr_medium_development_v0_2.json",
+        "sha256": "dc621477e8c3c907cb3f7d74b2c56a22075af858cbe027ab1ef7afe3893f1d0c"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "purpose": "challenge_evaluation",
+      "possession_id": "possession_003",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "start_frame_index": 150,
+      "end_frame_index": 174,
+      "detection_run_id": "possession_003_frames_0150_0174_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_003_frames_0150_0174_challenge_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_003_frames_0150_0174_rfdetr_medium_development_v0_2.json",
+        "sha256": "c28ab58e8a40e49018954d8327a178b268ad1b4b6fc7929a80f5ea8d8d344802"
+      }
+    }
+  ],
+  "scoring_labels": [
+    {
+      "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_001_frames_0050_0074_representative_evaluation_v0_1.json",
+        "sha256": "3731fa669da12fdcab0748ab92bc7bbb85961a2a0f80518092eaced0e08d5c6c"
+      }
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_001_frames_0200_0224_challenge_evaluation_v0_1.json",
+        "sha256": "73ed29bc62e002d86b207a12298b30b27724fe42be5a354ec09bc104211e2def"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_002_frames_0250_0274_representative_evaluation_v0_1.json",
+        "sha256": "cccec6a086bf9898197babeb5d785bdd4ba0290b7c6c1ba5c206e8545e67563f"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_002_frames_0025_0049_challenge_evaluation_v0_1.json",
+        "sha256": "c0d1bad8f6879e2d073b6d0becf3df12347b43ef06e9c6ff44c26b6f56d3c1e3"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_003_frames_0300_0324_representative_evaluation_v0_1.json",
+        "sha256": "2b35475e715e9a4b816ad997b58be3201370695a2f420a35a6947696bbe3637e"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_003_frames_0150_0174_challenge_evaluation_v0_1.json",
+        "sha256": "ab77e6c8570ee8fc536632e43ee71d978e72cd16188f7564c77ae256873994ee"
+      }
+    }
+  ],
+  "image_arms": [
+    "saved_whole_frame",
+    "four_crop_union"
+  ],
+  "crop_views": [
+    {
+      "view_id": "tl",
+      "ordinal": 0,
+      "xyxy_half_open_px": [
+        0,
+        0,
+        1152,
+        648
+      ]
+    },
+    {
+      "view_id": "tr",
+      "ordinal": 1,
+      "xyxy_half_open_px": [
+        768,
+        0,
+        1920,
+        648
+      ]
+    },
+    {
+      "view_id": "bl",
+      "ordinal": 2,
+      "xyxy_half_open_px": [
+        0,
+        432,
+        1152,
+        1080
+      ]
+    },
+    {
+      "view_id": "br",
+      "ordinal": 3,
+      "xyxy_half_open_px": [
+        768,
+        432,
+        1920,
+        1080
+      ]
+    }
+  ],
+  "crop_mapping": "Add (x0,y0) to crop-local box and center coordinates after crop-local validation/clipping; retain both coordinate systems.",
+  "global_candidate_order": "confidence_desc, global_bbox_xyxy_lexicographic, view_ordinal, local_candidate_index; assign contiguous global candidate indices",
+  "duplicate_policy": "retain_all_no_nms_no_deduplication",
+  "selectors": [
+    "raw",
+    "top_one"
+  ],
+  "top_one_rule": "highest confidence then smallest global candidate index among candidates meeting the inclusive threshold; empty if none",
+  "confidence_thresholds": [
+    0.01,
+    0.03,
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.35,
+    0.5
+  ],
+  "localization_radii_px": [
+    5.0,
+    10.0,
+    15.0,
+    20.0,
+    30.0
+  ],
+  "matching_rule": "raw center distance; uncertainty diagnostic only",
+  "pool_separation": [
+    "representative_evaluation",
+    "challenge_evaluation"
+  ],
+  "review": {
+    "confidence_thresholds": [
+      0.2,
+      0.35
+    ],
+    "radius_px": 10.0,
+    "panels": [
+      "saved_whole_frame/raw",
+      "saved_whole_frame/top_one",
+      "four_crop_union/raw",
+      "four_crop_union/top_one"
+    ],
+    "all_frames_and_final_frame_required": true,
+    "clips": 12
+  },
+  "expected_counts": {
+    "source_frames": 150,
+    "new_model_calls": 600,
+    "new_detection_files": 6,
+    "per_window_reports_saved_control": 540,
+    "per_window_reports_new_crop": 540,
+    "total_per_window_reports": 1080,
+    "aggregate_cells_per_pool": 180
+  },
+  "proposed_output_root": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1",
+  "inference_labels_access_allowed": false,
+  "training_allowed": false,
+  "window_expansion_allowed": false,
+  "saved_control_rerun_allowed": false,
+  "temporal_filtering_allowed": false,
+  "holdout_release_authorized": false,
+  "original_v0_1_embargoes_preserved": true,
+  "selected_operating_point": null,
+  "quality_gate": null,
+  "authorization": null,
+  "execution_preconditions": [
+    "approval_bound_to_this_proposal",
+    "separate_implementation_and_focused_full_validation",
+    "separately_authorized_clean_git_checkpoint",
+    "validated_new_executable_manifest",
+    "exact_runtime_source_and_protected_input_verification",
+    "new_ignored_outputs_only"
+  ]
+}

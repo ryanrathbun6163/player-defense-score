@@ -1,10 +1,116 @@
 # Current State
 
-## Latest checkpoint: temporal support validated; staging approval pending
+## Latest checkpoint: approved crop comparison validated; staging approval pending
 
 Branch remains `codex/ball-detector-baseline` at
-`84bcc8da143e54ff17a28b39db0e70c4b8b299c8`. Preserve the intentionally dirty
-worktree. Nothing has been staged, committed, or pushed for this step.
+`6769e07476da09d858fa42f82aace024d21f7735`. Preserve the intentionally dirty
+worktree. Ryan approved the concrete crop comparison with "yes i approve".
+The receipt is
+`configs/ball_tracking/reviews/rfdetr_medium_tiled_development_comparison_approval_v0_1.json`;
+it binds the unchanged proposal (SHA-256
+`2732e69b19e746b96af7d76e214b08281b5a8f4a58b8f28b494890973f846535`)
+and executable specification
+`3384a930d8633b202b689857de2bea4939277a2d2f0c3da483c2c48e9e9ef023`.
+Do not ask for this experiment approval or the completed temporal review again.
+
+Four separate `tiled_*.py` modules implement crop-local/global candidate
+provenance, fixed-window inference with immutable per-crop resume, separate
+scoring, and four-panel review rendering. They reuse the frozen per-call
+detector without editing its contract, source, tests, saved predictions, or
+labels. The new manifest is outside the old experiment registry:
+`configs/ball_tracking/tiled_experiments/rfdetr_medium_tiled_development_comparison_v0_1.json`.
+The implementation note documents the exact 15-file staging scope:
+`docs/ball_detector_tiled_comparison_implementation.md`.
+
+Final focused validation passed all 18 tests in 74.915 seconds. Synthetic
+integration exercised 600 model calls, exact and partial resume, 1,080 report
+cells, saved-control scoring parity, separate pools, 12 complete review videos,
+1,950 review images, and tamper rejection. The agent inspected the synthetic
+comparison and closeup previews. Real-input dry-run passed source, frozen
+package/weight, and RTX 5070 CUDA checks; it made no predictions. All commands
+used the repository `.venv` with bytecode disabled. The final full suite ran
+342 tests in 223.084 seconds: 341 passed, one existing directory-symlink
+capability skip. `git diff --check`, new-file syntax/whitespace checks, and
+exact 15-file scope verification passed. All 59 prior protected files and six
+saved detection/label bindings remain unchanged.
+
+Generated validation logs and synthetic previews stay ignored under
+`data/outputs/ball_tracking/tiled_implementation_validation/`: `focused_final.log`,
+`full_suite_final.log`, `preflight.log`, synthetic PNGs, and
+`validation_record.json` with file hashes and proposed Git blobs. The last
+completed work is the final validation and input/scope audit. Real crop outputs
+remain absent. The next boundary is separately
+authorized staging of the exact 15 files, then separate commit authorization.
+The approved runner requires a clean committed checkpoint for real inference;
+run inference, scoring, and rendering at that same commit before updating
+context. The real execution commands are documented for the future checkpoint
+and have not run. No manual command was left for Ryan to execute.
+
+The index is empty; nothing staged, committed, or pushed. The earlier temporal
+closeout files are preserved in this implementation scope. All nine original
+embargo paths remain absent, all three holdouts remain sealed, and no operating
+point or quality gate is selected. This changes no upstream reviewed player
+decision and needs no player-pipeline `--rerun-from` stage.
+
+## Previous checkpoint: temporal evidence inspected; crop comparison proposed
+
+Branch `codex/ball-detector-baseline` remains at
+`6769e07476da09d858fa42f82aace024d21f7735`. Ryan responded
+"inspected. please move forward" to the 12-clip temporal review package.
+The new receipt records inspection completion with that exact statement:
+`configs/ball_tracking/reviews/rfdetr_medium_temporal_association_visual_review_record_v0_1.json`,
+SHA-256 `c90aab1535c359e50069fbff5149d26040fd1bc9d1696a1009edf89993cf63a7`.
+Its timestamp is receipt creation time. Earlier runtime records remain
+unchanged as historical pending-review snapshots; do not request this review
+again or equate its completion with selecting a quality gate.
+
+All 2,412 review assets, 12 playback clips, 324 observation files, two scoring
+grids, six labels and raw files, and 59 protected file bindings were reverified.
+The read-only closeout compared all 360 tracklet aggregate cells with top-one
+at identical confidence/radius settings. Some settings gain correct matches,
+but all such gains also increase false guesses. At the two predeclared display
+settings, every tracklet variant loses correct matches in both pools.
+
+Candidate availability is also limiting: at the 0.01 export floor and 10-pixel
+radius, P001 has qualifying candidates in 10/25 representative and 18/25
+challenge frames. These are label-assisted availability counts, not a selected
+operating point. The new results note separates detector/threshold misses from
+additional association losses without relaxing the scoring radius:
+`docs/ball_temporal_association_results.md`.
+The ignored diagnostic contains every same-cell comparison and all 270 raw
+miss decompositions, with exact frame IDs and a bound generating script:
+`data/outputs/ball_tracking/temporal_closeout/6769e07476da/diagnostic.json`
+(SHA-256 `845dc1d7e7ead0ec952c27985595878c3e13488af54c1dc1f946ae207d6cce77`).
+
+The next proposed experiment gives the same detector more image detail using
+four fixed overlapping crops on each of these same 150 frames: 600 new model
+calls, no training or new weights, no window expansion. Its concrete design is
+`docs/ball_detector_tiled_comparison_proposal.md`; its non-executable scope is
+`configs/ball_tracking/proposals/rfdetr_medium_tiled_development_comparison_v0_1.json`.
+The existing temporal permit covers only saved detections. The next boundary
+is approval of this new prediction experiment, followed by implementation and
+validation before separate Git steps and real execution. No manual command
+was supplied but left unrun.
+
+This turn changes review/configuration/documentation only. Production code and
+the original approved temporal design/manifest remain unchanged. Existing
+uncommitted progress was preserved; the index is empty. The seven-file worktree
+scope is the three context documents, the new review receipt, results note,
+crop proposal document, and crop proposal JSON. Nothing staged, committed, or
+pushed. No operating point, quality gate, or model winner selected; all nine
+old embargo output paths remain absent and all three holdouts remain sealed.
+
+## Previous checkpoint: temporal execution awaiting visual review
+
+Verified 2026-09-19 UTC (2026-09-18 America/Phoenix). Branch remains
+`codex/ball-detector-baseline`, now at
+`6769e07476da09d858fa42f82aace024d21f7735`:
+`feat(ball-tracking): add approved temporal association experiment`.
+Ryan separately authorized staging with "yes go ahead" and committing with
+"yes commit". Exactly the validated 13-file scope was committed, with parent
+`84bcc8da143e54ff17a28b39db0e70c4b8b299c8`; the resulting worktree was clean.
+Nothing was pushed. This later progress note is intentionally uncommitted;
+the index remains empty.
 
 Ryan responded "lets move forward" to the linked temporal-association design.
 This authorizes its six-window experiment; the exact statement, design hash,
@@ -16,13 +122,33 @@ its specification SHA-256 is
 `ef2f7a2a77f334c94d0efc045311c6fd4a3cc86695aec84934bacbfb06605ab5`.
 It binds all six saved development outputs and the completed visual review.
 
-Four new `temporal_*.py` modules implement deterministic causal tracklets,
-separate derived-output scoring, strict manifest/authorization guards,
-resumability, and synchronized review rendering. No protected existing source,
-tests, annotations, or raw detector outputs changed. Synthetic tests exercise
-all 54 variants, 324 observation files, 1,620 per-window reports, separate pools,
-and a complete video bundle. A real-data read-only dry-run passed for all six
-windows and 150 frames. No real temporal observations, scores, or videos exist.
+The real dry-run, association, scoring, and rendering all completed at that
+clean commit using the repository `.venv`. Association reused the six saved
+development detection files: no new detector inference ran. All 54 declared
+variants produced 324 observation files across 150 frames. Scoring produced
+1,620 per-window reports and 270 aggregate cells per separate representative
+and challenge pool. All 270 raw-control reports reproduce the prior detector
+metrics and per-frame outcomes (the derived input count differs by design).
+Matching uses raw center distance; annotation uncertainty is diagnostic only
+and does not enlarge the localization radius.
+
+The bound review bundle contains 12 slow comparison videos, 300 comparison
+images, 1,800 native overlays, and 300 closeup sheets. All 2,412 assets passed
+integrity verification. All original videos and their 12 separate H.264
+playback copies decoded through all 25 frames. Agent visual inspection covered
+the 12 final-frame closeup sheets, six windows at both display thresholds;
+this does not claim a complete visual review of every video frame. Ryan's
+review of the new temporal evidence remains pending. Earlier detector-review
+approval does not approve these new temporal outputs.
+
+At both predeclared display thresholds (0.20 and 0.35) and the raw 10-pixel
+radius, the highest-confidence control retains more correct matches than
+every tracklet variant in both pools. Tracklets remove some false guesses but
+also suppress correct observations. P001 challenge frame 224 matches in raw
+and top-one views but is missed by all four tracklet variants; P003
+representative frame 324 is retained by the wider 0.03-step variants but
+dropped by both tighter 0.01-step variants. These are descriptive development
+results from short windows, not a selected winner or generalization claim.
 
 Final focused validation passed all 25 new tests. The final full suite ran
 324 tests in 147.691 seconds: 323 passed, one existing directory-symlink
@@ -31,31 +157,36 @@ capability skip. Both used the repository `.venv` with bytecode writing disabled
 13-file scope verification passed. The first full-suite run was deliberately
 stopped after the synthetic preview prompted larger headings and moving
 tracklet labels away from the ball marker; its partial result is not counted.
-No association or scoring rule changed. The agent inspected the final synthetic
-comparison preview; real temporal visual review remains future work.
+No association or scoring rule changed after validation. The exact committed
+file hashes and Git blobs match the validated scope.
 
 Generated validation artifacts are under
 `data/outputs/ball_tracking/temporal_implementation_validation/` and stay ignored:
 `focused_final.log`, `full_suite_final.log`, final synthetic preview PNGs, and
 `validation_record.json` with output hashes and proposed file/Git-blob scope.
-The latest commands completed were the full suite and final evidence/scope
-audit. All 59 prior protected files and six raw detection files are unchanged.
-The index is empty; worktree scope is three modified context documents plus
-ten new source/test/configuration/review/design files. Real execution correctly
-refuses this uncommitted state before association output is created.
+`staging_authorization.json` and `commit_authorization.json` record the later
+Git steps. All 59 prior protected files and six raw detection files remain
+unchanged, including the six annotation sets and their approval receipts.
 
-The next boundary is staging the exact 13-file scope in
-`docs/ball_temporal_association_implementation.md`, then separate commit approval.
-The runner requires a clean committed checkpoint before real association.
-After that checkpoint, run association, scoring, and rendering at the same
-commit and obtain Ryan's visual review of the new temporal evidence. All nine
-old prediction paths remain absent, three holdouts remain sealed, and no
-operating point or quality gate is selected. No manual execution command was
-left for Ryan; future post-commit commands are documented in the implementation
-note and have not been run.
+Execution logs, `score_audit.json`, `missed_match_diagnostic.json`,
+`review_bundle_verification.json`, playback copies, `results_summary.md`,
+`review_guide.md`, and `execution_record.json` are ignored under
+`data/outputs/ball_tracking/temporal_execution/6769e07476da/`.
+The 324 observations and two scoring grids are under
+`data/outputs/ball_tracking/temporal_association/rfdetr_medium_temporal_association_v0_1/`.
+The review bundle beneath that directory is
+`review/fa093f830294c6a4dd4259d318cdcf78/`.
 
-The detector review below is a completed earlier checkpoint. Its statements
-that temporal support is only proposed predate the implementation above.
+The next action is Ryan's visual review of all 12 linked clips through their
+final frames, using the guide's closeups to inspect dropped matches. Approval
+records whether the evidence has been reviewed; it does not select a detector
+setting, tracker, or quality gate. All nine old prediction paths remain absent,
+all three test holdouts remain sealed, and no operating point or quality gate
+is selected. No new staging, commit, push, PR, or merge is authorized by the
+completed commit request.
+
+The sections below are historical checkpoints. Their Git state, pending
+implementation, annotation, and execution statements predate the work above.
 
 ## Current checkpoint: development experiment visually approved
 
