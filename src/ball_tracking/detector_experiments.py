@@ -1100,7 +1100,9 @@ class ExperimentWindow:
     output_path: PurePosixPath
 
     @classmethod
-    def from_mapping(cls, value: Any, index: int) -> "ExperimentWindow":
+    def from_mapping(
+        cls, value: Any, index: int, *, development: bool = False,
+    ) -> "ExperimentWindow":
         label = f"windows[{index}]"
         window = _require_mapping(value, label)
         _require_exact_fields(window, WINDOW_FIELDS, label)
@@ -1144,8 +1146,13 @@ class ExperimentWindow:
                 f"{label}.execution_status must be one of "
                 f"{sorted(EXECUTION_STATUSES)}"
             )
+        if development and purpose not in EVALUATION_PURPOSES[:2]:
+            raise DetectorExperimentValidationError(
+                f"{label} is not a development window"
+            )
         expected_status = (
-            READY_FOR_INFERENCE if purpose == PROTOCOL_PURPOSE else PREDICTION_EMBARGO
+            READY_FOR_INFERENCE
+            if development or purpose == PROTOCOL_PURPOSE else PREDICTION_EMBARGO
         )
         if status != expected_status:
             raise DetectorExperimentValidationError(
@@ -1519,4 +1526,8 @@ def load_detector_experiment(path: Path) -> DetectorExperiment:
         raise DetectorExperimentValidationError(
             f"Invalid JSON in detector experiment {manifest_path}: {error}"
         ) from error
+    if isinstance(payload, Mapping) and payload.get("schema_version") == "ball_detector_experiment/v0.2":
+        from .development_experiments import load_development_experiment
+
+        return load_development_experiment(payload, manifest_path)
     return DetectorExperiment.from_mapping(payload)

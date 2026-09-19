@@ -8,6 +8,7 @@ import json
 import os
 import tempfile
 import unittest
+from datetime import datetime, timedelta
 from pathlib import Path
 from unittest.mock import patch
 
@@ -153,7 +154,12 @@ def complete_payload(payload: dict, *, reviewed: bool = False) -> dict:
     if reviewed:
         result["review"]["status"] = "reviewed"
         result["review"]["reviewer_id"] = "later_adjudicator"
-        result["review"]["reviewed_at_utc"] = "2026-08-24T12:00:00Z"
+        # A generated workspace uses today's creation time; keep this fixture
+        # chronologically valid so it reaches the reviewed-workspace guard.
+        created = datetime.fromisoformat(
+            result["review"]["created_at_utc"].replace("Z", "+00:00")
+        )
+        result["review"]["reviewed_at_utc"] = (created + timedelta(seconds=1)).isoformat()
     return result
 
 

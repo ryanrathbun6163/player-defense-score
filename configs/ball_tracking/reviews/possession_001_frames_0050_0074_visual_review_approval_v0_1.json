@@ -1,0 +1,38 @@
+{
+  "schema_version": "ball_annotation_visual_review_approval/v0.1",
+  "receipt_id": "possession_001_frames_0050_0074_visual_review_approval_v0_1",
+  "possession_id": "possession_001",
+  "window": {
+    "start_frame_index": 50,
+    "end_frame_index": 74,
+    "frame_count": 25
+  },
+  "approval": {
+    "approved_by": "ryan",
+    "approved_at_utc": "2026-08-24T15:20:49Z",
+    "statement": "I approve the P001 representative frames 50–74 visual-review package through final frame 74",
+    "scope": "human_visual_package_gate",
+    "recording_method": "explicit_user_statement_in_current_codex_task",
+    "external_signature_included": false
+  },
+  "visual_review_bundle": {
+    "path": "data/outputs/ball_tracking/annotation_visual_review/possession_001/frames_0050_0074/738fef323ffa561601196043c42d72b5fafebcc6091c45ba2a7bb9076746ed6d",
+    "schema_version": "ball_annotation_visual_review/v0.1",
+    "bundle_input_sha256": "738fef323ffa561601196043c42d72b5fafebcc6091c45ba2a7bb9076746ed6d",
+    "manifest_sha256": "cc8a33932b5062c0a27656612a18d32fc90e0a59e62a5d93e410ab23ec9f3d19"
+  },
+  "bound_inputs": {
+    "annotation_set_id": "possession_001_frames_0050_0074_representative_evaluation_v0_1",
+    "annotation_file_sha256": "30dfcea844f85b690570bfa5e7f7989d833807a2c7a02a12cbce868219a2aa73",
+    "canonical_annotation_sha256": "48d23a04392c0eee431ee9c43419a76d4852051c028d3117bbaf7652b72e548f",
+    "neutral_manifest_sha256": "51bcd225fc45387d1519e99dd7d0ea5823c4f5ba7a4365ea33a937cc6d5af916",
+    "source_video_sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6"
+  },
+  "limitations": {
+    "annotation_review_status": "draft",
+    "independent_adjudication_evidence_included": false,
+    "promotes_annotation_to_reviewed": false,
+    "proves_independent_blindness": false,
+    "requires_later_independent_submission_and_adjudication": false
+  }
+}

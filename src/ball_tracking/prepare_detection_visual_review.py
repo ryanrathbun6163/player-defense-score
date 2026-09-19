@@ -69,6 +69,17 @@ from .score_detector_experiment import (
 
 SCHEMA_VERSION = "ball_detection_visual_review/v0.1"
 PLAN_SCHEMA_VERSION = "ball_detection_visual_review_plan/v0.1"
+DEVELOPMENT_SCHEMA_VERSION = "ball_detection_visual_review/v0.2"
+DEVELOPMENT_PLAN_SCHEMA_VERSION = "ball_detection_visual_review_plan/v0.2"
+
+
+def _development_plan(plan):
+    return plan.schema_version == DEVELOPMENT_PLAN_SCHEMA_VERSION
+
+
+def _render_schema(plan):
+    return DEVELOPMENT_SCHEMA_VERSION if _development_plan(plan) else SCHEMA_VERSION
+
 PLAN_ROOT_PARTS = ("configs", "ball_tracking", "reviews")
 OUTPUT_ROOT_PARTS = (
     "data",
@@ -492,12 +503,15 @@ def load_detection_review_plan(path: Path) -> DetectionReviewPlan:
 
     plan = _exact_fields(payload, PLAN_TOP_LEVEL_FIELDS, "review plan")
 
-    if plan["schema_version"] != PLAN_SCHEMA_VERSION:
+    development = plan["schema_version"] == DEVELOPMENT_PLAN_SCHEMA_VERSION
+    if plan["schema_version"] not in {PLAN_SCHEMA_VERSION, DEVELOPMENT_PLAN_SCHEMA_VERSION}:
         raise DetectionVisualReviewError(
             f"review plan schema_version must be {PLAN_SCHEMA_VERSION!r}"
         )
 
-    if plan["purpose"] != "descriptive_protocol_pilot_candidate_comparison":
+    expected_purpose = ("descriptive_development_pool_candidate_comparison" if development
+                        else "descriptive_protocol_pilot_candidate_comparison")
+    if plan["purpose"] != expected_purpose:
         raise DetectionVisualReviewError(
             "review plan purpose is not the descriptive pilot comparison"
         )
@@ -556,12 +570,21 @@ def load_detection_review_plan(path: Path) -> DetectionReviewPlan:
     render_scope = dict(
         _exact_fields(
             plan["render_scope"],
-            RENDER_SCOPE_FIELDS,
+            (RENDER_SCOPE_FIELDS - {"all_authorized_pilots"} | {"all_authorized_pool_windows"}) if development else RENDER_SCOPE_FIELDS,
             "render_scope",
         )
     )
 
-    if render_scope != EXPECTED_RENDER_SCOPE:
+    expected_scope = dict(EXPECTED_RENDER_SCOPE)
+    if development:
+        from .development_experiments import PURPOSES
+        if render_scope["selection_purpose"] not in PURPOSES:
+            raise DetectionVisualReviewError("Development plan must name one development pool")
+        expected_scope["selection_purpose"] = render_scope["selection_purpose"]
+        expected_scope["all_authorized_pool_windows"] = expected_scope.pop("all_authorized_pilots")
+        if {(v.confidence_threshold, v.localization_radius_px) for v in views} != {(0.2, 10.0), (0.35, 10.0)}:
+            raise DetectionVisualReviewError("Development display cells differ from approved proposal")
+    if render_scope != expected_scope:
         raise DetectionVisualReviewError(
             "render_scope must request every required pilot-review asset"
         )
@@ -590,7 +613,7 @@ def load_detection_review_plan(path: Path) -> DetectionReviewPlan:
         "interpretation.decision_statement",
     )
     return DetectionReviewPlan(
-        schema_version=PLAN_SCHEMA_VERSION,
+        schema_version=plan["schema_version"],
         review_id=_require_identifier(plan["review_id"], "review_id"),
         experiment_id=_require_identifier(
             plan["experiment_id"],
@@ -1565,7 +1588,9 @@ def build_metric_heatmaps(
     )
     cv2.putText(
         canvas,
-        "DESCRIPTIVE PROTOCOL-PILOT GRID - REQUESTED CELLS OUTLINED - NO WINNER OR OPERATING POINT",
+        (f"DESCRIPTIVE {scoring_report['selection_purpose'].upper()} GRID - DISPLAY CELLS ONLY"
+         if scoring_report["selection_purpose"] != "protocol_adjudication" else
+         "DESCRIPTIVE PROTOCOL-PILOT GRID - REQUESTED CELLS OUTLINED - NO WINNER OR OPERATING POINT"),
         (24, 42),
         cv2.FONT_HERSHEY_SIMPLEX,
         0.72,
@@ -1799,8 +1824,17 @@ def _validate_scoring_report_against_experiment(
             "Scoring report grid conflicts with the frozen experiment grid"
         )
 
+    from .development_experiments import DevelopmentExperiment
+    from .score_detector_experiment import DEVELOPMENT_POOL_SCHEMA
+    development = isinstance(experiment, DevelopmentExperiment)
+    if development != (scoring_report["schema_version"] == DEVELOPMENT_POOL_SCHEMA):
+        raise DetectionVisualReviewError("Scoring and experiment versions conflict")
     windows = experiment.windows_for_inference()
-    pilot_inputs = scoring_report["pilot_inputs"]
+    if development:
+        if scoring_report["release_authorization"] != experiment.payload["release_authorization"]:
+            raise DetectionVisualReviewError("Scoring release binding changed")
+        windows = tuple(w for w in windows if w.selection_purpose == scoring_report["selection_purpose"])
+    pilot_inputs = scoring_report["window_inputs" if development else "pilot_inputs"]
 
     if len(windows) != len(pilot_inputs):
         raise DetectionVisualReviewError(
@@ -1845,10 +1879,11 @@ def _prepare_visual_pilots(
             "Review plan experiment_id does not match scoring report"
         )
 
-    if scoring_report["selection_purpose"] != "protocol_adjudication":
-        raise DetectionVisualReviewError(
-            "Detection visual review may consume only protocol pilots"
-        )
+    from .score_detector_experiment import DEVELOPMENT_POOL_SCHEMA
+    development = _development_plan(plan)
+    if (development != (scoring_report["schema_version"] == DEVELOPMENT_POOL_SCHEMA)
+        or scoring_report["selection_purpose"] != plan.render_scope["selection_purpose"]):
+        raise DetectionVisualReviewError("Review plan and scored selection pool differ")
 
     grid_cells = {
         (item["confidence_threshold"], item["localization_radius_px"])
@@ -1864,7 +1899,7 @@ def _prepare_visual_pilots(
                 f"Review view {view.view_id!r} is not a scored grid cell"
             )
 
-    pilot_inputs = scoring_report["pilot_inputs"]
+    pilot_inputs = scoring_report["window_inputs" if development else "pilot_inputs"]
 
     if len(pilot_inputs) != EXPECTED_PILOT_COUNT:
         raise DetectionVisualReviewError(
@@ -2077,7 +2112,7 @@ def _write_bundle_assets(
     _write_bytes(plan_snapshot_path, plan_bytes)
     _write_bytes(scoring_snapshot_path, report_bytes)
     _write_bytes(experiment_snapshot_path, manifest_bytes)
-    heatmap_path = staging_dir / "pilot_metric_heatmaps.png"
+    heatmap_path = staging_dir / ("development_pool_metric_heatmaps.png" if _development_plan(plan) else "pilot_metric_heatmaps.png")
     _write_lossless_png(
         heatmap_path,
         build_metric_heatmaps(scoring_report, plan.views),
@@ -2514,7 +2549,7 @@ def _write_bundle_assets(
         }
     )
     manifest = {
-        "schema_version": SCHEMA_VERSION,
+        "schema_version": _render_schema(plan),
         "asset_bundle_type": "ball_detection_candidate_visual_review",
         "bundle_input": {
             "bundle_input_sha256": digest,
@@ -2561,7 +2596,7 @@ def _write_bundle_assets(
                 "localization_radii_px"
             ],
             "grid_cell_count": scoring_report["grid_cell_count"],
-            "pilot_window_count": scoring_report["pilot_window_count"],
+            "pilot_window_count": scoring_report["window_count" if _development_plan(plan) else "pilot_window_count"],
             "evaluation_report_count": scoring_report[
                 "evaluation_report_count"
             ],
@@ -2569,6 +2604,11 @@ def _write_bundle_assets(
         "pilots": pilot_records,
         "assets": {"pilot_metric_heatmaps": heatmap_record},
     }
+    if _development_plan(plan):
+        manifest["windows"] = manifest.pop("pilots")
+        manifest["aggregate_grid"]["selection_purpose"] = scoring_report["selection_purpose"]
+        manifest["aggregate_grid"]["window_count"] = manifest["aggregate_grid"].pop("pilot_window_count")
+        manifest["assets"]["pool_metric_heatmaps"] = manifest["assets"].pop("pilot_metric_heatmaps")
     _write_json(staging_dir / "manifest.json", manifest)
     return manifest
 
@@ -2688,15 +2728,14 @@ def validate_detection_visual_review_bundle_integrity(
         )
 
     manifest_path = bundle_dir / "manifest.json"
-    manifest = dict(
-        _exact_fields(
-            _load_json_closed(manifest_path),
-            BUNDLE_TOP_LEVEL_FIELDS,
-            "visual-review manifest",
-        )
-    )
+    raw_manifest = _load_json_closed(manifest_path)
+    development = raw_manifest.get("schema_version") == DEVELOPMENT_SCHEMA_VERSION
+    fields = BUNDLE_TOP_LEVEL_FIELDS
+    if development:
+        fields = fields - {"pilots"} | {"windows"}
+    manifest = dict(_exact_fields(raw_manifest, fields, "visual-review manifest"))
 
-    if manifest["schema_version"] != SCHEMA_VERSION:
+    if manifest["schema_version"] not in {SCHEMA_VERSION, DEVELOPMENT_SCHEMA_VERSION}:
         raise DetectionVisualReviewError(
             f"Visual-review schema_version must be {SCHEMA_VERSION!r}"
         )
@@ -2748,7 +2787,14 @@ def validate_detection_visual_review_bundle_integrity(
             "Visual-review conventions do not match frozen semantics"
         )
 
-    pilots = manifest["pilots"]
+    if development:
+        from .development_experiments import PURPOSES
+        if (manifest["aggregate_grid"].get("selection_purpose") not in PURPOSES
+            or manifest["aggregate_grid"].get("window_count") != 3
+            or manifest["review_plan"]["schema_version"] != DEVELOPMENT_PLAN_SCHEMA_VERSION
+            or bundle_input.get("render_schema_version") != DEVELOPMENT_SCHEMA_VERSION):
+            raise DetectionVisualReviewError("Invalid development review scope/version")
+    pilots = manifest["windows" if development else "pilots"]
 
     if not isinstance(pilots, list) or len(pilots) != EXPECTED_PILOT_COUNT:
         raise DetectionVisualReviewError(
@@ -3066,11 +3112,13 @@ def prepare_detection_visual_review(
             f"Visual-review Git preflight failed: {error}"
         ) from error
 
+    from .development_release import validate_development_release
+    validate_development_release(experiment, root, head)
     deps.verify_tracked_file(root, plan_relative)
     pilots = _prepare_visual_pilots(plan, scoring_report, root, deps)
     fingerprint = generator_fingerprint()
     bundle_components = {
-        "render_schema_version": SCHEMA_VERSION,
+        "render_schema_version": _render_schema(plan),
         "review_plan_path": plan_relative.as_posix(),
         "review_plan_sha256": _sha256_bytes(plan_bytes),
         "scoring_report_sha256": _sha256_bytes(report_bytes),
@@ -3156,6 +3204,7 @@ def prepare_detection_visual_review(
                 f"Closing Git validation failed: {error}"
             ) from error
 
+        validate_development_release(experiment, root, closing_head)
         if closing_head != head:
             raise DetectionVisualReviewError(
                 "Git HEAD changed during rendering; nothing was published"

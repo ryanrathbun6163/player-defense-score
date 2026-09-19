@@ -1,0 +1,112 @@
+{
+  "schema_version": "ball_annotation_finalization/v0.1",
+  "finalization_id": "possession_003_frames_0150_0174_single_annotator_finalization_v0_1",
+  "annotation_set_id": "possession_003_frames_0150_0174_challenge_evaluation_v0_1",
+  "possession_id": "possession_003",
+  "window": {
+    "start_frame_index": 150,
+    "end_frame_index": 174,
+    "frame_count": 25
+  },
+  "review_policy": {
+    "method": "single_annotator_visual_self_review",
+    "annotator_and_final_reviewer_may_be_the_same_human": true,
+    "independent_reannotation_required": false,
+    "inter_annotator_agreement_measured": false,
+    "intra_annotator_repeatability_measured": false,
+    "reviewer_identity_is_factual": true,
+    "rationale": "The established protocol uses honest single-annotator visual review, explicit uncertainty, source verification, and later scoring tolerances. Duplicate annotation remains optional for a separately declared reproducibility study."
+  },
+  "authorization": {
+    "authorized_by": "ryan",
+    "authorized_at_utc": "2026-09-19T05:00:28Z",
+    "statement": "looks good to me. I approve and lets move forward",
+    "scope": "single_annotator_visual_review_finalization",
+    "recording_method": "explicit_user_instruction_in_current_codex_task"
+  },
+  "approved_visual_review": {
+    "approval_receipt_path": "configs/ball_tracking/reviews/possession_003_frames_0150_0174_visual_review_approval_v0_1.json",
+    "approval_receipt_file_sha256": "e0e546c3e1feb7a3709b8c78ed54d582cfdd829a8ff0e4b640d6300cfcf01a50",
+    "approval_receipt_canonical_sha256": "148cbdd1f868e9232a8f8010b321c6504a4d31fdfdf588247663e880c3ce7e52",
+    "visual_bundle_path": "data/outputs/ball_tracking/annotation_visual_review/possession_003/frames_0150_0174/0c6b7ea0d768643f6f4b36d0151a40001d2b2b88f3dc2db5a091ec5b981fa35b",
+    "visual_bundle_manifest_sha256": "f49cfacbf4531b14c77ffc1ebf2ad0ecc8797924f43050bff04bee9afd600e1d",
+    "approved_by": "ryan",
+    "approved_at_utc": "2026-09-19T05:00:28Z"
+  },
+  "transition": {
+    "mode": "review_metadata_only",
+    "allowed_changed_json_pointers": [
+      "/review/status",
+      "/review/reviewer_id",
+      "/review/reviewed_at_utc"
+    ],
+    "actual_changed_json_pointers": [
+      "/review/status",
+      "/review/reviewer_id",
+      "/review/reviewed_at_utc"
+    ],
+    "before_review": {
+      "status": "draft",
+      "annotator_id": "ryan_codex_joint",
+      "reviewer_id": null,
+      "created_at_utc": "2026-08-24T05:09:08Z",
+      "reviewed_at_utc": null
+    },
+    "after_review": {
+      "status": "reviewed",
+      "annotator_id": "ryan_codex_joint",
+      "reviewer_id": "ryan",
+      "created_at_utc": "2026-08-24T05:09:08Z",
+      "reviewed_at_utc": "2026-09-19T05:00:28Z"
+    },
+    "approved_draft_annotation_file_sha256": "2f914e13b6decb1fd2a44524b92a8bf7ae10c410eeb72fb3858b98b35041893f",
+    "approved_draft_canonical_sha256": "8aaebc128463bdf11ea098974672ab6401cbfa092166c64cde0e609a5223e901",
+    "approved_decision_payload_sha256": "c796bf28bec36f818e1046b8ed0b3a3dac140186921383cb9e7a98b1878e96d9",
+    "final_decision_payload_sha256": "c796bf28bec36f818e1046b8ed0b3a3dac140186921383cb9e7a98b1878e96d9",
+    "annotation_rows_sha256": "fdd68ea63675b4be538db06d91c1cfc7103268fc0cfc70539e05b912132d8dda"
+  },
+  "final_annotation": {
+    "path": "configs/ball_tracking/annotations/possession_003_frames_0150_0174_challenge_evaluation_v0_1.json",
+    "annotation_file_sha256": "ab77e6c8570ee8fc536632e43ee71d978e72cd16188f7564c77ae256873994ee",
+    "canonical_annotation_sha256": "187eef87e53cf43d28ff10e052b4854921e7e14875dbfd6e761e903410d65db1",
+    "review_status": "reviewed",
+    "reviewer_id": "ryan",
+    "reviewed_at_utc": "2026-09-19T05:00:28Z"
+  },
+  "validation": {
+    "validated_at_utc": "2026-09-19T05:00:28Z",
+    "strict_schema_passed": true,
+    "source_verification_passed": true,
+    "frame_count": 25,
+    "labeled_count": 25,
+    "unlabeled_count": 0,
+    "excluded_count": 0,
+    "localization_eligible_count": 20,
+    "fully_visible_count": 0,
+    "partially_visible_count": 20,
+    "not_visible_count": 5,
+    "no_geometry_frame_indices": [
+      165,
+      166,
+      167,
+      168,
+      169
+    ],
+    "source_video_sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+    "no_frame_annotation_changed_during_finalization": true
+  },
+  "optional_reannotation": {
+    "used_for_this_finalization": false,
+    "independent_draft_used": false,
+    "future_use": "Only for an explicitly declared inter-rater or intra-rater reproducibility study."
+  },
+  "limitations": {
+    "single_annotator_reference_set": true,
+    "suitable_for_challenge_detector_development": true,
+    "claims_inter_annotator_reproducibility": false,
+    "claims_unbiased_benchmark_sampling": false,
+    "claims_cross_game_generalization": false,
+    "claims_selected_detector_operating_point": false,
+    "claims_completed_ball_tracking_quality_gate": false
+  }
+}

@@ -1039,6 +1039,9 @@ def preflight_detector_experiment(
         tracked_manifest_paths=snapshot.tracked_experiment_manifests,
         dependencies=deps,
     )
+    from .development_release import validate_development_release
+
+    validate_development_release(experiment, root, head)
     weights_path = _validate_package_and_weights(experiment, deps)
     verified_sources = _validate_sources(ready_windows, root, deps)
 
@@ -1464,6 +1467,10 @@ def run_detector_experiment(
         return _summarize_runs(preflight, dry_runs, dry_run=True)
 
     has_pending = any(item.pending_frame_indices for item in preflight.windows)
+
+    from .development_release import validate_development_release
+
+    validate_development_release(preflight.experiment, preflight.repository_root, preflight.head)
 
     if has_pending:
         try:

@@ -1,5 +1,135 @@
 # Current State
 
+## Current local checkpoint: development labels complete; experiment support implemented
+
+Verified 2026-09-18 America/Phoenix (2026-09-19 UTC). This section supersedes
+the historical snapshot below for session continuation.
+
+- Branch: `codex/ball-detector-baseline`.
+- Exact HEAD: `b7a887f55705623889625edf60028e2e39d38dc4`.
+- Worktree intentionally contains uncommitted work. Preserve the existing
+  working-agreement edit, six development annotation files, approval and
+  finalization receipts, pilot review record, annotation initializer, and its
+  tests. This context update is also uncommitted. Nothing is staged; no commit,
+  push, PR, or merge was performed during this annotation continuation.
+- All six representative/challenge development windows are labeled, visually
+  approved by Ryan through their final frames, and finalized as `reviewed`.
+  They use the established single-annotator visual self-review policy.
+
+| Possession | Purpose | Inclusive frames | Labeled | Localization eligible | Not visible |
+| --- | --- | ---: | ---: | ---: | ---: |
+| P001 | Representative | 50–74 | 25 | 25 | 0 |
+| P001 | Challenge | 200–224 | 25 | 25 | 0 |
+| P002 | Representative | 250–274 | 25 | 25 | 0 |
+| P002 | Challenge | 25–49 | 25 | 25 | 0 |
+| P003 | Representative | 300–324 | 25 | 25 | 0 |
+| P003 | Challenge | 150–174 | 25 | 20 | 5 |
+
+The development sets total 150 labeled frames: 14 fully visible centers,
+131 partially visible amodal center estimates, and five `not_visible`
+occlusions. All 145 geometry points are localization eligible. There are no
+unlabeled or excluded rows. P003 challenge frames 165–169 remain explicitly
+occluded by the referee with null geometry; no interpolation crosses this gap.
+
+### Evidence and validation at this checkpoint
+
+- Annotation authority: the six `*_representative_evaluation_v0_1.json` and
+  `*_challenge_evaluation_v0_1.json` files in
+  `configs/ball_tracking/annotations/`.
+- Approval authority: the matching frame-scoped `*_visual_review_approval_v0_1.json`
+  and `*_single_annotator_finalization_v0_1.json` receipts in
+  `configs/ball_tracking/reviews/`. Receipts bind the source, approved draft,
+  visual bundle, and finalized file hashes to Ryan's actual approval statements.
+- Finalization changed only `/review/status`, `/review/reviewer_id`, and
+  `/review/reviewed_at_utc`. Every frame-level decision is unchanged.
+- P003 representative final annotation SHA-256:
+  `2b35475e715e9a4b816ad997b58be3201370695a2f420a35a6947696bbe3637e`.
+- P003 challenge final annotation SHA-256:
+  `ab77e6c8570ee8fc536632e43ee71d978e72cd16188f7564c77ae256873994ee`.
+- Generated visual packages remain ignored beneath
+  `data/outputs/ball_tracking/annotation_visual_review/`. P003 bundle IDs are
+  `82e049e3ea6d16f944f1a64345ef7f692e285864edbf47ce3c27161cf35353bf`
+  for frames 300–324 and
+  `0c6b7ea0d768643f6f4b36d0151a40001d2b2b88f3dc2db5a091ec5b981fa35b`
+  for frames 150–174. Their immutable snapshots correctly retain draft status;
+  the receipts document the subsequent metadata-only finalization.
+- The repository `.venv` with bytecode writing disabled passed strict schema
+  and source-video verification for all six sets, the existing finalization
+  receipt assertions for all six, and hash/size verification of all 330 review
+  assets. This six-window audit completed; it was not merely proposed. At that
+  annotation-only checkpoint, runtime code was unchanged and the full suite
+  had not been rerun; the implementation checkpoint below supersedes this.
+- The existing local pilot candidate-comparison review record reports Ryan's
+  approval at `2026-08-24T05:05:09Z`. Its bound review plan, scoring report, and
+  visual manifest still match their recorded hashes. The old snapshot's
+  instruction to run the first pilot baseline is historical, not a current
+  request to regenerate those artifacts.
+
+### Prediction boundary and next action
+
+All nine evaluation windows still have
+`annotation_pending_prediction_embargo` in the unchanged v0.1 experiment
+manifest. None of their nine declared prediction output files exists.
+Completed annotation does not release predictions. No operating point or
+quality gate was selected; no inference ran in this continuation.
+
+Ryan approved the development experiment with "lets move forward I approve
+of this experiment". The statement and immutable proposal-inventory hash are
+recorded in
+`configs/ball_tracking/reviews/rfdetr_medium_development_experiment_approval_v0_1.json`.
+This authorizes implementation and the proposed six-window experiment once
+its clean-checkpoint release conditions pass; it does not authorize staging,
+committing, pushing, a holdout release, an operating point, or a quality gate.
+
+Versioned support is implemented in `development_experiments.py`,
+`development_release.py`, and `development_scoring.py`, with explicit v0.2
+handling in the existing loader, runner, scorer, and visual renderer. The
+strict six-window parent binding retains frozen detector settings and all
+45 grid cells. Scoring produces two separate pools and 270 per-window results;
+visual review produces one complete three-window package for each pool.
+Synthetic tests use artificial frames and injected adapters only.
+
+The release verifier checks approved labels and assets during evidence
+preparation. At runtime it checks the release receipt and committed Git blob
+identities without opening annotation JSON or review images. Evidence belongs
+to a future clean commit; activation artifacts belong to a later separately
+authorized commit. The new executable manifest and its six prediction outputs
+remain absent. All nine original embargoed outputs remain absent. Existing
+uncommitted files and the old manifest are preserved.
+
+Implementation validation completed using the repository `.venv` with bytecode
+writing disabled. The 14 new development tests, 10 existing detector visual
+review tests, and 27 independent-review tests passed. The final full suite ran
+299 tests: 298 passed, one existing directory-symlink capability test skipped.
+`git diff --check` passed; new untracked Python syntax and whitespace checks
+also passed. The ignored full-suite log is
+`data/outputs/ball_tracking/development_implementation_validation/full_suite_20260919_retry.log`.
+The first full run exposed an old independent-review test fixture with a fixed
+August review timestamp earlier than its newly generated September creation
+time. The fixture now derives its timestamp from creation; production review
+rules and annotation data are unchanged. The full suite then passed.
+
+The audit reverified all 24 approved inventory bindings, the frozen parent
+hash, all nine original absent prediction outputs, and the six absent new
+outputs. The existing working-agreement edit retains SHA-256
+`55eb9c73c29c3f6f8c8e6c30d8caa1e9506adbded15a57e813b76f4c6fe13be3`.
+No operating point or quality gate was selected; no real model inference ran.
+The new source code remains uncommitted, so this successful implementation
+validation is not a clean-commit release receipt.
+
+The next external boundary is separate staging authorization for the exact
+35-file list in the proposal document, then separate commit authorization. The approved experiment does not need approval again.
+See `docs/ball_detector_development_release_proposal.md` for the checkpoint
+procedure. Keep all three test holdouts sealed.
+No development-window visual approvals remain unresolved, and no manual
+commands were supplied but left unrun. The existing annotation editors may
+still be open; their now-reviewed files must not be edited as drafts.
+
+## Historical snapshot retained for provenance
+
+The sections below describe the earlier checkpoint. In particular, their
+inference and annotation to-do lists predate the local evidence above.
+
 Snapshot date: 2026-08-23 (America/Phoenix)
 
 ## Repository checkpoint

@@ -47,6 +47,7 @@ from .run_detector_experiment import (
 
 
 SCHEMA_VERSION = "ball_detector_scoring_grid/v0.1"
+DEVELOPMENT_POOL_SCHEMA = "ball_detector_development_pool_grid/v0.2"
 REPORT_FILENAME = "protocol_adjudication_grid_v0_1.json"
 ANNOTATION_ROOT_PARTS = ("configs", "ball_tracking", "annotations")
 OUTPUT_ROOT_PARTS = ("data", "outputs", "ball_tracking", "evaluations")
@@ -378,9 +379,22 @@ def load_scoring_report(path: Path) -> dict[str, Any]:
 def validate_scoring_report(value: Any) -> dict[str, Any]:
     """Validate the closed bundle schema and every aggregate relationship."""
 
-    report = dict(_exact_fields(value, TOP_LEVEL_FIELDS, "scoring report"))
+    development = isinstance(value, Mapping) and value.get("schema_version") == DEVELOPMENT_POOL_SCHEMA
+    fields = ((TOP_LEVEL_FIELDS - {"pilot_window_count", "pilot_inputs"})
+              | {"window_count", "window_inputs", "release_authorization"}) if development else TOP_LEVEL_FIELDS
+    report = dict(_exact_fields(value, fields, "scoring report"))
+    count_key = "window_count" if development else "pilot_window_count"
+    inputs_key = "window_inputs" if development else "pilot_inputs"
+    purpose = report["selection_purpose"] if development else PROTOCOL_PURPOSE
+    version = DEVELOPMENT_POOL_SCHEMA if development else SCHEMA_VERSION
+    if development:
+        from .development_experiments import PURPOSES, REVIEW_ROOT, binding
 
-    if report["schema_version"] != SCHEMA_VERSION:
+        if purpose not in PURPOSES:
+            raise DetectorExperimentScoringError("Development scoring cannot consume pilots or holdouts")
+        binding(report["release_authorization"], REVIEW_ROOT)
+
+    if report["schema_version"] != version:
         raise DetectorExperimentScoringError(
             f"schema_version must be {SCHEMA_VERSION!r}"
         )
@@ -391,7 +405,8 @@ def validate_scoring_report(value: Any) -> dict[str, Any]:
         "experiment_id",
     )
 
-    if report_id != f"{experiment_id}_protocol_adjudication_grid_v0_1":
+    suffix = f"{purpose}_grid_v0_2" if development else "protocol_adjudication_grid_v0_1"
+    if report_id != f"{experiment_id}_{suffix}":
         raise DetectorExperimentScoringError(
             "report_id does not match experiment_id and report version"
         )
@@ -424,7 +439,7 @@ def validate_scoring_report(value: Any) -> dict[str, Any]:
         "detector_code_commit",
     )
 
-    if report["selection_purpose"] != PROTOCOL_PURPOSE:
+    if report["selection_purpose"] != purpose:
         raise DetectorExperimentScoringError(
             f"selection_purpose must be {PROTOCOL_PURPOSE!r}"
         )
@@ -449,8 +464,8 @@ def validate_scoring_report(value: Any) -> dict[str, Any]:
         )
 
     pilot_count = _require_nonnegative_integer(
-        report["pilot_window_count"],
-        "pilot_window_count",
+        report[count_key],
+        count_key,
     )
     grid_cell_count = _require_nonnegative_integer(
         report["grid_cell_count"],
@@ -482,7 +497,7 @@ def validate_scoring_report(value: Any) -> dict[str, Any]:
         report["model_run_signature"],
         "model_run_signature",
     )
-    pilot_inputs = report["pilot_inputs"]
+    pilot_inputs = report[inputs_key]
 
     if not isinstance(pilot_inputs, list) or len(pilot_inputs) != pilot_count:
         raise DetectorExperimentScoringError(
@@ -653,7 +668,7 @@ def validate_scoring_report(value: Any) -> dict[str, Any]:
                     "window_end_frame_index": input_record[
                         "window_end_frame_index"
                     ],
-                    "selection_purpose": PROTOCOL_PURPOSE,
+                    "selection_purpose": purpose,
                     "confidence_threshold": threshold,
                     "localization_radius_px": radius,
                     "model_run_signature": model_signature,
@@ -711,7 +726,10 @@ def validate_scoring_report(value: Any) -> dict[str, Any]:
             "quality_gate must remain null for the first baseline"
         )
 
-    if report["interpretation_constraints"] != INTERPRETATION_CONSTRAINTS:
+    constraints = dict(INTERPRETATION_CONSTRAINTS)
+    if development:
+        constraints["status"] = "descriptive_development_pool_grid"
+    if report["interpretation_constraints"] != constraints:
         raise DetectorExperimentScoringError(
             "interpretation_constraints do not match the frozen pilot semantics"
         )
@@ -981,10 +999,15 @@ def _prepare_pilots(
 ) -> tuple[PreparedPilot, ...]:
     windows = experiment.windows_for_inference()
 
-    if (
-        len(windows) != 3
-        or any(window.selection_purpose != PROTOCOL_PURPOSE for window in windows)
-    ):
+    from .development_experiments import DevelopmentExperiment, PURPOSES
+
+    development = isinstance(experiment, DevelopmentExperiment)
+    valid = (len(windows) == 6 and all(
+        sum(w.selection_purpose == p for w in windows) == 3 for p in PURPOSES
+    )) if development else (len(windows) == 3 and all(
+        w.selection_purpose == PROTOCOL_PURPOSE for w in windows
+    ))
+    if not valid:
         raise DetectorExperimentScoringError(
             "Scoring requires exactly the 3 manifest-authorized protocol pilots"
         )
@@ -1073,6 +1096,7 @@ def build_scoring_report(
     *,
     evaluate: Evaluator = evaluate_detections,
     aggregate: Aggregator = aggregate_evaluation_reports,
+    selection_purpose: str = PROTOCOL_PURPOSE,
 ) -> dict[str, Any]:
     """Build and internally validate the deterministic full-grid report."""
 
@@ -1080,6 +1104,15 @@ def build_scoring_report(
         raise DetectorExperimentScoringError(
             "Exactly 3 prepared pilots are required"
         )
+    from .development_experiments import DevelopmentExperiment, PURPOSES
+
+    development = selection_purpose in PURPOSES
+    if selection_purpose != PROTOCOL_PURPOSE and not (
+        development and isinstance(experiment, DevelopmentExperiment)
+    ):
+        raise DetectorExperimentScoringError("Unsupported scoring purpose")
+    if any(p.window.selection_purpose != selection_purpose for p in pilots):
+        raise DetectorExperimentScoringError("Scoring cannot mix window purposes")
 
     thresholds = experiment.scoring_grid.confidence_thresholds
     radii = experiment.scoring_grid.localization_radii_px
@@ -1171,6 +1204,16 @@ def build_scoring_report(
         "quality_gate": experiment.scoring_grid.quality_gate,
         "interpretation_constraints": dict(INTERPRETATION_CONSTRAINTS),
     }
+    if development:
+        report.update(
+            schema_version=DEVELOPMENT_POOL_SCHEMA,
+            report_id=f"{experiment.experiment_id}_{selection_purpose}_grid_v0_2",
+            selection_purpose=selection_purpose,
+            window_count=report.pop("pilot_window_count"),
+            window_inputs=report.pop("pilot_inputs"),
+            release_authorization=experiment.to_dict()["release_authorization"],
+        )
+        report["interpretation_constraints"]["status"] = "descriptive_development_pool_grid"
     return validate_scoring_report(report)
 
 
@@ -1270,6 +1313,15 @@ def score_detector_experiment(
     manifest_bytes = manifest_path.read_bytes()
     experiment = deps.load_experiment(manifest_path)
     _verify_evaluator_sources(root, deps)
+
+    from .development_experiments import DevelopmentExperiment
+
+    if isinstance(experiment, DevelopmentExperiment):
+        from .development_scoring import score_development_pools
+
+        return score_development_pools(
+            experiment, manifest_path, manifest_relative, manifest_bytes, root, head, deps,
+        )
 
     if manifest_path.read_bytes() != manifest_bytes:
         raise DetectorExperimentScoringError(
@@ -1394,8 +1446,8 @@ def score_detector_experiment(
 def build_argument_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
-            "Score only the three reviewed protocol pilots on the exact "
-            "detector-experiment grid and publish one immutable report."
+            "Score the manifest-authorized reviewed windows on the frozen "
+            "grid; keep development pools separate and publish immutable reports."
         )
     )
     parser.add_argument("--experiment", type=Path, required=True)
@@ -1423,8 +1475,8 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     action = "reused" if summary.reused_existing else "created"
     print(
-        "Ball detector pilot grid scoring complete: "
-        f"pilots={summary.pilot_window_count}, "
+        "Ball detector grid scoring complete: "
+        f"windows={summary.pilot_window_count}, "
         f"cells={summary.grid_cell_count}, "
         f"reports={summary.evaluation_report_count}, "
         f"artifact={action}, head={summary.head}"

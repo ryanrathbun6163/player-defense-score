@@ -14,6 +14,12 @@ When Ryan must run a command manually:
 
 Ryan values quality and context preservation over speed for ambiguous architecture, identity, geometry, validation, and scoring decisions.
 
+Teach as the project progresses: give short, simple explanations of what we are
+doing, why it matters, and where it fits in the overall project. Introduce new
+terms with a concrete example, keep implementation detail digestible, and
+explain meaningful choices and tradeoffs so Ryan can suggest changes and help
+direct the work. Carry this teaching preference across sessions.
+
 ## Git workflow
 
 Use this sequence, with explicit approval between mutating steps:
