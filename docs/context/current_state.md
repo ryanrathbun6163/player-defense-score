@@ -1,6 +1,63 @@
 # Current State
 
-## Current local checkpoint: development labels complete; experiment support implemented
+## Current checkpoint: evidence committed; release files prepared
+
+Verified 2026-09-19 UTC (2026-09-18 America/Phoenix).
+
+- Branch: `codex/ball-detector-baseline`.
+- Exact HEAD: `9521569cab36c8d289c4a341b5f33273062cabb4`.
+- Commit: `feat(ball-tracking): add approved development evaluation support`.
+  Ryan separately authorized staging the 35-file scope and then said
+  "yes commit please". The commit contains exactly those 35 files; their
+  working-file bytes were preserved. Nothing was pushed.
+- The clean evidence commit passed release preparation using the repository
+  `.venv` with bytecode disabled: full-suite return code 0, 299 tests recorded,
+  all six annotation approval chains and 330 review assets verified. The
+  validation report binds 59 protected code, test, label, receipt, and proposal
+  files to the evidence commit's Git blobs.
+- Ignored validation report:
+  `data/outputs/ball_tracking/release_evidence/9521569cab36c8d289c4a341b5f33273062cabb4/validation.json`.
+  Its copied evidence file has SHA-256
+  `9a47a6c4e48a77cf0e91311faceae085956a61952ae01697064d0bf778ef03b4`.
+- The approved preparation command created five new activation files: evidence
+  copy, release receipt, v0.2 experiment manifest, and two pool review plans.
+  Their hashes, approval/parent bindings, exact six-window scope, and global
+  window/run/output uniqueness were verified. This context file is the sixth
+  proposed release-checkpoint file.
+- Current worktree: five untracked activation JSON files and this modified
+  context file; the index is empty. No activation file has been staged or
+  committed. Runtime release validation correctly refuses this uncommitted
+  state before model construction.
+- The parent v0.1 manifest is unchanged with all nine historical embargoes.
+  None of its nine embargoed prediction files or the six new development
+  prediction files exists. The new manifest names only the approved six
+  development windows (150 frames); all three holdouts stay sealed.
+  No operating point or quality gate was selected, and no real inference ran.
+
+The next step is separate staging authorization for the six exact files below,
+followed by review of their staged contents and separate commit authorization.
+Ryan's experiment approval is already recorded; do not request it again.
+After that activation commit, run the existing detector's dry-run preflight,
+then the approved six-window experiment, separate-pool scoring, and both visual
+review plans. Do not modify protected source/labels or relax any gate. Ryan
+must review the resulting real visual evidence; push remains unauthorized.
+
+### Proposed release-checkpoint staging scope
+
+```text
+configs/ball_tracking/reviews/rfdetr_medium_development_evaluation_v0_2_9521569cab36_evidence.json
+configs/ball_tracking/reviews/rfdetr_medium_development_evaluation_v0_2_9521569cab36_release.json
+configs/ball_tracking/experiments/rfdetr_medium_development_evaluation_v0_2.json
+configs/ball_tracking/reviews/rfdetr_medium_development_evaluation_v0_2_representative_evaluation_comparison.json
+configs/ball_tracking/reviews/rfdetr_medium_development_evaluation_v0_2_challenge_evaluation_comparison.json
+docs/context/current_state.md
+```
+
+The checkpoint below records the earlier annotation/implementation work.
+Its old HEAD, uncommitted status, and next-action statements are historical;
+this section supersedes them. Always verify current Git state first.
+
+## Earlier annotation and implementation checkpoint
 
 Verified 2026-09-18 America/Phoenix (2026-09-19 UTC). This section supersedes
 the historical snapshot below for session continuation.

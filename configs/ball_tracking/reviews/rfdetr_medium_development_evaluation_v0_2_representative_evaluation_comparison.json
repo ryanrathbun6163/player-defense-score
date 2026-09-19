@@ -1,0 +1,39 @@
+{
+  "schema_version": "ball_detection_visual_review_plan/v0.2",
+  "review_id": "rfdetr_medium_development_evaluation_v0_2_representative_evaluation_comparison",
+  "experiment_id": "rfdetr_medium_development_evaluation_v0_2",
+  "scoring_report_path": "data/outputs/ball_tracking/evaluations/rfdetr_medium_development_evaluation_v0_2/representative_evaluation_grid_v0_2.json",
+  "purpose": "descriptive_development_pool_candidate_comparison",
+  "views": [
+    {
+      "view_id": "confidence_035_radius_10",
+      "confidence_threshold": 0.35,
+      "localization_radius_px": 10.0,
+      "role": "descriptive_display_cell_not_selected"
+    },
+    {
+      "view_id": "confidence_020_radius_10",
+      "confidence_threshold": 0.2,
+      "localization_radius_px": 10.0,
+      "role": "descriptive_display_cell_not_selected"
+    }
+  ],
+  "render_scope": {
+    "selection_purpose": "representative_evaluation",
+    "all_frames_including_final": true,
+    "full_resolution_overlays": true,
+    "synchronized_comparison": true,
+    "truth_region_zoom": true,
+    "category_contact_sheets": true,
+    "metric_heatmaps": true,
+    "all_authorized_pool_windows": true
+  },
+  "interpretation": {
+    "selected_operating_point": null,
+    "quality_gate": null,
+    "model_winner_claimed": false,
+    "generalization_claimed": false,
+    "holdout_evidence_included": false,
+    "decision_statement": "Display the two predeclared cells; neither selects an operating point or quality gate."
+  }
+}
