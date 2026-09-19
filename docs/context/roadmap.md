@@ -15,15 +15,21 @@ Status: complete for curated possessions and empirically generalized.
 
 ## Phase 2 — Ball tracking
 
-Status: in progress. The v0.1 protocol, three-window reviewed annotation pilot,
-detection-evaluation contract, first detector adapter/runner, and prediction-
-blind evaluation-window precommit are complete; real detector inference,
-benchmarking, and temporal tracking are not.
+Status: in progress. The protocol, three-window annotation pilot, six reviewed
+development windows, frozen image-only detector execution, separate-pool scoring,
+and detector-comparison visual review are complete. Temporal tracking and its
+quality gate are not complete. The current reviewed evidence and exact Git
+checkpoint are in `current_state.md`. The first temporal-association experiment
+has approved design and synthetic-tested implementation support; real execution
+awaits a separately authorized clean Git checkpoint. See
+`../ball_temporal_association_implementation.md`.
 
 - [x] define the ball annotation and detection-evaluation protocol;
 - [x] label and visually review a 75-frame pilot spanning three possessions;
 - [x] precommit new contiguous representative, challenge, and holdout pools;
 - [x] implement the frozen image-only detector adapter and guarded runner;
+- [x] annotate, approve, and finalize all six development windows;
+- [x] execute the approved 150-frame development baseline and review its six clips;
 - [ ] compare small-object basketball detectors;
 - [ ] associate detections through blur, occlusion, passes, shots, and rebounds;
 - [ ] preserve uncertainty and missing observations;

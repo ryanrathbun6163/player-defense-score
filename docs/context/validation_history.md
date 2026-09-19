@@ -152,3 +152,57 @@ Only the three reviewed protocol pilots are ready for inference. The nine new
 windows remain `annotation_pending_prediction_embargo`, the detector output
 directory is absent, and no operating point or ball-detector quality gate has
 been selected.
+
+## Ball detector — development execution and visual approval
+
+On 2026-09-19 UTC (2026-09-18 America/Phoenix), the approved versioned
+development release completed at clean commit
+`84bcc8da143e54ff17a28b39db0e70c4b8b299c8`: 150/150 inference frames,
+22,931 raw candidates, two separate 45-cell scoring grids containing 270
+per-window reports, and six synchronized comparison clips. Implementation
+validation ran 299 tests: 298 passed, one existing directory-symlink capability
+test skipped. No production code changed during the later review-record step.
+
+Ryan subsequently approved the six linked comparison videos as a solid starting
+point while noting small detection blips. His exact statement is preserved in
+`configs/ball_tracking/reviews/rfdetr_medium_development_candidate_comparison_review_record_v0_1.json`
+(SHA-256 `a60dea646736135620fb97eba9f1985f7b06f0c7bfc7abee38537580c05f4dba`).
+Both bundle-integrity checks, all six original/playback video hash pairs, and
+59 protected file hash/Git-blob bindings were reverified when recording approval.
+The original execution record remains unchanged as an earlier pending-review
+snapshot. The approval receipt is a later audit record, not a new execution permit.
+
+Visual approval does not establish complete trajectories: these remain
+independent frame detections. At the two 10-pixel display cells, representative
+recall is 62.7% at confidence 0.20 and 52.0% at 0.35; challenge recall is 68.6%
+and 58.6%, respectively. P001 remains the weakest possession. All original
+v0.1 embargo paths remain absent; only six separately authorized v0.2 development
+outputs were generated. Three test holdouts remain sealed, and no operating
+point, quality gate, or model winner was selected. A temporal-association
+experiment is proposed but has not run.
+
+## Ball temporal association — synthetic implementation validation
+
+The first temporal-association experiment is authorized by Ryan's "lets move
+forward" response to its linked design. Separate derived contracts, 54-variant
+association, scoring, resumable execution, and synchronized review support are
+implemented without changing the frozen detector or annotations. The manifest
+specification SHA-256 is
+`ef2f7a2a77f334c94d0efc045311c6fd4a3cc86695aec84934bacbfb06605ab5`.
+
+The final focused suite passed 25 tests. The full repository suite ran 324
+tests in 147.691 seconds: 323 passed and one existing directory-symlink
+capability test skipped. Tests used `.venv` with bytecode disabled. Synthetic
+integration exercised all 324 observation files, 1,620 per-window reports,
+two distinct 270-cell pools, complete review-video decoding, final-frame
+inclusion, exact resume, and tamper rejection. Raw control metrics match the
+established evaluator. The first full-suite attempt was stopped after an
+agent-inspected synthetic preview prompted a readability fix; the reported
+full-suite result is the subsequent run against final code.
+
+Real-data dry-run passed for exactly six saved development windows and 150
+frames. Prior protected files, saved detection hashes, and nine absent parent
+prediction paths were reverified. No real temporal outputs exist yet. Staging
+and committing the documented 13-file scope remain separately authorized steps
+before execution at a clean checkpoint. The three holdouts remain sealed, and
+operating-point and quality-gate selections remain unset.

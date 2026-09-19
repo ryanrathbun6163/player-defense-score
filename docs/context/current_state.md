@@ -1,6 +1,169 @@
 # Current State
 
-## Current checkpoint: evidence committed; release files prepared
+## Latest checkpoint: temporal support validated; staging approval pending
+
+Branch remains `codex/ball-detector-baseline` at
+`84bcc8da143e54ff17a28b39db0e70c4b8b299c8`. Preserve the intentionally dirty
+worktree. Nothing has been staged, committed, or pushed for this step.
+
+Ryan responded "lets move forward" to the linked temporal-association design.
+This authorizes its six-window experiment; the exact statement, design hash,
+and concrete specification hash are in
+`configs/ball_tracking/reviews/rfdetr_medium_temporal_association_approval_v0_1.json`.
+Do not request that experiment approval again. The new manifest is
+`configs/ball_tracking/temporal_experiments/rfdetr_medium_temporal_association_v0_1.json`;
+its specification SHA-256 is
+`ef2f7a2a77f334c94d0efc045311c6fd4a3cc86695aec84934bacbfb06605ab5`.
+It binds all six saved development outputs and the completed visual review.
+
+Four new `temporal_*.py` modules implement deterministic causal tracklets,
+separate derived-output scoring, strict manifest/authorization guards,
+resumability, and synchronized review rendering. No protected existing source,
+tests, annotations, or raw detector outputs changed. Synthetic tests exercise
+all 54 variants, 324 observation files, 1,620 per-window reports, separate pools,
+and a complete video bundle. A real-data read-only dry-run passed for all six
+windows and 150 frames. No real temporal observations, scores, or videos exist.
+
+Final focused validation passed all 25 new tests. The final full suite ran
+324 tests in 147.691 seconds: 323 passed, one existing directory-symlink
+capability skip. Both used the repository `.venv` with bytecode writing disabled.
+`git diff --check`, new-file JSON/Python syntax and whitespace checks, and exact
+13-file scope verification passed. The first full-suite run was deliberately
+stopped after the synthetic preview prompted larger headings and moving
+tracklet labels away from the ball marker; its partial result is not counted.
+No association or scoring rule changed. The agent inspected the final synthetic
+comparison preview; real temporal visual review remains future work.
+
+Generated validation artifacts are under
+`data/outputs/ball_tracking/temporal_implementation_validation/` and stay ignored:
+`focused_final.log`, `full_suite_final.log`, final synthetic preview PNGs, and
+`validation_record.json` with output hashes and proposed file/Git-blob scope.
+The latest commands completed were the full suite and final evidence/scope
+audit. All 59 prior protected files and six raw detection files are unchanged.
+The index is empty; worktree scope is three modified context documents plus
+ten new source/test/configuration/review/design files. Real execution correctly
+refuses this uncommitted state before association output is created.
+
+The next boundary is staging the exact 13-file scope in
+`docs/ball_temporal_association_implementation.md`, then separate commit approval.
+The runner requires a clean committed checkpoint before real association.
+After that checkpoint, run association, scoring, and rendering at the same
+commit and obtain Ryan's visual review of the new temporal evidence. All nine
+old prediction paths remain absent, three holdouts remain sealed, and no
+operating point or quality gate is selected. No manual execution command was
+left for Ryan; future post-commit commands are documented in the implementation
+note and have not been run.
+
+The detector review below is a completed earlier checkpoint. Its statements
+that temporal support is only proposed predate the implementation above.
+
+## Current checkpoint: development experiment visually approved
+
+Verified 2026-09-19 UTC (2026-09-18 America/Phoenix).
+
+- Branch: `codex/ball-detector-baseline`.
+- Exact HEAD: `84bcc8da143e54ff17a28b39db0e70c4b8b299c8`.
+- Latest commit: `feat(ball-tracking): activate approved development evaluation`.
+  Ryan separately approved staging the six release-checkpoint files, then
+  authorized their commit with "yes you may chat". Exactly those six files
+  were committed. Parent evidence commit:
+  `9521569cab36c8d289c4a341b5f33273062cabb4`. Nothing was pushed.
+- Clean-commit release validation passed against 59 protected file bindings.
+  Detector dry-run preflight passed for exactly six development windows.
+  The real frozen RF-DETR Medium run completed all 150 frames, with zero
+  incomplete frames and 22,931 raw candidates retained at the 0.01 export floor.
+  No labels, detector settings, or protected source/test files changed.
+- Scoring created two separate 45-cell grids, containing 270 per-window
+  evaluation reports in total. Representative labels have 75 eligible centers;
+  challenge labels have 70 centers plus five reviewed hidden-ball frames.
+- Both visual packages were rendered and passed bundle-integrity verification:
+  150 synchronized comparison frames, 150 truth-region panels, 300 full-resolution
+  overlays, and six 25-frame videos. Every final frame is present. All six
+  videos were fully decoded for validation. H.264 playback copies are provided
+  for app playback; original bound MP4V videos and PNGs are unchanged.
+- Agent inspection covered all six final-frame closeups and selected P003
+  occlusion-boundary images (164, 165, 169, 170). Ryan subsequently approved the
+  six linked comparison clips: "the videos look good. they pretty much track
+  the whole trajectory of the ball, with small little blips of possible
+  detections. overall though it looks pretty solid to start". The new review
+  receipt preserves this exact statement and binds both packages and all six
+  playback clips. This is approval of the visual evidence as a starting point,
+  not a quantitative quality gate or a claim of complete temporal trajectories.
+- No operating point, quality gate, model winner, or generalization claim was
+  selected. All three test holdouts remain sealed. The unchanged parent v0.1
+  manifest retains nine embargoes and all nine of its old prediction paths
+  remain absent. The six new versioned development outputs are the only newly
+  generated predictions authorized by this release.
+- Execution, scoring, and rendering all completed with a clean worktree at the
+  exact activation commit. Later context, roadmap, and validation-history edits,
+  the new visual-review receipt, and a temporal-association proposal remain
+  uncommitted; the index is empty. Generated media/results remain Git-ignored.
+
+### Results at the two predeclared display settings
+
+Both use the protocol's 10-pixel localization tolerance with stored label
+uncertainty. These are descriptive views, not selected operating points.
+
+| Pool | Confidence | Correct matches | False guesses | Misses | Precision | Recall |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Representative | 0.20 | 47 | 105 | 28 | 30.9% | 62.7% |
+| Representative | 0.35 | 39 | 12 | 36 | 76.5% | 52.0% |
+| Challenge | 0.20 | 48 | 53 | 22 | 47.5% | 68.6% |
+| Challenge | 0.35 | 41 | 9 | 29 | 82.0% | 58.6% |
+
+P001 is the weakest possession in both displayed views. In P003's five
+hidden-ball frames, the 0.20 view includes four false candidates across three
+frames; 0.35 includes one false candidate. Frame 164 has an offset candidate
+at 0.20 that still counts as FP plus FN under the displayed localization rule.
+The six reviewed annotation sets, all approval receipts, the frozen parent,
+and the historical pilot scoring report retain their original hashes.
+
+### Evidence and exact next action
+
+- Review guide: `data/outputs/ball_tracking/development_execution/84bcc8da143e/review_guide.md`.
+  It links all six playback clips, every final-frame closeup, all-frame contact
+  sheets, both full scoring grids, and their review manifests.
+- Audited run record: `data/outputs/ball_tracking/development_execution/84bcc8da143e/execution_record.json`.
+  This binds all detection/report/visual files and records the exact scope of
+  agent image inspection. Its execution-time pending-review state is preserved;
+  the later receipt below records completion. Runtime warnings are retained
+  in the inference log; the installed source documents `_kp_active_mask` as a
+  deterministic keypoint buffer. No package or model configuration was changed.
+- Representative visual bundle:
+  `data/outputs/ball_tracking/detection_review/rfdetr_medium_development_evaluation_v0_2_representative_evaluation_comparison/5ca366b16581f0a2156f1b64badd39e1`.
+- Challenge visual bundle:
+  `data/outputs/ball_tracking/detection_review/rfdetr_medium_development_evaluation_v0_2_challenge_evaluation_comparison/a8e607388bfbb511212b3956a63f55a3`.
+- Human review receipt:
+  `configs/ball_tracking/reviews/rfdetr_medium_development_candidate_comparison_review_record_v0_1.json`,
+  SHA-256 `a60dea646736135620fb97eba9f1985f7b06f0c7bfc7abee38537580c05f4dba`.
+  Its timestamp is receipt creation time, not an invented message event time.
+  Both bundle-integrity checks, all six original/playback clip hashes, all 59
+  protected file hashes/Git blobs, and all nine absent old outputs passed again.
+- Candidate-availability diagnostic:
+  `data/outputs/ball_tracking/development_execution/84bcc8da143e/candidate_availability_diagnostic.json`,
+  SHA-256 `2bf4efc3bf94472c8f5411fd28194c72a308584ece6faab071841cb856cf55b3`.
+  At the stored 0.01 floor and 10-pixel scoring radius, P001 has a qualifying
+  candidate in only 10/25 representative and 18/25 challenge frames. These are
+  label-assisted ceilings for retaining original candidate centers at those
+  settings, not achievable tracking results. No inference or scoring was rerun.
+
+Next: review the concrete design in
+`docs/ball_temporal_association_experiment_proposal.md` and implement its
+synthetic-first support before proposing a new execution manifest. It compares
+raw candidates, a highest-confidence control, and causal tracklets using only
+the six saved development outputs. No tracker has been implemented or run.
+The completed visual review need not be requested again. The new proposal is
+not an execution permit, operating-point choice, or quality gate. Keep all
+holdouts sealed. Completed detector artifacts remain bound to `84bcc8d`;
+inspect them without overwriting them or changing provenance to bypass resume
+checks. No unrun manual command was left with Ryan. Staging, further commits,
+and pushing need separate authorization. No production code changed this turn;
+the existing full-suite result remains 299 run, 298 passed, one capability skip.
+
+The release-preparation and annotation snapshots below are historical. This
+section supersedes their old Git states and next-action instructions.
+
+## Earlier release-preparation checkpoint
 
 Verified 2026-09-19 UTC (2026-09-18 America/Phoenix).
 

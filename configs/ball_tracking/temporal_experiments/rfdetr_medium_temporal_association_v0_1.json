@@ -1,0 +1,528 @@
+{
+  "schema_version": "ball_temporal_experiment/v0.1",
+  "experiment_id": "rfdetr_medium_temporal_association_v0_1",
+  "design": {
+    "path": "docs/ball_temporal_association_experiment_proposal.md",
+    "sha256": "dea1692fb46607e6c591f21c774a802987acce0803434e5a5c7d81bca4c7b5aa"
+  },
+  "baseline": {
+    "path": "configs/ball_tracking/experiments/rfdetr_medium_development_evaluation_v0_2.json",
+    "sha256": "3a78cf26686c0624c1a45dec5c47e7bad182cc7d5cd658b639e11d47c0d75489"
+  },
+  "visual_review": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_development_candidate_comparison_review_record_v0_1.json",
+    "sha256": "a60dea646736135620fb97eba9f1985f7b06f0c7bfc7abee38537580c05f4dba"
+  },
+  "windows": [
+    {
+      "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+      "purpose": "representative_evaluation",
+      "possession_id": "possession_001",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 50,
+      "end_frame_index": 74,
+      "detection_run_id": "possession_001_frames_0050_0074_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_001_frames_0050_0074_representative_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_001_frames_0050_0074_rfdetr_medium_development_v0_2.json",
+        "sha256": "c7a9963c6d0d33ca9faede512bbdced48f744f40ff803b68d55d1f97bae043c8"
+      }
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "purpose": "challenge_evaluation",
+      "possession_id": "possession_001",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 200,
+      "end_frame_index": 224,
+      "detection_run_id": "possession_001_frames_0200_0224_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_001_frames_0200_0224_challenge_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_001_frames_0200_0224_rfdetr_medium_development_v0_2.json",
+        "sha256": "4101f8b890138e25f2301b03f06791a9de3bdec66a84ab32c8dda16ffa22c656"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+      "purpose": "representative_evaluation",
+      "possession_id": "possession_002",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 250,
+      "end_frame_index": 274,
+      "detection_run_id": "possession_002_frames_0250_0274_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_002_frames_0250_0274_representative_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_002_frames_0250_0274_rfdetr_medium_development_v0_2.json",
+        "sha256": "8159041a0ffd707f5823081f52cf8012ba10a8af9fbc26809426310f5d9dceec"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+      "purpose": "challenge_evaluation",
+      "possession_id": "possession_002",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 25,
+      "end_frame_index": 49,
+      "detection_run_id": "possession_002_frames_0025_0049_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_002_frames_0025_0049_challenge_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_002_frames_0025_0049_rfdetr_medium_development_v0_2.json",
+        "sha256": "dcbb1c88ab70c7ee938944e890e3e22773b8e01cd792a32591ce91fc8cf3bee6"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+      "purpose": "representative_evaluation",
+      "possession_id": "possession_003",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "start_frame_index": 300,
+      "end_frame_index": 324,
+      "detection_run_id": "possession_003_frames_0300_0324_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_003_frames_0300_0324_representative_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_003_frames_0300_0324_rfdetr_medium_development_v0_2.json",
+        "sha256": "dc621477e8c3c907cb3f7d74b2c56a22075af858cbe027ab1ef7afe3893f1d0c"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "purpose": "challenge_evaluation",
+      "possession_id": "possession_003",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "start_frame_index": 150,
+      "end_frame_index": 174,
+      "detection_run_id": "possession_003_frames_0150_0174_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_003_frames_0150_0174_challenge_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_003_frames_0150_0174_rfdetr_medium_development_v0_2.json",
+        "sha256": "c28ab58e8a40e49018954d8327a178b268ad1b4b6fc7929a80f5ea8d8d344802"
+      }
+    }
+  ],
+  "scoring_labels": [
+    {
+      "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_001_frames_0050_0074_representative_evaluation_v0_1.json",
+        "sha256": "3731fa669da12fdcab0748ab92bc7bbb85961a2a0f80518092eaced0e08d5c6c"
+      }
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_001_frames_0200_0224_challenge_evaluation_v0_1.json",
+        "sha256": "73ed29bc62e002d86b207a12298b30b27724fe42be5a354ec09bc104211e2def"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_002_frames_0250_0274_representative_evaluation_v0_1.json",
+        "sha256": "cccec6a086bf9898197babeb5d785bdd4ba0290b7c6c1ba5c206e8545e67563f"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_002_frames_0025_0049_challenge_evaluation_v0_1.json",
+        "sha256": "c0d1bad8f6879e2d073b6d0becf3df12347b43ef06e9c6ff44c26b6f56d3c1e3"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_003_frames_0300_0324_representative_evaluation_v0_1.json",
+        "sha256": "2b35475e715e9a4b816ad997b58be3201370695a2f420a35a6947696bbe3637e"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_003_frames_0150_0174_challenge_evaluation_v0_1.json",
+        "sha256": "ab77e6c8570ee8fc536632e43ee71d978e72cd16188f7564c77ae256873994ee"
+      }
+    }
+  ],
+  "variants": [
+    {
+      "arm": "raw",
+      "confidence_threshold": 0.01,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "top_one",
+      "confidence_threshold": 0.01,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.01,
+      "step_limit": 0.01,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.01,
+      "step_limit": 0.01,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.01,
+      "step_limit": 0.03,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.01,
+      "step_limit": 0.03,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "raw",
+      "confidence_threshold": 0.03,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "top_one",
+      "confidence_threshold": 0.03,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.03,
+      "step_limit": 0.01,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.03,
+      "step_limit": 0.01,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.03,
+      "step_limit": 0.03,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.03,
+      "step_limit": 0.03,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "raw",
+      "confidence_threshold": 0.05,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "top_one",
+      "confidence_threshold": 0.05,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.05,
+      "step_limit": 0.01,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.05,
+      "step_limit": 0.01,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.05,
+      "step_limit": 0.03,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.05,
+      "step_limit": 0.03,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "raw",
+      "confidence_threshold": 0.1,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "top_one",
+      "confidence_threshold": 0.1,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.1,
+      "step_limit": 0.01,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.1,
+      "step_limit": 0.01,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.1,
+      "step_limit": 0.03,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.1,
+      "step_limit": 0.03,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "raw",
+      "confidence_threshold": 0.15,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "top_one",
+      "confidence_threshold": 0.15,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.15,
+      "step_limit": 0.01,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.15,
+      "step_limit": 0.01,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.15,
+      "step_limit": 0.03,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.15,
+      "step_limit": 0.03,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "raw",
+      "confidence_threshold": 0.2,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "top_one",
+      "confidence_threshold": 0.2,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.2,
+      "step_limit": 0.01,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.2,
+      "step_limit": 0.01,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.2,
+      "step_limit": 0.03,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.2,
+      "step_limit": 0.03,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "raw",
+      "confidence_threshold": 0.25,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "top_one",
+      "confidence_threshold": 0.25,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.25,
+      "step_limit": 0.01,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.25,
+      "step_limit": 0.01,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.25,
+      "step_limit": 0.03,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.25,
+      "step_limit": 0.03,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "raw",
+      "confidence_threshold": 0.35,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "top_one",
+      "confidence_threshold": 0.35,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.35,
+      "step_limit": 0.01,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.35,
+      "step_limit": 0.01,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.35,
+      "step_limit": 0.03,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.35,
+      "step_limit": 0.03,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "raw",
+      "confidence_threshold": 0.5,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "top_one",
+      "confidence_threshold": 0.5,
+      "step_limit": null,
+      "max_missing_frames": null
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.5,
+      "step_limit": 0.01,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.5,
+      "step_limit": 0.01,
+      "max_missing_frames": 2
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.5,
+      "step_limit": 0.03,
+      "max_missing_frames": 0
+    },
+    {
+      "arm": "tracklets",
+      "confidence_threshold": 0.5,
+      "step_limit": 0.03,
+      "max_missing_frames": 2
+    }
+  ],
+  "localization_radii_px": [
+    5.0,
+    10.0,
+    15.0,
+    20.0,
+    30.0
+  ],
+  "output_root": "data/outputs/ball_tracking/temporal_association/rfdetr_medium_temporal_association_v0_1",
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_temporal_association_approval_v0_1.json",
+    "sha256": "58e1699d6a0b7654a91896588f221124f1d3e6a9129d95548d85b834c13294e0"
+  },
+  "selected_operating_point": null,
+  "quality_gate": null
+}
