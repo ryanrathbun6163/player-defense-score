@@ -1,0 +1,1579 @@
+{
+  "schema_version": "ball_crop_motion_factorial_proposal/v0.1",
+  "proposal_id": "rfdetr_medium_crop_motion_factorial_v0_1",
+  "status": "proposal_not_authorized_not_executable",
+  "prepared_at_utc": "2026-10-01T03:55:21.415039+00:00",
+  "design": {
+    "path": "docs/ball_crop_motion_factorial_proposal.md",
+    "sha256": "39fa54b30461c39c71324b70ea5c3d60f90132d7a2e31b589e729dac4d028e7b"
+  },
+  "rationale": {
+    "path": "docs/ball_crop_candidate_ranking_results.md",
+    "sha256": "4989c21940cc4c70bfbe28330be4d7408721e3d8c4d3e835f7f9aa38e8f905af"
+  },
+  "diagnostic": {
+    "path": "data/outputs/ball_tracking/crop_ranking_diagnosis/3c4894656fd5/diagnostic.json",
+    "sha256": "b5fc30f8dd8e5bd4b8a7c1bf98bf9e51108cdd3cc45397dd6a12fe614a84014d"
+  },
+  "generator": {
+    "path": "data/outputs/ball_tracking/crop_ranking_diagnosis/3c4894656fd5/prepare_proposal.py",
+    "sha256": "7522e575c3f2741d9f983c1c80a94c6412a2e06f32f7b4ea7244a1e2d0ed1dbc"
+  },
+  "prior_ranking_proposal": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_candidate_ranking_v0_1.json",
+    "sha256": "f9a3ae162d2227ddffab9a9da68811ea629cf7dfa6ffa48625546ac1ab5ad2ca"
+  },
+  "prior_ranking_manifest": {
+    "path": "configs/ball_tracking/crop_ranking_experiments/rfdetr_medium_crop_candidate_ranking_v0_1.json",
+    "sha256": "a90c943dca042c34d9514b88c454318d9138ddc5835e604aa411bd168a79e7d5"
+  },
+  "prior_ranking_execution": {
+    "path": "data/outputs/ball_tracking/crop_ranking_execution/3c4894656fd5/execution_record.json",
+    "sha256": "95c0b8f92c8af1fde8a842bf7e4bd6993b87880cfbc2a690ae758bf267a14b5d"
+  },
+  "prior_ranking_execution_commit": "3c4894656fd5da11708a54089444d41f0a6f7773",
+  "ranking_review_receipt": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_ranking_visual_review_record_v0_1.json",
+    "sha256": "21d896cd6842fc28293f3196ecce3b2e3dc81d6ae65c694a0aaa93fb753054a5"
+  },
+  "crop_execution_commit": "1a9479f83a1766d8979fad07c604bc686d3c52c6",
+  "crop_experiment_manifest": {
+    "path": "configs/ball_tracking/tiled_experiments/rfdetr_medium_tiled_development_comparison_v0_1.json",
+    "sha256": "87716bd68417f57987ce88fd2b7b16a2f243f488a1f29e3d25b8680798ae7b00"
+  },
+  "crop_review_receipt": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_tiled_development_comparison_visual_review_record_v0_1.json",
+    "sha256": "6e108189b792d505c97adbcfcce5aa635a6e140893a6306e0c08bfe910218adb"
+  },
+  "saved_ranking_scoring_reports": [
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/evaluation/representative_evaluation.json",
+      "sha256": "b78c72c78ef38ced2d0b1c46d096f68eee811ab33ac6d765329a1dd23f8664c2"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/evaluation/challenge_evaluation.json",
+      "sha256": "d22bec904480d05a46c771628639406821f536331d223011c94874dbfa6d0aa0"
+    }
+  ],
+  "saved_ranking_control_outputs": [
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_raw_5ed9d15de1851e6a.json",
+      "sha256": "53f13710b9d511d2a588007ba4bb1613923efa3686647ab9624f4daac563b35f"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_one_ccd446d61a047d6d.json",
+      "sha256": "c3e5a76e66b4fd73e1f2965f1854835b1b8b4e6ed3c7b9a5d98c7d46c266e6bd"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_twenty_3119d75304b36557.json",
+      "sha256": "0a5ab6eae12e1e35f8efee0217b78820d63f32c07026172a65605ab469986991"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_tight_4585665cc9f43fcd.json",
+      "sha256": "69eeb893ba49c43b9d6588918db9f3f322dce291edabc06ee2c22ad7603f7af9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_wide_8305a893b004a71a.json",
+      "sha256": "8510fd0744b3948b85e755400639f4fcf25200956b0c79e0dfe040013de7e503"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_raw_2c966ea0ceaf44bc.json",
+      "sha256": "0f0e264cde2e360a970d3ae501dc293593ab271b4dd06eacab4d62313a5978d4"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_one_d9cab7eda34f1505.json",
+      "sha256": "d8d610defd568e1e57dfe3f577a8ffac13ba5be5bd53a58b785a02a4ed1a161f"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_twenty_4b2b40c9f2365442.json",
+      "sha256": "a237527a6fc3b9a5eb38f115a92b55a6f9411eefd112735a915398edb4c9650f"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_tight_889928d80e0d2a0c.json",
+      "sha256": "992e5ac1ffb2a5d4a6431613eff80394e29d21a6bc12414e5478c42f4f1d1192"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_wide_79a28903ddcc3855.json",
+      "sha256": "03635bfdbe8a26222ad0646a1607b4f3b8a2f450df41d6fedce4fd01dc2f1de4"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_raw_1eda2b7cecec0aaf.json",
+      "sha256": "5b79beb59b1ea639970a7d2aa04515b2905beee4b757cec99d7fc1e160537de8"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_one_27f59217f8261104.json",
+      "sha256": "af97d7fc542f9afe1e51da08eb18849a2e9fe43afb723b5b8c878e092a590f6c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_twenty_fa8d0fb29ca028c2.json",
+      "sha256": "5d73069878dc7a1a24ed5c3859dcce760b2904709e8c16507570ea582358a582"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_tight_d42867736809b2dc.json",
+      "sha256": "df0fa66099213bbb0b50615068614936147d889467b355431f0bf31f7f163907"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_wide_b42a834d9b337a91.json",
+      "sha256": "a79adf64a98e29c5a12f837c05dbb17f3155a2f460935a814ccdc01d1dee9184"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_raw_04ce5f07bd2e224b.json",
+      "sha256": "e0dd8cc99fd34acf5395d9d4190c4dad4b1096d362277200c99a7763b6e9222f"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_one_ca130fc8483d7e74.json",
+      "sha256": "f6b303c28302f3b2fb7df0ecd5a66cd906f1cc62454b66aabb57eb31c03776c3"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_twenty_7c5cd0938c4eb7ec.json",
+      "sha256": "4a380f8b272ff0a26fedae44efb0754ac673c424f40451733b4b58aa8624d9d6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_tight_aedaf3e6d5146a62.json",
+      "sha256": "0968351c355a9073123da0fb6ac5e910cc1c5464c4ce46c388136f4d29c8a6a3"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_wide_517e967bb6dbe7cc.json",
+      "sha256": "43f220b5a43690534e71171845010b3f9a051fdbf73e75da703a0e279f785c33"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_raw_72ba8cd81c65707e.json",
+      "sha256": "0217651215d90bd09befafb7006bbb8c5766db477ba03e7ad9bcbb8db2ed13cd"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_one_8bb94ae0fceb7271.json",
+      "sha256": "29d5e39ce36525ab49cb4476605f81806b46aacc5f135ed9e383cb770ac9ce3c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_twenty_1b8101587702be40.json",
+      "sha256": "f6dd7b5de5b4a7ac01744964e7f282c20c5f433650c0f968649e885ac916ec0b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_tight_02c647d76ccb59c6.json",
+      "sha256": "40c40580c73f654707ffecb9c7b2f69916a1b65115898cee50b8e8451fd809fd"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_wide_1e16c64464b3b839.json",
+      "sha256": "602090618586095eb54f5a704f2c0aff12b65decdadb0f1cf768b6ffa1401da9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_raw_a1d83f4ba8cf3b70.json",
+      "sha256": "b2a34976a80d078fd98dcb4ef273d7c0c190cb13e91a15298edec542cdbec2e0"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_one_6f0e12ae8037df84.json",
+      "sha256": "22a12601c2976e4dc7d15cd1177b284dd80982a0d8676b63dccea20c12988386"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_twenty_39f5b5368e1dd574.json",
+      "sha256": "c83fb2502ac18f3a2b7655c5ab94d0f79f975afafaa323ffc0e30c28ddb281f1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_tight_556843083f866a04.json",
+      "sha256": "f883be71406fecf9dc8db60c682447cb7e44c96b1dafbf20e2eae073e443a292"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_wide_00225b0313ca621c.json",
+      "sha256": "751400fad237a7ba3aec7f0e75eb2f45012cadedc278e61b6c55cc3b0ae87655"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_raw_923567ed371d701b.json",
+      "sha256": "4d61d65ea10a445c52ac97c0d72a613577796410fc32d7ffff9883cc2b8891a6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_one_63ff2d6baecab12d.json",
+      "sha256": "7e91c367d13c5c5a15dc5d67870b1d25cda6e79be73c15d5d5c21bf500752721"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_twenty_d393d4797811a0b6.json",
+      "sha256": "03522703c754c02bc945816e0561968184410c4891413115c5b10340e9d42da5"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_tight_75909256da03a6c7.json",
+      "sha256": "6133335d3774493b83bce1033740b88852c90adaf9751f69032200cd78ee3b2b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_wide_6cf235079ef75bd9.json",
+      "sha256": "3437134f9a5a5ebe45d9ecc1feda134cb324bd669a38697b0e4043c9ecb94e42"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_raw_eb250bdb7002f02c.json",
+      "sha256": "059728df6d27e3fef9db06f43cb2b995e876e4cd6674e729e4aaa7afa92337a5"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_one_4da22a369785ddb5.json",
+      "sha256": "ec5140b1b0657226b36d25a3c3b2fb2c101909af91984d49c89af66fa8729630"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_twenty_86da947a674c892f.json",
+      "sha256": "c0e809f05b90231ad22817b3e379f01ea1b97545e38a89ef832b42b720d292fc"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_tight_d26334bc0f2d5e8d.json",
+      "sha256": "87c286542f4385f1597e83df401c5511604f7df4caf5886ae1b06a50cb691893"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_wide_79719a852d11cf05.json",
+      "sha256": "480898de98ed9e49fcc07b59ebfabc2aa8d3fe871cd906f12b53dcaf13aa9c0a"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_raw_475b2cf07daecee9.json",
+      "sha256": "86bc356999daad1fec69f104b4671d86e579f2d08179ec8f638ad5bf2583ec02"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_one_01960b5c65324c37.json",
+      "sha256": "3fc738a2bd66218b47d4aea2866da55818a1dc55743d456a0e474c87b523f92b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/crop_top_twenty_3c8bbd523d3a9b0e.json",
+      "sha256": "eaba27ce0eaa0492240b445a6c143730b6977fcf9c2fa1d8bd0661c5885566af"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_tight_be6bf2b9104709a0.json",
+      "sha256": "bda848c8f2d0db62153a9cf463819c49975f4c8da3152ec96b7a64ae96565a19"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/recent_history_wide_2521e98254f2cafb.json",
+      "sha256": "afb938434a3fca33094c2cef61cfb54480fbb3ac2ad56b21624fca1e50c7c52f"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_raw_5ed9d15de1851e6a.json",
+      "sha256": "447b39e8f20fd6453ecf740b465ea96da89bd778c384bce327807a2f9c14f870"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_one_ccd446d61a047d6d.json",
+      "sha256": "8a29199193d8d2dbf63303e78332d2419434bf311af0428688243791f8a7db64"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_twenty_3119d75304b36557.json",
+      "sha256": "be58d724748b1511dbcb2c20053689a35693ea07187b08f6e02d1e597b38d703"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_tight_4585665cc9f43fcd.json",
+      "sha256": "2b4dc69350a9383782ed474a46d2c26207f87ab4cc0775e81a3f4213fd5614bd"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_wide_8305a893b004a71a.json",
+      "sha256": "a2a30bea1c567ec453c6c336158c6bb5e00334c76d658d45eb9a2523470c8abf"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_raw_2c966ea0ceaf44bc.json",
+      "sha256": "cecaeb6cb101c13699fb42e4ac26a25619747e4a1889a27022ccf69ba1687c84"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_one_d9cab7eda34f1505.json",
+      "sha256": "8f0cb573cd5581d595db387242af763803718841520e782516fef36d9a457446"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_twenty_4b2b40c9f2365442.json",
+      "sha256": "69563d76a24b1549b9878f9bd156b1e417893a36f94d3512a3fc8b831be7cf10"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_tight_889928d80e0d2a0c.json",
+      "sha256": "41012db682a0a210921e3ecd85775e0ba778ead82a91479fcc2f642936fd20fb"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_wide_79a28903ddcc3855.json",
+      "sha256": "8cdb65e3a34d9d07fd12e9320dbb57044b72086eb6dd35665fd204a2f1cd3a0f"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_raw_1eda2b7cecec0aaf.json",
+      "sha256": "adb9d6e358da06e08e1aaad52ee39d17a64050c4da60f9960096bf508a211e87"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_one_27f59217f8261104.json",
+      "sha256": "372e02f6b0626df2cad0461ea04bdab2dbe7441be37b78090b54196ae8a302b6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_twenty_fa8d0fb29ca028c2.json",
+      "sha256": "75f18871281e0cb79339fd2abe339abb6d9a4855eb73ded8d98f0bb36460e7e2"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_tight_d42867736809b2dc.json",
+      "sha256": "f9ffb7eaba8f0ec800c7b320f1fc1dea0f0adf05e3105d2cb6c272fe8dcfc7bc"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_wide_b42a834d9b337a91.json",
+      "sha256": "cb712eb4bac269032369ead5156c1178f2d1a5f923a441d66677905c2d50f1e6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_raw_04ce5f07bd2e224b.json",
+      "sha256": "a85c901e0b2755381bfc3db8e817c35c85738ca0b3d8aa99fa6ee95c3777c729"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_one_ca130fc8483d7e74.json",
+      "sha256": "951b196a020887fcfa1732866539e12eb398091d5288b489670b0036ee9346ad"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_twenty_7c5cd0938c4eb7ec.json",
+      "sha256": "4fae90012aa5d132d0fdb21e388b07fd4a26ae0af10b6846612dcbc2208a8c48"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_tight_aedaf3e6d5146a62.json",
+      "sha256": "a899014a74feefe2c56486710dd0c2bdab77e60c8fe864bc73f605c655a8a0be"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_wide_517e967bb6dbe7cc.json",
+      "sha256": "1b068792524e3781fb068eee650b139eaddd94741e0abcf1af542c724f79a083"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_raw_72ba8cd81c65707e.json",
+      "sha256": "5935beb2382f390f660c9d3d3dbb440410bc9e62c8d17e74f138bf763e43948d"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_one_8bb94ae0fceb7271.json",
+      "sha256": "d206991e1445b302b9e4976e9f8304cf6788f070557c619dba9ddfd38bccf974"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_twenty_1b8101587702be40.json",
+      "sha256": "10953bf15c06dc04425d2ece27e1b95449f47ed378fb21aec3de7b241f52a1e8"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_tight_02c647d76ccb59c6.json",
+      "sha256": "bd81db1beb5057fdd438ad7ca4de9ab5a317db760c6b8e4cc5194159db825b32"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_wide_1e16c64464b3b839.json",
+      "sha256": "3354c5795171f9fb3778b01caa6c1119c442895bc558fa883876191524589520"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_raw_a1d83f4ba8cf3b70.json",
+      "sha256": "d2d3494f1733f6cf7a692a387e75383c03bf8c5f5ec6d9cdd8becaa82cbf79ae"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_one_6f0e12ae8037df84.json",
+      "sha256": "cd83c81b454220fe4a37b9177d932447888c01dd75a8214d481336ae892d876f"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_twenty_39f5b5368e1dd574.json",
+      "sha256": "5b68c14c7a271a4b3101ad108f35517b1da11732b270d0efbd8be8f921371252"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_tight_556843083f866a04.json",
+      "sha256": "45ccd23218d7f4347a60260086e57c6e6241422ddaf8eca10b76033079fb1a42"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_wide_00225b0313ca621c.json",
+      "sha256": "bd812c824702bde13986ef423625429c7b39e62fd4320d9e3904610a423336bc"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_raw_923567ed371d701b.json",
+      "sha256": "d3c245c952da9dcb83734227f4aba687bb0454e2afe60337de900464eecd4522"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_one_63ff2d6baecab12d.json",
+      "sha256": "d1edff9f1447096ae8ad92097a9a28a9e9ce854ec443a575735ccd2a1d5bc206"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_twenty_d393d4797811a0b6.json",
+      "sha256": "d3bde27e09898ee47776e5ee987e7d10ad9f0b8640f2fffd1cf7204fb0aee852"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_tight_75909256da03a6c7.json",
+      "sha256": "5a13af754b9bb0560117d5e2c9f0fb942c94ec2e552c991970440035372c745a"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_wide_6cf235079ef75bd9.json",
+      "sha256": "03cdc7992406f096c607f6f53826cfab6bf5f0f3a72e810908c62bed5077a9a4"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_raw_eb250bdb7002f02c.json",
+      "sha256": "f22fd6c8ea429878a6c718be7813601a9364bc83cd56f189843b78a8e82c9556"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_one_4da22a369785ddb5.json",
+      "sha256": "4d7b97ab7fd983ea4e953c05bfa4c2fbf31ab7b9303eb6d318e508df7cdafa0e"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_twenty_86da947a674c892f.json",
+      "sha256": "c8f849b6e10d7c795fc21ae5ce0e0f07b6e1fa29522712c9e206408441765429"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_tight_d26334bc0f2d5e8d.json",
+      "sha256": "17f64febaef5c635d956525aac1252247c8f16669671abfaa32d9f497aaa6102"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_wide_79719a852d11cf05.json",
+      "sha256": "74adac750728a572243e35614bad637da4df822207b4d46fc7edf814bf9651a6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_raw_475b2cf07daecee9.json",
+      "sha256": "6e16a14611bd27266e6738a0212d643246e55a29c4cec9c9779eb0168b1096e7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_one_01960b5c65324c37.json",
+      "sha256": "57b50aedd7a89bfaa7427067993078786fbd9c8c5b0695f6a89f3d7a4f409e51"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/crop_top_twenty_3c8bbd523d3a9b0e.json",
+      "sha256": "86b91be34c7c1455a7a506f2cdd12385d2d4e05ec17327c1f366baeb08e337bb"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_tight_be6bf2b9104709a0.json",
+      "sha256": "8571a69ad2db92a8f779002ce93a1a056de5b3b379899d107ed8fc35b77120fc"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/recent_history_wide_2521e98254f2cafb.json",
+      "sha256": "86b8fefac9463922d1ca66ecbd89f76747d7527d3a3fd1bf815e9f9cbbe16611"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_raw_5ed9d15de1851e6a.json",
+      "sha256": "74d8be0d7e30b9568643137da5a09f1fd9bbb1e48d7b11eeb201abe2ab8d8050"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_one_ccd446d61a047d6d.json",
+      "sha256": "74021982bc17700d99680fcfffea6bc4a56dd3a1783623dd82b2edec1a01b247"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_twenty_3119d75304b36557.json",
+      "sha256": "985a0b33ff87732c2575999655dea7dfb18a1a9bd5cc8ba240ace02365928da8"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_tight_4585665cc9f43fcd.json",
+      "sha256": "b306741ec6f194f57a97b11b550fb7466014cda25ce62179787285d41d285e6e"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_wide_8305a893b004a71a.json",
+      "sha256": "79faf03d7126ec77d63c27b37ae58a395c2156bc6414500535586740f5565348"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_raw_2c966ea0ceaf44bc.json",
+      "sha256": "513e5797f8c45c8ccc779541ad68fad47b5f8de2bbbe720b8a1f90b421838725"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_one_d9cab7eda34f1505.json",
+      "sha256": "d95d082bd1b1878ba3112cb97f6e09768f62e6a4170ef159560d65e16bedee02"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_twenty_4b2b40c9f2365442.json",
+      "sha256": "382f0f13cae895f4b2a6c685c3f0f67719b3c2e08d1918a7376f6dd308fc3659"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_tight_889928d80e0d2a0c.json",
+      "sha256": "47e0db7c340e1aea88da95e43765ee51cc7cc622cd200dace518a231d1f7470d"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_wide_79a28903ddcc3855.json",
+      "sha256": "484b6d8a4aedb493f1ac7fc926e65dd8e42f25e741d791b4f0cd245e91f6d3b4"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_raw_1eda2b7cecec0aaf.json",
+      "sha256": "bc0cb8465770c08216e8466879f437c094f422d15b0dfedfe469630b02182233"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_one_27f59217f8261104.json",
+      "sha256": "dd793d49a6d67bb16b94d079168bef3c216f3c40cb7bcc3b8f6f19f8f4fa439e"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_twenty_fa8d0fb29ca028c2.json",
+      "sha256": "1afc105b493237acdcfecb21f0133b2b3f4a5694f78ff3a2bf1401c474c47a0a"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_tight_d42867736809b2dc.json",
+      "sha256": "cf4f6684a4e9f61145c71cf99209d96af0f42831465a0cd6efc21c40fe731806"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_wide_b42a834d9b337a91.json",
+      "sha256": "414b24d552fb682206bc55894a0cea85e2c2147477b76cf182bd22bc33522767"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_raw_04ce5f07bd2e224b.json",
+      "sha256": "47db0d967dc0ce341c602eaeb3eb5ac2dafa46e4f8e20c511a5b5af2b8b546c1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_one_ca130fc8483d7e74.json",
+      "sha256": "e2f40e343a8c121761bcb460a7391d5f036433b6aca6c27a0cc80a060c5a6031"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_twenty_7c5cd0938c4eb7ec.json",
+      "sha256": "70da7ef613aa70c3488f78c6bcfe294dfdc1bfc17ea667b297b478598296429c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_tight_aedaf3e6d5146a62.json",
+      "sha256": "2af8c1d0be4e9b4e7aa4e6e8e0967d3e8aa5acba3ec622af5daf54279f62f98b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_wide_517e967bb6dbe7cc.json",
+      "sha256": "857094d820d48dd8e4579111ec9e05279fc32ff7d6e090551e6db063a14c68e8"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_raw_72ba8cd81c65707e.json",
+      "sha256": "ac4f25c18e1d244a29659fd7e924d3020ab8b4955e193f7c1557b74d865b515a"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_one_8bb94ae0fceb7271.json",
+      "sha256": "922c8be49fac0cfcf328d001c7b6d4f04a65fee1e922516f5f72d09e16d48749"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_twenty_1b8101587702be40.json",
+      "sha256": "08d7bb5686b919425fb9fba7216d1ac2564b5cd61d1ea0be549425e0b305ef27"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_tight_02c647d76ccb59c6.json",
+      "sha256": "dfbe07f4210ad3c6db38d93b0754751a168c6ae25608b0dbc1c3c465e43ed898"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_wide_1e16c64464b3b839.json",
+      "sha256": "a0f1f4ca0ec37a49251c73c1ed7519114335523c4734e8a1a64efecc96becf0c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_raw_a1d83f4ba8cf3b70.json",
+      "sha256": "5adf1ea409c3b767a780f0ae15d1878720f7d98528947f8cd00ce056a106a3a6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_one_6f0e12ae8037df84.json",
+      "sha256": "684f467fa69c3152a4c02c68b41559083da4b2c558275474105fc56f1d09dff7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_twenty_39f5b5368e1dd574.json",
+      "sha256": "807a381dbbd38d875a0cfbfe6310fe7ac1f06af727b4baa0ada123769d9f7b9a"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_tight_556843083f866a04.json",
+      "sha256": "65c2afaefe8cab63e16a18e0741d8a15d867554ea485edea31b93397e2d3424c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_wide_00225b0313ca621c.json",
+      "sha256": "bb31a7c8e5a4ba387b2f71db3bbf2c4bf94310af95e66c58c3970167e58e80c4"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_raw_923567ed371d701b.json",
+      "sha256": "5e801fa20f66a99241fd2749190b89b6635d36994dc26a3acd9aeb6d1187f95f"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_one_63ff2d6baecab12d.json",
+      "sha256": "cf98d09463c61017f64fbe52e998bdea96f1b84db4eba7a39eb1bf43cba107bd"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_twenty_d393d4797811a0b6.json",
+      "sha256": "adfcaf1a4a7f2976131ba010370145ab54894f5a9bf447e1435b95a331989108"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_tight_75909256da03a6c7.json",
+      "sha256": "3cabf1575574e179ca70c7abf2bba9d36f6ad6fb390e6949e16b219adc744de8"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_wide_6cf235079ef75bd9.json",
+      "sha256": "e8cb37f81da8702531e46e37c7588e023e69600db409fbf838397f479cf628d4"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_raw_eb250bdb7002f02c.json",
+      "sha256": "5c044b84b23481ed4abaa51c4a4f44f985a7ddd2013d527c457cb35a9d819ead"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_one_4da22a369785ddb5.json",
+      "sha256": "6bfc977c3a99af37ac6b61d96baf01c1474fe9a3d16218aabe3b6918a67328b6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_twenty_86da947a674c892f.json",
+      "sha256": "a17a3ee9ba216f4be223f54da442511dc264525ccdd7aeeb4ecad3aad6a75e15"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_tight_d26334bc0f2d5e8d.json",
+      "sha256": "43ced1c38ce1b0c4a9d24676cbda029cc01fc88f25b0276a01b2935222e716e9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_wide_79719a852d11cf05.json",
+      "sha256": "1e2b3ab99f959fc2a54c7cd18eaa17c585c8d4c7855e2b0a2c8049fa5dc89080"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_raw_475b2cf07daecee9.json",
+      "sha256": "7555228a18fab3d1e01bd653be0b270cb3a2ec41770b39f18c084e27f1e99a84"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_one_01960b5c65324c37.json",
+      "sha256": "d2210c295c0a4c5e39284b523f2d98e5450e03aba186a2834ad40d581abc683c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/crop_top_twenty_3c8bbd523d3a9b0e.json",
+      "sha256": "d4e31ca7ac7f6b1fbf6817792fed79363338985361420792192f45f4ea929399"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_tight_be6bf2b9104709a0.json",
+      "sha256": "0aa3ffcb3d544d42e119b497a490fe5a78f2c97a2402b840213cb6c24df371bd"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/recent_history_wide_2521e98254f2cafb.json",
+      "sha256": "a7718feb4800da3771601db62d1285914c2e2998e7ef0c662fa1e9bde2946968"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_raw_5ed9d15de1851e6a.json",
+      "sha256": "7f9b20dffe3d05ab44d9fc0ab4a1948ea0a20f034ad8fc579f7819bf135bba27"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_one_ccd446d61a047d6d.json",
+      "sha256": "576f551664347d9e29b72d9e2fe7ee762a7d85b34b8fe8cdde763a1ecd916a67"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_twenty_3119d75304b36557.json",
+      "sha256": "82ab5b527d58a2c9713987abb3fc5f77932e5f3b5be33b117c1c1d00f3f7dbcc"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_tight_4585665cc9f43fcd.json",
+      "sha256": "ea23ad21725181661d280cb1b19b79067d84f67351558034d1093d087ad20f62"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_wide_8305a893b004a71a.json",
+      "sha256": "1192cbb1d105bb10b86dff2a7f97ef45125faff35022d07e3f73ca31a0890c6d"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_raw_2c966ea0ceaf44bc.json",
+      "sha256": "9f888899f0392162726e4b6184f5cc9ed03eb5c46c887fae216d4e3ad7882578"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_one_d9cab7eda34f1505.json",
+      "sha256": "f0444a8dbc8e073cfb4efd01b3b0324138721220d5b7a92c864dc832e0791814"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_twenty_4b2b40c9f2365442.json",
+      "sha256": "39a85a6098cddff77ffd7984c56c0878526acd09d4809cc7ef85ff6e09b9cc7c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_tight_889928d80e0d2a0c.json",
+      "sha256": "169845e76dee3b8def214f518def87412cb8bc383933c4ded3cf0ab92e169b99"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_wide_79a28903ddcc3855.json",
+      "sha256": "ad5b2f252f0ff4d0d082e8215dfee3ca59c72dd3e8499560343ca4bd8d4facf1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_raw_1eda2b7cecec0aaf.json",
+      "sha256": "e5ad95de1b4ee34fd710446ded7ace9a1732a420654f2ee13ab6e58252197a75"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_one_27f59217f8261104.json",
+      "sha256": "4edc69639734bdedcf3d5dfc3de5047cb64513d0e198160ab73351bd41b078fb"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_twenty_fa8d0fb29ca028c2.json",
+      "sha256": "969e92206a23d28d8d79013a4d4f5558986cc4935ac2011c31d5a0988142622c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_tight_d42867736809b2dc.json",
+      "sha256": "4de7be5f6fe44de4e15f5c355bc00c7db62ba6ec5ebfe2aa6dee40638788bc61"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_wide_b42a834d9b337a91.json",
+      "sha256": "7f7d71264c1b726fdef82c30eb991163f2267897c77b3efefda48c34b217a3e9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_raw_04ce5f07bd2e224b.json",
+      "sha256": "db5f60d87047784c85bc43e6260b7dcac3a1e0a05d152e1b224f445de36d0331"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_one_ca130fc8483d7e74.json",
+      "sha256": "5ea5ec0194036c6becfb8fbc242dfc05aaaca2407862e0e00fe1ac1c1963503b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_twenty_7c5cd0938c4eb7ec.json",
+      "sha256": "c56a347b3eba0032e6e4e90851eeb86827ffeddfdba84ec912a0555ab605abac"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_tight_aedaf3e6d5146a62.json",
+      "sha256": "7928f494168a6ca914564fdb986b48e31ba19714c102b1c1d898dda60f5d7448"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_wide_517e967bb6dbe7cc.json",
+      "sha256": "06819757bd7a7fdfd0491f57709293ad740a4a8b8a909957c2de2988930dd5a2"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_raw_72ba8cd81c65707e.json",
+      "sha256": "234df10f5d8ac191ff84fe0cd575ca0e56a0c015e90818630713b624933faa42"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_one_8bb94ae0fceb7271.json",
+      "sha256": "e3a323462f2196d5f0df93d67016b27838d81f222ff31ca94a0eae3b0f021e0e"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_twenty_1b8101587702be40.json",
+      "sha256": "ac8f9c6232277e891365460f280df3aa1f80b6e999689197b11740b6b88d94bf"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_tight_02c647d76ccb59c6.json",
+      "sha256": "45c1f0059a806590c51fc6d49b4e55a5f5aa49c2662c80cfab3502f77fc0fb52"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_wide_1e16c64464b3b839.json",
+      "sha256": "cac58fc04cdf0729ab9a0e206804493c87b89c93da0e8b5ea26b9211f13e15e4"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_raw_a1d83f4ba8cf3b70.json",
+      "sha256": "5f37231003bd2eec107c53856de8d77a65fd564751f08d1cbd2fb798c73118dd"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_one_6f0e12ae8037df84.json",
+      "sha256": "87e93f8bfd144539d496009a43b86a49607bea53affbfb8c960c635a8f6614f7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_twenty_39f5b5368e1dd574.json",
+      "sha256": "809d2e8d555434216f207f6f2154a20a897ca00896f62d5bcfc2c95e054ac311"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_tight_556843083f866a04.json",
+      "sha256": "c7a0d4cfe1733971c603480e70ca9b4e5d6f1a95b008d7d3db8274cdb5aa5042"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_wide_00225b0313ca621c.json",
+      "sha256": "fb631e9afc6a072f0690ee286fd2b3f21700a7365ad03ea2a5abe13fc5dfc244"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_raw_923567ed371d701b.json",
+      "sha256": "b4d084154926af94c7daa9d2029fb4af67da31be7eba5d7ae03e0b13f11b7df6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_one_63ff2d6baecab12d.json",
+      "sha256": "8e29cff27d41aa9202e091b4b1d4a3d17456c1519f049edaf4d7515d030f8f27"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_twenty_d393d4797811a0b6.json",
+      "sha256": "11167c465e6fa7bdb2c4d06eb03b931071e209c4711cae673adbcbc0ed3736c6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_tight_75909256da03a6c7.json",
+      "sha256": "b3405eb38f5c75b3758c25d3d18c88211dc16a3cae4221fb2417e1a682bc32a1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_wide_6cf235079ef75bd9.json",
+      "sha256": "0bd925f9a19482050a271725fdb97e339f4b904618fbe9f567a7e858a7897fac"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_raw_eb250bdb7002f02c.json",
+      "sha256": "18800e8d990360d869e547c51210f18b08ab635c04c13f10d864f903f93756c8"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_one_4da22a369785ddb5.json",
+      "sha256": "6dcf32f648aa9d0f1678f71a2a02338d1d8c036c690086764e2a4c65e626831a"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_twenty_86da947a674c892f.json",
+      "sha256": "d88ceab88b05107162a6f05ddf9489dbfa8ddf0372270460ff93610e074af9bd"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_tight_d26334bc0f2d5e8d.json",
+      "sha256": "7f73552dfc6b817eaf32da36a9e2369b9df8c67cade3a0abf5e84a4884fd8cfb"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_wide_79719a852d11cf05.json",
+      "sha256": "9ea6622f36871238f76b449c551e6e8585e0c9d5c3fd9dbd9c9882ed4bcffa45"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_raw_475b2cf07daecee9.json",
+      "sha256": "796981eaf464ef5327a5db6e69f4be5886271f6a49b204a1bc09169142fd1923"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_one_01960b5c65324c37.json",
+      "sha256": "a2769b5eb5751130c225c57a29fa66445100b31b92672a975a04674e3d4d97a3"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/crop_top_twenty_3c8bbd523d3a9b0e.json",
+      "sha256": "71bd6c5b884607ca20ff5b33a6a62d9fe59337403273d360e18b62095c2e5312"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_tight_be6bf2b9104709a0.json",
+      "sha256": "c1353611ccd488518f466065ce64db9c02d8db2f3df289b7074c20deae785de4"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/recent_history_wide_2521e98254f2cafb.json",
+      "sha256": "e35477c8f6b5dfbcc8619e24493c43b8ae15b1c96a4b1feafbf283c4b35f1826"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_raw_5ed9d15de1851e6a.json",
+      "sha256": "6b72688b0887189fad7b11644705f3ad68d6cbb23360bde57102c20b17a603a2"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_one_ccd446d61a047d6d.json",
+      "sha256": "5a81a8dd178d935a62907f58037d21ece1fdee53ea6f1da63ee9f640b2ef39d2"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_twenty_3119d75304b36557.json",
+      "sha256": "04db7d043084ed861ac9cff3ad27dbbfd21d16e27774c083158288d3c63faaed"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_tight_4585665cc9f43fcd.json",
+      "sha256": "74e29f3eb492581a219d0a784524164e2c815cb3e316e19578f6f68971cc3a44"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_wide_8305a893b004a71a.json",
+      "sha256": "28c831ab20f815c9d13ee71119e5992d30fed84ec72651ead6df617469ad87eb"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_raw_2c966ea0ceaf44bc.json",
+      "sha256": "aeb8c8da70b2c9fa822d76fc0428b3789503b826d8e8ea831b51ed153f484d0f"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_one_d9cab7eda34f1505.json",
+      "sha256": "62e50026e671cb2cb4bfcf2846279ddaa6ffd816ca8739188b793e9eaf77b0d9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_twenty_4b2b40c9f2365442.json",
+      "sha256": "b11232f8bdc0e3c9807e8e277974f2b08b8dea223342b5008540c78550eaf39b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_tight_889928d80e0d2a0c.json",
+      "sha256": "07a45449b442033b9e3ff08603cf8396ef84ebb3d1deca77602658e726e744b2"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_wide_79a28903ddcc3855.json",
+      "sha256": "02128619f14f18326720ae061d36fdc24ef1b31a07ce4a38c414f8eb5f1a41c4"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_raw_1eda2b7cecec0aaf.json",
+      "sha256": "81dfe7c5bc6bf3d9c4a0f5724a3d485d5c72dae814ef92b7828e23dda656784e"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_one_27f59217f8261104.json",
+      "sha256": "3404df5fadf8f39c1d8636538b756eb4e98299e0d491aeb62edfe1141c52805c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_twenty_fa8d0fb29ca028c2.json",
+      "sha256": "0af4a044d62031440bd67d2858a61bbea31ce76bec3c4b9bb378e0c9b43015bb"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_tight_d42867736809b2dc.json",
+      "sha256": "6fcf8cd22e9a2e600921bf3cce066995bd77746d19f8ec9e58f9ad9687903ed7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_wide_b42a834d9b337a91.json",
+      "sha256": "03d6deb31243bac13085ee148a33cd0c358d540954e9f7b6f5ab96a6371c48fa"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_raw_04ce5f07bd2e224b.json",
+      "sha256": "eb36417a88063456177d9e18ee1eed68e945c63ecd863f81ca3bcec98bda465a"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_one_ca130fc8483d7e74.json",
+      "sha256": "d070c9f6d1b3877d4db192254ec963b045f810a08481b9a90c7290fdfd8248be"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_twenty_7c5cd0938c4eb7ec.json",
+      "sha256": "018c1a87d8f9b12bdaa87cee71e7313b522b92c80033afed6e4be8a473006633"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_tight_aedaf3e6d5146a62.json",
+      "sha256": "df41a5bcd9f6ec9fe40ced4a19f594a4bcc1352f455d8823e501976caec033c1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_wide_517e967bb6dbe7cc.json",
+      "sha256": "e2c55da257821ef21022ed4f64561a762bc7ffdb9263d99593015eb3219dfe14"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_raw_72ba8cd81c65707e.json",
+      "sha256": "7a3b17c0a4d215047eb2adc6d035a2d29785908eaf83657d5026840abacd449f"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_one_8bb94ae0fceb7271.json",
+      "sha256": "83a7a4b94558a2fd71cbce9b4a0a8dd74469aa463266083c6a6ef14674aec0c0"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_twenty_1b8101587702be40.json",
+      "sha256": "eb2f10d23ea436d566f2c909d62de289b8b7bf36c9e352c20524d3421514605d"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_tight_02c647d76ccb59c6.json",
+      "sha256": "4e0d8233a923542a5f218fb195e4bdd5f5d58f98859e74f720a1a380241ce1f6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_wide_1e16c64464b3b839.json",
+      "sha256": "35b64be81186047ee10cefa0fd374aafa2e73e9043cb27846a57324c371646d1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_raw_a1d83f4ba8cf3b70.json",
+      "sha256": "1c5aaf1d9731cf29246344cd136e3fb1fe64deb29aecc14929c11306837759c8"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_one_6f0e12ae8037df84.json",
+      "sha256": "b62f5cc5fd2a499b3b5d4424e62a94b1c1f439600e5711e7372efdc843adeed0"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_twenty_39f5b5368e1dd574.json",
+      "sha256": "6e8e6f300dbb01aa05bcf4b35faa8d57be3e6e7150936729ff67188068254242"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_tight_556843083f866a04.json",
+      "sha256": "0f0c91dedb61dbe445b0129162d787523f7234613fc7242841f4016b33e6f3d7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_wide_00225b0313ca621c.json",
+      "sha256": "83b072924e16f33071a3dc6b8051d2d291f88bc4c6b4f28b9c9736b1b6304a57"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_raw_923567ed371d701b.json",
+      "sha256": "7df6ad31fba8f206cdcb2534dc42c4c146ef3a7b27ce5f2d7d19951dab0c5c01"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_one_63ff2d6baecab12d.json",
+      "sha256": "23dedf48e9574acfa6e51805ef82a247e4af1d166be95ee39f31df1a39e2b04c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_twenty_d393d4797811a0b6.json",
+      "sha256": "c13ef5b80597a027349c087e887c0a2873d4dd96c355914113838bf73b6992c9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_tight_75909256da03a6c7.json",
+      "sha256": "b3a8023dfeea2483d023c1eb8ae90043db38d0bacf3e9f583461dd60eb007478"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_wide_6cf235079ef75bd9.json",
+      "sha256": "07cbb2d72912fe1e59aedf3aa554827e1fd2911a08912d60286decf430fcf75e"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_raw_eb250bdb7002f02c.json",
+      "sha256": "a103e367a1e69163976568dc735e693e2982db2a94e7891defed3708634368c6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_one_4da22a369785ddb5.json",
+      "sha256": "6013cad82c89b4f9da74c1c413bea149f99d42305bc0b171d0a13d878142c109"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_twenty_86da947a674c892f.json",
+      "sha256": "d770f972bed7ab82747a68af63c39c91abf1d5de41a050bed1817d4b209eadec"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_tight_d26334bc0f2d5e8d.json",
+      "sha256": "568e74e6f749ec951bf9de7e7f823813a296cf493b7abb66206660cda99ac2c3"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_wide_79719a852d11cf05.json",
+      "sha256": "f648d40ae6e57685ab2143e1f8fb70ed603eaa0e78d2391e664177c3ca1f4a4e"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_raw_475b2cf07daecee9.json",
+      "sha256": "1d48490d364f2ceb0a64f79adaef6b523ca69e2724c9f1a7756ed4e9054ac4d6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_one_01960b5c65324c37.json",
+      "sha256": "bc65266c8f7f32b3d7c3d1a668819af7e447eb2c6770cb5b3f3d6a862a78e2f5"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_twenty_3c8bbd523d3a9b0e.json",
+      "sha256": "7304652ee1d459b80261fbf975a8742e1ab3bda831a987c02de44024af7dbb74"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_tight_be6bf2b9104709a0.json",
+      "sha256": "6db2b0e58f70367c22f1b22437174cbff00be3f8f05b74da8b679eaf0f7ade18"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/recent_history_wide_2521e98254f2cafb.json",
+      "sha256": "b0d8e1a97fa2472d9f2d2211f74f6f21f0e17dc992f4ef63b8994b6a79b63cfb"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_raw_5ed9d15de1851e6a.json",
+      "sha256": "df230535f25643ad4ae53bf6e7e00437f5677db73b984320e3f1ebbc0adea2e7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_one_ccd446d61a047d6d.json",
+      "sha256": "5a113fd7ee38ea8d6cb01ddb66ad9e2e3da30f985305cfcdff03d9bac9b59dc7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_twenty_3119d75304b36557.json",
+      "sha256": "aebfe1a6956ff7bec70528fbd05fcdaef9c1530eefc03ff390a6f907472448b2"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_tight_4585665cc9f43fcd.json",
+      "sha256": "f4ae112af2b1851033eae9c31588679e43a8a450fe10e7a5e1d30e8996459569"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_wide_8305a893b004a71a.json",
+      "sha256": "eebf96388950df31bf0ee6c9c11a9165f061c3fa5c59f0096fb5aa71f7feed96"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_raw_2c966ea0ceaf44bc.json",
+      "sha256": "643e9ebfc0dc107a614bf623e7859922b57c36a2a9015f1a87cb9e49b320c146"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_one_d9cab7eda34f1505.json",
+      "sha256": "b0c94787510265484ffc1daafe9c82369331211238b41ad2ceb0d500ce509f4a"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_twenty_4b2b40c9f2365442.json",
+      "sha256": "cd90f64a5a718f8c906e1d9912e7021ef7f1c1fbcbe99885bf2e0fdafe300c0a"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_tight_889928d80e0d2a0c.json",
+      "sha256": "0190ee033dbb0e047d046219aedb22e9cb8ea092eec928bfe211246ecc248b08"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_wide_79a28903ddcc3855.json",
+      "sha256": "a30741bda9bc26743e2c39c29d06f8e52071bfceb3c58988949bb33107fe60b5"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_raw_1eda2b7cecec0aaf.json",
+      "sha256": "b8121c5c1137f29d4665c22b9b8d726ae158cfad2eeac017aebb42e340cd62b1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_one_27f59217f8261104.json",
+      "sha256": "f538ba178bd16d9adb6ab1568a21ecfdad6465d9a13d082dd490fafdb8067328"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_twenty_fa8d0fb29ca028c2.json",
+      "sha256": "253bca9889e649b362a1431b3afbadba1a7b85fb08af43ec9ba40b3a3a258d58"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_tight_d42867736809b2dc.json",
+      "sha256": "95088b7f1685021fbcec92cf3c7e08d97df05b620ffe344778ae726ec35fa140"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_wide_b42a834d9b337a91.json",
+      "sha256": "5073dede87fdc275acdd9346b11884bf27040f8c8ac3c7c1b828344a42668acd"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_raw_04ce5f07bd2e224b.json",
+      "sha256": "62ff09918417e165aad53935b7d518cc8476534f900ac7f169b395cb20fdd3c2"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_one_ca130fc8483d7e74.json",
+      "sha256": "0bd54a78632448013f36212daf5f1871db3cbe5a7417c9acf8f442d537dd70ec"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_twenty_7c5cd0938c4eb7ec.json",
+      "sha256": "53e84b14e093714024669dccd4b41efdbce102e354a38330295b99d3dc4aa2d6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_tight_aedaf3e6d5146a62.json",
+      "sha256": "ccf2518095458af9a1a5823d716be400718887571ebd780beace26c509de5c87"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_wide_517e967bb6dbe7cc.json",
+      "sha256": "9575c17ce9f32751b3b8fc248dbd6fffa7d88f556bdd122c86879b8767b98c88"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_raw_72ba8cd81c65707e.json",
+      "sha256": "ca1da939c46e8880c57d894595b309fc6bb86ca731c881f0927b73d49fe00048"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_one_8bb94ae0fceb7271.json",
+      "sha256": "c75f535bda82cea7dc419b60f949c3b2e0627f09ef7e601eadf12f38b29c164f"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_twenty_1b8101587702be40.json",
+      "sha256": "0dc2c7a4dafb1ab2ef5a4272b4b0fd66825ec6c52bddbd981726c3ad2ac78b9d"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_tight_02c647d76ccb59c6.json",
+      "sha256": "8dafbd60dae6978b59dd31229f7d031e6b841669558a84117bc5c08f807889f3"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_wide_1e16c64464b3b839.json",
+      "sha256": "760ba4a0163fe74651b4fb2f6ea9513b7cd252dc9d51e838e6522e20cf73370d"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_raw_a1d83f4ba8cf3b70.json",
+      "sha256": "def94fc68be81dc56cfd48f5143d969ba16a6798b4e3672c02911c2d5a18d7be"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_one_6f0e12ae8037df84.json",
+      "sha256": "f65448400455a7a41f58f1cf44ef4c67d7a032aec879306cd43939675a4a6fa5"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_twenty_39f5b5368e1dd574.json",
+      "sha256": "0597e1ee476c13485126abb351496204cb39a2b6c981fd8dc62b8b0d79ae8201"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_tight_556843083f866a04.json",
+      "sha256": "e7ad73a8f6cfbb1cc69eaa67a9f580baf660ae6b742386d847c62a716dc5b4f9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_wide_00225b0313ca621c.json",
+      "sha256": "949c9d4153fb892c0deaff21cce5d825da2923d95dd22119bb34f1c6f4757c19"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_raw_923567ed371d701b.json",
+      "sha256": "caf6a5456ecb5c86c9ef45ee4d70de99bb7d64ee168b4af07c7772abac4cdf4f"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_one_63ff2d6baecab12d.json",
+      "sha256": "e703a85a3e83ee0c5df501850edb09ca9a26f51111644cd8cc609ebd99692cbe"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_twenty_d393d4797811a0b6.json",
+      "sha256": "1f63c1364d44dc8ad93d1afee0d9b00f670c3d1100798448fa0ae61b47482a2b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_tight_75909256da03a6c7.json",
+      "sha256": "2a7b2dabaca86a59cf2f45fe9013230acf20d7673f81aa1e450a01b0bfa07638"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_wide_6cf235079ef75bd9.json",
+      "sha256": "ff64326a481743b511d4e8b59dfa14957f418f907ef533b8268c9cac3a477e05"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_raw_eb250bdb7002f02c.json",
+      "sha256": "b4a6522cd4d544d380d8e65c0b4f5cfabe863cca2a43b8c952c2f9d4ebe4e218"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_one_4da22a369785ddb5.json",
+      "sha256": "ae902f0664a5668827532d88afee945695160118c1884f7528dfa084ca06921d"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_twenty_86da947a674c892f.json",
+      "sha256": "ef22fdca68ea58cb0b8b2396e1ee5b8cd539328d98153cd06571ce09f0bd8c11"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_tight_d26334bc0f2d5e8d.json",
+      "sha256": "df4fee8ace04e5775d922e4251536642f8fe654eee8127d4713adbe771bbc0ef"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_wide_79719a852d11cf05.json",
+      "sha256": "344a2e59aea5d95a62e2771b66e15b61ad9459471eca11dcbf0b7c19968a7fde"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_raw_475b2cf07daecee9.json",
+      "sha256": "038bebb338016d15f4c2b7b99b20b0507b6027024ac58daadd951b3c7d974724"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_one_01960b5c65324c37.json",
+      "sha256": "6bce96b86ed3d50995271c75d92a87699c6e803d900e9bb5b473e0a2ce0fb011"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/crop_top_twenty_3c8bbd523d3a9b0e.json",
+      "sha256": "65212ecc71b1e56acad271d59e219b1808ae4103d33852c72b816504234e65f6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_tight_be6bf2b9104709a0.json",
+      "sha256": "72d0c997543df909247b6f3c322e7ab3943bfd33db51a671bcc629f8db92ee36"
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/recent_history_wide_2521e98254f2cafb.json",
+      "sha256": "5f74231ee855c2dbf990c9fecfc6fdb71a34aed009a4e488c957f6be88c0c7f4"
+    }
+  ],
+  "frozen_detector_contract_source": {
+    "path": "configs/ball_tracking/experiments/rfdetr_medium_development_evaluation_v0_2.json",
+    "sha256": "3a78cf26686c0624c1a45dec5c47e7bad182cc7d5cd658b639e11d47c0d75489"
+  },
+  "windows": [
+    {
+      "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+      "purpose": "representative_evaluation",
+      "possession_id": "possession_001",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 50,
+      "end_frame_index": 74,
+      "detection_run_id": "possession_001_frames_0050_0074_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_001_frames_0050_0074_representative_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_001_frames_0050_0074_rfdetr_medium_development_v0_2.json",
+        "sha256": "c7a9963c6d0d33ca9faede512bbdced48f744f40ff803b68d55d1f97bae043c8"
+      },
+      "crop_candidates": {
+        "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/candidates.json",
+        "sha256": "68ec89f2a527a6643bc443e1ec7533bd3971015f681260a9d222681ebfb6989b"
+      }
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "purpose": "challenge_evaluation",
+      "possession_id": "possession_001",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 200,
+      "end_frame_index": 224,
+      "detection_run_id": "possession_001_frames_0200_0224_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_001_frames_0200_0224_challenge_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_001_frames_0200_0224_rfdetr_medium_development_v0_2.json",
+        "sha256": "4101f8b890138e25f2301b03f06791a9de3bdec66a84ab32c8dda16ffa22c656"
+      },
+      "crop_candidates": {
+        "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/candidates.json",
+        "sha256": "96b64d53938523536cfd6374bb3a33c93bc30d4bc0ffb66f0ced310a2b80bfc2"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+      "purpose": "representative_evaluation",
+      "possession_id": "possession_002",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 250,
+      "end_frame_index": 274,
+      "detection_run_id": "possession_002_frames_0250_0274_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_002_frames_0250_0274_representative_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_002_frames_0250_0274_rfdetr_medium_development_v0_2.json",
+        "sha256": "8159041a0ffd707f5823081f52cf8012ba10a8af9fbc26809426310f5d9dceec"
+      },
+      "crop_candidates": {
+        "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/candidates.json",
+        "sha256": "d9d8da77d604499765bb2a94f02a012a2713b5a1fed879c75f64d041d2e6734c"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+      "purpose": "challenge_evaluation",
+      "possession_id": "possession_002",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 25,
+      "end_frame_index": 49,
+      "detection_run_id": "possession_002_frames_0025_0049_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_002_frames_0025_0049_challenge_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_002_frames_0025_0049_rfdetr_medium_development_v0_2.json",
+        "sha256": "dcbb1c88ab70c7ee938944e890e3e22773b8e01cd792a32591ce91fc8cf3bee6"
+      },
+      "crop_candidates": {
+        "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/candidates.json",
+        "sha256": "ca1eba2c25ddcea655e8f3230a83fdbe419dfa057218fe2d569ce1de5c55eb2f"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+      "purpose": "representative_evaluation",
+      "possession_id": "possession_003",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "start_frame_index": 300,
+      "end_frame_index": 324,
+      "detection_run_id": "possession_003_frames_0300_0324_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_003_frames_0300_0324_representative_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_003_frames_0300_0324_rfdetr_medium_development_v0_2.json",
+        "sha256": "dc621477e8c3c907cb3f7d74b2c56a22075af858cbe027ab1ef7afe3893f1d0c"
+      },
+      "crop_candidates": {
+        "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/candidates.json",
+        "sha256": "7fa6a6d4b0ec153e30ffed53149cf4f00ffb11b9439138b8a0751f96d77b4cfa"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "purpose": "challenge_evaluation",
+      "possession_id": "possession_003",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "start_frame_index": 150,
+      "end_frame_index": 174,
+      "detection_run_id": "possession_003_frames_0150_0174_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_003_frames_0150_0174_challenge_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_003_frames_0150_0174_rfdetr_medium_development_v0_2.json",
+        "sha256": "c28ab58e8a40e49018954d8327a178b268ad1b4b6fc7929a80f5ea8d8d344802"
+      },
+      "crop_candidates": {
+        "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/candidates.json",
+        "sha256": "5a231da10c3cd8eb0b221124a6dcef1bec2d7e1cf12f4375d7d0f943f8d1d47e"
+      }
+    }
+  ],
+  "scoring_labels": [
+    {
+      "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_001_frames_0050_0074_representative_evaluation_v0_1.json",
+        "sha256": "3731fa669da12fdcab0748ab92bc7bbb85961a2a0f80518092eaced0e08d5c6c"
+      }
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_001_frames_0200_0224_challenge_evaluation_v0_1.json",
+        "sha256": "73ed29bc62e002d86b207a12298b30b27724fe42be5a354ec09bc104211e2def"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_002_frames_0250_0274_representative_evaluation_v0_1.json",
+        "sha256": "cccec6a086bf9898197babeb5d785bdd4ba0290b7c6c1ba5c206e8545e67563f"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_002_frames_0025_0049_challenge_evaluation_v0_1.json",
+        "sha256": "c0d1bad8f6879e2d073b6d0becf3df12347b43ef06e9c6ff44c26b6f56d3c1e3"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_003_frames_0300_0324_representative_evaluation_v0_1.json",
+        "sha256": "2b35475e715e9a4b816ad997b58be3201370695a2f420a35a6947696bbe3637e"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_003_frames_0150_0174_challenge_evaluation_v0_1.json",
+        "sha256": "ab77e6c8570ee8fc536632e43ee71d978e72cd16188f7564c77ae256873994ee"
+      }
+    }
+  ],
+  "confidence_thresholds": [
+    0.01,
+    0.03,
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.35,
+    0.5
+  ],
+  "localization_radii_px": [
+    5.0,
+    10.0,
+    15.0,
+    20.0,
+    30.0
+  ],
+  "pool_separation": [
+    "representative_evaluation",
+    "challenge_evaluation"
+  ],
+  "selectors": [
+    {
+      "arm": "crop_raw",
+      "candidate_cap": null,
+      "edge_step": null,
+      "cost_step": null,
+      "legacy_control_arm": "crop_raw"
+    },
+    {
+      "arm": "crop_top_one",
+      "candidate_cap": null,
+      "edge_step": null,
+      "cost_step": null,
+      "legacy_control_arm": "crop_top_one"
+    },
+    {
+      "arm": "crop_top_twenty",
+      "candidate_cap": 20,
+      "edge_step": null,
+      "cost_step": null,
+      "legacy_control_arm": "crop_top_twenty"
+    },
+    {
+      "arm": "history_edge_tight_cost_tight",
+      "candidate_cap": 20,
+      "edge_step": 0.01,
+      "cost_step": 0.01,
+      "legacy_control_arm": "recent_history_tight"
+    },
+    {
+      "arm": "history_edge_tight_cost_wide",
+      "candidate_cap": 20,
+      "edge_step": 0.01,
+      "cost_step": 0.03,
+      "legacy_control_arm": null
+    },
+    {
+      "arm": "history_edge_wide_cost_tight",
+      "candidate_cap": 20,
+      "edge_step": 0.03,
+      "cost_step": 0.01,
+      "legacy_control_arm": null
+    },
+    {
+      "arm": "history_edge_wide_cost_wide",
+      "candidate_cap": 20,
+      "edge_step": 0.03,
+      "cost_step": 0.03,
+      "legacy_control_arm": "recent_history_wide"
+    }
+  ],
+  "ranking_contract": {
+    "input_order": "original_global_candidate_order_after_inclusive_confidence_filter",
+    "history_frames": 5,
+    "max_missing_frames_between_nodes": 2,
+    "max_trailing_missing_frames": 2,
+    "missing_frame_penalty": 0.25,
+    "squared_normalized_step_penalty": 0.25,
+    "score": "sum(original_confidences) - 0.25*(internal_skipped_frames + trailing_skipped_frames) - 0.25*sum(normalized_step**2)",
+    "leading_missing_penalty": 0.0,
+    "empty_hypothesis_score": 0.0,
+    "solver": "exact_dynamic_programming_over_last_five_frame_acyclic_graph",
+    "path_ties": "lexicographically_smallest_sequence_of_original_frame_candidate_pairs",
+    "endpoint_ties": "latest_endpoint_frame_then_higher_endpoint_confidence_then_lower_global_candidate_index_then_lexicographic_path",
+    "empty_tie_rule": "empty_wins_any_score_zero_tie",
+    "output_rule": "emit_original_candidate_only_if_winning_endpoint_is_current_frame; otherwise_null",
+    "probability_interpretation": false,
+    "hypothesis_alternatives_and_score_margins_required": true,
+    "ambiguity_margin_acceptance_threshold": null,
+    "state_reset": "each_window",
+    "future_access_allowed": false,
+    "past_output_revisions_allowed": false,
+    "singleton_start_allowed": true,
+    "edge_limit": "distance_px <= edge_step * source_diagonal_px * elapsed_frames; elapsed_frames in [1,3]",
+    "normalized_step": "distance_px / (cost_step * source_diagonal_px * elapsed_frames)",
+    "normalized_step_clipping_allowed": false,
+    "existing_control_arithmetic_and_traversal_order_preserved": true
+  },
+  "matching_rule": "raw center distance; uncertainty diagnostic only",
+  "comparisons": [
+    "Same-cell graph arms versus raw/top-one/top-twenty.",
+    "Change edge_step holding cost_step fixed, at both cost values.",
+    "Change cost_step holding edge_step fixed, at both edge values.",
+    "Report interactions descriptively with paired frame gains/losses; no pooled significance claims."
+  ],
+  "required_metrics": [
+    "TP/FP/FN",
+    "duplicate_false_positives",
+    "hidden_false_alarms",
+    "localization_error",
+    "emitted_and_missing_frames",
+    "longest_missed_eligible_run",
+    "same_cell_gains_and_losses",
+    "raw_availability_cap_and_ranking_loss_partition"
+  ],
+  "control_parity": {
+    "derived_outputs": 270,
+    "scoring_cells": 1350,
+    "full_observation_trace_parity_required": true,
+    "compare": [
+      "emitted_indices",
+      "candidate_dispositions",
+      "horizons",
+      "edges",
+      "best_paths",
+      "component_scores",
+      "endpoint_scores",
+      "winner",
+      "score_margin",
+      "null_reason",
+      "frame_outcomes",
+      "metrics"
+    ],
+    "permitted_metadata_mapping": [
+      "explicit_legacy_to_new_arm_mapping",
+      "legacy_step_limit_to_equal_edge_and_cost_steps",
+      "schema_version",
+      "new_experiment_specification",
+      "new_code_commit",
+      "derived_content_digest"
+    ],
+    "behavioral_differences_allowed": false
+  },
+  "review": {
+    "confidence_thresholds": [
+      0.2,
+      0.35
+    ],
+    "radius_px": 10.0,
+    "panels": [
+      "crop_raw",
+      "crop_top_one",
+      "crop_top_twenty",
+      "history_edge_tight_cost_tight",
+      "history_edge_tight_cost_wide",
+      "history_edge_wide_cost_tight",
+      "history_edge_wide_cost_wide",
+      "unmarked_source",
+      "legend"
+    ],
+    "layout": {
+      "rows": 3,
+      "columns": 3
+    },
+    "clips": 12,
+    "frames_per_clip": 25,
+    "fps": 5.0,
+    "all_frames_and_final_frame_required": true,
+    "native_overlays_and_source_scale_closeups_required": true,
+    "graph_panel_labels_require_both_parameters": true,
+    "highlighted_context": {
+      "possession_002_representative": [
+        258,
+        262
+      ],
+      "possession_002_challenge": [
+        44,
+        45,
+        46,
+        48,
+        49
+      ],
+      "possession_003_representative": [
+        300,
+        301,
+        302,
+        303
+      ],
+      "possession_003_hidden": [
+        165,
+        166,
+        167,
+        168,
+        169
+      ],
+      "possession_003_boundaries": [
+        164,
+        170,
+        171,
+        173,
+        174
+      ]
+    }
+  },
+  "expected_counts": {
+    "source_frames": 150,
+    "new_model_calls": 0,
+    "variants": 63,
+    "per_window_derived_outputs": 378,
+    "total_per_window_scoring_reports": 1890,
+    "aggregate_cells_per_pool": 315,
+    "mapped_control_output_traces": 270,
+    "mapped_control_scoring_cells": 1350,
+    "new_graph_variants": 18,
+    "new_graph_window_outputs": 108
+  },
+  "proposed_output_root": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/",
+  "selection_labels_access_allowed": false,
+  "new_detector_inference_allowed": false,
+  "training_allowed": false,
+  "window_expansion_allowed": false,
+  "deduplication_allowed": false,
+  "candidate_center_or_confidence_modification_allowed": false,
+  "smoothing_interpolation_extrapolation_allowed": false,
+  "player_or_court_input_allowed": false,
+  "holdout_release_authorized": false,
+  "original_v0_1_embargoes_preserved": true,
+  "selected_operating_point": null,
+  "quality_gate": null,
+  "authorization": null,
+  "execution_preconditions": [
+    "Exact new scope approved in a separate evidence-bound receipt.",
+    "Separate versioned implementation passes focused and full synthetic tests with bytecode disabled.",
+    "Exact saved input/proposal/approval/control bindings verified; no old artifacts overwritten.",
+    "Separately authorized staging and commit produce a clean implementation checkpoint.",
+    "All nine original embargo paths absent and all three holdouts sealed."
+  ]
+}

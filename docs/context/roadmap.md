@@ -43,8 +43,31 @@ Ryan approved its exact scope with "I approve chat". Separate implementation
 now reuses the six saved crop files with raw/top-one/top-twenty controls and
 two motion limits. All 21 focused tests pass; the full suite has 362 passes
 and one existing Windows symlink skip.
-Real execution awaits separate authorization for a clean Git checkpoint.
-See `../ball_crop_candidate_ranking_implementation.md` for the concrete scope.
+Ryan separately approved staging and committing that implementation at
+`3c4894656fd5`. Real execution is complete: 270 derived outputs, 1,350 reports,
+all 540 saved crop control parity checks, and 12 review clips plus 2,400 PNGs.
+Both originals and separate H.264 copies decoded all 25 frames at 5 fps.
+Wide links improve challenge matches in all 45 grid cells but lose matches
+in five representative cells; tight links lose matches in all 45 cells of
+both pools. No method, operating point, or quality gate is selected.
+Ryan responded "looks good to me" to the linked ranking review package.
+A separate receipt records that package-level response and its scope limits;
+the exact statement does not itemize clips or separately attest every final
+frame. Earlier crop/temporal reviews remain complete. The saved-evidence
+diagnosis is now complete in `../ball_crop_candidate_ranking_results.md`.
+It separates unavailable/filtered candidates from cap and ranking losses,
+and identifies that the tight/wide comparison couples allowed movement with
+movement cost. The concrete next proposal, `../ball_crop_motion_factorial_proposal.md`,
+crosses those two parameters while fixing the rest of the algorithm. Ryan
+approved its exact seven-arm scope with "I approve chat". Four separate modules
+and 23 passing focused tests now implement it. The full suite has 385 passes
+and one existing Windows directory-symlink skip.
+The synthetic comparison covers 378 outputs, 1,890 reports, all 270 trace/1,350
+report/450 aggregate control checks and 12 complete clips with 3,000 PNGs.
+Real execution awaits a validated clean implementation commit, with staging
+and committing separately authorized. It does not resolve persistent clutter
+or hidden-ball starts by assumption.
+See `current_state.md` for exact evidence bindings and preservation checks.
 
 - [x] define the ball annotation and detection-evaluation protocol;
 - [x] label and visually review a 75-frame pilot spanning three possessions;
@@ -57,7 +80,13 @@ See `../ball_crop_candidate_ranking_implementation.md` for the concrete scope.
 - [x] visually review all 12 fixed-crop comparison clips through their final frames;
 - [x] approve the fixed recent-history selector experiment on saved crop candidates;
 - [x] implement and synthetically validate the approved candidate-ranking experiment;
-- [ ] checkpoint its implementation, then evaluate and review the real outputs;
+- [x] commit and execute the approved ranking comparison on the saved development inputs;
+- [x] record Ryan's visual-review response to the requested 12-clip ranking package;
+- [x] diagnose remaining candidate/ranking misses from saved evidence before a new design;
+- [x] specify a bounded comparison separating movement allowance from movement cost;
+- [x] approve and implement the exact motion-factorial experiment;
+- [x] validate the motion-factorial implementation with focused and full suites;
+- [ ] separately authorize staging and committing its exact validated scope;
 - [ ] compare small-object basketball detectors;
 - [ ] associate detections through blur, occlusion, passes, shots, and rebounds;
 - [ ] preserve uncertainty and missing observations;

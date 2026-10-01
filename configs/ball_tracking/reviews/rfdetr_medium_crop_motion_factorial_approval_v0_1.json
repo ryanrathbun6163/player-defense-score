@@ -1,0 +1,14 @@
+{
+  "schema_version": "ball_crop_motion_approval/v0.1",
+  "experiment_spec_sha256": "51bc58477f5e1273e4ec83588003861f3b095ae46923b46915905ca4600f829f",
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_motion_factorial_v0_1.json",
+    "sha256": "66e7c9aae8c66747d62a480d00c256f1e196df3044d5284be501a76a1edd1c64"
+  },
+  "approved_by": "ryan",
+  "statement": "I approve chat",
+  "recorded_at_utc": "2026-10-01T04:02:23.458325+00:00",
+  "timestamp_semantics": "Receipt creation time; actual approval is the user response to the linked exact motion-factorial scope.",
+  "scope": "saved_six_development_crop_windows_all_63_declared_variants",
+  "git_mutations_authorized": false
+}
