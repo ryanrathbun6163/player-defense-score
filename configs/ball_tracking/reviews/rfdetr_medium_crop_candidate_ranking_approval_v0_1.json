@@ -1,0 +1,14 @@
+{
+  "schema_version": "ball_crop_candidate_ranking_approval/v0.1",
+  "experiment_spec_sha256": "c3541d45fcc4db384d2222a56cd4fe18885c7212ad9f7c77b0e933bdd3eb2fe4",
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_candidate_ranking_v0_1.json",
+    "sha256": "f9a3ae162d2227ddffab9a9da68811ea629cf7dfa6ffa48625546ac1ab5ad2ca"
+  },
+  "approved_by": "ryan",
+  "statement": "I approve chat",
+  "recorded_at_utc": "2026-10-01T02:28:50.751684+00:00",
+  "timestamp_semantics": "Receipt creation time; authorization is the user response to the linked saved crop candidate ranking design.",
+  "scope": "saved_six_development_crop_windows_all_45_declared_variants",
+  "git_mutations_authorized": false
+}

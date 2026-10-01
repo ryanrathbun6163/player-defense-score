@@ -23,10 +23,28 @@ It exposed losses of valid observations; it does not establish a selected
 tracker or a quality gate. The current Git checkpoint is in `current_state.md`;
 the all-grid closeout is in `../ball_temporal_association_results.md`.
 Ryan approved the fixed overlapping-crop comparison on the same six windows.
-Separate inference/scoring/review support is implemented; focused tests, the
-full suite, and real-input dry-run passed. A separately authorized clean Git
-checkpoint precedes new inference. See
-`../ball_detector_tiled_comparison_implementation.md`. New inference has not run.
+Separate inference/scoring/review support passed focused and full tests and
+was committed with separate authorization at `1a9479f83a17`. Real execution
+then completed at that clean checkpoint: 600 crop calls, 1,080 reports, and
+12 synchronized clips with 1,950 supporting images. All 540 saved-control
+scoring cells reproduce prior outcomes. Cropped inputs improve pooled matches
+at both display settings but add false guesses and have local regressions;
+Ryan completed review of the new 12-clip package, stating "all of them look
+pretty good to me. even P002 challenge". A separate evidence-bound receipt
+records completion and preserves earlier pending-review snapshots. See `current_state.md`
+for the exact evidence links and next action. No operating point or quality
+gate is selected, and all nine original prediction embargoes remain intact.
+
+The saved-grid closeout separates candidate availability from candidate choice:
+at the 0.20/10-pixel display cell, crop raw matches 62 representative frames,
+but top one matches only 51. A concrete recent-history candidate-ranking
+experiment is specified in `../ball_crop_candidate_ranking_proposal.md`.
+Ryan approved its exact scope with "I approve chat". Separate implementation
+now reuses the six saved crop files with raw/top-one/top-twenty controls and
+two motion limits. All 21 focused tests pass; the full suite has 362 passes
+and one existing Windows symlink skip.
+Real execution awaits separate authorization for a clean Git checkpoint.
+See `../ball_crop_candidate_ranking_implementation.md` for the concrete scope.
 
 - [x] define the ball annotation and detection-evaluation protocol;
 - [x] label and visually review a 75-frame pilot spanning three possessions;
@@ -35,6 +53,11 @@ checkpoint precedes new inference. See
 - [x] annotate, approve, and finalize all six development windows;
 - [x] execute the approved 150-frame development baseline and review its six clips;
 - [x] compare saved detections with causal tracklets and inspect all 12 temporal clips;
+- [x] execute the approved fixed-crop comparison on the six development windows;
+- [x] visually review all 12 fixed-crop comparison clips through their final frames;
+- [x] approve the fixed recent-history selector experiment on saved crop candidates;
+- [x] implement and synthetically validate the approved candidate-ranking experiment;
+- [ ] checkpoint its implementation, then evaluate and review the real outputs;
 - [ ] compare small-object basketball detectors;
 - [ ] associate detections through blur, occlusion, passes, shots, and rebounds;
 - [ ] preserve uncertainty and missing observations;

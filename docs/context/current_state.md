@@ -1,6 +1,188 @@
 # Current State
 
-## Latest checkpoint: approved crop comparison validated; staging approval pending
+## Latest checkpoint: approved crop candidate-ranking implementation
+
+Ryan approved the bound saved-candidate experiment with "I approve chat".
+The separate receipt is
+`configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_ranking_approval_v0_1.json`.
+The executable manifest is
+`configs/ball_tracking/crop_ranking_experiments/rfdetr_medium_crop_candidate_ranking_v0_1.json`;
+specification digest, excluding its authorization binding:
+`c3541d45fcc4db384d2222a56cd4fe18885c7212ad9f7c77b0e933bdd3eb2fe4`.
+The original proposal/design retain their historical status and bound bytes.
+
+Four separate modules implement causal selection, guarded/resumable execution,
+unchanged matching with saved-control parity and loss decomposition, and
+six-panel synchronized review. Exact behavior and the proposed 15-file Git
+scope are in `docs/ball_crop_candidate_ranking_implementation.md`. Existing
+detector, crop, tracklet, player-pipeline, and reviewed label files are unchanged.
+
+All 21 focused tests pass with `.venv` Python and bytecode disabled. The full
+suite runs 363 tests: 362 pass and one existing Windows symlink test skips.
+Synthetic integration covers 270 derived outputs with partial resume,
+1,350 scoring reports, two separate 225-cell pools, all 540 saved crop control
+outcome cells, and 12 fully decoded 25-frame/5-fps clips plus 2,400 PNGs.
+The agent inspected synthetic comparison/closeup layouts; this does not approve
+real ranking quality. No user source video or model is opened by the synthetic
+ranking tests. Real-input read-only preflight verifies the six bound windows,
+150 frames, 45 variants, and zero new model calls.
+
+Branch/HEAD remain `codex/ball-detector-baseline` at
+`1a9479f83a1766d8979fad07c604bc686d3c52c6`. Exactly three tracked context files
+are modified; 12 new scope files are untracked. The index is empty. Prior
+intentional context notes remain preserved. The real ranking output root is
+absent; the completed crop inference/scoring/rendering were not rerun.
+All nine original prediction embargoes and all three sealed holdouts remain.
+No operating point or quality gate is selected.
+
+Next: request separate authorization to stage the exact validated 15-file
+scope, then separately commit it. The already approved ranking experiment can
+execute after that clean implementation checkpoint; no new experiment approval
+is needed for its fixed scope. Staging, committing, pushing, PR creation, and
+merging remain separate, currently unauthorized actions. Ryan's review of the
+12 real ranking clips is pending execution. No upstream player decision or
+player-pipeline `--rerun-from` change is involved. No manual command was supplied
+but left unrun. Ignored validation evidence is under
+`data/outputs/ball_tracking/crop_ranking_implementation_validation/`.
+The final `checkpoint_audit.json` binds the exact scope and successful logs,
+verifies all 59 protected Git/SHA-256 bindings, six saved detections, six labels,
+frozen crop/proposal/review evidence, all nine absent embargo paths and three
+holdouts, source/JSON parsing, whitespace, and the dirty-execution refusal.
+
+## Previous checkpoint: saved crop closeout and candidate-ranking design
+
+After completed visual review, Ryan said "lets move forward chat". The next
+design is now concrete in `docs/ball_crop_candidate_ranking_proposal.md` and
+`configs/ball_tracking/proposals/rfdetr_medium_crop_candidate_ranking_v0_1.json`
+(SHA-256 `f9a3ae162d2227ddffab9a9da68811ea629cf7dfa6ffa48625546ac1ab5ad2ca`).
+This is a non-executable proposal awaiting exact experiment-scope approval.
+No new selection, inference, scoring, or rendering experiment has run.
+
+A new create-only saved-result diagnostic extracts all 180 same-cell aggregate
+comparisons and the displayed per-window outcomes, without rescoring. It also
+counts label-blind cross-crop box overlaps. The diagnostic is
+`data/outputs/ball_tracking/tiled_closeout/1a9479f83a17/diagnostic.json`, SHA-256
+`87a2e57e147da2907d42286bc6d81d333c011eb5609ba3f71c09291265c0cc3d`.
+Its generator and inputs are bound; displayed frame counts/decompositions were
+checked. The results note is `docs/ball_detector_tiled_comparison_results.md`.
+
+At confidence 0.20/radius 10, crop raw has qualifying matches in 62/75
+representative and 63/70 challenge frames, while top one retains 51 and 59.
+Removing lower-ranked duplicates cannot change the highest-confidence guess.
+The proposed next experiment therefore ranks original candidates using a
+five-frame causal history, with raw/top-one/top-twenty controls and two motion
+limits. It uses saved crop inputs only, preserves explicit missing output,
+and does not smooth or invent ball coordinates. Its fixed scope is 45 variants,
+270 derived outputs, 1,350 per-window reports, two separate 225-cell pools,
+and 12 review clips. No operating point or quality gate is selected.
+
+Branch and HEAD remain `codex/ball-detector-baseline` at
+`1a9479f83a1766d8979fad07c604bc686d3c52c6`. Preserve the three existing context
+edits, completed crop review receipt, new results/design notes, and proposal
+JSON. The index is empty; no staging, commit, push, PR, or merge is authorized.
+All nine original embargo paths remain absent; all three holdouts stay sealed.
+No production code changed, so focused/full tests were not repeated. Next is
+approval of the concrete new experiment, then synthetic-first implementation
+and validation before any separately authorized Git steps and real execution.
+No upstream player decision changes or unrun manual commands are involved.
+
+## Previous checkpoint: crop comparison visually reviewed
+
+Ryan completed the requested 12-clip crop comparison review and stated:
+"all of them look pretty good to me. even P002 challenge". The separate receipt
+`configs/ball_tracking/reviews/rfdetr_medium_tiled_development_comparison_visual_review_record_v0_1.json`
+binds his exact feedback to execution commit
+`1a9479f83a1766d8979fad07c604bc686d3c52c6`, both scoring pools, the review
+manifest, all 12 original/playback clips, and their final-frame closeups.
+Receipt SHA-256:
+`6e108189b792d505c97adbcfcce5aa635a6e140893a6306e0c08bfe910218adb`.
+The timestamp is receipt creation time, not an invented message event time.
+Earlier pending-review records and notes remain historical snapshots.
+
+Read-only closeout rehashed all 1,962 bound review assets, all 12 playback
+clips and final closeups, two scoring-pool reports, six crop candidate files,
+and six saved whole-frame detection files. All bindings matched. The three
+intentional context edits matched the handoff hashes before this update.
+All nine original embargo paths remain absent; all three holdouts stay sealed.
+No inference, scoring, rendering, or test suite was rerun, and no production
+code changed. The previous 18 focused passes and full-suite 341 passes plus
+one existing skip remain the last code validation.
+
+Branch and HEAD remain unchanged; the index is empty. This review adds one
+unstaged receipt and updates the existing three context files while preserving
+their prior notes. Nothing was staged, committed, pushed, or submitted as a PR.
+No operating point, quality gate, winner, or next experiment is approved.
+Ryan's favorable visual assessment does not remove the numerical regressions:
+crops recover more matches overall but add false guesses; P002 challenge
+frames 48-49 still lose top-one matches at both displayed settings.
+
+Next: summarize the saved gains/losses and prepare a concrete next experiment
+design before seeking its separate scope authorization. Do not repeat the
+completed crop review or rerun the experiment. No upstream player decision
+changed, and no player-pipeline `--rerun-from` action is needed. No manual
+command was supplied but left unrun.
+
+## Previous checkpoint: crop comparison executed; visual review pending
+
+Branch is `codex/ball-detector-baseline` at
+`1a9479f83a1766d8979fad07c604bc686d3c52c6` (`feat(ball-tracking): add approved
+fixed-crop detector comparison`). Ryan separately authorized staging with
+"yes stage" and committing with "commit please". The exact 15 validated files
+were committed, their Git blobs and parent verified, and the worktree was clean
+through inference, scoring, rendering, playback verification, and final audit.
+Nothing was pushed. The three context files are the only subsequent uncommitted
+changes; the index is empty. Preserve these execution notes.
+
+The already approved fixed-crop experiment is now complete at that checkpoint:
+600 new model calls on exactly 150 frames in the six development windows,
+600 immutable view checkpoints, six candidate files, 1,080 per-window scoring
+reports, and 180 aggregate cells in each separate representative/challenge pool.
+All 540 saved whole-frame raw/top-one control cells reproduce the prior reviewed
+scoring outcomes and per-frame results. Adapter-stage input/below-threshold
+counts are excluded from that parity claim. All 59 protected files, six saved
+detection files, and six reviewed annotation bindings remain unchanged.
+
+All 1,962 review assets were hash-verified: 12 videos and 1,950 images. Every
+original video and separate H.264 playback copy fully decoded through all
+25 frames. The agent directly inspected all 12 final-frame closeups, P003
+hidden frame 165's four-panel image at 0.20, and P001 frame 74's crop context.
+This is not all-frame visual approval. Ryan's review of the new crop evidence
+is pending; his earlier temporal inspection remains complete.
+
+At both predeclared display confidences and the raw 10-pixel radius, cropped
+inputs improve pooled match counts but add false guesses. For top-one at 0.20,
+representative matches rise from 44 to 51 of 75 eligible frames and false
+guesses from 20 to 23; challenge matches rise from 46 to 59 of 70 and false
+guesses from 10 to 13. At 0.35, the corresponding match counts are 39 to 50
+and 41 to 55, with false guesses 5 to 19 and 4 to 6. These are descriptive
+comparisons, not selected settings. P002 challenge frames 48-49 lose top-one
+matches at both settings; P002 representative frames 258-259 and P001 challenge
+frame 219 also regress at 0.20. Review the losses as well as the gains.
+
+New generated evidence is ignored under
+`data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/`.
+The verified review bundle is `review/a007aa4b358587789f7ef1f28b1c66b5/`.
+The execution handoff is
+`data/outputs/ball_tracking/tiled_execution/1a9479f83a17/review_guide.md`,
+with links to all 12 playback clips and final closeups. The same directory has
+`results_summary.md`, `score_audit.json`, command logs, and `execution_record.json`
+(SHA-256 `4d7977be4e08c9e70df438a007cbe92de4be60bed14eccc4d75a581aff137b52`).
+Inference took 136.28 seconds end to end; synchronized model calls totalled
+96.02 seconds, including first-call initialization. Median four-crop frame
+time was 0.532 seconds. No measured runtime ratio to the saved control exists.
+
+The last execution command completed the final record and preservation audit;
+the subsequent context-only handoff received `git diff --check`. No new code
+changed after the validated 18 focused tests and 341 full-suite passes plus
+one existing skip, so those tests were not repeated. No manual command was
+provided but left unrun. The exact next action is for Ryan to watch all 12 new
+crop-comparison clips through their final frames and report visual findings.
+Do not repeat experiment authorization or the earlier temporal review.
+All nine original prediction paths remain absent, all three holdouts remain
+sealed, and operating-point and quality-gate fields remain null. No upstream
+reviewed player decision changed; no player-pipeline rerun is needed.
+
+## Previous checkpoint: approved crop comparison validated; staging approval pending
 
 Branch remains `codex/ball-detector-baseline` at
 `6769e07476da09d858fa42f82aace024d21f7735`. Preserve the intentionally dirty

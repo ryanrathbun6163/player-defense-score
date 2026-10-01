@@ -281,3 +281,150 @@ Separate staging and commit approval are still needed for the documented
 15-file implementation checkpoint. The already approved experiment may run
 after that clean checkpoint, with human visual review afterward. No operating
 point or quality gate is selected, and all three test holdouts remain sealed.
+
+## Ball detector crop comparison — committed execution and review handoff
+
+Ryan authorized staging with "yes stage" and the exact 15-file commit with
+"commit please". Commit `1a9479f83a1766d8979fad07c604bc686d3c52c6` has parent
+`6769e07476da09d858fa42f82aace024d21f7735`; its complete tree and all 15 Git
+blobs match the previously validated staged scope. The index and worktree
+were clean after commit. Nothing was pushed.
+
+The already approved fixed-crop experiment then ran at that clean commit:
+600 crop calls across 150 source frames in exactly the six declared windows,
+600 immutable view checkpoints, and six separate candidate files. All stages
+used the repository `.venv` with bytecode disabled. End-to-end inference took
+136.28 seconds; synchronized model calls totalled 96.02 seconds, including
+16.32 seconds for the first call. Median four-crop frame time was 0.532 seconds,
+and peak PyTorch CUDA allocation was 0.220 GiB. Saved whole-frame timing was
+not measured, so no runtime ratio is claimed. The installed model emitted
+the same deterministic keypoint-buffer warning recorded for the frozen control;
+package, weights, runtime, precision, and target-class rules were unchanged.
+
+Scoring produced 1,080 per-window reports and 180 aggregate cells in each
+separate representative/challenge pool. A read-only audit compared all 540
+saved-control raw/top-one cells to the prior reviewed temporal reports.
+Scoring metrics and per-frame outcomes match exactly; adapter-stage input and
+below-threshold bookkeeping counts are excluded. Candidate provenance,
+all 600 crop checkpoints, six saved detection files, six annotation bindings,
+and 59 protected files verified. All nine original embargo paths stay absent;
+the three holdouts remain sealed.
+
+Rendering produced 1,962 hash-verified assets: 12 synchronized four-panel
+videos, 300 comparison PNGs, 300 closeup sheets, 1,200 native overlays, and
+150 crop-context images. All 12 originals and separate H.264 playback copies
+fully decoded through 25 frames at 5 fps. The agent directly inspected every
+final-frame closeup plus a hidden-frame comparison and crop-boundary context;
+all-frame human visual review is pending. This does not replace Ryan's review.
+
+At both displayed confidence settings and 10-pixel radius, both pools gain
+matches with crop inputs but also add false guesses. Individual deteriorations
+are preserved: P002 challenge frames 48-49 lose top-one matches at both views.
+The full grid and per-frame recovered/lost lists remain available. No setting,
+winner, quality gate, or generalization claim is selected.
+
+The ignored handoff is
+`data/outputs/ball_tracking/tiled_execution/1a9479f83a17/review_guide.md`.
+The corresponding `execution_record.json` has SHA-256
+`4d7977be4e08c9e70df438a007cbe92de4be60bed14eccc4d75a581aff137b52`.
+The review bundle is
+`data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/`.
+Execution and verification completed before these three context-file edits.
+No new code changed, so the existing 18 focused passes and 341 full-suite
+passes plus one skip were not rerun; the context diff received a whitespace
+check. Next is Ryan's inspection of all 12 clips through their final frames.
+
+## Ball detector crop comparison — completed human review
+
+Ryan responded to the complete 12-clip review package with "all of them look
+pretty good to me. even P002 challenge". The separate receipt
+`configs/ball_tracking/reviews/rfdetr_medium_tiled_development_comparison_visual_review_record_v0_1.json`
+(SHA-256 `6e108189b792d505c97adbcfcce5aa635a6e140893a6306e0c08bfe910218adb`)
+binds his exact statement to the execution commit, review manifest, both scoring
+pools, all original/playback clips, and final-frame closeups. Receipt time is
+creation time; no separate user-message event time is invented. The original
+pending-review evidence remains unchanged as historical provenance.
+
+Read-only closeout rehashed all 1,962 review assets, 12 playback clips and final
+closeups, two pool reports, six crop candidate files, and six saved whole-frame
+detection files; all hashes matched. All nine original prediction embargo paths
+remain absent, and all three holdouts remain sealed. No experiment or tests were
+rerun and no production code changed. Visual review completion does not select
+an operating point, quality gate, winner, or authorize another experiment or
+Git mutation. The previously reported numerical gains and losses remain valid.
+
+## Ball detector crop comparison — saved-result closeout and next design
+
+Following "lets move forward chat", a new ignored diagnostic extracted all
+180 same-cell aggregate crop/whole-frame comparisons and 48 displayed
+per-window reports from the two bound scoring pools. It checked displayed
+per-frame TP/FP/FN/duplicate/hidden counts and exact raw/top-one miss
+decompositions. Label-blind overlap counting retains 300 frame/display
+records with original cross-crop candidate references. No candidate was
+suppressed, no selected output was created, and no detector or scoring ran.
+
+Diagnostic SHA-256:
+`87a2e57e147da2907d42286bc6d81d333c011eb5609ba3f71c09291265c0cc3d`;
+path: `data/outputs/ball_tracking/tiled_closeout/1a9479f83a17/diagnostic.json`.
+The new results note distinguishes extra qualifying centers from geometric
+overlap and preserves all-grid losses as well as gains. It does not select
+a winner or interpret correlated grid cells as independent trials.
+
+The next recent-history ranking proposal binds this diagnostic, reviewed crop
+receipt, saved candidates, scoring pools, labels, and exact six-window scope.
+Its SHA-256 is `f9a3ae162d2227ddffab9a9da68811ea629cf7dfa6ffa48625546ac1ab5ad2ca`.
+It remains non-executable and awaits specific experiment approval; no selector
+support or experiment validation is claimed. No production code changed, so
+the prior code-test result remains unchanged. Git staging and other mutations
+remain unauthorized; all original embargoes and holdouts are preserved.
+
+## Approved saved crop candidate ranking — implementation validation
+
+Ryan's "I approve chat" authorizes the exact saved-six-window, 45-variant
+experiment. A separate approval receipt binds the unchanged proposal; the
+new executable specification digest is
+`c3541d45fcc4db384d2222a56cd4fe18885c7212ad9f7c77b0e933bdd3eb2fe4`.
+This approval does not authorize staging, committing, pushing, PRs, or merging.
+
+Four new modules implement exact five-frame causal ranking, immutable/resumable
+execution, separate scoring, and six-panel synchronized review. New synthetic
+tests cover exhaustive small-graph agreement, deterministic ties including
+empty-score-zero, lower-confidence recovery and stable-clutter failure,
+tight/wide motion limits, cap losses, duplicate retention, causal prefixes,
+window reset, gaps/expiry without extrapolation, hidden-frame false alarms,
+malformed inputs, label-blind loading, immutable inputs, dirty-checkpoint
+refusal, exact scope and all nine embargo paths, and tampered provenance.
+
+All 21 focused tests pass in 97.651 seconds. The full suite runs 363 tests in
+325.472 seconds: 362 pass, with one existing directory-symlink skip because
+Windows symlinks are unavailable. Both commands use
+`.venv` Python with `-B`. The synthetic integration reproduces all 540 saved
+crop raw/top-one outcome cells across 1,350 reports and two 225-cell pools;
+adapter input/below-threshold bookkeeping is the sole parity exclusion.
+It creates all 270 outputs, interrupts after seven and resumes only the
+remaining 263, verifies exact reuse, and rejects changed derived outputs.
+Twelve synthetic review clips fully decode all 25 frames at 5 fps. Their
+2,412 assets have complete inventories and hashes, including final frames.
+The agent directly inspected the synthetic comparison and unmarked-source
+closeups; Ryan's real ranking visual review remains pending execution.
+
+Real-input read-only preflight verifies six windows, 150 source frames,
+45 variants, and zero model calls. The real ranking output root remains absent.
+The completed crop inference/scoring/rendering were not rerun. No upstream
+player, detector, crop, tracklet, or label decision changed. The prior three
+context-file edits and historical snapshots remain preserved.
+
+The final `checkpoint_audit.json` binds the exact 15-file scope and successful
+test logs, all 59 unchanged protected Git/SHA-256 bindings, six saved detections,
+six finalized labels, and frozen proposal/crop/review bindings. It confirms
+all nine original embargo paths absent, all three holdouts sealed, an absent
+real ranking output root, successful `git diff --check`, Python/JSON parsing,
+and refusal to execute before the clean implementation checkpoint.
+All generated synthetic outputs, previews, logs, and audits are ignored under
+`data/outputs/ball_tracking/crop_ranking_implementation_validation/`.
+The index remains empty at branch `codex/ball-detector-baseline`, HEAD
+`1a9479f83a1766d8979fad07c604bc686d3c52c6`. No operating point, quality gate,
+winner, holdout release, staging, commit, push, PR, or merge was performed.
+Next is separately authorized staging/commit of the exact validated 15-file
+scope, followed by the already approved real experiment and Ryan's final-frame
+review. No unrun manual command or player-pipeline rerun stage is involved.
