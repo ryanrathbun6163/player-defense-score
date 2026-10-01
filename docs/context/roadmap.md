@@ -64,10 +64,40 @@ and 23 passing focused tests now implement it. The full suite has 385 passes
 and one existing Windows directory-symlink skip.
 The synthetic comparison covers 378 outputs, 1,890 reports, all 270 trace/1,350
 report/450 aggregate control checks and 12 complete clips with 3,000 PNGs.
-Real execution awaits a validated clean implementation commit, with staging
-and committing separately authorized. It does not resolve persistent clutter
-or hidden-ball starts by assumption.
+Ryan separately authorized the exact staging scope and commit at `2274ab6097cd`.
+The real comparison is now complete: 378 outputs, 1,890 reports, all saved
+control checks, 12 clips and 3,000 PNGs. All original and H.264 copies decode
+25 frames at 5 fps. Increasing movement allowance recovers matches throughout
+the grid; penalty effects depend on the allowance and pool. Persistent clutter,
+P002 representative 262 and hidden-ball false starts remain unresolved.
+Ryan confirmed "I have reviewed all of these clips. move forward". A separate
+receipt records completion of the requested 12-clip review without invented
+frame-level verdicts. The saved-evidence closeout reconciles all 1,080 loss
+partitions and audits 4,843 emitted winners across 216 history outputs. Persistent
+wrong paths already have multiple observations, while correct starts can be
+singletons. A read-only feasibility audit examines existing player/scene context
+without applying a new rule or projecting the ball to the floor. The next design
+question is candidate identity evidence, with abstention treated as a separate
+tradeoff. See `../ball_crop_motion_factorial_results.md`.
+No method, operating point, quality gate or holdout release is selected.
 See `current_state.md` for exact evidence bindings and preservation checks.
+
+The saved candidate-identity diagnosis is now complete in
+`../ball_candidate_identity_diagnosis.md`: 12 agent-inspected sheets cover 215
+unique saved winners. Repeated distant clutter supports testing context;
+near-player confusion and imprecise ball localization limit its claim.
+`../ball_crop_player_context_proposal.md` specifies a single fixed soft
+distance penalty alongside all four motion settings, with all seven existing
+controls reused. The proposal binds 1,353 observed player rows in the same six
+windows. Ryan approved that exact scope with "I approve chat". Four separate
+modules now implement it, with 34 focused passes and 419 full-suite passes
+plus one existing Windows skip. Synthetic execution verifies 216 new outputs,
+1,080 new reports, 12 complete paired clips and unchanged reuse of all prior
+controls. The real-input read-only preflight passes; real context execution has
+not run. Next are separate staging and commit approvals for the exact tested
+eighteen-file scope, followed by already approved execution at a clean commit
+and Ryan's new final-frame review. See `../ball_crop_player_context_implementation.md`.
+No operating point, quality gate, holdout release or Git publication is selected.
 
 - [x] define the ball annotation and detection-evaluation protocol;
 - [x] label and visually review a 75-frame pilot spanning three possessions;
@@ -86,7 +116,17 @@ See `current_state.md` for exact evidence bindings and preservation checks.
 - [x] specify a bounded comparison separating movement allowance from movement cost;
 - [x] approve and implement the exact motion-factorial experiment;
 - [x] validate the motion-factorial implementation with focused and full suites;
-- [ ] separately authorize staging and committing its exact validated scope;
+- [x] separately authorize staging and committing its exact validated scope;
+- [x] execute, score and render the approved motion-factorial comparison;
+- [x] record Ryan's completed review of the requested 12-clip final-frame package;
+- [x] close out motion results and diagnose saved path support and remaining failures;
+- [x] audit feasibility of existing image-space player/context evidence;
+- [x] inspect saved candidate appearance and crop-view evidence;
+- [x] specify a bounded soft player-context comparison;
+- [x] approve the exact proposed player-context scope and implement/synthetically validate it;
+- [ ] separately authorize staging and committing its exact validated eighteen-file scope;
+- [ ] execute, score and render the approved player-context comparison at the clean commit;
+- [ ] review all twelve new paired context clips through their final frames;
 - [ ] compare small-object basketball detectors;
 - [ ] associate detections through blur, occlusion, passes, shots, and rebounds;
 - [ ] preserve uncertainty and missing observations;

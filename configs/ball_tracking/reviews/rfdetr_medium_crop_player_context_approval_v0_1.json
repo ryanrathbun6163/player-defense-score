@@ -1,0 +1,14 @@
+{
+  "schema_version": "ball_crop_player_context_approval/v0.1",
+  "experiment_spec_sha256": "7478fe4a3e5a3aaeb328c71b6ed1fe06db42dd3f904af17ca4ed13eb8a294e0d",
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_player_context_v0_1.json",
+    "sha256": "b41dd0094755de726db6de196c28376cdfc2bceb40b645b1ce91fa56a6be80e7"
+  },
+  "approved_by": "ryan",
+  "statement": "I approve chat",
+  "recorded_at_utc": "2026-10-01T22:54:00.832054+00:00",
+  "timestamp_semantics": "Receipt creation time; actual approval is Ryan's response to the linked exact player-context proposal in this chat.",
+  "scope": "saved_six_development_crop_windows_36_new_context_variants_reusing_63_saved_variants",
+  "git_mutations_authorized": false
+}

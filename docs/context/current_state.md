@@ -1,6 +1,228 @@
 # Current State
 
-## Latest checkpoint: approved motion-factorial implementation validated
+## Latest checkpoint: approved player-context comparison implemented and validated
+
+Ryan approved the exact player-context proposal with "I approve chat". The
+separate receipt is
+`configs/ball_tracking/reviews/rfdetr_medium_crop_player_context_approval_v0_1.json`
+(SHA-256 `6e6f0fa4016c2b187593a11af55e45ef5a0d3f87ad26783af05136d9d80c84c1`).
+It binds the unchanged proposal and fixed experiment specification. Four new
+modules implement its bounded distance cost, guarded runner, separate scoring,
+and paired review. Original confidence, candidate geometry/order, missingness,
+and all four motion configurations retain their stated semantics. Reviewed
+player rectangles remain offline inputs that may use hindsight; no ball-handler
+identity, floor projection or end-to-end online player causality is inferred.
+
+All 34 focused tests passed, followed by 419 full-suite passes and one
+existing Windows directory-symlink skip. Independent exhaustive path cases
+and complete zero-cost trace parity check the new recurrence. Synthetic
+integration covers 216 new outputs with 378 saved outputs reused, 2,970 total
+reports, 495 aggregate cells per pool, and all 12 complete 25-frame/5-fps clips.
+Review tests verify 2,112 new assets and 2,400 existing native PNG references,
+without old selectors/scorers/renderers or source-video decoding. Agent visual
+inspection covers the synthetic layout; real comparison quality is untested.
+
+The read-only real-input preflight passed on all six windows/150 frames with
+selector/scorer/media-decode calls disabled. A separate read-only check verified
+all 2,400 existing native PNG bindings without decoding media. The real runner rejects this dirty
+checkout. No real context ranking, scoring or rendering has run; its output
+root remains absent. The prior model/crop/ranking/motion experiments were not
+rerun. All nine original prediction embargoes remain absent and the three
+holdouts sealed. No method, operating point or quality gate is selected.
+
+Start with `../ball_crop_player_context_implementation.md` for the exact
+eighteen-file staging scope. Branch/HEAD remain `codex/ball-detector-baseline`
+at `2274ab6097cd841421e2b606f723b047cd7dc62b`, with an empty index. The worktree
+contains the three intentional tracked context edits and fifteen untracked
+files. All five prior untracked review/design files and 83 protected existing
+files retain their exact bytes. Only the three context documents were advanced;
+their previous versions are retained in the ignored implementation evidence.
+
+Evidence is under
+`data/outputs/ball_tracking/crop_player_context_implementation/2274ab6097cd/`:
+`focused_final.json`/`full_final.json` bind actual logs,
+`real_input_preflight.json` records read-only guards,
+`saved_native_input_preflight.json` verifies existing review images, and
+`implementation_handoff.json` binds the final scope and preservation checks.
+Whitespace, JSON and Python parsing are checked. No Git mutation occurred.
+Next is explicit authorization to stage exactly those eighteen files, then
+verification of the staged diff and separate commit authorization. Real
+execution scope is already approved, but requires that clean tested commit.
+Ryan's review of the new real clips follows execution. No manual command is
+pending, and pushes, PRs, merges and holdout release remain separate decisions.
+
+## Previous checkpoint: candidate appearance diagnosed; player-context proposal specified
+
+Ryan's requested motion-factorial visual review remains complete. The next
+saved-evidence diagnosis is `docs/ball_candidate_identity_diagnosis.md`.
+The agent inspected all 12 contact sheets covering 215 distinct saved winner
+candidates, with 430 exact native crops from 149 existing unmarked PNGs.
+Repeated distant seating clutter and near-player body/footwear confusion are
+different failure mechanisms. A saved WRONG localization outcome does not
+certify non-ball identity; these are agent observations, not new human labels.
+
+The fixed next design is `docs/ball_crop_player_context_proposal.md`, bound by
+`configs/ball_tracking/proposals/rfdetr_medium_crop_player_context_v0_1.json`
+(SHA-256 `b41dd0094755de726db6de196c28376cdfc2bceb40b645b1ce91fa56a6be80e7`).
+It proposes one soft .25 * z/(1+z) cost per observed candidate node, with z the
+minimum center-to-box distance divided by box height across all same-frame
+observed player boxes. Missing context is explicitly neutral. Original
+confidence/geometry, four motion settings and all other graph rules remain
+fixed. All seven prior controls are reused by hash; only four context arms
+would generate 216 new outputs and 1,080 new reports. The 12 planned new clips
+pair each motion control with its context variant through every final frame.
+No model call, completed experiment rerun, method/operating-point/quality-gate
+selection, or holdout release is included.
+
+The ignored evidence directory is
+`data/outputs/ball_tracking/candidate_identity_diagnosis/2274ab6097cd/`.
+Start with `catalog_guide.md` for optional diagnostic images. This is not a
+replacement requirement for Ryan's completed clip review. `context_inputs.json`
+(SHA-256 `272c0f14e86420f4b667a0a24d4723914c87efa31fdc0244b1348573a2a441a0`)
+freezes 1,353 observed player rows over exactly 150 permitted frames; all six
+window row digests match the prior feasibility audit. Original fields and
+duplicate/identity provenance remain. Historical player source hashes/model
+provenance remain unavailable; current hashes do not retroactively supply them.
+Reviewed player context can use hindsight, so online player causality is not
+claimed. Selection would use image-space rectangles only, without projection
+to the court or possession/ball-handler inference.
+
+The proposal is not yet approved, implemented or executed. Next is review of
+this exact new comparison scope, followed by implementation and focused/full
+synthetic validation. Staging, committing, pushing, PR creation and merging
+still need separate explicit authorization. Execution requires its approved
+scope and clean tested implementation commit. No manual command is pending.
+
+Branch/HEAD remain `codex/ball-detector-baseline` at
+`2274ab6097cd841421e2b606f723b047cd7dc62b`; index empty. Preserve the three
+intentional context edits, the prior untracked review receipt/results note,
+and three new untracked design files (diagnosis, proposal Markdown/JSON).
+No production code changed; the last results remain 23 focused and 385 full
+passes plus one existing Windows skip. JSON/AST parsing, exact bindings,
+scope and whitespace were checked; all 83 protected non-context files are
+unchanged, all nine embargo paths absent and all three holdouts sealed.
+`diagnosis_handoff.json` records the exact eight-file scope and final hashes.
+
+## Previous checkpoint: motion review completed; saved-evidence closeout complete
+
+Ryan explicitly stated "I have reviewed all of these clips. move forward".
+The separate receipt `configs/ball_tracking/reviews/rfdetr_medium_crop_motion_factorial_visual_review_record_v0_1.json`
+(SHA-256 `d629f93d4c4081dd89fcbc98c997fff0f5aea7fe9d8555a16d9328f803d6fd40`)
+records completion of the requested 12-clip review against the exact execution,
+both scoring pools, original/playback clips and final images. It does not invent
+individual-frame verdicts, select a method or approve measured accuracy. Earlier
+execution and guide snapshots retain their historical pending-review status.
+
+The read-only closeout is `docs/ball_crop_motion_factorial_results.md`.
+Increasing movement allowance helps across the fixed grid; movement-cost
+effects depend on the allowed links and pool. Persistent incorrect candidates
+remain despite long paths. No winner, operating point, quality gate or holdout
+release is selected.
+
+New ignored evidence is under
+`data/outputs/ball_tracking/crop_motion_closeout/2274ab6097cd/`.
+`closeout_audit.json` (SHA-256 `2eb17ff8c26237f3009396a5a54f9646fba187db7409d9e87cfe83c678361c5c`)
+reconciles 1,080 loss partitions and inventories 4,843 saved emitted winners
+from all 216 history outputs. It preserves path length, span, gaps, boundary
+flags, confidence, current/competing candidates and saved radius-10 outcomes.
+`mechanism_diagnostic.json` binds 112 copied case traces and 38 input files.
+A further read-only `context_feasibility.json` inventories reviewed image-space
+player/court inputs and diagnostic candidate context; see its companion note
+and results document for provenance limits. No new selection rule is applied.
+
+The support audit has 313 matched singleton emissions versus 71 unmatched
+eligible-frame and 19 hidden singleton emissions. Another 1,221 unmatched
+eligible-frame and 52 hidden emissions already have two or more nodes. These
+counts repeat correlated arms/confidences, not independent source examples.
+At both displays, all four arms choose a five-node false path at P002 262.
+Hidden P003 168 already has two nodes at .20; correct reacquisition 171 is a
+singleton in every arm at both displays. A generic minimum-support rule would
+lose correct observations and still retain persistent wrong objects.
+
+The next design question is candidate identity: whether appearance, crop-view
+provenance and reviewed image-space player/scene context supply useful evidence.
+Keep abstention as a separate false-alarm/missingness tradeoff. Do not project an
+airborne ball through the floor homography or infer possession from proximity.
+No new model, selector, scorer or renderer was invoked in this closeout; no
+prediction, smoothing, interpolation or operating-point selection was performed.
+
+Branch/HEAD remain `codex/ball-detector-baseline` at
+`2274ab6097cd841421e2b606f723b047cd7dc62b`. Preserve the three intentional unstaged
+context updates and the two new untracked files: review receipt and results note.
+The index is empty. All 83 protected non-context files and prior reviewed
+outputs are unchanged; all nine embargo paths remain absent and all three
+holdouts stay sealed. The final ignored `closeout_handoff.json` binds the exact
+five-file worktree scope and evidence. Whitespace and JSON/Python parsing are
+checked; production code and its 23 focused/385 full-suite passes plus one
+Windows skip are unchanged, so code tests were not repeated. No new staging,
+commit, push, PR or merge is authorized or performed. No upstream player review
+changed and no manual command was supplied but left unrun.
+
+## Previous checkpoint: motion-factorial execution complete; visual review pending
+
+Branch is `codex/ball-detector-baseline` at
+`2274ab6097cd841421e2b606f723b047cd7dc62b`
+(`feat(ball-tracking): separate motion allowance and cost`), parent
+`3c4894656fd5da11708a54089444d41f0a6f7773`. Ryan separately authorized staging
+the exact validated 15-file scope with "yes you may mr chat sir", then the
+proposed commit with "yes you may". The commit scope, parent and blobs were
+verified. No push, PR or merge occurred or is authorized.
+
+The already approved comparison completed at that clean checkpoint using only
+the six saved development crop windows. It separates movement allowance from
+movement penalty: four combinations plus three controls, each at nine confidence
+thresholds. There are 378 derived outputs, 1,890 per-window scoring reports and
+315 aggregate cells in each separate pool. All 270 saved control traces, 1,350
+control reports and 450 aggregate parity checks pass. Zero detector calls were
+made; neither completed original crop nor ranking experiment was rerun.
+Selection/scoring/rendering took 87.632/113.247/418.471 seconds.
+
+All 3,012 review assets were hash-verified: 12 clips and 3,000 PNGs. Every
+original and separate H.264 playback copy decoded all 25 frames at 5 fps.
+Agent inspection covered all 12 final-frame closeups and targeted comparison
+frames; it is not Ryan's visual judgment. His review of the new 12 clips remains
+pending. Earlier crop and ranking review responses remain complete.
+
+Start with the ignored guide:
+`data/outputs/ball_tracking/crop_motion_execution/2274ab6097cd/review_guide.md`.
+It links all playback clips, final panels/closeups, and exact mechanism cases.
+The same directory holds `results_summary.md`, `score_audit.json`, stage receipts,
+playback verification, and `execution_record.json` (SHA-256
+`1e732738669cb3f6c4389a92248cd1435b376b2fb023a2b02abacda9bb4eb40f`). The execution record binds all outputs, inputs,
+86 protected files, inspection evidence and the clean execution checkpoint.
+
+Increasing movement allowance at either fixed penalty scale increases matched
+frames in all 45 confidence/radius cells in both pools, without increasing false
+positives. Changing the penalty has mixed effects: a gentler penalty with tight
+allowance loses challenge matches in all 45 cells, while with wide allowance it
+gains challenge matches in 37 and ties in eight. These cells reuse the same
+development frames and are not independent trials. No winner is selected.
+
+At radius 10/confidence .20, representative TT/TW/WT/WW match counts are
+29/33/48/54 versus top one's 51; challenge counts are 53/50/62/63 versus 59.
+TT/TW/WT/WW mean tight/wide movement allowance first, then tight/wide cost scale;
+a wider cost scale produces a gentler penalty. P002 representative 258 depends
+on the penalty; all four history arms still choose incorrectly at 262. P002
+challenge 48 regresses under tight allowance/gentler penalty at .20. Only the
+wide-allowance/gentler-penalty history arm matches P003 final challenge frame
+174 at both displays. Hidden P003 false alarms remain two at .20 and one at
+.35 in each history arm. These are inspection targets, not a quality decision.
+
+All nine original prediction embargo paths remain absent, and holdouts P001
+300-324, P002 200-224 and P003 250-274 remain sealed. No operating point,
+quality gate or holdout release is selected. All original candidate confidence,
+coordinate and index provenance and explicit missingness are preserved.
+
+After the clean execution audit, only the three context files were updated;
+preserve these intentional unstaged changes. The index is empty. No production
+code changed after its 23 focused passes and 385 full-suite passes plus one
+existing Windows symlink skip; tests were not repeated. Whitespace and final
+scope are checked in the ignored post-execution context receipt. No upstream
+player decision changed and no manual command was supplied but left unrun.
+Next: Ryan reviews all 12 new clips through their final frames using the guide.
+Further staging, commits, pushes, PRs or merges require separate authorization.
+
+## Previous checkpoint: approved motion-factorial implementation validated
 
 Ryan approved the exact factorial comparison with "I approve chat". The new
 receipt is
