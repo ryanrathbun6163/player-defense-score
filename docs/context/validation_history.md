@@ -1042,3 +1042,69 @@ index empty, no Git mutation. Before-context bytes and final evidence are under
 `data/outputs/ball_tracking/yolo11x_recovery_implementation/116e3ed9cb41/`.
 The next boundary is staging the exact documented scope, then separate commit
 authorization. The approved experiment itself does not need approval again.
+
+## YOLO recovery execution, completed visual review and saved-results closeout
+
+Ryan separately authorized staging the exact seventeen-file scope, then replied
+"Yes you can" to the explicit commit request. Local commit
+`3326482e6f7e05527d146f3110c8ec39171cf08d` contains the tested staged bytes and
+has parent `116e3ed9cb4113521fa8c93adf4a100fea4dc0ec`. Clean branch, index,
+scope and blobs were verified. No push, PR or merge occurred.
+
+The approved recovery completed all 425 missing crop units, retaining the 175
+original checkpoints and all 561 original partial-run files unchanged. It
+created six candidate files and 162 selectors with explicit actual inference
+commits for every unit, separate from assembly provenance. The observed totals
+are 600 unique crops, 602 attempts/forwards including two historical failures,
+three predictor preparations and six synthetic forwards. There are no new
+failures or incomplete accounting records.
+
+Scoring produced 810 new reports while reusing 810 exact RF-DETR reports. Each
+separate pool contains 270 aggregate cells. Rendering produced twelve clips
+and 1,500 PNGs with 1,200 reused native/source references. The independent audit
+verified asset bytes, all twelve clips through all 25 frames at 5 fps, sixty
+final PNGs, all original files and all embargoes. Its SHA-256 is
+`0aeb970b6b550a7a6ce18840d9e88ebbf3cf6ea0f01155c40bcd0ef1522ea3a4`.
+The execution checkpoint is
+`df74bfd6f46070fa9b36866c4663b72fc7c89ff0addc2bc45c9f1c2dcc2849ca`.
+Both are under `data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/`.
+
+Twelve clips and sixty final-image support copies preserve the original bytes
+at shorter paths. They are not new model or rendering outputs. Agent visual
+inspection covered only two final stills; machine decoding is not human review.
+Ryan subsequently stated "I approve these clips. They have been reviewed and
+you are good to move forward" in direct response to the twelve-clip final-frame
+request. The separate review record SHA-256 is
+`365facf28a1e2f05339adea1e04e96a8fe7f33d0b3dea0184d16d1caa4c05433`.
+It records completed package review without inventing specific frame verdicts.
+All earlier pending snapshots remain unchanged.
+
+The closeout rehashed 4,750 frozen evidence bindings and 248 existing
+non-context tracked files. At radius 10/.01, RF-DETR covers 140/145 eligible
+frames while YOLO covers 87/145, with no additional YOLO-matched frame. YOLO
+has fewer matches in all 270 paired aggregate grid cells; these reuse the same
+development frames and are not independent trials. No method, threshold,
+operating point, quality gate or generalization claim is selected.
+
+The bounded ten-family saved-report audit reconciles 900 aggregate cells,
+2,700 per-window reports, 3,000 displayed frame-setting records and sixty
+existing context/YOLO loss partitions. The 810 duplicate RF reports and 270
+aggregate copies match and are counted once. Every pool/radius tradeoff set
+retains all outcome-tied settings and provenance. At radius 10, eight
+representative and seven challenge settings remain nondominated on TP/FP.
+YOLO top one at .50 retains a representative 17 TP/3 FP/58 FN tradeoff; no
+YOLO setting is nondominated in challenge. This is not a method selection.
+
+Twenty frames are missed by every family at both displays. RF causes are five
+unavailable proposals and fifteen confidence-filtered matches; P001 71 is the
+only frame with a false positive in all twenty displayed setting incidences.
+The audit retains all frame pointers and causes without rematching coordinates.
+Its SHA-256 is `9a83a996f4c4772a45530e1050dc9337c8caa3fabaf6095ed96bbc44bc5cfe21`.
+The next 32-frame saved-evidence inspection is specified in the results doc;
+it has not run and does not authorize training or new identity labels.
+
+This evidence/documentation closeout changes no production code. Existing
+27 recovery-focused and 15 adapter passes, plus 491 full-suite passes and one
+Windows capability skip, remain the relevant validation. No completed pipeline
+stage, model inference or media decode is repeated. All nine embargo paths
+remain absent, all three holdouts sealed, and the index remains empty.

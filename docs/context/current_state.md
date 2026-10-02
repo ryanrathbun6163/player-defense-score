@@ -1,6 +1,64 @@
 # Current State
 
-## Latest checkpoint: approved YOLO recovery implemented and validated; staging next
+## Latest checkpoint: YOLO recovery executed and visually approved; saved-method closeout
+
+The separately authorized recovery commit is
+`3326482e6f7e05527d146f3110c8ec39171cf08d` on `codex/ball-detector-baseline`.
+Its exact seventeen tested files were verified after committing. Recovery,
+scoring and rendering are complete: 175 original crops preserved, 425 missing
+crops completed, zero new failures, six candidates and 162 selectors. Actual
+totals are 600 unique crops, 602 project attempts/forwards including two earlier
+failures, three predictor preparations and six synthetic forwards. All 561
+original partial-run files retain their bytes and actual inference provenance.
+
+There are 810 new and 810 reused RF-DETR scoring reports, 270 aggregate cells
+per separate pool, twelve new clips and 1,500 PNGs with 1,200 saved references.
+The independent audit checked all asset hashes, every clip through its 25th
+frame at 5 fps, and sixty final images. Short playback/final-image copies are
+byte-identical support duplicates. Evidence is under
+`data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/`.
+
+Ryan explicitly approved the requested twelve-clip final-frame review:
+"I approve these clips. They have been reviewed and you are good to move forward".
+The separate receipt is
+`configs/ball_tracking/reviews/yolo11x_crop_recovery_visual_review_record_v0_2.json`
+(SHA-256 `365facf28a1e2f05339adea1e04e96a8fe7f33d0b3dea0184d16d1caa4c05433`).
+It records package review without invented frame-level correctness verdicts.
+Earlier pending snapshots stay unchanged. Do not request this review again.
+
+The results closeout is `../ball_yolo11x_crop_recovery_results.md`. YOLO has
+fewer matches in all 270 paired aggregate cells; these are correlated settings
+on reused development frames. At radius 10, its .01 exported set covers 87/145
+eligible frames versus RF-DETR's 140/145 and adds no matched frame beyond RF.
+P002 challenge top one matches 12/25 versus 22/25 at both display thresholds.
+A bounded comparison of ten existing single-detection families now reconciles
+900 aggregate cells, 2,700 reports and 3,000 displayed frame-setting records,
+counting duplicated controls once. At radius 10 it retains eight representative
+and seven challenge tradeoff settings without selecting among them. YOLO .50
+retains a representative low-FP/low-coverage point; it is not universally dominated.
+Twenty frames are missed by all families at both displays: five lack an RF
+match at .01 and fifteen lose an available RF match to confidence filtering.
+The saved audit SHA-256 is
+`9a83a996f4c4772a45530e1050dc9337c8caa3fabaf6095ed96bbc44bc5cfe21`.
+
+All nine original prediction embargoes remain absent and all three holdouts
+sealed. No method, operating point or quality gate is selected. No completed
+experiment, media decode or model call is rerun in this closeout. Production
+code is unchanged; the latest tests remain 27 recovery-focused, 15 adapter,
+and 491 full-suite passes with one existing Windows skip.
+
+The index is empty. Current work is three intentional context updates plus a
+new review receipt and results document; no Git mutation occurred in this
+closeout. Before-context bytes and a 4,750-file evidence preservation inventory
+are saved under `data/outputs/ball_tracking/yolo11x_crop_closeout/3326482e6f7e/`.
+Next Git step is separate authorization to stage the exact five-file closeout
+scope, then separate commit authorization. The next development task is the
+bounded 32-frame inspection of weak matching proposals versus emitted
+alternatives specified in the results document. It uses saved evidence only;
+no further clip approval, detector run, label change or training is pending.
+No manual command is pending. Further Git steps require separate authorization.
+
+## Prior checkpoint: approved YOLO recovery implemented and validated; staging next
 
 Ryan approved the exact v0.2 recovery plan with "Yes I approve chat". The
 separate record is

@@ -110,8 +110,21 @@ The next concrete proposal, `../ball_yolo11x_crop_comparison_proposal.md`, tests
 one fixed detector bundle on the same windows/crops with simple selectors and
 byte-reused controls. Its approved implementation was committed at `116e3ed9cb41`;
 the run preserved 175 crop units before a validator failure. Ryan approved the
-versioned recovery plan, and its implementation now passes focused and full
-tests. Separate staging/commit authorization precedes the remaining 425 units.
+versioned recovery plan, and its tested seventeen-file implementation was
+separately staged and committed at `3326482e6f7e`. Recovery completed the 425
+missing units without a new failure, preserving all 175 original units and
+their actual inference commits. Scoring and rendering are complete, and Ryan
+approved all twelve new clips in response to the final-frame review request.
+The separate review receipt and closeout are in `current_state.md` and
+`../ball_yolo11x_crop_recovery_results.md`. YOLO has fewer matches in all 270
+paired aggregate cells on these development windows. The bounded saved-results
+comparison of ten single-detection families is complete: 900 aggregate cells,
+2,700 reports and 3,000 displayed frame-setting records reconcile, with copied
+controls counted once. It retains tradeoffs without choosing a setting and
+separates twenty persistent display misses into five unavailable RF proposals
+and fifteen confidence-filtered RF proposals. The next saved-evidence task
+inspects these weak proposals and emitted alternatives with flight, hidden and
+reacquisition controls across 32 existing frames, as specified in the closeout.
 No method, operating point, quality gate or holdout release is selected.
 
 - [x] define the ball annotation and detection-evaluation protocol;
@@ -148,9 +161,12 @@ No method, operating point, quality gate or holdout release is selected.
 - [x] execute clean preflight and preserve the interrupted 175-unit YOLO run with a diagnosed validator failure;
 - [x] review and approve the v0.2 recovery proposal that preserves original per-crop code provenance;
 - [x] implement and validate approved recovery support;
-- [ ] separately authorize staging and committing the exact recovery implementation;
-- [ ] complete the remaining 425 YOLO crop units, score/render and review all twelve new clips;
-- [ ] compare small-object basketball detectors;
+- [x] separately authorize staging and committing the exact recovery implementation;
+- [x] complete the remaining 425 YOLO crop units, score/render and review all twelve new clips;
+- [x] compare the fixed RF-DETR and YOLO11x detector configurations;
+- [x] record the completed YOLO review and close out the saved comparison;
+- [x] consolidate existing single-detection settings and persistent errors from saved results;
+- [ ] inspect weak matching proposals and emitted alternatives in the bounded saved-frame cohort;
 - [ ] associate detections through blur, occlusion, passes, shots, and rebounds;
 - [ ] preserve uncertainty and missing observations;
 - [ ] map ball observations into court/time context where defensible;
