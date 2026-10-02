@@ -70,18 +70,18 @@ class RecoveryInventoryTests(unittest.TestCase):
                 patch.object(resources.time, "monotonic", return_value=0):
             self.assertEqual(resources.output_bytes("synthetic_root"), 60)
 
-    def test_new_path_or_changed_multiplicity_requires_two_new_matching_scans(self):
+    def test_new_path_or_increased_multiplicity_is_charged_in_second_scan(self):
         for hard_link in (True, False):
             with self.subTest(hard_link=hard_link):
                 scans = [[("synthetic_root", [], names)] for names in
-                         (["first"], ["first", "second"], ["first", "second"])]
-                identities = [7, 7, 7 if hard_link else 8, 7, 7 if hard_link else 8]
+                         (["first"], ["first", "second"])]
+                identities = [7, 7, 7 if hard_link else 8]
                 observations = [SimpleNamespace(st_dev=1, st_ino=i, st_size=23) for i in identities]
                 with patch.object(resources.os, "walk", side_effect=scans) as walk, \
                         patch.object(Path, "stat", side_effect=observations), \
                         patch.object(resources.time, "monotonic", return_value=0):
                     self.assertEqual(resources.output_bytes("synthetic_root"), 46)
-                self.assertEqual(walk.call_count, 3)
+                self.assertEqual(walk.call_count, 2)
 
     def test_actual_file_and_subtree_renames_preserve_all_bytes(self):
         for rename_directory in (False, True):

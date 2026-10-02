@@ -89,7 +89,7 @@ def _validate_report(report, observation, run, labels, config):
         raise ValueError("Retention review report/config/provenance synchronization differs")
 
 
-def prepare_window(root, context, window_id, *, observation_loader=None):
+def prepare_window(root, context, window_id, *, observation_loader=None, score_loader=None):
     """Load saved inputs only; a missing scoring artifact is a hard failure."""
     from .crop_retention_experiment import load_new_observations, load_saved_control
     from .crop_retention_evaluation import load_window_score
@@ -102,7 +102,7 @@ def prepare_window(root, context, window_id, *, observation_loader=None):
     score_path = safe_path(root, f"{OUTPUT_ROOT}/evaluation/windows/{window_id}.json", OUTPUT_ROOT)
     if not score_path.is_file():
         raise ValueError("Retention review requires completed saved window scoring")
-    scored = load_window_score(root, context, window_id)
+    scored = (load_window_score if score_loader is None else score_loader)(root, context, window_id)
     run, _ = context["inputs"][window_id]
     indices = list(range(window["start_frame_index"], window["end_frame_index"] + 1))
     if len(indices) != FRAME_COUNT or [f.frame_index for f in run.frames] != indices:
@@ -483,8 +483,9 @@ def render_prepared_window(root, prepared, target_dir):
     return {"bundle": str(target), "reused": False, "assets": len(assets), "human_visual_review": "pending"}
 
 
-def render_window(root, context, window_id, target_dir, *, observation_loader=None):
-    return render_prepared_window(root, prepare_window(root, context, window_id, observation_loader=observation_loader), target_dir)
+def render_window(root, context, window_id, target_dir, *, observation_loader=None, score_loader=None):
+    return render_prepared_window(root, prepare_window(root, context, window_id,
+                                  observation_loader=observation_loader, score_loader=score_loader), target_dir)
 
 
 def finalize_review(root, context, target_dir=None):

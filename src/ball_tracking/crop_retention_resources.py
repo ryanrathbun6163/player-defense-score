@@ -41,6 +41,8 @@ def _write_new(path, value):
 def output_bytes(root):
     # Writers may grow or rewrite a file while publishing an output. Compare
     # membership, including hard-link multiplicity, across two complete scans.
+    # New identities/links may appear, but none observed in the first complete
+    # scan may disappear or lose entries in the second accepted scan.
     # The larger observed size is conservative for those scans, not an upper
     # bound on future growth between monitor samples.
     deadline = time.monotonic() + .5
@@ -66,9 +68,9 @@ def output_bytes(root):
                     count, size = current.get(identity, (0, 0))
                     current[identity] = (count + 1, max(size, info.st_size))
             check_deadline()
-            if (previous is not None and current.keys() == previous.keys()
-                    and all(count == previous[key][0] for key, (count, _) in current.items())):
-                measured = sum(count * max(size, previous[key][1])
+            if (previous is not None and previous.keys() <= current.keys()
+                    and all(current[key][0] >= count for key, (count, _) in previous.items())):
+                measured = sum(count * max(size, previous.get(key, (0, 0))[1])
                                for key, (count, size) in current.items())
                 check_deadline()
                 return measured

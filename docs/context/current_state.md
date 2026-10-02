@@ -1,6 +1,105 @@
 # Current State
 
-## Latest checkpoint: retention recovery validated; staging unapproved
+## Latest checkpoint: rendering recovery approved and implemented; regression validation passed
+
+Ryan approved the bounded rendering recovery with "I approve, move forward chat".
+The exact approval is recorded in
+`configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_render_recovery_approval_v0_1.json`,
+SHA-256 `133981a85b191e931e739ad0c3030659072282665db0dd5cb234716fb52f71f6`.
+It binds `docs/ball_crop_candidate_retention_render_recovery_proposal.md`,
+SHA-256 `2d9ea51ca4f93fbc77d902266dcbf1ef496edcb8c320c7a0dbbe6d86bf884b48`.
+The earlier proposal remains frozen; its draft wording is superseded by this
+approval receipt. Staging, committing, pushing, PR creation and merging remain
+separate authorization steps.
+
+The implementation adds a runner restricted to verification and rendering,
+an explicit saved-score loader bridge, and the approved monotone-additions
+measurement rule. Original selections and completed scores keep their original
+commits/specifications. Both failures, all partial files, the 1,170-event history
+and existing budget remain preserved. No real recovery worker has run.
+
+Individual focused checks passed: 44 resource tests and 26 rendering-recovery
+tests. Independent static reviews passed, including the separately prepared
+completion-audit helper. The actual metadata-only dry-run passed. All 145
+combined retention tests passed in 198.604 seconds; all 140 source/test/dependency
+bindings stayed unchanged. The full suite completed 665 tests in 1,882.854 seconds:
+664 passed and one existing Windows directory-symlink test was skipped. Its 140
+source/test/dependency bindings also stayed unchanged. Independent certificate
+guard review passed. The final certificate SHA-256 is
+`652a8bb8926ea21be2e1863e34105b1c737986e46c5615a342e682be497644dc`;
+it binds 140 source/test/dependency files and 27 evidence artifacts. Evidence is under
+`data/outputs/ball_tracking/crop_candidate_retention_render_recovery_implementation/f36237247191_2026-10-02/`.
+The validated source/test bytes remain frozen.
+
+Branch remains `codex/ball-detector-baseline`, HEAD
+`f36237247191e726ad7e81bdc6651f9340a9063d`. Changes are unstaged; the index is empty.
+The final recovery specification is
+`326ba1cec475aa32d172a76a2ea760ceffb3e9188631c16ed2b1af5914fab3cd`;
+its metadata-only dry-run passed without worker dispatch. The exact 14-file scope
+is listed in `../ball_crop_candidate_retention_render_recovery_implementation.md`.
+Next obtain explicit staging authorization for that scope, then separate
+commit authorization before the already approved real recovery. Do not request
+scientific-scope approval again. All nine embargoes and three sealed holdouts
+remain protected; no method, operating point, quality gate or training is chosen.
+The twelve prior YOLO reviews remain complete. Six new retention clips and the
+full comparison audit remain outstanding.
+
+## Prior checkpoint: scoring complete; rendering interrupted and recovery proposed
+
+Ryan separately authorized staging and committing the exact 15-file recovery
+scope at `f36237247191e726ad7e81bdc6651f9340a9063d`. Execution began from that
+clean checkpoint on `codex/ball-detector-baseline`. Recovery verification
+succeeded, then all eight scoring-stage workers succeeded: six window JSON
+files and two separated pool files are complete, with 120 new localization
+reports and 630 saved reports. The original 24 selections were reused.
+
+Rendering preflight passed, but the first rendering worker,
+`158f51be5ab34cdface57f4e0036b7d2`, failed with
+`Output tree did not stabilize for complete byte accounting`. Ten partial PNGs
+totaling 32,989,248 bytes remain. No completed clip, global review manifest or
+full comparison-completion audit exists. Scoring completion does not establish
+tracking quality; all six new clips still need generation and human review.
+
+The supervised read-only forensic audit succeeded. Under
+`data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/`,
+its receipt `audit/render_interruption_f362.json` has SHA-256
+`f2bece32af228b0f525b07eb060b1671194812b26af7787283c8ecca2aabea8b`,
+and checkpoint `audit/render_interruption_checkpoint_f362.json` has SHA-256
+`8dce571305282e59dc61e3ceb610e2ea0e5dbd86ce1896beb9e035c8ee12dcac`.
+Diagnosis attempt `8e121d23c2494d969df9af94cc45bbeb` consumed 9.812 seconds.
+The preserved journal now contains 1,170 events and 41 completed attempts:
+39 successful and two failed. Cumulative real time is 1,136.756 seconds, leaving
+13,263.244 seconds; both failures and all partial outputs remain charged and
+preserved. This forensic verification is not the unexecuted comparison audit.
+
+See `../ball_crop_candidate_retention_render_interruption.md` for the exact
+evidence and `../ball_crop_candidate_retention_render_recovery_proposal.md`
+for the new draft. Synthetic reproduction showed that creating new files can
+prevent the current monitor from finding equal membership in two complete
+scans; it supports, but does not prove, that mechanism in the real failure.
+The proposal would permit only monotone membership additions within the same
+two-complete-scan, half-second contract and unchanged resource budgets. It
+would reuse the exact original selections and completed scores, then render
+only the six approved clips. No reranking or rescoring is proposed.
+
+This measurement rule and the new renderer-provenance transition require
+explicit review of the revised execution contract. The render-only amendment
+is a draft; implementation and retry are not approved. The original scientific
+scope remains unchanged. All 137 production/test/requirements hashes are
+unchanged; the 107 focused passes and full-suite 626 passes plus one existing
+Windows skip remain valid for the committed implementation. A later approved
+amendment would require its own focused/full validation, independent review,
+certificate and clean, separately authorized commit.
+
+HEAD remains `f36237247191e726ad7e81bdc6651f9340a9063d`; this preparation changes
+five documentation files only, unstaged with an empty index. Next is review
+and explicit approval of the concrete render-only proposal. All nine original
+prediction embargoes and three sealed holdouts remain protected. Ryan's prior
+twelve YOLO final-frame approvals remain complete. No method, operating point,
+quality gate, training or certified identity labels are selected. No manual
+command is pending; no rendering retry is running.
+
+## Prior checkpoint: retention recovery validated; staging unapproved
 
 Ryan approved the bounded recovery with "I approve chat. Please move forward".
 The separate receipt is

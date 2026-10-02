@@ -182,13 +182,33 @@ events across 29 completed attempts; after the 1.75-second preparation worker,
 recorded real-run consumption is 621.943 seconds with 13,778.057 remaining.
 See `../ball_crop_candidate_retention_recovery_implementation.md` for the
 implementation, validation evidence and intended 15-file staging scope.
-The actual dirty-checkout guard rejected dispatch before any worker; no real
-recovery stage has run. The comparison remains incomplete. Next is separate
-authorization to stage the exact 15 files, then separate commit authorization
-before already approved recovery execution from that clean tested checkpoint.
-No repeat scope approval is needed.
-The six new clips still need generation and final-frame human review; the
-twelve prior YOLO approvals remain complete.
+At that implementation checkpoint, the actual dirty-checkout guard rejected
+dispatch before any worker. Ryan subsequently authorized the exact 15-file
+staging and commit at `f36237247191e726ad7e81bdc6651f9340a9063d`. Recovery
+verification and all eight scoring-stage workers succeeded: six window JSON
+files and two pools are complete, with 120 new reports and 630 saved reports.
+The rendering preflight passed, but the first renderer stopped with an output
+tree stabilization error, leaving ten partial PNGs totaling 32,989,248 bytes.
+No completed clip, global review or comparison-completion audit exists.
+The supervised forensic audit passed and preserved 1,170 journal events across
+41 completed attempts, with 39 successes and two failures. Current recorded
+real time is 1,136.756 seconds consumed and 13,263.244 seconds remaining.
+See `../ball_crop_candidate_retention_render_interruption.md`.
+At that interruption checkpoint all 137 production/test/requirements files
+were unchanged; the 107 focused passes and 626 full-suite passes plus one
+existing skip remain historical validation of the committed scoring recovery.
+Ryan subsequently approved `../ball_crop_candidate_retention_render_recovery_proposal.md`.
+Its implementation amends membership accounting while preserving budgets,
+reuses exact old selections and scores, and permits only verification/rendering.
+The new implementation passed all 145 combined retention tests and independent
+static reviews. Full regression completed with 664 passes and one existing Windows
+symlink skip. The final certificate binds 140 source/test/dependency files and 27
+evidence artifacts. Separately authorized staging/commit remain outstanding.
+No real retry is running.
+See `../ball_crop_candidate_retention_render_recovery_implementation.md`.
+The scientific comparison remains incomplete and no quality conclusion follows
+from the forensic audit. The six new clips still need generation and final-frame
+human review; the twelve prior YOLO approvals remain complete.
 Training remains unapproved.
 No method, operating point, quality gate or holdout release is selected.
 
@@ -244,8 +264,15 @@ No method, operating point, quality gate or holdout release is selected.
 - [x] review and approve the bounded candidate-retention recovery proposal;
 - [x] implement recovery and pass combined focused tests plus independent static review;
 - [x] finish full recovery validation and bind the final certificate;
-- [ ] separately authorize staging and committing the tested recovery implementation;
-- [ ] complete scoring, rendering and independent audit of the approved retention comparison;
+- [x] separately authorize staging and committing the tested recovery implementation;
+- [x] complete all six retention scoring windows and both separated pools;
+- [x] preserve the first rendering interruption and complete its read-only forensic audit;
+- [x] prepare a bounded render-only recovery proposal;
+- [x] review and approve the revised rendering-recovery contract;
+- [x] implement rendering recovery and pass focused tests plus independent static review;
+- [x] finish full rendering-recovery validation and bind the exact certificate;
+- [ ] separately authorize staging and committing the tested rendering recovery;
+- [ ] complete rendering and the independent audit of the approved retention comparison;
 - [ ] review the six new .01 clips through their final frames;
 - [ ] associate detections through blur, occlusion, passes, shots, and rebounds;
 - [ ] preserve uncertainty and missing observations;

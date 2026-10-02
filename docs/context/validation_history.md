@@ -1359,3 +1359,107 @@ prediction embargoes and three sealed holdouts remain protected, and the
 twelve prior YOLO final-frame approvals remain complete. The six new retention
 clips still need generation and final-frame human review. No method, operating
 point, quality gate, training or certified identity labels are selected.
+
+## Committed recovery: scoring complete, rendering interrupted, forensic evidence preserved
+
+Ryan separately authorized staging and committing the tested 15-file recovery
+scope at `f36237247191e726ad7e81bdc6651f9340a9063d`. The clean checkpoint
+passed the recovery verification worker. All eight scoring-stage workers then
+succeeded, completing six window JSON files and two separate pool files with
+120 new localization reports and 630 saved reports. The 24 original selections
+and their original provenance were reused without reranking.
+
+Rendering preflight passed in 43.266 seconds. The first rendering attempt,
+`158f51be5ab34cdface57f4e0036b7d2`, failed after 62.875 seconds with the output
+tree stabilization error. Its log is empty and its worker result null. Ten
+partial PNGs totaling 32,989,248 bytes remain; no completed clip, global review
+manifest or full comparison-completion audit was produced. Both this failure
+and the earlier scoring failure remain preserved. No scientific interpretation
+or human review is inferred from completed scoring files.
+
+A supervised read-only forensic audit succeeded without selection, scoring,
+rendering or model inference. Its receipt is
+`data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/render_interruption_f362.json`,
+SHA-256 `f2bece32af228b0f525b07eb060b1671194812b26af7787283c8ecca2aabea8b`.
+The checkpoint in the same audit folder is
+`render_interruption_checkpoint_f362.json`, SHA-256
+`8dce571305282e59dc61e3ceb610e2ea0e5dbd86ce1896beb9e035c8ee12dcac`.
+Diagnosis attempt `8e121d23c2494d969df9af94cc45bbeb` consumed 9.812 seconds.
+The complete preserved journal contains 1,170 events and 41 completed attempts,
+39 successful and two failed. Cumulative real worker time is 1,136.756 seconds,
+with 13,263.244 seconds remaining. This limited forensic audit is distinct from
+the still-unexecuted full comparison-completion audit.
+
+Separate synthetic reproduction found that existing-file growth passed three
+trials while new-file additions failed three trials under the current
+equal-membership requirement. Both measured correctly after their writers
+stopped. This reproduces a possible mechanism; the exact real trigger remains
+inferred. See `../ball_crop_candidate_retention_render_interruption.md` for
+the saved real and synthetic evidence, and
+`../ball_crop_candidate_retention_render_recovery_proposal.md` for the bounded
+draft amendment. It proposes monotone membership additions within two complete
+scans and the unchanged half-second deadline, retaining all budgets and exact
+old selection/score provenance. Its execution scope would be rendering only.
+Implementation and retry require explicit approval of that new contract.
+
+All 137 production/test/requirements hashes remain unchanged. The 107 focused
+passes and full-suite 626 passes plus one existing Windows skip remain the
+validation of the committed code; no new source or test change occurred during
+this documentation preparation. No tests, real selectors or completed scores
+were rerun for these records. HEAD remains
+`f36237247191e726ad7e81bdc6651f9340a9063d`; five documentation files are the
+unstaged scope, with an empty index and no Git mutation. All nine embargoes
+and three sealed holdouts remain protected. The twelve prior YOLO approvals
+remain complete; the six new retention clips do not yet exist as completed
+review items. No method, operating point, quality gate, training or certified
+identity labels are selected.
+
+## Approved rendering recovery implementation: final regression validation passed
+
+Ryan approved the bounded rendering recovery with "I approve, move forward chat".
+The separate approval receipt binds the frozen proposal SHA-256
+`2d9ea51ca4f93fbc77d902266dcbf1ef496edcb8c320c7a0dbbe6d86bf884b48`.
+Implementation is restricted to the new verification/rendering runner, saved-score
+loader injection, the monotone file-inventory amendment and synthetic tests.
+Scoring/evaluation and the original selector remain unchanged. The three changed
+historical files are the resource monitor, review module, and one resource-test
+expectation; new code/tests are additional files.
+
+The resource subset passed all 44 tests. The new recovery subset passed all 26
+tests in 104.376 seconds. Independent static review identified and resolved
+two actual-schema mismatches: comparing a file binding to a binding containing
+a canonical-content digest, and treating nested pending PNGs as flat files.
+The corrected cases are covered by the new tests. Independent review also
+added global review schema/no-selection assertions to the prepared completion
+helper. No real audit execution is implied by that preparation.
+
+All 145 combined retention tests passed in 198.604 seconds, with no skips and
+all 140 source/test/dependency bindings unchanged. Logs, inventories and review
+receipts are saved under
+`data/outputs/ball_tracking/crop_candidate_retention_render_recovery_implementation/f36237247191_2026-10-02/`.
+The actual metadata-only dry-run succeeded without dispatching a worker.
+The full suite completed 665 tests in 1,882.854 seconds (1,884.437 seconds harness
+elapsed): 664 passed and one existing Windows directory-symlink test was skipped.
+All 140 source/test/dependency bindings stayed unchanged. Its log SHA-256 is
+`8718be18e1cfab70e8290688315e107c5de91f6931af803114a844ec9796eaa7`; both runs
+share source-inventory SHA-256
+`545592e57cfc716b8a9b7ad542fd0a493621a848c61516ca3374f2ae2b1d6148`.
+Independent certificate-guard review passed. The assembler checked exact commands,
+complete successful log summaries, required independent-review bindings, all
+1,170 journal event hashes and all 41 reservation/completion seals. It rejects
+optimized Python. The final create-only certificate SHA-256 is
+`652a8bb8926ea21be2e1863e34105b1c737986e46c5615a342e682be497644dc`, binding
+140 source/test/dependency files and 27 evidence artifacts. The final manifest
+file SHA-256 is `72f15b1d43750b00b49d0bd83c3e8ab0c4351064aeadad582008429580c00fcf`;
+its canonical specification SHA-256 is
+`326ba1cec475aa32d172a76a2ea760ceffb3e9188631c16ed2b1af5914fab3cd`.
+The final metadata-only CLI dry-run also passed without worker dispatch.
+
+The real checkpoint remains 1,170 events, 41 completed attempts, both preserved
+failures, 1,136.756 seconds consumed and 13,263.244 seconds remaining. No real
+verification, rendering or other scientific worker has run under the new
+recovery identity. The nine embargoes and three sealed holdouts remain protected;
+the twelve prior YOLO reviews remain complete. Staging and committing remain
+separately unapproved. See
+`../ball_crop_candidate_retention_render_recovery_implementation.md` for the
+implementation and intended 14-file staging scope.
