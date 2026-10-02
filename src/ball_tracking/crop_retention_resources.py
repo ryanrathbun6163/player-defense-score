@@ -39,28 +39,43 @@ def _write_new(path, value):
 
 
 def output_bytes(root):
-    # Publication renames directories while the monitor is running. Require two
-    # equal inventories by file identity, so a moved subtree cannot disappear
-    # silently from a sample. Retry briefly; uncertainty stops the worker.
+    # Writers may grow or rewrite a file while publishing an output. Compare
+    # membership, including hard-link multiplicity, across two complete scans.
+    # The larger observed size is conservative for those scans, not an upper
+    # bound on future growth between monitor samples.
     deadline = time.monotonic() + .5
+
+    def check_deadline():
+        if time.monotonic() >= deadline:
+            raise ResourceLimitError("Output tree did not stabilize for complete byte accounting")
+
     previous = None
     while True:
+        check_deadline()
         try:
-            rows = []
+            current = {}
             def fail(error):
                 raise error
             for folder, _, files in os.walk(root, onerror=fail):
+                check_deadline()
                 for name in files:
+                    check_deadline()
                     info = (Path(folder)/name).stat()
-                    rows.append((info.st_dev, info.st_ino, info.st_size, info.st_mtime_ns))
-            current = sorted(rows)
-            if current == previous:
-                return sum(row[2] for row in current)
+                    check_deadline()
+                    identity = (info.st_dev, info.st_ino)
+                    count, size = current.get(identity, (0, 0))
+                    current[identity] = (count + 1, max(size, info.st_size))
+            check_deadline()
+            if (previous is not None and current.keys() == previous.keys()
+                    and all(count == previous[key][0] for key, (count, _) in current.items())):
+                measured = sum(count * max(size, previous[key][1])
+                               for key, (count, size) in current.items())
+                check_deadline()
+                return measured
             previous = current
         except FileNotFoundError:
             previous = None
-        if time.monotonic() >= deadline:
-            raise ResourceLimitError("Output tree did not stabilize for complete byte accounting")
+        check_deadline()
 
 
 class BudgetJournal:

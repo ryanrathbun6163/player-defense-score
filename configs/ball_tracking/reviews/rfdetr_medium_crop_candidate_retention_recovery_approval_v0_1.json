@@ -1,0 +1,19 @@
+{
+  "schema_version": "ball_crop_candidate_retention_recovery_approval/v0.1",
+  "proposal": {
+    "path": "docs/ball_crop_candidate_retention_recovery_proposal.md",
+    "sha256": "c066bc43b204a09a05e2912589cbc173614cecbe563431ebbeed75c42db3de48"
+  },
+  "approved_by": "ryan",
+  "statement": "I approve chat. Please move forward",
+  "recorded_at_utc": "2026-10-02T18:58:19.659253+00:00",
+  "timestamp_semantics": "Receipt creation time, not an invented message timestamp.",
+  "scope": "bounded_recovery_implementation_and_execution_subject_to_validation_and_clean_separately_authorized_commit",
+  "implementation_authorized": true,
+  "execution_authorized": true,
+  "training_authorized": false,
+  "git_mutations_authorized": false,
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

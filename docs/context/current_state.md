@@ -1,6 +1,126 @@
 # Current State
 
-## Latest checkpoint: retention implementation validated; staging unapproved
+## Latest checkpoint: retention recovery validated; staging unapproved
+
+Ryan approved the bounded recovery with "I approve chat. Please move forward".
+The separate receipt is
+`configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_recovery_approval_v0_1.json`.
+The recovery proposal retains its original bytes and historical draft wording;
+its SHA-256 is `c066bc43b204a09a05e2912589cbc173614cecbe563431ebbeed75c42db3de48`.
+The receipt supplies current scope authorization. The original scientific
+comparison approval remains valid and does not need to be requested again.
+
+The implementation permits verification, scoring and rendering using the 24
+completed selections. It corrects accounting of continuously growing files,
+preserves all resource limits and consumed budgets, and requires exact old
+selection receipts while recording new evaluation/rendering provenance.
+The ordinary runner remains strict. Selection, candidate coordinates,
+confidence, annotations and matching mathematics are unchanged. Published
+outputs without successful completion receipts cannot be adopted.
+See `../ball_crop_candidate_retention_recovery_implementation.md` for details
+and the exact intended 15-file staging scope.
+
+The preserved inventory has SHA-256
+`5a05c6644196f7fd0dfb731c538f68077039f74265d62e7b95f3dbbe00b92739` and binds
+24 selection manifests, 600 trace hashes and all 697 resource events across
+29 completed attempts. A supervised read-only preparation worker consumed
+1.75 seconds, making the recorded real-run balance 621.943 seconds consumed
+and 13,778.057 seconds remaining. The original failure and partial JSON remain
+in place. This balance is historical; the persistent journal is authoritative.
+
+The combined focused run passed all 107 tests in 101.25 seconds. All 137
+production/test/requirements hashes were unchanged across focused validation,
+the initial full run and the successful retry. Independent static review passed.
+The final full suite passed: 627 tests ran, with 626 passes and one existing
+Windows directory-symlink capability skip, no failures or errors, in 1,824.921
+seconds of command wall time. The first full suite had failed:
+627 tests ran, with 621 passes, five errors and one existing skip. All five
+errors occurred during initial `git add` in older `ReleaseMetadataTests`
+temporary fixture repositories. Independent reproduction confirmed Windows Git
+reported `Filename too long` under the deep validation TEMP path. No production
+or test code changed. All 14 tests in the affected module then passed in
+40.031 seconds using the short ignored TEMP root `data/outputs/t/crr_setup_short`.
+The successful full-suite retry used a short TEMP path. Synthetic validation
+evidence is under
+`data/outputs/ball_tracking/crop_candidate_retention_recovery_implementation/0a7f5bc69be9_2026-10-02/`.
+The failed `full_final.log` and receipt remain preserved; `full_short.log` and
+`full_short_receipt.json` record the successful retry. The failed run's raw log
+records one skip; its original receipt incorrectly says zero because its old
+parser handled only `OK` summaries. Neither original evidence file was rewritten.
+
+The final `implementation_validation.json` certificate binds all 137 validated
+production/test/requirements files and the validation evidence. Its SHA-256 is
+`71f75c979c5c754c7387df859e885b4a48be1b43fcfc62f683d76a7bc14fc8bc`.
+The recovery manifest now binds that certificate and has file SHA-256
+`2e1a57cfdacfa0359f328d467fd75b513b81fde192f69e4bd2a9919dbb7a6e1f`.
+The actual dirty-checkout guard rejected recovery dispatch before a worker
+started or the journal changed. The recovery runner has not executed a real
+stage: scoring and rendering remain incomplete, and no comparison-quality
+conclusion or completed comparison audit is available.
+
+Branch remains `codex/ball-detector-baseline` at
+`0a7f5bc69be948b8c4e2c630c84c4ccdefb5dc41`; the 15-file scope is unstaged and
+the index empty. Next: obtain separate authorization to stage those exact
+15 files, then separate commit authorization. Already approved recovery execution
+requires that clean tested commit; no repeat scope approval is needed.
+All nine original prediction embargoes and three sealed holdouts remain
+protected. Ryan's twelve YOLO final-frame approvals remain complete. The six
+new retention clips still require generation and final-frame human review.
+No method, operating point, quality gate, training or certified identity labels
+are selected. No manual command is pending.
+
+## Prior checkpoint: retention selection complete; scoring interrupted
+
+Ryan separately authorized staging and committing the exact 24-file retention
+implementation scope. The approved real comparison began from the clean tested
+commit `0a7f5bc69be948b8c4e2c630c84c4ccdefb5dc41` on
+`codex/ball-detector-baseline`. All 24 selection units completed, using 25
+successful workers including selection preflight. Scoring preflight also
+completed. The first scoring window then failed with
+`ResourceLimitError: Output tree did not stabilize for complete byte accounting`.
+At the scoring failure there were 26 successful workers and one failed worker.
+No retry or rendering followed; no successful scoring reports, aggregate pools or six-clip review
+package exist. The prepared completion audit was never executed.
+
+The resource journal records 618.1929999999993 cumulative active seconds,
+279,302,144 peak worker-tree resident bytes, 881,741,466 maximum sampled output
+bytes and a .469-second maximum monitoring interval, with no recorded
+overshoots. The monitor requires two identical size/mtime inventories while
+the scorer writes JSON continuously; the saved partial write is consistent
+with that stability-check conflict. This is an interrupted comparison, not an
+accuracy result or a completed independent audit.
+
+See `../ball_crop_candidate_retention_interruption.md` for the failed attempt,
+exact completion-event hash and retained partial file. All completed outputs,
+failure evidence and consumed budgets are preserved under
+`data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/`.
+The limited forensic audit passed and is bound by
+`audit/interruption_receipt.json`, SHA-256
+`0f90a59c07dd2436ef8618ffd8d3637695b99ab3e56e08f879866d9d702e40df`.
+It verified selection manifests/canonical content, 600 compressed trace hashes,
+the failure-prefix resource history, source/input/control bindings and embargo
+absence; it read only holdout metadata. It did not decompress traces or rerun
+selection/scoring/rendering. Its 2.0-second supervised worker brings the total
+to 27 successful workers and one failure, 620.193 active seconds consumed and
+13,779.807 seconds remaining. Maximum sampled output is now 882,157,412 bytes;
+peak memory and maximum monitoring interval are unchanged. This limited audit
+does not substitute for the unexecuted comparison-completion audit. Next is
+review and approval of the bounded recovery proposal at
+`../ball_crop_candidate_retention_recovery_proposal.md`; no monitor change or
+recovery execution has occurred. The original scientific approval remains valid;
+the proposed live-write accounting and cross-commit reuse amend the execution
+contract under the frozen proposal's revised-explicit-scope boundary.
+
+The following historical checkpoints retain their original statuses. Current
+tracked changes are documentation only and remain unstaged; the index is empty.
+All nine original prediction embargoes and three sealed holdouts remain in force.
+Ryan's twelve prior YOLO final-frame approvals remain complete. The six new
+retention clips still require generation and final-frame human review after
+successful recovery. No method, operating point, quality gate or training is
+selected or authorized; localization outcomes are not certified identity labels.
+No manual command is pending. Further Git steps require separate authorization.
+
+## Prior checkpoint: retention implementation validated; staging unapproved
 
 Ryan approved the exact retention comparison on October 2, 2026 with
 "I approve. Please move forward chat". The separate receipt is

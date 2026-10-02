@@ -89,10 +89,12 @@ def _validate_report(report, observation, run, labels, config):
         raise ValueError("Retention review report/config/provenance synchronization differs")
 
 
-def prepare_window(root, context, window_id):
+def prepare_window(root, context, window_id, *, observation_loader=None):
     """Load saved inputs only; a missing scoring artifact is a hard failure."""
     from .crop_retention_experiment import load_new_observations, load_saved_control
     from .crop_retention_evaluation import load_window_score
+
+    load_observations = load_new_observations if observation_loader is None else observation_loader
 
     root = Path(root).resolve()
     proposal = context["proposal"]
@@ -120,9 +122,9 @@ def prepare_window(root, context, window_id):
             unit = _one(proposal["new_selection_units"],
                         lambda u: u["window_id"] == window_id and u["config"]["arm"] == arm,
                         "new retention observation unit")
-            observation = load_new_observations(root, context, unit)
+            observation = load_observations(root, context, unit)
             config = unit["config"]
-            reloaders.append((key, lambda unit=unit: load_new_observations(root, context, unit)))
+            reloaders.append((key, lambda unit=unit: load_observations(root, context, unit)))
             origin = {"kind": "new_all", "comparison_unit_id": unit["comparison_unit_id"]}
         else:
             record = _one(proposal["saved_control_outputs"],
@@ -182,6 +184,8 @@ def prepare_window(root, context, window_id):
               "hidden_closeup_focus": "top exported candidate or frame center; never ball truth",
               "prior_motion_and_yolo_review": "complete; no repeat requested",
               "selected_method": None, "selected_operating_point": None, "quality_gate": None}
+    if "recovery_provenance" in context:
+        header["recovery_provenance"] = context["recovery_provenance"]
 
     def verify():
         for binding in bindings:
@@ -479,8 +483,8 @@ def render_prepared_window(root, prepared, target_dir):
     return {"bundle": str(target), "reused": False, "assets": len(assets), "human_visual_review": "pending"}
 
 
-def render_window(root, context, window_id, target_dir):
-    return render_prepared_window(root, prepare_window(root, context, window_id), target_dir)
+def render_window(root, context, window_id, target_dir, *, observation_loader=None):
+    return render_prepared_window(root, prepare_window(root, context, window_id, observation_loader=observation_loader), target_dir)
 
 
 def finalize_review(root, context, target_dir=None):

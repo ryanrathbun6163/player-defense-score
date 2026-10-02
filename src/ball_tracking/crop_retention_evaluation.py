@@ -370,8 +370,9 @@ def _comparisons(reports, observations):
     return cap_pairs, confidence_pairs, parts
 
 
-def score_window(root, context, window_id, target_dir):
+def score_window(root, context, window_id, target_dir, *, observation_loader=None):
     from . import crop_retention_experiment as experiment
+    load_observations = experiment.load_new_observations if observation_loader is None else observation_loader
     root = Path(root)
     proposal = _context(context, "proposal")
     target = _window_path(root, context, window_id, target_dir)
@@ -382,7 +383,7 @@ def score_window(root, context, window_id, target_dir):
         for unit in proposal["new_selection_units"]:
             if unit["window_id"] != window_id:
                 continue
-            obs = experiment.load_new_observations(root, context, unit)
+            obs = load_observations(root, context, unit)
             rows = [r for r in payload["evaluation_reports"] if r["schema_version"] == REPORT_SCHEMA and r["config"]["arm"] == unit["config"]["arm"]]
             _require(len(rows) == 5 and all(r["observations_content_sha256"] == canonical_sha256(obs) for r in rows),
                      "Completed scoring checkpoint has different new observations")
@@ -411,7 +412,7 @@ def score_window(root, context, window_id, target_dir):
     units = [u for u in proposal["new_selection_units"] if u["window_id"] == window_id]
     _require(len(units) == 4, "Expected four new selection units per window")
     for unit in units:
-        obs = experiment.load_new_observations(root, context, unit)
+        obs = load_observations(root, context, unit)
         c = obs["config"]
         observations[(c["arm"], c["confidence_threshold"], None)] = obs
         reports.extend(evaluate_unit(labels, run, obs, radius, _context(context, "commit")) for radius in RADII)

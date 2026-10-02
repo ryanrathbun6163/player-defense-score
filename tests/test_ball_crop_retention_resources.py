@@ -190,7 +190,7 @@ class OutputInventoryTests(unittest.TestCase):
         scans = [[("pending", [], ["evidence.json"])], [("published", [], ["evidence.json"])]]
         with patch.object(resources.os, "walk", side_effect=scans) as walk, \
                 patch.object(Path, "stat", return_value=info), \
-                patch.object(resources.time, "monotonic", side_effect=[0, .1]):
+                patch.object(resources.time, "monotonic", return_value=0):
             self.assertEqual(resources.output_bytes("synthetic_root"), 23)
         self.assertEqual(walk.call_count, 2)
 
@@ -199,16 +199,18 @@ class OutputInventoryTests(unittest.TestCase):
         after = SimpleNamespace(st_dev=1, st_ino=8, st_size=31, st_mtime_ns=43)
         with patch.object(resources.os, "walk", return_value=[("synthetic_root", [], ["evidence.json"])]) as walk, \
                 patch.object(Path, "stat", side_effect=[before, FileNotFoundError(), after, after]), \
-                patch.object(resources.time, "monotonic", side_effect=[0, .1, .2, .3]):
+                patch.object(resources.time, "monotonic", return_value=0):
             self.assertEqual(resources.output_bytes("synthetic_root"), 31)
         self.assertEqual(walk.call_count, 4)
 
     def test_equal_byte_totals_with_changing_identity_fail_at_retry_deadline(self):
-        inventories = [SimpleNamespace(st_dev=1, st_ino=identity, st_size=23, st_mtime_ns=42)
-                       for identity in (7, 8, 9)]
+        clock = SimpleNamespace(now=0)
+        def changing_stat():
+            clock.now += .1
+            return SimpleNamespace(st_dev=1, st_ino=round(clock.now * 10), st_size=23, st_mtime_ns=42)
         with patch.object(resources.os, "walk", return_value=[("synthetic_root", [], ["evidence.json"])]), \
-                patch.object(Path, "stat", side_effect=inventories), \
-                patch.object(resources.time, "monotonic", side_effect=[0, .1, .2, .5]):
+                patch.object(Path, "stat", side_effect=changing_stat), \
+                patch.object(resources.time, "monotonic", side_effect=lambda: clock.now):
             with self.assertRaisesRegex(resources.ResourceLimitError, "did not stabilize"):
                 resources.output_bytes("synthetic_root")
 

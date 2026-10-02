@@ -150,9 +150,46 @@ exact comparison with "I approve. Please move forward chat". Five modules and
 five synthetic test files implement the approved scope. Validation is complete:
 78 focused passes, 597 full-suite passes with one existing Windows skip, and
 both dense/sparse 400-candidate/25-frame benchmarks passed. The implementation note is
-`../ball_crop_candidate_retention_implementation.md`. Real execution awaits
-the required clean tested commit, with staging and committing separately
-authorized. Training remains unapproved.
+`../ball_crop_candidate_retention_implementation.md`. Ryan separately authorized
+staging and committing the exact 24-file scope at
+`0a7f5bc69be948b8c4e2c630c84c4ccdefb5dc41`. All 24 real selection units and
+scoring preflight completed, but the first scoring window stopped when output
+byte accounting could not stabilize during its JSON write. No scoring retry,
+successful reports, aggregate pools or rendering followed. All completed and
+partial outputs and resource history are preserved. The prepared completion
+audit was not executed. A limited supervised forensic audit verified the saved
+selections, trace hashes, original inputs and failure-prefix resource history
+without rerunning selection/scoring or decompressing traces. It does not
+replace the full comparison-completion audit. See
+`../ball_crop_candidate_retention_interruption.md`.
+Ryan approved `../ball_crop_candidate_retention_recovery_proposal.md` with
+"I approve chat. Please move forward". The bounded recovery is implemented;
+107 combined focused tests passed in 101.25 seconds and independent static
+review passed. All 137 production/test/requirements hashes remained unchanged
+across focused validation and both full runs. The first full run finished with
+621 passes, five errors and one existing skip out of 627 tests. Independent
+reproduction traced all five errors to Windows Git's path-length limit during
+initial `git add` in older temporary test fixtures, caused by the deep TEMP
+path. No source or tests changed. The affected module's 14 tests passed in
+40.031 seconds with a short ignored TEMP path. The full-suite retry passed:
+627 tests ran, with 626 passes, one existing Windows directory-symlink skip,
+no failures or errors, in 1,824.921 seconds of command wall time. The final
+certificate binds all 137 unchanged production/test/requirements files and is
+referenced by the recovery manifest. The failed initial log and receipt
+are preserved, including the recorded receipt-parser skip-count discrepancy.
+The exact preserved inventory binds 24 selections, 600 traces and 697 resource
+events across 29 completed attempts; after the 1.75-second preparation worker,
+recorded real-run consumption is 621.943 seconds with 13,778.057 remaining.
+See `../ball_crop_candidate_retention_recovery_implementation.md` for the
+implementation, validation evidence and intended 15-file staging scope.
+The actual dirty-checkout guard rejected dispatch before any worker; no real
+recovery stage has run. The comparison remains incomplete. Next is separate
+authorization to stage the exact 15 files, then separate commit authorization
+before already approved recovery execution from that clean tested checkpoint.
+No repeat scope approval is needed.
+The six new clips still need generation and final-frame human review; the
+twelve prior YOLO approvals remain complete.
+Training remains unapproved.
 No method, operating point, quality gate or holdout release is selected.
 
 - [x] define the ball annotation and detection-evaluation protocol;
@@ -202,8 +239,13 @@ No method, operating point, quality gate or holdout release is selected.
 - [x] review and approve the exact retention-comparison scope;
 - [x] implement the bounded selector, preserved-control scoring and saved-PNG review;
 - [x] finish focused/full regression and dense/sparse resource validation;
-- [ ] separately authorize staging and committing the tested retention implementation;
-- [ ] execute the approved retention comparison from that clean checkpoint;
+- [x] separately authorize staging and committing the tested retention implementation;
+- [x] complete all 24 retention selections and preserve the first scoring interruption;
+- [x] review and approve the bounded candidate-retention recovery proposal;
+- [x] implement recovery and pass combined focused tests plus independent static review;
+- [x] finish full recovery validation and bind the final certificate;
+- [ ] separately authorize staging and committing the tested recovery implementation;
+- [ ] complete scoring, rendering and independent audit of the approved retention comparison;
 - [ ] review the six new .01 clips through their final frames;
 - [ ] associate detections through blur, occlusion, passes, shots, and rebounds;
 - [ ] preserve uncertainty and missing observations;
