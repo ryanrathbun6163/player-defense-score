@@ -1,6 +1,94 @@
 # Current State
 
-## Latest checkpoint: approved YOLO11x support validated; staging next
+## Latest checkpoint: approved YOLO recovery implemented and validated; staging next
+
+Ryan approved the exact v0.2 recovery plan with "Yes I approve chat". The
+separate record is
+`configs/ball_tracking/reviews/yolo11x_crop_recovery_approval_v0_2.json`
+(SHA-256 `5d9ec4a2d2d7c310ed304f4ce41e5b5aed9c76dd2829fdeb469201478c773782`).
+The original proposal and design remain byte-identical historical snapshots.
+The new executable manifest and three recovery modules implement guarded
+inference/resume, saved-control scoring, and synchronized review rendering.
+Every crop retains its actual inference commit and checkpoint/attempt/preparation
+bindings; the typed model commit is explicitly assembly-view provenance only.
+
+Validation: 27 recovery-focused tests and 15
+adapter tests passed; the full suite ran 492 tests with
+491 passes and one existing Windows directory-symlink skip.
+Synthetic tests cover the 175/425 boundary, retry/resume, mixed provenance,
+control preservation, complete scoring and twelve final-frame review clips.
+Agent visual inspection covers synthetic layouts only. No real new review
+clips or complete detector-quality results exist yet.
+
+The actual read-only preflight verified the frozen runtime, all 150 source PNGs
+and 175 original crop checkpoints without constructing a model, decoding
+pixels or opening labels. The dirty-tree guard rejects execution. All 561
+original partial-run files remain unchanged, and the real recovery subtree is
+absent. All nine embargo paths and three holdouts remain protected. No method,
+operating point or quality gate was selected. Earlier player-context review
+is complete; do not request it again or rerun any completed experiment.
+
+Branch remains `codex/ball-detector-baseline` at `116e3ed9cb4113521fa8c93adf4a100fea4dc0ec`.
+The index is empty. No staging, commit, push, PR or merge occurred in this
+implementation. See `../ball_yolo11x_crop_recovery_implementation.md` for exact
+file scope and validation details. Evidence and the latest handoff are under
+`data/outputs/ball_tracking/yolo11x_recovery_implementation/116e3ed9cb41/`.
+Next is separate authorization to stage that exact scope, then separate commit
+authorization. After a clean tested commit, execute only the approved 425
+missing crop units, score/render and request Ryan's twelve-clip final-frame
+review. No additional experiment approval or manual command is pending.
+
+## Prior checkpoint: YOLO commit saved; partial run preserved; recovery proposed
+
+Ryan separately authorized staging and committing the nineteen-file YOLO
+snapshot. Commit `116e3ed9cb4113521fa8c93adf4a100fea4dc0ec` is complete on
+`codex/ball-detector-baseline`. The exact staged/committed bytes match the
+validated implementation. No push, PR or merge occurred.
+
+Clean preflight passed for the approved six windows. The real new run saved
+175 of 600 crop checkpoints, one full window candidate file and 27 selector
+files, then failed at P001 challenge frame 218, bottom-right crop. One traced
+normal retry preserved all 175 completed units and reproduced the failure.
+There are 177 recorded project attempts: 175 completed and two failed; two
+predictors performed four synthetic warmup forwards. No scoring or rendering
+ran, so there are no new YOLO review clips or complete performance results.
+
+The adapter wrongly rejected a native postprocessor box clipped to zero
+height at the crop edge. Its confidence was 8.813966019260988e-7, below the
+fixed .01 export floor, and that crop had zero exported candidates. The new
+unstaged validator fix preserves finite, bounded, non-reversed native boxes
+below the floor; all exported boxes still require positive size. The saved
+failure replay preserves all 60 native rows, zero exports and every completed
+checkpoint. All 15 focused tests and 464 full-suite tests pass, with one
+existing Windows directory-symlink skip. No model call was made for the fix.
+
+The existing v0.1 candidate format has one code commit. It cannot truthfully
+describe preserved results from the old code and remaining work from a repair
+commit. Do not rewrite old headers, overwrite artifacts, bypass validation or
+rerun the 175 completed crops. The concrete versioned recovery proposal is
+`docs/ball_yolo11x_crop_recovery_proposal.md`, bound by
+`configs/ball_tracking/proposals/yolo11x_crop_recovery_v0_2.json`
+(SHA-256 `b0a6a6ee81711d59f35b6360ce6c9595fce80c1625d45ff407683958a65612fe`). It proposes 175 reused plus 425
+new crop units, explicit actual inference provenance per unit, a separate
+assembly commit and new derived outputs in a fresh recovery subtree. It is
+not approved, implemented or executable. Detector settings, development
+windows and scoring/display grids remain fixed.
+
+Start the next session with
+`data/outputs/ball_tracking/yolo11x_execution/116e3ed9cb41/handoff_failure.md`.
+The directory contains commit/preflight/failure receipts, the captured native
+prediction, replay proof, tests, partial-run audit and final failure checkpoint.
+The old experiment, all nine embargo paths and three sealed holdouts remain
+preserved; no method, operating point or quality gate was selected. Ryan's
+previous twelve player-context clips are reviewed; do not request them again.
+
+The index is empty. Current unstaged work is the two-file validator fix and
+three context updates; two recovery proposal files are untracked. Next is
+review of the exact recovery contract, then implementation/validation and
+separately authorized Git steps. Do not invoke the original inference helper
+again. No manual command is pending.
+
+## Prior checkpoint: approved YOLO11x support validated; staging next
 
 Ryan approved the exact six-window YOLO11x comparison. The separate approval
 and executable manifest are saved; the historical proposal remains unchanged.

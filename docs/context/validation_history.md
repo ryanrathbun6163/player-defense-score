@@ -967,3 +967,78 @@ The final implementation checkpoint and before-context backups are under
 Git branch/HEAD are unchanged and the index is empty. Exact next step is
 separate staging authorization for the nineteen-file scope documented in
 `docs/ball_yolo11x_crop_implementation.md`, followed by separate commit approval.
+
+## YOLO committed run: safe stop, native-row repair and recovery design
+
+Ryan explicitly authorized staging, then answered "Yes you may chat" to the
+separate commit request. Commit `116e3ed9cb4113521fa8c93adf4a100fea4dc0ec` contains the
+exact nineteen-file snapshot, with a clean tree at execution start. The commit
+receipt binds all 239 tracked files. No push, PR or merge occurred.
+
+Guarded preflight passed. Initial inference saved 175 crop checkpoints and one
+candidate window with 27 selectors before failing on P001 challenge frame 218
+BR. A traced normal retry at the unchanged commit reproduced the same error
+without recomputing completed units. All175 retained their hashes. Ledgers
+record 177 project forwards/attempts (175 successes, two failures), two fresh
+predictors and four synthetic warmup forwards. Inference is incomplete;
+scoring and rendering never started.
+
+The ignored diagnostic preserves native postprocessor row 55, with zero height
+at the image edge and confidence `8.813966019260988e-7`.
+SDK inverse-letterbox mapping clips corners
+independently, allowing a collapsed below-floor native row. The adapter's
+strict geometry check mistakenly applied exported-box requirements to it.
+The unstaged repair preserves such native evidence below .01 while retaining
+strict positive geometry at and above .01. No model settings, score, candidate
+order, native rows or export floor changed. Saved replay has all 60 native rows
+and zero exports; all completed checkpoint bytes remain intact.
+
+Validator repair validation: 15 focused passes; 464 full-suite passes plus one
+existing Windows directory-symlink skip. Logs and exact source hashes are in
+`validator_fix_tests.json` under the execution directory. Runtime/model
+inference was not used for repair validation.
+
+A v0.2 recovery proposal binds the complete partial-run inventory and declares
+actual inference commits per crop separately from the assembly commit. It
+preserves all earlier outputs, reuses 175 crop units without GPU calls and
+proposes 425 remaining units in a new recovery subtree. New derived selectors
+would preserve the old 27 artifacts while enabling an honest complete dataset.
+No result is relabeled as having been inferred by the future repair commit.
+This contract change requires review under the approved proposal; it remains
+proposed, unapproved and unimplemented. Its JSON digest is
+`b0a6a6ee81711d59f35b6360ce6c9595fce80c1625d45ff407683958a65612fe`.
+
+All nine original embargoes and three holdouts remain protected; no complete
+YOLO quality result, operating point, gate or generalization claim exists.
+The latest handoff and final file bindings are in `handoff_failure.md` and
+`failure_checkpoint.json` under
+`data/outputs/ball_tracking/yolo11x_execution/116e3ed9cb41/`.
+
+## Approved YOLO recovery implementation checkpoint
+
+Ryan approved the exact bound recovery proposal with "Yes I approve chat".
+A separate approval and executable manifest preserve its historical bytes.
+Three recovery modules implement explicit per-unit inference provenance,
+separate assembly/selection/evaluation/rendering commits, guarded missing-unit
+execution, and immutable resume. The native-box correction retains below-floor
+zero-area evidence while keeping positive geometry for all exported detections.
+
+All 27 recovery-focused and 15 adapter tests
+passed, followed by 491 full-suite passes and one existing Windows
+directory-symlink skip. Synthetic tests cover complete scoring, control reuse,
+final frames and failure/resume boundaries; agent inspection covers synthetic
+review layouts. Exact tested bytes and logs are bound in `final/test_results.json`.
+
+The approved isolated runtime's real read-only preflight verified 150 bound
+source PNGs and all 175 original completed crops without a model, media decode
+or annotation access. Dirty execution is rejected before runtime inspection.
+Independent preservation checks retain all 561 original partial-run files,
+all nine prediction embargoes and three holdouts. Real recovery, scoring and
+rendering remain unexecuted; the new output subtree is absent. No quality,
+method, operating-point or unseen-game generalization claim is made.
+
+Branch/HEAD remain `codex/ball-detector-baseline` / `116e3ed9cb4113521fa8c93adf4a100fea4dc0ec`;
+index empty, no Git mutation. Before-context bytes and final evidence are under
+`data/outputs/ball_tracking/yolo11x_recovery_implementation/116e3ed9cb41/`.
+The next boundary is staging the exact documented scope, then separate commit
+authorization. The approved experiment itself does not need approval again.

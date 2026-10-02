@@ -108,8 +108,11 @@ preserve matches and do not add false-positive frames or increase shared-match
 error; residual detector/filtering/path-selection weaknesses remain.
 The next concrete proposal, `../ball_yolo11x_crop_comparison_proposal.md`, tests
 one fixed detector bundle on the same windows/crops with simple selectors and
-byte-reused controls. It is not approved, implemented or executed. No model,
-operating point, quality gate, holdout release or Git publication is selected.
+byte-reused controls. Its approved implementation was committed at `116e3ed9cb41`;
+the run preserved 175 crop units before a validator failure. Ryan approved the
+versioned recovery plan, and its implementation now passes focused and full
+tests. Separate staging/commit authorization precedes the remaining 425 units.
+No method, operating point, quality gate or holdout release is selected.
 
 - [x] define the ball annotation and detection-evaluation protocol;
 - [x] label and visually review a 75-frame pilot spanning three possessions;
@@ -141,8 +144,12 @@ operating point, quality gate, holdout release or Git publication is selected.
 - [x] review all twelve new paired context clips through their final frames;
 - [x] close out saved player-context results and specify one detector challenger;
 - [x] approve, implement and synthetically validate the fixed YOLO11x crop comparison;
-- [ ] separately authorize staging and committing the exact nineteen-file YOLO scope;
-- [ ] execute the approved YOLO comparison at its clean tested commit and review all twelve new clips;
+- [x] separately authorize staging and committing the exact nineteen-file YOLO scope;
+- [x] execute clean preflight and preserve the interrupted 175-unit YOLO run with a diagnosed validator failure;
+- [x] review and approve the v0.2 recovery proposal that preserves original per-crop code provenance;
+- [x] implement and validate approved recovery support;
+- [ ] separately authorize staging and committing the exact recovery implementation;
+- [ ] complete the remaining 425 YOLO crop units, score/render and review all twelve new clips;
 - [ ] compare small-object basketball detectors;
 - [ ] associate detections through blur, occlusion, passes, shots, and rebounds;
 - [ ] preserve uncertainty and missing observations;

@@ -1,0 +1,18 @@
+{
+  "schema_version": "ball_yolo11x_crop_recovery_approval/v0.2",
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/yolo11x_crop_recovery_v0_2.json",
+    "sha256": "b0a6a6ee81711d59f35b6360ce6c9595fce80c1625d45ff407683958a65612fe"
+  },
+  "approved_by": "Ryan",
+  "user_statement": "Yes I approve chat",
+  "approved_at_utc": "2026-10-02T02:08:43.709293+00:00",
+  "implementation_and_recovery_authorized": true,
+  "git_authorization": {
+    "stage": false,
+    "commit": false,
+    "push": false,
+    "pull_request": false,
+    "merge": false
+  }
+}

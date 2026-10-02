@@ -165,9 +165,14 @@ def validate_prediction(result, model_provenance):
             raise YOLOContractError("Wrong candidate box shape")
         x1, y1, x2, y2 = [_number(v, "bbox coordinate") for v in box]
         score = _number(row["confidence"], "confidence")
-        if not (0 <= x1 < x2 <= 1152 and 0 <= y1 < y2 <= 648 and 0 <= score <= 1):
+        if not (0 <= x1 <= x2 <= 1152 and 0 <= y1 <= y2 <= 648 and 0 <= score <= 1):
             raise YOLOContractError("Out-of-bounds/degenerate candidate or confidence")
         if score >= .01:
+            # Vendor inverse-letterbox clipping can collapse a rejected native
+            # row at the image edge. Preserve it below the floor; exported
+            # candidates still require strictly positive width and height.
+            if x1 == x2 or y1 == y2:
+                raise YOLOContractError("Degenerate exported candidate at or above confidence floor")
             accepted.append((score, (x1, y1, x2, y2), i))
     accepted.sort(key=lambda x: (-x[0], x[1], x[2]))
     expected, sources = [], []

@@ -185,6 +185,55 @@ class AdapterTests(unittest.TestCase):
         value["postprocessing"]["exported_candidate_sources"] = []
         self.assertEqual(a.validate_prediction(value, model_provenance())["candidates"], [])
 
+    def test_below_floor_collapsed_native_rows_are_preserved_without_export_changes(self):
+        boxes = ([30., 0., 50., 0.], [30., 648., 50., 648.],
+                 [0., 20., 0., 40.], [1152., 20., 1152., 40.], [0., 0., 0., 0.])
+        for box in boxes:
+            for score in (0., 8.813966e-7, .009999):
+                with self.subTest(box=box, score=score):
+                    value = result_fixture()
+                    value["postprocessing"]["returned_candidates"][2].update(bbox_xyxy_px=list(box), confidence=score)
+                    before = copy.deepcopy(value)
+                    self.assertIs(a.validate_prediction(value, model_provenance()), value)
+                    self.assertEqual(value, before)
+                    self.assertEqual(value["candidates"], result_fixture()["candidates"])
+                    self.assertEqual(value["postprocessing"]["exported_candidate_sources"],
+                                     result_fixture()["postprocessing"]["exported_candidate_sources"])
+
+    def test_collapsed_geometry_at_inclusive_floor_or_above_still_fails(self):
+        for box in ([30., 0., 50., 0.], [0., 20., 0., 40.], [0., 0., 0., 0.]):
+            for score in (.01, .011, .8):
+                with self.subTest(box=box, score=score):
+                    value = result_fixture()
+                    value["postprocessing"]["returned_candidates"][0].update(bbox_xyxy_px=list(box), confidence=score)
+                    with self.assertRaisesRegex(a.YOLOContractError, "Degenerate exported candidate"):
+                        a.validate_prediction(value, model_provenance())
+
+    def test_below_floor_native_rows_still_reject_reversed_outside_and_nonfinite_values(self):
+        mutations = [dict(bbox_xyxy_px=[5., 0., 4., 0.]), dict(bbox_xyxy_px=[0., 5., 0., 4.]),
+                     dict(bbox_xyxy_px=[-1., 0., 0., 0.]), dict(bbox_xyxy_px=[1152., 0., 1153., 0.]),
+                     dict(bbox_xyxy_px=[0., 648., 0., 649.]), dict(bbox_xyxy_px=[0., 0., float("nan"), 0.]),
+                     dict(bbox_xyxy_px=[0., 0., float("inf"), 0.]), dict(confidence=-.001),
+                     dict(confidence=float("nan")), dict(confidence=False)]
+        for mutation in mutations:
+            with self.subTest(mutation=mutation):
+                value = result_fixture()
+                value["postprocessing"]["returned_candidates"][2].update(mutation)
+                with self.assertRaises(a.YOLOContractError):
+                    a.validate_prediction(value, model_provenance())
+
+    def test_adapter_preserves_native_collapsed_reject_and_produces_same_exports(self):
+        native = result_fixture()
+        native["postprocessing"]["returned_candidates"][2].update(bbox_xyxy_px=[30., 0., 50., 0.], confidence=8.813966e-7)
+        adapter = self.adapter()
+        adapter.prepare()
+        with patch(__name__ + ".result_fixture", return_value=native):
+            result = adapter.predict_frame(np.zeros((648, 1152, 3), np.uint8))
+        self.assertEqual(result["postprocessing"]["returned_candidates"], native["postprocessing"]["returned_candidates"])
+        self.assertEqual(result["candidates"], native["candidates"])
+        self.assertEqual(result["postprocessing"]["exported_candidate_sources"], native["postprocessing"]["exported_candidate_sources"])
+        self.assertEqual(result["forward_accounting"]["project_forwards"], 1)
+
     def test_wrong_crop_shape_dtype_and_batch_are_rejected(self):
         adapter = self.adapter(); adapter.prepare()
         for array in [np.zeros((648,1152,3), np.float32), np.zeros((648,1151,3), np.uint8), np.zeros((1,648,1152,3), np.uint8)]:
