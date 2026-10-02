@@ -1,0 +1,20 @@
+{
+  "schema_version": "ball_crop_candidate_retention_experiment/v0.1",
+  "experiment_id": "rfdetr_medium_crop_candidate_retention_v0_1",
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_candidate_retention_v0_1.json",
+    "sha256": "7640784e2a64e81a2064ebb40cd4d1c77366076e5e78a2c19f8f5fc28e29fe1b"
+  },
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_approval_v0_1.json",
+    "sha256": "dcc52439d7e08f17c45f10811b4eb39b34577c23a0a3291aa347246ef6f24219"
+  },
+  "output_root": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1",
+  "implementation_validation": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention_implementation/9fe6a1ef86d2_2026-10-02/implementation_validation.json",
+    "sha256": "135bb50a461eec662f70ed4c64d15fe15e36826eefe81ee21e7521f36578890f"
+  },
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

@@ -1,0 +1,624 @@
+{
+  "schema_version": "candidate_retention_localization_diagnostic_proposal/v0.1",
+  "proposal_id": "saved_candidate_retention_localization_diagnostic_v0_1",
+  "status": "draft_for_scope_review",
+  "executable": false,
+  "approval": null,
+  "prepared_on_local_date": "2026-10-02",
+  "timezone": "America/Phoenix",
+  "preparation_checkpoint": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "9fe6a1ef86d23391c64b7d5b16198ad7bb005c25",
+    "starting_worktree_clean": true,
+    "starting_index_empty": true
+  },
+  "design_document": {
+    "path": "docs/ball_candidate_retention_localization_proposal.md",
+    "sha256": "b5ee493e670fc4eb44c9de6ce119d438bac420bba929183e8c794cfe7ed96d60"
+  },
+  "evidence_bindings": [
+    {
+      "path": "data/outputs/ball_tracking/weak_candidate_inspection/9fe6a1ef86d2/handoff_2026-10-02.md",
+      "sha256": "a79934584d8357c8810098329132a87696b32e46837e97cddde61f59072e56e7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_candidate_inspection/9fe6a1ef86d2/findings.md",
+      "sha256": "069ef724bce200f7d1bf31984f05c4a97bb0aa39faa177075dbdd26d172216b4"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_candidate_inspection/9fe6a1ef86d2/completion.json",
+      "sha256": "471ebd6a46d3d78b63d31cc3c4c3ebcff27f600b9d1a3d8ddcb4959e3a151878"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_candidate_inspection/9fe6a1ef86d2/inspection.json",
+      "sha256": "5a97f2e002001279eef982068024985c78db9faa533adae7001997f10030923f"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_candidate_inspection/9fe6a1ef86d2/saved_cap_diagnosis.json",
+      "sha256": "5c534ea3d4fcf94ddc1f130d9577257993e644a80ad41154c47ce2421b1298f7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_candidate_inspection/9fe6a1ef86d2/review_native.html",
+      "sha256": "33d493646583e3ad8910a91c4b67b5ea64bb2a517c3cdd20aa7086c372c9c4bd"
+    },
+    {
+      "path": "data/outputs/ball_tracking/yolo11x_crop_closeout/3326482e6f7e/closeout_checkpoint.json",
+      "sha256": "49cf5d10ae8976d4bc3378553bced199fcf7a592ec1f5177202c9275551c3b15"
+    },
+    {
+      "path": "data/outputs/ball_tracking/yolo11x_crop_closeout/3326482e6f7e/frontier/audit.json",
+      "sha256": "9a83a996f4c4772a45530e1050dc9337c8caa3fabaf6095ed96bbc44bc5cfe21"
+    },
+    {
+      "path": "data/outputs/ball_tracking/yolo11x_crop_closeout/3326482e6f7e/commit_receipt.json",
+      "sha256": "70e3a04ecaea5e9b5c16455bef8e74df1da0fa03f7e98e632812e91ac0f546b7"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/yolo11x_crop_recovery_visual_review_record_v0_2.json",
+      "sha256": "365facf28a1e2f05339adea1e04e96a8fe7f33d0b3dea0184d16d1caa4c05433"
+    },
+    {
+      "path": "docs/ball_yolo11x_crop_recovery_results.md",
+      "sha256": "c45cf2d6ae8e2882d7b9b334bf69bdbf07610b13ba5ec41c431f5c2e1a458a4e"
+    },
+    {
+      "path": "src/ball_tracking/evaluation.py",
+      "sha256": "d4161d87bdfc0f7ad9c113a815aded62d6516b3fed700968d02b97125a1ec948"
+    },
+    {
+      "path": "src/ball_tracking/crop_ranking.py",
+      "sha256": "3d736c5a9b4a0789effdeab637913e1c4b6cf9374dc960a59cf621ab409760eb"
+    }
+  ],
+  "evidence_authority": {
+    "yolo_twelve_clip_final_frame_review": "complete",
+    "saved_32_frame_inspection": "complete_agent_diagnosis",
+    "new_human_identity_labels": false,
+    "prior_pending_statements": "historical_superseded_by_current_git_and_later_evidence"
+  },
+  "scope": {
+    "frame_count": 32,
+    "candidate_count": 82,
+    "display_outcome_count": 640,
+    "saved_cap_record_count": 15,
+    "cohort_counts": {
+      "persistent_miss": 20,
+      "hidden_control": 5,
+      "positive_control": 7
+    },
+    "candidate_counts_by_detector": {
+      "RF": 56,
+      "YOLO": 26
+    },
+    "reference_counts": {
+      "fully_visible": 2,
+      "partially_visible_amodal": 25,
+      "hidden_null_geometry": 5
+    },
+    "frames": [
+      {
+        "id": "P001_challenge_200",
+        "cohort_role": "positive_control",
+        "possession_id": "possession_001",
+        "purpose": "challenge_evaluation",
+        "frame_index": 200,
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P001_challenge_201",
+        "cohort_role": "positive_control",
+        "possession_id": "possession_001",
+        "purpose": "challenge_evaluation",
+        "frame_index": 201,
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P001_challenge_204",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_001",
+        "purpose": "challenge_evaluation",
+        "frame_index": 204,
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P001_challenge_217",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_001",
+        "purpose": "challenge_evaluation",
+        "frame_index": 217,
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P001_challenge_219",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_001",
+        "purpose": "challenge_evaluation",
+        "frame_index": 219,
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P001_representative_051",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_001",
+        "purpose": "representative_evaluation",
+        "frame_index": 51,
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2"
+      },
+      {
+        "id": "P001_representative_052",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_001",
+        "purpose": "representative_evaluation",
+        "frame_index": 52,
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2"
+      },
+      {
+        "id": "P001_representative_053",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_001",
+        "purpose": "representative_evaluation",
+        "frame_index": 53,
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2"
+      },
+      {
+        "id": "P001_representative_059",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_001",
+        "purpose": "representative_evaluation",
+        "frame_index": 59,
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2"
+      },
+      {
+        "id": "P001_representative_067",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_001",
+        "purpose": "representative_evaluation",
+        "frame_index": 67,
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2"
+      },
+      {
+        "id": "P001_representative_068",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_001",
+        "purpose": "representative_evaluation",
+        "frame_index": 68,
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2"
+      },
+      {
+        "id": "P001_representative_069",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_001",
+        "purpose": "representative_evaluation",
+        "frame_index": 69,
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2"
+      },
+      {
+        "id": "P001_representative_070",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_001",
+        "purpose": "representative_evaluation",
+        "frame_index": 70,
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2"
+      },
+      {
+        "id": "P001_representative_071",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_001",
+        "purpose": "representative_evaluation",
+        "frame_index": 71,
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2"
+      },
+      {
+        "id": "P001_representative_072",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_001",
+        "purpose": "representative_evaluation",
+        "frame_index": 72,
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2"
+      },
+      {
+        "id": "P001_representative_073",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_001",
+        "purpose": "representative_evaluation",
+        "frame_index": 73,
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2"
+      },
+      {
+        "id": "P002_challenge_034",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_002",
+        "purpose": "challenge_evaluation",
+        "frame_index": 34,
+        "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P002_representative_257",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_002",
+        "purpose": "representative_evaluation",
+        "frame_index": 257,
+        "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2"
+      },
+      {
+        "id": "P002_representative_262",
+        "cohort_role": "positive_control",
+        "possession_id": "possession_002",
+        "purpose": "representative_evaluation",
+        "frame_index": 262,
+        "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2"
+      },
+      {
+        "id": "P002_representative_263",
+        "cohort_role": "positive_control",
+        "possession_id": "possession_002",
+        "purpose": "representative_evaluation",
+        "frame_index": 263,
+        "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2"
+      },
+      {
+        "id": "P002_representative_264",
+        "cohort_role": "positive_control",
+        "possession_id": "possession_002",
+        "purpose": "representative_evaluation",
+        "frame_index": 264,
+        "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2"
+      },
+      {
+        "id": "P003_challenge_164",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_003",
+        "purpose": "challenge_evaluation",
+        "frame_index": 164,
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P003_challenge_165",
+        "cohort_role": "hidden_control",
+        "possession_id": "possession_003",
+        "purpose": "challenge_evaluation",
+        "frame_index": 165,
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P003_challenge_166",
+        "cohort_role": "hidden_control",
+        "possession_id": "possession_003",
+        "purpose": "challenge_evaluation",
+        "frame_index": 166,
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P003_challenge_167",
+        "cohort_role": "hidden_control",
+        "possession_id": "possession_003",
+        "purpose": "challenge_evaluation",
+        "frame_index": 167,
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P003_challenge_168",
+        "cohort_role": "hidden_control",
+        "possession_id": "possession_003",
+        "purpose": "challenge_evaluation",
+        "frame_index": 168,
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P003_challenge_169",
+        "cohort_role": "hidden_control",
+        "possession_id": "possession_003",
+        "purpose": "challenge_evaluation",
+        "frame_index": 169,
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P003_challenge_170",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_003",
+        "purpose": "challenge_evaluation",
+        "frame_index": 170,
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P003_challenge_171",
+        "cohort_role": "positive_control",
+        "possession_id": "possession_003",
+        "purpose": "challenge_evaluation",
+        "frame_index": 171,
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P003_challenge_173",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_003",
+        "purpose": "challenge_evaluation",
+        "frame_index": 173,
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P003_challenge_174",
+        "cohort_role": "positive_control",
+        "possession_id": "possession_003",
+        "purpose": "challenge_evaluation",
+        "frame_index": 174,
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2"
+      },
+      {
+        "id": "P003_representative_304",
+        "cohort_role": "persistent_miss",
+        "possession_id": "possession_003",
+        "purpose": "representative_evaluation",
+        "frame_index": 304,
+        "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2"
+      }
+    ],
+    "candidate_ids": [
+      "P001_challenge_200_RF_0",
+      "P001_challenge_200_YOLO_0",
+      "P001_challenge_200_YOLO_1",
+      "P001_challenge_201_RF_0",
+      "P001_challenge_201_YOLO_17",
+      "P001_challenge_204_RF_0",
+      "P001_challenge_204_RF_1",
+      "P001_challenge_217_RF_0",
+      "P001_challenge_217_RF_2",
+      "P001_challenge_219_RF_0",
+      "P001_challenge_219_RF_1",
+      "P001_challenge_219_RF_3",
+      "P001_challenge_219_YOLO_0",
+      "P001_representative_051_RF_0",
+      "P001_representative_051_RF_99",
+      "P001_representative_052_RF_61",
+      "P001_representative_052_YOLO_0",
+      "P001_representative_053_RF_0",
+      "P001_representative_053_RF_3",
+      "P001_representative_053_YOLO_0",
+      "P001_representative_059_RF_0",
+      "P001_representative_067_RF_0",
+      "P001_representative_067_RF_1",
+      "P001_representative_067_YOLO_0",
+      "P001_representative_068_RF_0",
+      "P001_representative_068_RF_1",
+      "P001_representative_068_YOLO_0",
+      "P001_representative_069_RF_0",
+      "P001_representative_069_RF_1",
+      "P001_representative_069_YOLO_0",
+      "P001_representative_070_RF_0",
+      "P001_representative_070_RF_1",
+      "P001_representative_070_RF_129",
+      "P001_representative_070_YOLO_0",
+      "P001_representative_071_RF_0",
+      "P001_representative_071_RF_148",
+      "P001_representative_071_YOLO_0",
+      "P001_representative_072_RF_0",
+      "P001_representative_072_RF_1",
+      "P001_representative_072_RF_3",
+      "P001_representative_072_RF_51",
+      "P001_representative_073_RF_0",
+      "P001_representative_073_RF_2",
+      "P001_representative_073_RF_4",
+      "P001_representative_073_RF_51",
+      "P001_representative_073_YOLO_0",
+      "P002_challenge_034_RF_0",
+      "P002_challenge_034_YOLO_0",
+      "P002_challenge_034_YOLO_1",
+      "P002_representative_257_RF_0",
+      "P002_representative_257_RF_1",
+      "P002_representative_257_RF_4",
+      "P002_representative_262_RF_0",
+      "P002_representative_262_RF_2",
+      "P002_representative_262_YOLO_0",
+      "P002_representative_262_YOLO_1",
+      "P002_representative_263_RF_0",
+      "P002_representative_263_YOLO_0",
+      "P002_representative_263_YOLO_1",
+      "P002_representative_264_RF_0",
+      "P002_representative_264_YOLO_0",
+      "P002_representative_264_YOLO_7",
+      "P003_challenge_164_RF_0",
+      "P003_challenge_164_RF_33",
+      "P003_challenge_164_YOLO_0",
+      "P003_challenge_164_YOLO_2",
+      "P003_challenge_165_YOLO_0",
+      "P003_challenge_166_YOLO_0",
+      "P003_challenge_167_RF_0",
+      "P003_challenge_168_RF_0",
+      "P003_challenge_169_RF_0",
+      "P003_challenge_170_RF_0",
+      "P003_challenge_170_RF_148",
+      "P003_challenge_171_RF_0",
+      "P003_challenge_173_RF_0",
+      "P003_challenge_173_RF_14",
+      "P003_challenge_173_YOLO_2",
+      "P003_challenge_174_RF_0",
+      "P003_challenge_174_RF_2",
+      "P003_challenge_174_YOLO_0",
+      "P003_representative_304_RF_0",
+      "P003_representative_304_RF_5"
+    ],
+    "candidate_identity_key": [
+      "input_candidates.sha256",
+      "detector",
+      "window_id",
+      "frame_index",
+      "detection.candidate_index"
+    ],
+    "saved_display_confidences": [
+      0.2,
+      0.35
+    ],
+    "saved_availability_confidence": 0.01,
+    "saved_localization_radius_source_px": 10,
+    "saved_cap": 20,
+    "settings_role": "references_to_completed_reports_only_not_new_or_selected_settings",
+    "fixed_cap_loss_frame_ids": [
+      "P001_representative_051",
+      "P001_representative_052",
+      "P001_representative_070",
+      "P001_representative_071",
+      "P001_representative_072",
+      "P001_representative_073",
+      "P003_challenge_164",
+      "P003_challenge_170"
+    ],
+    "six_window_reports": "contextual_saved_references_only_separate_representative_and_challenge_pools",
+    "candidate_catalog_expansion": false,
+    "new_performance_grid": false
+  },
+  "proposed_operations": [
+    "verify_bound_input_hashes_and_exact_saved_json_pointers",
+    "copy_saved_32_frame_82_candidate_640_display_15_cap_records_into_parallel_mechanism_ledger",
+    "resolve_retention_membership_from_saved_traces_with_original_candidate_mapping_no_selector_calls",
+    "attribute_existing_agent_findings_and_link_existing_native_gallery_without_new_semantic_labels",
+    "calculate_descriptive_dx_dy_and_reference_distance_for_catalog_candidates_with_eligible_reference_geometry_only",
+    "write_mechanism_summary_and_remaining_evidence_needed_for_later_proposal",
+    "verify_prior_bytes_unchanged_and_nine_embargo_path_absences"
+  ],
+  "parallel_fields": {
+    "retention": {
+      "values": [
+        "saved_floor_match",
+        "no_saved_floor_match",
+        "confidence_rejected",
+        "saved_cap_rejected",
+        "saved_cap_retained",
+        "retained_but_not_emitted",
+        "emitted",
+        "unknown",
+        "not_applicable"
+      ],
+      "semantics": "parallel_candidate_and_setting_facts_with_source_pointers_not_one_exclusive_error_class",
+      "cap_threshold_accounting": "eight_cap_losses_at_0.01_are_not_additive_causes_at_0.20_or_0.35",
+      "candidate_index_policy": "resolve_original_index_via_saved_mapping_not_derived_list_position",
+      "top_twenty_membership_binding": "Existing .01 top-twenty selector files are outside inspection input_bindings; verify the saved report observations_content_sha256 contract before resolving membership, otherwise retain unknown and the unchanged saved cap outcome."
+    },
+    "identity": {
+      "certified_candidate_identity": null,
+      "training_eligible": false,
+      "evidence": "existing_attributed_agent_observation_or_unresolved",
+      "localization_outcome_is_semantic_label": false,
+      "hidden_alarm_is_certified_non_ball_crop": false
+    },
+    "localization": {
+      "residual_formula": {
+        "dx": "saved_candidate_x - reviewed_reference_x",
+        "dy": "saved_candidate_y - reviewed_reference_y",
+        "reference_distance_px": "hypot(dx, dy)"
+      },
+      "only_when": "reviewed_frame_localization_eligible_and_reference_geometry_present",
+      "hidden_or_missing_geometry_residual": null,
+      "reference_source_and_numeric_uncertainty": "preserve_separately",
+      "saved_matched_error_fields": "copy_unchanged_including_nulls",
+      "residual_role": "descriptive_label_assisted_measurement_not_new_match_score_identity_or_corrected_center",
+      "matching_radius_changes": false
+    },
+    "emission": "preserve_original_candidate_or_explicit_absence_for_every_saved_setting"
+  },
+  "required_provenance": [
+    "source_png_path_and_sha256",
+    "annotation_path_sha256_visibility_geometry_source_uncertainty",
+    "input_candidate_path_sha256_json_pointer_original_index",
+    "detector_namespace",
+    "crop_id_rectangle_local_coordinates_source_mapping",
+    "actual_inference_commit_and_inference_unit_when_present",
+    "saved_report_path_sha256_json_pointer",
+    "saved_selector_path_sha256_json_pointer_and_original_index_mapping",
+    "native_bbox_and_context_path_sha256",
+    "finding_passage_or_focused_plate",
+    "ledger_creation_commit_separate_from_inference_provenance"
+  ],
+  "proposed_outputs": {
+    "root": "data/outputs/ball_tracking/candidate_retention_localization_diagnostic/",
+    "versioned_fresh_directory_required": true,
+    "create_only": true,
+    "files": [
+      "case_ledger.json",
+      "summary.md",
+      "integrity.json"
+    ],
+    "reuse_existing_gallery": true,
+    "new_media": false,
+    "created_by_this_proposal": false
+  },
+  "later_change_evidence": {
+    "retention": "mechanical_rejection_plus_pixel_support_and_declared_candidate_load_false_alarm_missingness_tradeoffs_before_separate_comparison_design",
+    "identity": "retained_alternative_and_attributed_pixel_path_evidence_with_unresolved_semantics_explicit",
+    "localization": "supported_ball_region_identity_and_reference_discrepancy_with_occlusion_uncertainty_before_separate_localization_study",
+    "temporal": "useful_retained_alternative_lost_at_path_choice_with_saved_path_cost_evidence",
+    "controls": "future_proposal_must_expose_losses_as_well_as_gains_on_hidden_flight_reacquisition_and_full_approved_development_scope",
+    "verifier": "separate_reviewed_identity_semantics_and_leakage_aware_training_evaluation_design_required",
+    "automatic_go_no_go_or_quality_gate": false
+  },
+  "prohibited_operations": [
+    "model_inference",
+    "training",
+    "new_selector_execution",
+    "evaluator_or_matching_rerun",
+    "completed_inspection_helper_rerun",
+    "new_threshold_or_cap_sweep",
+    "new_prediction_or_center_correction",
+    "annotation_revision",
+    "semantic_pseudolabeling_from_localization",
+    "new_renderer_or_media_decode",
+    "candidate_merging",
+    "smoothing_or_interpolation",
+    "floor_homography_ball_projection",
+    "ball_handler_or_possession_inference",
+    "sealed_holdout_content_access",
+    "existing_artifact_overwrite"
+  ],
+  "boundaries": {
+    "original_nine_embargo_paths": [
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_001_frames_0050_0074_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_001_frames_0200_0224_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_001_frames_0300_0324_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_002_frames_0250_0274_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_002_frames_0025_0049_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_002_frames_0200_0224_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_003_frames_0300_0324_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_003_frames_0150_0174_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_003_frames_0250_0274_rfdetr_medium_image_only_v0_1.json"
+    ],
+    "sealed_holdouts_metadata_only": [
+      [
+        "possession_001",
+        300,
+        324
+      ],
+      [
+        "possession_002",
+        200,
+        224
+      ],
+      [
+        "possession_003",
+        250,
+        274
+      ]
+    ],
+    "selected_method": null,
+    "selected_operating_point": null,
+    "quality_gate": null,
+    "new_experiment_authorized": false,
+    "training_authorized": false,
+    "stage_authorized": false,
+    "commit_authorized": false,
+    "push_authorized": false,
+    "pr_creation_authorized": false,
+    "merge_authorized": false,
+    "upstream_player_review_changes": false,
+    "rerun_from_stage": null
+  },
+  "validation_plan": [
+    "binding_and_pointer_equality",
+    "exact_32_82_640_15_scope_reconciliation",
+    "preserve_nulls_geometry_confidence_order_and_inference_provenance",
+    "synthetic_threshold_cap_namespace_center_uncertainty_hidden_cases_if_implemented",
+    "focused_then_full_suite_if_code_changes_with_bytecode_disabled",
+    "no_new_human_visual_verdict_claim",
+    "prior_source_and_output_hash_preservation",
+    "git_diff_check_and_empty_index"
+  ],
+  "next_decision": "review_this_bounded_diagnostic_scope_before_implementation_or_execution; any_later_tracking_experiment_requires_separate_concrete_design_and_authorization"
+}

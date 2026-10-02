@@ -1,6 +1,201 @@
 # Current State
 
-## Latest checkpoint: YOLO recovery executed and visually approved; saved-method closeout
+## Latest checkpoint: retention implementation validated; staging unapproved
+
+Ryan approved the exact retention comparison on October 2, 2026 with
+"I approve. Please move forward chat". The separate receipt is
+`configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_approval_v0_1.json`.
+The frozen proposal/design keep their historical draft text and exact hashes;
+the new receipt authorizes implementation and later execution within that scope.
+Training, method/operating-point/quality selection and every Git step remain
+unauthorized. The proposal's clean tested commit prerequisite still applies.
+
+Five new modules and five synthetic test files implement cap removal throughout
+the causal history, lossless full traces, immutable saved-control reuse,
+ordered scoring comparisons, saved-PNG review and persistent resource bounds.
+See `../ball_crop_candidate_retention_implementation.md` for the concrete scope.
+Read-only candidate preflight passed for six inputs, 126 saved controls and
+48 higher-confidence equivalence records. No real selection, scoring, rendering,
+model inference or training has run. The real experiment root remains absent.
+
+All 78 focused synthetic tests and both final 400-candidate/25-frame stress
+fixtures pass. The dense fixture saved and decoded 31,840,000 edges in 491.578
+seconds, peaking at 1,280,413,696 worker-tree resident bytes. The sparse fixture
+saved 112,280 edges in 10.266 seconds, peaking at 74,559,488 bytes. Neither
+crossed a resource bound; these costs do not consume the future real-run budget.
+The full regression suite passed: 598 tests ran, with 597 passes and one
+existing Windows directory-symlink capability skip, in 1,638.766 seconds.
+All 134 production/test/requirements files were unchanged during validation.
+Evidence is under
+`data/outputs/ball_tracking/crop_candidate_retention_implementation/9fe6a1ef86d2_2026-10-02/`.
+Only fabricated candidates and pixels are used for execution validation.
+Independent preservation checks passed for 755 unique files; all eight prior
+non-context working files retain their exact hashes. The runner's actual
+dirty-checkout guard was exercised without starting a real worker.
+The completed certificate binds all production/test Python and requirements
+bytes, the full-suite log, and complete benchmark/resource receipts. Its
+SHA-256 is `135bb50a461eec662f70ed4c64d15fe15e36826eefe81ee21e7521f36578890f`;
+the executable manifest now binds it. All 755 preservation bindings were
+reverified after the full suite. Both independent preservation and synthetic
+benchmark audits passed. The real experiment root remains absent.
+
+Branch remains `codex/ball-detector-baseline`, HEAD
+`9fe6a1ef86d23391c64b7d5b16198ad7bb005c25`; index empty. The implementation is
+unstaged in an exact 24-file scope listed in the implementation note. All nine
+original embargo paths remain absent and all three holdouts
+sealed. Ryan's prior twelve YOLO final-frame approvals remain complete.
+Next: obtain separate authorization to stage those 24 files; committing remains
+a subsequent, separate authorization. Real execution needs that clean tested
+commit, but its scope approval is already recorded and should not be requested
+again. No manual command is pending. The final checkpoint receipt records
+exact working hashes, validation evidence and the empty index for resumption.
+
+## Prior checkpoint: bounded candidate-retention comparison drafted
+
+On October 2, 2026, Ryan said "Move forward chat" after the completed
+saved-evidence diagnostic. This turn prepares the next concrete design:
+`../ball_crop_candidate_retention_proposal.md` and
+`configs/ball_tracking/proposals/rfdetr_medium_crop_candidate_retention_v0_1.json`.
+They are non-executable and await scope review; no implementation, new
+selection/scoring, inference, training or rendering occurred in preparation.
+
+The proposed change removes only the twenty-candidate cap from all four
+unchanged no-context motion scorers at the existing .01 floor, across all six
+development windows. It requires 24 new window outputs and 120 reports if
+later approved. At .20/.35, stored candidates never exceed nine/seven per
+frame, so the corresponding 48 graph settings are structural-equivalence
+references to existing cap20 results; they must not be rerun or relabeled as
+new execution. The proposal reuses 126 existing control outputs and 630 reports.
+Six new .01 paired clips would need final-frame review after execution;
+completed .20/.35 motion review and all twelve YOLO approvals remain complete.
+
+The saved inventory has 47,198 candidates, at most 400/frame and 1,924 in a
+five-frame horizon. Explicit resource limits and synthetic stress validation
+are required; no silent truncation or partial-comparison claim is allowed.
+The design separates confidence filtering, cap retention, final path choice,
+uncertified identity and center placement. Candidate burden, false alarms,
+missingness, gains and regressions stay explicit, with pools separate.
+Player-context and YOLO methods are outside this conditional mechanism test;
+no method, operating point, quality gate or training labels are selected.
+
+Preparation evidence and source inventories are under
+`data/outputs/ball_tracking/crop_candidate_retention_proposal/9fe6a1ef86d2_2026-10-02/`.
+Use `independent_proposal_audit_v2.json` and `final_preparation_receipt.json`
+for the final draft. The earlier receipt precedes the explicit aggregate-alias
+deduplication clarification; that prior draft is retained as a snapshot.
+The prior diagnostic, source/test bytes, approved proposal and receipts remain
+unchanged. Its relevant validation remains 28 focused passes and 519 full-suite
+passes with one existing Windows skip. Documentation/source-inventory checks
+replace any need to repeat that suite for this preparation.
+
+Branch remains `codex/ball-detector-baseline` at
+`9fe6a1ef86d23391c64b7d5b16198ad7bb005c25`. Eleven intentional files are now
+unstaged; index empty. This turn adds two proposal files and updates only this
+checkpoint and `roadmap.md`. All nine embargo paths remain absent and all
+three holdouts sealed. No Git mutation occurred. No manual command is pending.
+Next: review the exact retention-comparison scope before implementation or
+execution; staging, committing, pushing, PR creation and merging each require
+separate explicit authorization.
+
+## Prior checkpoint: approved saved-evidence diagnostic complete
+
+On October 2, 2026, Ryan replied "mover forward chat" to the concrete bounded
+diagnostic proposal. The separate approval is
+`configs/ball_tracking/reviews/saved_candidate_retention_localization_approval_v0_1.json`.
+The original proposal and design retain their exact bytes and historical draft
+status; the receipt authorizes implementation and execution of this diagnostic.
+It does not authorize a new tracking experiment, training or any Git step.
+
+The helper `src/ball_tracking/candidate_retention_diagnostic.py` and its 28
+focused synthetic tests are complete. The full suite ran 520 tests: 519 passed
+and one existing Windows directory-symlink capability test was skipped.
+Exact tested helper/test bytes were unchanged during execution.
+
+The approved diagnostic ran once, successfully, into the fresh ignored
+directory `data/outputs/ball_tracking/candidate_retention_localization_diagnostic/v0_1_9fe6a1ef86d2/`.
+Its `case_ledger.json`, `summary.md` and `integrity.json` preserve 32 frames,
+82 candidates, 640 saved display outcomes and 15 cap records. An independent
+audit verified all original payloads, 1,060 same-detector candidate-setting
+records, residual arithmetic and hashes. All 231 original assets and 177 input
+bindings remain unchanged. All fifteen cap-membership bindings were available
+and verified: eight rejected and seven retained the saved floor-match candidate.
+
+Fifteen of twenty persistent display misses have RF floor matches rejected by
+both display confidence thresholds. Eight of those fifteen are separately lost
+at .01/top-twenty; these counts overlap. Choice, identity and center placement
+remain distinct. All 82 certified identities remain null and ineligible for
+training. Five hidden frames retain null geometry/residuals. Reference distances
+are descriptive arithmetic, not new matches or ball/non-ball labels; 25 of the
+27 eligible reference centers are partially visible amodal estimates.
+
+Results and exact evidence links are in
+`../ball_candidate_retention_localization_results.md`. Validation, execution
+and independent audit receipts are under
+`data/outputs/ball_tracking/candidate_retention_localization_implementation/9fe6a1ef86d2_2026-10-02/`.
+No model, selector, evaluator, renderer or media decode ran in the real diagnostic.
+Ryan's completed twelve-clip final-frame review and the later agent inspection
+remain complete. Neither requires repetition for this saved-record diagnostic.
+
+Branch remains `codex/ball-detector-baseline`, HEAD
+`9fe6a1ef86d23391c64b7d5b16198ad7bb005c25`. Nine intentional files are unstaged;
+index empty. No staging, commit, push, PR or merge occurred. All nine original
+prediction embargoes remain absent and all three holdouts sealed. No method,
+operating point or quality gate is selected; no upstream player review changes.
+No manual command is pending. Next: use the completed diagnostic to prepare a
+bounded next comparison with candidate-load, false-alarm and missingness
+tradeoffs explicit. New experiment execution/training and each Git step remain
+separate authorization boundaries.
+
+## Prior checkpoint: completed inspection; retention/localization diagnostic proposed
+
+Verified October 2, 2026 (America/Phoenix): branch
+`codex/ball-detector-baseline`, HEAD
+`9fe6a1ef86d23391c64b7d5b16198ad7bb005c25`, initially clean worktree and empty
+index. The reviewed YOLO closeout was separately committed at this HEAD. The
+later saved-candidate inspection is complete. The older staging and pending
+inspection instructions below are historical; neither step should be repeated.
+
+The full preceding handoff is
+`data/outputs/ball_tracking/weak_candidate_inspection/9fe6a1ef86d2/handoff_2026-10-02.md`.
+Its `findings.md`, `completion.json`, `inspection.json`,
+`saved_cap_diagnosis.json` and final `review_native.html` contain the completed
+agent diagnosis. All 231 assets and 177 input bindings were rehashed successfully
+during this preparation; 79 saved floor/cap report pointers match their sources.
+The earlier pixel-exact crop verification was not repeated. This remains agent
+diagnosis, not a new human object-identity labeling pass. Ryan's twelve-clip
+YOLO review through final frames is complete; do not request it again.
+
+The new draft is `../ball_candidate_retention_localization_proposal.md`, with
+non-executable specification
+`configs/ball_tracking/proposals/saved_candidate_retention_localization_diagnostic_v0_1.json`.
+It freezes 32 frames, 82 candidate identities, 640 saved display outcomes and
+15 saved cap records. It proposes a ledger with separate retention, identity,
+center-discrepancy and emission fields. Fifteen persistent display misses have
+weak RF floor matches; eight lose the match in the separate saved .01 top-twenty
+setting as well. Those causes must not be double-counted. MATCH/UNMATCHED does
+not certify ball/non-ball identity. Proposed center residuals are descriptive
+distances to reviewed references; hidden geometry stays null.
+
+Preparation changes only this file, `roadmap.md`, the new proposal document
+and its JSON. These four files are unstaged; the index remains empty and HEAD
+is unchanged. No implementation, new diagnostic execution, inference, training,
+selector/scorer/renderer rerun or media decode occurred. All nine original
+embargo paths remain absent and three holdouts sealed. No method, operating
+point or quality gate is selected. No upstream player review or pipeline stage
+changes. No staging, commit, push, PR or merge occurred.
+
+The proposal received independent read-only design review. JSON, scope, source
+bindings, local links and whitespace are checked in the ignored preparation
+receipt under
+`data/outputs/ball_tracking/candidate_retention_localization_proposal/9fe6a1ef86d2_2026-10-02/`.
+Production code is unchanged, so tests were not rerun; the existing result
+remains 27 recovery-focused and 15 adapter passes, plus 491 full-suite passes
+and one existing Windows capability skip. No manual command is pending.
+Next: Ryan reviews the concrete diagnostic scope. Its implementation/execution
+and any later tracking experiment remain unapproved; Git steps each require
+separate explicit authorization.
+
+## Prior checkpoint: YOLO recovery executed and visually approved; saved-method closeout
 
 The separately authorized recovery commit is
 `3326482e6f7e05527d146f3110c8ec39171cf08d` on `codex/ball-detector-baseline`.

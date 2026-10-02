@@ -1108,3 +1108,108 @@ This evidence/documentation closeout changes no production code. Existing
 Windows capability skip, remain the relevant validation. No completed pipeline
 stage, model inference or media decode is repeated. All nine embargo paths
 remain absent, all three holdouts sealed, and the index remains empty.
+
+## Approved saved candidate-retention and localization diagnostic
+
+On October 2, 2026, Ryan's "mover forward chat" response authorized the exact
+bounded saved-evidence diagnostic. The separate approval receipt binds the
+unchanged proposal and design. It authorizes neither a new tracking experiment
+nor training or a Git step. The earlier closeout is committed at
+`9fe6a1ef86d23391c64b7d5b16198ad7bb005c25`; the later 32-frame agent inspection
+was already complete and remains distinct from human identity labeling.
+
+The new helper and its 28 focused synthetic tests passed, followed by the full
+suite: 520 tests run, 519 passes and one existing Windows directory-symlink
+capability skip. Tests cover assembly/output, original candidate indices,
+RF/YOLO namespaces and crop schemas, mixed actual inference commits, hidden
+nulls, uncertainty, threshold/cap overlap, missing optional membership versus
+contradictory evidence, exact approval bindings and create-only output.
+Both validation commands disabled bytecode writing. Source/test hashes were
+unchanged before and after validation and real execution:
+
+- helper: `12adbe87c83f3f801e7bf76e06d6ea31210c539cec84138c5d6b717e00d93f82`;
+- focused tests: `ecdfcfd516e756cfd5294680d84a08d7345857205a80f3eb91e09634196e5120`.
+
+One real diagnostic execution returned zero and wrote only `case_ledger.json`,
+`summary.md` and `integrity.json` to
+`data/outputs/ball_tracking/candidate_retention_localization_diagnostic/v0_1_9fe6a1ef86d2/`.
+The integrity SHA-256 is
+`a15e99a163ee169a38ac37097d3e1ca6b3a4fa827e016b8bc89bddd037f51326`.
+Creation HEAD and dirty helper hashes are recorded separately from actual
+detector inference provenance. No model, selector, evaluator, renderer or
+media decoder was called by this real diagnostic.
+
+An independent audit, without importing the implementation, checked all 32
+frames, 82 original candidate records, 640 saved display/report/trace records,
+1,060 same-detector candidate settings and fifteen cap memberships. The latter
+resolve to eight rejected and seven retained saved floor-match candidates.
+Original report payloads and null matched-error fields are preserved; separate
+dx/dy/distance fields match independent arithmetic. Five hidden residuals stay
+null. All 82 certified identities stay null and training eligibility false.
+All 231 original assets, 177 input bindings and newly bound records retain
+their hashes. The existing final gallery and twelve-clip review remain complete.
+
+The exact commands, logs and source/output hashes are in `final1_tests.json`,
+`execution_receipt.json` and `independent_output_audit.json` under
+`data/outputs/ball_tracking/candidate_retention_localization_implementation/9fe6a1ef86d2_2026-10-02/`.
+`git diff --check` passes. Branch/HEAD remain unchanged and the index is empty;
+implementation and documentation remain unstaged. All nine original prediction
+embargoes remain absent and all three holdouts sealed. No method, operating
+point, quality gate or training labels are selected.
+
+## Approved candidate-retention implementation: synthetic validation
+
+Ryan's October 2, 2026 approval authorizes the exact new retention comparison,
+subject to its tested clean-commit prerequisite. A separate approval receipt
+preserves the original proposal/design bytes. The new implementation changes
+only cap retention at .01 for four fixed motion settings; it does not move
+centers, change confidence, certify identities or select a method.
+
+All 78 distinct focused synthetic tests pass. Coverage includes exhaustive
+small-graph path oracles, exact legacy cap20 parity, all four motion settings,
+old-path feasibility, original indices beyond twenty, gaps/ties/causality,
+confidence and cap partitions, original-report reuse, higher-confidence
+equivalence references, hidden nulls, uncertainty, immutable checkpoints,
+complete rendering and resource abort/resume. Windows tests exercise actual
+Job Object process trees and verify child memory accounting and termination.
+
+Final fabricated 400-candidate/25-frame stress fixtures both passed complete
+lossless serialization and decoding. Dense: 31,840,000 serialized edges,
+491.578 seconds, 1,280,413,696 peak worker-tree resident bytes and 118,447,870
+new root bytes at the final sample. Sparse: 112,280 edges, 10.266 seconds,
+74,559,488 peak resident bytes and 3,439,756 new root bytes. Maximum monitor
+intervals were .328 and .266 seconds, with no time/memory/output overshoot.
+Final receipt space is conservatively reserved. These are separate synthetic
+validation costs, not real experiment resource consumption or accuracy claims.
+
+The first benchmark snapshots remain preserved. Final fixtures use the fixed
+Windows portable receipt paths and bind unchanged implementation bytes. The
+full suite then passed: 598 tests run, 597 passes and one existing Windows
+directory-symlink capability skip, in 1,638.766 seconds. All 134 production,
+test and requirements files retained their exact hashes throughout validation.
+Both focused and full commands disabled bytecode writing.
+
+An independent preservation audit checked 755 unique files, including all
+312 non-video proposal-bound files, 126 saved controls, 150 saved source PNG
+bindings, the completed diagnostic's original bindings, and all 134 inventory
+files. Eight prior non-context working files remain unchanged. No source video
+or holdout contents were opened. The actual dirty-checkout guard rejected real
+dispatch before any worker or experiment output was created.
+
+Evidence is under
+`data/outputs/ball_tracking/crop_candidate_retention_implementation/9fe6a1ef86d2_2026-10-02/`.
+No real candidate selection/scoring/rendering, inference, training or Git
+mutation has occurred. The original nine embargoes remain absent, the three
+holdouts remain sealed, and prior human reviews remain complete.
+
+The final certificate is `implementation_validation.json`, SHA-256
+`135bb50a461eec662f70ed4c64d15fe15e36826eefe81ee21e7521f36578890f`.
+The executable manifest binds it and has SHA-256
+`f2b8834722ddf9f1ce4dcfdf1441a12cc0d52591b57bb66ca726c3aef2ca15ff`.
+It includes the full-suite receipt/log and both independent audits. All 755
+preservation bindings were reverified after the full suite. The benchmark audit
+also independently checked all 50 compressed trace hashes, resource journals,
+completion seals and analytic edge counts without rerunning selection.
+The 24-file implementation/diagnostic preparation remains unstaged; index empty.
+The next step is separate staging authorization, followed separately by commit
+authorization. The already approved real comparison requires that clean commit.

@@ -122,9 +122,37 @@ comparison of ten single-detection families is complete: 900 aggregate cells,
 2,700 reports and 3,000 displayed frame-setting records reconcile, with copied
 controls counted once. It retains tradeoffs without choosing a setting and
 separates twenty persistent display misses into five unavailable RF proposals
-and fifteen confidence-filtered RF proposals. The next saved-evidence task
-inspects these weak proposals and emitted alternatives with flight, hidden and
-reacquisition controls across 32 existing frames, as specified in the closeout.
+and fifteen confidence-filtered RF proposals. The subsequent saved-evidence
+inspection is complete: 32 existing frames and 82 candidate identities include
+weak proposals, emitted alternatives, flight, hidden and reacquisition controls.
+This is agent diagnosis, not new human identity labels. The closeout was
+separately committed at `9fe6a1ef86d2`; the later inspection is preserved under
+`data/outputs/ball_tracking/weak_candidate_inspection/9fe6a1ef86d2/`.
+The bounded proposal, `../ball_candidate_retention_localization_proposal.md`,
+separates candidate retention, object identity and center placement using those
+saved records. Ryan approved this diagnostic with "mover forward chat"; a
+separate receipt preserves the proposal's historical bytes. Implementation,
+28 focused tests, the full suite (519 passes and one existing Windows skip),
+and one real saved-evidence execution are complete. The independently audited
+ledger preserves 32 frames, 82 candidates, 640 outcomes and fifteen cap records.
+All original 231 assets and 177 inputs are unchanged. See
+`../ball_candidate_retention_localization_results.md` for retention losses,
+descriptive center offsets and remaining identity uncertainty. The next
+bounded design is now drafted in `../ball_crop_candidate_retention_proposal.md`.
+It proposes removing the cap at .01 in the four unchanged motion settings:
+24 new window outputs, 120 reports and six new review clips. Saved .20/.35
+inputs never reach the cap, so their corresponding settings reference existing
+results through explicit structural equivalence. The proposal measures extra
+candidate load alongside false alarms, missingness, gains and regressions
+across all six windows with pools separate. It includes resource bounds and
+keeps identity/localization questions distinct. Ryan subsequently approved that
+exact comparison with "I approve. Please move forward chat". Five modules and
+five synthetic test files implement the approved scope. Validation is complete:
+78 focused passes, 597 full-suite passes with one existing Windows skip, and
+both dense/sparse 400-candidate/25-frame benchmarks passed. The implementation note is
+`../ball_crop_candidate_retention_implementation.md`. Real execution awaits
+the required clean tested commit, with staging and committing separately
+authorized. Training remains unapproved.
 No method, operating point, quality gate or holdout release is selected.
 
 - [x] define the ball annotation and detection-evaluation protocol;
@@ -166,7 +194,17 @@ No method, operating point, quality gate or holdout release is selected.
 - [x] compare the fixed RF-DETR and YOLO11x detector configurations;
 - [x] record the completed YOLO review and close out the saved comparison;
 - [x] consolidate existing single-detection settings and persistent errors from saved results;
-- [ ] inspect weak matching proposals and emitted alternatives in the bounded saved-frame cohort;
+- [x] inspect weak matching proposals and emitted alternatives in the bounded saved-frame cohort;
+- [x] draft a bounded candidate-retention and localization diagnostic proposal;
+- [x] approve, implement and validate the bounded saved-evidence diagnostic;
+- [x] execute it once and independently audit its ledger and source preservation;
+- [x] prepare the next bounded comparison with retention and localization questions separate;
+- [x] review and approve the exact retention-comparison scope;
+- [x] implement the bounded selector, preserved-control scoring and saved-PNG review;
+- [x] finish focused/full regression and dense/sparse resource validation;
+- [ ] separately authorize staging and committing the tested retention implementation;
+- [ ] execute the approved retention comparison from that clean checkpoint;
+- [ ] review the six new .01 clips through their final frames;
 - [ ] associate detections through blur, occlusion, passes, shots, and rebounds;
 - [ ] preserve uncertainty and missing observations;
 - [ ] map ball observations into court/time context where defensible;
