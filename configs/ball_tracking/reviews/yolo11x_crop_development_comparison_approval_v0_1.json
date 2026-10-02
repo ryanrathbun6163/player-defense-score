@@ -1,0 +1,14 @@
+{
+  "schema_version": "ball_yolo_crop_experiment_approval/v0.1",
+  "experiment_spec_sha256": "99fe51b2617b49642e9a2120f39da476d70a35a063c301b66565053b174af867",
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/yolo11x_crop_development_comparison_v0_1.json",
+    "sha256": "f891c04464422428dadbcfdf425436d3347464dbcab6d96ae23cac963dca5492"
+  },
+  "approved_by": "ryan",
+  "statement": "yes I approve, move forward. Also I just set up a connection with my phone, so I will be talking to you while I am at the gym!",
+  "recorded_at_utc": "2026-10-02T00:58:18.372843+00:00",
+  "timestamp_semantics": "Receipt creation time; approval was the user's response to the exact bound proposal. Runtime evidence was prepared afterward within that approval.",
+  "scope": "six_development_windows_four_fixed_crops_three_selectors",
+  "git_mutations_authorized": false
+}

@@ -820,3 +820,150 @@ intentional context documents are advanced with their prior bytes saved locally.
 Next is exact-scope staging approval, then staged verification and separate
 commit approval. Already approved real execution waits for that clean tested
 commit. No manual command is pending.
+
+## Player-context comparison - clean execution and pending new visual review
+
+Ryan explicitly approved staging the eighteen-file scope ("yes go ahead and
+stage"), then committing it ("yes you may"). Commit
+`119159817df5414f534f133f0954c1f78c7e51de` has the exact expected title, parent,
+scope and blobs. Git metadata required the sandbox's write-permission override;
+the authorized actions completed and were verified. No push, PR or merge ran.
+The earlier experiment approval then permitted execution at the clean tested
+checkpoint. Production code is unchanged from 34 focused passes and 419 full
+passes plus one existing Windows directory-symlink skip; tests were not repeated.
+
+Selection created all 216 new outputs in 157.302 seconds. Scoring added
+1,080 new reports in 420.797 seconds; all 378 saved outputs, 1,890 reports
+and 630 aggregate cells retain their exact bytes/content and prior provenance.
+Together the two pools contain 2,970 reports; each has 495 aggregate cells.
+Completed detector/crop/ranking/motion stages were disabled by execution guards;
+no detector calls or source-video decoding occurred. Frozen PNG inputs remain
+confined to the approved six windows. No sealed holdout geometry was decoded.
+
+Independent audits read saved evidence only. The selection audit checks 216
+outputs/5,400 frames, 47,198 source candidate records (crop duplicates retained), 222,888 node-cost
+and recorded-path records, 684,466 edges and 145,400 endpoint/trailing records.
+It replays recorded arithmetic without choosing winners. Every frame has
+observed player context. The scoring audit reconciles 2,970 reports, 990
+aggregate cells, 1,080 paired differences, 1,080 loss partitions and 360 aggregate
+contrasts, with exact saved-control equality and all 594 output bindings checked.
+
+Across the 360 correlated paired aggregate cells, none reduces matched frames
+or increases false positives. At the two fixed review settings (.20/.35,
+radius 10), representative gains are 6-11 matches per variant and challenge
+gains 0-4, with no matched display-frame losses. P002 representative 262 recovers
+for all four arms at both displays; P002 challenge 48 recovers for TW at .20.
+Hidden false alarms persist at P003 167 (.20) and 168 (both displays). P001
+representative final 74 recovers at .20 but remains wrong at .35; P003 challenge
+final 174 still matches only for WW. These are development observations, not
+independent-trial evidence, a selected winner or a quality/operating-point gate.
+
+Rendering finished in 414.968 seconds. The 2,112 new assets (2,100 PNGs,
+12 clips) and 2,400 reused native/source PNG references are hash verified.
+All 12 originals and 12 separate H.264 copies fully decode 25 frames at 5 fps,
+including their final source frames. Independent helper review tightened
+per-clip sidecar identity/destination checks before playback preparation.
+Agent image inspection covers all 12 final closeups and targeted real panels;
+Ryan's new visual review remains pending. Existing crop/ranking/motion approvals
+do not assert review of this new package.
+
+Evidence is under
+`data/outputs/ball_tracking/crop_player_context_execution/119159817df5/`.
+Start with `review_guide.md`; `results_summary.md` contains the exact tables.
+`execution_record.json` SHA-256 is
+`300eecaecc8b99c2e44d765ec1757a10f9431a1f2e1c2766ccfddcd86b3c1615`. It binds the stages,
+new/reused output inventories, score/selection audits, review manifest, playback,
+inspection and 101 protected files at the clean execution checkpoint.
+Only the three context documents were advanced afterward, with their original
+bytes retained locally and final hashes in `post_execution_context.json`.
+Whitespace passes, index empty, nine original embargo paths absent, and three
+holdouts sealed. No upstream reviewed player decision changed. No manual
+command is pending. Next is Ryan's review of all twelve new clips through their
+final frames; completed stages must not be rerun.
+
+## Player-context visual review complete and saved-results closeout
+
+Ryan answered "Yes, reviewed all 12; proceed" to the explicit question about
+watching all twelve new player-context clips through their final frames.
+The separate review receipt SHA-256 is `0ebaabad929558d9c07339161f0d37362d6da9477883853146345cc56a848ef6`.
+All 2,112 new assets, 2,400 reused PNG references, twelve playback copies,
+216 new outputs, 378 controls and 98 protected non-context files were rehashed.
+An independent read-only check verified all 73 receipt file bindings and exact
+agreement of its twelve clip entries with the playback manifest. Historical
+pending-review evidence was preserved; no itemized human verdict was invented.
+
+The new saved-evidence diagnosis reconciles all 1,080 per-window comparisons
+and loss partitions. Compared with each matching motion control, there are
+no newly lost matches, added false-positive frames or worse center errors on
+shared matches. It separately preserves residual failures against top one and
+all exported candidates. At radius 10 the .01 exported pool covers 140/145
+eligible frames; .20/.35 still have confidence and path-selection losses.
+The hidden P003 167/168 cases retain zero context cost. No selector, scorer,
+renderer, model, source-video decoder or holdout geometry reader ran.
+
+The numerical artifact `residual_diagnosis.json` has SHA-256
+`3f2744d8c88c26abd2595384ac83147b623e35a204dbd4aded1704c92ad569e8`.
+The closeout document is `docs/ball_crop_player_context_results.md`.
+All settings reuse the same six windows and do not establish generalization.
+
+Primary-source research supports preparing one bounded YOLO11x Detect
+challenger; the concrete proposal JSON SHA-256 is `f891c04464422428dadbcfdf425436d3347464dbcab6d96ae23cac963dca5492`.
+It binds 150 unmarked source PNGs, all 162 reused simple-selector outputs,
+two saved scoring pools (405 selected report cells each), labels and protected
+embargo/holdout scope. Published checkpoint digest and package version are
+pinned; local artifact verification and isolated runtime validation are future
+preconditions. No package or model was downloaded, installed, loaded or run.
+The design explicitly retains preprocessing/NMS/candidate-budget differences,
+uncalibrated model confidences and unverified exact training overlap. It is
+not an execution permit and requires separate exact-scope experiment approval.
+
+Only evidence/design/context files changed; production code and prior evidence
+are unchanged. The latest 34 focused and 419 full-suite passes plus one existing
+Windows skip remain applicable; no redundant tests were run. Index empty,
+nine original prediction paths absent, three holdouts sealed, no selected
+method/point/gate and no Git mutation. Previous context bytes and final binding
+inventory are preserved under
+`data/outputs/ball_tracking/crop_player_context_closeout/119159817df5/`.
+No manual command is pending. Next is the exact new proposal review, not a
+repeat of Ryan's completed clip inspection.
+
+## Approved YOLO11x implementation and synthetic validation
+
+Ryan's exact approval is bound by the new approval receipt and executable
+manifest. The design JSON remains SHA-256
+`f891c04464422428dadbcfdf425436d3347464dbcab6d96ae23cac963dca5492`.
+The isolated Ultralytics 8.4.171 environment records exact package/wheel/file
+inventories and verified publisher weights. Baseline package metadata remains
+unchanged. The runtime receipt SHA-256 is
+`bd549dff7c4d7810b3154c9a5442cf43516e15bd5c72ab6abe631f819652e7ba`.
+
+Actual synthetic GPU tests passed color conversion, 640-square letterbox with
+140-pixel vertical pads, normalization, inverse boxes and FP32 device 0 checks.
+Each fresh predictor performed two synthetic startup forwards and one further
+ordinary-route forward on a constant synthetic image. No project pixels were
+used. SDK deepcopy and canonical precision handling were checked against the
+installed version. Offline configuration remains inside the ignored runtime.
+
+All 41 focused tests pass, followed by 460 full-suite passes and
+1 existing Windows directory-symlink skip. Focused tests cover all 600
+synthetic crop units, retry/preparation accounting, 162 new outputs, 810 new plus
+810 unchanged saved reports, 270 aggregate cells per pool and twelve 25-frame
+synthetic clips with 1,512 new assets and 1,200 reused references. Independent
+review caught and fixed wrong-prefix acceptance and a PNG hash/decode race.
+Root and renderer agent inspected synthetic comparison/native/closeup layouts.
+The first combined test invocation failed on flat fixture imports; the normal
+repository discovery command passed. Failed and passing logs are preserved.
+
+Read-only actual preflight verified 150 PNGs/600 planned crop units without
+constructing a model. The dirty-tree gate was separately verified before
+runtime access. No new real inference, scoring or rendering has occurred;
+the approved challenger output root remains absent. All 98 protected files,
+four preceding design/review files and old local evidence bindings are intact.
+No old pipeline or source-video decoding occurred. Embargoes and holdouts
+remain protected, with no operating point, method or quality gate selected.
+
+The final implementation checkpoint and before-context backups are under
+`data/outputs/ball_tracking/yolo11x_implementation/119159817df5/`.
+Git branch/HEAD are unchanged and the index is empty. Exact next step is
+separate staging authorization for the nineteen-file scope documented in
+`docs/ball_yolo11x_crop_implementation.md`, followed by separate commit approval.

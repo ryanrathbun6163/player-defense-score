@@ -1,0 +1,19 @@
+{
+  "schema_version": "ball_yolo_crop_experiment/v0.1",
+  "experiment_id": "yolo11x_crop_development_comparison_v0_1",
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/yolo11x_crop_development_comparison_v0_1.json",
+    "sha256": "f891c04464422428dadbcfdf425436d3347464dbcab6d96ae23cac963dca5492"
+  },
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/yolo11x_crop_development_comparison_approval_v0_1.json",
+    "sha256": "6f2fb78750901edc548e045daa7af0ab1807f8c55381d992d25d25f26a4c045c"
+  },
+  "runtime": {
+    "path": "data/outputs/ball_tracking/yolo11x_runtime/ultralytics_8_4_171_py311/runtime_record.json",
+    "sha256": "bd549dff7c4d7810b3154c9a5442cf43516e15bd5c72ab6abe631f819652e7ba"
+  },
+  "output_root": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1",
+  "selected_operating_point": null,
+  "quality_gate": null
+}

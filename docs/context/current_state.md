@@ -1,6 +1,159 @@
 # Current State
 
-## Latest checkpoint: approved player-context comparison implemented and validated
+## Latest checkpoint: approved YOLO11x support validated; staging next
+
+Ryan approved the exact six-window YOLO11x comparison. The separate approval
+and executable manifest are saved; the historical proposal remains unchanged.
+Implementation details and the exact nineteen-file staging scope are in
+`docs/ball_yolo11x_crop_implementation.md`. Prior player-context review is
+complete; do not ask Ryan to repeat it or rerun any completed experiment.
+
+The isolated ignored runtime and official weights are verified. Actual GPU
+checks used synthetic arrays only: RGB conversion, fixed letterbox, inverse
+mapping, FP32 CUDA device 0 and one ordinary forward after synthetic warmup
+passed. No basketball frames entered the new detector. Read-only preflight
+verified 150 source PNGs and 600 planned crops without constructing a model.
+The dirty-tree guard rejects real execution before inspecting the runtime.
+
+All 41 focused tests pass; the full suite has 460 passes and
+1 existing Windows directory-symlink skip. Synthetic paired review panels
+were visually inspected, and all 12 synthetic test clips decode through their
+final frames. Candidate-prefix and same-buffer PNG hash/decode checks were
+tightened during independent review. The initial focused invocation had
+fixture-import errors; repository-style discovery passed without changing
+production behavior. Logs retain both attempts.
+
+Branch remains `codex/ball-detector-baseline` at `119159817df5414f534f133f0954c1f78c7e51de`;
+the index is empty. The three intentional context changes are retained with
+preceding bytes backed up. The four prior review/design files and 98 protected
+non-context files remain unchanged. No staging, commit, push, PR or merge
+occurred. All nine original embargoes and three sealed holdouts remain intact.
+No method, operating point or gate is selected.
+
+Evidence is in `data/outputs/ball_tracking/yolo11x_implementation/119159817df5/`;
+`implementation_checkpoint.json` binds final files, tests, runtime and audits.
+The next decision is authorization to stage exactly those nineteen files.
+Committing remains a separate step. After a clean tested commit, execute the
+already approved new comparison, score it and prepare twelve new review clips.
+No manual command is pending and no new experiment approval is needed.
+
+## Prior checkpoint: player-context review complete; next detector comparison proposed
+
+Ryan explicitly answered "Yes, reviewed all 12; proceed" to the question asking
+whether he watched all twelve new player-context clips through their final
+frames. The separate record
+`configs/ball_tracking/reviews/rfdetr_medium_crop_player_context_visual_review_record_v0_1.json`
+(SHA-256 `0ebaabad929558d9c07339161f0d37362d6da9477883853146345cc56a848ef6`) binds his exact response,
+the guide, all twelve clips/final panels, reports and execution checkpoint.
+It records review completion without inventing frame-level correctness claims.
+Earlier pending-review artifacts remain unchanged. Do not request this review
+again or rerun the completed experiments.
+
+The saved-results closeout is `docs/ball_crop_player_context_results.md`.
+Across all 1,080 per-window comparisons with matching motion controls, the
+context term causes no new lost matches, false-positive frames or increased
+errors on shared matches. Remaining errors include candidate unavailability,
+confidence filtering and path-choice losses. At radius 10, candidates at the
+.01 export floor cover 140/145 eligible frames; better confidence separation
+and fewer false guesses matter as well as candidate recall. P003 hidden false
+observations persist with zero node context cost, and some graph settings
+still lose top-one-correct reacquisitions. These are correlated development
+results, not an operating-point decision or generalization gate.
+
+Next proposed comparison: one fixed official YOLO11x Detect checkpoint on the
+same 150 development frames and four fixed crops, with all-exported/top-one/
+top-twenty selectors. See `docs/ball_yolo11x_crop_comparison_proposal.md` and
+`configs/ball_tracking/proposals/yolo11x_crop_development_comparison_v0_1.json`
+(SHA-256 `f891c04464422428dadbcfdf425436d3347464dbcab6d96ae23cac963dca5492`). The proposal binds 150 existing
+unmarked PNGs, 162 saved RF-DETR outputs, their 810 report cells and six labels
+for later scoring. It specifies 600 unique project-crop inference units, 162 new selector outputs,
+810 new reports and twelve future review clips. It is not approved, executable,
+implemented or run. No model/package was downloaded, installed or loaded.
+
+The proposed model and package are pinned, including the official weight
+digest. Actual local bytes, dependency hashes, environment lock and runtime
+compatibility still require implementation/preflight validation in an isolated
+environment. The baseline environment remains unchanged. Standard YOLO
+letterboxing, best-class assignment and NMS differ from RF-DETR; this is a
+complete detector-configuration comparison, not an architecture-only claim.
+Model confidence values are not calibrated equivalents. COCO pretraining is
+documented; exact footage overlap is unverified. Publisher licensing is recorded.
+
+Branch/HEAD remain `codex/ball-detector-baseline` at
+`119159817df5414f534f133f0954c1f78c7e51de`. The index is empty. The three
+intentional context files are updated with their previous bytes retained;
+four new review/results/proposal files are untracked. No production code
+changed, so 34 focused passes and 419 full-suite passes plus one existing skip
+remain the latest code validation; tests were not repeated. No staging, commit,
+push, PR or merge occurred in this closeout. All nine embargo paths remain
+absent and the three holdouts sealed. No method, operating point or quality
+gate is selected. Saved evidence and `closeout_checkpoint.json` are under
+`data/outputs/ball_tracking/crop_player_context_closeout/119159817df5/`.
+No manual command is pending. First next action is Ryan's review of the exact
+new experiment proposal; implementation/validation and separately authorized
+Git steps must precede any approved real execution.
+
+## Previous checkpoint: player-context execution complete; new visual review pending
+
+Ryan separately authorized staging the exact validated eighteen-file scope
+("yes go ahead and stage") and committing it ("yes you may"). Commit
+`119159817df5414f534f133f0954c1f78c7e51de` on `codex/ball-detector-baseline`
+is `feat(ball-tracking): compare observed player context`, with parent
+`2274ab6097cd841421e2b606f723b047cd7dc62b`. Exact scope, blobs and clean checkout
+were verified. No push, PR or merge occurred.
+
+The already approved comparison then ran at that clean tested checkpoint on
+the same six development windows/150 frames. It produced 216 new context
+outputs and 1,080 new reports while reusing all 378 saved motion outputs and
+1,890 reports unchanged. Both separate pools contain 495 aggregate cells.
+Selection/scoring/rendering took 157.302/420.797/414.968 seconds.
+Zero detector calls were made; no completed detector/crop/ranking/motion
+experiment was rerun. Source-video decoding was disabled: the renderer used
+only frozen development PNGs and its own new clips.
+
+The new review bundle has 2,112 hash-verified assets: 2,100 PNGs and 12 clips,
+plus 2,400 unchanged native/source PNG references. All twelve originals and
+twelve separate H.264 playback copies fully decode 25 frames at 5 fps.
+Agent inspection covers all twelve final closeup panels and targeted real
+comparison frames. This is not Ryan's visual judgment; his review of these
+new player-context clips through their final frames remains pending.
+
+Start with the saved guide:
+`data/outputs/ball_tracking/crop_player_context_execution/119159817df5/review_guide.md`.
+It links every playback clip, final panel/closeup, native view and targeted case.
+The same directory contains `results_summary.md`, `selection_audit.json`,
+`score_audit.json`, all stage/visual/playback receipts and `execution_record.json`
+(SHA-256 `300eecaecc8b99c2e44d765ec1757a10f9431a1f2e1c2766ccfddcd86b3c1615`).
+
+No paired aggregate cell loses matches or increases false positives across
+the fixed 360-cell grid. These correlated comparisons reuse the same 150
+development frames and are not independent trials or a generalization gate.
+At radius 10 and confidence .20/.35, representative matches gain 6-11 frames
+per variant; challenge gains are 0-4. No matched display frame is lost.
+P002 representative 262 recovers in all arms at both displays, and P002
+challenge 48 recovers for tight allowance/gentler cost at .20. Hidden P003
+false alarms remain two at .20 and one at .35 in every arm. P001 final 74
+recovers at .20 but remains wrong at .35; P003 final 174 still matches only
+with wide allowance/gentler cost. These exact cases are linked for review.
+
+An independent saved-trace audit verified all 5,400 frame records, 222,888
+node-cost records and 684,466 edges without selecting new winners. The saved
+score audit reconciles all 2,970 reports, 990 aggregates, 1,080 paired/loss
+cells and 360 aggregate contrasts. Neither audit reruns a selector or scorer.
+Reviewed player input may use hindsight, historical player video/model
+provenance remains incomplete, and proximity does not establish ball identity.
+No method, operating point, quality gate or holdout release is selected.
+
+All 101 protected files stayed unchanged through clean execution and
+verification. Only the three intentional context documents were then advanced;
+the index is empty. All nine original prediction paths remain absent and
+all three holdouts sealed. `post_execution_context.json` binds the final
+context edits and preservation checks. The tested implementation is unchanged:
+34 focused passes and 419 full-suite passes plus one existing Windows skip.
+No manual command is pending. Next is Ryan's twelve-clip final-frame review;
+do not rerun completed stages or infer that earlier clip approvals cover it.
+
+## Previous checkpoint: approved player-context comparison implemented and validated
 
 Ryan approved the exact player-context proposal with "I approve chat". The
 separate receipt is

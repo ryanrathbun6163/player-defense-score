@@ -93,11 +93,23 @@ windows. Ryan approved that exact scope with "I approve chat". Four separate
 modules now implement it, with 34 focused passes and 419 full-suite passes
 plus one existing Windows skip. Synthetic execution verifies 216 new outputs,
 1,080 new reports, 12 complete paired clips and unchanged reuse of all prior
-controls. The real-input read-only preflight passes; real context execution has
-not run. Next are separate staging and commit approvals for the exact tested
-eighteen-file scope, followed by already approved execution at a clean commit
-and Ryan's new final-frame review. See `../ball_crop_player_context_implementation.md`.
-No operating point, quality gate, holdout release or Git publication is selected.
+controls. Ryan separately authorized exact staging and committing at
+`119159817df5`. The real comparison then completed at that clean checkpoint:
+216 new outputs/1,080 new reports, unchanged reuse of all saved controls, and
+12 complete paired clips with 2,100 new PNGs plus 2,400 native image references.
+Every original and H.264 playback copy decodes 25 frames at 5 fps. No aggregate
+cell loses matches or increases false positives across the fixed comparison
+grid; local false alarms and final-frame misses remain. These are correlated
+development results, not independent trials. Ryan explicitly confirmed reviewing
+all twelve new clips through their final frames. The evidence-bound receipt and
+saved-results closeout are recorded in `current_state.md` and
+`../ball_crop_player_context_results.md`. All 1,080 local paired comparisons
+preserve matches and do not add false-positive frames or increase shared-match
+error; residual detector/filtering/path-selection weaknesses remain.
+The next concrete proposal, `../ball_yolo11x_crop_comparison_proposal.md`, tests
+one fixed detector bundle on the same windows/crops with simple selectors and
+byte-reused controls. It is not approved, implemented or executed. No model,
+operating point, quality gate, holdout release or Git publication is selected.
 
 - [x] define the ball annotation and detection-evaluation protocol;
 - [x] label and visually review a 75-frame pilot spanning three possessions;
@@ -124,9 +136,13 @@ No operating point, quality gate, holdout release or Git publication is selected
 - [x] inspect saved candidate appearance and crop-view evidence;
 - [x] specify a bounded soft player-context comparison;
 - [x] approve the exact proposed player-context scope and implement/synthetically validate it;
-- [ ] separately authorize staging and committing its exact validated eighteen-file scope;
-- [ ] execute, score and render the approved player-context comparison at the clean commit;
-- [ ] review all twelve new paired context clips through their final frames;
+- [x] separately authorize staging and committing its exact validated eighteen-file scope;
+- [x] execute, score and render the approved player-context comparison at the clean commit;
+- [x] review all twelve new paired context clips through their final frames;
+- [x] close out saved player-context results and specify one detector challenger;
+- [x] approve, implement and synthetically validate the fixed YOLO11x crop comparison;
+- [ ] separately authorize staging and committing the exact nineteen-file YOLO scope;
+- [ ] execute the approved YOLO comparison at its clean tested commit and review all twelve new clips;
 - [ ] compare small-object basketball detectors;
 - [ ] associate detections through blur, occlusion, passes, shots, and rebounds;
 - [ ] preserve uncertainty and missing observations;
