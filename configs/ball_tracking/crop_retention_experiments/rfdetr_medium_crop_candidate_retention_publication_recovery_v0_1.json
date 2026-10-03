@@ -1,0 +1,37 @@
+{
+  "schema_version": "ball_crop_candidate_retention_publication_recovery/v0.1",
+  "recovery_id": "rfdetr_medium_crop_candidate_retention_publication_recovery_v0_1",
+  "rendering_manifest": {
+    "path": "configs/ball_tracking/crop_retention_experiments/rfdetr_medium_crop_candidate_retention_render_recovery_v0_1.json",
+    "sha256": "72f15b1d43750b00b49d0bd83c3e8ab0c4351064aeadad582008429580c00fcf",
+    "content_sha256": "326ba1cec475aa32d172a76a2ea760ceffb3e9188631c16ed2b1af5914fab3cd"
+  },
+  "publication_proposal": {
+    "path": "docs/ball_crop_candidate_retention_publication_recovery_proposal.md",
+    "sha256": "d2280805d52b9b2a5bc3e675f77ca16491793b62f3983987aa5ce7a5110ad8b8"
+  },
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_publication_recovery_approval_v0_1.json",
+    "sha256": "891eaf3d0837c8aa5e92e23d5cfc1fe537497cdb7f24354cd9931f3608c9c735"
+  },
+  "preservation_audit": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/publication_preservation_audit_cd51.json",
+    "sha256": "a400911f83b7408c6f9c5ddabf5eae47f704d9f73fed16f538ac135fc04d2106"
+  },
+  "resource_checkpoint": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention_render_recovery_implementation/cd51bfc1336b_2026-10-02/publication_diagnosis/checkpoint.json",
+    "sha256": "ae72b7d729e342dd5123c49e27d027315cf18e9ccd29280210dfd1d81d74d356"
+  },
+  "implementation_validation": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention_publication_recovery_implementation/cd51bfc1336b_2026-10-02/implementation_validation.json",
+    "sha256": "692a4b4b23b0cf22976d11161e7c8befa03e5646667bd1a90a394b0e9242f50b"
+  },
+  "output_root": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1",
+  "permitted_stages": [
+    "verify",
+    "recover"
+  ],
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}
