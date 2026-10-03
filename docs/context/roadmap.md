@@ -209,6 +209,30 @@ See `../ball_crop_candidate_retention_render_recovery_implementation.md`.
 The scientific comparison remains incomplete and no quality conclusion follows
 from the forensic audit. The six new clips still need generation and final-frame
 human review; the twelve prior YOLO approvals remain complete.
+
+Rendering subsequently completed five successfully receipted windows and
+published the sixth before another output-accounting failure. Ryan approved a
+bounded publication-recovery amendment that validates that exact sixth bundle
+without rerendering or changing the monitor. Its separately authorized execution
+at `a89cd40838b066c1d2fe3cb1f257dda10e80a3bb` completed six supervised workers,
+including a new sixth-window acceptance, global finalization, independent
+comparison-completion audit and review guide. Validation passed 38 runner tests,
+13 helper tests and the full suite with 715 passes plus one existing Windows
+symlink skip. All 143 source/test/dependency files and three helpers remain
+unchanged; the three original failures and partial evidence remain preserved.
+
+Ryan approved the six new retention clips in response to the final-frame review
+request: "I approve and have reviewed everything’s looking pretty good. Move forward chat".
+The separate receipt records package completion without invented individual
+frame verdicts. The six new reviews and twelve earlier YOLO reviews are complete;
+generated pending-review snapshots remain frozen. See `current_state.md` and
+`../ball_crop_candidate_retention_closeout.md` for the current checkpoint and
+exact evidence bindings. No quantitative cap-retention conclusion is asserted
+by this closeout. The next concrete draft,
+`../ball_crop_candidate_retention_interpretation_proposal.md`, proposes one
+supervised interpretation of the existing audited guide and audit, keeping the
+two development pools separate. Review of that scope for approval is next;
+no interpretation worker has executed.
 Training remains unapproved.
 No method, operating point, quality gate or holdout release is selected.
 
@@ -271,9 +295,19 @@ No method, operating point, quality gate or holdout release is selected.
 - [x] review and approve the revised rendering-recovery contract;
 - [x] implement rendering recovery and pass focused tests plus independent static review;
 - [x] finish full rendering-recovery validation and bind the exact certificate;
-- [ ] separately authorize staging and committing the tested rendering recovery;
-- [ ] complete rendering and the independent audit of the approved retention comparison;
-- [ ] review the six new .01 clips through their final frames;
+- [x] separately authorize staging and committing the tested rendering recovery;
+- [x] preserve the sixth publication failure and approve a bounded validation-only recovery;
+- [x] validate and separately commit the publication-recovery implementation;
+- [x] complete review publication and the independent audit of the approved retention comparison;
+- [x] record Ryan's approval of the six new .01 clips through their final frames;
+- [x] prepare a bounded proposal to interpret the completed audited comparison;
+- [x] approve the exact bounded interpretation scope;
+- [x] pass its 42 focused tests and independent source review;
+- [x] complete the full unittest run: 757 passed and one existing Windows skip;
+- [x] approve the narrow validation-recorder correction after its buffered-log parsing failure;
+- [x] reconcile the preserved passing test log and finish the validation certificate;
+- [ ] separately authorize staging and committing the tested interpretation;
+- [ ] execute its one supervised summary worker and explain the audited tradeoffs;
 - [ ] associate detections through blur, occlusion, passes, shots, and rebounds;
 - [ ] preserve uncertainty and missing observations;
 - [ ] map ball observations into court/time context where defensible;

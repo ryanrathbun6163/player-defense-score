@@ -1,6 +1,129 @@
 # Current State
 
-## Latest checkpoint: rendering recovery approved and implemented; regression validation passed
+## Latest checkpoint: interpretation validation complete; separate Git authorization next
+
+Ryan approved `../ball_crop_candidate_retention_interpretation_proposal.md` with
+"I approve chat, and can you please give me a status update on where we’re at,
+and how close we are to finishing this stage". The separate approval record is
+`configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_interpretation_approval_v0_1.json`,
+SHA-256 `c485620816810e6d035fb019d4a466a0e73038d4a2f1cab4ea049277d6420ca3`.
+The exact approved proposal remains frozen at SHA-256
+`e01da501500e359fd3f27d27aa6647f9a444022eb7e7eb2a647a473f350013a3`.
+Its historical draft wording is superseded by the separate approval receipt.
+
+The new implementation prepares one supervised reading of the already audited
+guide and audit, followed by a bounded descriptive summary. It preserves both
+pools, all four settings, gains, regressions and missingness without new scoring,
+aggregation, model calls or video access. Its tighter 1,800-second reservation
+uses the original cumulative journal and unchanged supervisor. See
+`../ball_crop_candidate_retention_interpretation_implementation.md`.
+
+All 42 focused fabricated-fixture tests pass, including a genuine supervised
+synthetic child and bounded receipt-verified summary return. Independent source
+review is clear. The full unittest subprocess exited zero after 758 tests in
+1,846.555 seconds: 757 passed and the existing Windows directory-symlink test
+was skipped. All 147 source/test/dependency bindings and three preserved helper
+sources remained unchanged.
+
+The separate validation recorder stopped with exit one. It expected the last
+log line to be the unittest status, but two buffered diagnostic lines appeared
+after `OK (skipped=1)`: `Saved context: context.jpg` and
+`Saved identities: identities.jpg`. Its `full_suite_receipt.json` therefore
+truthfully remains `passed: false`; the original receipt and log are preserved.
+Work stopped under Ryan's stop-on-new-failure instruction. Ryan subsequently
+approved the narrow correction with "Ok move forward chat". A new ignored
+reconciler passed 12 focused synthetic checks and independent review. It verified
+the exact original test commands, counts, durations, exit codes, known skip,
+two trailing diagnostics and unchanged source bindings. The original failed
+receipt, logs, scripts and historical review records remain unchanged. The full
+suite was not rerun.
+
+The separate reconciliation SHA-256 is
+`d9bf5e6e330f4153657eb1beccdaf58adb85dbcb0afbc684ecf35c7df6bc45a5`.
+The completed implementation certificate SHA-256 is
+`fd18eb13f5b9d88251b21b47282e82cba3c17226d602482a8faa180c686424cf`.
+Both are under the interpretation implementation directory, and the manifest
+now binds that certificate. The code is ready for separately authorized staging
+and committing of the thirteen files listed in the implementation note.
+
+No real interpretation worker has run, and the completed prefix remains
+2,966 events and 56 attempts, including
+three preserved failures. The branch remains `codex/ball-detector-baseline` at
+`a89cd40838b066c1d2fe3cb1f257dda10e80a3bb`. New implementation and closeout files
+are intentionally unstaged; the index is empty. Staging and committing require
+separate explicit authorization before execution at a clean tested checkpoint.
+All eighteen prior clip reviews remain complete; no repeat review is requested.
+
+Ryan requested fuller explanations after each completed task: explain what
+changed, why it mattered, how it was checked and what it means for the project.
+Use simple language, define unfamiliar terms and do not assume prior Python,
+computer-vision, machine-learning or Git workflow knowledge.
+
+## Prior checkpoint: publication recovery and six-clip human review complete
+
+The approved candidate-retention comparison has completed selection, scoring,
+review publication and its independent completion audit. Ryan approved the six
+new clips in response to the requested final-frame review: "I approve and have
+reviewed everything’s looking pretty good. Move forward chat". The separate
+receipt is
+`configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_visual_review_record_v0_1.json`,
+SHA-256 `9a3089a14747dce7b95670838dd116b2ddaf6cd426837f93435ff6ad6706d46b`.
+It records package completion and approval without invented individual frame
+verdicts, new identity labels or a selected method or quality gate. Do not
+request these six reviews or the twelve earlier YOLO reviews again.
+
+Branch is `codex/ball-detector-baseline`; HEAD is
+`a89cd40838b066c1d2fe3cb1f257dda10e80a3bb`. Publication recovery has its own
+execution provenance. Preserved selections remain attributed to
+`0a7f5bc69be948b8c4e2c630c84c4ccdefb5dc41`, scoring to
+`f36237247191e726ad7e81bdc6651f9340a9063d`, and original rendering to
+`cd51bfc1336bba76e4b118b6cfe55d7f74a3b5a6`. Five windows had successful render
+receipts; the sixth had been published before its renderer failed. Ryan approved
+the bounded amendment that independently validates that exact sixth publication
+and records a new acceptance without rewriting the failed attempt. No selector,
+scorer or renderer was replayed.
+
+All six new supervised workers passed: verification, recovery preflight,
+sixth-window acceptance, global finalization, independent completion audit and
+review-guide creation. The journal now has 2,966 events and 56 completed attempts:
+53 successes and the same three preserved failures, with zero active attempts.
+Its chain tip is
+`018a97a3075f46698e215c3f6e8e95cab7cbab4f926e9bad68dbbd25d6c0640e`.
+Recorded active-worker time is 3,220.103 seconds, leaving 11,179.897 seconds under
+the original budget. This is an allowance for active work; idle time and human
+discussion do not consume it. All original limits and partial evidence remain
+preserved. The completion checkpoint is
+`data/outputs/ball_tracking/crop_candidate_retention_publication_recovery_implementation/cd51bfc1336b_2026-10-02/recovery_completion_checkpoint.json`,
+SHA-256 `03ddbd6151b3827afaf98070a5c8ed745f9ccd05b582b84d0c23ab8f0417e7d0`.
+The review receipt binds the acceptance, independent audit, global manifest,
+guide and successful resource receipts. Generated review manifests and guides
+retain their historical pending-human-review snapshots; the later human receipt
+establishes completion.
+
+Validation passed 38 runner tests and 13 helper tests. The full suite ran 716
+tests in 1,873.376 seconds: 715 passed and one existing Windows directory-symlink
+test was skipped. All 143 source/test/dependency files and three helper sources
+remain unchanged. Implementation certificates and scientific outputs are frozen.
+This documentation closeout reruns no test, scientific work or media decode and
+draws no quantitative cap-retention conclusion from unread results.
+
+See `../ball_crop_candidate_retention_closeout.md` for the completed review record
+and `../ball_crop_candidate_retention_interpretation_proposal.md` for the next
+concrete draft. Next review that scope for approval: one supervised worker would
+read the existing audited guide and audit to explain the saved comparison, with
+representative and challenge pools separate. That interpretation has not run.
+The project remains in the ball-tracking foundation phase; possession
+understanding, matchup inference, defensive scoring and full-game validation
+remain later work. No method, operating point, quality gate, training, holdout
+release or certified object identity is selected. The nine original prediction
+embargoes and three sealed holdouts remain intact.
+
+The closeout documents and review receipt are intentionally unstaged; the index
+is empty. No Git mutation is authorized by this review response or has occurred
+during the closeout. Staging, committing and subsequent Git steps remain separate
+authorization decisions. No manual command is pending and no worker is active.
+
+## Prior checkpoint: rendering recovery approved and implemented; regression validation passed
 
 Ryan approved the bounded rendering recovery with "I approve, move forward chat".
 The exact approval is recorded in

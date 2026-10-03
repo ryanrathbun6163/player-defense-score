@@ -1,0 +1,420 @@
+{
+  "schema_version": "ball_crop_candidate_retention_visual_review_record/v0.1",
+  "record_id": "rfdetr_medium_crop_candidate_retention_visual_review_record_v0_1",
+  "record_role": "human_inspection_audit_only_not_new_experiment_execution_permit",
+  "recorded_at_utc": "2026-10-03T01:19:28.306266+00:00",
+  "timestamp_semantics": "Receipt creation time; the user response supplies no independent review-event timestamp.",
+  "bound_evidence": {
+    "publication_execution_commit": "a89cd40838b066c1d2fe3cb1f257dda10e80a3bb",
+    "original_rendering_commit": "cd51bfc1336bba76e4b118b6cfe55d7f74a3b5a6",
+    "selection_commit": "0a7f5bc69be948b8c4e2c630c84c4ccdefb5dc41",
+    "scoring_commit": "f36237247191e726ad7e81bdc6651f9340a9063d",
+    "publication_spec_sha256": "31b35067ad97fa45ff2a6f1e83f0c47485e688a3527a16b5c330f3e31c7caf0e",
+    "publication_manifest": {
+      "path": "configs/ball_tracking/crop_retention_experiments/rfdetr_medium_crop_candidate_retention_publication_recovery_v0_1.json",
+      "sha256": "8ce82d7a3ff8c474f948e0f7efb8faba56d988f13f2d2da20945564ca79655f3"
+    },
+    "publication_approval": {
+      "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_publication_recovery_approval_v0_1.json",
+      "sha256": "891eaf3d0837c8aa5e92e23d5cfc1fe537497cdb7f24354cd9931f3608c9c735"
+    },
+    "completion_checkpoint": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention_publication_recovery_implementation/cd51bfc1336b_2026-10-02/recovery_completion_checkpoint.json",
+      "sha256": "03ddbd6151b3827afaf98070a5c8ed745f9ccd05b582b84d0c23ab8f0417e7d0"
+    },
+    "acceptance_receipt": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/publication_acceptance_cd51.json",
+      "sha256": "5ef095793f64b752b887cf228187cb734ab2bc440fb3c3f734778a91cf2b754a"
+    },
+    "independent_completion_audit": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/independent_publication_recovery_audit.json",
+      "sha256": "a1c944c3e1a5184ff08986adacbb2e623d515a67b33a67a55075dcc3f5fc5da2"
+    },
+    "global_review_manifest": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/manifest.json",
+      "sha256": "20b12bb750b158a6428b6a2c61051b11ebf81a86b45426fcf810928b1fc14b24"
+    },
+    "review_guide": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/publication_recovery_review_guide.md",
+      "sha256": "2a45db2ecfd5f60c3bbe1e4262ff8106bf2a496aa2de57ee9ba3b083131cc867"
+    },
+    "successful_resource_receipts": [
+      {
+        "attempt_id": "2a70a8074bac482a9eb31b0974b4dd08",
+        "unit_key": "publication-recovery:preflight:verify",
+        "success": true,
+        "elapsed_seconds": 53.56199999999808,
+        "completion_event_sha256": "cd95b4ede8145e7ec6146735f51a1497585bc2f014ca758a7d0827c09245a945",
+        "worker_result": {
+          "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/attempts/2a70a8074bac482a9eb31b0974b4dd08.result.json",
+          "sha256": "f1132c57bcaafcdeff55342e283c69d87c32d6408362261a0c621b7ddeba1c24"
+        },
+        "artifacts": []
+      },
+      {
+        "attempt_id": "a1394fcad49d4f92a98e69076bc2dfa2",
+        "unit_key": "publication-recovery:preflight:recover",
+        "success": true,
+        "elapsed_seconds": 53.15600000000268,
+        "completion_event_sha256": "a92248802af904a99c796024c82cd13dfe173dff2a7946e93b5153598a22797b",
+        "worker_result": {
+          "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/attempts/a1394fcad49d4f92a98e69076bc2dfa2.result.json",
+          "sha256": "1fc0534c20e82ffc96dec4ae9850819149aa0cf5a2b3b861e8a3eb97c98a1672"
+        },
+        "artifacts": []
+      },
+      {
+        "attempt_id": "e746c07a82324ad69437b92770d97d21",
+        "unit_key": "publication-recovery:accept:",
+        "success": true,
+        "elapsed_seconds": 76.625,
+        "completion_event_sha256": "a32fed27fcb8aa110446d08dee55bc684b394ee3e738d0c11ad742287220e5f3",
+        "worker_result": {
+          "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/attempts/e746c07a82324ad69437b92770d97d21.result.json",
+          "sha256": "b781a3cf26c8350c6beb73e4c596c2d9d27e2868e4b47ed2066b22e13e85d60b"
+        },
+        "artifacts": [
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/publication_acceptance_cd51.json",
+            "sha256": "5ef095793f64b752b887cf228187cb734ab2bc440fb3c3f734778a91cf2b754a"
+          }
+        ]
+      },
+      {
+        "attempt_id": "b6b986aa57a44d8980f19447f0b7bae6",
+        "unit_key": "publication-recovery:review-final:",
+        "success": true,
+        "elapsed_seconds": 104.64100000000326,
+        "completion_event_sha256": "27c32d6193d247ef8d99b71dbd89e00e067798d22774756d9c78110992468299",
+        "worker_result": {
+          "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/attempts/b6b986aa57a44d8980f19447f0b7bae6.result.json",
+          "sha256": "37b2058e47b9f9d4efe26fe306313bdb9b7d9dd7027bde0749e5cb9c7eae6ed0"
+        },
+        "artifacts": [
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/manifest.json",
+            "sha256": "20b12bb750b158a6428b6a2c61051b11ebf81a86b45426fcf810928b1fc14b24"
+          }
+        ]
+      },
+      {
+        "attempt_id": "b5b46e5fac4f442ab960984758cfd469",
+        "unit_key": "publication-recovery:completion-audit:",
+        "success": true,
+        "elapsed_seconds": 50.43800000000192,
+        "completion_event_sha256": "4b67f553e95f95b5b683dc15638feeedc9dc9ac97be7a65d33feca0c32fb8d14",
+        "worker_result": {
+          "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/attempts/b5b46e5fac4f442ab960984758cfd469.result.json",
+          "sha256": "e45897d7545aa6b2bce15d68af9d8b54077cb32ab88e98bdc67c9103549da87e"
+        },
+        "artifacts": [
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/independent_publication_recovery_audit.json",
+            "sha256": "a1c944c3e1a5184ff08986adacbb2e623d515a67b33a67a55075dcc3f5fc5da2"
+          }
+        ]
+      },
+      {
+        "attempt_id": "611d8801ba264208a5db8b568994da26",
+        "unit_key": "publication-recovery:presentation:",
+        "success": true,
+        "elapsed_seconds": 26.031999999999243,
+        "completion_event_sha256": "018a97a3075f46698e215c3f6e8e95cab7cbab4f926e9bad68dbbd25d6c0640e",
+        "worker_result": {
+          "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/attempts/611d8801ba264208a5db8b568994da26.result.json",
+          "sha256": "5c59ec9f58f52d46900c2c5830a41d2a154ee65db1b57a45bb1faccbe4dbf461"
+        },
+        "artifacts": [
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/publication_recovery_review_guide.md",
+            "sha256": "2a45db2ecfd5f60c3bbe1e4262ff8106bf2a496aa2de57ee9ba3b083131cc867"
+          }
+        ]
+      }
+    ],
+    "clips": [
+      {
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+        "purpose": "representative_evaluation",
+        "start_frame_index": 50,
+        "end_frame_index": 74,
+        "frame_count": 25,
+        "fps": 5.0,
+        "confidence_threshold": 0.01,
+        "display_radius_source_px": 10,
+        "paired_motion_settings": [
+          "TT",
+          "TW",
+          "WT",
+          "WW"
+        ],
+        "comparison": "saved_cap20_vs_all_saved_qualified_candidates",
+        "containing_manifest": {
+          "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/manifest.json",
+          "sha256": "e3fb1f21a80166b533cc0cb440a598d139db25bead7d26de13db06959a49288b"
+        },
+        "clip_and_final_frame_asset_bindings_copied_from_preservation_metadata": [
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/comparison/frame_000074.png",
+            "sha256": "e33bb9ddb60b4de020df7f3366857408f45f2e6755ffc36b5237a76d2ff6cb89",
+            "size_bytes": 7344337
+          },
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/closeups/frame_000074.png",
+            "sha256": "9c0da2d6cc073ee4807e76c383dfc9147c5d1360e0a0dabd63056ffddeaede38",
+            "size_bytes": 1843022
+          },
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/comparison_slow.mp4",
+            "sha256": "6eb909eee249d274be1eafbfc6466cb3d48f6b72cb6ac7bace2088470a2ca5df",
+            "size_bytes": 11396369
+          }
+        ]
+      },
+      {
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+        "purpose": "challenge_evaluation",
+        "start_frame_index": 200,
+        "end_frame_index": 224,
+        "frame_count": 25,
+        "fps": 5.0,
+        "confidence_threshold": 0.01,
+        "display_radius_source_px": 10,
+        "paired_motion_settings": [
+          "TT",
+          "TW",
+          "WT",
+          "WW"
+        ],
+        "comparison": "saved_cap20_vs_all_saved_qualified_candidates",
+        "containing_manifest": {
+          "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/manifest.json",
+          "sha256": "d671786d301a9ecc06897c9f9a07b5536f0ca38a1986126706c13fe29644b46f"
+        },
+        "clip_and_final_frame_asset_bindings_copied_from_preservation_metadata": [
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/comparison/frame_000224.png",
+            "sha256": "2056ba8e61f12aa38a94293971cb8edfed950ca42a82226772a1c68e8904e6bd",
+            "size_bytes": 7170516
+          },
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/closeups/frame_000224.png",
+            "sha256": "e233c59a40cb7d1aa5c0eaa3a441930564697895b0f7535e1e1655091a1ffdb1",
+            "size_bytes": 2151492
+          },
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/comparison_slow.mp4",
+            "sha256": "6a09eefee4be86dfbe5a12724b14f5780e1f4c37914e05956af0e9970ce82505",
+            "size_bytes": 13027729
+          }
+        ]
+      },
+      {
+        "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+        "purpose": "representative_evaluation",
+        "start_frame_index": 250,
+        "end_frame_index": 274,
+        "frame_count": 25,
+        "fps": 5.0,
+        "confidence_threshold": 0.01,
+        "display_radius_source_px": 10,
+        "paired_motion_settings": [
+          "TT",
+          "TW",
+          "WT",
+          "WW"
+        ],
+        "comparison": "saved_cap20_vs_all_saved_qualified_candidates",
+        "containing_manifest": {
+          "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/manifest.json",
+          "sha256": "7927e51aef9be42191f5d7e6ed377f79d278e895c2f0fa32928357e25d917cfd"
+        },
+        "clip_and_final_frame_asset_bindings_copied_from_preservation_metadata": [
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/comparison/frame_000274.png",
+            "sha256": "16f0343ce8ccd5401db07703581c2a680141aae3d6c8598589491c85a9dae0fb",
+            "size_bytes": 7138671
+          },
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/closeups/frame_000274.png",
+            "sha256": "608161f1842347f49d4977c2120827d11f8679a2a327b00f22a61c9797471cdb",
+            "size_bytes": 1793676
+          },
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/comparison_slow.mp4",
+            "sha256": "dd24ef758ae63f318be602b08c2f72975cfb233e5cbf71ec362592250ec92da9",
+            "size_bytes": 10820166
+          }
+        ]
+      },
+      {
+        "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+        "purpose": "challenge_evaluation",
+        "start_frame_index": 25,
+        "end_frame_index": 49,
+        "frame_count": 25,
+        "fps": 5.0,
+        "confidence_threshold": 0.01,
+        "display_radius_source_px": 10,
+        "paired_motion_settings": [
+          "TT",
+          "TW",
+          "WT",
+          "WW"
+        ],
+        "comparison": "saved_cap20_vs_all_saved_qualified_candidates",
+        "containing_manifest": {
+          "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/manifest.json",
+          "sha256": "5e4df55ee8cc255fc79a29aa7b4df6352d4d68c168e3c50156163e17783e4fcb"
+        },
+        "clip_and_final_frame_asset_bindings_copied_from_preservation_metadata": [
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/comparison/frame_000049.png",
+            "sha256": "59c1037aca34ce6dcd13fbcb4818c629ceb493d88fbde9979532c1ceffcb9267",
+            "size_bytes": 6841203
+          },
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/closeups/frame_000049.png",
+            "sha256": "a904aad3d71b9987177efdb7dbe2a69e1e0a700ab347856558ff6ac20918c4db",
+            "size_bytes": 1540937
+          },
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/comparison_slow.mp4",
+            "sha256": "c32bd766ed1eb76dc585e08a44484ab4fc9f15fda5b1f5a3dd84b5a37cc40ae0",
+            "size_bytes": 11452689
+          }
+        ]
+      },
+      {
+        "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+        "purpose": "representative_evaluation",
+        "start_frame_index": 300,
+        "end_frame_index": 324,
+        "frame_count": 25,
+        "fps": 5.0,
+        "confidence_threshold": 0.01,
+        "display_radius_source_px": 10,
+        "paired_motion_settings": [
+          "TT",
+          "TW",
+          "WT",
+          "WW"
+        ],
+        "comparison": "saved_cap20_vs_all_saved_qualified_candidates",
+        "containing_manifest": {
+          "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/manifest.json",
+          "sha256": "9819bcd0a105fb71a70e2b23e63a0dbeeea7be50cbaca632ea0f24e1f8d574a0"
+        },
+        "clip_and_final_frame_asset_bindings_copied_from_preservation_metadata": [
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/comparison/frame_000324.png",
+            "sha256": "4948998cfab130de670e959a2682140d085a85345b5e5057bb9c57c337215d70",
+            "size_bytes": 7329815
+          },
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/closeups/frame_000324.png",
+            "sha256": "3f1e78ebdffba14fb7dcaedfe03bdec3e21408c857dc1a00cecc6f2db5d15dff",
+            "size_bytes": 1650687
+          },
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/comparison_slow.mp4",
+            "sha256": "befa30f890206743023ec4ff0eb1ed77b2e3fc8bd9e9387c008193e2658acd3a",
+            "size_bytes": 12899295
+          }
+        ]
+      },
+      {
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+        "purpose": "challenge_evaluation",
+        "start_frame_index": 150,
+        "end_frame_index": 174,
+        "frame_count": 25,
+        "fps": 5.0,
+        "confidence_threshold": 0.01,
+        "display_radius_source_px": 10,
+        "paired_motion_settings": [
+          "TT",
+          "TW",
+          "WT",
+          "WW"
+        ],
+        "comparison": "saved_cap20_vs_all_saved_qualified_candidates",
+        "containing_manifest": {
+          "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/manifest.json",
+          "sha256": "5665beabdbdcf7da2c3ad70f11a90095e14f251bf0c9ffe8bd284fcac2eaa29e"
+        },
+        "clip_and_final_frame_asset_bindings_copied_from_preservation_metadata": [
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/comparison/frame_000174.png",
+            "sha256": "12bb196568474eb44df737eda0cae34063ba8b08782b7bc3f84ae9158be4b8e6",
+            "size_bytes": 7309674
+          },
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/closeups/frame_000174.png",
+            "sha256": "c2c12c320e541bc5ec693e41b51d517bca5d5653c4492bcbef0311ce26f3b16f",
+            "size_bytes": 1691837
+          },
+          {
+            "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/comparison_slow.mp4",
+            "sha256": "cd0db412a42687f22912be62fd1ead2a3b388359bb08b79bc5ce719276bac789",
+            "size_bytes": 14281579
+          }
+        ]
+      }
+    ]
+  },
+  "human_visual_review": {
+    "reviewer": "ryan",
+    "status": "completed_and_approved",
+    "exact_user_statement": "I approve and have reviewed everything’s looking pretty good. Move forward chat",
+    "requested_scope": "All six new .01 candidate-retention comparison clips and their final frames in the linked publication recovery review guide.",
+    "requested_scope_completed": true,
+    "scope_interpretation": "Direct approval in response to the six-clip final-frame review request. This records completion of that package review; it does not invent individual-frame correctness verdicts or claim every emitted detection is correct.",
+    "frame_specific_verdicts_provided": false,
+    "native_image_inspection_separately_attested": false,
+    "quality_gate_approved": false
+  },
+  "preserved_snapshots": "The earlier execution, acceptance, audit, guide, manifests and completion checkpoint retain their historical pending-review states. This separate later record establishes Ryan's completed review.",
+  "verification": {
+    "basis": "Already-completed supervised verification, acceptance, finalization, completion audit and presentation; current source/authority/certificate/resource metadata checked. Asset hashes are copied from bound preservation metadata, not rehashed during this receipt creation.",
+    "new_scientific_file_reads_or_hashes": false,
+    "media_decoded": false,
+    "new_real_workers": 0,
+    "resource_event_count": 2966,
+    "resource_chain_tip_sha256": "018a97a3075f46698e215c3f6e8e95cab7cbab4f926e9bad68dbbd25d6c0640e",
+    "completed_attempts": 56,
+    "successful_attempts": 53,
+    "preserved_failed_attempts": 3,
+    "cumulative_active_seconds": 3220.103,
+    "remaining_cumulative_seconds": 11179.897,
+    "original_nine_embargo_paths_absent": true,
+    "sealed_holdouts_metadata_only": [
+      [
+        "possession_001",
+        300,
+        324
+      ],
+      [
+        "possession_002",
+        200,
+        224
+      ],
+      [
+        "possession_003",
+        250,
+        274
+      ]
+    ],
+    "prior_twelve_yolo_final_frame_reviews": "complete_do_not_repeat"
+  },
+  "decision_constraints": {
+    "selected_method": null,
+    "selected_operating_point": null,
+    "quality_gate": null,
+    "generalization_claimed": false,
+    "holdout_release_authorized": false,
+    "new_object_identity_labels": false,
+    "new_experiment_authorized_by_this_receipt": false,
+    "git_mutations_authorized_by_this_receipt": false
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "ball_crop_candidate_retention_interpretation/v0.1",
+  "interpretation_id": "rfdetr_medium_crop_candidate_retention_interpretation_v0_1",
+  "proposal": {
+    "path": "docs/ball_crop_candidate_retention_interpretation_proposal.md",
+    "sha256": "e01da501500e359fd3f27d27aa6647f9a444022eb7e7eb2a647a473f350013a3"
+  },
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_interpretation_approval_v0_1.json",
+    "sha256": "c485620816810e6d035fb019d4a466a0e73038d4a2f1cab4ea049277d6420ca3"
+  },
+  "completion_checkpoint": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention_publication_recovery_implementation/cd51bfc1336b_2026-10-02/recovery_completion_checkpoint.json",
+    "sha256": "03ddbd6151b3827afaf98070a5c8ed745f9ccd05b582b84d0c23ab8f0417e7d0"
+  },
+  "human_review_record": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_visual_review_record_v0_1.json",
+    "sha256": "9a3089a14747dce7b95670838dd116b2ddaf6cd426837f93435ff6ad6706d46b"
+  },
+  "frozen_history": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention_interpretation_implementation/a89cd40838b0_2026-10-02/frozen_history.json",
+    "sha256": "0343d2c8e7130365d78813941dddf87cc3bd56d67fbfa05f94ad64bf1d2db1ea"
+  },
+  "scientific_inputs": {
+    "guide": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/publication_recovery_review_guide.md",
+      "sha256": "2a45db2ecfd5f60c3bbe1e4262ff8106bf2a496aa2de57ee9ba3b083131cc867",
+      "size_bytes": 15537
+    },
+    "audit": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/independent_publication_recovery_audit.json",
+      "sha256": "a1c944c3e1a5184ff08986adacbb2e623d515a67b33a67a55075dcc3f5fc5da2",
+      "size_bytes": 1770176
+    }
+  },
+  "implementation_validation": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention_interpretation_implementation/a89cd40838b0_2026-10-02/implementation_validation.json",
+    "sha256": "fd18eb13f5b9d88251b21b47282e82cba3c17226d602482a8faa180c686424cf"
+  },
+  "output_root": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1",
+  "permitted_stages": [
+    "interpret"
+  ],
+  "unit_key": "post-review-interpretation:summary:",
+  "maximum_unit_seconds": 1800,
+  "maximum_summary_bytes": 65536,
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

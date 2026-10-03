@@ -1,0 +1,28 @@
+{
+  "schema_version": "ball_crop_candidate_retention_interpretation_approval/v0.1",
+  "proposal": {
+    "path": "docs/ball_crop_candidate_retention_interpretation_proposal.md",
+    "sha256": "e01da501500e359fd3f27d27aa6647f9a444022eb7e7eb2a647a473f350013a3"
+  },
+  "approved_by": "ryan",
+  "statement": "I approve chat, and can you please give me a status update on where we’re at, and how close we are to finishing this stage",
+  "recorded_at_utc": "2026-10-03T01:37:01.730934+00:00",
+  "timestamp_semantics": "Receipt creation time, not an invented message timestamp.",
+  "scope": "one_bounded_supervised_reading_and_presentation_of_existing_guide_and_passed_audit_subject_to_tested_clean_separately_authorized_commit",
+  "frozen_history": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention_interpretation_implementation/a89cd40838b0_2026-10-02/frozen_history.json",
+    "sha256": "0343d2c8e7130365d78813941dddf87cc3bd56d67fbfa05f94ad64bf1d2db1ea"
+  },
+  "implementation_authorized": true,
+  "execution_authorized": true,
+  "clean_commit_required": true,
+  "execution_requires_clean_separately_authorized_commit": true,
+  "bounded_summary_return_authorized": true,
+  "maximum_summary_bytes": 65536,
+  "maximum_unit_seconds": 1800,
+  "training_authorized": false,
+  "git_mutations_authorized": false,
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

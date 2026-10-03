@@ -1,5 +1,67 @@
 # Validation History
 
+## Interpretation recorder correction complete; original passing results accepted
+
+Ryan approved the narrow correction with "Ok move forward chat". The new ignored
+recorder reconciler passed 12 synthetic checks in 0.013 seconds and independent
+source review. The checks include duplicate or failed summaries, wrong counts
+and durations, altered skips, reordered or unexpected diagnostics, incorrect
+commands, changed file bindings and refusal to overwrite an existing record.
+The correction verifies its own exact test command, source bindings and receipt.
+
+The reconciler accepted the preserved 42-test focused run and 758-test full run
+from their exact commands, exit-zero results, unique unittest summary blocks,
+known Windows skip and unchanged 147 source/test/dependency files plus three
+helper sources. It permits only the two exact diagnostic lines observed after
+the full-suite success summary. The original recorder's failed receipt, original
+logs, original scripts and historical reviews remain unchanged. A separate
+acceptance record distinguishes that recorder failure from the passing tests.
+The full suite was not rerun and no project source or test file was edited.
+
+Evidence remains under
+`data/outputs/ball_tracking/crop_candidate_retention_interpretation_implementation/a89cd40838b0_2026-10-02/`.
+The reconciliation SHA-256 is
+`d9bf5e6e330f4153657eb1beccdaf58adb85dbcb0afbc684ecf35c7df6bc45a5`;
+the implementation certificate SHA-256 is
+`fd18eb13f5b9d88251b21b47282e82cba3c17226d602482a8faa180c686424cf`.
+The interpretation manifest now binds the completed certificate. No scientific
+body, video or holdout content was opened, no real worker ran and no Git mutation
+occurred. Staging and committing the exact thirteen-file scope remain separately
+unauthorized; the actual interpretation still requires that clean checkpoint.
+
+## Candidate-retention interpretation: tests passed; recorder stopped
+
+The bounded interpretation implementation and two test modules are new files;
+all 143 earlier source/test/dependency bindings and three ignored helper sources
+remain unchanged. Independent source review cleared the new runner and pure
+summary formatter. Review fixes enforce sample/final-counter consistency,
+exact authored output hashes and refusal of incomplete journal publications.
+
+The recorded focused run passed 42 tests. The full unittest process exited zero
+after 758 tests in 1,846.555 seconds: 757 passed and one existing Windows
+directory-symlink test was skipped. All 147 current source/test/dependency
+bindings and three helper sources stayed unchanged. The full log SHA-256 is
+`344fd3a54eeae912df45678fde0876af2d7d9c261497ec3efe11a5555de92534`.
+Logs, snapshots, reviews and receipts are under
+`data/outputs/ball_tracking/crop_candidate_retention_interpretation_implementation/a89cd40838b0_2026-10-02/`.
+
+The validation recorder itself exited one after writing a failed receipt. It
+incorrectly required the last combined-log line to be the unittest status;
+buffered `Saved context: context.jpg` and `Saved identities: identities.jpg`
+messages followed the unique `OK (skipped=1)` summary. This is a recording
+failure, not a failed unittest. Its receipt remains `passed: false` and is not
+rewritten or silently treated as complete. The certificate assembler shares
+the terminal-line assumption and has not run.
+
+Work stopped under Ryan's stop-on-new-failure instruction. No recorder repair,
+test rerun, certificate assembly, scientific read, real interpretation worker
+or Git mutation followed. The exact proposed correction is documented in
+`../ball_crop_candidate_retention_interpretation_implementation.md`. Separate
+approval is needed to fix the recorder and reconcile the saved successful
+test result while preserving the failed receipt. The experiment history remains
+2,966 events and 56 completed attempts, including the same three failures;
+all clip reviews, embargoes and sealed holdouts remain preserved.
+
 ## Possession 001 — reviewed behavioral baseline
 
 - decoded frames: 499;
@@ -1463,3 +1525,55 @@ the twelve prior YOLO reviews remain complete. Staging and committing remain
 separately unapproved. See
 `../ball_crop_candidate_retention_render_recovery_implementation.md` for the
 implementation and intended 14-file staging scope.
+
+## Candidate-retention publication recovery and human review complete
+
+The separately authorized publication-recovery implementation executed at
+`a89cd40838b066c1d2fe3cb1f257dda10e80a3bb` on `codex/ball-detector-baseline`.
+It followed the approved amendment for the exact sixth window published before
+the renderer's failure at `cd51bfc1336bba76e4b118b6cfe55d7f74a3b5a6`.
+The five successfully receipted original renders remained unchanged. The sixth
+received independent validation and a new acceptance receipt; its original
+failed attempt remains failed. Original selections, scores, rendering provenance,
+all three historical failures and partial evidence remain preserved. No selection,
+scoring or rendering was replayed.
+
+All 38 focused runner tests and 13 helper tests passed. The full suite completed
+716 tests in 1,873.376 seconds: 715 passed, with one existing Windows
+directory-symlink skip. All 143 source/test/dependency files and three helper
+sources remained unchanged. Implementation certificates and generated scientific
+evidence remain frozen.
+
+Six new supervised workers succeeded: verification, recovery preflight,
+acceptance, global review finalization, independent comparison-completion audit
+and review-guide creation. The final journal has 2,966 events and 56 completed
+attempts: 53 successes and the unchanged three failures. No attempt is active.
+Cumulative active-worker time is 3,220.103 seconds, with 11,179.897 seconds
+remaining under the original limits; idle and human-review time do not consume
+that allowance. The final chain tip is
+`018a97a3075f46698e215c3f6e8e95cab7cbab4f926e9bad68dbbd25d6c0640e`.
+The completion checkpoint is
+`data/outputs/ball_tracking/crop_candidate_retention_publication_recovery_implementation/cd51bfc1336b_2026-10-02/recovery_completion_checkpoint.json`,
+SHA-256 `03ddbd6151b3827afaf98070a5c8ed745f9ccd05b582b84d0c23ab8f0417e7d0`.
+The completed independent audit under the real output root is
+`audit/independent_publication_recovery_audit.json`, SHA-256
+`a1c944c3e1a5184ff08986adacbb2e623d515a67b33a67a55075dcc3f5fc5da2`.
+
+Ryan approved the requested six-clip final-frame review with "I approve and have
+reviewed everything’s looking pretty good. Move forward chat". The new receipt is
+`configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_visual_review_record_v0_1.json`,
+SHA-256 `9a3089a14747dce7b95670838dd116b2ddaf6cd426837f93435ff6ad6706d46b`.
+This records package completion and approval without invented frame verdicts,
+independent native-image attestations, new identity labels or a chosen quality
+gate. Generated pending-review snapshots remain unchanged. Both these six
+reviews and the earlier twelve YOLO reviews are complete and must not be
+requested again.
+
+See `../ball_crop_candidate_retention_closeout.md`. This documentation-only
+closeout performs no fresh scientific hashing, decoding, interpretation or test
+execution. The next bounded interpretation proposal is a draft in
+`../ball_crop_candidate_retention_interpretation_proposal.md`; scope approval
+is next, and no interpretation worker has run. All nine embargoes and three
+sealed holdouts remain protected. No method, operating point, quality gate,
+training or holdout release is selected. These documents and the review receipt
+remain unstaged with an empty index; no current-turn Git mutation is authorized.
