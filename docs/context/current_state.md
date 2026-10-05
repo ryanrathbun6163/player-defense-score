@@ -1,6 +1,112 @@
 # Current State
 
-## Latest checkpoint: interpretation validation complete; separate Git authorization next
+## Latest checkpoint: saved error-breakdown implementation validated; Git authorization next
+
+Ryan approved the exact new scope with "Yes I permit. Move forward". The separate
+approval receipt is
+`configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_error_breakdown_approval_v0_1.json`,
+SHA-256 `f0eb74cde6077a5741c46ebe1aa1f8633ed2ac031f8b3a5f493d417ca9a2a0cf`.
+The frozen proposal SHA-256 is
+`f8525927fa5589b7c5a70aef6fee9bcc813365e267503eaa4f6610438802deee`;
+its draft wording is superseded by this separate receipt, not edited in place.
+Scientific-scope approval need not be requested again.
+
+Two new modules implement a separate supervised reader and pure formatter for
+the existing error breakdown. Independent source review passed, including
+fabricated child-process supervision, deterministic window mapping, exact
+authority guards, per-row saved-list counts, create-only outputs and rejection
+of partial or tampered results. All prior implementation files remain unchanged.
+The new validation recorder passed twelve fabricated checks and parsed the
+exact preserved 758-test log without rerunning that old suite. It handles the
+known buffered diagnostic suffix while requiring the exact successful result.
+
+All 46 focused tests (35 runner, 11 formatter) passed in 72.28 unittest seconds
+(72.625 seconds of command wall time), with zero skips. Source/helper/recorder
+bindings stayed unchanged. The actual metadata-only dry-run passed in 15.047
+seconds without scientific-body access, worker dispatch or journal changes.
+The full suite completed successfully: 804 run, 803 passed and one existing
+Windows directory-symlink capability skip. Unittest time was 2,040.214 seconds;
+command wall time was 2,044.594 seconds. All 151 source/test/dependency bindings
+and three prior helper bindings remained unchanged. The new manifest binds the
+completed `implementation_validation.json` certificate, SHA-256
+`c252a3015acd0cc037ac084db8f6a09589f0d41a23d28e2d18312b0be58ca233`.
+No real diagnostic worker has started and no scientific bodies have been read
+for this implementation and validation. See
+`../ball_crop_candidate_retention_error_breakdown_implementation.md` for the
+eleven-file scope, approval and validation details. Evidence is under
+`data/outputs/ball_tracking/crop_candidate_retention_error_breakdown_implementation/e71a4d216562_2026-10-02/`.
+
+Branch remains `codex/ball-detector-baseline`, HEAD
+`e71a4d2165623208d624c4839e9321bd9bf779ba`. The implementation/documentation scope
+is intentionally unstaged; the index remains empty. Stop on any new failure.
+Obtain separate Git authorization before the approved real
+unit can execute at a clean tested checkpoint. Do not request prior clip reviews
+or scope approval again. All embargoes, sealed holdouts, completed evidence and
+original resource limits remain intact.
+
+## Prior checkpoint: interpretation complete; error-breakdown proposal prepared
+
+Ryan authorized staging and committing the exact thirteen-file interpretation
+scope with "Yea move forward chat" in response to the concrete Git request.
+The commit is `e71a4d2165623208d624c4839e9321bd9bf779ba` on
+`codex/ball-detector-baseline`, parent `a89cd40838b066c1d2fe3cb1f257dda10e80a3bb`.
+The exact committed scope, clean worktree and empty index were verified before
+the already-approved interpretation ran. Nothing was pushed.
+
+The one `post-review-interpretation:summary:` worker succeeded, attempt
+`7bd613d71cef48d38c15a72e9647fc10`, in 40.14 active seconds. Its verified bounded
+summary was returned and explained to Ryan. The completion checkpoint is
+`data/outputs/ball_tracking/crop_candidate_retention_interpretation_implementation/a89cd40838b0_2026-10-02/interpretation_completion_checkpoint.json`,
+SHA-256 `c6e55a921c44bd6dfa29b291dd753fb80b72637ecc86ba035802210f5bb80bf5`.
+The readable result is
+`data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/post_review_interpretation_v0_1/summary.md`,
+SHA-256 from the successful result receipt
+`590f2ed1ff1159f381bbae078dce5e5850b494aad6cf93d54e59d4af429461e9`.
+Do not rerun the finished unit or reopen scientific bodies in the parent.
+
+At the fixed .01/10px comparison, removing the cap gained no localization
+matches under any of the four settings in either pool. Some settings lost a
+match; all challenge settings produced more false observations. Some looser
+radii had gains with extra errors. These are development observations, not a
+tracker selection or passed quality gate. Localization is not certified object
+identity, and five hidden frames from one episode cannot establish robust
+hidden-ball behavior. See the returned summary for the balanced full account.
+
+The original resource journal now has 3,002 events and 57 completed attempts:
+54 successes, the same three preserved failures and no active worker. Its final
+event digest is `6c0924cc29f4bdf6b7d6e9311b3fc8205baf8ad0ab251a31ae2bb056a45e1f6c`.
+Recorded cumulative active time is 3,260.243 seconds, leaving 11,139.757 seconds
+(both rounded here). This is available processing allowance, not a completion
+estimate or chat-usage balance. All earlier evidence and resource limits remain
+preserved; preservation used frozen metadata and receipt bindings, not a fresh
+parent content audit. All eighteen requested clip reviews remain complete.
+
+Ryan asked to move forward. The next preparation confirmed from source that
+the completed scoring files already contain an ordered error breakdown. The
+concrete draft is `../ball_crop_candidate_retention_error_breakdown_proposal.md`:
+one bounded reading of two saved pool files and the passed audit, covering all
+six windows/four settings/both cap policies at .01/10px. It distinguishes missing
+near-reference candidates, filtering, cap removal and path-selection misses
+without new scoring or individual object-identity judgments. Window mapping
+uses saved companion window IDs, not an assumed possession order.
+
+A read-only preparation command incorrectly requested `resource_events.jsonl`
+and returned an error. Work stopped without edits or a new worker. Ryan then
+authorized the corrected metadata check and documentation-only proposal with
+"You can move forward chat". The corrected `resource_events/` check passed:
+3,002 files and the expected successful final event. No experimental failure,
+retry, journal mutation or scientific-body access occurred during preparation.
+
+Current changes are limited to the new draft and current-state, roadmap and
+validation-history documentation, intentionally unstaged with an empty index.
+No implementation or new diagnostic worker has started. No manual command is
+pending. First next action: review this concrete new scientific-reading scope
+with Ryan for approval before implementation; future Git mutations require
+separate authorization. No method, setting, quality gate, training, new clip
+review or holdout release is selected. Ball tracking remains the active phase;
+possession understanding, matchup inference and defensive scoring come later.
+
+## Prior checkpoint: interpretation validation complete; separate Git authorization next
 
 Ryan approved `../ball_crop_candidate_retention_interpretation_proposal.md` with
 "I approve chat, and can you please give me a status update on where we’re at,

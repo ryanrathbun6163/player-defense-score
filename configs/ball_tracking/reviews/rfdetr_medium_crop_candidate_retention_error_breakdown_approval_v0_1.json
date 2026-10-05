@@ -1,0 +1,28 @@
+{
+  "schema_version": "ball_crop_candidate_retention_error_breakdown_approval/v0.1",
+  "proposal": {
+    "path": "docs/ball_crop_candidate_retention_error_breakdown_proposal.md",
+    "sha256": "f8525927fa5589b7c5a70aef6fee9bcc813365e267503eaa4f6610438802deee"
+  },
+  "approved_by": "ryan",
+  "statement": "Yes I permit. Move forward",
+  "recorded_at_utc": "2026-10-03T04:31:29.129774+00:00",
+  "timestamp_semantics": "Receipt creation time, not an invented message timestamp.",
+  "scope": "one_bounded_supervised_reading_of_two_saved_scoring_pools_and_passed_audit_with_per_row_saved_list_counts_subject_to_tested_clean_separately_authorized_commit",
+  "frozen_history": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention_error_breakdown_implementation/e71a4d216562_2026-10-02/frozen_history.json",
+    "sha256": "b765b13e8e76daa9d6108d5a82b5d3e589c93b76415fc97a75054ba8fb0238cf"
+  },
+  "implementation_authorized": true,
+  "execution_authorized": true,
+  "clean_commit_required": true,
+  "execution_requires_clean_separately_authorized_commit": true,
+  "bounded_summary_return_authorized": true,
+  "maximum_summary_bytes": 65536,
+  "maximum_unit_seconds": 300,
+  "training_authorized": false,
+  "git_mutations_authorized": false,
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

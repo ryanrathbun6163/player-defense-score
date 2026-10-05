@@ -1,5 +1,74 @@
 # Validation History
 
+## Approved saved error-breakdown implementation: validation complete
+
+The new reader/formatter and two fabricated test modules passed independent
+source review. They preserve existing sources, the exact 3,002-event prefix,
+57 completed attempts, three earlier failures and all existing resource limits.
+The focused inventory is 46 checks; the full suite contains 804 tests.
+No real diagnostic worker or scientific-body read has occurred.
+
+The new recorder passed twelve fabricated checks in 0.019 unittest seconds.
+It also parsed the exact preserved previous 758-test log, including the two
+known trailing diagnostic messages, without rerunning those tests. Recorder
+checks exited zero and recorded immutable source, command, environment and log
+bindings. Independent review of the validation/certificate orchestration passed.
+Its corrected authority guard checks exact approved paths and digests before
+following any manifest-referenced binding. Evidence is under
+`data/outputs/ball_tracking/crop_candidate_retention_error_breakdown_implementation/e71a4d216562_2026-10-02/`.
+All 46 focused checks subsequently passed: zero skips, 72.28 unittest seconds
+and 72.625 command wall seconds, with unchanged source/helper/recorder bindings.
+The actual metadata-only dry-run also passed in 15.047 seconds, with no worker
+or scientific-body access. Its log and receipt are saved alongside the tests.
+The full suite exited zero: 804 tests run, 803 passed and the one existing
+Windows directory-symlink skip. Unittest time was 2,040.214 seconds; command
+wall time was 2,044.594 seconds. The recorder accepted the exact success block
+and two known buffered diagnostic lines, with no failure markers. All 151
+source/test/dependency bindings and three helper bindings remained unchanged.
+The create-only certificate assembler passed and produced
+`implementation_validation.json`, SHA-256
+`c252a3015acd0cc037ac084db8f6a09589f0d41a23d28e2d18312b0be58ca233`.
+The new manifest binds this exact certificate. No Git mutation or real
+diagnostic execution occurred; separately authorized staging and committing
+remain necessary before the approved worker can run.
+
+## Interpretation execution complete; documentation-only continuation
+
+The exact thirteen-file interpretation scope was separately authorized and
+committed at `e71a4d2165623208d624c4839e9321bd9bf779ba`. After verifying the clean
+checkpoint, the one approved interpretation unit exited zero and passed receipt,
+source, authority, preservation and resource checks. Attempt
+`7bd613d71cef48d38c15a72e9647fc10` used 40.14 active seconds. Its external worker
+result SHA-256 is `07d810dcfe98bf2937d2e6bfdfbb1985cdbd05b974c3d974f6919bcb7a19fa62`.
+Three create-only scientific outputs were completed and their bounded readable
+summary returned after success verification. No inference, scoring or media
+decoding occurred.
+
+The metadata completion checkpoint is under
+`data/outputs/ball_tracking/crop_candidate_retention_interpretation_implementation/a89cd40838b0_2026-10-02/interpretation_completion_checkpoint.json`,
+SHA-256 `c6e55a921c44bd6dfa29b291dd753fb80b72637ecc86ba035802210f5bb80bf5`.
+It records 3,002 resource events, 57 completed attempts, 54 successes, the three
+unchanged failures and zero active workers. All 5,718 original frozen files
+remain preserved on the recorded metadata/receipt basis. Previously validated
+source, certificate and evidence bindings remained unchanged. The 42 focused
+passes and full-suite 757 passes plus one existing Windows skip were not rerun.
+
+During the next documentation preparation, a read-only command requested the
+wrong single-file journal path and returned an error. It changed no files and
+started no worker. Work stopped. Ryan's "You can move forward chat" authorized
+correcting that metadata check and finishing the documentation-only proposal.
+The actual `resource_events/` directory contains the expected 3,002 JSON events;
+the final successful event and completion-checkpoint digest match. The proposed
+new output directory is absent. No generated scientific body was opened or
+freshly hashed for this preparation. Source inspection establishes that the
+saved pool breakdown must use companion window IDs for its block mapping.
+The new proposal remains unimplemented and unexecuted; documentation changes
+do not require a full regression rerun.
+Documentation checks passed for the exact four-file scope, whitespace, empty
+index, unchanged HEAD and unchanged frozen proposal/approval/checkpoint hashes.
+An independent source-and-metadata scope review cleared the completed draft;
+it did not inspect scientific bodies or calculate experimental results.
+
 ## Interpretation recorder correction complete; original passing results accepted
 
 Ryan approved the narrow correction with "Ok move forward chat". The new ignored

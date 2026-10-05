@@ -1,5 +1,29 @@
 # Roadmap
 
+## Current continuation: saved retention comparison and interpretation complete
+
+The approved interpretation was separately committed and executed successfully
+at `e71a4d2165623208d624c4839e9321bd9bf779ba`. Its bounded summary was explained
+to Ryan. All six retention clip reviews and twelve earlier YOLO reviews remain
+complete. The older execution-pending descriptions below are historical.
+
+The fixed .01/10px comparison gained no localization matches from removing the
+cap in any of the four settings in either pool. Some looser radii had gains with
+additional errors. No tracker or operating point is selected, and the broader
+ball-tracking quality gate remains outstanding.
+
+The next concrete draft is
+`../ball_crop_candidate_retention_error_breakdown_proposal.md`: explain the
+already-calculated missing-candidate/filter/cap/path-choice categories for the
+same six development windows. Ryan approved that exact scope with
+"Yes I permit. Move forward". Separate reader/formatter implementation is
+complete and validation passed: 46 focused tests, then 803 full-suite passes
+and one existing Windows skip. The manifest binds the completed validation
+certificate. Separate Git authorization is next; real execution has not begun.
+It proposes no new inference, scoring, rendering or training, and keeps object
+identity and center placement unresolved. See
+`current_state.md` for completion evidence, resource balance and Git status.
+
 ## Phase 1 — Player-coordinate foundation
 
 Status: complete for curated possessions and empirically generalized.
@@ -306,8 +330,14 @@ No method, operating point, quality gate or holdout release is selected.
 - [x] complete the full unittest run: 757 passed and one existing Windows skip;
 - [x] approve the narrow validation-recorder correction after its buffered-log parsing failure;
 - [x] reconcile the preserved passing test log and finish the validation certificate;
-- [ ] separately authorize staging and committing the tested interpretation;
-- [ ] execute its one supervised summary worker and explain the audited tradeoffs;
+- [x] separately authorize staging and committing the tested interpretation;
+- [x] execute its one supervised summary worker and explain the audited tradeoffs;
+- [x] prepare a bounded proposal to explain the saved error breakdown;
+- [x] review and approve that concrete scope before implementation or scientific reading;
+- [x] implement the separate saved-error reader and formatter; complete independent source review;
+- [x] complete focused/full validation and the implementation certificate;
+- [ ] separately authorize staging and committing the validated error-breakdown scope;
+- [ ] execute the one approved error-breakdown unit and explain its saved evidence;
 - [ ] associate detections through blur, occlusion, passes, shots, and rebounds;
 - [ ] preserve uncertainty and missing observations;
 - [ ] map ball observations into court/time context where defensible;

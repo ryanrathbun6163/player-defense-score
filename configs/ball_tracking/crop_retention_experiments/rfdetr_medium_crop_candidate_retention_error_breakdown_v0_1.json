@@ -1,0 +1,59 @@
+{
+  "schema_version": "ball_crop_candidate_retention_error_breakdown/v0.1",
+  "error_breakdown_id": "rfdetr_medium_crop_candidate_retention_error_breakdown_v0_1",
+  "proposal": {
+    "path": "docs/ball_crop_candidate_retention_error_breakdown_proposal.md",
+    "sha256": "f8525927fa5589b7c5a70aef6fee9bcc813365e267503eaa4f6610438802deee"
+  },
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_error_breakdown_approval_v0_1.json",
+    "sha256": "f0eb74cde6077a5741c46ebe1aa1f8633ed2ac031f8b3a5f493d417ca9a2a0cf"
+  },
+  "completion_checkpoint": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention_interpretation_implementation/a89cd40838b0_2026-10-02/interpretation_completion_checkpoint.json",
+    "sha256": "c6e55a921c44bd6dfa29b291dd753fb80b72637ecc86ba035802210f5bb80bf5"
+  },
+  "human_review_record": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_visual_review_record_v0_1.json",
+    "sha256": "9a3089a14747dce7b95670838dd116b2ddaf6cd426837f93435ff6ad6706d46b"
+  },
+  "frozen_history": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention_error_breakdown_implementation/e71a4d216562_2026-10-02/frozen_history.json",
+    "sha256": "b765b13e8e76daa9d6108d5a82b5d3e589c93b76415fc97a75054ba8fb0238cf"
+  },
+  "window_authority": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_candidate_retention_v0_1.json",
+    "sha256": "7640784e2a64e81a2064ebb40cd4d1c77366076e5e78a2c19f8f5fc28e29fe1b"
+  },
+  "scientific_inputs": {
+    "representative_pool": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/evaluation/representative_evaluation.json",
+      "sha256": "82ce2d01b9f61a5d66b358f5aa42654db2413f7a9d5e45867ddffc9fb1e5acfb",
+      "size_bytes": 134447507
+    },
+    "challenge_pool": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/evaluation/challenge_evaluation.json",
+      "sha256": "01afe5ad0391336c5619e93dea585f79a665dccd02d9201c3dbe9349d1e60f60",
+      "size_bytes": 126628338
+    },
+    "audit": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/independent_publication_recovery_audit.json",
+      "sha256": "a1c944c3e1a5184ff08986adacbb2e623d515a67b33a67a55075dcc3f5fc5da2",
+      "size_bytes": 1770176
+    }
+  },
+  "implementation_validation": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention_error_breakdown_implementation/e71a4d216562_2026-10-02/implementation_validation.json",
+    "sha256": "c252a3015acd0cc037ac084db8f6a09589f0d41a23d28e2d18312b0be58ca233"
+  },
+  "output_root": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1",
+  "permitted_stages": [
+    "summarize"
+  ],
+  "unit_key": "post-review-error-breakdown:summary:",
+  "maximum_unit_seconds": 300,
+  "maximum_summary_bytes": 65536,
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}
