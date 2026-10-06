@@ -1,5 +1,88 @@
 # Validation History
 
+## 2026-10-06: saved-decision contrast committed and one authorized attempt succeeded
+
+The eleven-file implementation was staged and committed under Ryan's explicit
+conditional permission at `26242d13a5a93043d35fa832c348a44445c1759e` on
+`codex/ball-detector-baseline`. The clean descendant commit and its release
+checkpoint were verified, then the single authorized comparison succeeded.
+Validation remains **55 focused passes** and **1,048 full-suite passes plus the
+one existing Windows skip**; no tests were repeated for this execution.
+
+Only the owned worker read and hashed the two fixed saved scientific inputs.
+The parent inspected the verified bounded return and administrative records;
+no scientific input/output body or pixel was reopened. No inference, selector,
+evaluator, rendering, tuning or new human review ran. Existing human judgments,
+null human indices and original raw-10 localization outcomes are unchanged.
+
+For the fixed saved winner–comparison pairs in frames 301, 302, 308, 319,
+320 and 324, the emitted endpoint had lower current confidence, but its larger
+saved past-confidence contribution outweighed that disadvantage and the combined
+gap/motion differences. Frame 300 was confidence-only. In frame 304, higher
+current confidence and a smaller motion penalty outweighed lower past confidence.
+There were no exact score ties. These are descriptive saved-score arithmetic,
+not a controlled causal finding or overall performance estimate. The comparator
+remains the saved highest-confidence raw-10-qualified retained endpoint; its
+visual identity, nearest-point status and best-compatible-objective status are
+not established. The saved global margin remains distinct from this pair gap.
+
+Signed differences below are winner minus the fixed comparison, rounded to six
+decimals for continuity. The worker artifacts/verified return retain full precision
+and exact source pointers. Candidate indices below come from the saved scientific
+records; they do not overwrite null indices in Ryan's human-review ledger.
+
+| Frame | Winner index | Comparison index | Current confidence Δ | Past confidence Δ | Gap Δ | Motion Δ | Pair score gap | Saved global margin |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 300 | 0 | 1 | +0.007903 | +0.000000 | +0.000000 | +0.000000 | +0.007903 | +0.007903 |
+| 301 | 1 | 0 | -0.223674 | +0.415812 | +0.000000 | +0.015307 | +0.207444 | +0.207444 |
+| 302 | 1 | 0 | -0.160452 | +0.192138 | +0.000000 | +0.171548 | +0.203234 | +0.155710 |
+| 304 | 0 | 5 | +0.192307 | -0.255778 | +0.000000 | +0.301832 | +0.238361 | +0.131841 |
+| 308 | 3 | 0 | -0.711348 | +1.409314 | +0.000000 | -0.007421 | +0.690545 | +0.001663 |
+| 319 | 14 | 0 | -0.538594 | +0.773399 | +0.250000 | +0.000736 | +0.485541 | +0.262307 |
+| 320 | 5 | 0 | -0.806809 | +2.212062 | -0.250000 | -0.413984 | +0.741269 | +0.007299 |
+| 324 | 1 | 0 | -0.473951 | +0.868971 | +0.000000 | -0.005010 | +0.390009 | +0.335418 |
+
+The new attempt `9b7ad2e59c67420ea70e0a2be8b7767d` is consumed: **42.078
+charged seconds of 120**, 42.625 supervisor wall seconds and
+85.313 command wall seconds. The journal now has **3,221 events,
+62 closed attempts, 58 successes and four preserved historical failures**.
+Remaining cumulative time is `10951.195000000016` seconds; this balance does
+not authorize another attempt. All prior diagnostic/recovery/verification roles
+remain consumed. No automatic retry is authorized. Nine prediction embargoes
+and three sealed holdouts remain intact.
+
+The ignored outputs are `contrast.json`, `summary.md` and `provenance.json`
+under `data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/post_review_saved_decision_contrast_v0_1/`.
+The administrative completion is
+`data/outputs/t/sdc_impl_7a2e660a3887/saved_decision_contrast_completion_26242d13a5a9.json`;
+its verified bounded transport is
+`data/outputs/t/sdc_impl_7a2e660a3887/saved_decision_contrast_execution_26242d13a5a9_stdout.json`.
+Use those administrative bindings for resumption; do not open the scientific
+artifact bodies merely to recover context.
+
+All worker integrity checks passed. Maximum completed monitor interval was
+0.282 seconds, below the one-second requirement;
+the successful completion verified owned cleanup and final accounting.
+Output sizes were 100,374 bytes (`contrast.json`), 9,289 (`summary.md`) and
+35,810 (`provenance.json`), all inside their approved bounds. The bounded parent
+transport was 121,497 bytes, untruncated, with no stderr output. Independent
+interpretation review confirmed the signed arithmetic and the limited wording.
+
+A closeout-only script initially used the wrong administrative field name for
+supervisor wall time. Its original source is preserved; the field was corrected
+to `total_wall_seconds_before_publication` and only the administrative closeout
+was rerun. No worker, experiment or test was repeated, and no evidence or budget
+was reset. The implementation commit remains the execution identity; the later
+three-document continuity commit changes no source or validated configuration.
+
+Next is a separately scoped decision about a possible follow-up to the saved
+history contribution. Any change to selection/scoring or new experiment needs
+a concrete proposal and approval; this diagnostic grants neither. Do not rerun
+the consumed comparison, the completed tests, or the eight visual reviews for
+resumption. Nothing was pushed. These three completion-context documents are
+the only follow-up changes and are covered by the existing associated-documentation
+stage/commit permission; verify Git for the later documentation commit.
+
 ## 2026-10-06: saved-decision contrast implementation validated
 
 Ryan explicitly approved the exact saved-decision contrast proposal and added:

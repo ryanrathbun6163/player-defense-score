@@ -1,6 +1,49 @@
 # Roadmap
 
-## Current continuation: commit the validated saved-decision contrast and execute once
+## Current continuation: choose a separately scoped follow-up after the completed contrast
+
+The eleven-file implementation was staged and committed under Ryan's explicit
+conditional permission at `26242d13a5a93043d35fa832c348a44445c1759e` on
+`codex/ball-detector-baseline`. The clean descendant commit and its release
+checkpoint were verified, then the single authorized comparison succeeded.
+Validation remains **55 focused passes** and **1,048 full-suite passes plus the
+one existing Windows skip**; no tests were repeated for this execution.
+
+Only the owned worker read and hashed the two fixed saved scientific inputs.
+The parent inspected the verified bounded return and administrative records;
+no scientific input/output body or pixel was reopened. No inference, selector,
+evaluator, rendering, tuning or new human review ran. Existing human judgments,
+null human indices and original raw-10 localization outcomes are unchanged.
+
+For the fixed saved winner–comparison pairs in frames 301, 302, 308, 319,
+320 and 324, the emitted endpoint had lower current confidence, but its larger
+saved past-confidence contribution outweighed that disadvantage and the combined
+gap/motion differences. Frame 300 was confidence-only. In frame 304, higher
+current confidence and a smaller motion penalty outweighed lower past confidence.
+There were no exact score ties. These are descriptive saved-score arithmetic,
+not a controlled causal finding or overall performance estimate. The comparator
+remains the saved highest-confidence raw-10-qualified retained endpoint; its
+visual identity, nearest-point status and best-compatible-objective status are
+not established. The saved global margin remains distinct from this pair gap.
+
+The new attempt `9b7ad2e59c67420ea70e0a2be8b7767d` is consumed: **42.078
+charged seconds of 120**, 42.625 supervisor wall seconds and
+85.313 command wall seconds. The journal now has **3,221 events,
+62 closed attempts, 58 successes and four preserved historical failures**.
+Remaining cumulative time is `10951.195000000016` seconds; this balance does
+not authorize another attempt. All prior diagnostic/recovery/verification roles
+remain consumed. No automatic retry is authorized. Nine prediction embargoes
+and three sealed holdouts remain intact.
+
+Next is a separately scoped decision about a possible follow-up to the saved
+history contribution. Any change to selection/scoring or new experiment needs
+a concrete proposal and approval; this diagnostic grants neither. Do not rerun
+the consumed comparison, the completed tests, or the eight visual reviews for
+resumption. Nothing was pushed. These three completion-context documents are
+the only follow-up changes and are covered by the existing associated-documentation
+stage/commit permission; verify Git for the later documentation commit.
+
+## Prior continuation: commit the validated saved-decision contrast and execute once
 
 Ryan explicitly approved the exact saved-decision contrast proposal and added:
 "Yes you may, and you also have my permission to stage and commit if nothing is broken after you implement this".
