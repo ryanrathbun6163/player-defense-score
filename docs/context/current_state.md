@@ -1,6 +1,147 @@
 # Current State
 
-## Latest checkpoint: recovery integration validated; staging approval pending
+## Latest checkpoint: output-presence implementation validated; staging is next
+
+Ryan's "Yes move forward chat" approved the exact output-presence proposal,
+implementation, artificial validation and one conditional scientific unit.
+The frozen proposal and separate approval are preserved. A new reader and pure
+formatter retain the complete recovered breakdown and derive the two approved
+ordered membership lists separately for all 48 rows. They keep semantic causes,
+method choice, operating point and quality gate unknown.
+
+Independent review passed. The accepted focused run passed 42 tests; the full
+suite passed 960 tests with the one existing Windows directory-symlink skip.
+The initial focused run passed 41 tests and failed one invalid exact comparison
+of floating-point time. Only that test assertion changed to the existing
+seven-decimal precision. Its log, source snapshots, failure and correction are
+preserved; no production limit changed. The first full run was stopped by a
+validation-helper race while a test renamed a temporary directory. Cleanup
+passed. After a reviewed helper correction, fresh focused/full validation
+passed; the interrupted run and original helpers remain preserved.
+Current validation binds all 163
+source/test/requirements files. Validation and certificate evidence are under
+`data/outputs/t/op_impl_de134d942767/`.
+
+The new `post-review-output-presence:summary:` role has at most one attempt
+and 120 charged seconds, bounded by the unchanged cumulative balance of
+`11079.945000000014` seconds. Its 3,071-event predecessor history preserves
+59 closed attempts, 55 successes and all four failures. The completed recovery
+attempt remains consumed; its unused role time is not renewed. The responsive
+monitor and its completed design evidence are reused.
+
+No real output-presence worker ran. No parent scientific body was read or
+hashed; no scientific inference, scoring, rendering or visual review occurred.
+All validation fixtures were artificial.
+The only conditionally authorized scientific input remains the 744,235-byte
+recovered breakdown, accessible inside the owned worker after release.
+Existing scientific evidence, nine embargoes, three sealed holdouts and prior
+review decisions remain preserved.
+
+Branch/HEAD remain `codex/ball-detector-baseline` /
+`de134d942767b70dfc6da360745f50405a8b3f8d`. The index is empty and the exact
+intended scope is ten unstaged files: two source modules, two test modules,
+proposal, approval, manifest and these three context documents.
+Next: separately approve staging, then separately approve committing the
+validated scope. The new post-commit execution checkpoint remains absent.
+No staging, commit, push, PR or merge is authorized by the study approval.
+
+## Prior checkpoint: output-presence study proposed from one saved breakdown
+
+Ryan's "move forward chat" authorized preparing the next concrete study.
+The proposal is `../ball_crop_candidate_retention_output_presence_proposal.md`.
+It requests one worker-only read of the 744,235-byte recovered breakdown,
+without reopening the large evaluation pools, observations, labels or media.
+Within every existing row, split S memberships by presence in that same row's
+eligible false-observation list: present but nonmatching current output versus
+no current emitted output. Preserve both pools, all 48 rows and original roles.
+
+Source reasoning establishes this distinction for both frozen cap policies:
+each emits at most one original threshold-qualified current candidate, and an
+unmatched eligible frame's false-positive count equals its accepted output
+count. All four relevant source blobs match the original scoring commit.
+No new scientific memberships or counts were calculated during preparation.
+The six-clip review receipt has no individual-frame semantic verdicts, so
+wrong-object versus ball-center placement remains unknown. No repeat visual
+review or new semantic adjudication is requested by this proposal.
+
+Implementation and the new derivation await explicit approval. The proposed
+unit has at most one attempt and 120 charged seconds from the existing
+remaining cumulative budget, using the validated responsive monitor. This
+neither renews the completed recovery nor repurposes its unused role time.
+Source review, focused/full validation and separately approved staging/commit
+precede conditional execution. The old scientific body-access boundary remains
+effective until the new exact input and operations are approved.
+
+Preparation used only source, reviewed authority and administrative receipts.
+No scientific body was read/hashed, no test or experiment ran, and no completed
+review was repeated. Planning evidence and source-contract bindings are under
+`data/outputs/t/output_presence_plan_de134d942767/`.
+Branch/HEAD remain `codex/ball-detector-baseline` /
+`de134d942767b70dfc6da360745f50405a8b3f8d`, with an empty index. Intended dirty
+scope is now the three existing context files plus the new proposal. All prior
+budgets, evidence, embargoes and holdouts remain preserved. Next: Ryan decides
+whether to approve the exact proposal; no additional Git step is authorized.
+
+## Prior checkpoint: saved error-breakdown recovery completed successfully
+
+Ryan separately authorized staging and committing the exact validated 34-file
+scope. Commit `de134d942767b70dfc6da360745f50405a8b3f8d` on
+`codex/ball-detector-baseline` contains those exact staged blobs. Working-file
+bytes were preserved, with Git's configured line-ending normalization accounted
+for. The worktree and index were clean before execution; nothing was pushed.
+
+After Ryan's "ok lets move forward", the create-only post-commit checkpoint
+was bound to that actual HEAD, unchanged manifest and implementation certificate.
+All 159 source bindings and 16 validation-evidence bindings matched. The public
+recovery command then ran once, including its own metadata preflight. No tests,
+old experiments, abandoned scanner benchmarks or visual reviews were repeated.
+
+Recovery attempt `05fe00c14f224c5abfc2cc6008e90f96` succeeded. The public runner
+verified completion, preservation and bounded summary transport before returning
+the 48 saved rows. Representative and challenge pools remain separate. Only the
+owned worker read/hashed the three scientific inputs and its generated outputs;
+the parent received the verified summary through administrative transport.
+No inference, scoring, media decoding, training or method selection ran.
+
+The supervisor charged `52.54699999999866` seconds; its wall time before final
+publication was `53.09300000000076` seconds. The full command, including metadata
+preflight and post-run verification, took `106.45300000000134` seconds. Eleven
+complete scans succeeded; maximum safety-check interval was about 0.296 seconds.
+Peak sampled combined memory was 419,811,328 bytes. Final output bound was
+7,415,183,417 bytes, minimum free disk 1,465,797,832,704 bytes. No resource
+overshoot, final-accounting error or cleanup error was recorded; owned cleanup
+was verified.
+
+The original failed attempt and 3,010-event prefix remain preserved. The new
+completion is event `00003070.json`, chain tip
+`d800b77b4db2128d1baa09db59538ab6f16d4aad6d96aaa7a9fd84f96c11bf92`.
+Remaining role time is `240.18800000001647` seconds and cumulative experiment
+time is `11079.945000000014` seconds. The one recovery attempt is consumed.
+Arithmetic time remaining does not grant another attempt; do not rerun either
+public diagnostic entry point.
+
+The verified summary records, for example, 14 saved misses under both cap20 and
+all policies for P001 representative TT. Its cap20 row has six cap-loss and four
+final-output-loss memberships; its all row has zero and ten respectively.
+Retaining the candidates did not resolve those saved final outputs. This does
+not distinguish wrong-object output, center placement or missing output. No new
+rates, pool totals, rankings or cross-row unions were calculated.
+
+Execution checkpoint, launch receipts, bounded returned transport and completion
+record are under `data/outputs/t/ebri_fa730bcb6d2e/`. Scientific outputs remain
+ignored at the existing experiment root's
+`audit/post_review_error_breakdown_recovery_v0_1/`. Never follow their pointers
+for parent body reads/hashes. Nine prediction embargoes, three sealed holdouts,
+six retention reviews and twelve earlier YOLO final-frame reviews remain intact.
+
+Next: specify a separate study of the saved final-output losses that can
+distinguish missing output, object identity and center placement. This is a
+proposed question, not a new experiment authorization or selected method.
+Ball-tracking quality, possession understanding, matchups and defensive scoring
+remain unfinished. This post-run continuation changes only three context files;
+staging and committing those new documentation changes are not authorized.
+
+## Prior checkpoint: recovery integration validated; staging approval pending
 
 The new `src/ball_tracking/crop_retention_error_breakdown_recovery.py` connects
 the saved error-breakdown recovery to the validated responsive monitor. Its

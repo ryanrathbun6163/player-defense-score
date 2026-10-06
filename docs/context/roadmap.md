@@ -1,6 +1,78 @@
 # Roadmap
 
-## Current continuation: stage the validated recovery integration after approval
+## Current continuation: stage and commit the validated output-presence implementation
+
+The exact proposal has been approved and implemented. Independent review,
+42 focused passes and 960 full-suite passes plus the existing Windows skip
+validate the separate reader/formatter and its release boundaries. The initial
+floating-point assertion failure and later temporary-directory scan race were
+corrected and preserved with their evidence. Neither changed production limits.
+
+The next boundary is separate approval to stage the ten intended files,
+followed by separate commit approval. After the validated clean commit, create
+the new release checkpoint and execute the already conditionally authorized
+single `post-review-output-presence:summary:` unit. Its limit is one attempt,
+120 charged seconds from the existing cumulative allowance, using the unchanged
+responsive monitor. Reuse completed tests and monitor evidence while their
+exact source bindings remain valid.
+
+The scientific unit has not run. It may read only the bound recovered breakdown
+inside its owned worker and publish create-only presence, summary and provenance
+outputs. Preserve all 48 rows and their original evidence. Do not renew the
+consumed recovery, adopt partial output or retry a real failed unit automatically.
+
+The two resulting categories distinguish missing current output from present
+but nonmatching current output. They cannot establish wrong-object output,
+center-placement cause or missing-output cause. Any later semantic adjudication
+requires a separate concrete evidence/access scope. Preserve all existing
+review decisions, embargoes and sealed holdouts.
+
+## Prior continuation: approve the single-input output-presence diagnostic
+
+The concrete next study is
+`../ball_crop_candidate_retention_output_presence_proposal.md`. Source analysis
+shows that the recovered breakdown alone can distinguish no current emitted
+output from an emitted output failing the saved localization rule, within each
+S row. No large-pool, candidate, annotation, trace or media body is needed.
+
+Requested scope: implement and validate a small separate reader, then run one
+conditional 120-second unit from the existing cumulative budget after separately
+approved staging and a validated clean commit. Its only scientific input is
+the bound 744,235-byte recovery breakdown; its new ordered membership operations
+need explicit approval. Keep all 48 original rows, pools and roles; no new rates,
+rankings, model calls or semantic judgments are proposed. The completed
+recovery attempt remains consumed and its evidence is preserved.
+
+The resulting categories still cannot separate wrong-object output from center
+placement. Existing package review does not contain those frame-specific labels.
+Any later semantic adjudication needs its own concrete evidence/access scope;
+do not repeat completed visual approvals. Preparation ran no tests or scientific
+work, and neither implementation nor the new diagnostic has been approved yet.
+
+## Prior continuation: use the completed breakdown to specify the next study
+
+The exact 34-file recovery scope was separately staged and committed at
+`de134d942767b70dfc6da360745f50405a8b3f8d`. The post-commit release checkpoint
+was created from unchanged validated sources, and the one approved recovery
+completed successfully as attempt `05fe00c14f224c5abfc2cc6008e90f96`.
+Its 48 saved rows are now available through verified bounded transport under
+`data/outputs/t/ebri_fa730bcb6d2e/`. No tests or visual reviews were repeated.
+
+One descriptive example: P001 representative TT retains 14 saved misses under
+both cap policies. Removing the cap moves its six cap-loss memberships into
+the final-output-loss category without resolving the saved misses. The summary
+does not identify whether these final-output losses arise from missing output,
+wrong-object output or center placement. Those distinctions are a useful next
+study question, not a completed diagnosis or a chosen tracking method.
+
+Prepare a separate, concrete study scope before accessing more scientific
+material or running another experiment. Do not infer new input access, rendering,
+inference, training, budget or attempt authorization from the completed recovery.
+Preserve its outputs, the original failed history and all nine embargoes, three
+sealed holdouts and completed reviews. The recovery attempt is consumed even
+though arithmetic time remains. No operating point or quality gate is selected.
+
+## Prior continuation: stage the validated recovery integration after approval
 
 The recovery runner, versioned authority and implementation certificate are
 complete. 32 focused tests passed; full regression passed

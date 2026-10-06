@@ -1,5 +1,131 @@
 # Validation History
 
+## 2026-10-05: approved output-presence implementation and artificial validation
+
+Ryan's "Yes move forward chat" approved implementation, focused/full artificial
+validation and one conditional unit under the exact output-presence proposal.
+The approval and manifest bind the frozen proposal and completed predecessor
+history; the only new scientific input is copied from the successful producer's
+administrative receipt. No parent scientific body was read or hashed.
+
+Independent production and test review passed. Before helper execution, review
+tightened exact test-count checks, explicit outcomes, verified process cleanup,
+final temporary-output/free-disk accounting, normalized administrative paths and
+bounded log reads. These were ordinary implementation corrections, not failed
+scientific runs or changes to the approved envelope.
+
+The first focused run (`focused_01`) ran 42 tests: 41 passed and one failed
+because a test compared `1.9999999999986358` with exactly `2` seconds.
+Its log, result and four implementation snapshots remain preserved.
+`correction_01.json` records the one-line change to a seven-decimal comparison,
+consistent with existing budget precision. Production behavior was unchanged.
+
+The first full run (`full_01`) stopped after 500.031 supervised seconds when
+the validation helper encountered a directory removed during a live TEMP scan.
+No completed test failure or resource-limit breach was reported. All owned
+processes stopped; final accounting passed and source bytes were unchanged.
+The original driver/certifier, log, result and four source snapshots remain
+preserved. `correction_02.json` records the reviewed live-scan-only handling of
+vanished nested paths; final post-cleanup accounting remains strict. Production
+source and test bytes did not change for this correction. Sixteen deterministic
+helper checks passed, covering the live race and required fatal conditions. The successful
+`focused_02` run under the former helper is retained as intermediate evidence.
+
+Accepted `focused_03`: 42 passes, no skips/failures/errors, 15.235
+seconds under the validation supervisor. Accepted `full_02`: 961 tests,
+960 passes and the existing Windows directory-symlink capability skip, no
+failures/errors, 2206.828 supervised seconds. Source inventories matched
+before and after both runs; owned cleanup and final resource accounting passed.
+Bytecode was disabled. The full discovery count equals the prior 919 tests
+plus 42 new tests.
+
+The create-only implementation certificate binds 163 source/test/requirements
+files and 48 evidence files, including both interrupted/failed runs, original helpers and corrections.
+The manifest's certificate binding changed only after successful validation;
+its approved specification stayed unchanged. The completed responsive-monitor
+design check was reused, not rerun. Records, snapshots, logs, source review,
+certificate and completion checkpoint are under
+`data/outputs/t/op_impl_de134d942767/`.
+
+No scientific output-presence attempt or other scientific execution occurred.
+All validation fixtures were artificial; no real media was inspected and no
+completed visual review was repeated. The prior 3,071-event history, 59 closed
+attempts, 55 successes, four failures and cumulative balance
+`11079.945000000014` seconds remain unchanged. The completed recovery is consumed;
+the distinct new one-attempt 120-second role has not been reserved.
+
+Branch/HEAD remain `codex/ball-detector-baseline` /
+`de134d942767b70dfc6da360745f50405a8b3f8d`. Ten intended files are unstaged,
+the index is empty, and `git diff --check` passed. Staging and committing still
+need separate approval. The new post-commit execution checkpoint remains absent.
+
+## 2026-10-05: output-presence proposal prepared using source and receipts only
+
+After successful recovery, Ryan asked to move forward. Preparation produced
+`../ball_crop_candidate_retention_output_presence_proposal.md`, requesting a
+new within-row split of S memberships using only the recovered breakdown.
+Its 744,235-byte size and SHA-256 were copied from the successful worker's
+administrative receipt; the scientific breakdown body was not opened or hashed.
+
+The source contract establishes single current, threshold-qualified output for
+both cap policies and false-positive count equal to accepted output count on
+an unmatched eligible frame. Git confirmed unchanged blobs since original
+scoring commit `f36237247191e726ad7e81bdc6651f9340a9063d` for
+`crop_retention_evaluation.py`, `evaluation.py`, `crop_motion_factorial.py` and
+`crop_motion_evaluation.py`. This is a source-based derivation proof, not a new
+empirical result. No new memberships, counts, semantic labels or performance
+claims were produced. The reviewed package receipt explicitly lacks individual
+frame identity verdicts.
+
+Before-context copies and source bindings are preserved under
+`data/outputs/t/output_presence_plan_de134d942767/`. An initial read referenced
+a nonexistent proposal filename; the correct existing filename was found from
+the documentation inventory. This was an ordinary read-command correction,
+not a failed test or experiment, and required no permission stop.
+No tests, scientific reads/hashes, real workers, media inspection or Git
+mutations occurred. The previous 32 focused passes and 918 full-suite passes
+plus one existing skip remain the latest implementation validation.
+The original recovery allowance and attempt are unchanged. The new 120-second
+one-attempt diagnostic requests separate approval; no code was implemented.
+
+## 2026-10-05: one scientific error-breakdown recovery completed successfully
+
+Ryan separately authorized the 34-file staging and commit, then continued with
+"ok lets move forward". The clean execution commit was
+`de134d942767b70dfc6da360745f50405a8b3f8d`. Committed blobs matched the verified
+index and all working-file bindings remained unchanged. Release preparation
+verified 159 source bindings and 16 validation-evidence bindings, then created
+the exact post-commit checkpoint. It reused the completed 32 focused passes and
+918 full-suite passes plus the existing Windows skip; no tests were rerun.
+
+The new public recovery entry point ran exactly once as attempt
+`05fe00c14f224c5abfc2cc6008e90f96`. It passed its metadata preflight, owned-worker
+execution, final accounting, cleanup, preservation and bounded-summary release
+checks. Command exit code was zero and stderr was empty. The unchanged formatter
+copied the approved 48 rows, with representative/challenge pools kept separate.
+No inference, scoring, decoding, training, new visual review or method selection
+occurred. Scientific input/output body reads and hashes stayed in the owned
+worker; the parent used administrative receipts and the accepted transport.
+
+Charged time was `52.54699999999866` seconds from the existing
+`292.73500000001513`-second balance. Supervisor wall time before publication was
+`53.09300000000076` seconds; complete external command wall time was
+`106.45300000000134` seconds. Eleven accounting scans completed. Maximum safety
+interval was `0.2960000000020955` seconds, peak sampled combined memory
+419,811,328 bytes, final output bound 7,415,183,417 bytes and minimum free disk
+1,465,797,832,704 bytes. Time/memory/output overshoots were zero; final-accounting
+and cleanup errors were absent, and owned cleanup was verified.
+
+The original failure and 3,010-event prefix remain preserved. Completion event
+`00003070.json` has chain tip
+`d800b77b4db2128d1baa09db59538ab6f16d4aad6d96aaa7a9fd84f96c11bf92`.
+The recovery attempt is consumed; no automatic retry or renewed budget exists.
+Launch command, wall time, stdout/stderr bindings, release checkpoint and
+completion record are under `data/outputs/t/ebri_fa730bcb6d2e/`. Scientific
+outputs are ignored under the original experiment root at
+`audit/post_review_error_breakdown_recovery_v0_1/` and must not be reopened or
+hashed by the parent. All holdouts, embargoes and completed reviews remain.
+
 ## 2026-10-05: recovery integration passed focused and full validation
 
 Ryan authorized continuation with "move forward chat". The new recovery runner

@@ -1,0 +1,29 @@
+{
+  "schema_version": "ball_crop_retention_output_presence_approval/v0.1",
+  "approved_by": "Ryan",
+  "recorded_at_utc": "2026-10-06T03:36:51.774104+00:00",
+  "statement": "Yes move forward chat",
+  "timestamp_semantics": "Receipt creation time, not an invented user-message timestamp.",
+  "proposal": {
+    "path": "docs/ball_crop_candidate_retention_output_presence_proposal.md",
+    "sha256": "355bfcd29d8059737ca4b8449cd1fe0a03b72ba32aefc57b2ed5e71ba2dbdfcb"
+  },
+  "implementation_authorized": true,
+  "focused_validation_authorized": true,
+  "full_regression_authorized": true,
+  "conditional_execution_authorized": true,
+  "separate_clean_commit_required": true,
+  "maximum_new_attempts": 1,
+  "maximum_unit_seconds": 120,
+  "responsive_monitor_policy_adopted": true,
+  "approved_operations": [
+    "ordered_difference",
+    "ordered_intersection",
+    "list_length"
+  ],
+  "parent_scientific_body_access_authorized": false,
+  "automatic_scientific_retry_authorized": false,
+  "semantic_adjudication_authorized": false,
+  "new_model_inference_authorized": false,
+  "git_mutations_authorized": false
+}
