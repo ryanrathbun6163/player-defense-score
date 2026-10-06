@@ -1,0 +1,66 @@
+{
+  "schema_version": "ball_crop_saved_decision_contrast_experiment/v0.1",
+  "study_id": "rfdetr_medium_crop_saved_decision_contrast_v0_1",
+  "output_root": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1",
+  "output_dir": "audit/post_review_saved_decision_contrast_v0_1",
+  "permitted_stages": [
+    "summarize"
+  ],
+  "unit_key": "post-review-saved-decision-contrast:summary:",
+  "maximum_unit_seconds": 120,
+  "maximum_summary_bytes": 65536,
+  "maximum_contrast_bytes": 131072,
+  "maximum_provenance_bytes": 131072,
+  "scientific_inputs": {
+    "representative_pool": {
+      "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/evaluation/representative_evaluation.json",
+      "sha256": "d70e2c4abafdd943a5f1add2e4f15748f04f5f2c2a240c2a5f867c81f03c7c9b",
+      "size_bytes": 22583132
+    },
+    "tt_observations_wrapper": {
+      "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/history_edge_tight_cost_tight_6faf84c6b3f6ca9d.json",
+      "sha256": "731eb6e538e43d4412762b5aab276ed250f57cc8f1ea19a34ee4e62b722fe26f",
+      "size_bytes": 5522898
+    }
+  },
+  "proposal": {
+    "path": "docs/ball_crop_saved_decision_contrast_proposal.md",
+    "sha256": "aefe7d8619d85ed82a228e76e6fcdaa8ae95f16f6c6243217aca4697a1bf5119"
+  },
+  "scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_saved_decision_contrast_v0_1.json",
+    "sha256": "2e67565cc7fbedfe24eb04b7743e24d4904a44d5425470abecf90f35fe4ca2da"
+  },
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_saved_decision_contrast_approval_v0_1.json",
+    "sha256": "172484bb0b302920d298e4d4ec3f43a2f58974c4f6b15205ba1f204f86c97494"
+  },
+  "frozen_history": {
+    "path": "data/outputs/t/sdc_impl_7a2e660a3887/frozen_history.json",
+    "sha256": "5bc62396d7817110b91f8126b5ab2f03c4935483a8ce25782d96a87b0c27bf35"
+  },
+  "predecessor_manifest": {
+    "path": "configs/ball_tracking/crop_retention_experiments/rfdetr_medium_crop_candidate_identity_review_v0_1.json",
+    "sha256": "5b0333f663f1aa33a755a4fc46f841fdfac162a2762238e348a63d4166590cdc"
+  },
+  "predecessor_completion": {
+    "path": "data/outputs/t/ci_impl_efeefd58f680/identity_review_completion_7a2e660a3887.json",
+    "sha256": "bfd72f86bfba0bfd8250f3480382ae7f530e89fda278413ca5de59cc14a68087"
+  },
+  "human_ledger": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/candidate_identity_review_v0_1/human_review_0008.json",
+    "sha256": "bdd9179f0982646fea2ede5686187bab6f26c51ee61b89f1139ab088b1192665"
+  },
+  "human_review_completion": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/candidate_identity_review_v0_1/human_review_completion_v0_1.json",
+    "sha256": "b7958873abdc31c8bd8b409f6238090ebfd7ed19c130f6ab1fa6b44de805d857"
+  },
+  "implementation_validation": {
+    "path": "data/outputs/t/sdc_impl_7a2e660a3887/implementation_validation.json",
+    "sha256": "8199d31f5c952754f5e87e15fb11d045ba939c0e760ee10da68020feb153e9b7"
+  },
+  "post_commit_checkpoint": "data/outputs/t/sdc_impl_7a2e660a3887/post_commit_execution_checkpoint.json",
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

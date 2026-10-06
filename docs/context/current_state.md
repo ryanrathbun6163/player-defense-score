@@ -1,6 +1,251 @@
 # Current State
 
-## Latest checkpoint: 2026-10-06 candidate-identity implementation validated; staging is next
+## Latest checkpoint: 2026-10-06 saved-decision contrast validated; approved commit is next
+
+Ryan explicitly approved the exact saved-decision contrast proposal and added:
+"Yes you may, and you also have my permission to stage and commit if nothing is broken after you implement this".
+The separate approval record authorizes implementation, artificial validation,
+one conditional execution, and staging/committing the passing scope. No further
+permission is needed for those approved steps; pushing, PR creation and merging
+remain unauthorized.
+
+The new runner and pure formatter are validated with **55 focused passes** and
+**1,048 full-suite passes plus the one existing Windows directory-symlink skip**
+(1,049 total; no failures or errors). Independent implementation/helper reviews
+passed. The certificate in `data/outputs/t/sdc_impl_7a2e660a3887/` binds all 169
+source/test/requirements files, unchanged authority and validation evidence.
+The original selector, evaluator, monitor and prior tests remain unchanged.
+
+
+Next stage and commit the exact eleven intended files after reporting branch,
+HEAD, status and scope. Then verify the clean descendant commit, create its
+release checkpoint and dispatch the one authorized 120-second comparison.
+The index is empty; this pre-commit checkpoint remains on
+`codex/ball-detector-baseline` at `7a2e660a38877e2000fa997e675c86b97d55e9ac`.
+The release checkpoint and new comparison outputs are absent.
+
+The fresh preservation snapshot includes all nine human administrative records,
+the sixteen prior image metadata rows, the two declared input metadata rows,
+the 3,172-event/61-attempt prefix, nine embargoes and three sealed holdouts.
+All old attempts remain consumed; the new role is unspent and the cumulative
+balance is `10993.273000000017` seconds. Implementation and validation opened
+no real scientific bodies or pixels and repeated no completed human review.
+Only the future owned worker may read the two exact saved inputs. It will
+return the fixed eight comparisons with unchanged judgments and null indices.
+
+## Prior checkpoint: 2026-10-06 saved-decision contrast proposed; approval is next
+
+Ryan's "move forward chat" authorized planning only. The concrete proposal is
+`../ball_crop_saved_decision_contrast_proposal.md`, with companion scope
+`configs/ball_tracking/proposals/rfdetr_medium_crop_saved_decision_contrast_v0_1.json`.
+For the same eight TT/cap20 frames, it would compare the emitted winner's saved
+score/path with one saved highest-confidence top-twenty candidate satisfying
+the raw 10-pixel rule. Saved S membership already establishes retained
+availability; neither that question nor the completed visual review is repeated.
+
+The proposed worker would read exactly the original motion representative pool
+(22,583,132 bytes) and TT observations (5,522,898 bytes), totaling 28,106,030 bytes.
+Sizes came from metadata; expected hashes came from committed metadata. It
+would report signed current-confidence, past-confidence, gap and motion
+contributions and differences from saved values, keeping the pair gap separate
+from the saved global margin. Frame 300 has no history contribution. These
+comparisons support no global causal conclusion or new semantic identity.
+
+The proposed distinct unit permits one attempt of at most 120 charged seconds,
+bounded by the remaining `10993.273000000017` seconds. All old attempts remain
+consumed; the 3,172-event prefix, completed human review, original localization
+outcomes, nine embargoes and three holdouts remain preserved. Preparation read
+or hashed no scientific bodies and accessed no pixels; no tests, experiments
+or Git mutations ran. Independent source/document review of the proposal passed;
+this is not code validation or a test run.
+
+Next is explicit approval of the exact proposal for implementation, artificial
+focused/full validation, independent review and one conditional execution.
+Execution still requires separately approved staging and committing, a verified
+clean commit, and its release checkpoint. The intended dirty scope is five files:
+three context documents plus the new proposal and scope. The index is empty;
+HEAD remains `7a2e660a38877e2000fa997e675c86b97d55e9ac` on
+`codex/ball-detector-baseline`. Nothing is staged, committed or pushed by this planning.
+
+## Prior checkpoint: 2026-10-06 all eight candidate-identity judgments complete
+
+Ryan's exact response for frame 324 was: "ok this one is the furthest from the ball of all 8 frames. This one is on the white player in the left corner, very far from the ball".
+The final `human_review_0008.json` records `another_object`, center
+`not_applicable`, and candidate index null. The left-corner-player description
+and furthest-of-eight comparison are Ryan's qualitative judgments; no numerical
+distance or player identity is inferred. The administrative completion record is
+`data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/candidate_identity_review_v0_1/human_review_completion_v0_1.json`.
+Administrative checks confirmed the eight-record chain, one new answer per
+record, preserved other rows/image bindings/raw outcomes, and unchanged
+verification-artifact metadata and resource-journal event count and tip.
+
+All eight frames are reviewed, with none pending or uncertain: seven
+`another_object` judgments and one `ball` judgment. Frames 300, 301, 302, 304
+and 308 were hands; frame 320 was the dribbling player; frame 324 was the
+left-corner player. Frame 319 was ball with `clearly_displaced` center at its
+outer edge. These selected, correlated failures do not establish overall rates,
+method rankings or causal proof. The original 10-pixel outcomes remain unchanged.
+
+Next is a separately bounded follow-up proposal using these human observations;
+no additional experiment or visual review is authorized. Resource journals,
+consumed attempts, budgets, existing tests, nine embargoes and three sealed
+holdouts are unchanged. HEAD remains `7a2e660a38877e2000fa997e675c86b97d55e9ac`;
+the three context documents remain unstaged with an empty index. Staging and
+committing still require separate approval. No scientific input/image access,
+test rerun or Git mutation accompanied these notes.
+
+## Prior checkpoint: 2026-10-06 frame 320 judgment recorded; frame 324 is next
+
+Ryan's exact response for frame 320 was: "ok this one is off the ball but it is not nearly as far as frames 1-5. This one landed on the player who is actively dribbling the ball".
+The immutable administrative `human_review_0007.json` records `another_object`,
+center `not_applicable`, and candidate index null. Ryan identified the dribbling
+player, without specifying a body part or candidate number. His comparison with
+the first five reviewed examples remains qualitative; no distance, cause or
+matchup identity is inferred. Record `0006` and all other rows are preserved.
+
+Seven of eight frames are reviewed: five hand cases, frame 319 ball/off-center,
+and frame 320 the dribbling player. Only frame 324 remains pending; present its
+unmarked source first, then its verified native overlay. Original outcomes,
+budgets, test evidence and Git boundaries are unchanged. Recording this response
+required no scientific input or image access, experiment/test rerun or Git
+mutation. The three context documents remain unstaged with an empty index.
+
+## Prior checkpoint: 2026-10-06 frame 319 judgment recorded; frame 320 is next
+
+Ryan's exact response for frame 319 was: "so this one is on the ball, but it is on the outer edge of the ball and not in the center".
+The immutable administrative `human_review_0006.json` records identity `ball`,
+center `clearly_displaced`, and candidate index null because no number was
+supplied. The marked point's outer-edge placement is a qualitative judgment;
+no numerical displacement or causal explanation is inferred. Record `0005`
+and all other rows are preserved.
+
+Six of eight frames are reviewed: the first five were another object (player's
+hand); frame 319 is ball with an off-center mark. Frames 320 and 324 remain
+pending. Present frame 320's unmarked source first, then its verified native overlay.
+Original 10-pixel outcomes, budgets, test evidence and Git boundaries are
+unchanged. Recording this response required no scientific input or image
+access, experiment/test rerun or Git mutation. The three context documents
+remain unstaged with an empty index.
+
+## Prior checkpoint: 2026-10-06 frame 308 judgment recorded; frame 319 is next
+
+Ryan's exact response for frame 308 was: "same thing with this one, it is only a players hand".
+The immutable administrative `human_review_0005.json` records `another_object`
+(player's hand), center `not_applicable`, and candidate index null because no
+number was supplied. Record `0004` and all other rows are preserved.
+
+Five of eight frames are reviewed; 319, 320 and 324 remain pending.
+Present frame 319's unmarked source first, then its verified native overlay.
+Budgets, localization outcomes, test evidence and Git boundaries are unchanged.
+Recording this response required no scientific input or image access,
+experiment/test rerun or Git mutation. The three context documents remain
+unstaged with an empty index.
+
+## Prior checkpoint: 2026-10-06 frame 304 judgment recorded; frame 308 is next
+
+Ryan's exact response for frame 304 was: "same thing with this one, it is on a black players hand".
+The immutable administrative `human_review_0004.json` records `another_object`
+(player's hand), center `not_applicable`, and candidate index null because no
+number was supplied. Record `0003` and all other rows are preserved.
+
+Four of eight frames are reviewed; 308, 319, 320 and 324 remain pending.
+Present frame 308's unmarked source first, then its verified native overlay.
+Budgets, localization outcomes, test evidence and Git boundaries are unchanged.
+Recording this response required no scientific input or image access,
+experiment/test rerun or Git mutation. The three context documents remain
+unstaged with an empty index.
+
+## Prior checkpoint: 2026-10-06 frame 302 judgment recorded; frame 304 is next
+
+Ryan's exact response for frame 302 was: "same thing with this one, it is on a black players hand".
+The immutable `human_review_0003.json` records `another_object` (player's hand),
+center `not_applicable`, and candidate index null because no number was supplied.
+Record `0002` and all other rows are preserved.
+
+Three of eight frames are reviewed; 304, 308, 319, 320 and 324 remain pending.
+Present frame 304's unmarked source first, then its verified native overlay.
+Budgets, localization outcomes, test evidence and Git boundaries are unchanged.
+The new administrative ledger preserves all earlier records. No scientific
+input or image was opened/hashed; no experiment, test or Git mutation occurred.
+The three documents remain unstaged with an empty index.
+
+## Prior checkpoint: 2026-10-06 frame 301 judgment recorded; frame 302 is next
+
+Ryan's exact response for frame 301 was: "same thing with this one, the candidate is on a black players hand".
+The new immutable `human_review_0002.json` in the candidate-identity review
+directory records `another_object` (player's hand), center `not_applicable`,
+and candidate index null. Ryan did not state a number for this frame;
+frame 300's index 0 is not inherited. Record `0001` and all other rows are preserved.
+
+Two of eight frames are reviewed; 302, 304, 308, 319, 320 and 324 remain pending.
+Present frame 302's unmarked source first, then its verified native overlay.
+Budgets, original localization outcomes, test evidence and Git boundaries are
+unchanged. No scientific artifact or pixel inspection, experiment, test or Git
+mutation accompanied these notes. The three context documents remain unstaged
+with an empty index.
+
+## Prior checkpoint: 2026-10-06 frame 300 judgment recorded; frame 301 is next
+
+Ryan's exact response for frame 300 was: "That candidate landed on a black
+players hand, not very close to the ball". The new immutable administrative
+ledger is `data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/candidate_identity_review_v0_1/human_review_0001.json`.
+It records `another_object`, center `not_applicable`, and candidate index 0
+from the preceding marker clarification. Ryan supplied the identity judgment;
+the numeral was not separately restated in his answer. No distance was derived.
+
+One frame is reviewed; 301, 302, 304, 308, 319, 320 and 324 remain pending.
+Present frame 301's unmarked source first, then its verified native overlay.
+The original pending ledger, verification artifacts and localization outcomes
+remain unchanged. No image bodies were opened/hashed to record this response,
+and no experiment or test was repeated. Budgets and Git boundaries below remain
+unchanged. The three context documents remain unstaged with an empty index.
+
+## Prior checkpoint: 2026-10-06 image-byte verification complete; human review is next
+
+Ryan separately approved staging and committing the exact nine validated files.
+Commit `7a2e660a38877e2000fa997e675c86b97d55e9ac` on
+`codex/ball-detector-baseline` was verified clean before the already conditional
+verification ran. Its parent is `efeefd58f6801ffe5de106a48f8dad1e835b9647`.
+Nothing was pushed.
+
+The one approved attempt, `89268748193e45b4a598af6bd4747f05`, succeeded.
+Its owned worker verified only the sixteen declared PNG byte bindings and
+created verification, pending-review, guide and provenance outputs. No pixels
+were decoded or inspected by the parent; no inference, scoring, selection or
+semantic labels were produced. All eight frames remain pending with zero human
+answers: 300, 301, 302, 304, 308, 319, 320 and 324 in P003 representative TT/cap20.
+The administrative completion record is
+`data/outputs/t/ci_impl_efeefd58f680/identity_review_completion_7a2e660a3887.json`;
+it binds the verified summary transport without requiring scientific-body reads.
+
+The attempt used 43.938 charged seconds of 120; supervisor wall time was
+44.750 seconds and complete command wall time was 86.094 seconds. Cleanup and
+final accounting passed with no resource overshoot. The preserved 3,121-event
+prefix is now part of a 3,172-event journal with 61 closed attempts: 57 successes
+and the same four historical failures. Its tip is
+`10ce622caf54c06526fa2b0b259889157711adeb35d4185d793e74cf845dad13`.
+Cumulative allowance remaining is `10993.273000000017` seconds. This attempt,
+the output-presence attempt and prior recovery are consumed, with zero
+authorized attempts remaining. Unused arithmetic time grants no retry.
+
+Next is Ryan's already approved human judgment, beginning with frame 300:
+inspect the unmarked source first, then the native TT/cap20 overlay. Reference
+markings are disclosed; this is source-first review, not blind review. Use the
+emitted candidate `#`, not the amber `alt #`; record an unreadable identifier as
+null. Identity choices are `ball`, `another_object`, or `uncertain`; for `ball`,
+center choices are `plausible`, `clearly_displaced`, or `cannot_judge`.
+Keep the original 10-pixel outcome separate. These selected eight frames do
+not establish general rates, rankings or a tracking-method choice. All nine
+embargoes, three sealed holdouts and completed review decisions remain protected.
+
+The existing validation remains 33 focused passes and 993 full-suite passes
+plus the existing Windows skip; no tests or completed visual reviews were
+repeated. These three post-execution context updates are intentionally unstaged,
+with an empty index and HEAD unchanged at `7a2e660a38877e2000fa997e675c86b97d55e9ac`.
+Further staging and committing each require separate approval. No new
+scientific run, retry or budget renewal is authorized.
+
+## Prior checkpoint: 2026-10-06 candidate-identity implementation validated; staging is next
 
 Ryan's exact approval, "ok I'm back chat. Lets move forwar sir", authorized
 implementation, artificial validation and the conditional execution/human-review

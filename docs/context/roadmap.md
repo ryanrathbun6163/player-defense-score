@@ -1,6 +1,104 @@
 # Roadmap
 
-## Current continuation: stage the validated eight-frame identity-review implementation
+## Current continuation: commit the validated saved-decision contrast and execute once
+
+Ryan explicitly approved the exact saved-decision contrast proposal and added:
+"Yes you may, and you also have my permission to stage and commit if nothing is broken after you implement this".
+The separate approval record authorizes implementation, artificial validation,
+one conditional execution, and staging/committing the passing scope. No further
+permission is needed for those approved steps; pushing, PR creation and merging
+remain unauthorized.
+
+The new runner and pure formatter are validated with **55 focused passes** and
+**1,048 full-suite passes plus the one existing Windows directory-symlink skip**
+(1,049 total; no failures or errors). Independent implementation/helper reviews
+passed. The certificate in `data/outputs/t/sdc_impl_7a2e660a3887/` binds all 169
+source/test/requirements files, unchanged authority and validation evidence.
+The original selector, evaluator, monitor and prior tests remain unchanged.
+
+
+Follow the approved sequence: exact eleven-file stage, verified commit, clean
+release checkpoint, then the one distinct monitored comparison. The role remains
+unspent: at most 120 charged seconds within `10993.273000000017` cumulative seconds.
+No automatic retry, new inference, parameter tuning, image access, candidate
+re-ranking or evaluator execution is authorized. Keep all consumed attempts,
+human reviews, original localization outcomes, nine embargoes and three holdouts.
+
+The worker compares the saved emitted endpoint with the saved highest-confidence
+raw-10-compatible retained endpoint for frames 300, 301, 302, 304, 308, 319, 320
+and 324. Current confidence, past confidence, gap and motion terms explain the
+saved arithmetic only; the comparison's visual identity remains unknown. Keep
+pair gaps separate from global margins and avoid causal/general-performance claims.
+
+## Prior continuation: approve the proposed saved-decision contrast
+
+The next concrete scope is `../ball_crop_saved_decision_contrast_proposal.md`
+and `configs/ball_tracking/proposals/rfdetr_medium_crop_saved_decision_contrast_v0_1.json`.
+Ryan authorized preparing this proposal only. Independent source/document
+review of the proposal passed; no code validation or tests ran. Implementation,
+tests and scientific execution still need the exact-proposal approval.
+
+For the same eight reviewed frames, compare the saved emitted endpoint with
+one saved highest-confidence raw-10-compatible top-twenty endpoint. Report
+their recorded paths and signed confidence/history/gap/motion terms, preserving
+the separate pair gap and global margin. Retained availability is already
+established; no availability rerun or visual review is needed. Frame 300 has
+no history contribution, and the selected comparisons cannot prove general causes.
+
+Only a future owned worker may access the two bound motion-pool/TT-observation
+bodies, totaling 28,106,030 metadata-reported bytes. Proposed execution is one
+new 120-second attempt within `10993.273000000017` cumulative seconds; old
+attempts stay consumed. The next boundary is exact-proposal approval for
+implementation, artificial focused/full validation and conditional execution.
+Separate staging and commit approvals, a verified clean commit and a new
+release checkpoint remain mandatory before execution. Preserve all original
+outcomes, completed reviews, embargoes and holdouts.
+
+Preparation performed no scientific-body read/hash, pixel access, tests,
+experiments or Git mutation. Five intended files are unstaged, the index is
+empty, and HEAD remains `7a2e660a38877e2000fa997e675c86b97d55e9ac`.
+
+## Prior continuation: plan a bounded follow-up after the completed eight-frame review
+
+The nine-file implementation was separately staged and committed at
+`7a2e660a38877e2000fa997e675c86b97d55e9ac`. The approved one-time verification
+then succeeded, checking only the sixteen existing PNG byte bindings without
+decoding pixels. All eight frames are reviewed. Frames 300, 301, 302, 304
+and 308 are `another_object` (player's hand), center `not_applicable`. Frame 319
+is `ball`, center `clearly_displaced`: Ryan described the mark at the ball's
+outer edge rather than its center. This is qualitative, with no numerical
+displacement or causal conclusion. Frame 320 is `another_object`, center
+`not_applicable`: Ryan reported the player actively dribbling, without naming
+a body part. His comparison with the first five examples is qualitative;
+no distance, cause or matchup identity is inferred. Frame 324 is `another_object`,
+center `not_applicable`: Ryan described the left-corner player and judged this
+mark furthest from the ball among the eight. No numerical distance or player
+identity is inferred. Frame 300's candidate index is 0 from its
+prior clarification; the other reviewed indices are null because no numbers
+were supplied. The final `human_review_0008.json` and administrative
+`human_review_completion_v0_1.json` document seven `another_object` judgments
+and one `ball` judgment, with no pending or uncertain rows.
+
+Next prepare a concrete, bounded follow-up proposal from the recorded human
+observations. No further experiment, scientific access or visual review is
+authorized. Preserve the source-first, non-blind review context and keep the
+original 10-pixel outcomes separate. These selected, correlated failures cannot
+establish overall rates, method rankings, causal proof or a general quality gate.
+
+The single verification attempt is consumed: 43.938 charged seconds of 120,
+with `10993.273000000017` cumulative seconds remaining. The journal has 3,172
+events and 61 closed attempts, retaining all four historical failures. No new
+scientific run or automatic retry is authorized, and previous recovery and
+output-presence attempts remain consumed. Use the administrative completion
+record under `data/outputs/t/ci_impl_efeefd58f680/` for continuity; do not reopen
+scientific artifact bodies. Existing tests and completed package reviews stay
+complete. Preserve all nine embargoes, three sealed holdouts and prior decisions.
+
+Nothing was pushed. The three continuation documents remain unstaged with an
+empty index; any later staging and commit each require separate approval.
+Next is a separately bounded follow-up proposal; no new execution is authorized.
+
+## Prior continuation: stage the validated eight-frame identity-review implementation
 
 Ryan's 2026-10-06 approval, "ok I'm back chat. Lets move forwar sir", authorizes
 the exact proposal in `../ball_crop_candidate_identity_review_proposal.md`,
