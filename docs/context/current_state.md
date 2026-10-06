@@ -1,6 +1,702 @@
 # Current State
 
-## Latest checkpoint: saved error-breakdown implementation validated; Git authorization next
+## Latest checkpoint: recovery integration validated; staging approval pending
+
+The new `src/ball_tracking/crop_retention_error_breakdown_recovery.py` connects
+the saved error-breakdown recovery to the validated responsive monitor. Its
+versioned manifest, integration design and approval preserve the original
+scientific scope, three worker-only inputs, failed attempt and 3,010-event
+prefix. The original 300-second allowance remains shared; the recovery balance
+is still 292.73500000001513 seconds. The original runner, formatter, monitor,
+resource module and historical approvals/certificates were not edited.
+
+Independent static review passed. All 32 focused synthetic
+tests passed, followed by 919 full-suite tests: 918 passes
+and the existing Windows directory-symlink capability skip, no failures/errors
+on the final validated run. Supervised elapsed times were
+8.719 seconds focused and 2241.687
+seconds full. Validation binds the exact current source/test inventory and
+reuses the monitor's completed design check without rerunning it.
+
+Evidence and the new implementation certificate are under
+`data/outputs/t/ebri_fa730bcb6d2e/`. The post-commit execution checkpoint is
+deliberately absent. No scientific recovery, parent scientific-body read/hash,
+new visual review or Git mutation occurred. The planned 48-row diagnostic is
+still pending; this completes its runner integration and validation.
+
+The intended scope is 34 unstaged files, with empty index on
+`codex/ball-detector-baseline` at
+`fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`. Next: Ryan may authorize staging the
+exact files in `data/outputs/t/ebri_fa730bcb6d2e/staging_scope.json`. Committing
+remains a separate approval. After a validated clean commit, the create-only
+execution checkpoint must bind its actual HEAD before the conditional recovery.
+See `../ball_crop_candidate_retention_error_breakdown_recovery_integration.md`.
+
+## Prior checkpoint: responsive monitor validated; 886 full-suite passes
+
+Ryan approved the monitoring redesign with "ok I like it. Move forward" after
+reviewing the difference between computer safety and the arbitrary half-second
+accounting target. The new isolated backend is
+`src/ball_tracking/crop_retention_monitor.py`; policy and scope are in
+`../ball_crop_candidate_retention_monitor_revision.md` and its versioned approval.
+The compiled scanner/native timing proposal is set aside; its evidence remains
+preserved and no pending native allocation was executed.
+
+Fast resource checks remain at most one second apart, while a separately owned
+Python helper gets ten seconds per complete accounting request. The effective
+free-disk reserve is 50 GiB. Combined sampled RAM remains bounded at 8 GiB, with
+separate Windows committed-memory backstops. Process ownership begins before
+execution, and whole-root preflight/final accounting remain mandatory. Original
+supervisor, runners, journal limit bindings and consumed budgets are unchanged.
+
+Independent static review passed. All 37 focused checks passed on their first
+run (0.978 unittest seconds). The separate fresh 12,000-file/400-directory
+design check passed with three complete scans and a maximum safety-check gap
+of 0.266 seconds. Its final scan took 0.890 seconds, demonstrating accounting
+longer than the former half-second limit while safety checks continued.
+The full suite passed on its first run: 887 tests, 886 passes and one existing
+Windows directory-symlink capability skip, no failures/errors, in 2197.840
+unittest seconds (2199.922 supervised seconds). Source/test bytes stayed frozen
+across validation. No scientific execution, old
+fixture traversal, parent scientific-body read/hash, Git mutation or visual
+re-review is included. The saved error breakdown still requires recovery-runner
+integration/authority and a separately authorized validated clean commit.
+
+Administrative evidence is under `data/outputs/t/ebdm_fa730bcb6d2e/`; see
+`completion_checkpoint.json`, the three result records and the design receipt.
+Starting 25-file dirty state and 181 source/test/configuration/context bindings
+were captured. Current intended scope adds four files (monitor, tests, design
+and approval), for 29 unstaged files and empty index at unchanged branch
+`codex/ball-detector-baseline`, HEAD `fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`.
+
+## Prior checkpoint: compiled prototype built; focused and full validation passed
+
+Ryan authorized the specified installation and isolated prototype with "ok well
+lets move forward" and asked to keep usage focused. Microsoft Build Tools
+17.14.41 (installed build 17.14.37710.0), MSVC v143 and the selected Windows SDK
+are installed and verified, with no reboot required. The fixed bootstrapper's
+Microsoft signature and version were checked. Existing newer C++ runtimes remain
+registered; setup also added required components. The approval is
+`configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_compiled_batch_build_approval_v0_1.json`.
+
+The isolated production/test extensions and Python accounting wrapper are under
+`data/outputs/t/ebcb_src_fa730bcb6d2e/`, successful source `revision_02`, build
+`build_02`. Public ABI/path, allocation/error and deadline behavior passed
+independent source review. Production exposes no artificial provider hooks.
+Both binaries compiled with strict warnings and passed architecture/export/
+dependency inspection; the build receipt binds 260 dependency inputs.
+
+All **39 focused artificial checks passed** on their first actual test run.
+The single full regression run completed **850 tests: 849 passes and the existing
+directory-symlink capability skip**, with no failures/errors. It took 2290.353
+unittest seconds and 2296.125 supervised seconds. Peak sampled worker-tree memory
+was 955,551,744 bytes; cleanup succeeded and no job members remained. All 156
+production/test/requirements bindings stayed unchanged.
+
+Two routine setup corrections are preserved: the first build stopped on a
+Python-header warning, resolved by a file-scope forward declaration without
+weakening warnings; the first validator invocation could not import `psutil`
+and stopped before any test/worker launch. Its replacement reuses the frozen
+Windows Job/RSS helper and adds no Python dependency. Neither was a scientific
+failure. Original revisions, logs and correction records remain intact.
+
+No production query series, performance benchmark, scanner replacement or real
+scientific recovery ran. Speed is still unproved. The next reviewed proposal is
+`../ball_crop_candidate_retention_compiled_scanner_validation_proposal.md`: one
+new conditional native correctness/static/dynamic validation allocation, 120
+charged seconds with separate outer command limits totaling 150 seconds. It
+requires new approval; no consumed allocation is renewed. The planned 48-row
+saved error breakdown still awaits safe accounting and validated integration.
+
+All scientific embargoes, holdouts, completed reviews and evidence remain.
+Git state is 25 intended unstaged files, empty index, unchanged branch
+`codex/ball-detector-baseline` and HEAD `fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`.
+No Git mutation is authorized. See the new ignored completion checkpoint for
+exact result/source/binary bindings and final preservation checks.
+
+## Prior checkpoint: compiled-batch plan ready; compiler installation proposed
+
+The read-only toolchain inventory and concrete build/interface plan are complete:
+`../ball_crop_candidate_retention_compiled_batch_plan.md`. CPython 3.11.15/x64
+already has its extension headers and import library. No usable compiler or
+Windows SDK was found in the checked PATH, known locations or registry roots;
+installed C++ runtimes and VS Code are not those build tools. No installer was
+downloaded or executed, and no prototype was built or tested.
+
+The proposed next block installs specified Microsoft Build Tools/SDK components,
+then builds and artificially validates an isolated CPython C extension. Its
+128-name batches retain fresh per-file queries, full native identities, the
+same Python deadline callback and original error precedence. Discovery and both
+complete accounting inventories stay in Python. Speed remains unproved; a later
+live correctness/performance series needs a fresh explicit envelope. No consumed
+series or leftover arithmetic time grants another attempt.
+
+Installation/implementation approval is pending. Scientific recovery, scanner
+integration and Git mutations are outside this plan. All embargoes, holdouts,
+completed reviews, evidence, resource limits and readiness gates remain. The
+planned 48-row breakdown of saved ball-candidate errors is still pending safe
+accounting. Planning records are under `data/outputs/t/ebcb_plan_fa730bcb6d2e/`.
+Final planning scope is 23 intended unstaged files, empty index, branch
+`codex/ball-detector-baseline`, HEAD `fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`.
+
+## Prior checkpoint: accounting reassessed; compiled-loop build plan preferred
+
+Ryan requested reassessment after the completed negative speed finding. The
+saved profile, component evidence, accounting/diagnostic source and official
+Windows API documentation were reviewed without new tests, native probes,
+benchmarks or scientific reads. The decision note is
+`../ball_crop_candidate_retention_accounting_reassessment.md`.
+
+Fresh file metadata occupied about 59.8% of the older profiled scanner call;
+that incomplete profiled call is not an unprofiled speed bound. The latest tiny
+comparison was order-sensitive: the second method won nine of ten pairs. That
+observation does not establish cache causation or invalidate the saved negative
+gate result. No timing pass was discarded or repeated.
+
+The source-only write audit found an explicit 65,536-byte limit on readable
+summary text, but no complete pre-write byte budget for JSON artifacts, receipts,
+journals, logs and temporary/runtime output. Saved receipts do not make history
+immutable. Counting only a mutable suffix is therefore not a proved substitute
+for whole-root accounting. Directory-entry sizes have a documented hard-link
+freshness limitation and are not an equivalent shortcut either.
+
+Preferred next scope: establish a supported build path and review a bounded
+compiled sequential loop that still queries every file freshly and preserves
+both complete inventories, identities, multiplicity, conservative sizes and
+all deadlines. This may reduce language-boundary overhead; its performance is
+unproved. The limited local inventory found no common compiler on PATH or the
+usual Visual Studio locator. It did not establish that no compiler exists
+elsewhere, and no compiler was run or installed.
+
+No implementation or execution allocation was added. All prior gates, budgets,
+failures, embargoes, holdouts and completed reviews remain unchanged. The planned
+48-row breakdown of saved results and reliable ball-tracking quality remain pending. Git
+state is branch `codex/ball-detector-baseline`, HEAD
+`fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`, 22 intended unstaged files and empty
+index. Reassessment records are under `data/outputs/t/ebra_plan_fa730bcb6d2e/`.
+
+## Prior checkpoint: identity equivalence passed; component speed gate not met
+
+Ryan approved the reviewed identity-equivalence follow-up with "Ok move forward
+now chat". The separate approval is recorded in
+`configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_by_name_identity_equivalence_approval_v0_1.json`.
+The implementation and its preserved source revision are under
+`data/outputs/t/ebni_src_fa730bcb6d2e/`. The Windows adapter remains unchanged.
+
+Independent source review passed. All 50 relevant artificial checks passed on
+their first run: 35 identity/timing checks and 15 adapted supervision regressions,
+with zero failures, errors or skips. The unchanged adapter's prior 32 passing
+checks were reused; neither those checks nor the full suite were repeated.
+
+The one authorized native series completed as `component_comparison_complete`,
+attempt `0148ff4a58d247aa83b1e4758b48902e`, under
+`data/outputs/t/ebni_fa730bcb6d2e/`. All 94 comparisons across seven correctness
+phases passed. The two backends retained their different complete identifiers
+while agreeing on known file groups, sizes and continuity through the controlled
+mutations. Opaque 128-bit evidence was preserved and checked separately. Both
+backends observed a different identity for the declared replacement. This does
+not establish arbitrary concurrent-replacement behavior. The final fabricated
+fixture had 64 names, four directories and 2,125 logical bytes counted per name.
+
+All 20 timing batches and ten alternating pairs completed, totaling 1,280 fresh
+queries. The median native/reference duration ratio was `0.8992258224480973`.
+Native was faster in six pairs and slower in four. The prospective gate required
+a median at most `0.80` and every native batch faster; both conditions failed.
+This is a valid negative performance finding. `worth_full_scanner_proposal` and
+`scanner_readiness_passed` remain false. No pass was discarded or rerun.
+
+The unchanged supervisor sealed a successful execution with `1.5780000000013388`
+charged seconds, a 221,061-byte final output bound and no resource violations.
+The arithmetic remainder is `28.42199999999866` seconds, with zero native series
+remaining. Parent-reported harness/external wall times were respectively
+`2.0964757000001555` and `2.2839816` seconds; they are separate from sealed active
+time. Independent post-run metadata audit passed in `outcome_audit_01.json`.
+
+Next: reassess the output-accounting design using saved evidence. This result
+does not justify integrating the candidate or repeating its series. The saved
+48-row scientific error breakdown still awaits safe, sufficiently fast output
+accounting. Ball tracking quality and the full scanner readiness gates remain
+open; this task produced infrastructure evidence, not improved ball tracks.
+
+All earlier results and allowances remain preserved, including the earlier
+numeric-identity finding. No scientific bodies or fixtures were traversed by
+the parent; no completed visual reviews were repeated. Embargoes and sealed
+holdouts remain unchanged. Git mutations remain unauthorized: branch
+`codex/ball-detector-baseline`, HEAD `fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`,
+21 intended unstaged files and an empty index. Preservation verification is
+recorded in the implementation directory's `completion_checkpoint.json`.
+
+## Prior checkpoint: identity semantics reviewed; follow-up proposal prepared
+
+Ryan asked to continue after the by-name component finding. The next work was
+read-only review of identity semantics and preparation of
+`../ball_crop_candidate_retention_identity_equivalence_proposal.md`. No new
+component code, tests, native probe, benchmark or fixture traversal ran.
+
+The current byte counter uses file identifiers as equality keys, not numeric
+quantities. A consistent one-to-one relabeling across both complete inventories
+preserves membership, hard-link multiplicity, conservative maximum sizes and
+the byte sum. Separate numeric identifiers can therefore support the same
+accounting semantics, conditional on correct same-file grouping and continuity.
+Per-phase group agreement alone is insufficient: still-live files must retain
+their own identity across observations. This is source-based reasoning, not a
+new empirical pass or proof for arbitrary concurrent replacements.
+
+The proposal retains the existing full native volume/FileId64 key and complete
+Python device/inode key separately. It requires declared and cross-backend
+hard-link groups, distinct files, constant per-backend volume, live-file
+continuity, known sizes, consistent observed replacement reuse, and opaque
+128-bit evidence. No truncation, identity translation or 128-bit key redesign
+is proposed. Timing would use separate frozen expectations for the two APIs.
+
+The saved numeric mismatch remains `identity_contract_review_required`; its
+native series is still consumed and its 29.21900000000096 arithmetic seconds
+are not renewed. Speed and scanner readiness remain unproved. The follow-up
+asks for explicit approval of the amended component checks and a fresh bounded
+30-second/16 MiB series, with the original supervisor and all existing gates.
+Implementation, native execution, full scanner integration, scientific recovery
+and Git mutations are not authorized by this preparation.
+
+Preparation records are under `data/outputs/t/ebni_plan_fa730bcb6d2e/`. Eighty
+source/authority/context/fabricated-metadata bindings were verified. Only the new
+proposal and continuation text in three context files change; 77 other bindings
+and all historical context bodies remain protected. The expected dirty scope
+is 20 intended unstaged files, index empty, branch `codex/ball-detector-baseline`,
+HEAD `fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`. No completed tests or visual reviews
+were repeated, no old budget changed, and all scientific boundaries remain.
+
+Next: obtain approval of the concrete identity-equivalence component envelope.
+The project remains at ball-tracking diagnostics; the 48-row saved error
+breakdown still awaits safe, sufficiently fast output accounting.
+
+## Prior checkpoint: metadata component tested; volume identity differs
+
+Ryan approved the reviewed by-name component proposal on 2026-10-05 and asked
+for an honest project status. Approval is recorded separately in
+`configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_by_name_feasibility_approval_v0_1.json`.
+The frozen proposal remains historical; its formerly pending approval is now
+satisfied for this component only. No Git or real-recovery permission was added.
+
+The ignored adapter, tiny comparison engine, supervision harness and artificial
+checks were implemented under `data/outputs/t/ebbn_src_fa730bcb6d2e/`. Combined
+independent review passed. All 72 new artificial tests passed on their first
+validation run, with zero failures, errors or skips. Old tests and the full
+suite were not repeated; the original scanner/supervisor remained unchanged.
+
+The single native series then completed under the original supervisor at
+`data/outputs/t/ebbn_fa730bcb6d2e/`, attempt
+`d774f180726d47a08a6aead2658a807a`. The API was available and the local fixed
+NTFS/ancestor checks passed. The first fabricated-file comparison found the
+same file ID (`1125899906873685`) and logical size (64 bytes) but different
+volume identifiers: ordinary `os.stat` returned `986718957`, whereas the native
+API returned full unsigned value `14572188484234126061`. Raw signed storage and
+the complete 128-bit file ID are preserved. No identifier was truncated or
+remapped to force equality.
+
+The outcome is `identity_contract_review_required`. This is a completed,
+supervisor-bound component finding, not an exception or a passing compatibility
+check. It prevents a direct substitution under the current numeric-identity
+contract. It does not establish that the native query is wrong or unsafe under
+a different reviewed contract. Only the first initial file comparison ran:
+later correctness mutations, the 64-entry timing inventory and all timing
+passes did not run. Speed benefit and scanner readiness remain unproved.
+
+The supervisor charged `0.7809999999990396` seconds; command wall time was
+`1.3705132` seconds. Its five-event journal closed successfully, with no resource
+overshoot or final-accounting error, maximum monitor interval 0.25 seconds and
+final output bound 34,770 bytes. The final event SHA-256 is
+`23af9026d35da59de3d6500b33e8bca498948c3bd9ec7d10e40e1a9c683d400a`.
+The arithmetic balance is `29.21900000000096` seconds, but the single native
+series has been consumed: no retry or new allocation is implied.
+
+The project has demonstrated player coordinates across three reviewed
+possessions and completed the ball-evaluation protocol, 75-frame pilot,
+150-frame development baseline and controlled detector/association comparisons.
+The retention and YOLO visual reviews are complete. These experiments establish
+useful tradeoffs, but no robust end-to-end ball tracker or multi-possession ball
+quality gate has been selected. Recent progress concerns the resource monitor;
+it is not demonstrated tracking-quality improvement. The saved 48-row error
+breakdown remains pending on safe, sufficiently fast output accounting.
+
+Next technical decision: review the identity representation explicitly before
+considering another by-name experiment, or select a different accounting design.
+Do not silently narrow the native volume ID. Full scanner correctness/static/
+dynamic gates, integration/regression, a recovery certificate and separately
+authorized clean commit remain prerequisites for real recovery. Possession
+understanding, roster identity, matchups and validated defensive scoring follow
+the ball-tracking foundation; no completion percentage or ETA is established.
+
+Post-run review/preservation and this checkpoint are documentation work only.
+All nine embargoes, three sealed holdouts, six retention reviews, twelve YOLO
+final-frame reviews, old balances and completed/failed evidence remain intact.
+There was no parent scientific-body access, old stress-fixture traversal, or
+real-root execution. Routine command quoting, a metadata-directory lookup and
+a bookkeeping path-array expression were corrected without permission stops;
+none was an experimental failure.
+The worktree has 19 intended unstaged files, an empty index, branch
+`codex/ball-detector-baseline` and HEAD `fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`.
+
+## Prior checkpoint: fresh Windows metadata feasibility proposal prepared
+
+Ryan's 2026-10-05 instruction replaces the blanket stop-on-any-failure rule:
+resolve ordinary tool/helper problems within approved scope; pause for material
+correctness, evidence, resource or scope issues. The updated working agreement
+records this. Historical stop instructions below describe their earlier scope;
+they do not override Ryan's latest instruction. Git permissions, embargoes,
+sealed holdouts and consumed experimental allowances remain separate.
+
+Read-only review of the saved profile and existing source supports investigating
+a different fresh metadata interface. The new proposal is
+`../ball_crop_candidate_retention_by_name_feasibility_proposal.md`: an isolated
+Windows by-name adapter, artificial checks and one conditional tiny correctness/
+timing series before any full scanner implementation. Availability, complete
+identity compatibility, fresh sizes and useful speed benefit are unproved. The
+proposal requests a new cumulative 30-second, 16 MiB feasibility allowance;
+it does not consume or renew any old allocation.
+
+The earlier CPython raw-source lookup was blocked by the fetch tool. It was not
+a test or diagnostic failure. Its interruption receipt remains unchanged and
+the restricted fetch was not retried. Official Microsoft interface declarations
+support this proposal without claims about installed CPython internals.
+
+Only documentation changed during preparation: the proposal, this checkpoint,
+roadmap, validation history and working agreement. No native API probe, tests,
+benchmark, fixture traversal or scientific-body access occurred. Preparation
+and final verification records live under `data/outputs/t/ebbn_plan_fa730bcb6d2e/`.
+The intended dirty scope is now 18 files, with an empty index, on
+`codex/ball-detector-baseline` at `fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`.
+No staging or other Git mutation is authorized.
+
+Next: obtain approval of the concrete component envelope, then implement its
+reviewed adapter/harness and perform its new checks and conditional bounded
+series. Full scanner readiness and the saved 48-row scientific error breakdown
+remain pending. Earlier successful/failed evidence, all nine embargoes, three
+sealed holdouts and the six plus twelve completed visual reviews stay intact.
+
+## Prior checkpoint: static timing attempt failed on the first call; stopped
+
+Ryan approved the reviewed static timing request with "Yes move forward".
+The separate approval is
+`configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_scan_prefix_static_timing_approval_v0_1.json`.
+New ignored harness, artificial tests and validation are preserved under
+`data/outputs/t/ebxt_src_fa730bcb6d2e/`. Independent static review passed, followed
+by one run of 29 new helper tests: 29 passes, zero failures, errors or skips.
+The candidate's earlier 26 correctness tests were not repeated.
+
+The one approved static attempt was then executed at
+`data/outputs/t/ebxt_static_fa730bcb6d2e/`, attempt
+`5650139001c240c5bb6c9e243927f0de`. The owned worker verified the preserved
+fabricated fixture's metadata before timing. Call 1 raised the unchanged
+accounting-deadline `ResourceLimitError` after a measured
+`0.4854300000006333` seconds and returned no byte total. This failed the static
+gate; no second candidate call ran. The after-series fixture check did not run.
+The saved call progress and worker result are failure evidence, not a successful
+supervisor-bound completion result. Static and overall readiness remain false.
+
+Read-only failure preservation verified the sole closed attempt, six-event
+journal, reservation/completion seals and absent supervisor lock. The final
+event SHA-256 is
+`3dfa324db2969075accea17ea8485898cc4962a98c277311a54a1cd6dd4a48c1`.
+The supervisor charged `2.312999999998283` seconds; the external command took
+`2.6772916` seconds. No time, memory or output overshoot or final-accounting error
+was recorded; maximum monitor interval was `0.26599999999962165` seconds.
+The new allocation has `27.687000000001717` seconds arithmetically unspent but
+**zero authorized attempts remaining**. The failure does not authorize a retry,
+an alternate root, code repair or a changed threshold.
+
+`failed_execution.json` in the new helper directory preserves the command
+outputs, failure-artifact hashes, charged/wall times and unchanged old balances.
+Only failure documentation and preservation followed the stop. The candidate,
+supervisor, old approvals, successful/failed evidence and timing request remain
+unchanged. No parent fixture traversal, scientific body access or real-root
+traversal occurred. All embargoes, sealed holdouts and completed visual reviews
+remain protected; no full suite or scientific recovery ran.
+
+The new approval brings the intended dirty scope to sixteen files on
+`codex/ball-detector-baseline`, HEAD
+`fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`, with an empty index. No Git mutation
+is authorized. The next proposed approval is read-only review of existing
+profile/source evidence to prepare another concrete optimization proposal;
+no new tests, benchmark, profiler or scientific access would be included.
+No manual command is pending. Stop remains in effect until Ryan authorizes
+the next scope.
+
+## Prior checkpoint: bounded static timing request ready for approval
+
+The amended prefix candidate's 26 focused passes and independent reviews remain
+valid. No benchmark or additional test has run. Ryan's "Move forward" authorized
+preparation of `../ball_crop_candidate_retention_scan_timing_request.md`.
+
+The request proposes a new static-only allocation: one owned worker, 30 seconds
+of recorded unit/cumulative active time, 16 MiB new outputs, 8 GiB combined worker
+memory and 10 GiB minimum free disk. Keep 0.25-second polling, the live one-second
+monitor limit and the candidate's half-second deadline. The original supervisor
+captures charged elapsed before its final accounting/seal publication; those
+mandatory checks remain, and total command wall time is reported separately.
+
+The worker would verify the preserved 12,000-file/400-directory fabricated tree
+and run exactly 30 candidate calls, each returning 12,259,360 bytes in less than
+0.40 seconds. No candidate warmup, extra candidate verification call, profiler
+or retry is allowed. First failure stops dispatch. The unchanged supervisor and
+original scanner monitor a separate small result root. The existing fixture
+remains read-only, and its before/after preservation checks are metadata-only.
+
+Independent request review passed after clarifying the existing time-accounting
+semantics. Preparation verified 31 source/authority/synthetic-metadata bindings,
+without traversing the fixture or real scientific root. Bindings, before-context
+copies and completion evidence are under `data/outputs/t/ebxt_plan_fa730bcb6d2e/`.
+The new request brings the intended dirty scope to fifteen files; the branch,
+HEAD and empty index remain unchanged. No source, old approval or evidence is
+altered by this documentation stage.
+
+Next approval covers a new ignored static harness, its new artificial helper
+checks and one conditional static execution if those checks and review pass.
+It proposes no reuse/reset of the old profiling balance and no new dynamic
+budget. Dynamic readiness, full regression and real recovery remain outstanding;
+all scientific/Git boundaries below remain intact. No manual command is pending.
+Stop on any new failure; no automatic repair or retry.
+
+## Prior checkpoint: amended prefix candidate passed focused correctness
+
+The separate directory-prefix scanner is implemented, including Ryan's approved
+UNC correction: `prefix = os.path.join(folder, "_")[:-1]`. It prepares each
+directory prefix once, then uses fresh `os.stat(prefix + name)` queries. The
+two-inventory accounting algorithm and all existing deadline checks remain;
+one additional check follows prefix preparation. The ordinary supervisor does
+not install this candidate.
+
+Both independent source reviews passed. The structural validator confirmed that
+only the approved prefix preparation, added deadline check and query expression
+differ from the frozen first candidate's executable code. The first and only
+focused run passed all 26 tests with zero failures, errors or skips. Coverage
+includes bare/extended UNC and drive-relative paths, fresh queries, hard links,
+inventory changes, disappearance/errors and deadline enforcement. A small
+temporary Windows fixture matched an independent ordinary-stat reference.
+
+The test log reports 0.016 seconds; the helper took 0.24663389999841456 seconds,
+with 0.583733 seconds command wall time. These are correctness-test durations,
+not a scanner benchmark. The validation SHA-256 is
+`416983627262eb332f74af528ad996aed93029ce81bc3f85b3c23d260f56cd73`;
+the log SHA-256 is
+`2f5e6316d89bbc780f34773507246cf7867d46bf81a5979e4e3d032284cab1bd`.
+Evidence is under `data/outputs/t/ebsx_impl_fa730bcb6d2e/`, with the current
+continuation in `completion_checkpoint.json` there. Independent result review
+confirmed the structured counts, log and source/review bindings.
+
+The blocked empty-prefix version, original proposal/approval and all earlier
+failures remain preserved. The UNC amendment has separate authority. A subsequent
+JavaScript wrapper syntax error stopped before its PowerShell command started;
+Ryan approved correction with "Yes you may". That corrected preparation and
+the single focused run succeeded. No test was rerun.
+
+Branch is `codex/ball-detector-baseline`, HEAD
+`fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`, with an empty index and fourteen
+intended dirty files. The prior thirteen are joined by the separate amendment
+approval. Context updates after validation are reporting changes; the validation
+receipt retains its actual pre/post-test context snapshot. Runtime source,
+tests, helper, approvals and all protected evidence remain frozen.
+
+Next: prepare a concrete, bounded timing-execution request. Speed and full
+regression for this candidate remain unverified. No stress benchmark, new profile,
+full-suite run or real recovery is authorized in this stage. The completed
+profiling allowance retains `26.560999999998785` seconds and cannot be silently
+reused or reset. The saved real balances, nine embargoes, three sealed holdouts
+and eighteen completed reviews remain unchanged. Parent scientific-body reads
+and hashes remain prohibited. Git steps are separately unapproved. No manual
+command is pending. Stop on any new failure; no automatic repair or retry.
+
+## Prior checkpoint: prefix implementation stopped at static review
+
+Ryan approved the directory-prefix implementation and new focused correctness
+checks with "Yes you may chat move forward". The separate scanner, approval,
+26-test module and ignored structural-result helper were prepared. No test,
+benchmark, profile, full suite or real recovery ran.
+
+Independent test-source review found a blocker in the frozen proposal: for a
+bare UNC share root such as `\\server\share`, joining an empty string omits
+the separator needed before a filename. The proposed prefix concatenation is
+therefore not equivalent to the original join for that required case. Read-only
+inspection of the installed Python `ntpath.py` confirmed its conditional UNC
+separator logic. The earlier proposal review missed this case.
+
+Implementation stopped before validation. There is no validation-start marker,
+test log, result or overall passing implementation-review receipt. The candidate,
+tests, helper, original proposal and approval remain preserved; no repair or
+retry has occurred. The exact review/binding checkpoint is
+`data/outputs/t/ebsx_impl_fa730bcb6d2e/blocked_review.json`.
+
+The proposed amendment is `prefix = os.path.join(folder, "_")[:-1]`: join a
+nonempty placeholder to obtain the normal separator, then remove that one
+character. It is not implemented or approved. Ryan's explicit amendment approval
+is needed before changing the candidate, related tests and structural checker,
+obtaining fresh review and running the new tests once. Timing remains unproved.
+
+Branch/HEAD remain `codex/ball-detector-baseline` /
+`fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`. The intentional dirty scope is
+thirteen files, with an empty index: the prior ten plus the new scanner, test
+and approval. Scientific data, all resource balances, nine embargoes, three
+holdouts and eighteen completed visual reviews remain unchanged. No manual
+command is pending. Stop on any new failure; no automatic repair or retry.
+
+## Prior checkpoint: profile captured; directory-prefix candidate proposed
+
+Branch is `codex/ball-detector-baseline`, HEAD
+`fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`, with an empty index. The approved
+single synthetic profile succeeded in capturing the anticipated accounting
+deadline. It returned no byte total; readiness remains false. Fresh metadata
+queries took 291.710 ms, approximately 60% of recorded scanner time. Path joining
+took 71.589 ms cumulative, including nested work. The truncated profile does not
+prove a speedup, tree instability or the original real-run cause.
+
+The profile used 2.594 active seconds within the approved limits. Its completed
+attempt is `4932f5dc070640e3a96cf094ff86859b`. The exact result checkpoint is
+`data/outputs/t/ebsp_src_fa730bcb6d2e/profile_execution_continuity.json`, SHA-256
+`bdb79f4f527beb7b3927b5c02dd5779d8a60e45c9deefac21f7416c6727b730b`.
+The remaining profiling balance is `26.560999999998785` seconds, with no unused
+execution authorization. Earlier helper/ownership failures and successful
+corrections remain preserved; the final integrated helper passed 15 new tests.
+
+The next draft is
+`../ball_crop_candidate_retention_scan_prefix_proposal.md`: retain fresh ordinary
+stat calls and the two-inventory algorithm, but construct the directory prefix
+once per directory. Its benefit remains unproved. Ryan authorized documentation
+preparation; implementing this new candidate and its focused correctness checks
+is the next approval. No benchmark budget, stress run, full-suite rerun or real
+recovery is authorized by preparation. All later performance/full-regression
+gates and separately authorized staging/clean-commit requirements remain.
+
+Preparation changes only the new proposal and these three existing context
+documents, bringing the intentional dirty scope from nine files to ten. Source,
+old approvals/proposals and completed/failed evidence remain preserved. Two
+preparation interruptions were separately cleared: a wrong source path, then
+an unavailable external documentation page. Neither was a failed test or
+diagnostic. The proposal uses already retrieved sources; the page was not retried.
+Preparation bindings and before-context copies are under
+`data/outputs/t/ebsx_plan_fa730bcb6d2e/`.
+
+The real error breakdown remains pending. No real-root traversal or scientific
+body read/hash occurs in this preparation. All nine embargoes, three sealed
+holdouts and eighteen completed clip reviews remain protected. No manual command
+is pending. Stop on any new failure; no automatic repair or retry.
+
+## Prior checkpoint: scanner timing gate failed; synthetic diagnosis proposed
+
+Branch remains `codex/ball-detector-baseline`, HEAD
+`fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`, with an empty index. Ryan approved
+the first recovery proposal with "yes I do move forward"; its separate approval
+record supersedes its frozen draft wording. The recovery-only ordinary-stat
+scanner and 20 focused tests were implemented. All 20 tests passed, zero skipped.
+The recorder initially failed to parse Windows CRLF line endings. With separate
+permission, `scanner_focused_reconciliation.json` accepted the unchanged saved
+log after 13 parser checks; the tests were not rerun. Preserve the original
+failed recorder receipt and successful reconciliation.
+
+The approved static readiness benchmark ran once on its fixed 12,000-file,
+400-directory fabricated tree. The first call raised the existing accounting-
+deadline error, returned no total, and was measured at `0.4908125000074506`
+seconds. The requirement was less than 0.40 seconds for each of 30 calls.
+Work stopped after that first call. No dynamic gate, full-suite rerun, recovery
+runner implementation or real recovery dispatch followed. Correctness passed;
+the candidate did not pass performance readiness. No slow phase, speedup or
+performance on the real tree was established by this observation.
+
+Evidence is under
+`data/outputs/ball_tracking/crop_candidate_retention_error_breakdown_recovery_implementation/fa730bcb6d2e_2026-10-04/`.
+The failed `static_receipt.json` SHA-256 is
+`f7f12382fa600f1e05d9aaf160e7aec2e064492865d30fce23c035afe4e9e3f2`.
+The scanner uses a monotonic clock for its deadline; the wrapper used a
+performance counter. No saved internal readings establish why their observed
+values differ. Neither clock nor threshold was changed.
+
+Ryan then authorized inspection of the saved result and a revised proposal
+with "yes you may". Independent review confirmed the nine bound files and
+the fabricated layout/reference. Metadata preparation verified all 5,774 real
+files/189 directories, all 12,000 fabricated files/400 directories, 151 original
+source/test/dependency bindings and three helpers. No scientific bodies were
+read or hashed, and no scanner was called during that investigation.
+
+The new draft is
+`../ball_crop_candidate_retention_error_breakdown_scan_diagnosis_proposal.md`.
+It proposes one supervised synthetic profile of the unchanged scanner on the
+preserved fabricated tree. Profiling measures function calls and time but adds
+overhead; its result cannot pass readiness or unlock real execution. A captured
+known deadline would remain an explicit diagnostic observation. Any later
+scanner design and execution need their own concrete authority. Pure batched
+directory sizes are not accepted as a fresh-stat substitute because documented
+NTFS size staleness could understate growing files.
+
+Preparation evidence and before-context copies are under
+`data/outputs/ball_tracking/crop_candidate_retention_error_breakdown_scan_diagnosis_proposal/fa730bcb6d2e_2026-10-04/`.
+The preparation receipt SHA-256 is
+`e7b8e01b920c25dea4ed3ff7d671aad82f8e46ac1c223e93d5436af57c518ba3`.
+The eight intended dirty files comprise the existing proposal, approval, scanner,
+test and three context files, plus the new diagnosis proposal. No Git mutation
+was performed. The old proposal, approval, scanner/tests and all failure evidence
+remain unchanged. The real journal and remaining balances below are preserved.
+
+Next: review the new synthetic diagnosis scope with Ryan before implementing
+its helper or running the profile. No command is pending. Do not repeat any of
+the eighteen completed clip reviews, old tests or experiments. The original
+scientific approval remains valid, all embargoes and sealed holdouts remain in
+force, and the saved error breakdown remains unproduced. Stop on any new failure.
+
+## Prior checkpoint: error-breakdown execution stopped; recovery proposal prepared
+
+Ryan separately authorized staging and committing the eleven tested files.
+Commit `fa730bcb6d2e6d396391191c0fb3e36a3a338bf1` on
+`codex/ball-detector-baseline` has parent
+`e71a4d2165623208d624c4839e9321bd9bf779ba`. The exact committed hashes, clean
+checkout and empty index were verified before real execution. Nothing was pushed.
+The earlier handoff ignore-check and independent-check interpreter errors were
+separately corrected with permission; neither was a test or scientific failure.
+
+The approved public error-breakdown command ran once and failed. Attempt
+`4adfb390f1f74a1baaec7fb178092218` consumed `7.264999999984866` active seconds;
+the command took 41.266 wall seconds. The resource monitor reported
+`Output tree did not stabilize for complete byte accounting`. Work stopped
+without repair or retry. Its worker log is empty, its result file and diagnostic
+output directory are absent, and no verified summary was returned. The records
+do not establish the worker's internal interruption point or whether it reached
+a scientific input. Parent investigation read no scientific bodies.
+
+Ryan authorized read-only investigation, then preparation of the concrete draft
+`../ball_crop_candidate_retention_error_breakdown_recovery_proposal.md` with
+"move forward with the recovery proposal". The scanner's one half-second deadline
+can fail on slow complete scans as well as membership changes; the exact trigger
+is unresolved. The draft proposes a recovery-only ordinary `os.stat` lookup
+without repeated `Path` construction, preserving all counting rules and live
+limits. Its performance is unproved. Fixed fabricated correctness/timing gates
+must pass before one newly authorized recovery attempt at a clean tested commit.
+No recovery implementation, benchmark or retry has run or is approved.
+
+The full 3,010-event chain is verified: 58 closed attempts, 54 successes, four
+preserved failures and no open attempt. Tip:
+`e5f2a832dd961d2615daa30ca77b039ad8dbe68bcbcfa12c2437128fbc83a3b3`.
+Cumulative usage is `3267.507999999987` seconds; remaining cumulative allowance
+is `11132.492000000013`. The original diagnostic's 300 seconds would cover both
+attempts, leaving `292.73500000001513` seconds for recovery, not a fresh budget.
+The supervisor lock is absent. Final accounting succeeded after termination;
+that does not convert the failed attempt into success.
+
+Execution receipts remain under
+`data/outputs/ball_tracking/crop_candidate_retention_error_breakdown_implementation/e71a4d216562_2026-10-02/`.
+Proposal preparation evidence and before-context copies are under
+`data/outputs/ball_tracking/crop_candidate_retention_error_breakdown_recovery_proposal/fa730bcb6d2e_2026-10-04/`.
+All 5,762 original evidence files match frozen metadata; the current inventory
+has 5,774 files and 189 directories, including the new failure. This is metadata
+preservation, not a new scientific-content audit. All 151 source/test/dependency
+bindings and three earlier helper bindings are unchanged. The prior 46 focused
+passes and 803 full-suite passes plus one Windows skip were not repeated.
+
+The proposal and three context updates are intentionally unstaged; index empty.
+HEAD remains `fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`. Next: Ryan reviews the
+specific operational recovery proposal. Original scientific approval and all
+eighteen completed clip reviews remain valid; no repeat review is requested.
+All embargoes, holdouts, original authorities and resource limits are preserved.
+Do not invoke the old runner or dry-run: both reject the changed failure prefix.
+No manual command is pending. Stop on any new failure; Git steps remain separate.
+
+## Prior checkpoint: saved error-breakdown implementation validated; Git authorization next
 
 Ryan approved the exact new scope with "Yes I permit. Move forward". The separate
 approval receipt is

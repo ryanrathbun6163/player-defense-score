@@ -1,5 +1,633 @@
 # Validation History
 
+## 2026-10-05: recovery integration passed focused and full validation
+
+Ryan authorized continuation with "move forward chat". The new recovery runner
+uses the responsive monitor through an explicit journal adapter, preserving
+the original failed execution and deducting its charged time from the shared
+300-second allowance. A new manifest and certificate separate current source
+validation from immutable historical certificates. A missing post-commit
+checkpoint prevents public execution before the separately authorized clean
+commit. Source/configuration review preceded test execution.
+
+Final focused validation passed all 32 synthetic tests in
+8.719 supervised seconds. Full regression completed
+919 tests: **918 passes, one existing Windows directory-symlink
+capability skip, zero failures/errors** on the final validated run, in
+2241.687 supervised seconds. Peak sampled full-suite worker
+memory was 963,837,952 bytes. Source/test bytes were frozen during
+the successful focused and full runs. The monitor's prior 12,000-file design
+evidence was reused; no new large fixture or performance benchmark ran.
+
+The first focused run completed 32 tests with 30 passes, one error and one
+failure. Both came from the same path check: it required preserved directories
+to be strictly below the output root and therefore rejected the root itself.
+The correction explicitly accepts the exact output root while retaining all
+ancestor/reparse checks and the stricter descendant boundary. The original
+source snapshot, log, result and review receipt remain preserved. Focused tests
+were rerun after this real correction; the full suite ran on the corrected
+source. No real data or diagnostic execution was involved in that failure.
+
+Exact command, source snapshots, logs, resource observations, review receipt,
+implementation certificate and preservation checkpoint are under
+`data/outputs/t/ebri_fa730bcb6d2e/`. Validation used fresh ignored artificial
+fixtures, owned Windows processes and disabled bytecode. Its output subtotal
+covers fresh TEMP plus logs; legacy fixed fixture destinations are explicitly
+outside that subtotal. No scientific body was read or hashed by the parent,
+and no real recovery unit was dispatched. Ordinary read-command corrections
+are separate from this recorded focused-test failure.
+
+The final intended scope adds five files to the prior 29-file dirty worktree:
+runner, tests, integration design, integration approval and recovery manifest.
+Only three existing context documents were updated during this step; their
+historical bodies and all other prior bindings are preserved. The index remains
+empty at `fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`. Staging and committing still
+require separate authorization. The saved 48-row diagnostic remains pending.
+
+## 2026-10-05: responsive monitoring passed focused, design and full validation
+
+Ryan approved implementation after reviewing the engineering choice behind the
+half-second deadline. A separate Python monitor now keeps cheap resource checks
+independent of whole-root metadata scans. The original resource module,
+scientific runner, journal limit bindings, consumed budgets and earlier evidence
+were preserved. The compiled-scanner benchmark proposal was set aside without
+executing its pending allocation.
+
+Independent static review passed before execution. Review corrections included
+suspended process startup before Windows Job assignment/resume, exact primary
+thread ownership verification, separate worker/IPC receipt bounds, actual
+serialized-byte bounds, tick-start cadence, observed overshoot recording and
+validation-driver phase/source bindings. These were pre-test source corrections;
+no failing validation attempt occurred in this implementation.
+
+All 37 focused tests passed in 0.978 unittest seconds (1.641 supervised seconds),
+covering metadata accounting, slow/stalled scans, responsive memory/disk/time
+checks, preserved budgets, bounded records and startup/descendant cleanup. Actual
+Windows checks confirmed a small job rejects an allocation above its committed
+memory ceiling and owns/terminates child processes. Test allocations were tiny
+and controlled; no system-wide memory pressure test was performed.
+
+One fresh artificial design check created 12,000 file names and 400 directories,
+including a hard-link pair, with 192,000 initial logical bytes. It ran a seven-
+second growing worker under the new monitor. Three complete scans succeeded;
+the final scan took 0.890 seconds, while the maximum safety-check gap was 0.266
+seconds. Combined sampled worker/helper RSS peaked at 75,661,312 bytes. Final
+reference bytes were 236,340 and within the conservative published bound.
+Charged attempt time was 8.766 seconds; wall time before final publication was
+9.797 seconds. The outer design check took 15.531 supervised seconds including
+fixture setup and verification. No original 0.40/0.50-second speed gate was
+applied or retroactively changed, and no historical fixture was revisited.
+
+The single full suite completed 887 tests: **886 passes, one existing Windows
+directory-symlink capability skip, zero failures/errors**. It took 2197.840
+unittest seconds and 2199.922 supervised seconds. All source/test bindings
+remained unchanged during validation. The ignored evidence directory is
+`data/outputs/t/ebdm_fa730bcb6d2e/`; its completion checkpoint binds the outputs
+and verifies preservation, branch/HEAD and the empty index.
+
+The 29-file unstaged scope consists of the original 25 intended files plus the
+new monitor, focused tests, revision design and approval record. Git staging,
+committing and real scientific execution did not occur. Recovery-runner and
+authority integration remain necessary before the saved error breakdown. All
+embargoes, holdouts and completed human reviews remain preserved.
+
+## 2026-10-05: compiled prototype built; 39 focused and 849 full-suite passes
+
+Ryan authorized the planned compiler/SDK installation, isolated implementation,
+build and artificial/full-regression validation. Preparation under
+`data/outputs/t/ebcb_src_fa730bcb6d2e/` verified 123 protected bindings, HEAD
+`fa730bcb6d2e`, branch `codex/ball-detector-baseline`, 23 intended unstaged files
+and empty index. No live candidate query allocation was granted.
+
+The official fixed Build Tools 17.14.41 bootstrapper had a valid Microsoft
+signature, ProductVersion 17.14.41, FileVersion 17.14.37710.0 and SHA-256
+`37bb0fb429d163ecebd272a865d11a37b906d152bef960da2ddb29c2e2fd6eeb`.
+The selected offline layout used exactly the three approved component IDs and
+en-US. Setup exited zero; the installed instance is complete, launchable and
+requires no reboot. Dependency/version, layout, installer and setup records are
+preserved. No runtime downgrade was requested; installed runtime registrations
+are recorded. No scientific data were involved in installation.
+
+Independent source review passed for the C core, artificial provider, wrapper
+and 39 focused checks. Build 01 stopped at CPython's header warning C4115 under
+strict /WX. Source revision 02 adds only `struct timeval;` before Python.h;
+revision 01 and its failed build/log are preserved. Build 02 compiled both
+modules successfully and inspected their x64 exports/dependencies, with 260
+input bindings. Its production binary SHA-256 is
+`54242db5b678e06bbb50fa2f0d74e1e6bf3f3280dd3bf64465d402ffd557b290`.
+
+The first validation launcher invocation failed before its marker or worker
+launch because `psutil` is absent. The failed driver was retained unchanged;
+the reviewed replacement reuses hash-verified `_WindowsJob`/`_rss` from the
+existing resource helper. No dependency was installed and no tests were rerun
+because of that pre-test failure. The corrected validator preserves exceptions,
+bounded cleanup, create-only logs, explicit binary/source bindings and limits.
+
+Focused validation passed all 39 checks in 0.011 unittest seconds, 0.516
+supervised seconds. Full regression ran once: **850 tests, 849 passes, one
+existing directory-symlink capability skip, zero failures/errors**, in 2290.353
+unittest seconds and 2296.125 supervised seconds. Peak sampled owned-tree RSS
+was 955,551,744 bytes; minimum sampled free disk was 1,469,064,687,616 bytes.
+Both jobs were assigned/closed successfully with no remaining members or
+cleanup errors. All 156 production/test/requirements bindings stayed unchanged.
+
+These results establish build and artificial correctness, not native metadata
+correctness or performance. No production candidate query, benchmark, old
+fixture traversal, scientific body read/hash, scanner integration or Git
+mutation occurred. The independently reviewed next native proposal explicitly
+separates original charged elapsed from finalization/outer command wall time
+and records static gate calls separately from whole-tree supervisor calls.
+Its 120-second allocation is proposed only; previous budgets are unchanged.
+
+Final scope adds the installation/prototype approval and next validation
+proposal to the prior worktree, plus three context continuations: 25 intended
+unstaged files, empty index, unchanged branch/HEAD. Before context updates,
+all 123 preparation bindings matched; final preservation retains the other
+120 bindings and all historical context text with prior-heading demotions.
+
+## 2026-10-05: compiled-batch toolchain inventory and interface plan
+
+Planning began at HEAD `fa730bcb6d2e`, branch `codex/ball-detector-baseline`,
+22 intended unstaged files and empty index. A preparation receipt under
+`data/outputs/t/ebcb_plan_fa730bcb6d2e/` verified 119 protected bindings and saved
+the three context bodies before continuation edits.
+
+Read-only checks found CPython 3.11.15/x64, its headers/import libraries and
+`.cp311-win_amd64.pyd` suffix. PATH, known installation locations and registry
+roots supplied no usable compiler/SDK. Existing Visual C++ runtimes and VS Code
+were recorded without treating them as build tools. No exhaustive disk search,
+installer download, compilation, test, live query or benchmark occurred.
+
+The new plan specifies Microsoft Build Tools 17.14.41/required C++ dependencies,
+one SDK family, isolated build provenance and a bounded public-CPython interface.
+The same deadline closure surrounds successful fresh queries; failed queries
+preserve the original error precedence. Python retains complete inventories,
+multiplicity, conservative sizes and disappearance behavior. Independent review
+covers the proposal; artificial tests and native validation remain future work.
+
+Only the new plan and three context continuations change. Final preservation
+checks require the other 116 bound files unchanged, historical context bodies
+preserved, exact 23-file unstaged scope, unchanged branch/HEAD, empty index and
+clean whitespace. No scientific bodies or old fixtures are read or hashed, and
+no experimental allocation or Git authorization is renewed. The next approval
+concerns specified machine installation plus isolated implementation/artificial
+validation, with a live candidate query series outside that block.
+
+## 2026-10-05: saved-evidence accounting reassessment and source-only write audit
+
+Ryan requested reassessment after the identity-equivalence experiment. Current
+Git state matched its completion checkpoint: HEAD `fa730bcb6d2e`, the expected
+branch, 21 intended unstaged files and empty index. A preparation receipt under
+`data/outputs/t/ebra_plan_fa730bcb6d2e/` bound 114 source/authority/context/synthetic
+metadata files. No fixture or scientific body was inspected or hashed.
+
+Review confirmed the older profile's 291.710 ms of `nt.stat` time in a failed
+487.581 ms scanner call. The latest component's second method was faster in nine
+of ten pairs; this descriptive order sensitivity supplies no cache-causation or
+whole-scanner speed claim. All completed tests and timing results remain intact.
+
+Source review mapped scientific artifacts, worker receipts, journal publication
+temporaries/seals, stdout/stderr logs and temporary/runtime output. Only readable
+summary text has the cited 65,536-byte pre-write limit; a complete fixed budget
+for new writes and enforceably immutable history were not established. Official
+Microsoft documentation confirms the directory-entry hard-link freshness caveat.
+
+The new reassessment note prefers a supported build/interface plan for a
+compiled sequential fresh-query loop, with unchanged complete accounting and
+timing gates. No speed benefit or implementation readiness is claimed. A limited
+read-only tool inventory found no `cl.exe`, `clang.exe`, `gcc.exe`, `cargo.exe` or
+`cmake.exe` on PATH, nor the default Visual Studio locator; no global compiler
+absence is inferred. No compiler, test, native probe or experiment was run.
+
+A routine read-only `rg` wildcard-path error was corrected with its `-g` filter;
+it was not a failed test or diagnostic. Only the new decision note and three
+context continuations change. Preserve the other 111 bound files and historical
+context bodies. Final documentation checks cover independent review, references,
+whitespace and exact 22-file unstaged scope with unchanged branch/HEAD and empty
+index. No experimental allowance, scientific scope or Git authorization changed.
+
+## 2026-10-05: identity equivalence passed; completed speed comparison missed its gate
+
+Ryan approved the reviewed follow-up and fresh 30-second/16 MiB envelope. The
+before receipt under `data/outputs/t/ebni_src_fa730bcb6d2e/` verified 84 protected
+source/authority/context/metadata bindings and the exact 20-file starting status.
+The new approval adds one intended unstaged file. The adapter and original
+supervisor/ownership helper remain frozen. Before validation, review removed an
+unnecessary 64-bit cap on complete Python identifiers and added a wider-label
+artificial case; no native result prompted that refinement.
+
+Two independent source reviews passed. Validation revision 01 ran 35 new series
+checks plus 15 adapted harness regressions: 50 passes, zero failures/errors/skips,
+in `0.370976400001382` seconds. The prior 32 unchanged adapter checks were reused.
+No old experiment, adapter test run or full suite was repeated. Source revision,
+review, test log and validation report are preserved create-only.
+
+One native series ran at `data/outputs/t/ebni_fa730bcb6d2e/`, attempt
+`0148ff4a58d247aa83b1e4758b48902e`. All 94 correctness comparisons across seven
+phases passed, including held-open growth/shrink, other-link writes, closure,
+replacement and the final 64-name inventory. The separate missing-file check
+also passed. Full raw
+backend identifiers and opaque128 evidence remain preserved. The replacement
+had a different identity under both APIs; no general ID-reuse rule is inferred.
+
+All 20 batches/ten alternating pairs/1,280 timed queries completed. Median
+native/reference ratio: `0.8992258224480973`; six native wins and four slower
+pairs (1, 3, 7, 9). The required median at most `0.80` and every-native-faster
+conditions both failed. Outcome: `component_comparison_complete`, correctness
+true, `worth_full_scanner_proposal:false`, `scanner_readiness_passed:false`.
+This valid negative finding is preserved without retuning, discard or retry.
+
+Sealed accounting: `1.5780000000013388` charged seconds; 44,625,920-byte peak
+worker memory; 204,677-byte maximum observed output; 221,061-byte final output
+bound; maximum monitor interval `0.26599999999962165` seconds; minimum free disk
+1,481,896,800,256 bytes; zero overshoots/accounting errors. Parent-reported
+harness/external wall times were `2.0964757000001555`/`2.2839816` seconds.
+Arithmetic unspent time is `28.42199999999866` seconds, with zero series left.
+
+Independent `outcome_audit_01.json` checked 25 allowlisted source/evidence files,
+all six journal events and seals, ownership, result bindings, phase evidence
+and timing calculations. It passed. Only continuation text in three context
+files changes afterward; the other 81 before-bindings and historical context
+bodies remain protected. Final status is 21 intended unstaged files, empty
+index, unchanged branch/HEAD. All earlier allowances, failures and completed
+reviews remain preserved; no parent fixture/scientific traversal or Git mutation
+occurred. Real error-breakdown recovery remains pending.
+
+## 2026-10-05: identity-equivalence contract review and follow-up proposal
+
+Ryan asked to move forward after the completed by-name identity finding. Review
+used current source, frozen component metadata and official Python/Microsoft
+documentation. It did not inspect fixture contents, scientific bodies or the
+installed CPython implementation. No native probe, new test, benchmark or retry
+occurred. The original 72-pass validation and sealed component outcome stand.
+
+The counter's source uses identities for equality, membership and multiplicity.
+A fixed one-to-one label change across both inventories preserves its formula
+and acceptance conditions; matching separate per-phase partitions without
+continuity is insufficient. Independent conceptual review supported retaining
+full native FileId64/volume and Python inode/device keys separately on the
+already restricted local NTFS fixture. Documentation supports representation
+differences without establishing a universal conversion between saved values.
+
+The new proposal explicitly amends cross-API comparison to test known groups,
+continuity, per-backend volume stability and known sizes. It preserves raw
+128-bit evidence and replacement/reuse uncertainty. It proposes separate frozen
+timing expectations and a new bounded allocation; neither implementation nor
+that new execution is approved by this preparation. No readiness pass or
+tracking-quality improvement is claimed.
+
+The preparation receipt at
+`data/outputs/t/ebni_plan_fa730bcb6d2e/preparation_before.json` binds 80 allowlisted
+inputs. Three context files receive continuation text; the remaining 77 bindings
+and historical bodies are checked for preservation. Final validation for this
+documentation task consists of independent proposal review, local-link and
+whitespace checks, exact 20-file worktree status, unchanged HEAD and empty index.
+A routine setup-command quoting error was corrected before execution and is
+recorded in the preparation receipt; it did not run or repeat an experiment.
+
+## 2026-10-05: 72 new component checks passed; native identity mismatch preserved
+
+Ryan approved implementation, new artificial checks and the conditional bounded
+series in `../ball_crop_candidate_retention_by_name_feasibility_proposal.md`
+(SHA-256 `b74d2681b85c40564a27a89bc15873cf154ddfb775f8a88769474f3f8173e57f`).
+Preflight verified 51 source/authority/context/fabricated-metadata bindings and
+the exact 18-file starting status, branch/HEAD and empty index. The separate
+approval added one intended unstaged file; generated helpers remain ignored.
+
+The adapter, series engine and supervisor wrapper received independent combined
+source review. Review corrections removed a post-supervision runtime receipt
+outside the charged output root and added summary/result consistency checks.
+The final new test inventory was 32 adapter + 25 series + 15 supervision tests.
+All 72 ran once and passed, with zero failures, errors, skips, expected failures
+or unexpected successes, in `0.33760719999918365` seconds of helper elapsed time.
+No old tests/full suite/native probe were part of this artificial validation.
+The bound report, log, independent review and source snapshot are under
+`data/outputs/t/ebbn_src_fa730bcb6d2e/`.
+
+The authorized native series ran once under the unchanged original supervisor,
+using the preserved ownership protocol and a create-only series marker. Its
+attempt ID is `d774f180726d47a08a6aead2658a807a`. The fixed local NTFS guard passed.
+The worker created four fixture directories and five initial file entries, then
+stopped the series at its first initial comparison: ordinary volume identifier
+`986718957` differs from full native `14572188484234126061`. Both reported file
+ID `1125899906873685` and logical size 64. Full raw values, including the 128-bit
+ID and signed native storage, are retained. There was no query exception.
+
+Outcome: `identity_contract_review_required`; compatibility and scanner
+readiness are false. The five progress records contain no batch/timing events.
+No growth/shrink/replacement phase or later 64-entry inventory was reached.
+This observation cannot establish freshness across changes or any speed benefit.
+It is a completed negative compatibility finding, not a diagnostic crash or a
+failed test suite. No truncation, remapping, retry or threshold change followed.
+
+The five-event journal sealed one successful supervised execution with no
+resource violation or final-accounting error. Charged time was
+`0.7809999999990396` seconds, harness wall time `1.1970968999994511` seconds and
+external command wall time `1.3705132` seconds. Peak worker memory was 49,811,456
+bytes, final output accounting bound 34,770 bytes, and maximum monitor interval
+0.25 seconds. Final event digest:
+`23af9026d35da59de3d6500b33e8bca498948c3bd9ec7d10e40e1a9c683d400a`.
+Bound worker-result digest:
+`f3c2b225d7934b3deb5778492d6615a6c1b75d342ed880c4951a4905f007d552`.
+The native series is consumed despite `29.21900000000096` seconds arithmetically
+remaining. All earlier allocations and successful/failed evidence are unchanged.
+
+Routine shell/bookkeeping issues were corrected under Ryan's latest policy:
+a setup-command quoting parse error before execution, a missing metadata folder
+lookup corrected from the supervisor's source, and a path-array expression in
+the post-run receipt builder. None ran or repeated an experiment.
+Post-run independent review and final preservation bind the
+component evidence without traversing the fixture or scientific bodies.
+
+## 2026-10-05: metadata feasibility proposal and revised failure policy
+
+Ryan authorized read-only review and a next proposal, then explicitly replaced
+the blanket stop-on-any-failure rule with judgment about material issues. The
+new working-agreement section persists that instruction. It changes routine
+failure handling; Git steps, evidence protections and resource limits remain.
+
+Review used saved source and fabricated-result metadata plus official Microsoft
+API declarations. The earlier restricted CPython raw-source fetch is preserved
+as a lookup interruption, not a failed test or diagnostic; it was not retried.
+The proposed Windows by-name metadata interface has not been called. Its native
+availability, complete identity compatibility, freshness and speed remain open.
+
+The proposal binds a new isolated component task and conditional tiny paired
+comparison; its new allocation is unapproved. No old or new test suite, benchmark,
+scientific diagnostic, stress-fixture traversal or native probe ran in this
+preparation. The prior 26 candidate and 29 helper passes stand, alongside the
+separate failed first static call. The old balances and sealed failure remain.
+
+Preparation receipt `data/outputs/t/ebbn_plan_fa730bcb6d2e/preparation_before.json`
+binds 46 allowlisted source/authority/context/fabricated-metadata files. Four
+context files receive new text; the other 42 bindings and historical context
+bodies are checked for preservation. Independent proposal review, whitespace,
+local links, exact 18-file dirty scope, unchanged branch/HEAD and empty index are
+the relevant final checks. No implementation validation is claimed for a design.
+
+## Approved static harness passed 29 checks; first timing call failed
+
+Ryan's "Yes move forward" approved implementation, independent review, new
+artificial checks and one conditional static timing run. The new approval binds
+`../ball_crop_candidate_retention_scan_timing_request.md` at SHA-256
+`c6c02f4264b075815e703f0efee6da03a764b2125c255abb94667ce4dcb48d3b`.
+Preflight verified the fifteen-file starting scope and 32 source/authority/
+synthetic-metadata bindings without traversing the fabricated or scientific root.
+
+New ignored files under `data/outputs/t/ebxt_src_fa730bcb6d2e/` implement the
+static harness, 29 artificial tests and once-only structured validator. Independent
+combined review passed with no blockers. The first helper validation ran all
+29 tests successfully: zero failures, errors, skips, expected failures or unexpected
+successes. Helper elapsed time was `0.29927740000130143` seconds; external command
+wall time was `0.6919108` seconds. Existing candidate tests, earlier helper suites,
+startup observations, profiler and full suite were not repeated.
+
+The one conditional static attempt ran at `data/outputs/t/ebxt_static_fa730bcb6d2e/`,
+ID `5650139001c240c5bb6c9e243927f0de`. It used the unchanged original supervisor
+and ownership protocol with the exact amended candidate in the owned worker.
+The worker verified the frozen synthetic fixture metadata before timing. Its
+first candidate call raised `ResourceLimitError: Output tree did not stabilize
+for complete byte accounting`, returned no total and recorded
+`0.4854300000006333` seconds. The per-call threshold remains strictly below
+0.40 seconds. Dispatch stopped immediately; no later candidate call or after-series
+fixture check occurred. The failed worker result has no successful supervisor
+result binding, and is preserved only as failure evidence alongside its progress
+log. No static or overall readiness pass is claimed.
+
+Read-only failure bookkeeping verified the six-event journal's sole failed,
+closed attempt, matching reservation/completion seals and absent lock. Final tip:
+`3dfa324db2969075accea17ea8485898cc4962a98c277311a54a1cd6dd4a48c1`.
+Charged time was `2.312999999998283` seconds; external command wall time was
+`2.6772916` seconds. Peak worker memory was 53,428,224 bytes, maximum observed
+output 12,207 bytes, final accounting bound 28,591 bytes, and maximum monitor
+interval `0.26599999999962165` seconds. All three overshoot fields were zero;
+final-accounting error was null. The new 30-second allocation has zero remaining
+attempt authorizations regardless of its `27.687000000001717` unspent seconds.
+
+`failed_execution.json` in the new helper directory preserves both command
+outputs and the failure details. No automatic repair, retry, parent fixture
+traversal, scientific body/root access, old-budget modification or Git mutation
+occurred. Only the new approval and three existing context documents join this
+stage's ignored artifacts; the intended dirty scope is now sixteen files with
+an empty index. Further work requires approval under the stop-on-failure rule.
+
+## Static timing request prepared; no new execution
+
+After the amended candidate's first 26-test pass, Ryan authorized a bounded
+timing request. The new document is
+`../ball_crop_candidate_retention_scan_timing_request.md`. It preserves the
+original static/dynamic readiness gates while requesting only the static phase
+now, avoiding dynamic setup before a static pass.
+
+Read-only source review identified the exact frozen supervisor timing semantics:
+charged elapsed is captured before its final accounting scan and finished-event/
+seal publication. The draft was clarified during preparation to describe a
+30-second recorded active allocation, mandatory later checks and separate total
+wall-time reporting. No runtime code or approved resource accounting was changed.
+Independent request review then passed with no remaining blockers.
+
+Preparation checked the fourteen-file preexisting Git scope and recorded 31
+bindings for current source, authorities, focused results, ownership helpers and
+frozen synthetic fixture metadata. It did not traverse either the fabricated
+fixture or real scientific root and did not read/hash scientific bodies. Planned
+new destinations were absent; the checked atomic reservation path is 184
+characters, within the unchanged 240-character ceiling. Before-context copies
+and preparation evidence are under `data/outputs/t/ebxt_plan_fa730bcb6d2e/`.
+
+No test, scanner call, benchmark, profile or real worker ran in preparation.
+The 26 focused passes remain the latest validation of this candidate; performance
+is still unproved. The new 30-second synthetic allocation is proposed, not yet
+granted. Old profiling and real balances, failed evidence, embargoes, sealed
+holdouts and completed reviews remain preserved. Only the new request and the
+three existing context documents change; the current dirty scope is fifteen
+files with an empty index. Approval of the request is the next boundary.
+
+## Amended prefix candidate: first focused validation passed
+
+Ryan approved implementation and 26 new focused checks, then explicitly approved
+the UNC amendment after static review found the empty-prefix expression omitted
+a separator at a bare share root. The corrected expression is
+`os.path.join(folder, "_")[:-1]`. The old candidate/test/helper bytes are preserved
+in `data/outputs/t/ebsx_impl_fa730bcb6d2e/blocked_snapshot/`; the original proposal,
+approval and blocked review remain unchanged. The amendment approval SHA-256 is
+`9a1ac3d04aa2b3f4589d9a0409fa17c2e3575f4bcd5887928f731bd5153f241a`.
+
+Fresh independent reviews passed for the amended scanner/tests and the helper/
+authority checks. A later tool-wrapper parenthesis error prevented a preparation
+command from starting; it was not a failed test or scanner call. Ryan explicitly
+authorized the corrected wrapper and the already-approved first test run.
+The corrected binding/scope checks succeeded, then the helper ran once under
+the explicit repository `.venv\Scripts\python.exe -B`, with bytecode disabled
+and UTF-8 enabled.
+
+All 26 tests passed, zero failures/errors/skips. Unittest reported 0.016 seconds;
+helper elapsed time was 0.24663389999841456 seconds and command wall time was
+0.583733 seconds. Structural comparison proved the executable accounting code
+differs from the frozen first candidate only by the approved prefix preparation,
+additional deadline check and fresh-stat query expression. All 23 bound files
+and the exact fourteen-file Git scope remained unchanged across execution.
+
+The validation receipt is
+`data/outputs/t/ebsx_impl_fa730bcb6d2e/validation.json`, SHA-256
+`416983627262eb332f74af528ad996aed93029ce81bc3f85b3c23d260f56cd73`.
+Its log SHA-256 is
+`2f5e6316d89bbc780f34773507246cf7867d46bf81a5979e4e3d032284cab1bd`;
+review receipt SHA-256 is
+`e1a3fd997f9aa066d3d8d12ca93e409c05518997a44ee2e686b76241d9b8ff24`.
+Independent result review confirmed the counts and log/review/source bindings.
+Later context-document updates are reporting changes; their earlier receipt
+hashes retain their historical role as the validation snapshot.
+
+This establishes focused correctness only. No stress benchmark, profile, full
+suite or real scientific worker ran. No completed test command was repeated.
+Existing profile/real resource balances, protected scientific data, embargoes,
+holdouts and completed visual reviews remain unchanged. No Git mutation occurred.
+The next task is a bounded timing-execution request, not an automatic benchmark.
+
+## Synthetic profile completed; directory-prefix proposal prepared
+
+The final integrated profiling helper passed 15 new focused tests and independent
+review. Ryan then authorized its single execution. Attempt
+`4932f5dc070640e3a96cf094ff86859b` exited zero and captured the known accounting
+deadline as the explicitly approved diagnostic observation. There was exactly one
+profiled fixture call, no returned byte total and no passing readiness result.
+
+The scanner's recorded cumulative time was 487.581 ms; fresh `nt.stat` calls
+accounted for 291.710 ms. Path joining took 71.589 ms cumulative, with nested
+work included. These instrumented, incomplete timings cannot establish a full
+scan duration, completed inventory count, speedup or the original real failure's
+cause. Independent read-only interpretation review confirmed these limits.
+
+The supervised attempt used 2.594 active seconds, observed peak worker memory
+54,411,264 bytes and maximum monitor interval about 0.281 seconds. It recorded
+zero resource overshoots and successful final accounting. Seven resource events
+ended at canonical tip
+`9f1a861c090e800d7e5e18b5b8cabd001915276e393623e56ff0a134f7c12cdb`.
+The profile JSON SHA-256 is
+`06ee889ded721f65eabe15e3e2788cc2a49dcfe6ab37b30396bc00b307b37337`;
+the result receipt SHA-256 is
+`f0146c994ef77d181ed47389fc9c5454ffcf81727ef2d6c422f36205035c1351`.
+Evidence is under `data/outputs/t/ebsp_fa730bcb6d2e/`, with the complete checkpoint
+at `data/outputs/t/ebsp_src_fa730bcb6d2e/profile_execution_continuity.json`.
+The prior failed recorder, static benchmark and startup/ownership observations
+retain their historical roles; successful profiling does not replace them.
+
+Ryan subsequently approved preparing and finishing the new proposal at
+`../ball_crop_candidate_retention_scan_prefix_proposal.md`. A delegated lookup
+first named an absent source file; work stopped and Ryan authorized correction.
+An optional external documentation retrieval then failed; work stopped again
+and Ryan authorized completing the proposal from sources already retrieved.
+No affected page was retried and neither interruption was a software-test or
+scientific failure.
+
+This preparation contains documentation and static review only. No runtime code,
+scanner call, test command, benchmark or real worker runs in preparation. The
+old 46 focused passes, 803 full-suite passes with one existing Windows skip,
+first-candidate 20 passes and profiling-helper results are preserved evidence,
+not validation of the proposed new candidate. Source/evidence preservation,
+document scope, local links and whitespace are the applicable preparation checks.
+
+## Scanner correctness passed; static timing failed; diagnosis proposal prepared
+
+Ryan approved the first scanner recovery proposal with "yes I do move forward".
+The separate approval is
+`configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_error_breakdown_recovery_approval_v0_1.json`,
+SHA-256 `4b82583e1bbd54ab489f9ea67432d9af61acb8397ee382284ae8298a5f0cd1af`.
+It did not authorize another backend, weaker limits, automatic retry or Git steps.
+
+The separate scanner preserves the original counting-function AST except for
+the ordinary-stat path expression. Twenty focused tests passed in 0.014 unittest
+seconds, zero skips, exit 0; command wall time was 0.687 seconds. Their source
+hashes stayed unchanged. The parent recorder's line-anchored regex missed CRLF
+line endings and recorded `passed: false` with an empty parsed summary. Work
+stopped; Ryan authorized correction. A separately reviewed reconciler passed
+13 positive/negative parser checks and accepted the exact saved 20-pass log,
+creating a new receipt while preserving the old one. No test was rerun.
+
+All these records are under
+`data/outputs/ball_tracking/crop_candidate_retention_error_breakdown_recovery_implementation/fa730bcb6d2e_2026-10-04/`.
+The reconciliation SHA-256 is
+`8da31e6c99e29a0512dc7f0d1bc5e742236014e751612ba9383a654b0385af99`.
+Its source checks and the independent AST-parity record passed before timing.
+
+The fixed synthetic benchmark then created 12,000 files in 400 directories
+using seed 0, with 12,259,360 bytes and maximum absolute path length 172.
+Layout/sizes and ordinary-stat reference were saved before the first measured
+accounting call. That call failed with
+`ResourceLimitError: Output tree did not stabilize for complete byte accounting`.
+The measured duration was `0.4908125000074506` seconds; returned bytes were null.
+There was no warmup, discarded call or retry. It failed the required first-call
+readiness gate; the other 29 calls and the dynamic test did not run. No after-
+static reference or dynamic marker/receipt exists. The failed static receipt
+SHA-256 is `f7f12382fa600f1e05d9aaf160e7aec2e064492865d30fce23c035afe4e9e3f2`.
+
+The scanner's `time.monotonic()` deadline and wrapper's `time.perf_counter()`
+duration are distinct observations. No captured internal readings, completed-
+scan count or phase measurements establish their discrepancy or the slow
+operation. The failure is not evidence of a disk-byte overshoot, a speedup,
+actual membership churn, or performance on the real tree.
+
+With Ryan's subsequent permission, independent read-only investigation verified
+all nine bound benchmark files and matching layout/reference metadata. A separate
+preparation check verified 151 original source/test/dependency bindings, three
+helpers, preserved metadata for all 5,774 real files/189 directories and all
+12,000 synthetic files/400 directories, plus protected absent paths. No source
+or failed evidence was repaired, no scientific body was read/hashed and no
+scanner, test, profile, dynamic gate or real worker was run in preparation.
+
+The new draft is `../ball_crop_candidate_retention_error_breakdown_scan_diagnosis_proposal.md`.
+Its preparation evidence is under
+`data/outputs/ball_tracking/crop_candidate_retention_error_breakdown_scan_diagnosis_proposal/fa730bcb6d2e_2026-10-04/`;
+`preparation_before.json` SHA-256 is
+`e7b8e01b920c25dea4ed3ff7d671aad82f8e46ac1c223e93d5436af57c518ba3`.
+It proposes one future synthetic profiling observation, not a passing timing
+benchmark. No new runtime implementation is validated or authorized by this
+documentation. Earlier focused/full results retain their historical roles.
+
+## Error-breakdown execution interruption and recovery-proposal preparation
+
+Ryan separately authorized the eleven-file staging and commit. The staged,
+working and committed bytes matched the readiness record; staged whitespace,
+exact scope, correct parent, clean checkout and empty index checks passed.
+Commit is `fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`. Earlier handoff verification
+and independent staging-check invocation errors were corrected only after
+separate permission. Their original evidence and readiness record remain intact.
+
+The approved public summarize command exited 1 after 41.266 wall seconds.
+Attempt `4adfb390f1f74a1baaec7fb178092218` was charged
+`7.264999999984866` active seconds and failed with
+`ResourceLimitError: Output tree did not stabilize for complete byte accounting`.
+Its empty log, absent worker result, absent output directory and failed
+completion were verified from logs/receipts and filesystem metadata. The exact
+internal worker phase, including whether scientific inputs were reached, is
+unknown. No successful summary was returned. No repair or retry followed.
+
+The supervisor recorded peak worker memory 57,663,488 bytes, maximum whole-root
+size 7,413,894,332 bytes, zero recorded time/memory/output overshoots and successful
+final accounting. Source review establishes a fixed 0.5-second deadline for two
+complete scans; that error is not proof of tree instability or an exceeded byte
+cap. A slow scan is possible, but the historical records cannot prove its cause.
+
+Read-only investigation verified all 3,010 canonical event links, the original
+3,002-event prefix tip, exact new failed reservation/completion seals, 58 closed
+attempts, 54 successes, four failures and no open attempt. New chain tip is
+`e5f2a832dd961d2615daa30ca77b039ad8dbe68bcbcfa12c2437128fbc83a3b3`.
+Remaining cumulative allowance is `11132.492000000013` seconds; a recovery would
+retain only `292.73500000001513` seconds from the original diagnostic allowance.
+
+Ryan subsequently authorized documentation-only recovery preparation. The new
+draft is `../ball_crop_candidate_retention_error_breakdown_recovery_proposal.md`.
+Preparation preserved all 5,762 original files by frozen metadata and recorded
+the current 5,774-file/189-directory inventory, all 3,010 raw-event bindings and
+unchanged 151 source/test/dependency plus three helper bindings. No scientific
+body was opened or freshly hashed. Before-context copies and preparation records
+remain ignored under
+`data/outputs/ball_tracking/crop_candidate_retention_error_breakdown_recovery_proposal/fa730bcb6d2e_2026-10-04/`.
+No runtime code changed and no scanner benchmark ran in preparation. Prior focused/full test results
+were not repeated; they do not establish that the proposed optimization works.
+The recovery draft requires its own focused/full tests and fixed timing gates
+after approval. Scope/link/whitespace and independent proposal review apply now.
+
 ## Approved saved error-breakdown implementation: validation complete
 
 The new reader/formatter and two fabricated test modules passed independent

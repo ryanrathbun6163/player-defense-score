@@ -1,6 +1,308 @@
 # Roadmap
 
-## Current continuation: saved retention comparison and interpretation complete
+## Current continuation: stage the validated recovery integration after approval
+
+The recovery runner, versioned authority and implementation certificate are
+complete. 32 focused tests passed; full regression passed
+918 tests with one existing Windows skip. The earlier responsive-monitor
+design check is reused, and no scanner benchmark or scientific experiment was
+repeated. See `../ball_crop_candidate_retention_error_breakdown_recovery_integration.md`.
+
+The next boundary is explicit staging approval for the exact 34-file scope in
+`data/outputs/t/ebri_fa730bcb6d2e/staging_scope.json`, followed by a separate commit
+approval. Do not infer either from the implementation continuation. The index
+remains empty at HEAD `fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`.
+
+After the validated clean commit, create the versioned execution checkpoint
+binding actual HEAD, manifest and certificate before the one conditional
+recovery unit. Preserve the failed attempt, consume only the remaining shared
+allowance, and keep scientific input access inside the owned worker. The
+48-row saved error breakdown remains the next scientific result. All completed
+human reviews, embargoes and holdouts stay intact. No ball tracker, detector
+operating point or ball-tracking quality gate has been selected.
+
+## Prior continuation: integrate the validated responsive monitor into recovery
+
+Ryan approved separating cheap computer-safety checks from slower whole-root
+accounting. The isolated new monitor and policy are implemented and validated:
+37 focused checks passed; the 12,000-file design check passed with a 0.266-second
+maximum safety-check gap during scans exceeding half a second; full regression
+passed 886 tests with one existing Windows skip. Each validation ran once with
+no failure. See `../ball_crop_candidate_retention_monitor_revision.md`.
+
+The former compiled-scanner benchmark proposal is set aside, with its completed
+evidence and consumed allocations preserved. Do not pursue the half-second
+optimization or replay its benchmarks as the next step. The explicit ten-second
+scan allowance does not slow the separate safety-check loop.
+
+The real error-breakdown recovery still needs its
+versioned runner/authority integration, validation certificate and a separately
+authorized clean commit. No real execution or Git mutation follows implicitly
+from this implementation approval. Preserve all original scientific boundaries.
+
+## Prior continuation: approve one bounded whole-scanner native validation
+
+The toolchain installation and isolated compiled prototype are complete. Both
+extensions build successfully; all 39 new artificial checks passed. The single
+full suite passed 849 tests with one existing Windows skip. Production/test
+source remained unchanged, and the candidate is not installed into the scanner.
+
+The next decision is whether this complete candidate meets the original scanner
+gates. See `../ball_crop_candidate_retention_compiled_scanner_validation_proposal.md`.
+The proposed new 120-second charged allocation covers conditional tiny native
+correctness, 30 static gate calls on a fresh 12,000-file/400-directory tree and
+the prescribed dynamic test. Separate outer command limits total 150 seconds.
+An isolated harness must bind real filesystem guards and account for the entire
+mutable validation tree; review and artificial checks precede native execution.
+
+This proposal is not approved yet. All consumed attempts remain consumed; no
+performance retry or gate relaxation is implied. Synthetic success would still
+need production integration and a validated clean commit before the already
+approved scientific recovery. No new visual reviews or Git mutations are part
+of the proposed validation. Ball-tracking speed/quality claims remain pending.
+
+## Prior continuation: approve tool installation and isolated compiled prototype
+
+The build/interface plan is complete; see
+`../ball_crop_candidate_retention_compiled_batch_plan.md`. The bounded inventory
+found Python's build dependencies but no usable C compiler or Windows SDK.
+Proposed installation is Microsoft Visual Studio 2022 Build Tools 17.14.41,
+the MSVC v143 x64/x86 tools and one Windows 11 SDK family, including their required
+dependencies. No installer or compiler has run.
+
+The next proposed block combines this machine change with an isolated 128-name
+CPython extension, independent review, compilation and artificial validation.
+The compiled loop preserves fresh queries and the Python accounting/deadline
+contract. Artificial provider tests cannot establish Windows freshness or speed.
+No live query series, old fixture reuse, scanner integration or scientific run
+follows from this block; a new native envelope would be proposed afterward.
+
+All consumed attempts and original correctness/readiness/resource gates remain.
+There is no measured improvement yet. Safe accounting must precede the saved
+48-row error breakdown and further ball-tracking decisions. Git permissions
+remain separate; the existing worktree stays unstaged.
+
+## Prior continuation: review a supported compiled-loop build and interface plan
+
+The accounting reassessment is complete; see
+`../ball_crop_candidate_retention_accounting_reassessment.md`. The existing
+write surface does not support a proved fixed new-output budget, and immutable
+history would require a larger enforcement redesign. Directory-entry metadata
+does not establish fresh sizes through hard links.
+
+Prefer source/build feasibility for a compiled sequential loop retaining fresh
+per-file queries and complete whole-root accounting. First resolve a supported
+local compiler/runtime and precise bounded interface. The initial limited tool
+inventory found no common compiler on PATH or default Visual Studio locator;
+no installation or compiled prototype has occurred. Performance remains unknown.
+
+The prior component remains a valid negative result. No benchmark allowance,
+scanner integration, scientific recovery or Git mutation is authorized by the
+reassessment. All existing correctness/readiness gates remain. The error
+breakdown of saved results is still the next scientific milestone once accounting is ready.
+
+## Prior continuation: reassess accounting after a valid negative speed result
+
+The approved identity-equivalence component is complete. Independent review and
+all 50 relevant artificial checks passed. Its single native series passed seven
+controlled correctness phases and completed all 1,280 timing queries. Complete
+backend-local identifiers preserved the required relationships on this fixture.
+
+The median native/reference duration ratio was `0.8992258224480973`, above the
+required `0.80`; only six of ten native batches were faster. The component does
+not meet the prospective performance gate and does not justify scanner
+integration. Supervision and the independent metadata audit passed. Preserve
+this valid negative result and the consumed series; no retry is authorized.
+
+Next, reassess the accounting design from the saved profiling and component
+evidence before proposing further implementation or experiments. The unchanged
+full-scanner static/dynamic gates, regression/integration, recovery certificate
+and separately authorized clean commit remain necessary before scientific
+recovery. The saved error breakdown, reliable multi-possession ball tracking,
+possession understanding, matchups and defensive scoring remain pending.
+
+## Prior continuation: approve the reviewed identity-equivalence component scope
+
+Read-only review found that byte-accounting semantics require consistent file
+relationships and continuity, not equal numeric labels from different APIs.
+The proposed amendment is
+`../ball_crop_candidate_retention_identity_equivalence_proposal.md`. It keeps
+full native/reference keys separately, checks known groups, volume stability,
+live-file continuity and sizes, and freezes separate expectations for timing.
+It leaves the previous numeric mismatch and every completed result unchanged.
+
+The concrete next envelope requests changed component checks, new relevant
+artificial validation and one conditional fresh 30-second/16 MiB native series.
+The unchanged adapter and its 32 passing tests would be reused as prior
+evidence. No old fixture, allowance or series would be reused. No new test or
+experiment ran during this review. Approval remains pending for that envelope.
+
+A positive component finding would still precede full scanner implementation,
+static/dynamic readiness, regression/integration, recovery certification and a
+separately authorized clean commit. The saved scientific error breakdown and
+reliable multi-possession ball tracking remain pending.
+
+## Prior continuation: resolve the metadata identity contract before another experiment
+
+The approved component was implemented and independently reviewed. Its 72 new
+artificial checks passed once. One supervised native series completed safely
+and found a volume-identifier mismatch on the first fabricated file, while file
+ID and size agreed. The adapter is therefore not a direct numeric-identity
+replacement. No speed comparison or later correctness phase ran, and scanner
+readiness remains false. See the latest `current_state.md` checkpoint and
+`data/outputs/t/ebbn_fa730bcb6d2e/attempts/d774f180726d47a08a6aead2658a807a.result.json`.
+
+The consumed series cannot be repeated using its arithmetic unspent time.
+Review whether a different identity representation preserves the accounting
+semantics, or propose another design. No truncation/remapping, new unit, scanner
+integration, real recovery or Git action is authorized by this completed task.
+
+Project position: player coordinates are demonstrated on three possessions;
+ball evaluation, baseline and multiple controlled comparisons are complete;
+reliable end-to-end ball tracking and its quality gate remain open. The immediate
+scientific milestone is the saved error breakdown, currently blocked by resource
+accounting. Then improve/select association and validate across possessions
+before possession understanding, matchups and defensive scoring. Recent helper
+tests and infrastructure findings do not themselves demonstrate better tracks.
+
+## Prior continuation: decide the bounded metadata feasibility proposal
+
+The saved profile makes fresh file metadata a justified next investigation; it
+does not establish that another API is faster. The new proposal
+`../ball_crop_candidate_retention_by_name_feasibility_proposal.md` specifies an
+isolated Windows adapter, new artificial checks and a tiny correctness-first
+paired comparison within a new cumulative 30-second/16 MiB envelope. No native
+probe or experiment has run, and no full scanner change is approved.
+
+If Ryan approves that envelope, routine helper defects may be corrected without
+new permission within its bounds. Report material compatibility/resource issues
+and preserve negative results. Ryan's latest failure policy supersedes older
+blanket stops; it does not renew old attempts or grant Git permission.
+
+Only a correct, sufficiently faster component would justify proposing full
+scanner integration. The existing static/dynamic gates, regression, recovery
+integration and certificate, separately authorized clean commit and scientific
+recovery still remain. No repeated completed visual review is required.
+
+## Prior continuation: static timing failed; further work awaits approval
+
+The approved static harness passed independent review and all 29 new artificial
+helper checks. Its single timing attempt then stopped at candidate call 1: the
+scanner raised its accounting-deadline exception after approximately 0.485 seconds
+and returned no total. The unchanged readiness threshold is strictly below
+0.40 seconds for each of 30 consecutive correct calls. This attempt failed it.
+
+The failed attempt and sealed accounting are preserved; no repair or retry ran.
+The new allowance charged about 2.313 seconds and has no execution authorization
+remaining. Old profiling and scientific budgets remain unchanged. The new
+approval brings the intended dirty scope to sixteen files; the index stays empty.
+
+The next proposed scope is a read-only review of existing evidence and source
+to prepare a different optimization proposal. It needs Ryan's approval under the
+stop-on-failure boundary. Dynamic readiness, full regression, recovery integration,
+separately authorized staging/clean commit and scientific recovery remain pending.
+See `current_state.md` and `data/outputs/t/ebxt_src_fa730bcb6d2e/failed_execution.json`.
+
+## Prior continuation: static timing request prepared
+
+The reviewed request is `../ball_crop_candidate_retention_scan_timing_request.md`.
+It proposes one separately allocated static gate: 30 consecutive correct calls,
+each below 0.40 seconds, on the unchanged fabricated fixture. A new ignored
+harness and artificial helper checks precede its one conditional execution.
+No benchmark or repeated test ran during preparation.
+
+Run this prerequisite before building the dynamic harness. The later 30-second
+growth workload, dynamic monitor gate, full regression and scientific recovery
+remain required. No dynamic allocation, old-budget reset or Git mutation is
+included. See `current_state.md` for the fifteen-file intentional dirty scope
+and exact approval boundary. Ball tracking and the saved error breakdown remain
+in progress; the completed visual reviews remain complete.
+
+## Prior continuation: prefix correctness passed; timing request next
+
+The separate directory-prefix scanner and approved UNC amendment passed fresh
+independent review and their first 26 focused tests, with zero failures, errors
+or skips. Fresh metadata queries, two complete inventories and all deadline
+rules remain intact. The blocked design and all earlier evidence are preserved.
+
+The next step is a concrete bounded timing-execution request for this exact
+candidate. The unchanged 30-call static and 30-second dynamic gates remain
+outstanding, as does full regression for the new code. The completed profiling
+allowance is not benchmark authorization. Real error-breakdown recovery still
+requires those gates, its validation certificate and separately authorized
+staging and a clean commit. No tracker or ball-tracking quality gate is selected.
+
+See `current_state.md` and
+`data/outputs/t/ebsx_impl_fa730bcb6d2e/completion_checkpoint.json` for the fourteen-
+file intentional dirty scope, exact validation record and next boundary.
+
+## Prior continuation: profile captured; narrow optimization proposed
+
+The one approved synthetic profile captured the expected accounting deadline
+successfully. Fresh metadata queries were the largest measured cost; repeated
+path processing also contributed. Readiness remains false and the real saved
+error breakdown is pending.
+
+The next concrete proposal is
+`../ball_crop_candidate_retention_scan_prefix_proposal.md`: prepare each directory
+prefix once while retaining ordinary fresh stat calls and every accounting rule.
+Its next approval covers a separate implementation and new focused correctness
+checks only. Performance is unproved. Future static/dynamic gates need their own
+concrete execution request; the profiling allowance cannot be silently reused.
+Full regression and separately authorized Git steps remain required before real
+recovery. No completed reviews, tests or experiments are repeated for preparation.
+
+Ball tracking remains the active phase. The player-coordinate foundation is
+complete; a tracker and ball-tracking quality gate remain unselected. See
+`current_state.md` for the ten-file intentional dirty checkpoint and evidence.
+
+## Prior continuation: failed scanner readiness; bounded diagnosis proposed
+
+The first recovery candidate passed 20 correctness tests but failed its first
+static timing call on the fixed 12,000-file/400-directory synthetic tree. No
+total was returned and no dynamic gate or real recovery ran. The recorder's
+earlier CRLF parsing problem was separately reconciled from the preserved
+successful test log; it was not a test failure and required no test rerun.
+
+Ryan authorized investigation and revised proposal preparation. The concrete
+draft is `../ball_crop_candidate_retention_error_breakdown_scan_diagnosis_proposal.md`:
+one bounded synthetic profile of the unchanged scanner to locate time spent
+before choosing another implementation. Profiling cannot count as readiness
+validation. Its helper and execution are awaiting approval; no backend change,
+timing-gate retry or scientific retry follows automatically. All existing
+deadlines, quality gates and future clean-commit requirements remain intact.
+
+Ball tracking remains the active phase. The saved error breakdown, selection of
+a tracker and the ball-tracking quality gate are still outstanding. The real
+failed attempt, its resource consumption, all completed reviews and all sealed
+holdouts remain preserved. See `current_state.md` for the eight-file dirty
+checkpoint and exact evidence. Git steps remain separately authorized.
+
+## Prior continuation: error-breakdown recovery proposed
+
+The eleven-file implementation was separately committed at
+`fa730bcb6d2e6d396391191c0fb3e36a3a338bf1`. The approved real error-breakdown
+attempt failed when the monitor could not finish complete byte accounting
+within its half-second deadline. No diagnostic output or successful summary
+was produced; the failed attempt and its 7.265 active seconds remain preserved.
+This is an execution interruption, not a failed software-test result or an
+accuracy finding. The exact scan-time trigger remains unproved.
+
+Ryan requested the concrete recovery proposal at
+`../ball_crop_candidate_retention_error_breakdown_recovery_proposal.md`.
+It proposes a narrowly scoped scan optimization, fixed synthetic readiness
+gates, and one conditional recovery attempt under new explicit authority.
+All live limits remain unchanged; recovery would share the original 300-second
+diagnostic allowance and the existing cumulative journal. No implementation,
+benchmark or retry is authorized or has run. Next is review of that operational
+amendment, followed by validation and separately authorized Git steps if approved.
+
+Ball tracking remains in progress. Saved-error findings, a selected tracker and
+the ball-tracking quality gate remain outstanding. All six retention reviews,
+twelve earlier YOLO reviews, original embargoes and sealed holdouts are preserved.
+The earlier checkpoint statements below retain their historical context.
+
+## Prior continuation: saved retention comparison and interpretation complete
 
 The approved interpretation was separately committed and executed successfully
 at `e71a4d2165623208d624c4839e9321bd9bf779ba`. Its bounded summary was explained

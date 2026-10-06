@@ -1,0 +1,39 @@
+{
+  "schema_version": "ball_crop_candidate_retention_error_breakdown_recovery_approval/v0.1",
+  "proposal": {
+    "path": "docs/ball_crop_candidate_retention_error_breakdown_recovery_proposal.md",
+    "sha256": "f4b7e2afa35e34ffaeb15031c1e399692568ec6a58dd2dcfa1c6532add7db503"
+  },
+  "approved_by": "ryan",
+  "statement": "yes I do move forward",
+  "recorded_at_utc": "2026-10-05T03:24:15.205041+00:00",
+  "timestamp_semantics": "Receipt creation time, not an invented user-message timestamp.",
+  "implementation_authorized": true,
+  "synthetic_validation_authorized": true,
+  "conditional_execution_authorized": true,
+  "execution_requires_all_fixed_gates_and_clean_separately_authorized_commit": true,
+  "maximum_new_recovery_attempts": 1,
+  "failed_attempt_id": "4adfb390f1f74a1baaec7fb178092218",
+  "frozen_prefix_event_count": 3010,
+  "frozen_prefix_tip_sha256": "e5f2a832dd961d2615daa30ca77b039ad8dbe68bcbcfa12c2437128fbc83a3b3",
+  "frozen_metadata": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention_error_breakdown_recovery_proposal/fa730bcb6d2e_2026-10-04/preparation_before.json",
+    "sha256": "3da326ad4768f8b3f8e991fb176d27cdbe9474305c8f264acfc1b392bfd0dc9b"
+  },
+  "shared_original_and_recovery_maximum_seconds": 300,
+  "output_measurement_deadline_seconds": 0.5,
+  "maximum_monitor_interval_seconds": 1.0,
+  "static_calls": 30,
+  "maximum_synthetic_accounting_call_seconds_exclusive": 0.4,
+  "maximum_synthetic_monitor_interval_seconds_exclusive": 0.9,
+  "scientific_scope_unchanged": true,
+  "maximum_summary_bytes": 65536,
+  "automatic_retry_authorized": false,
+  "alternative_scanner_authorized": false,
+  "resource_limit_relaxation_authorized": false,
+  "training_authorized": false,
+  "git_mutations_authorized": false,
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

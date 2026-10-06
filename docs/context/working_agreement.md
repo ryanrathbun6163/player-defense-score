@@ -1,5 +1,40 @@
 # Working Agreement
 
+## Resource policy and engineering effort: Ryan's 2026-10-05 clarification
+
+Ryan is comfortable devoting substantial computer resources to the project,
+while keeping computer safety a high priority. Operational timings are design
+choices, not scientific accuracy requirements. Before pursuing repeated or
+increasingly complex optimizations to satisfy a timing setting, compare the
+cost with a simpler monitoring-policy or architecture change and explain the
+tradeoff to Ryan. Existing limits remain effective until the change is approved;
+they do not prevent proposing an amendment. Do not retroactively change failed
+results, consumed budgets, scientific gates or sealed evidence.
+
+Ryan approved the responsive-monitor revision after this comparison. Its
+separate policy retains frequent safety checks while allowing slower complete
+storage accounting; implementation/validation do not authorize Git mutations
+or a real scientific execution. See `../ball_crop_candidate_retention_monitor_revision.md`.
+
+## Failure handling: Ryan's 2026-10-05 instruction
+
+Ryan explicitly instructed: "You are allowed to move and NOT stop on any
+failures, only stop on failures that are large and issues you feel deserve an
+actual investigation."
+
+This supersedes earlier blanket stop-on-any-failure instructions. Correct
+ordinary tooling, command and helper problems within approved scope without
+repeated permission requests. Preserve failed evidence, explain meaningful
+corrections simply, and verify the resulting work. Rerun affected checks when a
+real correction warrants it; do not repeat completed work merely for resumption.
+
+Pause for issues that materially affect correctness, evidence integrity,
+resource limits, or the approved scope. This change does not authorize Git
+mutations, scientific body access, new experiments, renewed consumed attempts,
+budget resets, weakened gates, or reopening completed visual reviews. Apply
+Ryan's latest explicit scope and approvals rather than treating historical
+failure instructions as permanently binding.
+
 ## Communication
 
 Ryan is technically capable but is refreshing hands-on software engineering, Git, Python, computer vision, and ML. Use plain language first, then introduce the exact technical term. Explain what a command changes, why it is needed, what success looks like, and how to recover if it fails.
