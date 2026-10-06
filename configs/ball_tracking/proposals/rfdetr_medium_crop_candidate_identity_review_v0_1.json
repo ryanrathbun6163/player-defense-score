@@ -1,0 +1,196 @@
+{
+  "schema_version": "ball_crop_candidate_identity_review_scope/v0.1",
+  "status": "proposed_not_authorized",
+  "prepared_at_commit": "efeefd58f6801ffe5de106a48f8dad1e835b9647",
+  "proposal_path": "docs/ball_crop_candidate_identity_review_proposal.md",
+  "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+  "setting": {
+    "arm": "history_edge_tight_cost_tight",
+    "policy": "cap20",
+    "confidence_threshold": 0.01,
+    "localization_radius_source_px": 10.0,
+    "native_view": "view_0"
+  },
+  "selection_source": {
+    "path": "data/outputs/t/op_impl_de134d942767/output_presence_execution_efeefd58f680_stdout.json",
+    "sha256": "92c41bd4aafed4eb2e152c8681fc4ca50ff70d72825a73e9ed540b66cbcb415c",
+    "source_row_pointer": "/pools/0/rows/16",
+    "field": "present_nonmatching_current_output",
+    "frame_indices": [
+      300,
+      301,
+      302,
+      304,
+      308,
+      319,
+      320,
+      324
+    ]
+  },
+  "binding_sources": {
+    "committed_retention_proposal": {
+      "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_candidate_retention_v0_1.json",
+      "sha256": "7640784e2a64e81a2064ebb40cd4d1c77366076e5e78a2c19f8f5fc28e29fe1b"
+    },
+    "administrative_preservation_audit": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/publication_preservation_audit_cd51.json",
+      "sha256": "a400911f83b7408c6f9c5ddabf5eae47f704d9f73fed16f538ac135fc04d2106"
+    },
+    "renderer_source": {
+      "path": "src/ball_tracking/crop_retention_review.py",
+      "sha256": "552c02ccf4cda3be35b0652d01040a02eae1152ed1fc4c9b2e2ee264fd4b188b"
+    }
+  },
+  "scientific_provenance_pointers_not_authorized_inputs": {
+    "retention_window_manifest": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/manifest.json",
+      "sha256": "9819bcd0a105fb71a70e2b23e63a0dbeeea7be50cbaca632ea0f24e1f8d574a0",
+      "size_bytes": 146449
+    },
+    "unmarked_source_manifest": {
+      "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/manifest.json",
+      "sha256": "b17a2212764292b0f3a3336c8c05ad412251e6a9731d573668c1ec50213c4073"
+    }
+  },
+  "scientific_inputs": [
+    {
+      "frame_index": 300,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000300.png",
+        "sha256": "83f66dd364e17e786bc9332d1a6680dafff755d2d3a000b198c29358fb60885a"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000300.png",
+        "sha256": "dbd73c0a853c125e285d464488318de4058e2fa8e34d564a61cccf6e3313ead1",
+        "size_bytes": 3131375
+      }
+    },
+    {
+      "frame_index": 301,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000301.png",
+        "sha256": "58204cc756cced65d25e50143418ddca5418cb70a431394a303172e98ef2b88b"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000301.png",
+        "sha256": "1f526b2959b4387123a11c62b6654cca918cde68aa825f47686d7b3cfe56017a",
+        "size_bytes": 3045831
+      }
+    },
+    {
+      "frame_index": 302,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000302.png",
+        "sha256": "7f3a3aa7f6968b0fe7bf7d26969f2592554beba868ddd99f756599db6319ff54"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000302.png",
+        "sha256": "a9cda0c820bd2e3ad4d4deb8ba4032007e0c639bf7738ccb30f86bc3ceeec67b",
+        "size_bytes": 3090512
+      }
+    },
+    {
+      "frame_index": 304,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000304.png",
+        "sha256": "4073903b152ef4883ad21e02d6da3cac47bf3827cad08dbf596d90b7a39308d3"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000304.png",
+        "sha256": "4145004f13ed4641f8daeae0d8fbcf9a8d2191b6d8ce9c909f9c0b6bdf8c18a8",
+        "size_bytes": 3059573
+      }
+    },
+    {
+      "frame_index": 308,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000308.png",
+        "sha256": "b20cf1b540e13429fca1fbf2e75642cc8decb4e54bf5811f88ffe6ff637def9e"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000308.png",
+        "sha256": "e5a10f63f7f32b1c39ffbd4de09acc8e708f44136cb185a8e0f80b4760657fa9",
+        "size_bytes": 3074979
+      }
+    },
+    {
+      "frame_index": 319,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000319.png",
+        "sha256": "0fbdb28bafec5b4add46c5712aef20d0c14fe00f3718d0f4fc491bcecd5f79a9"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000319.png",
+        "sha256": "2205ac3773c3ddc056a3a1ceb56e00722a6d2c8ab5d698d04d48f8cbedbc6787",
+        "size_bytes": 3072188
+      }
+    },
+    {
+      "frame_index": 320,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000320.png",
+        "sha256": "674943028e1bdbb5ab340ace5d564c419803c266509cda4735fcf1a6f06a78b1"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000320.png",
+        "sha256": "430488219092c68efe391fc841bc354776e37bccd973528dc784f218782df274",
+        "size_bytes": 3091241
+      }
+    },
+    {
+      "frame_index": 324,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000324.png",
+        "sha256": "b6f9bb4b83a6a3f39ee5963b895226d4d3f9f4578eeac2d9e75b20b9d1d47874"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000324.png",
+        "sha256": "45e392c62b972fcaa773c7b99eae00b058afe58b836a2c331b5ba9d5468f385f",
+        "size_bytes": 3120588
+      }
+    }
+  ],
+  "preparation_access": {
+    "image_bodies_read": false,
+    "image_hashes_recomputed": false,
+    "pixels_decoded": false,
+    "scientific_manifests_opened": false,
+    "judgments_recorded": false,
+    "expected_image_bindings_copied_from_metadata": true
+  },
+  "proposed_worker": {
+    "unit": "post-review-candidate-identity:verify:",
+    "maximum_attempts": 1,
+    "maximum_charged_seconds": 120,
+    "cumulative_remaining_seconds_at_preparation": 11037.211000000018,
+    "purpose": "verify exactly the sixteen declared PNG byte bindings without decoding pixels",
+    "parent_return": "bounded administrative verification receipt only",
+    "output_root": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/candidate_identity_review_v0_1"
+  },
+  "human_review": {
+    "reviewer": "Ryan",
+    "sequence": [
+      "unmarked_source",
+      "native_tt_cap20_overlay"
+    ],
+    "identity_choices": [
+      "ball",
+      "another_object",
+      "uncertain"
+    ],
+    "ball_center_choices": [
+      "plausible",
+      "clearly_displaced",
+      "cannot_judge"
+    ],
+    "other_identity_center_value": "not_applicable",
+    "initial_row_status": "pending",
+    "emitted_candidate_index": "copy only if visibly readable; otherwise null",
+    "preserve_localization_outcome": true,
+    "source_first_not_blind": true,
+    "parent_pixel_inspection_authorized": false
+  },
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

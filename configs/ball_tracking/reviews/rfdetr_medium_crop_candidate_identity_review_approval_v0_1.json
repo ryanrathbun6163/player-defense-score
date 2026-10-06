@@ -1,0 +1,38 @@
+{
+  "schema_version": "ball_crop_candidate_identity_review_approval/v0.1",
+  "approved_by": "Ryan",
+  "recorded_at_utc": "2026-10-06T20:50:34.543370+00:00",
+  "user_local_date": "2026-10-06",
+  "statement": "ok I'm back chat. Lets move forwar sir",
+  "timestamp_semantics": "Receipt creation time, not an invented user-message timestamp.",
+  "proposal": {
+    "path": "docs/ball_crop_candidate_identity_review_proposal.md",
+    "sha256": "4f3ae4ce372599e10b8768611ccccd8cab61ede09de28a90be20da6251a395da"
+  },
+  "scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_candidate_identity_review_v0_1.json",
+    "sha256": "e767f943291464609c1567439910a0f092d9d63943da5932d4ba53cd8c9a7c49"
+  },
+  "implementation_authorized": true,
+  "focused_validation_authorized": true,
+  "full_regression_authorized": true,
+  "conditional_execution_authorized": true,
+  "separate_clean_commit_required": true,
+  "maximum_new_attempts": 1,
+  "maximum_unit_seconds": 120,
+  "responsive_monitor_policy_adopted": true,
+  "approved_operations": [
+    "verify_png_byte_bindings",
+    "prepare_pending_human_review"
+  ],
+  "human_review_authorized": true,
+  "reviewer": "Ryan",
+  "human_review_requires_successful_byte_verification": true,
+  "parent_scientific_body_access_authorized": false,
+  "parent_pixel_inspection_authorized": false,
+  "automatic_scientific_retry_authorized": false,
+  "new_model_inference_authorized": false,
+  "scoring_authorized": false,
+  "rendering_authorized": false,
+  "git_mutations_authorized": false
+}

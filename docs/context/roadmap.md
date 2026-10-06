@@ -1,6 +1,74 @@
 # Roadmap
 
-## Current continuation: stage and commit the validated output-presence implementation
+## Current continuation: stage the validated eight-frame identity-review implementation
+
+Ryan's 2026-10-06 approval, "ok I'm back chat. Lets move forwar sir", authorizes
+the exact proposal in `../ball_crop_candidate_identity_review_proposal.md`,
+its implementation and artificial validation, one conditional verification
+attempt, and Ryan's subsequent human review. The frozen scope has sixteen
+existing PNGs for P003 representative TT/cap20 frames 300, 301, 302, 304, 308,
+319, 320 and 324. No rendering or new model output is needed.
+
+The new runner is validated: 33 focused passes and 993 full-suite passes plus
+the one existing Windows skip. The full run completed 994 tests with no failures
+or errors in 2,090.750 supervised seconds. The sealed implementation certificate
+under `data/outputs/t/ci_impl_efeefd58f680/` binds all 165 source/test/requirements
+files and the validation evidence; its approved manifest specification is unchanged.
+Next request separate approval to stage the nine intended files, then separate
+commit approval. The real review target and release checkpoint remain absent.
+The index remains empty and HEAD remains
+`efeefd58f6801ffe5de106a48f8dad1e835b9647` on `codex/ball-detector-baseline`.
+
+After a verified clean commit and its release checkpoint, the single new
+`post-review-candidate-identity:verify:` unit may verify only the sixteen
+approved image byte bindings and prepare pending review records. Its maximum
+is one attempt and 120 charged seconds from the unchanged cumulative balance
+of `11037.211000000018` seconds. The 3,121-event, 60-attempt prefix and all four
+historical failures remain preserved. The new attempt is unspent; consumed
+recovery/output-presence attempts and their old budgets are not renewed.
+
+Ryan's review follows successful verification: unmarked source first, then
+the existing overlay with its reference/context markings disclosed. Parent
+pixel inspection is not authorized. Record uncertainty explicitly, keep the
+saved 10-pixel localization outcome separate from identity/center judgments,
+and treat these selected eight frames as a limited case study. Do not repeat
+completed package reviews or infer rates, rankings or general performance.
+No scientific execution or image review has yet occurred. Preserve all
+embargoes, sealed holdouts and earlier review decisions; no push is authorized.
+
+## Prior continuation: propose the next bounded study after completed output-presence derivation
+
+The approved output-presence unit completed once at clean commit
+`efeefd58f6801ffe5de106a48f8dad1e835b9647`. It preserved all 48 rows and their
+original evidence while separating each row's saved S memberships into missing
+current output and present nonmatching current output. It created no cross-row
+totals, rates, rankings or semantic labels. Both pools and original execution
+roles remain separate.
+
+The next step is a concrete, separately bounded study proposal. Any further
+scientific input access or execution needs its own explicit scope and approval.
+The completed result cannot identify a wrong object, ball-center-placement
+error or cause of missing output. If resolving those distinctions is useful,
+the proposal must identify the necessary evidence and uncertainty without
+converting completed package reviews into frame-specific semantic judgments.
+Do not reopen completed clip approvals or release sealed holdouts.
+
+The new unit used 42.734 charged seconds of its 120-second limit; complete
+command wall time was 84.703 seconds. The original 3,071-event prefix remains
+preserved inside the now-closed 3,121-event journal: 60 attempts, 56 successes
+and four historical failures. Cumulative time remaining is
+`11037.211000000018` seconds. Zero output-presence or prior-recovery attempts
+remain authorized. No retry, renewed budget or new study follows from unused
+arithmetic time.
+
+Use the completion record and bounded verified summary transport under
+`data/outputs/t/op_impl_de134d942767/` for continuity; do not reopen scientific
+artifact bodies in the parent. No inference, scoring, selection, media decoding,
+repeated tests or repeated visual reviews were part of this execution/closeout.
+The three context updates remain unstaged, with an empty index and no push.
+Any further staging or commit requires its own approval.
+
+## Prior continuation: stage and commit the validated output-presence implementation
 
 The exact proposal has been approved and implemented. Independent review,
 42 focused passes and 960 full-suite passes plus the existing Windows skip

@@ -1,6 +1,134 @@
 # Current State
 
-## Latest checkpoint: output-presence implementation validated; staging is next
+## Latest checkpoint: 2026-10-06 candidate-identity implementation validated; staging is next
+
+Ryan's exact approval, "ok I'm back chat. Lets move forwar sir", authorized
+implementation, artificial validation and the conditional execution/human-review
+scope in `../ball_crop_candidate_identity_review_proposal.md`. The separate
+approval is `configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_identity_review_approval_v0_1.json`;
+the frozen proposal and exact scope remain unchanged.
+
+One new runner, `src/ball_tracking/crop_candidate_identity_review.py`, and one
+test module implement the fixed sixteen-image scope: an existing unmarked PNG
+and native TT/cap20 `view_0` overlay for each P003 representative frame 300,
+301, 302, 304, 308, 319, 320 and 324. After successful byte verification, Ryan
+may inspect each unmarked source first, then its existing overlay, and record
+identity and qualitative center-placement judgments. The overlays contain
+reference markings, so this is source-first review, not blind review. The
+parent may not inspect pixels or read/hash scientific bodies. The saved
+10-pixel outcomes remain separate from these pending semantic judgments;
+this selected eight-frame case study cannot establish general error rates.
+
+The distinct `post-review-candidate-identity:verify:` unit permits one
+conditional attempt with at most 120 charged seconds. It has not run or spent
+its allowance. The preserved prefix remains 3,121 events and 60 closed attempts:
+56 successes and four historical failures, with tip
+`7a990a3fd2b86502dd6245d6d08d2d17c75abe4534bad8d6cc323aa9c43ba701`.
+Cumulative time remaining stays `11037.211000000018` seconds. Consumed recovery
+and output-presence attempts remain consumed; no old budget or retry is renewed.
+All nine embargoes, three sealed holdouts and prior review decisions remain protected.
+
+Focused validation passed all 33 new tests in 10.953 supervised seconds, with
+no skips, failures or errors. Full validation completed 994 tests in 2,090.750
+supervised seconds: 993 passes and the single existing Windows directory-symlink
+skip, with no failures or errors. The 165 source/test/requirements bindings
+matched before and after validation; owned cleanup and final accounting passed.
+The create-only `implementation_validation.json` certificate is sealed under
+`data/outputs/t/ci_impl_efeefd58f680/`, alongside the records, logs, snapshots
+and source review. Its manifest binding changed without changing the approved
+specification. Existing monitor-design and helper race evidence were reused
+without rerunning their checks. Output accounting covers the fresh TEMP tree
+and log; legacy fixture paths remain outside that byte subtotal.
+
+No real scientific worker, image inspection, media decoding, inference,
+scoring or visual adjudication has occurred for this scope. Branch/HEAD remain
+`codex/ball-detector-baseline` / `efeefd58f6801ffe5de106a48f8dad1e835b9647`,
+with nine intended unstaged files and an empty index. Next: request separate
+approval to stage those nine validated files, then separate commit approval.
+The real review target and post-commit checkpoint remain absent.
+Only after a verified clean commit and release
+checkpoint may the already conditional unit run. Nothing is staged, committed
+or pushed by this implementation work.
+
+## Prior checkpoint: eight-frame candidate identity review proposed
+
+The next proposed step is
+`../ball_crop_candidate_identity_review_proposal.md`, with exact image bindings
+in `configs/ball_tracking/proposals/rfdetr_medium_crop_candidate_identity_review_v0_1.json`.
+It fixes P003 representative TT/cap20 frames 300, 301, 302, 304, 308, 319, 320
+and 324 from the previously returned present-nonmatching row. Each has an
+existing unmarked PNG and native `view_0` overlay; no new rendering is needed.
+Source inspection established the setting-to-view mapping. Expected image
+bindings were copied from the committed proposal and verified administrative
+preservation audit, without opening/hashing images or scientific manifests.
+
+The proposal requests one new monitored, 120-second maximum verification
+attempt for those sixteen image byte bindings, followed by Ryan's new
+frame-specific identity and qualitative center-placement judgments. The
+parent would receive only administrative verification metadata and present
+the exact images for Ryan to inspect. Existing overlays contain reference
+markings; this would be source-first review, not blind review. The previous
+10-pixel outcomes and completed package reviews remain unchanged.
+
+This is a proposal only. No new implementation, tests, scientific execution,
+media decoding or visual review ran. No budget or consumed attempt was renewed.
+The previous three dirty context files are preserved; the two new proposal
+files are untracked, making five intended unstaged files. The index is empty
+and HEAD remains `efeefd58f6801ffe5de106a48f8dad1e835b9647` on
+`codex/ball-detector-baseline`. Nothing was staged, committed or pushed.
+Next: approve the exact new scope before implementation or scientific access;
+future staging and committing remain separate approval steps.
+
+## Prior checkpoint: output-presence diagnostic complete; next study needs its own scope
+
+Ryan separately authorized staging and committing the exact ten validated files.
+Commit `efeefd58f6801ffe5de106a48f8dad1e835b9647` on
+`codex/ball-detector-baseline` was verified clean before the already conditionally
+approved output-presence unit ran. Nothing was pushed.
+
+The single worker succeeded, attempt `395c3038fe7440a1b59912df476c3dd7`.
+It used only the bound recovered breakdown and preserved all 48 original rows,
+with the two pools, settings and original execution roles kept separate. Each
+saved S list now has its own missing-current-output and present-nonmatching-
+current-output lists and counts. The parent received the verified 11,566-byte
+summary through the administrative transport; it did not reopen or hash
+scientific input or output bodies.
+
+One example copied from the returned P003 representative TT/cap20 row is
+`4: 310, 311, 322, 323` missing current outputs and
+`8: 300, 301, 302, 304, 308, 319, 320, 324` present nonmatching current outputs.
+This is one saved row, not a cross-row total or a new performance rate.
+Present nonmatching output does not establish wrong-object identity or
+inaccurate ball-center placement. Those distinctions and missing-output causes
+remain unresolved; no semantic labels, method, operating point or quality gate
+were selected.
+
+Charged time was 42.734 seconds of the 120-second allocation; supervisor wall
+time was 43.265 seconds and complete command wall time was 84.703 seconds.
+Cleanup and final accounting passed with no resource overshoots. The journal
+now has 3,121 events and 60 closed attempts: 56 successes and the same four
+preserved failures. Its tip is
+`7a990a3fd2b86502dd6245d6d08d2d17c75abe4534bad8d6cc323aa9c43ba701`.
+The remaining cumulative allowance is `11037.211000000018` seconds. Both the
+output-presence attempt and prior recovery attempt are consumed, with zero
+authorized attempts remaining; arithmetic unused time grants no retry.
+
+The completion record and verified summary transport are
+`data/outputs/t/op_impl_de134d942767/output_presence_completion_efeefd58f680.json`
+and `output_presence_execution_efeefd58f680_stdout.json` in that same directory.
+All scientific outputs remain ignored. No detector inference, scoring,
+selection or media decoding ran; no completed tests or visual reviews were
+repeated for execution or closeout. All nine embargoes, three sealed holdouts
+and prior player/court and clip-review decisions remain preserved.
+
+The three post-execution context updates are intentionally unstaged; the index
+is empty. HEAD remains `efeefd58f6801ffe5de106a48f8dad1e835b9647`.
+Next: prepare a separately bounded study proposal before any further scientific
+access. No new study, real retry, budget allocation, semantic adjudication or
+Git step is authorized by this completed execution. Further staging and
+committing each require separate approval.
+
+## Prior checkpoint: output-presence implementation validated; staging is next
 
 Ryan's "Yes move forward chat" approved the exact output-presence proposal,
 implementation, artificial validation and one conditional scientific unit.

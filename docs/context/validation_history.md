@@ -1,5 +1,109 @@
 # Validation History
 
+## 2026-10-06: candidate-identity implementation and artificial validation completed
+
+Ryan's exact statement, "ok I'm back chat. Lets move forwar sir", approved the
+frozen candidate-identity proposal and scope, implementation, artificial
+validation and one conditional byte-verification unit followed by Ryan's
+human review. The separate approval receipt records its creation time without
+inventing a user-message timestamp. Staging, committing and pushing were not
+authorized. The proposal and scope bytes remain unchanged.
+
+The implementation adds one runner and one test module for exactly sixteen
+existing PNG bindings across eight P003 representative TT/cap20 frames.
+Pending judgments remain Ryan's: unmarked source first, then existing overlay,
+with reference markings disclosed. Parent scientific-body reads/hashes and
+pixel inspection remain prohibited. No scientific unit, image review,
+rendering, inference or scoring has run for this scope.
+
+Accepted `focused_01`: 33 passes, no skips/failures/errors, 10.953 supervised
+seconds. Accepted `full_01`: 994 tests, 993 passes and the existing Windows
+directory-symlink capability skip, no failures or errors, 2,090.750 supervised
+seconds (2,085.596 seconds reported by unittest). Full discovery equals the
+previous 961 tests plus 33 new tests. All 165 source/test/requirements bindings
+matched before and after both runs; the accepted runs used unchanged helpers.
+Owned cleanup and final accounting passed. Full-run peak RSS was 966,332,416
+bytes; final measured TEMP-plus-log output was 189,719 bytes and final free disk
+was 1,462,928,089,088 bytes. The driver retained owned
+Windows-process cleanup, a 1,200-second focused/3,600-second full limit,
+8 GiB memory ceiling, 50 GiB free-disk floor and 32 GiB measured-output limit.
+That output subtotal covers the fresh TEMP tree and log; legacy fixture paths
+remain outside it. Bytecode is disabled. The previously passed monitor-design
+and live-walk race checks are reused, not repeated.
+
+Create-only records, logs, two source snapshots per run, starting-file copies,
+review and certification helpers are under
+`data/outputs/t/ci_impl_efeefd58f680/`. Its create-only
+`implementation_validation.json` certificate binds 165 source/test/requirements
+files and the validation evidence. The 37,604-byte certificate SHA256 is
+`58a54d89bcd887f211c523a76d204ddbd135c57f7b4c4a3f71e630ec1ab3b165`.
+Only the manifest's certificate binding changed; the approved specification
+remained unchanged. The real review target and post-commit execution checkpoint
+remain absent. Separate staging approval, then separate commit approval, is next.
+Branch/HEAD remain `codex/ball-detector-baseline` /
+`efeefd58f6801ffe5de106a48f8dad1e835b9647`; the nine intended files are unstaged
+and the index is empty.
+
+The distinct conditional `post-review-candidate-identity:verify:` unit remains
+unrun and unspent: one attempt, at most 120 charged seconds, with cumulative
+allowance still `11037.211000000018` seconds. The completed 3,121-event prefix
+retains 60 closed attempts, 56 successes and four failures. Consumed recovery
+and output-presence attempts are not renewed. All nine embargoes, three sealed
+holdouts and prior visual decisions remain preserved.
+
+## 2026-10-05: output-presence commit and conditional execution completed
+
+Ryan separately approved the exact ten-file staging scope and its commit.
+Commit `efeefd58f6801ffe5de106a48f8dad1e835b9647` on
+`codex/ball-detector-baseline` was verified before execution with a clean
+worktree and empty index. The existing conditional approval then authorized
+one output-presence unit after its create-only post-commit checkpoint bound
+the actual HEAD, manifest, certificate and preserved predecessor history.
+Nothing was pushed.
+
+Attempt `395c3038fe7440a1b59912df476c3dd7` completed successfully. Its owned
+worker read only the bound recovered breakdown, derived the approved ordered
+lists and their lengths separately for all 48 rows, and published create-only
+presence, summary and provenance outputs. The complete original breakdown,
+row identities, settings, pools, source pointers and execution roles remain
+preserved. No cross-row aggregation, rates, rankings, inference, scoring,
+selection, media decoding or semantic labels were created. Wrong-object
+identity, center-placement errors and missing-output causes remain unresolved.
+
+The parent accepted only the 11,566-byte bounded summary from the verified
+administrative transport. It did not reopen or hash scientific input/output
+bodies. Successful completion, output bindings, preserved metadata, final
+accounting and owned-process cleanup passed. No time, memory or output
+overshoot was recorded.
+
+Charged elapsed time was 42.734 seconds against the 120-second reservation.
+Supervisor wall time was 43.265 seconds; complete command wall time was
+84.703 seconds. The journal advanced from the preserved 3,071-event prefix to
+3,121 events and 60 closed attempts: 56 successes and all four historical
+failures. The new tip is
+`7a990a3fd2b86502dd6245d6d08d2d17c75abe4534bad8d6cc323aa9c43ba701`.
+Remaining cumulative allowance is `11037.211000000018` seconds. The single
+output-presence attempt is consumed and has zero authorized attempts remaining;
+the earlier recovery also remains consumed. Unused arithmetic time does not
+authorize a retry or a new allocation.
+
+Administrative completion evidence is
+`data/outputs/t/op_impl_de134d942767/output_presence_completion_efeefd58f680.json`;
+the verified summary is transported in
+`output_presence_execution_efeefd58f680_stdout.json` in the same directory.
+The existing implementation validation remains 42 focused passes, 960
+full-suite passes plus the one Windows directory-symlink skip, and 16 helper
+checks. Those tests and the completed monitor design check were not rerun for
+execution or closeout. No completed visual review was repeated. All nine
+embargoes, three sealed holdouts and prior review decisions remain protected.
+
+After the clean execution, only the three context documents receive unstaged
+continuation notes; the index remains empty and HEAD stays
+`efeefd58f6801ffe5de106a48f8dad1e835b9647`. Further staging and committing require
+separate approval. The next scientific work must first have a separately
+bounded proposal; no further scientific access, real retry, budget allocation
+or new study is authorized by this completion.
+
 ## 2026-10-05: approved output-presence implementation and artificial validation
 
 Ryan's "Yes move forward chat" approved implementation, focused/full artificial
