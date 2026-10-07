@@ -1,6 +1,30 @@
 # Roadmap
 
-## Current continuation: review the six completed mean-confidence comparisons
+## Current continuation: propose the next bounded step after six submitted reviews
+
+Ryan submitted qualitative observations for all six new clips. The top-left
+panel is intentionally unmarked source footage; it needs no marker correction.
+Saved TT looked strongest to Ryan at P001 challenge 200-224, while the new mean
+looked amazing at P003 representative 300-324. He reported remaining misses near
+the referee passage for all three methods, with better pre-passage centering from
+mean/top-one, and generally positive observations on the other clips.
+
+All raw responses and interpretation caveats are preserved in
+`data/outputs/t/mean_impl_10e5fcb90f51/human_review_0001.json` and its receipt.
+These are six submitted clip reviews in response to a final-frame-review request;
+no separate final-frame attestation or exact error-frame/candidate labels were
+supplied. Do not invent those labels, numerical pass rates or identity assignments.
+
+Next is a separately bounded proposal informed by the remaining selection/occlusion
+errors and any difference between qualitative impressions and strict raw10 metrics.
+The development result remains mixed, with P001 regressions and top-one still
+ahead in pool match counts. No method, operating point or quality gate is selected.
+No new experiment, parameter sweep, scientific-body access or holdout release is
+authorized. Preserve the consumed attempt, 3,330-event history, all review evidence,
+nine embargoes and three sealed holdouts. No tests or reviews need repeating merely
+to resume. The prior pending-review checkpoint below is historical.
+
+## Prior continuation: review the six completed mean-confidence comparisons
 
 Implementation commit `06d3bb96ebb2659005716b7390f40f64e563e44b` passed 55 focused
 tests and the full suite (1,103 passes plus the existing Windows skip). A clean

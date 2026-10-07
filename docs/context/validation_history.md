@@ -1,5 +1,33 @@
 # Validation History
 
+## 2026-10-06: six qualitative mean-confidence clip reviews recorded
+
+Ryan responded to the request to review all six clips through their final frames.
+The six responses were recorded verbatim with normalized panel observations in
+`data/outputs/t/mean_impl_10e5fcb90f51/human_review_0001.json` (SHA-256
+`3fcc37bc7969e99cc294c6a3bd3b56d4d3322e4baec309bac8a22f1494cd8589`).
+`human_review_receipt_0001.json` binds all six submissions (SHA-256
+`47faf088a3057903d3f8888f9a2b82f8fa7172a6a51543b1100f64d7bbc9e6b9`).
+Separate explicit final-frame attestation and exact error-frame/candidate indices
+remain null; no numerical accuracy or production-gate approval was inferred.
+
+Independent interpretation review confirmed the six-clip mapping, the inferred
+bottom-pair reference in "both two", and the P002 representative mapping by reply
+order. The unmarked top-left source panel is expected. TT received strong praise
+on P001 challenge; mean received strong praise on P003 representative. All three
+methods still had reported misses near the referee, with better centering from
+the bottom pair before that passage. Other clip observations remain qualitative.
+Exact wording, including the player-hand description, is preserved without added
+race, jersey, frame or candidate-identity inference.
+
+Metadata-only checks matched all six clips and review indices to their existing
+worker receipt. The administrative completion/return bindings and unchanged
+3,330-event journal tip were checked. No original media or scientific JSON output
+body was opened/hashed, and no tests, experiment, render or visual review reran.
+All 636 scientific artifacts and the eight earlier human judgments are immutable.
+Validation remains 55 focused passes and 1,103 full passes plus the existing skip.
+The mixed quantitative interpretation, budgets, embargoes and holdouts are unchanged.
+
 ## 2026-10-06: mean-confidence implementation committed; one authorized attempt succeeded
 
 The exact 15-file scope was staged and committed at

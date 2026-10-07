@@ -1,6 +1,51 @@
 # Current State
 
-## Latest checkpoint: 2026-10-06 mean-confidence comparison executed; six new reviews pending
+## Latest checkpoint: 2026-10-06 Ryan submitted all six mean-confidence clip reviews
+
+Ryan supplied six qualitative responses to the request to review the new clips
+through their final frames. All six clip responses are recorded. A separate
+explicit final-frame attestation, exact error frames and candidate indices were
+not supplied and are not invented. These observations do not replace the fixed
+raw10 results or approve a production quality gate.
+
+The panel map is top-left unmarked source, top-right saved TT, bottom-left new
+mean and bottom-right saved top-one. The repeatedly noted lack of top-left
+markers is the intended source-reference design, not a rendering failure.
+
+| Clip | Ryan's qualitative observations |
+| --- | --- |
+| P001 representative 50-74 | All three marked panels looked pretty good; no specific miss identified. |
+| P001 challenge 200-224 | Saved TT looked amazing; bottom panels had a couple of misses. "Both two" is interpreted as the bottom pair; "although very scarce" is preserved without inferring a rate. |
+| P002 representative 250-274 | All three marked panels looked great; Ryan saw no markers miss the ball. This frame range follows the six-clip reply order because the bullet omitted it. |
+| P002 challenge 25-49 | All three marked panels looked great; no specific miss identified. |
+| P003 representative 300-324 | Saved TT had a couple of incorrect markers close to the ball; top-one had a couple on a player's hand, with its other markers hitting the ball. Mean looked amazing. |
+| P003 challenge 150-174 | All three marked panels missed around the referee passage. Mean and top-one kept the center better before that passage than saved TT. |
+
+Verbatim wording, panel mapping, interpretation caveats and null exact-frame/
+candidate fields are preserved in the create-only administrative ledger
+`data/outputs/t/mean_impl_10e5fcb90f51/human_review_0001.json`, SHA-256
+`3fcc37bc7969e99cc294c6a3bd3b56d4d3322e4baec309bac8a22f1494cd8589`.
+`human_review_receipt_0001.json` binds the six submitted responses (SHA-256
+`47faf088a3057903d3f8888f9a2b82f8fa7172a6a51543b1100f64d7bbc9e6b9`).
+Clip/index metadata still matches the successful worker receipt. The original
+636 bound artifacts, eight earlier human judgments and old handoff are unchanged.
+
+The quantitative interpretation remains mixed: human impressions neither erase
+the P001 regressions nor turn general praise into per-frame localization passes.
+They describe different strengths by clip and remaining referee-passage misses.
+New identities cannot be assigned to exact frame/candidate pairs from this reply.
+No method or operating point is selected. No tests, experiments, media reads or
+scientific-body hashes were repeated for recording these reviews. The scientific
+journal remains 3,330 events / 63 closed attempts (59 successes, four historical
+failures), with `10852.476000000015` seconds remaining; holdouts and embargoes
+remain unchanged. Remaining time is not execution authority.
+
+Next is a separately bounded follow-up proposal using this evidence. Any new
+scientific access, tuning, execution or holdout release requires its own approved
+scope. Do not repeat the six submitted reviews merely to resume. The earlier
+handoff and pending-review checkpoint below describe the state before this reply.
+
+## Prior checkpoint: 2026-10-06 mean-confidence comparison executed; six new reviews pending
 
 The 15-file implementation was committed under Ryan's conditional authorization
 at `06d3bb96ebb2659005716b7390f40f64e563e44b` on `codex/ball-detector-baseline`.
