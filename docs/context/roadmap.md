@@ -1,6 +1,58 @@
 # Roadmap
 
-## Current continuation: choose a separately scoped follow-up after the completed contrast
+## Current continuation: validate and execute the approved mean-confidence comparison
+
+Ryan approved the exact bounded proposal and conditionally authorized staging and
+committing after passing checks. Four new modules and four artificial test files
+are implemented; independent code/boundary review, the corrected 55-test
+focused suite and the full suite (1,103 passes plus one existing Windows skip)
+passed. The interrupted first full run
+and correction evidence remain preserved within the original validation budget.
+
+The implementation certificate is sealed. Commit the exact 15-file scope,
+verify the clean descendant and create a new release checkpoint.
+Then perform at most the one approved 1,200-second attempt with the fixed six
+windows and saved controls. No old selector/evaluator is rerun, no new inference
+or parameter sweep is authorized, and the prior history/budgets/holdouts stay intact.
+Parent access remains administrative/metadata-only until successful verification
+permits presentation of the six newly generated review packages to Ryan.
+
+Ryan's new final-frame reviews are the next human judgment boundary. Quantitative
+improvement is not a prerequisite to preserving valid evidence; it does not select
+a production method, operating point or quality gate. There is no automatic retry,
+push, PR creation or merge authority.
+
+## Prior preparation: propose the fixed mean-confidence comparison
+
+The separately bounded follow-up is now written in
+`../ball_crop_path_confidence_mean_proposal.md` and
+`configs/ball_tracking/proposals/rfdetr_medium_crop_path_confidence_mean_v0_1.json`.
+Ryan's "move forward chat" authorized planning; implementation/execution remain
+unapproved. The proposal compares one mean-confidence path arm with saved
+TT/cap20 and top-one results at .01/raw10 across the same six development windows.
+It preserves movement/gap rules, candidate identities, missingness and both
+separate pools. No old control is rerun and no parameter sweep is proposed.
+
+The new evidence would show complete paired match/wrong/missing transitions,
+hidden alarms, path support and six new synchronized final-frame review packages.
+Frame 300's confidence-only choice must remain unchanged; frame 304 and the six
+history-dominated examples remain diagnostic context. A favorable development
+result would still not select a method or certify ball identity/generalization.
+
+Proposed limits are one distinct attempt, 1,200 charged seconds and 4 GiB new
+output under the unchanged responsive monitor. Exact input bindings, phase access,
+artificial validation limits, acceptance criteria and release requirements are
+in the scope. The remaining cumulative allowance is not approval. All consumed
+roles, 3,221 events, completed reviews, nine embargoes and three sealed holdouts
+remain preserved; planning accessed no scientific bodies or pixels and ran no tests.
+
+Next: obtain exact-scope approval before implementation, artificial validation,
+new scientific access or execution. Staging/committing require their own approval,
+then a verified clean commit and a new create-only checkpoint. The proposal/scope
+and three context files remain unstaged with an empty index at
+`10e5fcb90f51909891d5df08d0b84ea5932a4033`. Nothing was pushed.
+
+## Prior continuation: choose a separately scoped follow-up after the completed contrast
 
 The eleven-file implementation was staged and committed under Ryan's explicit
 conditional permission at `26242d13a5a93043d35fa832c348a44445c1759e` on

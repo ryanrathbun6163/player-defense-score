@@ -1,6 +1,99 @@
 # Current State
 
-## Latest checkpoint: 2026-10-06 saved-decision contrast completed successfully
+## Latest checkpoint: 2026-10-06 mean-confidence implementation validated for the approved commit
+
+Ryan approved the exact proposal and added: "yes I do an you are approved to stage
+and commit if nothing is broken after". The separate immutable approval record is
+`configs/ball_tracking/reviews/rfdetr_medium_crop_path_confidence_mean_approval_v0_1.json`.
+It authorizes implementation, artificial validation, one conditional scientific
+attempt and the six new review packages, plus staging/committing after passing
+checks. Push, PR creation and merge remain outside this authorization. The frozen
+proposal/scope retain their original planning status; the new approval supplies
+authority without rewriting them.
+
+Four separate modules and four artificial test files implement the fixed mean
+arm, saved-control comparison, synchronized rendering and guarded execution.
+Historical selectors, evaluator semantics and the responsive monitor are unchanged.
+All six selections freeze before labels, saved reports or pixels are accessible.
+Independent numerical, access-boundary and returned-report reviews passed after
+adding report consistency checks. The corrected focused suite passed **55 tests**.
+The full suite passed **1,103 tests plus the one existing Windows skip** (1,104
+total), with no errors or failures. No scientific attempt has started.
+
+Administrative evidence is in `data/outputs/t/mean_impl_10e5fcb90f51/`.
+`focused_01` passed 54 tests; `full_01` was deliberately interrupted after
+35.375 supervised seconds to incorporate the final review findings, before any
+source edits. Its failed/interrupted receipt and verified owned cleanup remain
+preserved with `correction_01.json`. `focused_02` passed 55 tests. All correction
+time counts toward the original 4,200-second artificial validation allowance.
+Accepted `full_02` used 2,123.766 supervised seconds (2,121.558 unittest seconds).
+Total artificial time including the interruption and both focused runs is
+2,164.297 seconds. Exact 177-file source bindings stayed unchanged; cleanup and
+resource bounds passed. The create-only implementation certificate SHA-256 is
+`51384f02cf27f56bd5bfb0b2281fcc62cecd30c2726f528c9671fccb2fc92093`.
+The manifest now binds that certificate; the release checkpoint is still absent.
+
+The new preservation snapshot binds the exact 3,221-event prefix, 62 closed
+attempts, 58 successes, four historical failures, all eight human judgments,
+nine embargoes and three sealed holdouts. Parent scientific bodies/pixels have
+not been opened. The existing cumulative scientific balance remains
+10951.195000000016 seconds. The one new unit retains its 1,200-second/4-GiB
+ceilings and cannot retry automatically.
+
+Next: stage and commit the exact 15-file scope under Ryan's permission, verify a clean
+descendant commit and create the new release checkpoint, then execute once.
+After a successful bounded return, present the six new clips through their final
+frames for Ryan's judgment. No method, operating point or quality gate is selected.
+Implementation was prepared from `10e5fcb90f51909891d5df08d0b84ea5932a4033` on
+`codex/ball-detector-baseline`; the new checkpoint must bind its clean descendant.
+Nothing has been pushed.
+
+## Prior preparation: 2026-10-06 mean-confidence comparison proposed
+
+Ryan's latest "move forward chat" authorized the next bounded proposal only.
+The proposal is `../ball_crop_path_confidence_mean_proposal.md`, with scope
+`configs/ball_tracking/proposals/rfdetr_medium_crop_path_confidence_mean_v0_1.json`.
+It asks whether averaging path confidence instead of summing it improves
+current-frame localization or changes the wrong-output/missingness tradeoff.
+It proposes one new TT/cap20/.01 arm across all six existing development windows,
+using saved TT and top-one controls without rerunning their selection/scoring.
+
+The proposed fixed-terminal-length algorithm preserves movement/gap rules and
+defines binary64 arithmetic and tie behavior. Normalization also increases the
+relative influence of the unchanged penalties; it is not a proven history-only
+fix. All 150 frames are evaluated at raw10, with representative/challenge pools
+separate, paired match/wrong/missing transitions, hidden alarms and six new
+final-frame review packages. Frame 300 must remain unchanged at startup; all
+eight completed human judgments and their null candidate indices are preserved.
+
+The proposed worker-only allowance binds 176 existing candidate/control/label/
+pool/PNG files, totaling 558,727,833 bytes from filesystem metadata. All six new
+selections must be frozen before labels, saved scoring reports or pixels are
+opened. Parent scientific bodies remain opaque; the proposal requests only a
+later exception to present the new verified review media to Ryan. No such new
+access is authorized yet. One distinct attempt would have a 1,200-second ceiling
+and 4 GiB of new output under the unchanged responsive safety policy. The
+remaining 10951.195000000016 seconds does not itself authorize this attempt.
+
+Preparation read source, committed metadata and administrative records, and
+checked scientific path sizes only. No scientific body/hash/pixel access, tests,
+experiments or completed review repetitions occurred. Existing validation stays
+at 55 focused passes and 1,048 full passes plus one existing Windows skip.
+Independent numerical-design and access-boundary reviews passed after clarifying
+window-regression disclosure and temporal-run definitions. JSON inventory/binding
+and document whitespace checks passed; these are proposal checks, not code tests.
+Preserve all 3,221 events, 62 closed attempts, 58 successes, four failures, the
+successful contrast suffix, nine embargoes and three sealed holdouts.
+
+Next is approval of the exact proposal for implementation, artificial validation
+and one conditional execution/new review scope. Staging and committing still
+require separate permission before a clean release checkpoint. No production
+method, operating point or quality gate is selected. The five intended files
+are the new proposal/scope and these three context records; they are unstaged,
+with an empty index. HEAD remains `10e5fcb90f51909891d5df08d0b84ea5932a4033`
+on `codex/ball-detector-baseline`. No Git step has been performed.
+
+## Prior checkpoint: 2026-10-06 saved-decision contrast completed successfully
 
 The eleven-file implementation was staged and committed under Ryan's explicit
 conditional permission at `26242d13a5a93043d35fa832c348a44445c1759e` on

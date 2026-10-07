@@ -1,5 +1,79 @@
 # Validation History
 
+## 2026-10-06: approved mean-confidence implementation passed artificial validation
+
+Ryan approved the exact proposal, its validation/conditional run and staging plus
+committing if checks pass. The immutable approval and separate experiment manifest
+bind the unchanged proposal/scope and the new metadata/admin-only history snapshot.
+Four new modules and four test files leave historical scientific and monitor
+semantics unchanged. No real scientific attempt, input body/hash or pixel access
+has occurred in the parent.
+
+Independent reviews cover the fixed-terminal-length arithmetic and ties, phase
+access, all-six selection freezing, control reuse, rendering and report accounting.
+Final review found three report-consistency gaps: complete diagnostic selections
+and startup/human-index reconciliation, startup changed-frame inventory checks,
+and review-index digest cross-links. Those checks and mutation coverage were added
+before accepted full validation; final independent review passed.
+
+`data/outputs/t/mean_impl_10e5fcb90f51/` preserves all administrative evidence:
+
+- `focused_01`: 54 passes, 1.922 supervised seconds.
+- `full_01`: deliberately interrupted after 35.375 seconds for the review correction;
+  no sources changed during that run, and owned cleanup was verified.
+- `correction_01.json`: reason and exact interrupted-worker stop verification.
+- `focused_02`: corrected 55 passes, 3.234 supervised seconds.
+- `full_02`: 1,104 total tests = 1,103 passes plus the one existing Windows
+  directory-symlink skip; no errors/failures. 2,121.558 unittest seconds and
+  2,123.766 supervised seconds on unchanged corrected source bindings.
+
+All actual correction time remains charged to the 4,200-second artificial allowance:
+2,164.297 seconds total. Full-suite peak sampled memory was 1,088,929,792 bytes;
+peak observed output was 797,763,357 bytes across the fresh admin/temp trees and
+the ten explicit artificial-fixture roots (including their preexisting bytes).
+Disk reserve, exact 177-source before/after bindings and owned cleanup passed.
+The create-only `implementation_validation.json` binds all four validation
+receipts, retained snapshots/logs, the correction and final independent review.
+Certificate SHA-256: `51384f02cf27f56bd5bfb0b2281fcc62cecd30c2726f528c9671fccb2fc92093`.
+The manifest binds this certificate; no execution checkpoint exists yet.
+The unchanged responsive-monitor validation is reused, not rerun. Existing 3,221
+scientific journal events and 62 closed attempts, nine embargoes, three sealed
+holdouts, eight completed human judgments and prior outputs remain preserved.
+The new scientific attempt and its 1,200-second allowance are still unused.
+
+## 2026-10-06: mean-confidence follow-up preparation only
+
+The new proposal `../ball_crop_path_confidence_mean_proposal.md` and companion
+`configs/ball_tracking/proposals/rfdetr_medium_crop_path_confidence_mean_v0_1.json`
+describe one unapproved scoring comparison across the six existing development
+windows. Scientific expected hashes were copied from the committed retention
+inventory; 176 input path sizes (558,727,833 bytes total) came only from filesystem
+metadata. No scientific input/output body was read or hashed and no pixels were
+accessed. New selectors, evaluators, renders, tests and human reviews did not run.
+
+The proposed algorithm normalizes confidence per terminal path length while
+preserving the existing movement and gap rules, with explicit floating-point
+state pruning and tie semantics. Saved TT/top-one controls would be read without
+rerunning them. Quantitative evaluation and six new final-frame visual reviews
+are future scope requiring approval; no improvement has been measured or claimed.
+
+Independent numerical-design and access-boundary reviews passed. The proposal
+now requires disclosure of every window regression even when pool totals improve,
+and defines temporal runs so hidden/ineligible frames break them. Metadata-only
+checks confirmed all 176 input bindings against the committed authority, all 636
+unique relative output paths, the proposal/document binding and false authorization
+flags. Document whitespace checks passed. These checks do not validate the future
+implementation or establish runtime feasibility. An ordinary context-patch mismatch
+was corrected before publication; it caused no partial edit or scientific retry.
+
+Existing completed validation remains 55 focused passes and 1,048 full passes
+plus one existing Windows skip. All 3,221 resource events, 62 consumed/closed
+attempts, 58 successes and four historical failures remain preserved, along with
+the latest contrast outputs, completed human reviews, nine embargoes and three
+sealed holdouts. No prior run or release checkpoint was replayed. The proposal
+does not change the cumulative balance of 10951.195000000016 seconds or authorize
+its proposed single 1,200-second attempt. Source, tests and monitor are unchanged.
+
 ## 2026-10-06: saved-decision contrast committed and one authorized attempt succeeded
 
 The eleven-file implementation was staged and committed under Ryan's explicit
