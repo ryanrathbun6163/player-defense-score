@@ -1,6 +1,34 @@
 # Roadmap
 
-## Current continuation: validate and execute the approved mean-confidence comparison
+## Current continuation: review the six completed mean-confidence comparisons
+
+Implementation commit `06d3bb96ebb2659005716b7390f40f64e563e44b` passed 55 focused
+tests and the full suite (1,103 passes plus the existing Windows skip). A clean
+release checkpoint preceded the single successful attempt. All six new selections,
+comparisons and review packages are complete; 636 artifacts were verified.
+
+The result is mixed. Matched frames increased against saved TT from 32 to 49 in
+the representative pool and 53 to 57 in the challenge pool, but challenge
+missingness increased from 3 to 4 and P001 regressed in both windows. The mean
+arm still trails saved top-one matches (51 representative, 60 challenge).
+P003 hidden alarms fell from 4 to 3 (top-one has 5), without resolving identity
+or generalization. Complete per-window regressions and missingness remain visible.
+
+Next: Ryan reviews the six new 25-frame/5-fps clips through their final frames,
+with source, saved TT, new mean and saved top-one synchronized. All six reviews
+are pending. The eight previous human judgments remain complete and scoped to
+their original saved-TT emissions. Two new composites received layout-only
+inspection under the approved presentation exception; no human judgment was inferred.
+
+The new attempt is consumed: 98.719 charged seconds; current history is 3,330
+events and 63 closed attempts (59 successes, four historical failures), with
+10852.476000000015 cumulative seconds remaining. Preserve evidence, nine embargoes
+and three sealed holdouts. Do not rerun the experiment, tests or release checkpoint
+for resumption, and do not treat remaining time as execution authority. Any next
+scientific work requires a separately bounded proposal after the new reviews.
+No method, operating point or quality gate is selected. Nothing has been pushed.
+
+## Prior continuation: validate and execute the approved mean-confidence comparison
 
 Ryan approved the exact bounded proposal and conditionally authorized staging and
 committing after passing checks. Four new modules and four artificial test files

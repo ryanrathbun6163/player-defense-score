@@ -1,6 +1,80 @@
 # Current State
 
-## Latest checkpoint: 2026-10-06 mean-confidence implementation validated for the approved commit
+## Latest checkpoint: 2026-10-06 mean-confidence comparison executed; six new reviews pending
+
+The 15-file implementation was committed under Ryan's conditional authorization
+at `06d3bb96ebb2659005716b7390f40f64e563e44b` on `codex/ball-detector-baseline`.
+The clean descendant, exact implementation certificate and new create-only
+release checkpoint passed. The single approved worker then completed successfully;
+its verified bounded return classified the development result as **mixed**.
+
+Validation remains **55 focused passes** and **1,103 full passes plus one existing
+Windows skip**. No tests or prior experiments were repeated for execution. The
+worker read only the 176 declared inputs, froze all six new selections before
+scoring/rendering, copied the saved controls without rerunning them, and verified
+all 636 artifacts (1,457,619,447 published bytes). There were zero new model calls.
+Parent scientific JSON bodies remain opaque; only administrative/metadata records
+and the bounded return were read. The approved post-success presentation exception
+was used to inspect the layout of two new verified composites, without media
+hashing, original-image access or human identity judgments.
+
+Pool results at the fixed .01/raw10 operating point are below. Counts are
+matched / wrong-present / missing on eligible frames; hidden alarms are separate.
+
+| Pool | Saved TT | New mean | Saved top-one | Hidden alarms TT / mean / top-one |
+| --- | --- | --- | --- | --- |
+| Representative (75 eligible) | 32 / 39 / 4 | 49 / 24 / 2 | 51 / 24 / 0 | no hidden frames |
+| Challenge (70 eligible, 5 hidden) | 53 / 14 / 3 | 57 / 9 / 4 | 60 / 10 / 0 | 4 / 3 / 5 |
+
+The conservative favorable criterion did not pass: challenge missingness increased.
+Pool gains also conceal important window regressions, particularly P001.
+
+| Window | Saved TT matched / wrong / missing | New mean | Saved top-one |
+| --- | --- | --- | --- |
+| P001 representative 50-74 | 11 / 14 / 0 | 9 / 16 / 0 | 8 / 17 / 0 |
+| P001 challenge 200-224 | 25 / 0 / 0 | 18 / 5 / 2 | 20 / 5 / 0 |
+| P002 representative 250-274 | 8 / 17 / 0 | 18 / 6 / 1 | 20 / 5 / 0 |
+| P002 challenge 25-49 | 16 / 7 / 2 | 22 / 2 / 1 | 23 / 2 / 0 |
+| P003 representative 300-324 | 13 / 8 / 4 | 22 / 2 / 1 | 23 / 2 / 0 |
+| P003 challenge 150-174 | 12 / 7 / 1 | 17 / 2 / 1 | 17 / 3 / 0 |
+
+All window regressions against both controls and exact paired transitions remain
+in the bounded administrative return. New-mean singleton emissions per window
+in the order above are 16, 16, 19, 24, 22 and 21; current/older/empty endpoint
+counts are 25/0/0, 23/2/0, 24/1/0, 24/1/0, 24/1/0 and 22/3/0. The new rule still
+trails saved top-one in matched frames in both pools, so these results do not
+establish added value from history. Localization does not certify object identity.
+
+Frame 300 stayed candidate 0 at startup; frame 304 also stayed candidate 0.
+The other six fixed diagnostic frames (301, 302, 308, 319, 320, 324) switched to
+candidate 0, matching the saved top-one choice. Their new semantic identities
+remain unknown. The eight prior human judgments apply only to the originally
+reviewed saved-TT emissions; null human candidate indices remain null.
+
+Attempt `b36133afc62a4c9fb34547ab6ad2c4ac` consumed 98.719 charged seconds of
+its 1,200-second ceiling. Supervisor wall time before publication was 99.516
+seconds; full command wall time was 144.468 seconds. Maximum completed safety
+interval was 0.282 seconds; all memory/output/disk/cleanup checks passed.
+The journal now has **3,330 events, 63 closed attempts, 59 successes and the same
+four historical failures**. Consumed cumulative time is `3547.523999999985`
+seconds; remaining time is `10852.476000000015`. The new attempt is consumed and
+cannot retry. Nine embargoes, three sealed holdouts and prior outputs stay intact.
+
+Administrative evidence lives in `data/outputs/t/mean_impl_10e5fcb90f51/`:
+`study_stdout.json` is the allowed bounded parent return;
+`path_confidence_mean_completion_06d3bb96ebb2.json` records completion and balances
+(SHA-256 `0a83fbcd35079b57738ce32c05c8d31d5c979b8384d84c17a60d20eabc4e2071`).
+Journal tip is `4dd2b89f3fea67f3be9e3f409e7b937fc6da8a2a622c9b2a98505041c2a31fd6`.
+The release checkpoint binds the execution commit, not a later documentation HEAD.
+
+Next is Ryan's review of **all six new 25-frame clips through their final frames**,
+at 5 fps, under the retention root's `audit/path_confidence_mean_v0_1/review/`.
+Each window has `comparison.mp4`, `first.png`, `last.png` and native overlays.
+No new human review has been completed. No method, operating point or production
+quality gate is selected. New execution, tuning, retries and holdout release need
+separate bounded approval. Push, PR creation and merge remain unauthorized.
+
+## Prior checkpoint: 2026-10-06 mean-confidence implementation validated for the approved commit
 
 Ryan approved the exact proposal and added: "yes I do an you are approved to stage
 and commit if nothing is broken after". The separate immutable approval record is

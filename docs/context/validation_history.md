@@ -1,5 +1,47 @@
 # Validation History
 
+## 2026-10-06: mean-confidence implementation committed; one authorized attempt succeeded
+
+The exact 15-file scope was staged and committed at
+`06d3bb96ebb2659005716b7390f40f64e563e44b` under Ryan's explicit conditional
+permission. Staged whitespace checks passed; worktree and index were clean.
+The new post-commit checkpoint verified exact validated sources, authority,
+preserved history and metadata before the single scientific attempt.
+Validation stayed at 55 focused passes and 1,103 full passes plus the existing
+Windows skip; it was not rerun for release or execution.
+
+Attempt `b36133afc62a4c9fb34547ab6ad2c4ac` succeeded. The worker enforced the
+176-input allowlist, froze all six new selections before labels/reports/pixels,
+reused saved controls without selector/evaluator reruns and made zero model calls.
+It verified 636 create-only artifacts totaling 1,457,619,447 bytes, including six
+25-frame/5-fps clips, 450 native overlays and twelve first/final composites.
+Parent return was 127,959 bytes; stderr was empty. Parent scientific JSON outputs
+were not opened or hashed. Post-success layout inspection viewed only two newly
+verified composites; original-image files and human judgments were untouched.
+
+Charged time was 98.719 seconds; supervisor wall time before publication was
+99.516 seconds and full command wall time was 144.468 seconds. The monitor used
+19 complete scans, maximum safety interval 0.282 seconds and peak sampled combined
+memory 419,037,184 bytes. Whole-root final accounting bound was 8,875,232,080 bytes;
+the incremental 4-GiB and whole-root 32-GiB limits passed. Minimum free disk was
+1,458,809,614,336 bytes. Owned cleanup passed without errors.
+
+The journal has 3,330 events, 63 closed attempts, 59 successes and the unchanged
+four historical failures; tip `4dd2b89f3fea67f3be9e3f409e7b937fc6da8a2a622c9b2a98505041c2a31fd6`.
+Consumed time is `3547.523999999985`; remaining cumulative time is
+`10852.476000000015` seconds. The new attempt cannot retry automatically.
+All prior evidence/reviews, nine embargoes and three sealed holdouts are preserved.
+
+The verified bounded result is mixed: representative matched/wrong/missing changed
+32/39/4 to 49/24/2; challenge changed 53/14/3 to 57/9/4, with hidden alarms 4 to 3.
+Saved top-one remains 51/24/0 and 60/10/0, with five hidden alarms. Every window
+regression is retained, including P001's match losses of two and seven frames.
+All six new Ryan final-frame reviews remain pending; no method or quality gate
+was selected. Exact returned accounting and completion are preserved in
+`data/outputs/t/mean_impl_10e5fcb90f51/study_stdout.json` and
+`path_confidence_mean_completion_06d3bb96ebb2.json` (SHA-256
+`0a83fbcd35079b57738ce32c05c8d31d5c979b8384d84c17a60d20eabc4e2071`).
+
 ## 2026-10-06: approved mean-confidence implementation passed artificial validation
 
 Ryan approved the exact proposal, its validation/conditional run and staging plus
