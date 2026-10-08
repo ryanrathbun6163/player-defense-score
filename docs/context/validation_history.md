@@ -1,5 +1,34 @@
 # Validation History
 
+## 2026-10-08: focused path repair and saved corroboration result recovery
+
+Path-repair commit `decfcbaf642bcff8d04496f8c1274a1c7a415811` followed one exact
+producer-backed regression failure, 98 passing focused tests, and a passing check
+of the actual emitted certificate. Those three checks consumed 65.203 seconds;
+no new full-suite run occurred. Earlier full-suite receipts retain their original
+scope and are not evidence for later source changes.
+
+The subsequent scientific attempt `dcdfd95a942c44f3bccb8d41fe8c795c` failed writing
+an oversized Markdown summary after calculation/rendering. Its finished event
+records 58.562999999994645 charged seconds and verified owned cleanup. It remains
+failed, with no completed worker receipt. The saved JSON summary and all six
+window/two pool reports consistently show worse matches with YOLO agreement:
+51→41 representative, 60→37 challenge, no recovered matches or suppressed wrong
+outputs/hidden alarms. Counts were recovered without rerunning the experiment.
+
+The Markdown writer now uses the compact pool totals. Its existing whole-protocol
+regression exercises 150 artificial frames with long window IDs and the real
+65,536-byte Markdown limit, checks every reported total, and confirms the previous
+raw representation exceeds that limit. All three whole-comparison tests passed
+in 5.402 seconds after correcting the fixture's required `synthetic_` prefix.
+The full suite and scientific experiment were not repeated for this repair.
+
+See `../ball_crop_cross_detector_corroboration_results.md` and the fresh recovery
+record under `data/outputs/t/corroboration_path_normalization_c946aed/`.
+Ryan's October 8 policy replaces mandatory full-suite and routine proposal/
+certificate requirements with risk-proportionate checks; historical failed
+attempts, test evidence, reviews, and consumed resources remain unchanged.
+
 ## 2026-10-07: final human batch and joint diagnostic completion
 
 Ryan's final P003/170 and P003/171 response is preserved in

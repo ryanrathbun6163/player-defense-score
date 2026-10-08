@@ -31,6 +31,16 @@ When sources disagree, prefer:
 
 Never infer that an old command, artifact link, branch, or checkpoint is still current. Verify the actual repository state first.
 
+## Current operating policy — Ryan's 2026-10-08 instruction
+
+This standing policy supersedes conflicting older operational instructions in this repository, including mandatory full-suite runs, stop-on-failure rules, recovery proposals, certificate procedures, arbitrary resource caps, and blanket scientific-body read bans. Historical records remain evidence of what was authorized and done at that time; they do not impose new approval gates on routine work now.
+
+- Complete routine path, formatting, report-size, tooling, and implementation fixes autonomously. Read and compute the development results needed to answer Ryan's question, including recovering existing results after a delivery failure. Do not require a new recovery proposal or routine RED/GREEN certificate sequence.
+- Use the computer and data resources reasonably needed for the work, with practical memory, disk, process-ownership, and cleanup safeguards. Adjust arbitrary operational limits when needed; do not spend repeated runs or complex release machinery merely satisfying an obsolete cap.
+- Test in proportion to risk. Use focused checks for local changes; run the full suite when the change's reach or unresolved risk justifies it. Do not repeat a completed full run for a routine fix or merely to resume.
+- Preserve failed attempts, consumed resources, original evidence, uncertainty, and completed reviews. Never reset history, turn a failed run into a successful one, or imply that an earlier test run covered later code. Keep holdouts separate from development decisions and retain human visual-review gates.
+- Simplify delivery and integrate completed increments into the active project. Bring substantial scientific, architectural, evidence-integrity, safety, or cost tradeoffs to Ryan for approval; explain routine corrections briefly and continue.
+
 ## Non-negotiable engineering rules
 
 - Preserve uncertainty. Missing data is better than fabricated certainty.
@@ -45,7 +55,7 @@ Never infer that an old command, artifact link, branch, or checkpoint is still c
 
 ## Git authorization boundary
 
-Treat editing, validation, staging, committing, pushing, PR creation, and merging as distinct steps. Do not stage, commit, push, create a PR, or merge unless Ryan explicitly asks for that step. Never push directly to `main`.
+Treat editing, validation, staging, committing, pushing, PR creation, and merging as distinct steps. Apply Ryan's existing session or standing authorization to local integration without repeatedly asking for the same permission. If local staging or committing has not been authorized, obtain that authorization. Pushing, PR creation, and merging require explicit authorization; never push directly to `main`.
 
 Before any Git mutation, report the current branch, HEAD, worktree status, and intended file scope. Afterward, verify the exact result.
 
@@ -59,10 +69,10 @@ Do not assume a command was run merely because it was provided. Confirm terminal
 
 For relevant code changes:
 
-- run focused tests first, then the full test suite;
+- run focused checks appropriate to the change; run the full suite only when broader risk warrants it;
 - for changes that consume another component's records, derive critical fixtures from the producing code or an explicitly authorized captured record; verify producer and consumer fields independently;
-- demonstrate a regression test failing for the identified bug before correction and passing afterward, using isolated artificial inputs; count both runs within the approved validation allowance;
-- the validation launcher must verify the producer-backed regression and focused checks before starting the full suite on frozen files; a general AI review or a hand-written matching fixture does not satisfy this gate;
+- add a useful regression check when the failure merits one; a mandatory pre-fix RED run, certificate chain, or separate validation proposal is not required for routine corrections;
+- when record transport is the risk, check the actual emitted record against its consumer instead of relying only on a fixture that mirrors the implementation;
 - use `PYTHONDONTWRITEBYTECODE=1` or remove newly generated `__pycache__` directories;
 - keep generated test/output artifacts outside Git;
 - run `git diff --check` before proposing staging;

@@ -65,9 +65,10 @@ def administrative_scope():
     return json.loads((ROOT / SCOPE_PATH).read_text(encoding="utf-8"))
 
 
-def release_fixture(root):
+def release_fixture(root, *, production_window_ids=False):
     """190 tiny inputs and a full 342-file output contract, without old runs."""
     scope = administrative_scope()
+    window_ids = [window["window_id"] for window in scope["windows"]]
     scope.update(artificial_only=True, fixture_id="synthetic:release-contract", status="artificial_fixture",
                  windows=[], existing_scientific_files=[], saved_controls=[], saved_reports=[], saved_mean_references=[])
     scope["outputs"]["directory"] = "data/outputs/synthetic_corroboration"
@@ -90,7 +91,7 @@ def release_fixture(root):
         labels, rf, yolo, observations, reports, window = fixture(
             count=25, start=start, purpose=scoring.POOLS[index % 2],
             possession=f"possession_{index // 2 + 1:03d}", hidden=tuple(range(15, 20)) if index == 5 else ())
-        ident = f"synthetic_window_{index}"
+        ident = "synthetic_" + window_ids[index] if production_window_ids else f"synthetic_window_{index}"
         window.update(window_id=ident, annotation_set_id=labels.annotation_set_id)
         runs[ident] = {"rfdetr": rf, "yolo": yolo}
         # Small artificial stand-ins exercise access/binding. Pure adapters get
@@ -446,7 +447,7 @@ class AdapterTests(TemporaryRoot):
 class WholeComparisonTests(TemporaryRoot):
     def setUp(self):
         super().setUp()
-        self.scope, self.runs, self.reports, _ = release_fixture(self.root)
+        self.scope, self.runs, self.reports, _ = release_fixture(self.root, production_window_ids=True)
 
     def adapters(self, payload, window, detector):
         self.assertEqual(payload["window_id"], window["window_id"])
@@ -454,6 +455,10 @@ class WholeComparisonTests(TemporaryRoot):
         return self.runs[window["window_id"]][detector]
 
     def test_full_file_protocol_freezes_six_then_scores_new_only_preserving_all_controls(self):
+        markdown_limit = 65536
+        next(row for row in self.scope["outputs"]["files"] if row["path"] == "summary.md")["maximum_bytes"] = markdown_limit
+        self.scope["outputs"]["sum_of_individual_file_maxima_bytes"] = sum(
+            row["maximum_bytes"] for row in self.scope["outputs"]["files"])
         originals = {row["path"]: (self.root / row["path"]).read_bytes() for row in self.scope["existing_scientific_files"]}
         from src.ball_tracking import crop_motion_factorial as old_selector
         from src.ball_tracking import crop_motion_evaluation as old_evaluator
@@ -472,6 +477,19 @@ class WholeComparisonTests(TemporaryRoot):
         self.assertLessEqual(len(encoded(release.parent_return(result))), 512 * 1024)
         self.assertLessEqual(len(encoded(result["summary"])), 131072)
         output_root = self.root / self.scope["outputs"]["directory"]
+        markdown = (output_root / "summary.md").read_bytes()
+        self.assertLessEqual(len(markdown), markdown_limit)
+        reported = {purpose: json.loads(totals) for purpose, totals in
+                    (line.split(": ", 1) for line in markdown.decode("utf-8").splitlines()[4:])}
+        raw_totals = {}
+        for purpose in scoring.POOLS:
+            raw_totals[purpose] = json.loads((output_root / f"evaluation/{purpose}.json").read_text())["totals"]
+            self.assertEqual(reported[purpose], {arm: {key: value for key, value in totals.items() if key != "frames"}
+                                                 for arm, totals in raw_totals[purpose].items()})
+        self.assertGreater(len(json.dumps(raw_totals).encode("utf-8")), markdown_limit)
+        self.assertEqual(sum(pool[scoring.TOP]["frame_denominator"] for pool in reported.values()), 150)
+        self.assertEqual(sum(pool[scoring.TOP]["counts"]["matched"] for pool in reported.values()), 145)
+        self.assertEqual(sum(pool[scoring.TOP]["counts"]["alarm"] for pool in reported.values()), 5)
         self.assertEqual({path.relative_to(output_root).as_posix() for path in output_root.rglob("*") if path.is_file()},
                          {row["path"] for row in self.scope["outputs"]["files"]})
         for path, original in originals.items():

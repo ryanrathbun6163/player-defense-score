@@ -13,6 +13,7 @@
 | Ball annotation semantics and review contract | `docs/ball_tracking_annotation_protocol.md`, `src/ball_tracking/annotations.py`, `src/ball_tracking/detections.py`, reviewed files under `configs/ball_tracking/annotations/` | Current desktop ball-tracking work |
 | Ball-detector window selection | `docs/ball_detector_baseline_selection.md`, `configs/ball_tracking/experiments/rfdetr_medium_image_only_baseline_v0_1.json` | Prediction-free source contact sheets are temporary supporting evidence only |
 | Ball-detector execution contract | `src/ball_tracking/detector_experiments.py`, `src/ball_tracking/rfdetr_adapter.py`, `src/ball_tracking/run_detector_experiment.py`, tests | Current desktop ball-tracking work |
+| RF/YOLO corroboration outcome | `docs/ball_crop_cross_detector_corroboration_results.md`, saved six-window/two-pool outputs and recovery record | October 8 recovered negative result; original reporting attempt remains failed |
 | Git history | repository commits and merged PRs | transcripts only for rationale |
 | Generated local evidence | ignored `data/` tree plus hash manifest | attachment/archive manifests |
 | Collaboration and Git rules | `AGENTS.md`, `working_agreement.md` | Chat 05 opening checkpoint |

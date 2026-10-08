@@ -1,6 +1,33 @@
 # Current State
 
-## Latest checkpoint: 2026-10-07 joint 16-frame diagnostic review complete
+## Latest checkpoint: 2026-10-08 corroboration result recovered; practical workflow adopted
+
+The tested RF/YOLO agreement rule worsens localization on all six development
+windows. Representative matches fall from 51/75 to 41/75; challenge matches fall
+from 60/70 to 37/70. It recovers no match and suppresses no wrong output or hidden
+alarm. The five hidden alarms remain. See
+`../ball_crop_cross_detector_corroboration_results.md` for the separate pools,
+per-window counts, evidence, and limitations. This answers the corroboration
+question; it does not finish the broader ball-tracking phase.
+
+Attempt `dcdfd95a942c44f3bccb8d41fe8c795c` at `decfcbaf642bcff8d04496f8c1274a1c7a415811`
+computed the results and rendered the reviews, then failed on an oversized
+Markdown report. Its saved numerical summary passed internal consistency checks
+and an independent comparison with all six window and two pool evaluations.
+The failed status, 58.562999999994645 charged seconds, and existing outputs remain
+preserved. No experimental recomputation or full-suite rerun was needed for recovery.
+New human visual reviews have not occurred; no method or quality gate is promoted.
+
+Ryan's current standing instructions in `../../AGENTS.md` and `working_agreement.md`
+supersede older arbitrary caps, read bans, mandatory full-suite runs, routine
+certificate procedures, and recovery-proposal requirements. Fix routine issues,
+read needed development results, and check changes proportionally. Preserve honest
+evidence and practical computer safety; bring substantial tradeoffs to Ryan.
+Older checkpoints below are historical, including their now-superseded operational
+approval boundaries. Next work should advance the usable ball-tracking baseline
+and integration of completed increments, not rerun this rejected corroboration rule.
+
+## Prior checkpoint: 2026-10-07 joint 16-frame diagnostic review complete
 
 All 16 fixed frames now have separate Ryan and Codex observations for all three
 methods. The completed diagnostic summary and receipt are

@@ -685,8 +685,8 @@ def run_comparison(scope, access, sink, commit, *, render=True, progress=None):
         lines = ["RF/YOLO corroboration development comparison", summary["interpretation"]["label"],
                  "Six new final-frame human reviews remain pending.",
                  "Suppressed false output is not recovered localization; agreement does not establish object identity."]
-        for pool in aggregated:
-            lines.append(pool["purpose"] + ": " + json.dumps(pool.get("totals", {}), sort_keys=True))
+        for pool in summary["pools"]:
+            lines.append(pool["purpose"] + ": " + json.dumps(pool["totals"], sort_keys=True))
         sink.write("summary.md", ("\n".join(lines) + "\n").encode("utf-8"))
         sink.json("provenance.json", {"study_id": ID, "attempt_id": access.attempt_id, "commit": commit,
                   "scope_content_sha256": canonical_sha256(scope), "input_files": scope["existing_scientific_files"],

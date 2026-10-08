@@ -1,6 +1,18 @@
 # Working Agreement
 
-## Resource policy and engineering effort: Ryan's 2026-10-05 clarification
+## Current standing policy: Ryan's 2026-10-08 instruction
+
+Ryan authorized a simpler, practical development workflow going forward. Complete routine path, formatting, report-limit, tooling, and implementation fixes without stopping for a recovery proposal or a new approval ceremony. Read the development data and compute the results needed to answer the current question, including recovery of already computed results after a delivery failure. Use the necessary computer resources safely, and integrate completed increments into the active project.
+
+Validation should match the risk. Use focused checks for local corrections and check actual producer/consumer record formats when relevant. Run the full suite only when the breadth of the change or unresolved risk warrants it. Do not repeat a completed full run simply because a small correction followed it, and do not require routine RED/GREEN certificates, repeated release proposals, or a new validation framework to deliver an answer.
+
+Earlier arbitrary timing, output-size, validation-budget, and read-access restrictions may be adjusted or removed when they obstruct authorized work without protecting a real scientific or computer-safety requirement. Retain practical memory, disk, process-ownership, and cleanup safeguards. Explain meaningful changes plainly. Bring substantial scientific, architectural, evidence-integrity, safety, or cost tradeoffs to Ryan for approval rather than escalating routine fixes.
+
+This authorization does not erase history. Preserve actual failed attempts and resource consumption, original artifacts, uncertainty, and completed human/AI reviews. Keep a failed study marked failed even when its numeric results are recovered. Describe which code a prior validation covered. Keep holdouts separate from development decisions, do not weaken scientific thresholds to obtain a pass, and retain Ryan's visual judgments for identity, calibration, trajectories, and ball tracking.
+
+This policy supersedes conflicting older operational rules, including blanket stop-on-failure instructions, scientific-body read bans, fixed-cap amendment requirements, and mandatory full-suite or certificate procedures. The two October 5 sections below are retained as historical context, not additional current approval gates. Git authorization remains governed by the current Git workflow below and Ryan's explicit session instructions.
+
+## Historical resource policy: Ryan's 2026-10-05 clarification
 
 Ryan is comfortable devoting substantial computer resources to the project,
 while keeping computer safety a high priority. Operational timings are design
@@ -16,7 +28,7 @@ separate policy retains frequent safety checks while allowing slower complete
 storage accounting; implementation/validation do not authorize Git mutations
 or a real scientific execution. See `../ball_crop_candidate_retention_monitor_revision.md`.
 
-## Failure handling: Ryan's 2026-10-05 instruction
+## Historical failure handling: Ryan's 2026-10-05 instruction
 
 Ryan explicitly instructed: "You are allowed to move and NOT stop on any
 failures, only stop on failures that are large and issues you feel deserve an
@@ -57,20 +69,20 @@ direct the work. Carry this teaching preference across sessions.
 
 ## Git workflow
 
-Use this sequence, with explicit approval between mutating steps:
+Use this sequence, applying existing session or standing authorization without asking repeatedly for the same permission:
 
 1. inspect branch, HEAD, status, and relevant diffs;
 2. edit on a narrowly scoped feature branch;
-3. validate code and artifacts;
-4. propose exact staging scope;
-5. stage only after approval;
+3. validate code and artifacts in proportion to risk;
+4. report the exact local integration scope;
+5. stage within Ryan's authorization;
 6. show the staged diff and checks;
-7. commit only after approval;
-8. push only after approval;
-9. create a PR only after approval;
+7. commit within Ryan's authorization;
+8. push only with explicit authorization;
+9. create a PR only with explicit authorization;
 10. merge only after Ryan reviews and approves.
 
-Never push directly to `main`. Do not bundle staging, committing, pushing, PR creation, or merging into a single implied authorization.
+If local staging or committing has not been authorized, obtain that authorization. Never push directly to `main`. Authorization for local integration does not imply permission to push, create a PR, or merge. Report branch, HEAD, worktree status, and intended file scope before a Git mutation, then verify its exact result.
 
 ## Artifact hygiene
 
@@ -103,4 +115,5 @@ This prevents a later task from confusing a proposed action with a completed one
 
 - Ryan's background and learning goal: Chat 01, messages `29214222-c0f2-4448-bf20-7ade7be4c86a` and `e1a9d25d-052c-476c-81e3-38b2d0524e58`.
 - Explicit workflow rules: Chat 05, message `a0b4f63f-838f-49f5-a825-e4f2bfb1f971`.
+- Current operating policy: Ryan's 2026-10-08 standing instruction to fix routine delivery issues autonomously, use necessary development data/resources, test proportionally, preserve honest evidence, and bring substantial tradeoffs for approval.
 - Example of an unrun command preserved as a checkpoint: Chat 05, messages `83152b6e-f4df-4507-b17f-e3cf4a8b2514` and `d7e48921-b96a-59c9-9fc6-93e0708c19cd`.

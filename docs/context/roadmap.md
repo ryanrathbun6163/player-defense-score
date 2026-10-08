@@ -1,6 +1,24 @@
 # Roadmap
 
-## Current continuation: propose a bounded follow-up after the completed review
+## Current continuation: advance ball tracking after the negative corroboration result
+
+The RF/YOLO agreement rule has a recovered negative result on all six development
+windows: representative matches 51→41, challenge matches 60→37, no recovered
+match or suppression of wrong/hidden output. Do not promote or rerun this rule.
+See `../ball_crop_cross_detector_corroboration_results.md`. The reporting failure
+remains recorded as failed; the numerical answer was recovered from saved outputs.
+
+Retain RF-DETR candidates as the working baseline. The next deliverable is a usable,
+reviewed ball trajectory across the three curated possessions, addressing ball
+selection and withholding unreliable observations through occlusion. Reuse the
+completed diagnostic reviews. Integrate completed, validated increments instead
+of keeping the whole phase behind an expanding release framework. Apply the
+October 8 standing policy in `working_agreement.md`: handle routine fixes and
+necessary development-data work autonomously, with proportional checks; bring
+substantial scientific or architectural tradeoffs to Ryan. No production method
+or quality gate has yet been selected, and holdouts remain separate.
+
+## Prior continuation: propose a bounded follow-up after the completed review
 
 The 16-frame joint diagnostic review is complete. Its summary and bound completion
 record are `data/outputs/t/error_type_review_b71c64d3fd46/summary.md` and
