@@ -1,0 +1,1182 @@
+{
+  "schema_version": "ball_tracking_research_sources/v0.1",
+  "research_date": "2026-10-08",
+  "scope": "Primary-source literature, repository and artifact-metadata review for ball tracking; no replication or execution",
+  "methodology": {
+    "primary_sources_preferred": true,
+    "downloaded_weights": false,
+    "downloaded_datasets_or_media": false,
+    "installed_or_executed_external_models": false,
+    "publication_date_policy": "Exact date only where verified; null otherwise, with year fields when known. Access date is not publication date.",
+    "availability_policy": "A published link or metadata listing does not authenticate artifact bytes, availability to this user, training history or terms.",
+    "inspection_policy": "Depth applies only to the listed source; targeted code inspection is not a complete repository audit.",
+    "source_count_note": "One paper may have several implementation/configuration sources. Record count is not a count of independent studies."
+  },
+  "sources": [
+    {
+      "id": "wasb_paper",
+      "url": "https://arxiv.org/html/2311.05237",
+      "title": "WASB: Widely Applicable Strong Baseline for Sports Ball Detection and Tracking",
+      "type": "primary_paper",
+      "published_date": "2023-11-09",
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "BMVC2023; multi-image high-resolution heatmaps; five sports including basketball",
+        "Basketball70train/11test games and244224/31104frames",
+        "Paper basketballF1 80.6 step3 and82.6 step1; comparator reproduction limitations"
+      ],
+      "inspection_depth": "Paper method, dataset, results and reproduction-caveat sections read",
+      "caveats": [
+        "Not replicated; paper protocol differs from local match/eligible metric"
+      ]
+    },
+    {
+      "id": "sam_nba_dataset",
+      "url": "https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123530205.pdf",
+      "title": "Social Adaptive Module for Weakly-supervised Group Activity Recognition",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "181NBA games collected from2019; original task group-activity recognition"
+      ],
+      "inspection_depth": "Dataset section3.2 and source chronology read",
+      "caveats": [
+        "Not itself the WASB ball annotation set; exact annotated subset not inventoried"
+      ],
+      "publication_year": 2020
+    },
+    {
+      "id": "wasb_model",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/configs/model/wasb.yaml",
+      "title": "WASB model configuration",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Three input/output frames;512x288 working resolution;HRNet high-resolution stem"
+      ],
+      "inspection_depth": "Full config read",
+      "caveats": [
+        "Configuration does not authenticate checkpoint bytes"
+      ]
+    },
+    {
+      "id": "wasb_detector_config",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/configs/detector/tracknetv2.yaml",
+      "title": "WASB shared temporal detector configuration",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Step3 default;component threshold and heatmap weighting"
+      ],
+      "inspection_depth": "Full config read",
+      "caveats": [
+        "Changingstep changes temporal coverage"
+      ]
+    },
+    {
+      "id": "wasb_basketball_config",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/configs/dataset/basketball.yaml",
+      "title": "WASB basketball dataset configuration",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "30source test IDs beginning21800974,21801076,21801079; remaining sources train"
+      ],
+      "inspection_depth": "Full config read",
+      "caveats": [
+        "Only11annotated test games inpaper; do not confuse source list with actual evaluated membership"
+      ]
+    },
+    {
+      "id": "wasb_loader",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/datasets/basketball.py",
+      "title": "WASB basketball XML and sequence loader",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Visibility fromoccludedflag;outsideparsedbutunused;firstpointchosen",
+        "Absent entries invisible;all-no-visibleclips excluded",
+        "Complete3framewindows only;stepfilter and contiguous zero-based indexing assumptions"
+      ],
+      "inspection_depth": "Full file fetched; visibility, inclusion, split and sequence loops inspected",
+      "caveats": [
+        "No actualXML/data examined; these are static behaviors, not proven dataset corruption"
+      ]
+    },
+    {
+      "id": "wasb_postprocess",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/detectors/postprocessor.py",
+      "title": "WASB heatmap postprocessor",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Thresholded connected components;weighted centers;sumscore;inverse affine mapping"
+      ],
+      "inspection_depth": "Full code file read",
+      "caveats": [
+        "Native scores are not calibrated probabilities"
+      ]
+    },
+    {
+      "id": "wasb_tracker",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/trackers/online.py",
+      "title": "WASB online tracker",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Predictor defined but_select_best xy_predNone; gate uses previous visible location",
+        "Missing output remains invisible;missing prior bypasses gate"
+      ],
+      "inspection_depth": "Full code file read",
+      "caveats": [
+        "No execution; distinguish released behavior from paper description"
+      ]
+    },
+    {
+      "id": "wasb_tracker_config",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/configs/tracker/online.yaml",
+      "title": "WASB online tracker configuration",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "max_disp300"
+      ],
+      "inspection_depth": "Full config read",
+      "caveats": [
+        "Threshold units follow output coordinate path"
+      ]
+    },
+    {
+      "id": "wasb_evaluator",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/utils/evaluator.py",
+      "title": "WASB evaluator",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "WrongvisiblelocalizationFP1;invisiblealarmFP2;absentvisibleFN",
+        "RecallTP/(TP+FN) excludesFP1;RMSEusesvisibleGT+emittedprediction"
+      ],
+      "inspection_depth": "Full code file read",
+      "caveats": [
+        "Not a localcoverage metric or COCOAP"
+      ]
+    },
+    {
+      "id": "wasb_eval",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/runners/eval.py",
+      "title": "WASB evaluation runner",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Pools candidates byimagepath;sourcecoordinate evaluation",
+        "Throughputcounts batchtimesframes_in;renderinglater; fixed25FPSrendercall"
+      ],
+      "inspection_depth": "Full code file read",
+      "caveats": [
+        "Overlapping inference may count repeated contributions; no reproducedtiming"
+      ]
+    },
+    {
+      "id": "wasb_eval_config",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/configs/runner/eval.yaml",
+      "title": "WASB evaluation runner configuration",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Configured CUDA devices and localization threshold"
+      ],
+      "inspection_depth": "Full config read",
+      "caveats": [
+        "Do not equate threshold with local annotation uncertainty"
+      ]
+    },
+    {
+      "id": "wasb_detector",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/detectors/detector.py",
+      "title": "WASB CUDA detector and checkpoint loader",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "CPUunsupported assertion;CUDADataParallel;checkpointstate loading"
+      ],
+      "inspection_depth": "Full code file read",
+      "caveats": [
+        "ModernWindows compatibility untested"
+      ]
+    },
+    {
+      "id": "wasb_dataloader",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/dataloaders/dataset_loader.py",
+      "title": "WASB image and heatmap dataset loader",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Image-center/maxdimension affine warp;bilinear interpolation;inverse transform"
+      ],
+      "inspection_depth": "Targeted preprocessing and transform code read",
+      "caveats": [
+        "No claim genericresize/letterbox is equivalent"
+      ]
+    },
+    {
+      "id": "wasb_normalization",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/dataloaders/__init__.py",
+      "title": "WASB dataloader construction and normalization",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "ToTensor andImageNetRGBmean/std"
+      ],
+      "inspection_depth": "Targeted transform code read",
+      "caveats": [
+        "Runtime shape/color test stillneeded"
+      ]
+    },
+    {
+      "id": "wasb_image_reader",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/utils/utils.py",
+      "title": "WASB RGB image reader",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "PILImage.open.convertRGB"
+      ],
+      "inspection_depth": "read_image function inspected",
+      "caveats": [
+        "No image decoded duringresearch"
+      ]
+    },
+    {
+      "id": "wasb_zoo",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/MODEL_ZOO.md",
+      "title": "WASB official model zoo",
+      "type": "primary_repository_document",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Per-sport checkpoints includingbasketball andcomparator models"
+      ],
+      "inspection_depth": "Full document read",
+      "caveats": [
+        "Published links only;remoteweightbytes notverified"
+      ]
+    },
+    {
+      "id": "wasb_setup",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/GET_STARTED.md",
+      "title": "WASB official dataset/evaluation setup",
+      "type": "primary_repository_document",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "NBA image source and separateballannotations linked;trainingTBA"
+      ],
+      "inspection_depth": "Full document read",
+      "caveats": [
+        "Source/datalicenses do notautomatically coverweights orfootage"
+      ]
+    },
+    {
+      "id": "wasb_license",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/LICENSE.md",
+      "title": "WASB MIT license",
+      "type": "primary_repository_document",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "CodeMIT"
+      ],
+      "inspection_depth": "Full license read",
+      "caveats": [
+        "No separateexplicit linkedweights/data grant established"
+      ]
+    },
+    {
+      "id": "wasb_docker",
+      "url": "https://github.com/nttcom/WASB-SBDT/blob/923462cacdeb3353b84ddebdedb3f4b7a8553b0f/Dockerfile",
+      "title": "WASB environment Dockerfile",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Python-eraLinuxenvironment;NumPy1.22.4;torch1.11 CUDA11.3"
+      ],
+      "inspection_depth": "Full file read",
+      "caveats": [
+        "No install orcompatibility test performed"
+      ]
+    },
+    {
+      "id": "wasb_checkpoint",
+      "url": "https://drive.google.com/file/d/1nfECuSyJvPUmz3njZCdFERSQQbERt8FU/view",
+      "title": "WASB author-linked basketball checkpoint",
+      "type": "primary_artifact_link",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Official repository identifies basketballcheckpoint"
+      ],
+      "inspection_depth": "Link verified in model zoo; direct web access failed",
+      "caveats": [
+        "No download/hash/load;filedate andtrainingmetadata unknown"
+      ]
+    },
+    {
+      "id": "tracknet1",
+      "url": "https://arxiv.org/abs/1907.03698",
+      "title": "TrackNet: A Deep Learning Network for Tracking High-speed and Tiny Objects in Sports Applications",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "2019 tennis tiny-fast-object temporalheatmapmodel"
+      ],
+      "inspection_depth": "Abstract and paper lineage inspected",
+      "caveats": [
+        "Originalimplementation notdeepaudited"
+      ],
+      "publication_year": 2019
+    },
+    {
+      "id": "tracknet2",
+      "url": "https://ieeexplore.ieee.org/document/9302757",
+      "title": "TrackNetV2: Efficient Shuttlecock Tracking Network",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Original2020shuttlecockpaper identity"
+      ],
+      "inspection_depth": "Publisher page blocked by JavaScript verification; bibliographic identity corroborated by author/reimplementation citations",
+      "caveats": [
+        "Fullprimarytext notaccessed;methoddiscussion also supported byWASBexplicitreimplementation"
+      ],
+      "publication_year": 2020
+    },
+    {
+      "id": "tracknet3_paper",
+      "url": "https://people.cs.nycu.edu.tw/~yushuen/data/TrackNetV3.pdf",
+      "title": "TrackNetV3: Enhancing ShuttleCock Tracking with Augmentations and Trajectory Rectification",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "MMAsia2023authoridentity;background-assistedprediction andtrajectoryrectification;fixedviewassumptions"
+      ],
+      "inspection_depth": "Author PDF method/background/inpainting sections read",
+      "caveats": [
+        "No basketball evaluation; offlinecontext needs declaration"
+      ],
+      "publication_year": 2023,
+      "doi": "10.1145/3595916.3626370"
+    },
+    {
+      "id": "tracknet3_readme",
+      "url": "https://github.com/qaz812345/TrackNetV3/blob/6eda442ada1740573f200f836d93edc9a541ee86/README.md",
+      "title": "Author TrackNetV3 README",
+      "type": "primary_repository_document",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Detectionseq8,repairseq16commands;shuttlecocktestF198.56%;medianbackgroundworkflow"
+      ],
+      "inspection_depth": "Full README read",
+      "caveats": [
+        "Checkpointpage inaccessible;READMEresultsnotreplicated"
+      ]
+    },
+    {
+      "id": "tracknet3_predict",
+      "url": "https://github.com/qaz812345/TrackNetV3/blob/6eda442ada1740573f200f836d93edc9a541ee86/predict.py",
+      "title": "Author TrackNetV3 prediction workflow",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Separate detector/inpaintingmodel;weighted/average/nonoverlap;Inpaint_Mask"
+      ],
+      "inspection_depth": "Targeted checkpoint, overlap, sequence and mask code read",
+      "caveats": [
+        "Temporaloutputs can use futurecontext; noexecution"
+      ]
+    },
+    {
+      "id": "tracknet3_utils",
+      "url": "https://github.com/qaz812345/TrackNetV3/blob/6eda442ada1740573f200f836d93edc9a541ee86/utils/general.py",
+      "title": "Author TrackNetV3 utilities",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Working512x288;backgroundinputmodes;separatemodelconstruction"
+      ],
+      "inspection_depth": "Working resolution and model-construction sections read",
+      "caveats": [
+        "Notcompleteaudit ofall utilityfunctions"
+      ]
+    },
+    {
+      "id": "tracknet3_license",
+      "url": "https://github.com/qaz812345/TrackNetV3/blob/6eda442ada1740573f200f836d93edc9a541ee86/LICENSE",
+      "title": "Author TrackNetV3 license including checkpoints",
+      "type": "primary_license",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "MIT-stylepermission expressly includespretrainedcheckpoints"
+      ],
+      "inspection_depth": "Full license read",
+      "caveats": [
+        "Datasetterms separate"
+      ]
+    },
+    {
+      "id": "tracknet3_weights",
+      "url": "https://drive.google.com/file/d/1CfzE87a0f6LhBp0kniSl1-89zaLCZ8cA/view",
+      "title": "Author TrackNetV3 checkpoint archive",
+      "type": "primary_artifact_link",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Author publishes checkpointlink"
+      ],
+      "inspection_depth": "Link verified in README; directwebaccessfailed",
+      "caveats": [
+        "No bytes orembeddedparamsverified"
+      ]
+    },
+    {
+      "id": "tracknet4_paper",
+      "url": "https://arxiv.org/abs/2409.14543",
+      "title": "Enhancing Fast Sports Object Tracking with Motion Attention Maps",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "TrackNetV4motionattention;tennis/badmintonstudy"
+      ],
+      "inspection_depth": "Abstract and official project description inspected",
+      "caveats": [
+        "Detailedimplementationclaims citecode"
+      ],
+      "publication_year": 2024
+    },
+    {
+      "id": "tracknet4_model",
+      "url": "https://github.com/TrackNetV4/TrackNetV4/blob/cb7eea7988474771ceac7e880bbffc35bfa87bca/src/models/TrackNetV4.py",
+      "title": "TrackNetV4 motion attention implementation",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "TensorFlowKeras;grayscaledifferences;trainablepowernormalization;fusion"
+      ],
+      "inspection_depth": "MotionPrompt and fusion code inspected",
+      "caveats": [
+        "No localTensorFlowcompatibilitycheck"
+      ]
+    },
+    {
+      "id": "tracknet4_dataset",
+      "url": "https://github.com/TrackNetV4/TrackNetV4/blob/cb7eea7988474771ceac7e880bbffc35bfa87bca/docs/DATASET.md",
+      "title": "TrackNetV4 dataset/split documentation",
+      "type": "primary_repository_document",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Game-vs-clip tennis splits;badmintonversiondifference;3in3out512x288"
+      ],
+      "inspection_depth": "Fulldocument read",
+      "caveats": [
+        "Changing splitinvalidates simplecrosspaper ranking"
+      ]
+    },
+    {
+      "id": "tracknet4_results",
+      "url": "https://github.com/TrackNetV4/TrackNetV4/blob/cb7eea7988474771ceac7e880bbffc35bfa87bca/docs/RESULT.md",
+      "title": "TrackNetV4 reported results and weight links",
+      "type": "primary_repository_document",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Weightlinks pointto#;trainingandmetriccontext"
+      ],
+      "inspection_depth": "Fulldocument read",
+      "caveats": [
+        "Artifactavailabilitygap; no modelreproduction"
+      ]
+    },
+    {
+      "id": "tracknet4_project",
+      "url": "https://tracknetv4.github.io/",
+      "title": "TrackNetV4 project and dataset access terms",
+      "type": "primary_project_page",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Newtennisdataset researchonly;commercialandredistributionrestrictions"
+      ],
+      "inspection_depth": "Project method and research-onlyagreement read",
+      "caveats": [
+        "CodeMITdoesnotestablishdatareuse permission"
+      ]
+    },
+    {
+      "id": "tracknet5_paper",
+      "url": "https://arxiv.org/abs/2512.02789",
+      "title": "TrackNetV5: Residual-Driven Spatio-Temporal Refinement and Motion Direction Decoupling for Fast Object Tracking",
+      "type": "primary_paper",
+      "published_date": "2025-12-02",
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Signedmotiondecoupling/residualrefinement;reportedF1.9859onTrackNetV2dataset"
+      ],
+      "inspection_depth": "Abstract and methods overview inspected",
+      "caveats": [
+        "Preprint result;notbasketball orreplicated"
+      ]
+    },
+    {
+      "id": "tracknet5_sdk",
+      "url": "https://github.com/thaonan/TrackNetV5-SDK",
+      "title": "Official TrackNetV5 SDK",
+      "type": "primary_repository_document",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Proprietaryacademic/technical-exchange notice;weights/datawithheld;recommendedPython3.10CUDA12.6"
+      ],
+      "inspection_depth": "README, repository tree and license notice read",
+      "caveats": [
+        "Publiclyreadable isnotpermissivelylicensed"
+      ],
+      "inspected_commit": "779d78f487b63cd76076f8deab27f42dcd4d8930"
+    },
+    {
+      "id": "tracknet5_mdd",
+      "url": "https://github.com/thaonan/TrackNetV5-SDK/blob/779d78f487b63cd76076f8deab27f42dcd4d8930/models_factory/basic/mdd.py",
+      "title": "TrackNetV5 MDD source",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Separatepositive/negative luminancechanges foradjacentframes"
+      ],
+      "inspection_depth": "Fullforward and luminance/powernormalization code inspected",
+      "caveats": [
+        "No reuse/execution performed"
+      ]
+    },
+    {
+      "id": "totnet_journal",
+      "url": "https://rbouadjenek.github.io/assets/pdf/YCVIU_104657.pdf",
+      "title": "TOTNet: Occlusion-aware temporal tracking for robust ball detection in sports videos",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "CVIU264(2026)104657;TTA12414frames17matches",
+        "Occludedlabels trajectory-inferred;visiblethreshold4pixelsversus10hidden"
+      ],
+      "inspection_depth": "Author-hosted journal PDF dataset/annotation/method/evaluation sections read",
+      "caveats": [
+        "Journalandpreprintdiffer; inferredhiddenreference isnotobservedtruth"
+      ],
+      "publication_year": 2026,
+      "doi": "10.1016/j.cviu.2026.104657"
+    },
+    {
+      "id": "totnet_preprint",
+      "url": "https://arxiv.org/html/2508.09650",
+      "title": "TOTNet preprint version1",
+      "type": "primary_paper",
+      "published_date": "2025-08-13",
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "EarlierTTA9159samples4matches;threshold5/10"
+      ],
+      "inspection_depth": "Dataset/method/result sections read",
+      "caveats": [
+        "Supersededbyexpandedjournalversion; do notmixnumbers"
+      ]
+    },
+    {
+      "id": "totnet_repo",
+      "url": "https://github.com/AugustRushG/TOTNet",
+      "title": "TOTNet official repository and TTA access instructions",
+      "type": "primary_repository_document",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "MITsource;traininginstructions;TTAagreementresearch-onlynoredistribution/commercialuse"
+      ],
+      "inspection_depth": "README, tree and GitHublicense metadata read",
+      "caveats": [
+        "No pretrainedrelease established ininspectedmaterial"
+      ],
+      "inspected_commit": "8a757f63391b262c14d18b4095486336852dbeef"
+    },
+    {
+      "id": "totnet_model",
+      "url": "https://github.com/AugustRushG/TOTNet/blob/8a757f63391b262c14d18b4095486336852dbeef/src/model/TOTNet.py",
+      "title": "TOTNet temporal convolution model",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Fiveframe3Dtemporalconvolution;spatialsoftmaxoutput"
+      ],
+      "inspection_depth": "Targetedarchitecture,forward,output andtiming sections read",
+      "caveats": [
+        "Softmaxpositionmass isnotvisibilityconfidence; no execution"
+      ]
+    },
+    {
+      "id": "blurball_paper",
+      "url": "https://arxiv.org/html/2509.18387",
+      "title": "BlurBall: Joint Ball and Motion Blur Estimation for Table Tennis Ball Tracking",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "64119frames;blur-centerlabels;80/20split;blur-assistedtrajectory fitting",
+        "Badmintonpretrainingreportednoimprovement"
+      ],
+      "inspection_depth": "Methods, dataset, split and blur/trajectory result sections read",
+      "caveats": [
+        "CVPRW2026version linked fromrepo; tabletennisnotbasketball; no replication"
+      ],
+      "preprint_year": 2025,
+      "publication_year": 2026
+    },
+    {
+      "id": "blurball_repo",
+      "url": "https://github.com/cogsys-tuebingen/blurball",
+      "title": "BlurBall official code and linked artifacts",
+      "type": "primary_repository_document",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "WASB-derived;trainingcode;authorNextcloudweights/data;MITsource"
+      ],
+      "inspection_depth": "Full README, tree and license metadata read",
+      "caveats": [
+        "Weight/data separate terms notestablished; links inaccessiblethroughwebtool"
+      ],
+      "inspected_commit": "2f0f5496f7ba4b5b1a36790749935121b2ce972d"
+    },
+    {
+      "id": "blurball_model",
+      "url": "https://github.com/cogsys-tuebingen/blurball/blob/2f0f5496f7ba4b5b1a36790749935121b2ce972d/src/configs/model/blurball.yaml",
+      "title": "BlurBall model configuration",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Threeframesin/out;512x288HRNet"
+      ],
+      "inspection_depth": "Full file read",
+      "caveats": [
+        "Staticfinding; no media/execution; actualeffectrequiresconsumer/dataaudit"
+      ]
+    },
+    {
+      "id": "blurball_split",
+      "url": "https://github.com/cogsys-tuebingen/blurball/blob/2f0f5496f7ba4b5b1a36790749935121b2ce972d/src/configs/dataset/tabletennis.yaml",
+      "title": "BlurBall table-tennis split configuration",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Trainingmatch13duplicatedand14absentinexplicitlist;test22-25"
+      ],
+      "inspection_depth": "Full file read",
+      "caveats": [
+        "Staticfinding; no media/execution; actualeffectrequiresconsumer/dataaudit"
+      ]
+    },
+    {
+      "id": "blurball_tracker",
+      "url": "https://github.com/cogsys-tuebingen/blurball/blob/2f0f5496f7ba4b5b1a36790749935121b2ce972d/src/trackers/online_blur.py",
+      "title": "BlurBall native tracker",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Previouscoordinategate;xy_predNone;blurangle/lengthoutput"
+      ],
+      "inspection_depth": "Full file read",
+      "caveats": [
+        "Staticfinding; no media/execution; actualeffectrequiresconsumer/dataaudit"
+      ]
+    },
+    {
+      "id": "blurball_frames",
+      "url": "https://github.com/cogsys-tuebingen/blurball/blob/2f0f5496f7ba4b5b1a36790749935121b2ce972d/src/utils/preprocess.py",
+      "title": "BlurBall frame extraction helper",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "OptionalSSIMfilterrenumbersretainedframes;defaultFalse"
+      ],
+      "inspection_depth": "Full file read",
+      "caveats": [
+        "Staticfinding; no media/execution; actualeffectrequiresconsumer/dataaudit"
+      ]
+    },
+    {
+      "id": "blurball_weights",
+      "url": "https://cloud.cs.uni-tuebingen.de/index.php/s/6Z8TpM3sXRKHzGC",
+      "title": "BlurBall author-linked weights",
+      "type": "primary_artifact_link",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Authorpublicationofweightslink"
+      ],
+      "inspection_depth": "Link verified inREADME;webaccessfailed",
+      "caveats": [
+        "Bytes andlicenseunverified"
+      ]
+    },
+    {
+      "id": "blurball_data",
+      "url": "https://cloud.cs.uni-tuebingen.de/index.php/s/C3pJEPKWQAkono7",
+      "title": "BlurBall author-linked dataset",
+      "type": "primary_artifact_link",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Authorpublicationofdatasetlink"
+      ],
+      "inspection_depth": "Link verified inREADME;webaccessfailed",
+      "caveats": [
+        "No datadownload; termsunverified"
+      ]
+    },
+    {
+      "id": "racketvision_repo",
+      "url": "https://github.com/OrcustD/RacketVision",
+      "title": "RacketVision official AAAI2026 repository",
+      "type": "primary_repository_document",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Three racket sports;code/datareleaseApril2026;MITcode"
+      ],
+      "inspection_depth": "README, repository tree and license metadata read",
+      "caveats": [
+        "Notbasketball; no inference"
+      ],
+      "publication_year": 2026,
+      "inspected_commit": "c44af2a08524d3cb54d818f19686f4cdea4d2793"
+    },
+    {
+      "id": "racketvision_ballreadme",
+      "url": "https://github.com/OrcustD/RacketVision/blob/c44af2a08524d3cb54d818f19686f4cdea4d2793/source/BallTrack/README.md",
+      "title": "RacketVision BallTrack module",
+      "type": "primary_repository_document",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "TrackNetV3 plusmedianbackground;heatmaps/thresholdcontours"
+      ],
+      "inspection_depth": "Module README architecture/parameters read",
+      "caveats": [
+        "Modelimplementationnotfullyaudited"
+      ]
+    },
+    {
+      "id": "racketvision_download",
+      "url": "https://github.com/OrcustD/RacketVision/blob/c44af2a08524d3cb54d818f19686f4cdea4d2793/source/download_checkpoints.py",
+      "title": "RacketVision checkpoint downloader",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "ExactHFmodelrepo andball/racket/trajectory filenames"
+      ],
+      "inspection_depth": "Fullfile read",
+      "caveats": [
+        "Notexecuted; no weightsdownload"
+      ]
+    },
+    {
+      "id": "racketvision_data",
+      "url": "https://huggingface.co/datasets/linfeng302/RacketVision",
+      "title": "RacketVision dataset card",
+      "type": "primary_dataset_card",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "MITmetadata;rawannotationsversusinterpolatedtrajectories;explicitfiles/splits"
+      ],
+      "inspection_depth": "Datasetmetadata andformat sections inspected",
+      "caveats": [
+        "Publishergrant doesnotindependentlyauthenticateunderlyingvideorights"
+      ]
+    },
+    {
+      "id": "racketvision_weights",
+      "url": "https://huggingface.co/linfeng302/RacketVision-Models",
+      "title": "RacketVision model host",
+      "type": "primary_model_metadata",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Actualcheckpointfilenames listed;nomodelcard/cardData"
+      ],
+      "inspection_depth": "Modelpage andread-onlyHFAPImetadata inspected",
+      "caveats": [
+        "No separateweightlicense established; no bytesdownloaded"
+      ],
+      "inspected_revision": "a3760773233a0988c9605259743fbdd87c59d3a3"
+    },
+    {
+      "id": "deepsportlab_paper",
+      "url": "https://arxiv.org/html/2112.00627",
+      "title": "DeepSportLab: a Unified Framework for Ball Detection, Player Instance Segmentation and Pose Estimation in Team Sports Scenes",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Sharedball/pose/instancesegmentation;basketballstudy"
+      ],
+      "inspection_depth": "Abstract/method/dataset context read",
+      "caveats": [
+        "Capture/scale/labelsdifferfromNBA broadcast"
+      ],
+      "publication_year": 2021
+    },
+    {
+      "id": "deepsportlab_metrics",
+      "url": "https://github.com/ispgroupucl/DeepSportLab/blob/67b03dd7e8b012de6309adf3fce2694046ccbdad/ball_metrics.py",
+      "title": "DeepSportLab ball metric implementation",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Dedicatedballheatmapmetrics;641x641cropwithdef_min30def_max80;separateballdataset"
+      ],
+      "inspection_depth": "Targetedheatmapmetric,cropanddatasetsplit code read",
+      "caveats": [
+        "No pretrainedmodelverified; fulltrainingnotaudited"
+      ]
+    },
+    {
+      "id": "deepsportlab_license",
+      "url": "https://github.com/ispgroupucl/DeepSportLab/blob/67b03dd7e8b012de6309adf3fce2694046ccbdad/LICENSE",
+      "title": "DeepSportLab license",
+      "type": "primary_license",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "AGPLv3orlater;additionalnoharmtext;commerciallicense contacts"
+      ],
+      "inspection_depth": "Fulllicense read",
+      "caveats": [
+        "Distinct frommodernDeepSportrepository terms"
+      ]
+    },
+    {
+      "id": "deepsport_repo",
+      "url": "https://github.com/gabriel-vanzandycke/deepsport/tree/eb902209fcbb5c4ea06332b95f71bb8ef0a46b72",
+      "title": "DeepSport ball tasks and data repository",
+      "type": "primary_repository_document",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "BallSeg/PIFBall/BallSize;instants/ballisticdata;arenaheldoutBallSize;optionalprivatedependency",
+        "CCBYNCND4.0source notice"
+      ],
+      "inspection_depth": "FullREADME andtree read",
+      "caveats": [
+        "No taskcodeexecution orweightsverified;dataownterms separate"
+      ]
+    },
+    {
+      "id": "ball3d_paper",
+      "url": "https://arxiv.org/html/2204.00003",
+      "title": "3D Ball Localization From A Single Calibrated Image",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Knownsize plusestimateddiameter andcalibratedcamera supportdepth"
+      ],
+      "inspection_depth": "Abstract and method/calibration context read",
+      "caveats": [
+        "Notaninitialballdetector;monoculardepthuncertainty"
+      ],
+      "publication_year": 2022
+    },
+    {
+      "id": "hmmatrack",
+      "url": "https://www.mdpi.com/2076-3417/14/4/1376",
+      "title": "Ball Tracking Based on Multiscale Feature Enhancement and Cooperative Trajectory Matching",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "SportsTrackbasketball3660frames2196train1464test1280x72030FPS;multiscale/associationapproach"
+      ],
+      "inspection_depth": "Publisher-indexedabstract/table excerpts;directarticle/pdf/XML accessblocked",
+      "caveats": [
+        "Fullmethodnotread;code/checkpoint/datarelease notestablished"
+      ],
+      "publication_year": 2024,
+      "doi": "10.3390/app14041376"
+    },
+    {
+      "id": "iot_basketball",
+      "url": "https://www.mdpi.com/2073-431X/14/11/469",
+      "title": "Computer Vision-Driven Framework for IoT-Enabled Basketball Score Tracking",
+      "type": "primary_paper",
+      "published_date": "2025-11-01",
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Overheadcamera/RaspberryPiacceleratorscoresrimcrossings"
+      ],
+      "inspection_depth": "Publisherabstract andpublicationmetadata read",
+      "caveats": [
+        "Narrowerfixedcameraeventtask notfullbroadcastballtracking"
+      ]
+    },
+    {
+      "id": "deconnet",
+      "url": "https://www.nature.com/articles/s41598-026-39084-4",
+      "title": "DeCon-Net: decoupled hierarchical contrast for soccer object detection",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "PaperclaimsBallAPonSportsMOTsports subsets"
+      ],
+      "inspection_depth": "Publisherindexedresultsanddatasetclaims inspected",
+      "caveats": [
+        "Ballannotationlineage unresolved; excludedfromshortlist"
+      ],
+      "publication_year": 2026
+    },
+    {
+      "id": "deepball",
+      "url": "https://arxiv.org/abs/1902.07304",
+      "title": "DeepBall: Deep Neural-Network Ball Detector",
+      "type": "primary_paper",
+      "published_date": "2019-02-19",
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Fullyconvolutionalsoccerballconfidencemap;multiscalefeatures"
+      ],
+      "inspection_depth": "Abstractread",
+      "caveats": [
+        "Noauthorimplementation audited"
+      ]
+    },
+    {
+      "id": "footandball_repo",
+      "url": "https://github.com/jac99/FootAndBall",
+      "title": "FootAndBall: Integrated Player and Ball Detector",
+      "type": "primary_repository_document",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Specializedsoccerball/playerdetector;namedrepositorycheckpoint;MITcode"
+      ],
+      "inspection_depth": "README/license andconfiguration read",
+      "caveats": [
+        "Weightbytes andseparatedata/weightterms unverified"
+      ],
+      "publication_year": 2020,
+      "inspected_commit": "01261092a93de55026745e532a2e12188ad86801"
+    },
+    {
+      "id": "footandball_config",
+      "url": "https://github.com/jac99/FootAndBall/blob/01261092a93de55026745e532a2e12188ad86801/config.txt",
+      "title": "FootAndBall training split configuration",
+      "type": "primary_source_code",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "ISSIAtraincameras1-4/val5-6;playerdatasetconfiguration"
+      ],
+      "inspection_depth": "Fullconfig read",
+      "caveats": [
+        "Cameraholdoutnotnecessarilygameholdout"
+      ]
+    },
+    {
+      "id": "ttnet_paper",
+      "url": "https://arxiv.org/html/2004.09927",
+      "title": "TTNet: Real-time temporal and spatial video analysis of table tennis",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Global/localballstages;event/segmentationtasks;120FPS tabletennis"
+      ],
+      "inspection_depth": "Abstract,architecture/datasetcontext read",
+      "caveats": [
+        "Task/FPS/cameramismatch; no replication"
+      ],
+      "publication_year": 2020
+    },
+    {
+      "id": "ttnet_unofficial",
+      "url": "https://github.com/maudzung/TTNet-Real-time-Analysis-System-for-Table-Tennis-Pytorch",
+      "title": "Unofficial TTNet PyTorch implementation",
+      "type": "firsthand_third_party_repository",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Fourmoduleworkflow;projectdescribesitselfunofficial"
+      ],
+      "inspection_depth": "README andexplicitunofficialdesignation read",
+      "caveats": [
+        "Notauthorimplementation; modelchangesandresultclaimsnotreplicated"
+      ]
+    },
+    {
+      "id": "physics_maksai",
+      "url": "https://arxiv.org/html/1511.06181",
+      "title": "What Players do with the Ball: A Physically Constrained Interaction Modeling",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Calibratedoverlappingmultiview;MIPjointball/playerphysics;notpresentstate"
+      ],
+      "inspection_depth": "Problemformulation,state/constraint andcapturesections read",
+      "caveats": [
+        "Notmonocularbroadcastdropin"
+      ],
+      "preprint_year": 2015,
+      "publication_year": 2016
+    },
+    {
+      "id": "physics_parisot",
+      "url": "https://projet.liris.cnrs.fr/imagine/pub/proceedings/ICME2011/HTML/Papers/MainConference/paper_1011.pdf",
+      "title": "Graph-based Filtering of Ballistic Trajectory",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Basketballballisticcandidate/trajectoryfiltering historicallead"
+      ],
+      "inspection_depth": "PrimaryPDFindexedtitle/abstractexcerpt;directwebopenfailed",
+      "caveats": [
+        "Fullpaper/code notinspected; no modernbaselineclaim"
+      ],
+      "publication_year": 2011
+    },
+    {
+      "id": "monotrack_paper",
+      "url": "https://arxiv.org/html/2204.01899",
+      "title": "MonoTrack: Shuttle trajectory reconstruction from monocular badminton video",
+      "type": "primary_paper",
+      "published_date": "2022-04-04",
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Court/pose/2Dshuttle/shotsegmentation/physical3Dreconstruction"
+      ],
+      "inspection_depth": "Abstract,pipeline andgeometry/trajectorymethod context read",
+      "caveats": [
+        "Badmintongeometry/aerodynamicsnotbasketball"
+      ]
+    },
+    {
+      "id": "monotrack_repo",
+      "url": "https://github.com/jhwang7628/monotrack",
+      "title": "MonoTrack author implementation",
+      "type": "primary_repository_document",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "ModifiedTrackNetpluscourtposeandreconstructioncomponents"
+      ],
+      "inspection_depth": "README/componenttree read",
+      "caveats": [
+        "Deepcode/weights/licenseaudit notcompleted"
+      ]
+    },
+    {
+      "id": "where_ball_paper",
+      "url": "https://arxiv.org/html/2506.05763",
+      "title": "Where Is The Ball: 3D Ball Trajectory Estimation From 2D Monocular Tracking",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "SimulationtrainedLSTM3Dfrom2D;reprojectionconsistentrepresentation"
+      ],
+      "inspection_depth": "Abstract,fixedcameraassumption andpipeline contextread",
+      "caveats": [
+        "Requires2Dtrajectory/calibrationcontext;notdetector;fixedcamera"
+      ],
+      "publication_year": 2025
+    },
+    {
+      "id": "where_ball_project",
+      "url": "https://where-is-the-ball.github.io/",
+      "title": "Where Is The Ball author project",
+      "type": "primary_project_page",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Code/simulation/datasetlinkslabelledcomingsoon;three-stagepipeline"
+      ],
+      "inspection_depth": "Fullprojectpage read",
+      "caveats": [
+        "No completereleaserepositoryverified"
+      ]
+    },
+    {
+      "id": "graph_tt",
+      "url": "https://www.nature.com/articles/s41598-024-80056-3",
+      "title": "Fast moving table tennis ball tracking algorithm based on graph neural network",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "Learnedgraphnode/edgescoringforballcandidates"
+      ],
+      "inspection_depth": "Publishercandidate/node/edgemethod sections read",
+      "caveats": [
+        "Code/checkpointsandbasketballtransfer notverified"
+      ],
+      "publication_year": 2024
+    },
+    {
+      "id": "tsfmo",
+      "url": "https://openaccess.thecvf.com/content/ACCV2022/html/Zhang_Tracking_Small_and_Fast_Moving_Objects_A_Benchmark_ACCV_2022_paper.html",
+      "title": "Tracking Small and Fast Moving Objects: A Benchmark",
+      "type": "primary_paper",
+      "published_date": null,
+      "access_date": "2026-10-08",
+      "claims_supported": [
+        "250sequences~50kboxannotatedframes;20trackersplusSKeepTrack"
+      ],
+      "inspection_depth": "Publisherindexedabstract andprojectlink;directPDFaccess403",
+      "caveats": [
+        "No fullcode/checkpointaudit;initializedboxtrackingdiffersfromdiscoveryandabsence"
+      ],
+      "publication_year": 2022
+    }
+  ]
+}

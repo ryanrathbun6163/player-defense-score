@@ -14,6 +14,7 @@
 | Ball-detector window selection | `docs/ball_detector_baseline_selection.md`, `configs/ball_tracking/experiments/rfdetr_medium_image_only_baseline_v0_1.json` | Prediction-free source contact sheets are temporary supporting evidence only |
 | Ball-detector execution contract | `src/ball_tracking/detector_experiments.py`, `src/ball_tracking/rfdetr_adapter.py`, `src/ball_tracking/run_detector_experiment.py`, tests | Current desktop ball-tracking work |
 | RF/YOLO corroboration outcome | `docs/ball_crop_cross_detector_corroboration_results.md`, saved six-window/two-pool outputs and recovery record | October 8 recovered negative result; original reporting attempt remains failed |
+| External sports tracking research and implementation choices | `docs/research/README.md`, `docs/research/recommendations.md`, detailed chapters and four source ledgers | October 8 primary-source research; source inspection is not local reproduction or runtime authority |
 | Git history | repository commits and merged PRs | transcripts only for rationale |
 | Generated local evidence | ignored `data/` tree plus hash manifest | attachment/archive manifests |
 | Collaboration and Git rules | `AGENTS.md`, `working_agreement.md` | Chat 05 opening checkpoint |

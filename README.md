@@ -44,6 +44,8 @@ The empirical thresholds require at least 95% coordinate coverage and at least 8
 
 The committed evidence is available in [`configs/possession_003_generalization_evidence.json`](configs/possession_003_generalization_evidence.json). The design and validation details are documented in [`docs/pipeline_generalization.md`](docs/pipeline_generalization.md).
 
+The [sports-video research collection](docs/research/README.md) compares ball models, player tracking, court geometry, complete sports pipelines, datasets and analytics using primary sources and selected implementation inspection. Its [recommendations](docs/research/recommendations.md) prioritize a basketball temporal-image model as the next ball comparison; no external method has yet been locally reproduced or promoted by that research. The tested RF/YOLO agreement rule has a [recovered negative result](docs/ball_crop_cross_detector_corroboration_results.md).
+
 ## End goal
 
 The intended production pipeline is:
@@ -296,6 +298,7 @@ The gate validates structural generalization, completed stages and reviews, homo
 - [x] Label and visually review a 75-frame pilot across three possessions
 - [x] Precommit new contiguous representative, challenge, and holdout pools
 - [x] Implement the frozen image-only detector adapter and guarded runner
+- [x] Research relevant sports tracking models, implementations, datasets and evaluation practices
 - [ ] Evaluate and select a small-object basketball detector
 - [ ] Track the ball through motion blur, occlusion, passes, shots, and rebounds
 - [ ] Fuse detections temporally and preserve uncertainty

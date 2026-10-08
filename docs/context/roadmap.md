@@ -1,5 +1,18 @@
 # Roadmap
 
+## Research-informed next implementation
+
+The [October 8 sports-video research](../research/README.md) now provides an
+implementation shortlist, source-inspected project comparisons, dataset/metric
+limitations and a practical adapter/evaluation outline. Start with
+[the recommendations](../research/recommendations.md). WASB basketball temporal
+heatmaps are the leading new representation to evaluate; their local benefit is
+unproven. Keep the player-coordinate foundation and saved RF observations as
+controls, and avoid repeating the rejected RF/YOLO agreement rule or the same
+motion/proximity experiments under new names. Source research is complete for
+this review; external runtime reproduction and a selected ball method remain
+future work.
+
 ## Current continuation: advance ball tracking after the negative corroboration result
 
 The RF/YOLO agreement rule has a recovered negative result on all six development

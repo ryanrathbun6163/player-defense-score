@@ -1,5 +1,29 @@
 # Current State
 
+## Latest research: 2026-10-08 sports-video implementation review
+
+Ryan requested an extensive external research effort before further implementation.
+The durable collection begins at [the research hub](../research/README.md), with
+[recommendations](../research/recommendations.md), detailed ball/player/geometry/
+pipeline/analytics chapters and source ledgers. It separates author-reported
+benchmarks, inspected implementations, unresolved artifact access/terms and local
+results. No external model was installed, trained, run or promoted during this
+research; no scientific comparison or full test suite was repeated.
+
+The leading recommendation is a small adapter for WASB's linked basketball
+temporal checkpoint, comparing its image evidence with saved RF controls under
+our current label/evaluation semantics. Actual weight access, compatible loading,
+frame/coordinate alignment and local benefit remain unresolved. Existing motion
+graphs and player-context rules have already been tested; a new temporal image
+representation is a materially different hypothesis. Preserve the reviewed player
+foundation and use the broader references when measured failures justify them.
+
+The research does not change the recovered negative corroboration result, failed
+attempt history, consumed resources, completed reviews, holdouts or quality gates.
+The next implementation should follow the practical October 8 operating policy:
+fix routine issues, check real component boundaries proportionally, and deliver a
+usable ball/player increment instead of another general release framework.
+
 ## Latest checkpoint: 2026-10-08 corroboration result recovered; practical workflow adopted
 
 The tested RF/YOLO agreement rule worsens localization on all six development
