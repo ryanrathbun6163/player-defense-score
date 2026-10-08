@@ -1,0 +1,120 @@
+{
+  "schema_version": "ball_crop_corroboration_execution_approval/v0.1",
+  "study_id": "rfdetr_yolo_crop_corroboration_v0_1",
+  "approved_by": "Ryan",
+  "user_statement": "move forward chat",
+  "authorization_context": "Continuation after completed release implementation and validation, with the fixed six-clip real comparison and separate Git boundary identified.",
+  "recorded_at_utc": "2026-10-08T05:27:42.460278+00:00",
+  "prepared_branch": "codex/ball-detector-baseline",
+  "prepared_at_commit": "b71c64d3fd46bb27072efa8644e90c1c222bb65c",
+  "scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_release_v0_1.json",
+    "size_bytes": 344753,
+    "sha256": "b81098c3aae5a89438d4c0cd621534abc806b5d9b099a5aa35211ce9be0d8ff2"
+  },
+  "proposal": {
+    "path": "docs/ball_crop_cross_detector_corroboration_release_proposal.md",
+    "size_bytes": 11764,
+    "sha256": "ae28ca67f9464747d11cfb5c2d7b0f5883d3d776e2a1dc48be786bca570abf2e"
+  },
+  "implementation_validation": {
+    "path": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/implementation_validation.json",
+    "size_bytes": 46188,
+    "sha256": "38e4ff8b81b971ba2f3b12ac2a033c02f6903bd75359e4e6772ce4a38bea59a6"
+  },
+  "scientific_execution_authorized": true,
+  "administrative_history_verification_authorized": true,
+  "new_verified_media_presentation_authorized": true,
+  "release_checkpoint_authorized": true,
+  "execution_requires_separately_authorized_staging_and_committing": true,
+  "checkpoint_requires_actual_clean_descendant_commit": true,
+  "scientific_access_only_in_owned_worker_and_declared_phases": true,
+  "parent_scientific_body_access_authorized": false,
+  "parent_scientific_body_hashing_authorized": false,
+  "real_journal_verification_only_in_approved_runtime": true,
+  "proposed_scientific_unit": {
+    "key": "cross-detector-corroboration:study:",
+    "maximum_attempts": 1,
+    "maximum_charged_seconds": 1200,
+    "reservation_seconds": "min(1200,current verified remaining scientific seconds)",
+    "automatic_retry_or_fallback": false,
+    "partial_output_adoption": false,
+    "all_six_windows_inside_same_attempt": true,
+    "monitored_history_validation_requires_future_execution_authority": true,
+    "journal_constructor_reads_administrative_event_chain": true,
+    "new_study_journal_factory": true,
+    "refuse_consumed_key_or_unexplained_suffix_or_orphan": true,
+    "preserve_original_limits_digest": true
+  },
+  "monitor_policy": {
+    "reuse_validated_responsive_monitor": true,
+    "requested_poll_interval_seconds": 0.25,
+    "maximum_completed_safety_interval_seconds": 1,
+    "scan_request_deadline_seconds": 10,
+    "next_request_after_completion_seconds": 5,
+    "maximum_measurement_age_seconds": 30,
+    "maximum_helpers": 1,
+    "maximum_sampled_memory_bytes": 8589934592,
+    "worker_committed_memory_bytes": 8589934592,
+    "helper_committed_memory_bytes": 536870912,
+    "minimum_free_disk_bytes": 53687091200,
+    "maximum_whole_output_root_bytes": 34359738368,
+    "maximum_scan_record_bytes": 8192,
+    "maximum_worker_receipt_bytes": 1048576,
+    "publication_reserve_bytes": 65536,
+    "initial_and_distinct_final_scan_required": true,
+    "owned_cleanup_required": true
+  },
+  "carried_scientific_history": {
+    "resource_event_count": 3330,
+    "closed_attempts": 63,
+    "successes": 59,
+    "historic_failure_ids": [
+      "158f51be5ab34cdface57f4e0036b7d2",
+      "4adfb390f1f74a1baaec7fb178092218",
+      "e1ba648def3f4e1f887332e850396e4c",
+      "e3ea5536e59d4cdc8fea72d45bc53241"
+    ],
+    "resource_tip": "4dd2b89f3fea67f3be9e3f409e7b937fc6da8a2a622c9b2a98505041c2a31fd6",
+    "consumed_seconds": 3547.523999999985,
+    "remaining_seconds": 10852.476000000015,
+    "maximum_cumulative_seconds": 14400,
+    "new_journal_events_permitted": false,
+    "mean_artifacts_unchanged": 636,
+    "prior_human_identity_judgments_unchanged": 8,
+    "prior_clip_review_responses_unchanged": 6,
+    "embargoes_unchanged": 9,
+    "sealed_holdouts_unchanged": 3
+  },
+  "carried_validation_budget": {
+    "original_seconds": 4200,
+    "additional_approved_seconds": 600,
+    "total_seconds": 4800,
+    "consumed_seconds": 4210.719000000001,
+    "remaining_seconds": 589.280999999999,
+    "unsuccessful_attempts_preserved": [
+      "focused_01",
+      "full_01"
+    ],
+    "prior_validation_consumed_seconds_preserved": [
+      "2164.2970000000005",
+      "2295.467999999999"
+    ]
+  },
+  "prior_validation_consumed_seconds_preserved": [
+    "2164.2970000000005",
+    "2295.467999999999"
+  ],
+  "automatic_retry_authorized": false,
+  "parameter_tuning_authorized": false,
+  "holdout_access_authorized": false,
+  "embargo_changes_authorized": false,
+  "stage_authorized": false,
+  "commit_authorized": false,
+  "push_authorized": false,
+  "pr_authorized": false,
+  "merge_authorized": false,
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

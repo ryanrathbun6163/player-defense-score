@@ -1,6 +1,102 @@
 # Roadmap
 
-## Current continuation: propose the next bounded step after six submitted reviews
+## Current continuation: propose a bounded follow-up after the completed review
+
+The 16-frame joint diagnostic review is complete. Its summary and bound completion
+record are `data/outputs/t/error_type_review_b71c64d3fd46/summary.md` and
+`completion.json`. Other-object selections, on-ball offsets and absent predictions
+are distinct findings in this selected sample. Next is a separately bounded
+proposal about object selection and withholding predictions during occlusion,
+while preserving the center-placement distinction. No method, operating point,
+quality gate, annotation change or scientific execution is selected by this review.
+
+Ryan accepted the 16-frame diagnostic scope and requested AI visual review too.
+The separate approval is
+`configs/ball_tracking/reviews/rfdetr_medium_crop_error_type_review_approval_v0_1.json`;
+it supplements the unchanged frozen proposal and scope. Both reviewers use only
+the same 48 existing native overlays. Keep their observations separate, seal each
+AI batch before asking for new human judgments, and preserve disagreements.
+This remains unblinded, with prior clip feedback known and Ryan retaining final
+human review authority; neither source becomes automatic ground truth.
+
+The first joint batch, P001 challenge 204 and 210, is recorded separately in
+`data/outputs/t/error_type_review_b71c64d3fd46/submission_0001.json` (AI) and
+`submission_0002.json` (Ryan and a separately attributed comparison). Keep the
+reference-marker distinction, human unspecified 204 target, AI uncertainty on TT
+centering, and 210 pants-versus-torso/jersey disagreement explicit.
+The second batch, 211 and 215, is separately recorded in `submission_0003.json`
+(AI) and `submission_0004.json` (Ryan). Both report TT/top-one on the ball and no
+mean prediction; human centered judgments and AI fine-centering uncertainty remain
+separate. Human visibility categories and candidate indices were not supplied.
+The third batch, 216 and 217, is separately recorded in `submission_0005.json`
+(AI) and `submission_0006.json` (Ryan). Both place mean/top-one off-ball; Ryan's
+"about 6 feet" and farther-at-217 descriptions remain uncalibrated human estimates.
+He does not identify the non-ball targets. TT centered judgments and AI uncertainty
+remain separate; no visibility category or candidate indices are invented.
+The fourth batch, P001/219 and P003/163, is in `submission_0007.json` (AI) and
+`submission_0008.json` (Ryan). A reported missing mean marker at P001/219 prompted
+one targeted reinspection of that exact existing image. Ryan confirmed the red
+bench marker in appended `submission_0009.json`; the initial no-marker statement
+and original AI record remain intact. The presence disagreement is resolved,
+without relabeling scientific output. His top-one 15-foot estimate is unmeasured.
+The fifth batch, P003/164 and P003/165, is recorded in `submission_0010.json` (AI)
+and `submission_0011.json` (Ryan). Ryan identifies a slight leftward offset on the
+ball for all red marks at 164; the qualitative wording is not forced into a
+threshold-based category. He explicitly confirms the referee hides the ball at
+165, with TT/top-one on a player's shoe and no mean prediction. No hidden center
+or calibrated distance is inferred. The sixth batch, P003/166 and P003/167, is in
+`submission_0012.json` (AI) and `submission_0013.json` (Ryan). The target descriptions
+agree at the official/player level; Ryan's exact anatomy and ball visibility are
+unspecified. His approximate distances and same-as inheritance remain explicit.
+The seventh batch, P003/168 and P003/169, is in `submission_0014.json` (AI) and
+`submission_0015.json` (Ryan). Both identify leg-area marks at 168 and the far
+bench/person area for mean/top-one at 169, with no TT prediction at 169. Ryan's
+head/coach description remains attributed to him; distances are unmeasured.
+His appended `submission_0016.json` confirms "red" meant referee at 169, preserving
+the original wording and applying the covered-by-referee statement to all views.
+Codex sealed the final pair, P003/170 and P003/171, in `submission_0017.json`.
+Administrative clarification `submission_0018.json` removes unsupported chronology
+and anatomical-side specificity without new image access or changed targets.
+Ryan's final response is in `submission_0019.json`; his appended clarification
+`submission_0020.json` confirms red-marker wording and green on-ball predictions
+for 171 mean/top-one. Both reviewers place 170 predictions and 171 TT on a foot.
+Approximate distances remain unmeasured, reference marks remain distinct from
+predictions, and ambiguous player descriptors do not establish race/uniform color.
+Coverage is 16/16 for each reviewer, with 48 method records each. Twenty submissions
+plus summary/completion total 232,784 bytes within the original create-only bounds.
+No questions remain pending; unspecified fields and diagnostic differences persist.
+No algorithm change, scientific attempt, additional frame, relabeling or Git step
+is authorized. Existing budgets, evidence, embargoes and holdouts are preserved.
+
+## Prior continuation: accept the fixed 16-frame error-type review proposal
+
+The next proposal is `../ball_crop_error_type_review_proposal.md`, with exact scope
+`configs/ball_tracking/proposals/rfdetr_medium_crop_error_type_review_v0_1.json`.
+It requests new frame-specific diagnostic judgments on 16 fixed cases using 48
+existing native overlays: every regression in the worst mean-versus-TT window
+(P001 challenge 204, 210, 211, 215, 216, 217, 219), and the complete saved hidden
+interval plus two frames on each side (P003 challenge 163-171).
+
+The purpose is to distinguish other-object selection, displaced ball centers,
+absent outputs and hidden-boundary behavior before choosing another intervention.
+The sample is selected and unblinded; no generalized accuracy, ground-truth edits,
+operating-point choice or method promotion follows. The six clip responses and
+eight identity reviews remain intact and are not replayed. The P003 representative
+panel-impression difference stays unresolved.
+
+This costs zero new scientific attempts, charged seconds, model calls, selectors,
+scoring passes, renders, tests or release checkpoints. No application code changes
+are proposed. New human records would be create-only and limited to 1 MiB in a
+separate ignored directory. Existing presentation authority requires no per-image
+approval; acceptance is for this new diagnostic scope. No images were opened or
+new judgments collected during proposal preparation.
+
+Independent proposal reviews passed. The five preparation files remain unstaged,
+with an empty index at `b71c64d3fd46bb27072efa8644e90c1c222bb65c`. No Git mutation
+or scientific execution follows from planning. Preserve all consumed roles,
+evidence, budgets, nine embargoes and three sealed holdouts.
+
+## Prior continuation: propose the next bounded step after six submitted reviews
 
 Ryan submitted qualitative observations for all six new clips. The top-left
 panel is intentionally unmarked source footage; it needs no marker correction.

@@ -1,0 +1,69 @@
+{
+  "schema_version": "ball_crop_error_type_review_approval/v0.1",
+  "approved_by": "Ryan",
+  "statement": "Yes go ahead, but are you reviewing these things yourself as well chat? I think we should both be doing this at the same time in case I mess anything up",
+  "recorded_at_utc": "2026-10-07T01:47:54.239717+00:00",
+  "timestamp_semantics": "Receipt creation time, not an invented message timestamp.",
+  "proposal": {
+    "path": "docs/ball_crop_error_type_review_proposal.md",
+    "sha256": "e392f5af6b05e39d4ccb99ba25a7c3dbf073af8f9c16b1b613bb5b262820340d",
+    "size_bytes": 9497
+  },
+  "scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_error_type_review_v0_1.json",
+    "sha256": "37eb7b5b0a79d3a2dec6352c6fc5728b1dcf775a9a9cfaa47bad135de54980d6",
+    "size_bytes": 57566
+  },
+  "diagnostic_review_accepted": true,
+  "review_frame_count": 16,
+  "existing_native_overlay_count": 48,
+  "amendment": {
+    "assistant_visual_semantic_assessment_authorized": true,
+    "scope": "Same 48 existing native overlays only; no added media or frames.",
+    "reviewers": {
+      "human": "Ryan",
+      "assistant": "Codex (AI)"
+    },
+    "separate_observations_required": true,
+    "assistant_batch_observations_sealed_before_requesting_new_human_frame_judgments": true,
+    "no_claim_of_second_human_or_blinded_review": true,
+    "prior_clip_feedback_and_method_labels_already_known": true,
+    "disagreements_preserved_not_automatically_resolved": true,
+    "human_final_review_authority": "Ryan",
+    "assistant_records_share_original_create_only_32_submission_and_1MiB_bounds": true
+  },
+  "source_scientific_json_body_reads_or_hashes_authorized": false,
+  "original_source_image_reads_authorized": false,
+  "parent_media_hashing_authorized": false,
+  "new_detector_model_calls_authorized": false,
+  "new_scientific_attempts_authorized": false,
+  "new_rendering_authorized": false,
+  "annotation_or_ground_truth_changes_authorized": false,
+  "application_code_changes_authorized": false,
+  "staging_authorized": false,
+  "committing_authorized": false,
+  "pushing_authorized": false,
+  "pull_request_authorized": false,
+  "merging_authorized": false,
+  "unchanged_preservation": {
+    "resource_event_count": 3330,
+    "closed_attempts": 63,
+    "successes": 59,
+    "historic_failure_ids": [
+      "158f51be5ab34cdface57f4e0036b7d2",
+      "4adfb390f1f74a1baaec7fb178092218",
+      "e1ba648def3f4e1f887332e850396e4c",
+      "e3ea5536e59d4cdc8fea72d45bc53241"
+    ],
+    "resource_tip": "4dd2b89f3fea67f3be9e3f409e7b937fc6da8a2a622c9b2a98505041c2a31fd6",
+    "consumed_seconds": 3547.523999999985,
+    "remaining_seconds": 10852.476000000015,
+    "maximum_cumulative_seconds": 14400,
+    "new_journal_events_permitted": false,
+    "mean_artifacts_unchanged": 636,
+    "prior_human_identity_judgments_unchanged": 8,
+    "prior_clip_review_responses_unchanged": 6,
+    "embargoes_unchanged": 9,
+    "sealed_holdouts_unchanged": 3
+  }
+}

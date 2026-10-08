@@ -1,6 +1,210 @@
 # Current State
 
-## Latest checkpoint: 2026-10-06 Ryan submitted all six mean-confidence clip reviews
+## Latest checkpoint: 2026-10-07 joint 16-frame diagnostic review complete
+
+All 16 fixed frames now have separate Ryan and Codex observations for all three
+methods. The completed diagnostic summary and receipt are
+`data/outputs/t/error_type_review_b71c64d3fd46/summary.md` (7,208 bytes; SHA-256
+`178e899526d686a635a45bb16ebc56dbdbed616bd2dc812fbbd5c05d6f0ed16a`) and
+`completion.json` (13,226 bytes; SHA-256
+`7996f3c2254649a8e10efaf7fc25ef2f1ceef51d5305b29654f244e1e809adf2`).
+These selected cases distinguish other-object marks, on-ball center offsets and
+absent predictions. At P003/164 Ryan places all marks on the ball but slightly
+left despite their saved wrong-present status; identity and center-distance
+criteria remain distinct. At 170 all methods select a foot; at 171 mean/top-one
+are on the ball while TT still selects a foot. No method is promoted. Next is a
+separately bounded follow-up proposal about object selection and withholding
+predictions during occlusion, keeping center placement distinct. No execution or
+Git mutation follows automatically from completion.
+
+Ryan accepted the fixed 16-frame review and explicitly requested Codex's own visual
+assessments alongside his. The exact request and amendment are recorded in
+`configs/ball_tracking/reviews/rfdetr_medium_crop_error_type_review_approval_v0_1.json`
+(SHA-256 `ea04de33574ecab244d063fc3f9262ac0d2ce73ed6c0e6318dbae4d51d38a65c`).
+This approval supplements the frozen proposal/scope below; their original proposed
+status is historical. AI semantic review is limited to the same 48 native overlays.
+
+Record Codex and Ryan separately, sealing each AI batch before requesting new
+human frame judgments. This is an unblinded diagnostic review by one human and
+an AI assistant, not two humans or independent blinded annotation. Both can err;
+preserve disagreements and uncertainty, with Ryan retaining final human review
+authority. Prior clip comments, image labels and reference markings are already known.
+
+Codex inspected all three methods at P001 challenge frames 204 and 210 and sealed
+the provisional observations in the create-only ignored record
+`data/outputs/t/error_type_review_b71c64d3fd46/submission_0001.json` (9,499 bytes;
+SHA-256 `531acd9f54613e25fc59f0231b5a040491eba9256e176ae746813c8f677a8c84`).
+Ryan's six panel observations for 204 and 210 are now recorded verbatim in
+`submission_0002.json` in that same directory (13,769 bytes; SHA-256
+`5f820a7f4168a13d1dbd758077d37ede564e9ac310b4e114a15e1e52e810cf66`).
+His top/bottom rows map to 204/210 and left/middle/right to TT/mean/top-one.
+He reports TT centered in both frames, the other predictions near but not touching
+the ball at 204, and far across the court on a player's pants at 210. Preserve his
+reported green on-ball markings separately from their reference-marker role in
+mean/top-one images. No extra model prediction or confirmed candidate index is inferred.
+The 204 non-ball target is unspecified by Ryan; 210 has a preserved pants-versus-
+torso/jersey detail disagreement with AI. TT fine-centering remains uncertain in
+the original AI record, whereas Ryan judges it centered. His visibility extent is
+unspecified, not a contradiction of AI's partly-visible observation.
+
+Codex then inspected and sealed all three methods at 211 and 215 in
+`submission_0003.json` (9,761 bytes; SHA-256
+`be5dfc0fc9c53484cad35e08f26bb4d04a3b92169051dc7d68cc5e54498e1266`).
+Ryan's response for 211 and 215 is now saved verbatim in `submission_0004.json`
+(10,933 bytes; SHA-256 `9de235aef38d174e3d34e2bba21ac5c37365a1e73faf3eb6b468974c280a2eee`).
+He reports green markers centered on the ball for TT/top-one, no red marks, and a
+centered crosshair with no prediction markers for mean. Same-as references remain
+explicit. The crosshair does not create an identity or center judgment for absent
+mean output. No explicit visibility category or candidate number was supplied;
+those fields remain null. Human centering is more specific than AI uncertainty,
+with no contradictory ball-identity or prediction-presence claim in this batch.
+
+Codex inspected and sealed all three methods at 216 and 217 in
+`submission_0005.json` (9,919 bytes; SHA-256
+`fd40775a5cb47d8cad721e97213c1ebe11f8ed9124e8df587cae993cdf6abccd`).
+Ryan's 216/217 observations are saved in `submission_0006.json` (12,933 bytes;
+SHA-256 `4328de9931a8d0388a6cb8416d965b5e717410f6728020ea902982754d5c7dfb`).
+He reports TT centered and mean/top-one off-ball in both frames. Preserve "about
+6 feet" at 216 and farther-away at 217 as uncalibrated human descriptions, not
+measured court or pixel distances. The off-ball targets, explicit visibility
+category and candidate indices are unspecified; AI floor/line and clothing
+descriptions are not promoted to human-confirmed object identities.
+
+Codex inspected and sealed P001 challenge 219 and P003 challenge 163 in
+`submission_0007.json` (9,981 bytes; SHA-256
+`0b258c47c81f47ca5a1b887e66371bbace570f88835649323e01154614f7b018`).
+Ryan's P001/219 and P003/163 response is recorded in `submission_0008.json`
+(14,198 bytes; SHA-256 `24abe63109ff01debebf03df35089a56ac5fbd83a00d78e5c6eccdedc162924a`).
+Five panels agreed on prediction presence and apparent ball identity. His initial
+P001/219 mean no-marker report conflicted with the sealed AI red bench-marker
+observation. Codex reopened only that bound native image to investigate this new
+disagreement, not to repeat a completed checkpoint, and again observed red #1.
+Ryan then confirmed seeing it and explained that it blended into the bench.
+The exact question and reply are appended in `submission_0009.json` (3,407 bytes;
+SHA-256 `ad6fb8e57c05952c064f97c2001fbdd771f5749bf1f3bcba9002f96078ac12d9`).
+Presence is now confirmed, while the first response and original AI record remain
+unchanged. This prompted clarification is not another independent/blinded review.
+Ryan's approximate 15-foot description applies only to P001/219 top-one and remains
+unmeasured. No new exact target-object identity or candidate index was assigned.
+
+Codex sealed the next fixed pair, P003/164 and P003/165, in `submission_0010.json`
+(11,037 bytes; SHA-256 `193c4610e2f22eb091c49f097074c3cf8cdcd7896d18989ceae8fe8ba1ee061a`).
+Ryan's P003/164 and P003/165 observations are recorded in `submission_0011.json`
+(14,585 bytes; SHA-256 `3bd99402eac57ddfa6205872ff343c61635cfb0dc2e48a714210ebcc1a3c61f7`).
+For 164 he places all red predictions on the ball, a little left of center. This
+qualitative offset is retained directly; no threshold-based displacement category
+or human uncertainty is invented. Reported green on-ball marks remain reference
+geometry. For 165 he explicitly says the referee hides the ball, identifies TT and
+top-one marks on a player's shoe, and reports no mean mark or crosshair. The shoe
+is more specific than the AI's white-patch observation. His approximate 10-foot
+description is unmeasured; no hidden ball center or candidate index is inferred.
+
+Codex sealed P003/166 and P003/167 in `submission_0012.json` (10,667 bytes; SHA-256
+`d3b151abda0d16bbd2882165910435117f7cd0a0af278acdcfcaa1b9b4cb1bb3`).
+Ryan's P003/166 and P003/167 response is saved in `submission_0013.json`
+(13,593 bytes; SHA-256 `3d45593a324160cd28f7716067e17e299bdcedd9048e890c569f522daecd842e`).
+He identifies the baseline official for 166 TT/top-one and 167 TT, no prediction
+for 166 mean, and a player near the free-throw line for 167 mean/top-one. His
+approximate 30-foot and 10-foot descriptions remain uncalibrated; inherited
+same-as descriptions are explicit. Exact anatomy is unspecified by Ryan. No
+crosshair is reported, but visibility for 166/167 remains null in his record;
+the explicit hidden statement for 165 is not silently carried forward.
+
+Codex sealed P003/168 and P003/169 in `submission_0014.json` (10,525 bytes; SHA-256
+`77223aa2565a6297d39ea55b6ae8d1d8e95ed320b5ed33a6e2b6716d65b78ca8`).
+Ryan's P003/168 and P003/169 response is saved verbatim in `submission_0015.json`
+(14,549 bytes; SHA-256 `b1b32709bc160dbf76589ea1e29c57257b7d83ba23ad5bfcb62096e5bba8c499`).
+He identifies player-leg targets for all three methods at 168, absent TT output
+at 169, and a bench person's head for mean/top-one at 169. The person's role as
+coach is his description, not a verified identity. His 10-foot and 35-to-40-foot
+estimates remain unmeasured. Both frames are described as covered; the original
+169 word "red" is preserved. Ryan confirmed he meant the referee in appended
+`submission_0016.json` (3,548 bytes; SHA-256
+`46b8c6c56856c0e8a159cd35fe0ecbd10be76947ded305430d59af29e5237e42`).
+The clarification applies to all three views and is not another independent review.
+
+Codex sealed the final pair, P003/170 and P003/171, in `submission_0017.json`
+(11,426 bytes; SHA-256 `de6b0eea96dda3c44ce3b729a0e2a12ae46ca56d6453832c1ca0efc5e07eb516`).
+An appended administrative correction, `submission_0018.json` (2,560 bytes;
+SHA-256 `2d270f6750a0e9fc0f18c72b7862a6779fd064a825f92448e6635efe76de2c11`),
+removes unsupported inspection chronology and clarifies screen-right versus
+anatomical foot side. It adds no image access or changed target judgment.
+Ryan's final P003/170 and P003/171 response is preserved in `submission_0019.json`
+(15,300 bytes; SHA-256 `7b9b8044f0fa67e78cc77dcf7103bfa9a6057c42acae8a7b0b1e193a3cca9758`).
+He reports foot targets at 170 for all methods and at 171 for TT, with centered
+reference crosshairs. His approximate 25-foot distance remains unmeasured. In
+`submission_0020.json` (10,160 bytes; SHA-256
+`72d586c67f0629251c16fafedbec00a3d4ed5810c142eb665d1025bd4daa2efa`), he confirms
+"right marker" meant red and confirms green on-ball predictions in 171 mean/top-one.
+No red marker is not treated as no prediction. Human on-ball confirmation and
+AI centering remain separately attributed. "White player" does not establish race
+or uniform color, so no confirmed clothing disagreement is inferred. Human explicit
+visibility categories remain unspecified in this batch; AI uncertainty at 170 stays.
+
+Coverage is AI 16/16 and human 16/16, with three method records each per frame.
+Twenty submissions plus summary/completion total 232,784 bytes; individual limits
+and exact frozen frame/media/state bindings passed administrative consistency
+checks. Prior submissions, frozen scope, proposal and approval remain unchanged.
+The earlier presence disagreement is resolved by appended clarification; other
+uncertainty and the pants-versus-jersey detail remain preserved. No question remains
+pending. Review is complete; no method or quality gate is selected.
+
+The original submission count, individual-size and 1 MiB aggregate bounds include
+both reviewers. No scientific bodies or original-source images were opened, media
+hashed, images derived, annotations changed, tests repeated or new scientific
+attempts consumed. All prior evidence, budgets, embargoes and holdouts remain intact.
+The proposal, scope, approval and three context records remain unstaged at
+`b71c64d3fd46bb27072efa8644e90c1c222bb65c`, with an empty index. This review approval
+does not add Git or scientific-execution authority. Any next algorithm or experiment
+still requires a separately bounded proposal.
+
+## Prior checkpoint: 2026-10-06 fixed error-type review proposed; no new execution
+
+Ryan's "Ok move forward" authorized the next bounded proposal. It is now
+`../ball_crop_error_type_review_proposal.md`, with exact metadata scope
+`configs/ball_tracking/proposals/rfdetr_medium_crop_error_type_review_v0_1.json`.
+The proposal asks whether remaining errors are wrong-object marks, displaced
+ball-center marks or absent outputs, and what happens at hidden-interval boundaries.
+It uses existing images instead of another scoring intervention.
+
+The fixed scope is 16 frames: P001 challenge 204, 210, 211, 215, 216, 217, 219
+(all TT-matched to mean-wrong/missing transitions in the unique worst net-match-loss
+window), plus P003 challenge 163-171 (the entire saved hidden run 165-169 and two
+adjacent frames on each side). Exactly 48 existing worker-verified native overlays,
+one per arm/frame, are bound by copied receipt hashes and filesystem metadata;
+their aggregate existing size is 143,320,299 bytes. No pixels were opened in planning.
+
+This would be a new, unblinded frame-specific diagnostic review, not an accuracy
+study or a repeat of the six whole clips or eight completed identity reviews.
+Ryan would report ball visibility, object identity of each present marker and
+center alignment when identifiable. Missing outputs receive no invented identity;
+uncertain/skipped observations remain explicit. The prior P003 300-324 impression
+discrepancy remains unresolved, and the referee passage is not assigned a precise
+frame range merely from its proximity to the saved hidden interval.
+
+The proposal permits zero new scientific attempts, charged seconds, model calls,
+selectors, scoring, rendering, tests, release checkpoints or application-code changes.
+The existing post-success exception covers presentation of these verified images;
+acceptance is for the new diagnostic scope, with no additional per-image permission.
+Original images and scientific JSON stay closed; parent media hashes are forbidden.
+New create-only human submissions/completion records would stay under the proposed
+ignored `data/outputs/t/error_type_review_b71c64d3fd46/` directory, at most 1 MiB total.
+No new judgments have been collected and that output directory has not been created.
+
+Independent design and boundary reviews passed. Preparation used source,
+administrative records and metadata only. No old validation, scientific attempt,
+render or visual review was repeated. The history remains 3,330 events / 63 closed
+attempts, with `10852.476000000015` cumulative seconds remaining; all prior evidence,
+nine embargoes and three sealed holdouts stay unchanged. No method or quality gate
+is selected. Next is accepting this 16-frame diagnostic scope; any later algorithm
+change or scientific execution needs a separate proposal.
+
+The intended five-file preparation is the proposal, scope and these three context
+records. They remain unstaged with an empty index at
+`b71c64d3fd46bb27072efa8644e90c1c222bb65c` on `codex/ball-detector-baseline`.
+No Git mutation is authorized or performed for this new proposal.
+
+## Prior checkpoint: 2026-10-06 Ryan submitted all six mean-confidence clip reviews
 
 Ryan supplied six qualitative responses to the request to review the new clips
 through their final frames. All six clip responses are recorded. A separate

@@ -1,5 +1,238 @@
 # Validation History
 
+## 2026-10-07: final human batch and joint diagnostic completion
+
+Ryan's final P003/170 and P003/171 response is preserved in
+`data/outputs/t/error_type_review_b71c64d3fd46/submission_0019.json` (15,300 bytes;
+SHA-256 `7b9b8044f0fa67e78cc77dcf7103bfa9a6057c42acae8a7b0b1e193a3cca9758`).
+His clarification is appended in `submission_0020.json` (10,160 bytes; SHA-256
+`72d586c67f0629251c16fafedbec00a3d4ed5810c142eb665d1025bd4daa2efa`): right meant
+red, and 171 mean/top-one contain green predictions on the ball. No red marker
+was not converted into total prediction absence. Foot targets, uncalibrated
+25-foot estimates and same-as inheritance remain explicit. No race/uniform color
+or candidate index is inferred from the player wording. Visibility categories and
+separate human centering extent remain unspecified where not supplied.
+
+A text-only interpretation/conclusion check confirmed the reference/prediction
+distinction and required keeping P001/219 mean human presence confirmation separate
+from AI off-ball interpretation. The summary retains P003/164 on-ball slight-left
+judgments alongside the different saved center-distance criterion. Disagreements,
+prompted clarifications and unknowns remain explicit; no generic accuracy is claimed.
+
+Administrative consistency checks passed exact 16-frame coverage, three methods
+per frame for each reviewer, frozen media/state bindings, null identity/alignment
+for absent predictions, no invented human indices, and original file preservation.
+No pixels or scientific bodies were reopened for completion. The completed files:
+
+- `summary.md`: 7,208 bytes; SHA-256
+  `178e899526d686a635a45bb16ebc56dbdbed616bd2dc812fbbd5c05d6f0ed16a`.
+- `completion.json`: 13,226 bytes; SHA-256
+  `7996f3c2254649a8e10efaf7fc25ef2f1ceef51d5305b29654f244e1e809adf2`.
+
+Twenty submissions plus those two files total 232,784 bytes, within all approved
+individual/count/aggregate limits. Coverage is 16/16 for both reviewers; questions
+are resolved and unspecified fields remain null. No tests, scientific execution,
+renders, scientific-body/media hashes, original-source reads or Git mutations
+occurred. Evidence, consumed budgets, embargoes and holdouts remain preserved.
+The next scientific step requires a separately bounded proposal; completion does
+not authorize implementation, execution, method selection or a Git step.
+
+## 2026-10-07: seventh human frame batch recorded; final AI pair sealed
+
+Ryan's P003/168 and P003/169 response is preserved in
+`data/outputs/t/error_type_review_b71c64d3fd46/submission_0015.json` (14,549 bytes;
+SHA-256 `b1b32709bc160dbf76589ea1e29c57257b7d83ba23ad5bfcb62096e5bba8c499`).
+Leg/head descriptions remain explicit and the coach role remains attributed to
+Ryan; approximate distances are uncalibrated. Frame169's original "red" wording
+is preserved, with the referee clarification appended in `submission_0016.json`
+(3,548 bytes; SHA-256 `46b8c6c56856c0e8a159cd35fe0ecbd10be76947ded305430d59af29e5237e42`).
+A text-only interpretation check confirmed that this is a clarification of the
+same frame, not a new independent review. No hidden center or index is inferred.
+
+Six final-overlay metadata bindings matched. Codex viewed P003/170 and P003/171,
+sealing `submission_0017.json` (11,426 bytes; SHA-256
+`de6b0eea96dda3c44ce3b729a0e2a12ae46ca56d6453832c1ca0efc5e07eb516`).
+Appended `submission_0018.json` (2,560 bytes; SHA-256
+`2d270f6750a0e9fc0f18c72b7862a6779fd064a825f92448e6635efe76de2c11`)
+removes unsupported observation chronology and clarifies screen-right versus
+anatomical foot side; no image was reopened and no target judgment changed.
+Coverage is AI 16/16, human 14/16. Eighteen create-only records total 186,890 bytes,
+within the existing bounds; prior records remain unchanged. The final human pair
+is pending. No scientific execution, tests, renders, scientific-body/original-source
+reads, media hashes or Git mutations occurred. Evidence, budgets, embargoes and
+holdouts remain preserved.
+
+## 2026-10-07: sixth human frame batch recorded; seventh AI batch sealed
+
+Ryan's P003/166 and P003/167 response is preserved in
+`data/outputs/t/error_type_review_b71c64d3fd46/submission_0013.json` (13,593 bytes;
+SHA-256 `3d45593a324160cd28f7716067e17e299bdcedd9048e890c569f522daecd842e`).
+Independent interpretation review confirmed same-as/except inheritance, baseline
+judge to referee normalization, and retention of 30-foot/10-foot descriptions as
+uncalibrated estimates. Human anatomy and visibility remain unspecified; absent
+crosshairs do not establish hidden-ball labels, and 165 visibility is not carried
+forward. No exact player identity or candidate number is inferred.
+
+Six next-overlay metadata bindings matched. Codex viewed P003/168 and P003/169,
+sealing `submission_0014.json` (10,525 bytes; SHA-256
+`77223aa2565a6297d39ea55b6ae8d1d8e95ed320b5ed33a6e2b6716d65b78ca8`).
+Coverage is AI 14/16, human 12/16. Fourteen create-only records total 154,807 bytes
+within the existing bounds; prior records remain unchanged. No scientific execution,
+tests, renders, scientific-body/original-source reads, media hashes or Git mutations
+occurred. Evidence, budgets, embargoes and holdouts remain preserved.
+
+## 2026-10-07: fifth human frame batch recorded; sixth AI batch sealed
+
+Ryan's P003/164 and P003/165 response is preserved in
+`data/outputs/t/error_type_review_b71c64d3fd46/submission_0011.json` (14,585 bytes;
+SHA-256 `3bd99402eac57ddfa6205872ff343c61635cfb0dc2e48a714210ebcc1a3c61f7`).
+An independent normalization check supported preserving the 164 slight-leftward
+offset as text, without inventing a displacement threshold or attributing
+uncertainty to Ryan. His explicit 165 hidden-by-referee statement applies to all
+three views. Shoe identity is retained without inferring race or uniform color
+from the raw phrase; the approximate 10-foot distance remains unmeasured. Mean
+absence has null identity/alignment, and all numeric candidate indices remain null.
+
+Six next-image metadata bindings matched. Codex viewed P003/166 and P003/167 and
+sealed `submission_0012.json` (10,667 bytes; SHA-256
+`d3b151abda0d16bbd2882165910435117f7cd0a0af278acdcfcaa1b9b4cb1bb3`).
+Coverage is AI 12/16 and human 10/16. Twelve records total 130,689 bytes within
+the original bounds; prior records are unchanged. No new scientific execution,
+tests, renders, scientific-body/original-source reads, media hashes or Git
+mutations occurred. Evidence, budgets, embargoes and holdouts remain preserved.
+
+## 2026-10-07: fourth human batch, appended clarification and fifth AI batch
+
+Ryan's mixed-window P001/219 and P003/163 response is preserved in
+`data/outputs/t/error_type_review_b71c64d3fd46/submission_0008.json` (14,198 bytes;
+SHA-256 `24abe63109ff01debebf03df35089a56ac5fbd83a00d78e5c6eccdedc162924a`).
+An independent interpretation check confirmed the distinct windows, same-as
+references, null unspecified fields and unmeasured top-one distance estimate.
+The initial P001/219 mean no-marker report differed from AI. After a metadata
+check, Codex reopened only that existing native image for this specific disagreement
+and again saw red #1 near the bench. This was targeted clarification, not resumption
+replay. Ryan confirmed the marker and said it blended into the bench. The exact
+question/reply are appended in `submission_0009.json` (3,407 bytes; SHA-256
+`ad6fb8e57c05952c064f97c2001fbdd771f5749bf1f3bcba9002f96078ac12d9`).
+Presence is resolved; neither initial record was edited. No extra independent
+review, target identity, physical distance or numeric candidate confirmation is claimed.
+
+Six next-overlay metadata bindings matched. Codex viewed P003/164 and P003/165,
+sealing `submission_0010.json` (11,037 bytes; SHA-256
+`193c4610e2f22eb091c49f097074c3cf8cdcd7896d18989ceae8fe8ba1ee061a`).
+Coverage is AI 10/16, human 8/16. Ten records total 105,437 bytes within the original
+individual and aggregate bounds; prior records remain unchanged. No scientific
+execution, tests, renders, scientific-body/original-source reads, media hashes
+or Git mutations occurred. Budgets, old evidence, embargoes and holdouts persist.
+
+## 2026-10-07: third human frame batch recorded; fourth AI batch sealed
+
+Ryan's 216/217 observations are preserved in
+`data/outputs/t/error_type_review_b71c64d3fd46/submission_0006.json` (12,933 bytes;
+SHA-256 `4328de9931a8d0388a6cb8416d965b5e717410f6728020ea902982754d5c7dfb`).
+An independent interpretation check confirmed that "about 6 feet" and the greater
+217 distance are uncalibrated human descriptions. Explicit off-ball observations
+are recorded separately from unspecified target identity; no physical distance,
+visibility category or candidate index was inferred. Prior AI observations remain
+separate, including TT fine-centering uncertainty.
+
+Six existing native-overlay metadata bindings matched. Codex reviewed P001/219
+and P003/163, sealing `submission_0007.json` (9,981 bytes; SHA-256
+`0b258c47c81f47ca5a1b887e66371bbace570f88835649323e01154614f7b018`).
+The two windows retain distinct identifiers. Coverage is AI 8/16, human 6/16;
+review is incomplete. Seven create-only records total 76,795 bytes and satisfy
+existing individual/aggregate bounds; the previous five are unchanged. No new
+scientific execution, tests, renders, scientific-body access, original-image
+reads, media hashes or Git mutations occurred. Budgets, embargoes and holdouts
+are preserved.
+
+## 2026-10-07: second human frame batch recorded; third AI batch sealed
+
+Ryan's six panel statements for 211/215 are preserved in
+`data/outputs/t/error_type_review_b71c64d3fd46/submission_0004.json` (10,933 bytes;
+SHA-256 `9de235aef38d174e3d34e2bba21ac5c37365a1e73faf3eb6b468974c280a2eee`).
+An independent interpretation check confirmed same-as mapping, reference-crosshair
+separation, null identity/alignment for absent mean output, and no inferred explicit
+visibility category or candidate index. Ryan's TT/top-one centering judgments do
+not replace the sealed AI uncertainty.
+
+Six next-image metadata bindings matched. Codex viewed only the fixed native
+overlays for 216/217 and sealed `submission_0005.json` (9,919 bytes; SHA-256
+`fd40775a5cb47d8cad721e97213c1ebe11f8ed9124e8df587cae993cdf6abccd`).
+Coverage is AI 6/16, human 4/16; the review remains incomplete. Five create-only
+records total 53,881 bytes and satisfy the existing individual and aggregate bounds.
+The previous three records are unchanged. No scientific-body or original-image
+reads, media hashes, renders, tests, scientific attempts or Git mutations occurred.
+Prior results, consumed budgets, embargoes and holdouts remain unchanged.
+
+## 2026-10-07: first human frame batch recorded; next AI batch sealed
+
+Ryan's six panel statements map to frames 204/210 and TT/mean/top-one in table
+order. The raw wording, same-as references and conservative normalized fields are
+saved in `data/outputs/t/error_type_review_b71c64d3fd46/submission_0002.json`
+(13,769 bytes; SHA-256 `5f820a7f4168a13d1dbd758077d37ede564e9ac310b4e114a15e1e52e810cf66`).
+An independent interpretation review confirmed that seeing the ball does not
+specify visibility extent, proximity does not identify another object, and reported
+green reference marks must not become second predictions. The 210 clothing-location
+disagreement remains explicit; neither reviewer record overwrites the other.
+
+Codex viewed the next six fixed native overlays, frames 211 and 215, and sealed
+`submission_0003.json` (9,761 bytes; SHA-256
+`be5dfc0fc9c53484cad35e08f26bb4d04a3b92169051dc7d68cc5e54498e1266`).
+AI coverage is 4/16 and human frame-specific coverage 2/16; the review is incomplete.
+Three create-only records total 33,029 bytes, each below 16 KiB and together below
+1 MiB. Original submission 0001 is unchanged. After Ryan reported a computer
+restart, saved administrative bindings and next-frame metadata matched; no completed
+visual review or scientific checkpoint was repeated. No scientific-body or original
+image reads, media hashes, renders, tests, scientific attempts or Git mutations were
+performed. Earlier results, consumed budgets, embargoes and holdouts are unchanged.
+
+## 2026-10-06: joint diagnostic review accepted; first AI batch sealed
+
+Ryan approved the fixed scope and asked Codex to make its own visual observations.
+The approval amendment permits semantic AI review of the same 48 native overlays,
+with separate reviewer records and AI batches sealed before requesting new human
+frame judgments. It preserves the original access, output and scientific limits.
+An independent protocol review supported separate attribution, explicit uncertainty
+and no claim of a second human or blinded review.
+
+Existing media metadata and administrative bindings matched the frozen scope.
+Codex viewed six existing native PNGs, covering three methods at P001 challenge
+204 and 210, then created `data/outputs/t/error_type_review_b71c64d3fd46/submission_0001.json`.
+The 9,499-byte record has SHA-256
+`531acd9f54613e25fc59f0231b5a040491eba9256e176ae746813c8f677a8c84`.
+Its AI observations are provisional; new frame-specific human responses remain
+pending. The record fits the 16 KiB submission and 1 MiB aggregate limits, with
+no overwrite or truncation. No new tests, scientific execution, image hashes,
+source-image reads, derived media or scientific-body access occurred. Prior
+judgments, quantitative results, consumed attempts, budgets and holdouts remain
+unchanged. No Git mutation was performed.
+
+## 2026-10-06: metadata-only preparation of a 16-frame error-type review
+
+The new proposal/scope binds 16 exact frames and 48 existing native overlays from
+the completed mean comparison, totaling 143,320,299 existing media bytes. Frames
+were derived before any pixel access from the already verified bounded return:
+all seven TT-matched to mean-wrong/missing transitions in the unique worst net-loss
+window, and the sole hidden interval plus two adjacent frames on each side.
+Expected media hashes were copied from the bounded worker receipt; only file
+metadata was checked in preparation. Original images, scientific JSON output
+bodies and media hashes were not opened/recomputed.
+
+Independent design and boundary reviews found no material blockers. They confirmed
+the selection rules, 16/48 inventory, existing presentation exception, unblinded
+diagnostic status, uncertainty rules and create-only administrative-output bounds.
+Prior judgments and the unresolved P003 impression discrepancy remain unchanged.
+No new review response, model call, selector/evaluator run, render, test, release
+checkpoint or scientific attempt occurred. The proposed review has zero new
+scientific budget charge and no application-code change.
+
+The next boundary is acceptance of the diagnostic scope, not another execution.
+Its proposal and JSON scope, plus current_state.md, roadmap.md and this history,
+remain unstaged at `b71c64d3fd46bb27072efa8644e90c1c222bb65c`, with an empty index.
+The 3,330-event journal, 63 closed attempts, remaining 10852.476000000015 seconds,
+old validation, all evidence, nine embargoes and three sealed holdouts are preserved.
+
 ## 2026-10-06: six qualitative mean-confidence clip reviews recorded
 
 Ryan responded to the request to review all six clips through their final frames.
