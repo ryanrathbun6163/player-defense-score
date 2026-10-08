@@ -1,0 +1,43 @@
+{
+  "schema_version": "wasb_training_data_expansion_approval/v0.1",
+  "status": "approved",
+  "recorded_at_utc": "2026-10-08T23:48:55.171876+00:00",
+  "approval_date_local": "2026-10-08",
+  "timezone": "America/Phoenix",
+  "approved_by": "Ryan",
+  "approval_statement_verbatim": "Approve 75 frames and one fit",
+  "approval_context": "Ryan answered the explicit question approving P001100\u2013124, P001250\u2013274 and P002343\u2013367 training-data expansion and one200-update fit after the new labels are reviewed.",
+  "approved_proposal": {
+    "path": "configs/ball_tracking/proposals/wasb_training_data_expansion_v0_1.json",
+    "sha256": "8851c8fe93bf5f185b04569827c10660bb1eb36ab1efa8f76bed18ff24785b54"
+  },
+  "approved_proposal_document": {
+    "path": "docs/ball_wasb_training_data_expansion.md",
+    "sha256": "90d7a5cb7926e22e1c12e3fc35af523d193201628cf7cb4f7ccefbb133417ab4"
+  },
+  "new_frame_count": 75,
+  "fit_count": 1,
+  "fit_updates": 200,
+  "conditions": [
+    "New labels must be complete and human visually reviewed before training.",
+    "Start from the original pretrained checkpoint, preserve prior checkpoint/results, same declared recipe and six development windows.",
+    "No holdout release or quality-gate/operating-point promotion."
+  ],
+  "annotation_draft_initial_bindings": [
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0100_0124_training_expansion_v0_1.json",
+      "sha256": "fc8c229704391435a93d3f80843e7d649d1efb6fe51a1fa8e0ea846a9d66acf0"
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0250_0274_training_expansion_v0_1.json",
+      "sha256": "1048443cb7345d08257d871e28abf161c6de8a3fd8ff1c96bdbdd00bb3a4e7c1"
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_002_frames_0343_0367_training_expansion_v0_1.json",
+      "sha256": "c7d35bdaffc4b7e40c7a9477ba1d0c6b295abbfbc82543accd85aff234524379"
+    }
+  ],
+  "draft_binding_semantics": "Initial blank templates only. Human annotation is expected to change these bytes; freeze new bindings after completed label review.",
+  "annotation_state_at_approval": "75 unlabeled frames; no human coordinates or visibility judgments entered",
+  "training_execution_state": "not_started"
+}

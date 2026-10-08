@@ -136,7 +136,8 @@ disjoint; both remain correlated same-game footage. No additional labels are
 needed for this limited diagnostic. The approved trial has since
 [completed](ball_wasb_adaptation_results.md): 98 matches, one wrong observation
 and 46 eligible missing frames at the original 0.5 threshold. Its checkpoint and
-new review videos are preserved separately; human visual review remains pending.
+new review videos are preserved separately. Ryan subsequently reviewed all six
+adapted videos and authorized continuation with observations recorded in that report.
 
 This screen answers the calibration question without another model run. Reliable
 ball tracking across the complete three possessions, synchronized human visual

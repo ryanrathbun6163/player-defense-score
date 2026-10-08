@@ -23,7 +23,12 @@ and 14 challenge frames, accounting for 39/46 missing. The sole geometric error
 is P003/164 at 11.43 source pixels from the reviewed amodal center; it remains
 wrong under the unchanged ten-pixel rule. Do not automatically equate that with
 following a different object. Six synchronized adapted review videos cover all
-25 frames and their endpoints; human visual review remains pending.
+25 frames and their endpoints. Ryan has now reviewed all six and authorized
+continued work. His bleacher-ball and dark-uniform/referee-occlusion observations
+are preserved in `configs/ball_tracking/reviews/wasb_basketball_adaptation_visual_review_v0_1.json`.
+The two supplied screenshots show yellow RF detections while WASB reports missing;
+do not treat them as WASB false detections. The original rendering receipts keep
+their historical pending state; the new human record supplies completed review.
 
 Training took 23.207 seconds, with 1.87 GiB peak allocated GPU memory. Evaluation
 and eight cached thresholds completed in 32.705 seconds; rendering took 12.551
@@ -37,9 +42,30 @@ Read [the adaptation results and review links](../ball_wasb_adaptation_results.m
 The final checkpoint is
 `data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/training/checkpoint.pth`,
 SHA-256 `98912a271791326bcfe2d2f468e94002d0986281f27ff1641c795177d1f94289`.
-No production operating point or quality gate is promoted. Next: review the new
-outputs and target the remaining P001 gaps, retaining RF as a control. The agreed
-full-possession finish line and reviewed player foundation are unchanged.
+No production operating point or quality gate is promoted. The subsequent
+[gap diagnosis](../ball_wasb_remaining_gap_diagnosis.md) reuses saved results:
+all 39 P001 primary missing frames have a nearby raw candidate somewhere in the
+existing threshold grid, but 28 are never selected correctly. A forced-peak
+diagnostic is correct on only 2/25 P001 representative frames; most strongest
+responses are elsewhere. Lowering thresholds or replacing component mass alone
+does not resolve the main visual-discrimination weakness.
+
+The [data expansion proposal](../ball_wasb_training_data_expansion.md) now names
+75 new training-only frames: P001/100–124, P001/250–274 and P002/343–367. Source-only
+previews are ready, and source bytes plus evaluation/holdout separation were
+checked. The P002 addition intentionally continues the old training occlusion;
+combining it yields five training blocks, 150 frames and 140 complete triplets.
+Ryan approved this added labeling work and one original-initialized 200-update
+fit after label review. The approval is recorded separately at
+`configs/ball_tracking/reviews/wasb_training_data_expansion_approval_v0_1.json`;
+the proposal's pending status is its historical preparation snapshot. Three strict
+training drafts contain 75 unlabeled rows. The [annotation guide](../ball_wasb_training_expansion_annotation_guide.md)
+provides one command for the existing editor, using a helper that seeks only the
+approved windows and resumes unfinished drafts. No new coordinate/visibility
+labels or fit have run. Next: Ryan's new labels and their visual review, then the
+already-approved fit; no renewed approval for that same fit is needed. The six
+completed output reviews remain complete. The full-possession finish line and
+player foundation are unchanged.
 
 ## Earlier snapshot: cached calibration, before the completed adaptation above
 

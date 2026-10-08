@@ -53,9 +53,16 @@ alarms on the five hidden frames. RF ranked to the same output counts gives
 90 matches and nine wrong outputs. Training used only the 75 reviewed pilot
 frames; the 150 development frames stayed out of training. This is useful
 same-game development evidence, not ball-phase completion: 39 of the 46 missing
-frames are in possession 001, human review of the new videos is pending, and
-holdouts and the quality bar remain unchanged. The earlier
+frames are in possession 001. Ryan reviewed all six new videos and authorized
+continued work with distractor observations recorded; holdouts and the quality
+bar remain unchanged. The earlier
 [calibration-only result](docs/ball_wasb_calibration_results.md) remains preserved.
+
+The [remaining-gap diagnosis](docs/ball_wasb_remaining_gap_diagnosis.md) found
+that lower thresholds and strongest-pixel selection do not resolve P001's main
+failure. A [75-frame training-data addition](docs/ball_wasb_training_data_expansion.md)
+is approved, with [three annotation drafts ready](docs/ball_wasb_training_expansion_annotation_guide.md);
+its labels and next fit are not yet done.
 
 ## End goal
 

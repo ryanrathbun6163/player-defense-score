@@ -1,0 +1,310 @@
+{
+  "schema_version": "0.1",
+  "annotation_set_id": "possession_002_frames_0343_0367_training_expansion_v0_1",
+  "possession_id": "possession_002",
+  "source_video": {
+    "path": "data/clips/possession_002.mp4",
+    "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+    "width_px": 1920,
+    "height_px": 1080,
+    "fps": 25.0,
+    "frame_count": 499
+  },
+  "window": {
+    "start_frame_index": 343,
+    "end_frame_index": 367,
+    "selection_purpose": "training"
+  },
+  "coordinate_system": {
+    "frame_index_origin": 0,
+    "pixel_origin": "top_left",
+    "x_axis_direction": "right",
+    "y_axis_direction": "down",
+    "center_definition": "complete_ball_center",
+    "timestamp_rule": "frame_index_divided_by_fps"
+  },
+  "review": {
+    "status": "draft",
+    "annotator_id": "ryan",
+    "reviewer_id": null,
+    "created_at_utc": "2026-10-08T23:48:55.171876+00:00",
+    "reviewed_at_utc": null
+  },
+  "annotations": [
+    {
+      "frame_index": 343,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 344,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 345,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 346,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 347,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 348,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 349,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 350,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 351,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 352,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 353,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 354,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 355,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 356,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 357,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 358,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 359,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 360,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 361,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 362,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 363,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 364,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 365,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 366,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    },
+    {
+      "frame_index": 367,
+      "annotation_status": "unlabeled",
+      "visibility": null,
+      "absence_reason": null,
+      "game_ball_identity_certainty": null,
+      "geometry": null,
+      "localization_eligible": false,
+      "difficulty_tags": [],
+      "notes": null
+    }
+  ]
+}

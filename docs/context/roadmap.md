@@ -1,6 +1,6 @@
 # Roadmap
 
-## Current continuation: review improved ball observations, address P001 gaps
+## Current continuation: reviewed improved observations, address P001 gaps
 
 The [approved 200-update adaptation](../ball_wasb_adaptation_results.md) completed
 successfully. At the predeclared threshold it raises WASB matches from 31 to 98
@@ -8,17 +8,26 @@ of 145 eligible frames, with one wrong output and no hidden alarms. Equal-count
 RF gives 90 matches and nine wrong outputs. This is useful development evidence
 for learned adaptation; retain the trained checkpoint and cached results.
 
-The next review has concrete outputs: six synchronized clips, with the P002
-representative recovery and P003 occlusion/reacquisition sequence especially
-useful to inspect. Do not reopen old reviews or promote the new checkpoint before
-reviewing its own outputs. P001 accounts for 39 of 46 remaining missing frames;
-the next correction should address that specific weakness. Avoid a blind
+Ryan reviewed all six synchronized clips and authorized continued work. Preserve
+his observations about bleacher-ball distractors and the dark-uniform/referee
+occlusion sequence; both supplied examples are RF false detections with WASB
+missing. Motion history remains a possible future aid, not a demonstrated fix.
+P001 accounts for 39 of 46 remaining missing frames; the next correction should
+address that specific weakness. Avoid a blind
 checkpoint/threshold search or claiming the same-game trial generalizes broadly.
 
+The [saved-output gap diagnosis](../ball_wasb_remaining_gap_diagnosis.md) now shows
+that weaker matching candidates often lose to distractors; P001 representative's
+strongest pixel is correct only twice in 25 frames. A simple threshold drop or
+strongest-pixel substitution is insufficient. The next concrete proposal adds
+[75 training-only frames](../ball_wasb_training_data_expansion.md) with prepared
+source previews. Ryan approved the data addition and one fit after new label review.
+Three blank drafts and the annotation guide are ready; human labeling/review is
+the next dependency and no new fit has run. Avoid repeating generic RF motion grids.
+
 Full-possession coverage, accepted trajectories, explicit gaps and the existing
-phase quality bar remain required. No new trial beyond the completed approved
-preset, holdout evaluation, production promotion or main-branch integration has
-occurred.
+phase quality bar remain required. Holdouts, production promotion and main-branch
+integration remain untouched.
 
 ## Earlier plan: adaptation trial, now completed as recorded above
 

@@ -9,7 +9,8 @@ at the original 31-output count RF can also achieve zero observed errors. The
 original fixed-policy results below remain unchanged. The subsequent
 [approved adaptation trial](ball_wasb_adaptation_results.md) also completed:
 98 matches, one wrong observation and 46 eligible missing frames at threshold
-0.5. Human review of the adapted outputs remains pending.
+0.5. Ryan subsequently reviewed all six adapted clips and authorized continued
+work with observations recorded in that report.
 
 The fixed WASB policy produced 31 geometrically matched observations among 145 localization-eligible frames, with no wrong observations and 114 eligible frames missing. The saved RF-DETR crop-union top-one control matched 111 frames and was wrong on 34. WASB emitted nothing on the five hidden-ball frames; RF emitted on all five. Every WASB match was already an RF match: WASB recovered zero RF failures and lost 80 RF matches.
 

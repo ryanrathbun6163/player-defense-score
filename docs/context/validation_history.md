@@ -1,5 +1,52 @@
 # Validation History
 
+## 2026-10-08: Ryan completed all six adapted-WASB video reviews
+
+Ryan reported all six clips reviewed and authorized continuation, with bleacher-ball
+and dark-uniform/referee-occlusion distractor observations. The record at
+`configs/ball_tracking/reviews/wasb_basketball_adaptation_visual_review_v0_1.json`
+binds the actual six videos to checkpoint `98912a271791` and preserves his exact
+statement plus byte-identical copies of both attachments under the ignored trial
+directory. P002/49 and P003/168 show yellow RF top-one marks and WASB missing;
+the broader observations do not supply additional exact frame IDs or counts.
+No new judgment on P003/164's center offset, changed annotation, operating point,
+quality-gate acceptance or full-possession trajectory acceptance is inferred.
+Original receipts and captions retain their creation-time pending review state.
+
+## 2026-10-08: cached gap diagnosis and source-only training-data proposal
+
+Saved-grid aggregation found that all 46 primary missing eligible frames have a
+matching raw component at some already-completed setting; only 14 are selected
+correctly somewhere in the grid. P001's split is 11 selected-recoverable and 28
+raw-only. This label-assisted union is diagnostic, not an achievable policy.
+A separate strongest-pixel calculation on the six cached adapted heatmaps gives
+110 correct/35 wrong, with forced output on all five hidden frames; P001's fully
+missed representative window has only two correct peaks. Existing transform
+matrices match the producer metadata. No model inference, retraining, threshold
+search or full-suite run occurred; existing scores and primary output are unchanged.
+
+Source-only inspection considered seven candidate training windows (four sparse
+frames each). Three selected previews contain P001/100–124, P001/250–274 and
+P002/343–367, each encoded and decoded through all 25 frames. This is preparation,
+not human label review. The two source-video hashes match their existing manifests.
+Metadata checks show no overlap with old development/holdout windows and at least
+25 intervening frames; P002 intentionally adjoins its old training pilot. No
+holdout frames or annotation bodies were requested. Ryan subsequently approved
+75 new frames and one fit after label review. The separate approval record binds
+the original proposal and the three initial annotation drafts, each schema-valid
+with exactly 25 unlabeled training-only rows. Initial draft hashes are provenance
+for blank templates, not a ban on the authorized human annotation edits. New
+coordinate/visibility labels and the controlled next fit are not yet done. See
+the diagnosis/proposal and annotation guide; no production source code was changed.
+
+The ignored annotation helper's one actual input check passed: all three drafts
+loaded against their verified sources and all 75 approved frames decoded as
+1920x1080 RGB images for the existing editor. No GUI opened and no draft bytes
+changed. Its receipt is in the trial's `annotation_session_v0_1/check_only_receipt.json`.
+The check used HEAD `1b35f067e51da554adc66adb8ebb172df358429d`; after local integration,
+only the launch binding's expected HEAD is refreshed. The successful check is
+preserved without repeating its decoding or implying that human labeling occurred.
+
 ## 2026-10-08: approved pilot adaptation, paired evaluation and review rendering
 
 Implementation commit `193319f984e5d150fbb86e9da2c5ec559540d61e` passed 21 unique

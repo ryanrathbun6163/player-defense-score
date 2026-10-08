@@ -1,0 +1,292 @@
+{
+  "schema_version": "wasb_adaptation_human_visual_review/v0.1",
+  "review_date_local": "2026-10-08",
+  "timezone": "America/Phoenix",
+  "recorded_at_utc": "2026-10-08T23:32:41.662623+00:00",
+  "reviewer": "Ryan",
+  "status": "all_six_clips_reviewed_with_observations",
+  "user_statement_verbatim": "all 6 have been reviewed. Only big things are there are some balls in the bleachers that will sometimes pick up detections (happens in possesion 1 and 2), so some formed trajectory prediction influencer (you had talked about this earlier) that we possibly implement in the future should hopefully help. Other thing was the fucker in black jersey keeps getting detections when the ball is covered by the ref, but that could also possibly be fixed by the trajectory influencer as well. These are just observations though, keep going with your next steps and we can come back to this if need be",
+  "config": {
+    "path": "configs/ball_tracking/wasb_experiments/wasb_basketball_adaptation_v0_1.json",
+    "sha256": "1a56a4d3bce9f1c85dd2d359e52d3e65d442049c04a2fa45e42bab74016c7cc9"
+  },
+  "training_completion": {
+    "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/training/completion.json",
+    "sha256": "253ca6e10fe445864ff93ad90df0c3abc885df00cbc78d19769b175a654b3e43"
+  },
+  "checkpoint_sha256": "98912a271791326bcfe2d2f468e94002d0986281f27ff1641c795177d1f94289",
+  "heatmap_threshold": 0.5,
+  "clips": [
+    {
+      "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+      "source_frame_indices": [
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74
+      ],
+      "video": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/evaluation/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/adapted_review.mp4",
+        "sha256": "278784075871c06cadbf73ed86c8c6d11092c1547663b53109bf33abb17a7835"
+      },
+      "render_receipt": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/evaluation/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/adapted_review.json",
+        "sha256": "5fb16cbfc04430eae2682ecbb12fb2b1240e48897688855f421ff2a854f948d4"
+      },
+      "review_status": "reviewed_by_Ryan_with_observations"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "source_frame_indices": [
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224
+      ],
+      "video": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/adapted_review.mp4",
+        "sha256": "f2f50b3e6b4a1741719f3754cc1f2d0804a2fca3ff2bd976d24e8e3d5ce3905c"
+      },
+      "render_receipt": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/adapted_review.json",
+        "sha256": "502716d3ad84b65ad7d8d67ec216a68c028d87c788c5c7ece79029d131850e19"
+      },
+      "review_status": "reviewed_by_Ryan_with_observations"
+    },
+    {
+      "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+      "source_frame_indices": [
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274
+      ],
+      "video": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/evaluation/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/adapted_review.mp4",
+        "sha256": "5fb150a47dcf30cf1f8705513c76fcfabddd83ddb173f8bafb67c4330028007d"
+      },
+      "render_receipt": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/evaluation/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/adapted_review.json",
+        "sha256": "8e48af1e7912a789318e45e40a64c21f7abf611ca35e9a4c5acccd50ef35f31b"
+      },
+      "review_status": "reviewed_by_Ryan_with_observations"
+    },
+    {
+      "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+      "source_frame_indices": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "video": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/adapted_review.mp4",
+        "sha256": "719a84ed8d3c7b3f28fbd4ef9b800718ff23e0c824c6f3dedd9cd6dbdb485dd5"
+      },
+      "render_receipt": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/adapted_review.json",
+        "sha256": "b6e1b13ee33e75d7387cc332c9d39db2994c5f84a61e91e2e6730450277fcf14"
+      },
+      "review_status": "reviewed_by_Ryan_with_observations"
+    },
+    {
+      "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+      "source_frame_indices": [
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324
+      ],
+      "video": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/adapted_review.mp4",
+        "sha256": "8bc1d244060fdb62a8a2daa1aaa1745da5cddc3961ec5b69dd53b1e62e9ab368"
+      },
+      "render_receipt": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/adapted_review.json",
+        "sha256": "af4a3178714da90491e6b321cf8e7f0d8f7db48052fdb75d97fc290cd1ffa25f"
+      },
+      "review_status": "reviewed_by_Ryan_with_observations"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "source_frame_indices": [
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174
+      ],
+      "video": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/evaluation/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/adapted_review.mp4",
+        "sha256": "d2f41f8a64e22f4288b6b83a17fc7181bc9541e16e231465f34a6bdbbf459c28"
+      },
+      "render_receipt": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/evaluation/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/adapted_review.json",
+        "sha256": "c3bceac146641cd8ac09928683d31ceada70924111388491c21d053b125b2816"
+      },
+      "review_status": "reviewed_by_Ryan_with_observations"
+    }
+  ],
+  "attachments": [
+    {
+      "attachment_name": "codex-clipboard-7946d883-60f9-470c-862c-16e34aec765f.png",
+      "preserved_copy": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/human_review_2026_10_08/ryan_p002_frame49.png",
+        "sha256": "2cf2868f5b9b3b35f25638293d06f10042d99f4d4be8775a31381a3bd46a45f1"
+      },
+      "possession_id": "possession_002",
+      "source_frame_index": 49,
+      "assistant_attribution": "Yellow saved RF top-one mark is in bleachers; overlay explicitly reports WASB MISSING. Ryan identifies background balls as distractors."
+    },
+    {
+      "attachment_name": "codex-clipboard-3babf4a0-2fe2-4720-be4c-5133a8856031.png",
+      "preserved_copy": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/human_review_2026_10_08/ryan_p003_frame168.png",
+        "sha256": "66e7e0d2f8deb47d9301cd71b008c9a695ae9349abdadc9dc01f2e5bf581ece2"
+      },
+      "possession_id": "possession_003",
+      "source_frame_index": 168,
+      "assistant_attribution": "Yellow saved RF top-one mark is on/near a dark-uniform player; overlay explicitly reports WASB MISSING and not_visible. Ryan reports referee occlusion."
+    }
+  ],
+  "interpretation": {
+    "review_scope": "The six adapted-WASB versus saved-RF synchronized development videos identified above.",
+    "continuation_authorized": true,
+    "observations_are_blockers": false,
+    "method_attribution": "The two attached examples show yellow RF top-one errors while adapted WASB abstains. The broader P001/P002 observation is retained as reported; no unsupplied frame IDs or method-specific count is inferred.",
+    "motion_history": "Suggested future possibility, not a demonstrated fix or approval of a specific new tracker experiment.",
+    "quality_gate_passed": false,
+    "selected_operating_point": null,
+    "limits": [
+      "Review completion is not a claim that every prediction is correct or that full-possession ball tracking is accepted.",
+      "No individual judgment on P003 frame164 center offset was supplied; existing geometric error count remains.",
+      "No labels, scores, weights, old review receipts or failed records were changed.",
+      "The original render receipts and videos retain their creation-time human-review-pending status; this later record supplies the human review."
+    ]
+  }
+}

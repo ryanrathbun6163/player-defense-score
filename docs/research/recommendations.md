@@ -11,8 +11,9 @@ The subsequent [cached calibration](../ball_wasb_calibration_results.md) and
 [approved pilot adaptation](../ball_wasb_adaptation_results.md) are also complete.
 Adaptation raises fixed-threshold matches to 98/145 with one wrong output,
 compared with 90 matches/nine wrong for RF at the same output counts. This is
-useful local evidence for training, with 46 eligible frames still missing and
-new visual acceptance pending. Read those results before following the historical
+useful local evidence for training, with 46 eligible frames still missing. Ryan
+reviewed all six new clips and authorized continuation with observations recorded.
+Read those results before following the historical
 implementation outline below; do not repeat the completed runs merely to resume.
 
 ## Main recommendation

@@ -1,6 +1,6 @@
 # WASB pilot adaptation: development results
 
-Recorded 2026-10-08. Training and the six-window development evaluation completed. Human synchronized visual review remains pending. No operating point or quality gate has been promoted.
+Recorded 2026-10-08. Training and the six-window development evaluation completed. Ryan subsequently reviewed all six synchronized clips and authorized continued work with observations recorded below. No operating point or quality gate has been promoted.
 
 The approved 200-update trial substantially improved the pretrained WASB result at the predeclared heatmap threshold of 0.5: **98 matched frames, one wrong observation, 46 eligible missing frames and no hidden-frame alarms**. Pretrained WASB had 31 matches, no wrong observations and 114 missing frames under the same policy. Adaptation retained every original match and added 67.
 
@@ -73,7 +73,9 @@ Raw candidate availability also improves: across the fixed grid, adapted WASB co
 
 ## Specific visual-review targets
 
-Human visual review of the adapted model remains pending. The numeric audit did not view or reinterpret the footage. Review all six synchronized windows, with particular attention to:
+Ryan completed review of all six synchronized clips on 2026-10-08. The [human review record](../configs/ball_tracking/reviews/wasb_basketball_adaptation_visual_review_v0_1.json) binds the six videos, checkpoint and two preserved screenshots. He noted detections on balls in the bleachers in possessions 001/002 and on a dark-uniform player during referee occlusion, suggested motion history as a possible future aid, and explicitly said these observations should not block the next steps. The supplied examples are P002 frame 49 and P003 frame 168: both show yellow saved-RF detections while adapted WASB reports missing. Do not attribute those marks to WASB or infer unsupplied frame-specific judgments from the broader comments.
+
+The following review targets remain useful failure references. Review completion does not change their numeric classifications or certify full-possession trajectories:
 
 - **P003 frame 164:** the only wrong observation at the primary policy. The predicted center `(724.2333, 847.9696)` is 11.433 source pixels from the reviewed center `(735.429, 850.286)`, outside the unchanged 10-pixel rule. The reviewed point is an amodal estimate with 3.833-pixel annotation uncertainty. The result remains a geometric failure; that alone does not prove the prediction is on a different physical object. It precedes the reviewed hidden interval 165–169. Frame 170 is missing; frames 171–174 then match. Inspect the transition without filling the hidden interval or treating a geometric return as certified identity continuity.
 - **P001 frames 50–74:** all 25 frames remain missing. This is the largest unresolved coverage failure.
@@ -81,7 +83,7 @@ Human visual review of the adapted model remains pending. The numeric audit did 
 - **P003 frames 300–304** and **P002 frame 49:** the remaining six missing frames outside P001 and the P003 occlusion boundary.
 - **P002 frames 257–261:** five consecutive recovered RF failures in an adapted window with 25/25 geometric matches. Confirm the object being localized, not only the score.
 
-All six fixed-0.5 videos completed. Each `adapted_review.json` records 25 decoded frames, successful final-frame decoding, the adapted checkpoint digest and pending human review. The video display explicitly identifies adaptation and its threshold; structural inspection of screenshots does not constitute human acceptance.
+All six fixed-0.5 videos completed. Each `adapted_review.json` records 25 decoded frames, successful final-frame decoding, the adapted checkpoint digest and the creation-time pending human-review state. Those original receipts and video captions remain unchanged; the later human review record supplies the completed review. The video display explicitly identifies adaptation and its threshold.
 
 | Review video | Main issue or improvement to inspect |
 | --- | --- |
@@ -115,4 +117,4 @@ The result supports further work on this adapted model. It does not complete the
 
 The training and evaluation windows are disjoint but come from the same NFHS game and gym. The development windows have already informed several decisions. There is one evaluation hidden-ball episode, heavy reliance on partial/amodal labels, and no independent-game evidence. Three-channel inference also uses future frames within each available triplet. Geometric agreement does not independently establish physical identity, uninterrupted trajectories or defensive-value validity.
 
-The checkpoint was selected by the prescribed final update, not its evaluation outcome. Existing reviews remain valid for their original artifacts; they do not approve the changed model. Human synchronized review, broader occlusion/reacquisition evidence and the remaining quantitative/trajectory requirements still stand. `selected_operating_point` and `quality_gate` remain null.
+The checkpoint was selected by the prescribed final update, not its evaluation outcome. Existing reviews remain valid for their original artifacts. Ryan's review of this checkpoint's six development clips is now complete with observations; broader occlusion/reacquisition evidence, full-possession review and the remaining quantitative/trajectory requirements still stand. `selected_operating_point` and `quality_gate` remain null.
