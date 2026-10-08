@@ -44,7 +44,7 @@ The empirical thresholds require at least 95% coordinate coverage and at least 8
 
 The committed evidence is available in [`configs/possession_003_generalization_evidence.json`](configs/possession_003_generalization_evidence.json). The design and validation details are documented in [`docs/pipeline_generalization.md`](docs/pipeline_generalization.md).
 
-The [sports-video research collection](docs/research/README.md) compares ball models, player tracking, court geometry, complete sports pipelines, datasets and analytics using primary sources and selected implementation inspection. Its [recommendations](docs/research/recommendations.md) prioritize a basketball temporal-image model as the next ball comparison; no external method has yet been locally reproduced or promoted by that research. The tested RF/YOLO agreement rule has a [recovered negative result](docs/ball_crop_cross_detector_corroboration_results.md).
+The [sports-video research collection](docs/research/README.md) compares ball models, player tracking, court geometry, complete sports pipelines, datasets and analytics using primary sources and selected implementation inspection. The subsequent [WASB basketball transfer comparison](docs/ball_wasb_transfer_results.md) completed on all six development windows: at its published heatmap threshold it matched 31/145 eligible frames, emitted no wrong selections, and left 114 eligible frames missing. This coverage is insufficient to replace the saved RF baseline; no method or quality gate is promoted. The tested RF/YOLO agreement rule also has a [recovered negative result](docs/ball_crop_cross_detector_corroboration_results.md).
 
 ## End goal
 

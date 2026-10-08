@@ -1,6 +1,23 @@
 # Roadmap
 
-## Research-informed next implementation
+## Current continuation: adapt visual evidence after the completed WASB comparison
+
+The [WASB transfer comparison](../ball_wasb_transfer_results.md) completed on all
+six development windows. Its fixed setting produces 31/145 geometric matches,
+zero wrong observations and 114 eligible missing frames; it is too sparse to
+replace RF. A post-hoc forced-peak diagnostic produces 76 matches and 69 wrong
+locations, so simply forcing outputs also fails. No operating point or quality
+gate is selected. Preserve the working RF control, usable WASB adapter and cached
+heatmaps; do not repeat completed inference merely to resume.
+
+The next development decision should target visual discrimination and the
+coverage/error tradeoff. Any focused calibration can reuse cached heatmaps;
+training or fine-tuning needs a concrete development-data and split plan. Keep
+holdouts separate and the agreed phase finish line and quality bar unchanged.
+Runtime reproduction of this fixed WASB comparison is now complete; general
+ball-tracking readiness and acceptance of new trajectories remain unfinished.
+
+## Prior research-informed implementation recommendation
 
 The [October 8 sports-video research](../research/README.md) now provides an
 implementation shortlist, source-inspected project comparisons, dataset/metric

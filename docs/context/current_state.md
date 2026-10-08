@@ -1,5 +1,33 @@
 # Current State
 
+## Latest implementation: 2026-10-08 WASB transfer comparison completed
+
+The official WASB basketball checkpoint now loads safely in the existing GPU
+environment through a small temporal point adapter. All six released development
+windows completed inference, scoring and synchronized player/ball rendering at
+source commit `96907dfdf77fd29474357c6ee7845c2be49fc9dc`. No training, holdout
+access, native WASB tracker or interpolation was used. Inputs remain inside each
+25-frame window; all frames receive aligned outputs, with fewer contributions at
+the endpoints. Predictions, heatmaps, timing and review media are cached under
+`data/outputs/ball_tracking/wasb/wasb_basketball_transfer_v0_1/`.
+
+At the published strict heatmap threshold above 0.5 and the existing 10-source-
+pixel match radius, WASB top-one matches 17/75 representative and 14/70 challenge
+frames, compared with saved RF top-one 51/75 and 60/70. WASB makes zero wrong
+selections and zero alarms on the five hidden frames, but leaves 114 eligible
+frames missing. It recovers no match absent from RF top-one and loses 80. This
+fixed setting is insufficient as a replacement. See
+`../ball_wasb_transfer_results.md` for results, diagnostics and remaining choices.
+
+The point evaluator agrees with all 60 declared saved-RF raw/top-one control
+cells across the six windows. Twenty-nine focused tests passed; no full suite
+was needed. Actual real-frame preprocessing also matched the official RGB,
+affine and normalization path bit for bit on the checked triplet. All six videos
+decode through their final frames; human visual acceptance remains pending.
+The comparison is a completed development result, not a failed startup, a new
+generalization claim, or ball-phase completion. Prior failures/reviews remain
+unchanged, and the existing quality bar remains in force.
+
 ## Latest research: 2026-10-08 sports-video implementation review
 
 Ryan requested an extensive external research effort before further implementation.

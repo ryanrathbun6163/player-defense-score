@@ -1,5 +1,35 @@
 # Validation History
 
+## 2026-10-08: WASB adapter and completed six-window development comparison
+
+Commit `96907dfdf77fd29474357c6ee7845c2be49fc9dc` adds an isolated WASB adapter,
+temporal point evaluator, cached development runner, synchronized review renderer,
+configuration and focused tests. Ten adapter tests, eleven point-evaluator tests
+and eight runner tests passed. The adapter checks include safe strict loading of
+the official checkpoint and real CUDA inference on synthetic images; runner
+checks cover frame/channel alignment, actual component-to-evaluator transport and
+reuse after partial cache publication. Existing detector evaluation code was not
+modified. No full test suite was run for this increment.
+
+Both scientific invocations completed: first one real window, then all six while
+reusing the first window's cache. There were 138 unique triplet calls, 2.111 seconds
+of measured adapter inference and 33.432 seconds across both invocation receipts.
+All 60 saved RF raw/top-one control cells agree with the new point evaluator.
+All six videos contain 25 frames and decode through their final source frame.
+Independent actual-frame preprocessing comparison on P001 frames 50–52 was
+bit-identical to the official RGB/affine/normalization path; no new inference was
+needed for that check.
+
+WASB at its fixed threshold matches 17/75 representative and 14/70 challenge
+frames, with no wrong observations, 114 eligible missing frames and no alarms
+on five hidden frames. It is not a replacement for RF's 51/75 and 60/70 matches.
+A separately labeled post-hoc forced-peak diagnostic, using only cached heatmaps,
+matches 76/145 but is wrong on 69 and emits on all five hidden frames. These are
+development findings, not a method promotion or independent generalization test.
+Human visual acceptance remains pending; numerical rejection does not require
+reopening completed reviews. Earlier failed attempts remain failed and preserved.
+See `../ball_wasb_transfer_results.md` and the ignored WASB output directory.
+
 ## 2026-10-08: focused path repair and saved corroboration result recovery
 
 Path-repair commit `decfcbaf642bcff8d04496f8c1274a1c7a415811` followed one exact

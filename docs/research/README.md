@@ -2,6 +2,8 @@
 
 Research date: **2026-10-08**. Start with [the implementation recommendations](recommendations.md), then use the detailed chapters and source ledgers below. This collection records researched evidence and engineering judgments. No external model was run or promoted by this research.
 
+**Subsequent local evidence:** the [WASB transfer comparison](../ball_wasb_transfer_results.md) has now run successfully on the six development windows. At its published heatmap threshold it is too sparse to replace RF. The research below remains the pre-experiment rationale; use the local result when making the next choice.
+
 The collection contains **eight narrative documents and four source ledgers**, with **269 source records covering 265 distinct URLs**. Records include papers, implementation files, benchmark documentation and artifact terms; these are not 269 reproduced studies. Inspection depth and unresolved questions are recorded beside the sources.
 
 ## The practical conclusion

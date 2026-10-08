@@ -2,6 +2,11 @@
 
 Research date: 2026-10-08. These are recommendations based on inspected sources and existing project evidence. They are not new performance results or authorization to replace reviewed decisions. See [the research hub](README.md) for the full collection.
 
+**Subsequent implementation:** the proposed first WASB comparison is now complete.
+Read [the local transfer result](../ball_wasb_transfer_results.md) before acting on
+the original recommendation below. Its published-threshold output is too sparse
+to replace the existing RF control; do not repeat the completed inference to resume.
+
 ## Main recommendation
 
 **Test a released basketball-specific temporal image model, beginning with WASB, through a small adapter into our current evaluation pipeline.** Retain saved RF-DETR results as controls. Do not restart the generic RF-versus-YOLO comparison or replace the reviewed player pipeline.
