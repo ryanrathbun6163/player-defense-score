@@ -12,6 +12,14 @@ This authorization does not erase history. Preserve actual failed attempts and r
 
 This policy supersedes conflicting older operational rules, including blanket stop-on-failure instructions, scientific-body read bans, fixed-cap amendment requirements, and mandatory full-suite or certificate procedures. The two October 5 sections below are retained as historical context, not additional current approval gates. Git authorization remains governed by the current Git workflow below and Ryan's explicit session instructions.
 
+## Quality and progress clarification: Ryan's 2026-10-08 instruction
+
+Ryan accepts the current ball-phase finish line: reviewed trajectories across the three curated possessions, synchronized player/ball playback, explicit missing intervals, quantitative error summaries, and a repeatable configuration-driven run. He wants reliable ball tracking before moving to downstream phases. His concern is slow progress and repeated avoidable mistakes; it is not a request to lower the quality bar or change the scientific acceptance criteria.
+
+The time since the last integration into `main` was an illustration of how long this phase has taken, not a request for more frequent within-phase merges. Keep useful local commits and choose main-branch integration around readiness and coherent scope under the existing authorization rules. Merge frequency itself is not the progress target.
+
+Future visual review remains part of accepting actual new results. No opinion or approval is needed merely to acknowledge that responsibility. Present concrete review artifacts and a specific decision when Ryan's judgment is needed; retain completed reviews.
+
 ## Historical resource policy: Ryan's 2026-10-05 clarification
 
 Ryan is comfortable devoting substantial computer resources to the project,
