@@ -2294,6 +2294,71 @@ class HistoryGuardCertificateTests(TemporaryRoot):
         self.assertEqual(len(cert["preserved_worktree_bindings"]), 203)
         self.assertEqual(cert["new_phase_seconds"], 6)
 
+    def test_actual_validator_absolute_bindings_are_accepted_at_each_administrative_read(self):
+        # Exact bind() function from the closed history-guard validate.py,
+        # SHA256 c04a842a38407de9fe80eefab93c4cab7f18a00debf1bdaa3c160452e9f0d34d.
+        # Its AST is frozen against that actual producer before RED. Embedding
+        # this isolated function avoids an ignored-file runtime dependency.
+        producer_source = """def bind(path):
+    path = Path(path).resolve()
+    digest = hashlib.sha256()
+    with path.open('rb') as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b''):
+            digest.update(block)
+    return dict(path=str(path), size_bytes=path.stat().st_size, sha256=digest.hexdigest())
+"""
+        namespace = {"Path": Path, "hashlib": hashlib}
+        exec(compile(ast.parse(producer_source), "<closed-validator-bind-producer>", "exec"), namespace)
+        producer_bind = namespace["bind"]
+        base_root, failures = self.root, []
+        try:
+            for case in ("red_inventory", "final_inventory", "full_review"):
+                self.root = base_root / case
+                self.root.mkdir()
+                scope, manifest, cert, pins = history_guard_certificate_fixture(self.root)
+                records = {key: json.loads((self.root / cert[key]["path"]).read_text())
+                           for key in ("red_result", "focused_result", "full_result")}
+                red, green, full = (records[key] for key in ("red_result", "focused_result", "full_result"))
+                review_path = full["implementation_review"]["path"]
+                review_record = json.loads((self.root / review_path).read_text())
+                original = (red["test_inventory"] if case == "red_inventory" else cert["test_inventory"]
+                            if case == "final_inventory" else full["implementation_review"])
+                produced = producer_bind(self.root / original["path"])
+                self.assertTrue(Path(produced["path"]).is_absolute())
+                self.assertEqual({key: produced[key] for key in ("size_bytes", "sha256")},
+                                 {key: original[key] for key in ("size_bytes", "sha256")})
+                if case == "red_inventory":
+                    red["test_inventory"] = produced
+                if case == "final_inventory":
+                    cert["test_inventory"] = green["test_inventory"] = full["test_inventory"] = produced
+                    review_record["test_inventory"] = produced
+                # Preserve the complete immutable dependency graph after the
+                # artificial producer changes only a binding's path spelling.
+                cert["red_result"] = put(self.root, cert["red_result"]["path"], red)
+                green["red_result"] = full["red_result"] = review_record["red_result"] = cert["red_result"]
+                cert["focused_result"] = put(self.root, cert["focused_result"]["path"], green)
+                full["focused_result"] = cert["focused_result"]
+                full["implementation_review"] = put(self.root, review_path, review_record)
+                if case == "full_review":
+                    full["implementation_review"] = producer_bind(self.root / review_path)
+                cert["full_result"] = put(self.root, cert["full_result"]["path"], full)
+                by_path = {cert[key]["path"]: (cert[key], records[key]) for key in records}
+                cert["new_validation_results"] = [by_path[row["path"]][0] for row in cert["new_validation_results"]]
+                cert["new_consumption_records"] = [{**row, "binding": by_path[row["binding"]["path"]][0]}
+                                                   for row in cert["new_consumption_records"]]
+                cert["new_invocation_evidence"] = [
+                    {**row, "result": by_path[row["result"]["path"]][0],
+                     "test_inventory": by_path[row["result"]["path"]][1]["test_inventory"]}
+                    for row in cert["new_invocation_evidence"]]
+                try:
+                    self.assertEqual(self.verify(scope, manifest, cert, pins), cert)
+                except ValueError as error:
+                    failures.append(f"{case}: {error}")
+        finally:
+            self.root = base_root
+        if failures:
+            self.fail("Administrative producer bindings rejected: " + "; ".join(failures))
+
     def test_leaf_rejects_missing_parent_receipt_protected_rule_or_red_gate(self):
         scope, manifest, cert, pins = history_guard_certificate_fixture(self.root)
         for change in ({"prior_validation_results": cert["prior_validation_results"][:-1]},
@@ -2467,6 +2532,92 @@ class HistoryGuardAuthorityTests(TemporaryRoot):
         self.assertEqual(seconds, 1198.875)
         self.assertEqual(journal.events[-1]["retry_approval"], context["retry_approval_binding"])
         self.assertEqual(journal.baseline_bytes, 8875168842)
+
+
+class PathNormalizationTests(TemporaryRoot):
+    def test_focused_inventory_accepts_absolute_binding_and_rejects_full_or_missing_producer_claims(self):
+        producer_id = ("test_ball_crop_cross_detector_corroboration_release.HistoryGuardCertificateTests."
+                       "test_actual_validator_absolute_bindings_are_accepted_at_each_administrative_read")
+        ids = sorted([producer_id, release.HISTORY_GUARD_PRODUCER_TEST] +
+                     [f"test_artificial.Focused.test_{index:03d}" for index in range(93)])
+        inventory = {"schema_version": "ball_crop_corroboration_path_normalization_test_inventory/v0.1",
+                     "source_bindings": [], "helper_bindings": [], "producer_test_id": producer_id,
+                     "focused_repository_ids": ids, "ignored_lifecycle_ids": []}
+        declared = {"repository_focused_test_count": 95, "ignored_lifecycle_test_count": 0}
+
+        def verify(value, counts):
+            binding = put(self.root, release.PATH_NORMALIZATION_ADMIN_ROOT + "/test_inventory.json", value)
+            binding["path"] = str((self.root / binding["path"]).resolve())
+            return release._path_normalization_test_inventory(self.root, binding, [], [], counts, {"test_id": producer_id})
+
+        self.assertEqual(verify(inventory, declared), {"focused": 95})
+        outside = {"path": str(self.root.parent / "outside_inventory.json"), "sha256": "a" * 64, "size_bytes": 1}
+        with patch.object(Path, "open", side_effect=AssertionError("Outside binding was opened")), self.assertRaises(ValueError):
+            release._path_normalization_test_inventory(self.root, outside, [], [], declared, {"test_id": producer_id})
+        for change, counts in (({"full_repository_ids": ids}, declared),
+                               ({"ignored_lifecycle_ids": ["test_lifecycle.Artificial.test_one"]}, declared),
+                               ({"focused_repository_ids": [row for row in ids if row != release.HISTORY_GUARD_PRODUCER_TEST]}, declared),
+                               ({"focused_repository_ids": ids + [ids[0]]}, declared),
+                               ({}, {**declared, "full_test_count": 1262})):
+            with self.subTest(change=change, counts=counts), self.assertRaisesRegex(ValueError, "Focused-only inventory differs"):
+                verify({**inventory, **change}, counts)
+
+    def test_explicit_waiver_gate_preserves_historical_full_without_claiming_current_full_validation(self):
+        # Only the waiver gate is isolated here. The separately owned acceptance
+        # step verifies the actual emitted certificate through its entire leaf.
+        waiver = {"full_suite_waived_for_this_correction": True, "prior_full_applies_only_to_ancestor_bytes": True}
+        approval = put(self.root, release.PATH_NORMALIZATION_IMPLEMENTATION_APPROVAL["path"], waiver)
+        contract = put(self.root, release.PATH_NORMALIZATION_PRODUCER_CONTRACT["path"], {"artificial_only": True})
+        historical_full = {"path": release.HISTORY_GUARD_ADMIN_ROOT + "/full_01_result.json", "sha256": "f" * 64, "size_bytes": 1}
+        parent = put(self.root, release.PATH_NORMALIZATION_PARENT_CERTIFICATE["path"],
+                     {"full_result": historical_full, "source_bindings": []})
+        correction = put(self.root, release.PATH_NORMALIZATION_SCOPE_PATH,
+                         {**waiver, "approval": approval, "parent_certificate": parent,
+                          "base_commit": release.PATH_NORMALIZATION_BASE_COMMIT})
+        cert = {**waiver, "schema_version": "ball_crop_corroboration_path_normalization_validation/v0.1",
+                "status": "focused_validation_passed_full_suite_waiver_recorded", "scope": correction,
+                "approval": approval, "full_suite_waiver": approval, "parent_certificate": parent,
+                "producer_contract": contract, "new_full_invocation_count": 0,
+                "closed_predecessor_remainder_reused": False, "historical_full_result": historical_full,
+                "source_bindings": []}
+        manifest = {"path_normalization_scope": correction}
+        with patch.object(release, "PATH_NORMALIZATION_SCOPE_SHA", correction["sha256"]), \
+                patch.object(release, "PATH_NORMALIZATION_IMPLEMENTATION_APPROVAL", approval), \
+                patch.object(release, "PATH_NORMALIZATION_PARENT_CERTIFICATE", parent), \
+                patch.object(release, "PATH_NORMALIZATION_PRODUCER_CONTRACT", contract), \
+                patch.object(release, "_retry_source_transition", side_effect=RuntimeError("Approved waiver reached source verification")):
+            manifest["implementation_validation"] = put(self.root, release.PATH_NORMALIZATION_CERTIFICATE_PATH, cert)
+            with self.assertRaisesRegex(RuntimeError, "Approved waiver reached source verification"):
+                release._path_normalization_certificate(self.root, manifest, {})
+            for change in ({"full_suite_waived_for_this_correction": False}, {"prior_full_applies_only_to_ancestor_bytes": False},
+                           {"full_result": historical_full}, {"new_full_invocation_count": 1},
+                           {"closed_predecessor_remainder_reused": True},
+                           {"historical_full_result": {**historical_full, "sha256": "0" * 64}}):
+                manifest["implementation_validation"] = put(self.root, release.PATH_NORMALIZATION_CERTIFICATE_PATH, {**cert, **change})
+                with self.subTest(change=change), self.assertRaisesRegex(ValueError, "focused-only waiver or historical lineage differs"):
+                    release._path_normalization_certificate(self.root, manifest, {})
+
+    def test_v03_manifest_and_dispatch_require_separate_focused_only_authority(self):
+        manifest = {**HistoryGuardAuthorityTests.manifest(self),
+                    "schema_version": "ball_crop_corroboration_retry_release_manifest/v0.3",
+                    "path_normalization_scope": {"path": release.PATH_NORMALIZATION_SCOPE_PATH,
+                                                 "sha256": release.PATH_NORMALIZATION_SCOPE_SHA},
+                    "retry_approval": {"path": release.PATH_NORMALIZATION_APPROVAL_PATH, "sha256": "a" * 64},
+                    "implementation_validation": {"path": release.PATH_NORMALIZATION_CERTIFICATE_PATH, "sha256": "b" * 64},
+                    "post_commit_checkpoint": release.PATH_NORMALIZATION_CHECKPOINT_PATH}
+        self.assertEqual(release._retry_manifest(manifest), manifest)
+        for change in ({"schema_version": "ball_crop_corroboration_retry_release_manifest/v0.2"},
+                       {"retry_approval": {"path": release.HISTORY_GUARD_APPROVAL_PATH, "sha256": "a" * 64}},
+                       {"implementation_validation": release.PATH_NORMALIZATION_PARENT_CERTIFICATE},
+                       {"post_commit_checkpoint": release.HISTORY_GUARD_CHECKPOINT_PATH},
+                       {"path_normalization_scope": {"path": release.PATH_NORMALIZATION_SCOPE_PATH, "sha256": "0" * 64}},
+                       {"force": True}):
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                release._retry_manifest({**manifest, **change})
+        sentinel = {"artificial_route_only": True}
+        with patch.object(release, "_retry_metadata", return_value=sentinel) as route:
+            self.assertIs(release._metadata(self.root, release.PATH_NORMALIZATION_MANIFEST_PATH), sentinel)
+        route.assert_called_once_with(self.root, release.PATH_NORMALIZATION_MANIFEST_PATH)
 
 
 if __name__ == "__main__":

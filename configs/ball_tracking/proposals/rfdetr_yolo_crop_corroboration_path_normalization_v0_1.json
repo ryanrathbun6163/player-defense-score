@@ -1,0 +1,57 @@
+{
+  "schema_version": "ball_crop_corroboration_path_normalization_scope/v0.1",
+  "study_id": "rfdetr_yolo_crop_corroboration_v0_1",
+  "base_commit": "c946aedcb1a56dd3d238444f72b7b4752fdf134f",
+  "approval": {
+    "path": "data/outputs/t/corroboration_path_normalization_c946aed/approval.json",
+    "size_bytes": 3814,
+    "sha256": "502fbace78e84e773f844fbc20c110b0158b4f6de9f4a35034d5d3072c47d8e2"
+  },
+  "parent_certificate": {
+    "path": "data/outputs/t/corroboration_history_guard_154657c/implementation_validation.json",
+    "size_bytes": 163096,
+    "sha256": "0cfaca54dff66054f0d43fbb6b54702b37ff9228cfe4ee8febd909c3f4466a4c"
+  },
+  "previous_runtime_manifest": {
+    "path": "configs/ball_tracking/crop_retention_experiments/rfdetr_yolo_crop_corroboration_retry_v0_2.json",
+    "size_bytes": 2742,
+    "sha256": "f5b75bcf14c9ef4c67147bb8591a2263b49f2b09b1bb4c74871282f7b88d57cd"
+  },
+  "previous_runtime_approval": {
+    "path": "configs/ball_tracking/reviews/rfdetr_yolo_crop_corroboration_retry_execution_approval_v0_2.json",
+    "size_bytes": 5182,
+    "sha256": "b78a85a60f7997f4d9ee1181aae033774ba27eb6da9ce78358cbf74a2a1bfc8e"
+  },
+  "runtime_refusal_audit": {
+    "path": "data/outputs/t/corroboration_history_guard_154657c/runtime_refusal_audit.json",
+    "size_bytes": 3822,
+    "sha256": "8b92a56370e6ba1542886364abb19a25e871ea6095ad3979dabc5b2d59e20f44"
+  },
+  "implementation_files": [
+    "src/ball_tracking/crop_cross_detector_corroboration_release.py",
+    "tests/test_ball_crop_cross_detector_corroboration_release.py"
+  ],
+  "repair": "Normalize inventory and full-review administrative bindings at the two existing read sites; preserve global path safety. Add only the explicit focused-only continuation needed to honor Ryan's full-suite waiver, retaining old certificates as historical evidence.",
+  "full_suite_waived_for_this_correction": true,
+  "prior_full_applies_only_to_ancestor_bytes": true,
+  "focused_allowance": {
+    "maximum_invocations": 3,
+    "maximum_cumulative_seconds": 180,
+    "maximum_full_invocations": 0
+  },
+  "regression": "The exact prior helper bind() producer is embedded with matching AST and used only on TEMP files; RED covers absolute RED inventory, final inventory and full review before the fix, then unchanged regression passes after it.",
+  "runtime": {
+    "manifest": "configs/ball_tracking/crop_retention_experiments/rfdetr_yolo_crop_corroboration_retry_v0_3.json",
+    "approval": "configs/ball_tracking/reviews/rfdetr_yolo_crop_corroboration_retry_execution_approval_v0_3.json",
+    "certificate": "data/outputs/t/corroboration_path_normalization_c946aed/implementation_validation.json",
+    "checkpoint": "data/outputs/t/corroboration_path_normalization_c946aed/post_commit_execution_checkpoint.json",
+    "predecessor_attempt_id": "ac3a321649414170adf823deaa1b7b9e",
+    "maximum_retry_seconds": 1198.875,
+    "additional_scientific_budget_seconds": 0,
+    "parent_scientific_body_access": false,
+    "new_media_presentation": false
+  },
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

@@ -85,6 +85,20 @@ HISTORY_GUARD_PRODUCER_CONTRACT = {"path": HISTORY_GUARD_ADMIN_ROOT + "/producer
                                  "sha256": "4dd5d29b9072cbd7e07892f6d656639f75ac98cc59cef502a9ce38675cf95f1c"}
 HISTORY_GUARD_PRODUCER_TEST = ("test_ball_crop_cross_detector_corroboration_release.RetryHistoryTests."
                                "test_real_monitor_failure_record_is_accepted_by_retry_predecessor_guard")
+PATH_NORMALIZATION_BASE_COMMIT = "c946aedcb1a56dd3d238444f72b7b4752fdf134f"
+PATH_NORMALIZATION_SCOPE_PATH = "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_path_normalization_v0_1.json"
+PATH_NORMALIZATION_SCOPE_SHA = "ec552b8a6fd0210b63fa99ede3cfd463c4b4f164af6da995e494c33e279b5e06"
+PATH_NORMALIZATION_ADMIN_ROOT = "data/outputs/t/corroboration_path_normalization_c946aed"
+PATH_NORMALIZATION_MANIFEST_PATH = "configs/ball_tracking/crop_retention_experiments/rfdetr_yolo_crop_corroboration_retry_v0_3.json"
+PATH_NORMALIZATION_APPROVAL_PATH = "configs/ball_tracking/reviews/rfdetr_yolo_crop_corroboration_retry_execution_approval_v0_3.json"
+PATH_NORMALIZATION_CERTIFICATE_PATH = PATH_NORMALIZATION_ADMIN_ROOT + "/implementation_validation.json"
+PATH_NORMALIZATION_CHECKPOINT_PATH = PATH_NORMALIZATION_ADMIN_ROOT + "/post_commit_execution_checkpoint.json"
+PATH_NORMALIZATION_PARENT_CERTIFICATE = {"path": HISTORY_GUARD_CERTIFICATE_PATH, "size_bytes": 163096,
+                                        "sha256": "0cfaca54dff66054f0d43fbb6b54702b37ff9228cfe4ee8febd909c3f4466a4c"}
+PATH_NORMALIZATION_IMPLEMENTATION_APPROVAL = {"path": PATH_NORMALIZATION_ADMIN_ROOT + "/approval.json", "size_bytes": 3814,
+                                            "sha256": "502fbace78e84e773f844fbc20c110b0158b4f6de9f4a35034d5d3072c47d8e2"}
+PATH_NORMALIZATION_PRODUCER_CONTRACT = {"path": PATH_NORMALIZATION_ADMIN_ROOT + "/producer_contract.json", "size_bytes": 2451,
+                                      "sha256": "8c9ab967edf72ce67f9790d2e6b9692c4329e3b9d30c830753034b7580311aaa"}
 ROLE_PHASE = {"rf_candidates": "selection", "yolo_candidates": "selection",
               "reviewed_annotations": "evaluation", "saved_control_observations": "evaluation",
               "saved_mean_observations": "evaluation", "saved_scoring_pool": "evaluation",
@@ -1052,24 +1066,28 @@ def _require_tracked(root, names):
 
 
 def _retry_manifest(manifest):
-    corrected = manifest.get("schema_version") == "ball_crop_corroboration_retry_release_manifest/v0.2"
+    path_corrected = manifest.get("schema_version") == "ball_crop_corroboration_retry_release_manifest/v0.3"
+    corrected = path_corrected or manifest.get("schema_version") == "ball_crop_corroboration_retry_release_manifest/v0.2"
+    version = "v0.3" if path_corrected else "v0.2" if corrected else "v0.1"
     required = {"schema_version", "study_id", "scope", "proposal", "execution_approval",
                 "integration_scope", "integration_proposal", "retry_approval", "implementation_validation",
                 "frozen_history", "post_commit_checkpoint", "selected_method", "selected_operating_point", "quality_gate"}
     if corrected:
         required |= {"history_guard_scope", "history_guard_proposal"}
+    if path_corrected:
+        required.add("path_normalization_scope")
     _require(set(manifest) == required and manifest["schema_version"] ==
-             ("ball_crop_corroboration_retry_release_manifest/v0.2" if corrected else "ball_crop_corroboration_retry_release_manifest/v0.1")
+             "ball_crop_corroboration_retry_release_manifest/" + version
              and manifest["study_id"] == ID and manifest["scope"]["path"] == SCOPE_PATH
              and manifest["scope"]["sha256"] == SCOPE_SHA and manifest["proposal"]["path"] == PROPOSAL_PATH
              and manifest["proposal"]["sha256"] == PROPOSAL_SHA and manifest["execution_approval"]["path"] == APPROVAL_PATH
              and manifest["integration_scope"]["path"] == RETRY_SCOPE_PATH and manifest["integration_scope"]["sha256"] == RETRY_SCOPE_SHA
              and manifest["integration_proposal"]["path"] == RETRY_PROPOSAL_PATH
              and manifest["integration_proposal"]["sha256"] == RETRY_PROPOSAL_SHA
-             and manifest["retry_approval"]["path"] == (HISTORY_GUARD_APPROVAL_PATH if corrected else RETRY_APPROVAL_PATH)
-             and manifest["implementation_validation"]["path"] == (HISTORY_GUARD_CERTIFICATE_PATH if corrected else RETRY_CERTIFICATE_PATH)
+             and manifest["retry_approval"]["path"] == (PATH_NORMALIZATION_APPROVAL_PATH if path_corrected else HISTORY_GUARD_APPROVAL_PATH if corrected else RETRY_APPROVAL_PATH)
+             and manifest["implementation_validation"]["path"] == (PATH_NORMALIZATION_CERTIFICATE_PATH if path_corrected else HISTORY_GUARD_CERTIFICATE_PATH if corrected else RETRY_CERTIFICATE_PATH)
              and manifest["frozen_history"]["path"] == RETRY_HISTORY_PATH
-             and manifest["post_commit_checkpoint"] == (HISTORY_GUARD_CHECKPOINT_PATH if corrected else RETRY_CHECKPOINT_PATH)
+             and manifest["post_commit_checkpoint"] == (PATH_NORMALIZATION_CHECKPOINT_PATH if path_corrected else HISTORY_GUARD_CHECKPOINT_PATH if corrected else RETRY_CHECKPOINT_PATH)
              and all(manifest[k] is None for k in ("selected_method", "selected_operating_point", "quality_gate")),
              "Exact versioned retry manifest required")
     if corrected:
@@ -1077,6 +1095,10 @@ def _retry_manifest(manifest):
                  and manifest["history_guard_scope"]["sha256"] == HISTORY_GUARD_SCOPE_SHA
                  and manifest["history_guard_proposal"] == HISTORY_GUARD_PROPOSAL,
                  "Unknown history-guard correction scope")
+    if path_corrected:
+        _require(manifest["path_normalization_scope"]["path"] == PATH_NORMALIZATION_SCOPE_PATH
+                 and manifest["path_normalization_scope"]["sha256"] == PATH_NORMALIZATION_SCOPE_SHA,
+                 "Unknown focused-only path-normalization scope")
     return manifest
 
 
@@ -1323,26 +1345,26 @@ def _history_guard_method(raw, contract):
         _require(digest == row["sha256"], "Frozen producer regression changed after RED")
 
 
-def _history_guard_snapshots(root, binding, record, current, helpers, contract_binding, contract):
+def _history_guard_snapshots(root, binding, record, current, helpers, contract_binding, contract, *, admin_root=HISTORY_GUARD_ADMIN_ROOT):
     stem = Path(binding["path"]).name.removesuffix("_result.json")
     for key, tested, infix in (("helper_snapshots", helpers, "_helper_"),
                                ("implementation_snapshots", [b for b in current if b["path"] in RETRY_CHANGED_FILES], "_")):
         snapshots = _normalized_bindings(root, record[key])
-        expected = sorted([{**b, "path": HISTORY_GUARD_ADMIN_ROOT + "/" + stem + infix + Path(b["path"]).name}
+        expected = sorted([{**b, "path": admin_root + "/" + stem + infix + Path(b["path"]).name}
                            for b in tested], key=lambda b: b["path"])
         _require(snapshots == expected, "History-guard tested source/helper snapshot differs")
         for snapshot in snapshots:
             raw = _read_bound(root, snapshot, maximum=4 * 1024**2)
             if key == "implementation_snapshots" and snapshot["path"].endswith("/" + stem + "_test_ball_crop_cross_detector_corroboration_release.py"):
                 _history_guard_method(raw, contract)
-    expected_contract = {**contract_binding, "path": HISTORY_GUARD_ADMIN_ROOT + "/" + stem + "_producer_contract.json"}
+    expected_contract = {**contract_binding, "path": admin_root + "/" + stem + "_producer_contract.json"}
     _require(_normalized_bindings(root, [record["producer_contract_snapshot"]]) == [expected_contract],
              "Producer contract snapshot differs")
     _read_bound(root, expected_contract, maximum=1024**2)
 
 
 def _history_guard_result(root, binding, record, current, helpers, protected, approval_binding, approval,
-                          contract_binding, contract, inventory_binding, counts, *, red=False):
+                          contract_binding, contract, inventory_binding, counts, *, red=False, admin_root=HISTORY_GUARD_ADMIN_ROOT):
     _require(record["driver_exception"] is None and record["owned_cleanup_verified"] is True
              and record["cleanup_errors"] == [] and record["final_accounting_error"] is None
              and record["preservation_error"] is None
@@ -1382,10 +1404,10 @@ def _history_guard_result(root, binding, record, current, helpers, protected, ap
     for key, suffix in (("log", ".log"), ("active_test_telemetry", "_active_test.jsonl"),
                         ("lifecycle_telemetry", "_lifecycle.jsonl")):
         trace_binding = _normalized_bindings(root, [record[key]])[0]
-        _require(trace_binding["path"] == HISTORY_GUARD_ADMIN_ROOT + "/" + stem + suffix,
+        _require(trace_binding["path"] == admin_root + "/" + stem + suffix,
                  "History-guard trace belongs to another invocation")
         traces[key] = _read_bound(root, trace_binding, maximum=16 * 1024**2, allow_empty=key == "lifecycle_telemetry")
-    inventory = _json(_read_bound(root, inventory_binding, maximum=4 * 1024**2))
+    inventory = _json(_read_bound(root, _normalized_bindings(root, [inventory_binding])[0], maximum=4 * 1024**2))
     expected_ids = ([contract["test_id"]] if red else sorted(inventory["focused_repository_ids"] + inventory["ignored_lifecycle_ids"])
                     if record["phase"] == "focused" else sorted(inventory["full_repository_ids"]))
     events = [_json(line) for line in traces["active_test_telemetry"].splitlines()]
@@ -1420,7 +1442,7 @@ def _history_guard_result(root, binding, record, current, helpers, protected, ap
                  and record["test_count"] == counts[record["phase"]] and record["skipped_count"] == skipped
                  and record["passed_count"] == record["test_count"] - skipped,
                  "Corrected producer regression and complete frozen tests did not pass")
-    _history_guard_snapshots(root, binding, record, current, helpers, contract_binding, contract)
+    _history_guard_snapshots(root, binding, record, current, helpers, contract_binding, contract, admin_root=admin_root)
 
 
 def _history_guard_certificate(root, manifest, scope):
@@ -1596,7 +1618,7 @@ def _history_guard_certificate(root, manifest, scope):
              and accepted["full"][1]["previously_consumed_seconds"] >=
                  accepted["focused"][1]["previously_consumed_seconds"] + accepted["focused"][1]["elapsed_seconds"],
              "Sole full run lacks its passing producer-backed GREEN gate")
-    review = _json(_read_bound(root, accepted["full"][1]["implementation_review"], maximum=4 * 1024**2))
+    review = _json(_read_bound(root, _normalized_bindings(root, [accepted["full"][1]["implementation_review"]])[0], maximum=4 * 1024**2))
     _require(review["schema_version"] == "ball_crop_corroboration_history_guard_review/v0.1"
              and review["status"] == "independent_review_passed" and review["findings"] == []
              and review["producer_consumer_contract_review_passed"] is True
@@ -1609,8 +1631,239 @@ def _history_guard_certificate(root, manifest, scope):
     return cert
 
 
+
+def _path_normalization_test_inventory(root, binding, current, helpers, declared, contract):
+    binding = _normalized_bindings(root, [binding])[0]
+    _require(re.fullmatch(re.escape(PATH_NORMALIZATION_ADMIN_ROOT) +
+                         r"/(red_test_inventory|test_inventory|focused_03_test_inventory)\.json", binding["path"]),
+             "Unknown focused-only inventory")
+    inventory = _json(_read_bound(root, binding, maximum=4 * 1024**2))
+    ids = inventory["focused_repository_ids"]
+    _require(inventory["schema_version"] == "ball_crop_corroboration_path_normalization_test_inventory/v0.1"
+             and _normalized_bindings(root, inventory["source_bindings"]) == current
+             and _normalized_bindings(root, inventory["helper_bindings"]) == helpers
+             and inventory["producer_test_id"] == contract["test_id"]
+             and inventory["ignored_lifecycle_ids"] == [] and "full_repository_ids" not in inventory
+             and isinstance(ids, list) and all(isinstance(v, str) and v for v in ids)
+             and len(ids) == len(set(ids)) >= 95
+             and {contract["test_id"], HISTORY_GUARD_PRODUCER_TEST} <= set(ids)
+             and declared == {"repository_focused_test_count": len(ids), "ignored_lifecycle_test_count": 0},
+             "Focused-only inventory differs or drops a producer regression")
+    return {"focused": len(ids)}
+
+
+def _path_normalization_certificate(root, manifest, scope):
+    """Honor the explicit focused-only waiver; the prior full run remains historical."""
+    def binding(row):
+        return _normalized_bindings(root, [row])[0]
+
+    def read(row, maximum=4 * 1024**2):
+        return _json(_read_bound(root, binding(row), maximum=maximum))
+
+    scope_binding = binding(manifest["path_normalization_scope"])
+    _require(scope_binding["path"] == PATH_NORMALIZATION_SCOPE_PATH
+             and scope_binding["sha256"] == PATH_NORMALIZATION_SCOPE_SHA, "Unknown path-normalization scope")
+    correction = read(scope_binding)
+    approval_binding, contract_binding = PATH_NORMALIZATION_IMPLEMENTATION_APPROVAL, PATH_NORMALIZATION_PRODUCER_CONTRACT
+    approval, contract, parent = (read(row) for row in
+                                  (approval_binding, contract_binding, PATH_NORMALIZATION_PARENT_CERTIFICATE))
+    cert_binding = binding(manifest["implementation_validation"])
+    _require(cert_binding["path"] == PATH_NORMALIZATION_CERTIFICATE_PATH, "Unknown focused-only certificate")
+    cert = read(cert_binding)
+    _require(correction["approval"] == approval_binding
+             and correction["parent_certificate"] == PATH_NORMALIZATION_PARENT_CERTIFICATE
+             and correction["base_commit"] == PATH_NORMALIZATION_BASE_COMMIT
+             and cert["schema_version"] == "ball_crop_corroboration_path_normalization_validation/v0.1"
+             and cert["status"] == "focused_validation_passed_full_suite_waiver_recorded"
+             and binding(cert["scope"]) == scope_binding
+             and binding(cert["approval"]) == binding(cert["full_suite_waiver"]) == approval_binding
+             and binding(cert["parent_certificate"]) == PATH_NORMALIZATION_PARENT_CERTIFICATE
+             and binding(cert["producer_contract"]) == contract_binding
+             and all(value[k] is True for value in (approval, correction, cert)
+                     for k in ("full_suite_waived_for_this_correction", "prior_full_applies_only_to_ancestor_bytes"))
+             and cert["new_full_invocation_count"] == 0 and "full_result" not in cert
+             and cert["closed_predecessor_remainder_reused"] is False
+             and binding(cert["historical_full_result"]) == binding(parent["full_result"]),
+             "Explicit focused-only waiver or historical lineage differs")
+    current, before = _retry_source_transition(root, cert["source_bindings"], parent["source_bindings"])
+    protected = _normalized_bindings(root, parent["preserved_worktree_bindings"])
+    _require(len(protected) == 203 and protected == _normalized_bindings(root, cert["preserved_worktree_bindings"]),
+             "Focused correction changed protected work")
+    for row in protected:
+        _read_bound(root, row, maximum=4 * 1024**2, allow_empty=True)
+    prior = _normalized_bindings(root, parent["prior_validation_results"] + parent["new_validation_results"])
+    _require(len(prior) == 20 and prior == _normalized_bindings(root, cert["prior_validation_results"]),
+             "Focused correction dropped historical validation evidence")
+    for row in prior:
+        _read_bound(root, row, maximum=4 * 1024**2)
+    _require(binding(contract["approval"]) == approval_binding
+             and binding(contract["red_consumer_source"]) ==
+                 next(row for row in before if row["path"] == "src/ball_tracking/crop_cross_detector_corroboration_release.py")
+             and binding(contract["old_monitor_producer_contract"]) == HISTORY_GUARD_PRODUCER_CONTRACT,
+             "Focused producer contract changed its predecessor")
+    old_contract = read(contract["old_monitor_producer_contract"])
+    test_source = next(row for row in current if row["path"] == contract["test_file"])
+    test_raw = _read_bound(root, test_source, maximum=4 * 1024**2)
+    _history_guard_method(test_raw, contract)
+    _history_guard_method(test_raw, old_contract)
+    for row in _normalized_bindings(root, contract["producer_bindings"]):
+        _read_bound(root, row, maximum=4 * 1024**2)
+    helpers = _normalized_bindings(root, cert["helper_bindings"])
+    _require(len(helpers) == 4 and {row["path"] for row in helpers} ==
+             {PATH_NORMALIZATION_ADMIN_ROOT + "/" + name for name in
+              ("validate.py", "finalize_validation.py", "lifecycle.py", "test_lifecycle.py")},
+             "Focused helper inventory differs")
+    for row in helpers:
+        _read_bound(root, row, maximum=1024**2)
+        if Path(row["path"]).name in ("lifecycle.py", "test_lifecycle.py"):
+            old = next(item for item in parent["helper_bindings"] if Path(item["path"]).name == Path(row["path"]).name)
+            _require((row["sha256"], row["size_bytes"]) == (old["sha256"], old["size_bytes"]), "Accepted lifecycle changed")
+    counts = _path_normalization_test_inventory(root, cert["test_inventory"], current, helpers, cert["test_counts"], contract)
+    directory = _safe(root, PATH_NORMALIZATION_ADMIN_ROOT)
+    names = {path.name for path in directory.glob("focused_*_result.json")}
+    starts = {path.name.replace("_started.json", "_result.json") for path in directory.glob("focused_*_started.json")}
+    rows = _normalized_bindings(root, cert["new_validation_results"])
+    _require(names == starts == {"focused_01_result.json", "focused_02_result.json"}
+             and {row["path"] for row in rows} == {PATH_NORMALIZATION_ADMIN_ROOT + "/" + name for name in names}
+             and len(rows) == 2 and not list(directory.glob("full_*_result.json")),
+             "Exactly RED and GREEN are allowed before administrative acceptance")
+    records = [(row, read(row)) for row in rows]
+    evidence = cert["new_invocation_evidence"]
+    _require(len(evidence) == 2 and _normalized_bindings(root, [row["result"] for row in evidence]) == rows,
+             "Focused invocation evidence is incomplete")
+    total, consumed = 13825.985999999983, []
+    _require(math.isclose(parent["cumulative_validation_seconds"], total, rel_tol=0, abs_tol=1e-8)
+             and cert["previously_consumed_seconds"] == approval["previously_consumed_seconds"] == total,
+             "Focused correction rebased consumed validation")
+    for row, record in records:
+        stem = Path(row["path"]).name.removesuffix("_result.json")
+        item = next(item for item in evidence if binding(item["result"]) == row)
+        started_binding = binding(item["started"])
+        _require(item["name"] == stem and started_binding["path"] == PATH_NORMALIZATION_ADMIN_ROOT + "/" + stem + "_started.json",
+                 "Focused start belongs to another invocation")
+        started = read(started_binding)
+        _require(started and all(record.get(key) == value for key, value in started.items())
+                 and _normalized_bindings(root, item["helper_snapshots"]) == _normalized_bindings(root, record["helper_snapshots"])
+                 and binding(item["test_inventory"]) == binding(record["test_inventory"])
+                 and binding(item["producer_contract_snapshot"]) == binding(record["producer_contract_snapshot"]),
+                 "Focused started authority differs from its receipt")
+        elapsed = record["elapsed_seconds"]
+        _require(record["phase"] == "focused" and type(elapsed) in (int, float) and math.isfinite(elapsed) and elapsed > 0
+                 and math.isclose(record["previously_consumed_seconds"], total, rel_tol=0, abs_tol=1e-8)
+                 and record["cumulative_validation_budget_seconds"] == 15980 and record["timeout_seconds"] <= 180,
+                 "Focused consumption is discontinuous or exceeds the new allowance")
+        total += elapsed
+        consumed.append({"binding": row, "success": record["success"], "failure": record["failure"],
+                         "elapsed_seconds": elapsed, "cumulative_seconds": total})
+    expected_consumed = [{**row, "binding": binding(row["binding"])} for row in cert["new_consumption_records"]]
+    delta = total - approval["previously_consumed_seconds"]
+    _require(consumed == expected_consumed and 0 < delta <= 180
+             and cert["cumulative_validation_cap_seconds"] == 15980
+             and cert["maximum_new_phase_seconds"] == 180
+             and all(math.isclose(cert[key], value, rel_tol=0, abs_tol=1e-8) for key, value in
+                     (("cumulative_validation_seconds", total), ("new_phase_seconds", delta),
+                      ("new_focused_validation_seconds", delta))),
+             "Focused certificate omits a charge or reuses closed budget")
+    red_binding, red = records[0]
+    green_binding, green = records[1]
+    _require(binding(cert["red_result"]) == red_binding and binding(cert["focused_result"]) == green_binding
+             and cert["red_expected_failure_verified"] is True
+             and binding(green["red_result"]) == red_binding, "Focused RED/GREEN lineage differs")
+    red_sources = _normalized_bindings(root, red["source_bindings"])
+    old_by_name = {row["path"]: row for row in before}
+    _require(len(red_sources) == 187 and {row["path"] for row in red_sources} == set(old_by_name)
+             and all(row["path"] == contract["test_file"] or row == old_by_name[row["path"]] for row in red_sources),
+             "RED did not run against the unchanged failed consumer")
+    _path_normalization_test_inventory(root, red["test_inventory"], red_sources, helpers, red["test_counts"], contract)
+    _history_guard_result(root, red_binding, red, red_sources, helpers, protected, approval_binding, approval,
+                          contract_binding, contract, red["test_inventory"], counts, red=True,
+                          admin_root=PATH_NORMALIZATION_ADMIN_ROOT)
+    _require(green["test_counts"] == cert["test_counts"], "GREEN focused composition differs")
+    _history_guard_result(root, green_binding, green, current, helpers, protected, approval_binding, approval,
+                          contract_binding, contract, cert["test_inventory"], counts, admin_root=PATH_NORMALIZATION_ADMIN_ROOT)
+    review_binding = binding(cert["implementation_review"])
+    _require(review_binding == binding(green["implementation_review"]), "GREEN lacks the bound implementation review")
+    review_record = read(review_binding)
+    _require(review_record["schema_version"] == "ball_crop_corroboration_path_normalization_review/v0.1"
+             and review_record["status"] == "independent_review_passed" and review_record["findings"] == []
+             and review_record["producer_consumer_contract_review_passed"] is True
+             and review_record["full_suite_waived_for_this_correction"] is True
+             and _normalized_bindings(root, review_record["source_bindings"]) == current
+             and _normalized_bindings(root, review_record["helper_bindings"]) == helpers
+             and binding(review_record["test_inventory"]) == binding(cert["test_inventory"])
+             and binding(review_record["producer_contract"]) == contract_binding
+             and binding(review_record["red_result"]) == red_binding, "Focused implementation review differs")
+    return cert
+
+
+
+
+def _path_normalization_acceptance(root, acceptance_binding, cert, manifest):
+    """Require the separately owned check of the actual emitted certificate."""
+    def binding(row):
+        return _normalized_bindings(root, [row])[0]
+
+    accepted_binding = binding(acceptance_binding)
+    _require(accepted_binding["path"] == PATH_NORMALIZATION_ADMIN_ROOT + "/administrative_acceptance.json",
+             "Unknown administrative acceptance")
+    record = _json(_read_bound(root, accepted_binding, maximum=4 * 1024**2))
+    inputs = {key: binding(manifest[key]) for key in ("implementation_validation", "path_normalization_scope")}
+    _require(record["schema_version"] == "ball_crop_corroboration_path_normalization_acceptance/v0.1"
+             and record["phase"] == "administrative_acceptance" and record["validation_mode"] == "acceptance"
+             and record["consumer"] == "src.ball_tracking.crop_cross_detector_corroboration_release._path_normalization_certificate"
+             and record["invocation_slot"] == record["maximum_invocations"] == 3
+             and record["success"] is True and record["returncode"] == 0 and record["administrative_outcome_verified"] is True
+             and all(record[key] is None for key in ("failure", "driver_exception", "preservation_error", "final_accounting_error"))
+             and record["owned_cleanup_verified"] is True and record["cleanup_errors"] == []
+             and record["scientific_execution"] is False and record["scientific_dry_run"] is False
+             and {key: binding(value) for key, value in record["acceptance_manifest"].items()} == inputs
+             and all(binding(record[key]) == binding(record[key + "_after"]) == value for key, value in inputs.items())
+             and binding(record["approval"]) == binding(record["approval_after"]) == PATH_NORMALIZATION_IMPLEMENTATION_APPROVAL,
+             "Actual administrative consumer acceptance is absent or differs")
+    for key, cert_key in (("source_bindings", "source_bindings"), ("helper_bindings", "helper_bindings")):
+        _require(_normalized_bindings(root, record[key]) == _normalized_bindings(root, record[key + "_after"])
+                 == _normalized_bindings(root, cert[cert_key]), "Administrative acceptance did not preserve tested bytes")
+    _require(_normalized_bindings(root, record["preserved_worktree_bindings_before"])
+             == _normalized_bindings(root, record["preserved_worktree_bindings_after"])
+             == _normalized_bindings(root, cert["preserved_worktree_bindings"])
+             and record["preservation_metadata_before"] == record["preservation_metadata_after"],
+             "Administrative acceptance changed preserved evidence")
+    helper = next(row for row in _normalized_bindings(root, cert["helper_bindings"])
+                  if row["path"] == PATH_NORMALIZATION_ADMIN_ROOT + "/validate.py")
+    _require(binding(record["acceptance_helper"]) == binding(record["acceptance_helper_after"]) == helper,
+             "Administrative acceptance used different helper bytes")
+    elapsed, previous = record["elapsed_seconds"], cert["cumulative_validation_seconds"]
+    _require(type(elapsed) in (int, float) and math.isfinite(elapsed) and 0 < elapsed <= record["timeout_seconds"] <= 30
+             and math.isclose(record["previously_consumed_seconds"], previous, rel_tol=0, abs_tol=1e-8)
+             and math.isclose(record["cumulative_validation_seconds"], previous + elapsed, rel_tol=0, abs_tol=1e-8)
+             and math.isclose(record["new_phase_total_seconds"], cert["new_phase_seconds"] + elapsed, rel_tol=0, abs_tol=1e-8)
+             and record["new_phase_total_seconds"] <= 180 and record["cumulative_validation_cap_seconds"] == 15980
+             and record["peak_rss_bytes"] <= 8 * 1024**3
+             and record["peak_observed_output_bytes"] + record["publication_reserve_bytes"] <= 4 * 1024**3
+             and record["minimum_free_bytes"] - record["publication_reserve_bytes"] >= 50 * 1024**3
+             and record["publication_reserve_bytes"] >= monitor.FINAL_RESERVE, "Administrative acceptance exceeded its final slot")
+    shutdown = record["shutdown"]
+    _require(shutdown["natural_shutdown_success"] is True and shutdown["failure"] is None
+             and shutdown["final_membership"] == [] and shutdown["owned_cleanup_verified"] is True
+             and shutdown["cleanup_errors"] == [] and 0 <= shutdown["elapsed_seconds"] <= shutdown["natural_shutdown_limit_seconds"] <= 1,
+             "Administrative acceptance lacks bounded natural cleanup")
+    stem = PATH_NORMALIZATION_ADMIN_ROOT + "/administrative_acceptance"
+    started = _json(_read_admin(root, stem + "_start.json", 4 * 1024**2))
+    _require(started and all(key in record and record[key] == value for key, value in started.items()),
+             "Administrative acceptance started authority differs")
+    traces = {}
+    for key, suffix in (("log", ".log"), ("active_test_telemetry", "_active_test.jsonl"), ("lifecycle_telemetry", "_lifecycle.jsonl")):
+        row = binding(record[key])
+        _require(row["path"] == stem + suffix, "Administrative acceptance trace belongs to another invocation")
+        traces[key] = _read_bound(root, row, maximum=4 * 1024**2, allow_empty=key == "lifecycle_telemetry")
+    _require(_json(traces["log"]) == {"administrative_acceptance": True, **record["acceptance_manifest"]}
+             and [_json(line) for line in traces["active_test_telemetry"].splitlines()] ==
+                 [{"event": "administrative_acceptance", "test_id": None, "success": True, **record["acceptance_manifest"]}],
+             "Actual administrative acceptance output differs")
+
+
 def _metadata(root, manifest_path=MANIFEST_PATH):
-    if str(manifest_path).replace("\\", "/") in (RETRY_MANIFEST_PATH, HISTORY_GUARD_MANIFEST_PATH):
+    if str(manifest_path).replace("\\", "/") in (RETRY_MANIFEST_PATH, HISTORY_GUARD_MANIFEST_PATH, PATH_NORMALIZATION_MANIFEST_PATH):
         return _retry_metadata(root, manifest_path)
     root = Path(root).resolve()
     _require(str(manifest_path).replace("\\", "/") == MANIFEST_PATH, "Only the exact future manifest is allowed")
@@ -1671,16 +1924,18 @@ def _retry_metadata(root, manifest_path=RETRY_MANIFEST_PATH):
     """The new authority is additive; never reinterpret the consumed v0.1 route."""
     root = Path(root).resolve()
     manifest_path = str(manifest_path).replace("\\", "/")
-    corrected = manifest_path == HISTORY_GUARD_MANIFEST_PATH
-    _require(manifest_path in (RETRY_MANIFEST_PATH, HISTORY_GUARD_MANIFEST_PATH), "Only the exact retry manifest is allowed")
-    approval_path = HISTORY_GUARD_APPROVAL_PATH if corrected else RETRY_APPROVAL_PATH
-    checkpoint_path = HISTORY_GUARD_CHECKPOINT_PATH if corrected else RETRY_CHECKPOINT_PATH
-    base_commit = HISTORY_GUARD_BASE_COMMIT if corrected else RETRY_BASE_COMMIT
+    path_corrected = manifest_path == PATH_NORMALIZATION_MANIFEST_PATH
+    corrected = path_corrected or manifest_path == HISTORY_GUARD_MANIFEST_PATH
+    _require(manifest_path in (RETRY_MANIFEST_PATH, HISTORY_GUARD_MANIFEST_PATH, PATH_NORMALIZATION_MANIFEST_PATH), "Only the exact retry manifest is allowed")
+    version = "v0.3" if path_corrected else "v0.2" if corrected else "v0.1"
+    approval_path = PATH_NORMALIZATION_APPROVAL_PATH if path_corrected else HISTORY_GUARD_APPROVAL_PATH if corrected else RETRY_APPROVAL_PATH
+    checkpoint_path = PATH_NORMALIZATION_CHECKPOINT_PATH if path_corrected else HISTORY_GUARD_CHECKPOINT_PATH if corrected else RETRY_CHECKPOINT_PATH
+    base_commit = PATH_NORMALIZATION_BASE_COMMIT if path_corrected else HISTORY_GUARD_BASE_COMMIT if corrected else RETRY_BASE_COMMIT
     if not _safe(root, manifest_path).is_file():
         raise PermissionError("Scientific retry requires its separate exact authority, tested certificate and clean checkpoint")
     raw = _read_admin(root, manifest_path, 1024**2)
     manifest = _retry_manifest(_json(raw))
-    _require((manifest["schema_version"] == "ball_crop_corroboration_retry_release_manifest/v0.2") == corrected,
+    _require(manifest["schema_version"] == "ball_crop_corroboration_retry_release_manifest/" + version,
              "Retry manifest version does not match its authority path")
     correction = None
     if corrected:
@@ -1694,6 +1949,16 @@ def _retry_metadata(root, manifest_path=RETRY_MANIFEST_PATH):
                  and all(manifest[k] == prior_retry[k] for k in ("scope", "proposal", "execution_approval", "integration_scope",
                                                                 "integration_proposal", "frozen_history")),
                  "History-guard correction changed its prior runtime/scientific authority")
+    if path_corrected:
+        patch_scope = _json(_read_bound(root, manifest["path_normalization_scope"], maximum=1024**2))
+        prior_manifest = _retry_manifest(_json(_read_bound(root, patch_scope["previous_runtime_manifest"], maximum=1024**2)))
+        _read_bound(root, patch_scope["previous_runtime_approval"], maximum=1024**2)
+        _require(prior_manifest["schema_version"] == "ball_crop_corroboration_retry_release_manifest/v0.2"
+                 and prior_manifest["retry_approval"] == patch_scope["previous_runtime_approval"]
+                 and prior_manifest["implementation_validation"] == PATH_NORMALIZATION_PARENT_CERTIFICATE
+                 and all(manifest[k] == prior_manifest[k] for k in ("scope", "proposal", "execution_approval", "integration_scope",
+                                                                  "integration_proposal", "frozen_history", "history_guard_scope", "history_guard_proposal")),
+                 "Focused-only correction changed the previous runtime authority")
     retry = _json(_read_bound(root, manifest["integration_scope"], maximum=4 * 1024**2))
     _read_bound(root, manifest["integration_proposal"], maximum=1024**2)
     _require(retry["schema_version"] == "ball_crop_corroboration_retry_integration_proposal/v0.1"
@@ -1710,8 +1975,7 @@ def _retry_metadata(root, manifest_path=RETRY_MANIFEST_PATH):
              and old_approval["proposal"] == manifest["proposal"] and old_approval["scientific_execution_authorized"] is True,
              "Original scientific approval differs")
     approval = _json(_read_bound(root, manifest["retry_approval"], maximum=1024**2))
-    _require(approval["schema_version"] == ("ball_crop_corroboration_retry_execution_approval/v0.2" if corrected
-                                          else "ball_crop_corroboration_retry_execution_approval/v0.1")
+    _require(approval["schema_version"] == "ball_crop_corroboration_retry_execution_approval/" + version
              and approval["study_id"] == ID and approval["approved_by"] == "Ryan"
              and isinstance(approval["user_statement"], str) and approval["user_statement"].strip()
              and approval["scope"] == manifest["scope"] and approval["original_execution_approval"] == manifest["execution_approval"]
@@ -1730,6 +1994,12 @@ def _retry_metadata(root, manifest_path=RETRY_MANIFEST_PATH):
         _require(all(approval[k] == manifest[k] for k in ("history_guard_scope", "history_guard_proposal"))
                  and all(approval[k] == correction[k] for k in ("parent_certificate", "original_runtime_manifest", "original_retry_approval")),
                  "Corrected runtime approval lacks its preserved authority lineage")
+    if path_corrected:
+        _require(approval["path_normalization_scope"] == manifest["path_normalization_scope"]
+                 and approval["path_normalization_parent_certificate"] == PATH_NORMALIZATION_PARENT_CERTIFICATE
+                 and approval["full_suite_waived_for_this_correction"] is True
+                 and approval["prior_full_applies_only_to_ancestor_bytes"] is True,
+                 "Focused-only runtime approval lacks the explicit waiver and lineage")
     _require(_git(root, "status", "--porcelain") == "", "Retry release requires clean committed work; preserve dirty files")
     commit = _git(root, "rev-parse", "HEAD")
     require_digest(commit, "actual retry release commit", 40)
@@ -1740,14 +2010,17 @@ def _retry_metadata(root, manifest_path=RETRY_MANIFEST_PATH):
                    MANIFEST_PATH, APPROVAL_PATH, SCOPE_PATH, PROPOSAL_PATH)
     if corrected:
         authorities += (HISTORY_GUARD_MANIFEST_PATH, HISTORY_GUARD_APPROVAL_PATH, HISTORY_GUARD_SCOPE_PATH, "AGENTS.md")
+    if path_corrected:
+        authorities += (PATH_NORMALIZATION_MANIFEST_PATH, PATH_NORMALIZATION_APPROVAL_PATH, PATH_NORMALIZATION_SCOPE_PATH)
     for name in authorities:
         _require(_git(root, "ls-files", "--", name) == name, "Retry and original authority must be committed")
-    cert = (_history_guard_certificate if corrected else _retry_certificate)(root, manifest, scope)
+    cert = (_path_normalization_certificate if path_corrected else _history_guard_certificate if corrected else _retry_certificate)(root, manifest, scope)
+    if path_corrected:
+        _path_normalization_acceptance(root, approval["administrative_acceptance"], cert, manifest)
     _require_tracked(root, [b["path"] for b in _normalized_bindings(root, cert["source_bindings"])]
                      + [b["path"] for b in _normalized_bindings(root, cert["preserved_worktree_bindings"])] + list(authorities))
     checkpoint = monitor._read_record(_safe(root, checkpoint_path), limit=1024**2)
-    _require(checkpoint["schema_version"] == ("ball_crop_corroboration_retry_post_commit_checkpoint/v0.2" if corrected
-                                            else "ball_crop_corroboration_retry_post_commit_checkpoint/v0.1")
+    _require(checkpoint["schema_version"] == "ball_crop_corroboration_retry_post_commit_checkpoint/" + version
              and checkpoint["commit"] == commit and checkpoint["clean"] is True
              and checkpoint["manifest"] == _binding(manifest_path, raw)
              and all(checkpoint[k] == manifest[k] for k in ("retry_approval", "implementation_validation", "scope",
@@ -1759,6 +2032,11 @@ def _retry_metadata(root, manifest_path=RETRY_MANIFEST_PATH):
         _require(all(checkpoint[k] == manifest[k] for k in ("history_guard_scope", "history_guard_proposal"))
                  and checkpoint["parent_certificate"] == HISTORY_GUARD_PARENT_CERTIFICATE,
                  "Corrected clean checkpoint lacks its exact lineage")
+    if path_corrected:
+        _require(checkpoint["path_normalization_scope"] == manifest["path_normalization_scope"]
+                 and checkpoint["path_normalization_parent_certificate"] == PATH_NORMALIZATION_PARENT_CERTIFICATE
+                 and checkpoint["administrative_acceptance"] == approval["administrative_acceptance"],
+                 "Focused-only checkpoint lacks its actual administrative acceptance")
     frozen = _json(_read_bound(root, manifest["frozen_history"], maximum=16 * 1024**2))
     _retry_history_authority(root, frozen, scope, retry)
     original_limits = next(b for b in scope["administrative_binding_sources"]
