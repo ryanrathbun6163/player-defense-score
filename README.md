@@ -46,13 +46,16 @@ The committed evidence is available in [`configs/possession_003_generalization_e
 
 The [sports-video research collection](docs/research/README.md) compares ball models, player tracking, court geometry, complete sports pipelines, datasets and analytics using primary sources and selected implementation inspection. The subsequent [WASB basketball transfer comparison](docs/ball_wasb_transfer_results.md) completed on all six development windows: at its published heatmap threshold it matched 31/145 eligible frames, emitted no wrong selections, and left 114 eligible frames missing. This coverage is insufficient to replace the saved RF baseline; no method or quality gate is promoted. The tested RF/YOLO agreement rule also has a [recovered negative result](docs/ball_crop_cross_detector_corroboration_results.md).
 
-A [cached calibration screen](docs/ball_wasb_calibration_results.md) increased
-WASB's matches to 62/145 without observed wrong outputs, but still left 83
-eligible frames missing. RF ranked to the same output count gets 61 matches and
-one wrong output; calibration has not established a replacement. A concrete
-[small adaptation trial](docs/ball_wasb_adaptation_plan.md) is prepared using
-75 reviewed pilot frames, with the 150 development frames kept out of training.
-Training has not run; the holdouts and ball-phase quality bar are unchanged.
+The approved [pilot adaptation trial](docs/ball_wasb_adaptation_results.md) is
+complete. At the original threshold, trained WASB improves from 31 to **98/145
+matched positions**, with one wrong output, 46 missing eligible frames and zero
+alarms on the five hidden frames. RF ranked to the same output counts gives
+90 matches and nine wrong outputs. Training used only the 75 reviewed pilot
+frames; the 150 development frames stayed out of training. This is useful
+same-game development evidence, not ball-phase completion: 39 of the 46 missing
+frames are in possession 001, human review of the new videos is pending, and
+holdouts and the quality bar remain unchanged. The earlier
+[calibration-only result](docs/ball_wasb_calibration_results.md) remains preserved.
 
 ## End goal
 

@@ -1,6 +1,47 @@
 # Current State
 
-## Latest development: 2026-10-08 cached WASB calibration completed
+## Latest result: 2026-10-08 approved WASB adaptation helped development localization
+
+Ryan approved the concrete pilot-training plan. Implementation commit
+`193319f984e5d150fbb86e9da2c5ec559540d61e` adds an isolated trainer, safely bound
+adapted-checkpoint loader, paired evaluator and labeled review renderer. One
+uninterrupted 200-update fit completed on the three reviewed pilots: 66 coordinate
+targets, eight hidden negatives and one masked ambiguous frame. No development
+evaluation frame entered training or checkpoint selection; holdouts stayed sealed.
+
+At the predeclared 0.5 threshold, adapted WASB gives **98 matched / 1 wrong / 46
+missing** eligible observations, with zero alarms on five hidden frames. Original
+WASB gave 31 / 0 / 114. All 31 original matches remain, with 67 gained. Pool-wise
+equal-output-count RF gives 90 / 9 / 46 and no hidden alarms. That comparison is
+a post-hoc ranking diagnostic, not a deployable RF threshold. Against unrestricted
+RF (111 / 34 / 0, five hidden alarms), adapted WASB recovers nine matches and loses
+22 through abstention. This establishes useful development improvement, not
+superiority at every coverage level or independent generalization.
+
+The remaining missing frames concentrate in P001: all 25 representative frames
+and 14 challenge frames, accounting for 39/46 missing. The sole geometric error
+is P003/164 at 11.43 source pixels from the reviewed amodal center; it remains
+wrong under the unchanged ten-pixel rule. Do not automatically equate that with
+following a different object. Six synchronized adapted review videos cover all
+25 frames and their endpoints; human visual review remains pending.
+
+Training took 23.207 seconds, with 1.87 GiB peak allocated GPU memory. Evaluation
+and eight cached thresholds completed in 32.705 seconds; rendering took 12.551
+seconds without new inference. Twenty-one unique focused checks passed (nine
+trainer, eight adapter, four evaluator); no full suite was run. Independent
+training/result audits confirmed the saved weights, 200 updates, frozen BN
+buffers, complete outputs, control parity and comparison records. All earlier
+evidence and reviews remain intact.
+
+Read [the adaptation results and review links](../ball_wasb_adaptation_results.md).
+The final checkpoint is
+`data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/training/checkpoint.pth`,
+SHA-256 `98912a271791326bcfe2d2f468e94002d0986281f27ff1641c795177d1f94289`.
+No production operating point or quality gate is promoted. Next: review the new
+outputs and target the remaining P001 gaps, retaining RF as a control. The agreed
+full-possession finish line and reviewed player foundation are unchanged.
+
+## Earlier snapshot: cached calibration, before the completed adaptation above
 
 The eight-setting [calibration screen](../ball_wasb_calibration_results.md) reused
 saved heatmaps without model inference, media reads or holdout access. Threshold

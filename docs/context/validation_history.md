@@ -1,5 +1,48 @@
 # Validation History
 
+## 2026-10-08: approved pilot adaptation, paired evaluation and review rendering
+
+Implementation commit `193319f984e5d150fbb86e9da2c5ec559540d61e` passed 21 unique
+focused checks: nine training, eight derived-checkpoint adapter and four paired
+evaluation tests. Training checks use the actual pinned upstream target/loss
+producer and real pilot annotation records, plus small synthetic models for
+gradients, masks, frozen BN buffers and safe state recovery. Independent review
+found and corrected receipt-bound calibration reuse and final-state recovery
+edge cases before the real fit. The affected focused tests passed after fixes;
+earlier focused receipts remain preserved. No full-suite run occurred.
+
+One real, non-resumed training attempt completed all 200 updates and 400 sampled
+triplets in 23.207 seconds. The final checkpoint matches the saved update-200
+state exactly. All 213 BatchNorm buffers remain unchanged. All 215 parameter
+tensors were trainable and in the optimizer; the 176 active tensors changed and
+have Adam step counters of 200. The other 39 belong to upstream final-fusion
+branches unused by its configured scale-zero output, not accidentally frozen
+layers. Actual input/mask/sampling accounting agrees with 66 positive, eight
+hidden and one ambiguous pilot frame. No evaluation/holdout label or image was
+used in training or checkpoint selection.
+
+All six development windows completed 138 triplet inference calls, point scoring,
+the fixed eight-threshold cached comparison and 60 saved-RF parity cells. At 0.5,
+adapted WASB has 98 matches, one wrong point, 46 missing eligible frames and zero
+hidden alarms. Original WASB has 31 matches; equal-output-count RF has 90 matches
+and nine wrong points. Independent audits reconciled all 48 grid-window results,
+16 equal-count rankings and 96 original/adapted report bindings. The model and
+comparison remain development results, with no operating point/quality gate
+promoted.
+
+Evaluation plus calibration took 32.705 seconds. A separate render-only invocation
+took 12.551 seconds, reusing inference. All six new 25-frame review videos decode
+through their actual final frames and explicitly identify the adapted checkpoint
+and threshold. Root inspected four snapshots/endpoints for display/marker context;
+this is not human trajectory acceptance. Human review remains pending. Generated
+weights, states, heatmaps, reports and media remain ignored under
+`data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/`.
+
+No real training/evaluation failure occurred in this trial. Earlier failed
+scientific attempts, consumed resources, reviewed annotations, old model results
+and completed human reviews remain unchanged. See
+`../ball_wasb_adaptation_results.md` for the exact results and remaining P001 gaps.
+
 ## 2026-10-08: cached WASB calibration and adaptation-data inspection
 
 Nine focused calibration tests passed (unittest runtime 1.171 seconds), covering

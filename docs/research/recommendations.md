@@ -7,10 +7,13 @@ Read [the local transfer result](../ball_wasb_transfer_results.md) before acting
 the original recommendation below. Its published-threshold output is too sparse
 to replace the existing RF control; do not repeat the completed inference to resume.
 
-The subsequent [cached calibration](../ball_wasb_calibration_results.md) also
-completed: it improves coverage but does not establish a replacement. The
-[adaptation plan](../ball_wasb_adaptation_plan.md) now specifies the pilot-data
-split and one small training preset; that training has not run.
+The subsequent [cached calibration](../ball_wasb_calibration_results.md) and
+[approved pilot adaptation](../ball_wasb_adaptation_results.md) are also complete.
+Adaptation raises fixed-threshold matches to 98/145 with one wrong output,
+compared with 90 matches/nine wrong for RF at the same output counts. This is
+useful local evidence for training, with 46 eligible frames still missing and
+new visual acceptance pending. Read those results before following the historical
+implementation outline below; do not repeat the completed runs merely to resume.
 
 ## Main recommendation
 

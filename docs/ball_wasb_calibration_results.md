@@ -126,15 +126,17 @@ failed attempts, consumed resources, original predictions and holdouts remain
 unchanged. Ten-pixel agreement is still a geometric measure, not independent
 proof of physical ball identity or a continuous trajectory.
 
-## Next useful step
+## Subsequent adaptation trial
 
 The [adaptation plan](ball_wasb_adaptation_plan.md) specifies one small pretrained
 training trial using the three already reviewed pilots, then evaluation on these
 six development windows. There are 66 eligible training centers, eight hidden
 negatives and one ambiguous frame to mask. Training and evaluation inputs are
 disjoint; both remain correlated same-game footage. No additional labels are
-needed for this limited diagnostic. Training has not run, and no training-derived
-checkpoint exists yet.
+needed for this limited diagnostic. The approved trial has since
+[completed](ball_wasb_adaptation_results.md): 98 matches, one wrong observation
+and 46 eligible missing frames at the original 0.5 threshold. Its checkpoint and
+new review videos are preserved separately; human visual review remains pending.
 
 This screen answers the calibration question without another model run. Reliable
 ball tracking across the complete three possessions, synchronized human visual

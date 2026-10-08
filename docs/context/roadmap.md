@@ -1,6 +1,26 @@
 # Roadmap
 
-## Next concrete step: one small pretrained adaptation trial
+## Current continuation: review improved ball observations, address P001 gaps
+
+The [approved 200-update adaptation](../ball_wasb_adaptation_results.md) completed
+successfully. At the predeclared threshold it raises WASB matches from 31 to 98
+of 145 eligible frames, with one wrong output and no hidden alarms. Equal-count
+RF gives 90 matches and nine wrong outputs. This is useful development evidence
+for learned adaptation; retain the trained checkpoint and cached results.
+
+The next review has concrete outputs: six synchronized clips, with the P002
+representative recovery and P003 occlusion/reacquisition sequence especially
+useful to inspect. Do not reopen old reviews or promote the new checkpoint before
+reviewing its own outputs. P001 accounts for 39 of 46 remaining missing frames;
+the next correction should address that specific weakness. Avoid a blind
+checkpoint/threshold search or claiming the same-game trial generalizes broadly.
+
+Full-possession coverage, accepted trajectories, explicit gaps and the existing
+phase quality bar remain required. No new trial beyond the completed approved
+preset, holdout evaluation, production promotion or main-branch integration has
+occurred.
+
+## Earlier plan: adaptation trial, now completed as recorded above
 
 The [cached calibration screen](../ball_wasb_calibration_results.md) is complete.
 It improves WASB coverage, but its cleanest higher-coverage setting still misses
