@@ -15,6 +15,7 @@
 | Ball-detector execution contract | `src/ball_tracking/detector_experiments.py`, `src/ball_tracking/rfdetr_adapter.py`, `src/ball_tracking/run_detector_experiment.py`, tests | Current desktop ball-tracking work |
 | RF/YOLO corroboration outcome | `docs/ball_crop_cross_detector_corroboration_results.md`, saved six-window/two-pool outputs and recovery record | October 8 recovered negative result; original reporting attempt remains failed |
 | WASB temporal ball transfer | `docs/ball_wasb_transfer_results.md`, `configs/ball_tracking/wasb_experiments/wasb_basketball_transfer_v0_1.json`, new adapter/point evaluator/runner and ignored cached outputs | October 8 completed six-window comparison; fixed setting too sparse, no method/quality gate promoted |
+| WASB cached calibration and proposed adaptation | `docs/ball_wasb_calibration_results.md`, `src/ball_tracking/wasb_calibration.py`, calibration config/tests; `docs/ball_wasb_adaptation_plan.md` | Eight cached thresholds completed; pilot/evaluation split inspected; training not executed |
 | External sports tracking research and implementation choices | `docs/research/README.md`, `docs/research/recommendations.md`, detailed chapters and four source ledgers | October 8 primary-source research; source inspection is not local reproduction or runtime authority |
 | Git history | repository commits and merged PRs | transcripts only for rationale |
 | Generated local evidence | ignored `data/` tree plus hash manifest | attachment/archive manifests |

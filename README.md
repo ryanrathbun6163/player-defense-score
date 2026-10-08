@@ -46,6 +46,14 @@ The committed evidence is available in [`configs/possession_003_generalization_e
 
 The [sports-video research collection](docs/research/README.md) compares ball models, player tracking, court geometry, complete sports pipelines, datasets and analytics using primary sources and selected implementation inspection. The subsequent [WASB basketball transfer comparison](docs/ball_wasb_transfer_results.md) completed on all six development windows: at its published heatmap threshold it matched 31/145 eligible frames, emitted no wrong selections, and left 114 eligible frames missing. This coverage is insufficient to replace the saved RF baseline; no method or quality gate is promoted. The tested RF/YOLO agreement rule also has a [recovered negative result](docs/ball_crop_cross_detector_corroboration_results.md).
 
+A [cached calibration screen](docs/ball_wasb_calibration_results.md) increased
+WASB's matches to 62/145 without observed wrong outputs, but still left 83
+eligible frames missing. RF ranked to the same output count gets 61 matches and
+one wrong output; calibration has not established a replacement. A concrete
+[small adaptation trial](docs/ball_wasb_adaptation_plan.md) is prepared using
+75 reviewed pilot frames, with the 150 development frames kept out of training.
+Training has not run; the holdouts and ball-phase quality bar are unchanged.
+
 ## End goal
 
 The intended production pipeline is:

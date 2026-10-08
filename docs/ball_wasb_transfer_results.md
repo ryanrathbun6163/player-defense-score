@@ -2,6 +2,13 @@
 
 Recorded 2026-10-08. Execution commit: `96907dfdf77fd29474357c6ee7845c2be49fc9dc`.
 
+Subsequent [cached calibration](ball_wasb_calibration_results.md) is now complete.
+It doubles error-free observed matches to 62 at threshold 0.2, still leaving 83
+eligible frames missing. Equal-count RF gives 61 matches and one wrong point;
+at the original 31-output count RF can also achieve zero observed errors. The
+original fixed-policy results below remain unchanged. See the
+[next adaptation plan](ball_wasb_adaptation_plan.md); training has not run.
+
 The fixed WASB policy produced 31 geometrically matched observations among 145 localization-eligible frames, with no wrong observations and 114 eligible frames missing. The saved RF-DETR crop-union top-one control matched 111 frames and was wrong on 34. WASB emitted nothing on the five hidden-ball frames; RF emitted on all five. Every WASB match was already an RF match: WASB recovered zero RF failures and lost 80 RF matches.
 
 This is a sparse, clean development result under one fixed policy, not evidence that WASB is a replacement for RF or meets the ball-tracking quality gate. Human synchronized visual review remains pending. The saved result retains `selected_operating_point: null` and `quality_gate: null`.

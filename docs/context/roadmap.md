@@ -1,5 +1,20 @@
 # Roadmap
 
+## Next concrete step: one small pretrained adaptation trial
+
+The [cached calibration screen](../ball_wasb_calibration_results.md) is complete.
+It improves WASB coverage, but its cleanest higher-coverage setting still misses
+83/145 eligible frames and beats equal-count RF by only one correct observation.
+Lower thresholds do not establish a replacement. Keep RF as the working control;
+do not repeat this completed screen or earlier inference merely to resume.
+
+The [adaptation plan](../ball_wasb_adaptation_plan.md) specifies the next scientific
+decision: one fixed 200-update training trial on the 75 reviewed pilot frames,
+with the 150 development frames excluded from training, no checkpoint search and
+holdouts untouched. Training has not run. Better visual features are the question;
+same-game improvement would not itself establish reliable full-possession tracking
+or independent generalization. The existing phase finish line remains unchanged.
+
 ## Current continuation: adapt visual evidence after the completed WASB comparison
 
 The [WASB transfer comparison](../ball_wasb_transfer_results.md) completed on all

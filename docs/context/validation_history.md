@@ -1,5 +1,30 @@
 # Validation History
 
+## 2026-10-08: cached WASB calibration and adaptation-data inspection
+
+Nine focused calibration tests passed (unittest runtime 1.171 seconds), covering
+the real component producer and point consumer, strict thresholds, native-mass
+selection, hidden-inclusive label-free RF ranking, cache binding and preservation
+of conflicting/failed records. An independent static review found no actionable
+scoring, ranking or label-boundary defect. No full-suite run was needed.
+
+One real cached-only screen completed in 2.851 seconds across six windows and
+eight declared thresholds. Original 0.5 candidate records and raw/top-one reports
+agree on all six windows; saved RF baseline reports also agree. All 42 bound
+original inputs remain unchanged. An independent audit reconciled all 48 window
+evaluations and all 16 RF ranking records with the saved inputs. No model loading,
+media reads, new inference, training or holdout access occurred. The source/test/
+config and execution receipts are preserved under
+`data/outputs/ball_tracking/wasb/wasb_basketball_calibration_v0_1/`.
+
+Threshold 0.2 gives 62 matches, zero wrong outputs, 83 missing eligible frames and
+zero hidden alarms. Equal-count RF gives 61 matches and one wrong output. This is
+development calibration, not a method promotion. The separate read-only pilot
+inventory confirms 66 eligible centers, eight certain hidden negatives and one
+ambiguous frame across 75 reviewed frames; all input frames are disjoint from
+the 150 development frames. The adaptation plan has not been executed. See
+`../ball_wasb_calibration_results.md` and `../ball_wasb_adaptation_plan.md`.
+
 ## 2026-10-08: WASB adapter and completed six-window development comparison
 
 Commit `96907dfdf77fd29474357c6ee7845c2be49fc9dc` adds an isolated WASB adapter,

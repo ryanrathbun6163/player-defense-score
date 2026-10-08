@@ -1,5 +1,29 @@
 # Current State
 
+## Latest development: 2026-10-08 cached WASB calibration completed
+
+The eight-setting [calibration screen](../ball_wasb_calibration_results.md) reused
+saved heatmaps without model inference, media reads or holdout access. Threshold
+0.2 raises WASB matches from 31 to 62/145 with zero observed wrong/hidden outputs,
+but leaves 83 eligible frames missing. Representative/challenge matches are
+29/75 and 33/70. At equal pool output counts, RF gives 61 matches and one wrong
+output; at threshold 0.1, WASB's 70 matches/five wrong outputs trail equal-count
+RF's 72/three. The original zero-error 31-output count is also achievable by
+selective RF ranking. This ranking comparison is post-hoc, not a deployable gate.
+
+All six original 0.5 point/report comparisons and RF control comparisons agree;
+nine focused tests passed. One cached-only invocation completed in 2.851 seconds.
+Original evidence remains intact. No full suite, new training, visual acceptance
+or method promotion occurred. Outputs are under
+`data/outputs/ball_tracking/wasb/wasb_basketball_calibration_v0_1/`.
+
+The [adaptation plan](../ball_wasb_adaptation_plan.md) specifies one 200-update
+pretrained trial: train on the three reviewed pilots (66 coordinate targets,
+eight hidden negatives, one ambiguous frame masked), then evaluate on the six
+disjoint development windows. It is prepared, not executed. This same-game split
+can test useful adaptation but cannot establish independent generalization.
+The ball-phase finish line, reviewed player foundation and holdouts are unchanged.
+
 ## Latest implementation: 2026-10-08 WASB transfer comparison completed
 
 The official WASB basketball checkpoint now loads safely in the existing GPU
