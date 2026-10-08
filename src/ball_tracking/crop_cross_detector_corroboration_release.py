@@ -7,6 +7,7 @@ The artificial route uses explicit fixture files and cannot authorize a launch.
 from __future__ import annotations
 
 import argparse
+import ast
 from collections import Counter
 from copy import deepcopy
 import hashlib
@@ -66,6 +67,24 @@ RETRY_PREDECESSOR = "ac3a321649414170adf823deaa1b7b9e"
 RETRY_BASELINE_BYTES, RETRY_MAX_SECONDS = 8875168842, 1198.875
 RETRY_CHANGED_FILES = {"src/ball_tracking/crop_cross_detector_corroboration_release.py",
                        "tests/test_ball_crop_cross_detector_corroboration_release.py"}
+HISTORY_GUARD_BASE_COMMIT = "154657cd42c9db7573ab0e2d6cab3bea8fa48ff3"
+HISTORY_GUARD_SCOPE_PATH = "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_history_guard_correction_v0_1.json"
+HISTORY_GUARD_SCOPE_SHA = "32b43a6dadcfe8d0c5187288957f56e0d5e3a7eca844193c2c2c25fe6059ed12"
+HISTORY_GUARD_PROPOSAL = {"path": RETRY_ADMIN_ROOT + "/next_correction_proposal.json", "size_bytes": 3725,
+                          "sha256": "8a3e7741e0083831305cd25350a8bd532a5271f30434f2c19d67e5ed480a9ba0"}
+HISTORY_GUARD_ADMIN_ROOT = "data/outputs/t/corroboration_history_guard_154657c"
+HISTORY_GUARD_MANIFEST_PATH = "configs/ball_tracking/crop_retention_experiments/rfdetr_yolo_crop_corroboration_retry_v0_2.json"
+HISTORY_GUARD_APPROVAL_PATH = "configs/ball_tracking/reviews/rfdetr_yolo_crop_corroboration_retry_execution_approval_v0_2.json"
+HISTORY_GUARD_CERTIFICATE_PATH = HISTORY_GUARD_ADMIN_ROOT + "/implementation_validation.json"
+HISTORY_GUARD_CHECKPOINT_PATH = HISTORY_GUARD_ADMIN_ROOT + "/post_commit_execution_checkpoint.json"
+HISTORY_GUARD_PARENT_CERTIFICATE = {"path": RETRY_CERTIFICATE_PATH, "size_bytes": 162862,
+                                    "sha256": "c2f86015149bc38ddeaf950c5e9de464bfc6cfe3e6ced0cd73a002f2ef6c3bea"}
+HISTORY_GUARD_IMPLEMENTATION_APPROVAL = {"path": HISTORY_GUARD_ADMIN_ROOT + "/approval.json", "size_bytes": 155680,
+                                        "sha256": "3491252f7fe439f063469bae83118a8eaf808cb39b013469a217aa391780674c"}
+HISTORY_GUARD_PRODUCER_CONTRACT = {"path": HISTORY_GUARD_ADMIN_ROOT + "/producer_contract.json", "size_bytes": 2662,
+                                 "sha256": "4dd5d29b9072cbd7e07892f6d656639f75ac98cc59cef502a9ce38675cf95f1c"}
+HISTORY_GUARD_PRODUCER_TEST = ("test_ball_crop_cross_detector_corroboration_release.RetryHistoryTests."
+                               "test_real_monitor_failure_record_is_accepted_by_retry_predecessor_guard")
 ROLE_PHASE = {"rf_candidates": "selection", "yolo_candidates": "selection",
               "reviewed_annotations": "evaluation", "saved_control_observations": "evaluation",
               "saved_mean_observations": "evaluation", "saved_scoring_pool": "evaluation",
@@ -791,10 +810,17 @@ def verify_retry_history(journal, context, phase="before", attempt_id=None):
              == set(scope["preserved_history"]["historic_failure_ids"]) | {RETRY_PREDECESSOR},
              "Failed scientific attempts changed")
     predecessor = attempts.get(RETRY_PREDECESSOR)
+    predecessor_log = f"attempts/{RETRY_PREDECESSOR}.log"
+    # The monitor journals its exit-status wrapper. The separately bound audit
+    # retains the worker's underlying diagnosis; those fields are not aliases.
     _require(predecessor is not None and predecessor["start"]["unit_key"] == UNIT_KEY
              and predecessor["start"]["selection_unit"] is False
              and predecessor["finished"].get("success") is False
-             and predecessor["finished"].get("failure") == "Worker has no live owning supervisor"
+             and predecessor["finished"].get("failure") ==
+                 f"ResourceLimitError: Worker failed with exit code 1; see {Path(journal.root) / predecessor_log}"
+             and type(predecessor["finished"].get("exit_code")) is int and predecessor["finished"]["exit_code"] == 1
+             and predecessor["finished"].get("log_path") == predecessor_log
+             and "worker_result" in predecessor["finished"] and predecessor["finished"]["worker_result"] is None
              and predecessor["finished"]["elapsed_seconds"] == 1.125
              and predecessor["finished"].get("charged_elapsed_seconds") == 1.125
              and old.consumed(UNIT_KEY) == 1.125
@@ -843,7 +869,7 @@ class CorroborationRetryJournal(CorroborationJournal):
     def reserve(self, unit_key, selection_unit):
         _require(unit_key == UNIT_KEY and selection_unit is False, "Unknown retry reservation")
         authority = self.context["retry_approval_binding"]
-        _require(authority["path"] == RETRY_APPROVAL_PATH
+        _require(authority["path"] == self.context.get("retry_approval_path", RETRY_APPROVAL_PATH)
                  and _json(_read_bound(self.context["root"], authority, maximum=1024**2)) == self.context["retry_approval"],
                  "Retry approval changed before reservation")
         verify_retry_history(self, self.context)
@@ -1026,22 +1052,31 @@ def _require_tracked(root, names):
 
 
 def _retry_manifest(manifest):
+    corrected = manifest.get("schema_version") == "ball_crop_corroboration_retry_release_manifest/v0.2"
     required = {"schema_version", "study_id", "scope", "proposal", "execution_approval",
                 "integration_scope", "integration_proposal", "retry_approval", "implementation_validation",
                 "frozen_history", "post_commit_checkpoint", "selected_method", "selected_operating_point", "quality_gate"}
-    _require(set(manifest) == required and manifest["schema_version"] == "ball_crop_corroboration_retry_release_manifest/v0.1"
+    if corrected:
+        required |= {"history_guard_scope", "history_guard_proposal"}
+    _require(set(manifest) == required and manifest["schema_version"] ==
+             ("ball_crop_corroboration_retry_release_manifest/v0.2" if corrected else "ball_crop_corroboration_retry_release_manifest/v0.1")
              and manifest["study_id"] == ID and manifest["scope"]["path"] == SCOPE_PATH
              and manifest["scope"]["sha256"] == SCOPE_SHA and manifest["proposal"]["path"] == PROPOSAL_PATH
              and manifest["proposal"]["sha256"] == PROPOSAL_SHA and manifest["execution_approval"]["path"] == APPROVAL_PATH
              and manifest["integration_scope"]["path"] == RETRY_SCOPE_PATH and manifest["integration_scope"]["sha256"] == RETRY_SCOPE_SHA
              and manifest["integration_proposal"]["path"] == RETRY_PROPOSAL_PATH
              and manifest["integration_proposal"]["sha256"] == RETRY_PROPOSAL_SHA
-             and manifest["retry_approval"]["path"] == RETRY_APPROVAL_PATH
-             and manifest["implementation_validation"]["path"] == RETRY_CERTIFICATE_PATH
+             and manifest["retry_approval"]["path"] == (HISTORY_GUARD_APPROVAL_PATH if corrected else RETRY_APPROVAL_PATH)
+             and manifest["implementation_validation"]["path"] == (HISTORY_GUARD_CERTIFICATE_PATH if corrected else RETRY_CERTIFICATE_PATH)
              and manifest["frozen_history"]["path"] == RETRY_HISTORY_PATH
-             and manifest["post_commit_checkpoint"] == RETRY_CHECKPOINT_PATH
+             and manifest["post_commit_checkpoint"] == (HISTORY_GUARD_CHECKPOINT_PATH if corrected else RETRY_CHECKPOINT_PATH)
              and all(manifest[k] is None for k in ("selected_method", "selected_operating_point", "quality_gate")),
              "Exact versioned retry manifest required")
+    if corrected:
+        _require(manifest["history_guard_scope"]["path"] == HISTORY_GUARD_SCOPE_PATH
+                 and manifest["history_guard_scope"]["sha256"] == HISTORY_GUARD_SCOPE_SHA
+                 and manifest["history_guard_proposal"] == HISTORY_GUARD_PROPOSAL,
+                 "Unknown history-guard correction scope")
     return manifest
 
 
@@ -1252,8 +1287,330 @@ def _retry_certificate(root, manifest, scope):
     return cert
 
 
+def _history_guard_test_inventory(root, binding, current, helpers, counts, contract):
+    binding = _normalized_bindings(root, [binding])[0]
+    _require(re.fullmatch(re.escape(HISTORY_GUARD_ADMIN_ROOT) +
+                         r"/(red_test_inventory|test_inventory|focused_03_test_inventory)\.json", binding["path"]),
+             "Unknown history-guard test inventory")
+    inventory = _json(_read_bound(root, binding, maximum=4 * 1024**2))
+    _require(inventory["schema_version"] == "ball_crop_corroboration_history_guard_test_inventory/v0.1"
+             and _normalized_bindings(root, inventory["source_bindings"]) == current
+             and _normalized_bindings(root, inventory["helper_bindings"]) == helpers
+             and inventory["producer_test_id"] == contract["test_id"], "History-guard inventory differs from tested bytes")
+    focused, ignored, full = (inventory[k] for k in ("focused_repository_ids", "ignored_lifecycle_ids", "full_repository_ids"))
+    _require(all(isinstance(rows, list) and all(isinstance(v, str) and v for v in rows)
+                 and len(rows) == len(set(rows)) for rows in (focused, ignored, full))
+             and len(focused) >= 84 and len(ignored) == 17 and len(full) == 1167 + len(focused)
+             and set(focused) <= set(full) and not set(ignored) & set(full)
+             and contract["test_id"] in focused,
+             "History-guard test inventory drops prior coverage or the producer regression")
+    _require(counts == {"repository_focused_test_count": len(focused), "ignored_lifecycle_test_count": len(ignored),
+                        "full_test_count": len(full)}, "History-guard test counts differ")
+    return {"focused": len(focused) + len(ignored), "full": len(full)}
+
+
+def _history_guard_method(raw, contract):
+    """Verify the frozen producer regression without importing or executing it."""
+    tree = ast.parse(raw.decode("utf-8-sig"))
+    for row in contract["ast_nodes"]:
+        nodes = tree.body
+        for name in row["qualified_name"].split("."):
+            matches = [node for node in nodes if getattr(node, "name", None) == name]
+            _require(len(matches) == 1, "Frozen producer regression is absent or ambiguous")
+            node = matches[0]
+            nodes = getattr(node, "body", [])
+        digest = hashlib.sha256(ast.dump(node, include_attributes=False).encode("utf-8")).hexdigest()
+        _require(digest == row["sha256"], "Frozen producer regression changed after RED")
+
+
+def _history_guard_snapshots(root, binding, record, current, helpers, contract_binding, contract):
+    stem = Path(binding["path"]).name.removesuffix("_result.json")
+    for key, tested, infix in (("helper_snapshots", helpers, "_helper_"),
+                               ("implementation_snapshots", [b for b in current if b["path"] in RETRY_CHANGED_FILES], "_")):
+        snapshots = _normalized_bindings(root, record[key])
+        expected = sorted([{**b, "path": HISTORY_GUARD_ADMIN_ROOT + "/" + stem + infix + Path(b["path"]).name}
+                           for b in tested], key=lambda b: b["path"])
+        _require(snapshots == expected, "History-guard tested source/helper snapshot differs")
+        for snapshot in snapshots:
+            raw = _read_bound(root, snapshot, maximum=4 * 1024**2)
+            if key == "implementation_snapshots" and snapshot["path"].endswith("/" + stem + "_test_ball_crop_cross_detector_corroboration_release.py"):
+                _history_guard_method(raw, contract)
+    expected_contract = {**contract_binding, "path": HISTORY_GUARD_ADMIN_ROOT + "/" + stem + "_producer_contract.json"}
+    _require(_normalized_bindings(root, [record["producer_contract_snapshot"]]) == [expected_contract],
+             "Producer contract snapshot differs")
+    _read_bound(root, expected_contract, maximum=1024**2)
+
+
+def _history_guard_result(root, binding, record, current, helpers, protected, approval_binding, approval,
+                          contract_binding, contract, inventory_binding, counts, *, red=False):
+    _require(record["driver_exception"] is None and record["owned_cleanup_verified"] is True
+             and record["cleanup_errors"] == [] and record["final_accounting_error"] is None
+             and record["preservation_error"] is None
+             and _normalized_bindings(root, record["source_bindings"]) == current
+             == _normalized_bindings(root, record["source_bindings_after"])
+             and _normalized_bindings(root, record["helper_bindings"]) == helpers
+             == _normalized_bindings(root, record["helper_bindings_after"])
+             and _normalized_bindings(root, record["preserved_worktree_bindings_before"]) == protected
+             == _normalized_bindings(root, record["preserved_worktree_bindings_after"])
+             and _normalized_bindings(root, [record["approval"]]) == [approval_binding]
+             == _normalized_bindings(root, [record["approval_after"]])
+             and _normalized_bindings(root, [record["validation_extension"]]) == [approval_binding]
+             == _normalized_bindings(root, [record["validation_extension_after"]])
+             and _normalized_bindings(root, [record["producer_contract"]]) == [contract_binding]
+             and _normalized_bindings(root, [record["test_inventory"]]) == _normalized_bindings(root, [inventory_binding]),
+             "History-guard result is not a preserved frozen-source check")
+    _require(0 < record["elapsed_seconds"] <= record["timeout_seconds"] <= (2500 if record["phase"] == "full" else 300)
+             and record["peak_rss_bytes"] <= approval["maximum_sampled_memory_bytes"]
+             and record["peak_observed_output_bytes"] + record["publication_reserve_bytes"] <= approval["maximum_new_output_bytes"]
+             and record["minimum_free_bytes"] - record["publication_reserve_bytes"] >= approval["minimum_free_disk_bytes"]
+             and record["publication_reserve_bytes"] >= monitor.FINAL_RESERVE, "History-guard validation exceeded resource bounds")
+    shutdown = record["shutdown"]
+    observation = shutdown["telemetry"]["identity_observation_budget"]
+    _require(shutdown["natural_shutdown_success"] is True and shutdown["failure"] is None
+             and shutdown["final_membership"] == [] and shutdown["owned_cleanup_verified"] is True
+             and shutdown["cleanup_errors"] == []
+             and 0 <= shutdown["elapsed_seconds"] <= shutdown["natural_shutdown_limit_seconds"] <= 1
+             and observation["maximum_incident_seconds"] == .05 and observation["maximum_total_seconds"] == .25
+             and observation["failed"] is False and 0 <= observation["consumed_seconds"] <= .25,
+             "History-guard validation did not prove bounded natural cleanup")
+    outcome = {"test_id": contract["test_id"], "outcome": contract["expected_outcome"] if red else "success",
+               "error_type": contract["expected_error_type"] if red else None,
+               "error_message": contract["expected_error_message"] if red else None}
+    _require(record["producer_contract_result"] == outcome, "The actual producer regression outcome differs")
+    stem = Path(binding["path"]).name.removesuffix("_result.json")
+    traces = {}
+    for key, suffix in (("log", ".log"), ("active_test_telemetry", "_active_test.jsonl"),
+                        ("lifecycle_telemetry", "_lifecycle.jsonl")):
+        trace_binding = _normalized_bindings(root, [record[key]])[0]
+        _require(trace_binding["path"] == HISTORY_GUARD_ADMIN_ROOT + "/" + stem + suffix,
+                 "History-guard trace belongs to another invocation")
+        traces[key] = _read_bound(root, trace_binding, maximum=16 * 1024**2, allow_empty=key == "lifecycle_telemetry")
+    inventory = _json(_read_bound(root, inventory_binding, maximum=4 * 1024**2))
+    expected_ids = ([contract["test_id"]] if red else sorted(inventory["focused_repository_ids"] + inventory["ignored_lifecycle_ids"])
+                    if record["phase"] == "focused" else sorted(inventory["full_repository_ids"]))
+    events = [_json(line) for line in traces["active_test_telemetry"].splitlines()]
+    started_ids = [event["test_id"] for event in events if event["event"] == "start"]
+    stopped_ids = [event["last_test_id"] for event in events if event["event"] == "stop"]
+    actual_outcomes = [{key: event[key] for key in outcome} for event in events
+                       if event["event"] == "outcome" and event["test_id"] == contract["test_id"]]
+    _require(sorted(started_ids) == sorted(stopped_ids) == expected_ids and len(started_ids) == len(set(started_ids))
+             and actual_outcomes == [outcome], "Raw telemetry does not establish exact producer outcome and test coverage")
+    log = traces["log"].decode("utf-8", errors="replace")
+    reported_counts = re.findall(r"^Ran (\d+) tests? in ", log, re.MULTILINE)
+    summaries = re.findall(r"^(OK(?: \([^)]*\))?|FAILED \([^)]*\))\r?$", log, re.MULTILINE)
+    skips = [line for line in log.splitlines() if " ... skipped " in line]
+    _require(reported_counts and summaries and int(reported_counts[-1]) == record["test_count"]
+             and summaries[-1] == record["unittest_summary"] and summaries[-1].startswith("FAILED" if red else "OK")
+             and (not skips if record["phase"] == "focused" else len(skips) == 1
+                  and "test_output_escape_and_symlink_traversal_are_rejected" in skips[0]
+                  and "test_ball_detector_experiment_runner.PreflightTests" in skips[0]
+                  and "skipped 'Directory symlinks are unavailable'" in skips[0]),
+             "Raw unittest log or existing skip differs from the claimed result")
+    if red:
+        _require(record["phase"] == "focused" and record["validation_mode"] == "red"
+                 and record["red_expected_failure_verified"] is True and record["success"] is False
+                 and record["returncode"] == 1 and record["failure"] == "expected_producer_contract_red"
+                 and all(record[k] == value for k, value in contract["expected_red_counts"].items()),
+                 "RED did not demonstrate the exact original consumer defect")
+    else:
+        skipped = 1 if record["phase"] == "full" else 0
+        _require(record["validation_mode"] == "green" and record["red_expected_failure_verified"] is False
+                 and record["success"] is True and record["returncode"] == 0
+                 and record["failure"] is None and record["failed_count"] == record["error_count"] == 0
+                 and record["test_count"] == counts[record["phase"]] and record["skipped_count"] == skipped
+                 and record["passed_count"] == record["test_count"] - skipped,
+                 "Corrected producer regression and complete frozen tests did not pass")
+    _history_guard_snapshots(root, binding, record, current, helpers, contract_binding, contract)
+
+
+def _history_guard_certificate(root, manifest, scope):
+    """Accept one bounded correction leaf while retaining its immutable parent."""
+    correction = _json(_read_bound(root, manifest["history_guard_scope"], maximum=1024**2))
+    _require(correction["schema_version"] == "ball_crop_corroboration_history_guard_correction_scope/v0.1"
+             and correction["base_commit"] == HISTORY_GUARD_BASE_COMMIT and correction["study_id"] == ID
+             and correction["proposal"] == manifest["history_guard_proposal"]
+             and correction["scientific_scope"] == manifest["scope"] and correction["integration_scope"] == manifest["integration_scope"]
+             and correction["frozen_history"] == manifest["frozen_history"]
+             and correction["parent_certificate"] == HISTORY_GUARD_PARENT_CERTIFICATE,
+             "History-guard correction changed scientific scope or its accepted parent")
+    _read_bound(root, correction["runtime_refusal_audit"], maximum=1024**2)
+    parent = _json(_read_bound(root, HISTORY_GUARD_PARENT_CERTIFICATE, maximum=4 * 1024**2))
+    _require(parent["schema_version"] == "ball_crop_corroboration_retry_integration_validation/v0.1"
+             and parent["status"] == "artificial_validation_passed_runtime_authority_unchanged"
+             and parent["cumulative_validation_seconds"] == 11709.157999999989
+             and parent["cumulative_validation_cap_seconds"] == 13000, "Accepted integration parent differs")
+    cert = _json(_read_bound(root, manifest["implementation_validation"], maximum=4 * 1024**2))
+    _require(cert["schema_version"] == "ball_crop_corroboration_history_guard_validation/v0.1"
+             and cert["status"] == "artificial_validation_passed_runtime_authority_unchanged"
+             and cert["scope"] == manifest["history_guard_scope"] and cert["proposal"] == manifest["history_guard_proposal"]
+             and cert["red_expected_failure_verified"] is True and cert["parent_certificate"] == HISTORY_GUARD_PARENT_CERTIFICATE
+             and _normalized_bindings(root, [cert["approval"]]) == [HISTORY_GUARD_IMPLEMENTATION_APPROVAL]
+             and _normalized_bindings(root, [cert["producer_contract"]]) == [HISTORY_GUARD_PRODUCER_CONTRACT],
+             "Unknown history-guard correction certificate")
+    approval_binding, contract_binding = HISTORY_GUARD_IMPLEMENTATION_APPROVAL, HISTORY_GUARD_PRODUCER_CONTRACT
+    approval = _json(_read_bound(root, approval_binding, maximum=4 * 1024**2))
+    contract = _json(_read_bound(root, contract_binding, maximum=1024**2))
+    current, before = _retry_source_transition(root, cert["source_bindings"], parent["source_bindings"])
+    _require(approval["schema_version"] == "ball_crop_corroboration_history_guard_implementation_approval/v0.1"
+             and approval["status"] == "approved_implementation_and_bounded_artificial_validation"
+             and approval["approved_by"] == "Ryan" and isinstance(approval["user_statement"], str) and approval["user_statement"].strip()
+             and approval["head"] == HISTORY_GUARD_BASE_COMMIT and set(approval["implementation_files"]) == RETRY_CHANGED_FILES
+             and approval["repository_rule_path"] == "AGENTS.md"
+             and approval["scope_binding"] == manifest["history_guard_scope"] and approval["proposal_binding"] == manifest["history_guard_proposal"]
+             and approval["parent_certificate"] == HISTORY_GUARD_PARENT_CERTIFICATE
+             and _normalized_bindings(root, approval["ancestor_source_bindings"]) == before
+             and _normalized_bindings(root, approval["ancestor_protected_bindings"]) == _normalized_bindings(root, parent["preserved_worktree_bindings"])
+             and approval["previously_consumed_seconds"] == 11709.157999999989 and approval["prior_cap_seconds"] == 13000
+             and approval["additional_seconds"] == approval["maximum_new_phase_seconds"] == 2800
+             and approval["cumulative_validation_budget_seconds"] == 15800 and approval["maximum_focused_invocations"] == 3
+             and approval["maximum_focused_seconds"] == 300 and approval["maximum_full_invocations"] == 1
+             and approval["maximum_full_seconds"] == 2500 and approval["closed_remainder_reusable"] is False
+             and approval["maximum_sampled_memory_bytes"] == 8 * 1024**3 and approval["maximum_new_output_bytes"] == 4 * 1024**3
+             and approval["minimum_free_disk_bytes"] == 50 * 1024**3
+             and approval["maximum_natural_shutdown_seconds"] == approval["maximum_forced_cleanup_seconds"] == 1
+             and approval["producer_regression_required"] is True
+             and all(approval[k] is True for k in ("implementation_authorized", "repository_source_edits_authorized",
+                      "repository_rule_edit_authorized", "ignored_validator_implementation_authorized", "artificial_validation_authorized"))
+             and all(approval[k] is False for k in ("scientific_body_access_authorized", "scientific_execution_authorized",
+                      "real_resource_journal_replay_authorized", "runtime_authority_or_certificate_replacement_authorized")),
+             "History-guard implementation approval or closed-budget boundary differs")
+    protected = _normalized_bindings(root, parent["preserved_worktree_bindings"] + [
+        correction["repository_rule"], manifest["history_guard_scope"], correction["original_runtime_manifest"], correction["original_retry_approval"]])
+    _require(len(protected) == 203 and len({b["path"] for b in protected}) == 203
+             and protected == _normalized_bindings(root, approval["expected_preserved_bindings"])
+             == _normalized_bindings(root, cert["preserved_worktree_bindings"]), "History-guard protected inventory differs")
+    for binding in protected:
+        _read_bound(root, binding, maximum=4 * 1024**2, allow_empty=True)
+    prior = _normalized_bindings(root, parent["validation_results"])
+    _require(len(prior) == 17 and prior == _normalized_bindings(root, cert["prior_validation_results"])
+             == _normalized_bindings(root, approval["prior_validation_results"])
+             and approval["prior_consumption_records"] == parent["consumption_records"],
+             "History-guard correction dropped prior validation evidence")
+    for binding in prior:
+        _read_bound(root, binding, maximum=4 * 1024**2)
+    _require(contract["schema_version"] == "ball_crop_corroboration_history_guard_producer_contract/v0.1"
+             and _normalized_bindings(root, [contract["approval"]]) == [approval_binding]
+             and contract["test_id"] == HISTORY_GUARD_PRODUCER_TEST
+             and contract["test_file"] == "tests/test_ball_crop_cross_detector_corroboration_release.py"
+             and contract["expected_outcome"] == "failure" and contract["expected_error_type"] == "AssertionError"
+             and contract["expected_error_message"] == "Producer completion rejected by frozen retry guard: Exact failed same-unit attempt and charge required"
+             and contract["expected_red_counts"] == {"test_count": 1, "passed_count": 0, "skipped_count": 0, "failed_count": 1, "error_count": 0}
+             and contract["unmodified_contract_fields"] == ["failure", "success", "exit_code", "log_path", "worker_result"]
+             and _normalized_bindings(root, [contract["red_consumer_source"]])[0] ==
+                 next(b for b in before if b["path"] == "src/ball_tracking/crop_cross_detector_corroboration_release.py")
+             and _normalized_bindings(root, contract["producer_bindings"]) ==
+                 [b for b in before if b["path"] in ("src/ball_tracking/crop_retention_monitor.py", "src/ball_tracking/crop_retention_resources.py")],
+             "Frozen producer/consumer regression contract differs")
+    _history_guard_method(_read_bound(root, next(b for b in current if b["path"] == contract["test_file"]), maximum=4 * 1024**2), contract)
+    helpers = _normalized_bindings(root, cert["helper_bindings"])
+    _require(len(helpers) == 4 and {b["path"] for b in helpers} ==
+             {HISTORY_GUARD_ADMIN_ROOT + "/" + n for n in ("validate.py", "finalize_validation.py", "lifecycle.py", "test_lifecycle.py")},
+             "History-guard helper inventory differs")
+    for binding in helpers:
+        _read_bound(root, binding, maximum=1024**2)
+        if Path(binding["path"]).name in ("lifecycle.py", "test_lifecycle.py"):
+            ancestor = next(b for b in parent["helper_bindings"] if Path(b["path"]).name == Path(binding["path"]).name)
+            _require((binding["sha256"], binding["size_bytes"]) == (ancestor["sha256"], ancestor["size_bytes"]), "Accepted lifecycle behavior changed")
+    counts = _history_guard_test_inventory(root, cert["test_inventory"], current, helpers, cert["test_counts"], contract)
+    directory = _safe(root, HISTORY_GUARD_ADMIN_ROOT)
+    names = {p.name for p in directory.glob("*_result.json")}
+    starts = {p.name.replace("_started.json", "_result.json") for p in directory.glob("*_started.json")}
+    bindings = _normalized_bindings(root, cert["new_validation_results"])
+    _require(3 <= len(bindings) <= 4 and names == starts and {b["path"] for b in bindings} ==
+             {HISTORY_GUARD_ADMIN_ROOT + "/" + n for n in names}
+             and all(re.fullmatch(r"(focused_0[1-3]|full_01)_result\.json", n) for n in names),
+             "History-guard invocation inventory is partial or expanded")
+    records = [(b, _json(_read_bound(root, b, maximum=4 * 1024**2))) for b in bindings]
+    records.sort(key=lambda pair: pair[1]["previously_consumed_seconds"])
+    evidence = cert["new_invocation_evidence"]
+    _require(len(evidence) == len(records) and
+             _normalized_bindings(root, [row["result"] for row in evidence]) == bindings,
+             "History-guard invocation evidence is incomplete")
+    for binding, record in records:
+        row = next(row for row in evidence if _normalized_bindings(root, [row["result"]])[0] == binding)
+        stem = Path(binding["path"]).name.removesuffix("_result.json")
+        started_binding = _normalized_bindings(root, [row["started"]])[0]
+        _require(row["name"] == stem and started_binding["path"] == HISTORY_GUARD_ADMIN_ROOT + "/" + stem + "_started.json",
+                 "History-guard started authority belongs to another invocation")
+        started = _json(_read_bound(root, started_binding, maximum=4 * 1024**2))
+        _require(started and all(key in record and record[key] == value for key, value in started.items())
+                 and _normalized_bindings(root, row["helper_snapshots"]) == _normalized_bindings(root, record["helper_snapshots"])
+                 and _normalized_bindings(root, [row["test_inventory"]]) == _normalized_bindings(root, [record["test_inventory"]])
+                 and _normalized_bindings(root, [row["producer_contract_snapshot"]]) ==
+                     _normalized_bindings(root, [record["producer_contract_snapshot"]]),
+                 "Started authority or invocation snapshot evidence differs from its result")
+        for key, suffix in (("log", ".log"), ("active_test_telemetry", "_active_test.jsonl"),
+                            ("lifecycle_telemetry", "_lifecycle.jsonl")):
+            trace = _normalized_bindings(root, [record[key]])[0]
+            _require(trace["path"] == HISTORY_GUARD_ADMIN_ROOT + "/" + stem + suffix,
+                     "Preserved validation trace belongs to another invocation")
+            _read_bound(root, trace, maximum=16 * 1024**2, allow_empty=key == "lifecycle_telemetry")
+    total, focused_seconds, full_count, consumed = 11709.157999999989, 0.0, 0, []
+    for binding, record in records:
+        elapsed = record["elapsed_seconds"]
+        _require(type(elapsed) in (int, float) and math.isfinite(elapsed) and elapsed > 0
+                 and math.isclose(record["previously_consumed_seconds"], total, rel_tol=0, abs_tol=1e-8)
+                 and record["cumulative_validation_budget_seconds"] == 15800, "History-guard consumed budget is discontinuous")
+        total += elapsed
+        consumed.append({"binding": binding, "success": record["success"], "failure": record["failure"],
+                         "elapsed_seconds": elapsed, "cumulative_seconds": total})
+        if record["phase"] == "focused":
+            _require(full_count == 0 and Path(binding["path"]).name.startswith("focused_"), "History-guard focus occurred after full")
+            focused_seconds += elapsed
+        else:
+            _require(record["phase"] == "full" and Path(binding["path"]).name == "full_01_result.json" and elapsed <= 2500,
+                     "Unexpected history-guard full invocation")
+            full_count += 1
+    declared_consumed = [{**r, "binding": _normalized_bindings(root, [r["binding"]])[0]} for r in cert["new_consumption_records"]]
+    _require(consumed == declared_consumed and full_count == 1 and focused_seconds <= 300
+             and total - 11709.157999999989 <= 2800 and total <= 15800
+             and cert["previously_consumed_seconds"] == 11709.157999999989
+             and cert["cumulative_validation_seconds"] == total and cert["cumulative_validation_cap_seconds"] == 15800
+             and math.isclose(cert["new_phase_seconds"], total - 11709.157999999989, rel_tol=0, abs_tol=1e-8)
+             and cert["new_focused_validation_seconds"] == focused_seconds and cert["new_full_invocation_count"] == 1,
+             "History-guard correction reset or exceeded its additive allowance")
+    red_binding = _normalized_bindings(root, [cert["red_result"]])[0]
+    _require(red_binding["path"] == HISTORY_GUARD_ADMIN_ROOT + "/focused_01_result.json" and records[0][0] == red_binding,
+             "Correction lacks the original first RED invocation")
+    red = records[0][1]
+    red_sources = _normalized_bindings(root, red["source_bindings"])
+    before_by_path = {b["path"]: b for b in before}
+    _require(len(red_sources) == 187 and {b["path"] for b in red_sources} == set(before_by_path)
+             and all(b["path"] == contract["test_file"] or b == before_by_path[b["path"]] for b in red_sources),
+             "RED did not test the original unfixed consumer")
+    _history_guard_test_inventory(root, red["test_inventory"], red_sources, helpers, red["test_counts"], contract)
+    _history_guard_result(root, red_binding, red, red_sources, helpers, protected, approval_binding, approval,
+                          contract_binding, contract, red["test_inventory"], counts, red=True)
+    accepted = {}
+    for phase in ("focused", "full"):
+        binding = _normalized_bindings(root, [cert[phase + "_result"]])[0]
+        _require(binding in bindings and binding != red_binding, "Accepted GREEN/full result is outside the correction phase")
+        record = next(r for b, r in records if b == binding)
+        _require(record["phase"] == phase and record["test_counts"] == cert["test_counts"]
+                 and _normalized_bindings(root, [record["red_result"]]) == [red_binding], "Accepted correction result lacks its RED predecessor")
+        _history_guard_result(root, binding, record, current, helpers, protected, approval_binding, approval,
+                              contract_binding, contract, cert["test_inventory"], counts)
+        accepted[phase] = (binding, record)
+    _require(records[-1] == accepted["full"] and
+             _normalized_bindings(root, [accepted["full"][1]["focused_result"]]) == [accepted["focused"][0]]
+             and accepted["full"][1]["previously_consumed_seconds"] >=
+                 accepted["focused"][1]["previously_consumed_seconds"] + accepted["focused"][1]["elapsed_seconds"],
+             "Sole full run lacks its passing producer-backed GREEN gate")
+    review = _json(_read_bound(root, accepted["full"][1]["implementation_review"], maximum=4 * 1024**2))
+    _require(review["schema_version"] == "ball_crop_corroboration_history_guard_review/v0.1"
+             and review["status"] == "independent_review_passed" and review["findings"] == []
+             and review["producer_consumer_contract_review_passed"] is True
+             and _normalized_bindings(root, [review["producer_contract"]]) == [contract_binding]
+             and _normalized_bindings(root, [review["red_result"]]) == [red_binding]
+             and _normalized_bindings(root, [review["test_inventory"]]) == _normalized_bindings(root, [cert["test_inventory"]])
+             and _normalized_bindings(root, review["source_bindings"]) == current
+             and _normalized_bindings(root, review["helper_bindings"]) == helpers,
+             "Independent producer/consumer review is absent or stale")
+    return cert
+
+
 def _metadata(root, manifest_path=MANIFEST_PATH):
-    if str(manifest_path).replace("\\", "/") == RETRY_MANIFEST_PATH:
+    if str(manifest_path).replace("\\", "/") in (RETRY_MANIFEST_PATH, HISTORY_GUARD_MANIFEST_PATH):
         return _retry_metadata(root, manifest_path)
     root = Path(root).resolve()
     _require(str(manifest_path).replace("\\", "/") == MANIFEST_PATH, "Only the exact future manifest is allowed")
@@ -1313,11 +1670,30 @@ def _metadata(root, manifest_path=MANIFEST_PATH):
 def _retry_metadata(root, manifest_path=RETRY_MANIFEST_PATH):
     """The new authority is additive; never reinterpret the consumed v0.1 route."""
     root = Path(root).resolve()
-    _require(str(manifest_path).replace("\\", "/") == RETRY_MANIFEST_PATH, "Only the exact retry manifest is allowed")
-    if not _safe(root, RETRY_MANIFEST_PATH).is_file():
+    manifest_path = str(manifest_path).replace("\\", "/")
+    corrected = manifest_path == HISTORY_GUARD_MANIFEST_PATH
+    _require(manifest_path in (RETRY_MANIFEST_PATH, HISTORY_GUARD_MANIFEST_PATH), "Only the exact retry manifest is allowed")
+    approval_path = HISTORY_GUARD_APPROVAL_PATH if corrected else RETRY_APPROVAL_PATH
+    checkpoint_path = HISTORY_GUARD_CHECKPOINT_PATH if corrected else RETRY_CHECKPOINT_PATH
+    base_commit = HISTORY_GUARD_BASE_COMMIT if corrected else RETRY_BASE_COMMIT
+    if not _safe(root, manifest_path).is_file():
         raise PermissionError("Scientific retry requires its separate exact authority, tested certificate and clean checkpoint")
-    raw = _read_admin(root, RETRY_MANIFEST_PATH, 1024**2)
+    raw = _read_admin(root, manifest_path, 1024**2)
     manifest = _retry_manifest(_json(raw))
+    _require((manifest["schema_version"] == "ball_crop_corroboration_retry_release_manifest/v0.2") == corrected,
+             "Retry manifest version does not match its authority path")
+    correction = None
+    if corrected:
+        correction = _json(_read_bound(root, manifest["history_guard_scope"], maximum=1024**2))
+        _read_bound(root, manifest["history_guard_proposal"], maximum=1024**2)
+        prior_retry = _retry_manifest(_json(_read_bound(root, correction["original_runtime_manifest"], maximum=1024**2)))
+        _read_bound(root, correction["original_retry_approval"], maximum=1024**2)
+        _require(prior_retry["schema_version"] == "ball_crop_corroboration_retry_release_manifest/v0.1"
+                 and prior_retry["retry_approval"] == correction["original_retry_approval"]
+                 and prior_retry["implementation_validation"] == HISTORY_GUARD_PARENT_CERTIFICATE
+                 and all(manifest[k] == prior_retry[k] for k in ("scope", "proposal", "execution_approval", "integration_scope",
+                                                                "integration_proposal", "frozen_history")),
+                 "History-guard correction changed its prior runtime/scientific authority")
     retry = _json(_read_bound(root, manifest["integration_scope"], maximum=4 * 1024**2))
     _read_bound(root, manifest["integration_proposal"], maximum=1024**2)
     _require(retry["schema_version"] == "ball_crop_corroboration_retry_integration_proposal/v0.1"
@@ -1334,7 +1710,8 @@ def _retry_metadata(root, manifest_path=RETRY_MANIFEST_PATH):
              and old_approval["proposal"] == manifest["proposal"] and old_approval["scientific_execution_authorized"] is True,
              "Original scientific approval differs")
     approval = _json(_read_bound(root, manifest["retry_approval"], maximum=1024**2))
-    _require(approval["schema_version"] == "ball_crop_corroboration_retry_execution_approval/v0.1"
+    _require(approval["schema_version"] == ("ball_crop_corroboration_retry_execution_approval/v0.2" if corrected
+                                          else "ball_crop_corroboration_retry_execution_approval/v0.1")
              and approval["study_id"] == ID and approval["approved_by"] == "Ryan"
              and isinstance(approval["user_statement"], str) and approval["user_statement"].strip()
              and approval["scope"] == manifest["scope"] and approval["original_execution_approval"] == manifest["execution_approval"]
@@ -1349,28 +1726,39 @@ def _retry_metadata(root, manifest_path=RETRY_MANIFEST_PATH):
              and all(approval[k] is True for k in ("scientific_execution_authorized", "administrative_history_verification_authorized",
                                                   "release_checkpoint_authorized")),
              "Separate one-time scientific retry approval is absent or differs")
+    if corrected:
+        _require(all(approval[k] == manifest[k] for k in ("history_guard_scope", "history_guard_proposal"))
+                 and all(approval[k] == correction[k] for k in ("parent_certificate", "original_runtime_manifest", "original_retry_approval")),
+                 "Corrected runtime approval lacks its preserved authority lineage")
     _require(_git(root, "status", "--porcelain") == "", "Retry release requires clean committed work; preserve dirty files")
     commit = _git(root, "rev-parse", "HEAD")
     require_digest(commit, "actual retry release commit", 40)
-    _require(commit != RETRY_BASE_COMMIT and _git(root, "branch", "--show-current") == "codex/ball-detector-baseline",
+    _require(commit != base_commit and _git(root, "branch", "--show-current") == "codex/ball-detector-baseline",
              "Expected clean tested retry feature branch")
-    _git(root, "merge-base", "--is-ancestor", RETRY_BASE_COMMIT, commit)
+    _git(root, "merge-base", "--is-ancestor", base_commit, commit)
     authorities = (RETRY_MANIFEST_PATH, RETRY_APPROVAL_PATH, RETRY_SCOPE_PATH, RETRY_PROPOSAL_PATH,
                    MANIFEST_PATH, APPROVAL_PATH, SCOPE_PATH, PROPOSAL_PATH)
+    if corrected:
+        authorities += (HISTORY_GUARD_MANIFEST_PATH, HISTORY_GUARD_APPROVAL_PATH, HISTORY_GUARD_SCOPE_PATH, "AGENTS.md")
     for name in authorities:
         _require(_git(root, "ls-files", "--", name) == name, "Retry and original authority must be committed")
-    cert = _retry_certificate(root, manifest, scope)
+    cert = (_history_guard_certificate if corrected else _retry_certificate)(root, manifest, scope)
     _require_tracked(root, [b["path"] for b in _normalized_bindings(root, cert["source_bindings"])]
                      + [b["path"] for b in _normalized_bindings(root, cert["preserved_worktree_bindings"])] + list(authorities))
-    checkpoint = monitor._read_record(_safe(root, RETRY_CHECKPOINT_PATH), limit=1024**2)
-    _require(checkpoint["schema_version"] == "ball_crop_corroboration_retry_post_commit_checkpoint/v0.1"
+    checkpoint = monitor._read_record(_safe(root, checkpoint_path), limit=1024**2)
+    _require(checkpoint["schema_version"] == ("ball_crop_corroboration_retry_post_commit_checkpoint/v0.2" if corrected
+                                            else "ball_crop_corroboration_retry_post_commit_checkpoint/v0.1")
              and checkpoint["commit"] == commit and checkpoint["clean"] is True
-             and checkpoint["manifest"] == _binding(RETRY_MANIFEST_PATH, raw)
+             and checkpoint["manifest"] == _binding(manifest_path, raw)
              and all(checkpoint[k] == manifest[k] for k in ("retry_approval", "implementation_validation", "scope",
                                                            "integration_scope", "frozen_history"))
              and checkpoint["predecessor_attempt_id"] == RETRY_PREDECESSOR
              and checkpoint["original_baseline_bytes"] == RETRY_BASELINE_BYTES,
              "Missing or stale actual clean retry checkpoint")
+    if corrected:
+        _require(all(checkpoint[k] == manifest[k] for k in ("history_guard_scope", "history_guard_proposal"))
+                 and checkpoint["parent_certificate"] == HISTORY_GUARD_PARENT_CERTIFICATE,
+                 "Corrected clean checkpoint lacks its exact lineage")
     frozen = _json(_read_bound(root, manifest["frozen_history"], maximum=16 * 1024**2))
     _retry_history_authority(root, frozen, scope, retry)
     original_limits = next(b for b in scope["administrative_binding_sources"]
@@ -1384,7 +1772,7 @@ def _retry_metadata(root, manifest_path=RETRY_MANIFEST_PATH):
         _require(not _safe(root, name).exists(), "Original prediction embargo changed")
     return {"root": root, "scope": scope, "retry": retry, "retry_approval": approval,
             "retry_approval_binding": manifest["retry_approval"], "manifest": manifest,
-            "manifest_path": RETRY_MANIFEST_PATH, "manifest_binding": _binding(RETRY_MANIFEST_PATH, raw),
+             "manifest_path": manifest_path, "manifest_binding": _binding(manifest_path, raw), "retry_approval_path": approval_path,
             "commit": commit, "certificate": cert, "history": frozen, "limits": limits,
             "policy": monitor.monitoring_policy(limits), "output_root": _safe(root, OUTPUT_ROOT)}
 

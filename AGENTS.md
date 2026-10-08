@@ -60,6 +60,9 @@ Do not assume a command was run merely because it was provided. Confirm terminal
 For relevant code changes:
 
 - run focused tests first, then the full test suite;
+- for changes that consume another component's records, derive critical fixtures from the producing code or an explicitly authorized captured record; verify producer and consumer fields independently;
+- demonstrate a regression test failing for the identified bug before correction and passing afterward, using isolated artificial inputs; count both runs within the approved validation allowance;
+- the validation launcher must verify the producer-backed regression and focused checks before starting the full suite on frozen files; a general AI review or a hand-written matching fixture does not satisfy this gate;
 - use `PYTHONDONTWRITEBYTECODE=1` or remove newly generated `__pycache__` directories;
 - keep generated test/output artifacts outside Git;
 - run `git diff --check` before proposing staging;
