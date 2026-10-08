@@ -51,6 +51,21 @@ OUTPUT_DIR = OUTPUT_ROOT + "/audit/cross_detector_corroboration_v0_1"
 UNIT_KEY = "cross-detector-corroboration:study:"
 MAX_RETURN_BYTES, MAX_RECEIPT_BYTES = 512 * 1024, 1024 * 1024
 MAX_NEW_BYTES, MAX_SECONDS = 4 * 1024**3, 1200
+RETRY_BASE_COMMIT = "3233d2cb1c2d3773bd109ac81ed8474a63c4d2c4"
+RETRY_SCOPE_PATH = "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_retry_integration_v0_1.json"
+RETRY_SCOPE_SHA = "f125ccc0ef2e4d732a0f807436c9d1ec9dab3d47b258f973af5a6e59c74daa80"
+RETRY_PROPOSAL_PATH = "docs/ball_crop_cross_detector_corroboration_retry_integration_proposal.md"
+RETRY_PROPOSAL_SHA = "bd03fd5c262135934802f27f7fe5bbcae3cb262bdc25476af5df7ae0da990863"
+RETRY_MANIFEST_PATH = "configs/ball_tracking/crop_retention_experiments/rfdetr_yolo_crop_corroboration_retry_v0_1.json"
+RETRY_APPROVAL_PATH = "configs/ball_tracking/reviews/rfdetr_yolo_crop_corroboration_retry_execution_approval_v0_1.json"
+RETRY_ADMIN_ROOT = "data/outputs/t/corroboration_retry_integration_3233d2c"
+RETRY_CERTIFICATE_PATH = RETRY_ADMIN_ROOT + "/implementation_validation.json"
+RETRY_CHECKPOINT_PATH = RETRY_ADMIN_ROOT + "/post_commit_execution_checkpoint.json"
+RETRY_HISTORY_PATH = RETRY_ADMIN_ROOT + "/runtime_frozen_history.json"
+RETRY_PREDECESSOR = "ac3a321649414170adf823deaa1b7b9e"
+RETRY_BASELINE_BYTES, RETRY_MAX_SECONDS = 8875168842, 1198.875
+RETRY_CHANGED_FILES = {"src/ball_tracking/crop_cross_detector_corroboration_release.py",
+                       "tests/test_ball_crop_cross_detector_corroboration_release.py"}
 ROLE_PHASE = {"rf_candidates": "selection", "yolo_candidates": "selection",
               "reviewed_annotations": "evaluation", "saved_control_observations": "evaluation",
               "saved_mean_observations": "evaluation", "saved_scoring_pool": "evaluation",
@@ -286,8 +301,11 @@ def _owned_paths(root, attempt_id):
 def _ownership(root, attempt_id):
     base = _owned_paths(root, attempt_id)
     _require(Path(str(base) + ".start").is_file(), "Supervisor has not released the worker gate")
+    supervisor_pid = os.environ.get("BALL_RETENTION_PARENT_PID")
+    _require(isinstance(supervisor_pid, str) and re.fullmatch(r"[1-9][0-9]*", supervisor_pid),
+             "Worker has no valid monitor-injected supervisor PID")
     owner = monitor._read_record(_safe(root, OUTPUT_ROOT + "/supervisor.lock"))
-    _require(type(owner.get("pid")) is int and owner["pid"] == os.getppid()
+    _require(type(owner.get("pid")) is int and owner["pid"] == int(supervisor_pid)
              and resources._alive(owner["pid"]) and isinstance(owner.get("token"), str), "Worker has no live owning supervisor")
 
 
@@ -741,6 +759,117 @@ class CorroborationJournal(resources.BudgetJournal):
         return super().append(kind, **details)
 
 
+def verify_retry_history(journal, context, phase="before", attempt_id=None):
+    """Check the one explicitly approved retry without changing its old prefix."""
+    _require(phase in ("before", "worker", "completed"), "Unknown retry history phase")
+    retry, scope = context["retry"], context["scope"]
+    expected = retry["retry_design"]["exact_starting_history"]
+    count = expected["events"]
+    _require(count == 3334 and expected["closed_attempts"] == 64
+             and expected["successes"] == 59 and expected["failures"] == 5
+             and expected["tip"] == "828394ce0efd82a6665e1bb919593d7208a231ee3ce5b584505fd0abd73d5847"
+             and expected["consumed_seconds"] == 3548.648999999985
+             and expected["cumulative_cap_seconds"] == journal.limits["maximum_cumulative_seconds"] == 14400,
+             "Exact failed scientific predecessor history required")
+    _require(len(journal.events) >= count and journal.events[count - 1]["sha256"] == expected["tip"],
+             "Failed predecessor prefix changed or truncated")
+    original_count = scope["preserved_history"]["resource_event_count"]
+    _require(original_count == 3330 and journal.events[original_count - 1]["sha256"] == scope["preserved_history"]["resource_tip"],
+             "Original pre-failure prefix changed")
+    prior = object.__new__(resources.BudgetJournal)
+    prior.events, prior.limits, prior.root = journal.events[:original_count], journal.limits, journal.root
+    verify_history(prior, scope)
+    old = object.__new__(resources.BudgetJournal)
+    old.events, old.limits, old.root = journal.events[:count], journal.limits, journal.root
+    attempts = old._attempts()
+    _require(len(attempts) == 64 and all(a["finished"] is not None for a in attempts.values())
+             and old.consumed() == expected["consumed_seconds"]
+             and journal.limits["maximum_cumulative_seconds"] - old.consumed() == expected["remaining_seconds"],
+             "Retry would reset failed scientific accounting")
+    failed = {aid for aid, a in attempts.items() if a["finished"].get("success") is not True}
+    _require(failed == set(expected["failed_attempt_ids"])
+             == set(scope["preserved_history"]["historic_failure_ids"]) | {RETRY_PREDECESSOR},
+             "Failed scientific attempts changed")
+    predecessor = attempts.get(RETRY_PREDECESSOR)
+    _require(predecessor is not None and predecessor["start"]["unit_key"] == UNIT_KEY
+             and predecessor["start"]["selection_unit"] is False
+             and predecessor["finished"].get("success") is False
+             and predecessor["finished"].get("failure") == "Worker has no live owning supervisor"
+             and predecessor["finished"]["elapsed_seconds"] == 1.125
+             and predecessor["finished"].get("charged_elapsed_seconds") == 1.125
+             and old.consumed(UNIT_KEY) == 1.125
+             and journal.events[original_count] == predecessor["start"]
+             and journal.events[count - 1] == predecessor["finished"]
+             and all(e.get("attempt_id") == RETRY_PREDECESSOR for e in journal.events[original_count:count]),
+             "Exact failed same-unit attempt and charge required")
+    for aid, attempt in attempts.items():
+        for suffix, event in (("reservation", attempt["start"]), ("completion", attempt["finished"])):
+            _require(monitor._read_record(Path(journal.root) / "attempts" / f"{aid}.{suffix}.json") ==
+                     {"event_sha256": event["sha256"]}, "Failed-prefix reservation/completion seal changed")
+    suffix = journal.events[count:]
+    if phase == "before":
+        _require(attempt_id is None and not suffix, "Consumed retry cannot reserve again or adopt a suffix")
+        return journal
+    current = journal._attempts()
+    _require(isinstance(attempt_id, str) and attempt_id != RETRY_PREDECESSOR
+             and set(current) == set(attempts) | {attempt_id}, "Unexpected retry attempt inventory")
+    attempt = current[attempt_id]
+    start = attempt["start"]
+    _require(suffix and suffix[0] == start and all(e.get("attempt_id") == attempt_id for e in suffix)
+             and start["unit_key"] == UNIT_KEY and start["selection_unit"] is False
+             and start.get("predecessor_attempt_id") == RETRY_PREDECESSOR
+             and start.get("retry_approval") == context["retry_approval_binding"]
+             and start.get("original_scientific_scope") == {"path": SCOPE_PATH, "sha256": SCOPE_SHA}
+             and start["reserved_seconds"] == min(MAX_SECONDS - old.consumed(UNIT_KEY), expected["remaining_seconds"])
+             and 0 < start["reserved_seconds"] <= RETRY_MAX_SECONDS,
+             "Retry reservation changed its unit, authority or old ceilings")
+    _require((attempt["finished"] is None) if phase == "worker" else
+             (attempt["finished"] is not None and suffix[-1] == attempt["finished"]
+              and attempt["finished"].get("success") is True), "Retry has not reached the required successful phase")
+    if phase == "completed":
+        finished = attempt["finished"]
+        _require(finished["time_budget_seconds"] == start["reserved_seconds"]
+                 and 0 < finished["elapsed_seconds"] == finished["charged_elapsed_seconds"] <= start["reserved_seconds"],
+                 "Retry completion changed or exceeded its reservation")
+    return journal
+
+
+class CorroborationRetryJournal(CorroborationJournal):
+    """Same study and accounting policy; one separately authorized extra attempt."""
+    def __init__(self, output_root, limits, *, context):
+        self.context = context
+        super().__init__(output_root, limits, scope=context["scope"], baseline_bytes=RETRY_BASELINE_BYTES)
+
+    def reserve(self, unit_key, selection_unit):
+        _require(unit_key == UNIT_KEY and selection_unit is False, "Unknown retry reservation")
+        authority = self.context["retry_approval_binding"]
+        _require(authority["path"] == RETRY_APPROVAL_PATH
+                 and _json(_read_bound(self.context["root"], authority, maximum=1024**2)) == self.context["retry_approval"],
+                 "Retry approval changed before reservation")
+        verify_retry_history(self, self.context)
+        _require(not _safe(self.context["root"], OUTPUT_DIR).exists(), "Retry output directory already exists")
+        seconds = min(MAX_SECONDS - self.consumed(UNIT_KEY),
+                      self.limits["maximum_cumulative_seconds"] - self.consumed())
+        _require(0 < seconds <= RETRY_MAX_SECONDS, "Original scientific retry allowance exhausted")
+        aid = uuid.uuid4().hex
+        event = self.append("started", attempt_id=aid, unit_key=UNIT_KEY, selection_unit=False,
+                            reserved_seconds=seconds, predecessor_attempt_id=RETRY_PREDECESSOR,
+                            retry_approval=self.context["retry_approval_binding"],
+                            original_scientific_scope={"path": SCOPE_PATH, "sha256": SCOPE_SHA})
+        resources._write_new(self.root / "attempts" / (aid + ".reservation.json"), {"event_sha256": event["sha256"]})
+        return aid, seconds
+
+
+def _verify_context_history(journal, context, phase="before", attempt_id=None):
+    if context.get("retry") is not None:
+        return verify_retry_history(journal, context, phase, attempt_id)
+    return verify_history(journal, context["scope"], phase, attempt_id)
+
+
+def _context_baseline(context):
+    return RETRY_BASELINE_BYTES if context.get("retry") is not None else _baseline_bytes(context["history"]["preserved_files"])
+
+
 def _git(root, *args):
     result = subprocess.run(["git", "-C", str(root), *args], text=True, capture_output=True, check=True)
     return result.stdout.strip()
@@ -896,7 +1025,236 @@ def _require_tracked(root, names):
     _require(set(names) <= tracked, "All tested source and preserved work must be committed in the clean release")
 
 
+def _retry_manifest(manifest):
+    required = {"schema_version", "study_id", "scope", "proposal", "execution_approval",
+                "integration_scope", "integration_proposal", "retry_approval", "implementation_validation",
+                "frozen_history", "post_commit_checkpoint", "selected_method", "selected_operating_point", "quality_gate"}
+    _require(set(manifest) == required and manifest["schema_version"] == "ball_crop_corroboration_retry_release_manifest/v0.1"
+             and manifest["study_id"] == ID and manifest["scope"]["path"] == SCOPE_PATH
+             and manifest["scope"]["sha256"] == SCOPE_SHA and manifest["proposal"]["path"] == PROPOSAL_PATH
+             and manifest["proposal"]["sha256"] == PROPOSAL_SHA and manifest["execution_approval"]["path"] == APPROVAL_PATH
+             and manifest["integration_scope"]["path"] == RETRY_SCOPE_PATH and manifest["integration_scope"]["sha256"] == RETRY_SCOPE_SHA
+             and manifest["integration_proposal"]["path"] == RETRY_PROPOSAL_PATH
+             and manifest["integration_proposal"]["sha256"] == RETRY_PROPOSAL_SHA
+             and manifest["retry_approval"]["path"] == RETRY_APPROVAL_PATH
+             and manifest["implementation_validation"]["path"] == RETRY_CERTIFICATE_PATH
+             and manifest["frozen_history"]["path"] == RETRY_HISTORY_PATH
+             and manifest["post_commit_checkpoint"] == RETRY_CHECKPOINT_PATH
+             and all(manifest[k] is None for k in ("selected_method", "selected_operating_point", "quality_gate")),
+             "Exact versioned retry manifest required")
+    return manifest
+
+
+def _retry_source_transition(root, current_bindings, ancestor_bindings):
+    current = _normalized_bindings(root, current_bindings)
+    before = _normalized_bindings(root, ancestor_bindings)
+    actual = {p.relative_to(Path(root)).as_posix() for folder in ("src", "tests")
+              for p in (Path(root) / folder).rglob("*.py")} | {"requirements.txt"}
+    prior_by_name = {b["path"]: b for b in before}
+    _require(len(current) == len(before) == len(actual) == 187
+             and {b["path"] for b in current} == set(prior_by_name) == actual
+             and all(b["path"] in RETRY_CHANGED_FILES or b == prior_by_name[b["path"]] for b in current),
+             "Retry changed or omitted a source outside its two-file scope")
+    for binding in current:
+        _read_bound(root, binding, maximum=4 * 1024**2, allow_empty=True)
+    return current, before
+
+
+def _retry_test_inventory(root, binding, current, helpers, declared_counts):
+    binding = _normalized_bindings(root, [binding])[0]
+    _require(re.fullmatch(re.escape(RETRY_ADMIN_ROOT) + r"/(test_inventory|focused_0[23]_test_inventory)\.json", binding["path"]),
+             "Unknown integration test inventory")
+    inventory = _json(_read_bound(root, binding, maximum=4 * 1024**2))
+    _require(inventory["schema_version"] == "ball_crop_corroboration_retry_test_inventory/v0.1"
+             and _normalized_bindings(root, inventory["source_bindings"]) == current
+             and _normalized_bindings(root, inventory["helper_bindings"]) == helpers,
+             "Test inventory is not bound to the final source/helpers")
+    focused, ignored, full = (inventory[k] for k in ("focused_repository_ids", "ignored_lifecycle_ids", "full_repository_ids"))
+    _require(all(isinstance(rows, list) and all(isinstance(v, str) and v for v in rows)
+                 and len(rows) == len(set(rows)) for rows in (focused, ignored, full))
+             and len(focused) >= 54 and len(ignored) == 17 and len(full) == 1167 + len(focused)
+             and set(focused) <= set(full) and not (set(ignored) & set(full)),
+             "Incomplete or duplicated frozen test-ID inventory")
+    _require(declared_counts == {"repository_focused_test_count": len(focused),
+                                "ignored_lifecycle_test_count": len(ignored), "full_test_count": len(full)},
+             "Integration test count semantics differ")
+    return {"focused": len(focused) + len(ignored), "full": len(full)}
+
+
+def _retry_certificate(root, manifest, scope):
+    """Verify historical evidence as history, then independently bind new bytes."""
+    retry = _json(_read_bound(root, manifest["integration_scope"], maximum=4 * 1024**2))
+    _require(manifest["implementation_validation"]["path"] == RETRY_CERTIFICATE_PATH, "Unknown retry certificate")
+    cert = _json(_read_bound(root, manifest["implementation_validation"], maximum=4 * 1024**2))
+    _require(cert["schema_version"] == "ball_crop_corroboration_retry_integration_validation/v0.1"
+             and cert["status"] == "artificial_validation_passed_runtime_authority_unchanged"
+             and cert["scope"] == manifest["integration_scope"] and cert["proposal"] == manifest["integration_proposal"],
+             "Retry integration certificate identity differs")
+    evidence = retry["evidence_reuse"]
+    original = next(b for b in evidence["original_runtime_package"] if b["path"] == CERTIFICATE_PATH)
+    expected_ancestors = [original, evidence["accepted_shutdown_certificate"]]
+    _require(_normalized_bindings(root, cert["ancestor_certificates"]) == _normalized_bindings(root, expected_ancestors),
+             "Retry certificate changed historical ancestors")
+    ancestors = [_json(_read_bound(root, b, maximum=4 * 1024**2)) for b in expected_ancestors]
+    _require(ancestors[0]["schema_version"] == "ball_crop_cross_detector_corroboration_release_implementation/v0.1"
+             and ancestors[0]["stage1_validation"] == scope["stage1_validation"]
+             and ancestors[1]["schema_version"] == "ball_crop_shutdown_implementation_validation/v0.1"
+             and ancestors[1]["status"] == "artificial_validation_passed_runtime_authority_unchanged"
+             and ancestors[1]["focused_counts"] == evidence["accepted_focused_counts"]
+             and ancestors[1]["full_counts"] == evidence["accepted_full_counts"]
+             and ancestors[1]["cumulative_validation_seconds"] == 9589.048999999992,
+             "Historical artificial evidence differs")
+    current, before = _retry_source_transition(root, cert["source_bindings"], ancestors[1]["source_bindings"])
+    approval_binding = _normalized_bindings(root, [cert["approval"]])[0]
+    _require(approval_binding["path"] == RETRY_ADMIN_ROOT + "/approval.json", "Unknown retry implementation approval")
+    approval = _json(_read_bound(root, approval_binding, maximum=4 * 1024**2))
+    _require(approval["schema_version"] == "ball_crop_corroboration_retry_integration_implementation_approval/v0.1"
+             and approval["status"] == "approved_implementation_and_bounded_artificial_validation"
+             and approval["approved_by"] == "Ryan" and isinstance(approval["user_statement"], str) and approval["user_statement"].strip()
+             and approval["head"] == RETRY_BASE_COMMIT and set(approval["implementation_files"]) == RETRY_CHANGED_FILES
+             and approval["scope_binding"] == manifest["integration_scope"] and approval["proposal_binding"] == manifest["integration_proposal"]
+             and _normalized_bindings(root, approval["ancestor_source_bindings"]) == before
+             and _normalized_bindings(root, approval["ancestor_certificates"]) == _normalized_bindings(root, expected_ancestors)
+             and approval["prior_consumption_records"] == evidence["consumption_records"]
+             and approval["previously_consumed_seconds"] == 9589.048999999992 and approval["prior_cap_seconds"] == 10200
+             and approval["additional_seconds"] == approval["maximum_new_phase_seconds"] == 2800
+             and approval["cumulative_validation_budget_seconds"] == 13000
+             and approval["maximum_focused_invocations"] == 3 and approval["maximum_focused_seconds"] == 300
+             and approval["maximum_full_invocations"] == 1 and approval["maximum_full_seconds"] == 2500
+             and approval["closed_remainder_reusable"] is False
+             and approval["maximum_sampled_memory_bytes"] == 8 * 1024**3
+             and approval["maximum_new_output_bytes"] == 4 * 1024**3
+             and approval["minimum_free_disk_bytes"] == 50 * 1024**3
+             and approval["maximum_natural_shutdown_seconds"] == approval["maximum_forced_cleanup_seconds"] == 1
+             and approval["prior_validation_consumed_seconds_preserved"] == ["2164.2970000000005", "2295.467999999999"]
+             and all(approval[k] is True for k in ("implementation_authorized", "repository_source_edits_authorized",
+                                                  "ignored_validator_implementation_authorized", "artificial_validation_authorized"))
+             and all(approval[k] is False for k in ("scientific_body_access_authorized", "scientific_execution_authorized",
+                       "real_resource_journal_replay_authorized", "runtime_authority_or_certificate_replacement_authorized")),
+             "Retry implementation approval or additive allowance differs")
+    old_protected = _normalized_bindings(root, ancestors[1]["preserved_worktree_bindings"])
+    _require(len(old_protected) == 199 and _normalized_bindings(root, approval["ancestor_protected_bindings"]) == old_protected,
+             "Retry omitted historical protected bindings")
+    protected = _normalized_bindings(root, [b for b in old_protected if b["path"] not in RETRY_CHANGED_FILES]
+                                    + [manifest["integration_scope"], manifest["integration_proposal"]])
+    _require(_normalized_bindings(root, cert["preserved_worktree_bindings"]) == protected, "Retry protected scope differs")
+    for binding in protected:
+        _read_bound(root, binding, maximum=4 * 1024**2, allow_empty=True)
+    for binding in evidence["old_helper_bindings"]:
+        _read_bound(root, binding, maximum=1024**2)
+    helpers = _normalized_bindings(root, cert["helper_bindings"])
+    helper_names = {RETRY_ADMIN_ROOT + "/" + n for n in ("validate.py", "finalize_validation.py", "lifecycle.py", "test_lifecycle.py")}
+    _require(len(helpers) == 4 and {b["path"] for b in helpers} == helper_names, "Incomplete integration helper inventory")
+    for binding in helpers:
+        _read_bound(root, binding, maximum=1024**2)
+        if Path(binding["path"]).name in ("lifecycle.py", "test_lifecycle.py"):
+            old = next(b for b in evidence["old_helper_bindings"] if Path(b["path"]).name == Path(binding["path"]).name)
+            _require((binding["sha256"], binding["size_bytes"]) == (old["sha256"], old["size_bytes"]), "Lifecycle behavior changed")
+    counts = _retry_test_inventory(root, cert["test_inventory"], current, helpers, cert["test_counts"])
+    bindings = _normalized_bindings(root, cert["validation_results"])
+    historical = _normalized_bindings(root, [r["binding"] for r in evidence["consumption_records"]])
+    _require(len(historical) == 15 and all(b in bindings for b in historical), "Historical validation receipts dropped or altered")
+    old_total = 0.0
+    for row in evidence["consumption_records"]:
+        record = _json(_read_bound(root, row["binding"], maximum=4 * 1024**2))
+        _require(record["elapsed_seconds"] == row["elapsed_seconds"]
+                 and record["previously_consumed_seconds"] == row["previously_consumed_seconds"]
+                 and record.get("success") == row["success"] and record.get("failure") == row["failure"]
+                 and math.isclose(row["previously_consumed_seconds"], old_total, rel_tol=0, abs_tol=1e-8),
+                 "Historical validation charges changed")
+        old_total += row["elapsed_seconds"]
+    _require(math.isclose(old_total, 9589.048999999992, rel_tol=0, abs_tol=1e-8), "Historical validation budget reset")
+    new_bindings = [b for b in bindings if b not in historical]
+    directory = _safe(root, RETRY_ADMIN_ROOT)
+    names = {p.name for p in directory.glob("*_result.json") if re.fullmatch(r"(focused_0[1-3]|full_01)_result\.json", p.name)}
+    all_result_names = {p.name for p in directory.glob("*_result.json")}
+    starts = {p.name.replace("_started.json", "_result.json") for p in directory.glob("*_started.json")}
+    _require(2 <= len(new_bindings) <= 4 and names == all_result_names == starts
+             and {b["path"] for b in new_bindings} == {RETRY_ADMIN_ROOT + "/" + n for n in names},
+             "Integration validation invocation inventory is partial or expanded")
+    records = []
+    for binding in new_bindings:
+        _require(re.fullmatch(re.escape(RETRY_ADMIN_ROOT) + r"/(focused_0[1-3]|full_01)_result\.json", binding["path"]),
+                 "Unknown integration validation receipt")
+        records.append((binding, _json(_read_bound(root, binding, maximum=4 * 1024**2))))
+    records.sort(key=lambda pair: pair[1]["previously_consumed_seconds"])
+    total, focused_seconds, full_count = old_total, 0.0, 0
+    for binding, record in records:
+        elapsed = record["elapsed_seconds"]
+        _require(type(elapsed) in (float, int) and math.isfinite(elapsed) and elapsed > 0
+                 and math.isclose(record["previously_consumed_seconds"], total, rel_tol=0, abs_tol=1e-8)
+                 and record["cumulative_validation_budget_seconds"] == 13000, "Integration validation accounting is discontinuous")
+        total += elapsed
+        if record["phase"] == "focused":
+            _require(full_count == 0 and Path(binding["path"]).name.startswith("focused_"), "Focused validation occurred after full")
+            focused_seconds += elapsed
+        else:
+            _require(record["phase"] == "full" and Path(binding["path"]).name == "full_01_result.json" and elapsed <= 2500,
+                     "Unknown or excessive full invocation")
+            full_count += 1
+    _require(full_count == 1 and focused_seconds <= 300 and total - old_total <= 2800 and total <= 13000
+             and cert["cumulative_validation_seconds"] == total and cert["cumulative_validation_cap_seconds"] == 13000
+             and math.isclose(cert["new_phase_seconds"], total - old_total, rel_tol=0, abs_tol=1e-8)
+             and cert["new_focused_validation_seconds"] == focused_seconds and cert["new_full_invocation_count"] == 1,
+             "Integration exceeded its additive validation allowance")
+    successful = {}
+    for kind in ("focused", "full"):
+        binding = _normalized_bindings(root, [cert[kind + "_result"]])[0]
+        _require(binding in new_bindings, "Accepted result is not a new integration invocation")
+        record = next(r for b, r in records if b == binding)
+        _require(record["phase"] == kind and record["success"] is True and record["returncode"] == 0
+                 and record["failure"] is None and record["driver_exception"] is None
+                 and record["owned_cleanup_verified"] is True and not record["cleanup_errors"]
+                 and record["final_accounting_error"] is None and record["preservation_error"] is None
+                 and record["failed_count"] == record["error_count"] == 0
+                 and record["test_count"] == counts[kind] and record["skipped_count"] == (1 if kind == "full" else 0)
+                 and record["passed_count"] == counts[kind] - record["skipped_count"]
+                 and record["test_counts"] == cert["test_counts"]
+                 and _normalized_bindings(root, [record["test_inventory"]]) == _normalized_bindings(root, [cert["test_inventory"]])
+                 and _normalized_bindings(root, record["source_bindings"]) == current
+                 == _normalized_bindings(root, record["source_bindings_after"])
+                 and _normalized_bindings(root, record["helper_bindings"]) == helpers
+                 == _normalized_bindings(root, record["helper_bindings_after"])
+                 and _normalized_bindings(root, [record["approval"]]) == [approval_binding]
+                 == _normalized_bindings(root, [record["approval_after"]])
+                 and _normalized_bindings(root, [record["validation_extension"]]) == [approval_binding]
+                 == _normalized_bindings(root, [record["validation_extension_after"]])
+                 and _normalized_bindings(root, record["preserved_worktree_bindings_before"]) == protected
+                 == _normalized_bindings(root, record["preserved_worktree_bindings_after"]),
+                 "Accepted integration validation is not a successful frozen-source check")
+        _require(0 < record["elapsed_seconds"] <= record["timeout_seconds"] <= (2500 if kind == "full" else 300)
+                 and record["peak_rss_bytes"] <= approval["maximum_sampled_memory_bytes"]
+                 and record["peak_observed_output_bytes"] + record["publication_reserve_bytes"] <= approval["maximum_new_output_bytes"]
+                 and record["minimum_free_bytes"] - record["publication_reserve_bytes"] >= approval["minimum_free_disk_bytes"]
+                 and record["publication_reserve_bytes"] >= monitor.FINAL_RESERVE,
+                 "Accepted validation exceeded resource bounds")
+        shutdown = record["shutdown"]
+        observation = shutdown["telemetry"]["identity_observation_budget"]
+        _require(shutdown["natural_shutdown_success"] is True and shutdown["failure"] is None
+                 and shutdown["final_membership"] == [] and shutdown["owned_cleanup_verified"] is True
+                 and shutdown["cleanup_errors"] == [] and 0 <= shutdown["elapsed_seconds"] <= shutdown["natural_shutdown_limit_seconds"] <= 1
+                 and observation["maximum_incident_seconds"] == .05 and observation["maximum_total_seconds"] == .25
+                 and observation["failed"] is False and 0 <= observation["consumed_seconds"] <= .25,
+                 "Accepted validation did not prove bounded natural owned cleanup")
+        stem = Path(binding["path"]).name.removesuffix("_result.json")
+        for key, tested, infix in (("helper_snapshots", helpers, "_helper_"),
+                                   ("implementation_snapshots", [b for b in current if b["path"] in RETRY_CHANGED_FILES], "_")):
+            snapshots = _normalized_bindings(root, record[key])
+            expected_snapshots = [{**b, "path": RETRY_ADMIN_ROOT + "/" + stem + infix + Path(b["path"]).name} for b in tested]
+            _require(snapshots == sorted(expected_snapshots, key=lambda b: b["path"]), "Validated source/helper snapshot differs")
+            for snapshot in snapshots:
+                _read_bound(root, snapshot, maximum=4 * 1024**2)
+        successful[kind] = record
+    _require(records[-1][1] == successful["full"]
+             and successful["full"]["previously_consumed_seconds"] >=
+                 successful["focused"]["previously_consumed_seconds"] + successful["focused"]["elapsed_seconds"],
+             "Final passing focused source did not precede the sole full run")
+    return cert
+
+
 def _metadata(root, manifest_path=MANIFEST_PATH):
+    if str(manifest_path).replace("\\", "/") == RETRY_MANIFEST_PATH:
+        return _retry_metadata(root, manifest_path)
     root = Path(root).resolve()
     _require(str(manifest_path).replace("\\", "/") == MANIFEST_PATH, "Only the exact future manifest is allowed")
     path = _safe(root, MANIFEST_PATH)
@@ -952,6 +1310,121 @@ def _metadata(root, manifest_path=MANIFEST_PATH):
             "policy": monitor.monitoring_policy(limits), "output_root": _safe(root, OUTPUT_ROOT)}
 
 
+def _retry_metadata(root, manifest_path=RETRY_MANIFEST_PATH):
+    """The new authority is additive; never reinterpret the consumed v0.1 route."""
+    root = Path(root).resolve()
+    _require(str(manifest_path).replace("\\", "/") == RETRY_MANIFEST_PATH, "Only the exact retry manifest is allowed")
+    if not _safe(root, RETRY_MANIFEST_PATH).is_file():
+        raise PermissionError("Scientific retry requires its separate exact authority, tested certificate and clean checkpoint")
+    raw = _read_admin(root, RETRY_MANIFEST_PATH, 1024**2)
+    manifest = _retry_manifest(_json(raw))
+    retry = _json(_read_bound(root, manifest["integration_scope"], maximum=4 * 1024**2))
+    _read_bound(root, manifest["integration_proposal"], maximum=1024**2)
+    _require(retry["schema_version"] == "ball_crop_corroboration_retry_integration_proposal/v0.1"
+             and retry["proposal"] == manifest["integration_proposal"], "Frozen integration scope differs")
+    original_binding = next(b for b in retry["evidence_reuse"]["original_runtime_package"] if b["path"] == MANIFEST_PATH)
+    original = _validate_manifest(_json(_read_bound(root, original_binding, maximum=1024**2)))
+    _require(all(manifest[k] == original[k] for k in ("scope", "proposal", "execution_approval")),
+             "Retry changed original scientific authority")
+    scope = _json(_read_bound(root, manifest["scope"], maximum=4 * 1024**2))
+    validate_scope(scope, production=True)
+    _read_bound(root, manifest["proposal"], maximum=1024**2)
+    old_approval = _json(_read_bound(root, manifest["execution_approval"], maximum=1024**2))
+    _require(old_approval["study_id"] == ID and old_approval["scope"] == manifest["scope"]
+             and old_approval["proposal"] == manifest["proposal"] and old_approval["scientific_execution_authorized"] is True,
+             "Original scientific approval differs")
+    approval = _json(_read_bound(root, manifest["retry_approval"], maximum=1024**2))
+    _require(approval["schema_version"] == "ball_crop_corroboration_retry_execution_approval/v0.1"
+             and approval["study_id"] == ID and approval["approved_by"] == "Ryan"
+             and isinstance(approval["user_statement"], str) and approval["user_statement"].strip()
+             and approval["scope"] == manifest["scope"] and approval["original_execution_approval"] == manifest["execution_approval"]
+             and approval["integration_scope"] == manifest["integration_scope"]
+             and approval["integration_proposal"] == manifest["integration_proposal"]
+             and approval["implementation_validation"] == manifest["implementation_validation"]
+             and approval["failed_attempt_audit"] == retry["evidence_reuse"]["failed_attempt_audit"]
+             and approval["predecessor_attempt_id"] == RETRY_PREDECESSOR and approval["unit_key"] == UNIT_KEY
+             and type(approval["maximum_attempts"]) is int and approval["maximum_attempts"] == 1
+             and approval["maximum_retry_seconds"] == RETRY_MAX_SECONDS and approval["fresh_budget"] is False
+             and type(approval["new_verified_media_presentation_authorized"]) is bool
+             and all(approval[k] is True for k in ("scientific_execution_authorized", "administrative_history_verification_authorized",
+                                                  "release_checkpoint_authorized")),
+             "Separate one-time scientific retry approval is absent or differs")
+    _require(_git(root, "status", "--porcelain") == "", "Retry release requires clean committed work; preserve dirty files")
+    commit = _git(root, "rev-parse", "HEAD")
+    require_digest(commit, "actual retry release commit", 40)
+    _require(commit != RETRY_BASE_COMMIT and _git(root, "branch", "--show-current") == "codex/ball-detector-baseline",
+             "Expected clean tested retry feature branch")
+    _git(root, "merge-base", "--is-ancestor", RETRY_BASE_COMMIT, commit)
+    authorities = (RETRY_MANIFEST_PATH, RETRY_APPROVAL_PATH, RETRY_SCOPE_PATH, RETRY_PROPOSAL_PATH,
+                   MANIFEST_PATH, APPROVAL_PATH, SCOPE_PATH, PROPOSAL_PATH)
+    for name in authorities:
+        _require(_git(root, "ls-files", "--", name) == name, "Retry and original authority must be committed")
+    cert = _retry_certificate(root, manifest, scope)
+    _require_tracked(root, [b["path"] for b in _normalized_bindings(root, cert["source_bindings"])]
+                     + [b["path"] for b in _normalized_bindings(root, cert["preserved_worktree_bindings"])] + list(authorities))
+    checkpoint = monitor._read_record(_safe(root, RETRY_CHECKPOINT_PATH), limit=1024**2)
+    _require(checkpoint["schema_version"] == "ball_crop_corroboration_retry_post_commit_checkpoint/v0.1"
+             and checkpoint["commit"] == commit and checkpoint["clean"] is True
+             and checkpoint["manifest"] == _binding(RETRY_MANIFEST_PATH, raw)
+             and all(checkpoint[k] == manifest[k] for k in ("retry_approval", "implementation_validation", "scope",
+                                                           "integration_scope", "frozen_history"))
+             and checkpoint["predecessor_attempt_id"] == RETRY_PREDECESSOR
+             and checkpoint["original_baseline_bytes"] == RETRY_BASELINE_BYTES,
+             "Missing or stale actual clean retry checkpoint")
+    frozen = _json(_read_bound(root, manifest["frozen_history"], maximum=16 * 1024**2))
+    _retry_history_authority(root, frozen, scope, retry)
+    original_limits = next(b for b in scope["administrative_binding_sources"]
+                           if b["path"] == "configs/ball_tracking/proposals/rfdetr_medium_crop_candidate_retention_v0_1.json")
+    limits = _json(_read_bound(root, original_limits, maximum=4 * 1024**2))["resource_limits"]
+    for name in ("src/ball_tracking/crop_retention_monitor.py", "src/ball_tracking/crop_retention_resources.py"):
+        _read_bound(root, next(b for b in scope["administrative_binding_sources"] if b["path"] == name), maximum=1024**2)
+    for row in scope["existing_scientific_files"]:
+        _require(_stat(_safe(root, row["path"])) == row["preparation_metadata"], "Scientific metadata differs from original scope")
+    for name in scope["prediction_embargoes"]:
+        _require(not _safe(root, name).exists(), "Original prediction embargo changed")
+    return {"root": root, "scope": scope, "retry": retry, "retry_approval": approval,
+            "retry_approval_binding": manifest["retry_approval"], "manifest": manifest,
+            "manifest_path": RETRY_MANIFEST_PATH, "manifest_binding": _binding(RETRY_MANIFEST_PATH, raw),
+            "commit": commit, "certificate": cert, "history": frozen, "limits": limits,
+            "policy": monitor.monitoring_policy(limits), "output_root": _safe(root, OUTPUT_ROOT)}
+
+
+def _retry_history_authority(root, frozen, scope, retry):
+    expected = retry["retry_design"]["exact_starting_history"]
+    history = {"resource_event_count": expected["events"], "resource_tip": expected["tip"],
+               "closed_attempts": expected["closed_attempts"], "successes": expected["successes"],
+               "historic_failure_ids": expected["failed_attempt_ids"], "consumed_seconds": expected["consumed_seconds"],
+               "remaining_seconds": expected["remaining_seconds"]}
+    baseline_binding = retry["retry_design"]["output_accounting"]["original_frozen_history"]
+    preservation_binding = {"path": "data/outputs/t/corroboration_ownership_repair_3233d2c/preservation.json",
+                            "size_bytes": 2348263, "sha256": "93a34635ec395f4f8a7fba86107bef43877566b874a667506329faef87cad08d"}
+    _require(frozen["schema_version"] == "ball_crop_corroboration_retry_frozen_history/v0.1"
+             and frozen["preserved_history"] == history and frozen["original_baseline_binding"] == baseline_binding
+             and frozen["original_baseline_bytes"] == RETRY_BASELINE_BYTES
+             and frozen["failed_attempt_audit"] == retry["evidence_reuse"]["failed_attempt_audit"]
+             and frozen["preservation_source"] == preservation_binding, "Retry frozen-history authority differs")
+    baseline = _json(_read_bound(root, baseline_binding, maximum=4 * 1024**2))
+    preservation = _json(_read_bound(root, preservation_binding, maximum=4 * 1024**2))
+    _require(len(baseline["preserved_files"]) == 6903 and _baseline_bytes(baseline["preserved_files"]) == RETRY_BASELINE_BYTES
+             and len(frozen["preserved_files"]) == 6917 and frozen["preserved_files"] == preservation["output_root_files"]
+             and frozen["preserved_directories"] == preservation["output_root_directories"]
+             and frozen["external_preserved_files"] == preservation["external_preserved_files"] == baseline["external_preserved_files"]
+             and frozen["protection"] == preservation["protection"] == baseline["protection"],
+             "Retry rebased original byte accounting or changed preservation")
+    original_files = {b["path"]: b for b in baseline["preserved_files"]}
+    current_files = {b["path"]: b for b in frozen["preserved_files"]}
+    _require(len(current_files) == 6917 and all(current_files.get(name) == row for name, row in original_files.items())
+             and set(baseline["preserved_directories"]) <= set(frozen["preserved_directories"]),
+             "Retry preservation drops pre-failure evidence")
+    audit = _json(_read_bound(root, frozen["failed_attempt_audit"], maximum=1024**2))
+    _require(audit["attempt_id"] == RETRY_PREDECESSOR and audit["status"] == "failed_before_worker_scientific_access_no_retry"
+             and audit["current_event_count"] == 3334 and audit["current_resource_tip"] == expected["tip"]
+             and audit["charged_seconds"] == 1.125 and audit["consumed_seconds"] == expected["consumed_seconds"]
+             and audit["scientific_output_directory_created"] is False and audit["scientific_worker_access_reached"] is False,
+             "Failed scientific startup evidence differs")
+    _history_authority(root, frozen, scope)
+
+
 def _history_authority(root, frozen, scope):
     """Verify historical administrative authorities; all scientific paths inert."""
     old = _json(_read_bound(root, PRIOR_HISTORY, maximum=4 * 1024**2))
@@ -1005,6 +1478,8 @@ def _inventory(root):
 def _preserved(context, phase="before", attempt_id=None):
     _require(phase in ("before", "worker", "completed"), "Unknown preservation phase")
     history, root = context["history"], context["root"]
+    history_start = (history["preserved_history"]["resource_event_count"] if context.get("retry") is not None
+                     else context["scope"]["preserved_history"]["resource_event_count"])
     rows, old_dirs = history["preserved_files"], history["preserved_directories"]
     for row in history["external_preserved_files"]:
         _require(_stat(_safe(root, row["path"])) == {k: row[k] for k in ("size_bytes", "mtime_ns", "device", "inode")},
@@ -1038,7 +1513,7 @@ def _preserved(context, phase="before", attempt_id=None):
     suffix = []
     for name in extra_files:
         if phase == "worker" and re.fullmatch(re.escape(event_prefix) + r"\.pending_([0-9]{8})\.json_[0-9a-f]{32}", name):
-            _require(int(name.split(".pending_")[1][:8]) >= context["scope"]["preserved_history"]["resource_event_count"],
+            _require(int(name.split(".pending_")[1][:8]) >= history_start,
                      "Pending publication overwrites preserved event")
             continue
         if name.startswith(event_prefix) and re.fullmatch(r"[0-9]{8}\.json", name[len(event_prefix):]):
@@ -1051,7 +1526,7 @@ def _preserved(context, phase="before", attempt_id=None):
         generated_temp = phase == "worker" and re.fullmatch(re.escape(OUTPUT_DIR) + r"/tmp/[0-9a-f]{32}\.mp4", name)
         _require(name in exact or name in declared or scanner or temporary or generated_temp,
                  "Undeclared output-root addition")
-    start = context["scope"]["preserved_history"]["resource_event_count"]
+    start = history_start
     _require(suffix and sorted(suffix) == list(range(start, start + len(suffix))), "Noncontiguous new resource suffix")
     allowed_dirs = set(old_dirs)
     for name in extra_files | declared:
@@ -1205,7 +1680,7 @@ def _worker(root, manifest_path=MANIFEST_PATH):
     _ownership(root, attempt_id)  # Before metadata, journals or any scientific path.
     context = _metadata(root, manifest_path)
     journal = resources.BudgetJournal(context["output_root"], context["limits"])
-    verify_history(journal, context["scope"], "worker", attempt_id)
+    _verify_context_history(journal, context, "worker", attempt_id)
     _preserved(context, "worker", attempt_id)
     access = PhaseAccess(root, context["scope"], attempt_id=attempt_id)
     sink = OutputSink(root, context["scope"])
@@ -1217,7 +1692,7 @@ def _worker(root, manifest_path=MANIFEST_PATH):
     end = _metadata(root, manifest_path)
     _require(end["commit"] == context["commit"] and end["manifest_binding"] == context["manifest_binding"], "Release authority changed during execution")
     final_journal = resources.BudgetJournal(end["output_root"], end["limits"])
-    verify_history(final_journal, end["scope"], "worker", attempt_id)
+    _verify_context_history(final_journal, end, "worker", attempt_id)
     _preserved(end, "worker", attempt_id)
     path = _safe(root, OUTPUT_ROOT + "/attempts/" + attempt_id + ".result.json")
     raw = _json_bytes(result)
@@ -1229,6 +1704,7 @@ def _worker(root, manifest_path=MANIFEST_PATH):
 
 def _successful_event(event, context, baseline):
     policy, aid = context["policy"], event["attempt_id"]
+    ceiling = RETRY_MAX_SECONDS if context.get("retry") is not None else MAX_SECONDS
     _require(event["success"] is True and event["failure"] is None and event["exit_code"] == 0
              and event["owned_cleanup_verified"] is True and not event["cleanup_errors"]
              and event["final_accounting_error"] is None
@@ -1239,7 +1715,7 @@ def _successful_event(event, context, baseline):
              "Incomplete owned monitor completion")
     for field in ("time_overshoot_seconds", "memory_overshoot_bytes", "output_overshoot_bytes"):
         _require(event[field] == 0, "Monitored resource bound was exceeded")
-    _require(0 < event["charged_elapsed_seconds"] == event["elapsed_seconds"] <= event["time_budget_seconds"] <= MAX_SECONDS
+    _require(0 < event["charged_elapsed_seconds"] == event["elapsed_seconds"] <= event["time_budget_seconds"] <= ceiling
              and event["peak_worker_memory_bytes"] <= policy["maximum_combined_rss_bytes"]
              and event["minimum_free_disk_bytes"] - monitor.FINAL_RESERVE >= policy["effective_minimum_free_disk_bytes"]
              and event["maximum_monitor_interval_seconds"] <= policy["maximum_fast_interval_seconds"]
@@ -1261,16 +1737,18 @@ def run_study(root, manifest_path=MANIFEST_PATH, dry_run=False):
     scope = context["scope"]
     _preserved(context)
     journal = resources.BudgetJournal(context["output_root"], context["limits"])
-    verify_history(journal, scope)
+    _verify_context_history(journal, context)
     _require(not _safe(root, OUTPUT_DIR).exists(), "Scientific output directory already exists")
     if dry_run:
         return {"study_id": ID, "ready": True, "commit": context["commit"], "scientific_body_reads": 0,
                 "administrative_history_verified": True, "input_count": 190, "output_count": 342}
-    baseline = _baseline_bytes(context["history"]["preserved_files"])
+    baseline = _context_baseline(context)
     def factory(output, limits):
+        if context.get("retry") is not None:
+            return CorroborationRetryJournal(output, limits, context=context)
         return CorroborationJournal(output, limits, scope=scope, baseline_bytes=baseline)
     command = [sys.executable, "-B", "-m", "src.ball_tracking.crop_cross_detector_corroboration_release",
-               "--repository-root", str(context["root"]), "--manifest", MANIFEST_PATH, "--worker"]
+               "--repository-root", str(context["root"]), "--manifest", context.get("manifest_path", MANIFEST_PATH), "--worker"]
     event = monitor.run_supervised(context["output_root"], UNIT_KEY, command, context["limits"], cwd=context["root"],
                                    selection_unit=False, require_result=True, journal_factory=factory)
     _require(event.get("success") is True, "Scientific attempt failed; preserve evidence and do not retry")
@@ -1279,7 +1757,7 @@ def run_study(root, manifest_path=MANIFEST_PATH, dry_run=False):
     final = _metadata(root, manifest_path)
     _require(final["commit"] == context["commit"] and final["manifest_binding"] == context["manifest_binding"], "Authority changed before release")
     verified = resources.BudgetJournal(context["output_root"], context["limits"])
-    verify_history(verified, scope, "completed", aid)
+    _verify_context_history(verified, final, "completed", aid)
     _require(event == verified._attempts()[aid]["finished"] and event["final_accounting_output_bound_bytes"] - baseline <= MAX_NEW_BYTES,
              "Final monitored completion/accounting differs")
     b = event["worker_result"]

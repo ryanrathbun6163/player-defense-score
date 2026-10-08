@@ -1,7 +1,8 @@
-"""Artificial-file release tests; no real evidence, model or worker launch.
+"""Artificial-file release tests; no real evidence or model calls.
 
 Every generated file lives beneath tempfile's supervised TEMP root. Repository
 reads are restricted to the frozen administrative scope and proposal prose.
+The bounded Windows smoke launches only an artificial ownership probe.
 """
 from __future__ import annotations
 
@@ -13,7 +14,9 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import subprocess
 import tempfile
+import time
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
@@ -1018,11 +1021,134 @@ class AuthorityAndTransportTests(TemporaryRoot):
         Path(str(base) + ".start").write_bytes(b"owned-test-start")
         put(self.root, release.OUTPUT_ROOT + "/supervisor.lock", {"pid": os.getppid(), "token": "artificial"})
         environment = {"BALL_RETENTION_ATTEMPT_ID": ident, "BALL_RETENTION_START_GATE": str(base) + ".start",
-                       "BALL_RETENTION_RESULT_PATH": str(base) + ".result.json"}
+                       "BALL_RETENTION_RESULT_PATH": str(base) + ".result.json",
+                       "BALL_RETENTION_PARENT_PID": str(os.getppid())}
         with patch.dict(os.environ, {**environment, "BALL_RETENTION_RESULT_PATH": str(base) + ".wrong.json"}, clear=True), self.assertRaises(ValueError):
             release._ownership(self.root, ident)
         with patch.dict(os.environ, environment, clear=True), patch.object(resources, "_alive", return_value=False), self.assertRaises(ValueError):
             release._ownership(self.root, ident)
+
+    def ownership_fixture(self, *, released=True):
+        attempt, supervisor = "a" * 32, 32123
+        base = self.root / release.OUTPUT_ROOT / "attempts" / attempt
+        base.parent.mkdir(parents=True)
+        if released:
+            Path(str(base) + ".start").write_bytes(b"artificial released gate")
+        put(self.root, release.OUTPUT_ROOT + "/supervisor.lock", {"pid": supervisor, "token": "artificial"})
+        environment = {"BALL_RETENTION_ATTEMPT_ID": attempt, "BALL_RETENTION_START_GATE": str(base) + ".start",
+                       "BALL_RETENTION_RESULT_PATH": str(base) + ".result.json", "BALL_RETENTION_PARENT_PID": str(supervisor)}
+        return attempt, supervisor, base, environment
+
+    def test_redirected_worker_accepts_live_injected_supervisor_when_immediate_parent_differs(self):
+        attempt, supervisor, _, environment = self.ownership_fixture()
+        with patch.dict(os.environ, environment, clear=True), patch.object(os, "getppid", return_value=supervisor + 1), \
+                patch.object(resources, "_alive", return_value=True) as alive, \
+                patch.object(release, "_metadata", side_effect=AssertionError("ownership entered metadata")):
+            release._ownership(self.root, attempt)
+        alive.assert_called_once_with(supervisor)
+
+    def test_worker_rejects_missing_malformed_or_mismatched_injected_supervisor(self):
+        attempt, supervisor, _, environment = self.ownership_fixture()
+        for value in (None, "", "0", "-1", "abc", "1.5", "+32123", " 32123", "032123", str(supervisor + 1)):
+            altered = dict(environment)
+            if value is None:
+                altered.pop("BALL_RETENTION_PARENT_PID")
+            else:
+                altered["BALL_RETENTION_PARENT_PID"] = value
+            with self.subTest(parent=value), patch.dict(os.environ, altered, clear=True), \
+                    patch.object(resources, "_alive", return_value=True), self.assertRaises(ValueError):
+                release._ownership(self.root, attempt)
+
+    def test_worker_rejects_unreleased_gate_and_wrong_exact_gate_with_live_owner(self):
+        attempt, _, base, environment = self.ownership_fixture(released=False)
+        with patch.dict(os.environ, environment, clear=True), patch.object(resources, "_alive", return_value=True), self.assertRaises(ValueError):
+            release._ownership(self.root, attempt)
+        wrong_gate = Path(str(base) + ".wrong.start")
+        wrong_gate.write_bytes(b"artificial unrelated released gate")
+        with patch.dict(os.environ, {**environment, "BALL_RETENTION_START_GATE": str(wrong_gate)}, clear=True), \
+                patch.object(resources, "_alive", return_value=True), self.assertRaises(ValueError):
+            release._ownership(self.root, attempt)
+
+    @unittest.skipUnless(os.name == "nt", "Windows virtual-environment owned launch")
+    def test_windows_virtualenv_owned_ownership_smoke_records_topology_and_cleanup(self):
+        started = time.monotonic()
+        python = ROOT / ".venv" / "Scripts" / "python.exe"
+        self.assertTrue(python.is_file(), "The actual repository virtual-environment launcher is required")
+        attempt = "a" * 32
+        base = self.root / release.OUTPUT_ROOT / "attempts" / attempt
+        base.parent.mkdir(parents=True)
+        gate, result_path = Path(str(base) + ".start"), Path(str(base) + ".result.json")
+        put(self.root, release.OUTPUT_ROOT + "/supervisor.lock", {"pid": os.getpid(), "token": "artificial-smoke"})
+        environment = {**os.environ, "PYTHONDONTWRITEBYTECODE": "1", "BALL_RETENTION_ATTEMPT_ID": attempt,
+                       "BALL_RETENTION_PARENT_PID": str(os.getpid()), "BALL_RETENTION_START_GATE": str(gate),
+                       "BALL_RETENTION_RESULT_PATH": str(result_path)}
+        # This child calls only the ownership entry checks. Metadata, budget
+        # journals and scientific access are explicit failure sentinels.
+        code = """import json, os, sys, time
+from pathlib import Path
+from src.ball_tracking import crop_cross_detector_corroboration_release as release
+from src.ball_tracking import crop_retention_resources as resources
+def forbidden(*args, **kwargs):
+    raise AssertionError('ownership smoke crossed into metadata, journal or science')
+release._metadata = forbidden
+resources.BudgetJournal = forbidden
+release.PhaseAccess = forbidden
+root = Path(sys.argv[1]).resolve()
+attempt = os.environ['BALL_RETENTION_ATTEMPT_ID']
+release._owned_paths(root, attempt)
+resources.wait_for_supervisor()
+release._ownership(root, attempt)
+lock = json.loads((root / release.OUTPUT_ROOT / 'supervisor.lock').read_text())
+record = {'worker_pid': os.getpid(), 'worker_ppid': os.getppid(),
+          'injected_supervisor_pid': int(os.environ['BALL_RETENTION_PARENT_PID']),
+          'lock_pid': lock['pid'], 'stopped_before_metadata_journal_science': True}
+resources._write_new(Path(os.environ['BALL_RETENTION_RESULT_PATH']), record)
+# Stay in the owned Job until the test verifies membership and terminates it.
+deadline = time.monotonic() + 20
+while time.monotonic() < deadline:
+    time.sleep(.025)
+raise RuntimeError('ownership smoke parent did not clean up its child')
+"""
+        process, job, value, owned, cleanup_verified = None, None, None, [], False
+        log_path = self.root / "ownership-smoke.log"
+        try:
+            with log_path.open("xb") as log:
+                process, job = release.monitor._spawn_owned(
+                    [str(python), "-B", "-u", "-c", code, str(self.root)],
+                    commit_limit_bytes=512 * 1024**2, cwd=ROOT, env=environment,
+                    stdin=subprocess.DEVNULL, stdout=log, stderr=subprocess.STDOUT)
+                gate.touch(exist_ok=False)
+                deadline = started + 24.0
+                while not result_path.is_file() and process.poll() is None and time.monotonic() < deadline:
+                    time.sleep(.025)
+                self.assertTrue(result_path.is_file(), "Owned virtual-environment probe did not complete its ownership check")
+                with result_path.open("rb") as stream:
+                    raw = stream.read(16385)
+                self.assertLessEqual(len(raw), 16384)
+                value = json.loads(raw)
+                owned = sorted(job.pids())
+                self.assertIn(value["worker_pid"], owned)
+                self.assertIn(process.pid, owned)
+                self.assertEqual(value["injected_supervisor_pid"], os.getpid())
+                self.assertEqual(value["lock_pid"], os.getpid())
+                self.assertTrue(value["stopped_before_metadata_journal_science"])
+                if value["worker_pid"] != process.pid:
+                    self.assertEqual(value["worker_ppid"], process.pid)
+        finally:
+            if process is not None or job is not None:
+                # The unchanged helper kills the full Job, verifies empty
+                # membership and process exit within one second, then closes it.
+                release.monitor._terminate(process, job)
+                cleanup_verified = process is not None and process.poll() is not None
+                if value is not None:
+                    cleanup_verified = cleanup_verified and not resources._alive(value["worker_pid"])
+                self.assertTrue(cleanup_verified, "Owned smoke cleanup did not verify")
+        self.assertLess(time.monotonic() - started, 30.0)
+        audit = {**value, "launcher_pid": process.pid, "python_path": str(python), "artificial_root": str(self.root),
+                 "owned_pids_before_cleanup": owned, "cleanup_verified": cleanup_verified,
+                 "immediate_parent_differs_from_injected": value["worker_ppid"] != value["injected_supervisor_pid"],
+                 "elapsed_seconds": round(time.monotonic() - started, 6)}
+        print("PDS_OWNERSHIP_SMOKE " + json.dumps(audit, sort_keys=True, separators=(",", ":")), flush=True)
 
     def test_complete_source_certificate_passes_and_changed_source_bytes_fail(self):
         scope, manifest, certificate, bindings = certificate_fixture(self.root)
@@ -1223,6 +1349,634 @@ class AuthorityAndTransportTests(TemporaryRoot):
 
         with patch.object(Path, "lstat", new=reparse), patch.object(Path, "open", side_effect=AssertionError("reparse body open")), self.assertRaises(ValueError):
             release._safe(self.root, "data/synthetic/input.json")
+
+
+def retry_scope_fixture():
+    """Read only the approved planning metadata, never its embedded bodies."""
+    return json.loads((ROOT / release.RETRY_SCOPE_PATH).read_text(encoding="utf-8"))
+
+
+def retry_journal_fixture(root):
+    """Invent the failed startup on top of the existing artificial prefix."""
+    scope, retry = administrative_scope(), retry_scope_fixture()
+    events = artificial_prefix(scope)
+    predecessor = release.RETRY_PREDECESSOR
+    events += [
+        {"kind": "started", "attempt_id": predecessor, "unit_key": release.UNIT_KEY,
+         "selection_unit": False, "reserved_seconds": 1200.0, "sha256": "a" * 64},
+        {"kind": "sample", "attempt_id": predecessor, "elapsed_seconds": 0.25, "sha256": "b" * 64},
+        {"kind": "sample", "attempt_id": predecessor, "elapsed_seconds": 0.5, "sha256": "c" * 64},
+        {"kind": "finished", "attempt_id": predecessor, "elapsed_seconds": 1.125,
+         "charged_elapsed_seconds": 1.125, "success": False, "failure": "Worker has no live owning supervisor",
+         "sha256": retry["retry_design"]["exact_starting_history"]["tip"]}]
+    approval = {"artificial_only": True, "user_statement": "Synthetic fixture, never production authority."}
+    context = {"root": root, "scope": scope, "retry": retry, "retry_approval": approval,
+               "retry_approval_binding": put(root, release.RETRY_APPROVAL_PATH, approval)}
+    journal = release.CorroborationRetryJournal.__new__(release.CorroborationRetryJournal)
+    journal.root, journal.folder = root, root / "resource_events"
+    journal.scope, journal.context, journal.events = scope, context, events
+    journal.limits, journal.baseline_bytes = artificial_limits(), release.RETRY_BASELINE_BYTES
+    for event in events:
+        if event["kind"] in ("started", "finished"):
+            suffix = "reservation" if event["kind"] == "started" else "completion"
+            put(root, f"attempts/{event['attempt_id']}.{suffix}.json", {"event_sha256": event["sha256"]})
+    return journal, context
+
+
+def retry_receipt_snapshots(root, record, stem):
+    for key, rows, infix in (("helper_snapshots", record["helper_bindings"], "_helper_"),
+                             ("implementation_snapshots", [row for row in record["source_bindings"]
+                                                            if row["path"] in release.RETRY_CHANGED_FILES], "_")):
+        record[key] = [put(root, release.RETRY_ADMIN_ROOT + "/" + stem + infix + Path(row["path"]).name,
+                           (root / row["path"]).read_bytes()) for row in rows]
+
+
+def retry_certificate_fixture(root):
+    """All historical/current certificate bodies are invented beneath TEMP."""
+    scope, _, original_certificate, source_rows = certificate_fixture(root)
+    retry = retry_scope_fixture()
+    evidence = retry["evidence_reuse"]
+    original_binding = put(root, release.CERTIFICATE_PATH, original_certificate)
+    before = copy.deepcopy(source_rows)
+    old_protected = before + [put(root, f"docs/artificial/ancestor_{i:02d}.txt", b"Artificial preserved ancestor.\n")
+                              for i in range(12)]
+    old_helper_root = "data/outputs/t/artificial_shutdown"
+    old_helpers = [put(root, old_helper_root + "/" + name, ("# Artificial " + name + "\n").encode())
+                   for name in ("validate.py", "finalize_validation.py", "lifecycle.py", "test_lifecycle.py")]
+    shutdown = {"schema_version": "ball_crop_shutdown_implementation_validation/v0.1",
+                "status": "artificial_validation_passed_runtime_authority_unchanged",
+                "focused_counts": evidence["accepted_focused_counts"], "full_counts": evidence["accepted_full_counts"],
+                "cumulative_validation_seconds": 9589.048999999992,
+                "source_bindings": before, "preserved_worktree_bindings": old_protected}
+    shutdown_binding = put(root, old_helper_root + "/implementation_validation.json", shutdown)
+    for row in evidence["consumption_records"]:
+        name = row["binding"]["path"]
+        row["binding"] = put(root, name, {key: row[key] for key in
+            ("success", "failure", "phase", "elapsed_seconds", "previously_consumed_seconds", "cumulative_seconds")})
+    evidence["original_runtime_package"] = [original_binding if row["path"] == release.CERTIFICATE_PATH else row
+                                             for row in evidence["original_runtime_package"]]
+    evidence["accepted_shutdown_certificate"] = shutdown_binding
+    evidence["old_helper_bindings"] = old_helpers
+    retry_proposal = put(root, release.RETRY_PROPOSAL_PATH, b"Artificial integration proposal; no production authority.\n")
+    retry_binding = put(root, release.RETRY_SCOPE_PATH, retry)
+    ancestors = [original_binding, shutdown_binding]
+    current = [put(root, row["path"], b"# Changed artificial integration source.\n")
+               if row["path"] in release.RETRY_CHANGED_FILES else row for row in before]
+    protected = [row for row in old_protected if row["path"] not in release.RETRY_CHANGED_FILES] + [retry_binding, retry_proposal]
+    helpers = [put(root, release.RETRY_ADMIN_ROOT + "/" + Path(row["path"]).name,
+                   (root / row["path"]).read_bytes()) for row in old_helpers]
+    approval = {
+        "schema_version": "ball_crop_corroboration_retry_integration_implementation_approval/v0.1",
+        "status": "approved_implementation_and_bounded_artificial_validation", "approved_by": "Ryan",
+        "user_statement": "Artificial approval fixture only; not authorization for repository work.",
+        "head": release.RETRY_BASE_COMMIT, "implementation_files": sorted(release.RETRY_CHANGED_FILES),
+        "scope_binding": retry_binding, "proposal_binding": retry_proposal,
+        "ancestor_source_bindings": before, "ancestor_certificates": ancestors,
+        "ancestor_protected_bindings": old_protected, "prior_consumption_records": evidence["consumption_records"],
+        "previously_consumed_seconds": 9589.048999999992, "prior_cap_seconds": 10200,
+        "additional_seconds": 2800, "maximum_new_phase_seconds": 2800, "cumulative_validation_budget_seconds": 13000,
+        "maximum_focused_invocations": 3, "maximum_focused_seconds": 300,
+        "maximum_full_invocations": 1, "maximum_full_seconds": 2500, "closed_remainder_reusable": False,
+        "maximum_sampled_memory_bytes": 8 * 1024**3, "maximum_new_output_bytes": 4 * 1024**3,
+        "minimum_free_disk_bytes": 50 * 1024**3, "maximum_natural_shutdown_seconds": 1,
+        "maximum_forced_cleanup_seconds": 1,
+        "prior_validation_consumed_seconds_preserved": ["2164.2970000000005", "2295.467999999999"],
+        **{key: True for key in ("implementation_authorized", "repository_source_edits_authorized",
+                                "ignored_validator_implementation_authorized", "artificial_validation_authorized")},
+        **{key: False for key in ("scientific_body_access_authorized", "scientific_execution_authorized",
+                                 "real_resource_journal_replay_authorized", "runtime_authority_or_certificate_replacement_authorized")}}
+    approval_binding = put(root, release.RETRY_ADMIN_ROOT + "/approval.json", approval)
+    focused_ids = [f"test_ball_crop_cross_detector_corroboration_release.Artificial.test_{i:03d}" for i in range(54)]
+    ignored_ids = [f"test_lifecycle.Artificial.test_{i:03d}" for i in range(17)]
+    full_ids = sorted(focused_ids + [f"test_artificial.Other.test_{i:04d}" for i in range(1167)])
+    inventory = {"schema_version": "ball_crop_corroboration_retry_test_inventory/v0.1", "source_bindings": current,
+                 "helper_bindings": helpers, "focused_repository_ids": focused_ids,
+                 "ignored_lifecycle_ids": ignored_ids, "full_repository_ids": full_ids}
+    inventory_binding = put(root, release.RETRY_ADMIN_ROOT + "/test_inventory.json", inventory)
+    counts = {"repository_focused_test_count": 54, "ignored_lifecycle_test_count": 17, "full_test_count": 1221}
+    base = {"success": True, "returncode": 0, "failure": None, "driver_exception": None,
+            "owned_cleanup_verified": True, "cleanup_errors": [], "final_accounting_error": None,
+            "preservation_error": None, "failed_count": 0, "error_count": 0,
+            "source_bindings": current, "source_bindings_after": current,
+            "helper_bindings": helpers, "helper_bindings_after": helpers,
+            "approval": approval_binding, "approval_after": approval_binding,
+            "validation_extension": approval_binding, "validation_extension_after": approval_binding,
+            "preserved_worktree_bindings_before": protected, "preserved_worktree_bindings_after": protected,
+            "cumulative_validation_budget_seconds": 13000, "test_inventory": inventory_binding, "test_counts": counts,
+            "peak_rss_bytes": 100, "peak_observed_output_bytes": 100,
+            "minimum_free_bytes": 51 * 1024**3, "publication_reserve_bytes": release.monitor.FINAL_RESERVE,
+            "shutdown": {"natural_shutdown_success": True, "failure": None, "final_membership": [],
+                         "owned_cleanup_verified": True, "cleanup_errors": [], "elapsed_seconds": 0,
+                         "natural_shutdown_limit_seconds": 1, "telemetry": {"identity_observation_budget": {
+                             "maximum_incident_seconds": .05, "maximum_total_seconds": .25,
+                             "failed": False, "consumed_seconds": 0}}}, **counts}
+    prior = 9589.048999999992
+    focused = {**base, "phase": "focused", "test_count": 71, "passed_count": 71, "skipped_count": 0,
+               "elapsed_seconds": 2.0, "previously_consumed_seconds": prior, "timeout_seconds": 300}
+    full = {**base, "phase": "full", "test_count": 1221, "passed_count": 1220, "skipped_count": 1,
+            "elapsed_seconds": 3.0, "previously_consumed_seconds": prior + 2.0, "timeout_seconds": 2500}
+    retry_receipt_snapshots(root, focused, "focused_01")
+    retry_receipt_snapshots(root, full, "full_01")
+    focused_binding = put(root, release.RETRY_ADMIN_ROOT + "/focused_01_result.json", focused)
+    full_binding = put(root, release.RETRY_ADMIN_ROOT + "/full_01_result.json", full)
+    for kind in ("focused", "full"):
+        put(root, release.RETRY_ADMIN_ROOT + f"/{kind}_01_started.json", {"artificial_only": True})
+    cert = {"schema_version": "ball_crop_corroboration_retry_integration_validation/v0.1",
+            "status": "artificial_validation_passed_runtime_authority_unchanged", "scope": retry_binding,
+            "proposal": retry_proposal, "approval": approval_binding, "ancestor_certificates": ancestors,
+            "source_bindings": current, "preserved_worktree_bindings": protected, "helper_bindings": helpers,
+            "focused_result": focused_binding, "full_result": full_binding,
+            "validation_results": [row["binding"] for row in evidence["consumption_records"]] + [focused_binding, full_binding],
+            "test_inventory": inventory_binding, "test_counts": counts,
+            "cumulative_validation_seconds": prior + 5.0, "cumulative_validation_cap_seconds": 13000,
+            "new_phase_seconds": 5.0, "new_focused_validation_seconds": 2.0, "new_full_invocation_count": 1}
+    manifest = {"integration_scope": retry_binding, "integration_proposal": retry_proposal,
+                "implementation_validation": put(root, release.RETRY_CERTIFICATE_PATH, cert)}
+    return scope, manifest, cert
+
+
+class RetryCertificateTests(TemporaryRoot):
+    def verify(self, scope, manifest, cert):
+        manifest["implementation_validation"] = put(self.root, release.RETRY_CERTIFICATE_PATH, cert)
+        return release._retry_certificate(self.root, manifest, scope)
+
+    def test_new_certificate_accepts_changed_two_files_without_retesting_historical_bytes(self):
+        scope, manifest, cert = retry_certificate_fixture(self.root)
+        with patch.object(release, "_certificate", side_effect=AssertionError("historical current-byte verifier reused")):
+            self.assertEqual(self.verify(scope, manifest, cert), cert)
+        self.assertEqual(len(cert["source_bindings"]), 187)
+        self.assertEqual(len(cert["validation_results"]), 17)
+        self.assertEqual(cert["new_phase_seconds"], 5)
+        self.assertGreater(cert["cumulative_validation_seconds"], 9589)
+
+    def test_retry_certificate_refuses_original_schema_missing_ancestor_or_historical_receipt(self):
+        scope, manifest, cert = retry_certificate_fixture(self.root)
+        for change in ({"schema_version": "ball_crop_cross_detector_corroboration_release_implementation/v0.1"},
+                       {"ancestor_certificates": cert["ancestor_certificates"][:-1]},
+                       {"validation_results": cert["validation_results"][1:]},
+                       {"cumulative_validation_seconds": 5.0}, {"new_phase_seconds": 2801}):
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                self.verify(scope, manifest, {**cert, **change})
+
+    def test_retry_certificate_rejects_extra_omitted_or_resealed_out_of_scope_source(self):
+        scope, manifest, cert = retry_certificate_fixture(self.root)
+        omitted = copy.deepcopy(cert)
+        omitted["source_bindings"].pop()
+        with self.assertRaises(ValueError):
+            self.verify(scope, manifest, omitted)
+        extra = put(self.root, "src/artificial/unapproved_extra.py", b"# Unapproved additional source.\n")
+        with self.assertRaises(ValueError):
+            self.verify(scope, manifest, cert)
+        (self.root / extra["path"]).unlink()
+        changed = copy.deepcopy(cert)
+        row = next(row for row in changed["source_bindings"] if row["path"].startswith("src/artificial/"))
+        row.update(put(self.root, row["path"], b"# Out-of-scope change resealed in current certificate.\n"))
+        with self.assertRaises(ValueError):
+            self.verify(scope, manifest, changed)
+
+    def test_retry_certificate_rejects_changed_ancestor_or_missing_protected_binding(self):
+        scope, manifest, cert = retry_certificate_fixture(self.root)
+        missing = {**cert, "preserved_worktree_bindings": cert["preserved_worktree_bindings"][:-1]}
+        with self.assertRaises(ValueError):
+            self.verify(scope, manifest, missing)
+        put(self.root, cert["ancestor_certificates"][1]["path"], {"forged_ancestor": True})
+        with self.assertRaises(ValueError):
+            self.verify(scope, manifest, cert)
+
+    def test_retry_certificate_count_inventory_keeps_ignored_focus_out_of_full_suite(self):
+        scope, manifest, cert = retry_certificate_fixture(self.root)
+        wrong = copy.deepcopy(cert)
+        wrong["test_counts"]["full_test_count"] = 1167 + 71
+        with self.assertRaises(ValueError):
+            self.verify(scope, manifest, wrong)
+        inventory = json.loads((self.root / cert["test_inventory"]["path"]).read_text())
+        inventory["full_repository_ids"] += inventory["ignored_lifecycle_ids"]
+        wrong = copy.deepcopy(cert)
+        wrong["test_inventory"] = put(self.root, cert["test_inventory"]["path"], inventory)
+        with self.assertRaises(ValueError):
+            self.verify(scope, manifest, wrong)
+
+    def test_retry_certificate_refuses_unfinished_or_extra_validation_invocation(self):
+        scope, manifest, cert = retry_certificate_fixture(self.root)
+        put(self.root, release.RETRY_ADMIN_ROOT + "/focused_02_started.json", {"artificial_only": True})
+        with self.assertRaises(ValueError):
+            self.verify(scope, manifest, cert)
+        put(self.root, release.RETRY_ADMIN_ROOT + "/focused_02_result.json", {"success": False})
+        with self.assertRaises(ValueError):
+            self.verify(scope, manifest, cert)
+
+    def test_retry_certificate_refuses_changed_receipt_bytes_cleanup_counts_or_source_inventory(self):
+        scope, manifest, cert = retry_certificate_fixture(self.root)
+        full = json.loads((self.root / cert["full_result"]["path"]).read_text())
+        for change in ({"owned_cleanup_verified": False}, {"source_bindings_after": []},
+                       {"helper_bindings_after": []}, {"passed_count": 1237},
+                       {"elapsed_seconds": 2501}, {"previously_consumed_seconds": 0.0},
+                       {"preservation_error": "Artificial changed preservation"}):
+            altered = copy.deepcopy(cert)
+            altered["full_result"] = put(self.root, cert["full_result"]["path"], {**full, **change})
+            altered["validation_results"][-1] = altered["full_result"]
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                self.verify(scope, manifest, altered)
+
+    def test_retry_certificate_resealed_approval_cannot_reset_or_expand_validation(self):
+        scope, manifest, cert = retry_certificate_fixture(self.root)
+        approval = json.loads((self.root / cert["approval"]["path"]).read_text())
+        for change in ({"previously_consumed_seconds": 0.0}, {"maximum_focused_seconds": 301},
+                       {"closed_remainder_reusable": True}, {"maximum_full_invocations": 2},
+                       {"prior_consumption_records": approval["prior_consumption_records"][:-1]},
+                       {"scientific_execution_authorized": True}):
+            altered = copy.deepcopy(cert)
+            altered["approval"] = put(self.root, cert["approval"]["path"], {**approval, **change})
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                self.verify(scope, manifest, altered)
+
+    def test_retry_certificate_charges_failed_focus_before_final_source_validation(self):
+        scope, manifest, cert = retry_certificate_fixture(self.root)
+        focused = json.loads((self.root / cert["focused_result"]["path"]).read_text())
+        full = json.loads((self.root / cert["full_result"]["path"]).read_text())
+        old_total = 9589.048999999992
+        failed = {**focused, "success": False, "returncode": 1, "failure": "Artificial failed focus",
+                  "elapsed_seconds": .75}
+        failed_binding = put(self.root, cert["focused_result"]["path"], failed)
+        focused["previously_consumed_seconds"] += .75
+        full["previously_consumed_seconds"] += .75
+        retry_receipt_snapshots(self.root, focused, "focused_02")
+        cert["focused_result"] = put(self.root, release.RETRY_ADMIN_ROOT + "/focused_02_result.json", focused)
+        put(self.root, release.RETRY_ADMIN_ROOT + "/focused_02_started.json", {"artificial_only": True})
+        cert["full_result"] = put(self.root, cert["full_result"]["path"], full)
+        cert["validation_results"] = cert["validation_results"][:15] + [failed_binding, cert["focused_result"], cert["full_result"]]
+        cert.update(cumulative_validation_seconds=old_total + 5.75, new_phase_seconds=5.75,
+                    new_focused_validation_seconds=2.75)
+        self.assertEqual(self.verify(scope, manifest, cert), cert)
+        cert["validation_results"].remove(failed_binding)
+        with self.assertRaises(ValueError):
+            self.verify(scope, manifest, cert)
+
+
+class RetryHistoryTests(TemporaryRoot):
+    def test_failed_prefix_charge_and_one_same_unit_reservation_are_preserved(self):
+        journal, context = retry_journal_fixture(self.root)
+        original = copy.deepcopy(journal.events)
+        release.verify_retry_history(journal, context)
+        self.assertEqual(len(original), 3334)
+        self.assertEqual(journal.consumed(release.UNIT_KEY), 1.125)
+        attempt, reserved = journal.reserve(release.UNIT_KEY, False)
+        self.assertEqual(reserved, 1198.875)
+        self.assertEqual(journal.events[:-1], original)
+        self.assertEqual(journal.consumed(release.UNIT_KEY), 1200.0)
+        self.assertAlmostEqual(journal.consumed(), 4747.523999999985)
+        start = journal.events[-1]
+        self.assertEqual(start["predecessor_attempt_id"], release.RETRY_PREDECESSOR)
+        self.assertEqual(start["retry_approval"], context["retry_approval_binding"])
+        self.assertEqual(start["original_scientific_scope"], {"path": release.SCOPE_PATH, "sha256": release.SCOPE_SHA})
+        self.assertEqual(json.loads((self.root / f"attempts/{attempt}.reservation.json").read_text()),
+                         {"event_sha256": start["sha256"]})
+        release.verify_retry_history(journal, context, "worker", attempt)
+        with self.assertRaises(ValueError):
+            journal.reserve(release.UNIT_KEY, False)
+
+    def test_retry_completion_accepts_one_contiguous_owned_suffix_only(self):
+        journal, context = retry_journal_fixture(self.root)
+        attempt, _ = journal.reserve(release.UNIT_KEY, False)
+        with self.assertRaises(ValueError):
+            release.verify_retry_history(journal, context, "completed", attempt)
+        journal.append("sample", attempt_id=attempt, elapsed_seconds=0.5)
+        journal.append("finished", attempt_id=attempt, elapsed_seconds=2.0, charged_elapsed_seconds=2.0,
+                       time_budget_seconds=1198.875, success=True)
+        release.verify_retry_history(journal, context, "completed", attempt)
+        self.assertEqual(journal.consumed(release.UNIT_KEY), 3.125)
+        self.assertAlmostEqual(journal.consumed(), 3550.648999999985)
+        with self.assertRaises(ValueError):
+            release.verify_retry_history(journal, context, "worker", attempt)
+        with self.assertRaises(ValueError):
+            journal.reserve(release.UNIT_KEY, False)
+        journal.events[-1]["time_budget_seconds"] = 1200
+        with self.assertRaises(ValueError):
+            release.verify_retry_history(journal, context, "completed", attempt)
+
+    def test_retry_refuses_changed_count_tip_failure_charge_and_successful_predecessor(self):
+        changes = (
+            lambda rows: rows.pop(),
+            lambda rows: rows[-1].update(sha256="0" * 64),
+            lambda rows: rows[3329].update(sha256="0" * 64),
+            lambda rows: rows[-1].update(elapsed_seconds=1.0),
+            lambda rows: rows[-1].update(charged_elapsed_seconds=0),
+            lambda rows: rows[-1].update(success=True),
+            lambda rows: rows[-1].update(failure="different failure"),
+            lambda rows: rows[-4].update(unit_key="renamed-study"),
+            lambda rows: rows[-4].update(selection_unit=True),
+        )
+        for mutate in changes:
+            journal, context = retry_journal_fixture(self.root)
+            mutate(journal.events)
+            with self.subTest(mutation=mutate), self.assertRaises((ValueError, resources.ResourceLimitError)):
+                release.verify_retry_history(journal, context)
+
+    def test_retry_rejects_changed_or_missing_predecessor_seals(self):
+        for suffix in ("reservation", "completion"):
+            journal, context = retry_journal_fixture(self.root)
+            name = f"attempts/{release.RETRY_PREDECESSOR}.{suffix}.json"
+            put(self.root, name, {"event_sha256": "0" * 64})
+            with self.subTest(suffix=suffix), self.assertRaises(ValueError):
+                release.verify_retry_history(journal, context)
+
+    def test_retry_refuses_wrong_authority_unit_ceiling_and_predecessor_on_new_reservation(self):
+        journal, context = retry_journal_fixture(self.root)
+        attempt, _ = journal.reserve(release.UNIT_KEY, False)
+        original = copy.deepcopy(journal.events[-1])
+        for change in ({"retry_approval": {**context["retry_approval_binding"], "sha256": "0" * 64}},
+                       {"predecessor_attempt_id": "b" * 32}, {"reserved_seconds": 1200},
+                       {"reserved_seconds": 1.0}, {"unit_key": "renamed-study"}, {"selection_unit": True},
+                       {"original_scientific_scope": {"path": release.SCOPE_PATH, "sha256": "0" * 64}}):
+            journal.events[-1] = {**original, **change}
+            with self.subTest(change=change), self.assertRaises((ValueError, resources.ResourceLimitError)):
+                release.verify_retry_history(journal, context, "worker", attempt)
+
+    def test_retry_refuses_open_unrelated_suffix_and_third_attempt(self):
+        journal, context = retry_journal_fixture(self.root)
+        attempt, _ = journal.reserve(release.UNIT_KEY, False)
+        with self.assertRaises(ValueError):
+            release.verify_retry_history(journal, context, "before")
+        journal.append("started", attempt_id="b" * 32, unit_key=release.UNIT_KEY,
+                       selection_unit=False, reserved_seconds=1.0)
+        with self.assertRaises(ValueError):
+            release.verify_retry_history(journal, context, "worker", attempt)
+        with self.assertRaises(ValueError):
+            release.verify_retry_history(journal, context, "worker", "b" * 32)
+
+    def test_failed_retry_retains_charge_and_never_becomes_another_retry(self):
+        journal, context = retry_journal_fixture(self.root)
+        attempt, _ = journal.reserve(release.UNIT_KEY, False)
+        journal.append("finished", attempt_id=attempt, elapsed_seconds=3.0, success=False,
+                       failure="Artificial failed retry")
+        self.assertEqual(journal.consumed(release.UNIT_KEY), 4.125)
+        with self.assertRaises(ValueError):
+            release.verify_retry_history(journal, context, "completed", attempt)
+        with self.assertRaises(ValueError):
+            journal.reserve(release.UNIT_KEY, False)
+
+    def test_retry_refuses_changed_global_budget_existing_output_or_unknown_unit(self):
+        journal, context = retry_journal_fixture(self.root)
+        journal.limits["maximum_cumulative_seconds"] = 14401
+        with self.assertRaises(ValueError):
+            release.verify_retry_history(journal, context)
+        journal.limits["maximum_cumulative_seconds"] = 14400
+        for unit, selected in (("renamed-study", False), (release.UNIT_KEY, True)):
+            with self.subTest(unit=unit, selected=selected), self.assertRaises(ValueError):
+                journal.reserve(unit, selected)
+        (self.root / release.OUTPUT_DIR).mkdir(parents=True)
+        with self.assertRaises(ValueError):
+            journal.reserve(release.UNIT_KEY, False)
+        self.assertEqual(len(journal.events), 3334)
+
+    def test_retry_rechecks_bound_approval_before_reserving_under_supervisor_lock(self):
+        journal, context = retry_journal_fixture(self.root)
+        put(self.root, release.RETRY_APPROVAL_PATH, {"changed_after_parent_verification": True})
+        with self.assertRaises(ValueError):
+            journal.reserve(release.UNIT_KEY, False)
+        self.assertEqual(len(journal.events), 3334)
+
+    def test_retry_constructor_rejects_orphan_evidence_without_replaying_real_journal(self):
+        _, context = retry_journal_fixture(self.root)
+        with self.assertRaises(resources.ResourceLimitError):
+            release.CorroborationRetryJournal(self.root, artificial_limits(), context=context)
+
+    def test_retry_output_allowance_keeps_original_baseline_and_charges_failed_startup_files(self):
+        journal, context = retry_journal_fixture(self.root)
+        context["history"] = {"preserved_files": [{"size_bytes": 9999999999} for _ in range(6917)]}
+        self.assertEqual(release._context_baseline(context), 8875168842)
+        attempt, _ = journal.reserve(release.UNIT_KEY, False)
+        boundary = 8875168842 + release.MAX_NEW_BYTES - release.monitor.FINAL_RESERVE
+        journal.append("sample", attempt_id=attempt, elapsed_seconds=.25, output_bytes=boundary)
+        with self.assertRaises(resources.ResourceLimitError):
+            journal.append("sample", attempt_id=attempt, elapsed_seconds=.5, output_bytes=boundary + 1)
+        self.assertEqual(journal.events[-1]["output_bytes"], boundary + 1)
+        end = journal.append("finished", attempt_id=attempt, elapsed_seconds=1.0, success=True,
+                             final_accounting_output_bound_bytes=8875168842 + release.MAX_NEW_BYTES + 1)
+        self.assertFalse(end["success"])
+
+    def test_retry_preservation_suffix_starts_after_3334_and_never_reuses_failed_startup_indices(self):
+        context = PreservationMetadataTests.context(self)
+        context["retry"] = retry_scope_fixture()
+        context["history"]["preserved_history"] = {"resource_event_count": 3334}
+        attempt = "a" * 32
+        PreservationMetadataTests.append_owned(self, attempt)
+        old_name = release.OUTPUT_ROOT + "/resource_events/00003330.json"
+        new_name = release.OUTPUT_ROOT + "/resource_events/00003334.json"
+        (self.root / old_name).unlink()
+        put(self.root, new_name, b"artificial retry reservation event")
+        with patch.object(Path, "open", side_effect=AssertionError("preserved body read")):
+            release._preserved(context, "worker", attempt)
+        put(self.root, old_name, b"attempt to reuse the old startup event index")
+        with patch.object(Path, "open", side_effect=AssertionError("preserved body read")), \
+                self.assertRaisesRegex(ValueError, "Noncontiguous"):
+            release._preserved(context, "worker", attempt)
+
+
+class RetryAuthorityTests(TemporaryRoot):
+    def manifest(self):
+        retry = retry_scope_fixture()
+        old = {row["path"]: row for row in retry["evidence_reuse"]["original_runtime_package"]}
+        return {"schema_version": "ball_crop_corroboration_retry_release_manifest/v0.1", "study_id": release.ID,
+                "scope": old[release.SCOPE_PATH],
+                "proposal": {"path": release.PROPOSAL_PATH, "sha256": release.PROPOSAL_SHA},
+                "execution_approval": old[release.APPROVAL_PATH],
+                "integration_scope": {"path": release.RETRY_SCOPE_PATH, "sha256": release.RETRY_SCOPE_SHA},
+                "integration_proposal": retry["proposal"],
+                "retry_approval": {"path": release.RETRY_APPROVAL_PATH, "sha256": "d" * 64},
+                "implementation_validation": {"path": release.RETRY_CERTIFICATE_PATH, "sha256": "e" * 64},
+                "frozen_history": {"path": release.RETRY_HISTORY_PATH, "sha256": "f" * 64},
+                "post_commit_checkpoint": release.RETRY_CHECKPOINT_PATH,
+                "selected_method": None, "selected_operating_point": None, "quality_gate": None}
+
+    def admin_gate(self, *, dirty=False, committed=True, media_authorized=True):
+        manifest, retry, scope = self.manifest(), retry_scope_fixture(), administrative_scope()
+        put(self.root, release.RETRY_MANIFEST_PATH, manifest)
+        original = artificial_manifest()
+        original.update({key: manifest[key] for key in ("scope", "proposal", "execution_approval")})
+        original_approval = {"study_id": release.ID, "scope": manifest["scope"], "proposal": manifest["proposal"],
+                             "scientific_execution_authorized": True}
+        approval = {"schema_version": "ball_crop_corroboration_retry_execution_approval/v0.1",
+                    "study_id": release.ID, "approved_by": "Ryan", "user_statement": "Artificial retry gate fixture only.",
+                    "scope": manifest["scope"], "original_execution_approval": manifest["execution_approval"],
+                    "integration_scope": manifest["integration_scope"], "integration_proposal": manifest["integration_proposal"],
+                    "implementation_validation": manifest["implementation_validation"],
+                    "failed_attempt_audit": retry["evidence_reuse"]["failed_attempt_audit"],
+                    "predecessor_attempt_id": release.RETRY_PREDECESSOR, "unit_key": release.UNIT_KEY,
+                    "maximum_attempts": 1, "maximum_retry_seconds": 1198.875, "fresh_budget": False,
+                    **{key: True for key in ("scientific_execution_authorized", "administrative_history_verification_authorized",
+                                             "release_checkpoint_authorized", "new_verified_media_presentation_authorized")}}
+        approval["new_verified_media_presentation_authorized"] = media_authorized
+        bodies = {release.RETRY_SCOPE_PATH: encoded(retry), release.RETRY_PROPOSAL_PATH: b"Artificial proposal.",
+                  release.MANIFEST_PATH: encoded(original), release.SCOPE_PATH: encoded(scope),
+                  release.PROPOSAL_PATH: b"Artificial original proposal.", release.APPROVAL_PATH: encoded(original_approval),
+                  release.RETRY_APPROVAL_PATH: encoded(approval)}
+
+        def read_admin(root, binding, **kwargs):
+            if binding["path"] not in bodies:
+                raise AssertionError("Retry checkpoint reached an unauthorized later body")
+            return bodies[binding["path"]]
+
+        def git(root, *args):
+            if args[0] == "status":
+                return "?? src/uncommitted_retry.py" if dirty else ""
+            if args[:2] == ("rev-parse", "HEAD"):
+                return COMMIT
+            if args[0] == "branch":
+                return "codex/ball-detector-baseline"
+            if args[0] == "merge-base":
+                return ""
+            if args[0] == "ls-files":
+                return args[-1] if committed else ""
+            raise AssertionError(f"Unexpected Git inspection {args}")
+
+        return manifest, read_admin, git
+
+    def test_retry_dirty_or_uncommitted_authority_fails_before_certificate_or_science(self):
+        for dirty, committed in ((True, True), (False, False)):
+            _, reader, git = self.admin_gate(dirty=dirty, committed=committed)
+            with patch.object(release, "_read_bound", side_effect=reader), patch.object(release, "_git", side_effect=git), \
+                    patch.object(release, "_retry_certificate", side_effect=AssertionError("dirty authority reached certificate")), \
+                    self.subTest(dirty=dirty, committed=committed), self.assertRaises(ValueError):
+                release._metadata(self.root, release.RETRY_MANIFEST_PATH)
+
+    def test_retry_requires_certified_source_and_preserved_paths_to_be_tracked(self):
+        _, reader, original_git = self.admin_gate()
+        sources = [{"path": f"src/artificial_{i:03d}.py", "sha256": "a" * 64, "size_bytes": 1} for i in range(187)]
+        preserved = [{"path": "docs/artificial_review.md", "sha256": "b" * 64, "size_bytes": 1}]
+        authorities = {release.RETRY_MANIFEST_PATH, release.RETRY_APPROVAL_PATH, release.RETRY_SCOPE_PATH,
+                       release.RETRY_PROPOSAL_PATH, release.MANIFEST_PATH, release.APPROVAL_PATH,
+                       release.SCOPE_PATH, release.PROPOSAL_PATH}
+        names = {row["path"] for row in sources + preserved} | authorities
+        for missing in (sources[90]["path"], preserved[0]["path"]):
+            def git(root, *args):
+                return "\n".join(sorted(names - {missing})) if args == ("ls-files",) else original_git(root, *args)
+
+            with patch.object(release, "_read_bound", side_effect=reader), patch.object(release, "_git", side_effect=git), \
+                    patch.object(release, "_retry_certificate", return_value={"source_bindings": sources,
+                                                                            "preserved_worktree_bindings": preserved}), \
+                    self.subTest(missing=missing), self.assertRaisesRegex(ValueError, "All tested source"):
+                release._metadata(self.root, release.RETRY_MANIFEST_PATH)
+
+    def test_retry_stale_checkpoint_fails_before_frozen_history_or_scientific_metadata(self):
+        # Scientific approval remains valid when later media presentation is
+        # explicitly unapproved; execution must reach the checkpoint gate.
+        manifest, reader, git = self.admin_gate(media_authorized=False)
+        checkpoint = {"schema_version": "ball_crop_corroboration_retry_post_commit_checkpoint/v0.1", "commit": COMMIT,
+                      "clean": True, "manifest": release._binding(release.RETRY_MANIFEST_PATH, encoded(manifest)),
+                      "predecessor_attempt_id": release.RETRY_PREDECESSOR, "original_baseline_bytes": 8875168842,
+                      **{key: manifest[key] for key in ("retry_approval", "implementation_validation", "scope",
+                                                       "integration_scope", "frozen_history")}}
+        for change in ({"commit": "a" * 40}, {"clean": False}, {"original_baseline_bytes": 9999999999},
+                       {"predecessor_attempt_id": "b" * 32}, {"manifest": {"path": release.MANIFEST_PATH}}):
+            with patch.object(release, "_read_bound", side_effect=reader), patch.object(release, "_git", side_effect=git), \
+                    patch.object(release, "_retry_certificate", return_value={"source_bindings": [], "preserved_worktree_bindings": []}), \
+                    patch.object(release, "_require_tracked"), \
+                    patch.object(release.monitor, "_read_record", return_value={**checkpoint, **change}), \
+                    patch.object(release, "_retry_history_authority", side_effect=AssertionError("stale checkpoint reached later history")), \
+                    self.subTest(change=change), self.assertRaisesRegex(ValueError, "stale actual clean retry checkpoint"):
+                release._metadata(self.root, release.RETRY_MANIFEST_PATH)
+
+    def test_retry_manifest_is_a_separate_exact_version_without_generic_retry_switch(self):
+        manifest = self.manifest()
+        self.assertEqual(release._retry_manifest(manifest), manifest)
+        with self.assertRaises(ValueError):
+            release._validate_manifest(manifest)
+        with self.assertRaises(ValueError):
+            release._retry_manifest(artificial_manifest())
+        for change in ({"schema_version": "ball_crop_corroboration_release_manifest/v0.1"},
+                       {"study_id": release.ID + "_new"}, {"force": True}, {"selected_method": "corroborated"},
+                       {"integration_scope": {"path": release.RETRY_SCOPE_PATH, "sha256": "0" * 64}},
+                       {"implementation_validation": {"path": release.CERTIFICATE_PATH, "sha256": "e" * 64}},
+                       {"post_commit_checkpoint": release.CHECKPOINT_PATH}):
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                release._retry_manifest({**manifest, **change})
+
+    def test_retry_metadata_dispatch_is_allowlisted_and_absent_authority_stops_early(self):
+        with patch.object(release, "_read_bound", side_effect=AssertionError("unauthorized body access")), \
+                patch.object(release, "_git", side_effect=AssertionError("unauthorized Git check")), \
+                patch.object(resources, "BudgetJournal", side_effect=AssertionError("unauthorized journal")), \
+                patch.object(release.monitor, "run_supervised", side_effect=AssertionError("unauthorized dispatch")):
+            with self.assertRaises(PermissionError):
+                release.run_study(self.root, release.RETRY_MANIFEST_PATH)
+            for manifest in ("configs/arbitrary_retry.json", "../escape.json", release.RETRY_MANIFEST_PATH + ".copy"):
+                with self.subTest(manifest=manifest), self.assertRaises(ValueError):
+                    release.run_study(self.root, manifest)
+
+    def test_history_dispatch_retains_old_guard_and_uses_retry_only_for_explicit_context(self):
+        journal, scope = object(), {"artificial": True}
+        context = {"scope": scope}
+        with patch.object(release, "verify_history") as original, \
+                patch.object(release, "verify_retry_history") as retry:
+            release._verify_context_history(journal, context, "worker", "a" * 32)
+            original.assert_called_once_with(journal, scope, "worker", "a" * 32)
+            retry.assert_not_called()
+            context["retry"] = retry_scope_fixture()
+            release._verify_context_history(journal, context, "completed", "b" * 32)
+            retry.assert_called_once_with(journal, context, "completed", "b" * 32)
+            self.assertEqual(original.call_count, 1)
+
+    def test_retry_worker_carries_same_manifest_to_both_authority_checks(self):
+        attempt = "a" * 32
+        receipt = self.root / release.OUTPUT_ROOT / "attempts" / (attempt + ".result.json")
+        receipt.parent.mkdir(parents=True)
+        context = {"root": self.root, "scope": {}, "limits": {}, "retry": retry_scope_fixture(),
+                   "output_root": self.root / release.OUTPUT_ROOT, "commit": COMMIT,
+                   "manifest_path": release.RETRY_MANIFEST_PATH,
+                   "manifest_binding": {"path": release.RETRY_MANIFEST_PATH, "sha256": "a" * 64}}
+        journal = SimpleNamespace(_attempts=lambda: {attempt: {"start": {"reserved_seconds": 1198.875}}})
+        result = {"artificial_orchestration_only": True, "attempt_id": attempt}
+        with patch.dict(os.environ, {"BALL_RETENTION_ATTEMPT_ID": attempt}, clear=True), \
+                patch.object(release, "_owned_paths"), patch.object(resources, "wait_for_supervisor"), \
+                patch.object(release, "_ownership"), patch.object(release, "_metadata", return_value=context) as metadata, \
+                patch.object(resources, "BudgetJournal", return_value=journal), \
+                patch.object(release, "_verify_context_history") as history, patch.object(release, "_preserved"), \
+                patch.object(release, "PhaseAccess"), patch.object(release, "OutputSink"), \
+                patch.object(release, "run_comparison", return_value=result), \
+                patch.object(release.monitor, "run_supervised", side_effect=AssertionError("production launch")):
+            release._worker(self.root, release.RETRY_MANIFEST_PATH)
+        self.assertEqual([call.args for call in metadata.call_args_list],
+                         [(self.root, release.RETRY_MANIFEST_PATH)] * 2)
+        self.assertEqual([call.args for call in history.call_args_list],
+                         [(journal, context, "worker", attempt)] * 2)
+        self.assertEqual(json.loads(receipt.read_text()), result)
+
+    def test_retry_supervisor_command_and_completion_keep_selected_manifest_and_original_baseline(self):
+        attempt = "b" * 32
+        event = {"success": True, "attempt_id": attempt, "final_accounting_output_bound_bytes": 8875168843,
+                 "worker_result": {"path": f"attempts/{attempt}.result.json", "sha256": "e" * 64, "size_bytes": 2}}
+        context = {"root": self.root, "scope": {}, "retry": retry_scope_fixture(), "limits": {}, "policy": {},
+                   "output_root": self.root / release.OUTPUT_ROOT, "commit": COMMIT,
+                   "manifest_path": release.RETRY_MANIFEST_PATH,
+                   "manifest_binding": {"path": release.RETRY_MANIFEST_PATH, "sha256": "a" * 64},
+                   "history": {"preserved_files": [{"size_bytes": 9999999999}]}}
+        journal = SimpleNamespace(_attempts=lambda: {attempt: {"finished": event}})
+        called = []
+
+        def supervised(output, unit, command, limits, **kwargs):
+            called.append(command)
+            self.assertEqual(unit, release.UNIT_KEY)
+            self.assertFalse(kwargs["selection_unit"])
+            self.assertTrue(kwargs["require_result"])
+            kwargs["journal_factory"](output, limits)
+            return event
+
+        with patch.object(release, "_metadata", return_value=context) as metadata, \
+                patch.object(release, "_preserved"), patch.object(resources, "BudgetJournal", return_value=journal), \
+                patch.object(release, "_verify_context_history") as history, \
+                patch.object(release, "CorroborationRetryJournal") as retry_journal, \
+                patch.object(release, "CorroborationJournal", side_effect=AssertionError("old journal route")), \
+                patch.object(release.monitor, "run_supervised", side_effect=supervised), \
+                patch.object(release, "_successful_event") as completion, \
+                patch.object(release, "_read_bound", return_value=b"{}"), \
+                patch.object(release, "validate_return", return_value={"artificial_only": True}):
+            release.run_study(self.root, release.RETRY_MANIFEST_PATH)
+        self.assertEqual(len(called), 1)
+        self.assertEqual(called[0][called[0].index("--manifest") + 1], release.RETRY_MANIFEST_PATH)
+        self.assertEqual([call.args for call in metadata.call_args_list], [(self.root, release.RETRY_MANIFEST_PATH)] * 2)
+        retry_journal.assert_called_once_with(context["output_root"], context["limits"], context=context)
+        completion.assert_called_once_with(event, context, 8875168842)
+        self.assertEqual(history.call_args_list[-1].args, (journal, context, "completed", attempt))
 
 
 if __name__ == "__main__":

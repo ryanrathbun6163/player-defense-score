@@ -1,0 +1,59 @@
+{
+  "schema_version": "ball_crop_corroboration_retry_execution_approval/v0.1",
+  "study_id": "rfdetr_yolo_crop_corroboration_v0_1",
+  "approved_by": "Ryan",
+  "user_statement": "Ok I approve, thank you for this. I also approve for you to move forward at runtime, git steps, and the scientific retry if nothing goes wrong",
+  "scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_release_v0_1.json",
+    "size_bytes": 344753,
+    "sha256": "b81098c3aae5a89438d4c0cd621534abc806b5d9b099a5aa35211ce9be0d8ff2"
+  },
+  "original_execution_approval": {
+    "path": "configs/ball_tracking/reviews/rfdetr_yolo_crop_corroboration_execution_approval_v0_1.json",
+    "size_bytes": 4934,
+    "sha256": "c67d5c1d479584cb2835ba2eae88534fa13918fb0d3d27e69d61ef19d51b4e4b"
+  },
+  "integration_scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_retry_integration_v0_1.json",
+    "size_bytes": 42059,
+    "sha256": "f125ccc0ef2e4d732a0f807436c9d1ec9dab3d47b258f973af5a6e59c74daa80"
+  },
+  "integration_proposal": {
+    "path": "docs/ball_crop_cross_detector_corroboration_retry_integration_proposal.md",
+    "size_bytes": 16553,
+    "sha256": "bd03fd5c262135934802f27f7fe5bbcae3cb262bdc25476af5df7ae0da990863"
+  },
+  "implementation_validation": {
+    "path": "data/outputs/t/corroboration_retry_integration_3233d2c/implementation_validation.json",
+    "size_bytes": 162862,
+    "sha256": "c2f86015149bc38ddeaf950c5e9de464bfc6cfe3e6ced0cd73a002f2ef6c3bea"
+  },
+  "failed_attempt_audit": {
+    "path": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/failed_attempt_audit.json",
+    "size_bytes": 3218,
+    "sha256": "e3bbe1028aedd0fe04dc4aaa13850e9b049d56c20ce0416623a7d27e46f49922"
+  },
+  "predecessor_attempt_id": "ac3a321649414170adf823deaa1b7b9e",
+  "unit_key": "cross-detector-corroboration:study:",
+  "maximum_attempts": 1,
+  "maximum_retry_seconds": 1198.875,
+  "fresh_budget": false,
+  "scientific_execution_authorized": true,
+  "administrative_history_verification_authorized": true,
+  "release_checkpoint_authorized": true,
+  "new_verified_media_presentation_authorized": false,
+  "implementation_approval": {
+    "path": "data/outputs/t/corroboration_retry_integration_3233d2c/approval.json",
+    "size_bytes": 109625,
+    "sha256": "a6b8989a18db341aad4d3b3492e91171034511df1a7b70da810bf5e4f36c8508"
+  },
+  "condition_satisfied": "Frozen implementation and independent review passed; focused100/100 and full1249pass+1existing skip; validation finalizer and independent final evidence audit accepted. Runtime requires actual clean descendant commit and new bound checkpoint.",
+  "presentation_scope": "This record authorizes scientific execution and its bounded numeric result; presentation of new media remains a separate review step.",
+  "git_authorization": {
+    "staging": true,
+    "commit": true,
+    "push": false,
+    "pr": false,
+    "merge": false
+  }
+}
