@@ -45,16 +45,19 @@ def load_completed_training(root, config_path):
     return config, trial, completion, calibration.file_binding(root, path)
 
 
-def evaluation_config(original, trial_relative, completion, completion_binding):
+def evaluation_config(original, trial_relative, completion, completion_binding,
+                      experiment_id="wasb_basketball_adaptation_v0_1", training_scope=None):
     result = copy.deepcopy(original)
     result.update(
-        experiment_id="wasb_basketball_adaptation_v0_1_evaluation",
+        experiment_id=experiment_id + "_evaluation",
         output_root=trial_relative + "/evaluation",
         checkpoint=copy.deepcopy(completion["checkpoint"]),
         pretrained_checkpoint=copy.deepcopy(original["checkpoint"]),
         training_completion=completion_binding,
         training_provenance=copy.deepcopy(completion["training_provenance"]),
     )
+    if training_scope is not None:
+        result["training_scope"] = copy.deepcopy(training_scope)
     return result
 
 
@@ -69,8 +72,10 @@ def calibration_config(root, config, output, calibration_output):
             window[key] = calibration.file_binding(root, folder / filename)
     return {
         "schema_version": "wasb_cached_calibration_screen/v0.1",
-        "experiment_id": "wasb_basketball_adaptation_v0_1_calibration",
-        "declaration_context": "Eight thresholds and final checkpoint fixed in approved adaptation plan before training",
+        "experiment_id": config["experiment_id"].removesuffix("_evaluation") + "_calibration",
+        "declaration_context": ("Eight thresholds and final checkpoint fixed in approved expanded-data adaptation plan before training"
+                                if config.get("training_scope") else
+                                "Eight thresholds and final checkpoint fixed in approved adaptation plan before training"),
         "source_experiment": calibration.file_binding(root, output / "experiment.json"),
         "output_root": calibration_output.relative_to(root).as_posix(),
         "component_thresholds": list(calibration.THRESHOLDS), "threshold_operator": ">",
@@ -116,16 +121,25 @@ def completed_calibration(root, config):
     raise ValueError("Cached calibration has no successful receipt for its current summary")
 
 
-def compare_calibrations(root, original_config, adapted_config, trial, completion_binding):
+def compare_calibrations(root, original_config, adapted_config, trial, completion_binding,
+                         baseline_role="pretrained", training_scope=None):
+    if baseline_role not in {"pretrained", "prior_adapted"}:
+        raise ValueError("Unsupported completed comparison baseline")
     old_folder = repository_path(root, original_config["output_root"], "data/outputs")
     new_folder = repository_path(root, adapted_config["output_root"], "data/outputs")
+    ids = {w["window_id"] for w in adapted_config["windows"]}
+    if ids != {w["window_id"] for w in original_config["windows"]}:
+        raise ValueError("Pretrained/adapted development windows differ")
+    old_windows = {w["window_id"]: w for w in original_config["windows"]}
+    for window in adapted_config["windows"]:
+        if any(window[key] != old_windows[window["window_id"]][key] for key in (
+                "purpose", "possession_id", "source_video", "start_frame_index", "end_frame_index",
+                "annotation_set_id", "annotation", "rf_candidates")):
+            raise ValueError("Compared calibration annotations, source frames or RF controls differ")
     old = completed_calibration(root, original_config)
     new = completed_calibration(root, adapted_config)
     if old["component_thresholds"] != new["component_thresholds"] or new["component_thresholds"] != list(calibration.THRESHOLDS):
         raise ValueError("Pretrained/adapted threshold grids differ")
-    ids = {w["window_id"] for w in adapted_config["windows"]}
-    if ids != {w["window_id"] for w in original_config["windows"]}:
-        raise ValueError("Pretrained/adapted development windows differ")
     rows, report_bindings = [], []
     for old_row, new_row in zip(old["threshold_results"], new["threshold_results"], strict=True):
         threshold = old_row["component_threshold"]
@@ -142,7 +156,7 @@ def compare_calibrations(root, original_config, adapted_config, trial, completio
                 if len(matches) != 1 or calibration.summarize_reports([report]) != matches[0]["wasb_top_native_mass"]:
                     raise ValueError("Cached window report disagrees with completed summary")
             report_bindings.append({"threshold": threshold, "window_id": wid,
-                "pretrained": calibration.file_binding(root, old_folder / relative),
+                baseline_role: calibration.file_binding(root, old_folder / relative),
                 "adapted": calibration.file_binding(root, new_folder / relative)})
             changes.append({"window_id": wid, "purpose": window["purpose"],
                 **paired_frame_changes(new_report, old_report)})
@@ -150,29 +164,35 @@ def compare_calibrations(root, original_config, adapted_config, trial, completio
         for pool in calibration.POOLS:
             members = [w for w in changes if w["purpose"] == pool]
             pools[pool] = {
-                "pretrained": old_row["pools"][pool]["wasb_top_native_mass"],
+                baseline_role: old_row["pools"][pool]["wasb_top_native_mass"],
                 "adapted": new_row["pools"][pool]["wasb_top_native_mass"],
-                "pretrained_raw": old_row["pools"][pool]["wasb_raw"],
+                baseline_role + "_raw": old_row["pools"][pool]["wasb_raw"],
                 "adapted_raw": new_row["pools"][pool]["wasb_raw"],
                 "rf_baseline": new_row["pools"][pool]["rf_baseline"],
                 "rf_equal_adapted_output_count": new_row["pools"][pool]["rf_equal_output_count"],
                 "adapted_vs_rf_baseline": new_row["pools"][pool]["wasb_vs_rf_baseline"],
-                "adapted_vs_pretrained": {key: sum(len(w[key + "_frame_indices"]) for w in members)
+                "adapted_vs_" + baseline_role: {key: sum(len(w[key + "_frame_indices"]) for w in members)
                                            for key in ("recovered", "lost", "shared")},
             }
         rows.append({"component_threshold": threshold, "pools": pools, "paired_windows": changes})
-    result = {"schema_version": "wasb_adaptation_comparison/v0.1",
+    result = {"schema_version": ("wasb_adaptation_comparison/v0.1" if baseline_role == "pretrained"
+                                  else "wasb_adaptation_comparison/v0.2"),
         "training_completion": completion_binding,
-        "pretrained_summary": calibration.file_binding(root, old_folder / "summary.json"),
+        baseline_role + "_summary": calibration.file_binding(root, old_folder / "summary.json"),
         "adapted_summary": calibration.file_binding(root, new_folder / "summary.json"),
         "compared_report_bindings": report_bindings,
         "threshold_results": rows, "primary_threshold": .5, "localization_radius_px": 10,
         "selected_operating_point": None, "quality_gate": None, "human_visual_review": "pending",
         "limitations": ["Same-game, repeatedly inspected development windows; not independent generalization",
-            "Training uses only reviewed pilot windows; final checkpoint selected by update count, not evaluation",
+            (("Training uses " + training_scope + "; final checkpoint selected by update count, not evaluation")
+             if training_scope else
+             "Training uses only reviewed pilot windows; final checkpoint selected by update count, not evaluation"),
             "Pool-level equal-output-count RF ranking is a post-hoc diagnostic, not a deployable threshold",
             "One five-frame evaluation occlusion episode; geometric matches do not independently establish identity"]}
-    write_once(trial / "comparison.json", result)
+    if baseline_role != "pretrained":
+        result["baseline_role"] = baseline_role
+    filename = "comparison.json" if baseline_role == "pretrained" else "prior_adapted_comparison.json"
+    write_once(trial / filename, result)
     return result
 
 
@@ -180,10 +200,15 @@ def execute(root, config_path, stage="all"):
     # Keep connected-component ordering consistent with the cached calibration.
     cv2.setNumThreads(1)
     config, trial, completion, completed_binding = load_completed_training(root, config_path)
+    training_scope = None
+    if config.get("schema_version") == "wasb_adaptation_experiment/v0.2":
+        training_scope = (f"{len(config['training_blocks'])} training blocks / "
+                          f"{config['expected_split']['reviewed_frames']} reviewed frames")
     original = load_transfer_config(root, bound_path(root, config["transfer_config"]))
     if len(original["windows"]) != 6 or len({w["window_id"] for w in original["windows"]}) != 6:
         raise ValueError("The approved comparison requires the six bound development windows")
-    result_config = evaluation_config(original, trial.relative_to(root).as_posix(), completion, completed_binding)
+    result_config = evaluation_config(original, trial.relative_to(root).as_posix(), completion, completed_binding,
+                                     config["experiment_id"], training_scope)
     output = repository_path(root, result_config["output_root"], "data/outputs")
     output.mkdir(parents=True, exist_ok=True)
     invocation = output / "invocations" / (datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ_") + uuid.uuid4().hex + ".json")
@@ -227,7 +252,9 @@ def execute(root, config_path, stage="all"):
         summary = summarize(result_config, payloads)
         summary["training_completion"] = completed_binding
         summary["limitations"] = [s for s in summary["limitations"] if "No tracker" not in s] + [
-            "Checkpoint trained on the three disjoint reviewed pilots; no tracker, interpolation or player/court inference input"]
+            ("Checkpoint trained on " + training_scope + "; no tracker, interpolation or player/court inference input"
+             if training_scope else
+             "Checkpoint trained on the three disjoint reviewed pilots; no tracker, interpolation or player/court inference input")]
         write_once(output / "summary.json", summary)
         calibration_output = trial / "calibration"
         calibration_output.mkdir(exist_ok=True)
@@ -238,7 +265,13 @@ def execute(root, config_path, stage="all"):
         if not (calibration_output / "summary.json").exists():
             calibration.execute(root, calibration_path)
         old_config = calibration.load_config(root, bound_path(root, config["original_calibration_config"]))
-        comparison = compare_calibrations(root, old_config, derived_calibration, trial, completed_binding)
+        comparison = compare_calibrations(root, old_config, derived_calibration, trial, completed_binding,
+                                          training_scope=training_scope)
+        if config.get("prior_adapted_calibration_config"):
+            prior = calibration.load_config(root, bound_path(root, config["prior_adapted_calibration_config"]))
+            compare_calibrations(root, prior, derived_calibration, trial, completed_binding,
+                                 baseline_role="prior_adapted", training_scope=training_scope)
+            receipt["prior_adapted_comparison"] = calibration.file_binding(root, trial / "prior_adapted_comparison.json")
         receipt.update(status="completed", comparison=calibration.file_binding(root, trial / "comparison.json"))
         return comparison
     except BaseException as exc:

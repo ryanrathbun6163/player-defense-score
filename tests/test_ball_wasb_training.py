@@ -21,6 +21,7 @@ from test_ball_annotation_foundation import (
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSET = ROOT / "data/outputs/wasb_assets/WASB-SBDT-923462cacdeb3353b84ddebdedb3f4b7a8553b0f"
+EXPANDED_CONFIG = ROOT / "configs/ball_tracking/wasb_experiments/wasb_basketball_expanded_adaptation_v0_1.json"
 
 
 def upstream_module(relative, name):
@@ -232,6 +233,146 @@ class TrainingBoundaryTests(unittest.TestCase):
                         self.fail("Concurrent lock acquired")
             with training.training_lock(root / "training.lock"):
                 pass
+
+
+class ExpandedTrainingBoundaryTests(unittest.TestCase):
+    def test_real_reviewed_segments_compose150_frames_and140_triplets_without_reading_evaluation_labels(self):
+        config = training.load_config(ROOT, EXPANDED_CONFIG)
+        with patch.object(training, "load_annotations", wraps=training.load_annotations) as loader:
+            manifest, blocks = training.build_training_manifest(ROOT, config)
+        self.assertEqual(manifest["schema_version"], "wasb_training_manifest/v0.2")
+        self.assertEqual(manifest["counts"], config["expected_split"])
+        self.assertEqual([len(row["frames"]) for row in manifest["training_blocks"]], [25, 25, 25, 50, 25])
+        approved_annotations = {
+            (ROOT / segment["annotation"]["path"]).resolve()
+            for block in config["training_blocks"] for segment in block["annotation_segments"]
+        }
+        self.assertEqual(len(approved_annotations), 6)
+        self.assertEqual(len(loader.call_args_list), 6)
+        self.assertEqual({call.args[0].resolve() for call in loader.call_args_list}, approved_annotations)
+        self.assertFalse(manifest["evaluation_label_bodies_read"])
+        self.assertFalse(manifest["holdout_label_bodies_read"])
+        self.assertFalse(manifest["outside_training_block_temporal_context"])
+        p002 = config["training_blocks"][3]
+        combined = blocks[p002["window_id"]]
+        self.assertEqual(list(combined.annotation_by_frame()), list(range(318, 368)))
+        self.assertEqual(combined.source_video.to_dict(), p002["source_video"])
+        self.assertEqual(training.annotation_kind(combined.annotation_by_frame()[335]), "masked")
+        for frame in (341, 342, 343, 344):
+            self.assertEqual(training.annotation_kind(combined.annotation_by_frame()[frame]), "hidden")
+        frame_records = {row["frame_index"]: row for row in manifest["training_blocks"][3]["frames"]}
+        self.assertEqual(frame_records[342]["annotation_set_id"], p002["annotation_segments"][0]["annotation_set_id"])
+        self.assertEqual(frame_records[343]["annotation_set_id"], p002["annotation_segments"][1]["annotation_set_id"])
+        p002_triplets = [t["frame_indices"] for t in manifest["triplets"] if t["window_id"] == p002["window_id"]]
+        self.assertEqual(len(p002_triplets), 48)
+        self.assertIn([341, 342, 343], p002_triplets)
+        self.assertIn([342, 343, 344], p002_triplets)
+        self.assertEqual(len({t["triplet_id"] for t in manifest["triplets"]}), 140)
+        for block in config["training_blocks"]:
+            block_triplets = [t for t in manifest["triplets"] if t["window_id"] == block["window_id"]]
+            self.assertEqual(len(block_triplets), block["end_frame_index"] - block["start_frame_index"] - 1)
+            for triplet in block_triplets:
+                first = triplet["frame_indices"][0]
+                self.assertEqual(triplet["frame_indices"], [first, first + 1, first + 2])
+                self.assertGreaterEqual(first, block["start_frame_index"])
+                self.assertLessEqual(first + 2, block["end_frame_index"])
+        schedule = training.sample_schedule(manifest["triplets"])
+        self.assertEqual([len(c["consumed_ids"]) for c in schedule["cycles"]], [140, 140, 120])
+        self.assertEqual(len(schedule["sampled_ids"]), 400)
+        self.assertEqual(len(schedule["batches"]), 200)
+        self.assertEqual(training.sample_schedule(list(reversed(manifest["triplets"]))), schedule)
+
+    def test_changed_blocks_segments_sources_and_initialization_fail_before_label_reads(self):
+        original = training.load_config(ROOT, EXPANDED_CONFIG)
+        cases = []
+        changed = copy.deepcopy(original)
+        changed["training_blocks"][0]["start_frame_index"] -= 1
+        cases.append(("unapproved range", changed, "block inventory"))
+        changed = copy.deepcopy(original)
+        changed["training_blocks"][1]["window_id"] = changed["training_blocks"][0]["window_id"]
+        cases.append(("duplicate block ID", changed, "block inventory"))
+        changed = copy.deepcopy(original)
+        changed["training_blocks"][3]["annotation_segments"].reverse()
+        cases.append(("nonchronological segments", changed, "contiguously"))
+        changed = copy.deepcopy(original)
+        changed["training_blocks"][3]["annotation_segments"].pop()
+        cases.append(("missing segment", changed, "exactly once"))
+        changed = copy.deepcopy(original)
+        changed["training_blocks"][3]["annotation_segments"].append(changed["training_blocks"][3]["annotation_segments"][0])
+        cases.append(("duplicate segment", changed, "exactly once"))
+        changed = copy.deepcopy(original)
+        changed["training_blocks"][3]["annotation_segments"][1]["start_frame_index"] += 1
+        cases.append(("segment gap", changed, "segment identity/source/window"))
+        changed = copy.deepcopy(original)
+        changed["training_blocks"][0]["annotation_segments"][0]["selection_purpose"] = "representative_evaluation"
+        cases.append(("wrong purpose", changed, "segment identity/source/window"))
+        changed = copy.deepcopy(original)
+        changed["training_blocks"][0]["source_video"]["width_px"] -= 1
+        cases.append(("wrong source", changed, "segment identity/source/window"))
+        changed = copy.deepcopy(original)
+        changed["pretrained_checkpoint"]["path"] = "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/training/checkpoint.pth"
+        cases.append(("prior adapted initialization", changed, "retain original pretrained_checkpoint"))
+        for name, config, error in cases:
+            with self.subTest(name=name), patch.object(training, "load_annotations", side_effect=AssertionError("No label body should be read")):
+                with self.assertRaisesRegex(ValueError, error):
+                    training.build_training_manifest(ROOT, config)
+
+    def test_review_gate_and_metadata_overlap_reject_before_any_annotation_body(self):
+        config = training.load_config(ROOT, EXPANDED_CONFIG)
+        read = training.read_json
+        review_path = (ROOT / config["expansion_label_review"]["path"]).resolve()
+        metadata_path = (ROOT / config["split_metadata"]["path"]).resolve()
+        for failure in ("pending review", "wrong approval", "holdout overlap"):
+            # Mutate captured producer records only in memory to exercise each
+            # consumer decision after binding checks; the actual files stay intact.
+            def changed_read(path):
+                value = read(path)
+                if Path(path).resolve() == review_path:
+                    if failure == "pending review":
+                        value["status"] = "pending"
+                    elif failure == "wrong approval":
+                        value["expansion_approval"]["sha256"] = "0" * 64
+                if Path(path).resolve() == metadata_path and failure == "holdout overlap":
+                    block = config["training_blocks"][3]
+                    value["sealed_holdouts"][0].update(source_video=block["source_video"], start_frame_index=341, end_frame_index=343)
+                return value
+            error = "overlaps development or holdout" if failure == "holdout overlap" else "completed Ryan visual review"
+            with self.subTest(failure=failure), patch.object(training, "read_json", side_effect=changed_read), \
+                    patch.object(training, "load_annotations", side_effect=AssertionError("Excluded or unreviewed data read")):
+                with self.assertRaisesRegex(ValueError, error):
+                    training.build_training_manifest(ROOT, config)
+
+    def test_expanded_schema_keeps_preset_and_requires_reviewed_segment_status(self):
+        config = training.load_config(ROOT, EXPANDED_CONFIG)
+        self.assertIs(training.training_blocks(config), config["training_blocks"])
+        original = training.load_config(ROOT, ROOT / training.DEFAULT_CONFIG)
+        self.assertIs(training.training_blocks(original), original["pilots"])
+        self.assertEqual(config["pretrained_checkpoint"], original["pretrained_checkpoint"])
+        with tempfile.TemporaryDirectory() as folder:
+            for mutation in ("legacy pilots", "changed learning rate", "unknown schema"):
+                changed = copy.deepcopy(config)
+                if mutation == "legacy pilots":
+                    changed["pilots"] = original["pilots"]
+                elif mutation == "changed learning rate":
+                    changed["training"]["learning_rate"] = .01
+                else:
+                    changed["schema_version"] = "wasb_adaptation_experiment/v9"
+                path = Path(folder) / f"{mutation}.json"
+                write_once(path, changed)
+                with self.subTest(mutation=mutation), self.assertRaisesRegex(ValueError, "training_blocks|preset"):
+                    training.load_config(ROOT, path)
+        load = training.load_annotations
+        first = (ROOT / config["training_blocks"][0]["annotation_segments"][0]["annotation"]["path"]).resolve()
+        def unreviewed(path):
+            annotation = load(path)
+            if Path(path).resolve() == first:
+                payload = annotation.to_dict()
+                payload["review"].update(status="draft", reviewer_id=None, reviewed_at_utc=None)
+                return type(annotation).from_mapping(payload)
+            return annotation
+        with patch.object(training, "load_annotations", side_effect=unreviewed):
+            with self.assertRaisesRegex(ValueError, "annotation identity/review/source"):
+                training.build_training_manifest(ROOT, config)
 
 
 if __name__ == "__main__":

@@ -4,6 +4,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import torch
 
@@ -55,12 +56,23 @@ class AdaptationExperimentTests(unittest.TestCase):
         self.assertEqual(result["checkpoint"], completion["checkpoint"])
         self.assertEqual(result["pretrained_checkpoint"], original["checkpoint"])
         self.assertEqual(result["output_root"], "data/outputs/trial/evaluation")
+        self.assertEqual(result["experiment_id"], "wasb_basketball_adaptation_v0_1_evaluation")
+        self.assertNotIn("training_scope", result)
+        expanded = experiment.evaluation_config(
+            original, "data/outputs/expanded", completion, {"sha256": "c" * 64},
+            "wasb_basketball_expanded_adaptation_v0_1", "5 training blocks / 150 reviewed frames")
+        self.assertEqual(expanded["experiment_id"], "wasb_basketball_expanded_adaptation_v0_1_evaluation")
+        self.assertEqual(expanded["training_scope"], "5 training blocks / 150 reviewed frames")
+        self.assertEqual(expanded["windows"], original["windows"])
+        self.assertEqual(original, before)
 
     def test_generated_calibration_uses_genuine_source_cache_and_compares_same_frames(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             source_path, source_config = fixture(root)
             inference = read_json(root / "original_experiment.json")
+            inference["experiment_id"] = "wasb_basketball_expanded_adaptation_v0_1_evaluation"
+            inference["training_scope"] = "5 training blocks / 150 reviewed frames"
             source_folder = root / inference["output_root"]
             write_once(source_folder / "experiment.json", inference)
             derived_folder = root / "data/outputs/derived_calibration"
@@ -68,6 +80,7 @@ class AdaptationExperimentTests(unittest.TestCase):
             derived_path = root / "derived.json"
             write_once(derived_path, derived)
             self.assertEqual(calibration.load_config(root, derived_path), derived)
+            self.assertEqual(derived["experiment_id"], "wasb_basketball_expanded_adaptation_v0_1_calibration")
             # Both score the real fixture component->point->evaluator records;
             # one uses the original config and one the generated adapted config.
             old_summary = calibration.execute(root, source_path)
@@ -81,6 +94,34 @@ class AdaptationExperimentTests(unittest.TestCase):
                     self.assertEqual(pool["adapted_vs_pretrained"]["lost"], 0)
                     self.assertEqual(pool["adapted"], pool["pretrained"])
             self.assertEqual(derived["source_experiment"]["path"], "data/outputs/original/experiment.json")
+            # The same completed producer evidence can be compared as a historical
+            # adapted baseline, without rerunning its screen or changing its bytes.
+            preserved = {path: path.read_bytes() for path in (root / source_config["output_root"]).rglob("*")
+                         if path.is_file()}
+            with patch.object(calibration, "execute", side_effect=AssertionError("cached baseline rerun")), \
+                    patch("cv2.VideoCapture", side_effect=AssertionError("media forbidden")), \
+                    patch("src.ball_tracking.wasb_adapted_adapter.AdaptedWasbAdapter",
+                          side_effect=AssertionError("model forbidden")):
+                prior = experiment.compare_calibrations(
+                    root, source_config, derived, trial, {"sha256": "d" * 64},
+                    baseline_role="prior_adapted", training_scope=inference["training_scope"])
+            self.assertEqual(prior["baseline_role"], "prior_adapted")
+            self.assertNotIn("pretrained_summary", prior)
+            self.assertEqual(prior["prior_adapted_summary"], compared["pretrained_summary"])
+            self.assertEqual(read_json(trial / "comparison.json"), compared)
+            self.assertEqual(read_json(trial / "prior_adapted_comparison.json"), prior)
+            self.assertTrue(all(path.read_bytes() == payload for path, payload in preserved.items()))
+            for row in prior["threshold_results"]:
+                for pool in row["pools"].values():
+                    self.assertEqual(pool["adapted_vs_prior_adapted"], {"recovered": 0, "lost": 0, "shared":
+                        pool["adapted"]["raw_available_or_matched"]})
+                    self.assertEqual(pool["prior_adapted"], pool["adapted"])
+                    self.assertNotIn("pretrained", pool)
+            self.assertIn("150 reviewed frames", prior["limitations"][1])
+            changed_scope = copy.deepcopy(derived)
+            changed_scope["windows"][0]["annotation"]["sha256"] = "0" * 64
+            with self.assertRaisesRegex(ValueError, "annotations, source frames or RF controls differ"):
+                experiment.compare_calibrations(root, source_config, changed_scope, trial, {"sha256": "d" * 64})
             # A leftover or modified summary cannot masquerade as completed.
             summary_path = derived_folder / "summary.json"
             summary_path.write_text(json.dumps({**new_summary, "experiment_id": "modified"}), encoding="utf-8")

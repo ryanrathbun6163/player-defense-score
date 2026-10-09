@@ -24,11 +24,11 @@
     "timestamp_rule": "frame_index_divided_by_fps"
   },
   "review": {
-    "status": "draft",
+    "status": "reviewed",
     "annotator_id": "ryan",
-    "reviewer_id": null,
+    "reviewer_id": "ryan",
     "created_at_utc": "2026-10-08T23:48:55.171876+00:00",
-    "reviewed_at_utc": null
+    "reviewed_at_utc": "2026-10-09T01:18:32.874696+00:00"
   },
   "annotations": [
     {

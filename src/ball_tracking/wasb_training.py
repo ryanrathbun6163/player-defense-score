@@ -1,6 +1,6 @@
-"""One preset WASB adaptation on reviewed pilots, with resumable safe checkpoints.
+"""Preset WASB adaptation on reviewed training blocks, with safe checkpoints.
 
-Only pilot annotation bodies and pilot image frames enter training. Development
+Only approved training annotation bodies and image frames enter training. Development
 and holdout exclusions are checked from manifest metadata, never their labels.
 Publication of an already trained final state never repeats optimizer updates.
 """
@@ -18,6 +18,7 @@ import time
 import traceback
 import uuid
 from contextlib import contextmanager
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -26,7 +27,7 @@ import numpy as np
 import torch
 from torch import nn
 
-from .annotations import load_annotations, verify_source_video_contract
+from .annotations import FrameAnnotation, SourceVideo, load_annotations, verify_source_video_contract
 from .wasb_adapter import WasbAdapter, affine_matrices, preprocess_triplet
 from .wasb_experiment import bound_path, canonical, digest_file, read_json, repository_path, write_once
 
@@ -34,6 +35,21 @@ ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CONFIG = "configs/ball_tracking/wasb_experiments/wasb_basketball_adaptation_v0_1.json"
 UPDATES, BATCH_SIZE, SEED = 200, 2, 1234
 PILOT_RANGES = {"possession_001": (375, 399), "possession_002": (318, 342), "possession_003": (416, 440)}
+EXPANDED_SCHEMA = "wasb_adaptation_experiment/v0.2"
+
+
+@dataclass(frozen=True)
+class TrainingBlockAnnotations:
+    """In-memory frame lookup; each original reviewed segment keeps its authority."""
+    source_video: SourceVideo
+    annotations: tuple[FrameAnnotation, ...]
+
+    def annotation_by_frame(self):
+        return {annotation.frame_index: annotation for annotation in self.annotations}
+
+
+def training_blocks(config):
+    return config["training_blocks"] if config["schema_version"] == EXPANDED_SCHEMA else config["pilots"]
 
 
 def binding(root, path):
@@ -155,18 +171,132 @@ def load_config(root, path):
         "masked_denominator": "valid_output_channels_times_height_times_width",
         "checkpoint_interval_updates": 25, "augmentation": False, "mining": False,
         "checkpoint_selection": "final_update200_only"}
-    if config["schema_version"] != "wasb_adaptation_experiment/v0.1" or any(train.get(k) != v for k, v in required.items()):
+    if config["schema_version"] not in {"wasb_adaptation_experiment/v0.1", EXPANDED_SCHEMA} or any(train.get(k) != v for k, v in required.items()):
         raise ValueError("Training preset differs from the approved200-update trial")
     repository_path(root, config["output_root"], "data/outputs")
     for key in ("approved_plan", "transfer_config", "original_calibration_config", "split_metadata"):
         bound_path(root, config[key])
     for source in config["upstream_training_sources"]:
         bound_path(root, source)
+    if config["schema_version"] == EXPANDED_SCHEMA:
+        if "pilots" in config:
+            raise ValueError("Expanded config uses training_blocks, not pilots")
+        for key in ("original_training_config", "expansion_proposal", "expansion_approval", "expansion_label_review"):
+            bound_path(root, config[key])
     return config
 
 
+def _expanded_training_manifest(root, config, development, holdouts):
+    """Compose approved reviewed segments without inventing a merged review record."""
+    original = read_json(bound_path(root, config["original_training_config"]))
+    proposal = read_json(bound_path(root, config["expansion_proposal"]))
+    approval = read_json(bound_path(root, config["expansion_approval"]))
+    review = read_json(bound_path(root, config["expansion_label_review"]))
+    if (original["schema_version"] != "wasb_adaptation_experiment/v0.1"
+            or proposal["schema_version"] != "wasb_training_data_expansion_proposal/v0.1"
+            or approval["schema_version"] != "wasb_training_data_expansion_approval/v0.1"
+            or approval["status"] != "approved" or approval["approved_by"] != "Ryan"
+            or approval["approved_proposal"] != config["expansion_proposal"]
+            or approval["approved_proposal_document"] != config["approved_plan"]
+            or proposal["previous_experiment"] != config["original_training_config"]
+            or approval["new_frame_count"] != proposal["new_frames_to_annotate"]
+            or approval["fit_count"] != 1 or approval["fit_updates"] != UPDATES):
+        raise ValueError("Expanded training approval/proposal lineage differs")
+    if (review["schema_version"] != "wasb_training_expansion_human_visual_review/v0.1"
+            or review["status"] != "approved" or review["approved_by"] != "Ryan"
+            or review["expansion_approval"] != config["expansion_approval"]):
+        raise ValueError("Expanded labels require completed Ryan visual review")
+    for key in ("pretrained_checkpoint", "upstream_source", "upstream_commit", "upstream_training_sources",
+                "transfer_config", "original_calibration_config", "split_metadata"):
+        if config[key] != original[key]:
+            raise ValueError(f"Expanded trial must retain original {key}")
+    approved_paths = [item["path"] for item in approval["annotation_draft_initial_bindings"]]
+    reviewed = review["reviewed_annotations"]
+    if (len(approved_paths) != len(set(approved_paths)) or len(reviewed) != len(approved_paths)
+            or {item["path"] for item in reviewed} != set(approved_paths)
+            or len(proposal["new_windows"]) != len(approved_paths)):
+        raise ValueError("Expanded reviewed annotation inventory differs")
+    reviewed_by_path = {item["path"]: item for item in reviewed}
+    allowed = {}
+    for pilot in original["pilots"]:
+        allowed[pilot["annotation"]["path"]] = {**pilot, "annotation_set_id": pilot["window_id"],
+                                                 "selection_purpose": "protocol_adjudication"}
+    for path, window in zip(approved_paths, proposal["new_windows"]):
+        if path in allowed or window["training_only"] is not True:
+            raise ValueError("Expanded training segment authorization overlaps or is not training-only")
+        allowed[path] = {**window, "annotation_set_id": Path(path).stem,
+                         "annotation": reviewed_by_path[path], "selection_purpose": "training"}
+    blocks = config["training_blocks"]
+    if ([{key: block[key] for key in ("possession_id", "start_frame_index", "end_frame_index")} for block in blocks]
+            != proposal["combined_training_blocks"] or len({block["window_id"] for block in blocks}) != len(blocks)):
+        raise ValueError("Expanded training block inventory differs from approved proposal")
+    segments = [segment for block in blocks for segment in block["annotation_segments"]]
+    paths = [segment["annotation"]["path"] for segment in segments]
+    if len(paths) != len(set(paths)) or set(paths) != set(allowed):
+        raise ValueError("Training segments must use every approved annotation exactly once")
+    # Validate all source/window contracts and exclusions before opening label bodies.
+    for block in blocks:
+        low, high = block["start_frame_index"], block["end_frame_index"]
+        coverage = []
+        for segment in block["annotation_segments"]:
+            expected = allowed[segment["annotation"]["path"]]
+            if (any(segment[key] != expected[key] for key in ("annotation_set_id", "annotation", "selection_purpose",
+                                                            "start_frame_index", "end_frame_index"))
+                    or block["source_video"] != expected["source_video"] or block["possession_id"] != expected["possession_id"]):
+                raise ValueError("Training segment identity/source/window/review binding differs")
+            coverage.extend(range(segment["start_frame_index"], segment["end_frame_index"] + 1))
+        if coverage != list(range(low, high + 1)):
+            raise ValueError("Training segments must cover their block contiguously without gaps or overlaps")
+        for excluded in [*development, *holdouts]:
+            if (excluded["source_video"]["sha256"] == block["source_video"]["sha256"]
+                    and max(low, excluded["start_frame_index"]) <= min(high, excluded["end_frame_index"])):
+                raise ValueError("Training/context overlaps development or holdout metadata")
+    counts = {"reviewed_frames": 0, "positive_frames": 0, "hidden_frames": 0, "masked_frames": 0,
+              "fully_visible_positive": 0, "partially_visible_positive": 0, "triplets": 0,
+              "masked_frame_ids": [], "hidden_frame_ids": []}
+    labels_by_id, records, triplets = {}, [], []
+    for block in blocks:
+        annotations, frames = [], []
+        for segment in block["annotation_segments"]:
+            labels = load_annotations(bound_path(root, segment["annotation"]))
+            if (labels.review.status != "reviewed" or labels.window.selection_purpose != segment["selection_purpose"]
+                    or labels.source_video.to_dict() != block["source_video"] or labels.possession_id != block["possession_id"]
+                    or labels.annotation_set_id != segment["annotation_set_id"]
+                    or (labels.window.start_frame_index, labels.window.end_frame_index) !=
+                       (segment["start_frame_index"], segment["end_frame_index"])):
+                raise ValueError("Training annotation identity/review/source differs from its segment")
+            annotations.extend(labels.annotations)
+            for annotation in labels.annotations:
+                kind = annotation_kind(annotation)
+                counts["reviewed_frames"] += 1
+                counts[f"{kind}_frames"] += 1
+                if kind == "positive":
+                    counts[f"{annotation.visibility}_positive"] += 1
+                else:
+                    counts[f"{kind}_frame_ids"].append({"possession_id": labels.possession_id, "frame_index": annotation.frame_index})
+                _, valid, target = annotation_target(annotation, labels.source_video.width_px, labels.source_video.height_px)
+                frames.append({"frame_index": annotation.frame_index, "annotation_set_id": labels.annotation_set_id,
+                               "valid_output_channel": valid, **target})
+        labels_by_id[block["window_id"]] = TrainingBlockAnnotations(labels.source_video, tuple(annotations))
+        records.append({"window_id": block["window_id"], "annotation_segments": block["annotation_segments"], "frames": frames})
+        for first in range(block["start_frame_index"], block["end_frame_index"] - 1):
+            triplets.append({"triplet_id": f"{block['window_id']}/frame_{first:06d}",
+                             "window_id": block["window_id"], "frame_indices": [first, first + 1, first + 2]})
+    counts["triplets"] = len(triplets)
+    if (counts != config["expected_split"] or counts["reviewed_frames"] != proposal["combined_training_frames"]
+            or counts["triplets"] != proposal["complete_triplets"]):
+        raise ValueError(f"Expanded label accounting differs: {counts}")
+    return {"schema_version": "wasb_training_manifest/v0.2", "counts": counts, "training_blocks": records,
+            "triplets": triplets, "expansion_proposal": config["expansion_proposal"],
+            "expansion_approval": config["expansion_approval"], "expansion_label_review": config["expansion_label_review"],
+            "original_training_config": config["original_training_config"],
+            "exclusion_metadata": config["split_metadata"], "evaluation_metadata": config["transfer_config"],
+            "evaluation_label_bodies_read": False, "holdout_label_bodies_read": False,
+            "outside_training_block_temporal_context": False}, labels_by_id
+
+
 def build_training_manifest(root, config):
-    """Read only three pilot label bodies; exclusions use bound metadata files."""
+    """Read approved training labels; exclusions use bound metadata files only."""
     metadata = read_json(bound_path(root, config["split_metadata"]))
     transfer = read_json(bound_path(root, config["transfer_config"]))
     development = metadata["windows"]
@@ -178,6 +308,8 @@ def build_training_manifest(root, config):
         if len(matches) != 1 or any(matches[0][key] != window[key] for key in (
                 "possession_id", "source_video", "start_frame_index", "end_frame_index")):
             raise ValueError("Evaluation metadata differs from the split manifest")
+    if config["schema_version"] == EXPANDED_SCHEMA:
+        return _expanded_training_manifest(root, config, development, holdouts)
     pilots = config["pilots"]
     if len(pilots) != 3 or {p["possession_id"] for p in pilots} != set(PILOT_RANGES):
         raise ValueError("Only the three approved pilot windows may train")
@@ -228,7 +360,7 @@ def build_training_manifest(root, config):
 
 def prepare_examples(root, config, manifest, labels_by_id):
     examples, source_checks = {}, []
-    for pilot in config["pilots"]:
+    for pilot in training_blocks(config):
         labels = labels_by_id[pilot["window_id"]]
         source_checks.append(verify_source_video_contract(labels.source_video, root))
         path = repository_path(root, labels.source_video.path.as_posix(), "data/clips")
