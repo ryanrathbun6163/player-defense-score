@@ -146,3 +146,8 @@ Implementation commit: `3928f7fee7f6e41eb3ffa05b0db062b176442e6e`.
 Final checkpoint SHA-256:
 `09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98`.
 All generated videos, model outputs and source footage remain uncommitted.
+
+A subsequent [longer development observation](ball_wasb_development_observation.md)
+uses the same checkpoint and 0.3 candidate on the non-holdout segments of all
+three possessions. Its unlabeled timelines support gap/distractor review and
+include training frames; they do not replace any metric in this report.

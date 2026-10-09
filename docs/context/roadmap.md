@@ -1,6 +1,23 @@
 # Roadmap
 
-## Current continuation: expanded fit complete; review cached 0.3 candidate
+## Current continuation: review longer development timelines
+
+The [longer development observation](../ball_wasb_development_observation.md)
+completed with the frozen expanded checkpoint at 0.3. Three synchronized
+20-second timelines expose the model's behavior outside the six short clips.
+Sealed holdouts and buffers are black. Of 1,273 visible frames, 979 have a model
+point and 294 are missing; these training-inclusive, unlabeled counts do not
+measure accuracy. No training, motion rule or operating-point promotion occurred.
+
+Review the three longer videos for wrong-object selections, gaps and recovery.
+Short, bounded gaps may merit a motion-based correction; long gaps still need
+better evidence or explicit missingness. Choose the next change from that review
+rather than assuming interpolation or another threshold reduction will solve it.
+The earlier six-clip human review also remains pending clarification of Ryan's
+"Review. Move forward" message. No completed review needs to be repeated.
+Retain the agreed complete-trajectory finish line and original six-window metrics.
+
+## Earlier continuation: expanded fit complete; review cached 0.3 candidate
 
 The [expanded training comparison](../ball_wasb_expanded_adaptation_results.md)
 completed the approved single 200-update fit after Ryan approved the three new

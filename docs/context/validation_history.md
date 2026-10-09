@@ -1,5 +1,30 @@
 # Validation History
 
+## 2026-10-08: longer development observation completed without retry
+
+Implementation commit `23fc90876458068ca422708bef92a35357bfa201` passed nine
+focused tests in 1.808 seconds, covering source-band exclusion, cache producer/
+consumer records, aligned means, missing/withheld semantics, resumability and
+real synthetic H264 playback through its final frame. One check also consumed an
+actual previous model cache without altering it. No full suite was run.
+
+The actual metadata check confirmed 1,273 visible frames, 225 protected positions,
+138 reused raw triplets and 1,123 new ones before runtime. One real invocation
+completed in 212.761 seconds with exactly 1,123 model calls (17.832 inference
+seconds), 263 MiB peak allocated/400 MiB reserved GPU memory, no retry and no fit.
+Its three review videos decode all 1,498 frames and contain 225 black protected
+source areas. AI endpoint review passed; human trajectory acceptance is pending.
+
+An independent saved-output audit took 14.976 seconds and reconciled actual
+records, lineage, exact-frame inventories and cache bindings. All 130 old
+same-context means are identical; the 20 changed-context boundary means differ.
+It emitted descriptive missing-run/jump cues without labels or rescoring.
+Counts are 979 observed/294 missing/225 withheld, not accuracy estimates.
+P001/223–224 remain missing despite extra context; P002/49 emits a new unscored
+point. Original six-window results are preserved. Audit SHA-256:
+`0d86a7a72d1767c5dfd7e92965edd5f6e6643c00b06ae6358967ca8f60e23cb2`.
+See [longer observation report](../ball_wasb_development_observation.md).
+
 ## 2026-10-08: reviewed expanded-data fit and comparison completed
 
 Ryan approved all three new label clips and continuation. The human review record

@@ -64,6 +64,67 @@ also confirmed his acceptance of all six previous 0.3 clips was asked explicitly
 pending that answer, their human review remains pending. The three longer videos
 also require their own human visual review. No operating point is promoted.
 
+## Completed run and review videos
+
+The pass completed once under implementation commit
+`23fc90876458068ca422708bef92a35357bfa201`, without a retry. It took 212.761 seconds
+including cache work and rendering; new model calls accounted for 17.832 seconds.
+Peak allocated GPU memory was 263 MiB (400 MiB reserved). Exactly 1,123 new calls
+ran, and all 138 prior triplets were reused. No additional fit or threshold
+screen ran. Nine focused checks passed in 1.808 seconds; no full suite was run.
+
+| Possession | Model points | Missing | Withheld | Review |
+|---|---:|---:|---:|---|
+| 001 | 324 | 100 | 75 | [20-second video](../data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_001/render_attempts/e263e1d9cb5649638b8ec1754f7a2feb/review.mp4) |
+| 002 | 308 | 116 | 75 | [20-second video](../data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_002/render_attempts/8c1301e21ea149a1afdde0d1b0de9228/review.mp4) |
+| 003 | 347 | 78 | 75 | [20-second video](../data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_003/render_attempts/89da7bdc01974c81a2b2801d0d7ae75f/review.mp4) |
+
+All 1,498 encoded frames decode, including each final frame. All 225 withheld
+source areas are black. AI inspection of the three decoded endpoints confirmed
+readable state/threshold labels, synchronized player context and magenta model
+points; it does not supply human visual acceptance. Watch for false points,
+disappearance/reacquisition around occlusion and plausible ball motion. These
+videos provide longer context for the remaining development decision.
+
+Start with these review locations; playback time is source frame divided by 25:
+
+| Possession | Missing interval | Largest adjacent-point jump |
+|---|---|---|
+| 001 | Frames 26–40, about 1.04–1.60s (15 missing frames) | 440→441, about 17.60s: 796.81 pixels |
+| 002 | Frames 421–437, about 16.84–17.48s (17 missing frames) | 2→3, about 0.08s: 58.16 pixels |
+| 003 | Frames 24–39 and 42–57, about 0.96–1.56s and 1.68–2.28s (16 each) | 63→64, about 2.52s: 517.93 pixels |
+
+These are ranked inspection cues, not confirmed identity errors. P001 also has
+a jump out and back at 246→247→248 (465.94 then 458.38 pixels). No motion filter
+has removed or corrected these outputs. Longer gaps must not be filled merely
+to raise coverage.
+
+AI spot-review of both jump endpoints finds:
+
+- P003/63→64: the marker leaves the visible ball with white jersey 24 at the
+  lower left and moves to white jersey 21's side/arm. The ball remains with 24.
+- P001/440→441: the marker moves from a dark-uniform player's upper arm/torso
+  near the center to the visible ball held by white jersey 24 at the right.
+  This appears to be recovery from a false selection.
+- P002/2→3: the marker stays on the visible dribbling ball in both images;
+  its comparatively large displacement is not itself a visible failure.
+
+These are concrete visual review cues, not new scored labels. A rule that simply
+rejects the later endpoint of every large jump would reject P001's apparent
+recovery. Motion-based selection needs to handle both distractors and
+reacquisition after gaps. Missing samples P002/421 and /429 and P003/24, /31 and
+/39 visibly contain a ball; P001/26, /33 and /40 are less certain because of body
+and arm overlap. This bounded spot-review does not classify every missing frame.
+Exactly five frames per possession were extracted from the new rendered videos,
+with no withheld pixels. The frames, manifests and AI notes are under the new
+trial's `diagnostics/visual/` directory; human review remains pending.
+
+The independent saved-output audit passed: all 130 unchanged-context means are
+identical, while all 20 changed-context boundary means differ. Of the original
+14 missing frames, 13 remain missing; P002/49 now emits an unscored point.
+P001/223–224 remain missing despite gaining context. The audit used saved
+outputs only, without new inference, reference-label scoring or media decoding.
+
 ## Reproduction and evidence
 
 Configuration:
@@ -77,3 +138,10 @@ The source, labels, checkpoint, prior results and completed reviews are preserve
 The command reuses completed raw triplets and preserves attempt records; it must
 not be run again merely to resume a conversation. Generated artifacts stay under
 ignored `data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/`.
+
+The [completed summary](../data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/summary.json)
+has SHA-256 `722a60dab8d34aa7acd3cbc5d1fc1635042050fb8a5d0f65fa96a7e380ae1b9f`.
+The successful invocation and its earlier start record are preserved in
+`invocations/20261009T020518Z_f622c5aeba31439e98e69db71f386147*.json`.
+The [independent audit](../data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/diagnostics/post_runtime_audit_v0_1.json)
+has SHA-256 `0d86a7a72d1767c5dfd7e92965edd5f6e6643c00b06ae6358967ca8f60e23cb2`.

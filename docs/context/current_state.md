@@ -1,6 +1,50 @@
 # Current State
 
-## Latest result: 2026-10-08 expanded training improves P001 substantially
+## Latest result: 2026-10-08 longer development observations completed
+
+Ryan directed "Review. Move forward". Technical review and longer development
+inspection proceeded under standing runtime/data/local-integration authorization.
+Clarification was requested about whether that also confirms his review of all
+six previous 0.3 clips; do not mark them accepted without his answer. Completed
+older reviews remain complete. No operating point is promoted.
+
+Implementation commit `23fc90876458068ca422708bef92a35357bfa201` adds an isolated,
+configuration-driven longer observation runner. Nine focused checks passed in
+1.808 seconds, including actual old-producer/cache-consumer compatibility and
+real synthetic video exclusion/final-frame checks. No full suite was run.
+
+The fixed expanded checkpoint at 0.3 processed 1,273 visible frames once. It
+reused 138 raw triplets and computed 1,123 new triplets; no training or threshold
+search occurred. Runtime including rendering was 212.761 seconds, with 17.832
+seconds of new inference and 263 MiB peak allocated GPU memory. Three 25fps
+timelines contain 499/499/500 frames; each has 75 black positions preserving the
+sealed holdout plus its surrounding 25-frame buffers. Temporal inputs never
+cross those bands. All final frames decode and all protected display areas
+are verified black.
+
+Counts are P001 324 observed/100 missing, P002 308/116, P003 347/78, plus 75
+withheld each. These are unlabeled, training-inclusive availability counts,
+not correctness metrics. There are no interpolated points or connecting trails.
+All 130 old same-context development heatmaps remain bit-for-bit equal; 20
+boundary means change with longer context. P001/223 and /224 remain missing;
+P002/49 newly emits an unscored point. The frozen six-window metrics are unchanged.
+
+AI spot-review finds a distractor at P003/64: the marker is on white jersey 21's
+waist while the ball is visible with white jersey 24. This is a human-review cue,
+not a new label or accuracy metric. Motion consistency is a plausible next test
+for rejecting such points; recovery of missing positions is still unproven.
+
+See [longer results and three review videos](../ball_wasb_development_observation.md).
+Outputs are under
+`data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/`.
+Summary SHA-256 `722a60dab8d34aa7acd3cbc5d1fc1635042050fb8a5d0f65fa96a7e380ae1b9f`.
+The independent saved-output audit passed. Next: human review of these longer
+timelines, then choose the smallest correction supported by the observed gaps
+and distractors. Do not repeat the completed fit, six-window evaluation or this
+observation pass merely to resume. Full-possession tracking and phase acceptance
+remain unfinished; reserved bands have not been released.
+
+## Earlier result: 2026-10-08 expanded training improves P001 substantially
 
 Ryan approved all three new label clips: "yep these look good. move forward chat".
 The review record is
