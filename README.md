@@ -77,6 +77,14 @@ holdouts and buffers appear as black sections. The run completed without retry,
 reusing prior predictions, and Ryan reviewed all three videos. The labeled
 improvement stands; reliable continuous ball tracking remains unfinished.
 
+The subsequent [fixed motion-selection comparison](docs/ball_wasb_motion_selection.md)
+is complete. On identical longer-context labeled frames, native mass and motion
+both give **131 matches, one error, 13 missing and no hidden alarms**. Motion
+changes no scored choice. It removes some distractors elsewhere, but also drops
+visible ball observations during recovery; this rule is not promoted. All
+originally empty frames remain empty. Three new comparison videos and a complete
+changed-frame AI review preserve the negative result; their human review is pending.
+
 ## End goal
 
 The intended production pipeline is:

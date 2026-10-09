@@ -1,5 +1,27 @@
 # Roadmap
 
+## Current continuation: fixed motion comparison completed; improve visual evidence next
+
+The approved [motion-assisted comparison](../ball_wasb_motion_selection.md)
+completed once on saved 0.3 candidates, with no model calls. Both same-context
+arms retain identical choices on all 150 development label frames: 131 matched,
+one wrong-present, 13 missing and zero hidden alarms. The prior short-window
+130/1/14 result remains separate; the extra P002/49 match is shared by both
+longer-context arms and is not a motion gain.
+
+Only 13 longer-timeline frames change: three switches and ten abstentions.
+AI inspection finds some apparent distractor suppression and a useful P001/247
+switch, but also loss of visible-ball recovery at P001/441-443 and /462-463.
+This setting should not be promoted. The 294 frames with no original candidate
+remain empty; stricter continuity does not supply missing visual evidence.
+
+Next, Ryan reviews the three new synchronized comparison videos. Earlier video
+reviews remain complete. The proposed scientific direction is a concrete change
+to visual evidence for missing frames, with development and training separated
+and the same trajectory quality bar. No new trial, threshold/checkpoint screen
+or blind motion grid is approved. Holdouts and buffers remain protected;
+operating-point promotion and full-possession phase acceptance remain unfinished.
+
 ## Current continuation: longer timelines reviewed; test temporal selection next
 
 The [longer development observation](../ball_wasb_development_observation.md)

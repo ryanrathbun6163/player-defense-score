@@ -1,5 +1,52 @@
 # Validation History
 
+## 2026-10-08: fixed motion comparison completed and audited without scientific retry
+
+Implementation commit `915ba13c2910efa7f875cb251b7bc049790d1df3` adds a frozen
+candidate-only selector, same-context paired evaluator, synchronized renderer
+and resumable evidence publication. The consolidated 19 focused checks passed
+in 2.568 seconds before the final renderer correction to accept the producer's
+valid out-of-source candidate coordinates. Four affected renderer checks then
+passed in 0.764 seconds. Do not imply that the earlier consolidated run tested
+that later correction. No full suite was run.
+
+Focused validation preserves the initial wrong-module import attempt and TEMP
+sandbox fixture/cleanup failures, followed by successful execution outside the
+sandbox. The independent resume regression demonstrates that a synthetic render
+failure preserves its failed invocation and reuses completed selections and
+scores. These were validation/tooling attempts, not scientific failures.
+
+One actual invocation completed in 175.5554 seconds with zero model calls,
+without scientific retry. Selection took 0.2004 seconds; selection and scoring
+together took 0.3083 seconds. All selections were saved before labels opened.
+Both arms retain identical choices on all 150 scoring frames, giving 131 matches,
+one wrong-present output, 13 missing and zero hidden alarms. Training and withheld
+frames were excluded. The older 130/1/14 short-window result remains unchanged;
+P002/49 is a shared longer-context match at 4.530709637 pixels, not a motion gain.
+
+The independent audit in
+`data/outputs/ball_tracking/wasb/wasb_motion_selection_v0_1/diagnostics/independent_saved_output_audit_01/`
+checks all 1,498 timeline rows against hash-bound original observations, all 300
+arm/frame classifications against released labels, report statistics, paired
+changes and pool/overall totals. It preserves 225 protected positions and all
+294 originally empty visible frames. No selector, evaluator, model, tests or
+media processing ran during that audit. `short_window_check.json` separately
+verifies the original saved result and P002/49's former missing output.
+
+The renderer verified all 1,498 video frames, final frames and 225 black protected
+frame pairs. Motion leaves 969 observed / 304 missing / 225 withheld positions,
+with 13 changes: three switches and ten abstentions. AI inspection notes for all
+13 changes are preserved in `diagnostics/visual/p001_selection_notes.json`,
+`p001_recovery_notes.json` and `p002_p003_notes.json`. The inspection-helper's
+partial failure is retained in `p001_root_detail_manifest.json`; its routine
+correction did not rerun scientific work. AI review finds visible-ball recovery
+losses despite some apparent distractor suppression; this setting is not promoted.
+P001/256 remains an unscored training-frame visual concern.
+
+Human review of the three new comparison videos remains pending; prior completed
+reviews are unchanged. No new labels, holdout release, operating point or phase
+quality gate is established. See [comparison report](../ball_wasb_motion_selection.md).
+
 ## 2026-10-08: Ryan reviewed all three longer possession videos
 
 Ryan confirmed "Ok what’s the next move. I reviewed the possessions". The review

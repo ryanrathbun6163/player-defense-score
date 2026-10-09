@@ -1,5 +1,55 @@
 # Current State
 
+## Latest result: 2026-10-08 fixed motion comparison completed; do not promote
+
+Ryan approved one candidate-only comparison with "Yes move forward". The fixed
+rule at implementation commit `915ba13c2910efa7f875cb251b7bc049790d1df3`
+completed once in 175.5554 seconds, with zero model calls. Selection took 0.2004
+seconds; selection plus scoring took 0.3083 seconds. Training, inference,
+thresholds, original observations and completed reviews were not repeated.
+
+Both arms select exactly the same candidates on all 150 released development
+frames: **131 matched / 1 wrong-present / 13 missing / zero hidden alarms**.
+The historical short-window result remains 130 / 1 / 14 / zero; P002/49 is now
+4.531 pixels from its reviewed center in both longer-context arms. That is a
+context difference, not a motion-selection gain. No training or withheld frame
+enters scoring, and the existing ten-pixel radius is unchanged.
+
+Across the longer timelines, motion changes 13 frames: nine in P001, two each
+in P002/P003; three candidate switches and ten abstentions. It leaves 969 points,
+304 missing positions and 225 withheld positions. All 294 originally empty
+visible frames stay empty. These are training-inclusive availability counts,
+not accuracy rates. P001/256 is a training frame and remains unscored.
+
+AI inspection covered all 13 changes. P001/247 appears to recover the ball, but
+P001/441-443 and /462-463 discard visible-ball observations and damage recovery.
+P001/230 appears to switch between wrong objects; training frame /256 appears
+to switch from a possible ball observation to an elbow. P001/185, P002/454-455
+and P003/19 and /64 appear to suppress distractors. These are visual inspection
+notes, not new labels or Ryan's judgments. With no labeled improvement and
+visible recovery losses, this setting should not be promoted.
+
+All three new comparison videos decode all 1,498 frames through their final
+frames; all 225 protected frame pairs are black. **Ryan's review of these new
+videos is pending.** His previous three longer-video reviews and all other
+completed reviews remain complete. Holdouts, the quality bar and phase acceptance
+are unchanged. See [comparison, evidence and new review videos](../ball_wasb_motion_selection.md).
+
+Outputs are under `data/outputs/ball_tracking/wasb/wasb_motion_selection_v0_1/`.
+The independent saved-output audit in `diagnostics/independent_saved_output_audit_01/`
+verified original candidate transport, training exclusion, geometric distances,
+paired reports and aggregate arithmetic without rerunning selection or scoring.
+Three inspection-note files are under `diagnostics/visual/`. Validation is 19
+focused passes before the final renderer bounds correction, then four affected
+renderer passes afterward; no full suite ran. Initial import/TEMP validation
+failures and the partial inspection-helper failure remain preserved. The actual
+scientific invocation succeeded without retry.
+
+Next recommendation: improve the visual evidence needed for missing positions,
+using a separately specified development comparison. No new trial or blind motion
+parameter search is approved; candidate-only motion cannot fill empty frames.
+The older checkpoints below retain their historical approval and review states.
+
 ## Latest result: 2026-10-08 longer development observations completed
 
 Ryan directed "Review. Move forward". Technical review and longer development
