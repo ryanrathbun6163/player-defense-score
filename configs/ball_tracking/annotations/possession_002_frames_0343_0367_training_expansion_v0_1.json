@@ -33,277 +33,443 @@
   "annotations": [
     {
       "frame_index": 343,
-      "annotation_status": "unlabeled",
-      "visibility": null,
-      "absence_reason": null,
-      "game_ball_identity_certainty": null,
+      "annotation_status": "labeled",
+      "visibility": "not_visible",
+      "absence_reason": "occluded",
+      "game_ball_identity_certainty": "certain",
       "geometry": null,
       "localization_eligible": false,
-      "difficulty_tags": [],
+      "difficulty_tags": [
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 344,
-      "annotation_status": "unlabeled",
-      "visibility": null,
-      "absence_reason": null,
-      "game_ball_identity_certainty": null,
+      "annotation_status": "labeled",
+      "visibility": "not_visible",
+      "absence_reason": "occluded",
+      "game_ball_identity_certainty": "certain",
       "geometry": null,
       "localization_eligible": false,
-      "difficulty_tags": [],
+      "difficulty_tags": [
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 345,
-      "annotation_status": "unlabeled",
-      "visibility": null,
-      "absence_reason": null,
-      "game_ball_identity_certainty": null,
+      "annotation_status": "labeled",
+      "visibility": "not_visible",
+      "absence_reason": "occluded",
+      "game_ball_identity_certainty": "certain",
       "geometry": null,
       "localization_eligible": false,
-      "difficulty_tags": [],
+      "difficulty_tags": [
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 346,
-      "annotation_status": "unlabeled",
-      "visibility": null,
-      "absence_reason": null,
-      "game_ball_identity_certainty": null,
+      "annotation_status": "labeled",
+      "visibility": "not_visible",
+      "absence_reason": "occluded",
+      "game_ball_identity_certainty": "certain",
       "geometry": null,
       "localization_eligible": false,
-      "difficulty_tags": [],
+      "difficulty_tags": [
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 347,
-      "annotation_status": "unlabeled",
-      "visibility": null,
+      "annotation_status": "labeled",
+      "visibility": "partially_visible",
       "absence_reason": null,
-      "game_ball_identity_certainty": null,
-      "geometry": null,
-      "localization_eligible": false,
-      "difficulty_tags": [],
+      "game_ball_identity_certainty": "certain",
+      "geometry": {
+        "center_xy_px": [
+          601.714,
+          498.857
+        ],
+        "source": "human_amodal_estimate",
+        "uncertainty_radius_px": 2.424
+      },
+      "localization_eligible": true,
+      "difficulty_tags": [
+        "motion_blur",
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 348,
-      "annotation_status": "unlabeled",
-      "visibility": null,
+      "annotation_status": "labeled",
+      "visibility": "partially_visible",
       "absence_reason": null,
-      "game_ball_identity_certainty": null,
-      "geometry": null,
-      "localization_eligible": false,
-      "difficulty_tags": [],
+      "game_ball_identity_certainty": "certain",
+      "geometry": {
+        "center_xy_px": [
+          603.429,
+          466.286
+        ],
+        "source": "human_amodal_estimate",
+        "uncertainty_radius_px": 5.143
+      },
+      "localization_eligible": true,
+      "difficulty_tags": [
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 349,
-      "annotation_status": "unlabeled",
-      "visibility": null,
-      "absence_reason": null,
-      "game_ball_identity_certainty": null,
+      "annotation_status": "labeled",
+      "visibility": "not_visible",
+      "absence_reason": "occluded",
+      "game_ball_identity_certainty": "certain",
       "geometry": null,
       "localization_eligible": false,
-      "difficulty_tags": [],
+      "difficulty_tags": [
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 350,
-      "annotation_status": "unlabeled",
-      "visibility": null,
-      "absence_reason": null,
-      "game_ball_identity_certainty": null,
+      "annotation_status": "labeled",
+      "visibility": "not_visible",
+      "absence_reason": "occluded",
+      "game_ball_identity_certainty": "certain",
       "geometry": null,
       "localization_eligible": false,
-      "difficulty_tags": [],
+      "difficulty_tags": [
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 351,
-      "annotation_status": "unlabeled",
-      "visibility": null,
-      "absence_reason": null,
-      "game_ball_identity_certainty": null,
+      "annotation_status": "labeled",
+      "visibility": "not_visible",
+      "absence_reason": "occluded",
+      "game_ball_identity_certainty": "certain",
       "geometry": null,
       "localization_eligible": false,
-      "difficulty_tags": [],
+      "difficulty_tags": [
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 352,
-      "annotation_status": "unlabeled",
-      "visibility": null,
-      "absence_reason": null,
-      "game_ball_identity_certainty": null,
+      "annotation_status": "labeled",
+      "visibility": "not_visible",
+      "absence_reason": "occluded",
+      "game_ball_identity_certainty": "certain",
       "geometry": null,
       "localization_eligible": false,
-      "difficulty_tags": [],
+      "difficulty_tags": [
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 353,
-      "annotation_status": "unlabeled",
-      "visibility": null,
-      "absence_reason": null,
-      "game_ball_identity_certainty": null,
+      "annotation_status": "labeled",
+      "visibility": "not_visible",
+      "absence_reason": "occluded",
+      "game_ball_identity_certainty": "certain",
       "geometry": null,
       "localization_eligible": false,
-      "difficulty_tags": [],
+      "difficulty_tags": [
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 354,
-      "annotation_status": "unlabeled",
-      "visibility": null,
-      "absence_reason": null,
-      "game_ball_identity_certainty": null,
+      "annotation_status": "labeled",
+      "visibility": "not_visible",
+      "absence_reason": "occluded",
+      "game_ball_identity_certainty": "certain",
       "geometry": null,
       "localization_eligible": false,
-      "difficulty_tags": [],
+      "difficulty_tags": [
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 355,
-      "annotation_status": "unlabeled",
-      "visibility": null,
+      "annotation_status": "labeled",
+      "visibility": "partially_visible",
       "absence_reason": null,
-      "game_ball_identity_certainty": null,
-      "geometry": null,
-      "localization_eligible": false,
-      "difficulty_tags": [],
+      "game_ball_identity_certainty": "certain",
+      "geometry": {
+        "center_xy_px": [
+          708.0,
+          342.857
+        ],
+        "source": "human_amodal_estimate",
+        "uncertainty_radius_px": 6.181
+      },
+      "localization_eligible": true,
+      "difficulty_tags": [
+        "hand_overlap",
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 356,
-      "annotation_status": "unlabeled",
-      "visibility": null,
+      "annotation_status": "labeled",
+      "visibility": "partially_visible",
       "absence_reason": null,
-      "game_ball_identity_certainty": null,
-      "geometry": null,
-      "localization_eligible": false,
-      "difficulty_tags": [],
+      "game_ball_identity_certainty": "certain",
+      "geometry": {
+        "center_xy_px": [
+          720.0,
+          308.571
+        ],
+        "source": "human_amodal_estimate",
+        "uncertainty_radius_px": 1.714
+      },
+      "localization_eligible": true,
+      "difficulty_tags": [
+        "hand_overlap",
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 357,
-      "annotation_status": "unlabeled",
-      "visibility": null,
+      "annotation_status": "labeled",
+      "visibility": "partially_visible",
       "absence_reason": null,
-      "game_ball_identity_certainty": null,
-      "geometry": null,
-      "localization_eligible": false,
-      "difficulty_tags": [],
+      "game_ball_identity_certainty": "certain",
+      "geometry": {
+        "center_xy_px": [
+          740.571,
+          281.143
+        ],
+        "source": "human_amodal_estimate",
+        "uncertainty_radius_px": 1.714
+      },
+      "localization_eligible": true,
+      "difficulty_tags": [
+        "hand_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 358,
-      "annotation_status": "unlabeled",
-      "visibility": null,
+      "annotation_status": "labeled",
+      "visibility": "partially_visible",
       "absence_reason": null,
-      "game_ball_identity_certainty": null,
-      "geometry": null,
-      "localization_eligible": false,
-      "difficulty_tags": [],
+      "game_ball_identity_certainty": "certain",
+      "geometry": {
+        "center_xy_px": [
+          762.857,
+          269.143
+        ],
+        "source": "human_amodal_estimate",
+        "uncertainty_radius_px": 2.425
+      },
+      "localization_eligible": true,
+      "difficulty_tags": [
+        "hand_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 359,
-      "annotation_status": "unlabeled",
-      "visibility": null,
+      "annotation_status": "labeled",
+      "visibility": "partially_visible",
       "absence_reason": null,
-      "game_ball_identity_certainty": null,
-      "geometry": null,
-      "localization_eligible": false,
-      "difficulty_tags": [],
+      "game_ball_identity_certainty": "certain",
+      "geometry": {
+        "center_xy_px": [
+          786.857,
+          276.0
+        ],
+        "source": "human_amodal_estimate",
+        "uncertainty_radius_px": 2.424
+      },
+      "localization_eligible": true,
+      "difficulty_tags": [
+        "hand_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 360,
-      "annotation_status": "unlabeled",
-      "visibility": null,
+      "annotation_status": "labeled",
+      "visibility": "partially_visible",
       "absence_reason": null,
-      "game_ball_identity_certainty": null,
-      "geometry": null,
-      "localization_eligible": false,
-      "difficulty_tags": [],
+      "game_ball_identity_certainty": "certain",
+      "geometry": {
+        "center_xy_px": [
+          814.286,
+          300.0
+        ],
+        "source": "human_amodal_estimate",
+        "uncertainty_radius_px": 2.424
+      },
+      "localization_eligible": true,
+      "difficulty_tags": [
+        "hand_overlap",
+        "motion_blur"
+      ],
       "notes": null
     },
     {
       "frame_index": 361,
-      "annotation_status": "unlabeled",
-      "visibility": null,
+      "annotation_status": "labeled",
+      "visibility": "partially_visible",
       "absence_reason": null,
-      "game_ball_identity_certainty": null,
-      "geometry": null,
-      "localization_eligible": false,
-      "difficulty_tags": [],
+      "game_ball_identity_certainty": "certain",
+      "geometry": {
+        "center_xy_px": [
+          834.857,
+          324.0
+        ],
+        "source": "human_amodal_estimate",
+        "uncertainty_radius_px": 2.424
+      },
+      "localization_eligible": true,
+      "difficulty_tags": [
+        "compression_artifact",
+        "hand_overlap",
+        "motion_blur"
+      ],
       "notes": null
     },
     {
       "frame_index": 362,
-      "annotation_status": "unlabeled",
-      "visibility": null,
+      "annotation_status": "labeled",
+      "visibility": "partially_visible",
       "absence_reason": null,
-      "game_ball_identity_certainty": null,
-      "geometry": null,
-      "localization_eligible": false,
-      "difficulty_tags": [],
+      "game_ball_identity_certainty": "certain",
+      "geometry": {
+        "center_xy_px": [
+          857.143,
+          349.714
+        ],
+        "source": "human_amodal_estimate",
+        "uncertainty_radius_px": 2.424
+      },
+      "localization_eligible": true,
+      "difficulty_tags": [
+        "compression_artifact",
+        "hand_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 363,
-      "annotation_status": "unlabeled",
-      "visibility": null,
+      "annotation_status": "labeled",
+      "visibility": "partially_visible",
       "absence_reason": null,
-      "game_ball_identity_certainty": null,
-      "geometry": null,
-      "localization_eligible": false,
-      "difficulty_tags": [],
+      "game_ball_identity_certainty": "certain",
+      "geometry": {
+        "center_xy_px": [
+          872.571,
+          368.571
+        ],
+        "source": "human_amodal_estimate",
+        "uncertainty_radius_px": 2.424
+      },
+      "localization_eligible": true,
+      "difficulty_tags": [
+        "hand_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 364,
-      "annotation_status": "unlabeled",
-      "visibility": null,
+      "annotation_status": "labeled",
+      "visibility": "partially_visible",
       "absence_reason": null,
-      "game_ball_identity_certainty": null,
-      "geometry": null,
-      "localization_eligible": false,
-      "difficulty_tags": [],
+      "game_ball_identity_certainty": "certain",
+      "geometry": {
+        "center_xy_px": [
+          889.714,
+          375.429
+        ],
+        "source": "human_amodal_estimate",
+        "uncertainty_radius_px": 1.715
+      },
+      "localization_eligible": true,
+      "difficulty_tags": [
+        "hand_overlap",
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 365,
-      "annotation_status": "unlabeled",
-      "visibility": null,
+      "annotation_status": "labeled",
+      "visibility": "partially_visible",
       "absence_reason": null,
-      "game_ball_identity_certainty": null,
-      "geometry": null,
-      "localization_eligible": false,
-      "difficulty_tags": [],
+      "game_ball_identity_certainty": "certain",
+      "geometry": {
+        "center_xy_px": [
+          908.571,
+          373.714
+        ],
+        "source": "human_amodal_estimate",
+        "uncertainty_radius_px": 1.714
+      },
+      "localization_eligible": true,
+      "difficulty_tags": [
+        "hand_overlap",
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 366,
-      "annotation_status": "unlabeled",
-      "visibility": null,
+      "annotation_status": "labeled",
+      "visibility": "partially_visible",
       "absence_reason": null,
-      "game_ball_identity_certainty": null,
-      "geometry": null,
-      "localization_eligible": false,
-      "difficulty_tags": [],
+      "game_ball_identity_certainty": "certain",
+      "geometry": {
+        "center_xy_px": [
+          922.286,
+          358.286
+        ],
+        "source": "human_amodal_estimate",
+        "uncertainty_radius_px": 2.424
+      },
+      "localization_eligible": true,
+      "difficulty_tags": [
+        "hand_overlap",
+        "player_overlap"
+      ],
       "notes": null
     },
     {
       "frame_index": 367,
-      "annotation_status": "unlabeled",
-      "visibility": null,
+      "annotation_status": "labeled",
+      "visibility": "partially_visible",
       "absence_reason": null,
-      "game_ball_identity_certainty": null,
-      "geometry": null,
-      "localization_eligible": false,
-      "difficulty_tags": [],
+      "game_ball_identity_certainty": "certain",
+      "geometry": {
+        "center_xy_px": [
+          927.429,
+          329.143
+        ],
+        "source": "human_amodal_estimate",
+        "uncertainty_radius_px": 1.715
+      },
+      "localization_eligible": true,
+      "difficulty_tags": [
+        "hand_overlap",
+        "player_overlap"
+      ],
       "notes": null
     }
   ]

@@ -1,5 +1,29 @@
 # Validation History
 
+## 2026-10-08: all 75 expansion labels saved and review playback prepared
+
+Ryan completed all three new training windows. Schema and exact-frame checks
+confirm 75 labeled rows with no unfinished or duplicate frames: 64 eligible
+centers (four fully visible, 60 partially visible) and 11 hidden frames with null
+geometry. Combined with the existing pilot data, this gives 130 eligible centers,
+19 hidden frames and one masked ambiguous frame across 150 frames.
+
+Ryan clarified that his camera-motion difficulty tags meant motion blur. Eight
+tags were changed: P001/258–261 and 274; P002/347, 360 and 361. A correction record
+binds the original completed snapshots and corrected files, with all geometry,
+visibility, identity, eligibility, notes and review fields preserved. The old
+three pilots and six released development sets contain no `camera_motion` tags.
+
+Existing annotation renderers produced three full-resolution H264 clips at 5 fps,
+75 native overlays, 75 zoom/status panels and three decoded final-frame images.
+Each clip decoded exactly 25 frames through EOF. Source hashes and annotation
+bindings matched; rendering took 12.069 seconds without changing labels or running
+a model. The manifest is at
+`data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/training_expansion_labels_v0_1/visual_review/manifest.json`.
+These checks establish completeness and review delivery, not visual acceptance.
+All three label sets remain drafts pending Ryan's review. No production code,
+full-suite run, training fit or holdout access was involved.
+
 ## 2026-10-08: Ryan completed all six adapted-WASB video reviews
 
 Ryan reported all six clips reviewed and authorized continuation, with bleacher-ball

@@ -22,8 +22,12 @@ strongest pixel is correct only twice in 25 frames. A simple threshold drop or
 strongest-pixel substitution is insufficient. The next concrete proposal adds
 [75 training-only frames](../ball_wasb_training_data_expansion.md) with prepared
 source previews. Ryan approved the data addition and one fit after new label review.
-Three blank drafts and the annotation guide are ready; human labeling/review is
-the next dependency and no new fit has run. Avoid repeating generic RF motion grids.
+All 75 new labels are now complete: 64 eligible centers and 11 hidden frames.
+Eight camera-motion difficulty tags were corrected to motion blur at Ryan's
+direction. Three label-review clips and zoom panels are ready through the
+[annotation guide](../ball_wasb_training_expansion_annotation_guide.md). Human
+visual review is the next dependency; the already-approved fit has not run.
+Avoid repeating generic RF motion grids.
 
 Full-possession coverage, accepted trajectories, explicit gaps and the existing
 phase quality bar remain required. Holdouts, production promotion and main-branch

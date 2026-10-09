@@ -58,14 +58,20 @@ combining it yields five training blocks, 150 frames and 140 complete triplets.
 Ryan approved this added labeling work and one original-initialized 200-update
 fit after label review. The approval is recorded separately at
 `configs/ball_tracking/reviews/wasb_training_data_expansion_approval_v0_1.json`;
-the proposal's pending status is its historical preparation snapshot. Three strict
-training drafts contain 75 unlabeled rows. The [annotation guide](../ball_wasb_training_expansion_annotation_guide.md)
-provides one command for the existing editor, using a helper that seeks only the
-approved windows and resumes unfinished drafts. No new coordinate/visibility
-labels or fit have run. Next: Ryan's new labels and their visual review, then the
-already-approved fit; no renewed approval for that same fit is needed. The six
-completed output reviews remain complete. The full-possession finish line and
-player foundation are unchanged.
+the proposal's pending status is its historical preparation snapshot. Ryan has
+completed all 75 new labels: 64 eligible centers (four fully visible and 60
+partially visible) and 11 hidden frames. At his direction, eight `camera_motion`
+tags became `motion_blur`; pre-correction snapshots and exact changes are recorded
+in `configs/ball_tracking/reviews/wasb_training_expansion_tag_correction_v0_1.json`.
+None of the old three pilots or six released development sets used that tag.
+The combined training set has 130 eligible centers, 19 hidden frames and one
+masked ambiguous frame. All three new sets remain drafts pending visual review.
+The [annotation guide](../ball_wasb_training_expansion_annotation_guide.md) links
+three label-only clips, native overlays and zoom panels. Each clip decodes through
+all 25 frames and its final frame; no predictions were used. Next: Ryan's visual
+review of these new labels, then the already-approved fit; no renewed approval
+for that same fit is needed. No new fit has run. The six completed output reviews,
+full-possession finish line and player foundation remain unchanged.
 
 ## Earlier snapshot: cached calibration, before the completed adaptation above
 
