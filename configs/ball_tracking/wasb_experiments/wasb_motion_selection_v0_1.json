@@ -1,0 +1,33 @@
+{
+  "schema_version": "wasb_motion_selection_comparison/v0.1",
+  "experiment_id": "wasb_motion_selection_v0_1",
+  "authorization_context": "Ryan approved the bounded candidate-only comparison with 'Yes move forward' after confirmation of the 5606615 handoff. This authorizes this one comparison, not a parameter search, new inference, training, holdout release or phase acceptance.",
+  "output_root": "data/outputs/ball_tracking/wasb/wasb_motion_selection_v0_1",
+  "observation_config": {
+    "path": "configs/ball_tracking/wasb_experiments/wasb_expanded_development_observation_v0_1.json",
+    "sha256": "e5dba1f3eb2f82d5d78b0825650f697df06d9360c8e80d7681158b8085336eda"
+  },
+  "observation_summary": {
+    "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/summary.json",
+    "sha256": "722a60dab8d34aa7acd3cbc5d1fc1635042050fb8a5d0f65fa96a7e380ae1b9f"
+  },
+  "selection": {
+    "algorithm": "causal_short_memory_prediction_gate/v0.1",
+    "gate_diagonal_fraction_per_frame": 0.06,
+    "minimum_relative_native_mass": 0.5,
+    "maximum_missing_frames": 2,
+    "velocity_history_points": 2,
+    "velocity_cap_diagonal_fraction_per_frame": 0.06,
+    "startup_and_reacquisition": "native_mass_maximum_immediate",
+    "selection_order": "prediction_distance_then_descending_mass_then_candidate_index",
+    "future_selection_context_frames": 0,
+    "interpolation": "none"
+  },
+  "evaluation_radius_px": 10.0,
+  "rendering": {"playback_fps": 25, "crf": 18},
+  "parameter_rationale": "One a priori engineering setting, not tuned against current comparison scores: broad 0.06-diagonal motion allowance (about 132 pixels at 1920x1080), current half-maximum mass guard, two missing-frame memory. Immediate native-mass restart permits singleton recovery. Persistent false paths and suppression of genuine recovery remain explicit failure possibilities.",
+  "evaluation_scope": "Same longer-context control and motion outputs at only the 150 existing development label frames, 145 eligible and five hidden. Training membership is independently checked against the bound training blocks. Labels enter only after all three selection timelines are saved.",
+  "success_interpretation": "Seek fewer false choices without losing correct positions, adding hidden alarms or suppressing legitimate recovery. Inspect all changed outputs plus known distractor/recovery cues. A tradeoff or negative result does not authorize another grid.",
+  "quality_gate": null,
+  "selected_operating_point": null
+}
