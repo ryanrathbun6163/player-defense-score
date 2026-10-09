@@ -4,9 +4,13 @@
 
 Ryan directed "Review. Move forward". Technical review and longer development
 inspection proceeded under standing runtime/data/local-integration authorization.
-Clarification was requested about whether that also confirms his review of all
-six previous 0.3 clips; do not mark them accepted without his answer. Completed
-older reviews remain complete. No operating point is promoted.
+Ryan subsequently confirmed "Ok what’s the next move. I reviewed the possessions".
+All three longer videos are now reviewed, recorded in
+`configs/ball_tracking/reviews/wasb_expanded_development_observation_visual_review_v0_1.json`.
+This is review completion, not acceptance of every prediction or the phase gate.
+The earlier six short candidate clips were not separately named; retain their
+historical status without requesting that review again as a planning blocker.
+Completed older reviews remain complete. No operating point is promoted.
 
 Implementation commit `23fc90876458068ca422708bef92a35357bfa201` adds an isolated,
 configuration-driven longer observation runner. Nine focused checks passed in
@@ -38,9 +42,13 @@ See [longer results and three review videos](../ball_wasb_development_observatio
 Outputs are under
 `data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/`.
 Summary SHA-256 `722a60dab8d34aa7acd3cbc5d1fc1635042050fb8a5d0f65fa96a7e380ae1b9f`.
-The independent saved-output audit passed. Next: human review of these longer
-timelines, then choose the smallest correction supported by the observed gaps
-and distractors. Do not repeat the completed fit, six-window evaluation or this
+The independent saved-output audit passed. Next recommendation: one motion-assisted
+selection comparison on the existing 0.3 candidates, preserving missingness and
+reacquisition. Compare against native-mass selection on the same longer-context
+caches at the 150 existing development label frames; do not mix in training frames.
+This specific scientific change is proposed, not yet approved or executed. It
+cannot fill the 294 frames with no candidate; recovery needs a separate visual-
+evidence change. Do not repeat the completed fit, six-window evaluation or this
 observation pass merely to resume. Full-possession tracking and phase acceptance
 remain unfinished; reserved bands have not been released.
 

@@ -74,7 +74,7 @@ now provides three synchronized 20-second review timelines using that frozen
 0.3 candidate. Across 1,273 visible frames it emits 979 points and leaves 294
 missing; these unlabeled, training-inclusive counts are **not accuracy**. Sealed
 holdouts and buffers appear as black sections. The run completed without retry,
-reusing prior predictions, and all three videos await human review. The labeled
+reusing prior predictions, and Ryan reviewed all three videos. The labeled
 improvement stands; reliable continuous ball tracking remains unfinished.
 
 ## End goal

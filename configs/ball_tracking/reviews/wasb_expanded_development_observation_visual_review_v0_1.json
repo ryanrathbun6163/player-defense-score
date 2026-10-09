@@ -1,0 +1,102 @@
+{
+  "schema_version": "wasb_development_observation_human_review/v0.1",
+  "recorded_at_utc": "2026-10-09T02:38:25.702411+00:00",
+  "review_date_local": "2026-10-08",
+  "timezone": "America/Phoenix",
+  "reviewer": "Ryan",
+  "status": "all_three_possession_videos_reviewed",
+  "user_statement_verbatim": "Ok what’s the next move. I reviewed the possessions",
+  "config": {
+    "path": "configs/ball_tracking/wasb_experiments/wasb_expanded_development_observation_v0_1.json",
+    "sha256": "e5dba1f3eb2f82d5d78b0825650f697df06d9360c8e80d7681158b8085336eda"
+  },
+  "summary": {
+    "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/summary.json",
+    "sha256": "722a60dab8d34aa7acd3cbc5d1fc1635042050fb8a5d0f65fa96a7e380ae1b9f"
+  },
+  "heatmap_threshold": 0.3,
+  "clips": [
+    {
+      "possession_id": "possession_001",
+      "video": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_001/render_attempts/e263e1d9cb5649638b8ec1754f7a2feb/review.mp4",
+        "sha256": "517b45ba3e64024915988b2c72c83e0468ea0215f859ca68c9b77a39b466a1b1",
+        "size_bytes": 27873276
+      },
+      "render_receipt": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_001/review.json",
+        "sha256": "336536adf1bc8e9cc727a600da9283f888a7e9a14c11318926c2b6adaaac3eb6"
+      },
+      "review_status": "reviewed_by_Ryan",
+      "visible_segments": [
+        [
+          0,
+          274
+        ],
+        [
+          350,
+          498
+        ]
+      ]
+    },
+    {
+      "possession_id": "possession_002",
+      "video": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_002/render_attempts/8c1301e21ea149a1afdde0d1b0de9228/review.mp4",
+        "sha256": "873fea71247c408ccc3017dfb6ee55a6ce1bfda757788b0bdbc6720914200ebf",
+        "size_bytes": 27333650
+      },
+      "render_receipt": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_002/review.json",
+        "sha256": "8296aeff80f2adee8328a221a99e333b1d2cfb2a5d5f1f81a77c6de16b767355"
+      },
+      "review_status": "reviewed_by_Ryan",
+      "visible_segments": [
+        [
+          0,
+          174
+        ],
+        [
+          250,
+          498
+        ]
+      ]
+    },
+    {
+      "possession_id": "possession_003",
+      "video": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_003/render_attempts/89da7bdc01974c81a2b2801d0d7ae75f/review.mp4",
+        "sha256": "f751ff152bee8656a10374440edf3fe941e6a24307a475fad8aa2ce2402e059e",
+        "size_bytes": 28987540
+      },
+      "render_receipt": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_003/review.json",
+        "sha256": "e2fbe523daa6d4ac891110bb48260c9739ba5e5680331b40e0f02542e1d9df3c"
+      },
+      "review_status": "reviewed_by_Ryan",
+      "visible_segments": [
+        [
+          0,
+          224
+        ],
+        [
+          300,
+          499
+        ]
+      ]
+    }
+  ],
+  "interpretation": {
+    "review_scope": "The three longer possession timelines linked in the preceding assistant response.",
+    "additional_observations_supplied": false,
+    "quality_gate_passed": false,
+    "selected_operating_point": null,
+    "new_motion_trial_approved": false,
+    "limits": [
+      "Review completion does not assert every point is correct or accept full-possession trajectories.",
+      "The earlier six short candidate clips were not separately identified by this statement; their historical review status is not rewritten or requested again as a blocker to proposing the next step.",
+      "Original render receipts retain their creation-time pending status; this later record supplies the completed human review.",
+      "No source labels, model outputs, scores, failed attempts, holdout boundaries or prior review records changed."
+    ]
+  }
+}

@@ -59,10 +59,13 @@ Existing six-window metrics remain frozen. Enlarging context can change at most
 20 boundary-frame means; the other 130 should remain identical. Results from
 this pass must not silently replace the original comparison.
 
-Ryan's instruction "Review. Move forward" authorized continuation. Whether it
-also confirmed his acceptance of all six previous 0.3 clips was asked explicitly;
-pending that answer, their human review remains pending. The three longer videos
-also require their own human visual review. No operating point is promoted.
+Ryan subsequently confirmed: "Ok what’s the next move. I reviewed the possessions".
+The [human review record](../configs/ball_tracking/reviews/wasb_expanded_development_observation_visual_review_v0_1.json)
+binds all three longer videos. Review completion supplies no new frame-specific
+judgments and does not promote an operating point or accept the phase gate.
+Original render receipts retain their creation-time pending status. The earlier
+six short candidate clips were not separately named; their historical status
+is not rewritten or requested again as a blocker to planning the next step.
 
 ## Completed run and review videos
 
@@ -117,7 +120,7 @@ reacquisition after gaps. Missing samples P002/421 and /429 and P003/24, /31 and
 and arm overlap. This bounded spot-review does not classify every missing frame.
 Exactly five frames per possession were extracted from the new rendered videos,
 with no withheld pixels. The frames, manifests and AI notes are under the new
-trial's `diagnostics/visual/` directory; human review remains pending.
+trial's `diagnostics/visual/` directory. Ryan's later review is recorded above.
 
 The independent saved-output audit passed: all 130 unchanged-context means are
 identical, while all 20 changed-context boundary means differ. Of the original
@@ -126,6 +129,37 @@ P001/223–224 remain missing despite gaining context. The audit used saved
 outputs only, without new inference, reference-label scoring or media decoding.
 
 ## Reproduction and evidence
+
+### Recommended next development step
+
+Test one motion-assisted selector on the existing 0.3 components, with the same
+checkpoint, threshold and visible segments. This tests whether the stronger
+adapted observations can support useful temporal selection; earlier RF motion
+experiments did not establish that benefit. Do not repeat their broad grids.
+
+The selector may choose an existing candidate or leave a frame missing. It must
+allow recovery after a gap rather than locking onto a stale false point. No
+coordinate interpolation, lower-threshold candidate expansion, player-proximity
+rule or additional training belongs in this first comparison. Freeze one
+configuration before scoring and compare it against native-mass selection on
+the same longer-context outputs at the 150 existing development label frames.
+Preserve the original short-window results as separate evidence.
+
+The immediate opportunity and limit are concrete. P001/247 has an alternate
+candidate continuing the 246→248 path, while P003/64 has only the false candidate
+at 0.3. P001/440 also has only a false candidate, followed at 441 by both the
+false candidate and the apparent recovered ball. Motion needs to distinguish
+those situations; simply choosing the nearest point can preserve a false track.
+No selector confined to these candidates can fill the 294 empty frames.
+
+Positive evidence would be fewer false selections without losing correct
+localizations, adding hidden alarms or suppressing legitimate recovery. Inspect
+all changed outputs alongside the baseline and explicitly report gains and
+losses. If that fails, record the negative result and target visual evidence
+rather than launching another broad motion search. Gap recovery is a later,
+separate question requiring weaker visual candidates or improved recognition.
+This is the recommended scope; no new selector has been implemented or run,
+and Ryan has not yet approved this specific scientific change.
 
 Configuration:
 [`wasb_expanded_development_observation_v0_1.json`](../configs/ball_tracking/wasb_experiments/wasb_expanded_development_observation_v0_1.json).

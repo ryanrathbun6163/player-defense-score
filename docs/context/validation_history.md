@@ -1,5 +1,15 @@
 # Validation History
 
+## 2026-10-08: Ryan reviewed all three longer possession videos
+
+Ryan confirmed "Ok what’s the next move. I reviewed the possessions". The review
+record `wasb_expanded_development_observation_visual_review_v0_1.json` binds the
+three exact video and render-receipt artifacts from the completed run. No new
+frame-specific judgment, accuracy claim or phase acceptance is inferred. The
+original creation-time pending receipts remain unchanged. This closeout changes
+review metadata and documentation only; no test, model, score or video run was
+repeated. The next motion-selection comparison is recommended, not executed.
+
 ## 2026-10-08: longer development observation completed without retry
 
 Implementation commit `23fc90876458068ca422708bef92a35357bfa201` passed nine

@@ -1,6 +1,6 @@
 # Roadmap
 
-## Current continuation: review longer development timelines
+## Current continuation: longer timelines reviewed; test temporal selection next
 
 The [longer development observation](../ball_wasb_development_observation.md)
 completed with the frozen expanded checkpoint at 0.3. Three synchronized
@@ -9,13 +9,16 @@ Sealed holdouts and buffers are black. Of 1,273 visible frames, 979 have a model
 point and 294 are missing; these training-inclusive, unlabeled counts do not
 measure accuracy. No training, motion rule or operating-point promotion occurred.
 
-Review the three longer videos for wrong-object selections, gaps and recovery.
-Short, bounded gaps may merit a motion-based correction; long gaps still need
-better evidence or explicit missingness. Choose the next change from that review
-rather than assuming interpolation or another threshold reduction will solve it.
-The earlier six-clip human review also remains pending clarification of Ryan's
-"Review. Move forward" message. No completed review needs to be repeated.
-Retain the agreed complete-trajectory finish line and original six-window metrics.
+Ryan has reviewed all three longer videos. The next recommendation is one fixed
+motion-assisted candidate selector using the existing 0.3 outputs: reduce false
+selections while preserving good positions and recovery after gaps. No new fit,
+threshold grid or interpolation is part of that proposed first comparison.
+Compare against the same-context raw control on the 150 development label frames
+and review all changed output. The specific trial is not yet approved or run.
+Its candidate set cannot fill empty frames; address remaining gaps as a separate
+visual-evidence question after the selection result. Retain the agreed complete-
+trajectory finish line and original six-window metrics. No completed review
+needs to be repeated.
 
 ## Earlier continuation: expanded fit complete; review cached 0.3 candidate
 
