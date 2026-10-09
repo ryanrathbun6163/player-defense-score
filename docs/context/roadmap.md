@@ -1,6 +1,27 @@
 # Roadmap
 
-## Current continuation: reviewed improved observations, address P001 gaps
+## Current continuation: expanded fit complete; review cached 0.3 candidate
+
+The [expanded training comparison](../ball_wasb_expanded_adaptation_results.md)
+completed the approved single 200-update fit after Ryan approved the three new
+label clips. At the unchanged primary 0.5 setting, correct positions improve from
+98 to 120/145 and missing positions fall from 46 to 23, with two geometric errors
+and no hidden alarms. P001 supplies 23 gained matches; P002/48 is the sole lost
+match. Original model results and completed reviews remain preserved.
+
+The same completed eight-setting screen gives 130 matches, one error, 14 missing
+and no hidden alarms at 0.3. It retains all primary matches, corrects P001/52 and
+restores P002/48. Review these existing cached outputs before choosing a setting
+or adding more training/motion machinery. This is a development candidate, not
+an accepted operating point or full-possession result. The approved fit is now
+consumed and must not be repeated merely to resume. No full-suite repeat is needed.
+
+After the new-output human review, identify the remaining missing sequences and
+make the smallest evidence-supported correction toward complete three-possession
+trajectories. Keep uncertainty, synchronized player/ball output and the existing
+quality bar. No holdout access or main-branch merge is authorized by these results.
+
+## Earlier continuation: reviewed improved observations, address P001 gaps
 
 The [approved 200-update adaptation](../ball_wasb_adaptation_results.md) completed
 successfully. At the predeclared threshold it raises WASB matches from 31 to 98
@@ -26,7 +47,7 @@ All 75 new labels are now complete: 64 eligible centers and 11 hidden frames.
 Eight camera-motion difficulty tags were corrected to motion blur at Ryan's
 direction. Three label-review clips and zoom panels are ready through the
 [annotation guide](../ball_wasb_training_expansion_annotation_guide.md). Human
-visual review is the next dependency; the already-approved fit has not run.
+visual review and the approved fit subsequently completed as recorded above.
 Avoid repeating generic RF motion grids.
 
 Full-possession coverage, accepted trajectories, explicit gaps and the existing

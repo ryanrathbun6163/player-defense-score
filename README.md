@@ -61,11 +61,13 @@ bar remain unchanged. The earlier
 The [remaining-gap diagnosis](docs/ball_wasb_remaining_gap_diagnosis.md) found
 that lower thresholds and strongest-pixel selection do not resolve P001's main
 failure. A [75-frame training-data addition](docs/ball_wasb_training_data_expansion.md)
-is approved. All 75 new frames are labeled, and [three label-review clips are
-ready](docs/ball_wasb_training_expansion_annotation_guide.md). The new labels contain
-64 ball centers and 11 hidden frames; eight difficulty tags were corrected from
-camera motion to motion blur at Ryan's direction. Human visual review precedes
-the already-approved next fit, which has not run.
+is now complete: Ryan labeled and reviewed all 75 additions, then one original-
+initialized 200-update fit ran successfully. The [expanded-data comparison](docs/ball_wasb_expanded_adaptation_results.md)
+raises primary matches from **98 to 120/145** and halves missing frames from 46
+to 23, with two geometric errors and no hidden alarms. P001 improves from 11 to
+34 matches. The existing threshold grid also gives **130 matches, one error and
+14 missing at 0.3**. That setting is a visual-review candidate, not an accepted
+operating point. Complete possession trajectories and phase acceptance remain ahead.
 
 ## End goal
 

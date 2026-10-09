@@ -1,6 +1,55 @@
 # Current State
 
-## Latest result: 2026-10-08 approved WASB adaptation helped development localization
+## Latest result: 2026-10-08 expanded training improves P001 substantially
+
+Ryan approved all three new label clips: "yep these look good. move forward chat".
+The review record is
+`configs/ball_tracking/reviews/wasb_training_expansion_label_review_v0_1.json`.
+Only review metadata changed; all saved points, visibility and corrected blur
+tags remain as reviewed. Implementation commit
+`3928f7fee7f6e41eb3ffa05b0db062b176442e6e` adds versioned training-block composition
+and a comparison against preserved prior adapted results. Seventeen focused
+checks passed; no full suite was run. Independent code/config review passed.
+
+The approved expanded fit completed once, without resume: 150 reviewed frames,
+140 triplets, 400 sampled examples, 200 updates from the original pretrained
+checkpoint. It took 24.3455 seconds and used 1.87 GiB peak allocated GPU memory.
+All 213 BatchNorm buffers remained unchanged. Checkpoint SHA-256:
+`09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98`.
+Outputs are under
+`data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/`.
+
+At the unchanged primary 0.5 setting, expanded WASB gives **120 matched / 2 wrong /
+23 missing**, with zero alarms on five hidden frames. The prior fit gave 98 / 1 /
+46. P001 improves from 11 to 34 matches; P002 loses only frame 48, while P003's
+match/missing classifications are unchanged. Across all windows, 23 matches are
+gained and one is lost. The two geometric errors are P001/52 at 10.368 pixels and
+P003/164 at 10.972 pixels, still outside the unchanged ten-pixel radius. These
+offsets do not by themselves establish wrong-object selections. Equal-output-count
+RF gives 99 / 23 / 23; unrestricted RF gives 111 / 34 / 0 plus five hidden alarms.
+
+The predeclared eight-setting cached comparison is also complete. At 0.3 the
+expanded checkpoint gives **130 / 1 / 14**, with zero hidden alarms, retaining all
+120 primary matches and adding ten. It corrects P001/52 and restores P002/48 on
+these labels. Next: review the cached 0.3 candidate outputs before any additional
+training or motion rule. No operating point or phase gate is promoted. The
+primary results remain 0.5; candidate selection from inspected development data
+does not establish independent generalization. Existing human reviews remain
+complete; the new model outputs require their own visual review.
+
+Six cached 0.3 candidate clips are ready under `review_threshold_0_3/`, with
+`review_manifest.json` binding their receipts. Each is 25 frames at 5 fps and
+decodes through its final frame. Rendering took 9.315 seconds, with no new model
+inference, training or scoring. The results document links these six clips for
+the next human review, while keeping all primary 0.5 videos separately preserved.
+
+See [expanded results and review material](../ball_wasb_expanded_adaptation_results.md).
+Training and evaluation audits reconciled actual saved states and report records.
+Evaluation plus cached calibration took 32.714 seconds; primary review rendering
+took 12.630 seconds. No old model was rerun and no holdout was released. The
+approved single expanded fit is consumed and complete; do not restart it to resume.
+
+## Earlier result: first pilot adaptation helped development localization
 
 Ryan approved the concrete pilot-training plan. Implementation commit
 `193319f984e5d150fbb86e9da2c5ec559540d61e` adds an isolated trainer, safely bound
@@ -65,13 +114,14 @@ tags became `motion_blur`; pre-correction snapshots and exact changes are record
 in `configs/ball_tracking/reviews/wasb_training_expansion_tag_correction_v0_1.json`.
 None of the old three pilots or six released development sets used that tag.
 The combined training set has 130 eligible centers, 19 hidden frames and one
-masked ambiguous frame. All three new sets remain drafts pending visual review.
+masked ambiguous frame. Ryan has since approved all three new label sets, as
+recorded in the latest result above.
 The [annotation guide](../ball_wasb_training_expansion_annotation_guide.md) links
 three label-only clips, native overlays and zoom panels. Each clip decodes through
-all 25 frames and its final frame; no predictions were used. Next: Ryan's visual
-review of these new labels, then the already-approved fit; no renewed approval
-for that same fit is needed. No new fit has run. The six completed output reviews,
-full-possession finish line and player foundation remain unchanged.
+all 25 frames and its final frame; no predictions were used. Their completed
+review and the subsequent expanded fit are recorded above. The six earlier
+completed output reviews, full-possession finish line and player foundation
+remain unchanged.
 
 ## Earlier snapshot: cached calibration, before the completed adaptation above
 

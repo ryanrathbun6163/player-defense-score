@@ -1,5 +1,49 @@
 # Validation History
 
+## 2026-10-08: reviewed expanded-data fit and comparison completed
+
+Ryan approved all three new label clips and continuation. The human review record
+binds each clip, its exact corrected draft snapshot and reviewed annotation file.
+Only review status/reviewer/timestamp changed; all frame labels remained unchanged.
+The new versioned config composes six preserved annotation authorities into five
+training blocks: 150 frames, 130 positive centers, 19 hidden negatives and one
+masked ambiguous frame. P002's adjacent segments supply both crossing triplets.
+
+Implementation commit `3928f7fee7f6e41eb3ffa05b0db062b176442e6e` passed 13 focused
+trainer checks (1.887 seconds) and four evaluator checks (1.819 seconds), including
+actual reviewed-data composition, exact sampling, original behavior, stale-review
+and overlap rejection, saved comparison consumption and baseline preservation.
+Independent static review confirmed bindings and unchanged training semantics.
+No full-suite run occurred.
+
+One uninterrupted expanded fit completed 200 updates in 24.3455 seconds. All
+400 sample IDs, 200 loss rows and update-200 state agree. Its 428 final tensors
+match the published checkpoint; 213 BN buffers equal the original checkpoint,
+176 active parameter tensors changed with Adam step 200, and 39 unused branch
+tensors remain unchanged. Peak allocated/reserved GPU memory was 1.87/2.32 GiB;
+cached CPU tensors occupied 990,904,740 bytes. No training retry occurred.
+
+Evaluation and the fixed cached threshold screen completed in 32.714 seconds;
+primary rendering took 12.630 seconds. At 0.5, 120 matched/2 wrong/23 missing with
+zero hidden alarms compares with prior 98/1/46. Paired records show 23 gains and
+one loss, P002/48. Both primary errors remain outside ten pixels: P001/52 10.368px
+and P003/164 10.972px. At already-declared 0.3, 130/1/14 with zero hidden alarms
+retains all 120 primary matches and adds ten. This is a review candidate only.
+
+An independent saved-record audit reconciled 144 threshold/window reports, 96
+comparison binding rows, paired frame sets, 60 RF-control cells, point/identity/
+render receipts and successful invocations. All six primary clips decode through
+25 frames and their final frame. Selected diagnostic stills use only three source
+frames and saved points. No baseline model rerun, rescoring audit, holdout access
+or label revision occurred. New-output visual acceptance remains pending; the
+new single fit is complete and its authorization consumed. See the expanded
+results document for evidence paths and review material. Six separately labeled
+0.3 candidate clips were subsequently rendered from the already-scored cached
+points in 9.315 seconds. Point/control canonical signatures match the actual
+saved reports; every video decodes all 25 frames and its final frame. This added
+no inference, training, scoring or operating-point selection. Candidate review
+remains pending; primary videos are unchanged.
+
 ## 2026-10-08: all 75 expansion labels saved and review playback prepared
 
 Ryan completed all three new training windows. Schema and exact-frame checks
