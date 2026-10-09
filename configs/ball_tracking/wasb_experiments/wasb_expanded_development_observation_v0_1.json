@@ -1,0 +1,130 @@
+{
+  "schema_version": "wasb_development_observation/v0.1",
+  "experiment_id": "wasb_expanded_development_observation_v0_1",
+  "authorization_context": "Ryan authorized necessary safe development runtime and data use, routine implementation fixes and local integration, and directed 'Review. Move forward'. This pass inspects the frozen 0.3 development candidate; human visual acceptance remains pending clarification.",
+  "purpose": "Longer unlabeled development inspection; includes training frames and is not an accuracy test or completed full-possession gate.",
+  "output_root": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1",
+  "training_completion": {
+    "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/completion.json",
+    "sha256": "0d81bf6b8b876ad3dbddc9e826a8881b1aac92bd64bb0df915b873a2a7fd1ef1"
+  },
+  "training_config": {
+    "path": "configs/ball_tracking/wasb_experiments/wasb_basketball_expanded_adaptation_v0_1.json",
+    "sha256": "9c0d7013e36cd350cf02a0e78d17ee4ec3f176ff8154e0f72dc2b4620ea2e926"
+  },
+  "cached_experiment": {
+    "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/experiment.json",
+    "sha256": "397c5321d94d652c8737fede921ab666c0a7fb4824ef5c2b68cb7f6e57b5fb2f"
+  },
+  "split_metadata": {
+    "path": "configs/ball_tracking/experiments/rfdetr_medium_development_evaluation_v0_2.json",
+    "sha256": "3a78cf26686c0624c1a45dec5c47e7bad182cc7d5cd658b639e11d47c0d75489"
+  },
+  "holdout_buffer_frames": 25,
+  "inference": {
+    "heatmap_threshold": 0.3,
+    "triplet_stride": 1,
+    "overlap_policy": "all_available_mean",
+    "selection": "largest_component_mass",
+    "device": "cuda"
+  },
+  "rendering": {
+    "playback_fps": 25,
+    "crf": 18
+  },
+  "possessions": [
+    {
+      "possession_id": "possession_001",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "visible_segments": [
+        [
+          0,
+          274
+        ],
+        [
+          350,
+          498
+        ]
+      ],
+      "protected_ranges": [
+        [
+          275,
+          349
+        ]
+      ],
+      "player_context": {
+        "path": "data/outputs/identity/possession_001_reconciled_tracks.csv",
+        "sha256": "f723b294c0921a2bbccd2ba9eea2bd10ab6c5fec295094813e8ff20f76746676"
+      }
+    },
+    {
+      "possession_id": "possession_002",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "visible_segments": [
+        [
+          0,
+          174
+        ],
+        [
+          250,
+          498
+        ]
+      ],
+      "protected_ranges": [
+        [
+          175,
+          249
+        ]
+      ],
+      "player_context": {
+        "path": "data/outputs/identity/possession_002_reconciled_tracks.csv",
+        "sha256": "0e5b13c836161c564f1c500e1de5adfd956a1540607511a401c29d7c38f0a934"
+      }
+    },
+    {
+      "possession_id": "possession_003",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "visible_segments": [
+        [
+          0,
+          224
+        ],
+        [
+          300,
+          499
+        ]
+      ],
+      "protected_ranges": [
+        [
+          225,
+          299
+        ]
+      ],
+      "player_context": {
+        "path": "data/outputs/identity/possession_003_reconciled_tracks.csv",
+        "sha256": "afc51f3d46b79ced339c463aa91a20fa34bab7a0b3380a5615925f069d6f61db"
+      }
+    }
+  ]
+}
