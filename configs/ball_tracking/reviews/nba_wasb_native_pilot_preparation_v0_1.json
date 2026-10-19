@@ -1,0 +1,148 @@
+{
+  "schema_version": "nba_wasb_native_pilot_preparation/v0.1",
+  "status": "prepared_not_executed",
+  "prepared_at_utc": "2026-10-19T05:01:15.742026+00:00",
+  "base_commit": "cd8a406c925e6d7ba1adcdbce566884a7f32ad9d",
+  "label_reference_status": "AI-authored proposals accepted by Ryan; original proposals/drafts remain unchanged",
+  "diagnostic_id": "nba_wasb_native_pilot_diagnostic_v0_1",
+  "scientific_approval_status": "pending",
+  "config": {
+    "path": "configs/ball_tracking/wasb_experiments/nba_wasb_native_pilot_diagnostic_v0_1.json",
+    "sha256": "bb63377d515203b8c7fc1a89d6cb55acd84102587d9e53226fa10bb4d88f6eca",
+    "bytes": 1500
+  },
+  "plan_summary": {
+    "frames": 120,
+    "unique_triplets": 116,
+    "per_game_unique_triplets": 58,
+    "native_delta_ticks": [
+      1440,
+      1530
+    ],
+    "time_base": "1/90000",
+    "source_span_seconds_per_game": 0.984,
+    "heatmap_threshold_strict_greater_than": 0.3,
+    "matching_radius_source_px_inclusive": 10,
+    "training": false
+  },
+  "validation": {
+    "reference_loader": {
+      "passed": 6,
+      "first_attempt_seconds": 1.341,
+      "skipped": 0
+    },
+    "reference_publication": {
+      "first_attempt": true,
+      "native_pngs_checked": 120
+    },
+    "actual_published_record_join": {
+      "passed": true,
+      "rows": 120
+    },
+    "diagnostic_first_checks": {
+      "passed": 7,
+      "seconds": 2.803,
+      "original_stdout_redirected": false,
+      "then_current_source_hash_recorded": false,
+      "does_not_cover_later_corrections": true
+    },
+    "diagnostic_affected_checks": {
+      "passed": 6,
+      "seconds": 1.956,
+      "current_code_bound": true
+    },
+    "updated_plan": {
+      "passed": true,
+      "models_loaded": 0,
+      "images_decoded": 0,
+      "real_output_root_exists": false
+    },
+    "independent_code_reviews": {
+      "reviewers": [
+        "history_1",
+        "history_3"
+      ],
+      "material_finding": "Separate accepted reference provenance/review from unreviewed model-output provenance/review.",
+      "resolved": true,
+      "remaining_material_findings": 0
+    }
+  },
+  "bindings": [
+    {
+      "path": "configs/ball_tracking/reviews/nba_assisted_label_acceptance_v0_1.json",
+      "bytes": 3871,
+      "sha256": "230d9f84391dcd1242894f67816fa372a887eaceb40e61653379608b660aa7ad"
+    },
+    {
+      "path": "configs/ball_tracking/wasb_experiments/nba_wasb_native_pilot_diagnostic_v0_1.json",
+      "bytes": 1500,
+      "sha256": "bb63377d515203b8c7fc1a89d6cb55acd84102587d9e53226fa10bb4d88f6eca"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/reviewed_pilot_v0_1/reference.json",
+      "bytes": 154743,
+      "sha256": "6a2aa2dad7ecd5351c21b8806945f3e9c33ac4d17a295ec67fe1b5dd52b996c4"
+    },
+    {
+      "path": "data/outputs/t/nba_reviewed_reference_2026-10-18/validation_receipt.json",
+      "bytes": 3169,
+      "sha256": "fe430e29e04fea93dfa0faf437d55eb6c1f329ef7b927332e1b3e9b3dfd8bdc5"
+    },
+    {
+      "path": "data/outputs/t/nba_reviewed_reference_2026-10-18/published_record_join.json",
+      "bytes": 1380,
+      "sha256": "4b2c5f3ca0966d1947190434656b8f4ac711d5d8d0d8312d3a1636477b04270c"
+    },
+    {
+      "path": "data/outputs/t/nba_reviewed_reference_2026-10-18/accepted_page_receipt.json",
+      "bytes": 933,
+      "sha256": "7388e9ca1f6d90cd4e24aef869f85518b5111c3f9446805fabeb0b1b530cb4ef"
+    },
+    {
+      "path": "data/outputs/t/nba_reviewed_reference_2026-10-18/accepted_status.png",
+      "bytes": 36653,
+      "sha256": "2186df5e26f0380d6136fdb00ea31973473ce4417b9cb61e11b12944f72c61de"
+    },
+    {
+      "path": "data/outputs/t/nba_wasb_native_pilot_diagnostic_2026-10-18/readiness_history_2/validation_receipt.json",
+      "bytes": 4799,
+      "sha256": "aa5ce9e7096594f2448181ce408e85fa5c1d27ba4795430d6f09b133197dc1fc"
+    },
+    {
+      "path": "data/outputs/t/nba_wasb_native_pilot_diagnostic_2026-10-18/readiness_history_2/final_plan.json",
+      "bytes": 4432,
+      "sha256": "2c9860f21690a54b6fcfc7a0284b2878c4b404b9d30be80ab899d9e5935d8dbc"
+    },
+    {
+      "path": "src/ball_tracking/nba_reviewed_reference.py",
+      "bytes": 12714,
+      "sha256": "a3ec892376a5f9403d5c736c3ab3728c3739c11fb9b3fde082175579a0134e8c"
+    },
+    {
+      "path": "tests/test_nba_reviewed_reference.py",
+      "bytes": 11425,
+      "sha256": "245b00c8eb232f80a4eadecb0b0ad5781456e0756f797a95dc1334e16cc8adac"
+    },
+    {
+      "path": "src/ball_tracking/nba_wasb_diagnostic.py",
+      "bytes": 34275,
+      "sha256": "b8dcd105e964475e0efc53e45449e47acdc4341e7409f371d5c44172d0e950f3"
+    },
+    {
+      "path": "tests/test_nba_wasb_diagnostic.py",
+      "bytes": 17076,
+      "sha256": "dea804acc9f2209f4ebac56d0ea9ffd2c5c74d7e1637f1f0879b87030e169a60"
+    }
+  ],
+  "limits": {
+    "real_model_calls": 0,
+    "training_runs": 0,
+    "original_video_decodes": 0,
+    "independent_human_annotations": false,
+    "independent_test_set": false,
+    "hidden_negative_examples": 0,
+    "old_scientific_runs_repeated": false,
+    "completed_reviews_reopened": false,
+    "new_motion_human_reviews_still_pending": 3
+  }
+}

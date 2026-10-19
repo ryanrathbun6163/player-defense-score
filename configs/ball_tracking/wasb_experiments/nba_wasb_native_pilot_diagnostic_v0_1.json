@@ -1,0 +1,38 @@
+{
+  "schema_version": "nba_wasb_diagnostic/v0.1",
+  "diagnostic_id": "nba_wasb_native_pilot_diagnostic_v0_1",
+  "accepted_references": {
+    "path": "configs/ball_tracking/reviews/nba_assisted_label_acceptance_v0_1.json",
+    "sha256": "230d9f84391dcd1242894f67816fa372a887eaceb40e61653379608b660aa7ad"
+  },
+  "checkpoint_completion": {
+    "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/completion.json",
+    "sha256": "0d81bf6b8b876ad3dbddc9e826a8881b1aac92bd64bb0df915b873a2a7fd1ef1"
+  },
+  "pretrained_checkpoint": {
+    "path": "data/outputs/wasb_assets/wasb_basketball.pth",
+    "sha256": "8d1ba9870d0a6ab37b06ab82bed593c6c09133e713810bac475d0c000bb7e948"
+  },
+  "upstream_source": {
+    "path": "data/outputs/wasb_assets/WASB-SBDT-923462cacdeb3353b84ddebdedb3f4b7a8553b0f",
+    "revision": "923462cacdeb3353b84ddebdedb3f4b7a8553b0f"
+  },
+  "output_root": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1",
+  "inference": {
+    "heatmap_threshold": 0.3,
+    "triplet_stride": 1,
+    "aggregation": "mean_aligned_complete_native_triplets",
+    "padding": "none",
+    "resampling": "none",
+    "selection": "largest_component_mass",
+    "device": "cuda"
+  },
+  "scoring": {
+    "localization_radius_px": 10
+  },
+  "rendering": {
+    "fps": 6,
+    "final_hold_seconds": 1,
+    "ffmpeg": "C:/Users/Ryan/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-9.0-full_build/bin/ffmpeg.exe"
+  }
+}

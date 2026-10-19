@@ -1,5 +1,41 @@
 # Validation History
 
+## 2026-10-18: accepted NBA reference and prepared native-cadence diagnostic
+
+Ryan accepted the two presented AI label packages. Six new reference-loader
+checks passed on their first run (1.341 s, no skips), using actual draft/review
+producers and explicitly synthetic encoder bytes. One separate publication
+verified all 120 native PNGs and retained exact source-frame/PTS mappings, AI
+origin and placement uncertainty. A root comparison of the actual published
+record against its bound original drafts/proposals also passed all 120 rows.
+Original proposals retain historical pending status; the later acceptance is
+separate. No original game video was read or decoded for this increment.
+
+The new NBA diagnostic runner's first seven focused checks passed (2.803 s).
+They exercise actual producer-shaped records, fake model outputs, scoring,
+strict-threshold selection, recovery and an actual synthetic MP4 final hold.
+That first command's output was not redirected and its exact then-current
+source hash was not recorded; its tool-output transcription is explicitly
+labeled as such. It does not certify subsequent changes.
+
+Independent review identified ambiguous reference/model authorship fields in
+the new observations record. These were separated, with new model-output
+review explicitly pending. The final implementation also binds the aggregation
+and native-image verifier code, records actual adapter provenance, and uses an
+OS-held lock that releases when its process exits. Six affected/new checks
+then passed in 1.956 s, covering these paths, overlapping triplets, authorization
+ordering and cached recovery. Unchanged threshold/scoring and encoded-tail
+checks were not repeated. Two independent read-only reviews found no remaining
+material issue; actual NBA model behavior remains untested.
+
+The updated actual read-only plan passed with 120 frames and 116 distinct
+triplets, without model construction, image decoding or diagnostic output
+creation. Both plan versions and test executions remain recorded. See the
+[bound preparation record](../../configs/ball_tracking/reviews/nba_wasb_native_pilot_preparation_v0_1.json)
+and [exact proposed recipe](../nba_wasb_native_pilot_diagnostic.md). Scientific
+execution awaits approval; no real model calls, new fit, old experiment/full
+suite repeat, holdout access or phase promotion occurred.
+
 ## 2026-10-18: assistant-first NBA proposals and compact review delivery
 
 The new separate review renderer passed five focused checks on its first run

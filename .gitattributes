@@ -1,0 +1,8 @@
+# Preserve exact bytes for this hash-bound NBA pilot increment.
+configs/ball_tracking/reviews/nba_assisted_label_acceptance_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/ball_tracking/reviews/nba_wasb_native_pilot_preparation_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/ball_tracking/wasb_experiments/nba_wasb_native_pilot_diagnostic_v0_1.json -text
+src/ball_tracking/nba_reviewed_reference.py -text
+src/ball_tracking/nba_wasb_diagnostic.py -text
+tests/test_nba_reviewed_reference.py -text
+tests/test_nba_wasb_diagnostic.py -text

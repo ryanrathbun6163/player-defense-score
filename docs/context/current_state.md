@@ -1,6 +1,40 @@
 # Current State
 
-## Latest increment: 2026-10-18 assistant first-pass NBA labels ready for review
+## Latest increment: 2026-10-18 NBA pilot labels accepted; diagnostic prepared
+
+Ryan accepted both presented 60-frame AI proposal packages: “looks great chat.
+move forward.” The [acceptance record](../../configs/ball_tracking/reviews/nba_assisted_label_acceptance_v0_1.json)
+binds both clips, actual final frames and priority cases. All 120 labels retain
+AI authorship and placement uncertainty; human acceptance is a separate event,
+not a claim of independent human annotation or measured labeling accuracy.
+Original proposals, pre-acceptance review videos and blank editor drafts remain
+unchanged. A separate accepted reference bundle now exists at
+`data/outputs/ball_tracking/nba/reviewed_pilot_v0_1/reference.json`.
+
+The acceptance loader passed six focused checks and published that bundle once,
+verifying all 120 native PNGs without reading the original game recordings.
+The separate [frozen-checkpoint NBA diagnostic](../nba_wasb_native_pilot_diagnostic.md)
+is implemented and its read-only plan confirms 116 distinct three-frame inputs
+across the same 120 frames. Its seven initial focused checks use synthetic
+records/fake model output; no actual model inference or NBA evaluation has run.
+Six affected/new checks passed after provenance, locking and code-binding
+corrections; two independent reviews found no remaining material issue. The
+[preparation record](../../configs/ball_tracking/reviews/nba_wasb_native_pilot_preparation_v0_1.json)
+binds the exact validated code, receipts and final read-only plan.
+
+**Next concrete action:** decide on the exact proposed native-cadence diagnostic,
+then run it once and review the resulting two overlays. It keeps the existing
+expanded checkpoint and strict >0.3 threshold, with no fitting, threshold search,
+interpolation or external context. Native input spacing is 16–17 ms rather than
+the earlier NFHS 40 ms; this scientific choice is declared and awaiting approval.
+The recipe reports each game separately against the accepted AI references.
+These short visible-ball scenes cannot establish hidden-ball behavior, full
+trajectories or general NBA accuracy. SAC remains future-training-eligible;
+DET remains target development and excluded from fitting. Holdouts, completed
+experiments and reviews stand. The negative motion comparison is unchanged,
+and its three new human reviews remain pending.
+
+## Earlier increment: 2026-10-18 assistant first-pass NBA labels ready for review
 
 Ryan asked the assistant to take on more ball-tracking work and streamline the
 process. The assistant has now visually inspected all 120 approved native PNGs

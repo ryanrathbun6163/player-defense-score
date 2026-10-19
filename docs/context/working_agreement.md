@@ -126,6 +126,12 @@ acceptance, identity and calibration gates remain. Protected holdouts, approved
 game roles, completed experiments and completed reviews retain their existing
 boundaries. First-pass labeling does not itself authorize training or evaluation.
 
+After Ryan accepts a proposal, record that later event and publish a separate
+human-accepted AI reference. Preserve the original proposal, its prior status,
+review media and blank human drafts. In model-output records, distinguish
+reference authorship/acceptance from model authorship and model-output review;
+accepted reference labels do not make new predictions visually accepted.
+
 ## Session continuity
 
 At a stopping point, record:

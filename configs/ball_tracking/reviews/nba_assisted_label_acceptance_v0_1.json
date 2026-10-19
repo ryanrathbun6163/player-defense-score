@@ -1,0 +1,97 @@
+{
+  "schema_version": "nba_assisted_label_acceptance/v0.1",
+  "status": "accepted",
+  "reviewer_id": "Ryan",
+  "reviewed_at_utc": "2026-10-19T04:46:24.728923+00:00",
+  "review_date_local": "2026-10-18",
+  "timezone": "America/Phoenix",
+  "user_statement": "looks great chat. move forward",
+  "review_method": "human_visual_acceptance_of_assisted_proposals",
+  "annotation_origin": "assistant_visual_proposal",
+  "scope": "Acceptance of both presented120-frame pilot review packages and their highlighted cases/final frames; no corrections requested. User statement is the evidence of acceptance; no playback telemetry or independent human reannotation is claimed.",
+  "preparation_record": {
+    "path": "configs/ball_tracking/reviews/nba_assisted_annotation_pilot_v0_1.json",
+    "sha256": "71daedd3b80dbbfc8d5ca4a1477c3e9c880e77980a7293663a0a0d66d2564906"
+  },
+  "packages": [
+    {
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "approved_role": "future_training_candidate_pool",
+      "proposal": {
+        "path": "data/outputs/ball_tracking/nba/assisted_pilot_v0_1/sac_mem_q1_c01/proposal.json",
+        "sha256": "c80916be0790ca370d4dafd899cca2706273758f6ed02ccd088f2fa9467dd398"
+      },
+      "original_annotations": {
+        "path": "data/outputs/ball_tracking/nba/annotation_pilot_v0_1/sac_mem_q1_c01/annotations.json",
+        "sha256": "d22e437800d682729be1488fa54d03d7d6b4589e181f3eff479e42693aa51d63"
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/assisted_pilot_v0_1/sac_mem_q1_c01/review_manifest.json",
+        "sha256": "36fbb7c9c7e93371c33183fdd0c02db1b7351a2316cc6012fa7afe6d88c91195"
+      },
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/assisted_pilot_v0_1/sac_mem_q1_c01/review.mp4",
+        "sha256": "b9d9f9324a6026d034ef19767170c4030a795743ae7193fdfbe6f55a5516ad2a"
+      },
+      "frame_count": 60,
+      "source_frame_range_inclusive": [
+        660,
+        719
+      ],
+      "actual_final_frame_in_presented_review": 719,
+      "priority_frame_indices": [
+        660,
+        661,
+        662,
+        674,
+        675
+      ]
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "game_id": "0022500828",
+      "approved_role": "target_case_development",
+      "proposal": {
+        "path": "data/outputs/ball_tracking/nba/assisted_pilot_v0_1/sas_det_q1_c02/proposal.json",
+        "sha256": "c1c23c9cccebf19fa3426307fe71d41486c599624b3e06d6e2813308d352394b"
+      },
+      "original_annotations": {
+        "path": "data/outputs/ball_tracking/nba/annotation_pilot_v0_1/sas_det_q1_c02/annotations.json",
+        "sha256": "1cddb3b97ac1b2e34aba19963ae8a67bf420b15364601d5b4bacd4a3d9972d50"
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/assisted_pilot_v0_1/sas_det_q1_c02/review_manifest.json",
+        "sha256": "2cf2442865bad7017a22f2e807732b00fa91babfcf44233370219e28223c374b"
+      },
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/assisted_pilot_v0_1/sas_det_q1_c02/review.mp4",
+        "sha256": "5808c9688df97673b11edd708e46dbc06ab285dbc2b35aec95815772026e6c2b"
+      },
+      "frame_count": 60,
+      "source_frame_range_inclusive": [
+        10788,
+        10847
+      ],
+      "actual_final_frame_in_presented_review": 10847,
+      "priority_frame_indices": [
+        10788,
+        10791,
+        10833,
+        10834,
+        10835,
+        10840,
+        10846,
+        10847
+      ]
+    }
+  ],
+  "limits": {
+    "independent_human_annotation": false,
+    "training_authorized": false,
+    "new_diagnostic_recipe_approved": false,
+    "independent_test_set": false,
+    "full_possession_or_phase_acceptance": false,
+    "motion_human_reviews_still_pending": 3
+  }
+}

@@ -1,6 +1,24 @@
 # Roadmap
 
-## Current action: review assistant-proposed NBA pilot labels
+## Current action: accepted NBA labels; frozen-checkpoint diagnostic prepared
+
+Ryan accepted both complete pilot proposal packages. The separate
+[acceptance record](../../configs/ball_tracking/reviews/nba_assisted_label_acceptance_v0_1.json)
+and published reference bundle preserve AI origin, all 120 original-frame/PTS
+mappings, uncertainty and original drafts. This review is complete; do not ask
+Ryan to re-enter or re-accept the same labels merely to resume.
+
+The next [concrete diagnostic](../nba_wasb_native_pilot_diagnostic.md) is prepared:
+one frozen expanded WASB checkpoint at the existing strict >0.3 threshold,
+116 complete native triplets, separate game results and two short overlays.
+The native 16–17 ms cadence differs from the earlier 40 ms inputs and is an
+explicit proposed scientific choice. No real diagnostic execution or new fit
+has occurred. It requires approval of the bound recipe, then uses resumable
+cached calls while preserving every actual attempt. These two one-second
+scenes contain no hidden negatives and are not an independent benchmark.
+Game roles, the NFHS ball finish line and protected holdouts remain intact.
+
+## Earlier action: review assistant-proposed NBA pilot labels
 
 Ryan approved the allocation and 120-frame pilot. The [native annotation guide](../nba_native_annotation_guide.md)
 describes the prepared SAC 660–719 and DET 10788–10847 blocks and open browser

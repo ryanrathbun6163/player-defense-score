@@ -6,6 +6,26 @@ binds the preserved [selection proposal](nba_development_selection_plan.md).
 Sacramento is eligible for future training data; Detroit remains target-case
 development. Neither this pilot nor its completion authorizes a model fit.
 
+## Accepted pilot status
+
+Ryan accepted both presented AI proposal packages with “looks great chat. move
+forward.” The [acceptance record](../configs/ball_tracking/reviews/nba_assisted_label_acceptance_v0_1.json)
+binds the two full short reviews, priority cases and actual final frames. The
+separate accepted reference bundle is
+`data/outputs/ball_tracking/nba/reviewed_pilot_v0_1/reference.json`. Its 120 labels
+remain AI-authored, human-accepted estimates with their original uncertainty;
+they are not independent human annotations.
+
+The original proposals and videos retain their historical “pending review”
+status/captions. This later acceptance supersedes that status without rewriting
+the evidence. The blank manual editor drafts are also unchanged. The first-pass
+description below documents how this accepted batch was prepared; it is not a
+request to repeat the completed review.
+
+The [next prepared diagnostic](nba_wasb_native_pilot_diagnostic.md) uses one
+existing checkpoint on these native frames. Its new cadence choice is awaiting
+approval; no actual model execution or training is implied by label acceptance.
+
 ## What to label
 
 | Pilot | Original source frames, inclusive | Original source timestamps | Purpose |
