@@ -1,0 +1,721 @@
+{
+  "schema_version": "nba_development_selection_proposal/v0.1",
+  "proposal_id": "nba_development_selection_proposal_v0_1",
+  "created_at_utc": "2026-10-19T02:37:03.448538+00:00",
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "cd8defc3d08a5e54a05db15e1ed64b6ef93a65b6",
+    "tracked_state": "clean"
+  },
+  "status": "proposed_pending_ryan_decision",
+  "runnable_experiment": false,
+  "game_roles": [
+    {
+      "game_id": "0022500828",
+      "description": "SAS at DET, 2026-02-23",
+      "proposed_role": "target_case_development",
+      "source_sha256": "27b5143105f5bf3276a2cc51945133c9fdcd2b82d4247d8365110428062ec21f",
+      "development_visible": true,
+      "training_permitted_by_this_proposal": false
+    },
+    {
+      "game_id": "0022500829",
+      "description": "SAC at MEM, 2026-02-23",
+      "proposed_role": "future_training_candidate_pool",
+      "source_sha256": "420eacca7a05f9eebfab6306fe6d28fe1ee0509362cbcc053fba09cfd61b062b",
+      "development_visible": true,
+      "training_permitted_by_this_proposal": false
+    },
+    {
+      "game_id": "0022500843",
+      "description": "SAS at TOR, 2026-02-25",
+      "proposed_role": "additional_development_no_current_label_selection",
+      "source_sha256": "714118e131a6bc3c8b24bfb6e4695feb2cd68aec8837bedadea55fa75e64cd9d",
+      "development_visible": true,
+      "training_permitted_by_this_proposal": false
+    }
+  ],
+  "independent_test_game": null,
+  "human_source_selection_review": "pending",
+  "identity_matchup_calibration_acceptance": false,
+  "source_review_method": "Half-second contact sheets, selected full-resolution frames and all-frame change priorities; not a frame-by-frame human playback review.",
+  "candidates": [
+    {
+      "candidate_id": "sas_det_q1_c01",
+      "game_id": "0022500828",
+      "parent_source_sha256": "27b5143105f5bf3276a2cc51945133c9fdcd2b82d4247d8365110428062ec21f",
+      "source_search_seconds_half_open": [
+        128,
+        146
+      ],
+      "source_frame_range_inclusive": [
+        7670,
+        8748
+      ],
+      "source_pts": {
+        "first": 11520332,
+        "last": 13138982,
+        "end_exclusive": 13140422,
+        "time_base": "1/90000"
+      },
+      "review_video": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c01/source_review.mp4",
+        "bytes": 27375003,
+        "sha256": "72c3a927b33928c74d1e6e1d2a9733e3ad94b5fb1b50f77631a76146d3469d0e"
+      },
+      "review_derivative_audio": false,
+      "review_derivative_encoding": "Lossy H.264 CRF18; native frame inventory/PTS preserved; no labels should be placed from this lossy preview.",
+      "review_frames": 1079,
+      "sample_images": 37,
+      "preparation_receipt": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c01/preparation_receipt.json",
+        "bytes": 2868,
+        "sha256": "2e7483cc3d5681f76288bdc1968d10cb654ddbf9942225b5c29f3610797d2e59"
+      },
+      "frame_map": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c01/frame_map.jsonl",
+        "bytes": 145969,
+        "sha256": "63d40941edff4692f067f9edd49a60812c315f5dcba7af2569f4b47b3ba93142"
+      },
+      "assistant_disposition": "retain_multiview_transition_challenge",
+      "coverage_note": "Camera changes during Detroit action; not a single-camera baseline.",
+      "human_review": "pending",
+      "accepted_possession_boundary": false
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "game_id": "0022500828",
+      "parent_source_sha256": "27b5143105f5bf3276a2cc51945133c9fdcd2b82d4247d8365110428062ec21f",
+      "source_search_seconds_half_open": [
+        164,
+        202
+      ],
+      "source_frame_range_inclusive": [
+        9828,
+        12105
+      ],
+      "source_pts": {
+        "first": 14760602,
+        "last": 18179522,
+        "end_exclusive": 18180962,
+        "time_base": "1/90000"
+      },
+      "review_video": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c02/source_review.mp4",
+        "bytes": 56911660,
+        "sha256": "0f40ddddb164b1f7324d1c6836a518f13ff0c6b848a1809cee909827c03777af"
+      },
+      "review_derivative_audio": false,
+      "review_derivative_encoding": "Lossy H.264 CRF18; native frame inventory/PTS preserved; no labels should be placed from this lossy preview.",
+      "review_frames": 2278,
+      "sample_images": 77,
+      "preparation_receipt": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c02/preparation_receipt.json",
+        "bytes": 3313,
+        "sha256": "fcdedfdbcc36a367a9b8cfdb0010d822641dc7226c28cd4f79079519322e4586"
+      },
+      "frame_map": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c02/frame_map.jsonl",
+        "bytes": 312338,
+        "sha256": "b9f15dc7b3443882aa7fb34954a18d2e70bb0dc6bfc6d2fff97e4985efac38b2"
+      },
+      "assistant_disposition": "proposed_primary_development_action_window",
+      "coverage_note": "Partial possession: inbound/start hidden by closeup; sampled wide court action and ending are visible.",
+      "human_review": "pending",
+      "accepted_possession_boundary": false,
+      "proposed_action_core": {
+        "source_frame_range_inclusive": [
+          10668,
+          11898
+        ],
+        "source_pts_ticks_inclusive": [
+          16021862,
+          17868662
+        ],
+        "review_clip_frame_range_inclusive": [
+          840,
+          2070
+        ],
+        "time_base": "1/90000",
+        "exact_possession_boundaries_accepted": false
+      }
+    },
+    {
+      "candidate_id": "sas_det_q1_c03",
+      "game_id": "0022500828",
+      "parent_source_sha256": "27b5143105f5bf3276a2cc51945133c9fdcd2b82d4247d8365110428062ec21f",
+      "source_search_seconds_half_open": [
+        314,
+        341
+      ],
+      "source_frame_range_inclusive": [
+        18819,
+        20437
+      ],
+      "source_pts": {
+        "first": 28260602,
+        "last": 30689972,
+        "end_exclusive": 30691502,
+        "time_base": "1/90000"
+      },
+      "review_video": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c03/source_review.mp4",
+        "bytes": 40477834,
+        "sha256": "8610d1b5f8ebf53c109719eaf430e2a9168b36aa3042bb99f855757ba5a8a9a0"
+      },
+      "review_derivative_audio": false,
+      "review_derivative_encoding": "Lossy H.264 CRF18; native frame inventory/PTS preserved; no labels should be placed from this lossy preview.",
+      "review_frames": 1619,
+      "sample_images": 55,
+      "preparation_receipt": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c03/preparation_receipt.json",
+        "bytes": 3092,
+        "sha256": "9084f3583f617861337db7a576d010e232904e551c8b3016e93ff33f28925f54"
+      },
+      "frame_map": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c03/frame_map.jsonl",
+        "bytes": 221568,
+        "sha256": "34f04117ff3e95e69bab965aab54181a9d77618a82e1e4fb2b956363a0c3fdda"
+      },
+      "assistant_disposition": "retain_overlay_and_camera_cut_challenge",
+      "coverage_note": "Detroit restart obscured by closeup; interview inset and camera change during attack.",
+      "human_review": "pending",
+      "accepted_possession_boundary": false
+    },
+    {
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "parent_source_sha256": "420eacca7a05f9eebfab6306fe6d28fe1ee0509362cbcc053fba09cfd61b062b",
+      "source_search_seconds_half_open": [
+        0,
+        45
+      ],
+      "source_frame_range_inclusive": [
+        0,
+        2693
+      ],
+      "source_pts": {
+        "first": 2970,
+        "last": 4048892,
+        "end_exclusive": 4050422,
+        "time_base": "1/90000"
+      },
+      "review_video": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q1_c01/source_review.mp4",
+        "bytes": 65254756,
+        "sha256": "872820136ad1d1ef11df9e1c34e366ea062b70f9f497f4ac12203a68af445706"
+      },
+      "review_derivative_audio": false,
+      "review_derivative_encoding": "Lossy H.264 CRF18; native frame inventory/PTS preserved; no labels should be placed from this lossy preview.",
+      "review_frames": 2694,
+      "sample_images": 91,
+      "preparation_receipt": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q1_c01/preparation_receipt.json",
+        "bytes": 3293,
+        "sha256": "aa799ff86a7b90ccb0dc319c86e049d3462a9d84bdca6c95fa67fd292286540d"
+      },
+      "frame_map": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q1_c01/frame_map.jsonl",
+        "bytes": 362691,
+        "sha256": "c8d77812f35fae8a0dc5f70f4413a5b7ba1c527875cfc9cb8dadb29a40f93e6d"
+      },
+      "assistant_disposition": "proposed_primary_training_source_episode",
+      "coverage_note": "Promising complete opening live-action episode from pre-tip through made basket and next inbound; human acceptance pending.",
+      "human_review": "pending",
+      "accepted_possession_boundary": false,
+      "proposed_action_core": {
+        "source_frame_range_inclusive": [
+          540,
+          2010
+        ],
+        "source_pts_ticks_inclusive": [
+          816182,
+          3023342
+        ],
+        "review_clip_frame_range_inclusive": [
+          540,
+          2010
+        ],
+        "time_base": "1/90000",
+        "exact_possession_boundaries_accepted": false
+      }
+    },
+    {
+      "candidate_id": "sac_mem_q2_c02",
+      "game_id": "0022500829",
+      "parent_source_sha256": "420eacca7a05f9eebfab6306fe6d28fe1ee0509362cbcc053fba09cfd61b062b",
+      "source_search_seconds_half_open": [
+        1215,
+        1255
+      ],
+      "source_frame_range_inclusive": [
+        72824,
+        75221
+      ],
+      "source_pts": {
+        "first": 109350602,
+        "last": 112949702,
+        "end_exclusive": 112951142,
+        "time_base": "1/90000"
+      },
+      "review_video": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q2_c02/source_review.mp4",
+        "bytes": 51867468,
+        "sha256": "fbfc6ad10175f3072a8edf61e36f16aa99252d22a041d56f6ae49debeebeedf2"
+      },
+      "review_derivative_audio": false,
+      "review_derivative_encoding": "Lossy H.264 CRF18; native frame inventory/PTS preserved; no labels should be placed from this lossy preview.",
+      "review_frames": 2398,
+      "sample_images": 81,
+      "preparation_receipt": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q2_c02/preparation_receipt.json",
+        "bytes": 3322,
+        "sha256": "673368f1dcc97d328dfb5a73cb05cc6f18870d95eba49491577cc9575e3e9b18"
+      },
+      "frame_map": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q2_c02/frame_map.jsonl",
+        "bytes": 331468,
+        "sha256": "ed0cd04964c282fbc6871e07b49a790234b4c29749df05b1d8b00c93f4ce8358"
+      },
+      "assistant_disposition": "retain_partial_start_example",
+      "coverage_note": "Quarter-start graphic/dissolve hides start; return shows Memphis already advancing.",
+      "human_review": "pending",
+      "accepted_possession_boundary": false,
+      "proposed_action_core": {
+        "source_frame_range_inclusive": [
+          73604,
+          74654
+        ],
+        "source_pts_ticks_inclusive": [
+          110521772,
+          112098302
+        ],
+        "review_clip_frame_range_inclusive": [
+          780,
+          1830
+        ],
+        "time_base": "1/90000",
+        "exact_possession_boundaries_accepted": false
+      }
+    },
+    {
+      "candidate_id": "sac_mem_q3_c03",
+      "game_id": "0022500829",
+      "parent_source_sha256": "420eacca7a05f9eebfab6306fe6d28fe1ee0509362cbcc053fba09cfd61b062b",
+      "source_search_seconds_half_open": [
+        2715,
+        2755
+      ],
+      "source_frame_range_inclusive": [
+        162734,
+        165131
+      ],
+      "source_pts": {
+        "first": 244350422,
+        "last": 247949522,
+        "end_exclusive": 247951052,
+        "time_base": "1/90000"
+      },
+      "review_video": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q3_c03/source_review.mp4",
+        "bytes": 56405065,
+        "sha256": "3b87d5df3e1d197a44f1ed1ff0f8230237781072482012783a451600e7983e83"
+      },
+      "review_derivative_audio": false,
+      "review_derivative_encoding": "Lossy H.264 CRF18; native frame inventory/PTS preserved; no labels should be placed from this lossy preview.",
+      "review_frames": 2398,
+      "sample_images": 81,
+      "preparation_receipt": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q3_c03/preparation_receipt.json",
+        "bytes": 3324,
+        "sha256": "cd60b0dda378f0e46d661a4788b56669ff2fb2539c6eae345b8348b329f47041"
+      },
+      "frame_map": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q3_c03/frame_map.jsonl",
+        "bytes": 333866,
+        "sha256": "e79b8a08b100be77a63a14287d3ee3032a53a3cbaba6c8085547251592856cd8"
+      },
+      "assistant_disposition": "retain_obscured_start_example",
+      "coverage_note": "Replay/closeup/wipe precedes live inbound; large logo partly obscures the beginning.",
+      "human_review": "pending",
+      "accepted_possession_boundary": false
+    }
+  ],
+  "proposed_annotation_pilot": [
+    {
+      "candidate_id": "sac_mem_q1_c01",
+      "purpose": "future_training_eligible_protocol_pilot",
+      "status": "proposed_not_created",
+      "selection_rule": "First60consecutive source frames beginning at the first available PTS at least2seconds after the proposed action-core start; source-only protocol pilot, not a random or representative performance sample.",
+      "source_frame_range_inclusive": [
+        660,
+        719
+      ],
+      "source_pts_ticks_inclusive": [
+        996362,
+        1084922
+      ],
+      "review_clip_frame_range_inclusive": [
+        660,
+        719
+      ],
+      "time_base": "1/90000",
+      "frame_count": 60,
+      "fitting_or_model_evaluation_authorized": false
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "purpose": "case_study_development_protocol_pilot",
+      "status": "proposed_not_created",
+      "selection_rule": "First60consecutive source frames beginning at the first available PTS at least2seconds after the proposed action-core start; source-only protocol pilot, not a random or representative performance sample.",
+      "source_frame_range_inclusive": [
+        10788,
+        10847
+      ],
+      "source_pts_ticks_inclusive": [
+        16202042,
+        16290602
+      ],
+      "review_clip_frame_range_inclusive": [
+        960,
+        1019
+      ],
+      "time_base": "1/90000",
+      "frame_count": 60,
+      "fitting_or_model_evaluation_authorized": false
+    }
+  ],
+  "unchanged_scientific_scope": {
+    "labels_created": 0,
+    "model_calls": 0,
+    "training_runs": 0,
+    "evaluation_runs": 0,
+    "old_holdout_pixels_opened": false,
+    "completed_reviews_repeated": false,
+    "motion_human_reviews_pending": 3,
+    "nfhs_ball_phase_finish_line_changed": false,
+    "production_method_promoted": false
+  },
+  "timing_policy_proposed": {
+    "preserve_original_encoded_frames": true,
+    "source_time_authority": "Actual presentation timestamps, stored as integer ticks at1/90000 second",
+    "silent_25fps_conversion": false,
+    "old_frame_index_divided_by_fps_schema_reused": false,
+    "model_temporal_cadence_selected": false,
+    "review_derivatives_are_annotation_truth": false,
+    "annotation_prerequisite": "An explicit timestamp-aware NBA annotation/source-mapping path with bounded frame loading; source-faithful pixels must come from original frames or a verified lossless derivative."
+  },
+  "split_controls": [
+    "Keep every frame, temporal context, crop, augmentation, replay and duplicate encode of an episode/game in its proposed role.",
+    "SAS–DET must not enter fitting if its target-case development role is adopted.",
+    "No random frame-level split and no reuse of a clip hash to hide overlap in its parent source.",
+    "No independent test game currently exists; designate a separate uninspected game and release rules before final evaluation.",
+    "Existing NFHS split membership, withheld buffers, label authorities and completed results remain unchanged."
+  ],
+  "limitations": [
+    "Curated six-candidate convenience sample, not an unbiased NBA benchmark.",
+    "Complete downloaded files do not establish complete live-possession coverage.",
+    "Candidate source review does not accept NBA roster identity, matchup responsibility, court calibration or trajectories.",
+    "Chosen SAS–DET Q4 opening inbound remains unestablished.",
+    "Source access does not establish underlying distribution or project-use rights."
+  ],
+  "evidence_files": [
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/build_selection_proposal.py",
+      "bytes": 10153,
+      "sha256": "369458f24d8284af862a00896a4f98cbcf8a612e13f4da9e72e3e8bb507f1d4b"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/contracts/audit_prepared_derivatives.py",
+      "bytes": 12534,
+      "sha256": "80e80263d3edd3f4bc6405bb21f66545365236cbb30e611e375812c1a582a8a6"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/contracts/contract_notes.md",
+      "bytes": 11536,
+      "sha256": "99a7198dfe62f6166460beb9305e6101e21000373bf756a850d813a2c559e757"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/contracts/preparation_audit.json",
+      "bytes": 23939,
+      "sha256": "26b2c3acf839f15c188de87ddbd508de29c6fdf86acb425dd4bd2b54e159ed47"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/preparation_preflight_failure.json",
+      "bytes": 366,
+      "sha256": "9c76ca9d54c5a921fa6d4b32c9b78feede1ba8d381e46311f1d1e378ae6753b3"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/prepare_candidates.failed_preflight.py",
+      "bytes": 7882,
+      "sha256": "c72ee9e6a34298f3ab1c3fd7560ccf4d2ffc921a5b3f4e98cb92aab4f48ac6cc"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/prepare_candidates.py",
+      "bytes": 8738,
+      "sha256": "8d805584c3dceeccdc50a3f171ced8f489c94695413b24ca94cdb2cd8c83fd47"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_preparation_receipt.json",
+      "bytes": 12052,
+      "sha256": "9a81863e3915383a4231d5deee50b15a6f543d356d2a36c431586c0d9d8dcf95"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_preparation_started.json",
+      "bytes": 807,
+      "sha256": "a878da749585507ed6e592d2cefabfdda05d9c1ee4f6542239df2af287c05315"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q1_c01/ffprobe.json",
+      "bytes": 2941,
+      "sha256": "89219641628fe6fbd83b67be7ff8ec37d7d541e52affd6e7f8161cb7200c5346"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q1_c01/frame_map.jsonl",
+      "bytes": 362691,
+      "sha256": "c8d77812f35fae8a0dc5f70f4413a5b7ba1c527875cfc9cb8dadb29a40f93e6d"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q1_c01/preparation_receipt.json",
+      "bytes": 3293,
+      "sha256": "aa799ff86a7b90ccb0dc319c86e049d3462a9d84bdca6c95fa67fd292286540d"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q1_c01/preparation_started.json",
+      "bytes": 1680,
+      "sha256": "3d938abc0cd31320f8b789186a26bbbf599d76ffdb4cbc8fb43a020f61028c50"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q1_c01/review_image_manifest.json",
+      "bytes": 30059,
+      "sha256": "d4071df670867509e975c96f2117195b95b0a736dc5af7cee4020518cd7378da"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q1_c01/visual_change_diagnostic.json",
+      "bytes": 2410,
+      "sha256": "25de234031238c692a35aabddadc1352bfc1847e1a80f9d414e2c2ed8d88204f"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q2_c02/ffprobe.json",
+      "bytes": 2942,
+      "sha256": "3af3f1df909a026fa77b7cfb4eaf3a33b56bc44489e1b6175419cd24ab0e9646"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q2_c02/frame_map.jsonl",
+      "bytes": 331468,
+      "sha256": "ed0cd04964c282fbc6871e07b49a790234b4c29749df05b1d8b00c93f4ce8358"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q2_c02/preparation_receipt.json",
+      "bytes": 3322,
+      "sha256": "673368f1dcc97d328dfb5a73cb05cc6f18870d95eba49491577cc9575e3e9b18"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q2_c02/preparation_started.json",
+      "bytes": 1709,
+      "sha256": "5163e907e46091fc47c532998b6340a117414a946226f51f642549e8c0660d6b"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q2_c02/review_image_manifest.json",
+      "bytes": 26896,
+      "sha256": "c92e246ebb3eb119f86bc2a195b112667771467b54f82aadf19a5af8839f4664"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q2_c02/visual_change_diagnostic.json",
+      "bytes": 2442,
+      "sha256": "8e19b0d6399e2203925dbd9c51f5c6e7e7466f4e00d42d776ed1a3e3f1458540"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q3_c03/ffprobe.json",
+      "bytes": 2940,
+      "sha256": "11295e91fa71b0abdb308c95abe2dd47cd7e2a2fc46aab7279aba72e357aa787"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q3_c03/frame_map.jsonl",
+      "bytes": 333866,
+      "sha256": "e79b8a08b100be77a63a14287d3ee3032a53a3cbaba6c8085547251592856cd8"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q3_c03/preparation_receipt.json",
+      "bytes": 3324,
+      "sha256": "cd60b0dda378f0e46d661a4788b56669ff2fb2539c6eae345b8348b329f47041"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q3_c03/preparation_started.json",
+      "bytes": 1711,
+      "sha256": "9aa9670afbb3c0a58d755646b0636826deffaac81bb88eaa0b06bce26ca5a4e7"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q3_c03/review_image_manifest.json",
+      "bytes": 26959,
+      "sha256": "b5d25c5ae584970bda281c3ce2c8cf4d9dc834f505956fe3625f879e4f43f556"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q3_c03/visual_change_diagnostic.json",
+      "bytes": 2455,
+      "sha256": "97e29311c5dcbd42fc4c5cd0aead46c81b1cd0202f76f0d3a119a079f52600a5"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_preparation_receipt.json",
+      "bytes": 11325,
+      "sha256": "fd063e7cca9b3813db117d2d296534165e116311675e0d1a921dc493783f06ab"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_preparation_started.json",
+      "bytes": 806,
+      "sha256": "dadd0057befe94d9972a38f8641b64e4b89a602fd70c035f055e11b774f7116e"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c01/ffprobe.json",
+      "bytes": 2940,
+      "sha256": "165d424ba1bb5353266ad2379c5658113323a75d671a87c5e5d0047a0a6bc52f"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c01/frame_map.jsonl",
+      "bytes": 145969,
+      "sha256": "63d40941edff4692f067f9edd49a60812c315f5dcba7af2569f4b47b3ba93142"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c01/preparation_receipt.json",
+      "bytes": 2868,
+      "sha256": "2e7483cc3d5681f76288bdc1968d10cb654ddbf9942225b5c29f3610797d2e59"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c01/preparation_started.json",
+      "bytes": 1699,
+      "sha256": "0de6c7f58b0438e60bc35ae39ea043b31d27ce1a14d316322ef02a4f433b93cc"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c01/review_image_manifest.json",
+      "bytes": 12225,
+      "sha256": "104de7070c7e82877a61735e6998a7407861ea6fbdc47be69b4c52e37ce03116"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c01/visual_change_diagnostic.json",
+      "bytes": 2415,
+      "sha256": "fb759264e1a9f40c18112ca5a81d5f9df626926032ac39b71bc40c1465a87461"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c02/ffprobe.json",
+      "bytes": 2940,
+      "sha256": "ec59998adb78f32f699ef9f404af31172338b585dd113a46f7f161c9c6ba03bc"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c02/frame_map.jsonl",
+      "bytes": 312338,
+      "sha256": "b9f15dc7b3443882aa7fb34954a18d2e70bb0dc6bfc6d2fff97e4985efac38b2"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c02/preparation_receipt.json",
+      "bytes": 3313,
+      "sha256": "fcdedfdbcc36a367a9b8cfdb0010d822641dc7226c28cd4f79079519322e4586"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c02/preparation_started.json",
+      "bytes": 1700,
+      "sha256": "dbd7473f1be90b5babe1064c7bb529a7b49dac770b73c60a18ad638d3d49acbd"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c02/review_image_manifest.json",
+      "bytes": 25558,
+      "sha256": "e99563c5e2f858f22dd8b52b3475151ba93511cbdb578d6e2b60be5e4ac9a72a"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c02/visual_change_diagnostic.json",
+      "bytes": 2437,
+      "sha256": "770d23e1c56d3f0344ba89a6ee695153ba09b497e9b5c1c32de5333f680ec3b5"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c03/ffprobe.json",
+      "bytes": 2942,
+      "sha256": "82b3fd2cbe38e2b404d462e9223eb919cbc9846791b61bda903a3ef57ab419f2"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c03/frame_map.jsonl",
+      "bytes": 221568,
+      "sha256": "34f04117ff3e95e69bab965aab54181a9d77618a82e1e4fb2b956363a0c3fdda"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c03/preparation_receipt.json",
+      "bytes": 3092,
+      "sha256": "9084f3583f617861337db7a576d010e232904e551c8b3016e93ff33f28925f54"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c03/preparation_started.json",
+      "bytes": 1701,
+      "sha256": "32fe5052c99a039fc74c5208661eb04db90c8a9404ee816b06690cb170a67640"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c03/review_image_manifest.json",
+      "bytes": 18236,
+      "sha256": "ed603cbb0a8b66cc74caa93cf7bd605586958fe370cdd1ea640fc88d8604d2e4"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c03/visual_change_diagnostic.json",
+      "bytes": 2430,
+      "sha256": "5f88018423b6828eb639bed275f8edad8a44220f347980763400d6963e49e010"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/selection_references/c02_visual_review.json",
+      "bytes": 16096,
+      "sha256": "779fcd47152bbffe730bd3c68b2c4dc2c0a0d6cb61a385e3ba50321216f7d488"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/selection_references/sac_mem_visual_review.json",
+      "bytes": 31261,
+      "sha256": "7f665ef8977c9503a67b41ef8c865dccc2a00f8fc7ffca311b7b69fee248c87f"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/selection_references/sac_mem_visual_review_write_failure_001.json",
+      "bytes": 680,
+      "sha256": "630abadf03660cbf2d7042180248583834f81b154fd3c400f431bba205ed6dd1"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/selection_references/sas_det_q1_c01_root_visual_review.json",
+      "bytes": 1446,
+      "sha256": "cd3c2f8cad8e7837385122bb4842fb2a16ce28dce833e99d4c8ef5ebf4690263"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/selection_references/sas_det_q1_c03_root_visual_review.json",
+      "bytes": 1264,
+      "sha256": "c0105b1738b882ce9e681b77affd993289f833f7f35c684250ee875f8f1044d1"
+    },
+    {
+      "path": "data/outputs/t/nba_possession_selection_2026-10-18/selection_references/source_only_candidates.json",
+      "bytes": 26877,
+      "sha256": "0f380b80afbc270fb97a9e3a91541a55ad039b1b164d7b94859e08844e3e8419"
+    }
+  ],
+  "proposed_annotation_frames": 120,
+  "resources": {
+    "review_clips": 6,
+    "source_selected_frames": 12466,
+    "sampled_images": 422,
+    "review_video_bytes": 298291786,
+    "targeted_extraction_and_verification_seconds_by_game": {
+      "sas_det": 128.344,
+      "sac_mem": 181.547
+    },
+    "parallel_lane_count": 2,
+    "encoder_threads_per_lane": 4,
+    "new_network_media_bytes": 0,
+    "repeated_full_game_decodes": 0,
+    "repeated_full_source_hash_passes": 0,
+    "failed_preflight_count": 1,
+    "failed_preflight_media_reads": 0,
+    "new_pipeline_test_suite_runs": 0,
+    "visual_note_writer_preoutput_failures": 1
+  },
+  "existing_access_evidence": [
+    {
+      "path": "docs/research/nba_game_0022500828_acquisition_evidence.json",
+      "bytes": 17737,
+      "sha256": "aae5966e4d8b8abb84f18852acdc5f284926309a10d5a74233a422308de01615"
+    },
+    {
+      "path": "docs/research/nba_footage_repeatability_evidence.json",
+      "bytes": 57509,
+      "sha256": "3f83daba670451817ba71d66433c288ddb9b1142177d1fecd24849e3668222ae"
+    }
+  ]
+}

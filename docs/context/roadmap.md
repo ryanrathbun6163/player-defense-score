@@ -1,5 +1,26 @@
 # Roadmap
 
+## Current data preparation: NBA source candidates and split proposal
+
+Practical access has been demonstrated on three complete NBA recordings.
+Six new source-only candidate clips now have verified original-frame/PTS
+mappings. The [selection plan](../nba_development_selection_plan.md) proposes
+SAC–MEM for future training data, SAS–DET for target-case development and
+SAS–TOR for additional development. None is an untouched independent test.
+
+The primary pair is Sacramento's opening episode and a partial Detroit
+half-court action; the Detroit opening inbound is not established. Ryan's
+source-selection and scientific decision is pending. A proposed 120-frame
+annotation-protocol pilot needs a separate timestamp-aware NBA annotation
+path first; old 25 fps/fixed-window helpers cannot be reused silently. No
+new fit, inference, evaluation or label has occurred. Preserve rejected/limited
+candidates, exact source maps and final-frame review.
+
+This preparation does not replace the existing three-possession NFHS ball
+finish line or promote any method. The completed motion comparison remains
+negative, its three new human reviews remain pending, and all earlier
+completed work remains complete.
+
 ## Current continuation: fixed motion comparison completed; improve visual evidence next
 
 The approved [motion-assisted comparison](../ball_wasb_motion_selection.md)

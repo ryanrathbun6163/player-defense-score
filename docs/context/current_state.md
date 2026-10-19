@@ -1,5 +1,38 @@
 # Current State
 
+## Latest preparation: 2026-10-18 NBA candidates inspected; split/pilot proposed
+
+Six source-only review clips are prepared with exact original-frame and PTS
+mappings: three early SAS–DET candidates and three SAC–MEM quarter-opening
+candidates. Independent checks passed for 12,466 frames, 422 sampled images,
+21 contact sheets and all six review-video hashes. These are muted, lossy
+review derivatives, not label truth. No full-game acquisition/decode, old
+scientific experiment or completed review was repeated.
+
+The proposed first pair is SAC–MEM's opening episode (source frames 540–2010)
+and SAS–DET's partial half-court action (10668–11898). The latter's opening
+inbound is not shown. Other candidates retain camera-cut, overlay or obscured-
+start limitations; no complete-possession or primary-defender certainty is
+invented. See the [selection plan and two primary review clips](../nba_development_selection_plan.md)
+and [non-runnable proposal](../../configs/ball_tracking/selections/nba_development_selection_proposal_v0_1.json).
+
+**Pending scientific decision:** use SAC–MEM as a future training source,
+SAS–DET as target-case development and SAS–TOR as additional development;
+prepare an initial 60-frame native-source annotation pilot from each primary
+clip (120 total) after a timestamp-aware annotation path is implemented.
+All three games remain development-visible; there is no independent test game.
+The roles, source-selection acceptance and pilot are proposed, not approved.
+No labels, model calls, evaluations or training occurred. Native PTS must not
+be silently replaced with the old 25 fps/frame-index timing contract.
+
+**Next concrete action:** Ryan reviews the two primary candidates and decides
+on the proposed allocation/pilot. Then implement and verify a separate NBA
+timing/source-mapping annotation path before creating genuinely unlabeled
+pilot records. No fit or model comparison is authorized by this proposal.
+Existing NFHS holdouts, ball-phase finish line, completed negative motion
+comparison and earlier reviews remain unchanged; three new motion human
+reviews remain pending.
+
 ## Latest access result: 2026-10-18 repeated complete recordings verified
 
 The public replay-to-file route has now produced three specific local NBA
