@@ -2,7 +2,7 @@
 
 Research date: **October 18, 2026, America/Phoenix**. Repository starting point: `codex/ball-detector-baseline`, `10f3d4cfd0ce2f3fce2be898e8f498fc2cb1d4d6`.
 
-**Subsequent authorized acquisition:** the selected recording has now been downloaded and fully decoded. See the [full acquisition report and continuity limits](nba_game_0022500828_acquisition.md). Its SHA-256, 415,953 decoded frames, failed preliminary attempts and new visual checks are recorded there. All four quarters are present, but the opening Q4 inbound is not visually established because the broadcast returns from an interview with play underway. Every-possession continuity and repeatable complete-game access remain unproven. The findings below preserve the earlier research-stage evidence and recommendations.
+**Subsequent authorized acquisitions:** three complete recordings are now local, independently hash-audited and fully decoded. See the [chosen-game report and continuity limits](nba_game_0022500828_acquisition.md) and [two-additional-game repeatability result](nba_footage_repeatability.md). The chosen recording's 415,953 decoded frames, failed preliminary attempts and visual checks are recorded separately from the later Kings–Grizzlies and Spurs–Raptors checks. All four quarters are observed in each; repeated access is demonstrated on these three examples, while entire-season availability and every-possession continuity remain unproven. The chosen game's opening Q4 inbound remains unestablished after its interview transition. The later report preserves the Kings receipt-writing failure/recovery and the Raptors output-timing warning. The findings below preserve the earlier research-stage evidence and recommendations.
 
 ## Initial research finding and recommended action
 

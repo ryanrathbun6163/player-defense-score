@@ -1,6 +1,35 @@
 # Current State
 
-## Latest access result: 2026-10-18 chosen NBA recording acquired and decoded
+## Latest access result: 2026-10-18 repeated complete recordings verified
+
+The public replay-to-file route has now produced three specific local NBA
+recordings. In addition to the chosen Spurs–Pistons game, Kings–Grizzlies
+(`0022500829`, February 23) and Spurs–Raptors (`0022500843`, February 25)
+were acquired at 1920×1080/nominal 60000/1001 fps. Each passed an independent
+assembled-range/full-hash audit and one complete audio/video decode:
+357,233 and 423,838 video frames respectively. Sampled visuals establish the
+correct matchups, all four quarters, opening tips and final results of
+123–114 and 110–107. See the [repeatability report and bound evidence](../research/nba_footage_repeatability.md).
+
+This establishes practical repeated acquisition on these examples, not an
+entire-season supply or every-possession continuity. The files share one
+hosting route. Exact quarter-start coverage remains unproven; Toronto's Q2
+zero/end graphic was not isolated. The chosen game's Q4 opening limitation
+below remains unresolved. The Kings original receipt-writing failure remains
+failed; recovery used existing parts with no redownload. Toronto's full decode
+exited 0 with one preserved output-timing warning and a qualified rounding
+explanation. Cleanup removed only verified duplicate download pieces.
+
+**Next concrete step:** prepare the NBA development-possession selection and
+split plan using the acquired files, then inspect the exact selected intervals
+for complete actions, cuts, replays and useful court views before labeling or
+training. These three inspected games are development-visible; no independent
+game holdout or accepted split has been designated. Existing NFHS holdouts
+remain untouched. Earlier training, evaluations, observations and completed
+reviews remain complete; the negative motion result is unchanged and its
+three new human reviews remain pending. No method or phase gate is promoted.
+
+## Earlier access result: 2026-10-18 chosen NBA recording acquired and decoded
 
 Ryan authorized moving forward after the footage-access research. The selected
 Spurs–Pistons recording is now local at
