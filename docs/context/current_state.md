@@ -1,6 +1,39 @@
 # Current State
 
-## Latest access result: 2026-10-18 exact NBA game samples verified
+## Latest access result: 2026-10-18 chosen NBA recording acquired and decoded
+
+Ryan authorized moving forward after the footage-access research. The selected
+Spurs–Pistons recording is now local at
+`data/raw/nba/0022500828/0022500828_ok_12326019402326_1080p.mp4`:
+6,081,103,430 bytes, 1920×1080, nominal 60000/1001 fps, 1:55:39.509,
+415,953 video frames. SHA-256:
+`27b5143105f5bf3276a2cc51945133c9fdcd2b82d4247d8365110428062ec21f`.
+An independent prefix/range/full-hash audit passed. One complete video/audio
+decode passed with an empty warning/error log. Original transfer interruption,
+failed preflights, consumed resources and their receipts remain preserved.
+
+All four quarters are present. Opening/closing and selected clock/quarter
+checks support practical development-clip selection; **every-possession
+continuity remains unproven**. At the Q4 opening, the broadcast returns from
+a coach interview with play already underway; its opening inbound is not
+visually established and must be excluded from uninterrupted-possession claims.
+The saved scoreboard OCR has substantial
+missingness. Its three clock flags resolve to one actual apparent dead-ball
+clock correction and one OCR mistake that produced two flags. Long OCR gaps
+inspected in the fourth quarter contain visible broadcast content, stoppages
+and live play. These observations are not a claim that all 48 live minutes
+were continuously shown. See the [acquisition report and evidence](../research/nba_game_0022500828_acquisition.md).
+
+**Next access step:** verify additional complete game files before describing
+this route as repeatable. This chosen game, short research clips and repeatable
+full-game access remain separate requirements. Before labeling NBA footage,
+specify the development/split plan and inspect the exact selected possessions
+for cuts, replays and suitable court views. This acquisition used no ball model,
+added no ball labels and repeated no earlier science or completed review.
+Existing holdouts remain untouched; the three new motion-comparison human
+reviews remain pending. No method or phase gate is promoted.
+
+## Earlier access result: 2026-10-18 exact NBA game samples verified
 
 The full handoff and expected clean starting state were confirmed on
 `codex/ball-detector-baseline` at `10f3d4cfd0ce2f3fce2be898e8f498fc2cb1d4d6`.

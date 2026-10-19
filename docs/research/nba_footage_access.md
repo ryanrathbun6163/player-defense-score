@@ -2,7 +2,9 @@
 
 Research date: **October 18, 2026, America/Phoenix**. Repository starting point: `codex/ball-detector-baseline`, `10f3d4cfd0ce2f3fce2be898e8f498fc2cb1d4d6`.
 
-## Finding and recommended action
+**Subsequent authorized acquisition:** the selected recording has now been downloaded and fully decoded. See the [full acquisition report and continuity limits](nba_game_0022500828_acquisition.md). Its SHA-256, 415,953 decoded frames, failed preliminary attempts and new visual checks are recorded there. All four quarters are present, but the opening Q4 inbound is not visually established because the broadcast returns from an interview with play underway. Every-possession continuity and repeatable complete-game access remain unproven. The findings below preserve the earlier research-stage evidence and recommendations.
+
+## Initial research finding and recommended action
 
 **A technically usable source for the exact February 23, 2026 Spurs at Pistons game has been found.** An unofficial replay page leads to a public OK video with an ordinary MP4 endpoint and an HLS stream. Eight small segments were downloaded and decoded locally at 1920×1080, with an encoded frame rate of 60000/1001, approximately 59.94 fps. Visual inspection shows the opening tip in Detroit, action later in the game, and the final Spurs 114–Pistons 103 scoreboard. This materially changes the earlier conclusion that no workable NBA source had been established.
 

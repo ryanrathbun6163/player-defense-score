@@ -1,0 +1,444 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-19T01:27:19.030641+00:00",
+  "game": {
+    "nba_game_id": "0022500828",
+    "date": "2026-02-23",
+    "away": "San Antonio Spurs",
+    "home": "Detroit Pistons",
+    "final_score": {
+      "SAS": 114,
+      "DET": 103
+    }
+  },
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "016a04a8d753793721161d7332a8cd8ffb80e057",
+    "tracked_status": "clean"
+  },
+  "sources": {
+    "replay_page": "https://basketball-video.com/san-antonio-spurs-vs-detroit-pistons-full-game-replay-february-23-2026-nba",
+    "embed": "https://ok.ru/videoembed/12326019402326",
+    "official_gamebook": "https://statsdmz.nba.com/pdfs/20260223/20260223_SASDET_book.pdf",
+    "movie_id": "12326019402326",
+    "content_id": "11318997682774",
+    "variant": "full",
+    "signed_urls_committed": false,
+    "underlying_footage_rights_established": false
+  },
+  "file": {
+    "path": "data/raw/nba/0022500828/0022500828_ok_12326019402326_1080p.mp4",
+    "bytes": 6081103430,
+    "sha256": "27b5143105f5bf3276a2cc51945133c9fdcd2b82d4247d8365110428062ec21f",
+    "format_duration_seconds": 6939.508689,
+    "width": 1920,
+    "height": 1080,
+    "video_codec": "h264",
+    "nominal_fps": "60000/1001",
+    "average_fps": "1534918101/25607525",
+    "decoded_video_frames": 415953,
+    "audio_codec": "aac",
+    "audio_sample_rate": "48000"
+  },
+  "acquisition": {
+    "initial_attempt": "externally_interrupted_original_receipt_preserved",
+    "initial_receipt_bytes": 184549376,
+    "preserved_prefix_bytes": 188743680,
+    "suffix_range_count": 176,
+    "suffix_failed_attempts": 0,
+    "parallel_elapsed_seconds": 835.094,
+    "independent_assembly_status": "passed_local_assembly_audit",
+    "independent_audit_seconds": 6.719,
+    "remote_publisher_checksum_available": false,
+    "duplicate_suffix_bytes_removed": 5892359750.0,
+    "known_media_payload_with_overlap_checks_and_range_probe_bytes": 6081300038,
+    "network_usage_total_known": false
+  },
+  "decode": {
+    "returncode": 0,
+    "frames": 415953,
+    "elapsed_seconds": 150.094,
+    "warning_error_log_bytes": 0,
+    "scoreboard_images": 6933,
+    "overview_images": 694,
+    "complete_full_decode_count": 1,
+    "preflight_failures_before_decode": 2
+  },
+  "packet_timing": {
+    "returncode": 0,
+    "video_packet_count": 415953,
+    "valid_pts_count": 415953,
+    "declared_frame_count": 415953,
+    "missing_fields": {
+      "duration": 1
+    },
+    "missing_field_rows": [
+      {
+        "row": 415953,
+        "missing_field": "duration",
+        "raw": [
+          "6939.491689",
+          "6939.475689",
+          "N/A",
+          "___"
+        ]
+      }
+    ],
+    "nonincreasing_dts_count": 0,
+    "first_pts": 0.033,
+    "last_pts": 6939.508689,
+    "presentation_delta_seconds_histogram": {
+      "0.026689": 1,
+      "0.016000": 131718,
+      "0.017000": 284233
+    },
+    "packet_duration_counts": {
+      "0.026689": 1,
+      "0.016": 131718,
+      "0.017": 284233
+    },
+    "minimum_presentation_step": 0.01599999999962165,
+    "maximum_presentation_step": 0.026688999999999997,
+    "nonpositive_or_over_20ms_steps": [
+      {
+        "previous_pts": 0.033,
+        "next_pts": 0.059689,
+        "delta_seconds": 0.026688999999999997
+      }
+    ],
+    "keyframe_count": 1157,
+    "note": "Observed timestamps are millisecond-quantized despite90kHz container timebase. Missing duration is not missing PTS. Timing regularity cannot establish absence of edits in the broadcast."
+  },
+  "ocr": {
+    "records": 6933,
+    "written": 6933,
+    "ok": 5554,
+    "empty": 1379,
+    "errors": 0,
+    "elapsed_seconds": 406.126,
+    "full_manifest_metadata_bindings_checked": 6933,
+    "confidence_available": false
+  },
+  "continuity_diagnostic": {
+    "parsed_quarter_clock_pairs": 2781,
+    "quarter_summary": [
+      {
+        "quarter": 1,
+        "parsed_pair_observations": 558,
+        "first_video_time": 16.058689,
+        "last_video_time": 1352.393689,
+        "minimum_clock": 3.8,
+        "maximum_clock": 715,
+        "distinct_integer_clock_buckets_observed": 408,
+        "note": "Clock observations only; not measured live-play coverage"
+      },
+      {
+        "quarter": 2,
+        "parsed_pair_observations": 629,
+        "first_video_time": 1461.502689,
+        "last_video_time": 2937.977689,
+        "minimum_clock": 14.6,
+        "maximum_clock": 720,
+        "distinct_integer_clock_buckets_observed": 368,
+        "note": "Clock observations only; not measured live-play coverage"
+      },
+      {
+        "quarter": 3,
+        "parsed_pair_observations": 845,
+        "first_video_time": 3124.163689,
+        "last_video_time": 4792.830689,
+        "minimum_clock": 4.5,
+        "maximum_clock": 716,
+        "distinct_integer_clock_buckets_observed": 467,
+        "note": "Clock observations only; not measured live-play coverage"
+      },
+      {
+        "quarter": 4,
+        "parsed_pair_observations": 749,
+        "first_video_time": 4874.912689,
+        "last_video_time": 6879.915689,
+        "minimum_clock": 44.8,
+        "maximum_clock": 712,
+        "distinct_integer_clock_buckets_observed": 402,
+        "note": "Clock observations only; not measured live-play coverage"
+      }
+    ],
+    "suspicious_raw_pair_count": 3,
+    "quarter_transition_candidates": [
+      {
+        "from_quarter": 1,
+        "to_quarter": 2,
+        "video_bound_start": 1352.393689,
+        "video_bound_end": 1461.502689,
+        "last_old_clock": 3.8,
+        "first_new_clock": 720,
+        "expected_next_quarter": true,
+        "near_both_period_edges": true,
+        "interpretation": "Bounds from stable OCR runs, not verified exact edit/period boundary"
+      },
+      {
+        "from_quarter": 2,
+        "to_quarter": 3,
+        "video_bound_start": 2937.977689,
+        "video_bound_end": 3124.163689,
+        "last_old_clock": 14.6,
+        "first_new_clock": 716,
+        "expected_next_quarter": true,
+        "near_both_period_edges": true,
+        "interpretation": "Bounds from stable OCR runs, not verified exact edit/period boundary"
+      },
+      {
+        "from_quarter": 3,
+        "to_quarter": 4,
+        "video_bound_start": 4792.830689,
+        "video_bound_end": 4874.912689,
+        "last_old_clock": 4.5,
+        "first_new_clock": 712,
+        "expected_next_quarter": true,
+        "near_both_period_edges": true,
+        "interpretation": "Bounds from stable OCR runs, not verified exact edit/period boundary"
+      }
+    ],
+    "clock_pair_missing_intervals_count": 366,
+    "largest_clock_pair_gap_seconds": 186.18600000000015,
+    "anchors_with_any_clock_candidate": 31,
+    "anchors_with_score_after_candidate": 2,
+    "all_possessions_complete": null
+  },
+  "coverage_assessment": {
+    "four_quarters_present": true,
+    "all_possessions_complete": null,
+    "q4_opening_inbound_visually_established": false,
+    "q4_interview_last_sample_pts": 4868.022689,
+    "q4_dissolve_sample_pts": 4869.023689,
+    "q4_clear_court_sample_pts": 4870.024689,
+    "q4_first_clear_scorebug_sample": {
+      "pts": 4874.028689,
+      "clock": "11:53"
+    },
+    "meaning": "Usable chosen-game recording; Q4 opening broadcast view is limited, every-possession continuity unproven; sparse OCR/visual checks do not certify48 live minutes."
+  },
+  "scope": {
+    "new_nba_source_development_visible": true,
+    "existing_holdouts_opened": false,
+    "ball_model_calls": 0,
+    "training_runs": 0,
+    "ball_labels_added": 0,
+    "completed_reviews_repeated": false,
+    "new_motion_human_reviews_pending": 3,
+    "additional_complete_games_acquired": 0,
+    "repeatable_full_game_access_established": false
+  },
+  "evidence_files": [
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/acquisition_receipt.json",
+      "bytes": 1849,
+      "sha256": "b9b5f473ac8d2f638cfaf1ee904b1a4f56c95944f289ae39c6ddd914322d732d"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/interrupted_sequential_processes.json",
+      "bytes": 500,
+      "sha256": "c0896356f7d3a1e23c534b669bec83a8ca8dcc9719e541cf04873446c0182fa0"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/parallel_acquisition_receipt.json",
+      "bytes": 137166,
+      "sha256": "a9920aad45823fd800db1979fcd8dea178f93d9da8eca5bb7ceb5f338ea774b3"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/independent_audit/assembly_audit.json",
+      "bytes": 91561,
+      "sha256": "0c1b1b41d86c30fd8248662b39efee2123fc3c133e1b625fb0ccbe406f0ee302"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/successful_range_cleanup.json",
+      "bytes": 54718,
+      "sha256": "76f1df945e0a6f7682fbf2eca48cb5f5df87ce10110b56fc9512e56e4c00c27b"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/full_verification/ffprobe.json",
+      "bytes": 4633,
+      "sha256": "e616aa1b5080018123e0e64f490afce8d1df6b8a5d81022aa90f8affc4b24fca"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/full_verification/verification_receipt.json",
+      "bytes": 6913,
+      "sha256": "b11a9f64dc1d926a216c0d7a47efb645a78c08bde4b25bad92c9cf0013211ebb"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/full_verification/verification_receipt_v1_preflight.json",
+      "bytes": 342,
+      "sha256": "188b7d14423080388b773e20f4a1372d335a35c8942639bc411abdd51e21a12f"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/full_verification/verification_receipt_v2_preflight.json",
+      "bytes": 4891,
+      "sha256": "dd67158bf572811076d53f42dc3be8a2efa9dd7d0826a9b9a6a01b173b1d22c2"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/full_verification/packet_timing_audit_v3.json",
+      "bytes": 1179,
+      "sha256": "b0e2121de59b76a5f5f68fa01cadce2262223a7f0161437f6b749f719bb7d9e4"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/full_verification/ocr_manifest.jsonl",
+      "bytes": 2707837,
+      "sha256": "dca7d062baedc8701949ecef82a811a25842bea411af2354c093a3f0a3f3aa5e"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/full_verification/overview_manifest.jsonl",
+      "bytes": 266194,
+      "sha256": "5a531255fc3b8966315a2021e6bf882bfb127c767bea94f61fc75e983069f287"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/ocr/full_scoreboard_ocr.jsonl",
+      "bytes": 17465223,
+      "sha256": "5fd82af44914a7a9d98a24bb81af41601f0d90c5c85b1e51a0a6802d4cec48c9"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/ocr/full_scoreboard_ocr_summary.json",
+      "bytes": 1942,
+      "sha256": "d0d983153c95845e211d1c1a502542a05f9aec86135bc8ba82021869a1d24ef1"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/continuity/run_001/summary.json",
+      "bytes": 10021,
+      "sha256": "1c6868143bbbf8293fdb89086c21981ca5cd886ee1e182ba5bc1c3263c4bb17a"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/continuity/run_001/suspicious_pairs.json",
+      "bytes": 1711,
+      "sha256": "72944dc0382b910e675567eb9bd4d9c987aa3b339df5afa6e5b1cf22d1e4ee3f"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/continuity/run_001/clock_observation_gaps.json",
+      "bytes": 113412,
+      "sha256": "e878910eb3229f14ec2a02da0bab6d815331bd6a1e628dcccee62154d2806f81"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/continuity/run_001/official_anchor_candidates.json",
+      "bytes": 219296,
+      "sha256": "f23f4e428e85fa301a725a490899f68e220489b1ac16497b0b98a2ce1bc43ade"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/official_timeline/continuity_anchors.json",
+      "bytes": 28799,
+      "sha256": "e3feac0e40b74ac4e789765932c87b0dbb5673f881c069fae05e4b641f9a552c"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/official_timeline/gamebook_chronological_events.json",
+      "bytes": 266133,
+      "sha256": "b48774811757b5ff3bb7730d6ecd4693b42587cfa001cbfb0429299c9186f608"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/official_timeline/source_receipt.json",
+      "bytes": 3766,
+      "sha256": "ef087154c22164f6fcbc9d419c2455490d71a499ca6922b38d8ca03a06e16475"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/continuity/run_001/manual_review_history_1.json",
+      "bytes": 3531,
+      "sha256": "7056fcb4b53b5fa59f3f4d5963ead635a399e6615f3167e71a33d554149b60b2"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/continuity/run_001/manual_review_history_1.md",
+      "bytes": 2442,
+      "sha256": "3836991c5692e124cbe914905b61eb8004fc322352cd467f272c4ca773b2c89c"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/acquire_game.py",
+      "bytes": 8474,
+      "sha256": "0fda46d146b56e4c09240678d6a8906a0d431519822e295b163c6f194b1c98b4"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/parallel_acquire.py",
+      "bytes": 7318,
+      "sha256": "63a90cb55146cc5370fbc5fe7089e3d5b9a84d46ae133fafd8a6c07c4d8c0f77"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/verify_full_file.py",
+      "bytes": 6976,
+      "sha256": "9f6570cb1739f1a9e1b44d1fc5ca1c48afebde824dd9c0a69021043d01bc0623"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/verify_full_file_v2.py",
+      "bytes": 7806,
+      "sha256": "d63e902753493472f92dc90cc8c0918de9cbb0649a7c27662f76965bde27fe19"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/verify_full_file_v3.py",
+      "bytes": 6493,
+      "sha256": "8a899e76fdab622fd1800d53058050eba5b01bc3116fa0d2124fa3447313d5a5"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/ocr/windows_scoreboard_ocr.ps1",
+      "bytes": 18289,
+      "sha256": "cd5d0806b29d5d3ec735de65718ae8cc2863b63ea01547fe25d030fbf1b585b9"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/continuity/analyze_scoreboard_ocr.py",
+      "bytes": 25021,
+      "sha256": "0b60cc74a870e031990e03cbc70da5886a2a5ef786fe85f98442a3c57b58bf17"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/build_sanitized_evidence.py",
+      "bytes": 8766,
+      "sha256": "9e5296951d70324437bcfa14844036aa720ba6440a8b34947b0cc92427d9ecbe"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/visual_boundary_audit/dense_boundary_contact_receipt.json",
+      "bytes": 36703,
+      "sha256": "ca4a60917caf4d293f168b55fa0b2b81fb318c86d31fcf94ea8f568f204b633d"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/visual_boundary_audit/endpoint_visual_review.json",
+      "bytes": 13472,
+      "sha256": "e96705eb3102a516389086e78628a715fecd68a3b5d8845cbdfe9b1d1ab44498"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/visual_boundary_audit/first_last_extraction_receipt.json",
+      "bytes": 6910,
+      "sha256": "f4dbbb88c0f60c270d5d194bbad2b9618ed2f0f3bf30f85ee1a5f1318301820e"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/visual_boundary_audit/period_opening_extraction_receipt.json",
+      "bytes": 18638,
+      "sha256": "cf47ef236b68fdc14218ded721aae1025d10864b253e956f36af0b32e6f318df"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/visual_boundary_audit/quarter_boundary_visual_review.json",
+      "bytes": 28922,
+      "sha256": "d4c736b8edb1a7757923934c6f1ef44fdb29435383e381210c9058a4eec9d806"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/visual_boundary_audit/quarter_contact_receipt.json",
+      "bytes": 27673,
+      "sha256": "74de2dee09feaf6d790ef7ca23892e33cfb12e9844d11e4849729d853a6654ca"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/visual_boundary_audit/start_end_contact_sources.json",
+      "bytes": 7469,
+      "sha256": "74f129f0331d1616a71f87b506dd8fab79dcece8bf9aca94a81aa6d3084792a5"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/continuity/visual_review/largest_gap_contact_sources.json",
+      "bytes": 22495,
+      "sha256": "3a0a5422e252424ac10b5172b9dfcb4a5392881938b512049fcf266e7b6f0e61"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/continuity/visual_review/largest_gap_visual_review.json",
+      "bytes": 2625,
+      "sha256": "b69f08c330021f02170d2dd3f54d8baa1696d3ed76bda9863a86c045789f517b"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/continuity/visual_review/q2_flag_contact_sources.json",
+      "bytes": 7632,
+      "sha256": "aa60f43ca977bdb7565129cdc274f3f89226e241d06bde7e90d7d663774a3e5a"
+    },
+    {
+      "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/continuity/visual_review/q2_flag_review.json",
+      "bytes": 23637,
+      "sha256": "0ed2d575cb6e2ce72f03f9c368958be548104c82c7a9f110ddde1ecdc607f2da"
+    }
+  ]
+}
