@@ -1,5 +1,17 @@
 # NBA source selection and proposed development split
 
+## Approval recorded October 18, 2026
+
+Ryan replied, “Yes I approve. Move forward chat,” to the concrete allocation and
+120-frame pilot. The [approval record](../configs/ball_tracking/reviews/nba_development_selection_approval_v0_1.json)
+binds the unchanged proposal and exact two intervals. This approves the selected
+source use, game roles and annotation pilot, including the native-timestamp
+workflow needed to prepare it. Training/evaluation, completed label review,
+player identity, matchup responsibility and court calibration are not implied.
+The proposal below remains preserved as the pre-approval record.
+
+## Original proposal
+
 Prepared October 18, 2026, America/Phoenix, from clean branch `codex/ball-detector-baseline` at `cd8defc3d08a5e54a05db15e1ed64b6ef93a65b6`.
 
 ## Result and decision

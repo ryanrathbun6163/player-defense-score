@@ -1,5 +1,36 @@
 # Current State
 
+## Latest increment: 2026-10-18 approved NBA pilot ready for annotation
+
+Ryan explicitly approved the proposed game allocation and two-clip, 120-frame
+pilot: “Yes I approve. Move forward chat.” The new [approval record](../../configs/ball_tracking/reviews/nba_development_selection_approval_v0_1.json)
+binds the preserved proposal. SAC–MEM is the future-training candidate pool;
+SAS–DET is target-case development; SAS–TOR is additional development. No
+independent test game or new fit/evaluation is authorized.
+
+The separate native-timestamp annotation workflow is implemented. Original
+source frames 660–719 (SAC) and 10788–10847 (DET) now exist as 120 lossless RGB
+PNGs with exact integer PTS and genuinely unlabeled drafts. Extraction and an
+independent bounded decode agree on every frame's source PTS and RGB pixels.
+No full recording hash/decode was repeated. Frozen NFHS helpers are unchanged.
+
+The local browser editor loads one image at a time, supports zoom and original-
+pixel placement, validates uncertainty/missingness, saves atomically with prior
+snapshots, and rejects stale revisions or changed provenance. Twelve schema,
+three synthetic extraction and twelve current editor checks passed. Synthetic
+browser save/reload and real first/final-frame loading were checked. A browser
+automation timeout after a synthetic unsaved-change dialog remains recorded.
+
+**Next concrete action:** Ryan labels the two pilots in the open editor using
+the [native annotation guide](../nba_native_annotation_guide.md), then reviews
+the completed labels and actual final frames. The 120 real rows were still
+unlabeled at preparation verification; no model, training or evaluation ran.
+Source-use approval does not accept labels, complete possession boundaries,
+NBA identity, defensive responsibility or calibration. The Detroit opening
+inbound remains unseen. Existing NFHS holdouts and completed reviews remain
+unchanged; the negative motion comparison stands and its three new human
+reviews remain pending.
+
 ## Latest preparation: 2026-10-18 NBA candidates inspected; split/pilot proposed
 
 Six source-only review clips are prepared with exact original-frame and PTS

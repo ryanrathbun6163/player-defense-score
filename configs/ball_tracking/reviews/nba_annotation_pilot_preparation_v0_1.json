@@ -1,0 +1,170 @@
+{
+  "schema_version": "nba_annotation_pilot_preparation/v0.1",
+  "status": "prepared_unlabeled_editor_ready",
+  "recorded_at_utc": "2026-10-19T03:07:12.054417+00:00",
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "4b28a9fae467fae715ed5a8c52e4f6bb85ecd9a1",
+    "index_worktree": "clean"
+  },
+  "approval": {
+    "path": "configs/ball_tracking/reviews/nba_development_selection_approval_v0_1.json",
+    "bytes": 4950,
+    "sha256": "ec758838bae5d613c7a67bef0a8560d6cb7805141fe2511120469615240cf122"
+  },
+  "initial_draft_binding_semantics": "These hashes bind initially blank drafts. Actual human saves must change draft bytes and retain prior versions; these are not reviewed-label hashes.",
+  "pilots": [
+    {
+      "candidate_id": "sac_mem_q1_c01",
+      "initial_draft": {
+        "path": "data/outputs/ball_tracking/nba/annotation_pilot_v0_1/sac_mem_q1_c01/annotations.json",
+        "bytes": 42024,
+        "sha256": "d22e437800d682729be1488fa54d03d7d6b4589e181f3eff479e42693aa51d63"
+      },
+      "preparation_started": {
+        "path": "data/outputs/ball_tracking/nba/annotation_pilot_v0_1/sac_mem_q1_c01/preparation_started.json",
+        "bytes": 2413,
+        "sha256": "fe786973b93f8864629bfc80344fa6d28de3a7dcc5f65ec34b662b9b27cef66b"
+      },
+      "preparation_receipt": {
+        "path": "data/outputs/ball_tracking/nba/annotation_pilot_v0_1/sac_mem_q1_c01/preparation_receipt.json",
+        "bytes": 1040,
+        "sha256": "b93dfdce73711ea9cf0158a718c9cb177aaa62b56cb594feecf4a7815d3f5a28"
+      },
+      "source_rgb_framehash": {
+        "path": "data/outputs/ball_tracking/nba/annotation_pilot_v0_1/sac_mem_q1_c01/source_rgb_framehash.txt",
+        "bytes": 6942,
+        "sha256": "3892cbe1cbd6fee25a659bb70ad489945b22014954ab6479e6fa001be201d1b7"
+      },
+      "frames": 60,
+      "png_bytes": 128499250,
+      "elapsed_seconds": 6.921,
+      "source_frame_range_inclusive": [
+        660,
+        719
+      ],
+      "source_pts_ticks_inclusive": [
+        996362,
+        1084922
+      ]
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "initial_draft": {
+        "path": "data/outputs/ball_tracking/nba/annotation_pilot_v0_1/sas_det_q1_c02/annotations.json",
+        "bytes": 42320,
+        "sha256": "1cddb3b97ac1b2e34aba19963ae8a67bf420b15364601d5b4bacd4a3d9972d50"
+      },
+      "preparation_started": {
+        "path": "data/outputs/ball_tracking/nba/annotation_pilot_v0_1/sas_det_q1_c02/preparation_started.json",
+        "bytes": 2444,
+        "sha256": "100ce3d18baabac383d2b5174c03622da6bad231b9c08dc75c1a4e55aa28e0e0"
+      },
+      "preparation_receipt": {
+        "path": "data/outputs/ball_tracking/nba/annotation_pilot_v0_1/sas_det_q1_c02/preparation_receipt.json",
+        "bytes": 1040,
+        "sha256": "8cea47646ca489a4ad4c9f46c5ea039cec3ff706206c3de5e97a55a1c386702c"
+      },
+      "source_rgb_framehash": {
+        "path": "data/outputs/ball_tracking/nba/annotation_pilot_v0_1/sas_det_q1_c02/source_rgb_framehash.txt",
+        "bytes": 6942,
+        "sha256": "2c2ba21afd33ba3fe3ec5a902b016c4b5ea56110730dc6dbf4328f53fb3b758e"
+      },
+      "frames": 60,
+      "png_bytes": 145239427,
+      "elapsed_seconds": 6.922,
+      "source_frame_range_inclusive": [
+        10788,
+        10847
+      ],
+      "source_pts_ticks_inclusive": [
+        16202042,
+        16290602
+      ]
+    }
+  ],
+  "totals": {
+    "frames": 120,
+    "png_bytes": 273738677,
+    "preparation_attempts": 2,
+    "preparation_failures": 0,
+    "human_labels_created": 0,
+    "model_calls": 0,
+    "training_runs": 0,
+    "evaluation_runs": 0,
+    "repeated_full_source_hashes": 0,
+    "repeated_full_source_decodes": 0,
+    "old_holdout_pixels_opened": 0
+  },
+  "independent_source_audit": {
+    "path": "data/outputs/t/nba_native_annotation_2026-10-18/independent_source_audit/summary.json",
+    "bytes": 1691,
+    "sha256": "509900e589977cc0cbbd5b89f616114d9b42dc0d1723b6751d8e046bca2457d9"
+  },
+  "code_review_current": {
+    "path": "data/outputs/t/nba_native_annotation_2026-10-18/independent_source_audit/code_review.json",
+    "bytes": 4563,
+    "sha256": "b2bdba1b186b523ca25b18b33ca180f594cb2a12b9906175f4d7808954a36f56"
+  },
+  "earlier_code_review_and_schema_tests": {
+    "path": "data/outputs/t/nba_native_annotation_2026-10-18/code_review_history_1.json",
+    "bytes": 3569,
+    "sha256": "144268c3438d5b90135fa8e761d381dd9d143741a62f636d11abe8ffa393e05e"
+  },
+  "editor_test_history": {
+    "path": "data/outputs/t/nba_native_annotation_2026-10-18/editor_check_history_2.json",
+    "bytes": 2263,
+    "sha256": "5847640f1d22ef921bd98874e78467b7c18fb3b12703a0688cea766eaf8bafd6"
+  },
+  "browser_verification": {
+    "path": "data/outputs/t/nba_native_annotation_2026-10-18/browser_verification.json",
+    "bytes": 2680,
+    "sha256": "95c941e35c64aa1c31c2979820ac2e40074742fa2222776f13cf00beda211dd0"
+  },
+  "implementation": [
+    {
+      "path": "src/ball_tracking/nba_annotations.py",
+      "bytes": 21792,
+      "sha256": "5dd7af0ae4bcf666c3f09c4932c73f69766bf913781ff164fa9728a6e0762ea1"
+    },
+    {
+      "path": "src/ball_tracking/prepare_nba_annotation_pilot.py",
+      "bytes": 14072,
+      "sha256": "56b410d851cc7989623e8a7e1c3d4ee2cb5219ea0f54b43f0bb380633b18da6f"
+    },
+    {
+      "path": "src/ball_tracking/annotate_nba_frames.py",
+      "bytes": 13204,
+      "sha256": "2892381eae27a827bade87e00bee3df817575258f4d19053531718e6da43f818"
+    },
+    {
+      "path": "src/ball_tracking/nba_annotation_editor.html",
+      "bytes": 18674,
+      "sha256": "588dc3eb71c7c9c77bfeb31204283a380d484423ec6cb41bc58cfca68363590a"
+    },
+    {
+      "path": "tests/test_nba_annotations.py",
+      "bytes": 16966,
+      "sha256": "5e2a3f6b7a3e50da0d1202e18c901b0652651703428f471802d2d66765e5c72d"
+    },
+    {
+      "path": "tests/test_nba_annotation_preparation.py",
+      "bytes": 6197,
+      "sha256": "dc92fea81614b6f424209ba0f22d91c58f907d9150e64f793c1359838cef327e"
+    },
+    {
+      "path": "tests/test_nba_annotation_editor.py",
+      "bytes": 12863,
+      "sha256": "0523effb192710c4ddbeea91f327f2307ef6ccfbe258c2e011bdaa9acb67d635"
+    }
+  ],
+  "limitations": [
+    "Single-annotator pilot workflow; no NBA ball labels or human label review completed.",
+    "Independent RGB verification shares the installed FFmpeg codec/conversion implementation but uses a separate process, earlier seek, direct filter path, cached packet parser and PNG hash consumer.",
+    "Completed full-source SHA reused with unchanged size and modification time; no new full-source hash claim.",
+    "120 curated frames do not establish representative accuracy, full-possession coverage or reliable trajectories.",
+    "Three motion-comparison human reviews remain pending; old results, reviews and NFHS holdouts remain unchanged.",
+    "Synthetic browser confirmation appeared but subsequent browser-control timeouts prevented full cancellation observation; those failures are retained."
+  ],
+  "next_action": "Ryan labels both approved pilots in the editor; then prepare and perform explicit source-faithful visual label review before fitting or evaluation."
+}

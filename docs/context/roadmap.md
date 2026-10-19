@@ -1,5 +1,20 @@
 # Roadmap
 
+## Current action: annotate the approved native-frame NBA pilot
+
+Ryan approved the allocation and 120-frame pilot. The [native annotation guide](../nba_native_annotation_guide.md)
+describes the prepared SAC 660–719 and DET 10788–10847 blocks and open browser
+editor. All original PTS and RGB pixels passed preparation and independent
+bounded-source checks. The separate schema/editor preserves game roles,
+uncertainty and draft history while leaving frozen NFHS tools unchanged.
+
+Complete the prediction-free human labels, render/review their source-faithful
+overlays and actual last frames, then record explicit human acceptance. A
+training recipe, model cadence, fit, NBA evaluation and independent test set
+remain later decisions. Do not treat this one-second-per-source protocol pilot
+as a benchmark or replacement for full-episode trajectory review. The existing
+NFHS ball finish line, protected holdouts and pending motion reviews stand.
+
 ## Current data preparation: NBA source candidates and split proposal
 
 Practical access has been demonstrated on three complete NBA recordings.

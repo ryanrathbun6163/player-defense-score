@@ -1,5 +1,32 @@
 # Validation History
 
+## 2026-10-18: NBA native-timestamp annotation preparation and editor
+
+The separate NBA path passed 12 schema/save checks (0.436 s), three actual
+synthetic H264/FFmpeg extraction checks (0.161 s), and 12 current HTTP/editor
+checks (1.195 s). An earlier 11-check editor run passed in 1.481 s before the
+session provenance guard was added; do not apply that earlier run to the later
+guard. Synthetic fixtures use actual producer-shaped native PTS records and
+real emitted FFmpeg/HTTP records. No frozen NFHS module changed and no full
+suite or earlier scientific experiment was rerun.
+
+Both approved 60-frame extractions completed once, with exact source PTS and
+RGB PNG equality, empty FFmpeg logs and unchanged original source size/mtime.
+A separate independent earlier-seek verification passed for all 120 frames.
+Its two original-source reads were explicitly bounded to 13 seconds each;
+FFmpeg elapsed time totaled 4.656 seconds. No full-source hash or decode pass,
+old holdout access, model call, fit or evaluation occurred.
+
+Root browser QA saved and reloaded one synthetic label and verified that the
+next frame stayed blank. The unsaved-change confirmation appeared, followed by
+browser-control timeouts; those tooling failures and the unobserved cancellation
+result remain recorded. A fresh real workspace loaded both pilots through their
+actual last frames, with every real annotation still unlabeled and no annotator
+identity invented. The synthetic server was stopped deliberately. Root and two
+independent code reviews found no open material issue. See the [guide and bound
+preparation record](../nba_native_annotation_guide.md) for files, limitations and
+next human annotation/review work.
+
 ## 2026-10-08: fixed motion comparison completed and audited without scientific retry
 
 Implementation commit `915ba13c2910efa7f875cb251b7bc049790d1df3` adds a frozen
