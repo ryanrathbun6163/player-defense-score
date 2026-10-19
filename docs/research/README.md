@@ -1,10 +1,14 @@
 # Sports video tracking research for Player Defense Score
 
+**October 18 footage-access investigation:** start with [NBA footage access](nba_footage_access.md) for the current acquisition priority. This new collection contains a decision report, three detailed chapters and a [134-record source ledger](nba_footage_access_sources.json) covering 156 distinct source URLs. The exact February 23 Spurs–Pistons source has eight decoded 1080p/59.94 fps samples; a full local game and continuous coverage are not yet verified. A complete small BARD NBA clip was acquired. The report also resolves the original NFHS source through the migration archive and records alternative full-game routes, failed checks and the next concrete acquisition step.
+
+The October 8 research below remains historical rationale. Its recommended WASB work and subsequent motion comparison have already been performed; do not repeat them merely to resume. The [current state](../context/current_state.md) and completed local results take precedence.
+
 Research date: **2026-10-08**. Start with [the implementation recommendations](recommendations.md), then use the detailed chapters and source ledgers below. This collection records researched evidence and engineering judgments. No external model was run or promoted by this research.
 
 **Subsequent local evidence:** the [WASB transfer comparison](../ball_wasb_transfer_results.md) has now run successfully on the six development windows. At its published heatmap threshold it is too sparse to replace RF. The research below remains the pre-experiment rationale; use the local result when making the next choice.
 
-The collection contains **eight narrative documents and four source ledgers**, with **269 source records covering 265 distinct URLs**. Records include papers, implementation files, benchmark documentation and artifact terms; these are not 269 reproduced studies. Inspection depth and unresolved questions are recorded beside the sources.
+The original October 8 collection contains **eight narrative documents and four source ledgers**, with **269 source records covering 265 distinct URLs**. Records include papers, implementation files, benchmark documentation and artifact terms; these are not 269 reproduced studies. Inspection depth and unresolved questions are recorded beside the sources. The separate October 18 footage collection is counted above.
 
 ## The practical conclusion
 

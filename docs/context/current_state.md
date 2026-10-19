@@ -1,5 +1,49 @@
 # Current State
 
+## Latest access result: 2026-10-18 exact NBA game samples verified
+
+The full handoff and expected clean starting state were confirmed on
+`codex/ball-detector-baseline` at `10f3d4cfd0ce2f3fce2be898e8f498fc2cb1d4d6`.
+Ryan then requested a broad, in-depth footage-access investigation, explicitly
+including unofficial sources. The [decision report](../research/nba_footage_access.md),
+three detailed chapters and source ledger preserve that investigation.
+
+An exact-game replay page leads to public OK video `12326019402326`. Eight
+downloaded segments decode at 1920×1080 and 60000/1001 fps, showing the opening
+tip through the final Spurs 114–Pistons 103 scoreboard. These samples and their
+playlist consumed 52,881,180 payload bytes. The full MP4 endpoint declares
+6,081,103,430 bytes, but **the complete file has not been downloaded and
+continuous game coverage is unverified**. A separate MEGA candidate has live
+metadata and a 5,289,752,196-byte binary endpoint; its media is unverified.
+Two additional games have live replay-to-MP4 endpoints, which is promising
+access evidence, not completed repeatable full-game acquisition.
+
+A separate BARD Brooklyn–Detroit event clip was completely acquired and decoded:
+5,867,901 bytes, 1280×720, 60 fps, 473 frames including the final frame. It is a
+short research clip, not a full possession or the chosen game. Inf-Stream also
+exposes historical game-length NBA files with verified public headers; sampled
+containers are 720p/24 fps. This fixed corpus does not establish current-game
+availability. Public availability does not establish underlying footage rights.
+
+Ryan recalled that the assistant supplied the original `playon_full_game.mp4`.
+The migrated first transcript confirms the public PlayOn NFHS sample HLS and
+FFmpeg download command; no PlayOn Home/Cloud recording product was involved.
+The historical user terminal records the same 4,849,555,188-byte size as the
+current raw file. No old source pixels or protected ranges were inspected.
+
+**Next access step:** acquire the selected 6.08 GB source into a new ignored,
+game-scoped raw directory, verify bytes/hash and full decoding, then audit all
+quarter boundaries and game-clock coverage. Verify additional complete games
+before claiming repeatability. Do this before further labeling or training.
+The three requirements—research clips, this exact game and repeatable complete
+games—remain separate. No source or dataset was accepted as a new benchmark.
+
+The prior OBS failure remains failed. A new sample-thumbnail helper failure
+and its local recovery are both preserved in the ignored research evidence.
+No scientific run, prior review, holdout or full test suite was repeated.
+The motion comparison below stays complete and negative; **its three new
+human reviews remain pending**, and all earlier completed reviews stay complete.
+
 ## Latest result: 2026-10-08 fixed motion comparison completed; do not promote
 
 Ryan approved one candidate-only comparison with "Yes move forward". The fixed
