@@ -25,7 +25,53 @@ but their lossy pixels are not the annotation authority. Source image geometry
 is unchanged; the PNGs preserve the exact RGB pixels from the recorded FFmpeg
 software decode/conversion.
 
-## Use the editor
+## Default workflow: assistant first pass, Ryan reviews
+
+Ryan's October 18 workflow clarification replaces the all-manual starting plan.
+The assistant inspects every approved native frame, proposes labels with
+uncertainty, checks the records and prepares short source-plus-zoom overlays.
+Ryan reviews the complete short clips and highlighted difficult cases, including
+each actual final frame. Corrections can be requested by source frame number;
+the assistant carries them out and preserves the previous proposal.
+
+These are explicitly AI-authored proposals, separate from the original human
+editor drafts. They are not accepted reference labels and must not be reported
+as independently human-labeled data. A completed first pass is followed by
+explicit human acceptance; a plausible-looking overlay alone does not establish
+accuracy. Hidden or indefensible centers stay missing. The existing editor is
+still available for direct manual annotation when useful.
+
+The first assisted batch is ready in
+`data/outputs/ball_tracking/nba/assisted_pilot_v0_1/index.html`. Its two candidate
+directories each contain `review.mp4`, `index.html`, `proposal.json`, all 60
+source-plus-zoom overlays, a frame manifest and a preparation receipt. Each
+video shows the 60 source frames at six frames per second followed by a
+one-second final-frame hold. This deliberate slow playback is not evidence of
+the original temporal cadence. The underlying original PTS remain intact.
+
+SAC proposals contain 57 fully visible and three partly covered balls, with
+priority frames 660–662 and 674–675. DET proposals contain 14 fully visible and
+46 partly covered balls, with priority frames 10788, 10791, 10833–10835, 10840
+and 10846–10847. The 13 priority frames are a navigation aid; the remaining
+frames are not automatically accepted. All 120 have proposed centers, with
+uncertainty expressing estimated placement ambiguity rather than calibrated
+statistical confidence. No hidden-ball position was filled.
+
+The combined review page is open locally. In a later session the assistant can
+serve this existing directory on loopback again without regenerating labels or
+videos. Give corrections by game and original source-frame number. Preserve
+the current proposal and review package when creating a corrected version.
+The [compact preparation record](../configs/ball_tracking/reviews/nba_assisted_annotation_pilot_v0_1.json)
+binds the actual proposals, renderer checks and independent output audit.
+
+The separate `nba_assisted_annotation_proposal/v0.1` wrapper records AI origin,
+the original draft hash and per-frame inspection evidence. Its existing row
+semantics include the legacy geometry token `human_amodal_estimate`; inside
+this wrapper that names a partial-ball geometry convention, not a human author.
+Do not load these proposals into the original editor under Ryan's name or
+silently treat them as an independent human-labeled evaluation set.
+
+## Optional manual editor
 
 The local editor opens both pilots. Choose a pilot, enter your actual annotator
 name, and work through all 60 frames. Every initial row is explicitly unlabeled.

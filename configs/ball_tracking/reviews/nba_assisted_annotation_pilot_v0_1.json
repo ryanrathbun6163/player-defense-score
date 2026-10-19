@@ -1,0 +1,185 @@
+{
+  "schema_version": "nba_assisted_annotation_pilot_preparation/v0.1",
+  "status": "prepared_pending_human_review",
+  "created_at_utc": "2026-10-19T03:41:19.666742+00:00",
+  "authorization": {
+    "source": "Ryan 2026-10-18 request for the assistant to do more ball-tracking work and streamline the process",
+    "scope": "Assistant visual first-pass proposals for the already approved120-frame NBA development pilot; mechanical checks and compact review delivery."
+  },
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "4e1fc93b09a26b0a790aff10b347131ddd0baf5e",
+    "worktree": "clean"
+  },
+  "human_review": {
+    "status": "pending",
+    "reviewer_id": null,
+    "reviewed_at_utc": null
+  },
+  "totals": {
+    "source_frames": 120,
+    "ai_proposed_centers": 120,
+    "fully_visible_proposals": 71,
+    "partially_visible_proposals": 49,
+    "null_geometry": 0,
+    "priority_frames": 13,
+    "all_flagged_frames_including_partial_visibility": 54,
+    "human_accepted_frames": 0
+  },
+  "packages": [
+    {
+      "candidate_id": "sac_mem_q1_c01",
+      "counts": {
+        "frames": 60,
+        "with_point": 60,
+        "eligible": 60,
+        "exception_frames": 5,
+        "visibility": {
+          "partially_visible": 3,
+          "fully_visible": 57
+        }
+      },
+      "origin": {
+        "kind": "assistant_visual_proposal",
+        "actor_id": "codex_history_1",
+        "method": "direct_visual_inspection_of_native_rgb_pngs",
+        "detector_predictions_used": false,
+        "interpolation_used": false,
+        "created_at_utc": "2026-10-19T03:31:44.694442Z"
+      },
+      "proposal": {
+        "path": "data/outputs/ball_tracking/nba/assisted_pilot_v0_1/sac_mem_q1_c01/proposal.json",
+        "bytes": 96211,
+        "sha256": "c80916be0790ca370d4dafd899cca2706273758f6ed02ccd088f2fa9467dd398"
+      },
+      "original_draft": {
+        "path": "data/outputs/ball_tracking/nba/annotation_pilot_v0_1/sac_mem_q1_c01/annotations.json",
+        "sha256": "d22e437800d682729be1488fa54d03d7d6b4589e181f3eff479e42693aa51d63"
+      },
+      "review_receipt": {
+        "path": "data/outputs/ball_tracking/nba/assisted_pilot_v0_1/sac_mem_q1_c01/preparation_receipt.json",
+        "bytes": 1675,
+        "sha256": "c0c19d7a5cc8f1fab98a0f5566654bcdc0eb8dc49c5f209af4628c1daf39cb1d"
+      },
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/assisted_pilot_v0_1/sac_mem_q1_c01/review.mp4",
+        "bytes": 2510102,
+        "sha256": "b9d9f9324a6026d034ef19767170c4030a795743ae7193fdfbe6f55a5516ad2a"
+      },
+      "priority_frame_indices": [
+        660,
+        661,
+        662,
+        674,
+        675
+      ],
+      "render_elapsed_seconds": 11.797,
+      "original_draft_revision": 0,
+      "original_draft_all_rows_unlabeled": true
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "counts": {
+        "frames": 60,
+        "with_point": 60,
+        "eligible": 60,
+        "exception_frames": 49,
+        "visibility": {
+          "fully_visible": 14,
+          "partially_visible": 46
+        }
+      },
+      "origin": {
+        "kind": "assistant_visual_proposal",
+        "actor_id": "codex_history_2",
+        "method": "direct_visual_inspection_of_native_rgb_pngs",
+        "detector_predictions_used": false,
+        "interpolation_used": false,
+        "created_at_utc": "2026-10-19T03:29:04.821715+00:00"
+      },
+      "proposal": {
+        "path": "data/outputs/ball_tracking/nba/assisted_pilot_v0_1/sas_det_q1_c02/proposal.json",
+        "bytes": 76985,
+        "sha256": "c1c23c9cccebf19fa3426307fe71d41486c599624b3e06d6e2813308d352394b"
+      },
+      "original_draft": {
+        "path": "data/outputs/ball_tracking/nba/annotation_pilot_v0_1/sas_det_q1_c02/annotations.json",
+        "sha256": "1cddb3b97ac1b2e34aba19963ae8a67bf420b15364601d5b4bacd4a3d9972d50"
+      },
+      "review_receipt": {
+        "path": "data/outputs/ball_tracking/nba/assisted_pilot_v0_1/sas_det_q1_c02/preparation_receipt.json",
+        "bytes": 1680,
+        "sha256": "b2d2c111430f13206bc4ea3c4166b3b5cd2d65b8f849389870e3a8810ca9d62a"
+      },
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/assisted_pilot_v0_1/sas_det_q1_c02/review.mp4",
+        "bytes": 3310494,
+        "sha256": "5808c9688df97673b11edd708e46dbc06ab285dbc2b35aec95815772026e6c2b"
+      },
+      "priority_frame_indices": [
+        10788,
+        10791,
+        10833,
+        10834,
+        10835,
+        10840,
+        10846,
+        10847
+      ],
+      "render_elapsed_seconds": 11.343,
+      "original_draft_revision": 0,
+      "original_draft_all_rows_unlabeled": true
+    }
+  ],
+  "validation": {
+    "focused_checks_passed": 5,
+    "focused_checks_skipped": 0,
+    "first_attempt": true,
+    "unittest_seconds": 0.525,
+    "tool_receipt": {
+      "path": "data/outputs/t/nba_assisted_annotation_2026-10-18/assisted_review_tool_validation.json",
+      "bytes": 4324,
+      "sha256": "57d6c686ba17eb12df7c9aa11ca6a2b0a21a8d2215aaac8baca6703d239b8498"
+    },
+    "independent_actual_output_audit": {
+      "path": "data/outputs/t/nba_assisted_annotation_2026-10-18/independent_artifact_audit.json",
+      "bytes": 14830,
+      "sha256": "1807991be598dfda1508bed4e4f9b4a635a31f411c3e6ecdae0c110973f83ad1"
+    },
+    "browser_verification": {
+      "path": "data/outputs/t/nba_assisted_annotation_2026-10-18/browser_verification.json",
+      "bytes": 1352,
+      "sha256": "cec54e16365113363b75e0aadf9b3041c551aa044f4068c85077c4fa2a2369c5"
+    },
+    "root_visual_check": "Selected source contacts and six overlays inspected, including both first/final frames, SAC bounce674 and DET partial10813. This is AI sanity checking, not independent human acceptance."
+  },
+  "implementation": [
+    {
+      "path": "src/ball_tracking/prepare_nba_assisted_review.py",
+      "bytes": 21047,
+      "sha256": "f53abe87c35c795ed434ecc420bc9f2a7705a84ff53cd3d5eccbbcf4ad22ea50"
+    },
+    {
+      "path": "tests/test_nba_assisted_review.py",
+      "bytes": 8121,
+      "sha256": "987ca912cf0ce0fa632e24cfeb599d55472d70a932283818570f7ce12936c5eb"
+    }
+  ],
+  "review_page": {
+    "path": "data/outputs/ball_tracking/nba/assisted_pilot_v0_1/index.html",
+    "bytes": 4958,
+    "sha256": "c7072edc3d344776b99300db78d4e4b72e98ccddd9bbac8d59e25df650346446"
+  },
+  "preserved_boundaries": {
+    "original_editor_drafts_modified": false,
+    "original_recording_reads": 0,
+    "detector_inference_calls": 0,
+    "training_runs": 0,
+    "evaluation_runs": 0,
+    "holdouts_accessed": false,
+    "old_experiments_or_completed_reviews_repeated": false,
+    "motion_comparison": "complete_negative",
+    "new_motion_human_reviews_pending": 3
+  },
+  "next_action": "Ryan reviews both full11-second overlays and priority frames. Assistant performs any corrections into preserved versions; human acceptance must be explicit and separately recorded. No detector performance or phase-completion claim."
+}

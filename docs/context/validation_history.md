@@ -1,5 +1,35 @@
 # Validation History
 
+## 2026-10-18: assistant-first NBA proposals and compact review delivery
+
+The new separate review renderer passed five focused checks on its first run
+(0.525 s, no skips). The checks cover exact inventory/evidence bindings,
+rejection of changed provenance and human-acceptance/interpolation claims,
+point/missingness rendering, and an actual synthetic H264 encode. The encoded
+fixture contains three source frames plus six final-hold frames; a tail RGB
+decode matches the final overlay within lossy tolerance. No earlier suite or
+scientific experiment was repeated. The exact code/test hashes and output are
+preserved in the ignored `assisted_review_tool_validation.json` receipt.
+
+Both actual AI proposals passed the existing FrameAnnotation semantics and
+new consumer validation. Detroit's real render completed once in 11.343 s;
+Sacramento's completed once in 11.797 s, with empty FFmpeg warning/error logs.
+An independent audit checked all 120 actual source frame/PTS/PNG/RGB mappings,
+rendered PNG hashes, marker coordinates, copied proposals and receipt artifacts.
+Both videos report 1280x720, 66 encoded frames, 11 seconds and 6 fps. One decoded
+tail image per new video matches the final source overlay: whole-image RGB MAE
+2.0122 (DET) and 1.9802 (SAC), below the declared limit of 4. These are transport
+and rendering checks, not a label-accuracy metric or full encoded-video decode.
+
+The original source recordings were not read again. Both native editor drafts
+retain their exact preparation hashes, revision zero and 60 unlabeled rows.
+Root inspected both first/final overlays and selected contact/blur frames;
+this remains an AI sanity check, not Ryan's visual acceptance. See the
+[preparation record](../../configs/ball_tracking/reviews/nba_assisted_annotation_pilot_v0_1.json)
+and [current workflow](../nba_native_annotation_guide.md). The 120 first-pass
+proposals and their 13 priority frames await human review. No detector inference,
+training, evaluation, protected holdout access or phase promotion occurred.
+
 ## 2026-10-18: NBA native-timestamp annotation preparation and editor
 
 The separate NBA path passed 12 schema/save checks (0.436 s), three actual

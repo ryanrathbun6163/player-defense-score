@@ -104,6 +104,28 @@ If local staging or committing has not been authorized, obtain that authorizatio
 
 The agent should perform structural, numerical, code, and artifact checks. Ryan makes final visual judgments about whether identity, court mapping, trajectories, and future ball tracks look correct. Present narrowly targeted review material: exact frames, time ranges, candidate pairs, or synchronized videos.
 
+### Assistant first pass: Ryan's 2026-10-18 clarification
+
+Ryan asked the assistant to take on more ball-tracking work and streamline the
+process. Within approved development scope, the assistant should inspect source
+images, propose first-pass ball labels, check records, fix routine problems and
+prepare compact visual reviews before handing work back. Do not make Ryan enter
+every frame manually or approve each mechanical step. Batch related work into a
+reviewable result, explain uncertain cases plainly and handle requested corrections.
+
+AI proposals must retain their actual authorship and source-frame evidence.
+They are not independent human annotations or accepted reference labels. Keep
+them separate from existing drafts and reviewed baselines until Ryan reviews
+the proposed labels, missing intervals, uncertain cases and actual final frames.
+Present complete short overlays alongside an exception list; reviewing only
+flagged frames could miss confident AI mistakes. Never fill a hidden ball's
+position merely by interpolating neighboring points.
+
+This changes the division of labor, not the ball-phase quality bar. Human
+acceptance, identity and calibration gates remain. Protected holdouts, approved
+game roles, completed experiments and completed reviews retain their existing
+boundaries. First-pass labeling does not itself authorize training or evaluation.
+
 ## Session continuity
 
 At a stopping point, record:

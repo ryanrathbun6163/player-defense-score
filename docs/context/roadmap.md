@@ -1,6 +1,6 @@
 # Roadmap
 
-## Current action: annotate the approved native-frame NBA pilot
+## Current action: review assistant-proposed NBA pilot labels
 
 Ryan approved the allocation and 120-frame pilot. The [native annotation guide](../nba_native_annotation_guide.md)
 describes the prepared SAC 660–719 and DET 10788–10847 blocks and open browser
@@ -8,8 +8,12 @@ editor. All original PTS and RGB pixels passed preparation and independent
 bounded-source checks. The separate schema/editor preserves game roles,
 uncertainty and draft history while leaving frozen NFHS tools unchanged.
 
-Complete the prediction-free human labels, render/review their source-faithful
-overlays and actual last frames, then record explicit human acceptance. A
+Ryan's later workflow clarification puts the first pass with the assistant.
+All 120 frames now have separate AI visual proposals, with two short review
+videos, actual final frames and 13 priority frames. The original manual drafts
+remain unchanged. Review the complete short overlays and difficult cases, let
+the assistant make any corrections, then record explicit human acceptance.
+AI authorship must remain visible; these are not independent human labels. A
 training recipe, model cadence, fit, NBA evaluation and independent test set
 remain later decisions. Do not treat this one-second-per-source protocol pilot
 as a benchmark or replacement for full-episode trajectory review. The existing

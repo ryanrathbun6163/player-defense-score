@@ -1,6 +1,43 @@
 # Current State
 
-## Latest increment: 2026-10-18 approved NBA pilot ready for annotation
+## Latest increment: 2026-10-18 assistant first-pass NBA labels ready for review
+
+Ryan asked the assistant to take on more ball-tracking work and streamline the
+process. The assistant has now visually inspected all 120 approved native PNGs
+and saved separate, explicitly AI-authored proposals. SAC has 57 fully visible
+and three partially visible balls; DET has 14 fully visible and 46 partially
+visible balls. All 120 proposals contain a center with placement uncertainty;
+none uses detector predictions or interpolated hidden positions. These counts
+describe proposed labels, not measured accuracy or human acceptance.
+
+Two 11-second source-plus-zoom review videos, every-frame overlays and a combined
+review page are prepared under ignored
+`data/outputs/ball_tracking/nba/assisted_pilot_v0_1/`. Thirteen priority frames
+highlight contact boundaries, blur and a bounce; the full short clips still
+need review. Actual final frames 719 and 10847 are included and held for one
+second. Original editor drafts remain revision zero, genuinely unlabeled and
+byte-for-byte unchanged. The AI proposal wrapper retains the actual authorship,
+source-image evidence, uncertainty and pending human review.
+
+Five new focused renderer checks passed on their first run, including an actual
+encoded-video tail check. An independent audit of the actual packages passed
+all 120 mappings, image/proposal/receipt hashes and displayed marker coordinates;
+both videos report 66 encoded frames at 6 fps and their sampled tails match the
+final overlays within lossy tolerance. See the [guide](../nba_native_annotation_guide.md)
+and [bound preparation record](../../configs/ball_tracking/reviews/nba_assisted_annotation_pilot_v0_1.json).
+No original recording was decoded again and no detector inference, training,
+evaluation, holdout access or earlier review was repeated.
+
+**Next concrete action:** Ryan watches both complete short overlays and checks
+the priority frames, then accepts the proposals or identifies corrections by
+game/frame number. The assistant performs corrections and preserves versions;
+Ryan need not enter every point manually. Human acceptance remains separate
+from AI proposal creation. This pilot is about one source second per game,
+not a completed tracker or full-possession result. Existing game roles, NFHS
+finish line, holdouts and completed reviews stand; the negative motion result
+and its three pending new human reviews remain unchanged.
+
+## Earlier increment: 2026-10-18 approved NBA pilot ready for annotation
 
 Ryan explicitly approved the proposed game allocation and two-clip, 120-frame
 pilot: “Yes I approve. Move forward chat.” The new [approval record](../../configs/ball_tracking/reviews/nba_development_selection_approval_v0_1.json)
