@@ -1,6 +1,36 @@
 # Validation History
 
-## Completed 37-frame regression diagnostic
+## Completed candidate-preservation experiment
+
+The [frozen design and appended result](../nba_candidate_preservation_experiment.md)
+record one 22.094-second run across 790 frames, 1,580 means and 4,668 contributor
+planes. It read 1,580 caches (2,519,893,616 compressed bytes) and six original
+NFHS mean bundles (79,271,884 bytes). All original means, candidates, selections
+and scores were preserved. No model, fit, media decode or prediction change ran.
+
+Seven distinct focused tests pass: the initial command passed six and failed one
+fixture missing `game_id`; only that corrected case was rerun and passed. The
+old fixture/log are preserved; production source stayed unchanged and actual
+metadata validation passed. No full-suite rerun occurred.
+
+Independent audit passed 181,673 checks in 4.423944 seconds on its first attempt.
+All 790 rows, 1,580 arm evaluations/cache sidecars and aggregate decisions were
+checked. Numerical coverage was 141 unique frame-arm rows, including all 34
+availability gains, all 24 newly nonempty hidden cases, 20 prior-anchor arms and
+72 endpoint/midpoint arms; these reasons overlap. It read 325 cache bodies
+(518,372,749 bytes), reconstructed 373 contributor planes and compared 26 old
+NFHS means after loading six bundles/150 stored planes. Ordinary unsampled
+cases were not numerically reconstructed a second time. No audit or producer
+retry was needed.
+
+The retained baseline gains nine of 45 unavailable DET/NFHS frames; 36 remain
+unavailable. Non-anchor gains in both domains pass the minimal usefulness screen,
+while 51 extra ambiguous development frames and five new DET hidden nonempty
+frames constrain the benefit. The screen supports one future fixed selector
+test only; no selector, checkpoint or phase is accepted. Prior failures, human
+reviews and protected evidence remain unchanged.
+
+## Earlier increment (historical): completed 37-frame regression diagnostic
 
 Ryan explicitly said: “Ok move forward chat. Run the 37-frame diagnostic.” The
 [bound scope](../../configs/ball_tracking/selections/nba_adaptation_regression_diagnostic_v0_1.json)

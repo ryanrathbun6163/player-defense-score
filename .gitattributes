@@ -50,3 +50,8 @@ configs/ball_tracking/selections/nba_adaptation_regression_diagnostic_v0_1.json 
 configs/ball_tracking/reviews/nba_adaptation_regression_diagnostic_result_v0_1.json -text
 src/ball_tracking/nba_adaptation_regression_diagnostic.py -text
 tests/test_nba_adaptation_regression_diagnostic.py -text
+# Preserve the saved candidate-pool experiment and its executed implementation.
+configs/ball_tracking/selections/nba_candidate_preservation_v0_1.json -text
+configs/ball_tracking/reviews/nba_candidate_preservation_result_v0_1.json -text
+src/ball_tracking/nba_candidate_preservation.py -text
+tests/test_nba_candidate_preservation.py -text

@@ -1,6 +1,37 @@
 # Current State
 
-## Latest increment: 37-frame saved-output diagnostic complete
+## Latest increment: candidate preservation supports one bounded selector trial
+
+The approved [candidate-preservation experiment](../nba_candidate_preservation_experiment.md#completed-comparison)
+completed once in 22.094 seconds across 790 frames, 1,580 means and 4,668
+contributor planes. For retained checkpoint `09da1214e94f`, matching-candidate
+availability improves from 207 to 213/237 in DET and 130 to 133/145 in NFHS.
+Five DET and two NFHS gains are outside the ten prior anchors; five and one,
+respectively, are outside the full 37-frame diagnostic context.
+
+The nine gains cover 20% of 45 previously unavailable development frames.
+**Thirty-six still have no matching candidate and cannot be repaired by selecting
+from this pool.** Costs are 51 additional ambiguous development frames, DET
+hidden nonempty frames rising 13→18/69, and median raw candidates rising one→four.
+NFHS hidden frames stay 0/5. Easy-control availability remains 120/120 while
+ambiguity rises seven→20. Candidate availability is not selected accuracy.
+
+Seven distinct focused tests pass after one preserved missing-`game_id` fixture
+failure and a single corrected-case rerun; production source did not change.
+Independent audit passed 181,673 checks on its first attempt, checking all
+1,580 frame-arm evaluations and numerically reconstructing 141 selected rows,
+including every gain/newly nonempty hidden case. No fit, inference, media decode,
+prediction or score change occurred. The failed continuation, baseline, completed
+reviews, uncertainty and holdouts remain unchanged.
+
+**Next:** define one fixed, label-blind temporal selector trial using the retained baseline's
+saved candidates, permitting missing/uncertain output and preserving strict
+`>0.3` and inclusive ten-pixel evaluation. Compare with original selected outputs
+under existing gates, including no additional wrong outputs/alarms and retained
+easy controls, and review new trajectories. This is not yet executed or authorized. The aggregation
+question is resolved; do not restart a heatmap diagnosis or threshold sweep.
+
+## Earlier increment (historical): 37-frame saved-output diagnostic complete
 
 Ryan said: “Ok move forward chat. Run the 37-frame diagnostic.” The
 [bound scope](../../configs/ball_tracking/selections/nba_adaptation_regression_diagnostic_v0_1.json)

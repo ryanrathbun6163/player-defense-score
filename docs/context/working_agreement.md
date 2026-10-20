@@ -20,6 +20,17 @@ The time since the last integration into `main` was an illustration of how long 
 
 Future visual review remains part of accepting actual new results. No opinion or approval is needed merely to acknowledge that responsibility. Present concrete review artifacts and a specific decision when Ryan's judgment is needed; retain completed reviews.
 
+## Progress and usage clarification: Ryan's 2026-10-19 instruction
+
+Ryan wants carefully designed experiments that produce concrete progress toward
+the existing ball-phase finish line. He explicitly raised accumulated usage and
+asked us to push harder while keeping the same requirements. Each experiment
+should resolve a stated decision, reuse saved results and verified code where
+possible, and use focused validation. Avoid repeated diagnostics, elaborate
+release machinery or repeated approvals that do not advance that decision.
+Efficiency does not authorize weaker quality criteria or skipped human review
+of actual new trajectories.
+
 ## Historical resource policy: Ryan's 2026-10-05 clarification
 
 Ryan is comfortable devoting substantial computer resources to the project,

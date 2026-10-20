@@ -138,10 +138,14 @@ contexts and fixed scoring rules. One 2.375-second run reproduced all 74 means
 and passed independent audit. It found a stronger distractor overtaking a correct
 candidate, a marginal weighted-center error, and four NFHS means losing support
 despite an individual above-threshold response. These are distinct mechanisms;
-the diagnostic changes no prediction. The [next proposal](docs/nba_adaptation_regression_diagnostic_results.md#one-proposed-next-experiment)
-would test preserving existing contributor candidates across the 790 labeled
-frames, measuring availability and added distractors before choosing predictions.
-That experiment has not been executed or authorized by this diagnostic request.
+the diagnostic changes no prediction. The subsequently approved
+[candidate-preservation experiment](docs/nba_candidate_preservation_experiment.md#completed-comparison)
+is complete. The retained baseline gains six available DET positions and three
+NFHS positions, covering nine of 45 previously unavailable development frames;
+36 still have no matching candidate. The expanded pool also adds 51 ambiguous
+frames and five nonempty DET hidden frames. This modest gain supports one future
+fixed selector trial; no selected prediction or baseline changed. That selector
+trial has not been executed or authorized.
 These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved
 model trajectories or comparative NBA accuracy. The preceding heatmap inspection

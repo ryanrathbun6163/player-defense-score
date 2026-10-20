@@ -1,6 +1,29 @@
 # Roadmap
 
-## Current proposal: cached candidate preservation; retain baseline
+## Current proposal: one fixed selector trial on the retained baseline
+
+The approved [candidate-preservation comparison](../nba_candidate_preservation_experiment.md#completed-comparison)
+is complete. Retained-baseline availability gains six DET and three NFHS frames,
+including non-anchor gains in both groups, so the prospective minimum usefulness
+screen passes. This is 20% of the 45 unavailable development frames; **36 remain
+unavailable**. Added costs are 51 ambiguous development frames and five newly
+nonempty DET hidden frames. No selected prediction improved merely by retaining
+these alternatives, and no quality gate or model is promoted.
+
+Define one bounded, label-blind temporal selector on the retained baseline's saved
+pool, fixed before evaluation and able to leave uncertain output missing. Keep
+the strict `>0.3` candidate threshold, inclusive ten-pixel radius, uncertainty,
+game roles and protected holdouts. Use the original selected outputs as the
+control; compare matches, wrong outputs, missing frames and hidden alarms under
+existing gates, including no additional wrong outputs/alarms and retained easy
+controls. Require synchronized review of new trajectories. This selector trial
+has not run and is not authorized by the pool experiment. A selector restricted
+to this fixed pool cannot recover the 36 unavailable frames; those need separate
+detection/localization work, not necessarily new training or images.
+The aggregation question is closed; the next step is not another threshold sweep
+or heatmap diagnosis.
+
+## Earlier proposal (historical): cached candidate preservation
 
 Ryan explicitly authorized: “Ok move forward chat. Run the 37-frame diagnostic.”
 The [scope](../../configs/ball_tracking/selections/nba_adaptation_regression_diagnostic_v0_1.json)

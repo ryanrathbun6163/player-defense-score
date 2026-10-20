@@ -1,0 +1,2607 @@
+{
+  "schema_version": "nba_candidate_preservation_result/v0.1",
+  "status": "completed",
+  "recorded_at_utc": "2026-10-20T05:40:55.849566+00:00",
+  "authorization": {
+    "approved_by": "Ryan",
+    "user_statement": "Ok move forward chat, but please make sure you have taken your time developing this experiment. It sounds like we've made some progress, but I am still wanting us to push harder and get through this phase. I want it done correctly, under the same requirements we have already discussed, but we have used quite a bit a usage at this point, and I am wanting to see results and progress.",
+    "new_model_inference": false,
+    "training": false,
+    "threshold_sweep": false,
+    "label_changes": false,
+    "prediction_changes": false,
+    "source_png_or_video_decode": false
+  },
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "14f5ce7aa986ae3454b2e3cd4bbc4617c55673bd",
+    "index_and_worktree": "clean"
+  },
+  "scope": {
+    "path": "configs/ball_tracking/selections/nba_candidate_preservation_v0_1.json",
+    "sha256": "48ebc4187c7f88cfdedc437e5b92424c57c2126be7f8470ce896f7b455f56017",
+    "bytes": 70265
+  },
+  "pre_execution_design": {
+    "path": "data/outputs/ball_tracking/nba/candidate_preservation_v0_1/preparation/design_before_execution.md",
+    "sha256": "4e108627a144d8f4ecbb562a4df96feaf19a8231c06b063dbc177c22f05657b0",
+    "bytes": 6066
+  },
+  "cache_inventory": {
+    "path": "data/outputs/ball_tracking/nba/candidate_preservation_v0_1/preparation/cache_inventory.json",
+    "sha256": "e4333a825a76550d9fb55b7471e3578eb0128c4c7ba629f2e662f7569f105028",
+    "bytes": 2392450
+  },
+  "completion": {
+    "path": "data/outputs/ball_tracking/nba/candidate_preservation_v0_1/completion.json",
+    "bytes": 5379,
+    "sha256": "3fa0291ab9a5c668dcd5cedf39844da36c7e17999525c444601faede2668972c"
+  },
+  "report": {
+    "path": "data/outputs/ball_tracking/nba/candidate_preservation_v0_1/attempts/8e13c6cb5e07440692563a09168de0cf/report.json",
+    "sha256": "1752274f661e7bd650890a8f790065dc7a484b707bea2ada2f5135b0bc6e7399",
+    "bytes": 14649529
+  },
+  "summary": {
+    "path": "data/outputs/ball_tracking/nba/candidate_preservation_v0_1/attempts/8e13c6cb5e07440692563a09168de0cf/summary.json",
+    "sha256": "8a93094c213df183de604914b6e4b8e3faca173a058f002a86b6f71d2fc07574",
+    "bytes": 271715
+  },
+  "execution": {
+    "command": ".\\.venv\\Scripts\\python.exe -B -m src.ball_tracking.nba_candidate_preservation --scope configs/ball_tracking/selections/nba_candidate_preservation_v0_1.json --run",
+    "attempt_id": "8e13c6cb5e07440692563a09168de0cf",
+    "real_attempts": 1,
+    "failed_real_attempts": 0,
+    "elapsed_seconds": 22.093999999997322,
+    "frozen_totals": {
+      "frames": 790,
+      "frame_arm_rows": 1580,
+      "eligible": 652,
+      "hidden": 91,
+      "unknown": 47,
+      "included_control_frames": 120,
+      "unique_triplet_bodies": 1580,
+      "triplet_compressed_bytes": 2519893616,
+      "contributor_planes_both_arms": 4668,
+      "old_nfhs_mean_bundles": 6,
+      "old_nfhs_mean_bundle_compressed_bytes": 79271884,
+      "old_nfhs_mean_planes": 150
+    },
+    "resources": {
+      "attempted_cache_reads": 1580,
+      "old_nfhs_mean_bundles": [
+        {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/mean_heatmaps.npz",
+          "sha256": "e3a34477226e9e659e9f7769fa683a5628e5b3ddce339333e6ce6c6cc3750def",
+          "bytes": 13206988,
+          "stored_planes_loaded": 25,
+          "selected_planes_verified": 25,
+          "array_bytes": 14745600
+        },
+        {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/mean_heatmaps.npz",
+          "sha256": "338678ab89e8418f324ccf8285a8f231ec001fcc330a6413d30734da83174f6f",
+          "bytes": 13209382,
+          "stored_planes_loaded": 25,
+          "selected_planes_verified": 25,
+          "array_bytes": 14745600
+        },
+        {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/mean_heatmaps.npz",
+          "sha256": "552407b40c5ae9e8b5ff49e6dfb968a081d66d78f3c1393c18f9e3349654626c",
+          "bytes": 13207752,
+          "stored_planes_loaded": 25,
+          "selected_planes_verified": 25,
+          "array_bytes": 14745600
+        },
+        {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/mean_heatmaps.npz",
+          "sha256": "a144180aeed91a1cce70177e850c7489700292222465f6b4a4b51633f31887f8",
+          "bytes": 13204163,
+          "stored_planes_loaded": 25,
+          "selected_planes_verified": 25,
+          "array_bytes": 14745600
+        },
+        {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/mean_heatmaps.npz",
+          "sha256": "7f3297bcecacf0793c1b0f7e8fd814137f0ac766acfca8cc4e2bea2a8e9438b1",
+          "bytes": 13225598,
+          "stored_planes_loaded": 25,
+          "selected_planes_verified": 25,
+          "array_bytes": 14745600
+        },
+        {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/mean_heatmaps.npz",
+          "sha256": "33e5c07d1741d247913c7591d6dc34dcbcc443f2780d0ea4f034f104a1282349",
+          "bytes": 13218001,
+          "stored_planes_loaded": 25,
+          "selected_planes_verified": 25,
+          "array_bytes": 14745600
+        }
+      ],
+      "peak_rolling_triplet_arrays": 3,
+      "contributor_planes_measured": 4668,
+      "model_calls": 0,
+      "checkpoint_loads": 0,
+      "source_png_decode_events": 0,
+      "video_decode_events": 0,
+      "triplet_compressed_bytes_read": 2519893616,
+      "rolling_triplet_array_inventory_bytes": 5308416,
+      "memory_note": "Rolling array inventory is not total process RAM; one 25-plane old NFHS mean bundle at a time."
+    },
+    "verified_triplet_reads": 1580,
+    "run_log": {
+      "path": "data/outputs/ball_tracking/nba/candidate_preservation_v0_1/preparation/run_01.log",
+      "bytes": 5379,
+      "sha256": "3fa0291ab9a5c668dcd5cedf39844da36c7e17999525c444601faede2668972c"
+    },
+    "original_predictions_and_scores_unchanged": true
+  },
+  "validation": {
+    "focused_tests": {
+      "distinct_passed": 7,
+      "first_command": {
+        "tests": 7,
+        "passed": 6,
+        "errors": 1,
+        "elapsed_seconds": 1.977,
+        "log": {
+          "path": "data/outputs/ball_tracking/nba/candidate_preservation_v0_1/preparation/tests_01.log",
+          "bytes": 2697,
+          "sha256": "6d22ff932e71037e1d526da01ca1e4c3ef6cc328cfc84b087309e1616db45a80"
+        }
+      },
+      "corrected_test_only": {
+        "tests": 1,
+        "passed": 1,
+        "elapsed_seconds": 0.005,
+        "log": {
+          "path": "data/outputs/ball_tracking/nba/candidate_preservation_v0_1/preparation/tests_02.log",
+          "bytes": 333,
+          "sha256": "4a70ffc7548016d6cd569350841a11202eed0fca2be4fcf639579ee34e154b6b"
+        }
+      },
+      "preserved_original_test_source": {
+        "path": "data/outputs/ball_tracking/nba/candidate_preservation_v0_1/preparation/test_candidate_preservation_before_fixture_fix.py",
+        "bytes": 10343,
+        "sha256": "f930df7e511f68987117728824b73c9230e890a5e94942edbbc03021ad19059d"
+      },
+      "correction": "The synthetic reference manifest omitted game_id and approved_role required by the original score producer. Only test fixture metadata changed; the corrected failing test was rerun. Production code and the six passing checks were unchanged.",
+      "full_suite_run": false
+    },
+    "actual_metadata_scope_check": {
+      "path": "data/outputs/ball_tracking/nba/candidate_preservation_v0_1/preparation/check_scope_01.log",
+      "bytes": 668,
+      "sha256": "567a18e718a6df3d977674615664993d98cad2a67c1d5c166d738a7e0383577c"
+    },
+    "independent_audit": {
+      "status": "passed",
+      "checks": 181673,
+      "elapsed_seconds": 4.423943499998131,
+      "attempts": 1,
+      "failed_attempts": 0,
+      "receipt": {
+        "path": "data/outputs/ball_tracking/nba/candidate_preservation_v0_1/independent_audit/audit_01.json",
+        "bytes": 983270,
+        "sha256": "7a595616175764b2fc0409cd32128d43946b01da9358f103290e3ad2fe539759"
+      },
+      "implementation": {
+        "path": "data/outputs/ball_tracking/nba/candidate_preservation_v0_1/independent_audit/audit_pool.py",
+        "bytes": 37183,
+        "sha256": "c707b77b9c6e9e7ba7eb82e19c8bc32bc29d93592ba653a0ce740d9468a517cd"
+      },
+      "coverage": {
+        "all_frame_rows": 790,
+        "all_frame_arm_rows_scored": 1580,
+        "all_cache_sidecars_verified": 1580,
+        "all_reference_windows": 12,
+        "eligible_hidden_unknown": [
+          652,
+          91,
+          47
+        ],
+        "included_controls": 120,
+        "numeric_frame_arm_rows": 141,
+        "numeric_selection_reasons_overlap": {
+          "every_availability_gain": 34,
+          "every_newly_nonempty_hidden": 24,
+          "prior_anchor": 20,
+          "fixed_window_endpoint_midpoint": 72
+        },
+        "numeric_distinct_cache_bodies": 325,
+        "numeric_compressed_cache_bytes": 518372749,
+        "numerical_contributor_planes": 373,
+        "nfhs_original_bundle_planes_loaded": 150,
+        "nfhs_original_mean_planes_compared": 26,
+        "usefulness_screen_passed": true,
+        "model_promoted": false,
+        "prior_evidence_preserved": [
+          {
+            "path": "configs/ball_tracking/reviews/nba_wasb_adaptation_result_v0_1.json",
+            "sha256": "221e3be4866429ee3ed7fd8f05f386fbf857c83165bde8aef39ee2c69927e47f",
+            "bytes": 43569
+          },
+          {
+            "path": "configs/ball_tracking/reviews/nba_wasb_adaptation_visual_review_v0_1.json",
+            "sha256": "54fac89c2c1dd47244cec2357c29a87071171efc12255065a9dfca5a89490e76",
+            "bytes": 15388
+          },
+          {
+            "path": "configs/ball_tracking/reviews/nba_adaptation_regression_diagnostic_result_v0_1.json",
+            "sha256": "49d5ee45ca8b53bc91a0f850470cc1a44feb5687c0f66933a20746bfc7c3fe05",
+            "bytes": 58435
+          },
+          {
+            "path": "src/ball_tracking/nba_adaptation_regression_diagnostic.py",
+            "sha256": "fec5d421c0a44abf2dd02687c75a830a9aa6b526dfa79411062d1ca08a1c4c03",
+            "bytes": 23422
+          },
+          {
+            "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+            "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+            "bytes": 6084071
+          }
+        ],
+        "producer_attempt_history": [
+          {
+            "started": {
+              "path": "data/outputs/ball_tracking/nba/candidate_preservation_v0_1/attempts/8e13c6cb5e07440692563a09168de0cf/started.json",
+              "bytes": 4816,
+              "sha256": "9f2c75bbae6b90b2958ad609eb8d3ad6fb158872011c1d4707e86034742c5759"
+            },
+            "status": "completed",
+            "terminal": {
+              "path": "data/outputs/ball_tracking/nba/candidate_preservation_v0_1/attempts/8e13c6cb5e07440692563a09168de0cf/completed.json",
+              "bytes": 5379,
+              "sha256": "3fa0291ab9a5c668dcd5cedf39844da36c7e17999525c444601faede2668972c"
+            }
+          }
+        ],
+        "limits": [
+          "All emitted record membership, evaluations, aggregates and decisions independently checked.",
+          "All gains/newly-nonempty-hidden claims reconstructed, plus every prior anchor and fixed first/middle/last frame of each window in each arm.",
+          "Ordinary negative cases outside that deterministic sample are not numerically reconstructed a second time.",
+          "SciPy components matched to emitted OpenCV indices by centroid, support and mass; no shared component-extraction function.",
+          "No models, checkpoint deserialization, images or video decoding. Old NFHS historical pixel provenance is not strengthened.",
+          "Candidate availability is an oracle upper bound, not selected prediction accuracy or quality acceptance."
+        ]
+      }
+    }
+  },
+  "source_and_test_bindings": [
+    {
+      "path": "src/ball_tracking/nba_candidate_preservation.py",
+      "sha256": "818017033b3648d7d63f05534bcecec719e0d6a92d4da200332ab453e2403485",
+      "bytes": 24933
+    },
+    {
+      "path": "src/ball_tracking/nba_adaptation_regression_diagnostic.py",
+      "sha256": "fec5d421c0a44abf2dd02687c75a830a9aa6b526dfa79411062d1ca08a1c4c03",
+      "bytes": 23422
+    },
+    {
+      "path": "src/ball_tracking/nba_saved_heatmap_diagnostic.py",
+      "sha256": "be025647652c576c1a86660920a2894e28bf7ff3e0efdf76358b4f7da71583fb",
+      "bytes": 22400
+    },
+    {
+      "path": "src/ball_tracking/nba_action_observation.py",
+      "sha256": "160dac2b9d1d784c8d00bd8344905cb78886e011ca0a20f714da4436b969e5cd",
+      "bytes": 27371
+    },
+    {
+      "path": "src/ball_tracking/nba_adaptation_comparison.py",
+      "sha256": "dd229cab03967ac649e9540944a00d81ebb578b0b85169ece25d8d127f824500",
+      "bytes": 33044
+    },
+    {
+      "path": "src/ball_tracking/nba_wasb_diagnostic.py",
+      "sha256": "b8dcd105e964475e0efc53e45449e47acdc4341e7409f371d5c44172d0e950f3",
+      "bytes": 34275
+    },
+    {
+      "path": "src/ball_tracking/wasb_calibration.py",
+      "sha256": "21d83963cd53d77f3d719a85996aa03d8986b9f09d57fd6aaf61c00ca6644ee7",
+      "bytes": 19876
+    },
+    {
+      "path": "src/ball_tracking/wasb_adapter.py",
+      "sha256": "dfc26180bfd17d139391bfb1395d9b1b9c326f776a143f472fd8b821d8f24b39",
+      "bytes": 11587
+    },
+    {
+      "path": "src/ball_tracking/wasb_experiment.py",
+      "sha256": "c73d19f7b39fc6bd8251572854ad2e6222a37f7b8084f4090b424add36fead13",
+      "bytes": 26437
+    },
+    {
+      "path": "src/ball_tracking/nba_annotations.py",
+      "sha256": "758c7a8b732e84d2428fe186a58d4b43d2b0a7efd751d8879dd1fdac3873329e",
+      "bytes": 32971
+    },
+    {
+      "path": "tests/test_nba_candidate_preservation.py",
+      "sha256": "d3fc786ce941f5704f93c7dd4b35d1efe84712b1e23b33b5982b365b32f7554d",
+      "bytes": 10409
+    }
+  ],
+  "prior_evidence_preservation": {
+    "receipt": {
+      "path": "data/outputs/ball_tracking/nba/candidate_preservation_v0_1/preparation/prior_evidence_preservation.json",
+      "bytes": 1332,
+      "sha256": "83e38976f1297f5797eb9cd25bb9e541fe22053d1c19dc2a742e9e9a4c50a661"
+    },
+    "verified_unchanged": [
+      {
+        "path": "configs/ball_tracking/reviews/nba_wasb_adaptation_result_v0_1.json",
+        "sha256": "221e3be4866429ee3ed7fd8f05f386fbf857c83165bde8aef39ee2c69927e47f",
+        "bytes": 43569
+      },
+      {
+        "path": "configs/ball_tracking/reviews/nba_wasb_adaptation_visual_review_v0_1.json",
+        "sha256": "54fac89c2c1dd47244cec2357c29a87071171efc12255065a9dfca5a89490e76",
+        "bytes": 15388
+      },
+      {
+        "path": "configs/ball_tracking/reviews/nba_adaptation_regression_diagnostic_result_v0_1.json",
+        "sha256": "49d5ee45ca8b53bc91a0f850470cc1a44feb5687c0f66933a20746bfc7c3fe05",
+        "bytes": 58435
+      },
+      {
+        "path": "src/ball_tracking/nba_adaptation_regression_diagnostic.py",
+        "sha256": "fec5d421c0a44abf2dd02687c75a830a9aa6b526dfa79411062d1ca08a1c4c03",
+        "bytes": 23422
+      },
+      {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+        "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+        "bytes": 6084071
+      }
+    ]
+  },
+  "results": {
+    "by_analysis_group": {
+      "sac_training_fit": {
+        "frames": 300,
+        "eligibility": {
+          "eligible": 270,
+          "unknown": 13,
+          "hidden": 17
+        },
+        "arms": {
+          "old": {
+            "mean_available": 218,
+            "union_available": 227,
+            "newly_available": 9,
+            "lost_availability": 0,
+            "newly_ambiguous": 59,
+            "newly_nonempty_hidden": 5,
+            "newly_available_non_anchor": 9,
+            "newly_available_outside_prior_context": 9,
+            "residual_unavailable": 43,
+            "newly_available_frames": [
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 961
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 967
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1259
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1291
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1292
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1308
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1309
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1310
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1318
+              }
+            ],
+            "mean_hidden_nonempty": 0,
+            "mean_ambiguous": 17,
+            "mean_wrong_only": 5,
+            "mean_empty_eligible": 47,
+            "union_hidden_nonempty": 5,
+            "union_ambiguous": 76,
+            "union_wrong_only": 13,
+            "union_empty_eligible": 30,
+            "candidate_burden": {
+              "mean_raw_records": {
+                "count": 300,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "mean_exact_coordinates": {
+                "count": 300,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "mean_in_image_records": {
+                "count": 300,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "mean_in_image_exact_coordinates": {
+                "count": 300,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "union_raw_records": {
+                "count": 300,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 14
+              },
+              "union_exact_coordinates": {
+                "count": 300,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 14
+              },
+              "union_in_image_records": {
+                "count": 300,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 14
+              },
+              "union_in_image_exact_coordinates": {
+                "count": 300,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 14
+              },
+              "incremental_raw_records": {
+                "count": 300,
+                "median": 3.0,
+                "p95": 5.0,
+                "max": 11
+              },
+              "incremental_exact_coordinates": {
+                "count": 300,
+                "median": 3.0,
+                "p95": 5.0,
+                "max": 11
+              }
+            },
+            "eligible_candidate_composition": {
+              "mean_matching_records": {
+                "count": 270,
+                "median": 1.0,
+                "p95": 1.0,
+                "max": 1
+              },
+              "mean_nonmatching_in_image_records": {
+                "count": 270,
+                "median": 0.0,
+                "p95": 1.0,
+                "max": 2
+              },
+              "mean_matching_coordinates": {
+                "count": 270,
+                "median": 1.0,
+                "p95": 1.0,
+                "max": 1
+              },
+              "mean_nonmatching_in_image_coordinates": {
+                "count": 270,
+                "median": 0.0,
+                "p95": 1.0,
+                "max": 2
+              },
+              "union_matching_records": {
+                "count": 270,
+                "median": 4.0,
+                "p95": 4.0,
+                "max": 4
+              },
+              "union_nonmatching_in_image_records": {
+                "count": 270,
+                "median": 0.0,
+                "p95": 4.0,
+                "max": 10
+              },
+              "union_matching_coordinates": {
+                "count": 270,
+                "median": 4.0,
+                "p95": 4.0,
+                "max": 4
+              },
+              "union_nonmatching_in_image_coordinates": {
+                "count": 270,
+                "median": 0.0,
+                "p95": 4.0,
+                "max": 10
+              },
+              "incremental_nonmatching_in_image_records": {
+                "count": 270,
+                "median": 0.0,
+                "p95": 3.0,
+                "max": 8
+              },
+              "incremental_nonmatching_in_image_coordinates": {
+                "count": 270,
+                "median": 0.0,
+                "p95": 3.0,
+                "max": 8
+              }
+            },
+            "hidden_already_nonempty_burden": {
+              "frames": 0,
+              "incremental_raw_records": {
+                "count": 0,
+                "median": null,
+                "p95": null,
+                "max": null
+              },
+              "incremental_exact_coordinates": {
+                "count": 0,
+                "median": null,
+                "p95": null,
+                "max": null
+              }
+            },
+            "mean_to_union_availability_transitions": {
+              "True -> True": 218,
+              "False -> True": 9,
+              "False -> False": 43
+            }
+          },
+          "new": {
+            "mean_available": 266,
+            "union_available": 270,
+            "newly_available": 4,
+            "lost_availability": 0,
+            "newly_ambiguous": 57,
+            "newly_nonempty_hidden": 2,
+            "newly_available_non_anchor": 4,
+            "newly_available_outside_prior_context": 4,
+            "residual_unavailable": 0,
+            "newly_available_frames": [
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 962
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 967
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1274
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1278
+              }
+            ],
+            "mean_hidden_nonempty": 0,
+            "mean_ambiguous": 16,
+            "mean_wrong_only": 4,
+            "mean_empty_eligible": 0,
+            "union_hidden_nonempty": 2,
+            "union_ambiguous": 73,
+            "union_wrong_only": 0,
+            "union_empty_eligible": 0,
+            "candidate_burden": {
+              "mean_raw_records": {
+                "count": 300,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 4
+              },
+              "mean_exact_coordinates": {
+                "count": 300,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 4
+              },
+              "mean_in_image_records": {
+                "count": 300,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 4
+              },
+              "mean_in_image_exact_coordinates": {
+                "count": 300,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 4
+              },
+              "union_raw_records": {
+                "count": 300,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 15
+              },
+              "union_exact_coordinates": {
+                "count": 300,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 14
+              },
+              "union_in_image_records": {
+                "count": 300,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 15
+              },
+              "union_in_image_exact_coordinates": {
+                "count": 300,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 14
+              },
+              "incremental_raw_records": {
+                "count": 300,
+                "median": 3.0,
+                "p95": 6.0,
+                "max": 11
+              },
+              "incremental_exact_coordinates": {
+                "count": 300,
+                "median": 3.0,
+                "p95": 5.0,
+                "max": 10
+              }
+            },
+            "eligible_candidate_composition": {
+              "mean_matching_records": {
+                "count": 270,
+                "median": 1.0,
+                "p95": 1.0,
+                "max": 1
+              },
+              "mean_nonmatching_in_image_records": {
+                "count": 270,
+                "median": 0.0,
+                "p95": 1.0,
+                "max": 4
+              },
+              "mean_matching_coordinates": {
+                "count": 270,
+                "median": 1.0,
+                "p95": 1.0,
+                "max": 1
+              },
+              "mean_nonmatching_in_image_coordinates": {
+                "count": 270,
+                "median": 0.0,
+                "p95": 1.0,
+                "max": 4
+              },
+              "union_matching_records": {
+                "count": 270,
+                "median": 4.0,
+                "p95": 4.0,
+                "max": 4
+              },
+              "union_nonmatching_in_image_records": {
+                "count": 270,
+                "median": 0.0,
+                "p95": 4.0,
+                "max": 13
+              },
+              "union_matching_coordinates": {
+                "count": 270,
+                "median": 4.0,
+                "p95": 4.0,
+                "max": 4
+              },
+              "union_nonmatching_in_image_coordinates": {
+                "count": 270,
+                "median": 0.0,
+                "p95": 4.0,
+                "max": 12
+              },
+              "incremental_nonmatching_in_image_records": {
+                "count": 270,
+                "median": 0.0,
+                "p95": 3.0,
+                "max": 9
+              },
+              "incremental_nonmatching_in_image_coordinates": {
+                "count": 270,
+                "median": 0.0,
+                "p95": 3.0,
+                "max": 8
+              }
+            },
+            "hidden_already_nonempty_burden": {
+              "frames": 0,
+              "incremental_raw_records": {
+                "count": 0,
+                "median": null,
+                "p95": null,
+                "max": null
+              },
+              "incremental_exact_coordinates": {
+                "count": 0,
+                "median": null,
+                "p95": null,
+                "max": null
+              }
+            },
+            "mean_to_union_availability_transitions": {
+              "True -> True": 266,
+              "False -> True": 4
+            }
+          }
+        },
+        "old_to_new_mean_availability_transitions": {
+          "True -> True": 218,
+          "False -> True": 48,
+          "False -> False": 4
+        },
+        "old_to_new_union_availability_transitions": {
+          "True -> True": 227,
+          "False -> True": 43
+        },
+        "original_selected_outcome_transitions": {
+          "matched -> matched": 218,
+          "wrong -> matched": 3,
+          "wrong -> wrong": 2,
+          "unscored -> unscored": 13,
+          "hidden_quiet -> hidden_quiet": 17,
+          "missing -> matched": 44,
+          "missing -> wrong": 3
+        }
+      },
+      "det_development": {
+        "frames": 340,
+        "eligibility": {
+          "eligible": 237,
+          "unknown": 34,
+          "hidden": 69
+        },
+        "arms": {
+          "old": {
+            "mean_available": 207,
+            "union_available": 213,
+            "newly_available": 6,
+            "lost_availability": 0,
+            "newly_ambiguous": 32,
+            "newly_nonempty_hidden": 5,
+            "newly_available_non_anchor": 5,
+            "newly_available_outside_prior_context": 5,
+            "residual_unavailable": 24,
+            "newly_available_frames": [
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11013
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11437
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11438
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11521
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11542
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11557
+              }
+            ],
+            "mean_hidden_nonempty": 13,
+            "mean_ambiguous": 21,
+            "mean_wrong_only": 8,
+            "mean_empty_eligible": 22,
+            "union_hidden_nonempty": 18,
+            "union_ambiguous": 53,
+            "union_wrong_only": 6,
+            "union_empty_eligible": 18,
+            "candidate_burden": {
+              "mean_raw_records": {
+                "count": 340,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "mean_exact_coordinates": {
+                "count": 340,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "mean_in_image_records": {
+                "count": 340,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "mean_in_image_exact_coordinates": {
+                "count": 340,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "union_raw_records": {
+                "count": 340,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 8
+              },
+              "union_exact_coordinates": {
+                "count": 340,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 8
+              },
+              "union_in_image_records": {
+                "count": 340,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 8
+              },
+              "union_in_image_exact_coordinates": {
+                "count": 340,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 8
+              },
+              "incremental_raw_records": {
+                "count": 340,
+                "median": 3.0,
+                "p95": 5.0,
+                "max": 6
+              },
+              "incremental_exact_coordinates": {
+                "count": 340,
+                "median": 3.0,
+                "p95": 5.0,
+                "max": 6
+              }
+            },
+            "eligible_candidate_composition": {
+              "mean_matching_records": {
+                "count": 237,
+                "median": 1.0,
+                "p95": 1.0,
+                "max": 1
+              },
+              "mean_nonmatching_in_image_records": {
+                "count": 237,
+                "median": 0.0,
+                "p95": 1.0,
+                "max": 2
+              },
+              "mean_matching_coordinates": {
+                "count": 237,
+                "median": 1.0,
+                "p95": 1.0,
+                "max": 1
+              },
+              "mean_nonmatching_in_image_coordinates": {
+                "count": 237,
+                "median": 0.0,
+                "p95": 1.0,
+                "max": 2
+              },
+              "union_matching_records": {
+                "count": 237,
+                "median": 4.0,
+                "p95": 4.0,
+                "max": 4
+              },
+              "union_nonmatching_in_image_records": {
+                "count": 237,
+                "median": 0.0,
+                "p95": 4.0,
+                "max": 6
+              },
+              "union_matching_coordinates": {
+                "count": 237,
+                "median": 4.0,
+                "p95": 4.0,
+                "max": 4
+              },
+              "union_nonmatching_in_image_coordinates": {
+                "count": 237,
+                "median": 0.0,
+                "p95": 4.0,
+                "max": 6
+              },
+              "incremental_nonmatching_in_image_records": {
+                "count": 237,
+                "median": 0.0,
+                "p95": 3.0,
+                "max": 4
+              },
+              "incremental_nonmatching_in_image_coordinates": {
+                "count": 237,
+                "median": 0.0,
+                "p95": 3.0,
+                "max": 4
+              }
+            },
+            "hidden_already_nonempty_burden": {
+              "frames": 13,
+              "incremental_raw_records": {
+                "count": 13,
+                "median": 3.0,
+                "p95": 4.399999999999999,
+                "max": 5
+              },
+              "incremental_exact_coordinates": {
+                "count": 13,
+                "median": 3.0,
+                "p95": 4.399999999999999,
+                "max": 5
+              }
+            },
+            "mean_to_union_availability_transitions": {
+              "True -> True": 207,
+              "False -> True": 6,
+              "False -> False": 24
+            }
+          },
+          "new": {
+            "mean_available": 207,
+            "union_available": 212,
+            "newly_available": 5,
+            "lost_availability": 0,
+            "newly_ambiguous": 30,
+            "newly_nonempty_hidden": 12,
+            "newly_available_non_anchor": 4,
+            "newly_available_outside_prior_context": 4,
+            "residual_unavailable": 25,
+            "newly_available_frames": [
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11437
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11501
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11533
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11542
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11557
+              }
+            ],
+            "mean_hidden_nonempty": 9,
+            "mean_ambiguous": 22,
+            "mean_wrong_only": 9,
+            "mean_empty_eligible": 21,
+            "union_hidden_nonempty": 21,
+            "union_ambiguous": 52,
+            "union_wrong_only": 5,
+            "union_empty_eligible": 20,
+            "candidate_burden": {
+              "mean_raw_records": {
+                "count": 340,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "mean_exact_coordinates": {
+                "count": 340,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "mean_in_image_records": {
+                "count": 340,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "mean_in_image_exact_coordinates": {
+                "count": 340,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "union_raw_records": {
+                "count": 340,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 10
+              },
+              "union_exact_coordinates": {
+                "count": 340,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 9
+              },
+              "union_in_image_records": {
+                "count": 340,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 10
+              },
+              "union_in_image_exact_coordinates": {
+                "count": 340,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 9
+              },
+              "incremental_raw_records": {
+                "count": 340,
+                "median": 3.0,
+                "p95": 5.0,
+                "max": 7
+              },
+              "incremental_exact_coordinates": {
+                "count": 340,
+                "median": 3.0,
+                "p95": 5.0,
+                "max": 6
+              }
+            },
+            "eligible_candidate_composition": {
+              "mean_matching_records": {
+                "count": 237,
+                "median": 1.0,
+                "p95": 1.0,
+                "max": 1
+              },
+              "mean_nonmatching_in_image_records": {
+                "count": 237,
+                "median": 0.0,
+                "p95": 1.0,
+                "max": 3
+              },
+              "mean_matching_coordinates": {
+                "count": 237,
+                "median": 1.0,
+                "p95": 1.0,
+                "max": 1
+              },
+              "mean_nonmatching_in_image_coordinates": {
+                "count": 237,
+                "median": 0.0,
+                "p95": 1.0,
+                "max": 3
+              },
+              "union_matching_records": {
+                "count": 237,
+                "median": 4.0,
+                "p95": 4.0,
+                "max": 4
+              },
+              "union_nonmatching_in_image_records": {
+                "count": 237,
+                "median": 0.0,
+                "p95": 4.0,
+                "max": 10
+              },
+              "union_matching_coordinates": {
+                "count": 237,
+                "median": 4.0,
+                "p95": 4.0,
+                "max": 4
+              },
+              "union_nonmatching_in_image_coordinates": {
+                "count": 237,
+                "median": 0.0,
+                "p95": 4.0,
+                "max": 9
+              },
+              "incremental_nonmatching_in_image_records": {
+                "count": 237,
+                "median": 0.0,
+                "p95": 3.0,
+                "max": 7
+              },
+              "incremental_nonmatching_in_image_coordinates": {
+                "count": 237,
+                "median": 0.0,
+                "p95": 3.0,
+                "max": 6
+              }
+            },
+            "hidden_already_nonempty_burden": {
+              "frames": 9,
+              "incremental_raw_records": {
+                "count": 9,
+                "median": 3.0,
+                "p95": 4.6,
+                "max": 5
+              },
+              "incremental_exact_coordinates": {
+                "count": 9,
+                "median": 3.0,
+                "p95": 4.6,
+                "max": 5
+              }
+            },
+            "mean_to_union_availability_transitions": {
+              "True -> True": 207,
+              "False -> False": 25,
+              "False -> True": 5
+            }
+          }
+        },
+        "old_to_new_mean_availability_transitions": {
+          "True -> True": 206,
+          "False -> True": 1,
+          "False -> False": 29,
+          "True -> False": 1
+        },
+        "old_to_new_union_availability_transitions": {
+          "True -> True": 211,
+          "False -> False": 23,
+          "True -> False": 2,
+          "False -> True": 1
+        },
+        "original_selected_outcome_transitions": {
+          "matched -> matched": 205,
+          "missing -> matched": 1,
+          "unscored -> unscored": 34,
+          "hidden_quiet -> hidden_quiet": 53,
+          "hidden_alarm -> hidden_quiet": 7,
+          "hidden_quiet -> hidden_alarm": 3,
+          "missing -> missing": 21,
+          "hidden_alarm -> hidden_alarm": 6,
+          "matched -> wrong": 2,
+          "wrong -> wrong": 8
+        }
+      },
+      "nfhs_development": {
+        "frames": 150,
+        "eligibility": {
+          "eligible": 145,
+          "hidden": 5
+        },
+        "arms": {
+          "old": {
+            "mean_available": 130,
+            "union_available": 133,
+            "newly_available": 3,
+            "lost_availability": 0,
+            "newly_ambiguous": 19,
+            "newly_nonempty_hidden": 0,
+            "newly_available_non_anchor": 2,
+            "newly_available_outside_prior_context": 1,
+            "residual_unavailable": 12,
+            "newly_available_frames": [
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 208
+              },
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 217
+              },
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 221
+              }
+            ],
+            "mean_hidden_nonempty": 0,
+            "mean_ambiguous": 27,
+            "mean_wrong_only": 1,
+            "mean_empty_eligible": 14,
+            "union_hidden_nonempty": 0,
+            "union_ambiguous": 46,
+            "union_wrong_only": 2,
+            "union_empty_eligible": 10,
+            "candidate_burden": {
+              "mean_raw_records": {
+                "count": 150,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "mean_exact_coordinates": {
+                "count": 150,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "mean_in_image_records": {
+                "count": 150,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "mean_in_image_exact_coordinates": {
+                "count": 150,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "union_raw_records": {
+                "count": 150,
+                "median": 4.0,
+                "p95": 8.0,
+                "max": 11
+              },
+              "union_exact_coordinates": {
+                "count": 150,
+                "median": 4.0,
+                "p95": 8.0,
+                "max": 11
+              },
+              "union_in_image_records": {
+                "count": 150,
+                "median": 4.0,
+                "p95": 8.0,
+                "max": 11
+              },
+              "union_in_image_exact_coordinates": {
+                "count": 150,
+                "median": 4.0,
+                "p95": 8.0,
+                "max": 11
+              },
+              "incremental_raw_records": {
+                "count": 150,
+                "median": 3.0,
+                "p95": 6.0,
+                "max": 8
+              },
+              "incremental_exact_coordinates": {
+                "count": 150,
+                "median": 3.0,
+                "p95": 6.0,
+                "max": 8
+              }
+            },
+            "eligible_candidate_composition": {
+              "mean_matching_records": {
+                "count": 145,
+                "median": 1.0,
+                "p95": 1.0,
+                "max": 2
+              },
+              "mean_nonmatching_in_image_records": {
+                "count": 145,
+                "median": 0.0,
+                "p95": 1.0,
+                "max": 2
+              },
+              "mean_matching_coordinates": {
+                "count": 145,
+                "median": 1.0,
+                "p95": 1.0,
+                "max": 2
+              },
+              "mean_nonmatching_in_image_coordinates": {
+                "count": 145,
+                "median": 0.0,
+                "p95": 1.0,
+                "max": 2
+              },
+              "union_matching_records": {
+                "count": 145,
+                "median": 4.0,
+                "p95": 4.0,
+                "max": 4
+              },
+              "union_nonmatching_in_image_records": {
+                "count": 145,
+                "median": 0.0,
+                "p95": 4.0,
+                "max": 7
+              },
+              "union_matching_coordinates": {
+                "count": 145,
+                "median": 4.0,
+                "p95": 4.0,
+                "max": 4
+              },
+              "union_nonmatching_in_image_coordinates": {
+                "count": 145,
+                "median": 0.0,
+                "p95": 4.0,
+                "max": 7
+              },
+              "incremental_nonmatching_in_image_records": {
+                "count": 145,
+                "median": 0.0,
+                "p95": 3.0,
+                "max": 5
+              },
+              "incremental_nonmatching_in_image_coordinates": {
+                "count": 145,
+                "median": 0.0,
+                "p95": 3.0,
+                "max": 5
+              }
+            },
+            "hidden_already_nonempty_burden": {
+              "frames": 0,
+              "incremental_raw_records": {
+                "count": 0,
+                "median": null,
+                "p95": null,
+                "max": null
+              },
+              "incremental_exact_coordinates": {
+                "count": 0,
+                "median": null,
+                "p95": null,
+                "max": null
+              }
+            },
+            "mean_to_union_availability_transitions": {
+              "True -> True": 130,
+              "False -> True": 3,
+              "False -> False": 12
+            }
+          },
+          "new": {
+            "mean_available": 129,
+            "union_available": 136,
+            "newly_available": 7,
+            "lost_availability": 0,
+            "newly_ambiguous": 26,
+            "newly_nonempty_hidden": 0,
+            "newly_available_non_anchor": 3,
+            "newly_available_outside_prior_context": 2,
+            "residual_unavailable": 9,
+            "newly_available_frames": [
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 206
+              },
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 207
+              },
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 209
+              },
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 217
+              },
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 218
+              },
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 222
+              },
+              {
+                "candidate_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+                "source_frame_index": 304
+              }
+            ],
+            "mean_hidden_nonempty": 0,
+            "mean_ambiguous": 18,
+            "mean_wrong_only": 1,
+            "mean_empty_eligible": 15,
+            "union_hidden_nonempty": 0,
+            "union_ambiguous": 44,
+            "union_wrong_only": 2,
+            "union_empty_eligible": 7,
+            "candidate_burden": {
+              "mean_raw_records": {
+                "count": 150,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "mean_exact_coordinates": {
+                "count": 150,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "mean_in_image_records": {
+                "count": 150,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "mean_in_image_exact_coordinates": {
+                "count": 150,
+                "median": 1.0,
+                "p95": 2.0,
+                "max": 3
+              },
+              "union_raw_records": {
+                "count": 150,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 11
+              },
+              "union_exact_coordinates": {
+                "count": 150,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 11
+              },
+              "union_in_image_records": {
+                "count": 150,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 11
+              },
+              "union_in_image_exact_coordinates": {
+                "count": 150,
+                "median": 4.0,
+                "p95": 7.0,
+                "max": 11
+              },
+              "incremental_raw_records": {
+                "count": 150,
+                "median": 3.0,
+                "p95": 6.0,
+                "max": 8
+              },
+              "incremental_exact_coordinates": {
+                "count": 150,
+                "median": 3.0,
+                "p95": 6.0,
+                "max": 8
+              }
+            },
+            "eligible_candidate_composition": {
+              "mean_matching_records": {
+                "count": 145,
+                "median": 1.0,
+                "p95": 1.0,
+                "max": 1
+              },
+              "mean_nonmatching_in_image_records": {
+                "count": 145,
+                "median": 0.0,
+                "p95": 1.0,
+                "max": 2
+              },
+              "mean_matching_coordinates": {
+                "count": 145,
+                "median": 1.0,
+                "p95": 1.0,
+                "max": 1
+              },
+              "mean_nonmatching_in_image_coordinates": {
+                "count": 145,
+                "median": 0.0,
+                "p95": 1.0,
+                "max": 2
+              },
+              "union_matching_records": {
+                "count": 145,
+                "median": 4.0,
+                "p95": 4.0,
+                "max": 4
+              },
+              "union_nonmatching_in_image_records": {
+                "count": 145,
+                "median": 0.0,
+                "p95": 3.0,
+                "max": 7
+              },
+              "union_matching_coordinates": {
+                "count": 145,
+                "median": 4.0,
+                "p95": 4.0,
+                "max": 4
+              },
+              "union_nonmatching_in_image_coordinates": {
+                "count": 145,
+                "median": 0.0,
+                "p95": 3.0,
+                "max": 7
+              },
+              "incremental_nonmatching_in_image_records": {
+                "count": 145,
+                "median": 0.0,
+                "p95": 3.0,
+                "max": 5
+              },
+              "incremental_nonmatching_in_image_coordinates": {
+                "count": 145,
+                "median": 0.0,
+                "p95": 3.0,
+                "max": 5
+              }
+            },
+            "hidden_already_nonempty_burden": {
+              "frames": 0,
+              "incremental_raw_records": {
+                "count": 0,
+                "median": null,
+                "p95": null,
+                "max": null
+              },
+              "incremental_exact_coordinates": {
+                "count": 0,
+                "median": null,
+                "p95": null,
+                "max": null
+              }
+            },
+            "mean_to_union_availability_transitions": {
+              "True -> True": 129,
+              "False -> True": 7,
+              "False -> False": 9
+            }
+          }
+        },
+        "old_to_new_mean_availability_transitions": {
+          "True -> True": 126,
+          "True -> False": 4,
+          "False -> False": 12,
+          "False -> True": 3
+        },
+        "old_to_new_union_availability_transitions": {
+          "True -> True": 132,
+          "True -> False": 1,
+          "False -> True": 4,
+          "False -> False": 8
+        },
+        "original_selected_outcome_transitions": {
+          "matched -> matched": 126,
+          "matched -> missing": 4,
+          "missing -> missing": 11,
+          "missing -> matched": 3,
+          "wrong -> wrong": 1,
+          "hidden_quiet -> hidden_quiet": 5
+        }
+      }
+    },
+    "by_window": {
+      "sac_mem_q1_c01_pilot_control": {
+        "frames": 60,
+        "eligibility": {
+          "eligible": 60
+        },
+        "arms": {
+          "old": {
+            "mean_available": 60,
+            "union_available": 60,
+            "newly_available": 0,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 0,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 7,
+            "union_ambiguous": 16,
+            "newly_available_frames": []
+          },
+          "new": {
+            "mean_available": 60,
+            "union_available": 60,
+            "newly_available": 0,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 0,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 0,
+            "union_ambiguous": 1,
+            "newly_available_frames": []
+          }
+        }
+      },
+      "sac_distractor_recovery": {
+        "frames": 120,
+        "eligibility": {
+          "eligible": 90,
+          "unknown": 13,
+          "hidden": 17
+        },
+        "arms": {
+          "old": {
+            "mean_available": 87,
+            "union_available": 89,
+            "newly_available": 2,
+            "newly_available_non_anchor": 2,
+            "newly_available_outside_prior_context": 2,
+            "residual_unavailable": 1,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 5,
+            "mean_ambiguous": 7,
+            "union_ambiguous": 26,
+            "newly_available_frames": [
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 961
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 967
+              }
+            ]
+          },
+          "new": {
+            "mean_available": 88,
+            "union_available": 90,
+            "newly_available": 2,
+            "newly_available_non_anchor": 2,
+            "newly_available_outside_prior_context": 2,
+            "residual_unavailable": 0,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 2,
+            "mean_ambiguous": 2,
+            "union_ambiguous": 15,
+            "newly_available_frames": [
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 962
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 967
+              }
+            ]
+          }
+        }
+      },
+      "sac_held_ball_gaps": {
+        "frames": 120,
+        "eligibility": {
+          "eligible": 120
+        },
+        "arms": {
+          "old": {
+            "mean_available": 71,
+            "union_available": 78,
+            "newly_available": 7,
+            "newly_available_non_anchor": 7,
+            "newly_available_outside_prior_context": 7,
+            "residual_unavailable": 42,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 3,
+            "union_ambiguous": 34,
+            "newly_available_frames": [
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1259
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1291
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1292
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1308
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1309
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1310
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1318
+              }
+            ]
+          },
+          "new": {
+            "mean_available": 118,
+            "union_available": 120,
+            "newly_available": 2,
+            "newly_available_non_anchor": 2,
+            "newly_available_outside_prior_context": 2,
+            "residual_unavailable": 0,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 14,
+            "union_ambiguous": 57,
+            "newly_available_frames": [
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1274
+              },
+              {
+                "candidate_id": "sac_mem_q1_c01",
+                "source_frame_index": 1278
+              }
+            ]
+          }
+        }
+      },
+      "sas_det_q1_c02_pilot_control": {
+        "frames": 60,
+        "eligibility": {
+          "eligible": 60
+        },
+        "arms": {
+          "old": {
+            "mean_available": 60,
+            "union_available": 60,
+            "newly_available": 0,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 0,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 0,
+            "union_ambiguous": 4,
+            "newly_available_frames": []
+          },
+          "new": {
+            "mean_available": 60,
+            "union_available": 60,
+            "newly_available": 0,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 0,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 0,
+            "union_ambiguous": 5,
+            "newly_available_frames": []
+          }
+        }
+      },
+      "det_distractor_long_gap": {
+        "frames": 120,
+        "eligibility": {
+          "eligible": 65,
+          "unknown": 14,
+          "hidden": 41
+        },
+        "arms": {
+          "old": {
+            "mean_available": 45,
+            "union_available": 46,
+            "newly_available": 1,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 19,
+            "mean_hidden_nonempty": 12,
+            "union_hidden_nonempty": 15,
+            "mean_ambiguous": 13,
+            "union_ambiguous": 20,
+            "newly_available_frames": [
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11013
+              }
+            ]
+          },
+          "new": {
+            "mean_available": 46,
+            "union_available": 46,
+            "newly_available": 0,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 19,
+            "mean_hidden_nonempty": 8,
+            "union_hidden_nonempty": 18,
+            "mean_ambiguous": 14,
+            "union_ambiguous": 20,
+            "newly_available_frames": []
+          }
+        }
+      },
+      "det_drive_rim_overlap": {
+        "frames": 160,
+        "eligibility": {
+          "eligible": 112,
+          "unknown": 20,
+          "hidden": 28
+        },
+        "arms": {
+          "old": {
+            "mean_available": 102,
+            "union_available": 107,
+            "newly_available": 5,
+            "newly_available_non_anchor": 5,
+            "newly_available_outside_prior_context": 5,
+            "residual_unavailable": 5,
+            "mean_hidden_nonempty": 1,
+            "union_hidden_nonempty": 3,
+            "mean_ambiguous": 8,
+            "union_ambiguous": 29,
+            "newly_available_frames": [
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11437
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11438
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11521
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11542
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11557
+              }
+            ]
+          },
+          "new": {
+            "mean_available": 101,
+            "union_available": 106,
+            "newly_available": 5,
+            "newly_available_non_anchor": 4,
+            "newly_available_outside_prior_context": 4,
+            "residual_unavailable": 6,
+            "mean_hidden_nonempty": 1,
+            "union_hidden_nonempty": 3,
+            "mean_ambiguous": 8,
+            "union_ambiguous": 27,
+            "newly_available_frames": [
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11437
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11501
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11533
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11542
+              },
+              {
+                "candidate_id": "sas_det_q1_c02",
+                "source_frame_index": 11557
+              }
+            ]
+          }
+        }
+      },
+      "possession_001_frames_0050_0074_representative_evaluation_development_v0_2": {
+        "frames": 25,
+        "eligibility": {
+          "eligible": 25
+        },
+        "arms": {
+          "old": {
+            "mean_available": 25,
+            "union_available": 25,
+            "newly_available": 0,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 0,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 9,
+            "union_ambiguous": 14,
+            "newly_available_frames": []
+          },
+          "new": {
+            "mean_available": 25,
+            "union_available": 25,
+            "newly_available": 0,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 0,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 4,
+            "union_ambiguous": 13,
+            "newly_available_frames": []
+          }
+        }
+      },
+      "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2": {
+        "frames": 25,
+        "eligibility": {
+          "eligible": 25
+        },
+        "arms": {
+          "old": {
+            "mean_available": 16,
+            "union_available": 19,
+            "newly_available": 3,
+            "newly_available_non_anchor": 2,
+            "newly_available_outside_prior_context": 1,
+            "residual_unavailable": 6,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 3,
+            "union_ambiguous": 8,
+            "newly_available_frames": [
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 208
+              },
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 217
+              },
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 221
+              }
+            ]
+          },
+          "new": {
+            "mean_available": 15,
+            "union_available": 21,
+            "newly_available": 6,
+            "newly_available_non_anchor": 3,
+            "newly_available_outside_prior_context": 2,
+            "residual_unavailable": 4,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 2,
+            "union_ambiguous": 4,
+            "newly_available_frames": [
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 206
+              },
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 207
+              },
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 209
+              },
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 217
+              },
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 218
+              },
+              {
+                "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+                "source_frame_index": 222
+              }
+            ]
+          }
+        }
+      },
+      "possession_002_frames_0250_0274_representative_evaluation_development_v0_2": {
+        "frames": 25,
+        "eligibility": {
+          "eligible": 25
+        },
+        "arms": {
+          "old": {
+            "mean_available": 25,
+            "union_available": 25,
+            "newly_available": 0,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 0,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 0,
+            "union_ambiguous": 0,
+            "newly_available_frames": []
+          },
+          "new": {
+            "mean_available": 25,
+            "union_available": 25,
+            "newly_available": 0,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 0,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 0,
+            "union_ambiguous": 0,
+            "newly_available_frames": []
+          }
+        }
+      },
+      "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2": {
+        "frames": 25,
+        "eligibility": {
+          "eligible": 25
+        },
+        "arms": {
+          "old": {
+            "mean_available": 24,
+            "union_available": 24,
+            "newly_available": 0,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 1,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 7,
+            "union_ambiguous": 8,
+            "newly_available_frames": []
+          },
+          "new": {
+            "mean_available": 25,
+            "union_available": 25,
+            "newly_available": 0,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 0,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 4,
+            "union_ambiguous": 10,
+            "newly_available_frames": []
+          }
+        }
+      },
+      "possession_003_frames_0300_0324_representative_evaluation_development_v0_2": {
+        "frames": 25,
+        "eligibility": {
+          "eligible": 25
+        },
+        "arms": {
+          "old": {
+            "mean_available": 21,
+            "union_available": 21,
+            "newly_available": 0,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 4,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 8,
+            "union_ambiguous": 15,
+            "newly_available_frames": []
+          },
+          "new": {
+            "mean_available": 20,
+            "union_available": 21,
+            "newly_available": 1,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 4,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 8,
+            "union_ambiguous": 14,
+            "newly_available_frames": [
+              {
+                "candidate_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+                "source_frame_index": 304
+              }
+            ]
+          }
+        }
+      },
+      "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2": {
+        "frames": 25,
+        "eligibility": {
+          "eligible": 20,
+          "hidden": 5
+        },
+        "arms": {
+          "old": {
+            "mean_available": 19,
+            "union_available": 19,
+            "newly_available": 0,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 1,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 0,
+            "union_ambiguous": 1,
+            "newly_available_frames": []
+          },
+          "new": {
+            "mean_available": 19,
+            "union_available": 19,
+            "newly_available": 0,
+            "newly_available_non_anchor": 0,
+            "newly_available_outside_prior_context": 0,
+            "residual_unavailable": 1,
+            "mean_hidden_nonempty": 0,
+            "union_hidden_nonempty": 0,
+            "mean_ambiguous": 0,
+            "union_ambiguous": 3,
+            "newly_available_frames": []
+          }
+        }
+      }
+    },
+    "controls_included_subset": {
+      "frames": 120,
+      "eligibility": {
+        "eligible": 120
+      },
+      "arms": {
+        "old": {
+          "mean_available": 120,
+          "union_available": 120,
+          "newly_available": 0,
+          "lost_availability": 0,
+          "newly_ambiguous": 13,
+          "newly_nonempty_hidden": 0,
+          "newly_available_non_anchor": 0,
+          "newly_available_outside_prior_context": 0,
+          "residual_unavailable": 0,
+          "newly_available_frames": [],
+          "mean_hidden_nonempty": 0,
+          "mean_ambiguous": 7,
+          "mean_wrong_only": 0,
+          "mean_empty_eligible": 0,
+          "union_hidden_nonempty": 0,
+          "union_ambiguous": 20,
+          "union_wrong_only": 0,
+          "union_empty_eligible": 0,
+          "candidate_burden": {
+            "mean_raw_records": {
+              "count": 120,
+              "median": 1.0,
+              "p95": 2.0,
+              "max": 2
+            },
+            "mean_exact_coordinates": {
+              "count": 120,
+              "median": 1.0,
+              "p95": 2.0,
+              "max": 2
+            },
+            "mean_in_image_records": {
+              "count": 120,
+              "median": 1.0,
+              "p95": 2.0,
+              "max": 2
+            },
+            "mean_in_image_exact_coordinates": {
+              "count": 120,
+              "median": 1.0,
+              "p95": 2.0,
+              "max": 2
+            },
+            "union_raw_records": {
+              "count": 120,
+              "median": 4.0,
+              "p95": 7.0,
+              "max": 10
+            },
+            "union_exact_coordinates": {
+              "count": 120,
+              "median": 4.0,
+              "p95": 7.0,
+              "max": 10
+            },
+            "union_in_image_records": {
+              "count": 120,
+              "median": 4.0,
+              "p95": 7.0,
+              "max": 10
+            },
+            "union_in_image_exact_coordinates": {
+              "count": 120,
+              "median": 4.0,
+              "p95": 7.0,
+              "max": 10
+            },
+            "incremental_raw_records": {
+              "count": 120,
+              "median": 3.0,
+              "p95": 5.0,
+              "max": 8
+            },
+            "incremental_exact_coordinates": {
+              "count": 120,
+              "median": 3.0,
+              "p95": 5.0,
+              "max": 8
+            }
+          },
+          "eligible_candidate_composition": {
+            "mean_matching_records": {
+              "count": 120,
+              "median": 1.0,
+              "p95": 1.0,
+              "max": 1
+            },
+            "mean_nonmatching_in_image_records": {
+              "count": 120,
+              "median": 0.0,
+              "p95": 1.0,
+              "max": 1
+            },
+            "mean_matching_coordinates": {
+              "count": 120,
+              "median": 1.0,
+              "p95": 1.0,
+              "max": 1
+            },
+            "mean_nonmatching_in_image_coordinates": {
+              "count": 120,
+              "median": 0.0,
+              "p95": 1.0,
+              "max": 1
+            },
+            "union_matching_records": {
+              "count": 120,
+              "median": 4.0,
+              "p95": 4.0,
+              "max": 4
+            },
+            "union_nonmatching_in_image_records": {
+              "count": 120,
+              "median": 0.0,
+              "p95": 3.0,
+              "max": 6
+            },
+            "union_matching_coordinates": {
+              "count": 120,
+              "median": 4.0,
+              "p95": 4.0,
+              "max": 4
+            },
+            "union_nonmatching_in_image_coordinates": {
+              "count": 120,
+              "median": 0.0,
+              "p95": 3.0,
+              "max": 6
+            },
+            "incremental_nonmatching_in_image_records": {
+              "count": 120,
+              "median": 0.0,
+              "p95": 2.0,
+              "max": 5
+            },
+            "incremental_nonmatching_in_image_coordinates": {
+              "count": 120,
+              "median": 0.0,
+              "p95": 2.0,
+              "max": 5
+            }
+          },
+          "hidden_already_nonempty_burden": {
+            "frames": 0,
+            "incremental_raw_records": {
+              "count": 0,
+              "median": null,
+              "p95": null,
+              "max": null
+            },
+            "incremental_exact_coordinates": {
+              "count": 0,
+              "median": null,
+              "p95": null,
+              "max": null
+            }
+          },
+          "mean_to_union_availability_transitions": {
+            "True -> True": 120
+          }
+        },
+        "new": {
+          "mean_available": 120,
+          "union_available": 120,
+          "newly_available": 0,
+          "lost_availability": 0,
+          "newly_ambiguous": 6,
+          "newly_nonempty_hidden": 0,
+          "newly_available_non_anchor": 0,
+          "newly_available_outside_prior_context": 0,
+          "residual_unavailable": 0,
+          "newly_available_frames": [],
+          "mean_hidden_nonempty": 0,
+          "mean_ambiguous": 0,
+          "mean_wrong_only": 0,
+          "mean_empty_eligible": 0,
+          "union_hidden_nonempty": 0,
+          "union_ambiguous": 6,
+          "union_wrong_only": 0,
+          "union_empty_eligible": 0,
+          "candidate_burden": {
+            "mean_raw_records": {
+              "count": 120,
+              "median": 1.0,
+              "p95": 1.0,
+              "max": 1
+            },
+            "mean_exact_coordinates": {
+              "count": 120,
+              "median": 1.0,
+              "p95": 1.0,
+              "max": 1
+            },
+            "mean_in_image_records": {
+              "count": 120,
+              "median": 1.0,
+              "p95": 1.0,
+              "max": 1
+            },
+            "mean_in_image_exact_coordinates": {
+              "count": 120,
+              "median": 1.0,
+              "p95": 1.0,
+              "max": 1
+            },
+            "union_raw_records": {
+              "count": 120,
+              "median": 4.0,
+              "p95": 4.0,
+              "max": 6
+            },
+            "union_exact_coordinates": {
+              "count": 120,
+              "median": 4.0,
+              "p95": 4.0,
+              "max": 6
+            },
+            "union_in_image_records": {
+              "count": 120,
+              "median": 4.0,
+              "p95": 4.0,
+              "max": 6
+            },
+            "union_in_image_exact_coordinates": {
+              "count": 120,
+              "median": 4.0,
+              "p95": 4.0,
+              "max": 6
+            },
+            "incremental_raw_records": {
+              "count": 120,
+              "median": 3.0,
+              "p95": 3.0,
+              "max": 5
+            },
+            "incremental_exact_coordinates": {
+              "count": 120,
+              "median": 3.0,
+              "p95": 3.0,
+              "max": 5
+            }
+          },
+          "eligible_candidate_composition": {
+            "mean_matching_records": {
+              "count": 120,
+              "median": 1.0,
+              "p95": 1.0,
+              "max": 1
+            },
+            "mean_nonmatching_in_image_records": {
+              "count": 120,
+              "median": 0.0,
+              "p95": 0.0,
+              "max": 0
+            },
+            "mean_matching_coordinates": {
+              "count": 120,
+              "median": 1.0,
+              "p95": 1.0,
+              "max": 1
+            },
+            "mean_nonmatching_in_image_coordinates": {
+              "count": 120,
+              "median": 0.0,
+              "p95": 0.0,
+              "max": 0
+            },
+            "union_matching_records": {
+              "count": 120,
+              "median": 4.0,
+              "p95": 4.0,
+              "max": 4
+            },
+            "union_nonmatching_in_image_records": {
+              "count": 120,
+              "median": 0.0,
+              "p95": 0.04999999999999716,
+              "max": 2
+            },
+            "union_matching_coordinates": {
+              "count": 120,
+              "median": 4.0,
+              "p95": 4.0,
+              "max": 4
+            },
+            "union_nonmatching_in_image_coordinates": {
+              "count": 120,
+              "median": 0.0,
+              "p95": 0.04999999999999716,
+              "max": 2
+            },
+            "incremental_nonmatching_in_image_records": {
+              "count": 120,
+              "median": 0.0,
+              "p95": 0.04999999999999716,
+              "max": 2
+            },
+            "incremental_nonmatching_in_image_coordinates": {
+              "count": 120,
+              "median": 0.0,
+              "p95": 0.04999999999999716,
+              "max": 2
+            }
+          },
+          "hidden_already_nonempty_burden": {
+            "frames": 0,
+            "incremental_raw_records": {
+              "count": 0,
+              "median": null,
+              "p95": null,
+              "max": null
+            },
+            "incremental_exact_coordinates": {
+              "count": 0,
+              "median": null,
+              "p95": null,
+              "max": null
+            }
+          },
+          "mean_to_union_availability_transitions": {
+            "True -> True": 120
+          }
+        }
+      },
+      "old_to_new_mean_availability_transitions": {
+        "True -> True": 120
+      },
+      "old_to_new_union_availability_transitions": {
+        "True -> True": 120
+      },
+      "original_selected_outcome_transitions": {
+        "matched -> matched": 120
+      }
+    },
+    "primary_development": {
+      "det_development": {
+        "eligible": 237,
+        "mean_available": 207,
+        "union_available": 213,
+        "newly_available": 6,
+        "newly_available_non_anchor": 5,
+        "newly_available_outside_prior_context": 5,
+        "residual_unavailable": 24,
+        "mean_hidden_nonempty": 13,
+        "union_hidden_nonempty": 18,
+        "mean_ambiguous": 21,
+        "union_ambiguous": 53,
+        "newly_available_frames": [
+          {
+            "candidate_id": "sas_det_q1_c02",
+            "source_frame_index": 11013
+          },
+          {
+            "candidate_id": "sas_det_q1_c02",
+            "source_frame_index": 11437
+          },
+          {
+            "candidate_id": "sas_det_q1_c02",
+            "source_frame_index": 11438
+          },
+          {
+            "candidate_id": "sas_det_q1_c02",
+            "source_frame_index": 11521
+          },
+          {
+            "candidate_id": "sas_det_q1_c02",
+            "source_frame_index": 11542
+          },
+          {
+            "candidate_id": "sas_det_q1_c02",
+            "source_frame_index": 11557
+          }
+        ]
+      },
+      "nfhs_development": {
+        "eligible": 145,
+        "mean_available": 130,
+        "union_available": 133,
+        "newly_available": 3,
+        "newly_available_non_anchor": 2,
+        "newly_available_outside_prior_context": 1,
+        "residual_unavailable": 12,
+        "mean_hidden_nonempty": 0,
+        "union_hidden_nonempty": 0,
+        "mean_ambiguous": 27,
+        "union_ambiguous": 46,
+        "newly_available_frames": [
+          {
+            "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+            "source_frame_index": 208
+          },
+          {
+            "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+            "source_frame_index": 217
+          },
+          {
+            "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+            "source_frame_index": 221
+          }
+        ]
+      }
+    },
+    "combined_primary": {
+      "eligible_frames": 382,
+      "previously_unavailable": 45,
+      "newly_available": 9,
+      "fraction_previous_failures_recovered_in_pool": 0.2,
+      "remaining_unavailable": 36,
+      "newly_ambiguous": 51,
+      "newly_nonempty_hidden": 5
+    },
+    "usefulness_screen": {
+      "passed": true,
+      "conditions": {
+        "det_development": true,
+        "nfhs_development": true
+      },
+      "primary_arm": "old",
+      "meaning": "Only justify considering one future label-blind selection experiment; no model, selector or phase promotion.",
+      "candidate_or_model_promoted": false,
+      "costs": "Added hidden nonempty frames, off-reference candidates and ambiguity remain prominent regardless of screen."
+    }
+  },
+  "decision": {
+    "retained_baseline_checkpoint_sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+    "candidate_or_checkpoint_promoted": false,
+    "prior_failed_continuation_unchanged": true,
+    "ball_phase_complete": false,
+    "meaning": "The frozen minimal usefulness screen passes. Additional recoverable centers exist in both development domains, beyond the prior anchors, with meaningful ambiguity costs. This supports one bounded fixed selector trial, not a quality pass.",
+    "next_step": {
+      "status": "recommendation_not_executed",
+      "work": "One predeclared label-blind temporal selection and abstention comparison using the retained checkpoint and frozen candidate pool, with original selected outputs as the control.",
+      "requirements": [
+        "Keep source timing, uncertainty, original evidence and protected holdouts intact.",
+        "Freeze one rule before execution; no threshold or hyperparameter sweep.",
+        "Require actual selected-output gains, no additional wrong selections or hidden alarms, and preserved easy controls under the existing comparison requirements.",
+        "Produce synchronized review output for any proposed changed trajectories; Ryan retains final visual acceptance.",
+        "Use the result to adopt the useful change or stop this route; no repeated aggregation diagnosis."
+      ],
+      "limitation": "Even reference-informed selection restricted to this fixed pool cannot recover the 36 development frames with no accurate candidate. Those frames need separate detection or localization work; this result does not establish that new training or new images are necessary."
+    }
+  },
+  "limits": [
+    "Candidate availability uses labels diagnostically and is not usable prediction accuracy.",
+    "No checkpoint mixing, spatial merging, temporal selection, threshold tuning or blanket emission.",
+    "The original selected outcomes and failed continuation screen remain unchanged.",
+    "SAC describes training fit; DET/NFHS are development, not sealed tests.",
+    "Unknown geometry remains null. Existing holdouts and three pending motion reviews remain untouched.",
+    "Old NFHS caches retain original source/window/frame/model provenance, not invented captured PNG/PTS hashes. Their historical threshold0.5 metadata is separate from the fixed0.3 candidate extraction.",
+    "Candidate availability is a reference-informed ceiling, not deployed accuracy. Preserved mean availability follows from set inclusion.",
+    "Raw records and exactly equal coordinate groups are not counts of physical balls; nearby jittered candidates remain separate.",
+    "The old controls retain120available centers, but ambiguity rises7to20; future selection still needs explicit control checks.",
+    "All three retained-baseline NFHS gains are in P001 challenge; only frame217 is outside the previous37-frame context.",
+    "All emitted evaluations and summaries were independently checked, but only141frame-arms were numerically reconstructed independently; ordinary negative cases outside the fixed sample were not reconstructed twice.",
+    "Generated detailed candidate records and numerical outputs remain ignored; no new images/videos or human review claim."
+  ]
+}
