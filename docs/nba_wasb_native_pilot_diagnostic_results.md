@@ -1,5 +1,16 @@
 # NBA native-cadence pilot diagnostic result
 
+**Current status: accepted.** On 2026-10-19 (America/Phoenix), Ryan reported:
+“I reviewed both videos and the predictions look good. Move forward chat.”
+The separate [model-output acceptance record](../configs/ball_tracking/reviews/nba_wasb_native_pilot_visual_review_v0_1.json)
+records this later event for both presented complete clips and their actual
+final frames. No corrections were requested. Original result records, media
+and the creation-time pending review page remain unchanged; the
+[accepted-status page](../data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/accepted.html)
+links the same videos. Reference-label acceptance remains a separate event.
+
+## Completed diagnostic
+
 On 2026-10-19 (America/Phoenix), Ryan approved the exact
 [prepared recipe](nba_wasb_native_pilot_diagnostic.md): “yes I do. move forward
 chat”. The [approval record](../configs/ball_tracking/reviews/nba_wasb_native_pilot_diagnostic_approval_v0_1.json)
@@ -30,25 +41,26 @@ interpolation, motion selector or external context. The earlier NFHS inputs
 used 40 ms spacing; this run did not compare cadences and cannot show that the
 cadence change caused its result.
 
-## Review the new model outputs
+## Accepted model-output review
 
 Both videos last 11 seconds: all 60 native frames played at 6 fps, followed by
 a one-second hold on the actual final frame. Cyan marks the accepted AI
-reference; pink marks the model observation. Review both complete clips,
-including ball contact/blur and the held final frames, for points on the ball,
-distractor selections and any unexpected jump. Report corrections by game and
-original frame number.
+reference; pink marks the model observation. Ryan's reported review and
+favorable judgment cover both presented clips. No browser playback telemetry
+is claimed.
 
 - [SAC–MEM model-output review, through frame 719](../data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sac_mem_q1_c01/review_attempts/b9b4953913dc4706acf3009cea7ec49e/review.mp4)
 - [SAS–DET model-output review, through frame 10847](../data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sas_det_q1_c02/review_attempts/065345efdf3749c8bd8bbcc09d2d57a9/review.mp4)
-- [Combined local review page](../data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/index.html)
+- [Current accepted-status page](../data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/accepted.html)
+- [Preserved creation-time pending review page](../data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/index.html)
 
-**Ryan's review of both new model outputs is pending.** His completed acceptance
-of the reference labels remains separate and does not need repeating.
-The assistant inspected all 120 new overlays through both final frames and
-found no obvious distractor switch or dropout; points remain on the visible
-ball. This is an AI check, not human acceptance. Detroit's hand overlap and blur
-deserve particular attention at frames 10788–10792, 10831–10845 and 10847.
+Both model-output reviews are complete. His completed acceptance of the
+reference labels also remains intact and does not need repeating.
+Before human acceptance, the assistant inspected all 120 new overlays through
+both final frames and found no obvious distractor switch or dropout; points remain on the visible
+ball. That AI check remains distinct from the later human acceptance. The
+original review cues included Detroit's hand overlap and blur at frames
+10788–10792, 10831–10845 and 10847.
 
 ## Saved-output and media verification
 
@@ -88,5 +100,9 @@ No new fit or broader experiment is approved by this result. Existing holdouts,
 completed reviews and the negative motion-selection result remain unchanged;
 the motion study's three new human reviews are still pending.
 
-The next action is Ryan's review of these two complete overlays. Any broader
-NBA labeling or model experiment needs a concrete scope and preserved game roles.
+The [next concrete proposal](nba_wasb_action_observation_plan.md) extends the
+same frozen recipe across the two previously selected action cores, with
+complete review videos and explicit missing intervals. It is design-only and
+awaits approval to implement, validate and execute that broader observation
+pass. This would test behavior beyond the two easy, one-second pilot scenes;
+it would not add training, new labels or an independent accuracy benchmark.

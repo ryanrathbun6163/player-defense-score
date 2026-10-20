@@ -1,5 +1,35 @@
 # Validation History
 
+## 2026-10-19: native pilot model outputs accepted; broader scope prepared
+
+Ryan reported review of both videos and accepted the predictions without
+corrections. A separate [acceptance record](../../configs/ball_tracking/reviews/nba_wasb_native_pilot_visual_review_v0_1.json)
+binds the original result, configuration, observations and both presented
+complete review packages, including final frames 719 and 10847. This is a later
+human event; no playback telemetry is claimed. Original pending-era result and
+completion records, media, page and reference-label acceptance remain unchanged.
+A separate accepted-status page links the same videos.
+
+The [longer observation plan](../nba_wasb_action_observation_plan.md) and
+[non-runnable proposal](../../configs/ball_tracking/selections/nba_wasb_action_observation_proposal_v0_1.json)
+define two existing action cores with 2,702 source frames, at most 2,698 complete
+triplets, 116 planned prior imports and at most 2,582 new calls. This is design
+preparation, not implementation validation or executed science. No model calls,
+raw-video decoding, labeling, scoring or tests ran during this increment. One
+additional read-only cache-feasibility check repeated already audited
+hash/metadata/array checks for all 116 saved NPZ records and found zero issues;
+its duration was not measured. It did not rerun inference, media decoding or
+the original scoring. The completed diagnostic and its consumed resources
+remain as recorded below.
+
+Longer context could change eight pilot-edge means while 112 interior means
+should remain identical unless a newly declared scene boundary changes their
+input context; the original accepted 120/120 score is preserved.
+The proposed broader scope awaits approval to implement, validate and execute
+once. It adds no training, new-label benchmark or phase acceptance. Existing
+roles, protected holdouts, completed reviews and the negative motion result
+remain unchanged; the motion study's three new human reviews remain pending.
+
 ## 2026-10-19: approved NBA native-cadence diagnostic completed
 
 Ryan approved the exact prepared recipe and its 16–17 ms native input spacing.

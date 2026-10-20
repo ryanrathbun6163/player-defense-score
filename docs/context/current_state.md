@@ -1,6 +1,53 @@
 # Current State
 
-## Latest increment: 2026-10-19 approved NBA diagnostic completed
+## Latest increment: 2026-10-19 NBA predictions accepted; longer action pass proposed
+
+Ryan reported: “I reviewed both videos and the predictions look good. Move
+forward chat.” The separate [visual acceptance record](../../configs/ball_tracking/reviews/nba_wasb_native_pilot_visual_review_v0_1.json)
+records acceptance of both complete native pilot model-output videos through
+their presented final frames. No corrections were requested. Both new reviews
+are complete; original result/completion records, accepted references and
+pending-era media/page remain unchanged. The later
+[accepted-status page](../../data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/accepted.html)
+uses the same videos. This is user-reported review, not claimed playback telemetry.
+
+The [next proposed action observation](../nba_wasb_action_observation_plan.md)
+has an exact [non-runnable scope record](../../configs/ball_tracking/selections/nba_wasb_action_observation_proposal_v0_1.json):
+SAC–MEM source frames 540–2010 (1,471 frames, 24.541 seconds) and SAS–DET
+10668–11898 (1,231 frames, 20.537 seconds). Together, 2,702 frames permit at
+most 2,698 complete native triplets: reuse 116 completed pilot caches and make
+at most 2,582 new model calls. Explicit scene boundaries may reduce these
+counts; no triplet crosses a confirmed cut/replay boundary and the scope cannot
+expand to replace withheld inputs.
+
+This broader pass is **design-only, not implemented, approved or run**. It
+keeps the expanded checkpoint, strict `>0.3`, native 16–17 ms input spacing and
+complete-triplet averaging. It would expose shot/rebound/overlap and recovery
+behavior, with two complete source-synchronized videos and availability counts,
+not new-label accuracy scoring. No training, threshold search, interpolation or
+motion selector is proposed. The original accepted 120/120 pilot score stays
+unchanged: longer context may change eight pilot-edge means; the 112 interiors
+should remain identical unless a newly declared scene boundary changes their
+input context. Estimated new PNG/cache storage is 9.28 GiB plus
+videos/receipts; 15–30 minutes is a working estimate, not a hard limit.
+
+**Next concrete action:** Ryan decides on this exact broader scope. Approval
+would cover implementation, proportionate validation and one resumable run;
+routine implementation does not need another approval ceremony. Afterwards,
+the assistant inspects the complete new timelines and Ryan reviews the actual
+new videos. No new model calls, raw-video decodes, labels or tests occurred in
+preparing this proposal. A read-only import-feasibility check repeated existing
+hash/metadata/array checks on all 116 completed cache records, with zero issues;
+it did not rerun inference, source decoding or scoring.
+
+SAC remains future-training-eligible; DET remains target development and
+excluded from fitting; TOR is outside this pass. No independent test game,
+complete-possession certification, NBA identity/calibration acceptance or
+ball-phase pass is inferred. The NFHS finish line, protected holdouts and
+negative motion result stand; the motion study's three new human reviews remain
+pending.
+
+## Earlier increment: 2026-10-19 approved NBA diagnostic completed
 
 Ryan approved the exact native-cadence diagnostic: “yes I do. move forward
 chat”. One run completed all 116 unique three-frame inputs in 49.766 seconds,

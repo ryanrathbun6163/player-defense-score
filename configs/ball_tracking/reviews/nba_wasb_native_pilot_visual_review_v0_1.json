@@ -1,0 +1,103 @@
+{
+  "schema_version": "nba_wasb_native_pilot_visual_review/v0.1",
+  "status": "accepted",
+  "reviewer_id": "Ryan",
+  "review_recorded_at_utc": "2026-10-20T00:58:07.421480+00:00",
+  "review_date_local": "2026-10-19",
+  "timezone": "America/Phoenix",
+  "user_statement": "I reviewed both videos and the predictions look good. Move forward chat.",
+  "review_method": "User-reported review of both complete model-output videos followed by explicit favorable judgment.",
+  "review_scope": "Accepts model observations in both presented 60-frame native NBA pilot overlays, including their presented actual final frames. No corrections requested.",
+  "playback_telemetry_claimed": false,
+  "result_record": {
+    "path": "configs/ball_tracking/reviews/nba_wasb_native_pilot_diagnostic_result_v0_1.json",
+    "bytes": 14878,
+    "sha256": "60a97794654d3d561f9e8e9ddda4767e48429baa9bfa65a47a0bdf851b7e4abf"
+  },
+  "config": {
+    "path": "configs/ball_tracking/wasb_experiments/nba_wasb_native_pilot_diagnostic_v0_1.json",
+    "sha256": "bb63377d515203b8c7fc1a89d6cb55acd84102587d9e53226fa10bb4d88f6eca",
+    "bytes": 1500
+  },
+  "checkpoint_sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+  "packages": [
+    {
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "approved_role": "future_training_candidate_pool",
+      "source_frame_range_inclusive": [
+        660,
+        719
+      ],
+      "frame_count": 60,
+      "actual_final_frame_in_presented_review": 719,
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sac_mem_q1_c01/review_attempts/b9b4953913dc4706acf3009cea7ec49e/review.mp4",
+        "bytes": 2458701,
+        "sha256": "aff440ab27a696aac41ef0b0a3abd4ebf8d618fbeb5e5598638a1d4a80204e23"
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sac_mem_q1_c01/review_attempts/b9b4953913dc4706acf3009cea7ec49e/review_manifest.json",
+        "bytes": 47134,
+        "sha256": "c094aa28fb14c1608ddcce0193b93532d515fd43a483ec1168a98bf30d6a0e6e"
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sac_mem_q1_c01/review_attempts/b9b4953913dc4706acf3009cea7ec49e/completion.json",
+        "bytes": 18730,
+        "sha256": "6c83872e655477ecf71a847f41caa5ed263c9884e9ec6ce9b817fe5e5c4a4c70"
+      },
+      "observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sac_mem_q1_c01/observations.json",
+        "bytes": 86737,
+        "sha256": "5886ba624f8896d61a258f9e37e2325dd30d8795f2c7e70d7164e6612f66894b"
+      },
+      "model_output_human_review": "accepted"
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "game_id": "0022500828",
+      "approved_role": "target_case_development",
+      "source_frame_range_inclusive": [
+        10788,
+        10847
+      ],
+      "frame_count": 60,
+      "actual_final_frame_in_presented_review": 10847,
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sas_det_q1_c02/review_attempts/065345efdf3749c8bd8bbcc09d2d57a9/review.mp4",
+        "bytes": 3255995,
+        "sha256": "2ac687965e0b49fc49b9084f86cf0f0d4a16d1d4ee285fbe54ff8c519fa748a1"
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sas_det_q1_c02/review_attempts/065345efdf3749c8bd8bbcc09d2d57a9/review_manifest.json",
+        "bytes": 47324,
+        "sha256": "710413ba7d936e032c52636d65d9373c0029154ced09d65eef33b777c5a34d1a"
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sas_det_q1_c02/review_attempts/065345efdf3749c8bd8bbcc09d2d57a9/completion.json",
+        "bytes": 18731,
+        "sha256": "b05da480692a51ad0d2c3cab6355df376485aa8f218855048fe2d76e22bb1c1b"
+      },
+      "observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sas_det_q1_c02/observations.json",
+        "bytes": 84527,
+        "sha256": "115f5981941868e3208367bc8d99367eb299729bcff11a9ddba928afdd0a0728"
+      },
+      "model_output_human_review": "accepted"
+    }
+  ],
+  "historical_records": "Original completion, result, rendered media and pending-era review page stay unchanged; this is the later human acceptance event.",
+  "limits": {
+    "reference_authorship": "assistant_visual_proposal",
+    "reference_label_acceptance": "previously_complete_unchanged",
+    "independent_reannotation": false,
+    "hidden_ball_behavior_established": false,
+    "complete_trajectories_accepted": false,
+    "nba_identity_or_calibration_accepted": false,
+    "ball_phase_accepted": false,
+    "new_fit_or_broader_inference_recipe_approved": false,
+    "negative_motion_result_unchanged": true,
+    "new_motion_human_reviews_pending": 3,
+    "holdouts_unchanged": true
+  }
+}

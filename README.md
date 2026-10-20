@@ -92,8 +92,13 @@ outputs at the fixed ten-pixel radius. Mean center distances are 2.779 pixels
 for SAC–MEM and 2.894 for SAS–DET. One run completed all 116 native three-frame
 inputs without training. These two short, visible-ball scenes use human-accepted
 AI references; they are not an independent NBA benchmark or a ball-phase pass.
-Both new model-output videos await Ryan's visual review. Existing holdouts and
-the negative motion result remain unchanged.
+Ryan reviewed both complete model-output videos and accepted the predictions
+on October 19. The [next proposed observation pass](docs/nba_wasb_action_observation_plan.md)
+would extend this frozen recipe across the two existing action cores: 2,702
+native frames, about 45 seconds total, to expose shot, rebound, overlap and
+recovery behavior. This broader pass is design-only and awaits scope approval;
+it adds no training or new-label accuracy scoring. Existing holdouts, the NFHS
+finish line and the negative motion result remain unchanged.
 
 ## End goal
 

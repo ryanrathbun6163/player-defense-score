@@ -1,6 +1,36 @@
 # Roadmap
 
-## Current action: review the completed NBA model-output diagnostic
+## Current action: decide on the longer NBA action observation
+
+Ryan reviewed and accepted both complete native-pilot model-output videos on
+October 19. The [later acceptance record](../../configs/ball_tracking/reviews/nba_wasb_native_pilot_visual_review_v0_1.json)
+preserves the original result and media; those reviews do not need repeating.
+The 120/120 short-scene result is useful, but cannot show whether the model
+handles shots, rebounds, longer player overlap or recovery after missingness.
+
+The [next exact proposal](../nba_wasb_action_observation_plan.md) covers the two
+existing source action cores: SAC 540–2010 and DET 10668–11898, 2,702 native
+frames over 24.541 and 20.537 seconds. Keep the frozen checkpoint, strict `>0.3`
+and native timing; import the 116 compatible pilot triplets and add at most
+2,582 model calls. Confirmed scene boundaries reduce the maximum 2,698 complete
+triplets rather than extend the source scope. Produce two complete synchronized
+review videos with missing/withheld intervals and descriptive availability
+counts. No training, new-label scoring or method promotion is proposed.
+
+The scope is design-only and awaiting approval. The requested decision covers
+implementation, focused validation and one resumable observation pass together;
+routine implementation does not require a second permission step. The expected
+storage is about 9.28 GiB for new PNGs/caches plus videos and receipts, and the
+working time estimate is 15–30 minutes, not a cap. Keep original pilot results:
+eight edge points may change with longer context; 112 interior means should not
+unless a newly declared scene boundary changes their input context.
+New observations still need assistant inspection and Ryan's actual video review.
+
+SAC's training eligibility, DET's exclusion from fitting, TOR's exclusion from
+this pass, protected holdouts, the NFHS finish line and the negative motion
+result remain intact. Three new motion-comparison human reviews remain pending.
+
+## Earlier action: review the completed NBA model-output diagnostic
 
 The approved [native-cadence diagnostic](../nba_wasb_native_pilot_diagnostic_results.md)
 completed all 116 unique triplets in one run, without training. Both games
