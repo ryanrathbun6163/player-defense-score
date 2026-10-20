@@ -215,3 +215,20 @@ continuous-context validation/integration plan with explicit window boundaries,
 future-context allowances, missingness and unchanged quality gates. This pass
 does not automatically authorize broader inference, a new fit, a parameter
 sweep or a full-game run.
+
+
+## Later human approval and next step
+
+Ryan explicitly said “Ok I approve. What next chat” after receiving the three
+inline comparisons. The [later review record](../configs/ball_tracking/reviews/nba_temporal_gap_selection_visual_review_v0_1.json)
+closes the pending visual gate for this bounded development increment. No
+corrections were reported. This is explicit user approval without playback
+telemetry or a claim that every individual frame was viewed. Original generated
+pending-review receipts and the compact numerical result remain unchanged.
+
+The [next proposed validation](nba_temporal_gap_continuous_validation_plan.md)
+uses the same rule over the existing longer source contexts, with protected
+bands preserved and same-context controls. It has not run. The three-frame gain
+is accepted, while original trajectories, the retained checkpoint and all broader
+quality/holdout boundaries remain intact. No scientific run or test was repeated
+to record approval. Earlier negative motion-comparison reviews remain separate.

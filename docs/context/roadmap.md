@@ -1,28 +1,31 @@
 # Roadmap
 
-## Current step: review the passing bounded gap-selection trial
+## Current step: accepted bounded gap repair; proposed continuous-context validation
 
-Ryan authorized the [fixed temporal gap-selection trial](../nba_temporal_gap_selection_experiment.md#completed-single-run-result)
-with “Ok awesome move forward chat”. One saved-output run fills three frames
-in two short gaps: DET 11437–11438 and P001 208. Selected DET matches improve
-207→209/237 and NFHS 130→131/145; wrong outputs and hidden alarms do not increase.
-SAC and all 120 easy-control matches are unchanged. The sixteen frozen numeric
-conditions pass, and independent audit verifies every decision and score.
-All three videos passed complete transport checks; human review is pending.
+Ryan explicitly approved the three temporal-gap comparison videos with
+“Ok I approve. What next chat”. The [later review record](../../configs/ball_tracking/reviews/nba_temporal_gap_selection_visual_review_v0_1.json)
+accepts the bounded three-frame improvement: DET 209/237 and NFHS 131/145 matches,
+no added wrong positions or hidden alarms, and both NBA controls at 60/60.
+The original predictions remain intact; the ball phase remains incomplete.
 
-Review the three source/ball comparison videos before accepting this increment.
-The rule preserves every existing point and cannot repair wrong anchors, long
-or boundary gaps, or frames with no usable saved candidate. Its future-anchor
-context makes it an offline operation. The retained model and original outputs
-remain intact; the failed NBA continuation is still rejected.
+The [prepared next proposal](../nba_temporal_gap_continuous_validation_plan.md)
+applies the unchanged rule across two longer NBA cores and the permitted portions
+of all three NFHS clips. There are 3,975 processable frames in eight segments;
+225 protected positions remain excluded and black in playback. Reuse saved
+predictions and only the contributor caches needed for potentially fillable gaps.
+No new fit, inference, tuning or holdout access is proposed.
 
-After review, prepare one bounded continuous-context validation/integration
-plan: specify source windows, original model context, permitted future context,
-quality gates and synchronized review before running broader evaluation.
-Do not automatically start another fit, parameter sweep or full-game run.
-Reliable ball trajectories, complete possession validation, and the full
-synchronized player/ball milestone remain ahead. Holdouts and existing gates,
-including the three earlier pending motion reviews, are unchanged.
+Score the same 790 reference frames against same-context original selection.
+The existing longer-context NFHS control is 131/1/13/0 matched/wrong/missing/alarms;
+do not attribute its difference from the short-window control to gap repair.
+Require preserved correct points, no new errors/alarms, easy controls, and explicit
+retention of the three approved additions. Review five full comparisons, using
+existing NFHS player overlays; reviewed NBA player identity is not available.
+
+This is a concrete proposal, not an executed broader experiment. It tests
+continuity and supplies a remaining-error inventory for subsequent detection or
+localization work. Original holdouts, quality gates and three earlier pending
+negative motion reviews remain unchanged.
 
 ## Earlier proposal (historical): one fixed selector trial on the retained baseline
 

@@ -149,9 +149,11 @@ Ryan then approved the [temporal gap-selection trial](docs/nba_temporal_gap_sele
 “Ok awesome move forward chat”. One frozen rule now recovers **two DET matches
 and one NFHS match**, raising selected matches to 209/237 and 131/145 respectively,
 with no additional wrong outputs or hidden alarms and both easy controls still
-60/60. SAC stays unchanged. The numerical gates pass; human review of the three
-new comparisons is pending. This is a small saved-output improvement on twelve
-short development windows, not continuous tracking or ball-phase completion.
+60/60. SAC stays unchanged. The numerical gates pass, and Ryan explicitly
+[approved the three comparisons](configs/ball_tracking/reviews/nba_temporal_gap_selection_visual_review_v0_1.json).
+The bounded increment is accepted. The [next proposal](docs/nba_temporal_gap_continuous_validation_plan.md)
+validates the unchanged rule on the available longer clips using saved evidence;
+it has not run. Continuous tracking and ball-phase completion remain ahead.
 The original baseline remains intact, and the failed NBA continuation stays rejected.
 These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved

@@ -1,6 +1,6 @@
 # Validation History
 
-## Completed fixed temporal gap selection — numerical pass, review pending
+## Completed fixed temporal gap selection — numerical pass; later visual approval recorded
 
 Ryan's “Ok awesome move forward chat” approved one frozen rule on all 790
 existing frames in twelve independent consecutive windows. The
@@ -34,7 +34,12 @@ with twelve actual encoded window-final images. Rendering and verification
 took 306.063 seconds in total, separately from selector/audit runtimes. AI
 inspection covers all three encoded changed frames and twelve encoded finals,
 not manual continuous review of every frame. It retains known P001/P002 missing
-finals and the existing DET offset. Human review remains pending.
+finals and the existing DET offset. The original artifacts recorded human review
+as pending. Ryan subsequently explicitly approved the three delivered videos;
+the [later visual review](../../configs/ball_tracking/reviews/nba_temporal_gap_selection_visual_review_v0_1.json)
+closes that gate for this bounded increment. Approval recording verified the
+bound video/manifest/verification/completion files; no scientific execution or
+tests were repeated. Individual frame viewing or playback telemetry is not claimed.
 The [appended result](../nba_temporal_gap_selection_experiment.md#completed-single-run-result)
 and [compact result](../../configs/ball_tracking/reviews/nba_temporal_gap_selection_result_v0_1.json)
 record this small improvement without baseline replacement or phase acceptance.

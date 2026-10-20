@@ -1,6 +1,6 @@
 # Current State
 
-## Latest increment: fixed temporal gap rule passes numerical gates; human review pending
+## Latest increment: fixed temporal gap trial accepted; continuous-context validation proposed
 
 Ryan approved the [single temporal gap-selection trial](../nba_temporal_gap_selection_experiment.md#completed-single-run-result)
 with “Ok awesome move forward chat”. One 0.391-second saved-output run fixed all
@@ -20,7 +20,10 @@ unchanged. All three videos passed verification for every source frame, timestam
 duration and paired image, including twelve actual window finals. AI inspection
 covered the three encoded changed frames and all twelve encoded finals, not
 continuous manual review of all 790 frames. The [compact result](../../configs/ball_tracking/reviews/nba_temporal_gap_selection_result_v0_1.json)
-binds the evidence; human review remains a separate pending gate.
+binds the evidence. Ryan subsequently said “Ok I approve. What next chat”. The
+[later review record](../../configs/ball_tracking/reviews/nba_temporal_gap_selection_visual_review_v0_1.json)
+closes the visual gate and accepts this bounded increment, without claiming
+playback telemetry or changing the original pending-era receipts.
 
 This offline rule uses original past/future anchors, native timestamps and
 saved candidate coordinates; interpolated expectations are never emitted.
@@ -29,10 +32,13 @@ occurred. The failed NBA continuation, uncertainty, protected holdouts, DET
 fitting exclusion, NFHS finish line and three earlier pending motion reviews
 remain unchanged. Twelve short windows do not establish continuous tracking.
 
-**Next:** review the three synchronized comparisons. After review, prepare a
-bounded continuous-context validation/integration plan with explicit context,
-missingness and review gates. No automatic full-game run, new fit or additional
-tuning follows this numerical pass.
+**Next proposal:** [one continuous-context validation](../nba_temporal_gap_continuous_validation_plan.md)
+of the unchanged rule on the two existing NBA cores and three permitted NFHS
+timelines: 3,975 frames in eight segments, with 225 protected positions withheld.
+Use saved model evidence and the same 790 labels; compare against each source’s
+same-context control. The longer-context NFHS control is 131/1/13 matched/wrong/missing,
+so context effects must be separated from selector gains. This broader run has
+not executed. No new fit, parameter sweep or full-game run is proposed.
 
 ## Earlier increment (historical): candidate preservation supports one bounded selector trial
 

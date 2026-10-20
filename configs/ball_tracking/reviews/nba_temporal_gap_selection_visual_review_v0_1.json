@@ -1,0 +1,115 @@
+{
+  "schema_version": "nba_temporal_gap_selection_visual_review/v0.1",
+  "status": "accepted_bounded_development_increment",
+  "reviewer_id": "Ryan",
+  "recorded_at_utc": "2026-10-20T06:59:08.623062+00:00",
+  "review_date_local": "2026-10-19",
+  "timezone": "America/Phoenix",
+  "source_commit": "33cbdbeadfebcd82a655602fc5245d67736250ef",
+  "user_statement": "Ok I approve. What next chat",
+  "delivery": "Three inline videos: DET, NFHS six-window compilation, SAC; original left and temporal gap repair right.",
+  "review_scope": "Explicit user approval of the three presented comparisons and their bounded three-frame improvement.",
+  "playback_telemetry_claimed": false,
+  "individual_frame_viewing_claimed": false,
+  "corrections_reported": [],
+  "result_record": {
+    "path": "configs/ball_tracking/reviews/nba_temporal_gap_selection_result_v0_1.json",
+    "sha256": "02af0841728eba6686dcb43e6e83720df144e4e0630ee9c9e58c3734dd32a986",
+    "bytes": 40008
+  },
+  "packages": [
+    {
+      "group": "sac_training_fit",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/sac_training_fit/attempts/cacc463c9c8048a3bfc6a5e8d17488cc/review.mp4",
+        "sha256": "bd2a22b282687cfb3bdc6d7b48b7670e292b854811247daae3a396e214d8e4a2",
+        "bytes": 13791499
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/sac_training_fit/attempts/cacc463c9c8048a3bfc6a5e8d17488cc/review_manifest.json",
+        "sha256": "61f5e5c59124d84cd4e99161c1b96def00875ddade3d9720c011ab0a95aae649",
+        "bytes": 229496
+      },
+      "verification": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/sac_training_fit/attempts/cacc463c9c8048a3bfc6a5e8d17488cc/verification.json",
+        "sha256": "d9b564b7b4189e2eb85ad7bf59b074a061fac377775b122e1fb79a113ba84377",
+        "bytes": 3161
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/sac_training_fit/attempts/cacc463c9c8048a3bfc6a5e8d17488cc/completion.json",
+        "sha256": "2436f27a512ff3452662ca81b08256c67ca7e79fb0b6433a435feea1ab63875d",
+        "bytes": 5209
+      },
+      "frames": 300,
+      "duration_seconds": 13.0,
+      "human_review": "approved_by_Ryan"
+    },
+    {
+      "group": "det_development",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/det_development/attempts/adb74988de4c43e09dc85e76bd8d0507/review.mp4",
+        "sha256": "2198c486aae7a2819028d983cd3b5f561bdc312c97b0b92996eb40930dde03fd",
+        "bytes": 15729123
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/det_development/attempts/adb74988de4c43e09dc85e76bd8d0507/review_manifest.json",
+        "sha256": "bd0722166efd15ff38fef57d016bd237205bf2107502a2e79398516ce93a07c5",
+        "bytes": 261570
+      },
+      "verification": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/det_development/attempts/adb74988de4c43e09dc85e76bd8d0507/verification.json",
+        "sha256": "184b4ad811b1436dd8ca181e56152e65903183aa5e4882ea0d297c9f2017d6ab",
+        "bytes": 3167
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/det_development/attempts/adb74988de4c43e09dc85e76bd8d0507/completion.json",
+        "sha256": "b2e29ea72e5de01e29a2581b8117ca3679e2e5b4333af84624e8cf7a8fe69eb4",
+        "bytes": 5223
+      },
+      "frames": 340,
+      "duration_seconds": 14.333333333333334,
+      "human_review": "approved_by_Ryan"
+    },
+    {
+      "group": "nfhs_development",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/review.mp4",
+        "sha256": "c2bd4891328040af157b427b4ffbb3c11ed5831838855f4ae668dd13619fcdc9",
+        "bytes": 13581035
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/review_manifest.json",
+        "sha256": "0d8e2dd38f0bc3bbfc51b65efb20c89c016a77e451ad33ab02e0e4cb9f21fd7d",
+        "bytes": 139069
+      },
+      "verification": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/verification.json",
+        "sha256": "6102ca1e03475c7399b03a65ce12d02b2351bce0bd5dccc07bc85e7f8eec6c37",
+        "bytes": 4962
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/completion.json",
+        "sha256": "763d1616a0acefa5d2e41b9b44c81fcd7aea3e0db9ed55dfcfd7ad9f31949796",
+        "bytes": 7021
+      },
+      "frames": 150,
+      "duration_seconds": 31.0,
+      "human_review": "approved_by_Ryan"
+    }
+  ],
+  "decision": {
+    "bounded_trial_visual_gate": "passed",
+    "bounded_increment_accepted": true,
+    "new_predictions_replacing_original_baseline": false,
+    "checkpoint_changed": false,
+    "ball_phase_complete": false,
+    "broader_experiment_execution_authorization": "Not inferred from this review acknowledgment and next-step question.",
+    "original_pending_receipts": "Preserved unchanged; this later record supersedes their human-review status only."
+  },
+  "unchanged_boundaries": [
+    "Existing original trajectories and failed NBA continuation remain unchanged.",
+    "Protected holdouts and buffers remain excluded; DET fitting exclusion remains.",
+    "Three earlier negative motion-comparison reviews are separate and remain pending.",
+    "No new model run, scoring, trajectory rendering or test rerun occurred to record this approval."
+  ]
+}
