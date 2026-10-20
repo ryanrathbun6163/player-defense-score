@@ -100,9 +100,10 @@ No new fit or broader experiment is approved by this result. Existing holdouts,
 completed reviews and the negative motion-selection result remain unchanged;
 the motion study's three new human reviews are still pending.
 
-The [next concrete proposal](nba_wasb_action_observation_plan.md) extends the
-same frozen recipe across the two previously selected action cores, with
-complete review videos and explicit missing intervals. It is design-only and
-awaits approval to implement, validate and execute that broader observation
-pass. This would test behavior beyond the two easy, one-second pilot scenes;
-it would not add training, new labels or an independent accuracy benchmark.
+Ryan subsequently approved the [longer action observation](nba_wasb_action_observation_plan.md),
+which has now [completed with saved-output and media verification](nba_wasb_action_observation_results.md).
+It preserves this original accepted pilot result while adding 2,702-frame
+timelines with explicit missing intervals. The longer outputs contain
+distractor selections and visible-ball gaps; their two new human reviews
+remain pending. No training, new labels or independent accuracy benchmark was
+added by that pass.

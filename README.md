@@ -93,12 +93,16 @@ for SAC–MEM and 2.894 for SAS–DET. One run completed all 116 native three-fr
 inputs without training. These two short, visible-ball scenes use human-accepted
 AI references; they are not an independent NBA benchmark or a ball-phase pass.
 Ryan reviewed both complete model-output videos and accepted the predictions
-on October 19. The [next proposed observation pass](docs/nba_wasb_action_observation_plan.md)
-would extend this frozen recipe across the two existing action cores: 2,702
-native frames, about 45 seconds total, to expose shot, rebound, overlap and
-recovery behavior. This broader pass is design-only and awaits scope approval;
-it adds no training or new-label accuracy scoring. Existing holdouts, the NFHS
-finish line and the negative motion result remain unchanged.
+on October 19. Ryan subsequently approved the [longer action observation](docs/nba_wasb_action_observation_plan.md),
+which completed across the two existing cores: 2,702 native frames, about 45
+seconds total. It emits 2,380 observations and leaves 322 frames missing; these
+are availability counts, not accuracy. AI inspection finds spectator/head
+distractors and visible-ball gaps. Independent saved-output verification and
+both complete videos passed transport checks. The
+[results and new review videos](docs/nba_wasb_action_observation_results.md)
+preserve these limitations; their human review remains pending. There is no
+new training or new-label scoring. Existing
+holdouts, the NFHS finish line and the negative motion result remain unchanged.
 
 ## End goal
 

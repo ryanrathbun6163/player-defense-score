@@ -1,4 +1,16 @@
-# Proposed NBA action observation
+# NBA action observation plan
+
+**Current status: approved pass completed; new human review pending.** Ryan
+approved the exact longer plan: “I approve. Move forward chat”. The separate
+[approval record](../configs/ball_tracking/reviews/nba_wasb_action_observation_approval_v0_1.json)
+binds the unchanged proposal and authorizes implementation, focused validation
+and one resumable pass. Implementation was committed as
+`4b67d0850897d539ab2994afc6349c0b6af11667`; 23 distinct focused checks passed.
+The full suite was not repeated. One run completed 2,582 new model calls and
+imported all 116 prior triplets, with zero failed or unresolved calls. The
+[result and review report](nba_wasb_action_observation_results.md) records the
+2,380 observations, 322 missing frames, passed saved-output/media checks and
+qualitative concerns. This does not establish reliable longer ball tracking.
 
 Ryan accepted both complete [native pilot prediction videos](nba_wasb_native_pilot_diagnostic_results.md)
 on October 19. The model matched all 120 accepted reference points, but each
@@ -6,12 +18,12 @@ pilot covers only about one source second with the ball visible. The next
 useful question is whether the same frozen model remains useful through a
 longer action: a shot, rebound, player overlap and recovery after a gap.
 
-This plan is **design-only and not runnable, implemented, approved or executed**.
-The [exact scope record](../configs/ball_tracking/selections/nba_wasb_action_observation_proposal_v0_1.json)
-requests approval to implement, validate and run one resumable observation pass
-over the two already selected action cores. That decision covers the routine
-implementation work as well as the run; it does not introduce another approval
-step for mechanical fixes.
+The [exact proposal record](../configs/ball_tracking/selections/nba_wasb_action_observation_proposal_v0_1.json)
+retains its historical design-only, pending status. The later approval above
+supersedes that status without rewriting the original decision artifact. Its
+scope remains the two already selected action cores. Approval covers routine
+implementation work together with the run; mechanical fixes do not need an
+additional permission step.
 
 ## Exact footage and workload
 
@@ -105,7 +117,13 @@ measured longer-run results or hard caps. Keep detailed outputs ignored beneath
 `data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/`; commit only
 source, tests, configuration and compact evidence.
 
-Preparation made no model calls, raw-video decodes, labels or tests. One
+The completed inference/render run took 20 minutes 38 seconds, with earlier
+input preparation and later audit measured separately. Implementation and
+complete source/output AI review made the overall effort longer than the
+15–30-minute planning estimate. The estimate was not a resource cap.
+
+The original proposal preparation made no model calls, raw-video decodes,
+labels or tests. One
 additional read-only feasibility check repeated existing hash, metadata and
 array-validity checks on the 116 completed cache records, with zero issues.
 It did not rerun inference, source decoding or scoring; its duration was not
@@ -121,6 +139,9 @@ playback, explicit gaps, quantitative error summaries and a repeatable run—
 remains unchanged. Protected holdouts, the negative motion-selection result
 and its three pending new human reviews remain intact.
 
-Approval of this exact broader observation scope is the next decision. Its
-result would guide a later, concrete data or model improvement; it does not
-authorize a new fit or establish ball-phase completion.
+Approval, execution and saved-output/media verification of this exact scope
+are complete. Ryan's next action is to review both complete new videos with
+the specific frame cues in the result report, including their actual final
+frames. These longer predictions remain pending human review. Their result
+will guide a later, concrete data or model improvement; this completed pass
+does not authorize a new fit or establish ball-phase completion.

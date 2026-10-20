@@ -17,3 +17,4 @@ src/ball_tracking/nba_action_review.py -text
 tests/test_nba_action_inputs.py -text
 tests/test_nba_action_observation.py -text
 tests/test_nba_action_review.py -text
+configs/ball_tracking/reviews/nba_wasb_action_observation_result_v0_1.json -text

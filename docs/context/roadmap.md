@@ -1,6 +1,30 @@
 # Roadmap
 
-## Current action: decide on the longer NBA action observation
+## Current action: review the completed longer NBA action observation
+
+Ryan approved the exact two-core observation plan, including implementation,
+focused validation and one resumable run. The [approval record](../../configs/ball_tracking/reviews/nba_wasb_action_observation_approval_v0_1.json)
+preserves the original proposed-scope artifact. Implementation is committed at
+`4b67d0850897d539ab2994afc6349c0b6af11667`; 23 distinct focused checks passed
+without repeating the full suite.
+
+The run completed all 2,582 new calls and 116 imports without failed or unresolved
+calls. SAC has 1,310 observations/161 missing; DET has 1,070 observations/161
+missing, with no withheld frames. These are availability counts, not accuracy.
+All 112 pilot interiors remain identical, with eight longer-context edges.
+Independent reconstruction and both complete review videos passed artifact
+checks. AI inspection finds distractors and visible-ball gaps. The earlier
+120/120 short-scene result does not resolve these longer-timeline failures.
+
+Ryan should review both complete videos, their flagged intervals and final
+frames 2010 and 11898 using the [result and review report](../nba_wasb_action_observation_results.md).
+Then define the smallest evidence-supported next data/model change; no new
+experiment is authorized by completing this pass. No new fit, labels, scoring
+or threshold search is part of this pass. Earlier pilot acceptance, game roles, protected
+holdouts, the NFHS finish line and the negative motion result remain intact;
+three new motion human reviews remain pending.
+
+## Earlier action: decide on the longer NBA action observation
 
 Ryan reviewed and accepted both complete native-pilot model-output videos on
 October 19. The [later acceptance record](../../configs/ball_tracking/reviews/nba_wasb_native_pilot_visual_review_v0_1.json)

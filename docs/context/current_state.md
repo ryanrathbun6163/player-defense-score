@@ -1,6 +1,54 @@
 # Current State
 
-## Latest increment: 2026-10-19 NBA predictions accepted; longer action pass proposed
+## Latest increment: 2026-10-19 longer NBA action pass completed and audited
+
+Ryan explicitly approved the exact longer plan: “I approve. Move forward chat”.
+The [approval](../../configs/ball_tracking/reviews/nba_wasb_action_observation_approval_v0_1.json)
+binds the immutable proposal; its original design-only/pending status remains
+historical. The implementation is committed at
+`4b67d0850897d539ab2994afc6349c0b6af11667`. Twenty-three distinct focused checks
+passed: seven native-input, twelve observation and four review checks. The full
+suite was not repeated; failed setup attempts and subsequent corrections remain
+recorded.
+
+The approved run completed in 1,238.416 seconds of process wall time: all
+2,582 new model calls and 116 prior imports, with zero failed or unresolved
+calls. SAC has 1,310 observed/161 missing/0 withheld frames; DET has
+1,070 observed/161 missing/0 withheld. These 2,380/322 totals describe
+availability, not accuracy. All 112 original pilot interior observations are
+identical; eight edge frames receive longer context, while the original
+120/120 short-window score stays unchanged.
+
+The independent saved-output audit passed in 27.172 seconds with zero issues:
+all 2,698 cached triplets, 2,702 mean heatmaps and 2,711 final components were
+reconstructed, along with frame/PTS joins, selected points, availability
+intervals and provenance. Both videos passed every-frame renderer checks;
+the independent audit checked the bound receipts and saved ffprobe records
+without another media decode. Actual final frames 2010 and 11898 have an
+additional one-second hold. AI inspection covered all 2,702 frames and both
+actual final frames, preserving 14 SAC and seven DET cues. It finds distractors
+and visible-ball gaps; completion and correct artifact transport do not
+establish tracking quality. The [compact result record](../../configs/ball_tracking/reviews/nba_wasb_action_observation_result_v0_1.json)
+binds these outputs and checks.
+
+**Next concrete action:** Ryan reviews both complete longer videos with the
+exact cues in the [result and review report](../nba_wasb_action_observation_results.md).
+Ryan's acceptance of the original short pilots is complete and unchanged;
+human review of the two longer videos is pending. The frozen checkpoint,
+strict `>0.3`, native timing, game roles, protected holdouts and NFHS finish
+line remain intact. No training or new label scoring was added. The negative
+motion result and its three pending new human reviews also remain unchanged.
+
+Preparation took 162.884 seconds separately. Its loaded initial input-helper
+snapshot is preserved: on-disk recovery/predecode-stat safeguards changed while
+preparation was running, so a later start receipt hashes newer disk bytes.
+Original receipts remain unchanged; fresh extraction commands and PTS/RGB
+checks were unchanged. Preparation also used an earlier runner version; later
+runner changes concerned post-preparation/inference handling. Inference and
+rendering used committed `4b67d08` code.
+The result report links the exact provenance note and retained setup failures.
+
+## Earlier increment: 2026-10-19 NBA predictions accepted; longer action pass proposed
 
 Ryan reported: “I reviewed both videos and the predictions look good. Move
 forward chat.” The separate [visual acceptance record](../../configs/ball_tracking/reviews/nba_wasb_native_pilot_visual_review_v0_1.json)

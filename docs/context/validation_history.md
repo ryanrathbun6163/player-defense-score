@@ -1,5 +1,82 @@
 # Validation History
 
+## 2026-10-19: longer NBA action observation completed and audited
+
+Ryan approved the exact longer plan: “I approve. Move forward chat”. The
+[approval record](../../configs/ball_tracking/reviews/nba_wasb_action_observation_approval_v0_1.json)
+binds the preserved proposal's original bytes. The implementation was committed
+as `4b67d0850897d539ab2994afc6349c0b6af11667` after 23 distinct focused checks:
+seven input, twelve observation and four review checks. This count describes
+distinct checks, not total test invocations. The full suite was not repeated.
+
+The checks cover actual synthetic native-PTS extraction/render transport,
+producer-derived old cache imports, exact streamed float32 aggregation,
+unchanged pilot interiors, threshold/tie semantics, scope rejection, preserved
+failed calls and resume, cut boundaries and withheld frames, final-frame
+transport, and read-only prepared-input loading. Same-state/same-kind segments
+retain separate intervals across declared boundaries. Prepared-input loading
+uses small source/manifest/receipt checks without redundantly decoding every
+PNG; actual model/render consumption still verifies its inputs.
+
+The observation test history preserves the initial system-Python import failure
+(NumPy unavailable) and the subsequent six fixture setup errors caused by a
+reference-publication path outside `data/outputs`. The interpreter and fixture
+path were corrected; affected/new checks then passed. The first integration
+check also rejected a full-window approval comparison; the implementation now
+compares the exact approved field projection. No scientific model calls occurred
+in those failed checks. Logs remain under ignored
+`data/outputs/t/nba_action_implementation_2026-10-19/`.
+
+The initial six input checks preceded real preparation; seven checks passed
+after recovery and pre-decode source-stat safeguards were added. The running
+preparation process had already loaded the initial input helper, SHA-256
+`ee20bea139aa639806ab79739ec7572066433a04fd8f8a7608e078531c3c2842`.
+That exact snapshot and the [provenance explanation](../../data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/helper_loaded_provenance_01/provenance.json)
+are preserved. A later extraction-start receipt hashes the then-current disk
+file, not the already loaded code. No receipt was rewritten. Fresh extraction
+commands, native-PTS/RGB checks and successful output construction were
+unchanged; preparation completed with exit 0 in 162.884 seconds without a
+repeat decode to resolve that bookkeeping distinction. Inference/rendering
+used the committed `4b67d08` source. Preparation also used an earlier runner
+version, retained in its start receipt; later runner changes concerned
+post-preparation/inference handling. A DET inspection-helper import failure
+occurred before image reads and remains recorded; it was not a scientific
+model-call failure.
+
+The approved real run completed with exit 0 in 1,238.416 seconds of process
+wall time (1,237.234 seconds inside the runner). It made 2,582 new calls and
+imported 116 original triplets, with zero failed or unresolved model calls.
+SAC has 1,310 observed/161 missing/0 withheld; DET has 1,070 observed/161
+missing/0 withheld. All 112 pilot interior observations are identical, and
+eight pilot-edge observations have longer context. The original short-window
+120/120 score was not recomputed. These longer counts describe availability,
+not accuracy.
+
+Both new videos passed every-frame native-PTS, frame-key and overlay-pixel
+verification, including final frames 2010 and 11898 with an additional 90,000-
+tick hold. Maximum overlay RGB mean absolute errors were 3.323705 for SAC and
+3.543898 for DET, below the declared limit of 8. The independent
+[saved-output audit](../../data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/independent_audit_01/audit.json)
+passed on its first attempt in 27.172 seconds: 687,915 structural/numerical
+checks, 8,157 file bindings and zero issues. It reconstructed 2,702 aligned
+float32 means from all 2,698 actual NPZ caches, all 2,711 final components and
+selected points, and verified frame/PTS joins, availability intervals, original
+attempt identities and 112/8 pilot-context preservation. It checked bound
+renderer receipts and stored ffprobe records without another media decode,
+model call, annotation score or old experiment repeat.
+
+Inherited adapter metadata still describes its unused default `>0.5`
+components. The audited final path recomputes strict `>0.3` components after
+averaging; both facts are retained without rewriting provenance. AI inspection
+covered all 2,702 frames and both actual final frames, preserving 14 SAC and
+seven DET cues. It reports distractors and visible-ball gaps. The
+[compact result record](../../configs/ball_tracking/reviews/nba_wasb_action_observation_result_v0_1.json)
+binds the completed evidence; the [result and review report](../nba_wasb_action_observation_results.md)
+links both videos and their seekable cues.
+Original pilot acceptance, consumed resources, failed attempts, game roles,
+holdouts and the NFHS finish line remain preserved; new longer-video human
+reviews and the motion study's three new human reviews remain pending.
+
 ## 2026-10-19: native pilot model outputs accepted; broader scope prepared
 
 Ryan reported review of both videos and accepted the predictions without
