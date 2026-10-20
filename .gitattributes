@@ -40,6 +40,7 @@ tests/test_nba_saved_heatmap_diagnostic.py -text
 configs/ball_tracking/wasb_experiments/nba_wasb_adaptation_v0_1.json -text
 configs/ball_tracking/reviews/nba_wasb_adaptation_approval_v0_1.json -text
 configs/ball_tracking/reviews/nba_wasb_adaptation_result_v0_1.json -text
+configs/ball_tracking/reviews/nba_wasb_adaptation_visual_review_v0_1.json -text
 src/ball_tracking/nba_wasb_adaptation.py -text
 src/ball_tracking/nba_adaptation_comparison.py -text
 tests/test_nba_wasb_adaptation.py -text

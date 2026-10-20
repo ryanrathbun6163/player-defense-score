@@ -1,6 +1,14 @@
 # Current State
 
-## Latest increment: NBA continuation fails its numerical screen; baseline retained
+## Latest increment: NBA continuation review recorded; failed screen and baseline retained
+
+Ryan reported: “Ok I reviewed these chat. What’s the next step?” The
+[later review record](../../configs/ball_tracking/reviews/nba_wasb_adaptation_visual_review_v0_1.json)
+covers the three inline embeds: two complete NBA comparisons and the verified
+31-second compilation of all six NFHS windows. This is user-reported review
+completion, without playback telemetry or an explicit quality endorsement.
+The original generated pending-review receipts remain unchanged as publication
+history. This comparison no longer needs a repeated review request.
 
 Ryan approved the [bounded NBA experiment](../nba_wasb_adaptation_plan.md) with
 “Ok I like this chat. Move forward”. The bound config and approval were fixed
@@ -45,10 +53,21 @@ decoded-pixel/timing verification passed without re-encoding or inference.
 No model or phase gate is promoted. The negative motion result and three pending
 motion reviews remain unchanged.
 
-**Next concrete action:** review the complete synchronized videos with the
-regressions identified. All eight human model-output reviews remain pending.
-The numerical failure
-does not justify another fit or changed thresholds.
+**Next concrete action (planned, not run):** compare saved old/new heatmaps around
+the six lost matches and four recovered matches. Use exactly ±2 native frames
+around DET/11107, DET/11501, DET/11013, P001/206, P001/207, P001/209, P001/221,
+P001/223, P002/49 and P003/304, clipped to each original review window and
+deduplicated. This gives 37 unique source frames: DET 15, P001 14, P002 three
+and P003 five, or 74 old/new mean heatmaps. Reconstruct each mean from its
+original complete cached contributor context, not a shortened context.
+
+Compare true-ball response, averaging across overlapping triplets, component
+center/mass and competing distractors at the unchanged strict `>0.3` and inclusive
+ten-pixel match boundary. Preserve labels and scores. This routine inspection of
+existing development outputs needs no new permission gate. Use it to select one
+justified follow-up proposal; no new fit, data change or threshold tuning has been
+approved. These ten selected events cannot establish causal NBA overfitting or
+general forgetting, and the failed screen remains in force.
 
 ## Earlier increment (historical): approved saved-heatmap inspection completed
 

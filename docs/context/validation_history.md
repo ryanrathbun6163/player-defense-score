@@ -1,5 +1,21 @@
 # Validation History
 
+## Later NBA continuation review: user-reported completion
+
+Ryan said: “Ok I reviewed these chat. What’s the next step?” The
+[later review record](../../configs/ball_tracking/reviews/nba_wasb_adaptation_visual_review_v0_1.json)
+covers the three inline embeds delivered in chat: the two complete NBA comparisons
+and the verified 31-second compilation containing all six NFHS comparison windows.
+The statement records review completion without playback telemetry or an explicit
+quality endorsement. The original generated `human_review: pending` records remain
+unchanged as publication-time evidence. The four failed numerical conditions,
+retained expanded baseline and earlier three pending motion reviews are unchanged.
+No new fit or threshold tuning is authorized by the next-step question.
+The next saved-output diagnosis is planned but has not run: 37 unique context
+frames around six lost matches and four recoveries, with 74 old/new means using
+their original complete cached contexts. This review/status update does not
+repeat the scientific run or its tests.
+
 ## Approved NBA continuation: fixed numerical screen failed
 
 The [approved experiment](../nba_wasb_adaptation_plan.md) binds the exact inputs,
@@ -60,7 +76,8 @@ Numeric reconstruction covered 56 rows from 72 cache bodies (115,173,064
 compressed bytes); the remaining means/components were not independently
 recomputed. Eight review bindings, manifests, probes and every-frame decode
 receipts were checked without another media decode. It confirmed the failed
-screen. New model-output human review remains pending.
+screen. Model-output human review was pending at publication; the later completion
+record above supersedes that current status without rewriting generated evidence.
 
 AI inspected 56 sampled source frames and all eight actual encoded finals;
 this is not complete visual inspection of all video frames. The six NFHS videos

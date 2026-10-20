@@ -7,8 +7,28 @@ were frozen before execution. One 200-update continuation fit and its fixed
 numerical comparison are complete. The candidate **fails four of nine numerical
 conditions**, so the expanded checkpoint `09da1214e94f` remains the baseline.
 All eight complete comparison videos passed the producing media checks.
-Independent comparison audit passed; new model-output human review remains pending.
+Independent comparison audit passed. Ryan later reported completing visual review
+of the three inline embeds covering both NBA videos and all six NFHS windows.
 No second fit, threshold tuning or model promotion has occurred.
+
+## Later human review record
+
+Ryan said: “Ok I reviewed these chat. What’s the next step?” The
+[later review record](../configs/ball_tracking/reviews/nba_wasb_adaptation_visual_review_v0_1.json)
+binds the two complete NBA videos and the verified 31-second NFHS compilation
+delivered inline in chat. The compilation includes all six original NFHS windows.
+This records user-reported review completion, without playback telemetry or an
+explicit quality endorsement. The four failed numerical conditions and retained
+baseline are unchanged. Original generated pending-review receipts are preserved
+as the state at publication; this later record supersedes their current review
+status without rewriting them.
+
+The [next planned step](context/roadmap.md) is a small comparison of existing
+old/new heatmaps around six lost matches and four recoveries: 37 unique frames,
+74 means reconstructed with their original complete cached contexts. It has not
+run. This routine development inspection will help choose a justified follow-up;
+it does not authorize another fit or threshold tuning, change scores, or establish
+causal overfitting or general forgetting.
 
 ## Fixed comparison
 
@@ -48,7 +68,7 @@ comparison, and NFHS loses one net match. Fewer hidden alarms and one fewer DET
 miss do not offset the failed conditions. This single recipe does not establish
 improved NBA transfer or isolate why the regressions occurred.
 
-## Changes to inspect in synchronized video
+## Observed changes and retained review cues
 
 SAC retains all 218 old matches and adds 47. Of 47 previously missing outputs,
 44 become matches and three become wrong locations; three previously wrong
@@ -63,8 +83,8 @@ boundary. Seven old hidden alarms disappear, three new alarms appear at
 11036–11038, and six persist, giving the net reduction from 13 to nine.
 
 NFHS gains P001/221, P001/223 and P002/49, while P001/206–207, P001/209 and
-P003/304 become missing. The full windows and their final frames remain part of
-the review; these frame cues do not replace review of surrounding context.
+P003/304 become missing. The complete windows and actual final frames remain
+available alongside these frame cues as review evidence.
 
 ## Complete synchronized videos
 
@@ -83,7 +103,8 @@ NBA plays at 30 source frames per second, about half speed; NFHS plays at six.
 AI inspection covered 56 sampled source frames and all eight actual encoded
 final frames. It confirmed the described recoveries, distractor switch and
 visible-ball losses; it was not a complete visual inspection of every video.
-All eight new human reviews remain pending.
+Ryan subsequently reported reviewing all eight windows through the three inline
+embeds described above.
 
 | Video | Source frames, inclusive | Frames | Duration |
 | --- | --- | ---: | ---: |
@@ -97,8 +118,8 @@ All eight new human reviews remain pending.
 | [P003 challenge](../data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/review_attempts/d76e24da5b964ea394a5f683e1d6d1e4/review.mp4) | 150–174 | 25 | 5.167s |
 
 DET frame 11107 occurs at approximately 14.63 seconds in its video; frame
-11501 occurs at 27.77 seconds. Watch the full sequences, including the final
-held frame, to assess distractors, missing outputs and continuity.
+11501 occurs at 27.77 seconds. The complete sequences, including final holds,
+preserve the surrounding distractors, missing outputs and continuity evidence.
 
 For phone delivery, the [six NFHS clips in one 31-second video](../data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/delivery/nfhs_all_six_comparison.mp4)
 preserve all 150 decoded frames, their order, timing and each final hold. They
@@ -191,6 +212,7 @@ result remain intact; three motion-video human reviews are still pending.
 ## Evidence
 
 - [Tracked result and exact artifact bindings](../configs/ball_tracking/reviews/nba_wasb_adaptation_result_v0_1.json).
+- [Later user-reported model-output review](../configs/ball_tracking/reviews/nba_wasb_adaptation_visual_review_v0_1.json).
 - [Completed comparison and bound review packages](../data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/report.json).
 - [Fixed score report](../data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/score_report.json).
 - [Training completion](../data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/training/completion.json).
@@ -204,4 +226,5 @@ result remain intact; three motion-video human reviews are still pending.
 - [Comparison checks](../data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/validation/comparison_tests_01.log) and [producer-contract follow-up](../data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/validation/comparison_tests_02.log).
 
 All generated media, checkpoint tensors and prediction artifacts remain ignored
-by Git. New model-output human review remains pending.
+by Git. User-reported review is complete; model promotion and phase acceptance
+remain unsupported by this failed numerical result.

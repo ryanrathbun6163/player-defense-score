@@ -123,9 +123,18 @@ fitting. The [fixed comparison](docs/nba_wasb_adaptation_results.md) after one
 200-update fit **fails its numerical screen**, so the expanded baseline is
 retained. SAC training-fit matches improve from 218 to 265 of 270, but DET
 matches fall from 207 to 206 of 237 and wrong locations rise from eight to ten.
-NFHS matches fall from 130 to 129 of 145. New model-output human review remains
-pending; eight complete synchronized videos passed media checks, and independent
-training/comparison audits passed. No second fit or threshold tuning followed.
+NFHS matches fall from 130 to 129 of 145. Eight complete synchronized videos
+passed media checks, and independent training/comparison audits passed. Ryan
+reported reviewing the three inline embeds covering both NBA videos and all six
+NFHS windows through the verified compilation: “Ok I reviewed these chat. What’s
+the next step?” The [later review record](configs/ball_tracking/reviews/nba_wasb_adaptation_visual_review_v0_1.json)
+records completion without playback telemetry or an explicit quality endorsement.
+The failed screen and retained baseline are unchanged. No second fit or threshold
+tuning followed.
+The [next planned diagnosis](docs/context/roadmap.md) compares existing old/new
+heatmaps around six lost matches and four recoveries, preserving their original
+contexts and fixed scoring rules. It has not run; another fit is a separate
+decision.
 These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved
 model trajectories or comparative NBA accuracy. The preceding heatmap inspection

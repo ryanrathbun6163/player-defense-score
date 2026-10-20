@@ -1,6 +1,6 @@
 # Roadmap
 
-## Current action: review the failed NBA adaptation comparison; retain baseline
+## Current action: diagnose the failed NBA adaptation comparison; retain baseline
 
 Ryan approved the [bounded experiment](../nba_wasb_adaptation_plan.md). One
 200-update continuation fit on accepted SAC plus earlier NFHS training data
@@ -14,11 +14,35 @@ DET wrong locations rise from eight to ten, NFHS matches fall from 130 to 129
 and NFHS misses rise from 14 to 15. SAC's 218-to-265 training-fit improvement
 does not establish transfer. Retain the expanded baseline. Media and independent
 comparison checks passed; AI inspected 56 samples and all eight encoded finals.
-Review all eight synchronized videos through their actual final frames; the
-six NFHS videos also have a verified phone compilation. All eight human reviews
-remain pending. Any subsequent experiment needs a
+Ryan subsequently reported reviewing the three inline embeds covering the two
+NBA comparisons and all six NFHS windows through the verified compilation.
+The [later review record](../../configs/ball_tracking/reviews/nba_wasb_adaptation_visual_review_v0_1.json)
+records completion without an explicit quality endorsement or playback telemetry.
+The original publication receipts remain unchanged. Any subsequent experiment needs a
 concrete proposal informed by these failures. No second fit or threshold search
 is approved.
+
+The immediate planned step has **not run**: a paired saved-heatmap diagnosis of
+six lost matches and four recovered matches. Take exactly ±2 native frames around
+each anchor, clip to its original review window and deduplicate:
+
+| Existing development context | Anchor source frames | Unique frames |
+| --- | --- | ---: |
+| DET | 11107, 11501, 11013 | 15 |
+| P001 challenge | 206, 207, 209, 221, 223 | 14 |
+| P002 challenge | 49 | 3 |
+| P003 representative | 304 | 5 |
+| Total | Six lost and four recovered matches | 37 |
+
+Reconstruct all 74 old/new means from their **original complete cached
+contributor contexts**. Compare true-ball response, overlapping-triplet averaging,
+component center/mass and competing distractors using the unchanged strict
+`>0.3` and inclusive ten-pixel boundary. Labels, predictions and scores stay
+unchanged. Routine inspection of these existing development outputs requires no
+new approval barrier. Its result should select one justified follow-up proposal,
+without claiming that these selected events establish causal NBA overfitting or
+general forgetting. A new fit, training-data change or threshold tuning is a
+separate scientific choice; none is authorized by the next-step question.
 
 TOR, protected holdouts and buffers, the NFHS finish line and the negative motion
 result remain unchanged; three motion reviews remain pending.
