@@ -1,6 +1,51 @@
 # Current State
 
-## Latest increment: NBA continuation review recorded; failed screen and baseline retained
+## Latest increment: 37-frame saved-output diagnostic complete
+
+Ryan said: “Ok move forward chat. Run the 37-frame diagnostic.” The
+[bound scope](../../configs/ball_tracking/selections/nba_adaptation_regression_diagnostic_v0_1.json)
+and [results record](../nba_adaptation_regression_diagnostic_results.md) cover
+exactly 37 source frames and 74 old/new means around six lost matches and four
+recoveries. Means retain their original complete cached contributor contexts.
+One 2.375-second run reproduced all 74 original means, candidates, selections
+and scores. Eight focused tests passed. Independent audit fully recomputed all
+74 means and passed 20,962 checks in 1.630051 seconds. Its first helper omitted
+`in_source_bounds` and stopped after 1,128 checks; the failed receipt is preserved
+and the producer was not rerun.
+
+DET/11107 still has a correct 5.682-pixel candidate, but its response mass loses
+to a stronger off-ball hand component (ball 11.953→11.161; hand 9.237→13.747).
+DET/11501 retains a ball peak 4.809 pixels from the reference while its weighted
+center crosses 9.272→10.014 pixels. Four NFHS losses retain individual `>0.3`
+ball support, but their means fall to 0.279458, 0.187125, 0.216723 and 0.264340.
+The four recoveries cross the same mean threshold in the opposite direction.
+The unchanged averaging rule acts on changed individual responses; no single
+universal fix or causal forgetting conclusion follows.
+
+The run read 94 triplet bodies (149,913,392 compressed bytes) plus three original
+NFHS mean bundles (39,639,143 bytes; 75 planes loaded, 22 selected planes measured).
+Old NFHS source/window/frame/model provenance is preserved, without inventing
+historical captured PNG/PTS hashes. The report records array memory separately
+from total process RAM.
+
+This compares saved true-ball response, overlapping-triplet averaging, component
+center/mass and competing distractors at strict `>0.3` and inclusive ten pixels.
+It made no model calls, fit, threshold change, label/score change or holdout
+access. The unsuccessful continuation and retained `09da1214e94f` baseline remain
+unchanged. Its video review is already complete; no repeat review is requested.
+
+**Next proposal, not executed or authorized:** one cached candidate-preservation
+experiment. Retain original mean-map candidates and add provenance-tagged,
+in-image strict-`>0.3` components from original contributors, with both checkpoints,
+original contexts, labels and ten-pixel radius unchanged. On the existing 790
+frames (SAC 300, DET 340, NFHS 150), compare the presence of any matching candidate,
+extra candidates per frame and newly nonempty hidden-reference frames. Report
+SAC training fit, DET/NFHS development and the included 120 easy controls separately.
+This is candidate availability, not a usable prediction or model promotion;
+DET/11107's correct mean candidate already exists. No threshold or temporal rule
+would change, and no fit, inference or holdout access is proposed.
+
+## Earlier increment (historical): NBA continuation review recorded; failed screen and baseline retained
 
 Ryan reported: “Ok I reviewed these chat. What’s the next step?” The
 [later review record](../../configs/ball_tracking/reviews/nba_wasb_adaptation_visual_review_v0_1.json)

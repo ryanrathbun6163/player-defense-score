@@ -1,0 +1,1697 @@
+{
+  "schema_version": "nba_adaptation_regression_diagnostic_result/v0.1",
+  "status": "completed",
+  "recorded_at_utc": "2026-10-20T05:20:20.504563+00:00",
+  "authorization": {
+    "approved_by": "Ryan",
+    "user_statement": "Ok move forward chat. Run the 37-frame diagnostic.",
+    "new_model_inference": false,
+    "training": false,
+    "threshold_sweep": false,
+    "label_changes": false,
+    "prediction_changes": false,
+    "video_or_source_png_decode": false
+  },
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "0c9c9d6bbfe217535c8bc6ae5295ef11439f7012",
+    "index_and_worktree": "clean"
+  },
+  "scope": {
+    "path": "configs/ball_tracking/selections/nba_adaptation_regression_diagnostic_v0_1.json",
+    "sha256": "272ee6a39151cebe4858d96b48bc5ebcd2fe70fec13f279dc0bdbb073f132422",
+    "bytes": 156580
+  },
+  "completion": {
+    "path": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1/completion.json",
+    "bytes": 3982,
+    "sha256": "a9f6477f6e1814a4220611e413795c2f11d590f765ad3a309bcc1c524341aeee"
+  },
+  "report": {
+    "path": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1/attempts/2697d0dab9fa4afeb6e6f2cf41b67b80/report.json",
+    "sha256": "4d29c5363400472a67f2320bd6e841b2e94aec626d755e014a0c76e233bab006",
+    "bytes": 1011775
+  },
+  "summary": {
+    "path": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1/attempts/2697d0dab9fa4afeb6e6f2cf41b67b80/summary.json",
+    "sha256": "9dab5833d2cd852d53d1dc313f65eae55c80c674ad632063570f35322ed6dc7c",
+    "bytes": 79619
+  },
+  "anchor_mean_heatmaps": {
+    "path": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1/attempts/2697d0dab9fa4afeb6e6f2cf41b67b80/anchor_mean_heatmaps.npz",
+    "sha256": "15a0b261051b37e6d8ecbb9023d19fb75180e4d628435e61f5743129446ddc86",
+    "bytes": 10580406
+  },
+  "execution": {
+    "command": ".\\.venv\\Scripts\\python.exe -B -m src.ball_tracking.nba_adaptation_regression_diagnostic --scope configs/ball_tracking/selections/nba_adaptation_regression_diagnostic_v0_1.json --run",
+    "attempt_id": "2697d0dab9fa4afeb6e6f2cf41b67b80",
+    "attempts": 1,
+    "failed_real_attempts": 0,
+    "elapsed_seconds": 2.375,
+    "frames": 37,
+    "old_new_means": 74,
+    "parity_checks_passed": 74,
+    "anchors": 10,
+    "anchor_losses": 6,
+    "anchor_recoveries": 4,
+    "unique_triplet_caches": 94,
+    "compressed_triplet_bytes_read": 149913392,
+    "old_nfhs_mean_bundles_loaded": 3,
+    "stored_old_nfhs_planes_loaded": 75,
+    "selected_old_nfhs_planes_measured": 22,
+    "exported_anchor_mean_planes": 20,
+    "model_calls": 0,
+    "checkpoint_deserializations": 0,
+    "source_png_decodes": 0,
+    "video_decodes": 0,
+    "prediction_or_label_changes": false,
+    "transitions": {
+      "matched -> matched": 16,
+      "missing -> matched": 4,
+      "unscored -> unscored": 2,
+      "hidden_alarm -> hidden_alarm": 2,
+      "matched -> wrong": 2,
+      "matched -> missing": 4,
+      "missing -> missing": 7
+    },
+    "resources_note": "Audit rereads are separate from producer reads. Array inventories in the report are not total process RAM."
+  },
+  "validation": {
+    "focused_tests": {
+      "count": 8,
+      "status": "passed",
+      "elapsed_seconds": 3.486,
+      "log": {
+        "path": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1/preparation/tests_01.log",
+        "bytes": 1873,
+        "sha256": "535cccb1024c0fb229b762f53dca4fb9f239a040d618bdb00206a868912238f8"
+      },
+      "full_suite_run": false,
+      "scope": "Native producer/consumer transport, strict threshold and inclusive radius, original tail contributors, null geometry, fixed diagnostic regions, corruption refusal, immutable attempt history."
+    },
+    "independent_audit": {
+      "status": "passed",
+      "checks": 20962,
+      "elapsed_seconds": 1.6300507999985712,
+      "coverage": {
+        "frames": 37,
+        "mean_planes_fully_recomputed": 74,
+        "anchors": 10,
+        "anchor_losses": 6,
+        "anchor_gains": 4,
+        "cache_bodies": 94,
+        "compressed_cache_bytes": 149913392,
+        "nfhs_bundle_stored_planes_loaded": 75,
+        "nfhs_selected_old_planes_compared": 22,
+        "exported_anchor_planes_compared": 20,
+        "transitions": {
+          "matched -> matched": 16,
+          "missing -> matched": 4,
+          "unscored -> unscored": 2,
+          "hidden_alarm -> hidden_alarm": 2,
+          "matched -> wrong": 2,
+          "matched -> missing": 4,
+          "missing -> missing": 7
+        },
+        "baseline_checkpoint_unchanged": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+          "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+          "bytes": 6084071
+        },
+        "producer_attempts": 1,
+        "producer_failed_attempts": 0,
+        "coverage_limits": [
+          "All selected means, contributor metrics, components, source joins, selections and scores independently verified.",
+          "SciPy labels independently of OpenCV; component indices matched by original centroid/mass.",
+          "No new model calls, checkpoint deserialization, image or video decoding. Checkpoint preservation uses file hash only.",
+          "Old NFHS cache provenance binds original frame/model/window; original captured PNG/PTS bytes were not saved.",
+          "Three25-plane NFHS bundles loaded; only22 selected old planes measured.",
+          "Failure-selected correlated development data does not establish cause or broad generalization."
+        ]
+      },
+      "receipt": {
+        "path": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1/independent_audit/audit_02.json",
+        "bytes": 120003,
+        "sha256": "926732ef30723a523c05c0aa087b750ba9b27b11e7800d3172cd8eb9dfe37dbf"
+      },
+      "helper": {
+        "path": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1/independent_audit/audit_regression.py",
+        "bytes": 33673,
+        "sha256": "d5f0d7cb6b5e801324ce85421dada6e851438ffeeb4eaf2ed320a7463a3fc4e0"
+      }
+    },
+    "preserved_first_audit_attempt": {
+      "receipt": {
+        "path": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1/independent_audit/audit_01.json",
+        "bytes": 17310,
+        "sha256": "f3ffa0d3414e27fb49561363e0c1a2329bfb5d47c8a79c8adc0b3298c09c3bbb"
+      },
+      "original_helper": {
+        "path": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1/independent_audit/audit_regression_before_bounds_field.py",
+        "bytes": 33567,
+        "sha256": "af1c8592fa55e6c3cd97867651e66454aed6bee37195efe310e0c5545b480b4c"
+      },
+      "reason": "Audit comparison omitted the producer component in_source_bounds field. Corrected audit schema; no producer or scientific-output defect and no diagnostic rerun.",
+      "checks_before_failure": 1128,
+      "compressed_cache_bytes_read": 4772082,
+      "cache_bodies_read": 3
+    }
+  },
+  "source_and_test_bindings": [
+    {
+      "path": "src/ball_tracking/nba_saved_heatmap_diagnostic.py",
+      "sha256": "be025647652c576c1a86660920a2894e28bf7ff3e0efdf76358b4f7da71583fb",
+      "bytes": 22400
+    },
+    {
+      "path": "src/ball_tracking/nba_wasb_diagnostic.py",
+      "sha256": "b8dcd105e964475e0efc53e45449e47acdc4341e7409f371d5c44172d0e950f3",
+      "bytes": 34275
+    },
+    {
+      "path": "src/ball_tracking/nba_action_observation.py",
+      "sha256": "160dac2b9d1d784c8d00bd8344905cb78886e011ca0a20f714da4436b969e5cd",
+      "bytes": 27371
+    },
+    {
+      "path": "src/ball_tracking/nba_adaptation_comparison.py",
+      "sha256": "dd229cab03967ac649e9540944a00d81ebb578b0b85169ece25d8d127f824500",
+      "bytes": 33044
+    },
+    {
+      "path": "src/ball_tracking/wasb_calibration.py",
+      "sha256": "21d83963cd53d77f3d719a85996aa03d8986b9f09d57fd6aaf61c00ca6644ee7",
+      "bytes": 19876
+    },
+    {
+      "path": "src/ball_tracking/nba_adaptation_regression_diagnostic.py",
+      "sha256": "fec5d421c0a44abf2dd02687c75a830a9aa6b526dfa79411062d1ca08a1c4c03",
+      "bytes": 23422
+    },
+    {
+      "path": "tests/test_nba_adaptation_regression_diagnostic.py",
+      "bytes": 15522,
+      "sha256": "7d7c4a73c42363db1fede1213c5a66df3d502b6373ae69ee446be2486495b0d6"
+    }
+  ],
+  "scope_preparation_history": [
+    {
+      "event": "Before numerical cache reads, added paired fixed-location response at old/new selected centers within the same 74 means, to distinguish ball-response loss from distractor-response gain.",
+      "initial_scope_copy": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1/preparation/scope_initial_before_fixed_region_addendum.json"
+    }
+  ],
+  "figures": {
+    "render_receipt": {
+      "path": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1/delivery/figure_receipt.json",
+      "bytes": 1736,
+      "sha256": "022d07b69912adea47a5125479d5caa4bc1ae6d72cc3498ee614c81fb22e2177"
+    },
+    "inspection": {
+      "path": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1/delivery/figure_inspection.json",
+      "bytes": 1690,
+      "sha256": "5eaf9647098d8631a1b9225d97ce473dd624bc5a22a43c621e35527523256818"
+    },
+    "files": [
+      {
+        "path": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1/delivery/ball_response_changes.png",
+        "bytes": 151932,
+        "sha256": "d320449398c0b3776fb37689cf2c99993e4f660e13f81d74d581ce5ffa5f29ea"
+      },
+      {
+        "path": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1/delivery/three_regression_heatmaps.png",
+        "bytes": 160586,
+        "sha256": "a27b1e675f535e171b5ef07b8d9ed55c57a3fe9e41de97e97d4cb23aae4d6484"
+      }
+    ]
+  },
+  "anchors": [
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "source_frame_index": 11013,
+      "mechanism": "mean_local_response_crosses_upward",
+      "old": {
+        "outcome": "missing",
+        "selected_center_error_px": null,
+        "mean_local_peak": 0.21194995939731598,
+        "active_pixels_in_reference_disk": 0,
+        "selected_component": null,
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 11011,
+            "channel": 2,
+            "local_peak": 0.5087800621986389,
+            "active_pixels_in_reference_disk": 17
+          },
+          {
+            "triplet_first_source_frame_index": 11012,
+            "channel": 1,
+            "local_peak": 0.11732662469148636,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 11013,
+            "channel": 0,
+            "local_peak": 0.021592680364847183,
+            "active_pixels_in_reference_disk": 0
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": true,
+          "local_peak_mean_minus_max_contributor": -0.29683010280132294
+        },
+        "fixed_selection_locations": {
+          "new_selected_center": {
+            "center_xy_px": [
+              1669.397850036621,
+              409.4069194793701
+            ],
+            "local_peak": 0.21194995939731598,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      },
+      "new": {
+        "outcome": "matched",
+        "selected_center_error_px": 0.5690941172866337,
+        "mean_local_peak": 0.3247133791446686,
+        "active_pixels_in_reference_disk": 6,
+        "selected_component": {
+          "candidate_index": 0,
+          "centroid_source_xy_px": [
+            1669.397850036621,
+            409.4069194793701
+          ],
+          "native_mass": 1.8684353828430176,
+          "pixels": 6,
+          "peak": 0.3247133791446686,
+          "peak_heatmap_xy": [
+            445,
+            109
+          ],
+          "peak_source_xy_px": [
+            1668.75,
+            408.75
+          ],
+          "peak_tie_pixels": 1,
+          "bbox_heatmap_xyxy_inclusive": [
+            444,
+            108,
+            446,
+            110
+          ],
+          "bbox_source_lattice_xyxy": [
+            1665.0,
+            405.0,
+            1672.5,
+            412.5
+          ],
+          "centroid_error_px": 0.5690941172866337,
+          "peak_error_px": 0.3535533905932738,
+          "nearest_support_error_px": 0.3535533905932738,
+          "active_pixels_in_reference_disk": 6,
+          "mass_rank": 1,
+          "selected": true,
+          "in_source_bounds": true,
+          "centroid_within_reference_radius": true,
+          "peak_within_reference_radius": true
+        },
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 11011,
+            "channel": 2,
+            "local_peak": 0.5407577157020569,
+            "active_pixels_in_reference_disk": 19
+          },
+          {
+            "triplet_first_source_frame_index": 11012,
+            "channel": 1,
+            "local_peak": 0.41996458172798157,
+            "active_pixels_in_reference_disk": 19
+          },
+          {
+            "triplet_first_source_frame_index": 11013,
+            "channel": 0,
+            "local_peak": 0.047219689935445786,
+            "active_pixels_in_reference_disk": 0
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": false,
+          "local_peak_mean_minus_max_contributor": -0.2160443365573883
+        },
+        "fixed_selection_locations": {
+          "new_selected_center": {
+            "center_xy_px": [
+              1669.397850036621,
+              409.4069194793701
+            ],
+            "local_peak": 0.3247133791446686,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "source_frame_index": 11107,
+      "mechanism": "distractor_mass_overtakes_still_matching_ball_candidate",
+      "old": {
+        "outcome": "matched",
+        "selected_center_error_px": 5.865178900396851,
+        "mean_local_peak": 0.5609174966812134,
+        "active_pixels_in_reference_disk": 16,
+        "selected_component": {
+          "candidate_index": 1,
+          "centroid_source_xy_px": [
+            1455.1708602905273,
+            420.6491947174072
+          ],
+          "native_mass": 11.952604293823242,
+          "pixels": 27,
+          "peak": 0.5609174966812134,
+          "peak_heatmap_xy": [
+            388,
+            112
+          ],
+          "peak_source_xy_px": [
+            1455.0,
+            420.0
+          ],
+          "peak_tie_pixels": 1,
+          "bbox_heatmap_xyxy_inclusive": [
+            386,
+            110,
+            390,
+            115
+          ],
+          "bbox_source_lattice_xyxy": [
+            1447.5,
+            412.5,
+            1462.5,
+            431.25
+          ],
+          "centroid_error_px": 5.865178900396851,
+          "peak_error_px": 6.0,
+          "nearest_support_error_px": 1.5,
+          "active_pixels_in_reference_disk": 16,
+          "mass_rank": 1,
+          "selected": true,
+          "in_source_bounds": true,
+          "centroid_within_reference_radius": true,
+          "peak_within_reference_radius": true
+        },
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 11105,
+            "channel": 2,
+            "local_peak": 0.22131095826625824,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 11106,
+            "channel": 1,
+            "local_peak": 0.7827202081680298,
+            "active_pixels_in_reference_disk": 18
+          },
+          {
+            "triplet_first_source_frame_index": 11107,
+            "channel": 0,
+            "local_peak": 0.7543619275093079,
+            "active_pixels_in_reference_disk": 20
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": false,
+          "local_peak_mean_minus_max_contributor": -0.2218027114868164
+        },
+        "fixed_selection_locations": {
+          "old_selected_center": {
+            "center_xy_px": [
+              1455.1708602905273,
+              420.6491947174072
+            ],
+            "local_peak": 0.5609174966812134,
+            "meaning": "diagnostic location, not a reference label"
+          },
+          "new_selected_center": {
+            "center_xy_px": [
+              1157.4560165405273,
+              384.83004570007324
+            ],
+            "local_peak": 0.5168558955192566,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      },
+      "new": {
+        "outcome": "wrong",
+        "selected_center_error_px": 305.5746644928266,
+        "mean_local_peak": 0.5395395159721375,
+        "active_pixels_in_reference_disk": 16,
+        "selected_component": {
+          "candidate_index": 0,
+          "centroid_source_xy_px": [
+            1157.4560165405273,
+            384.83004570007324
+          ],
+          "native_mass": 13.746954917907715,
+          "pixels": 30,
+          "peak": 0.6470930576324463,
+          "peak_heatmap_xy": [
+            308,
+            103
+          ],
+          "peak_source_xy_px": [
+            1155.0,
+            386.25
+          ],
+          "peak_tie_pixels": 1,
+          "bbox_heatmap_xyxy_inclusive": [
+            306,
+            100,
+            311,
+            105
+          ],
+          "bbox_source_lattice_xyxy": [
+            1147.5,
+            375.0,
+            1166.25,
+            393.75
+          ],
+          "centroid_error_px": 305.5746644928266,
+          "peak_error_px": 307.85558708589326,
+          "nearest_support_error_px": 296.2727839339955,
+          "active_pixels_in_reference_disk": 0,
+          "mass_rank": 1,
+          "selected": true,
+          "in_source_bounds": true,
+          "centroid_within_reference_radius": false,
+          "peak_within_reference_radius": false
+        },
+        "matching_alternatives": [
+          {
+            "candidate_index": 1,
+            "centroid_source_xy_px": [
+              1455.3983688354492,
+              420.9511184692383
+            ],
+            "native_mass": 11.160623550415039,
+            "pixels": 26,
+            "peak": 0.5395395159721375,
+            "peak_heatmap_xy": [
+              388,
+              112
+            ],
+            "peak_source_xy_px": [
+              1455.0,
+              420.0
+            ],
+            "peak_tie_pixels": 1,
+            "bbox_heatmap_xyxy_inclusive": [
+              386,
+              110,
+              390,
+              115
+            ],
+            "bbox_source_lattice_xyxy": [
+              1447.5,
+              412.5,
+              1462.5,
+              431.25
+            ],
+            "centroid_error_px": 5.681804118956647,
+            "peak_error_px": 6.0,
+            "nearest_support_error_px": 1.5,
+            "active_pixels_in_reference_disk": 16,
+            "mass_rank": 2,
+            "selected": false,
+            "in_source_bounds": true,
+            "centroid_within_reference_radius": true,
+            "peak_within_reference_radius": true
+          }
+        ],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 11105,
+            "channel": 2,
+            "local_peak": 0.18959450721740723,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 11106,
+            "channel": 1,
+            "local_peak": 0.7804423570632935,
+            "active_pixels_in_reference_disk": 18
+          },
+          {
+            "triplet_first_source_frame_index": 11107,
+            "channel": 0,
+            "local_peak": 0.7223047614097595,
+            "active_pixels_in_reference_disk": 20
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": false,
+          "local_peak_mean_minus_max_contributor": -0.240902841091156
+        },
+        "fixed_selection_locations": {
+          "old_selected_center": {
+            "center_xy_px": [
+              1455.1708602905273,
+              420.6491947174072
+            ],
+            "local_peak": 0.5395395159721375,
+            "meaning": "diagnostic location, not a reference label"
+          },
+          "new_selected_center": {
+            "center_xy_px": [
+              1157.4560165405273,
+              384.83004570007324
+            ],
+            "local_peak": 0.6470930576324463,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "source_frame_index": 11501,
+      "mechanism": "small_centroid_shift_crosses_fixed_ten_pixel_boundary",
+      "old": {
+        "outcome": "matched",
+        "selected_center_error_px": 9.272158127126119,
+        "mean_local_peak": 0.5740987658500671,
+        "active_pixels_in_reference_disk": 15,
+        "selected_component": {
+          "candidate_index": 0,
+          "centroid_source_xy_px": [
+            870.534610748291,
+            451.42187118530273
+          ],
+          "native_mass": 14.915447235107422,
+          "pixels": 34,
+          "peak": 0.5740987658500671,
+          "peak_heatmap_xy": [
+            231,
+            121
+          ],
+          "peak_source_xy_px": [
+            866.25,
+            453.75
+          ],
+          "peak_tie_pixels": 1,
+          "bbox_heatmap_xyxy_inclusive": [
+            229,
+            118,
+            235,
+            123
+          ],
+          "bbox_source_lattice_xyxy": [
+            858.75,
+            442.5,
+            881.25,
+            461.25
+          ],
+          "centroid_error_px": 9.272158127126119,
+          "peak_error_px": 4.808846015417836,
+          "nearest_support_error_px": 1.5811388300841898,
+          "active_pixels_in_reference_disk": 15,
+          "mass_rank": 1,
+          "selected": true,
+          "in_source_bounds": true,
+          "centroid_within_reference_radius": true,
+          "peak_within_reference_radius": true
+        },
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 11499,
+            "channel": 2,
+            "local_peak": 0.5995646715164185,
+            "active_pixels_in_reference_disk": 15
+          },
+          {
+            "triplet_first_source_frame_index": 11500,
+            "channel": 1,
+            "local_peak": 0.5282042026519775,
+            "active_pixels_in_reference_disk": 12
+          },
+          {
+            "triplet_first_source_frame_index": 11501,
+            "channel": 0,
+            "local_peak": 0.6360201239585876,
+            "active_pixels_in_reference_disk": 16
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": false,
+          "local_peak_mean_minus_max_contributor": -0.06192135810852051
+        },
+        "fixed_selection_locations": {
+          "old_selected_center": {
+            "center_xy_px": [
+              870.534610748291,
+              451.42187118530273
+            ],
+            "local_peak": 0.5740987658500671,
+            "meaning": "diagnostic location, not a reference label"
+          },
+          "new_selected_center": {
+            "center_xy_px": [
+              871.4386940002441,
+              451.2953567504883
+            ],
+            "local_peak": 0.5740987658500671,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      },
+      "new": {
+        "outcome": "wrong",
+        "selected_center_error_px": 10.014310237479725,
+        "mean_local_peak": 0.5269663333892822,
+        "active_pixels_in_reference_disk": 12,
+        "selected_component": {
+          "candidate_index": 0,
+          "centroid_source_xy_px": [
+            871.4386940002441,
+            451.2953567504883
+          ],
+          "native_mass": 13.165501594543457,
+          "pixels": 31,
+          "peak": 0.5269663333892822,
+          "peak_heatmap_xy": [
+            231,
+            121
+          ],
+          "peak_source_xy_px": [
+            866.25,
+            453.75
+          ],
+          "peak_tie_pixels": 1,
+          "bbox_heatmap_xyxy_inclusive": [
+            230,
+            118,
+            235,
+            123
+          ],
+          "bbox_source_lattice_xyxy": [
+            862.5,
+            442.5,
+            881.25,
+            461.25
+          ],
+          "centroid_error_px": 10.014310237479725,
+          "peak_error_px": 4.808846015417836,
+          "nearest_support_error_px": 1.5811388300841898,
+          "active_pixels_in_reference_disk": 12,
+          "mass_rank": 1,
+          "selected": true,
+          "in_source_bounds": true,
+          "centroid_within_reference_radius": false,
+          "peak_within_reference_radius": true
+        },
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 11499,
+            "channel": 2,
+            "local_peak": 0.5774770975112915,
+            "active_pixels_in_reference_disk": 13
+          },
+          {
+            "triplet_first_source_frame_index": 11500,
+            "channel": 1,
+            "local_peak": 0.526374101638794,
+            "active_pixels_in_reference_disk": 12
+          },
+          {
+            "triplet_first_source_frame_index": 11501,
+            "channel": 0,
+            "local_peak": 0.5553958415985107,
+            "active_pixels_in_reference_disk": 15
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": false,
+          "local_peak_mean_minus_max_contributor": -0.05051076412200928
+        },
+        "fixed_selection_locations": {
+          "old_selected_center": {
+            "center_xy_px": [
+              870.534610748291,
+              451.42187118530273
+            ],
+            "local_peak": 0.5269663333892822,
+            "meaning": "diagnostic location, not a reference label"
+          },
+          "new_selected_center": {
+            "center_xy_px": [
+              871.4386940002441,
+              451.2953567504883
+            ],
+            "local_peak": 0.5269663333892822,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "source_frame_index": 206,
+      "mechanism": "weaker_contributors_leave_local_support_below_threshold_after_unchanged_averaging",
+      "old": {
+        "outcome": "matched",
+        "selected_center_error_px": 3.6393234625636244,
+        "mean_local_peak": 0.43562909960746765,
+        "active_pixels_in_reference_disk": 9,
+        "selected_component": {
+          "candidate_index": 0,
+          "centroid_source_xy_px": [
+            378.1834888458252,
+            210.91641426086426
+          ],
+          "native_mass": 3.4210798740386963,
+          "pixels": 9,
+          "peak": 0.43562909960746765,
+          "peak_heatmap_xy": [
+            100,
+            56
+          ],
+          "peak_source_xy_px": [
+            375.0,
+            210.0
+          ],
+          "peak_tie_pixels": 1,
+          "bbox_heatmap_xyxy_inclusive": [
+            99,
+            55,
+            103,
+            57
+          ],
+          "bbox_source_lattice_xyxy": [
+            371.25,
+            206.25,
+            386.25,
+            213.75
+          ],
+          "centroid_error_px": 3.6393234625636244,
+          "peak_error_px": 3.347012100366515,
+          "nearest_support_error_px": 2.4459129175013334,
+          "active_pixels_in_reference_disk": 9,
+          "mass_rank": 1,
+          "selected": true,
+          "in_source_bounds": true,
+          "centroid_within_reference_radius": true,
+          "peak_within_reference_radius": true
+        },
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 204,
+            "channel": 2,
+            "local_peak": 0.3861568868160248,
+            "active_pixels_in_reference_disk": 8
+          },
+          {
+            "triplet_first_source_frame_index": 205,
+            "channel": 1,
+            "local_peak": 0.7499389052391052,
+            "active_pixels_in_reference_disk": 22
+          },
+          {
+            "triplet_first_source_frame_index": 206,
+            "channel": 0,
+            "local_peak": 0.18006117641925812,
+            "active_pixels_in_reference_disk": 0
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": false,
+          "local_peak_mean_minus_max_contributor": -0.3143098056316376
+        },
+        "fixed_selection_locations": {
+          "old_selected_center": {
+            "center_xy_px": [
+              378.1834888458252,
+              210.91641426086426
+            ],
+            "local_peak": 0.43562909960746765,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      },
+      "new": {
+        "outcome": "missing",
+        "selected_center_error_px": null,
+        "mean_local_peak": 0.27945753931999207,
+        "active_pixels_in_reference_disk": 0,
+        "selected_component": null,
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 204,
+            "channel": 2,
+            "local_peak": 0.2765335440635681,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 205,
+            "channel": 1,
+            "local_peak": 0.5094642043113708,
+            "active_pixels_in_reference_disk": 15
+          },
+          {
+            "triplet_first_source_frame_index": 206,
+            "channel": 0,
+            "local_peak": 0.06563691794872284,
+            "active_pixels_in_reference_disk": 0
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": true,
+          "local_peak_mean_minus_max_contributor": -0.23000666499137878
+        },
+        "fixed_selection_locations": {
+          "old_selected_center": {
+            "center_xy_px": [
+              378.1834888458252,
+              210.91641426086426
+            ],
+            "local_peak": 0.27945753931999207,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "source_frame_index": 207,
+      "mechanism": "weaker_contributors_leave_local_support_below_threshold_after_unchanged_averaging",
+      "old": {
+        "outcome": "matched",
+        "selected_center_error_px": 5.24883552452599,
+        "mean_local_peak": 0.31597620248794556,
+        "active_pixels_in_reference_disk": 2,
+        "selected_component": {
+          "candidate_index": 0,
+          "centroid_source_xy_px": [
+            384.3990898132324,
+            210.00001430511475
+          ],
+          "native_mass": 0.6239383220672607,
+          "pixels": 2,
+          "peak": 0.31597620248794556,
+          "peak_heatmap_xy": [
+            103,
+            56
+          ],
+          "peak_source_xy_px": [
+            386.25,
+            210.0
+          ],
+          "peak_tie_pixels": 1,
+          "bbox_heatmap_xyxy_inclusive": [
+            102,
+            56,
+            103,
+            56
+          ],
+          "bbox_source_lattice_xyxy": [
+            382.5,
+            210.0,
+            386.25,
+            210.0
+          ],
+          "centroid_error_px": 5.248835524525991,
+          "peak_error_px": 4.445203819848978,
+          "nearest_support_error_px": 4.445203819848978,
+          "active_pixels_in_reference_disk": 2,
+          "mass_rank": 1,
+          "selected": true,
+          "in_source_bounds": true,
+          "centroid_within_reference_radius": true,
+          "peak_within_reference_radius": true
+        },
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 205,
+            "channel": 2,
+            "local_peak": 0.6879531145095825,
+            "active_pixels_in_reference_disk": 22
+          },
+          {
+            "triplet_first_source_frame_index": 206,
+            "channel": 1,
+            "local_peak": 0.14533841609954834,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 207,
+            "channel": 0,
+            "local_peak": 0.12036173045635223,
+            "active_pixels_in_reference_disk": 0
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": false,
+          "local_peak_mean_minus_max_contributor": -0.37197691202163696
+        },
+        "fixed_selection_locations": {
+          "old_selected_center": {
+            "center_xy_px": [
+              384.3990898132324,
+              210.00001430511475
+            ],
+            "local_peak": 0.31597620248794556,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      },
+      "new": {
+        "outcome": "missing",
+        "selected_center_error_px": null,
+        "mean_local_peak": 0.18712548911571503,
+        "active_pixels_in_reference_disk": 0,
+        "selected_component": null,
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 205,
+            "channel": 2,
+            "local_peak": 0.4867348372936249,
+            "active_pixels_in_reference_disk": 14
+          },
+          {
+            "triplet_first_source_frame_index": 206,
+            "channel": 1,
+            "local_peak": 0.04751921445131302,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 207,
+            "channel": 0,
+            "local_peak": 0.03567461296916008,
+            "active_pixels_in_reference_disk": 0
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": true,
+          "local_peak_mean_minus_max_contributor": -0.29960934817790985
+        },
+        "fixed_selection_locations": {
+          "old_selected_center": {
+            "center_xy_px": [
+              384.3990898132324,
+              210.00001430511475
+            ],
+            "local_peak": 0.18712548911571503,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "source_frame_index": 209,
+      "mechanism": "weaker_contributors_leave_local_support_below_threshold_after_unchanged_averaging",
+      "old": {
+        "outcome": "matched",
+        "selected_center_error_px": 2.132279932997723,
+        "mean_local_peak": 0.38278910517692566,
+        "active_pixels_in_reference_disk": 9,
+        "selected_component": {
+          "candidate_index": 0,
+          "centroid_source_xy_px": [
+            402.0223331451416,
+            207.65652179718018
+          ],
+          "native_mass": 2.99368953704834,
+          "pixels": 9,
+          "peak": 0.38278910517692566,
+          "peak_heatmap_xy": [
+            107,
+            56
+          ],
+          "peak_source_xy_px": [
+            401.25,
+            210.0
+          ],
+          "peak_tie_pixels": 1,
+          "bbox_heatmap_xyxy_inclusive": [
+            105,
+            54,
+            109,
+            56
+          ],
+          "bbox_source_lattice_xyxy": [
+            393.75,
+            202.5,
+            408.75,
+            210.0
+          ],
+          "centroid_error_px": 2.132279932997723,
+          "peak_error_px": 4.287335419581726,
+          "nearest_support_error_px": 0.5465757038142176,
+          "active_pixels_in_reference_disk": 9,
+          "mass_rank": 1,
+          "selected": true,
+          "in_source_bounds": true,
+          "centroid_within_reference_radius": true,
+          "peak_within_reference_radius": true
+        },
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 207,
+            "channel": 2,
+            "local_peak": 0.09051197022199631,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 208,
+            "channel": 1,
+            "local_peak": 0.4339500963687897,
+            "active_pixels_in_reference_disk": 16
+          },
+          {
+            "triplet_first_source_frame_index": 209,
+            "channel": 0,
+            "local_peak": 0.6355481743812561,
+            "active_pixels_in_reference_disk": 21
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": false,
+          "local_peak_mean_minus_max_contributor": -0.25275906920433044
+        },
+        "fixed_selection_locations": {
+          "old_selected_center": {
+            "center_xy_px": [
+              402.0223331451416,
+              207.65652179718018
+            ],
+            "local_peak": 0.38278910517692566,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      },
+      "new": {
+        "outcome": "missing",
+        "selected_center_error_px": null,
+        "mean_local_peak": 0.2167234867811203,
+        "active_pixels_in_reference_disk": 0,
+        "selected_component": null,
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 207,
+            "channel": 2,
+            "local_peak": 0.027562478557229042,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 208,
+            "channel": 1,
+            "local_peak": 0.18589240312576294,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 209,
+            "channel": 0,
+            "local_peak": 0.4416447877883911,
+            "active_pixels_in_reference_disk": 21
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": true,
+          "local_peak_mean_minus_max_contributor": -0.2249213010072708
+        },
+        "fixed_selection_locations": {
+          "old_selected_center": {
+            "center_xy_px": [
+              402.0223331451416,
+              207.65652179718018
+            ],
+            "local_peak": 0.2167234867811203,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "source_frame_index": 221,
+      "mechanism": "mean_local_response_crosses_upward",
+      "old": {
+        "outcome": "missing",
+        "selected_center_error_px": null,
+        "mean_local_peak": 0.20651547610759735,
+        "active_pixels_in_reference_disk": 0,
+        "selected_component": null,
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 219,
+            "channel": 2,
+            "local_peak": 0.11589086055755615,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 220,
+            "channel": 1,
+            "local_peak": 0.18403655290603638,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 221,
+            "channel": 0,
+            "local_peak": 0.34903842210769653,
+            "active_pixels_in_reference_disk": 6
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": true,
+          "local_peak_mean_minus_max_contributor": -0.14252294600009918
+        },
+        "fixed_selection_locations": {
+          "new_selected_center": {
+            "center_xy_px": [
+              433.10245513916016,
+              281.25
+            ],
+            "local_peak": 0.20651547610759735,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      },
+      "new": {
+        "outcome": "matched",
+        "selected_center_error_px": 6.8394376474868634,
+        "mean_local_peak": 0.30773022770881653,
+        "active_pixels_in_reference_disk": 2,
+        "selected_component": {
+          "candidate_index": 0,
+          "centroid_source_xy_px": [
+            433.10245513916016,
+            281.25
+          ],
+          "native_mass": 0.6081438064575195,
+          "pixels": 2,
+          "peak": 0.30773022770881653,
+          "peak_heatmap_xy": [
+            115,
+            75
+          ],
+          "peak_source_xy_px": [
+            431.25,
+            281.25
+          ],
+          "peak_tie_pixels": 1,
+          "bbox_heatmap_xyxy_inclusive": [
+            115,
+            75,
+            116,
+            75
+          ],
+          "bbox_source_lattice_xyxy": [
+            431.25,
+            281.25,
+            435.0,
+            281.25
+          ],
+          "centroid_error_px": 6.8394376474868634,
+          "peak_error_px": 6.791538853603062,
+          "nearest_support_error_px": 6.791538853603062,
+          "active_pixels_in_reference_disk": 2,
+          "mass_rank": 1,
+          "selected": true,
+          "in_source_bounds": true,
+          "centroid_within_reference_radius": true,
+          "peak_within_reference_radius": true
+        },
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 219,
+            "channel": 2,
+            "local_peak": 0.1728249490261078,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 220,
+            "channel": 1,
+            "local_peak": 0.22794677317142487,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 221,
+            "channel": 0,
+            "local_peak": 0.5555280447006226,
+            "active_pixels_in_reference_disk": 22
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": false,
+          "local_peak_mean_minus_max_contributor": -0.24779781699180603
+        },
+        "fixed_selection_locations": {
+          "new_selected_center": {
+            "center_xy_px": [
+              433.10245513916016,
+              281.25
+            ],
+            "local_peak": 0.30773022770881653,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "source_frame_index": 223,
+      "mechanism": "mean_local_response_crosses_upward",
+      "old": {
+        "outcome": "missing",
+        "selected_center_error_px": null,
+        "mean_local_peak": 0.18837103247642517,
+        "active_pixels_in_reference_disk": 0,
+        "selected_component": null,
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 221,
+            "channel": 2,
+            "local_peak": 0.2940963804721832,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 222,
+            "channel": 1,
+            "local_peak": 0.08264566957950592,
+            "active_pixels_in_reference_disk": 0
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": false,
+          "support_lost_in_mean": false,
+          "local_peak_mean_minus_max_contributor": -0.10572534799575806
+        },
+        "fixed_selection_locations": {
+          "new_selected_center": {
+            "center_xy_px": [
+              419.9999713897705,
+              290.6839656829834
+            ],
+            "local_peak": 0.18837103247642517,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      },
+      "new": {
+        "outcome": "matched",
+        "selected_center_error_px": 0.9699656834053453,
+        "mean_local_peak": 0.32734403014183044,
+        "active_pixels_in_reference_disk": 2,
+        "selected_component": {
+          "candidate_index": 0,
+          "centroid_source_xy_px": [
+            419.9999713897705,
+            290.6839656829834
+          ],
+          "native_mass": 0.6347212791442871,
+          "pixels": 2,
+          "peak": 0.32734403014183044,
+          "peak_heatmap_xy": [
+            112,
+            78
+          ],
+          "peak_source_xy_px": [
+            420.0,
+            292.5
+          ],
+          "peak_tie_pixels": 1,
+          "bbox_heatmap_xyxy_inclusive": [
+            112,
+            77,
+            112,
+            78
+          ],
+          "bbox_source_lattice_xyxy": [
+            420.0,
+            288.75,
+            420.0,
+            292.5
+          ],
+          "centroid_error_px": 0.9699656834053453,
+          "peak_error_px": 2.7860000000000014,
+          "nearest_support_error_px": 0.9639999999999986,
+          "active_pixels_in_reference_disk": 2,
+          "mass_rank": 1,
+          "selected": true,
+          "in_source_bounds": true,
+          "centroid_within_reference_radius": true,
+          "peak_within_reference_radius": true
+        },
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 221,
+            "channel": 2,
+            "local_peak": 0.5378828644752502,
+            "active_pixels_in_reference_disk": 23
+          },
+          {
+            "triplet_first_source_frame_index": 222,
+            "channel": 1,
+            "local_peak": 0.11680518090724945,
+            "active_pixels_in_reference_disk": 0
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": false,
+          "local_peak_mean_minus_max_contributor": -0.2105388343334198
+        },
+        "fixed_selection_locations": {
+          "new_selected_center": {
+            "center_xy_px": [
+              419.9999713897705,
+              290.6839656829834
+            ],
+            "local_peak": 0.32734403014183044,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+      "source_frame_index": 49,
+      "mechanism": "mean_local_response_crosses_upward",
+      "old": {
+        "outcome": "missing",
+        "selected_center_error_px": null,
+        "mean_local_peak": 0.24749524891376495,
+        "active_pixels_in_reference_disk": 0,
+        "selected_component": null,
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 47,
+            "channel": 2,
+            "local_peak": 0.24749524891376495,
+            "active_pixels_in_reference_disk": 0
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": false,
+          "support_lost_in_mean": false,
+          "local_peak_mean_minus_max_contributor": 0.0
+        },
+        "fixed_selection_locations": {
+          "new_selected_center": {
+            "center_xy_px": [
+              345.0,
+              611.25
+            ],
+            "local_peak": 0.24749524891376495,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      },
+      "new": {
+        "outcome": "matched",
+        "selected_center_error_px": 4.773289850826156,
+        "mean_local_peak": 0.3070819079875946,
+        "active_pixels_in_reference_disk": 1,
+        "selected_component": {
+          "candidate_index": 0,
+          "centroid_source_xy_px": [
+            345.0,
+            611.25
+          ],
+          "native_mass": 0.3070819079875946,
+          "pixels": 1,
+          "peak": 0.3070819079875946,
+          "peak_heatmap_xy": [
+            92,
+            163
+          ],
+          "peak_source_xy_px": [
+            345.0,
+            611.25
+          ],
+          "peak_tie_pixels": 1,
+          "bbox_heatmap_xyxy_inclusive": [
+            92,
+            163,
+            92,
+            163
+          ],
+          "bbox_source_lattice_xyxy": [
+            345.0,
+            611.25,
+            345.0,
+            611.25
+          ],
+          "centroid_error_px": 4.773289850826156,
+          "peak_error_px": 4.773289850826156,
+          "nearest_support_error_px": 4.773289850826156,
+          "active_pixels_in_reference_disk": 1,
+          "mass_rank": 1,
+          "selected": true,
+          "in_source_bounds": true,
+          "centroid_within_reference_radius": true,
+          "peak_within_reference_radius": true
+        },
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 47,
+            "channel": 2,
+            "local_peak": 0.3070819079875946,
+            "active_pixels_in_reference_disk": 1
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": false,
+          "local_peak_mean_minus_max_contributor": 0.0
+        },
+        "fixed_selection_locations": {
+          "new_selected_center": {
+            "center_xy_px": [
+              345.0,
+              611.25
+            ],
+            "local_peak": 0.3070819079875946,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+      "source_frame_index": 304,
+      "mechanism": "weaker_contributors_leave_local_support_below_threshold_after_unchanged_averaging",
+      "old": {
+        "outcome": "matched",
+        "selected_center_error_px": 8.269424590718906,
+        "mean_local_peak": 0.34624147415161133,
+        "active_pixels_in_reference_disk": 4,
+        "selected_component": {
+          "candidate_index": 0,
+          "centroid_source_xy_px": [
+            644.974193572998,
+            834.4290733337402
+          ],
+          "native_mass": 2.0080881118774414,
+          "pixels": 6,
+          "peak": 0.34624147415161133,
+          "peak_heatmap_xy": [
+            172,
+            223
+          ],
+          "peak_source_xy_px": [
+            645.0,
+            836.25
+          ],
+          "peak_tie_pixels": 1,
+          "bbox_heatmap_xyxy_inclusive": [
+            171,
+            222,
+            173,
+            223
+          ],
+          "bbox_source_lattice_xyxy": [
+            641.25,
+            832.5,
+            648.75,
+            836.25
+          ],
+          "centroid_error_px": 8.269424590718906,
+          "peak_error_px": 8.71561231354403,
+          "nearest_support_error_px": 4.4398083291962385,
+          "active_pixels_in_reference_disk": 4,
+          "mass_rank": 1,
+          "selected": true,
+          "in_source_bounds": true,
+          "centroid_within_reference_radius": true,
+          "peak_within_reference_radius": true
+        },
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 302,
+            "channel": 2,
+            "local_peak": 0.19159133732318878,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 303,
+            "channel": 1,
+            "local_peak": 0.270394504070282,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 304,
+            "channel": 0,
+            "local_peak": 0.6187780499458313,
+            "active_pixels_in_reference_disk": 11
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": false,
+          "local_peak_mean_minus_max_contributor": -0.27253657579421997
+        },
+        "fixed_selection_locations": {
+          "old_selected_center": {
+            "center_xy_px": [
+              644.974193572998,
+              834.4290733337402
+            ],
+            "local_peak": 0.34624147415161133,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      },
+      "new": {
+        "outcome": "missing",
+        "selected_center_error_px": null,
+        "mean_local_peak": 0.2643395960330963,
+        "active_pixels_in_reference_disk": 0,
+        "selected_component": null,
+        "matching_alternatives": [],
+        "contributors": [
+          {
+            "triplet_first_source_frame_index": 302,
+            "channel": 2,
+            "local_peak": 0.12115859240293503,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 303,
+            "channel": 1,
+            "local_peak": 0.1436273604631424,
+            "active_pixels_in_reference_disk": 0
+          },
+          {
+            "triplet_first_source_frame_index": 304,
+            "channel": 0,
+            "local_peak": 0.5559449791908264,
+            "active_pixels_in_reference_disk": 10
+          }
+        ],
+        "averaging": {
+          "any_contributor_local_support": true,
+          "support_lost_in_mean": true,
+          "local_peak_mean_minus_max_contributor": -0.2916053831577301
+        },
+        "fixed_selection_locations": {
+          "old_selected_center": {
+            "center_xy_px": [
+              644.974193572998,
+              834.4290733337402
+            ],
+            "local_peak": 0.26494190096855164,
+            "meaning": "diagnostic location, not a reference label"
+          }
+        }
+      }
+    }
+  ],
+  "interpretation": [
+    "DET11107 retains a matching ball component at 5.682px, but an already present hand distractor grows and overtakes its component mass.",
+    "DET11501 retains the same peak near the ball; a small centroid shift changes error from 9.272px to 10.014px across the unchanged 10px boundary.",
+    "All four NFHS losses have weaker local response in every original contributor; each retains one contributor above 0.3, but its averaged local response is below 0.3.",
+    "All four recoveries cross the mean threshold upward. P00249 uses one contributor; that gain is not an averaging effect.",
+    "A surviving local response does not establish an accurate contributor component center. No alternate pooling or selection policy was tested."
+  ],
+  "decision": {
+    "retain_expanded_baseline": true,
+    "candidate_promoted": false,
+    "prior_failed_trial_decision_unchanged": true,
+    "retained_checkpoint": {
+      "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+      "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+      "bytes": 6084071
+    },
+    "preserved_prior_records": [
+      {
+        "path": "configs/ball_tracking/reviews/nba_wasb_adaptation_result_v0_1.json",
+        "bytes": 43569,
+        "sha256": "221e3be4866429ee3ed7fd8f05f386fbf857c83165bde8aef39ee2c69927e47f"
+      },
+      {
+        "path": "configs/ball_tracking/reviews/nba_wasb_adaptation_visual_review_v0_1.json",
+        "bytes": 15388,
+        "sha256": "54fac89c2c1dd47244cec2357c29a87071171efc12255065a9dfca5a89490e76"
+      }
+    ],
+    "next_experiment": {
+      "status": "recommendation_only_not_executed_or_approved",
+      "name": "Cached candidate-preservation availability and ambiguity experiment",
+      "single_change": "Keep published mean candidates and add provenance-tagged in-image connected components above the same strict 0.3 threshold from each original contributor.",
+      "comparison": "Mean-only pool versus contributor union for both saved checkpoints across the existing 790 labeled frames: SAC300, DET340 and NFHS150. Easy-control subsets are not extra frames.",
+      "readouts": [
+        "Any candidate center within the unchanged inclusive 10px reference radius",
+        "Added candidates per frame and ambiguity",
+        "Newly nonempty hidden frames"
+      ],
+      "stratification": "Report SAC fitting rows, DET development, NFHS development, hidden rows and easy-control subsets separately; retain unscored rows without inventing geometry.",
+      "limits": "Candidate availability uses reference labels diagnostically and is not deployable accuracy. No temporal selector, changed threshold, extra fit, new inference, holdout access, or changed current predictions is part of this recommendation. Freeze exact deduplication/reporting policy and resource inventory before separate authorization and execution."
+    }
+  },
+  "limits": [
+    "Failure/recovery-selected development context, not a causal test of overfitting or forgetting.",
+    "NFHS old caches bind original source/window/frame indices and model identity, not captured PNG or PTS hashes. New manifest provides source frame/PTS mapping.",
+    "Historical NFHS cache producer threshold 0.5 is retained; selection parity uses previously published strict 0.3 calibration.",
+    "Null or ineligible reference geometry remains null; no inferred centers.",
+    "Failed adaptation screen and retained expanded baseline remain unchanged.",
+    "Thirty-seven correlated development frames were selected around known losses/recoveries; this is not a fresh accuracy estimate.",
+    "No causal conclusion about NBA overfitting or catastrophic forgetting follows from this diagnostic.",
+    "TOR and protected NFHS holdouts/buffers remain untouched. Prior negative motion comparison and its pending three human reviews remain separate.",
+    "Generated reports, NPZ, figures, source footage and temporary helpers remain ignored."
+  ]
+}

@@ -131,10 +131,17 @@ the next step?” The [later review record](configs/ball_tracking/reviews/nba_wa
 records completion without playback telemetry or an explicit quality endorsement.
 The failed screen and retained baseline are unchanged. No second fit or threshold
 tuning followed.
-The [next planned diagnosis](docs/context/roadmap.md) compares existing old/new
+Ryan then authorized the [37-frame diagnostic](docs/nba_adaptation_regression_diagnostic_results.md):
+“Ok move forward chat. Run the 37-frame diagnostic.” It compares existing old/new
 heatmaps around six lost matches and four recoveries, preserving their original
-contexts and fixed scoring rules. It has not run; another fit is a separate
-decision.
+contexts and fixed scoring rules. One 2.375-second run reproduced all 74 means
+and passed independent audit. It found a stronger distractor overtaking a correct
+candidate, a marginal weighted-center error, and four NFHS means losing support
+despite an individual above-threshold response. These are distinct mechanisms;
+the diagnostic changes no prediction. The [next proposal](docs/nba_adaptation_regression_diagnostic_results.md#one-proposed-next-experiment)
+would test preserving existing contributor candidates across the 790 labeled
+frames, measuring availability and added distractors before choosing predictions.
+That experiment has not been executed or authorized by this diagnostic request.
 These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved
 model trajectories or comparative NBA accuracy. The preceding heatmap inspection

@@ -1,6 +1,41 @@
 # Validation History
 
-## Later NBA continuation review: user-reported completion
+## Completed 37-frame regression diagnostic
+
+Ryan explicitly said: “Ok move forward chat. Run the 37-frame diagnostic.” The
+[bound scope](../../configs/ball_tracking/selections/nba_adaptation_regression_diagnostic_v0_1.json)
+covers 37 unique source frames and 74 old/new means using original complete
+cached contributor contexts. One actual producer attempt completed in 2.375
+seconds with no producer failure, reproducing all original means, candidates,
+selections and scores. It read 94 triplet caches (149,913,392 compressed bytes)
+and three original NFHS mean bundles (39,639,143 bytes); 75 stored bundle planes
+were loaded and only 22 selected old NFHS planes measured. Maximum rolling
+triplet arrays occupied 5,308,416 bytes, retained anchor planes 11,796,480 bytes
+and one NFHS bundle 14,745,600 bytes. These are not total process-RAM readings.
+
+Eight focused tests passed on the first command in 3.486 seconds. Independent
+audit fully recomputed all 74 means, contributor metrics, components, selections
+and scores, checked all source joins and 94 cache bodies, and verified 22 old
+NFHS planes plus 20 exported anchor planes. It passed 20,962 checks in 1.630051
+seconds. Its first helper omitted `in_source_bounds` from independent component
+records and stopped after 1,128 checks; the failed attempt and correction are
+preserved. The producer and diagnostic output were not rerun or modified.
+
+The [results record](../nba_adaptation_regression_diagnostic_results.md) separates
+a DET component-ranking loss, a marginal centroid-boundary loss and four NFHS
+averaging/response losses. All four recoveries cross the same mean threshold.
+No model was loaded, no inference or training ran, no source PNG/video was
+decoded, and no labels, predictions, thresholds or scores changed. Old NFHS
+caches retain their historical frame/model/window provenance limitation without
+invented captured PNG/PTS bindings. The failed adaptation screen, retained
+baseline and completed video review remain unchanged.
+
+A subsequent cached candidate-preservation experiment is proposed only. Its
+790-frame count is the existing SAC 300 + DET 340 + NFHS 150 comparison; the 120
+easy NBA controls are included subsets. No experiment, threshold/temporal rule
+change, fit or new inference followed this diagnostic.
+
+## Earlier NBA continuation review: user-reported completion
 
 Ryan said: “Ok I reviewed these chat. What’s the next step?” The
 [later review record](../../configs/ball_tracking/reviews/nba_wasb_adaptation_visual_review_v0_1.json)

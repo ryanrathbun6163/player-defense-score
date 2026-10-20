@@ -1,6 +1,38 @@
 # Roadmap
 
-## Current action: diagnose the failed NBA adaptation comparison; retain baseline
+## Current proposal: cached candidate preservation; retain baseline
+
+Ryan explicitly authorized: “Ok move forward chat. Run the 37-frame diagnostic.”
+The [scope](../../configs/ball_tracking/selections/nba_adaptation_regression_diagnostic_v0_1.json)
+and [result record](../nba_adaptation_regression_diagnostic_results.md) retain the
+exact saved-output comparison below. One 2.375-second run reproduced all 74
+means; independent audit fully recomputed them and passed 20,962 checks after
+one preserved audit-helper correction. Eight focused tests passed.
+
+The losses have distinct mechanisms: DET/11107's correct candidate remains but
+a stronger off-ball hand component wins; DET/11501's weighted center barely
+crosses ten pixels; and four NFHS means fall below 0.3 despite support in an
+individual contributor. Four recoveries cross the same threshold in the other
+direction. The findings do not support a blanket threshold reduction or a claim
+that the trial proves general forgetting.
+
+Propose **one cached candidate-preservation experiment**, not executed or
+authorized by the diagnostic request. Keep the unchanged mean candidate pool
+and add provenance-tagged, in-image components from original contributor maps
+at strict `>0.3`. Both checkpoints, reference labels, original contexts and the
+inclusive ten-pixel radius stay fixed; no threshold or temporal rule changes.
+
+Use the existing 790 labeled frames: SAC 300, DET 340 and NFHS 150. Measure the
+presence of any matching candidate, extra candidates per frame and hidden
+frames that become newly nonempty. Separate SAC training-fit and DET/NFHS
+development results, and report the included 120 NBA easy-control frames as
+subsets, not additional data. Keep holdouts excluded.
+
+This tests candidate availability rather than selecting a prediction. It cannot
+alone fix DET/11107, whose correct mean candidate already exists, and individual
+local support does not guarantee a matching component center. The result would
+justify or reject further candidate retention before designing a selection rule.
+It requires no new fit or inference; no candidate, model or phase is promoted.
 
 Ryan approved the [bounded experiment](../nba_wasb_adaptation_plan.md). One
 200-update continuation fit on accepted SAC plus earlier NFHS training data
@@ -22,7 +54,7 @@ The original publication receipts remain unchanged. Any subsequent experiment ne
 concrete proposal informed by these failures. No second fit or threshold search
 is approved.
 
-The immediate planned step has **not run**: a paired saved-heatmap diagnosis of
+The completed step is a paired saved-heatmap diagnosis of
 six lost matches and four recovered matches. Take exactly ±2 native frames around
 each anchor, clip to its original review window and deduplicate:
 
@@ -34,15 +66,15 @@ each anchor, clip to its original review window and deduplicate:
 | P003 representative | 304 | 5 |
 | Total | Six lost and four recovered matches | 37 |
 
-Reconstruct all 74 old/new means from their **original complete cached
-contributor contexts**. Compare true-ball response, overlapping-triplet averaging,
-component center/mass and competing distractors using the unchanged strict
-`>0.3` and inclusive ten-pixel boundary. Labels, predictions and scores stay
-unchanged. Routine inspection of these existing development outputs requires no
-new approval barrier. Its result should select one justified follow-up proposal,
+All 74 old/new means were reconstructed from their **original complete cached
+contributor contexts**. True-ball response, overlapping-triplet averaging,
+component center/mass and competing distractors were compared using unchanged
+strict `>0.3` and inclusive ten-pixel boundaries. Labels, predictions and scores
+remain unchanged. Routine inspection of existing development outputs requires no
+new approval barrier. These findings should select one justified follow-up proposal,
 without claiming that these selected events establish causal NBA overfitting or
 general forgetting. A new fit, training-data change or threshold tuning is a
-separate scientific choice; none is authorized by the next-step question.
+separate scientific choice; none is authorized by this diagnostic.
 
 TOR, protected holdouts and buffers, the NFHS finish line and the negative motion
 result remain unchanged; three motion reviews remain pending.

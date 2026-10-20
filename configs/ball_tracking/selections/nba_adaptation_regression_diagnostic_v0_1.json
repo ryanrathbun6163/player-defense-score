@@ -1,0 +1,2825 @@
+{
+  "schema_version": "nba_adaptation_regression_scope/v0.1",
+  "status": "approved",
+  "created_at_utc": "2026-10-20T05:08:28.131463+00:00",
+  "authorization": {
+    "approved_by": "Ryan",
+    "user_statement": "Ok move forward chat. Run the 37-frame diagnostic.",
+    "new_model_inference": false,
+    "training": false,
+    "threshold_sweep": false,
+    "label_changes": false,
+    "prediction_changes": false,
+    "video_or_source_png_decode": false
+  },
+  "source_head": "0c9c9d6bbfe217535c8bc6ae5295ef11439f7012",
+  "selection": "Exactly plus/minus two native source frames around the ten committed anchors, clipped to original windows and deduplicated; no selection from diagnostic heatmaps.",
+  "output_root": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1",
+  "policy": {
+    "support_threshold_strict": 0.3,
+    "localization_radius_source_px_inclusive": 10,
+    "mean": "original ascending float32 complete contributor context",
+    "component_connectivity": 8,
+    "selection": "largest native mass, original component index breaks ties"
+  },
+  "measurements": [
+    "original mean/candidate/selection/score parity",
+    "global and ten-pixel-reference-disk response/support",
+    "every original contributor and averaging attenuation",
+    "all components: mass, center, peak, support, rank and matching alternatives",
+    "ten-anchor old/new deltas",
+    "Both old/new mean responses in fixed ten-pixel disks at each available old/new selected center; diagnostic locations, not new labels"
+  ],
+  "anchor_plane_export": {
+    "file": "anchor_mean_heatmaps.npz",
+    "key": "heatmaps",
+    "shape": [
+      20,
+      288,
+      512
+    ],
+    "dtype": "float32",
+    "mapping": "report.anchor_planes entries index/candidate_id/source_frame_index/arm/mean_heatmap_sha256"
+  },
+  "authority": {
+    "adaptation_config": {
+      "path": "configs/ball_tracking/wasb_experiments/nba_wasb_adaptation_v0_1.json",
+      "sha256": "04d0b187cc3b515e6a2bf8b9f2c9b827428e75027a09b83a3d67e7b8296bd19a",
+      "bytes": 16483
+    },
+    "training_completion": {
+      "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/training/completion.json",
+      "sha256": "6535a03686b1148b69b6cf2d705e7611c57ae82ea7209980ee9a5447eabe13d2",
+      "bytes": 5943
+    },
+    "comparison_completion": {
+      "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/completion.json",
+      "sha256": "45098907e8d86dc2b480c125a79dc1eea947c7bd61c995e9db65ce1957ac96a3",
+      "bytes": 1750
+    },
+    "comparison_score_report": {
+      "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/score_report.json",
+      "sha256": "dd2edf5d1544b1c23634f17bbe95c74bb6f36a1e3b2fcb28fb19cdb16126a26b",
+      "bytes": 684645
+    },
+    "accepted_nba_hard_reference": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/accepted/reference.json",
+      "sha256": "91bd79c73e47193c4344b630205efee34c1636bec4bcb7bc4985846a1c6ad3a3",
+      "bytes": 688436
+    },
+    "baseline_calibration_config": {
+      "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration_config.json",
+      "sha256": "236979e3d6f5971fce7cc8d705dced577ddd1d40e19d3dd080ba41684777e955",
+      "bytes": 18112
+    }
+  },
+  "sources": [
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "anchors": [
+        11107,
+        11501,
+        11013
+      ],
+      "source_frame_indices": [
+        11011,
+        11012,
+        11013,
+        11014,
+        11015,
+        11105,
+        11106,
+        11107,
+        11108,
+        11109,
+        11499,
+        11500,
+        11501,
+        11502,
+        11503
+      ],
+      "original_context_inclusive": [
+        10668,
+        11898
+      ],
+      "new_observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/observations.json",
+        "sha256": "654e6879812ee82f57e367eb84a103eb3f3a494ce6adb6a082b0cd00099b9802",
+        "bytes": 2571417
+      },
+      "triplets": {
+        "new": [
+          {
+            "start": 11009,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011009.npz",
+              "sha256": "d902c9290a7a9ae81210ab004bb73b99a5a4a80719195cdb0884388680ed02de",
+              "bytes": 1596167
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011009.json",
+              "sha256": "6a7479c180ee2ffed263b9ff42ddd7bdcbc75a001e99157bf133d735e21acd90",
+              "bytes": 4525
+            },
+            "producer_record": {
+              "first_source_frame_index": 11009,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011009.npz",
+                "sha256": "d902c9290a7a9ae81210ab004bb73b99a5a4a80719195cdb0884388680ed02de",
+                "bytes": 1596167
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011009_9742b314e9624eeba2d500809f4054d3_started.json",
+                "sha256": "1fe78e54f6bc90a61c1b35523fcd2b207d8123b26ea4086f65da0299f158aefb"
+              },
+              "attempt_id": "9742b314e9624eeba2d500809f4054d3"
+            }
+          },
+          {
+            "start": 11010,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011010.npz",
+              "sha256": "22f7eee8a94a24c0e7a99c8d003ccb9cb90fc2007e30b804706253872dc3525b",
+              "bytes": 1596136
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011010.json",
+              "sha256": "1761566007335778f4b74fefbac65c4b066822fdc93bc620904e669a7a7f7844",
+              "bytes": 4525
+            },
+            "producer_record": {
+              "first_source_frame_index": 11010,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011010.npz",
+                "sha256": "22f7eee8a94a24c0e7a99c8d003ccb9cb90fc2007e30b804706253872dc3525b",
+                "bytes": 1596136
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011010_0837e95d86d046608801f6d4bd5eb240_started.json",
+                "sha256": "3b497395781ab198f894d3f0086fe84fe8669a70c3bc8749f4b7f3283aceb4dd"
+              },
+              "attempt_id": "0837e95d86d046608801f6d4bd5eb240"
+            }
+          },
+          {
+            "start": 11011,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011011.npz",
+              "sha256": "c9dc821b11fe3985760d137dcdff20ef5669f0b58e29e8bc184360464795149e",
+              "bytes": 1597191
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011011.json",
+              "sha256": "4ca6102b2d32ffde1df553e821bd74ba9f42be62e0145612fabd29b261941d3d",
+              "bytes": 4524
+            },
+            "producer_record": {
+              "first_source_frame_index": 11011,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011011.npz",
+                "sha256": "c9dc821b11fe3985760d137dcdff20ef5669f0b58e29e8bc184360464795149e",
+                "bytes": 1597191
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011011_59da3c2a68534fd7a500f60cc957e362_started.json",
+                "sha256": "333d5da0fb7dc9b722c5f5a0f5a9e936a3afcc1e16517c28e51b8fad7188e6c1"
+              },
+              "attempt_id": "59da3c2a68534fd7a500f60cc957e362"
+            }
+          },
+          {
+            "start": 11012,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011012.npz",
+              "sha256": "07ded4dbdf43193b145409fb8ca58fcfccf09b6ee7820bded880d54525bb392b",
+              "bytes": 1596555
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011012.json",
+              "sha256": "4ff2cc5bad5ddad23b9b3202ce87bdc23a5e08323684436f27dd3ab128de6f7f",
+              "bytes": 4524
+            },
+            "producer_record": {
+              "first_source_frame_index": 11012,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011012.npz",
+                "sha256": "07ded4dbdf43193b145409fb8ca58fcfccf09b6ee7820bded880d54525bb392b",
+                "bytes": 1596555
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011012_095c2d8d82e84d4ea0631acbc203d3b8_started.json",
+                "sha256": "c0de240b8b03be74a1bbca90d3aaae9661744b9de604f24a4e8674200f1b87ea"
+              },
+              "attempt_id": "095c2d8d82e84d4ea0631acbc203d3b8"
+            }
+          },
+          {
+            "start": 11013,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011013.npz",
+              "sha256": "0044bef7fc92dbe185b1ec47f32259bdf61a4c62b0b495084ac150489048f012",
+              "bytes": 1595397
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011013.json",
+              "sha256": "dda4a2d151422adedfc5fcee3032eb5a19c88ce5e2b6d4728e5a5ce4b735fc4d",
+              "bytes": 4525
+            },
+            "producer_record": {
+              "first_source_frame_index": 11013,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011013.npz",
+                "sha256": "0044bef7fc92dbe185b1ec47f32259bdf61a4c62b0b495084ac150489048f012",
+                "bytes": 1595397
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011013_7c6cc22749d64b4c8d1f8675fab8a66b_started.json",
+                "sha256": "730a6399c261b718eb27561a2bba85e893fd6a3f0acb314f227a0c6fd9d376aa"
+              },
+              "attempt_id": "7c6cc22749d64b4c8d1f8675fab8a66b"
+            }
+          },
+          {
+            "start": 11014,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011014.npz",
+              "sha256": "70928dc11a9dc958e47e05b40582b13c9819e66df8a63cac2569675347cd5d78",
+              "bytes": 1594782
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011014.json",
+              "sha256": "d12b4479ac6714f344e68f669edb8e0f1f88ce051c65bb4938ae3fcaa3bd6d03",
+              "bytes": 4523
+            },
+            "producer_record": {
+              "first_source_frame_index": 11014,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011014.npz",
+                "sha256": "70928dc11a9dc958e47e05b40582b13c9819e66df8a63cac2569675347cd5d78",
+                "bytes": 1594782
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011014_abfd0882de88461cad1c47796fbdf305_started.json",
+                "sha256": "2ad8597c5694df0f23c72c597f5bb41f01f8516ec0b0f1514ec8b3aa0b545df1"
+              },
+              "attempt_id": "abfd0882de88461cad1c47796fbdf305"
+            }
+          },
+          {
+            "start": 11015,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011015.npz",
+              "sha256": "5c7828e780232645dcd09d94f8cd1f46ac0d2aa1908833bc2ebe84ceeeb21342",
+              "bytes": 1593843
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011015.json",
+              "sha256": "0c3c1cf1984a3e1bc447af7cdee0d58edc070898ee1cc0798cb02585ce515c81",
+              "bytes": 4525
+            },
+            "producer_record": {
+              "first_source_frame_index": 11015,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011015.npz",
+                "sha256": "5c7828e780232645dcd09d94f8cd1f46ac0d2aa1908833bc2ebe84ceeeb21342",
+                "bytes": 1593843
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011015_509545d8927b462eb26c8fbb46dbb5e4_started.json",
+                "sha256": "2f31f55e365edba70d13f6ec5e546ff02de1449ea96bd06ce1bf265bc88d82bb"
+              },
+              "attempt_id": "509545d8927b462eb26c8fbb46dbb5e4"
+            }
+          },
+          {
+            "start": 11103,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011103.npz",
+              "sha256": "e2926ca097e0b4956b3a88f9f936c0efc2d04ba2b5cd68bfe54bee8cb48faa2b",
+              "bytes": 1595163
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011103.json",
+              "sha256": "18da0b5b84ab72d53e142c6530c7e93eefd0d7bed95567c44dfb594a4dfcd8bc",
+              "bytes": 4524
+            },
+            "producer_record": {
+              "first_source_frame_index": 11103,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011103.npz",
+                "sha256": "e2926ca097e0b4956b3a88f9f936c0efc2d04ba2b5cd68bfe54bee8cb48faa2b",
+                "bytes": 1595163
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011103_f4267fc4e5394f8ea0fcc8991cd29bb9_started.json",
+                "sha256": "8396d59157af6c5d595d8a1d618b04394091f03027cfde004ea83ec1f8ff69b4"
+              },
+              "attempt_id": "f4267fc4e5394f8ea0fcc8991cd29bb9"
+            }
+          },
+          {
+            "start": 11104,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011104.npz",
+              "sha256": "b25c750396a44ae6e0f8a01d7a6d6c9adc8a88cfc2b79f71103df8447747fa3c",
+              "bytes": 1596235
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011104.json",
+              "sha256": "260cfee58550a4234660d9592e982f8dd2ca87f215527f6d0861409269c9f3bb",
+              "bytes": 4525
+            },
+            "producer_record": {
+              "first_source_frame_index": 11104,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011104.npz",
+                "sha256": "b25c750396a44ae6e0f8a01d7a6d6c9adc8a88cfc2b79f71103df8447747fa3c",
+                "bytes": 1596235
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011104_c1d5d99db12a4fa1baf6737a0a283686_started.json",
+                "sha256": "a562595b4c22ec03c4ec705133d519503a51b9661b73fb39037113d9b243714e"
+              },
+              "attempt_id": "c1d5d99db12a4fa1baf6737a0a283686"
+            }
+          },
+          {
+            "start": 11105,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011105.npz",
+              "sha256": "4b9c3923d8283cc487799e64c44b0fae00d6be8555bc787e87b5d7b2aa57202c",
+              "bytes": 1594514
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011105.json",
+              "sha256": "351730d3de7ccc02de01f7b1fab62b265c37d02b7371a37423a65b3430ebf26a",
+              "bytes": 4523
+            },
+            "producer_record": {
+              "first_source_frame_index": 11105,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011105.npz",
+                "sha256": "4b9c3923d8283cc487799e64c44b0fae00d6be8555bc787e87b5d7b2aa57202c",
+                "bytes": 1594514
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011105_3976757c54de4edabb98f965dee9c93d_started.json",
+                "sha256": "27177cf3d42b920546757e9c5cbf5f8e099930b4f2044c8108829450fc0c7720"
+              },
+              "attempt_id": "3976757c54de4edabb98f965dee9c93d"
+            }
+          },
+          {
+            "start": 11106,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011106.npz",
+              "sha256": "2e4f6af4a8c18ee332b47c6b8ce68851cba6cade43a47afdff2ec662c52556de",
+              "bytes": 1596337
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011106.json",
+              "sha256": "f3e3f5dbe70c8cdae821b8110b4edd62d0ea795ad0e0a97bb5556b5d6f23c0de",
+              "bytes": 4524
+            },
+            "producer_record": {
+              "first_source_frame_index": 11106,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011106.npz",
+                "sha256": "2e4f6af4a8c18ee332b47c6b8ce68851cba6cade43a47afdff2ec662c52556de",
+                "bytes": 1596337
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011106_25984f785f3c44bfbc53f20b29298720_started.json",
+                "sha256": "8024291a999cb0fe96549f4a10534b12f074234ad6e6a5ea17f0310d364fe6c8"
+              },
+              "attempt_id": "25984f785f3c44bfbc53f20b29298720"
+            }
+          },
+          {
+            "start": 11107,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011107.npz",
+              "sha256": "8b7618a5edde7ade5b9aa5b74c6b7bbfff238fef767b779e2b02dc125ed8ed4b",
+              "bytes": 1596211
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011107.json",
+              "sha256": "c3394a52f7585a06e57c0688a84a227907b54022cd7a4948717cb340d729b4f6",
+              "bytes": 4523
+            },
+            "producer_record": {
+              "first_source_frame_index": 11107,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011107.npz",
+                "sha256": "8b7618a5edde7ade5b9aa5b74c6b7bbfff238fef767b779e2b02dc125ed8ed4b",
+                "bytes": 1596211
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011107_87f240f0c36f45b694d023bbf09b624c_started.json",
+                "sha256": "2528d4a31ef560e86011fdc9b462b9c9b3a6aa40687eb2bfbf3c0196c2ffd41e"
+              },
+              "attempt_id": "87f240f0c36f45b694d023bbf09b624c"
+            }
+          },
+          {
+            "start": 11108,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011108.npz",
+              "sha256": "650035cfd0226373c6b93e563d2ddb9bbac54e457af059fcf789e1ce0820542a",
+              "bytes": 1597003
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011108.json",
+              "sha256": "3cd6c47f46477e3493f3f68671f8c794a6711a9adcb75cf6a0c2984c9adb80c8",
+              "bytes": 4524
+            },
+            "producer_record": {
+              "first_source_frame_index": 11108,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011108.npz",
+                "sha256": "650035cfd0226373c6b93e563d2ddb9bbac54e457af059fcf789e1ce0820542a",
+                "bytes": 1597003
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011108_618eb77de6904b53b643aaefe9c388f0_started.json",
+                "sha256": "14461701954398da35a190bd1e0871f8372d3213622669e788a3f2340a198347"
+              },
+              "attempt_id": "618eb77de6904b53b643aaefe9c388f0"
+            }
+          },
+          {
+            "start": 11109,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011109.npz",
+              "sha256": "329aaad45a55b4b12261e5cae68e8783bc91e835063fdb18ebd23eaa1a896918",
+              "bytes": 1597249
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011109.json",
+              "sha256": "1e6be70f6f4e6900cccf175d3c12ac0aca9b4020ce8847e6f462a2e6017adc79",
+              "bytes": 4524
+            },
+            "producer_record": {
+              "first_source_frame_index": 11109,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011109.npz",
+                "sha256": "329aaad45a55b4b12261e5cae68e8783bc91e835063fdb18ebd23eaa1a896918",
+                "bytes": 1597249
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011109_90931dd8f58e471789dd61054202c253_started.json",
+                "sha256": "50bce745acc72b715c6d6734309baa6255eeca65fbc66638f1b838d1b7a1fed3"
+              },
+              "attempt_id": "90931dd8f58e471789dd61054202c253"
+            }
+          },
+          {
+            "start": 11497,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011497.npz",
+              "sha256": "0944dd01365991234bdc6e41d6055d7bf33d92a4cb707f1b1658767b6ddc1a1f",
+              "bytes": 1593538
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011497.json",
+              "sha256": "3d0d41c9d26ac348ddea703056988b6bd69ba79f3dd30ed6ed98f5e37c8aec0f",
+              "bytes": 4524
+            },
+            "producer_record": {
+              "first_source_frame_index": 11497,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011497.npz",
+                "sha256": "0944dd01365991234bdc6e41d6055d7bf33d92a4cb707f1b1658767b6ddc1a1f",
+                "bytes": 1593538
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011497_8040ffbc94d54a63a7eb35f4951cbf08_started.json",
+                "sha256": "49fedbf978146a6065f954aaa89b032c479383815a4b5637ea2c4039142b40d8"
+              },
+              "attempt_id": "8040ffbc94d54a63a7eb35f4951cbf08"
+            }
+          },
+          {
+            "start": 11498,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011498.npz",
+              "sha256": "6bec56a195395a73f114bb1661a0cc534ecde8856b586a8fedfe3ccb5bf64ea3",
+              "bytes": 1592762
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011498.json",
+              "sha256": "6d4ba0b1d4cd501adf4c9c1fae8a276023988d31d3c950fd093e669570f17bd2",
+              "bytes": 4525
+            },
+            "producer_record": {
+              "first_source_frame_index": 11498,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011498.npz",
+                "sha256": "6bec56a195395a73f114bb1661a0cc534ecde8856b586a8fedfe3ccb5bf64ea3",
+                "bytes": 1592762
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011498_317c9990dc544aab955b1c7399ced644_started.json",
+                "sha256": "d1b84894f9e0c4bc0172b3ac5de8ca30efdd628471e1541c70129494bd9a67d8"
+              },
+              "attempt_id": "317c9990dc544aab955b1c7399ced644"
+            }
+          },
+          {
+            "start": 11499,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011499.npz",
+              "sha256": "428ba36e8bbe771bd3854e17339fb9fa471ec24210be4e34cfe9f1384bd8d6e9",
+              "bytes": 1593820
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011499.json",
+              "sha256": "d37aab9685b3406fbcc6202c0ce91a744f9da2ddabee542c60b864f1b2d3d478",
+              "bytes": 4524
+            },
+            "producer_record": {
+              "first_source_frame_index": 11499,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011499.npz",
+                "sha256": "428ba36e8bbe771bd3854e17339fb9fa471ec24210be4e34cfe9f1384bd8d6e9",
+                "bytes": 1593820
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011499_86eda3c1b3d447c09c38544cb7c7aa9c_started.json",
+                "sha256": "6656160aea030195ca34179eb2be57baa5bc1c1244a55fccf2331d06ff1e3964"
+              },
+              "attempt_id": "86eda3c1b3d447c09c38544cb7c7aa9c"
+            }
+          },
+          {
+            "start": 11500,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011500.npz",
+              "sha256": "9b462729fc1d50c7090eadb5f30b036ba4d51ce7ff078fcba6c6fb98ed9c4734",
+              "bytes": 1594123
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011500.json",
+              "sha256": "17e7bd68611ae990440a82585e457eca8b984236377650bdb6eadec4080a4261",
+              "bytes": 4525
+            },
+            "producer_record": {
+              "first_source_frame_index": 11500,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011500.npz",
+                "sha256": "9b462729fc1d50c7090eadb5f30b036ba4d51ce7ff078fcba6c6fb98ed9c4734",
+                "bytes": 1594123
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011500_4e8f53dd56d54bc79eaa89736c6be04a_started.json",
+                "sha256": "5a0b18404cf6ab627d72a98a9713f6459dc3685222a649e6dc674bb3216d5331"
+              },
+              "attempt_id": "4e8f53dd56d54bc79eaa89736c6be04a"
+            }
+          },
+          {
+            "start": 11501,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011501.npz",
+              "sha256": "2152f40255148a0f62c6e0f72c8424525a66710f366d54a64b0bb126f70e52e6",
+              "bytes": 1594892
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011501.json",
+              "sha256": "5580bace8e5c7001de758efe4c968196e8c651fd52a241166b5bad3cd1efcc4f",
+              "bytes": 4524
+            },
+            "producer_record": {
+              "first_source_frame_index": 11501,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011501.npz",
+                "sha256": "2152f40255148a0f62c6e0f72c8424525a66710f366d54a64b0bb126f70e52e6",
+                "bytes": 1594892
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011501_cc9d5c5502374c8b893c95400c366614_started.json",
+                "sha256": "f5df9f9b71a40f662a33aed0623a123f7c4e909fff77cd106a021805c9c340c9"
+              },
+              "attempt_id": "cc9d5c5502374c8b893c95400c366614"
+            }
+          },
+          {
+            "start": 11502,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011502.npz",
+              "sha256": "cb6c8cddbcfa9c73b37ad10022006936f31fd9b696093ce2c7f8b6f3d3548edd",
+              "bytes": 1595548
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011502.json",
+              "sha256": "f3e940f12147f594c2c5bad08215d253ce30a3f6c5af67669124732a209d9c05",
+              "bytes": 4525
+            },
+            "producer_record": {
+              "first_source_frame_index": 11502,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011502.npz",
+                "sha256": "cb6c8cddbcfa9c73b37ad10022006936f31fd9b696093ce2c7f8b6f3d3548edd",
+                "bytes": 1595548
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011502_226873f731a64fcd9c5f5848207b2e42_started.json",
+                "sha256": "7e7024cdcc070711a1031bd3f74f5d598d038efa9219127299570c521b770a23"
+              },
+              "attempt_id": "226873f731a64fcd9c5f5848207b2e42"
+            }
+          },
+          {
+            "start": 11503,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011503.npz",
+              "sha256": "377865921fc7f1b88634fb984ac193c4ef2f6a88530f0383c50cab63ca3f7c15",
+              "bytes": 1596024
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011503.json",
+              "sha256": "9e6b0ba4a1977177c0d299dfcc1e187dad891d509afd55414daa05a14581fc4b",
+              "bytes": 4525
+            },
+            "producer_record": {
+              "first_source_frame_index": 11503,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/triplet_011503.npz",
+                "sha256": "377865921fc7f1b88634fb984ac193c4ef2f6a88530f0383c50cab63ca3f7c15",
+                "bytes": 1596024
+              },
+              "started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/triplets/attempts/011503_d970d79818a8477b842e5d30a939b378_started.json",
+                "sha256": "58352363d41e2b17fb749b5269cc777a9bcc0e5ebe9916d139039aed9913f769"
+              },
+              "attempt_id": "d970d79818a8477b842e5d30a939b378"
+            }
+          }
+        ],
+        "old": [
+          {
+            "start": 11009,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011009.npz",
+              "sha256": "c557b3aa0c1c6f27c7f2023d07f75e161fc54fe70d4e5e28b5d1237c6c3e20cf",
+              "bytes": 1590131
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011009.json",
+              "sha256": "f7681707db5025c59332d3e3b95a875845816f9d7ee428cde606355aa2509e08",
+              "bytes": 4203
+            },
+            "producer_record": {
+              "first_source_frame_index": 11009,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011009.npz",
+                "sha256": "c557b3aa0c1c6f27c7f2023d07f75e161fc54fe70d4e5e28b5d1237c6c3e20cf",
+                "bytes": 1590131
+              },
+              "original_identity_sha256": "217d9368263d53526e5e21b79e67d78d5a7412b8d77e069b973e4d914a51a608",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011009_243b060842c54a439ec617f8b90fea03_started.json",
+                "sha256": "ea1be78389cbbd55c0f0a212809fbafdf89817d2985a2e630d55ff6dce03886f"
+              },
+              "attempt_id": "243b060842c54a439ec617f8b90fea03"
+            }
+          },
+          {
+            "start": 11010,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011010.npz",
+              "sha256": "c189ad01449f62a00d8105c4bd0f4f410ec4dd647241c0b48270092b20cd414c",
+              "bytes": 1590291
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011010.json",
+              "sha256": "d1dab142802250285de915cab9a169f58fbb80866031fe5f3ebbc814ddc603aa",
+              "bytes": 4203
+            },
+            "producer_record": {
+              "first_source_frame_index": 11010,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011010.npz",
+                "sha256": "c189ad01449f62a00d8105c4bd0f4f410ec4dd647241c0b48270092b20cd414c",
+                "bytes": 1590291
+              },
+              "original_identity_sha256": "56883075adb09a5b5fa0284d146cb6aba7a48d85d71aed91febe50f7e98bf71e",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011010_4abfcf6311c24f29a6e06d0194bf67f3_started.json",
+                "sha256": "eec452e274853355e36090717a82224b0b6582a75e9056eb7448cc9d1901e154"
+              },
+              "attempt_id": "4abfcf6311c24f29a6e06d0194bf67f3"
+            }
+          },
+          {
+            "start": 11011,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011011.npz",
+              "sha256": "4629ad83529b370c36ce09f689c8a120f0cd5c7e4285dcdaeeb8a8330084549f",
+              "bytes": 1591660
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011011.json",
+              "sha256": "9eb4e908d2373f5551bd6be7c8f287a49912ab616d2ac38135e9041e9c109877",
+              "bytes": 4203
+            },
+            "producer_record": {
+              "first_source_frame_index": 11011,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011011.npz",
+                "sha256": "4629ad83529b370c36ce09f689c8a120f0cd5c7e4285dcdaeeb8a8330084549f",
+                "bytes": 1591660
+              },
+              "original_identity_sha256": "9c510007e0a14e2885876849aa891ff00a3a820812c5b5d35489ff2c53a5b154",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011011_38e7512aced843d897dc5b216a476fb7_started.json",
+                "sha256": "fee610d49a185b0890a49bd9291f3ead428e42c708fc96c7c37566c3576d7499"
+              },
+              "attempt_id": "38e7512aced843d897dc5b216a476fb7"
+            }
+          },
+          {
+            "start": 11012,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011012.npz",
+              "sha256": "8c4d84109fb8b73e61fae25b711fa647ccef2343eb2541be38bd2fd138ce1597",
+              "bytes": 1590453
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011012.json",
+              "sha256": "9e683cd8f4c3209b70ce027faa346b6e3f1c4596681fdc097b1fcefe9bcef096",
+              "bytes": 4203
+            },
+            "producer_record": {
+              "first_source_frame_index": 11012,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011012.npz",
+                "sha256": "8c4d84109fb8b73e61fae25b711fa647ccef2343eb2541be38bd2fd138ce1597",
+                "bytes": 1590453
+              },
+              "original_identity_sha256": "2e305e196e7de959231dd077b7fb71097252f6d02d9dff143c71a12af4ef7a72",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011012_8a415a254d7c42f09762ed5918b6ca11_started.json",
+                "sha256": "a48477c73900c00e7f40cb2bc68df6fd861ce2fa65f3271c41ee76710c540920"
+              },
+              "attempt_id": "8a415a254d7c42f09762ed5918b6ca11"
+            }
+          },
+          {
+            "start": 11013,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011013.npz",
+              "sha256": "d2c897e0c28fc8bd3289e51c40b93d8f089c1f443fb1ffd534461f4e120cddd3",
+              "bytes": 1589666
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011013.json",
+              "sha256": "61d79c3255d7e836d27e22661a956c304e270ab7b2951931cdd01be8d5ede2ca",
+              "bytes": 4202
+            },
+            "producer_record": {
+              "first_source_frame_index": 11013,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011013.npz",
+                "sha256": "d2c897e0c28fc8bd3289e51c40b93d8f089c1f443fb1ffd534461f4e120cddd3",
+                "bytes": 1589666
+              },
+              "original_identity_sha256": "296101c81961d357c24e8a7ebd6dca2658f357dc94b0f7e918b7422118ff2d57",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011013_fd5707a1b4984ce58b6ddce6a3a1580f_started.json",
+                "sha256": "e0cbfee5217dd13eadcebc8449d53843057e6488ce16032c88f1c6cf268f656e"
+              },
+              "attempt_id": "fd5707a1b4984ce58b6ddce6a3a1580f"
+            }
+          },
+          {
+            "start": 11014,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011014.npz",
+              "sha256": "ea4e54727193b7f51e987f1ad472a43fe79524e2c45357d23534a58eee9d998b",
+              "bytes": 1589084
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011014.json",
+              "sha256": "162f847f4fd836f818256096c1ff29099375894d0ffb0eb0f5d7070bc71b97fa",
+              "bytes": 4203
+            },
+            "producer_record": {
+              "first_source_frame_index": 11014,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011014.npz",
+                "sha256": "ea4e54727193b7f51e987f1ad472a43fe79524e2c45357d23534a58eee9d998b",
+                "bytes": 1589084
+              },
+              "original_identity_sha256": "1be56574902daf6e7fb7171e29e12ef20968b0ec693a5da8ddd5f863dc25343b",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011014_94f1c6493fef477293c526c15ccfec2f_started.json",
+                "sha256": "b89a84cf10080f1ad85d6bd551cab7afdb131208caa532b434b5edbe84b3ef53"
+              },
+              "attempt_id": "94f1c6493fef477293c526c15ccfec2f"
+            }
+          },
+          {
+            "start": 11015,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011015.npz",
+              "sha256": "5a2ce721740cfdbb3559225c3244f2c85c56a65604d6b1309a61362c1a8b06da",
+              "bytes": 1588428
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011015.json",
+              "sha256": "ebaa799d2000fccbe86ae5defe0f1cd7a6bd6e7006e950130533c098d8b5dfc1",
+              "bytes": 4202
+            },
+            "producer_record": {
+              "first_source_frame_index": 11015,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011015.npz",
+                "sha256": "5a2ce721740cfdbb3559225c3244f2c85c56a65604d6b1309a61362c1a8b06da",
+                "bytes": 1588428
+              },
+              "original_identity_sha256": "becdb10288a5ee7d01abc02e77fea71c46a7cff3de56a4cab16ef9801a80dba0",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011015_13e671d9b9604408bfc9a1a03a8390d6_started.json",
+                "sha256": "4141ff92cbee2777cace8d5b835d75e3179888ae73155105528f470fc36d15ca"
+              },
+              "attempt_id": "13e671d9b9604408bfc9a1a03a8390d6"
+            }
+          },
+          {
+            "start": 11103,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011103.npz",
+              "sha256": "6cf3ff621ef15f5c2ff15ae7ec1eff32661485656f3ff35076542de1ab49fd5b",
+              "bytes": 1589986
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011103.json",
+              "sha256": "c60f93949822db01c5bb25027b3e312e827c02104444a8b42d6cdf71b5cc333d",
+              "bytes": 4202
+            },
+            "producer_record": {
+              "first_source_frame_index": 11103,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011103.npz",
+                "sha256": "6cf3ff621ef15f5c2ff15ae7ec1eff32661485656f3ff35076542de1ab49fd5b",
+                "bytes": 1589986
+              },
+              "original_identity_sha256": "52d00c8ebe452c23da0522f4d32b0930b462812c7438ace48b424a08736f6b4e",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011103_6b167876507d4f23b1318fb333987747_started.json",
+                "sha256": "df4cc73c2d2e94ec3c029bc6e90890967145c98467c644e417a54c26923c1947"
+              },
+              "attempt_id": "6b167876507d4f23b1318fb333987747"
+            }
+          },
+          {
+            "start": 11104,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011104.npz",
+              "sha256": "a64f8a5e45d33f671659e3aa6a032f64657cf13f8705c8be99f1d84928a9b7e6",
+              "bytes": 1589846
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011104.json",
+              "sha256": "2fcf8b4f81c10dc7d8c6477e83b518ab6ba4d5cb55e089cc742316b486d72edb",
+              "bytes": 4203
+            },
+            "producer_record": {
+              "first_source_frame_index": 11104,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011104.npz",
+                "sha256": "a64f8a5e45d33f671659e3aa6a032f64657cf13f8705c8be99f1d84928a9b7e6",
+                "bytes": 1589846
+              },
+              "original_identity_sha256": "e058f02de49e5264667e73d115cd82abe731ab4d2770ed78d3fe76272ed59568",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011104_dfc83649bdcf47e3b764ae3bff56fe11_started.json",
+                "sha256": "f08187c524c21d9736cd90dfd91b32926c7b8e18a66a9a4ce9161672915ea078"
+              },
+              "attempt_id": "dfc83649bdcf47e3b764ae3bff56fe11"
+            }
+          },
+          {
+            "start": 11105,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011105.npz",
+              "sha256": "e59a6d32592af5a01d82c5ba4d661e4800ac0e77c53833ccbf6c52111d848a9b",
+              "bytes": 1589734
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011105.json",
+              "sha256": "86caf76f3cfc538f64ffb417fd9b5d4606091f80c6559b018fca740626f25738",
+              "bytes": 4202
+            },
+            "producer_record": {
+              "first_source_frame_index": 11105,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011105.npz",
+                "sha256": "e59a6d32592af5a01d82c5ba4d661e4800ac0e77c53833ccbf6c52111d848a9b",
+                "bytes": 1589734
+              },
+              "original_identity_sha256": "3822e0aa73ecd760e096e25c7574fc89d00454f442b899ea5e5a85a49939f1fb",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011105_26b80a50b4cc411395ece66434eaf5cc_started.json",
+                "sha256": "7bd22fb576fbb5dab69c365c535e500c979d1042c4c48ae7c25ff25853992f6a"
+              },
+              "attempt_id": "26b80a50b4cc411395ece66434eaf5cc"
+            }
+          },
+          {
+            "start": 11106,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011106.npz",
+              "sha256": "da7be2f26738a9f5ded02851837a53165969ee9c3362a3cfad47bc7374785bfe",
+              "bytes": 1591391
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011106.json",
+              "sha256": "d0620efade6b1ef40e0d5067ab750f89aa94f82406174822fe2de7beefd41100",
+              "bytes": 4202
+            },
+            "producer_record": {
+              "first_source_frame_index": 11106,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011106.npz",
+                "sha256": "da7be2f26738a9f5ded02851837a53165969ee9c3362a3cfad47bc7374785bfe",
+                "bytes": 1591391
+              },
+              "original_identity_sha256": "5865508e0b11c109a125c18947ab22f7d094a926158926bb81060ed29d651f18",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011106_d1c69aa4b5e24c3983661ba58b393b92_started.json",
+                "sha256": "61ec3fb2cce6b0a476ebea78a1bc815b3a257b4822aa6bd89c9e589211202cc0"
+              },
+              "attempt_id": "d1c69aa4b5e24c3983661ba58b393b92"
+            }
+          },
+          {
+            "start": 11107,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011107.npz",
+              "sha256": "db3a4ed8ff6f99fa5b58b56573c48e018d2cf38b86a4f901d011d39372ae63c6",
+              "bytes": 1590937
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011107.json",
+              "sha256": "e8029a019a49ff4775bf05683d85f269237c3a05b39712040b903603d2999b3c",
+              "bytes": 4202
+            },
+            "producer_record": {
+              "first_source_frame_index": 11107,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011107.npz",
+                "sha256": "db3a4ed8ff6f99fa5b58b56573c48e018d2cf38b86a4f901d011d39372ae63c6",
+                "bytes": 1590937
+              },
+              "original_identity_sha256": "8a6dc1ed7cf14f08fd0ab72f0aeb854b2a9334be8068ea6308b1a14784279837",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011107_758ddb2c5cf6411194fa119a1714f9dd_started.json",
+                "sha256": "a299c3e074450dc1fe295506e033584548d1237647702245f619cf63d233504c"
+              },
+              "attempt_id": "758ddb2c5cf6411194fa119a1714f9dd"
+            }
+          },
+          {
+            "start": 11108,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011108.npz",
+              "sha256": "df06fda5f9b39e1fd0ebd7ddda126c7295bda6e3f69df8e1497190360045a8c0",
+              "bytes": 1591064
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011108.json",
+              "sha256": "12944230a2395c117aedbd044e22a5321277b6ec24ec3813b7dc5238926d346e",
+              "bytes": 4202
+            },
+            "producer_record": {
+              "first_source_frame_index": 11108,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011108.npz",
+                "sha256": "df06fda5f9b39e1fd0ebd7ddda126c7295bda6e3f69df8e1497190360045a8c0",
+                "bytes": 1591064
+              },
+              "original_identity_sha256": "2e9ca9c646565afbe35d662cd18d935491a72c1d5e602b20af9ad2758004e47c",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011108_2d700a84c60c48e49e6cead6b375c51b_started.json",
+                "sha256": "c2da53a7efd3ed26e7def394743fb8884ac0e98c82545a296021e0a537a4bae9"
+              },
+              "attempt_id": "2d700a84c60c48e49e6cead6b375c51b"
+            }
+          },
+          {
+            "start": 11109,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011109.npz",
+              "sha256": "4f2981dbd36c47411183f4b1b167c7456de3bfe1fe91292728d986ef6ec0eb2c",
+              "bytes": 1590880
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011109.json",
+              "sha256": "98259350c24685265f19186ebd5166474c3d5a94d897f9e03ca1945f0b785c4c",
+              "bytes": 4202
+            },
+            "producer_record": {
+              "first_source_frame_index": 11109,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011109.npz",
+                "sha256": "4f2981dbd36c47411183f4b1b167c7456de3bfe1fe91292728d986ef6ec0eb2c",
+                "bytes": 1590880
+              },
+              "original_identity_sha256": "18b297dc88e86977ccbad4c9992191b3402f748741a990146bd0e91a92e779d0",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011109_f3a6eba7acd04cc2859e3102c65fbf23_started.json",
+                "sha256": "c3f3a00aaf84f343a463344a5108eae82c915c8850cf4c249e7564dc4d471e42"
+              },
+              "attempt_id": "f3a6eba7acd04cc2859e3102c65fbf23"
+            }
+          },
+          {
+            "start": 11497,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011497.npz",
+              "sha256": "3d3d748a17930862b15357fa6e511af7ee053c18c63dcecbf136a0e913353c08",
+              "bytes": 1588838
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011497.json",
+              "sha256": "b9ada763ebcb2cb7a565681c283b6c96847ede14317ca8f46aa1bb5607a17306",
+              "bytes": 4202
+            },
+            "producer_record": {
+              "first_source_frame_index": 11497,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011497.npz",
+                "sha256": "3d3d748a17930862b15357fa6e511af7ee053c18c63dcecbf136a0e913353c08",
+                "bytes": 1588838
+              },
+              "original_identity_sha256": "1807024be768226ab2a8f388f2f31819adbb2a741118e9b798e9558f452f85ff",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011497_4ae4c46e57bf4585987a9e3bbb947f92_started.json",
+                "sha256": "b5d2a0dbfb6099b5eb721e25b25236a73e2b34a3fbae904733f2395f560da4de"
+              },
+              "attempt_id": "4ae4c46e57bf4585987a9e3bbb947f92"
+            }
+          },
+          {
+            "start": 11498,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011498.npz",
+              "sha256": "abbb16c4333d25a9b4115db63ca1fede04309419be202b2e1bb70093b40b806a",
+              "bytes": 1587841
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011498.json",
+              "sha256": "b99f4973ebf1c74d4172ddbab675145ede125a04dfe32fe218f57aae98b411a8",
+              "bytes": 4203
+            },
+            "producer_record": {
+              "first_source_frame_index": 11498,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011498.npz",
+                "sha256": "abbb16c4333d25a9b4115db63ca1fede04309419be202b2e1bb70093b40b806a",
+                "bytes": 1587841
+              },
+              "original_identity_sha256": "1135a0d065aa86f6e5116153341fa3f5618efff266ca19df7d02174b88f7faa3",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011498_3cd3d250a4134e85af9ba4a411515151_started.json",
+                "sha256": "1240ef580fccc4a12be06d73be57fe782373b65cbb7fbd3b3a714acece36de97"
+              },
+              "attempt_id": "3cd3d250a4134e85af9ba4a411515151"
+            }
+          },
+          {
+            "start": 11499,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011499.npz",
+              "sha256": "1dd2e6f7c1ae25fa49e76dfff5c65849f6ad578dc0af469d2a729e4900793461",
+              "bytes": 1589185
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011499.json",
+              "sha256": "2aede7b8a6b7e753f7e3828f4975b17a334a8dd823542da363c43d8fadd413d1",
+              "bytes": 4202
+            },
+            "producer_record": {
+              "first_source_frame_index": 11499,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011499.npz",
+                "sha256": "1dd2e6f7c1ae25fa49e76dfff5c65849f6ad578dc0af469d2a729e4900793461",
+                "bytes": 1589185
+              },
+              "original_identity_sha256": "592165ab1a6f7652eb2462bf9831de1f35bdac589609bb7444a2e81d26c28506",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011499_59b033b64fec4ecb93457a1a52acfe1f_started.json",
+                "sha256": "95ec165e88daab97fc8b50012caafe6d63062d61212e266d337ed88acc01a5a4"
+              },
+              "attempt_id": "59b033b64fec4ecb93457a1a52acfe1f"
+            }
+          },
+          {
+            "start": 11500,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011500.npz",
+              "sha256": "d093a388c3af9e300801d22184e39fb79086e79eb7a6eaf56137004146331d16",
+              "bytes": 1589884
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011500.json",
+              "sha256": "7cdada47bec7f0c846f51d6472af748a36928c97a9ab4bbb1a9c42aa936c52e8",
+              "bytes": 4203
+            },
+            "producer_record": {
+              "first_source_frame_index": 11500,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011500.npz",
+                "sha256": "d093a388c3af9e300801d22184e39fb79086e79eb7a6eaf56137004146331d16",
+                "bytes": 1589884
+              },
+              "original_identity_sha256": "85b2a914488c67cd2b9cf696635b5f646b4b71e88b38d34df3052910fbcf7d0d",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011500_11fa64050cb64bd7ab75d0cccaed5aa3_started.json",
+                "sha256": "bffe1b02d6e7b0f85d99546fdccd404951691bd0e9a5ee8aa3b2ccb037a0cc5f"
+              },
+              "attempt_id": "11fa64050cb64bd7ab75d0cccaed5aa3"
+            }
+          },
+          {
+            "start": 11501,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011501.npz",
+              "sha256": "2ab5de18fe457007249abe3ec56e5a9809b84cfa5e2e6356a0be24f1c1ccbcd0",
+              "bytes": 1590301
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011501.json",
+              "sha256": "57507560fa9f7c1113df36941604b972240502e8085ebf3767ab41bea162c36e",
+              "bytes": 4202
+            },
+            "producer_record": {
+              "first_source_frame_index": 11501,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011501.npz",
+                "sha256": "2ab5de18fe457007249abe3ec56e5a9809b84cfa5e2e6356a0be24f1c1ccbcd0",
+                "bytes": 1590301
+              },
+              "original_identity_sha256": "d75d797879eb7e0bb9473bd8b49fb347998c0a44b3db157e869b970c7aa223c4",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011501_2526710ef454427cb1385926aff24e54_started.json",
+                "sha256": "526f50877f6b445cdeafe13b0dadf850a53c0d23cec04e79fdae59f6309f3de9"
+              },
+              "attempt_id": "2526710ef454427cb1385926aff24e54"
+            }
+          },
+          {
+            "start": 11502,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011502.npz",
+              "sha256": "d1a1d7ff4a2b1dbb9984d6fa6a8bb80d722cd58b832961d75d60e05ab8741848",
+              "bytes": 1590530
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011502.json",
+              "sha256": "a6009f3536a3a27616465d696e5baeddd7be88a446d048491021f266ce436ee4",
+              "bytes": 4203
+            },
+            "producer_record": {
+              "first_source_frame_index": 11502,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011502.npz",
+                "sha256": "d1a1d7ff4a2b1dbb9984d6fa6a8bb80d722cd58b832961d75d60e05ab8741848",
+                "bytes": 1590530
+              },
+              "original_identity_sha256": "cc19579279f4a8194760b51f04c7f014826df10c6d0de7b4bab2cc67391ac619",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011502_d164f5763560411c881cc9b35c4d8dd2_started.json",
+                "sha256": "008fa4642a7f9ae363166396073d46fb13b99b3b857c30476c391565ff53623a"
+              },
+              "attempt_id": "d164f5763560411c881cc9b35c4d8dd2"
+            }
+          },
+          {
+            "start": 11503,
+            "format": "native_action",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011503.npz",
+              "sha256": "54dc4ed0bc04ee756fd7b0b538e00b89f5855bd4637d86180ba9a053b4aea96a",
+              "bytes": 1590813
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011503.json",
+              "sha256": "4ba71d5e5adcd3e8922ea13c5712ea6299ee8373d41a73c759bea75062ab6032",
+              "bytes": 4201
+            },
+            "producer_record": {
+              "first_source_frame_index": 11503,
+              "origin": "action_observation",
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/triplet_011503.npz",
+                "sha256": "54dc4ed0bc04ee756fd7b0b538e00b89f5855bd4637d86180ba9a053b4aea96a",
+                "bytes": 1590813
+              },
+              "original_identity_sha256": "992efdf93d7bb78c312bce31d605ea1804aabfe9c2e51b5ac4c1d758eb6477fd",
+              "original_started_record": {
+                "bytes": 299,
+                "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/triplets/attempts/011503_c8ec0184629348c7acc2932ada215eb1_started.json",
+                "sha256": "4425c3239d62b902db85f4ad80896c2f5cdddcd2928baf22fbf3561d02bc8a8c"
+              },
+              "attempt_id": "c8ec0184629348c7acc2932ada215eb1"
+            }
+          }
+        ]
+      },
+      "kind": "nba",
+      "input_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/inputs/sas_det_q1_c02/manifest.json",
+        "sha256": "f40c5217cbcaa6f74b1b825b303a1b13572d84c735fc0083ca980dc9768d7b6e",
+        "bytes": 615594
+      },
+      "old_observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/observations.json",
+        "sha256": "a9ef10f9b88361ee7d1f3dde633bc1ff36f506cd5d2d9f562bcb7c3b50991db4",
+        "bytes": 2750073
+      }
+    },
+    {
+      "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "anchors": [
+        206,
+        207,
+        209,
+        221,
+        223
+      ],
+      "source_frame_indices": [
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224
+      ],
+      "original_context_inclusive": [
+        200,
+        224
+      ],
+      "new_observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/observations.json",
+        "sha256": "7da1adff118d07173e35b1f3f0cac9ac62b496c6d102c035da67e285d2730b20",
+        "bytes": 54431
+      },
+      "triplets": {
+        "new": [
+          {
+            "start": 202,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000202.npz",
+              "sha256": "f63285b74db537bb70713c581c7957564f1e088c53d83c3304b9762cc2ded070",
+              "bytes": 1598423
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000202.json",
+              "sha256": "6ea8762ebabe7e170d6c545e090a00cea695032d110e68f7c1cd5a40020017c3",
+              "bytes": 4752
+            },
+            "producer_record": {
+              "first_source_frame_index": 202,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000202.npz",
+                "sha256": "f63285b74db537bb70713c581c7957564f1e088c53d83c3304b9762cc2ded070",
+                "bytes": 1598423
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000202_6eba196ad4c446fd914e68d94741dedd_started.json",
+                "sha256": "30f5b06648f88175afea4664fd2951aedb49a90ae2e2767286b20e4040cde270"
+              },
+              "attempt_id": "6eba196ad4c446fd914e68d94741dedd"
+            }
+          },
+          {
+            "start": 203,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000203.npz",
+              "sha256": "38e0cdc5532c8b99ad324f2ce9a4d1b8f3c035d831f427645414e254f78d6102",
+              "bytes": 1597998
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000203.json",
+              "sha256": "047a2a8ef8a0bd8bfec62b5ec4ec3318087a7f2aae310b0b93354dd8b772ac14",
+              "bytes": 4751
+            },
+            "producer_record": {
+              "first_source_frame_index": 203,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000203.npz",
+                "sha256": "38e0cdc5532c8b99ad324f2ce9a4d1b8f3c035d831f427645414e254f78d6102",
+                "bytes": 1597998
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000203_f5f0b7ef6f6d46498c7ffed41214f370_started.json",
+                "sha256": "a23aca79acbb40f5663a7837a4ed4084bc0aa0358f7ca945f591f2ceded63385"
+              },
+              "attempt_id": "f5f0b7ef6f6d46498c7ffed41214f370"
+            }
+          },
+          {
+            "start": 204,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000204.npz",
+              "sha256": "79b8201f07fac8a4710b2c42237d7a5a53e9a9ee74e551ac7d4e0651ff9d62fe",
+              "bytes": 1597282
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000204.json",
+              "sha256": "abbbcb8e02bcee75ff192c5d3c88947cfafdf86bb6fd89f58ee32a4b17142b2c",
+              "bytes": 4752
+            },
+            "producer_record": {
+              "first_source_frame_index": 204,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000204.npz",
+                "sha256": "79b8201f07fac8a4710b2c42237d7a5a53e9a9ee74e551ac7d4e0651ff9d62fe",
+                "bytes": 1597282
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000204_601bf9526d994446a7bf70468a095105_started.json",
+                "sha256": "4eaf936371f6f06c1ae76c912259e5ab4a77ed4e5075e537cd4175212f342af5"
+              },
+              "attempt_id": "601bf9526d994446a7bf70468a095105"
+            }
+          },
+          {
+            "start": 205,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000205.npz",
+              "sha256": "86c70f605f8b00987a9f9d72384e9e36dc7b92f97af9b873ae01137a75c14e9d",
+              "bytes": 1598805
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000205.json",
+              "sha256": "9259660040fc73d662bcbc93a3f0eab512ec83149297f5a5fbffddff9c4e4e4d",
+              "bytes": 4751
+            },
+            "producer_record": {
+              "first_source_frame_index": 205,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000205.npz",
+                "sha256": "86c70f605f8b00987a9f9d72384e9e36dc7b92f97af9b873ae01137a75c14e9d",
+                "bytes": 1598805
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000205_5cb0608e5368477cbed057de61b09ccc_started.json",
+                "sha256": "f5425a8e3a1987431f086dc5634f452b95cb1ed47b1dbf35da3e34e37b37d8f6"
+              },
+              "attempt_id": "5cb0608e5368477cbed057de61b09ccc"
+            }
+          },
+          {
+            "start": 206,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000206.npz",
+              "sha256": "4f025653c0c5e3e00ba33c4652dee3fef897e8e9c5c47b1f6c4904be45c033e3",
+              "bytes": 1598317
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000206.json",
+              "sha256": "15066979a855dd07abfcb8324195b9c5b2cf4ac2977ff57516298121449987ec",
+              "bytes": 4750
+            },
+            "producer_record": {
+              "first_source_frame_index": 206,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000206.npz",
+                "sha256": "4f025653c0c5e3e00ba33c4652dee3fef897e8e9c5c47b1f6c4904be45c033e3",
+                "bytes": 1598317
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000206_8f16b379c86f42109b92d69fcb967ba3_started.json",
+                "sha256": "41c68c9a68e78e4a3fdf2deb8ca5ac88102a3baf4963d3f57854ce4302a01c41"
+              },
+              "attempt_id": "8f16b379c86f42109b92d69fcb967ba3"
+            }
+          },
+          {
+            "start": 207,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000207.npz",
+              "sha256": "522378bd0895e904e9098662af45d831a7a39a7d94acf5477a557a02f29e37eb",
+              "bytes": 1597799
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000207.json",
+              "sha256": "0f3de1d3199acb102bfd39359d9021edc2434cd9d1a91ddd353b9266747c0f68",
+              "bytes": 4752
+            },
+            "producer_record": {
+              "first_source_frame_index": 207,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000207.npz",
+                "sha256": "522378bd0895e904e9098662af45d831a7a39a7d94acf5477a557a02f29e37eb",
+                "bytes": 1597799
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000207_ed2906f65a2445b8b57edfc560630dac_started.json",
+                "sha256": "b39ec9c95b3ff60b13550d1e45b511e63f75b63736b66aae5bf2b8d4c1f5e4ef"
+              },
+              "attempt_id": "ed2906f65a2445b8b57edfc560630dac"
+            }
+          },
+          {
+            "start": 208,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000208.npz",
+              "sha256": "91b85a8c66fbc7a4ff3e004e59f635011803dcae297f5af15ecd24db4b0ad831",
+              "bytes": 1597263
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000208.json",
+              "sha256": "7cfe686c93be4622fc5a9c765186df489e7d075fb525a9d75e439ebd273f7e2c",
+              "bytes": 4751
+            },
+            "producer_record": {
+              "first_source_frame_index": 208,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000208.npz",
+                "sha256": "91b85a8c66fbc7a4ff3e004e59f635011803dcae297f5af15ecd24db4b0ad831",
+                "bytes": 1597263
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000208_6f05d84e8d9548f69ef116ca07dec3db_started.json",
+                "sha256": "11fa316d0b4c03bb89dd0fa29dadd8015861d3011203f92f08c51cfd4e56004e"
+              },
+              "attempt_id": "6f05d84e8d9548f69ef116ca07dec3db"
+            }
+          },
+          {
+            "start": 209,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000209.npz",
+              "sha256": "e2d74df0ebdb0c70ec88cf75b41de8fdb9c537f3f6931debff28c653fec07355",
+              "bytes": 1598473
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000209.json",
+              "sha256": "817e9661d29012ba78d8a97d26ca9bc800ebfe3e8467511b551c2a94b04edf04",
+              "bytes": 4751
+            },
+            "producer_record": {
+              "first_source_frame_index": 209,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000209.npz",
+                "sha256": "e2d74df0ebdb0c70ec88cf75b41de8fdb9c537f3f6931debff28c653fec07355",
+                "bytes": 1598473
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000209_cc1fff469ad449b7bbfc3c3a240f444a_started.json",
+                "sha256": "467ea85ec02a0c378d0c3da7c5bd0fc96165667d7cb252779bf75ae076cc185d"
+              },
+              "attempt_id": "cc1fff469ad449b7bbfc3c3a240f444a"
+            }
+          },
+          {
+            "start": 210,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000210.npz",
+              "sha256": "3505a87f606be7b67f89a9ef73fa25a975d00e31415fa63362e4bdb42ab0ab84",
+              "bytes": 1598979
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000210.json",
+              "sha256": "6bd760645f799131adfdd1d60d4c7a8878f9ad8e45842dc51f64d86291fcaa8a",
+              "bytes": 4751
+            },
+            "producer_record": {
+              "first_source_frame_index": 210,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000210.npz",
+                "sha256": "3505a87f606be7b67f89a9ef73fa25a975d00e31415fa63362e4bdb42ab0ab84",
+                "bytes": 1598979
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000210_4abdadf8c86641b1b9b472b995432502_started.json",
+                "sha256": "66996832452236c910885865a9f546e74d131213c47ab595e7afd9cd407b95b4"
+              },
+              "attempt_id": "4abdadf8c86641b1b9b472b995432502"
+            }
+          },
+          {
+            "start": 211,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000211.npz",
+              "sha256": "8b6572b755303dcaab683b3d71ff4ec44c90f55590b1ad564c8a9826b7e8f12d",
+              "bytes": 1599672
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000211.json",
+              "sha256": "7f89f665fa3acdbeed5bce111791d256203de02039bb4df2357d7efb126451e9",
+              "bytes": 4750
+            },
+            "producer_record": {
+              "first_source_frame_index": 211,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000211.npz",
+                "sha256": "8b6572b755303dcaab683b3d71ff4ec44c90f55590b1ad564c8a9826b7e8f12d",
+                "bytes": 1599672
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000211_7300906b291d45a5bef82d716165a089_started.json",
+                "sha256": "5ac1564c820b3303511a8bb3f8a2783b0068ad028f87b5630416a2d22a89c63f"
+              },
+              "attempt_id": "7300906b291d45a5bef82d716165a089"
+            }
+          },
+          {
+            "start": 217,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000217.npz",
+              "sha256": "896f1f81108fa2991a9a13600f5b64726fee93704746949154baaa405c495bff",
+              "bytes": 1597250
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000217.json",
+              "sha256": "5cb128e0fc5960ad6ea83c8e42a4ea3425dc5d543be89e4dc82589ecf3af46e2",
+              "bytes": 4751
+            },
+            "producer_record": {
+              "first_source_frame_index": 217,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000217.npz",
+                "sha256": "896f1f81108fa2991a9a13600f5b64726fee93704746949154baaa405c495bff",
+                "bytes": 1597250
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000217_2a542e542d8b4083bc8fbcc0f4a57ca2_started.json",
+                "sha256": "6f80fccc21194945ee7bcf46580201608cee1aae14982417ac94add1a1cfd618"
+              },
+              "attempt_id": "2a542e542d8b4083bc8fbcc0f4a57ca2"
+            }
+          },
+          {
+            "start": 218,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000218.npz",
+              "sha256": "d87f97d638fbabdf8e2eb3f67f7d86300504d17fcb5d454dfda983c679fb1f9a",
+              "bytes": 1597270
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000218.json",
+              "sha256": "1b27a1fea5d5f87edf1c768937e3c67518232c7fc4e68c1b8f07fe12442033a9",
+              "bytes": 4752
+            },
+            "producer_record": {
+              "first_source_frame_index": 218,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000218.npz",
+                "sha256": "d87f97d638fbabdf8e2eb3f67f7d86300504d17fcb5d454dfda983c679fb1f9a",
+                "bytes": 1597270
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000218_807d8c834492447887db85ec80a502b7_started.json",
+                "sha256": "13a728e85f2a330ab06a46a02103178534c89f16e6ea77c4b63fcbf0a7418a75"
+              },
+              "attempt_id": "807d8c834492447887db85ec80a502b7"
+            }
+          },
+          {
+            "start": 219,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000219.npz",
+              "sha256": "f1a27adc92f7c75d6340973ab03d7f219f89a17df7e381a3caf245d3cfd54a03",
+              "bytes": 1597165
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000219.json",
+              "sha256": "f4f6b45a7d6d56a0051f18e0281175d46560a2abefea63cbe1b10541f5da17c0",
+              "bytes": 4750
+            },
+            "producer_record": {
+              "first_source_frame_index": 219,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000219.npz",
+                "sha256": "f1a27adc92f7c75d6340973ab03d7f219f89a17df7e381a3caf245d3cfd54a03",
+                "bytes": 1597165
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000219_89548ac530eb4c8cb0229593ea65febe_started.json",
+                "sha256": "0ad609e41e35a95f224e8f326bcec1be0fd0bdf1098a7fc029eec63699073015"
+              },
+              "attempt_id": "89548ac530eb4c8cb0229593ea65febe"
+            }
+          },
+          {
+            "start": 220,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000220.npz",
+              "sha256": "9ee408aeae9341688c910fbfed723fd5323039e8ef2596fae0ccd368f647bb5f",
+              "bytes": 1597834
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000220.json",
+              "sha256": "64b05d373fa0fd845341e632a4c1e748cae6e25a6df15f91542d1b9e56c15a10",
+              "bytes": 4751
+            },
+            "producer_record": {
+              "first_source_frame_index": 220,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000220.npz",
+                "sha256": "9ee408aeae9341688c910fbfed723fd5323039e8ef2596fae0ccd368f647bb5f",
+                "bytes": 1597834
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000220_9f458385bf44412fa288f7bd85c2c2e2_started.json",
+                "sha256": "4fa3aab15e4277558b425e37bf337514731171adea8c3190350551d25ebb3154"
+              },
+              "attempt_id": "9f458385bf44412fa288f7bd85c2c2e2"
+            }
+          },
+          {
+            "start": 221,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000221.npz",
+              "sha256": "80dc552beadd49c71ab847c7da8d7f4329fbed9574d75f11842e112e698be645",
+              "bytes": 1597806
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000221.json",
+              "sha256": "e8144256ac2fb2e1a357c364350db78b19803f15c1b23b30505b158d00582223",
+              "bytes": 4752
+            },
+            "producer_record": {
+              "first_source_frame_index": 221,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000221.npz",
+                "sha256": "80dc552beadd49c71ab847c7da8d7f4329fbed9574d75f11842e112e698be645",
+                "bytes": 1597806
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000221_43bea38631e341e3bf0973e61cb507c2_started.json",
+                "sha256": "56b978d50e3697f8fb8cd2d57cc6e4e32b7f42af8b80eb03e515186354818da9"
+              },
+              "attempt_id": "43bea38631e341e3bf0973e61cb507c2"
+            }
+          },
+          {
+            "start": 222,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000222.npz",
+              "sha256": "c560b2aa7013aeef32e930c54228ba3a16c22e517111d369821c36411027aba9",
+              "bytes": 1597644
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000222.json",
+              "sha256": "0f4e6edae28bbd614d188b60241b589f497f7dfdfacc753cc3ed64d1a51cd830",
+              "bytes": 4751
+            },
+            "producer_record": {
+              "first_source_frame_index": 222,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/triplet_000222.npz",
+                "sha256": "c560b2aa7013aeef32e930c54228ba3a16c22e517111d369821c36411027aba9",
+                "bytes": 1597644
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplets/attempts/000222_2c445c3b8a3f4662802c496947f352da_started.json",
+                "sha256": "2169f887050ae7f552f0ef435936fddd44e2376b0b5164454c4ae146a7450c4e"
+              },
+              "attempt_id": "2c445c3b8a3f4662802c496947f352da"
+            }
+          }
+        ],
+        "old": [
+          {
+            "start": 202,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000202.npz",
+              "sha256": "49a869e775714823ddce5396e4d15796c9fd5671cc30201d25a150ee5c52b403",
+              "bytes": 1594136
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000202.json",
+              "sha256": "98aaddfd0e3f91db8eff544fdde9eed2033080e91f6c3f00cd85511e1fbcc9f3",
+              "bytes": 981
+            }
+          },
+          {
+            "start": 203,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000203.npz",
+              "sha256": "6eb4a9399169018e6a8036fe861ff55d55edbf823275cd0387a1882384529329",
+              "bytes": 1593203
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000203.json",
+              "sha256": "ecbaf2f666a8c2119959af54d4c75d1ed15008891daa997bf450298b49b4ef98",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 204,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000204.npz",
+              "sha256": "c01cc8e8ebc38719208f6667f947141778a5270c5d21d8dc1f671ded502069ea",
+              "bytes": 1592461
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000204.json",
+              "sha256": "127f77e170cbfb0b5d9d4cdf70dc8987ecced684d4568775e119305c0c68917c",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 205,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000205.npz",
+              "sha256": "3ae935791192104039104a7da08bb354221c3444f174304640028d456d476219",
+              "bytes": 1593765
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000205.json",
+              "sha256": "e5ec79c17e412bde0816f0c24e265095ddece5f5f7cfa27691e665abcfb37d9f",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 206,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000206.npz",
+              "sha256": "40253bb84f595e6f643d5dd05ccd66cce11d0559ac3d0d5d070a2053edf90817",
+              "bytes": 1593815
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000206.json",
+              "sha256": "56884955cb4a7a9ee48d7d5dbec944ce0395f9456775b6e201252069bc5ef610",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 207,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000207.npz",
+              "sha256": "c70d2500bc86d0a3e1efc12522b5e855b6b60bb78ea31e5764e9f9f9377c29c1",
+              "bytes": 1593038
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000207.json",
+              "sha256": "5b7b8802463788e23dc3fd68ec0b7aec6caccb1a389dbab4cf0a2d51ffd7cc42",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 208,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000208.npz",
+              "sha256": "2082fe5a41d2f70c5677015cc7f483d1f66c3f95d7e33565de82aff1800f58c4",
+              "bytes": 1592711
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000208.json",
+              "sha256": "5ea314d1c51160ebd6b7a89e41d76f584aa6635c1ef8c72c14c046a0a48f3b18",
+              "bytes": 981
+            }
+          },
+          {
+            "start": 209,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000209.npz",
+              "sha256": "b933682ba64e6fe3c4883c68474182d545ba97c176e8419e6386b6e5459595b6",
+              "bytes": 1594064
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000209.json",
+              "sha256": "5192d7b3de98e6431f11dbabc75a2cdc1ec18fbae3e5e08af3b6b1456374db49",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 210,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000210.npz",
+              "sha256": "45949f4be48ce3fc8553e68de5507271aeb166b027c9f0a37fa127be6a3cf114",
+              "bytes": 1594398
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000210.json",
+              "sha256": "264383fcb052156a2e4d02fe0fb7ae4d4c9944142e111b1cdf8b3bbec88bab8b",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 211,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000211.npz",
+              "sha256": "ecba634d28f8d865f2a076c56adb1bc1a10bcc6ffa65d33be6d7cb17eff9325f",
+              "bytes": 1594637
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000211.json",
+              "sha256": "1f16172c003a64aa5c97b99daa409bd678eb9c337de27c70af4a42462b0d2d30",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 217,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000217.npz",
+              "sha256": "703e6cce395f04f8a222202aa9aef03bdf9d5369e31ed9d3518e553de12094fc",
+              "bytes": 1591300
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000217.json",
+              "sha256": "09e5003f0cf4bac98cf43e670b2b292bb05e792aafa533a4168d43e6ef315ec4",
+              "bytes": 981
+            }
+          },
+          {
+            "start": 218,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000218.npz",
+              "sha256": "c5b17b30c771a4e1bce6ef3f0b5e45e474828dc22089df890035c6e913fd467e",
+              "bytes": 1592155
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000218.json",
+              "sha256": "e4c576f0ac702070e0e6882c417a6971a787d41074d41785689bf830925bfc6d",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 219,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000219.npz",
+              "sha256": "c36e1ce5880cd44cea618279927231b6ac4c2861a91c2c10d74471f58a9714fc",
+              "bytes": 1591572
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000219.json",
+              "sha256": "f89f39bc56010a98a9be29ee9d795d38ea87d14191dffcf61cc7a452d1333a8d",
+              "bytes": 981
+            }
+          },
+          {
+            "start": 220,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000220.npz",
+              "sha256": "d73802d66367b34520ef146f0c36e90cc6de4df03a60dfadace9b10ca16de7bc",
+              "bytes": 1592247
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000220.json",
+              "sha256": "f5a1f9ea65f6131cab14051a82362f70753c4370ed7c23eeb4f0f5d27adfc944",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 221,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000221.npz",
+              "sha256": "47d0f160a524d73c3688ce9832b7b8fb9c6d1703050bf07a5ffb50d59c950b8a",
+              "bytes": 1591550
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000221.json",
+              "sha256": "5a469bc938abbc054770577a8097477586a06f48ad6bb75d3a024488a914c59d",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 222,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000222.npz",
+              "sha256": "e41d4fff08dc8f9e6b8b1c4e42f6cde7d7b50410605d5e211f65612cd87178e2",
+              "bytes": 1591402
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/triplet_000222.json",
+              "sha256": "adcf89f7f0dd51a4d7ae6cdfcf5adc6f63563012b2a90189bc2454f19418a1f3",
+              "bytes": 982
+            }
+          }
+        ]
+      },
+      "kind": "nfhs",
+      "input_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/inputs/manifest.json",
+        "sha256": "9741e3245b2a6454bab436780d23a06ffe151b6694d9a71779d1c63446774a89",
+        "bytes": 14437
+      },
+      "window": {
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+        "purpose": "challenge_evaluation",
+        "possession_id": "possession_001",
+        "source_video": {
+          "path": "data/clips/possession_001.mp4",
+          "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+          "width_px": 1920,
+          "height_px": 1080,
+          "fps": 25.0,
+          "frame_count": 499
+        },
+        "start_frame_index": 200,
+        "end_frame_index": 224,
+        "annotation_set_id": "possession_001_frames_0200_0224_challenge_evaluation_v0_1",
+        "annotation": {
+          "path": "configs/ball_tracking/annotations/possession_001_frames_0200_0224_challenge_evaluation_v0_1.json",
+          "sha256": "73ed29bc62e002d86b207a12298b30b27724fe42be5a354ec09bc104211e2def"
+        },
+        "rf_candidates": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/candidates.json",
+          "sha256": "96b64d53938523536cfd6374bb3a33c93bc30d4bc0ffb66f0ced310a2b80bfc2"
+        },
+        "mean_heatmaps": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/mean_heatmaps.npz",
+          "sha256": "338678ab89e8418f324ccf8285a8f231ec001fcc330a6413d30734da83174f6f"
+        },
+        "heatmap_receipt": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/points_receipt.json",
+          "sha256": "a49fd97660b5ba0bbc941e22dbbd420f9037d252a90912c982fd865d995e6ce9"
+        },
+        "original_evaluation": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/evaluation.json",
+          "sha256": "dbd11742a72ea84e420a6f4f37e81f991ae07a76facdf4908db06721ff29dcd5"
+        },
+        "original_points": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/points.json",
+          "sha256": "21f1e3683b2c0a8530ca804621e8f1b2fa0000f5e8171431ef65fc51d27010fd"
+        },
+        "inference_identity": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/inference_identity.json",
+          "sha256": "b2627a4435a541bcff627a8505bc89f7d9480de4e53b9a86eb7a851f1881bbc4"
+        }
+      },
+      "baseline": {
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+        "components": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/threshold_0.3/components.json",
+          "sha256": "1bbe0ad289a422fdc99bb7b7826c865387ae749bc2e8b02ebeb15ab8638458c0",
+          "bytes": 5468
+        },
+        "points": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/threshold_0.3/points.json",
+          "sha256": "3a33119e562e41ee88a2ff6815e686ad718817423140c789d856a1f7ef079a7d",
+          "bytes": 9135
+        },
+        "evaluation": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/threshold_0.3/evaluation.json",
+          "sha256": "d83e869bd14db5af1dcf60c87545c9fb58962cc949d58dd1296ad751b1649e71",
+          "bytes": 36917
+        }
+      },
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_001_frames_0200_0224_challenge_evaluation_v0_1.json",
+        "sha256": "73ed29bc62e002d86b207a12298b30b27724fe42be5a354ec09bc104211e2def",
+        "bytes": 14022
+      },
+      "original_mean_bundle": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/mean_heatmaps.npz",
+        "sha256": "338678ab89e8418f324ccf8285a8f231ec001fcc330a6413d30734da83174f6f",
+        "bytes": 13209382
+      },
+      "original_cache_receipt": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/points_receipt.json",
+        "sha256": "a49fd97660b5ba0bbc941e22dbbd420f9037d252a90912c982fd865d995e6ce9",
+        "bytes": 452
+      },
+      "original_identity": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/inference_identity.json",
+        "sha256": "b2627a4435a541bcff627a8505bc89f7d9480de4e53b9a86eb7a851f1881bbc4",
+        "bytes": 1616
+      }
+    },
+    {
+      "candidate_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+      "anchors": [
+        49
+      ],
+      "source_frame_indices": [
+        47,
+        48,
+        49
+      ],
+      "original_context_inclusive": [
+        25,
+        49
+      ],
+      "new_observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/observations.json",
+        "sha256": "234a965ea56fc0f52e531e6a4d859daa781424cb9fa65862d632a2974788ec6a",
+        "bytes": 59452
+      },
+      "triplets": {
+        "new": [
+          {
+            "start": 45,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplets/triplet_000045.npz",
+              "sha256": "9e48fcbdd62e71060c4a40083ecf797674348e817a92db5c816453cb579a4a22",
+              "bytes": 1596550
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplets/triplet_000045.json",
+              "sha256": "cba34cdaa06819c4c846d1609f2b5abb6479a1737e80921cb91edd3f7e8378ef",
+              "bytes": 4748
+            },
+            "producer_record": {
+              "first_source_frame_index": 45,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplets/triplet_000045.npz",
+                "sha256": "9e48fcbdd62e71060c4a40083ecf797674348e817a92db5c816453cb579a4a22",
+                "bytes": 1596550
+              },
+              "started_record": {
+                "bytes": 290,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplets/attempts/000045_59fba3939b314774822235b494bc48a1_started.json",
+                "sha256": "577bb5f17619b4ce772af0b2d5b760f5a0be15ea8306f67ca7025b3b37b6db57"
+              },
+              "attempt_id": "59fba3939b314774822235b494bc48a1"
+            }
+          },
+          {
+            "start": 46,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplets/triplet_000046.npz",
+              "sha256": "077cc442a70fa2ce8b561920b62b8981dfa5b2cebdb89f45b438603c0b700e05",
+              "bytes": 1597786
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplets/triplet_000046.json",
+              "sha256": "f9533eaaa9e59af20fe6978bf124495e7ece3b803b3bf9e3798e5a4aa12f2a24",
+              "bytes": 4748
+            },
+            "producer_record": {
+              "first_source_frame_index": 46,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplets/triplet_000046.npz",
+                "sha256": "077cc442a70fa2ce8b561920b62b8981dfa5b2cebdb89f45b438603c0b700e05",
+                "bytes": 1597786
+              },
+              "started_record": {
+                "bytes": 290,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplets/attempts/000046_405b9086eb8b42f297daec81405a3875_started.json",
+                "sha256": "9f89da54622011bfba1666675a971e0529ce0be6628779f70ea37ac8814f62aa"
+              },
+              "attempt_id": "405b9086eb8b42f297daec81405a3875"
+            }
+          },
+          {
+            "start": 47,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplets/triplet_000047.npz",
+              "sha256": "9e13d554f80038ecdcca20602be780c7db33c2ad2f2fd315efc499e851b6af56",
+              "bytes": 1596931
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplets/triplet_000047.json",
+              "sha256": "b29dc31522c54438e00ba403f46ea557eee2e209be181a5440a65351dff5ffd2",
+              "bytes": 4748
+            },
+            "producer_record": {
+              "first_source_frame_index": 47,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplets/triplet_000047.npz",
+                "sha256": "9e13d554f80038ecdcca20602be780c7db33c2ad2f2fd315efc499e851b6af56",
+                "bytes": 1596931
+              },
+              "started_record": {
+                "bytes": 290,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplets/attempts/000047_1dc9ebb409c3445ca36d5404da89cea9_started.json",
+                "sha256": "72cb0389a75f90e08a64a670be2660576acb83c8fee42bd6174e268ab41037a9"
+              },
+              "attempt_id": "1dc9ebb409c3445ca36d5404da89cea9"
+            }
+          }
+        ],
+        "old": [
+          {
+            "start": 45,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplet_000045.npz",
+              "sha256": "64d0062278ed5a5794fa35e00bb43f1660ecf55e622c66c19898f786e49be82a",
+              "bytes": 1592874
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplet_000045.json",
+              "sha256": "79fa852aeff1d1dea6508837665b2ca2bceea31eab2b326082c77eef46c01050",
+              "bytes": 976
+            }
+          },
+          {
+            "start": 46,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplet_000046.npz",
+              "sha256": "0d2e215ac72ac3d2e6b6e467cd2de21c2ce0cb6786b52c7450a42d212fa38f9a",
+              "bytes": 1592536
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplet_000046.json",
+              "sha256": "f4fa9117ceb9562e24c2713c349b6a95f4f552725c7015df0f46b0d614dd215c",
+              "bytes": 976
+            }
+          },
+          {
+            "start": 47,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplet_000047.npz",
+              "sha256": "3a3adf7b3de70e4733c27e30f3e5852e898ee639c285105fc3442e1dc5ad4e13",
+              "bytes": 1592018
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/triplet_000047.json",
+              "sha256": "190778245ede0979d30078e78530c53a4c71d3a8c6079beae5f39de6517cc52b",
+              "bytes": 976
+            }
+          }
+        ]
+      },
+      "kind": "nfhs",
+      "input_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/inputs/manifest.json",
+        "sha256": "187adc1217b887b626c389773e6bc02b837dc8a3969e42b0f6c819a7c6b0ce80",
+        "bytes": 14407
+      },
+      "window": {
+        "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+        "purpose": "challenge_evaluation",
+        "possession_id": "possession_002",
+        "source_video": {
+          "path": "data/clips/possession_002.mp4",
+          "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+          "width_px": 1920,
+          "height_px": 1080,
+          "fps": 25.0,
+          "frame_count": 499
+        },
+        "start_frame_index": 25,
+        "end_frame_index": 49,
+        "annotation_set_id": "possession_002_frames_0025_0049_challenge_evaluation_v0_1",
+        "annotation": {
+          "path": "configs/ball_tracking/annotations/possession_002_frames_0025_0049_challenge_evaluation_v0_1.json",
+          "sha256": "c0d1bad8f6879e2d073b6d0becf3df12347b43ef06e9c6ff44c26b6f56d3c1e3"
+        },
+        "rf_candidates": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/candidates.json",
+          "sha256": "ca1eba2c25ddcea655e8f3230a83fdbe419dfa057218fe2d569ce1de5c55eb2f"
+        },
+        "mean_heatmaps": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/mean_heatmaps.npz",
+          "sha256": "a144180aeed91a1cce70177e850c7489700292222465f6b4a4b51633f31887f8"
+        },
+        "heatmap_receipt": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/points_receipt.json",
+          "sha256": "1c4631ca77f55ee106b08fbd3bd8301fb17d22fc2195f83ea32f97d44fb0e9cd"
+        },
+        "original_evaluation": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/evaluation.json",
+          "sha256": "2e6b6f768bb9fdeb7aa2a451ede511f643c881dbeb30df80ad685ae7ada2e7b7"
+        },
+        "original_points": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/points.json",
+          "sha256": "ac87854e3ec809f5d54e96c8e3ed91015ee9a43e75da7f1e568a81bf474c7360"
+        },
+        "inference_identity": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/inference_identity.json",
+          "sha256": "b2627a4435a541bcff627a8505bc89f7d9480de4e53b9a86eb7a851f1881bbc4"
+        }
+      },
+      "baseline": {
+        "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+        "components": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/threshold_0.3/components.json",
+          "sha256": "e36bc222ea1d97748664ea8159d4455f940de251a4449dbe5bc78f12a6fa78ce",
+          "bytes": 9541
+        },
+        "points": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/threshold_0.3/points.json",
+          "sha256": "743cbe60b7c30d01d5bb4d45dbb91810da1e2ab14a46ece454399588c1647182",
+          "bytes": 12236
+        },
+        "evaluation": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/threshold_0.3/evaluation.json",
+          "sha256": "be518fa3096765872fe12866525b61bfd09c3095840e5417d7d5e001feb6bba8",
+          "bytes": 37388
+        }
+      },
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_002_frames_0025_0049_challenge_evaluation_v0_1.json",
+        "sha256": "c0d1bad8f6879e2d073b6d0becf3df12347b43ef06e9c6ff44c26b6f56d3c1e3",
+        "bytes": 13595
+      },
+      "original_mean_bundle": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/mean_heatmaps.npz",
+        "sha256": "a144180aeed91a1cce70177e850c7489700292222465f6b4a4b51633f31887f8",
+        "bytes": 13204163
+      },
+      "original_cache_receipt": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/points_receipt.json",
+        "sha256": "1c4631ca77f55ee106b08fbd3bd8301fb17d22fc2195f83ea32f97d44fb0e9cd",
+        "bytes": 452
+      },
+      "original_identity": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/inference_identity.json",
+        "sha256": "b2627a4435a541bcff627a8505bc89f7d9480de4e53b9a86eb7a851f1881bbc4",
+        "bytes": 1616
+      }
+    },
+    {
+      "candidate_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+      "anchors": [
+        304
+      ],
+      "source_frame_indices": [
+        302,
+        303,
+        304,
+        305,
+        306
+      ],
+      "original_context_inclusive": [
+        300,
+        324
+      ],
+      "new_observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/observations.json",
+        "sha256": "0906017691ea4f8b3c157211e6bd6dae71ef28c59441956bb8120a3f3e1cd920",
+        "bytes": 58998
+      },
+      "triplets": {
+        "new": [
+          {
+            "start": 300,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000300.npz",
+              "sha256": "b17fbcc7756d9db10fac65292e7eaa879d4fe7ba87f05238e84ed14c17ea19fc",
+              "bytes": 1602448
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000300.json",
+              "sha256": "038ccbb0f17c4e1bebb84ae5ba1215a2743faac9e9f254b1121bcb277317bbb6",
+              "bytes": 4784
+            },
+            "producer_record": {
+              "first_source_frame_index": 300,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000300.npz",
+                "sha256": "b17fbcc7756d9db10fac65292e7eaa879d4fe7ba87f05238e84ed14c17ea19fc",
+                "bytes": 1602448
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/attempts/000300_9004ee8714964bbfaccd3e41f38b151d_started.json",
+                "sha256": "e383bad3a8b0b2959b2bc14e3b7ad95134e381a3ce7a81dc35c440ad97e581ef"
+              },
+              "attempt_id": "9004ee8714964bbfaccd3e41f38b151d"
+            }
+          },
+          {
+            "start": 301,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000301.npz",
+              "sha256": "a4ff1e7e3b75b67da697a6de72ed781dfa2f20cd4ed73645528ccbe93d1ea76f",
+              "bytes": 1602045
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000301.json",
+              "sha256": "8d2d04ed92d8c00c709422e2d3f55f62cdd0e52b03ed375d5b88b1244cff5825",
+              "bytes": 4784
+            },
+            "producer_record": {
+              "first_source_frame_index": 301,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000301.npz",
+                "sha256": "a4ff1e7e3b75b67da697a6de72ed781dfa2f20cd4ed73645528ccbe93d1ea76f",
+                "bytes": 1602045
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/attempts/000301_25e578aa0c9443e58e3f08eb0f160e52_started.json",
+                "sha256": "954c949938d6924467a063430bb9d70a955aaf1e8088987e3c28246a71d9de2f"
+              },
+              "attempt_id": "25e578aa0c9443e58e3f08eb0f160e52"
+            }
+          },
+          {
+            "start": 302,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000302.npz",
+              "sha256": "48b2966d36f021d811082fd8634176916b218eef9897c6e6e473c6d9194679c9",
+              "bytes": 1604566
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000302.json",
+              "sha256": "ec4cadcb99e1821238343ec6f04e1f71c18cdb297f4ceb7070746041157f60e3",
+              "bytes": 4784
+            },
+            "producer_record": {
+              "first_source_frame_index": 302,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000302.npz",
+                "sha256": "48b2966d36f021d811082fd8634176916b218eef9897c6e6e473c6d9194679c9",
+                "bytes": 1604566
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/attempts/000302_d75bd169be1c48519c8a2eacfb0720c1_started.json",
+                "sha256": "0cd140c654f479f38d0a0f8941d4adfe93de153c11035d9e0c6c7fd587735d47"
+              },
+              "attempt_id": "d75bd169be1c48519c8a2eacfb0720c1"
+            }
+          },
+          {
+            "start": 303,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000303.npz",
+              "sha256": "db5a8140f960d9fb1f733bc153894bf1bcd3a0bc437844d2ce9f767b509a4557",
+              "bytes": 1603613
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000303.json",
+              "sha256": "2909342432b1be790c318373690ddd495b758002df97a03de3b07882d4b14623",
+              "bytes": 4785
+            },
+            "producer_record": {
+              "first_source_frame_index": 303,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000303.npz",
+                "sha256": "db5a8140f960d9fb1f733bc153894bf1bcd3a0bc437844d2ce9f767b509a4557",
+                "bytes": 1603613
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/attempts/000303_b3b069991a654c1f9ee1618418613187_started.json",
+                "sha256": "84d33d18d13ba48a4824ac65bc22a8ae5edaf834cf866bd8bae6f47228870c6f"
+              },
+              "attempt_id": "b3b069991a654c1f9ee1618418613187"
+            }
+          },
+          {
+            "start": 304,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000304.npz",
+              "sha256": "2afd79a57bc24e9d0a22cddc711f8c1d0b65ae16496e6193e2e7978da5524904",
+              "bytes": 1603987
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000304.json",
+              "sha256": "e33f4fc4762fbb287f169620e7146d1ace95adf64d6ebb6824f73c8fab6ab8b7",
+              "bytes": 4783
+            },
+            "producer_record": {
+              "first_source_frame_index": 304,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000304.npz",
+                "sha256": "2afd79a57bc24e9d0a22cddc711f8c1d0b65ae16496e6193e2e7978da5524904",
+                "bytes": 1603987
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/attempts/000304_5529223fc1494746a90296bc79be0024_started.json",
+                "sha256": "3d57298da00fb0d68c56f9a6eb60c9772329d7fade01c5133a0d6b7ca43b09f7"
+              },
+              "attempt_id": "5529223fc1494746a90296bc79be0024"
+            }
+          },
+          {
+            "start": 305,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000305.npz",
+              "sha256": "50698be1cfe0a4b5bd4f82adea5f97622551e4052224198aedff05cd031b16dc",
+              "bytes": 1604696
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000305.json",
+              "sha256": "878ca95f03925041859161a0d065846e690a054ff650326aa98c149d43ad979d",
+              "bytes": 4785
+            },
+            "producer_record": {
+              "first_source_frame_index": 305,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000305.npz",
+                "sha256": "50698be1cfe0a4b5bd4f82adea5f97622551e4052224198aedff05cd031b16dc",
+                "bytes": 1604696
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/attempts/000305_9ffb639df2a248718f35e0f05272fd22_started.json",
+                "sha256": "58f889a6a4ca498bfd2aeadebb4f5c4036fc9ac42c82b714d69e0fbaa7735e1c"
+              },
+              "attempt_id": "9ffb639df2a248718f35e0f05272fd22"
+            }
+          },
+          {
+            "start": 306,
+            "format": "native_adaptation",
+            "cache": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000306.npz",
+              "sha256": "c9984d2f0818d23e226abecd1235fc35bd183415d7ffeca4a1e15a0a0132b397",
+              "bytes": 1606093
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000306.json",
+              "sha256": "ef3d63f196129dc959cf49ad23e38a3547e948005945c25bb8d46a7ca199ef4c",
+              "bytes": 4784
+            },
+            "producer_record": {
+              "first_source_frame_index": 306,
+              "cache": {
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/triplet_000306.npz",
+                "sha256": "c9984d2f0818d23e226abecd1235fc35bd183415d7ffeca4a1e15a0a0132b397",
+                "bytes": 1606093
+              },
+              "started_record": {
+                "bytes": 293,
+                "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplets/attempts/000306_0de9ec2252b548469d838bf0cb6e39d9_started.json",
+                "sha256": "7d9e69e22a6dc8218e6bbcb1a5095623dfe68fcc9f2295a5a51ff3f63dd5519d"
+              },
+              "attempt_id": "0de9ec2252b548469d838bf0cb6e39d9"
+            }
+          }
+        ],
+        "old": [
+          {
+            "start": 300,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplet_000300.npz",
+              "sha256": "3404c4c3cd4217ff3e1086f8d3234f0048351c2af65aab62dae5e31763879ee9",
+              "bytes": 1593972
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplet_000300.json",
+              "sha256": "441afee6f400a63c94489c5aa331782b3005769d7ebf0c7d8bcf3da6c9cb9e94",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 301,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplet_000301.npz",
+              "sha256": "e9c2fe4f4504f791281798a9ddb88cce9588308828eb3b5848319a63ee173795",
+              "bytes": 1594092
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplet_000301.json",
+              "sha256": "726ded064dea767dd1218fb4b4145f511fa62816b2ef7ee5f5c0f49f1fa9b1df",
+              "bytes": 981
+            }
+          },
+          {
+            "start": 302,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplet_000302.npz",
+              "sha256": "5c9d1e710d8b50cffc3335bbcdf7cf5f4ad855280ba27fe708639c6f5bccde06",
+              "bytes": 1595899
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplet_000302.json",
+              "sha256": "4ac11928b0f5718eacd3e6050dcbea1698e84872f308ef2ff41246191f8c85e0",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 303,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplet_000303.npz",
+              "sha256": "f7034aa21fb6b683c163cce32fcbbe33c5a652747b177e5e974337128271cd2b",
+              "bytes": 1595320
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplet_000303.json",
+              "sha256": "6e561f3ec781cc30428bf7961615e7300af90c0fca9b9851ab0ed29644e45c1a",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 304,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplet_000304.npz",
+              "sha256": "dce7f05ed33c29364ef46e4523c4613da1d11af2f9ceac6a69859dde2a995c69",
+              "bytes": 1595425
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplet_000304.json",
+              "sha256": "8fbc254acdab82647665c3c214966cd2bc3ec0f6a26a9e9a3ce5cd48b437cb74",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 305,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplet_000305.npz",
+              "sha256": "6c7808daa890ec4d6f38db9dc350b38cbc27c848125758404cf9d0e94690d638",
+              "bytes": 1596329
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplet_000305.json",
+              "sha256": "72e134f602552da5b997639c385a043037630512f9bc37c431edabcf816399df",
+              "bytes": 982
+            }
+          },
+          {
+            "start": 306,
+            "format": "nfhs_original",
+            "cache": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplet_000306.npz",
+              "sha256": "d55448e0b564e024cd14843c6b5d805a3f167e7f279c736984c90c61f5e51ea1",
+              "bytes": 1597345
+            },
+            "receipt": {
+              "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/triplet_000306.json",
+              "sha256": "aae7db7564fdb4b6f0f6c7248f2dbdc138ecf0c7a32279c357d8aac88d301461",
+              "bytes": 982
+            }
+          }
+        ]
+      },
+      "kind": "nfhs",
+      "input_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/inputs/manifest.json",
+        "sha256": "d855e66376585a6713a27c1983d7bbcdb3977fe71edfa510b9fb8f14ddb50da3",
+        "bytes": 14618
+      },
+      "window": {
+        "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+        "purpose": "representative_evaluation",
+        "possession_id": "possession_003",
+        "source_video": {
+          "path": "data/clips/possession_003.mp4",
+          "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+          "width_px": 1920,
+          "height_px": 1080,
+          "fps": 25.0,
+          "frame_count": 500
+        },
+        "start_frame_index": 300,
+        "end_frame_index": 324,
+        "annotation_set_id": "possession_003_frames_0300_0324_representative_evaluation_v0_1",
+        "annotation": {
+          "path": "configs/ball_tracking/annotations/possession_003_frames_0300_0324_representative_evaluation_v0_1.json",
+          "sha256": "2b35475e715e9a4b816ad997b58be3201370695a2f420a35a6947696bbe3637e"
+        },
+        "rf_candidates": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/candidates.json",
+          "sha256": "7fa6a6d4b0ec153e30ffed53149cf4f00ffb11b9439138b8a0751f96d77b4cfa"
+        },
+        "mean_heatmaps": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/mean_heatmaps.npz",
+          "sha256": "7f3297bcecacf0793c1b0f7e8fd814137f0ac766acfca8cc4e2bea2a8e9438b1"
+        },
+        "heatmap_receipt": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/points_receipt.json",
+          "sha256": "610c4bcbbd9152fa261414e8e9bd23073fa084b32f25877b151d38008c618e01"
+        },
+        "original_evaluation": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/evaluation.json",
+          "sha256": "7a3a4a67f9fe6b7722f312b9bf25659137e7bfbee1a8ef81728464eb44626267"
+        },
+        "original_points": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/points.json",
+          "sha256": "24fa1d379d23bf3d0c35ca03a89c61ead6ce492530160d3a40a95d2fc015bfa3"
+        },
+        "inference_identity": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/inference_identity.json",
+          "sha256": "b2627a4435a541bcff627a8505bc89f7d9480de4e53b9a86eb7a851f1881bbc4"
+        }
+      },
+      "baseline": {
+        "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+        "components": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/threshold_0.3/components.json",
+          "sha256": "29ff4b2d84f7398fb747aca5365869ef4d860a6f13f973cb7a7579100ba8054b",
+          "bytes": 8189
+        },
+        "points": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/threshold_0.3/points.json",
+          "sha256": "7e61a2a184987b2278c5d7681eaff0b7838a95ed97912919e602b908ce4f9c8b",
+          "bytes": 11223
+        },
+        "evaluation": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/threshold_0.3/evaluation.json",
+          "sha256": "7d52de65f54be2c4859b8bb7e650077377865c47dfeb57f2621ade36e5ed65ec",
+          "bytes": 37333
+        }
+      },
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_003_frames_0300_0324_representative_evaluation_v0_1.json",
+        "sha256": "2b35475e715e9a4b816ad997b58be3201370695a2f420a35a6947696bbe3637e",
+        "bytes": 13775
+      },
+      "original_mean_bundle": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/mean_heatmaps.npz",
+        "sha256": "7f3297bcecacf0793c1b0f7e8fd814137f0ac766acfca8cc4e2bea2a8e9438b1",
+        "bytes": 13225598
+      },
+      "original_cache_receipt": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/points_receipt.json",
+        "sha256": "610c4bcbbd9152fa261414e8e9bd23073fa084b32f25877b151d38008c618e01",
+        "bytes": 452
+      },
+      "original_identity": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/evaluation/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/inference_identity.json",
+        "sha256": "b2627a4435a541bcff627a8505bc89f7d9480de4e53b9a86eb7a851f1881bbc4",
+        "bytes": 1616
+      }
+    }
+  ],
+  "totals": {
+    "frames": 37,
+    "means": 74,
+    "anchors": 10,
+    "anchor_planes": 20,
+    "triplet_bodies": 94,
+    "triplet_compressed_bytes": 149913392,
+    "nfhs_old_mean_bundles": 3,
+    "nfhs_old_bundle_stored_planes_loaded": 75,
+    "nfhs_old_selected_planes_measured": 22,
+    "anchor_losses": 6,
+    "anchor_recoveries": 4
+  },
+  "limitations": [
+    "Failure/recovery-selected development context, not a causal test of overfitting or forgetting.",
+    "NFHS old caches bind original source/window/frame indices and model identity, not captured PNG or PTS hashes. New manifest provides source frame/PTS mapping.",
+    "Historical NFHS cache producer threshold 0.5 is retained; selection parity uses previously published strict 0.3 calibration.",
+    "Null or ineligible reference geometry remains null; no inferred centers.",
+    "Failed adaptation screen and retained expanded baseline remain unchanged."
+  ],
+  "scope_preparation_history": [
+    {
+      "event": "Before numerical cache reads, added paired fixed-location response at old/new selected centers within the same 74 means, to distinguish ball-response loss from distractor-response gain.",
+      "initial_scope_copy": "data/outputs/ball_tracking/nba/adaptation_regression_diagnostic_v0_1/preparation/scope_initial_before_fixed_region_addendum.json"
+    }
+  ],
+  "context_radius_native_frames": 2
+}

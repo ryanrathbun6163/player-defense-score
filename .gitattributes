@@ -45,3 +45,8 @@ src/ball_tracking/nba_wasb_adaptation.py -text
 src/ball_tracking/nba_adaptation_comparison.py -text
 tests/test_nba_wasb_adaptation.py -text
 tests/test_nba_adaptation_comparison.py -text
+# Preserve the paired saved-response diagnostic and its recorded implementation.
+configs/ball_tracking/selections/nba_adaptation_regression_diagnostic_v0_1.json -text
+configs/ball_tracking/reviews/nba_adaptation_regression_diagnostic_result_v0_1.json -text
+src/ball_tracking/nba_adaptation_regression_diagnostic.py -text
+tests/test_nba_adaptation_regression_diagnostic.py -text
