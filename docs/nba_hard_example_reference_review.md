@@ -1,5 +1,25 @@
 # NBA difficult-scene label review
 
+**Current status: all four label packages accepted; saved-output scoring complete.**
+Ryan accepted the centers, uncertainty, unknown intervals and actual final frames
+without corrections: “all of these look great chat. I have no qualms with any of
+them”. The [acceptance record](../configs/ball_tracking/reviews/nba_hard_example_label_acceptance_v0_1.json)
+preserves his complete statement and binds the presented packages. This is
+user-reported review, without claimed playback telemetry. The separate accepted
+reference retains AI authorship and all 133 null centers.
+
+The [completed diagnostic](nba_hard_example_reference_results.md) scores only
+saved frozen outputs: 305/387 eligible matches, 13 localization errors, 69 missing
+outputs and 13/86 hidden-ball alarms. The separate longer-context pilot controls
+remain 120/120. Six-fps label overlays show accepted reference positions; their
+apparent smoothness does not establish an improvement in model trajectories or
+a comparative NBA/high-school accuracy result. No new inference or training ran.
+
+The preparation and review instructions below are historical. Acceptance and
+scoring supersede their pending status; original proposals and media remain intact.
+
+## Prepared review packages and protocol (historical)
+
 Four complete label-overlay videos are ready for Ryan's review. His “Ok move
 forward” approved preparation of the exact 520-frame batch; it did not accept
 the resulting labels. These remain **AI proposals pending human acceptance**.

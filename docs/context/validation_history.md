@@ -1,6 +1,55 @@
 # Validation History
 
-## Approved NBA hard-example labels prepared; human acceptance pending
+## Difficult-scene label acceptance, reference publication and saved-output scoring
+
+Ryan accepted all four complete prepared label packages without corrections.
+The [acceptance record](../../configs/ball_tracking/reviews/nba_hard_example_label_acceptance_v0_1.json)
+binds that later human event and retains AI authorship, prior prediction exposure,
+uncertainty and the original proposal/media bytes. Publication produced a
+separate 520-frame accepted reference: 387 centers and 133 null geometries.
+The [prior-artifact preservation receipt](../../data/outputs/ball_tracking/nba/hard_example_reference_v0_1/validation/acceptance_prior_preservation_01.json)
+confirms all 29 scoped prior bindings are unchanged.
+
+Thirty distinct focused checks passed in this increment: 21 publication-related
+checks (six new, six existing reviewed-reference and nine asset checks), plus
+nine saved-output scorer checks. The initial scorer run had seven fixture
+setup errors across nine tests; that attempt remains recorded, and corrected
+fixtures passed the affected checks. The prior 26 tests below belong to label
+preparation; these are separate validation scopes, not one combined suite.
+The full suite was not repeated. Independent review of the scorer found no
+actionable issues. The independent [actual-report audit](../../data/outputs/ball_tracking/nba/hard_example_reference_v0_1/diagnostics/saved_score_v0_1/independent_audit_01/audit.json)
+passed on its first attempt with zero issues: 20 bound JSON/source files, all
+2,702 producer inventory records and 640 emitted scored rows. Summaries and
+native-time intervals agree; 112 pilot interiors and eight changed-context
+edges were independently checked. A separate [original-pilot preservation
+check](../../data/outputs/ball_tracking/nba/hard_example_reference_v0_1/validation/original_short_pilot_preservation_01.json)
+confirms the original tracked result and five generated score JSON files remain
+byte-identical.
+
+The saved-only diagnostic completed in 1.094 seconds with zero inference calls,
+training runs, image/video decodes or heatmap reaggregations. It verified the
+complete saved observation/component inventory and scored the approved 520
+new frames plus 120 separate pilot controls. At the unchanged inclusive
+10-source-pixel rule, new eligible centers yielded 305 matches, 13 wrong
+locations and 69 misses out of 387. The 13 wrong distances exceed ten pixels
+and reach 14.755 pixels; uncertainty is reported separately without changing
+matches. There were 13 alarms among 86 hidden references; 47 other frames stayed
+unscored. No localization geometry was fabricated for the 133 null centers.
+
+All 82 eligible failures lack an alternative saved strict `>0.3` component
+within ten pixels. Existing-candidate reranking cannot recover them. The longer
+pilot controls remain 120/120, explicitly retaining their eight context-edge
+changes; the original short-context score was neither recomputed nor replaced.
+See the [result report](../nba_hard_example_reference_results.md) and
+[compact result record](../../configs/ball_tracking/reviews/nba_hard_example_saved_diagnostic_result_v0_1.json).
+
+This failure-selected, correlated human-accepted AI reference is a development
+diagnostic, not an independent NBA benchmark. Slowed label-overlay appearance
+is not model improvement. No fitting or threshold change is approved by this
+result. Game roles, protected holdouts, the NFHS finish line and three pending
+motion human reviews remain unchanged.
+
+## Earlier preparation (historical): NBA hard-example labels awaiting acceptance
 
 Ryan approved the exact 520-frame scope with “Ok move forward”. The separate
 [approval](../../configs/ball_tracking/reviews/nba_hard_example_reference_approval_v0_1.json)

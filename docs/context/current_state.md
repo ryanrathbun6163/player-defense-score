@@ -1,6 +1,46 @@
 # Current State
 
-## Latest increment: 520 NBA label proposals prepared for human review
+## Latest increment: difficult-scene labels accepted and saved predictions scored
+
+Ryan accepted all four complete label-overlay videos without corrections. The
+[acceptance record](../../configs/ball_tracking/reviews/nba_hard_example_label_acceptance_v0_1.json)
+preserves his statement and binds the centers, uncertainty, unknown intervals
+and actual final frames. User-reported acceptance remains distinct from AI
+label authorship; no playback telemetry is claimed. A separate accepted
+reference retains all 520 labels, including 387 defensible centers and 133 null
+centers. Original proposals, media and prior results are unchanged.
+
+The [saved-output diagnostic](../nba_hard_example_reference_results.md) completed
+in 1.094 seconds: **305 matches, 13 wrong locations and 69 missing outputs** among
+387 eligible centers. All 13 wrong locations are just beyond ten pixels and no
+farther than 14.755 pixels. Separately, 13/86 hidden-ball frames emit an alarm;
+47 other frames remain unscored. The 133 null centers are not assigned invented
+geometry. The 120 easy controls remain 120/120 against longer-context outputs,
+with eight changed-context edges kept separate from the original pilot score.
+
+None of the 82 localization failures has another saved strict `>0.3` candidate
+within ten pixels. Reordering those existing candidates cannot recover these
+failures; this does not rule out subthreshold ball evidence. The scoring step used no new inference,
+training, threshold change, image/video decoding or heatmap reaggregation.
+Publication separately verified all 520 native PNGs.
+Publication passed 21 distinct focused checks and the scorer passed nine. The
+independent actual-report audit passed with zero issues, checking all 2,702
+producer records and 640 scored rows, summaries and native-time intervals.
+Earlier preparation failures and the scorer's corrected fixture attempt remain
+preserved.
+
+**Next concrete action:** prepare a bounded saved-heatmap inspection to explain
+the 69 misses and 13 marginal localization errors before choosing fitting or
+threshold changes. This is a recommendation, not approval of a new experiment.
+These correlated, failure-selected human-accepted AI labels are a development
+diagnostic, not an independent NBA benchmark. The six-fps label overlays do not
+measure model trajectory improvement or comparative NBA/high-school accuracy.
+
+SAC remains future-training-eligible, DET excluded from fitting and TOR outside
+scope. Prior pilot acceptance, protected holdouts, the NFHS finish line and the
+negative motion result remain unchanged; its three human reviews are pending.
+
+## Earlier increment (historical): 520 NBA label proposals prepared for human review
 
 Ryan approved the exact four-window scope: “Ok move forward”. The separate
 [approval](../../configs/ball_tracking/reviews/nba_hard_example_reference_approval_v0_1.json)

@@ -1,0 +1,503 @@
+{
+  "schema_version": "nba_hard_example_saved_diagnostic_result/v0.1",
+  "status": "accepted_references_published_saved_scores_completed_and_audited",
+  "recorded_at_utc": "2026-10-20T03:42:46.286659+00:00",
+  "event_date_local": "2026-10-19",
+  "timezone": "America/Phoenix",
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "d05c6945c7f03d9fc9f860ce7a6cd23175583934"
+  },
+  "execution_source_state": "New publisher and scorer executed from working-tree source bytes bound below; later local integration is verified separately.",
+  "scope_proposal": {
+    "path": "configs/ball_tracking/selections/nba_hard_example_reference_proposal_v0_1.json",
+    "bytes": 12189,
+    "sha256": "da8bfd01249ae6a803cca4ccd7686a727af4cf3c494358696115adca3ab1611b"
+  },
+  "scope_approval": {
+    "path": "configs/ball_tracking/reviews/nba_hard_example_reference_approval_v0_1.json",
+    "bytes": 2637,
+    "sha256": "e0a855cb2b28c8ecf3cfdcb8535fba37448bc9f92abc980c1dbf8785f36855f8"
+  },
+  "preparation_record": {
+    "path": "configs/ball_tracking/reviews/nba_hard_example_reference_preparation_v0_1.json",
+    "bytes": 21734,
+    "sha256": "6025affc712bc59bc8457fa41620209a04f1739f4d00b87e295fcf4460b0180f"
+  },
+  "label_acceptance": {
+    "path": "configs/ball_tracking/reviews/nba_hard_example_label_acceptance_v0_1.json",
+    "bytes": 12322,
+    "sha256": "1dc57528eae8075ff131a8b8d527ddc0515b9f30f684f299255d88b1bd7a7930"
+  },
+  "user_statement": "all of these look great chat. I have no qualms with any of them, and this honestly looks way smoother than any of the high school basketball clips we were trying to work with",
+  "accepted_reference": {
+    "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/accepted/reference.json",
+    "bytes": 688436,
+    "sha256": "91bd79c73e47193c4344b630205efee34c1636bec4bcb7bc4985846a1c6ad3a3"
+  },
+  "publication": {
+    "status": "human_accepted_assisted_reference",
+    "windows": 4,
+    "native_pngs_verified": 520,
+    "original_video_bytes_read": 0,
+    "original_video_decodes": 0,
+    "original_drafts_modified": false,
+    "proposals_modified": false,
+    "model_calls": 0,
+    "training_runs": 0,
+    "scoring_runs": 0,
+    "log": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/validation/accepted_reference_publication_01.log",
+      "bytes": 274,
+      "sha256": "1160274eada04847765aef1ca99193b0a0c08044c6684b68f61b8a3a188b3b45"
+    }
+  },
+  "execution": {
+    "scoring_attempts": 1,
+    "failed_scoring_attempts": 0,
+    "elapsed_seconds": 1.0939999999973224,
+    "completion": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/diagnostics/saved_score_v0_1/completion.json",
+      "bytes": 4335,
+      "sha256": "d3c42216d562082b0a79debf19dfd120b86b5340e8cb9e080951967e60b272cc"
+    },
+    "report": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/diagnostics/saved_score_v0_1/attempts/9e8067a522fb4e5d8edaf1b8f4e525e6/report.json",
+      "sha256": "779199c4ffbaf50d3c6d062aa570cbba00675fb29c70a138af77ddf3f115bc2c",
+      "bytes": 1228596
+    },
+    "summary": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/diagnostics/saved_score_v0_1/attempts/9e8067a522fb4e5d8edaf1b8f4e525e6/summary.json",
+      "sha256": "e0ba70e7d3ed602bbc7938f2f38f3370642c4b161388f7a6a1f965e045ff8592",
+      "bytes": 43238
+    },
+    "run_log": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/diagnostics/saved_score_run.log",
+      "bytes": 4335,
+      "sha256": "d3c42216d562082b0a79debf19dfd120b86b5340e8cb9e080951967e60b272cc"
+    },
+    "model_calls": 0,
+    "training_runs": 0,
+    "image_decodes": 0,
+    "video_decodes": 0,
+    "heatmap_reaggregations": 0
+  },
+  "source_and_tests": [
+    {
+      "path": "src/ball_tracking/nba_hard_example_reference.py",
+      "bytes": 14159,
+      "sha256": "66b06012af6db8c4e0ecde44e0116d50fee5424e5d3b195b6826ec9e48265382"
+    },
+    {
+      "path": "src/ball_tracking/nba_hard_example_diagnostic.py",
+      "bytes": 24479,
+      "sha256": "73a800b385a5477cd6c98ad87a8adda9f4d6f4d57880fd52fedd11fc85bbd5c9"
+    },
+    {
+      "path": "tests/test_nba_hard_example_reference.py",
+      "bytes": 15594,
+      "sha256": "31c71270149004def913b5e552e1da585967c9730e72cb80fa6f8a9a0b094fd8"
+    },
+    {
+      "path": "tests/test_nba_hard_example_diagnostic.py",
+      "bytes": 8536,
+      "sha256": "37f02d1cf6b16243688b520d65d4f8f40c0c453353cbd592ccbfea796832d0d2"
+    }
+  ],
+  "recipe": {
+    "checkpoint_sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+    "heatmap_threshold_strict": 0.3,
+    "selector": "largest component mass, stable candidate index tie break",
+    "localization_radius_source_px_inclusive": 10,
+    "uncertainty_relaxes_matches": false,
+    "native_timing": true,
+    "saved_predictions_only": true
+  },
+  "cohorts": {
+    "hard_example": {
+      "frames": 520,
+      "eligible_frames": 387,
+      "matched": 305,
+      "wrong": 13,
+      "missing": 69,
+      "hidden_alarm": 13,
+      "hidden_quiet": 73,
+      "unscored": 47,
+      "match_fraction_of_eligible": 0.7881136950904393,
+      "hidden_reference_frames": 86,
+      "hidden_alarm_fraction": 0.1511627906976744,
+      "raw_center_error_all_emitted_eligible": {
+        "count": 318,
+        "mean_px": 4.909047616549905,
+        "median_px": 4.642129673467797,
+        "max_px": 14.755208367237588
+      },
+      "raw_center_error_matched": {
+        "count": 305,
+        "mean_px": 4.635002186559787,
+        "median_px": 4.476454727114079,
+        "max_px": 9.82135549850018
+      },
+      "raw_center_error_wrong": {
+        "count": 13,
+        "mean_px": 11.338575012471876,
+        "median_px": 11.268753811821304,
+        "max_px": 14.755208367237588
+      },
+      "uncertainty_adjusted_error_all_emitted_eligible": {
+        "count": 318,
+        "mean_px": 0.7148535059618898,
+        "median_px": 0.0,
+        "max_px": 7.7552083672375876
+      },
+      "annotation_uncertainty_radius_eligible": {
+        "count": 387,
+        "mean_px": 5.449612403100775,
+        "median_px": 5.0,
+        "max_px": 9.0
+      },
+      "candidate_available_eligible": 305,
+      "failed_selection_with_alternative_candidate": 0,
+      "failed_selection_without_candidate": 82,
+      "wrong_with_alternative_candidate": 0,
+      "missing_with_candidate": 0,
+      "saved_candidate_inventory_count": 387,
+      "changed_pilot_context_edge_frames": 0,
+      "visibility": {
+        "fully_visible": 56,
+        "indeterminate": 23,
+        "not_visible": 86,
+        "partially_visible": 355
+      }
+    },
+    "pilot_control": {
+      "frames": 120,
+      "eligible_frames": 120,
+      "matched": 120,
+      "wrong": 0,
+      "missing": 0,
+      "hidden_alarm": 0,
+      "hidden_quiet": 0,
+      "unscored": 0,
+      "match_fraction_of_eligible": 1.0,
+      "hidden_reference_frames": 0,
+      "hidden_alarm_fraction": null,
+      "raw_center_error_all_emitted_eligible": {
+        "count": 120,
+        "mean_px": 2.8291964098618165,
+        "median_px": 2.763392519228833,
+        "max_px": 5.179421885426179
+      },
+      "raw_center_error_matched": {
+        "count": 120,
+        "mean_px": 2.8291964098618165,
+        "median_px": 2.763392519228833,
+        "max_px": 5.179421885426179
+      },
+      "raw_center_error_wrong": {
+        "count": 0,
+        "mean_px": null,
+        "median_px": null,
+        "max_px": null
+      },
+      "uncertainty_adjusted_error_all_emitted_eligible": {
+        "count": 120,
+        "mean_px": 0.009370921946398403,
+        "median_px": 0.0,
+        "max_px": 0.4004869069184105
+      },
+      "annotation_uncertainty_radius_eligible": {
+        "count": 120,
+        "mean_px": 4.633333333333334,
+        "median_px": 4.0,
+        "max_px": 9.0
+      },
+      "candidate_available_eligible": 120,
+      "failed_selection_with_alternative_candidate": 0,
+      "failed_selection_without_candidate": 0,
+      "wrong_with_alternative_candidate": 0,
+      "missing_with_candidate": 0,
+      "saved_candidate_inventory_count": 127,
+      "changed_pilot_context_edge_frames": 8,
+      "visibility": {
+        "fully_visible": 71,
+        "partially_visible": 49
+      }
+    }
+  },
+  "windows": [
+    {
+      "window_id": "sac_distractor_recovery",
+      "cohort": "hard_example",
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "approved_role": "future_training_candidate_pool",
+      "source_frame_range_inclusive": [
+        940,
+        1059
+      ],
+      "summary": {
+        "frames": 120,
+        "eligible_frames": 90,
+        "matched": 87,
+        "wrong": 3,
+        "missing": 0,
+        "hidden_alarm": 0,
+        "hidden_quiet": 17,
+        "unscored": 13,
+        "hidden_reference_frames": 17,
+        "failed_selection_with_alternative_candidate": 0,
+        "failed_selection_without_candidate": 3,
+        "changed_pilot_context_edge_frames": 0
+      }
+    },
+    {
+      "window_id": "sac_held_ball_gaps",
+      "cohort": "hard_example",
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "approved_role": "future_training_candidate_pool",
+      "source_frame_range_inclusive": [
+        1240,
+        1359
+      ],
+      "summary": {
+        "frames": 120,
+        "eligible_frames": 120,
+        "matched": 71,
+        "wrong": 2,
+        "missing": 47,
+        "hidden_alarm": 0,
+        "hidden_quiet": 0,
+        "unscored": 0,
+        "hidden_reference_frames": 0,
+        "failed_selection_with_alternative_candidate": 0,
+        "failed_selection_without_candidate": 49,
+        "changed_pilot_context_edge_frames": 0
+      }
+    },
+    {
+      "window_id": "det_distractor_long_gap",
+      "cohort": "hard_example",
+      "candidate_id": "sas_det_q1_c02",
+      "game_id": "0022500828",
+      "approved_role": "target_case_development",
+      "source_frame_range_inclusive": [
+        11000,
+        11119
+      ],
+      "summary": {
+        "frames": 120,
+        "eligible_frames": 65,
+        "matched": 45,
+        "wrong": 0,
+        "missing": 20,
+        "hidden_alarm": 12,
+        "hidden_quiet": 29,
+        "unscored": 14,
+        "hidden_reference_frames": 41,
+        "failed_selection_with_alternative_candidate": 0,
+        "failed_selection_without_candidate": 20,
+        "changed_pilot_context_edge_frames": 0
+      }
+    },
+    {
+      "window_id": "det_drive_rim_overlap",
+      "cohort": "hard_example",
+      "candidate_id": "sas_det_q1_c02",
+      "game_id": "0022500828",
+      "approved_role": "target_case_development",
+      "source_frame_range_inclusive": [
+        11420,
+        11579
+      ],
+      "summary": {
+        "frames": 160,
+        "eligible_frames": 112,
+        "matched": 102,
+        "wrong": 8,
+        "missing": 2,
+        "hidden_alarm": 1,
+        "hidden_quiet": 27,
+        "unscored": 20,
+        "hidden_reference_frames": 28,
+        "failed_selection_with_alternative_candidate": 0,
+        "failed_selection_without_candidate": 10,
+        "changed_pilot_context_edge_frames": 0
+      }
+    },
+    {
+      "window_id": "sac_mem_q1_c01_pilot_control",
+      "cohort": "pilot_control",
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "approved_role": "future_training_candidate_pool",
+      "source_frame_range_inclusive": [
+        660,
+        719
+      ],
+      "summary": {
+        "frames": 60,
+        "eligible_frames": 60,
+        "matched": 60,
+        "wrong": 0,
+        "missing": 0,
+        "hidden_alarm": 0,
+        "hidden_quiet": 0,
+        "unscored": 0,
+        "hidden_reference_frames": 0,
+        "failed_selection_with_alternative_candidate": 0,
+        "failed_selection_without_candidate": 0,
+        "changed_pilot_context_edge_frames": 4
+      }
+    },
+    {
+      "window_id": "sas_det_q1_c02_pilot_control",
+      "cohort": "pilot_control",
+      "candidate_id": "sas_det_q1_c02",
+      "game_id": "0022500828",
+      "approved_role": "target_case_development",
+      "source_frame_range_inclusive": [
+        10788,
+        10847
+      ],
+      "summary": {
+        "frames": 60,
+        "eligible_frames": 60,
+        "matched": 60,
+        "wrong": 0,
+        "missing": 0,
+        "hidden_alarm": 0,
+        "hidden_quiet": 0,
+        "unscored": 0,
+        "hidden_reference_frames": 0,
+        "failed_selection_with_alternative_candidate": 0,
+        "failed_selection_without_candidate": 0,
+        "changed_pilot_context_edge_frames": 4
+      }
+    }
+  ],
+  "complete_saved_inventory_verified": [
+    {
+      "candidate_id": "sac_mem_q1_c01",
+      "frames": 1471,
+      "candidate_components": 1557,
+      "states": {
+        "observed": 1310,
+        "missing": 161
+      }
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "frames": 1231,
+      "candidate_components": 1154,
+      "states": {
+        "missing": 161,
+        "observed": 1070
+      }
+    }
+  ],
+  "independent_audit": {
+    "status": "passed",
+    "issues": [],
+    "receipt": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/diagnostics/saved_score_v0_1/independent_audit_01/audit.json",
+      "bytes": 48915,
+      "sha256": "2d121425d66d77d77cd382ffb469f70f9c502686586c398695231b4a869384d7"
+    },
+    "source": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/diagnostics/saved_score_v0_1/independent_audit_01/audit_saved_score.py",
+      "bytes": 19919,
+      "sha256": "108487e8c95fa4a18f25912bc6fef9af128793cd668a770a52090b2ab2bb4632"
+    },
+    "scored_frame_rows_verified": 640,
+    "full_saved_inventory_frames_verified": 2702,
+    "separate_pilot_edge_matches": 8,
+    "separate_pilot_interior_matches": 112,
+    "elapsed_seconds": 0.0940000000045984,
+    "method": "Independent standard-library reconstruction from accepted references and frozen source records; no project scoring imports, media decoding or heatmap loading."
+  },
+  "validation": {
+    "distinct_focused_tests_passed": 30,
+    "publication_tests": 6,
+    "existing_pilot_publication_tests": 6,
+    "hard_example_asset_tests": 9,
+    "saved_diagnostic_tests": 9,
+    "publication_test_record": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/validation/publication_focused_checks_20261020T033904.log",
+      "bytes": 5338,
+      "sha256": "65657fd1be3454ce6ad59850452f955abdd705596430d33e2104fb9473460030"
+    },
+    "scorer_test_history": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/diagnostics/saved_score_test_history.json",
+      "bytes": 2705,
+      "sha256": "497a9b08a0b700b20e13fb8c3dcabb74b4285c5360606267c80409fd2efbfaaf"
+    },
+    "test_log_origin": "Transcribed from actual completed tool outputs after execution, explicitly identified as such; tests were not repeated merely to create logs.",
+    "full_suite_run": false,
+    "code_review": "Independent agent read the scorer/tests and found no actionable defect in matching, exact joins, eligibility, candidate accounting, intervals or control separation.",
+    "actual_transport": "Publisher verified all520 original native PNGs; independent diagnostic audit reconstructed actual emitted640 rows."
+  },
+  "preservation": {
+    "prior_scope_and_artifacts": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/validation/acceptance_prior_preservation_01.json",
+      "bytes": 7230,
+      "sha256": "e33171b1b42c43b739545934aa94342e2eb1e328b23cecd70059a07b31134b5a"
+    },
+    "original_short_pilot": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/validation/original_short_pilot_preservation_01.json",
+      "bytes": 1614,
+      "sha256": "4366a920b4b51a487b04458861dd7f3de7c62376550a79f0a16e00a80e6b561a"
+    },
+    "original_short_pilot_score_recomputed_or_overwritten": false,
+    "original_preparation_and_proposals_remain_pending_era_evidence": true,
+    "generated_files_ignored": true
+  },
+  "failures_preserved": [
+    {
+      "stage": "scorer unit-test fixture",
+      "first_run_tests": 9,
+      "first_run_errors": 7,
+      "cause": "Synthetic geometry included unsupported type field. Corrected fixture to the actual annotation schema; later all9 tests passed. Source/test hashes in history identify final tested bytes.",
+      "history": {
+        "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/diagnostics/saved_score_test_history.json",
+        "bytes": 2705,
+        "sha256": "497a9b08a0b700b20e13fb8c3dcabb74b4285c5360606267c80409fd2efbfaaf"
+      }
+    },
+    {
+      "stage": "prior label preparation",
+      "note": "Prior helper failures, draft corrections and targeted reviewer capacity error remain bound in the unchanged preparation record; they are not new failures of this scoring increment."
+    }
+  ],
+  "interpretation": {
+    "eligible_failures_without_any_saved_matching_candidate": 82,
+    "eligible_wrong_distance_range": "greater than10 and at most14.755208367237588 source pixels",
+    "candidate_selection": "No failure has a usable saved alternative within10px; reranking these saved >0.3 candidates cannot repair the82 measured failures. This does not rule out subthreshold ball evidence.",
+    "hidden_outputs": "13 outputs occur on86 eligible hidden-reference frames; this diagnostic does not assign a defensible ball center to hidden frames.",
+    "missingness": "69 eligible frames lack any selected output;47 are in the SAC held-ball window and20 in the Detroit overlap/gap window.",
+    "unknowns": "133 null centers comprise86 hidden frames eligible for alarm scoring and47 otherwise-unscored frames:24 partially visible unsupported centers and23 indeterminate frames.",
+    "controls": "Separate longer-context pilot controls match120/120; eight context-changed edges are8/8 and112interior frames112/112. Original short-context score remains unchanged.",
+    "footage_impression": "Ryan reported the reference videos look smoother than prior high-school clips. These are slowed AI-label overlays, not a new native-time model result or a controlled NBA/NFHS comparison."
+  },
+  "limits": [
+    "Failure-selected development frames, not representative NBA accuracy or an independent test.",
+    "Adjacent frames are correlated; no independent-sample confidence claim.",
+    "Unsupported geometry stays localization-unscored. Hidden alarms use only certain/probable not_visible labels.",
+    "AI authorship and human acceptance are distinct; prior prediction exposure is preserved.",
+    "Oracle availability is not a deployed selector; absent components do not prove no subthreshold ball evidence.",
+    "Following-frame cues do not certify continuous recovery across unknown labels or beyond each window.",
+    "SAC eligibility, Detroit exclusion from fitting, holdouts and NFHS finish line are unchanged."
+  ],
+  "boundaries": {
+    "sac": "future_training_candidate_pool; no new fit authorized",
+    "det": "target_case_development; excluded from fitting",
+    "tor": "outside scope",
+    "protected_holdouts_unchanged": true,
+    "nfhs_finish_line_unchanged": true,
+    "motion_result_unchanged": "negative",
+    "new_motion_human_reviews_pending": 3,
+    "full_possession_or_phase_accepted": false
+  },
+  "next_step_recommendation": "Prepare a bounded saved-heatmap inspection of missing and marginally localized frames to distinguish weak or displaced evidence before proposing training, threshold or other model changes. This recommendation is not an approved or executed new experiment."
+}

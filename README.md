@@ -104,13 +104,18 @@ preserve these limitations. After both complete videos were delivered in chat
 for phone viewing, Ryan reported: “Ok reviewed. What’s the next step”. This
 records review completion, without playback telemetry or an explicit quality
 endorsement. Ryan then approved the [520-frame reference batch](docs/nba_hard_example_reference_plan.md):
-“Ok move forward”. Four complete [label-review packages](docs/nba_hard_example_reference_review.md)
-are now prepared, with **387 proposed ball centers and 133 unknown centers**.
-All 520 source/render PNG checks and four video transport audits passed; 26
-focused tests passed. These are AI proposals awaiting Ryan's label acceptance.
-Only after acceptance will a separate accepted reference be published and saved
-outputs scored, with 120 existing pilot references as separate controls. No new
-scoring, inference or training has run. Existing holdouts, the NFHS finish line,
+“Ok move forward”. Ryan has now accepted all four complete
+[label-review packages](docs/nba_hard_example_reference_review.md) without
+corrections. The separate accepted AI reference retains **387 defensible centers
+and 133 unknown centers**. The [saved-output diagnostic](docs/nba_hard_example_reference_results.md)
+finds 305 matches, 13 localization errors and 69 missing outputs among the 387
+eligible frames, plus 13 alarms in 86 hidden-ball frames. The 120 easy controls
+remain 120/120 in their longer context. None of the 82 localization failures has
+an alternative saved candidate within ten pixels, so reranking the existing
+candidates cannot recover them. These correlated, failure-selected labels are
+a development diagnostic; slowed label overlays do not demonstrate improved
+model trajectories or comparative NBA accuracy. No new inference, training or
+threshold change occurred. Existing holdouts, the NFHS finish line,
 game roles and the negative motion result remain unchanged; three motion-video
 human reviews remain pending.
 

@@ -24,3 +24,10 @@ configs/ball_tracking/reviews/nba_hard_example_reference_approval_v0_1.json -tex
 configs/ball_tracking/reviews/nba_hard_example_reference_preparation_v0_1.json -text
 src/ball_tracking/nba_annotations.py -text
 tests/test_nba_hard_example_assets.py -text
+# Preserve accepted-reference and saved-only diagnostic evidence bytes.
+configs/ball_tracking/reviews/nba_hard_example_label_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/nba_hard_example_saved_diagnostic_result_v0_1.json -text
+src/ball_tracking/nba_hard_example_reference.py -text
+src/ball_tracking/nba_hard_example_diagnostic.py -text
+tests/test_nba_hard_example_reference.py -text
+tests/test_nba_hard_example_diagnostic.py -text

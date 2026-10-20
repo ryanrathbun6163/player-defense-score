@@ -1,18 +1,26 @@
 # NBA difficult-scene reference batch
 
-Ryan approved the exact scope below with “Ok move forward”. The separate
-[approval record](../configs/ball_tracking/reviews/nba_hard_example_reference_approval_v0_1.json)
-binds the unchanged original proposal, whose pending status is historical.
-The four [label-review packages](nba_hard_example_reference_review.md) are now
-prepared: 520 AI proposals, including 387 proposed centers and 133 null centers.
-The [preparation record](../configs/ball_tracking/reviews/nba_hard_example_reference_preparation_v0_1.json)
-binds source evidence, preserved attempts, passing focused tests and all four
-completed media audits.
+**Current status: approved batch accepted and saved-output scoring complete.**
+Ryan approved this exact scope with “Ok move forward”, then accepted all four
+complete [label-review packages](nba_hard_example_reference_review.md) without
+corrections. The separate [scope approval](../configs/ball_tracking/reviews/nba_hard_example_reference_approval_v0_1.json),
+[preparation record](../configs/ball_tracking/reviews/nba_hard_example_reference_preparation_v0_1.json)
+and [label acceptance](../configs/ball_tracking/reviews/nba_hard_example_label_acceptance_v0_1.json)
+preserve those distinct events and the unchanged original proposal.
 
-**Ryan's label acceptance is pending.** No new accepted reference, scoring,
-inference or training has occurred. After explicit acceptance, publish separate
-accepted AI references and score saved outputs within the original approved
-scope. The original proposal below remains intact as the record of that decision.
+The [completed diagnostic](nba_hard_example_reference_results.md) uses the
+accepted AI reference: 387 defensible centers and 133 null centers among 520
+frames. Saved outputs produce 305 matches, 13 localization errors and 69 missing
+outputs on eligible centers, plus 13 alarms in 86 hidden-ball frames. Separate
+longer-context pilot controls remain 120/120, including their eight changed
+context edges; the original short-context result is unchanged.
+
+No new inference, training, threshold change or heatmap reaggregation occurred.
+None of the 82 localization failures has a usable alternative in the saved
+strict `>0.3` component inventory. The next recommendation is to prepare a
+bounded inspection of saved heatmaps before choosing fitting or threshold
+changes; no new experiment is approved here. The original proposal below is
+preserved as historical evidence, including its original pending status.
 
 ## Original proposal (historical)
 

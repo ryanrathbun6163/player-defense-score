@@ -1,6 +1,30 @@
 # Roadmap
 
-## Current action: review four prepared NBA reference-label videos
+## Current action: prepare a bounded saved-heatmap inspection
+
+Ryan accepted all four difficult-scene label packages without corrections.
+Separate accepted AI references are published and the approved saved-only
+[diagnostic is complete](../nba_hard_example_reference_results.md): 305/387
+eligible matches, 13 localization errors and 69 misses, with 13/86 hidden-ball
+alarms and 47 other unscored frames. The 133 null centers remain without
+localization geometry. Separate longer-context easy controls are 120/120,
+including their eight context-edge changes; the original pilot score is intact.
+
+None of the 82 eligible failures has an alternative saved candidate within ten
+pixels. The next useful question is why the saved heatmaps fail to yield usable
+strict `>0.3` components around the 69 misses and 13 marginal location errors.
+Prepare a bounded inspection of that saved evidence before choosing fitting or
+threshold changes. This recommendation does not authorize a new experiment,
+model call, fit or threshold search, and no detailed new experiment is approved.
+
+Keep these correlated, failure-selected human-accepted AI labels separate from
+any future independent NBA benchmark. The accepted six-fps label overlays do
+not show a new model trajectory or establish comparative NBA/high-school
+accuracy. SAC retains future-training eligibility; DET remains excluded from
+fitting; TOR, protected holdouts and the NFHS finish line remain unchanged.
+The negative motion result and its three pending human reviews remain intact.
+
+## Earlier action (historical): review four prepared NBA reference-label videos
 
 Ryan's “Ok move forward” approved the exact 520-frame preparation scope. All
 four [label-review packages](../nba_hard_example_reference_review.md) are ready:
