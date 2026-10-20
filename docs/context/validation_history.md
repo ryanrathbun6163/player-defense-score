@@ -1,5 +1,28 @@
 # Validation History
 
+## Continuous-context video review completion recorded
+
+Ryan said “Ok videos reviewed. What’s next chat” after all five complete videos
+were embedded in the preceding response. The
+[later review record](../../configs/ball_tracking/reviews/nba_temporal_gap_continuous_visual_review_v0_1.json)
+binds those exact five videos, manifests, render completions and actual finals.
+This records user-reported completion without playback telemetry, explicit
+quality endorsement or adjudication of the SAC head fill and uncertain NFHS
+points. Their AI findings, all 24 numerical conditions, prior accepted bounded
+gains and broader non-adoption recommendation remain unchanged. Original
+pending-era result/media receipts remain preserved. The five reviews need not
+be repeated; the three older negative motion reviews remain pending separately.
+
+Read-only inventory of emitted gap records and the scored report confirms the
+[next reference proposal](../nba_gap_anchor_reference_plan.md): 34 unique
+gap/anchor targets, seven accepted overlaps, 27 new judgments and 74 permitted
+context frames. The first metadata queries used a nonexistent gap field and
+the historical NFHS window ID; both helper assumptions were corrected against
+actual emitted records. The ignored `preparation/next_reference_batch_census.json`
+preserves these inspection corrections. No annotation, new scoring, array load,
+model call or media decode occurred. This is a proposed new development-reference
+batch, not an executed experiment or independent test.
+
 ## Continuous-context validation — numerical pass with adverse unlabeled visual evidence
 
 Ryan's explicit “Move forward chat” authorized the five-clip continuous plan;

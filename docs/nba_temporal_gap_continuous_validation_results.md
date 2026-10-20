@@ -7,7 +7,10 @@ is separate from the earlier resume request and accepted bounded trial.
 The saved-evidence comparison passes all 24 numerical conditions, but AI visual
 inspection identifies an **unlabeled wrong-object fill at SAC frame 1420**.
 The rule extends an existing head distractor. Broader adoption is not recommended
-on this numerical pass. Human review of the five new trajectories is pending.
+on this numerical pass. Ryan has reported reviewing all five new videos; the
+[later review record](../configs/ball_tracking/reviews/nba_temporal_gap_continuous_visual_review_v0_1.json)
+records completion without an explicit quality endorsement or per-frame
+adjudication. Original pending-era receipts remain unchanged.
 Original predictions and retained checkpoint `09da1214e94f` remain unchanged;
 this is not a ball-phase pass.
 
@@ -107,7 +110,8 @@ smoothness cannot establish that an anchor is the ball. The exact true-ball
 center/visibility is not confidently established in this blurred, occluded
 context. Frame 1420 has no label among the 790 scored references, so the numeric
 results stay unchanged. This qualitative counterexample is preserved separately
-from scoring and requires Ryan's review; no label, rule or threshold was changed.
+from scoring. Ryan's subsequent video-review report did not explicitly adjudicate
+this individual finding; no label, rule or threshold was changed.
 
 Five complete comparisons are available in the
 [local review guide](../data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/review.html),
@@ -139,13 +143,20 @@ ball/forearm boundary. P003 additions 333/334 remain unresolved near the left
 wrist/hip; neighboring frames support a carrying sequence but cannot certify
 their visibility or exact centers. Those four remain uncertain, unscored cases.
 
-All new trajectories still require Ryan's review. The original bounded-trial
-acceptance remains complete, and the three older negative motion-comparison
-reviews remain pending separately. The
+Ryan reported reviewing all five complete videos: “Ok videos reviewed. What’s
+next chat”. Their review is complete, without a claimed favorable quality
+judgment or playback telemetry. The original bounded-trial acceptance remains
+complete, and the three older negative motion-comparison reviews remain pending
+separately. The
 [compact record](../configs/ball_tracking/reviews/nba_temporal_gap_continuous_validation_result_v0_1.json)
 binds the numerical, media, test and AI-inspection evidence. Broader adoption of
 the unchanged rule is not recommended; use the preserved wrong-anchor example
 and remaining-error inventory to define any subsequent improvement.
+
+The [next proposal](nba_gap_anchor_reference_plan.md) covers all ten repaired
+gaps and their original endpoints with 27 new source-first frame judgments and
+seven accepted controls. It is not yet executed. Its purpose is to make the
+unlabeled failure and uncertain cases measurable before changing the rule.
 
 This is offline development evidence using future anchors. NBA references retain
 their AI authorship and later human acceptance; they are not independent human

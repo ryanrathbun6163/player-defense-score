@@ -73,3 +73,4 @@ src/ball_tracking/nba_temporal_gap_continuous.py -text
 src/ball_tracking/nba_temporal_gap_continuous_review.py -text
 tests/test_nba_temporal_gap_continuous.py -text
 tests/test_nba_temporal_gap_continuous_review.py -text
+configs/ball_tracking/reviews/nba_temporal_gap_continuous_visual_review_v0_1.json -text

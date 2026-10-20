@@ -1,6 +1,12 @@
 # Roadmap
 
-## Current step: review the continuous comparisons and the new head-fill failure
+## Current step: proposed reference batch for repaired gaps and their anchors
+
+Ryan said “Ok videos reviewed. What’s next chat”. The
+[later review record](../../configs/ball_tracking/reviews/nba_temporal_gap_continuous_visual_review_v0_1.json)
+closes the five presented video-review tasks, without implying a favorable
+quality judgment, per-frame adjudication or broader adoption. Preserve the
+original pending-era receipts and do not repeat these completed reviews.
 
 Ryan's later “Move forward chat” authorized the
 [continuous-context validation](../nba_temporal_gap_continuous_validation_results.md).
@@ -15,8 +21,8 @@ New AI visual inspection identifies an unlabeled failure at SAC frame 1420,
 between original head-tracking anchors at 1419 and 1421. This case is outside
 the fixed 790 references, so numerical scores and the three previously accepted
 additions stay unchanged. It is adverse evidence against broader adoption of
-the unchanged rule. Present the bound source context for Ryan's adjudication;
-the true ball center and visibility have not been labeled.
+the unchanged rule. The source context remains bound evidence; the true ball
+center and visibility have not been labeled or specifically adjudicated by Ryan.
 
 Against same-context original outputs, DET improves 207/8/22 to 209/8/20 and
 NFHS improves 131/1/13 to 132/1/12 matched/wrong/missing. Hidden alarms remain
@@ -27,13 +33,22 @@ stays separate from the longer-context control. The
 preserves the first failed attempt, corrected recovery and independent audit.
 
 Five complete source-synchronized comparisons have passed native-timing,
-paired-pixel and final-frame verification. Review all five trajectories and the
-SAC counterexample before deciding further work. NFHS comparisons include reviewed
+paired-pixel and final-frame verification, and Ryan reports reviewing all five.
+Use the SAC counterexample to guide further work. NFHS comparisons include reviewed
 player overlays; NBA identity/calibration remains outside this scope. The
-numerical pass alone does not close the human review gate or the ball phase.
+reported review completion does not establish broader-rule quality or a ball-phase pass.
 
-Use that review and the recorded remaining failures to define a separately
-scoped response to wrong-object anchors and detection/localization gaps. Do not
+The [next concrete proposal](../nba_gap_anchor_reference_plan.md) is 27 new
+source-first frame judgments plus seven accepted references reused unchanged.
+Together they cover all fourteen additions and twenty original anchors in ten
+groups. Inspect 74 permitted context frames, prepare one compact AI-label review,
+and preserve uncertain/unknown positions. After reference acceptance, evaluate
+saved outputs separately from the unchanged 790-frame report and distinguish
+bad anchors from bad candidate selection or unresolved visibility. The batch is
+proposed, not executed or authorized by the review-completion statement.
+
+Use those accepted cases to define a response to wrong-object anchors and
+detection/localization gaps. Do not
 recommend broader unchanged-rule adoption from the numerical pass. DET/NFHS retain 32 labeled misses, nine
 wrong positions and thirteen hidden alarms; 602 allowed positions remain missing
 across the full clips. Those availability counts are not accuracy. No new fit,

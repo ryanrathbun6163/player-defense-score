@@ -4,6 +4,7 @@
 
 | Subject | Primary authority | Supporting archive |
 |---|---|---|
+| Latest continuous video review and next reference proposal | [Later review completion](../../configs/ball_tracking/reviews/nba_temporal_gap_continuous_visual_review_v0_1.json), [current results](../nba_temporal_gap_continuous_validation_results.md), [27-frame reference proposal](../nba_gap_anchor_reference_plan.md) | Supersedes pending render/review descriptions below: all five comparisons passed full media checks and Ryan said “Ok videos reviewed. What’s next chat”. User-reported completion, no playback telemetry, explicit quality endorsement or per-frame adjudication. Original pending-era receipts and AI head-fill/uncertainty findings remain; no broader adoption. Proposed, not run: 27 new judgments + seven accepted controls across all ten gaps/20 anchors, 74 permitted context frames, one compact review followed by separate accepted-reference scoring. No new fit, inference or threshold tuning. |
 | Public purpose, current pipeline, roadmap | Current Git-state `README.md`, `docs/context/current_state.md`, and `docs/context/roadmap.md` | PR #6 and Chat 06 are historical rationale only |
 | Stage order and modes | `src/pipeline/planner.py` | Chats 05–06 |
 | Manifest/path contract | `src/pipeline/possession.py`, `configs/*_pipeline.json` | Chat 05 |

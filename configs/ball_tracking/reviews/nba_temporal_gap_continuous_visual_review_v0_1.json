@@ -1,0 +1,175 @@
+{
+  "schema_version": "nba_temporal_gap_continuous_visual_review/v0.1",
+  "status": "review_completed_user_reported",
+  "reviewer_id": "Ryan",
+  "recorded_at_utc": "2026-10-20T21:49:27.713286+00:00",
+  "review_date_local": "2026-10-20",
+  "timezone": "America/Phoenix",
+  "source_commit": "6737b31c4471bba76c625630c988ba580551529b",
+  "user_statement": "Ok videos reviewed. What’s next chat",
+  "delivery": "Five complete standalone comparisons embedded in chat: SAC, DET, P001, P002 and P003.",
+  "review_scope": "User-reported review of all five videos presented immediately before this statement; no playback telemetry or per-frame adjudication claimed.",
+  "playback_telemetry_claimed": false,
+  "quality_judgment": "No explicit prediction-quality endorsement, individual finding adjudication, or broader-rule adoption approval was stated.",
+  "corrections_reported": [],
+  "result_record": {
+    "path": "configs/ball_tracking/reviews/nba_temporal_gap_continuous_validation_result_v0_1.json",
+    "bytes": 17923,
+    "sha256": "b5a4d29b55a352a371536726407119d3463c6d33dffd5602bd53d1a3b6715b6f"
+  },
+  "media_completion": {
+    "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/completion.json",
+    "bytes": 21360,
+    "sha256": "6ca3fc47af27f87b0f66adb4256eca970a468d86971fe314b59a4f00d3568854"
+  },
+  "packages": [
+    {
+      "candidate_id": "sac_mem_q1_c01",
+      "delivered_as": "standalone inline video in the immediately preceding assistant response",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/sac_mem_q1_c01/attempts/af85bb87edc2413a9d71381c20806309/comparison.mp4",
+        "bytes": 47299350,
+        "sha256": "307109aeef42388b38faa40e5614a279db2ce595006b2e67b15ac61797912a2c"
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/sac_mem_q1_c01/attempts/af85bb87edc2413a9d71381c20806309/completion.json",
+        "bytes": 4547,
+        "sha256": "06d6d947d15a07a92189ef50d520a7321f246896eaf6c8a39b0033fd10f557dc"
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/sac_mem_q1_c01/attempts/af85bb87edc2413a9d71381c20806309/review_manifest.json",
+        "bytes": 1146168,
+        "sha256": "9ec4d6c52179192b5c1ec42dd1228f91cbe8e1d72e9809ea3446e650df80d547"
+      },
+      "actual_encoded_final": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/sac_mem_q1_c01/attempts/af85bb87edc2413a9d71381c20806309/final_frame.png",
+        "bytes": 902805,
+        "sha256": "7f7b09ddb48754586e6104a7c255ba21678828192974df1b33a50d8b7d0061a2"
+      },
+      "model_output_human_review": "review_completed_user_reported"
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "delivered_as": "standalone inline video in the immediately preceding assistant response",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/sas_det_q1_c02/attempts/1008b48e0c054b3e9f2bff4c34e3edb6/comparison.mp4",
+        "bytes": 37250102,
+        "sha256": "6fa82db0884ad711f7e74e0fe87700fe4e94b6d3b4cb96a2b92c023cc6f4b5b5"
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/sas_det_q1_c02/attempts/1008b48e0c054b3e9f2bff4c34e3edb6/completion.json",
+        "bytes": 5725,
+        "sha256": "a49bd7bb076cf2ede15d018c0e52a54a7954b0293091ad370b769a7a3649a0ff"
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/sas_det_q1_c02/attempts/1008b48e0c054b3e9f2bff4c34e3edb6/review_manifest.json",
+        "bytes": 965025,
+        "sha256": "bcd1601bb0c87d19298ecdb376c5d39d43368b0bbc63ce44b5574da041713543"
+      },
+      "actual_encoded_final": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/sas_det_q1_c02/attempts/1008b48e0c054b3e9f2bff4c34e3edb6/final_frame.png",
+        "bytes": 1023648,
+        "sha256": "8d77a48ff698f41b7aa6a3c4d98c26d891381ad258cc3940bb5155e33a32563e"
+      },
+      "model_output_human_review": "review_completed_user_reported"
+    },
+    {
+      "candidate_id": "possession_001",
+      "delivered_as": "standalone inline video in the immediately preceding assistant response",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/possession_001/attempts/c46ddef44e374f9380e83b04aa08e56d/comparison.mp4",
+        "bytes": 18589068,
+        "sha256": "24146ddb2017859a0b4eb6d4dd0b7b8b329063692138364c92d3dc9997740973"
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/possession_001/attempts/c46ddef44e374f9380e83b04aa08e56d/completion.json",
+        "bytes": 5763,
+        "sha256": "3845ef8ecd16e66cf784bc05b982570248678450cb77631ad4f06f7a320b59af"
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/possession_001/attempts/c46ddef44e374f9380e83b04aa08e56d/review_manifest.json",
+        "bytes": 203237,
+        "sha256": "1dfebc1ed955cc8696f1d8b57783d67edcbb63dc2c84f0f85d09e65a2e2b017a"
+      },
+      "actual_encoded_final": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/possession_001/attempts/c46ddef44e374f9380e83b04aa08e56d/final_frame.png",
+        "bytes": 1057338,
+        "sha256": "d52bf71f53d33eda977f2f928db8628e45db25a7932040e53d235d313f66d11f"
+      },
+      "model_output_human_review": "review_completed_user_reported"
+    },
+    {
+      "candidate_id": "possession_002",
+      "delivered_as": "standalone inline video in the immediately preceding assistant response",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/possession_002/attempts/99b7d245ea1749b184d2a658b0419339/comparison.mp4",
+        "bytes": 18077013,
+        "sha256": "bbb8c603d7dfb99d9584e3e75a35699626c28a892444bbf879462235cecb2a20"
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/possession_002/attempts/99b7d245ea1749b184d2a658b0419339/completion.json",
+        "bytes": 4598,
+        "sha256": "5d46a9e420cffefa2ce43e6b2a019a1d5bfcc6eb24f39cd856f9f03df691684a"
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/possession_002/attempts/99b7d245ea1749b184d2a658b0419339/review_manifest.json",
+        "bytes": 203254,
+        "sha256": "75d8c0581553f6c4e54bce8c987d1fc729ae6f2ddc1a0d73fe9129a5569098e9"
+      },
+      "actual_encoded_final": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/possession_002/attempts/99b7d245ea1749b184d2a658b0419339/final_frame.png",
+        "bytes": 932288,
+        "sha256": "7c71551ff2b3ae13883eaede98898def8d2cbb543b6aa0084e65b14e1a6a0e8d"
+      },
+      "model_output_human_review": "review_completed_user_reported"
+    },
+    {
+      "candidate_id": "possession_003",
+      "delivered_as": "standalone inline video in the immediately preceding assistant response",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/possession_003/attempts/01290e8072d44106be5595e5a2373b00/comparison.mp4",
+        "bytes": 19865117,
+        "sha256": "4c61922deec81bf526075945303a2d32bf373c212684661c84453980335464c3"
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/possession_003/attempts/01290e8072d44106be5595e5a2373b00/completion.json",
+        "bytes": 6931,
+        "sha256": "d95d7adc30a27b20f225c2ed200da40b95f3a397edf324c5955e460e6b32a518"
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/possession_003/attempts/01290e8072d44106be5595e5a2373b00/review_manifest.json",
+        "bytes": 203979,
+        "sha256": "2552d9027042a640e7beb659109c7905dba0e366081a91509d0e77127643c4c3"
+      },
+      "actual_encoded_final": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/review/possession_003/attempts/01290e8072d44106be5595e5a2373b00/final_frame.png",
+        "bytes": 1045154,
+        "sha256": "60bab682bf97b97cafc246c3447d5e6e1b53ec59fbe07f068f460b9bb759abe8"
+      },
+      "model_output_human_review": "review_completed_user_reported"
+    }
+  ],
+  "preserved_findings": {
+    "numeric_checks_passed": 24,
+    "accepted_bounded_three_additions": "unchanged",
+    "sac_1420_head_fill": "AI visual finding preserved; this statement does not turn it into an accepted reference label.",
+    "uncertain_nfhs_frames": {
+      "possession_001": [
+        19,
+        91
+      ],
+      "possession_003": [
+        333,
+        334
+      ]
+    },
+    "broader_adoption_recommended": false
+  },
+  "boundaries": [
+    "Original pending-era result, selection, media and AI-inspection receipts remain immutable publication history.",
+    "The five new video reviews are complete; do not request their review again merely because original receipts say pending.",
+    "No new reference label, score, fit, inference, threshold rule, holdout release or ball-phase acceptance is authorized by this review-completion statement.",
+    "Three older negative motion-comparison reviews remain pending separately.",
+    "Retained checkpoint and rejected NBA continuation stay unchanged."
+  ]
+}

@@ -1,6 +1,6 @@
 # Current State
 
-## Latest increment: numerical pass with an adverse unlabeled visual case; human review pending
+## Latest increment: continuous videos reviewed; adverse visual evidence retained
 
 Ryan separately authorized the [continuous-context plan](../nba_temporal_gap_continuous_validation_plan.md)
 with “Move forward chat”. The earlier resume request did not authorize execution;
@@ -9,7 +9,11 @@ the bounded three-frame trial remains accepted separately. The new
 [compact result](../../configs/ball_tracking/reviews/nba_temporal_gap_continuous_validation_result_v0_1.json)
 record a completed saved-evidence comparison with all **24 numerical conditions
 passing**. Five full comparisons are rendered and verified through every native
-frame and timestamp. Ryan's trajectory review remains pending.
+frame and timestamp. Ryan subsequently said “Ok videos reviewed. What’s next
+chat”. The [later review record](../../configs/ball_tracking/reviews/nba_temporal_gap_continuous_visual_review_v0_1.json)
+records completion of all five presented video reviews, without playback
+telemetry, an explicit quality endorsement or per-frame adjudication. Original
+pending-era receipts remain unchanged; these five reviews need not be repeated.
 
 **Adverse visual evidence:** separate AI inspection of the encoded changed frame
 and bound unmarked source frames 1418–1422 finds the added SAC point at frame
@@ -19,7 +23,8 @@ bridges a consistent distractor trajectory. Frame 1420 is outside the 790 scored
 references; no label, visibility annotation, center-error value or score changed.
 The true ball center/visibility remains uncertain in this context. This finding
 does not support broader adoption of the unchanged rule despite the numerical
-pass. Ryan's adjudication is pending. Exact source, encoded-frame and crop
+pass. Ryan reported video review but did not explicitly adjudicate this finding.
+Exact source, encoded-frame and crop
 bindings are preserved in ignored `review/ai_sac_context_inspection.json` beneath
 `data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/`.
 
@@ -69,8 +74,16 @@ AI inspection covered all fourteen additions and eight segment finals, with
 adjacent context for SAC 1420 and P003 333/334. P001 19/91 and P003 333/334 remain
 visually uncertain due to occlusion/blur. This was not manual review of all 4,200 slots.
 
-**Next:** review the five synchronized comparisons through their final frames,
-with the SAC head-fill failure explicitly called out for Ryan's adjudication.
+**Next proposal:** [27 new source-first frame judgments](../nba_gap_anchor_reference_plan.md)
+and seven unchanged accepted controls cover all ten repaired gaps and both
+original anchors: 34 targets, with 74 permitted native context frames. The
+assistant prepares one compact review, retaining unknown centers and separately
+assessing whether saved predictions mark the ball, another object or remain
+unresolved. After acceptance, score saved outputs separately from the original
+790-frame report. This closes the unlabeled-failure blind spot before choosing
+a detector/selector change. Preparation and execution are not yet authorized
+by the video-review completion. No new labels, model calls or threshold search
+have occurred.
 Do not recommend broader unchanged-rule adoption from the numerical pass. The
 three previously accepted labeled additions remain accepted; this new case is
 separate adverse evidence from a previously unscored part of the longer clips.

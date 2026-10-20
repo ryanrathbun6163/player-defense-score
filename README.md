@@ -168,9 +168,15 @@ kept separate from the longer-context control. The first attempt's imported-cach
 identity failure and its corrected recovery remain recorded. Twenty-one focused
 tests and 42,844 independent audit checks pass. The
 [compact result](configs/ball_tracking/reviews/nba_temporal_gap_continuous_validation_result_v0_1.json)
-records the evidence; five complete comparisons are verified and their human
-trajectory review remains pending. Continuous tracking and ball-phase completion
-remain ahead.
+records the evidence. Ryan subsequently reported reviewing all five complete
+comparisons: “Ok videos reviewed. What’s next chat”. The
+[later review record](configs/ball_tracking/reviews/nba_temporal_gap_continuous_visual_review_v0_1.json)
+records completion without an explicit quality endorsement or broader-rule
+adoption. The head-fill finding and uncertain NFHS cases remain. Continuous
+tracking and ball-phase completion remain ahead.
+The [next proposal](docs/nba_gap_anchor_reference_plan.md) adds 27 source-first
+frame judgments and reuses seven accepted controls to cover every repaired gap
+and both original anchors. It has not run; no new fit or threshold change is proposed.
 The original baseline remains intact, and the failed NBA continuation stays rejected.
 These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved
