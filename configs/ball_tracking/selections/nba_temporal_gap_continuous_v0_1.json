@@ -1,0 +1,498 @@
+{
+  "schema_version": "nba_temporal_gap_continuous_scope/v0.1",
+  "status": "approved",
+  "experiment_id": "nba_temporal_gap_continuous_v0_1",
+  "created_at_utc": "2026-10-20T21:21:31.263311+00:00",
+  "approval": {
+    "path": "configs/ball_tracking/reviews/nba_temporal_gap_continuous_validation_approval_v0_1.json",
+    "sha256": "be500b48243ba7eeed15006312ba5d9045fc01b9678fd8bbca590cde2810e874",
+    "bytes": 1997
+  },
+  "policy": {
+    "arm": "old",
+    "time_base": "1/90000",
+    "max_anchor_elapsed_seconds": 0.12,
+    "max_anchor_speed_diagonals_per_second": 1.0,
+    "max_candidate_distance_diagonals": 0.006,
+    "max_plausible_diameter_diagonals": 0.006,
+    "limits": "inclusive; no tolerance or threshold sweep",
+    "original_points": "preserve every non-null original center exactly, including wrong or out-of-image points",
+    "gap": "maximal original-missing run within one supplied consecutive window",
+    "anchors": "both bounding original points must be in-image; no recursive anchors",
+    "expectation": "linear native-PTS interpolation for ranking only; never emit interpolation",
+    "pool": "in-image exact-coordinate groups from the old saved pool; retain all provenance members",
+    "ambiguity": "abstain entire gap if any frame lacks plausible coordinates or their pairwise diameter exceeds limit",
+    "choice": "minimum distance to expectation, then lowest original pool record index",
+    "edge_gaps": "abstain",
+    "whole_gap_or_none": true,
+    "mass_filter": false,
+    "contributor_voting": false,
+    "labels_used_by_selector": false
+  },
+  "gates": {
+    "original_adaptation": {
+      "det": {
+        "matched_min": 208,
+        "missing_max": 21,
+        "wrong_max": 8,
+        "hidden_alarm_max": 13,
+        "easy_control_matched": 60
+      },
+      "nfhs": {
+        "matched_min": 130,
+        "missing_max": 14,
+        "wrong_max": 1,
+        "hidden_alarm_max": 0
+      }
+    },
+    "sac_easy_control_matched": 60,
+    "no_additional_wrong_or_hidden_alarms_all_groups": true
+  },
+  "additional_conditions": {
+    "det_matched_min": 209,
+    "same_context_nfhs_matched_min": 131,
+    "no_new_wrong_frames": true,
+    "no_new_hidden_alarm_frames": true,
+    "no_lost_correct_positions": true,
+    "all_original_points_immutable": true,
+    "accepted_additions_retained": [
+      [
+        "sas_det_q1_c02",
+        11437
+      ],
+      [
+        "sas_det_q1_c02",
+        11438
+      ],
+      [
+        "possession_001",
+        208
+      ]
+    ],
+    "same_context_nfhs_baseline_matched_wrong_missing_hidden_alarm": [
+      131,
+      1,
+      13,
+      0
+    ],
+    "new_human_trajectory_review_required": true
+  },
+  "totals": {
+    "processed_frames": 3975,
+    "segments": 8,
+    "protected_frames": 225,
+    "timeline_frames": 4200,
+    "available_triplets": 3959,
+    "scored_frames": 790
+  },
+  "output_root": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1",
+  "source_authority": {
+    "nba_action_proposal": {
+      "path": "configs/ball_tracking/selections/nba_wasb_action_observation_proposal_v0_1.json",
+      "sha256": "c4da3da0506217ea21881cd52f4864aa402f40fbc041852efc0be18c826964de",
+      "bytes": 12515
+    },
+    "nfhs_observation_config": {
+      "path": "configs/ball_tracking/wasb_experiments/wasb_expanded_development_observation_v0_1.json",
+      "sha256": "e5dba1f3eb2f82d5d78b0825650f697df06d9360c8e80d7681158b8085336eda",
+      "bytes": 4175
+    }
+  },
+  "sources": [
+    {
+      "candidate_id": "sac_mem_q1_c01",
+      "kind": "nba",
+      "analysis_group": "sac_training_fit",
+      "source_video": {
+        "path": "data/raw/nba/0022500829/0022500829_ok_12326430640726_1080p.mp4",
+        "sha256": "420eacca7a05f9eebfab6306fe6d28fe1ee0509362cbcc053fba09cfd61b062b",
+        "width_px": 1920,
+        "height_px": 1080,
+        "frame_count": 357233
+      },
+      "source_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/inputs/sac_mem_q1_c01/manifest.json",
+        "sha256": "dfd51f416ca0b1819d6b0d8637d5f686f8389817de1bdef542d4179a0978217d",
+        "bytes": 726844
+      },
+      "source_end_exclusive_pts_ticks": 3024872,
+      "protected_ranges": [],
+      "segments": [
+        {
+          "segment_id": "sac_mem_q1_c01:540-2010",
+          "range_inclusive": [
+            540,
+            2010
+          ],
+          "observations": {
+            "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/observations.json",
+            "sha256": "0cd5a7eb8dd9a28cdaddfe1b072415b75c19a89f26e0842cd1c9bf0c83ddc6b4",
+            "bytes": 3339134
+          }
+        }
+      ]
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "kind": "nba",
+      "analysis_group": "det_development",
+      "source_video": {
+        "path": "data/raw/nba/0022500828/0022500828_ok_12326019402326_1080p.mp4",
+        "sha256": "27b5143105f5bf3276a2cc51945133c9fdcd2b82d4247d8365110428062ec21f",
+        "width_px": 1920,
+        "height_px": 1080,
+        "frame_count": 415953
+      },
+      "source_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/inputs/sas_det_q1_c02/manifest.json",
+        "sha256": "f40c5217cbcaa6f74b1b825b303a1b13572d84c735fc0083ca980dc9768d7b6e",
+        "bytes": 615594
+      },
+      "source_end_exclusive_pts_ticks": 17870192,
+      "protected_ranges": [],
+      "segments": [
+        {
+          "segment_id": "sas_det_q1_c02:10668-11898",
+          "range_inclusive": [
+            10668,
+            11898
+          ],
+          "observations": {
+            "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/observations.json",
+            "sha256": "a9ef10f9b88361ee7d1f3dde633bc1ff36f506cd5d2d9f562bcb7c3b50991db4",
+            "bytes": 2750073
+          }
+        }
+      ]
+    },
+    {
+      "candidate_id": "possession_001",
+      "kind": "nfhs",
+      "analysis_group": "nfhs_development",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "possession": {
+        "possession_id": "possession_001",
+        "source_video": {
+          "path": "data/clips/possession_001.mp4",
+          "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+          "width_px": 1920,
+          "height_px": 1080,
+          "fps": 25.0,
+          "frame_count": 499
+        },
+        "visible_segments": [
+          [
+            0,
+            274
+          ],
+          [
+            350,
+            498
+          ]
+        ],
+        "protected_ranges": [
+          [
+            275,
+            349
+          ]
+        ],
+        "player_context": {
+          "path": "data/outputs/identity/possession_001_reconciled_tracks.csv",
+          "sha256": "f723b294c0921a2bbccd2ba9eea2bd10ab6c5fec295094813e8ff20f76746676"
+        }
+      },
+      "source_end_exclusive_pts_ticks": 1796400,
+      "protected_ranges": [
+        [
+          275,
+          349
+        ]
+      ],
+      "timeline_observations": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_001/observations.json",
+        "sha256": "abc75a6a0e93316013429a54e651ecdd7b6bfa38e35e0ed66b9eed333672d0a0",
+        "bytes": 837273
+      },
+      "segments": [
+        {
+          "segment_id": "possession_001:0-274",
+          "range_inclusive": [
+            0,
+            274
+          ],
+          "observations": {
+            "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_001/segment_000000_000274/observations.json",
+            "sha256": "cc7c4d1cd531ba9dee9dc0da24cdb1cf5e2cc5dd3b0a9336dff0f2b9e004d936",
+            "bytes": 484648
+          }
+        },
+        {
+          "segment_id": "possession_001:350-498",
+          "range_inclusive": [
+            350,
+            498
+          ],
+          "observations": {
+            "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_001/segment_000350_000498/observations.json",
+            "sha256": "232516225de21e443defc32165f80afe412c8847314b02986367431503f31e20",
+            "bytes": 249242
+          }
+        }
+      ],
+      "native_timestamps": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/preparation/native_timing/possession_001_timestamps.json",
+        "sha256": "a9d1c310c8115372399de6926c1198cc60f8ca88def760c899ee018d9c18bc8e",
+        "bytes": 75097
+      }
+    },
+    {
+      "candidate_id": "possession_002",
+      "kind": "nfhs",
+      "analysis_group": "nfhs_development",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "possession": {
+        "possession_id": "possession_002",
+        "source_video": {
+          "path": "data/clips/possession_002.mp4",
+          "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+          "width_px": 1920,
+          "height_px": 1080,
+          "fps": 25.0,
+          "frame_count": 499
+        },
+        "visible_segments": [
+          [
+            0,
+            174
+          ],
+          [
+            250,
+            498
+          ]
+        ],
+        "protected_ranges": [
+          [
+            175,
+            249
+          ]
+        ],
+        "player_context": {
+          "path": "data/outputs/identity/possession_002_reconciled_tracks.csv",
+          "sha256": "0e5b13c836161c564f1c500e1de5adfd956a1540607511a401c29d7c38f0a934"
+        }
+      },
+      "source_end_exclusive_pts_ticks": 1796400,
+      "protected_ranges": [
+        [
+          175,
+          249
+        ]
+      ],
+      "timeline_observations": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_002/observations.json",
+        "sha256": "a5c978c3f1e5bacf9560ba2c4854fa695bf020a75b9b43c84107c2a617fb20f9",
+        "bytes": 829569
+      },
+      "segments": [
+        {
+          "segment_id": "possession_002:0-174",
+          "range_inclusive": [
+            0,
+            174
+          ],
+          "observations": {
+            "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_002/segment_000000_000174/observations.json",
+            "sha256": "c908885cf534eb193c2b8653726f1944fc199974a99aadc1bef8dea9f9255e05",
+            "bytes": 313975
+          }
+        },
+        {
+          "segment_id": "possession_002:250-498",
+          "range_inclusive": [
+            250,
+            498
+          ],
+          "observations": {
+            "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_002/segment_000250_000498/observations.json",
+            "sha256": "7369ce25bc0b228baa6730979409ba04ef1de38687db9bbef86e8ea23bdf13c6",
+            "bytes": 411986
+          }
+        }
+      ],
+      "native_timestamps": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/preparation/native_timing/possession_002_timestamps.json",
+        "sha256": "a1a6aab26b5161c36a77b99551f3092d8bf96df8be0a4de2151e9d058685ea94",
+        "bytes": 75097
+      }
+    },
+    {
+      "candidate_id": "possession_003",
+      "kind": "nfhs",
+      "analysis_group": "nfhs_development",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "possession": {
+        "possession_id": "possession_003",
+        "source_video": {
+          "path": "data/clips/possession_003.mp4",
+          "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+          "width_px": 1920,
+          "height_px": 1080,
+          "fps": 25.0,
+          "frame_count": 500
+        },
+        "visible_segments": [
+          [
+            0,
+            224
+          ],
+          [
+            300,
+            499
+          ]
+        ],
+        "protected_ranges": [
+          [
+            225,
+            299
+          ]
+        ],
+        "player_context": {
+          "path": "data/outputs/identity/possession_003_reconciled_tracks.csv",
+          "sha256": "afc51f3d46b79ced339c463aa91a20fa34bab7a0b3380a5615925f069d6f61db"
+        }
+      },
+      "source_end_exclusive_pts_ticks": 1800000,
+      "protected_ranges": [
+        [
+          225,
+          299
+        ]
+      ],
+      "timeline_observations": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_003/observations.json",
+        "sha256": "7d685eeeee3d9b06d12291c73adbb359d2715227311c68463a3282e7a9645a4c",
+        "bytes": 846997
+      },
+      "segments": [
+        {
+          "segment_id": "possession_003:0-224",
+          "range_inclusive": [
+            0,
+            224
+          ],
+          "observations": {
+            "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_003/segment_000000_000224/observations.json",
+            "sha256": "09ab34a85d7c9d131ec4669b2f482bda78fa5e685587181ebe1afaf81616d970",
+            "bytes": 382842
+          }
+        },
+        {
+          "segment_id": "possession_003:300-499",
+          "range_inclusive": [
+            300,
+            499
+          ],
+          "observations": {
+            "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/possession_003/segment_000300_000499/observations.json",
+            "sha256": "50b0cd2c30780b3b2216f2a49dcbf46ae43d7a6d0e7cc235f26299fe459c353e",
+            "bytes": 360433
+          }
+        }
+      ],
+      "native_timestamps": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/preparation/native_timing/possession_003_timestamps.json",
+        "sha256": "eaa267863fbf0aa0ea7b9d44757287816cae473209b46fc0a6ec3695f76b8985",
+        "bytes": 75236
+      }
+    }
+  ],
+  "accepted_gap_report": {
+    "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/attempts/78494f36bd3545b7912f92799bfd49f8/report.json",
+    "sha256": "d758549d87f9a4bada812681ec926eab95d9f644767171f741aa63603dbc2467",
+    "bytes": 3185906
+  },
+  "accepted_gap_scope": {
+    "path": "configs/ball_tracking/selections/nba_temporal_gap_selection_v0_1.json",
+    "sha256": "93bce4691bfed8432789b8e11a5eb5e6c524029be996ecf6e73b29119dcd7bf8",
+    "bytes": 21864
+  },
+  "accepted_gap_visual_review": {
+    "path": "configs/ball_tracking/reviews/nba_temporal_gap_selection_visual_review_v0_1.json",
+    "sha256": "3100a54c47975c409bef804b2202fb29d01c9e0c2d27e15106eb88a4c8eb8d13",
+    "bytes": 5944
+  },
+  "implementation": [
+    {
+      "path": "src/ball_tracking/nba_temporal_gap_continuous.py",
+      "sha256": "a7d232905f09ca1e23d73ed61e4df1e6a2f256e79ee76d774417120404687c95",
+      "bytes": 31330
+    },
+    {
+      "path": "src/ball_tracking/nba_temporal_gap_selection.py",
+      "sha256": "5e0d195e4ce318bb271c6286f68abe31ed1e2c7bd4fd64a8fa7a2408fec69202",
+      "bytes": 31732
+    },
+    {
+      "path": "src/ball_tracking/nba_candidate_preservation.py",
+      "sha256": "818017033b3648d7d63f05534bcecec719e0d6a92d4da200332ab453e2403485",
+      "bytes": 24933
+    },
+    {
+      "path": "src/ball_tracking/nba_adaptation_regression_diagnostic.py",
+      "sha256": "fec5d421c0a44abf2dd02687c75a830a9aa6b526dfa79411062d1ca08a1c4c03",
+      "bytes": 23422
+    },
+    {
+      "path": "src/ball_tracking/nba_action_observation.py",
+      "sha256": "160dac2b9d1d784c8d00bd8344905cb78886e011ca0a20f714da4436b969e5cd",
+      "bytes": 27371
+    },
+    {
+      "path": "src/ball_tracking/wasb_development_observation.py",
+      "sha256": "d122d07074fd0ce3ab829d1b85350bf19e0d0ccdee471c60a6135fd29fa94dbc",
+      "bytes": 31722
+    },
+    {
+      "path": "src/ball_tracking/nba_saved_heatmap_diagnostic.py",
+      "sha256": "be025647652c576c1a86660920a2894e28bf7ff3e0efdf76358b4f7da71583fb",
+      "bytes": 22400
+    },
+    {
+      "path": "src/ball_tracking/nba_wasb_diagnostic.py",
+      "sha256": "b8dcd105e964475e0efc53e45449e47acdc4341e7409f371d5c44172d0e950f3",
+      "bytes": 34275
+    }
+  ],
+  "focused_tests": {
+    "path": "tests/test_nba_temporal_gap_continuous.py",
+    "sha256": "77a334f623c38fec15da2042ef009e686102efba02664671dda9e4c34d2fb02b",
+    "bytes": 20751
+  },
+  "limits": [
+    "Development evidence only; SAC training fit, DET/NFHS development, included NBA controls.",
+    "No inference, fit, threshold search, reference changes, protected-pixel access or baseline overwrite.",
+    "Offline future-anchor rule; expected interpolation is used for ranking, never emitted.",
+    "Native NFHS container timestamps are retained alongside the historical clip-relative reference clock."
+  ]
+}
