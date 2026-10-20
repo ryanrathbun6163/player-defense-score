@@ -1,6 +1,29 @@
 # Roadmap
 
-## Current action: prepare a bounded NBA adaptation/data proposal
+## Current action: review the failed NBA adaptation comparison; retain baseline
+
+Ryan approved the [bounded experiment](../nba_wasb_adaptation_plan.md). One
+200-update continuation fit on accepted SAC plus earlier NFHS training data
+has completed; the [results report](../nba_wasb_adaptation_results.md) records its
+failed numerical screen, actual execution and partial frame exposure. DET is excluded from fitting and
+serves as the primary development comparison. SAC scores now describe training
+fit; neither game becomes an independent test.
+
+The fixed comparison fails four conditions: DET matches fall from 207 to 206,
+DET wrong locations rise from eight to ten, NFHS matches fall from 130 to 129
+and NFHS misses rise from 14 to 15. SAC's 218-to-265 training-fit improvement
+does not establish transfer. Retain the expanded baseline. Media and independent
+comparison checks passed; AI inspected 56 samples and all eight encoded finals.
+Review all eight synchronized videos through their actual final frames; the
+six NFHS videos also have a verified phone compilation. All eight human reviews
+remain pending. Any subsequent experiment needs a
+concrete proposal informed by these failures. No second fit or threshold search
+is approved.
+
+TOR, protected holdouts and buffers, the NFHS finish line and the negative motion
+result remain unchanged; three motion reviews remain pending.
+
+## Earlier action (historical): prepare a bounded NBA adaptation/data proposal
 
 The approved [saved-heatmap inspection](../nba_hard_example_heatmap_inspection_results.md)
 is complete. All 640 original means, candidates and selections were reproduced

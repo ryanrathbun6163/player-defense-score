@@ -117,13 +117,21 @@ reconstructed all 640 original means exactly. Missing frames have weak ball-regi
 responses (median 0.118); only 11/69 had above-threshold support in an individual
 contributor that disappeared in the mean. Changing component centers to peaks
 would recover three wrong locations but lose six current matches. These findings
-support preparing a bounded NBA adaptation/data experiment using SAC alongside
-eligible NFHS training examples, with DET excluded; no fit or new prediction policy is approved.
+led to the approved [bounded NBA continuation](docs/nba_wasb_adaptation_plan.md)
+using SAC alongside eligible NFHS training examples, with DET excluded from
+fitting. The [fixed comparison](docs/nba_wasb_adaptation_results.md) after one
+200-update fit **fails its numerical screen**, so the expanded baseline is
+retained. SAC training-fit matches improve from 218 to 265 of 270, but DET
+matches fall from 207 to 206 of 237 and wrong locations rise from eight to ten.
+NFHS matches fall from 130 to 129 of 145. New model-output human review remains
+pending; eight complete synchronized videos passed media checks, and independent
+training/comparison audits passed. No second fit or threshold tuning followed.
 These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved
-model trajectories or comparative NBA accuracy. No new inference, training or
-threshold change occurred. Existing holdouts, the NFHS finish line,
-game roles and the negative motion result remain unchanged; three motion-video
+model trajectories or comparative NBA accuracy. The preceding heatmap inspection
+used no new inference or training; the subsequent approved fit is separate.
+SAC's new scores describe training fit. Existing holdouts, the NFHS finish
+line, DET's exclusion from fitting and the negative motion result remain unchanged; three motion-video
 human reviews remain pending.
 
 ## End goal

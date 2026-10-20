@@ -1,6 +1,56 @@
 # Current State
 
-## Latest increment: approved saved-heatmap inspection completed
+## Latest increment: NBA continuation fails its numerical screen; baseline retained
+
+Ryan approved the [bounded NBA experiment](../nba_wasb_adaptation_plan.md) with
+“Ok I like this chat. Move forward”. The bound config and approval were fixed
+before execution. One continuation from expanded checkpoint `09da1214e94f`
+completed 200 updates in 50.328 seconds, producing `da44ce06cdf7`. No retry or
+intermediate-checkpoint selection occurred. The [fixed comparison](../nba_wasb_adaptation_results.md)
+fails four of nine predeclared conditions. The expanded checkpoint `09da1214e94f`
+remains the baseline; no second fit or threshold tuning has occurred.
+
+SAC training-fit matches rise from 218 to 265 of 270, with five wrong locations
+and no missing outputs. DET, excluded from fitting, changes from 207/8/22 to
+206/10/21 matched/wrong/missing among 237 eligible centers. Hidden alarms fall
+from 13 to nine of 69 probable-hidden references. Both easy NBA controls remain
+60/60. NFHS changes from 130/1/14 to 129/1/15 among 145 eligible centers; hidden
+alarms remain zero of five. DET's frame 11107 is a large new wrong-location
+error (305.575 pixels); frame 11501 is a marginal failure (10.014 pixels). Fewer
+misses or hidden alarms do not offset the failed screen.
+
+Training uses 300 accepted SAC frames plus 150 prior NFHS training frames:
+400 positive, 36 certain-hidden and 14 masked. Ten entirely masked triplets were
+excluded, leaving 424 usable; 400 samples comprise 269 NBA and 131 NFHS triplets.
+Twenty-four triplets were unsampled. The samples touch 440 frames; eight masked
+frames and positive frames P001/375 and SAC/1059 have zero input exposure.
+Native cadence and block boundaries are preserved. DET remains excluded from
+fitting; TOR and protected holdouts remain untouched. SAC's subsequent scores
+are training-fit evidence.
+
+Seventeen distinct focused trainer/comparison checks passed. Independent training audit passed 3,469
+checks, including checkpoint/state equality, unchanged BatchNorm buffers and
+200 optimizer steps. Its initial missing-PyTorch environment failure is preserved;
+the unchanged helper passed under the project environment without another fit.
+The single comparison/media execution completed in 1,425.922 seconds with
+2,836 new calls and no failed or uncertain calls. All eight videos cover 2,852
+source frames with every-frame key/pixel verification and actual-final holds.
+Independent comparison audit passed 48,264 checks, deriving all 790 scores and
+checking every source join/cache record; numeric means/components were sampled
+on 56 rows from 72 caches. It checked media receipts without duplicate decoding.
+AI inspected 56 sampled source frames and all eight actual encoded finals.
+The six NFHS clips also form a verified 31-second phone compilation, preserving
+all 150 decoded frames and timing. Its initial packet-byte check failed; exact
+decoded-pixel/timing verification passed without re-encoding or inference.
+No model or phase gate is promoted. The negative motion result and three pending
+motion reviews remain unchanged.
+
+**Next concrete action:** review the complete synchronized videos with the
+regressions identified. All eight human model-output reviews remain pending.
+The numerical failure
+does not justify another fit or changed thresholds.
+
+## Earlier increment (historical): approved saved-heatmap inspection completed
 
 Ryan approved the inspection with “Let’s do it. Move forward chat”. The
 [recorded scope](../../configs/ball_tracking/selections/nba_hard_example_heatmap_inspection_v0_1.json)

@@ -1,6 +1,82 @@
 # Validation History
 
-## Approved saved-heatmap inspection completed
+## Approved NBA continuation: fixed numerical screen failed
+
+The [approved experiment](../nba_wasb_adaptation_plan.md) binds the exact inputs,
+recipe, comparison and numerical screen before execution. Independent preflight
+verified 33 file bindings and the 450-frame mixed pool. Eight focused trainer
+tests passed in 2.102 seconds, covering actual approved metadata, native PNG
+transport, 16/17 ms cadence, masks/role exclusions, fresh optimizer and frozen
+BatchNorm, immutable final publication and altered-approval rejection. No full
+suite was repeated. Nine distinct comparison checks also passed: eight in the
+first command, then the repeated decoder check and one new actual-calibration
+producer check. They exercise exact record transport, scoring/gates, cache
+recovery and complete paired video transport. There are 17 distinct focused
+checks for this increment; synthetic failures are expected recovery-test cases,
+not failed scientific calls.
+
+The first independent preflight helper incorrectly required all NFHS segment
+purposes to be `training`. Three explicitly authorized pilot segments correctly
+retain `protocol_adjudication`. The helper was corrected to compare each source
+purpose to its frozen segment authority, allowing both authorized purposes;
+the second attempt passed without changing labels, configs or scientific outputs.
+Its passed receipt preserves the first attempt's history; the original traceback
+is in tool output, with no separate failed preflight receipt.
+
+One real fit completed all 200 updates without retry in 50.3275655 seconds.
+Final checkpoint SHA-256 is
+`da44ce06cdf7b3bf97468b5780f0f02e435807299cf3d771494c367d9010da26`.
+The 400 samples use 269 NBA and 131 NFHS triplets from 424 usable triplets.
+Twenty-four triplets were unsampled; 440 input frames were exposed. Ten frames
+have no input exposure: eight masked frames, P001/375 and SAC/1059. No claim
+that all 450 pool frames were trained is made.
+
+Independent training audit passed 3,469 checks: all 428 checkpoint tensors equal
+the update-200 state, all 213 BatchNorm buffers match initialization, 176 trainable
+tensors changed, and all 176 optimizer states reached step 200. The first audit
+completed 2,821 metadata checks before the system Python failed to import PyTorch.
+The same helper then passed under `.venv`; both attempts remain preserved and no
+fit was repeated. Peak GPU allocation was 2,004,807,168 bytes; cached CPU tensors
+occupied 3,001,025,784 bytes, not a total process-memory measurement.
+
+The fixed comparison uses strict `>0.3` and inclusive ten-source-pixel matching.
+SAC training fit changes from 218/5/47 to 265/5/0 matched/wrong/missing among 270
+eligible centers. DET development changes from 207/8/22 to 206/10/21 among 237;
+hidden alarms fall from 13 to nine of 69 probable-hidden references. NFHS changes
+from 130/1/14 to 129/1/15 among 145, with zero of five hidden alarms. Both easy
+NBA controls remain 60/60. Four of nine predeclared conditions fail: DET matches
+and wrong locations, NFHS matches and misses. The expanded baseline is retained.
+
+The single comparison/media execution completed in 1,425.922 seconds with
+2,836 inference calls and no failed or uncertain calls. Eight videos contain
+2,852 source frames, each once, with an extra second on each final frame's
+duration. Producing decode checks verified every frame/PTS key and paired overlay
+within the frozen pixel tolerance, plus actual finals and durations.
+
+Independent comparison audit passed 48,264 checks on its first attempt in
+15.0375274 seconds. It independently derived all 790 scores and checked all
+2,852 source joins, 2,836 cache/start records and unchanged 33 frozen inputs.
+Numeric reconstruction covered 56 rows from 72 cache bodies (115,173,064
+compressed bytes); the remaining means/components were not independently
+recomputed. Eight review bindings, manifests, probes and every-frame decode
+receipts were checked without another media decode. It confirmed the failed
+screen. New model-output human review remains pending.
+
+AI inspected 56 sampled source frames and all eight actual encoded finals;
+this is not complete visual inspection of all video frames. The six NFHS videos
+were stream-copied into a 31-second, 150-frame phone compilation. Initial encoded
+packet-byte equality failed only at each clip's first packet; all decoded RGB
+pixels, timestamps and durations then matched exactly. The original compilation
+was retained without re-encoding, new inference or a fit. A subsequent helper
+inspection stopped at an exclusive-create guard before FFmpeg. Both routine
+packaging-check events are preserved in the delivery failure receipt.
+
+The [current result report](../nba_wasb_adaptation_results.md)
+links immutable training, scores, exposure and audit evidence. Old checkpoints,
+labels, scores, protected holdouts and the three pending motion-video reviews
+are unchanged. No second fit or tuning followed the failed screen.
+
+## Earlier increment (historical): approved saved-heatmap inspection completed
 
 Ryan approved the inspection with “Let’s do it. Move forward chat”. The
 [recorded scope](../../configs/ball_tracking/selections/nba_hard_example_heatmap_inspection_v0_1.json)

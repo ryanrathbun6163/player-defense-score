@@ -36,3 +36,11 @@ configs/ball_tracking/selections/nba_hard_example_heatmap_inspection_v0_1.json -
 configs/ball_tracking/reviews/nba_hard_example_heatmap_inspection_result_v0_1.json -text
 src/ball_tracking/nba_saved_heatmap_diagnostic.py -text
 tests/test_nba_saved_heatmap_diagnostic.py -text
+# Preserve the fixed NBA adaptation recipe and recorded implementation bytes.
+configs/ball_tracking/wasb_experiments/nba_wasb_adaptation_v0_1.json -text
+configs/ball_tracking/reviews/nba_wasb_adaptation_approval_v0_1.json -text
+configs/ball_tracking/reviews/nba_wasb_adaptation_result_v0_1.json -text
+src/ball_tracking/nba_wasb_adaptation.py -text
+src/ball_tracking/nba_adaptation_comparison.py -text
+tests/test_nba_wasb_adaptation.py -text
+tests/test_nba_adaptation_comparison.py -text
