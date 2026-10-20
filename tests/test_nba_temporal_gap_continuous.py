@@ -129,19 +129,21 @@ class ContinuousGapTests(unittest.TestCase):
     def test_nfhs_actual_producer_size_bytes_and_per_cache_identity_transport(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder); source = {"path": "source.mp4", "sha256": "a"*64, "width_px": 512, "height_px": 288}
-            identity = {"weights": {"sha256": d.EXPANDED_SHA}, "source_video": source, "inference": {"heatmap_threshold": .5}}
-            d.write_once(root / "identity.json", identity)
+            identity = {"weights": {"sha256": d.EXPANDED_SHA}, "source_video": source,
+                        "segment": [10, 12], "inference": {"heatmap_threshold": .3}}
+            d.write_once(root / "inference_identity.json", identity)
             (root / "triplet_000010.npz").write_bytes(b"producer-fixture")
             d.write_once(root / "triplet_000010.json", {"fixture": True})
             record = {"input_frame_indices": [10, 11, 12], "cache": nfhs.binding(root, root / "triplet_000010.npz"),
-                "receipt": nfhs.binding(root, root / "triplet_000010.json"), "original_identity": nfhs.binding(root, root / "identity.json"),
-                "origin": "prior_development_cache"}
-            context = {"cache_records": {10: record}, "source": {"kind": "nfhs", "source_video": source}, "manifest": {}}
+                "receipt": nfhs.binding(root, root / "triplet_000010.json"), "original_identity": nfhs.binding(root, root / "inference_identity.json"),
+                "origin": "observation_cache"}
+            context = {"cache_records": {10: record}, "source": {"kind": "nfhs", "source_video": source}, "manifest": {},
+                       "producer": {"identity": identity}, "segment": {"range_inclusive": [10, 12]}}
             with patch.object(continuous.saved, "load_cache", return_value=("values", {"format": "nfhs_original"})) as loader:
                 values, provenance = continuous.read_contributor(root, context, 10)
             descriptor = loader.call_args.args[1]
             self.assertEqual(descriptor["cache"], d.binding(root, root / "triplet_000010.npz"))
-            self.assertEqual(loader.call_args.kwargs["nfhs_identity"]["inference"]["heatmap_threshold"], .5)
+            self.assertEqual(loader.call_args.kwargs["nfhs_identity"]["inference"]["heatmap_threshold"], .3)
             self.assertEqual(provenance["original_producer_record"], record)
             self.assertEqual(values, "values")
 
@@ -201,13 +203,13 @@ class ContinuousGapTests(unittest.TestCase):
             self.assertEqual([s["gaps"][0]["reason"] for s in emitted["segments"]], ["window_edge_gap"]*2)
 
     def test_actual_emitted_nfhs_cache_loads_without_receipt_repair(self):
-        for threshold in (.5, .3):
+        for threshold in (.3,):
             with self.subTest(threshold=threshold), tempfile.TemporaryDirectory() as folder:
                 root = Path(folder)
                 video = {"path": "source.mp4", "sha256": "a"*64, "width_px": 512, "height_px": 288}
                 identity = {"weights": {"sha256": d.EXPANDED_SHA}, "source_video": video,
-                            "inference": {"heatmap_threshold": threshold}}
-                d.write_once(root / "identity.json", identity)
+                            "segment": [10, 12], "inference": {"heatmap_threshold": threshold}}
+                d.write_once(root / "inference_identity.json", identity)
                 values = np.zeros((3, 288, 512), np.float32)
                 metadata = {"input_frame_indices": [10, 11, 12], "output_frame_indices": [10, 11, 12],
                     "inference_seconds": .01, "inference_identity_sha256": nfhs.canonical(identity),
@@ -215,10 +217,11 @@ class ContinuousGapTests(unittest.TestCase):
                 cache, receipt = root / "triplet_000010.npz", root / "triplet_000010.json"
                 nfhs.write_npz_once(cache, heatmaps=values, metadata_json=np.array(json.dumps(metadata, sort_keys=True)))
                 _, emitted = nfhs.read_bound_triplet(root, cache, receipt, 10, identity, video)
-                record = {**emitted, "input_frame_indices": [10, 11, 12],
-                          "original_identity": nfhs.binding(root, root / "identity.json")}
+                record = {**emitted, "input_frame_indices": [10, 11, 12], "origin": "observation_cache",
+                          "original_identity": nfhs.binding(root, root / "inference_identity.json")}
                 before = receipt.read_bytes()
-                context = {"source": {"kind": "nfhs", "source_video": video}, "manifest": {}, "cache_records": {10: record}}
+                context = {"source": {"kind": "nfhs", "source_video": video}, "manifest": {}, "cache_records": {10: record},
+                           "producer": {"identity": identity}, "segment": {"range_inclusive": [10, 12]}}
                 actual, provenance = continuous.read_contributor(root, context, 10)
                 self.assertTrue(np.array_equal(actual, values))
                 self.assertEqual(provenance["historical_producer_threshold"], threshold)
@@ -227,6 +230,52 @@ class ContinuousGapTests(unittest.TestCase):
                 with self.assertRaises((ValueError, FileNotFoundError)):
                     continuous.read_contributor(root, context, 10)
                 self.assertFalse(receipt.exists())
+
+    def test_imported_nfhs_model_only_identity_joins_the_actual_producer_window(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            video = {"path": "source.mp4", "sha256": "a"*64, "width_px": 512, "height_px": 288,
+                     "fps": 25.0, "frame_count": 25}
+            possession = {"possession_id": "synthetic_nfhs", "source_video": video, "visible_segments": [[0, 24]]}
+            window = {"window_id": "original_window", "possession_id": "synthetic_nfhs", "source_video": video,
+                      "start_frame_index": 10, "end_frame_index": 12}
+            old = {"checkpoint": {"path": "weights.pth", "sha256": d.EXPANDED_SHA},
+                   "training_completion": {"path": "training.json", "sha256": "b"*64}, "upstream_commit": "synthetic",
+                   "output_root": "data/outputs/prior", "windows": [window], "inference": nfhs.OLD_POLICY}
+            model = nfhs.model_identity(old, {"python": "synthetic"})
+            # This is the actual original producer's model-only identity shape.
+            identity = {**model, "experiment_config_sha256": nfhs.canonical(old), "inference": nfhs.OLD_POLICY}
+            self.assertNotIn("source_video", identity)
+            folder_path = root / old["output_root"] / window["window_id"]
+            d.write_once(folder_path / "inference_identity.json", identity)
+            d.write_once(root / "old_experiment.json", old)
+            config = {"possessions": [possession], "cached_experiment": nfhs.binding(root, root / "old_experiment.json")}
+            d.write_once(root / continuous.NFHS_CONFIG, config)
+            values = np.zeros((3, 288, 512), np.float32)
+            metadata = {"input_frame_indices": [10, 11, 12], "output_frame_indices": [10, 11, 12],
+                "inference_seconds": .01, "inference_identity_sha256": nfhs.canonical(identity),
+                "transform": nfhs.transform_metadata(512, 288), "cuda_peak_allocated_bytes": 0}
+            cache, receipt = folder_path / "triplet_000010.npz", folder_path / "triplet_000010.json"
+            nfhs.write_npz_once(cache, heatmaps=values, metadata_json=np.array(json.dumps(metadata, sort_keys=True)))
+            _, emitted = nfhs.read_bound_triplet(root, cache, receipt, 10, identity, video)
+            # Derive the import via cache_index, the same code that produced real records.
+            plan = nfhs.cache_index(root, config, old, model)["synthetic_nfhs", 10]
+            record = {**emitted, "input_frame_indices": [10, 11, 12], "origin": "prior_development_cache",
+                      "original_identity": plan["identity_binding"]}
+            context = {"source": {"kind": "nfhs", "candidate_id": "synthetic_nfhs", "source_video": video,
+                                   "possession": possession}, "manifest": {}, "cache_records": {10: record},
+                       "producer": {"identity": {**model, "source_video": video, "segment": [0, 24], "inference": nfhs.POLICY}},
+                       "segment": {"range_inclusive": [0, 24]}}
+            actual, provenance = continuous.read_contributor(root, context, 10)
+            self.assertTrue(np.array_equal(actual, values))
+            self.assertEqual(provenance["historical_producer_threshold"], .5)
+            self.assertEqual(provenance["original_source_authority"]["window_id"], "original_window")
+            changed = copy.deepcopy(context); changed["source"]["source_video"]["sha256"] = "wrong"
+            with self.assertRaisesRegex(ValueError, "source/window/protected-boundary"):
+                continuous.read_contributor(root, changed, 10)
+            changed = copy.deepcopy(context); changed["source"]["possession"]["visible_segments"] = [[0, 11]]
+            with self.assertRaisesRegex(ValueError, "source/window/protected-boundary"):
+                continuous.read_contributor(root, changed, 10)
 
     def test_labels_not_opened_without_persisted_selection(self):
         with tempfile.TemporaryDirectory() as folder:

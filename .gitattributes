@@ -67,6 +67,7 @@ configs/ball_tracking/reviews/nba_temporal_gap_selection_visual_review_v0_1.json
 # Preserve the approved continuous-context validation and its execution bindings.
 configs/ball_tracking/reviews/nba_temporal_gap_continuous_validation_approval_v0_1.json -text
 configs/ball_tracking/selections/nba_temporal_gap_continuous_v0_1.json -text
+configs/ball_tracking/selections/nba_temporal_gap_continuous_recovery_01_v0_1.json -text
 configs/ball_tracking/reviews/nba_temporal_gap_continuous_validation_result_v0_1.json -text
 src/ball_tracking/nba_temporal_gap_continuous.py -text
 src/ball_tracking/nba_temporal_gap_continuous_review.py -text

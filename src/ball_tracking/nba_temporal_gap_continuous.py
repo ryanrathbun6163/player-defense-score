@@ -176,6 +176,45 @@ def potentially_fillable_indices(projected):
     return {r["source_frame_index"] for gap in probe["gaps"] for r in gap["frame_diagnostics"]}
 
 
+def nfhs_cache_origin(root, context, record, start, identity):
+    """Reproduce the producer's source join without inventing identity fields.
+
+    Imported evaluation identities describe the model/config, not a source.
+    Their bound experiment window and original on-disk location bind the source.
+    Fresh longer-observation identities instead carry source_video and segment.
+    """
+    source = context["source"]
+    d.require(identity["weights"]["sha256"] == d.EXPANDED_SHA
+              and record["input_frame_indices"] == [start, start + 1, start + 2], "NFHS original identity/frame list differs")
+    cache_path = d.contained(root, record["cache"]["path"])
+    identity_path = d.contained(root, record["original_identity"]["path"])
+    d.require(cache_path.name == f"triplet_{start:06d}.npz" and identity_path == cache_path.with_name("inference_identity.json")
+              and d.contained(root, record["receipt"]["path"]) == cache_path.with_suffix(".json"), "NFHS cache/identity locations differ")
+    if record["origin"] == "observation_cache":
+        d.require(identity == context["producer"]["identity"] and identity["source_video"] == source["source_video"]
+                  and identity["segment"] == context["segment"]["range_inclusive"], "NFHS observation identity differs")
+        return {"kind": "observation_segment", "range_inclusive": identity["segment"]}
+    d.require(record["origin"] == "prior_development_cache", "Unknown NFHS cache origin")
+    config = d.read_json(root / NFHS_CONFIG)
+    old = saved.read_bound(root, config["cached_experiment"])
+    d.require(identity["experiment_config_sha256"] == nfhs.canonical(old)
+              and identity["inference"] == old["inference"] == nfhs.OLD_POLICY, "Imported NFHS experiment/model contract differs")
+    for key in ("weights", "training_completion", "upstream_commit", "adapter_sha256", "derived_adapter_sha256",
+                "inference_source_sha256", "runtime_versions", "input_modality", "offline_future_context"):
+        d.require(identity[key] == context["producer"]["identity"][key], "Imported NFHS model lineage differs")
+    windows = [window for window in old["windows"]
+               if d.contained(root, old["output_root"]) / window["window_id"] == cache_path.parent]
+    d.require(len(windows) == 1, "Imported NFHS cache has no unique original source window")
+    window = windows[0]; lo, hi = window["start_frame_index"], window["end_frame_index"]
+    d.require(window["possession_id"] == source["candidate_id"] and window["source_video"] == source["source_video"]
+              and lo <= start < start + 2 <= hi
+              and any(a <= lo <= hi <= b for a, b in source["possession"]["visible_segments"])
+              and context["segment"]["range_inclusive"][0] <= start < start + 2 <= context["segment"]["range_inclusive"][1],
+              "Imported NFHS source/window/protected-boundary join differs")
+    return {"kind": "prior_development_window", "experiment": config["cached_experiment"],
+            "window_id": window["window_id"], "range_inclusive": [lo, hi], "source_video": window["source_video"]}
+
+
 def read_contributor(root, context, start):
     record = context["cache_records"][start]
     if context["source"]["kind"] == "nba":
@@ -183,12 +222,12 @@ def read_contributor(root, context, start):
             "receipt": d.binding(root, d.contained(root, record["cache"]["path"]).with_suffix(".json")), "producer_record": record}
         return saved.load_cache(root, descriptor, context["manifest"], context["producer"])
     identity = saved.read_bound(root, record["original_identity"])
-    d.require(identity["weights"]["sha256"] == d.EXPANDED_SHA
-              and identity["source_video"] == context["source"]["source_video"], "NFHS original per-cache identity differs")
+    origin = nfhs_cache_origin(root, context, record, start, identity)
     cache = {"path": record["cache"]["path"], "sha256": record["cache"]["sha256"], "bytes": record["cache"]["size_bytes"]}
     descriptor = {"start": start, "format": "nfhs_original", "cache": cache, "receipt": record["receipt"]}
     values, binding = saved.load_cache(root, descriptor, context["manifest"], nfhs_identity=identity)
-    return values, {**binding, "original_identity": record["original_identity"], "original_producer_record": record}
+    return values, {**binding, "original_identity": record["original_identity"], "original_producer_record": record,
+                    "original_source_authority": origin}
 
 
 def select_segment(root, context, resources, *, cache_reader=read_contributor, prune=True):
