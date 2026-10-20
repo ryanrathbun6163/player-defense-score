@@ -55,3 +55,10 @@ configs/ball_tracking/selections/nba_candidate_preservation_v0_1.json -text
 configs/ball_tracking/reviews/nba_candidate_preservation_result_v0_1.json -text
 src/ball_tracking/nba_candidate_preservation.py -text
 tests/test_nba_candidate_preservation.py -text
+# Preserve the fixed temporal gap trial and its executed evidence bindings.
+configs/ball_tracking/selections/nba_temporal_gap_selection_v0_1.json -text
+configs/ball_tracking/reviews/nba_temporal_gap_selection_result_v0_1.json -text
+src/ball_tracking/nba_temporal_gap_selection.py -text
+src/ball_tracking/nba_temporal_gap_review.py -text
+tests/test_nba_temporal_gap_selection.py -text
+tests/test_nba_temporal_gap_review.py -text

@@ -144,8 +144,15 @@ is complete. The retained baseline gains six available DET positions and three
 NFHS positions, covering nine of 45 previously unavailable development frames;
 36 still have no matching candidate. The expanded pool also adds 51 ambiguous
 frames and five nonempty DET hidden frames. This modest gain supports one future
-fixed selector trial; no selected prediction or baseline changed. That selector
-trial has not been executed or authorized.
+fixed selector trial; no selected prediction changed in that availability experiment.
+Ryan then approved the [temporal gap-selection trial](docs/nba_temporal_gap_selection_experiment.md#completed-single-run-result):
+“Ok awesome move forward chat”. One frozen rule now recovers **two DET matches
+and one NFHS match**, raising selected matches to 209/237 and 131/145 respectively,
+with no additional wrong outputs or hidden alarms and both easy controls still
+60/60. SAC stays unchanged. The numerical gates pass; human review of the three
+new comparisons is pending. This is a small saved-output improvement on twelve
+short development windows, not continuous tracking or ball-phase completion.
+The original baseline remains intact, and the failed NBA continuation stays rejected.
 These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved
 model trajectories or comparative NBA accuracy. The preceding heatmap inspection

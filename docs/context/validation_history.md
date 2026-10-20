@@ -1,6 +1,45 @@
 # Validation History
 
-## Completed candidate-preservation experiment
+## Completed fixed temporal gap selection — numerical pass, review pending
+
+Ryan's “Ok awesome move forward chat” approved one frozen rule on all 790
+existing frames in twelve independent consecutive windows. The
+[scope](../../configs/ball_tracking/selections/nba_temporal_gap_selection_v0_1.json)
+binds the original candidate report, manifests, prospective design, implementation
+and tests. Native `1/90000` PTS/PNG joins were verified without image decoding.
+All choices were saved before scoring, and all original outcomes/errors were
+independently recreated against the existing producer records.
+
+The sole run completed in 0.391 seconds with no producer failure: DET matches
+207→209/237, missing 22→20; NFHS matches 130→131/145, missing 14→13; SAC unchanged.
+Only DET 11437, DET 11438 and P001 208 changed, all missing→matched. Wrong
+outputs, hidden alarms and the included 120/120 easy controls are unchanged.
+Sixteen fixed numeric conditions pass. No new inference, fit, checkpoint load,
+heatmap read, pixel decode or threshold sweep occurred in selection/scoring.
+
+Thirteen distinct focused tests (eight selector, five renderer) passed on their
+first commands, including actual
+component/score producer transport, label separation, inclusive time/spatial
+boundaries, all-or-none gaps, failure preservation and review-record transport.
+The deliberate failure fixture is a test, not an actual experiment failure.
+No full suite was repeated. Independent audit passed 165,219 checks in 0.281
+seconds on its first attempt: all 790 source/label joins and decisions, all
+1,580 before/after scores, twenty maximal gaps, missing intervals and sixteen
+conditions. It confirms all 597 original emitted points are unchanged and only
+three correct saved candidates were added. There was no audit or producer retry.
+All three videos completed on their first attempts: SAC 300 frames/13 seconds,
+DET 340/14.333333 seconds and NFHS 150/31 seconds. Every source key, native PTS,
+encoded duration, source PNG/RGB identity and paired image passed verification,
+with twelve actual encoded window-final images. Rendering and verification
+took 306.063 seconds in total, separately from selector/audit runtimes. AI
+inspection covers all three encoded changed frames and twelve encoded finals,
+not manual continuous review of every frame. It retains known P001/P002 missing
+finals and the existing DET offset. Human review remains pending.
+The [appended result](../nba_temporal_gap_selection_experiment.md#completed-single-run-result)
+and [compact result](../../configs/ball_tracking/reviews/nba_temporal_gap_selection_result_v0_1.json)
+record this small improvement without baseline replacement or phase acceptance.
+
+## Earlier increment (historical): completed candidate-preservation experiment
 
 The [frozen design and appended result](../nba_candidate_preservation_experiment.md)
 record one 22.094-second run across 790 frames, 1,580 means and 4,668 contributor

@@ -1,6 +1,40 @@
 # Current State
 
-## Latest increment: candidate preservation supports one bounded selector trial
+## Latest increment: fixed temporal gap rule passes numerical gates; human review pending
+
+Ryan approved the [single temporal gap-selection trial](../nba_temporal_gap_selection_experiment.md#completed-single-run-result)
+with “Ok awesome move forward chat”. One 0.391-second saved-output run fixed all
+790 choices before scoring. It preserves every original point and fills only
+two bounded gaps: DET frames 11437–11438 and P001 frame 208. All three additions
+match the accepted references. DET improves **207→209/237**, missing 22→20;
+NFHS improves **130→131/145**, missing 14→13. Wrong outputs stay eight/one and
+hidden alarms 13/zero respectively. SAC stays 218 matches, five wrong and 47
+missing; the included easy controls remain 60/60 in each NBA game.
+
+All sixteen fixed numeric conditions pass, including the nine original
+adaptation conditions and no added wrong points or hidden alarms in any group.
+All thirteen focused checks (eight selector, five renderer) passed first time.
+Independent audit passed 165,219 checks, recomputing all 790 decisions and
+1,580 before/after scores, and confirming all 597 original emitted points are
+unchanged. All three videos passed verification for every source frame, timestamp,
+duration and paired image, including twelve actual window finals. AI inspection
+covered the three encoded changed frames and all twelve encoded finals, not
+continuous manual review of all 790 frames. The [compact result](../../configs/ball_tracking/reviews/nba_temporal_gap_selection_result_v0_1.json)
+binds the evidence; human review remains a separate pending gate.
+
+This offline rule uses original past/future anchors, native timestamps and
+saved candidate coordinates; interpolated expectations are never emitted.
+No fit, inference, heatmap processing, threshold sweep or baseline overwrite
+occurred. The failed NBA continuation, uncertainty, protected holdouts, DET
+fitting exclusion, NFHS finish line and three earlier pending motion reviews
+remain unchanged. Twelve short windows do not establish continuous tracking.
+
+**Next:** review the three synchronized comparisons. After review, prepare a
+bounded continuous-context validation/integration plan with explicit context,
+missingness and review gates. No automatic full-game run, new fit or additional
+tuning follows this numerical pass.
+
+## Earlier increment (historical): candidate preservation supports one bounded selector trial
 
 The approved [candidate-preservation experiment](../nba_candidate_preservation_experiment.md#completed-comparison)
 completed once in 22.094 seconds across 790 frames, 1,580 means and 4,668

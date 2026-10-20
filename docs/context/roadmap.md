@@ -1,6 +1,30 @@
 # Roadmap
 
-## Current proposal: one fixed selector trial on the retained baseline
+## Current step: review the passing bounded gap-selection trial
+
+Ryan authorized the [fixed temporal gap-selection trial](../nba_temporal_gap_selection_experiment.md#completed-single-run-result)
+with “Ok awesome move forward chat”. One saved-output run fills three frames
+in two short gaps: DET 11437–11438 and P001 208. Selected DET matches improve
+207→209/237 and NFHS 130→131/145; wrong outputs and hidden alarms do not increase.
+SAC and all 120 easy-control matches are unchanged. The sixteen frozen numeric
+conditions pass, and independent audit verifies every decision and score.
+All three videos passed complete transport checks; human review is pending.
+
+Review the three source/ball comparison videos before accepting this increment.
+The rule preserves every existing point and cannot repair wrong anchors, long
+or boundary gaps, or frames with no usable saved candidate. Its future-anchor
+context makes it an offline operation. The retained model and original outputs
+remain intact; the failed NBA continuation is still rejected.
+
+After review, prepare one bounded continuous-context validation/integration
+plan: specify source windows, original model context, permitted future context,
+quality gates and synchronized review before running broader evaluation.
+Do not automatically start another fit, parameter sweep or full-game run.
+Reliable ball trajectories, complete possession validation, and the full
+synchronized player/ball milestone remain ahead. Holdouts and existing gates,
+including the three earlier pending motion reviews, are unchanged.
+
+## Earlier proposal (historical): one fixed selector trial on the retained baseline
 
 The approved [candidate-preservation comparison](../nba_candidate_preservation_experiment.md#completed-comparison)
 is complete. Retained-baseline availability gains six DET and three NFHS frames,

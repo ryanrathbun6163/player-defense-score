@@ -1,0 +1,1055 @@
+{
+  "schema_version": "nba_temporal_gap_selection_result/v0.1",
+  "status": "numerical_screen_pass_human_review_pending",
+  "created_at_utc": "2026-10-20T06:35:55.584875+00:00",
+  "source_head": "ae7ad9a28de9691296eb3b567398b69ff4814b4f",
+  "authorization": {
+    "approved_by": "Ryan",
+    "user_statement": "Ok awesome move forward chat",
+    "context": "Proceed with the proposed one fixed, label-blind temporal selector trial on retained-model saved candidates, with original error limits, uncertainty, controls and review.",
+    "new_model_inference": false,
+    "training": false,
+    "threshold_or_parameter_sweep": false,
+    "label_changes": false,
+    "baseline_overwrite": false,
+    "experimental_prediction_changes": true,
+    "saved_source_png_decode_for_review": true,
+    "protected_holdout_access": false
+  },
+  "scope": {
+    "path": "configs/ball_tracking/selections/nba_temporal_gap_selection_v0_1.json",
+    "sha256": "93bce4691bfed8432789b8e11a5eb5e6c524029be996ecf6e73b29119dcd7bf8",
+    "bytes": 21864
+  },
+  "frozen_design": {
+    "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/preparation/design_before_execution.md",
+    "sha256": "add991ff048447326248133c82ea4715d8e73e54b3603c675b9cc57d32d16354",
+    "bytes": 7678
+  },
+  "retained_checkpoint_sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+  "execution": {
+    "attempt_id": "78494f36bd3545b7912f92799bfd49f8",
+    "completion": {
+      "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/completion.json",
+      "sha256": "c90e8666000957dd91bfac9768ba69ca31cd1f7948c8571fae871d544e3eb8f4",
+      "bytes": 3544
+    },
+    "selection_saved_before_scoring": {
+      "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/attempts/78494f36bd3545b7912f92799bfd49f8/selection.json",
+      "sha256": "9ad4928a38063f44b11ed8ceb3bba6eb52bfe975b0dc73760e9ba0f9cbcfe222",
+      "bytes": 2169473
+    },
+    "report": {
+      "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/attempts/78494f36bd3545b7912f92799bfd49f8/report.json",
+      "sha256": "d758549d87f9a4bada812681ec926eab95d9f644767171f741aa63603dbc2467",
+      "bytes": 3185906
+    },
+    "summary": {
+      "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/attempts/78494f36bd3545b7912f92799bfd49f8/summary.json",
+      "sha256": "c03fc2e736be88dcf1fed9b31790dcd4c9687c4c32a7307db74925b4fc43f3fd",
+      "bytes": 104690
+    },
+    "selection_and_scoring_elapsed_seconds": 0.39099999999598367,
+    "producer_attempts": 1,
+    "producer_failed_attempts": 0,
+    "resources": {
+      "model_calls": 0,
+      "checkpoint_loads": 0,
+      "heatmap_array_reads": 0,
+      "source_png_decode_events": 0,
+      "video_decode_events": 0
+    },
+    "note": "Selection runtime excludes preparation, tests, independent audit, media rendering and visual inspection."
+  },
+  "comparison": {
+    "frames": {
+      "frames": 790,
+      "eligible": 652,
+      "hidden": 91,
+      "unknown": 47,
+      "windows": 12
+    },
+    "groups": {
+      "sac_training_fit": {
+        "frames": 300,
+        "eligibility": {
+          "eligible": 270,
+          "unknown": 13,
+          "hidden": 17
+        },
+        "baseline": {
+          "matched": 218,
+          "wrong": 5,
+          "missing": 47,
+          "hidden_alarm": 0,
+          "hidden_quiet": 17,
+          "unscored": 13,
+          "raw_error_emitted_eligible_px": {
+            "count": 223,
+            "mean": 4.234979323086806,
+            "median": 3.7467546765652493,
+            "p95": 8.260514440080522,
+            "max": 11.385611380831334
+          },
+          "raw_error_matched_px": {
+            "count": 218,
+            "mean": 4.084050008226202,
+            "median": 3.7223854745079934,
+            "p95": 7.876838081674887,
+            "max": 9.82135549850018
+          },
+          "raw_error_wrong_px": {
+            "count": 5,
+            "mean": 10.815497451009138,
+            "median": 10.682467830618997,
+            "p95": 11.369572915584069,
+            "max": 11.385611380831334
+          }
+        },
+        "selected": {
+          "matched": 218,
+          "wrong": 5,
+          "missing": 47,
+          "hidden_alarm": 0,
+          "hidden_quiet": 17,
+          "unscored": 13,
+          "raw_error_emitted_eligible_px": {
+            "count": 223,
+            "mean": 4.234979323086806,
+            "median": 3.7467546765652493,
+            "p95": 8.260514440080522,
+            "max": 11.385611380831334
+          },
+          "raw_error_matched_px": {
+            "count": 218,
+            "mean": 4.084050008226202,
+            "median": 3.7223854745079934,
+            "p95": 7.876838081674887,
+            "max": 9.82135549850018
+          },
+          "raw_error_wrong_px": {
+            "count": 5,
+            "mean": 10.815497451009138,
+            "median": 10.682467830618997,
+            "p95": 11.369572915584069,
+            "max": 11.385611380831334
+          }
+        },
+        "changed_frames": 0,
+        "outcome_transitions": {
+          "matched -> matched": 218,
+          "wrong -> wrong": 5,
+          "unscored -> unscored": 13,
+          "hidden_quiet -> hidden_quiet": 17,
+          "missing -> missing": 47
+        },
+        "new_wrong": 0,
+        "new_hidden_alarm": 0
+      },
+      "det_development": {
+        "frames": 340,
+        "eligibility": {
+          "eligible": 237,
+          "unknown": 34,
+          "hidden": 69
+        },
+        "baseline": {
+          "matched": 207,
+          "wrong": 8,
+          "missing": 22,
+          "hidden_alarm": 13,
+          "hidden_quiet": 56,
+          "unscored": 34,
+          "raw_error_emitted_eligible_px": {
+            "count": 215,
+            "mean": 4.447350335804324,
+            "median": 3.606086240142811,
+            "p95": 9.665781316891131,
+            "max": 14.755208367237588
+          },
+          "raw_error_matched_px": {
+            "count": 207,
+            "mean": 4.168388088361551,
+            "median": 3.575224261981042,
+            "p95": 8.613580641029253,
+            "max": 9.816988804303646
+          },
+          "raw_error_wrong_px": {
+            "count": 8,
+            "mean": 11.665498488386088,
+            "median": 11.322735502508465,
+            "p95": 14.067795580587067,
+            "max": 14.755208367237588
+          }
+        },
+        "selected": {
+          "matched": 209,
+          "wrong": 8,
+          "missing": 20,
+          "hidden_alarm": 13,
+          "hidden_quiet": 56,
+          "unscored": 34,
+          "raw_error_emitted_eligible_px": {
+            "count": 217,
+            "mean": 4.449839937077425,
+            "median": 3.6369727871536743,
+            "p95": 9.665247164714371,
+            "max": 14.755208367237588
+          },
+          "raw_error_matched_px": {
+            "count": 209,
+            "mean": 4.173642480568002,
+            "median": 3.5896430893039675,
+            "p95": 8.597481448600188,
+            "max": 9.816988804303646
+          },
+          "raw_error_wrong_px": {
+            "count": 8,
+            "mean": 11.665498488386088,
+            "median": 11.322735502508465,
+            "p95": 14.067795580587067,
+            "max": 14.755208367237588
+          }
+        },
+        "changed_frames": 2,
+        "outcome_transitions": {
+          "matched -> matched": 207,
+          "missing -> missing": 20,
+          "unscored -> unscored": 34,
+          "hidden_quiet -> hidden_quiet": 56,
+          "hidden_alarm -> hidden_alarm": 13,
+          "missing -> matched": 2,
+          "wrong -> wrong": 8
+        },
+        "new_wrong": 0,
+        "new_hidden_alarm": 0
+      },
+      "nfhs_development": {
+        "frames": 150,
+        "eligibility": {
+          "eligible": 145,
+          "hidden": 5
+        },
+        "baseline": {
+          "matched": 130,
+          "wrong": 1,
+          "missing": 14,
+          "hidden_alarm": 0,
+          "hidden_quiet": 5,
+          "unscored": 0,
+          "raw_error_emitted_eligible_px": {
+            "count": 131,
+            "mean": 3.8281247427606884,
+            "median": 3.6393234625636244,
+            "p95": 8.311559593507635,
+            "max": 11.666147538088106
+          },
+          "raw_error_matched_px": {
+            "count": 130,
+            "mean": 3.7678322597197083,
+            "median": 3.6229721133618336,
+            "p95": 8.128303918337686,
+            "max": 9.365988536184677
+          },
+          "raw_error_wrong_px": {
+            "count": 1,
+            "mean": 11.666147538088106,
+            "median": 11.666147538088106,
+            "p95": 11.666147538088106,
+            "max": 11.666147538088106
+          }
+        },
+        "selected": {
+          "matched": 131,
+          "wrong": 1,
+          "missing": 13,
+          "hidden_alarm": 0,
+          "hidden_quiet": 5,
+          "unscored": 0,
+          "raw_error_emitted_eligible_px": {
+            "count": 132,
+            "mean": 3.813808295408016,
+            "median": 3.6229721133618336,
+            "p95": 8.30734609322876,
+            "max": 11.666147538088106
+          },
+          "raw_error_matched_px": {
+            "count": 131,
+            "mean": 3.7538667744715264,
+            "median": 3.6066207641600423,
+            "p95": 8.112623843628661,
+            "max": 9.365988536184677
+          },
+          "raw_error_wrong_px": {
+            "count": 1,
+            "mean": 11.666147538088106,
+            "median": 11.666147538088106,
+            "p95": 11.666147538088106,
+            "max": 11.666147538088106
+          }
+        },
+        "changed_frames": 1,
+        "outcome_transitions": {
+          "matched -> matched": 130,
+          "missing -> matched": 1,
+          "missing -> missing": 13,
+          "wrong -> wrong": 1,
+          "hidden_quiet -> hidden_quiet": 5
+        },
+        "new_wrong": 0,
+        "new_hidden_alarm": 0
+      }
+    },
+    "controls_included_subset": {
+      "sac_training_fit": {
+        "frames": 60,
+        "eligibility": {
+          "eligible": 60
+        },
+        "baseline": {
+          "matched": 60,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 0,
+          "raw_error_emitted_eligible_px": {
+            "count": 60,
+            "mean": 2.7620034150451103,
+            "median": 2.5849667953261593,
+            "p95": 4.09940708691164,
+            "max": 4.4004869069184105
+          },
+          "raw_error_matched_px": {
+            "count": 60,
+            "mean": 2.7620034150451103,
+            "median": 2.5849667953261593,
+            "p95": 4.09940708691164,
+            "max": 4.4004869069184105
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "selected": {
+          "matched": 60,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 0,
+          "raw_error_emitted_eligible_px": {
+            "count": 60,
+            "mean": 2.7620034150451103,
+            "median": 2.5849667953261593,
+            "p95": 4.09940708691164,
+            "max": 4.4004869069184105
+          },
+          "raw_error_matched_px": {
+            "count": 60,
+            "mean": 2.7620034150451103,
+            "median": 2.5849667953261593,
+            "p95": 4.09940708691164,
+            "max": 4.4004869069184105
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "changed_frames": 0,
+        "outcome_transitions": {
+          "matched -> matched": 60
+        },
+        "new_wrong": 0,
+        "new_hidden_alarm": 0
+      },
+      "det_development": {
+        "frames": 60,
+        "eligibility": {
+          "eligible": 60
+        },
+        "baseline": {
+          "matched": 60,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 0,
+          "raw_error_emitted_eligible_px": {
+            "count": 60,
+            "mean": 2.896389404678523,
+            "median": 2.821407835082767,
+            "p95": 4.478085374418979,
+            "max": 5.179421885426179
+          },
+          "raw_error_matched_px": {
+            "count": 60,
+            "mean": 2.896389404678523,
+            "median": 2.821407835082767,
+            "p95": 4.478085374418979,
+            "max": 5.179421885426179
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "selected": {
+          "matched": 60,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 0,
+          "raw_error_emitted_eligible_px": {
+            "count": 60,
+            "mean": 2.896389404678523,
+            "median": 2.821407835082767,
+            "p95": 4.478085374418979,
+            "max": 5.179421885426179
+          },
+          "raw_error_matched_px": {
+            "count": 60,
+            "mean": 2.896389404678523,
+            "median": 2.821407835082767,
+            "p95": 4.478085374418979,
+            "max": 5.179421885426179
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "changed_frames": 0,
+        "outcome_transitions": {
+          "matched -> matched": 60
+        },
+        "new_wrong": 0,
+        "new_hidden_alarm": 0
+      },
+      "nfhs_development": {
+        "frames": 0,
+        "eligibility": {},
+        "baseline": {
+          "matched": 0,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 0,
+          "raw_error_emitted_eligible_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "raw_error_matched_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "selected": {
+          "matched": 0,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 0,
+          "raw_error_emitted_eligible_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "raw_error_matched_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "changed_frames": 0,
+        "outcome_transitions": {},
+        "new_wrong": 0,
+        "new_hidden_alarm": 0
+      }
+    },
+    "gap_decisions": {
+      "anchor_speed_exceeds_limit": 1,
+      "anchor_elapsed_exceeds_limit": 11,
+      "gap_has_empty_or_ambiguous_frame": 3,
+      "all_frames_have_unambiguous_saved_candidates": 2,
+      "window_edge_gap": 3
+    },
+    "original_emitted_points_preserved_exactly": 597,
+    "changed_frames": [
+      {
+        "candidate_id": "sas_det_q1_c02",
+        "window_id": "det_drive_rim_overlap",
+        "source_frame_index": 11437,
+        "source_pts_ticks": 17176472,
+        "before": "missing",
+        "after": "matched",
+        "center_xy_px": [
+          1161.1219024658203,
+          365.09562492370605
+        ],
+        "raw_center_error_px": 4.879034707706406,
+        "saved_candidate_provenance": [
+          "old",
+          "sas_det_q1_c02",
+          11437,
+          "contributor",
+          11435,
+          2,
+          0
+        ],
+        "gap_id": "det_drive_rim_overlap:11437-11438"
+      },
+      {
+        "candidate_id": "sas_det_q1_c02",
+        "window_id": "det_drive_rim_overlap",
+        "source_frame_index": 11438,
+        "source_pts_ticks": 17178002,
+        "before": "missing",
+        "after": "matched",
+        "center_xy_px": [
+          1162.6158142089844,
+          363.7609577178955
+        ],
+        "raw_center_error_px": 4.555909440165158,
+        "saved_candidate_provenance": [
+          "old",
+          "sas_det_q1_c02",
+          11438,
+          "contributor",
+          11438,
+          0,
+          0
+        ],
+        "gap_id": "det_drive_rim_overlap:11437-11438"
+      },
+      {
+        "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+        "source_frame_index": 208,
+        "source_pts_ticks": 748800,
+        "before": "missing",
+        "after": "matched",
+        "center_xy_px": [
+          395.6688594818115,
+          205.3582763671875
+        ],
+        "raw_center_error_px": 1.9383536922079272,
+        "saved_candidate_provenance": [
+          "old",
+          "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+          208,
+          "contributor",
+          208,
+          0,
+          0
+        ],
+        "gap_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2:208-208"
+      }
+    ],
+    "gates": {
+      "constants": {
+        "original_adaptation": {
+          "det": {
+            "matched_min": 208,
+            "missing_max": 21,
+            "wrong_max": 8,
+            "hidden_alarm_max": 13,
+            "easy_control_matched": 60
+          },
+          "nfhs": {
+            "matched_min": 130,
+            "missing_max": 14,
+            "wrong_max": 1,
+            "hidden_alarm_max": 0
+          }
+        },
+        "sac_easy_control_matched": 60,
+        "no_additional_wrong_or_hidden_alarms_all_groups": true
+      },
+      "checks": {
+        "det_matched_min": true,
+        "det_missing_max": true,
+        "det_wrong_max": true,
+        "det_hidden_alarm_max": true,
+        "det_easy_control_matched": true,
+        "nfhs_matched_min": true,
+        "nfhs_missing_max": true,
+        "nfhs_wrong_max": true,
+        "nfhs_hidden_alarm_max": true,
+        "sac_easy_control_matched": true,
+        "sac_training_fit_no_additional_wrong": true,
+        "sac_training_fit_no_additional_hidden_alarm": true,
+        "det_development_no_additional_wrong": true,
+        "det_development_no_additional_hidden_alarm": true,
+        "nfhs_development_no_additional_wrong": true,
+        "nfhs_development_no_additional_hidden_alarm": true
+      },
+      "numerical_candidate_pass": true,
+      "human_review": "pending",
+      "accepted": false
+    }
+  },
+  "validation": {
+    "focused_tests": {
+      "distinct_passes": 13,
+      "commands": 2,
+      "actual_test_command_failures": 0,
+      "selector": {
+        "passed": 8,
+        "elapsed_seconds": 0.086,
+        "log": {
+          "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/preparation/tests_selector_01.log",
+          "sha256": "ed9f2c2d5d2990dfef9d0e81ded9ecf0715a182e3832718c514a66c5f23b4109",
+          "bytes": 1737
+        }
+      },
+      "renderer": {
+        "passed": 5,
+        "elapsed_seconds": 1.493,
+        "log": {
+          "path": "data/outputs/t/nba_temporal_gap_review_validation/tests_01.log",
+          "sha256": "093445f4071361162ed799b0c0a810db1704b6624855055122fc4db59b4f1eca",
+          "bytes": 1053
+        }
+      },
+      "full_suite_repeated": false,
+      "deliberate_failure_fixtures": "Tests intentionally exercise preserved scoring/encoder failures; these are not failed real runs."
+    },
+    "actual_scope_check": {
+      "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/preparation/check_scope_01.log",
+      "sha256": "9b2124f35a9ab32f7b566e11ee5cd9e874a601afdf268a32d56c0f795f6916a6",
+      "bytes": 387
+    },
+    "actual_render_input_check": {
+      "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/preparation/review_check_inputs_01.log",
+      "sha256": "5540f8a289d50999bb8384471d2a841b7d29bf6d7112980d6ef9aa99b2de2c13",
+      "bytes": 1484
+    },
+    "independent_audit": {
+      "receipt": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/independent_audit/audit_01.json",
+        "sha256": "343d6d0a71c734a41a8f382e8a9f91821273266c990b5557c841a92da2c2d0e3",
+        "bytes": 38003
+      },
+      "helper": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/independent_audit/audit_selection.py",
+        "sha256": "5245a73d73e2df9449e5103646f8e68ee6d1589a9e011fc521245912c5117456",
+        "bytes": 32560
+      },
+      "status": "passed",
+      "checks": 165219,
+      "elapsed_seconds": 0.28100000000267755,
+      "coverage": {
+        "windows": 12,
+        "maximal_original_missing_runs": 20,
+        "filled_runs": 2,
+        "original_points_preserved": 597,
+        "filled_frame_coordinates": 3,
+        "source_rows_joined": 790,
+        "decisions_independently_recomputed": 790,
+        "before_after_scores_independently_recomputed": 1580,
+        "heatmap_arrays_read": 0,
+        "source_media_decodes": 0,
+        "model_calls": 0,
+        "producer_attempts": 1,
+        "producer_completed_attempts": 1,
+        "producer_failed_attempts": 0
+      },
+      "attempts": 1,
+      "failed_attempts": 0
+    },
+    "media_completion": {
+      "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/completion.json",
+      "sha256": "7fb5cf6d61951fb5c8da174bdd23814d0125acf419bbd9997158385b26bffc22",
+      "bytes": 14290
+    },
+    "ai_visual_inspection": {
+      "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/visual_inspection/inspection.json",
+      "sha256": "bf91eb457355ec025b31ff42bb8caae27a116aad4df80d0d7b6d8003400f0836",
+      "bytes": 11636
+    },
+    "ai_inspection_is_human_acceptance": false,
+    "implementation": [
+      {
+        "path": "src/ball_tracking/nba_temporal_gap_selection.py",
+        "sha256": "5e0d195e4ce318bb271c6286f68abe31ed1e2c7bd4fd64a8fa7a2408fec69202",
+        "bytes": 31732
+      },
+      {
+        "path": "src/ball_tracking/nba_candidate_preservation.py",
+        "sha256": "818017033b3648d7d63f05534bcecec719e0d6a92d4da200332ab453e2403485",
+        "bytes": 24933
+      },
+      {
+        "path": "src/ball_tracking/nba_wasb_diagnostic.py",
+        "sha256": "b8dcd105e964475e0efc53e45449e47acdc4341e7409f371d5c44172d0e950f3",
+        "bytes": 34275
+      },
+      {
+        "path": "src/ball_tracking/nba_annotations.py",
+        "sha256": "758c7a8b732e84d2428fe186a58d4b43d2b0a7efd751d8879dd1fdac3873329e",
+        "bytes": 32971
+      },
+      {
+        "path": "src/ball_tracking/nba_adaptation_regression_diagnostic.py",
+        "sha256": "fec5d421c0a44abf2dd02687c75a830a9aa6b526dfa79411062d1ca08a1c4c03",
+        "bytes": 23422
+      },
+      {
+        "path": "src/ball_tracking/nba_adaptation_comparison.py",
+        "sha256": "dd229cab03967ac649e9540944a00d81ebb578b0b85169ece25d8d127f824500",
+        "bytes": 33044
+      },
+      {
+        "path": "src/ball_tracking/annotations.py",
+        "sha256": "f2f775ca12a3780f7f5e6d81c65e595a5d24d1fa334c0dac38258e758bb9203a",
+        "bytes": 36408
+      }
+    ],
+    "selector_tests": {
+      "path": "tests/test_nba_temporal_gap_selection.py",
+      "sha256": "0e6a554eb0ae79a28286a68bb5cbcd6288ed6afa5c6a83e8e1d8104c8bb78d37",
+      "bytes": 12530
+    },
+    "renderer": {
+      "path": "src/ball_tracking/nba_temporal_gap_review.py",
+      "sha256": "6a22edac8ca693741021e154a5bbbf1e50c1a3a0ee19f3c85e8292ca21cab806",
+      "bytes": 22996
+    },
+    "renderer_tests": {
+      "path": "tests/test_nba_temporal_gap_review.py",
+      "sha256": "16e318d98857f960f4da49f48f8100d1a4e551ca101e2beae92ff9a8b11cf1c2",
+      "bytes": 8038
+    }
+  },
+  "reviews": {
+    "sac_training_fit": {
+      "video": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/sac_training_fit/attempts/cacc463c9c8048a3bfc6a5e8d17488cc/review.mp4",
+        "sha256": "bd2a22b282687cfb3bdc6d7b48b7670e292b854811247daae3a396e214d8e4a2",
+        "bytes": 13791499
+      },
+      "manifest": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/sac_training_fit/attempts/cacc463c9c8048a3bfc6a5e8d17488cc/review_manifest.json",
+        "sha256": "61f5e5c59124d84cd4e99161c1b96def00875ddade3d9720c011ab0a95aae649",
+        "bytes": 229496
+      },
+      "verification": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/sac_training_fit/attempts/cacc463c9c8048a3bfc6a5e8d17488cc/verification.json",
+        "sha256": "d9b564b7b4189e2eb85ad7bf59b074a061fac377775b122e1fb79a113ba84377",
+        "bytes": 3161
+      },
+      "probe": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/sac_training_fit/attempts/cacc463c9c8048a3bfc6a5e8d17488cc/ffprobe.json",
+        "sha256": "8db8e2890a3493a44e8dc88cac4aed9c4ec0589dcce55e7f506e2eac976d39d6",
+        "bytes": 23973
+      },
+      "final_frame": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/sac_training_fit/attempts/cacc463c9c8048a3bfc6a5e8d17488cc/window_final_02.png",
+        "sha256": "6a7104f8380dc18c4044b739dcf6c22f992e42fa0bcf19104272d217e2a7fb53",
+        "bytes": 922842
+      },
+      "window_final_frames": [
+        {
+          "window_id": "sac_distractor_recovery",
+          "review_index": 119,
+          "source_frame_index": 1059,
+          "source_pts_ticks": 1595402,
+          "overlay_mae": 2.000799440870098,
+          "image": {
+            "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/sac_training_fit/attempts/cacc463c9c8048a3bfc6a5e8d17488cc/window_final_00.png",
+            "sha256": "aa952452f7bbe0a8002d7d7b041efaa9ff22144b776ad59707d9ec3de5d9a3e0",
+            "bytes": 1159413
+          }
+        },
+        {
+          "window_id": "sac_held_ball_gaps",
+          "review_index": 239,
+          "source_frame_index": 1359,
+          "source_pts_ticks": 2045852,
+          "overlay_mae": 2.02161905126634,
+          "image": {
+            "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/sac_training_fit/attempts/cacc463c9c8048a3bfc6a5e8d17488cc/window_final_01.png",
+            "sha256": "6f8b69b95626589e45513a1c775f98e9bcd723d324b11a6a2397f1f685df1ecd",
+            "bytes": 1255879
+          }
+        },
+        {
+          "window_id": "sac_mem_q1_c01_pilot_control",
+          "review_index": 299,
+          "source_frame_index": 719,
+          "source_pts_ticks": 1084922,
+          "overlay_mae": 2.9574936810661763,
+          "image": {
+            "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/sac_training_fit/attempts/cacc463c9c8048a3bfc6a5e8d17488cc/window_final_02.png",
+            "sha256": "6a7104f8380dc18c4044b739dcf6c22f992e42fa0bcf19104272d217e2a7fb53",
+            "bytes": 922842
+          }
+        }
+      ],
+      "completion": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/sac_training_fit/attempts/cacc463c9c8048a3bfc6a5e8d17488cc/completion.json",
+        "sha256": "2436f27a512ff3452662ca81b08256c67ca7e79fb0b6433a435feea1ab63875d",
+        "bytes": 5209
+      },
+      "verified_frames": 300,
+      "duration_seconds": 13.0,
+      "render_and_verification_elapsed_seconds": 116.875
+    },
+    "det_development": {
+      "video": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/det_development/attempts/adb74988de4c43e09dc85e76bd8d0507/review.mp4",
+        "sha256": "2198c486aae7a2819028d983cd3b5f561bdc312c97b0b92996eb40930dde03fd",
+        "bytes": 15729123
+      },
+      "manifest": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/det_development/attempts/adb74988de4c43e09dc85e76bd8d0507/review_manifest.json",
+        "sha256": "bd0722166efd15ff38fef57d016bd237205bf2107502a2e79398516ce93a07c5",
+        "bytes": 261570
+      },
+      "verification": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/det_development/attempts/adb74988de4c43e09dc85e76bd8d0507/verification.json",
+        "sha256": "184b4ad811b1436dd8ca181e56152e65903183aa5e4882ea0d297c9f2017d6ab",
+        "bytes": 3167
+      },
+      "probe": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/det_development/attempts/adb74988de4c43e09dc85e76bd8d0507/ffprobe.json",
+        "sha256": "79037b3ca8fa681255f87b8f89332383a52f3f95e1bbb0f3d06762c058fc70e0",
+        "bytes": 27167
+      },
+      "final_frame": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/det_development/attempts/adb74988de4c43e09dc85e76bd8d0507/window_final_02.png",
+        "sha256": "861d793be7ac46e26fa96c470b046c02fd96a28935f0902ecca61cd7162f0373",
+        "bytes": 1150516
+      },
+      "window_final_frames": [
+        {
+          "window_id": "det_distractor_long_gap",
+          "review_index": 119,
+          "source_frame_index": 11119,
+          "source_pts_ticks": 16699022,
+          "overlay_mae": 2.168042470894608,
+          "image": {
+            "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/det_development/attempts/adb74988de4c43e09dc85e76bd8d0507/window_final_00.png",
+            "sha256": "7e69526f88fc9b649a164af10397955e09ab8bf67dec02feabe6cb352638ebb2",
+            "bytes": 1202312
+          }
+        },
+        {
+          "window_id": "det_drive_rim_overlap",
+          "review_index": 279,
+          "source_frame_index": 11579,
+          "source_pts_ticks": 17389682,
+          "overlay_mae": 2.107986749387255,
+          "image": {
+            "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/det_development/attempts/adb74988de4c43e09dc85e76bd8d0507/window_final_01.png",
+            "sha256": "b53071b37b9b269f9958d68fb9a5d4c9226237df88107ff0c745ba3481f0a2a4",
+            "bytes": 1177745
+          }
+        },
+        {
+          "window_id": "sas_det_q1_c02_pilot_control",
+          "review_index": 339,
+          "source_frame_index": 10847,
+          "source_pts_ticks": 16290602,
+          "overlay_mae": 3.155761399611928,
+          "image": {
+            "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/det_development/attempts/adb74988de4c43e09dc85e76bd8d0507/window_final_02.png",
+            "sha256": "861d793be7ac46e26fa96c470b046c02fd96a28935f0902ecca61cd7162f0373",
+            "bytes": 1150516
+          }
+        }
+      ],
+      "completion": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/det_development/attempts/adb74988de4c43e09dc85e76bd8d0507/completion.json",
+        "sha256": "b2e29ea72e5de01e29a2581b8117ca3679e2e5b4333af84624e8cf7a8fe69eb4",
+        "bytes": 5223
+      },
+      "verified_frames": 340,
+      "duration_seconds": 14.333333333333334,
+      "render_and_verification_elapsed_seconds": 129.39099999999598
+    },
+    "nfhs_development": {
+      "video": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/review.mp4",
+        "sha256": "c2bd4891328040af157b427b4ffbb3c11ed5831838855f4ae668dd13619fcdc9",
+        "bytes": 13581035
+      },
+      "manifest": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/review_manifest.json",
+        "sha256": "0d8e2dd38f0bc3bbfc51b65efb20c89c016a77e451ad33ab02e0e4cb9f21fd7d",
+        "bytes": 139069
+      },
+      "verification": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/verification.json",
+        "sha256": "6102ca1e03475c7399b03a65ce12d02b2351bce0bd5dccc07bc85e7f8eec6c37",
+        "bytes": 4962
+      },
+      "probe": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/ffprobe.json",
+        "sha256": "21a26b36cc8dbbb31144ebf12b663f59300d0378515268c5b19f8282476b6161",
+        "bytes": 12375
+      },
+      "final_frame": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/window_final_05.png",
+        "sha256": "43818fcc6d32ec0835112b34f324075ba7c462c0e012b12e459c554cb4260e0b",
+        "bytes": 1110350
+      },
+      "window_final_frames": [
+        {
+          "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+          "review_index": 24,
+          "source_frame_index": 74,
+          "source_pts_ticks": 266400,
+          "overlay_mae": 2.321720218035131,
+          "image": {
+            "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/window_final_00.png",
+            "sha256": "b56dd2585a7b8f97da5116d8e06d9d069d8bbded7cc5b06d0daa428d8f4a2da4",
+            "bytes": 1104184
+          }
+        },
+        {
+          "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+          "review_index": 49,
+          "source_frame_index": 224,
+          "source_pts_ticks": 806400,
+          "overlay_mae": 2.2943477456086603,
+          "image": {
+            "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/window_final_01.png",
+            "sha256": "5384c30b43dd4f014b4213e20548ddbc318dacf31b885e7c0b6d080e52b2ef7c",
+            "bytes": 1192665
+          }
+        },
+        {
+          "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+          "review_index": 74,
+          "source_frame_index": 274,
+          "source_pts_ticks": 986400,
+          "overlay_mae": 2.2119162964665033,
+          "image": {
+            "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/window_final_02.png",
+            "sha256": "7d044e855d1ddd0c9409ee7499a096a9e8f836a60873491081f6977329b60dd2",
+            "bytes": 1078052
+          }
+        },
+        {
+          "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+          "review_index": 99,
+          "source_frame_index": 49,
+          "source_pts_ticks": 176400,
+          "overlay_mae": 2.1207899305555555,
+          "image": {
+            "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/window_final_03.png",
+            "sha256": "6d89050cc5b375925a439bccbeb6d3497971c81ab0add1a4faa5159870171865",
+            "bytes": 1041153
+          }
+        },
+        {
+          "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+          "review_index": 124,
+          "source_frame_index": 324,
+          "source_pts_ticks": 1166400,
+          "overlay_mae": 2.2804113051470587,
+          "image": {
+            "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/window_final_04.png",
+            "sha256": "186b2ade047d98abf94d28f61e6d4d53a655a6dbb757f9515c33851961eb6d94",
+            "bytes": 1094424
+          }
+        },
+        {
+          "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+          "review_index": 149,
+          "source_frame_index": 174,
+          "source_pts_ticks": 626400,
+          "overlay_mae": 2.6277962877859475,
+          "image": {
+            "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/window_final_05.png",
+            "sha256": "43818fcc6d32ec0835112b34f324075ba7c462c0e012b12e459c554cb4260e0b",
+            "bytes": 1110350
+          }
+        }
+      ],
+      "completion": {
+        "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/review/nfhs_development/attempts/09cea1318de1465987ec34e01c68b4d1/completion.json",
+        "sha256": "763d1616a0acefa5d2e41b9b44c81fcd7aea3e0db9ed55dfcfd7ad9f31949796",
+        "bytes": 7021
+      },
+      "verified_frames": 150,
+      "duration_seconds": 31.0,
+      "render_and_verification_elapsed_seconds": 59.79699999999866
+    }
+  },
+  "decision": {
+    "numerical_screen": "pass",
+    "human_review": "pending",
+    "accepted": false,
+    "baseline_replaced": false,
+    "failed_continuation_promoted": false,
+    "ball_phase_complete": false,
+    "meaning": "Three correct saved-candidate additions in two short gaps; no extra wrong outputs or hidden alarms, all original points and easy controls preserved.",
+    "next": "Review the changed trajectories, then define bounded continuous-context validation and integration using the same rule and gates. No additional experiment is executed or authorized by this result.",
+    "remaining_development": {
+      "det_missing": 20,
+      "det_wrong": 8,
+      "det_hidden_alarms": 13,
+      "nfhs_missing": 13,
+      "nfhs_wrong": 1,
+      "nfhs_hidden_alarms": 0
+    }
+  },
+  "limits": [
+    "Previously inspected development windows; no independent holdout or full-game claim.",
+    "SAC remains training evidence; DET excluded from fitting; TOR and protected NFHS frames excluded.",
+    "Original contributor contexts stay fixed; selector resets at each original contiguous window.",
+    "Existing nonmissing outputs remain exactly unchanged, including wrong/out-of-image points.",
+    "Short offline gap repair, no recursive anchors or invented coordinates; longer gaps remain missing.",
+    "Failed NBA continuation, baseline artifacts and previous reviews remain unchanged.",
+    "Numeric pass is separate from human trajectory review, adoption and ball-phase completion."
+  ],
+  "publication_helper": {
+    "path": "data/outputs/ball_tracking/nba/temporal_gap_selection_v0_1/preparation/publish_result.py",
+    "sha256": "51b923105eb16c253d046d32143cc97962f83942edd24827c716a36b425f29c3",
+    "bytes": 7285
+  }
+}
