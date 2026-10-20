@@ -1,6 +1,30 @@
 # Roadmap
 
-## Current action: decide on a bounded hard-example reference batch
+## Current action: review four prepared NBA reference-label videos
+
+Ryan's “Ok move forward” approved the exact 520-frame preparation scope. All
+four [label-review packages](../nba_hard_example_reference_review.md) are ready:
+387 proposed centers and 133 null centers, with AI authorship, visibility and
+uncertainty retained. The [preparation record](../../configs/ball_tracking/reviews/nba_hard_example_reference_preparation_v0_1.json)
+binds the source evidence, 26 passing focused tests and passed transport checks
+for all 520 PNGs and four complete videos. The videos show six source frames per
+second and hold their actual final frames for one second, for about 91 seconds
+of total phone review.
+
+Ryan's acceptance of these new labels is the next scientific decision. After
+acceptance, publish a separate accepted AI reference and diagnose saved frozen
+predictions on the new labels plus 120 existing pilot references as separate
+longer-context controls, at most 640 frames. Unknown centers remain unscored;
+the original short-pilot score stays unchanged. No new scoring, inference,
+training, threshold search or motion change has occurred in this increment.
+
+The selected difficult windows cannot estimate representative NBA accuracy.
+SAC retains future-training eligibility; DET remains excluded from fitting;
+TOR and independent testing remain outside scope. Earlier pilot acceptance,
+three pending motion reviews, protected holdouts and the NFHS finish line are
+unchanged. The original proposal remains preserved as historical evidence.
+
+## Earlier action: decide on a bounded hard-example reference batch
 
 Ryan reported completion of both longer-video reviews after their delivery in
 chat for phone viewing: “Ok reviewed. What’s the next step”. The separate

@@ -103,11 +103,16 @@ both complete videos passed transport checks. The
 preserve these limitations. After both complete videos were delivered in chat
 for phone viewing, Ryan reported: “Ok reviewed. What’s the next step”. This
 records review completion, without playback telemetry or an explicit quality
-endorsement. The [next proposed reference batch](docs/nba_hard_example_reference_plan.md)
-would label 520 difficult frames and, after label acceptance, score saved
-outputs alongside 120 existing pilot references. This is design-only; no new
-labels, scoring, inference or training are authorized by that review. Existing
-holdouts, the NFHS finish line and the negative motion result remain unchanged.
+endorsement. Ryan then approved the [520-frame reference batch](docs/nba_hard_example_reference_plan.md):
+“Ok move forward”. Four complete [label-review packages](docs/nba_hard_example_reference_review.md)
+are now prepared, with **387 proposed ball centers and 133 unknown centers**.
+All 520 source/render PNG checks and four video transport audits passed; 26
+focused tests passed. These are AI proposals awaiting Ryan's label acceptance.
+Only after acceptance will a separate accepted reference be published and saved
+outputs scored, with 120 existing pilot references as separate controls. No new
+scoring, inference or training has run. Existing holdouts, the NFHS finish line,
+game roles and the negative motion result remain unchanged; three motion-video
+human reviews remain pending.
 
 ## End goal
 

@@ -1,0 +1,78 @@
+{
+  "schema_version": "nba_hard_example_reference_approval/v0.1",
+  "status": "approved",
+  "reviewer_id": "Ryan",
+  "user_statement": "Ok move forward",
+  "recorded_at_utc": "2026-10-20T02:24:03.481700+00:00",
+  "source_commit": "b45adf6ac99ba64923515f93269505253cf0ea10",
+  "proposal": {
+    "path": "configs/ball_tracking/selections/nba_hard_example_reference_proposal_v0_1.json",
+    "bytes": 12189,
+    "sha256": "da8bfd01249ae6a803cca4ccd7686a727af4cf3c494358696115adca3ab1611b"
+  },
+  "approved_scope": "Prepare the 520 AI label proposals and review packages, handle routine corrections, then publish accepted references and score up to 640 saved observations only after Ryan explicitly accepts the new labels. This proposal does not authorize a model change or fit.",
+  "windows": [
+    {
+      "window_id": "sac_distractor_recovery",
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "source_frame_range_inclusive": [
+        940,
+        1059
+      ],
+      "frames": 120
+    },
+    {
+      "window_id": "sac_held_ball_gaps",
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "source_frame_range_inclusive": [
+        1240,
+        1359
+      ],
+      "frames": 120
+    },
+    {
+      "window_id": "det_distractor_long_gap",
+      "candidate_id": "sas_det_q1_c02",
+      "game_id": "0022500828",
+      "source_frame_range_inclusive": [
+        11000,
+        11119
+      ],
+      "frames": 120
+    },
+    {
+      "window_id": "det_drive_rim_overlap",
+      "candidate_id": "sas_det_q1_c02",
+      "game_id": "0022500828",
+      "source_frame_range_inclusive": [
+        11420,
+        11579
+      ],
+      "frames": 160
+    }
+  ],
+  "totals": {
+    "new_proposed_label_frames": 520,
+    "sac_new_frames": 240,
+    "det_new_frames": 280,
+    "native_source_duration_seconds": 8.675,
+    "existing_accepted_pilot_control_frames": 120,
+    "maximum_saved_observations_scored_after_label_acceptance": 640,
+    "new_model_calls": 0,
+    "training_runs": 0,
+    "raw_game_video_decodes": 0
+  },
+  "human_label_acceptance_required_before_publication_or_scoring": true,
+  "new_model_inference_or_training_authorized": false,
+  "preserved_boundaries": {
+    "sac": "Future-training-eligible candidate pool remains unchanged; no fitting in this increment.",
+    "det": "Target-case development, excluded from fitting.",
+    "tor": "Outside scope.",
+    "protected_holdouts_unchanged": true,
+    "original_nfhs_finish_line_unchanged": true,
+    "new_motion_human_reviews_pending": 3,
+    "no_new_training_threshold_search_motion_selector_interpolation_or_model_inference": true
+  }
+}

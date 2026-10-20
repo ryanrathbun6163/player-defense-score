@@ -1,5 +1,39 @@
 # Validation History
 
+## Approved NBA hard-example labels prepared; human acceptance pending
+
+Ryan approved the exact 520-frame scope with “Ok move forward”. The separate
+[approval](../../configs/ball_tracking/reviews/nba_hard_example_reference_approval_v0_1.json)
+binds the unchanged original proposal. Four [complete review packages](../nba_hard_example_reference_review.md)
+now contain 387 proposed centers and 133 null centers: SAC recovery 90/120,
+SAC held ball 120/120, DET gap 65/120 and DET rim 112/160. Visibility totals are
+355 partially visible, 56 fully visible, 86 not visible and 23 indeterminate.
+Twenty-four partially visible frames still lack a defensible center. These
+counts describe AI proposals, not accepted truth or prediction accuracy.
+
+All 520 original native frames were visually inspected, including each actual
+final frame. Labels use source evidence, not saved prediction coordinates;
+prior model exposure and source/model-selected windows are disclosed. Drafts,
+visual corrections, helper import failures and the targeted review agent's
+capacity error remain in the [bound preparation record](../../configs/ball_tracking/reviews/nba_hard_example_reference_preparation_v0_1.json).
+The targeted twelve-frame independent AI check retained the proposed geometry
+and uncertainty; it does not replace Ryan's review.
+
+The existing renderer was reused. Hard-example asset verification checks the
+approved scope and native source manifest. Twenty-six focused checks passed:
+nine hard-example asset, twelve NBA annotation and five assisted-review tests.
+The full suite was not repeated. Independent media checks verified all 520
+source/render PNG pairs, all four MP4 timelines and 544 encoded frames including
+final holds. Actual finals 1059, 1359, 11119 and 11579 passed visual inspection.
+Playback is six source frames per second with native source timestamps retained
+and a one-second final hold; total review duration is 90.666667 seconds.
+
+No accepted new reference, scoring, inference, training or full-game decode was
+produced. Human acceptance remains pending. The earlier pilot result, game
+roles, protected holdouts, NFHS finish line and negative motion result remain
+unchanged; three motion-study human reviews remain pending. Passed transport
+checks do not establish label accuracy, overall NBA accuracy or a phase pass.
+
 ## Longer NBA review completion and proposed reference diagnostic
 
 Ryan reported: “Ok reviewed. What’s the next step” after both complete longer

@@ -1,4 +1,20 @@
-# Proposed NBA difficult-scene reference batch
+# NBA difficult-scene reference batch
+
+Ryan approved the exact scope below with “Ok move forward”. The separate
+[approval record](../configs/ball_tracking/reviews/nba_hard_example_reference_approval_v0_1.json)
+binds the unchanged original proposal, whose pending status is historical.
+The four [label-review packages](nba_hard_example_reference_review.md) are now
+prepared: 520 AI proposals, including 387 proposed centers and 133 null centers.
+The [preparation record](../configs/ball_tracking/reviews/nba_hard_example_reference_preparation_v0_1.json)
+binds source evidence, preserved attempts, passing focused tests and all four
+completed media audits.
+
+**Ryan's label acceptance is pending.** No new accepted reference, scoring,
+inference or training has occurred. After explicit acceptance, publish separate
+accepted AI references and score saved outputs within the original approved
+scope. The original proposal below remains intact as the record of that decision.
+
+## Original proposal (historical)
 
 Ryan reported review of both longer prediction videos: “Ok reviewed. What’s
 the next step”. The [later review record](../configs/ball_tracking/reviews/nba_wasb_action_observation_visual_review_v0_1.json)

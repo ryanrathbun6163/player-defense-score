@@ -265,6 +265,8 @@ def verify_annotation_assets(data: Any, repo_root: Path, *,
     root = Path(repo_root)
     approval = _parse(_read_binding(doc["approval"], root))
     _require(isinstance(approval, dict), "Approval must be an object")
+    if approval.get("schema_version") == "nba_hard_example_reference_approval/v0.1":
+        return _verify_hard_example_assets(doc, approval, root, verify_images=verify_images)
     _require(approval.get("schema_version") == "nba_development_selection_approval/v0.1"
              and approval.get("status") == "approved", "Allocation/pilot approval is not approved")
     _text(approval.get("approved_by"), "approval.approved_by")
@@ -334,6 +336,157 @@ def verify_annotation_assets(data: Any, repo_root: Path, *,
             "frame_map_rows_verified": len(doc["frames"]), "png_verification_skipped": not verify_images,
             "approval_sha256": doc["approval"]["sha256"], "full_source_bytes_read": 0,
             "human_label_review": "pending"}
+
+
+def _sized_json_binding(binding: Any, root: Path, label: str) -> dict[str, Any]:
+    """The new contract requires both exact bytes and digest for its authorities."""
+    _fields(binding, {"path", "bytes", "sha256"}, label)
+    value = _parse(_read_binding(binding, root))
+    _require(isinstance(value, dict), f"{label} must bind an object")
+    return value
+
+
+def _verify_hard_example_assets(doc: dict[str, Any], approval: dict[str, Any],
+                                root: Path, *, verify_images: bool) -> dict[str, Any]:
+    """Verify only the approved difficult-scene draft, without accepting labels.
+
+    The action-input producer already froze original PNG/RGB and native PTS
+    records. This consumer compares those actual records, not nominal fps or
+    an independently reconstructed image inventory.
+    """
+    _fields(approval, {
+        "schema_version", "status", "reviewer_id", "user_statement", "recorded_at_utc",
+        "source_commit", "proposal", "approved_scope", "windows", "totals",
+        "human_label_acceptance_required_before_publication_or_scoring",
+        "new_model_inference_or_training_authorized", "preserved_boundaries",
+    }, "hard-example approval")
+    _require(approval["status"] == "approved" and approval["reviewer_id"] == "Ryan",
+             "Hard-example scope requires Ryan's approval")
+    _text(approval["user_statement"], "approval.user_statement")
+    _utc(approval["recorded_at_utc"], "approval.recorded_at_utc")
+    _require(isinstance(approval["source_commit"], str)
+             and re.fullmatch(r"[0-9a-f]{40}", approval["source_commit"]) is not None,
+             "Approval source_commit must be a full Git commit")
+    _require(approval["human_label_acceptance_required_before_publication_or_scoring"] is True
+             and approval["new_model_inference_or_training_authorized"] is False,
+             "Hard-example approval cannot authorize scoring acceptance or new inference/training")
+    proposal = _sized_json_binding(approval["proposal"], root, "hard-example proposal binding")
+    _require(proposal.get("schema_version") == "nba_hard_example_reference_proposal/v0.1"
+             and proposal.get("proposal_id") == "nba_hard_example_reference_v0_1"
+             and proposal.get("status") == "design_only_awaiting_scope_approval"
+             and proposal.get("runnable") is False,
+             "Approval must bind the immutable hard-example proposal")
+    _require(approval["approved_scope"] == proposal.get("approval_scope_requested")
+             and isinstance(approval["approved_scope"], str) and bool(approval["approved_scope"].strip()),
+             "Approval scope differs from bound proposal")
+    _require(approval["totals"] == proposal.get("totals"), "Approval totals differ from bound proposal")
+    totals = approval["totals"]
+    _require(isinstance(totals, dict) and all(totals.get(key) == 0 and type(totals.get(key)) is int
+             for key in ("new_model_calls", "training_runs", "raw_game_video_decodes")),
+             "Hard-example scope must reuse existing inputs and predictions")
+    boundaries = proposal.get("boundaries")
+    _require(isinstance(boundaries, dict) and approval["preserved_boundaries"] == boundaries,
+             "Approval boundaries differ from bound proposal")
+    _require(all(boundaries.get(key) is True for key in (
+        "protected_holdouts_unchanged", "original_nfhs_finish_line_unchanged",
+        "no_new_training_threshold_search_motion_selector_interpolation_or_model_inference")),
+        "Hard-example scope must preserve scientific boundaries")
+    label_contract = proposal.get("label_contract")
+    _require(isinstance(label_contract, dict) and label_contract.get(
+        "human_acceptance_required_before_reference_publication_or_scoring") is True,
+        "Proposal must retain explicit human label acceptance")
+    windows = proposal.get("windows")
+    _require(isinstance(windows, list) and bool(windows) and all(isinstance(w, dict) for w in windows),
+             "Proposal windows must be objects")
+    window_ids = [w.get("window_id") for w in windows]
+    for window_id in window_ids:
+        _identifier(window_id, "proposed window_id")
+    for proposed_window in windows:
+        _integer(proposed_window.get("frames"), "proposed window frames", 1)
+    _require(len(set(window_ids)) == len(window_ids), "Duplicate proposed window_id")
+    approval_fields = ("window_id", "candidate_id", "game_id", "source_frame_range_inclusive", "frames")
+    _require(approval["windows"] == [{key: w.get(key) for key in approval_fields} for w in windows],
+             "Approved windows differ from bound proposal")
+    _require(sum(w.get("frames", 0) for w in windows) == totals.get("new_proposed_label_frames"),
+             "Proposed window counts differ from approved total")
+    selected = [w for w in windows if doc["annotation_set_id"] == w["window_id"] + "_hard_example_v0_1"]
+    _require(len(selected) == 1, "Annotation set must identify exactly one approved hard-example window")
+    window = selected[0]
+    for field in ("candidate_id", "game_id", "time_base"):
+        _require(window.get(field) == doc[field], f"Proposed window differs in {field}")
+    _require(window.get("approved_game_role") == doc["approved_role"], "Proposed window role differs")
+    _require(doc["approved_role"] in {"future_training_candidate_pool", "target_case_development"},
+             "Hard-example role is outside approved development scope")
+    manifest = _sized_json_binding(window.get("input_manifest"), root, "action-input manifest binding")
+    _require(manifest.get("schema_version") == "nba_action_inputs/v0.1", "Wrong action-input producer schema")
+    for field in ("candidate_id", "game_id", "approved_role", "source_video", "time_base"):
+        _require(manifest.get(field) == doc[field], f"Action-input manifest differs in {field}")
+    producer_frames = manifest.get("frames")
+    _require(isinstance(producer_frames, list) and bool(producer_frames), "Action-input frame inventory is empty")
+    for frame in producer_frames:
+        _fields(frame, FRAME_FIELDS, "action-input frame")
+        _integer(frame["source_frame_index"], "action-input source_frame_index")
+        _integer(frame["source_pts_ticks"], "action-input source_pts_ticks")
+        _fields(frame["png"], PNG_FIELDS, "action-input PNG")
+        _relative(frame["png"]["path"], "action-input PNG path")
+        for key in ("sha256", "rgb_sha256"):
+            _sha(frame["png"][key], f"action-input PNG {key}")
+    indices = [f["source_frame_index"] for f in producer_frames]
+    ticks = [f["source_pts_ticks"] for f in producer_frames]
+    _require(indices == list(range(indices[0], indices[-1] + 1)), "Action-input source frames are not contiguous")
+    _require(indices[-1] < doc["source_video"]["frame_count"], "Action-input frame exceeds original source")
+    _require(len({f["png"]["path"] for f in producer_frames}) == len(producer_frames),
+             "Action-input PNG paths must be distinct")
+    _require(all(a < b for a, b in zip(ticks, ticks[1:])), "Action-input native PTS are not increasing")
+    _require(manifest.get("source_frame_range_inclusive") == [indices[0], indices[-1]]
+             and manifest.get("source_pts_ticks_inclusive") == [ticks[0], ticks[-1]],
+             "Action-input manifest endpoints differ from its frame records")
+    end_pts = manifest.get("source_end_exclusive_pts_ticks")
+    _integer(end_pts, "action-input end-exclusive PTS")
+    _require(end_pts > ticks[-1], "Action-input end-exclusive PTS must follow final frame")
+    first, last = doc["frames"][0], doc["frames"][-1]
+    _require(window.get("source_frame_range_inclusive") == [first["source_frame_index"], last["source_frame_index"]]
+             and window.get("frames") == len(doc["frames"]), "Proposed frame range/count differs from annotation")
+    _require(window.get("source_pts_ticks_inclusive") == [first["source_pts_ticks"], last["source_pts_ticks"]],
+             "Proposed native PTS endpoints differ from annotation")
+    actual = [f for f in producer_frames if first["source_frame_index"] <= f["source_frame_index"] <= last["source_frame_index"]]
+    _require(actual == doc["frames"], "Annotation records differ from bound action-input frame/PTS/PNG/RGB records")
+    next_frame = last["source_frame_index"] + 1
+    lookup = {f["source_frame_index"]: f for f in producer_frames}
+    boundary = lookup[next_frame]["source_pts_ticks"] if next_frame in lookup else end_pts
+    _require(window.get("source_end_exclusive_pts_ticks") == boundary,
+             "Proposed end-exclusive PTS differs from action-input boundary")
+    _require(window.get("native_duration_seconds") == (boundary - first["source_pts_ticks"]) / 90000,
+             "Proposed native duration differs from producer PTS")
+    preparation = manifest.get("preparation")
+    _require(isinstance(preparation, dict) and isinstance(preparation.get("identity"), dict),
+             "Action-input preparation identity is missing")
+    original = preparation["identity"].get("window")
+    _require(isinstance(original, dict), "Action-input original window is missing")
+    for field in ("candidate_id", "game_id", "approved_role", "source_video", "time_base",
+                  "source_frame_range_inclusive", "source_pts_ticks_inclusive", "source_end_exclusive_pts_ticks"):
+        _require(original.get(field) == manifest.get(field), f"Producer identity differs in {field}")
+    verification = original.get("source_verification")
+    _fields(verification, {"audit", "hash_field", "stat_field", "source_stat"}, "source_verification")
+    _text(verification["hash_field"], "source_verification.hash_field")
+    _text(verification["stat_field"], "source_verification.stat_field")
+    audit = _parse(_read_binding(verification["audit"], root))
+    _require(isinstance(audit, dict) and audit.get(verification["hash_field"]) == doc["source_video"]["sha256"]
+             and audit.get(verification["stat_field"]) == verification["source_stat"],
+             "Original action-input source audit differs")
+    source_path = _bound_path(root, doc["source_video"]["path"])
+    _require(source_path.is_file(), "Parent source video is missing")
+    stat = source_path.stat()
+    _require({"bytes": stat.st_size, "mtime_ns": stat.st_mtime_ns} == verification["source_stat"],
+             "Parent source stat changed since completed action-input audit")
+    if verify_images:
+        for frame in doc["frames"]:
+            read_verified_png(frame, doc["source_video"], root)
+    return {"status": "verified", "frames_verified": len(doc["frames"]) if verify_images else 0,
+            "frame_map_rows_verified": len(doc["frames"]), "png_verification_skipped": not verify_images,
+            "approval_sha256": doc["approval"]["sha256"], "full_source_bytes_read": 0,
+            "human_label_review": "pending", "window_id": window["window_id"],
+            "action_input_manifest_sha256": window["input_manifest"]["sha256"]}
 
 
 def _encoded(doc: dict[str, Any]) -> bytes:

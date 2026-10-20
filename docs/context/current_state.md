@@ -1,6 +1,38 @@
 # Current State
 
-## Latest increment: longer NBA videos reviewed; reference batch proposed
+## Latest increment: 520 NBA label proposals prepared for human review
+
+Ryan approved the exact four-window scope: “Ok move forward”. The separate
+[approval](../../configs/ball_tracking/reviews/nba_hard_example_reference_approval_v0_1.json)
+preserves the original pending proposal. The [preparation record](../../configs/ball_tracking/reviews/nba_hard_example_reference_preparation_v0_1.json)
+binds four complete review packages: **520 AI-proposed labels, 387 defensible
+centers and 133 null centers**, with visibility and uncertainty retained. Every
+native source frame was visually inspected; predictions did not supply label
+coordinates. Prior model exposure and source/model-informed selection remain
+disclosed, so this is a biased development diagnostic.
+
+Twenty-six focused tests passed. The existing review renderer was reused with
+approval/manifest verification for the new source windows. Independent transport
+checks passed for all 520 review PNGs and four MP4 timelines (544 encoded frames
+including final holds). Actual final frames 1059, 1359, 11119 and 11579 were
+visually inspected. Playback is deliberately slowed to six source frames per
+second, retaining native source timestamps; total review time is about 91 seconds.
+Draft corrections and failed helper attempts remain preserved.
+
+**Next concrete action:** Ryan reviews the four complete videos delivered in
+chat and the [label-review guide](../nba_hard_example_reference_review.md), then
+explicitly accepts the labels or requests corrections. Human label acceptance
+is pending; no accepted new reference or new scores exist. Only after acceptance
+will separate accepted AI references be published and saved outputs scored for
+up to 640 frames, keeping the 120 existing pilot controls separate and the
+original short-pilot score unchanged. No new inference or training has run.
+
+Earlier pilot acceptance, the NFHS finish line, protected holdouts and the
+negative motion result remain unchanged; three motion reviews remain pending.
+SAC remains future-training-eligible, DET excluded from fitting and TOR outside
+scope. Transport correctness does not establish label or tracking accuracy.
+
+## Earlier increment: longer NBA videos reviewed; reference batch proposed
 
 After both complete longer videos were delivered in chat for phone viewing,
 Ryan reported: “Ok reviewed. What’s the next step”. The separate
