@@ -1,6 +1,32 @@
 # Current State
 
-## Latest increment: 2026-10-18 NBA pilot labels accepted; diagnostic prepared
+## Latest increment: 2026-10-19 approved NBA diagnostic completed
+
+Ryan approved the exact native-cadence diagnostic: “yes I do. move forward
+chat”. One run completed all 116 unique three-frame inputs in 49.766 seconds,
+with no failed or unresolved model calls, training or original-game decoding.
+The frozen expanded checkpoint at strict `>0.3` matched **60/60 frames in each
+game**, with zero wrong or missing outputs at the fixed inclusive ten-pixel
+radius. Mean center distances from the accepted AI references are 2.779 pixels
+for SAC–MEM and 2.894 for SAS–DET. See the [results and exact review videos](../nba_wasb_native_pilot_diagnostic_results.md)
+and [bound result record](../../configs/ball_tracking/reviews/nba_wasb_native_pilot_diagnostic_result_v0_1.json).
+
+**Next concrete action:** Ryan reviews both complete 11-second model-output
+overlays through final frames 719 and 10847. These new human reviews are
+pending; completed reference-label acceptance remains intact. Independent
+saved-output/media verification passed: all 116 cached triplets, 120 outcomes
+and 132 encoded review frames agree with the recorded computation and overlays.
+The assistant inspected all 120 overlays and found no obvious switch/dropout;
+this does not replace Ryan's visual judgment. No source/tests changed or earlier
+suite/experiment was repeated.
+Native 16–17 ms spacing was approved, but was not compared against 40 ms.
+These two one-second scenes contain no hidden negatives and are not an
+independent benchmark, complete trajectories or a ball-phase pass. SAC remains
+future-training-eligible and DET remains excluded from fitting. Existing
+holdouts, completed reviews and the negative motion result stand; its three
+new human reviews remain pending.
+
+## Earlier increment: 2026-10-18 NBA pilot labels accepted; diagnostic prepared
 
 Ryan accepted both presented 60-frame AI proposal packages: “looks great chat.
 move forward.” The [acceptance record](../../configs/ball_tracking/reviews/nba_assisted_label_acceptance_v0_1.json)

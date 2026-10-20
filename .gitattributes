@@ -6,3 +6,5 @@ src/ball_tracking/nba_reviewed_reference.py -text
 src/ball_tracking/nba_wasb_diagnostic.py -text
 tests/test_nba_reviewed_reference.py -text
 tests/test_nba_wasb_diagnostic.py -text
+configs/ball_tracking/reviews/nba_wasb_native_pilot_diagnostic_approval_v0_1.json -text
+configs/ball_tracking/reviews/nba_wasb_native_pilot_diagnostic_result_v0_1.json -text

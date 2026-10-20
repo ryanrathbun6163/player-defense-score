@@ -85,6 +85,16 @@ visible ball observations during recovery; this rule is not promoted. All
 originally empty frames remain empty. Three new comparison videos and a complete
 changed-frame AI review preserve the negative result; their human review is pending.
 
+The approved [NBA native-cadence pilot diagnostic](docs/nba_wasb_native_pilot_diagnostic_results.md)
+is complete. The frozen expanded WASB checkpoint at strict `>0.3` matches
+**60/60 accepted reference positions in each game**, with no wrong or missing
+outputs at the fixed ten-pixel radius. Mean center distances are 2.779 pixels
+for SAC–MEM and 2.894 for SAS–DET. One run completed all 116 native three-frame
+inputs without training. These two short, visible-ball scenes use human-accepted
+AI references; they are not an independent NBA benchmark or a ball-phase pass.
+Both new model-output videos await Ryan's visual review. Existing holdouts and
+the negative motion result remain unchanged.
+
 ## End goal
 
 The intended production pipeline is:

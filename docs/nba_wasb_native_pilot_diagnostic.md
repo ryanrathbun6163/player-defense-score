@@ -1,5 +1,16 @@
 # Proposed NBA frozen-checkpoint pilot diagnostic
 
+## Latest result: approved and completed on 2026-10-19
+
+Ryan approved this exact native-cadence recipe. One run completed all 116 unique
+triplets: each game matched all 60 accepted references at the fixed ten-pixel
+radius, with zero wrong or missing observations. No training occurred. See the
+[result and two model-output review videos](nba_wasb_native_pilot_diagnostic_results.md).
+Human review of these new predictions remains pending. The proposal below is
+preserved as the record of what was awaiting approval before this run.
+
+## Historical proposal and preparation
+
 **NOT EXECUTED. Awaiting scientific approval of this exact configuration.**
 
 The runner is implemented. Seven initial focused checks and six affected/new

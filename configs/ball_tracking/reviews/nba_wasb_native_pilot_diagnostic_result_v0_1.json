@@ -1,0 +1,377 @@
+{
+  "schema_version": "nba_wasb_native_pilot_diagnostic_result/v0.1",
+  "status": "completed_audited_model_output_human_review_pending",
+  "recorded_at_utc": "2026-10-20T00:52:39.686043+00:00",
+  "event_date_local": "2026-10-19",
+  "timezone": "America/Phoenix",
+  "execution_source_commit": "d994d44c08d9625dda4ff6090e222a05aa65de62",
+  "diagnostic_id": "nba_wasb_native_pilot_diagnostic_v0_1",
+  "config": {
+    "path": "configs/ball_tracking/wasb_experiments/nba_wasb_native_pilot_diagnostic_v0_1.json",
+    "sha256": "bb63377d515203b8c7fc1a89d6cb55acd84102587d9e53226fa10bb4d88f6eca",
+    "bytes": 1500
+  },
+  "approval": {
+    "path": "configs/ball_tracking/reviews/nba_wasb_native_pilot_diagnostic_approval_v0_1.json",
+    "sha256": "373be3c020e020cfc2399ea832c5dc001392037df5ad28dd95ea1d72f8f223f4",
+    "bytes": 1281
+  },
+  "reference": {
+    "path": "data/outputs/ball_tracking/nba/reviewed_pilot_v0_1/reference.json",
+    "bytes": 154743,
+    "sha256": "6a2aa2dad7ecd5351c21b8806945f3e9c33ac4d17a295ec67fe1b5dd52b996c4"
+  },
+  "checkpoint_sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+  "recipe": {
+    "native_input_spacing_ms": [
+      16,
+      17
+    ],
+    "strict_heatmap_threshold": 0.3,
+    "localization_radius_source_px_inclusive": 10,
+    "aligned_complete_triplets": 116,
+    "frames": 120,
+    "training": false,
+    "resampling": false,
+    "padding": false
+  },
+  "execution": {
+    "run_id": "ed9350ae6da5493197d44cac4beea973",
+    "elapsed_seconds": 49.76600000000326,
+    "model_call_elapsed_seconds_sum": 2.7969999999695574,
+    "call_accounting": {
+      "model_call_starts": 116,
+      "completed_unique_triplets": 116,
+      "failed_attempts": 0,
+      "started_without_completed_or_failed_record": [],
+      "all_attempt_evidence_retained": true
+    },
+    "original_video_decodes": 0,
+    "training": false
+  },
+  "candidates": [
+    {
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "approved_role": "future_training_candidate_pool",
+      "source_frame_range_inclusive": [
+        660,
+        719
+      ],
+      "source_pts_ticks_inclusive": [
+        996362,
+        1084922
+      ],
+      "time_base": "1/90000",
+      "summary": {
+        "frames": 60,
+        "eligible_frames": 60,
+        "matched": 60,
+        "wrong": 0,
+        "missing": 0,
+        "unscored": 0,
+        "true_positive_count": 60,
+        "false_positive_count": 0,
+        "false_negative_count": 0,
+        "raw_candidate_available": 60,
+        "raw_center_error_all_emitted_eligible_mean_px": 2.779011430781021,
+        "uncertainty_adjusted_error_all_emitted_eligible_mean_px": 0.018561427319258392,
+        "hidden_reference_frames": 0,
+        "hidden_alarm_rate": null
+      },
+      "maximum_raw_center_error_px": 4.4004869069184105,
+      "endpoints_fewer_than_three_contributions": {
+        "frames": 4,
+        "eligible_frames": 4,
+        "matched": 4,
+        "wrong": 0,
+        "missing": 0,
+        "unscored": 0,
+        "true_positive_count": 4,
+        "false_positive_count": 0,
+        "false_negative_count": 0,
+        "raw_candidate_available": 4,
+        "raw_center_error_all_emitted_eligible_mean_px": 3.1786309489973235,
+        "uncertainty_adjusted_error_all_emitted_eligible_mean_px": 0.04214922275346855,
+        "hidden_reference_frames": 0,
+        "hidden_alarm_rate": null
+      },
+      "interior_three_contributions": {
+        "frames": 56,
+        "eligible_frames": 56,
+        "matched": 56,
+        "wrong": 0,
+        "missing": 0,
+        "unscored": 0,
+        "true_positive_count": 56,
+        "false_positive_count": 0,
+        "false_negative_count": 0,
+        "raw_candidate_available": 56,
+        "raw_center_error_all_emitted_eligible_mean_px": 2.7504671794798567,
+        "uncertainty_adjusted_error_all_emitted_eligible_mean_px": 0.01687658478824338,
+        "hidden_reference_frames": 0,
+        "hidden_alarm_rate": null
+      },
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sac_mem_q1_c01/review_attempts/b9b4953913dc4706acf3009cea7ec49e/review.mp4",
+        "bytes": 2458701,
+        "sha256": "aff440ab27a696aac41ef0b0a3abd4ebf8d618fbeb5e5598638a1d4a80204e23"
+      },
+      "final_source_frame_index": 719,
+      "video_transport": {
+        "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sac_mem_q1_c01/review_attempts/b9b4953913dc4706acf3009cea7ec49e/review.mp4",
+        "decoded_frames": 66,
+        "fps": 6.0,
+        "expected_actual_final_frame": 719,
+        "transport_all_frames_mae_max": 2.2586422164351854,
+        "transport_all_frames_mae_mean": 2.080552338708263,
+        "final_hold_mae": [
+          2.0961516203703705,
+          2.0953761574074075,
+          2.095797164351852,
+          2.095472728587963,
+          2.0959602864583333,
+          2.0959320746527776
+        ]
+      },
+      "model_output_human_review": "pending"
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "game_id": "0022500828",
+      "approved_role": "target_case_development",
+      "source_frame_range_inclusive": [
+        10788,
+        10847
+      ],
+      "source_pts_ticks_inclusive": [
+        16202042,
+        16290602
+      ],
+      "time_base": "1/90000",
+      "summary": {
+        "frames": 60,
+        "eligible_frames": 60,
+        "matched": 60,
+        "wrong": 0,
+        "missing": 0,
+        "unscored": 0,
+        "true_positive_count": 60,
+        "false_positive_count": 0,
+        "false_negative_count": 0,
+        "raw_candidate_available": 60,
+        "raw_center_error_all_emitted_eligible_mean_px": 2.894104886361511,
+        "uncertainty_adjusted_error_all_emitted_eligible_mean_px": 0.002990364757102985,
+        "hidden_reference_frames": 0,
+        "hidden_alarm_rate": null
+      },
+      "maximum_raw_center_error_px": 5.179421885426179,
+      "endpoints_fewer_than_three_contributions": {
+        "frames": 4,
+        "eligible_frames": 4,
+        "matched": 4,
+        "wrong": 0,
+        "missing": 0,
+        "unscored": 0,
+        "true_positive_count": 4,
+        "false_positive_count": 0,
+        "false_negative_count": 0,
+        "raw_candidate_available": 4,
+        "raw_center_error_all_emitted_eligible_mean_px": 3.2452056962294296,
+        "uncertainty_adjusted_error_all_emitted_eligible_mean_px": 0.0,
+        "hidden_reference_frames": 0,
+        "hidden_alarm_rate": null
+      },
+      "interior_three_contributions": {
+        "frames": 56,
+        "eligible_frames": 56,
+        "matched": 56,
+        "wrong": 0,
+        "missing": 0,
+        "unscored": 0,
+        "true_positive_count": 56,
+        "false_positive_count": 0,
+        "false_negative_count": 0,
+        "raw_candidate_available": 56,
+        "raw_center_error_all_emitted_eligible_mean_px": 2.8690262570852307,
+        "uncertainty_adjusted_error_all_emitted_eligible_mean_px": 0.003203962239753198,
+        "hidden_reference_frames": 0,
+        "hidden_alarm_rate": null
+      },
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sas_det_q1_c02/review_attempts/065345efdf3749c8bd8bbcc09d2d57a9/review.mp4",
+        "bytes": 3255995,
+        "sha256": "2ac687965e0b49fc49b9084f86cf0f0d4a16d1d4ee285fbe54ff8c519fa748a1"
+      },
+      "final_source_frame_index": 10847,
+      "video_transport": {
+        "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sas_det_q1_c02/review_attempts/065345efdf3749c8bd8bbcc09d2d57a9/review.mp4",
+        "decoded_frames": 66,
+        "fps": 6.0,
+        "expected_actual_final_frame": 10847,
+        "transport_all_frames_mae_max": 2.3793883825231483,
+        "transport_all_frames_mae_mean": 2.196566719714506,
+        "final_hold_mae": [
+          2.1126548032407406,
+          2.1137745949074076,
+          2.1130132378472224,
+          2.1145319733796297,
+          2.114423828125,
+          2.114453486689815
+        ]
+      },
+      "model_output_human_review": "pending"
+    }
+  ],
+  "validation": {
+    "independent_saved_output_audit": {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/diagnostics/independent_audit_01/audit.json",
+      "bytes": 204551,
+      "sha256": "41a19258bea2736d4379699d21bc5a441f7cee4ba30b26b70dd102534d268eeb"
+    },
+    "status": "passed",
+    "attempts": 1,
+    "elapsed_seconds": 18.0940000000046,
+    "assertions": 7015,
+    "bindings_verified": 494,
+    "remaining_material_issues": 0,
+    "new_unit_test_runs": 0,
+    "production_source_or_tests_changed": false,
+    "ai_visual_inspection": {
+      "all_120_frames_inspected": true,
+      "actual_final_frames_inspected": [
+        719,
+        10847
+      ],
+      "finding": "No obvious off-ball selection or dropout in either pilot; blur and partial occlusion remain explicit.",
+      "human_acceptance": false
+    }
+  },
+  "limits": {
+    "reference_origin": "assistant_visual_proposal",
+    "reference_human_review": "accepted",
+    "model_output_human_review": "pending",
+    "independent_human_annotation": false,
+    "hidden_reference_frames": 0,
+    "hidden_alarm_rate": null,
+    "independent_test_set": false,
+    "cadence_comparison": false,
+    "full_trajectory_or_phase_acceptance": false,
+    "nfhs_holdouts_unchanged": true,
+    "motion_result": "complete_negative",
+    "new_motion_human_reviews_pending": 3,
+    "prior_completed_reviews_preserved": true
+  },
+  "evidence": [
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/completion.json",
+      "bytes": 4015,
+      "sha256": "7c739a0bffbb961915de99ceb9f978a892902bd63b1e42330c039b492124fba8"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/run_identity.json",
+      "bytes": 1010,
+      "sha256": "3a5455605b605792189266981ce9176ec4165914d7d802f80465a019c3fd70b5"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/run_attempts/ed9350ae6da5493197d44cac4beea973/started.json",
+      "bytes": 5274,
+      "sha256": "049680a697c07afdb5f76edb904d244aff99852a6ce76b2769206d77522ca259"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/run_attempts/ed9350ae6da5493197d44cac4beea973/model_loaded.json",
+      "bytes": 3069,
+      "sha256": "c2342f6e5c16087a65061c6d0820a04c22b0dbd1b2d40f448f48805f05a7b3ee"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/run_attempts/ed9350ae6da5493197d44cac4beea973/completed.json",
+      "bytes": 296,
+      "sha256": "60af15ed652c6f4e63045da6a3c158e93a57668fd4bc737c783b3edf6afe6458"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/diagnostics/independent_audit_01/audit.json",
+      "bytes": 204551,
+      "sha256": "41a19258bea2736d4379699d21bc5a441f7cee4ba30b26b70dd102534d268eeb"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/diagnostics/independent_audit_01/threshold_provenance_note.json",
+      "bytes": 3155,
+      "sha256": "38d32953a1acb05d5fab02afd7b9f1c27a8123b0f2c6f39b09c4be7a960182bc"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/diagnostics/visual_sac_01/inspection_notes.json",
+      "bytes": 1655,
+      "sha256": "a8222c6d87ab6742fb6647539fc06196e21da9b79e46d2c8dbcde1d14e40f0fe"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/diagnostics/visual_sac_01/contact_manifest.json",
+      "bytes": 2423,
+      "sha256": "f401c3b973c0cf8314f60c78617a07225afe67f42ab4bc9a188f61a25319ed97"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/diagnostics/visual_detroit_01/ai_visual_inspection.json",
+      "bytes": 30458,
+      "sha256": "99f758634a2c913b828f1eabc6a0cd6655845a4e03c1270efb39e5491cbb80a6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/index.html",
+      "bytes": 2602,
+      "sha256": "65a2ba3567ff20d57201766b8bbd40be223733745660294cb0a1797585b7f61a"
+    },
+    {
+      "path": "data/outputs/t/nba_wasb_native_pilot_execution_2026-10-19/attempt_001_exit.json",
+      "bytes": 273,
+      "sha256": "0c33643e7e4932c318a90e59b37a847a09b51e44a7242bee4b3af2336282b0ec"
+    },
+    {
+      "path": "data/outputs/t/nba_wasb_native_pilot_execution_2026-10-19/attempt_001.stdout.txt",
+      "bytes": 4015,
+      "sha256": "7c739a0bffbb961915de99ceb9f978a892902bd63b1e42330c039b492124fba8"
+    },
+    {
+      "path": "data/outputs/t/nba_wasb_native_pilot_execution_2026-10-19/attempt_001.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sac_mem_q1_c01/observations.json",
+      "bytes": 86737,
+      "sha256": "5886ba624f8896d61a258f9e37e2325dd30d8795f2c7e70d7164e6612f66894b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sac_mem_q1_c01/diagnostic.json",
+      "bytes": 21776,
+      "sha256": "e48112dd228ae635d39b5654037b48ff30672b740e2777846769741deb2e9091"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sac_mem_q1_c01/review_attempts/b9b4953913dc4706acf3009cea7ec49e/completion.json",
+      "bytes": 18730,
+      "sha256": "6c83872e655477ecf71a847f41caa5ed263c9884e9ec6ce9b817fe5e5c4a4c70"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sac_mem_q1_c01/review_attempts/b9b4953913dc4706acf3009cea7ec49e/review_manifest.json",
+      "bytes": 47134,
+      "sha256": "c094aa28fb14c1608ddcce0193b93532d515fd43a483ec1168a98bf30d6a0e6e"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sas_det_q1_c02/observations.json",
+      "bytes": 84527,
+      "sha256": "115f5981941868e3208367bc8d99367eb299729bcff11a9ddba928afdd0a0728"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sas_det_q1_c02/diagnostic.json",
+      "bytes": 21976,
+      "sha256": "4b16fb927f11a53396468b13781d0e45e2426f75fea6437693e8bca93ed92400"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sas_det_q1_c02/review_attempts/065345efdf3749c8bd8bbcc09d2d57a9/completion.json",
+      "bytes": 18731,
+      "sha256": "b05da480692a51ad0d2c3cab6355df376485aa8f218855048fe2d76e22bb1c1b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/wasb_native_pilot_diagnostic_v0_1/sas_det_q1_c02/review_attempts/065345efdf3749c8bd8bbcc09d2d57a9/review_manifest.json",
+      "bytes": 47324,
+      "sha256": "710413ba7d936e032c52636d65d9373c0029154ced09d65eef33b777c5a34d1a"
+    }
+  ]
+}

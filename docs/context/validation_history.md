@@ -1,5 +1,37 @@
 # Validation History
 
+## 2026-10-19: approved NBA native-cadence diagnostic completed
+
+Ryan approved the exact prepared recipe and its 16–17 ms native input spacing.
+One run completed in 49.766 seconds: 116 model-call starts, 116 unique completed
+triplets, zero failures and no unresolved starts. The expanded checkpoint and
+strict `>0.3` selection remained frozen. Each game scored 60 matches, zero wrong
+and zero missing at the inclusive ten-source-pixel radius. Mean raw distances
+are 2.779011 pixels (SAC–MEM) and 2.894105 (SAS–DET); all endpoints are scored.
+No new training, original recording decode, holdout access or old experiment
+repeat occurred. Original references and their separate acceptance are retained.
+
+Both new complete review videos are prepared with actual final frames 719 and
+10847. Independent saved-output/media verification passed on its first attempt
+in 18.094 seconds, with 7,015 checks, 494 file bindings and zero issues. It
+reconstructed 120 mean heatmaps from all 116 cached triplets, all 127 final
+components and every selected point, then confirmed all 120 scoring outcomes
+without importing the project's scoring functions or making new model calls.
+Both videos fully decoded to 66 frames at 6 fps; all 132 frames, including the
+six extra final-frame copies per video, matched the overlays within lossy
+tolerance. Maximum whole-image RGB mean absolute differences were 2.2586 (SAC)
+and 2.3794 (DET), below 4. Original metadata was retained with a separate note
+explaining adapter-default `>0.5` versus the independently verified final `>0.3`.
+
+The assistant inspected all 120 overlays through both final frames and found
+no obvious switch or dropout. Both human reviews remain pending; numerical and
+AI checks do not supply Ryan's acceptance. No source or test code changed, and
+no earlier suite or experiment was repeated. See the [result report](../nba_wasb_native_pilot_diagnostic_results.md)
+and [compact bound evidence](../../configs/ball_tracking/reviews/nba_wasb_native_pilot_diagnostic_result_v0_1.json).
+There are no hidden negatives or independent test games. The result does not
+compare cadences, promote a tracking method or complete the ball phase.
+The negative motion result and its three pending new human reviews stand.
+
 ## 2026-10-18: accepted NBA reference and prepared native-cadence diagnostic
 
 Ryan accepted the two presented AI label packages. Six new reference-loader

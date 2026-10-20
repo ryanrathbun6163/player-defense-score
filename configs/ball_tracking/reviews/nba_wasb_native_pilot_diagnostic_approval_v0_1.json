@@ -1,0 +1,28 @@
+{
+  "schema_version": "nba_wasb_diagnostic_approval/v0.1",
+  "status": "approved",
+  "approved_by": "Ryan",
+  "approved_at_utc": "2026-10-20T00:47:34.036427+00:00",
+  "approval_timestamp_basis": "Time the explicit user approval was recorded by the assistant.",
+  "user_statement": "yes I do. move forward chat",
+  "approval_context": "Response to: Do you approve running that exact native-cadence diagnostic? Existing expanded checkpoint, strict >0.3, 116 distinct complete native triplets over the accepted 120 NBA frames, native 16-17 ms spacing instead of prior NFHS 40 ms, per-game summaries and two model-output review videos; no training.",
+  "user_timezone": "America/Phoenix",
+  "approval_date_local": "2026-10-19",
+  "config": {
+    "path": "configs/ball_tracking/wasb_experiments/nba_wasb_native_pilot_diagnostic_v0_1.json",
+    "sha256": "bb63377d515203b8c7fc1a89d6cb55acd84102587d9e53226fa10bb4d88f6eca"
+  },
+  "scope": {
+    "diagnostic_id": "nba_wasb_native_pilot_diagnostic_v0_1",
+    "planned_unique_triplets": 116,
+    "training": false,
+    "source_video_decode": false
+  },
+  "limits": {
+    "threshold_search": false,
+    "motion_rule_change": false,
+    "holdout_release": false,
+    "model_output_human_review": "pending",
+    "phase_acceptance": false
+  }
+}

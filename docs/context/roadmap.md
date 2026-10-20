@@ -1,6 +1,26 @@
 # Roadmap
 
-## Current action: accepted NBA labels; frozen-checkpoint diagnostic prepared
+## Current action: review the completed NBA model-output diagnostic
+
+The approved [native-cadence diagnostic](../nba_wasb_native_pilot_diagnostic_results.md)
+completed all 116 unique triplets in one run, without training. Both games
+matched 60/60 accepted AI reference centers at the inclusive ten-pixel radius,
+with zero wrong or missing outputs. This is a useful two-scene development
+result; it does not establish hidden-ball behavior or general NBA accuracy.
+
+Ryan should review both complete new 11-second overlays through final frames
+719 and 10847, accepting the model observations or naming corrections by game
+and frame. Reference-label acceptance is already complete. New model-output
+review is pending. Independent saved-output/media verification passed and the
+assistant inspected all 120 overlays without an obvious switch or dropout.
+After review, define the next broader NBA data/experiment scope without changing
+game roles or inferring a phase pass.
+Native 16–17 ms spacing was approved for this run, not tested against 40 ms.
+SAC stays future-training-eligible; DET stays excluded from fitting. Existing
+holdouts, the NFHS finish line and the negative motion result with its three
+pending new human reviews remain intact.
+
+## Earlier action: accepted NBA labels; frozen-checkpoint diagnostic prepared
 
 Ryan accepted both complete pilot proposal packages. The separate
 [acceptance record](../../configs/ball_tracking/reviews/nba_assisted_label_acceptance_v0_1.json)
