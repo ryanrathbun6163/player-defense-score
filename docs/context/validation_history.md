@@ -1,6 +1,79 @@
 # Validation History
 
-## Completed fixed temporal gap selection — numerical pass; later visual approval recorded
+## Continuous-context validation — numerical pass with adverse unlabeled visual evidence
+
+Ryan's explicit “Move forward chat” authorized the five-clip continuous plan;
+the earlier resume and accepted bounded trial did not authorize this execution.
+The [results report](../nba_temporal_gap_continuous_validation_results.md) and
+[compact record](../../configs/ball_tracking/reviews/nba_temporal_gap_continuous_validation_result_v0_1.json)
+preserve the original implementation, failure, correction and separate recovery
+scope. Frozen selector policy and retained checkpoint `09da1214e94f` are unchanged.
+
+Subsequent AI inspection identifies a wrong-object fill at SAC source frame 1420
+(14.681 seconds into its comparison): the new point is on the foreground
+light-blue defender's head/face. Unmarked native crops 1418–1422 place the original
+1419/1421 anchors on the same moving head. All five source PNG and decoded RGB
+hashes match their producer records. The exact notes, crop bindings and encoded
+still are recorded in ignored `review/ai_sac_context_inspection.json` under the
+continuous output root. This is a qualitative observation outside the 790 scored
+references, not a new accepted label or numerical error-distance measurement.
+The ball's true center/visibility remains uncertain; no scores changed. Broader
+unchanged-rule adoption is not recommended. The three previously accepted
+additions remain accepted, and Ryan's new trajectory review/adjudication is pending.
+
+Attempt `890e7ac8d160491eb76f6d89d70c31be` failed before saving selections or
+scores: an imported NFHS cache identity has no `source_video` field. The failed
+receipt retains 1.391 seconds, 48 cache reads and 76,409,121 compressed bytes.
+Commit `ad82b03d2dbad115d188e83f62e99faf3ca1c88b` corrects source binding through
+the original experiment window and exact cache paths, preserving imported
+model-only identities. The new regression derives that structure through the
+actual producing `cache_index` and verifies the consuming loader.
+
+Recovery attempt `c4c9e3e80c5b4beaaa49147f0e0ad3b5` completed in 4.031 seconds:
+83 triplets, 132,172,876 compressed bytes, at most three arrays retained. All
+3,975 choices were sealed before loading labels; 225 protected positions remain
+excluded. All 3,359 original emitted points are exact. Fourteen new points in ten
+gaps include three labeled matches and eleven unscored positions. DET changes
+207/8/22 to 209/8/20 and NFHS 131/1/13 to 132/1/12 matched/wrong/missing;
+SAC remains 218/5/47. Hidden alarms remain DET thirteen/NFHS zero, both NBA
+controls remain 60/60, and the three accepted bounded additions retain exact
+coordinates. All 24 numerical conditions pass; among the 790 reference frames,
+no new wrong frame, hidden alarm or lost correct position occurs. The earlier short-window NFHS 130/1/14 control
+is preserved separately from this same-context comparison.
+
+Twenty-one distinct runner/renderer test methods have passed, using focused
+reruns for affected corrections. The initial fixture/transport failures, native
+timestamp zero-origin assumption failure, and protected-border chroma-bleed
+failure remain recorded. Black-pixel requirements were preserved when correcting
+the protected canvas. No full suite was repeated. NFHS packet inspection used
+no pixel decoding: P001/P002 container origins are 40 ms, P003 zero, with actual
+container PTS retained beside the existing clip-relative reference clock.
+
+Independent result audit passed 42,844 checks on its first result-audit attempt.
+It independently rebuilt all 3,975 geometric decisions without the producer
+selector and all 790 reference outcomes/distance errors, checked protected
+positions and full missing intervals, and reconstructed every added component
+from fourteen original caches (22,307,800 compressed bytes). All 24 gates agree.
+Its earlier inspection helper's missing-field error remains separate evidence.
+The audit is at `data/outputs/t/continuous_gap_audit_2026-10-20/audit_01.json`.
+
+No model inference, fit, checkpoint load, threshold search or source-pixel decode
+occurred during selection/scoring. Five new review renders completed in 676.688
+seconds with no failed render attempt. Every encoded frame's native timestamp,
+duration, paired pixels and frame/panel keys passed verification: 4,200 timeline
+slots, 225 protected black pairs, eight segment finals and five actual-final holds.
+Independent media audit passed 12,832 checks and rehashed 54 unique delivery
+bindings (246,740,339 bytes) without repeating source or output-video decoding.
+Its receipt is `data/outputs/t/continuous_gap_audit_2026-10-20/media_audit_01.json`.
+AI inspection covered all fourteen encoded additions and all eight segment
+finals, plus five original SAC neighbors and four encoded P003 neighbors.
+P001 19/91 and P003 333/334 remain visually uncertain; no label was invented.
+This is bounded image inspection, not manual continuous review of all 4,200 slots.
+Ryan's visual acceptance remains pending.
+The earlier bounded review remains accepted, the three older motion reviews
+remain pending, and no holdout or ball-phase gate is promoted.
+
+## Earlier increment: completed fixed temporal gap selection — numerical pass; later visual approval recorded
 
 Ryan's “Ok awesome move forward chat” approved one frozen rule on all 790
 existing frames in twelve independent consecutive windows. The

@@ -1,6 +1,85 @@
 # Current State
 
-## Latest increment: fixed temporal gap trial accepted; continuous-context validation proposed
+## Latest increment: numerical pass with an adverse unlabeled visual case; human review pending
+
+Ryan separately authorized the [continuous-context plan](../nba_temporal_gap_continuous_validation_plan.md)
+with “Move forward chat”. The earlier resume request did not authorize execution;
+the bounded three-frame trial remains accepted separately. The new
+[results report](../nba_temporal_gap_continuous_validation_results.md) and
+[compact result](../../configs/ball_tracking/reviews/nba_temporal_gap_continuous_validation_result_v0_1.json)
+record a completed saved-evidence comparison with all **24 numerical conditions
+passing**. Five full comparisons are rendered and verified through every native
+frame and timestamp. Ryan's trajectory review remains pending.
+
+**Adverse visual evidence:** separate AI inspection of the encoded changed frame
+and bound unmarked source frames 1418–1422 finds the added SAC point at frame
+1420 (14.681 seconds into the comparison) on the foreground light-blue defender's
+head/face. The original anchors at 1419 and 1421 also follow that head. The rule
+bridges a consistent distractor trajectory. Frame 1420 is outside the 790 scored
+references; no label, visibility annotation, center-error value or score changed.
+The true ball center/visibility remains uncertain in this context. This finding
+does not support broader adoption of the unchanged rule despite the numerical
+pass. Ryan's adjudication is pending. Exact source, encoded-frame and crop
+bindings are preserved in ignored `review/ai_sac_context_inspection.json` beneath
+`data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/`.
+
+The unchanged rule processes 3,975 allowed frames in eight segments, excluding
+225 protected NFHS positions. All **3,359 original points remain exact**.
+Ten gaps supply 14 additional points: three labeled matches and eleven unlabeled,
+unscored positions. The 3,373 selected points and 602 remaining missing positions
+are availability counts, not full-clip accuracy.
+
+| Group | Same-context original matched / wrong / missing | Selected matched / wrong / missing | Hidden alarms |
+| --- | --- | --- | --- |
+| SAC training fit | 218 / 5 / 47 | 218 / 5 / 47 | 0 unchanged |
+| DET development | 207 / 8 / 22 | 209 / 8 / 20 | 13 unchanged |
+| NFHS development | 131 / 1 / 13 | 132 / 1 / 12 | 0 unchanged |
+
+Both included NBA controls remain 60/60. Scoring uses the same 790 labels, with
+no new wrong frame, hidden alarm or lost correct position. All three accepted
+additions (DET 11437–11438 and P001 208) retain their exact coordinates and match.
+The older short-window NFHS control remains 130/1/14/0; its longer-context
+131/1/13/0 control already includes the P002/49 recovery. That context benefit
+is not attributed to gap repair. DET/NFHS still have 32 labeled misses, nine
+wrong positions and thirteen hidden alarms.
+
+The first attempt `890e7ac8d160491eb76f6d89d70c31be` failed before selections
+were saved because imported NFHS identities lack a source-video field. Its
+1.391 seconds and 48 cache reads remain consumed evidence. The routine source-
+window identity correction at `ad82b03d2dbad115d188e83f62e99faf3ca1c88b`
+uses a separate recovery configuration and preserves the original scope.
+Attempt `c4c9e3e80c5b4beaaa49147f0e0ad3b5` completed in 4.031 seconds using
+83 cached triplets, 132,172,876 compressed bytes and at most three retained
+triplet arrays. Selections and their receipt were sealed before label scoring.
+No inference, fitting, checkpoint load, threshold search or source-pixel decoding
+occurred in selection/scoring; rendering is a separate step.
+
+Twenty-one distinct focused tests pass; prior fixture failures and corrections
+are preserved and no full suite was repeated. Independent audit passed 42,844
+checks, reconstructing all 3,975 decisions without the producer selector,
+all 790 outcomes/errors, protected slots and missing intervals, plus every added
+component from fourteen original caches. NFHS actual container timestamps are
+retained alongside the historical clip-relative reference clock.
+
+The five videos cover all 4,200 timeline slots, including 225 black protected
+slots, eight segment finals and five actual-final holds. Rendering and complete
+pixel/timing verification took 676.688 seconds with no failed render attempts.
+Independent media audit passed 12,832 checks without repeating video decoding.
+AI inspection covered all fourteen additions and eight segment finals, with
+adjacent context for SAC 1420 and P003 333/334. P001 19/91 and P003 333/334 remain
+visually uncertain due to occlusion/blur. This was not manual review of all 4,200 slots.
+
+**Next:** review the five synchronized comparisons through their final frames,
+with the SAC head-fill failure explicitly called out for Ryan's adjudication.
+Do not recommend broader unchanged-rule adoption from the numerical pass. The
+three previously accepted labeled additions remain accepted; this new case is
+separate adverse evidence from a previously unscored part of the longer clips.
+The retained checkpoint, failed NBA continuation, sealed holdouts, DET fitting
+exclusion and three older pending motion reviews remain unchanged. No broader
+adoption, ball-phase completion or downstream possession/matchup work is approved
+by this numerical result.
+
+## Earlier increment (historical): fixed temporal gap trial accepted; continuous-context validation proposed
 
 Ryan approved the [single temporal gap-selection trial](../nba_temporal_gap_selection_experiment.md#completed-single-run-result)
 with “Ok awesome move forward chat”. One 0.391-second saved-output run fixed all

@@ -1,6 +1,46 @@
 # Roadmap
 
-## Current step: accepted bounded gap repair; proposed continuous-context validation
+## Current step: review the continuous comparisons and the new head-fill failure
+
+Ryan's later “Move forward chat” authorized the
+[continuous-context validation](../nba_temporal_gap_continuous_validation_results.md).
+The initial resume request had not approved it. The saved-evidence comparison
+is now complete: all 24 numerical conditions pass across 3,975 permitted frames
+and eight segments, with 225 protected positions excluded. All 3,359 original
+points stay unchanged; ten gaps add fourteen points, three labeled matches and
+eleven unscored positions. Both NBA controls remain 60/60.
+
+New AI visual inspection identifies an unlabeled failure at SAC frame 1420,
+14.681 seconds into its comparison: the filled point is on a defender's head
+between original head-tracking anchors at 1419 and 1421. This case is outside
+the fixed 790 references, so numerical scores and the three previously accepted
+additions stay unchanged. It is adverse evidence against broader adoption of
+the unchanged rule. Present the bound source context for Ryan's adjudication;
+the true ball center and visibility have not been labeled.
+
+Against same-context original outputs, DET improves 207/8/22 to 209/8/20 and
+NFHS improves 131/1/13 to 132/1/12 matched/wrong/missing. Hidden alarms remain
+13 and zero, respectively; SAC remains 218/5/47. All three accepted bounded
+additions retain their exact coordinates. The short-window NFHS 130/1/14 result
+stays separate from the longer-context control. The
+[compact result](../../configs/ball_tracking/reviews/nba_temporal_gap_continuous_validation_result_v0_1.json)
+preserves the first failed attempt, corrected recovery and independent audit.
+
+Five complete source-synchronized comparisons have passed native-timing,
+paired-pixel and final-frame verification. Review all five trajectories and the
+SAC counterexample before deciding further work. NFHS comparisons include reviewed
+player overlays; NBA identity/calibration remains outside this scope. The
+numerical pass alone does not close the human review gate or the ball phase.
+
+Use that review and the recorded remaining failures to define a separately
+scoped response to wrong-object anchors and detection/localization gaps. Do not
+recommend broader unchanged-rule adoption from the numerical pass. DET/NFHS retain 32 labeled misses, nine
+wrong positions and thirteen hidden alarms; 602 allowed positions remain missing
+across the full clips. Those availability counts are not accuracy. No new fit,
+parameter grid, holdout release or downstream matchup experiment is authorized.
+The three older negative motion-comparison reviews remain pending separately.
+
+## Earlier proposal (historical): accepted bounded gap repair; continuous-context validation proposed
 
 Ryan explicitly approved the three temporal-gap comparison videos with
 “Ok I approve. What next chat”. The [later review record](../../configs/ball_tracking/reviews/nba_temporal_gap_selection_visual_review_v0_1.json)

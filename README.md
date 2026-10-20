@@ -151,9 +151,26 @@ and one NFHS match**, raising selected matches to 209/237 and 131/145 respective
 with no additional wrong outputs or hidden alarms and both easy controls still
 60/60. SAC stays unchanged. The numerical gates pass, and Ryan explicitly
 [approved the three comparisons](configs/ball_tracking/reviews/nba_temporal_gap_selection_visual_review_v0_1.json).
-The bounded increment is accepted. The [next proposal](docs/nba_temporal_gap_continuous_validation_plan.md)
-validates the unchanged rule on the available longer clips using saved evidence;
-it has not run. Continuous tracking and ball-phase completion remain ahead.
+The bounded increment is accepted. Ryan separately authorized the
+[continuous-context validation](docs/nba_temporal_gap_continuous_validation_results.md)
+with “Move forward chat”. Its saved-evidence comparison passes all 24 numerical
+conditions across 3,975 permitted frames, preserving all 3,359 original points.
+Visual inspection identifies an adverse unlabeled case: at SAC source frame 1420
+(14.681 seconds into its comparison), the added point lies on a defender's head,
+between original head-tracking anchors at 1419 and 1421. This frame is outside
+the 790 scored references, so the numerical results remain unchanged. Broader
+adoption of the unchanged rule is not recommended from these results.
+It adds 14 points in ten gaps: three labeled matches and eleven unscored points.
+Against the same-context controls, DET improves **207→209/237** and NFHS
+**131→132/145**, with no new wrong outputs or hidden alarms and both NBA easy
+controls still 60/60. The earlier short-window NFHS baseline of 130 matches is
+kept separate from the longer-context control. The first attempt's imported-cache
+identity failure and its corrected recovery remain recorded. Twenty-one focused
+tests and 42,844 independent audit checks pass. The
+[compact result](configs/ball_tracking/reviews/nba_temporal_gap_continuous_validation_result_v0_1.json)
+records the evidence; five complete comparisons are verified and their human
+trajectory review remains pending. Continuous tracking and ball-phase completion
+remain ahead.
 The original baseline remains intact, and the failed NBA continuation stays rejected.
 These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved
