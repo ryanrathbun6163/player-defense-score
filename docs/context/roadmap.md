@@ -1,6 +1,33 @@
 # Roadmap
 
-## Current action: prepare a bounded saved-heatmap inspection
+## Current action: prepare a bounded NBA adaptation/data proposal
+
+The approved [saved-heatmap inspection](../nba_hard_example_heatmap_inspection_results.md)
+is complete. All 640 original means, candidates and selections were reproduced
+from 652 existing caches without new inference or changed predictions. The 69
+missing frames have local-response median 0.117843; only 11 had above-threshold
+support in an individual contributor that disappeared in the mean. Eleven of
+13 wrong-location components overlap the reference disk, but using peaks would
+recover three and lose six current matches. Hidden-frame response overlap means
+a lower threshold cannot be assumed safe.
+
+Prepare an exact bounded NBA adaptation/data design emphasizing held and
+partially overlapped balls, with appropriate hidden-ball context. Use SAC
+alongside eligible NFHS training examples to retain earlier learned behavior;
+DET remains excluded from fitting. The design
+should follow the measured weaknesses while retaining the current observations,
+accepted references and easy controls for comparison. It is not yet approved,
+and explicit approval of the exact next scope is required before a fit. No fit,
+new prediction policy or threshold sweep has occurred.
+
+Improving model responses to these ball appearances is a principal hypothesis,
+not a proven single cause.
+These correlated failure-selected labels cannot establish representative NBA
+accuracy. Original scores, all null geometries, eight context-edge distinctions,
+TOR's exclusion, protected holdouts and the NFHS finish line remain intact. The
+negative motion result and its three pending human reviews are unchanged.
+
+## Earlier action (historical): prepare a bounded saved-heatmap inspection
 
 Ryan accepted all four difficult-scene label packages without corrections.
 Separate accepted AI references are published and the approved saved-only

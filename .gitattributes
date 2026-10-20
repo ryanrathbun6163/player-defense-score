@@ -31,3 +31,8 @@ src/ball_tracking/nba_hard_example_reference.py -text
 src/ball_tracking/nba_hard_example_diagnostic.py -text
 tests/test_nba_hard_example_reference.py -text
 tests/test_nba_hard_example_diagnostic.py -text
+# Preserve saved NBA heatmap diagnostic evidence bytes.
+configs/ball_tracking/selections/nba_hard_example_heatmap_inspection_v0_1.json -text
+configs/ball_tracking/reviews/nba_hard_example_heatmap_inspection_result_v0_1.json -text
+src/ball_tracking/nba_saved_heatmap_diagnostic.py -text
+tests/test_nba_saved_heatmap_diagnostic.py -text

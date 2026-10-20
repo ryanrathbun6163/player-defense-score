@@ -1,6 +1,58 @@
 # Validation History
 
-## Difficult-scene label acceptance, reference publication and saved-output scoring
+## Approved saved-heatmap inspection completed
+
+Ryan approved the inspection with “Let’s do it. Move forward chat”. The
+[recorded scope](../../configs/ball_tracking/selections/nba_hard_example_heatmap_inspection_v0_1.json)
+fixed 640 rows and descriptive comparisons before heatmap reads. One actual inspection completed in 19.937
+seconds. It read 652 existing NPZ caches (1,037,888,584 compressed bytes), rebuilt
+all 640 original float32 means in their original addition order, and required
+exact mean hashes and candidate/selection agreement. The peak rolling cache
+held three triplet arrays, 5,308,416 bytes; this is not a total process-memory
+measurement. There were no model calls, checkpoint loads, training runs, source
+image/video decodes, label changes or prediction updates.
+
+Seven new focused tests passed. The first command passed 15 checks because an
+imported existing test class contributed eight extra checks; the corrected
+import yielded the intended seven passing new checks. Both logs remain recorded,
+with no failed tests or scientific runs. These are distinct from the earlier
+publication/scorer validations below; the full suite was not repeated.
+The independent [actual-output audit](../../data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/independent_audit_01/audit.json)
+passed on its first attempt in 3.297 seconds. All 640 rows/summaries and 652 cache
+metadata records were checked structurally. Independent numeric reconstruction
+covered 126 rows (all 82 failures plus 44 context rows) from 237 caches containing
+377,272,217 compressed bytes. The other 514 rows were not independently
+recomputed numerically; the producing run verified exact original mean hashes
+and candidate/selection agreement across all 640.
+
+The [preservation receipt](../../data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/preservation.json)
+confirms all nine authority/source bindings and five tracked prior code/result
+files are unchanged. Separate visual preparation made 12 cache reads
+(19,097,646 bytes) and four PNG decode events across two unique source images.
+Both final figures were visually checked. The [visual receipt](../../data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/visuals/visual_check.json)
+retains the initial clipped colorbar and corrected second layout; the diagnostic
+itself performed no image decoding.
+
+The frozen report retains all 82 primary failures and descriptive context:
+305 matched difficult frames, 120 pilot controls, 86 hidden references and 47
+other unsupported references. Missing local responses have median 0.117843 and
+maximum 0.293772. Eleven misses have an above-threshold original contributor
+but no local support in the mean; 58 have none. Global peaks match on only
+21/69 missing frames. Eleven of 13 wrong components have active support inside
+the reference disk, but component peaks match only three; six previously
+matched difficult frames have nonmatching peaks. These are descriptive geometric
+measurements, not changed selections or new scores. Hidden/unsupported rows
+retain null local geometry. Sigmoid responses are not calibrated probabilities.
+
+The [result report](../nba_hard_example_heatmap_inspection_results.md) and
+[compact result](../../configs/ball_tracking/reviews/nba_hard_example_heatmap_inspection_result_v0_1.json)
+retain original scores, labels, caches and uncertainty. No threshold sweep,
+fit or model-output promotion occurred. A bounded NBA adaptation/data proposal
+using SAC plus eligible NFHS training examples is recommended; no exact new
+training scope or fit is approved. Game roles, holdouts, NFHS gates and the three
+pending motion human reviews are unchanged.
+
+## Earlier increment (historical): difficult-scene label acceptance, reference publication and saved-output scoring
 
 Ryan accepted all four complete prepared label packages without corrections.
 The [acceptance record](../../configs/ball_tracking/reviews/nba_hard_example_label_acceptance_v0_1.json)

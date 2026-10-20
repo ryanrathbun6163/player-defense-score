@@ -1,0 +1,529 @@
+{
+  "schema_version": "nba_saved_heatmap_inspection_result/v0.1",
+  "status": "completed_and_independently_audited",
+  "recorded_at_utc": "2026-10-20T03:57:38.706554+00:00",
+  "event_date_local": "2026-10-19",
+  "timezone": "America/Phoenix",
+  "starting_head": "aec2c837f1874b728bc43c4eaa7f2f7ea40adca9",
+  "execution_source_state": "New source executed from working-tree bytes bound below; later local integration receipt identifies committed bytes.",
+  "scope": {
+    "path": "configs/ball_tracking/selections/nba_hard_example_heatmap_inspection_v0_1.json",
+    "bytes": 7805,
+    "sha256": "7d44d173e8e3ec5b04f3fefef744253a71d7e7c4961463378c1fbc5baeaaf214"
+  },
+  "authorization": {
+    "approved_by": "Ryan",
+    "user_statement": "Let\u2019s do it. Move forward chat",
+    "approved_work": "Inspect saved heatmaps to explain69missing and13marginal localization errors before choosing a model change. Include the existing successful, hidden and unsupported reference rows as fixed descriptive context.",
+    "new_model_inference": false,
+    "training": false,
+    "threshold_sweep": false,
+    "new_prediction_policy": false,
+    "label_changes": false
+  },
+  "source_and_tests": [
+    {
+      "path": "src/ball_tracking/nba_saved_heatmap_diagnostic.py",
+      "bytes": 22400,
+      "sha256": "be025647652c576c1a86660920a2894e28bf7ff3e0efdf76358b4f7da71583fb"
+    },
+    {
+      "path": "tests/test_nba_saved_heatmap_diagnostic.py",
+      "bytes": 6674,
+      "sha256": "be783f4fd76044db74ddea027548f64b41038513aeb45f5dae9044f20927e0f3"
+    }
+  ],
+  "execution": {
+    "attempts": 1,
+    "failures": 0,
+    "elapsed_seconds": 19.93699999999808,
+    "completion": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/completion.json",
+      "bytes": 1258,
+      "sha256": "dd65d684752d8646e38dde91936e3bdf26b1af049b2c066d884ad657fe264d01"
+    },
+    "report": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/attempts/1d897912d62b4010bc4c985335c1695a/report.json",
+      "sha256": "7c79dd6ff2d2f295b2e640753017613a13ef547bb1ebd4fcf133836fd4e95667",
+      "bytes": 4375249
+    },
+    "summary": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/attempts/1d897912d62b4010bc4c985335c1695a/summary.json",
+      "sha256": "13698171fd3054dfe488b007cc706c89916b14bd28400452bb4d474be3a604d8",
+      "bytes": 14507
+    },
+    "stdout": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/logs/run_01.log",
+      "bytes": 1516,
+      "sha256": "452001002012c19597f3a37fa6c30a1dabaf0518e89d243d8b934a31a9b912ac"
+    },
+    "accounting": {
+      "frames": 640,
+      "unique_caches_read": 652,
+      "compressed_cache_bytes": 1037888584,
+      "peak_cached_triplet_arrays": 3,
+      "peak_triplet_array_bytes": 5308416,
+      "original_means_and_candidate_inventories_verified": 640,
+      "model_calls": 0,
+      "checkpoint_loads": 0,
+      "training_runs": 0,
+      "video_decodes": 0,
+      "image_decodes": 0,
+      "original_receipts_modified": false,
+      "label_or_prediction_updates": false
+    },
+    "memory_limit_note": "5,308,416 bytes is the maximum resident triplet-array cache, not total process memory."
+  },
+  "measurements": {
+    "native_heatmap_shape": [
+      288,
+      512
+    ],
+    "native_dtype": "float32",
+    "mean_reconstruction": "Original overlapping triplets only; ascending-start float32 addition then float32 division; require exact original mean_heatmap_sha256. Cache reads and decompression only, no new predictions or altered aggregation.",
+    "local_region": "Mapped integer heatmap pixel locations within inclusive10sourcepixels of accepted center; no label rounding, interpolation or uncertainty relaxation.",
+    "localization_radius_source_px": 10,
+    "support_threshold_strict": 0.3,
+    "support_implementation": "Use original cv2 float32 strict threshold semantics and8connected components.",
+    "global_and_local_peaks": "Sigmoid response values and mapped source locations, first row-major tie; local/global ratio and peak distances. Descriptive, not calibrated probabilities or a deployed selector.",
+    "component_geometry": "Reproduce frozen candidates exactly; selected component weighted center, strongest pixel, nearest active support, bounding box and overlap with fixed reference disk.",
+    "contributions": "Report each original contributor local/global peak and whether its local support exceeds0.3; retain individual channels and time mapping.",
+    "unknowns": "No local region, center error or localization judgment for null/unsupported reference geometry. Only global/component evidence for these rows.",
+    "grouping": "Keep missing, wrong, matchedhard, hidden, unsupported and separate pilot cohorts. Retain window/game roles, eight changed-context edges and sourceframe/PTS/PNG bindings."
+  },
+  "cohorts": [
+    {
+      "cohort": "hard_example",
+      "outcome": "hidden_alarm",
+      "summary": {
+        "frames": 13,
+        "mean_global_peak": {
+          "count": 13,
+          "min": 0.3684929311275482,
+          "median": 0.4590210020542145,
+          "mean": 0.4529814926477579,
+          "max": 0.5162234902381897
+        },
+        "mean_local_peak": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "mean": null,
+          "max": null
+        },
+        "mean_local_to_global_ratio": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "mean": null,
+          "max": null
+        },
+        "mean_global_peak_error_px": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "mean": null,
+          "max": null
+        },
+        "local_active_support_frames": 0,
+        "any_contributor_local_active_support_frames": 0,
+        "contributor_support_but_mean_no_local_support": 0,
+        "global_peak_within_radius": 0,
+        "selected_component_peak_within_radius": 0,
+        "selected_component_support_within_radius": 0
+      }
+    },
+    {
+      "cohort": "hard_example",
+      "outcome": "hidden_quiet",
+      "summary": {
+        "frames": 73,
+        "mean_global_peak": {
+          "count": 73,
+          "min": 0.046523381024599075,
+          "median": 0.10968578606843948,
+          "mean": 0.12350230072050879,
+          "max": 0.2854748070240021
+        },
+        "mean_local_peak": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "mean": null,
+          "max": null
+        },
+        "mean_local_to_global_ratio": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "mean": null,
+          "max": null
+        },
+        "mean_global_peak_error_px": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "mean": null,
+          "max": null
+        },
+        "local_active_support_frames": 0,
+        "any_contributor_local_active_support_frames": 0,
+        "contributor_support_but_mean_no_local_support": 0,
+        "global_peak_within_radius": 0,
+        "selected_component_peak_within_radius": 0,
+        "selected_component_support_within_radius": 0
+      }
+    },
+    {
+      "cohort": "hard_example",
+      "outcome": "matched",
+      "summary": {
+        "frames": 305,
+        "mean_global_peak": {
+          "count": 305,
+          "min": 0.3017384707927704,
+          "median": 0.8456771969795227,
+          "mean": 0.776924409827248,
+          "max": 0.9116029739379883
+        },
+        "mean_local_peak": {
+          "count": 305,
+          "min": 0.3017384707927704,
+          "median": 0.8456771969795227,
+          "mean": 0.7766387146027361,
+          "max": 0.9116029739379883
+        },
+        "mean_local_to_global_ratio": {
+          "count": 305,
+          "min": 0.9223063873364458,
+          "median": 1.0,
+          "mean": 0.9994761571540686,
+          "max": 1.0
+        },
+        "mean_global_peak_error_px": {
+          "count": 305,
+          "min": 0.25,
+          "median": 4.5069390943299865,
+          "mean": 4.701062856249334,
+          "max": 12.772039774444801
+        },
+        "local_active_support_frames": 305,
+        "any_contributor_local_active_support_frames": 305,
+        "contributor_support_but_mean_no_local_support": 0,
+        "global_peak_within_radius": 299,
+        "selected_component_peak_within_radius": 299,
+        "selected_component_support_within_radius": 305
+      }
+    },
+    {
+      "cohort": "hard_example",
+      "outcome": "missing",
+      "summary": {
+        "frames": 69,
+        "mean_global_peak": {
+          "count": 69,
+          "min": 0.04835347831249237,
+          "median": 0.1687304824590683,
+          "mean": 0.16622166778298392,
+          "max": 0.29803451895713806
+        },
+        "mean_local_peak": {
+          "count": 69,
+          "min": 0.014576864428818226,
+          "median": 0.11784283071756363,
+          "mean": 0.1186340505230254,
+          "max": 0.29377201199531555
+        },
+        "mean_local_to_global_ratio": {
+          "count": 69,
+          "min": 0.06148192608500138,
+          "median": 0.7468938885935713,
+          "mean": 0.6812083396482923,
+          "max": 1.0
+        },
+        "mean_global_peak_error_px": {
+          "count": 69,
+          "min": 2.6575364531836625,
+          "median": 131.34020709592323,
+          "mean": 300.02233548317434,
+          "max": 1179.9423979584767
+        },
+        "local_active_support_frames": 0,
+        "any_contributor_local_active_support_frames": 11,
+        "contributor_support_but_mean_no_local_support": 11,
+        "global_peak_within_radius": 21,
+        "selected_component_peak_within_radius": 0,
+        "selected_component_support_within_radius": 0
+      }
+    },
+    {
+      "cohort": "hard_example",
+      "outcome": "unscored",
+      "summary": {
+        "frames": 47,
+        "mean_global_peak": {
+          "count": 47,
+          "min": 0.04150685667991638,
+          "median": 0.24561123549938202,
+          "mean": 0.2501087840250198,
+          "max": 0.790882408618927
+        },
+        "mean_local_peak": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "mean": null,
+          "max": null
+        },
+        "mean_local_to_global_ratio": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "mean": null,
+          "max": null
+        },
+        "mean_global_peak_error_px": {
+          "count": 0,
+          "min": null,
+          "median": null,
+          "mean": null,
+          "max": null
+        },
+        "local_active_support_frames": 0,
+        "any_contributor_local_active_support_frames": 0,
+        "contributor_support_but_mean_no_local_support": 0,
+        "global_peak_within_radius": 0,
+        "selected_component_peak_within_radius": 0,
+        "selected_component_support_within_radius": 0
+      }
+    },
+    {
+      "cohort": "hard_example",
+      "outcome": "wrong",
+      "summary": {
+        "frames": 13,
+        "mean_global_peak": {
+          "count": 13,
+          "min": 0.30189019441604614,
+          "median": 0.6734462380409241,
+          "mean": 0.6359902230592874,
+          "max": 0.872587263584137
+        },
+        "mean_local_peak": {
+          "count": 13,
+          "min": 0.2751009464263916,
+          "median": 0.6387791633605957,
+          "mean": 0.612490353675989,
+          "max": 0.8492329120635986
+        },
+        "mean_local_to_global_ratio": {
+          "count": 13,
+          "min": 0.8269260259966129,
+          "median": 0.9732355117990025,
+          "mean": 0.9583782196546754,
+          "max": 1.0
+        },
+        "mean_global_peak_error_px": {
+          "count": 13,
+          "min": 8.782084035125148,
+          "median": 11.335784048754634,
+          "mean": 11.645914101941761,
+          "max": 16.592543506045118
+        },
+        "local_active_support_frames": 11,
+        "any_contributor_local_active_support_frames": 13,
+        "contributor_support_but_mean_no_local_support": 2,
+        "global_peak_within_radius": 3,
+        "selected_component_peak_within_radius": 3,
+        "selected_component_support_within_radius": 11
+      }
+    },
+    {
+      "cohort": "pilot_control",
+      "outcome": "matched",
+      "summary": {
+        "frames": 120,
+        "mean_global_peak": {
+          "count": 120,
+          "min": 0.5245642066001892,
+          "median": 0.8925206065177917,
+          "mean": 0.8789735396703084,
+          "max": 0.9347980618476868
+        },
+        "mean_local_peak": {
+          "count": 120,
+          "min": 0.5245642066001892,
+          "median": 0.8925206065177917,
+          "mean": 0.8789735396703084,
+          "max": 0.9347980618476868
+        },
+        "mean_local_to_global_ratio": {
+          "count": 120,
+          "min": 1.0,
+          "median": 1.0,
+          "mean": 1.0,
+          "max": 1.0
+        },
+        "mean_global_peak_error_px": {
+          "count": 120,
+          "min": 0.25,
+          "median": 3.132491021535417,
+          "mean": 3.0339288333635452,
+          "max": 5.963430220938282
+        },
+        "local_active_support_frames": 120,
+        "any_contributor_local_active_support_frames": 120,
+        "contributor_support_but_mean_no_local_support": 0,
+        "global_peak_within_radius": 120,
+        "selected_component_peak_within_radius": 120,
+        "selected_component_support_within_radius": 120
+      }
+    }
+  ],
+  "findings": {
+    "missing_frames": 69,
+    "all_contributors_lack_local_above_threshold_support": 58,
+    "some_contributor_support_lost_in_original_mean": 11,
+    "missing_global_peak_within_10px": 21,
+    "missing_global_peak_outside_10px": 48,
+    "missing_local_peak_median": 0.11784283071756363,
+    "missing_local_peak_max": 0.29377201199531555,
+    "wrong_centers": 13,
+    "wrong_selected_components_touch_reference_disk": 11,
+    "wrong_selected_peaks_within_10px": 3,
+    "existing_matched_hard_frames_lost_by_peak_location": 6,
+    "interpretation": "The main measured failure is weak ball-region response:58of69misses lack above-threshold local support in every original contributor. Averaging removes such support in11. Most wrong centers are small localization offsets despite overlapping support. These facts motivate better NBA appearance/overlap training as a hypothesis, not proof of a remedy.",
+    "threshold_and_peak_limits": "Only21of69missing global peaks lie near the accepted ball, and hidden-frame responses overlap the missing-response range. Lowering a threshold or forcing the strongest pixel is not established as a safe fix. No new threshold or selector was evaluated or promoted."
+  },
+  "validation": {
+    "focused_final_tests_passed": 7,
+    "final_test_log": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/logs/tests_02.log",
+      "bytes": 1515,
+      "sha256": "476a1be137d403a8303a383f98588922ae9ce9ffc50cb6193fd33e20f5396df1"
+    },
+    "earlier_test_log": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/logs/tests_01.log",
+      "bytes": 3242,
+      "sha256": "2154f2a6a866dc68d29b013903bcb145ba7ecdd22033463d55004e2fbc2fb985"
+    },
+    "test_history": "Initial run passed15checks:7new and8existing action-producer tests unintentionally discovered through a directly imported TestCase class. The import was corrected; final7newtests passed after provenance checks were added. Both original stdout logs are retained. No failed test or scientific attempt occurred.",
+    "full_suite_run": false,
+    "independent_code_review": "No measurement-method defect found; suggested provenance/role checks were added before final tests and real execution.",
+    "actual_emitted_data_verification": {
+      "status": "passed",
+      "issues": [],
+      "receipt": {
+        "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/independent_audit_01/audit.json",
+        "bytes": 453928,
+        "sha256": "407445e9077750f449d0927e11539458a1c7c12b7f3b483aae2d0833564ab6fe"
+      },
+      "helper": {
+        "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/independent_audit_01/audit_inspection.py",
+        "sha256": "df85b206f14c186625b56a31212cc6c832a905e9185c595ba4daab89955f784a",
+        "bytes": 22003
+      },
+      "all_structural_rows": 640,
+      "all_cache_metadata_records": 652,
+      "independently_recomputed_numeric_rows": 126,
+      "all_primary_failure_rows_recomputed": 82,
+      "additional_context_rows_recomputed": 44,
+      "numeric_sampling": "Every20th nonfailure and final nonfailure per window, plus first/last hidden-alarm and unscored cases; deduplicated and specified before heatmap reads.",
+      "cached_triplets_loaded": 237,
+      "compressed_bytes_read": 377272217,
+      "elapsed_seconds": 3.2969999999986612,
+      "coverage_limit": "The other514rows were structurally/provenance checked and included in summary reconstruction; their numeric heatmap measurements were not independently recomputed."
+    }
+  },
+  "visual_delivery": {
+    "verification": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/visuals/visual_check.json",
+      "bytes": 3186,
+      "sha256": "c0b7dd2b216ba8966fa619b58b5e725eebd8685797dfdde6a33b522a21e5d18f"
+    },
+    "figures": [
+      {
+        "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/visuals/response_comparison.png",
+        "bytes": 85368,
+        "sha256": "58d3df43f0f3876c1af11274c35c2510396ae615cc44ca37affb88056a3ed37a"
+      },
+      {
+        "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/visuals/heatmap_examples_v2.png",
+        "bytes": 366821,
+        "sha256": "5b0e20dc9f1c016be4cecdf0fca210decde3dc39e4f07b53250fde5702d3bbe3"
+      }
+    ],
+    "render_receipts": [
+      {
+        "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/visuals/response_comparison_receipt.json",
+        "bytes": 964,
+        "sha256": "53ae2c990fd23c598a158e93ee2ab013143c543c0a8ca13db7af72b80804084f"
+      },
+      {
+        "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/visuals/heatmap_examples_v2_receipt.json",
+        "bytes": 6569,
+        "sha256": "8cbaf7b5d875fadcd3b650948f45374068d2df6dfac399fc6a516d4e9f0add7b"
+      }
+    ],
+    "helpers": [
+      {
+        "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/visuals/plot_responses.py",
+        "bytes": 3492,
+        "sha256": "fa6b6b5970cd25d7092c4070b426cb114ab3d65dcd44d1f0de31438ea78caf23"
+      },
+      {
+        "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/visuals/plot_examples_v2.py",
+        "bytes": 5803,
+        "sha256": "c7844ff710cf9bfa71a697184eea215f445938e77112d4c6d5505e088b345135"
+      }
+    ],
+    "resource_use_all_attempts": {
+      "cached_triplet_read_events": 12,
+      "compressed_bytes_read": 19097646,
+      "native_png_decode_events": 4,
+      "unique_native_pngs": 2,
+      "original_video_decodes": 0,
+      "model_calls": 0,
+      "label_or_prediction_updates": false
+    },
+    "retained_layout_correction": "First example plot clipped the right colorbar label; v2 adjusts layout only. Original figure, receipt and helper are retained.",
+    "purpose": "Phone-readable explanatory plots only. No changed reference geometry, tracker output or new human model-output acceptance is claimed."
+  },
+  "preservation": {
+    "path": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1/preservation.json",
+    "bytes": 3435,
+    "sha256": "b236ae68ed9163953f01214efbb0af9e6a59860775883860d94e2fe5ed2992ad"
+  },
+  "resource_totals_including_audit_and_visual_attempts": {
+    "compressed_cache_read_bytes": 1434258447,
+    "cache_read_events": 901,
+    "unique_caches_in_scope": 652,
+    "native_png_decode_events": 4,
+    "unique_native_pngs": 2,
+    "raw_game_video_decodes": 0,
+    "real_model_calls": 0,
+    "checkpoint_loads": 0,
+    "training_runs": 0
+  },
+  "limits": [
+    "Failure-selected correlated development labels, not representative NBA accuracy or an independent test.",
+    "AI label authorship, human acceptance, uncertainty and historical failed attempts remain explicit.",
+    "No new source scope, holdout access, fit, threshold sweep, motion rule, interpolation or model-output promotion.",
+    "SAC remains future-training eligible; Detroit remains excluded from fitting; TOR stays outside scope.",
+    "Original scores, accepted labels, cached predictions and three pending motion reviews remain unchanged."
+  ],
+  "next_step": {
+    "recommendation": "Prepare one bounded NBA adaptation experiment emphasizing held/overlapped ball appearances, using already accepted SAC references for training and keeping DET out of fitting. Mix reviewed NFHS training examples and compare against preserved NBA/NFHS development baselines to check forgetting.",
+    "training_or_new_inference_authorized": false,
+    "design_considerations": "Explicitly specify checkpoint initialization, native-PNG input contract, masked unknowns, replay sampling, update budget, unchanged operating point and complete visual comparisons before seeking experiment approval.",
+    "uncertainty": "Small correlated failure-selected training scenes may improve fit but fail to transfer; continuation changes training exposure and data composition. Detroit is repeatedly used development evidence, not an independent test."
+  },
+  "boundaries": {
+    "sac": "future-training eligible; not consumed in a new fit during this increment",
+    "det": "development-only, excluded from fitting",
+    "tor": "outside scope",
+    "holdouts_and_nfhs_finish_line": "unchanged",
+    "negative_motion_result": "unchanged; three human reviews remain pending",
+    "ball_phase_accepted": false
+  }
+}

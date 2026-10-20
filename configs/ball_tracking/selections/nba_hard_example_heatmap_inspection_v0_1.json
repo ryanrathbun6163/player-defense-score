@@ -1,0 +1,178 @@
+{
+  "schema_version": "nba_saved_heatmap_inspection_scope/v0.1",
+  "status": "approved",
+  "inspection_id": "nba_hard_example_heatmap_inspection_v0_1",
+  "created_at_utc": "2026-10-20T03:48:42.902360+00:00",
+  "source_head": "aec2c837f1874b728bc43c4eaa7f2f7ea40adca9",
+  "authorization": {
+    "approved_by": "Ryan",
+    "user_statement": "Let\u2019s do it. Move forward chat",
+    "approved_work": "Inspect saved heatmaps to explain69missing and13marginal localization errors before choosing a model change. Include the existing successful, hidden and unsupported reference rows as fixed descriptive context.",
+    "new_model_inference": false,
+    "training": false,
+    "threshold_sweep": false,
+    "new_prediction_policy": false,
+    "label_changes": false
+  },
+  "authority": {
+    "saved_diagnostic_result": {
+      "path": "configs/ball_tracking/reviews/nba_hard_example_saved_diagnostic_result_v0_1.json",
+      "bytes": 19551,
+      "sha256": "4714712b7f93a2a7c6af608dd034c293c0f44b752cdc6e4674b907db5a43223f"
+    },
+    "saved_score_report": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/diagnostics/saved_score_v0_1/attempts/9e8067a522fb4e5d8edaf1b8f4e525e6/report.json",
+      "sha256": "779199c4ffbaf50d3c6d062aa570cbba00675fb29c70a138af77ddf3f115bc2c",
+      "bytes": 1228596
+    },
+    "accepted_hard_reference": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/accepted/reference.json",
+      "bytes": 688436,
+      "sha256": "91bd79c73e47193c4344b630205efee34c1636bec4bcb7bc4985846a1c6ad3a3"
+    },
+    "accepted_pilot_reference": {
+      "path": "data/outputs/ball_tracking/nba/reviewed_pilot_v0_1/reference.json",
+      "sha256": "6a2aa2dad7ecd5351c21b8806945f3e9c33ac4d17a295ec67fe1b5dd52b996c4",
+      "bytes": 154743
+    },
+    "completed_action_observation": {
+      "path": "configs/ball_tracking/reviews/nba_wasb_action_observation_result_v0_1.json",
+      "bytes": 29946,
+      "sha256": "192a78fa2354165c8a41a25e71d1a5adb4e01069736f0300a1f0ab9a67e13f04"
+    }
+  },
+  "windows": [
+    {
+      "window_id": "sac_distractor_recovery",
+      "cohort": "hard_example",
+      "candidate_id": "sac_mem_q1_c01",
+      "source_frame_range_inclusive": [
+        940,
+        1059
+      ],
+      "frames": 120
+    },
+    {
+      "window_id": "sac_held_ball_gaps",
+      "cohort": "hard_example",
+      "candidate_id": "sac_mem_q1_c01",
+      "source_frame_range_inclusive": [
+        1240,
+        1359
+      ],
+      "frames": 120
+    },
+    {
+      "window_id": "det_distractor_long_gap",
+      "cohort": "hard_example",
+      "candidate_id": "sas_det_q1_c02",
+      "source_frame_range_inclusive": [
+        11000,
+        11119
+      ],
+      "frames": 120
+    },
+    {
+      "window_id": "det_drive_rim_overlap",
+      "cohort": "hard_example",
+      "candidate_id": "sas_det_q1_c02",
+      "source_frame_range_inclusive": [
+        11420,
+        11579
+      ],
+      "frames": 160
+    },
+    {
+      "window_id": "sac_mem_q1_c01_pilot_control",
+      "cohort": "pilot_control",
+      "candidate_id": "sac_mem_q1_c01",
+      "source_frame_range_inclusive": [
+        660,
+        719
+      ],
+      "frames": 60
+    },
+    {
+      "window_id": "sas_det_q1_c02_pilot_control",
+      "cohort": "pilot_control",
+      "candidate_id": "sas_det_q1_c02",
+      "source_frame_range_inclusive": [
+        10788,
+        10847
+      ],
+      "frames": 60
+    }
+  ],
+  "sources": [
+    {
+      "candidate_id": "sac_mem_q1_c01",
+      "input_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/inputs/sac_mem_q1_c01/manifest.json",
+        "bytes": 726844,
+        "sha256": "dfd51f416ca0b1819d6b0d8637d5f686f8389817de1bdef542d4179a0978217d"
+      },
+      "observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/observations.json",
+        "bytes": 3339134,
+        "sha256": "0cd5a7eb8dd9a28cdaddfe1b072415b75c19a89f26e0842cd1c9bf0c83ddc6b4"
+      },
+      "frames": 300,
+      "needed_unique_triplets": 306,
+      "compressed_cache_bytes": 487295209
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "input_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/inputs/sas_det_q1_c02/manifest.json",
+        "bytes": 615594,
+        "sha256": "f40c5217cbcaa6f74b1b825b303a1b13572d84c735fc0083ca980dc9768d7b6e"
+      },
+      "observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/observations.json",
+        "bytes": 2750073,
+        "sha256": "a9ef10f9b88361ee7d1f3dde633bc1ff36f506cd5d2d9f562bcb7c3b50991db4"
+      },
+      "frames": 340,
+      "needed_unique_triplets": 346,
+      "compressed_cache_bytes": 550593375
+    }
+  ],
+  "totals": {
+    "frames": 640,
+    "primary_missing": 69,
+    "primary_wrong": 13,
+    "matched_hard_context": 305,
+    "pilot_controls": 120,
+    "hidden_context": 86,
+    "unsupported_context": 47,
+    "needed_unique_triplets": 652,
+    "compressed_cache_bytes": 1037888584
+  },
+  "measurements": {
+    "native_heatmap_shape": [
+      288,
+      512
+    ],
+    "native_dtype": "float32",
+    "mean_reconstruction": "Original overlapping triplets only; ascending-start float32 addition then float32 division; require exact original mean_heatmap_sha256. Cache reads and decompression only, no new predictions or altered aggregation.",
+    "local_region": "Mapped integer heatmap pixel locations within inclusive10sourcepixels of accepted center; no label rounding, interpolation or uncertainty relaxation.",
+    "localization_radius_source_px": 10,
+    "support_threshold_strict": 0.3,
+    "support_implementation": "Use original cv2 float32 strict threshold semantics and8connected components.",
+    "global_and_local_peaks": "Sigmoid response values and mapped source locations, first row-major tie; local/global ratio and peak distances. Descriptive, not calibrated probabilities or a deployed selector.",
+    "component_geometry": "Reproduce frozen candidates exactly; selected component weighted center, strongest pixel, nearest active support, bounding box and overlap with fixed reference disk.",
+    "contributions": "Report each original contributor local/global peak and whether its local support exceeds0.3; retain individual channels and time mapping.",
+    "unknowns": "No local region, center error or localization judgment for null/unsupported reference geometry. Only global/component evidence for these rows.",
+    "grouping": "Keep missing, wrong, matchedhard, hidden, unsupported and separate pilot cohorts. Retain window/game roles, eight changed-context edges and sourceframe/PTS/PNG bindings."
+  },
+  "visual_delivery": "Small explicitly selected explanatory plots/crops from existing PNGs may illustrate the frozen measurements. They are diagnostic evidence, not revised trajectories or new accepted labels.",
+  "resource_policy": "Stream sorted caches with bounded rolling memory; process each needed cache once. Preserve attempts and all original evidence; no original video decode, no model load, no checkpoint load.",
+  "output_root": "data/outputs/ball_tracking/nba/hard_example_heatmap_inspection_v0_1",
+  "limits": [
+    "Failure-selected correlated development labels, not representative NBA accuracy or an independent test.",
+    "AI label authorship, human acceptance, uncertainty and historical failed attempts remain explicit.",
+    "No new source scope, holdout access, fit, threshold sweep, motion rule, interpolation or model-output promotion.",
+    "SAC remains future-training eligible; Detroit remains excluded from fitting; TOR stays outside scope.",
+    "Original scores, accepted labels, cached predictions and three pending motion reviews remain unchanged."
+  ]
+}

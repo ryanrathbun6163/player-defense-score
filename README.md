@@ -112,7 +112,14 @@ finds 305 matches, 13 localization errors and 69 missing outputs among the 387
 eligible frames, plus 13 alarms in 86 hidden-ball frames. The 120 easy controls
 remain 120/120 in their longer context. None of the 82 localization failures has
 an alternative saved candidate within ten pixels, so reranking the existing
-candidates cannot recover them. These correlated, failure-selected labels are
+candidates cannot recover them. The approved [saved-heatmap inspection](docs/nba_hard_example_heatmap_inspection_results.md)
+reconstructed all 640 original means exactly. Missing frames have weak ball-region
+responses (median 0.118); only 11/69 had above-threshold support in an individual
+contributor that disappeared in the mean. Changing component centers to peaks
+would recover three wrong locations but lose six current matches. These findings
+support preparing a bounded NBA adaptation/data experiment using SAC alongside
+eligible NFHS training examples, with DET excluded; no fit or new prediction policy is approved.
+These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved
 model trajectories or comparative NBA accuracy. No new inference, training or
 threshold change occurred. Existing holdouts, the NFHS finish line,

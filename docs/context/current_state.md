@@ -1,6 +1,47 @@
 # Current State
 
-## Latest increment: difficult-scene labels accepted and saved predictions scored
+## Latest increment: approved saved-heatmap inspection completed
+
+Ryan approved the inspection with “Let’s do it. Move forward chat”. The
+[recorded scope](../../configs/ball_tracking/selections/nba_hard_example_heatmap_inspection_v0_1.json)
+fixed 640 rows and comparisons before reading the heatmaps. One 19.937-second
+run read 652 existing
+cache files (1,037,888,584 compressed bytes) and reconstructed all 640 original
+means exactly, including the original candidates and selections. No model calls,
+checkpoint loads, training, source image/video decoding or prediction changes
+occurred. Three rolling triplet arrays used at most 5,308,416 bytes; this is not
+total process RAM. Seven intended new focused tests passed. Independent audit
+passed in 3.297 seconds: all 640 rows/summaries and 652 cache records checked
+structurally, with 126 rows independently recomputed numerically (all 82 failures
+and 44 context rows). The other 514 were not independently recomputed numerically.
+
+The [inspection report](../nba_hard_example_heatmap_inspection_results.md) explains
+why reranking the saved candidates is insufficient. On 69 missing frames, the
+local response median is 0.117843 and maximum 0.293772, below strict 0.3 support.
+Only 11/69 had an original contributor with local support above 0.3 that vanished
+in the mean; 58 had none. The global peak lies within ten pixels of the label on
+only 21/69. Eleven of 13 wrong-location components overlap the label disk, but
+only three component peaks match. Replacing weighted centers with peaks would
+lose six of the 305 currently matched difficult frames while gaining three wrong
+ones. No new selector or threshold was promoted.
+
+The 73 hidden quiet frames have a global-response median of 0.109686, overlapping
+missing-frame values; 13 hidden alarms have a median of 0.459021. These are
+uncalibrated responses, not probabilities or a basis for an assumed safe lower
+threshold. The original 305/387 score, 13/86 hidden alarms, 133 null geometries,
+120/120 separate controls and original short-pilot score remain unchanged.
+
+**Next concrete action:** prepare an exact bounded NBA adaptation/data proposal
+emphasizing held and overlapped balls, using SAC alongside eligible NFHS training
+examples to retain prior behavior, with DET excluded from fitting. Improving
+model responses to these ball appearances
+is a principal hypothesis; the findings do not prove one cause or approve a fit.
+Failure-selected,
+correlated human-accepted AI labels remain development evidence, not independent
+NBA accuracy. TOR, protected holdouts, the NFHS finish line and the negative
+motion result remain unchanged; its three human reviews are pending.
+
+## Earlier increment (historical): difficult-scene labels accepted and saved predictions scored
 
 Ryan accepted all four complete label-overlay videos without corrections. The
 [acceptance record](../../configs/ball_tracking/reviews/nba_hard_example_label_acceptance_v0_1.json)
