@@ -1,6 +1,6 @@
 # NBA action observation plan
 
-**Current status: approved pass completed; new human review pending.** Ryan
+**Current status: approved pass completed; both video reviews reported complete.** Ryan
 approved the exact longer plan: “I approve. Move forward chat”. The separate
 [approval record](../configs/ball_tracking/reviews/nba_wasb_action_observation_approval_v0_1.json)
 binds the unchanged proposal and authorizes implementation, focused validation
@@ -11,6 +11,11 @@ imported all 116 prior triplets, with zero failed or unresolved calls. The
 [result and review report](nba_wasb_action_observation_results.md) records the
 2,380 observations, 322 missing frames, passed saved-output/media checks and
 qualitative concerns. This does not establish reliable longer ball tracking.
+After both complete videos were delivered in chat for phone viewing, Ryan
+reported: “Ok reviewed. What’s the next step”. The later
+[visual-review record](../configs/ball_tracking/reviews/nba_wasb_action_observation_visual_review_v0_1.json)
+records completion without playback telemetry, explicit quality endorsement or
+new experiment authorization. Original result records and media are preserved.
 
 Ryan accepted both complete [native pilot prediction videos](nba_wasb_native_pilot_diagnostic_results.md)
 on October 19. The model matched all 120 accepted reference points, but each
@@ -139,9 +144,11 @@ playback, explicit gaps, quantitative error summaries and a repeatable run—
 remains unchanged. Protected holdouts, the negative motion-selection result
 and its three pending new human reviews remain intact.
 
-Approval, execution and saved-output/media verification of this exact scope
-are complete. Ryan's next action is to review both complete new videos with
-the specific frame cues in the result report, including their actual final
-frames. These longer predictions remain pending human review. Their result
-will guide a later, concrete data or model improvement; this completed pass
-does not authorize a new fit or establish ball-phase completion.
+Approval, execution, saved-output/media verification and user-reported video
+review of this exact scope are complete. The next decision is the separate
+[hard-example reference proposal](nba_hard_example_reference_plan.md): 520 new
+AI-proposed labels, human reference-overlay acceptance, then scoring of saved
+observations with 120 existing pilot references as separate longer-context easy
+controls. This proposal is design-only and leaves the original pilot score
+unchanged. Review completion does not authorize new labels, scoring or a fit,
+and does not establish ball-phase completion.

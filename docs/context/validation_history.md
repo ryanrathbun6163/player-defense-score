@@ -1,5 +1,25 @@
 # Validation History
 
+## Longer NBA review completion and proposed reference diagnostic
+
+Ryan reported: “Ok reviewed. What’s the next step” after both complete longer
+videos were delivered in chat for phone viewing. The separate
+[visual-review record](../../configs/ball_tracking/reviews/nba_wasb_action_observation_visual_review_v0_1.json)
+binds that later event; it claims neither playback telemetry nor explicit
+acceptance of prediction quality. The original pending-era result record and
+media remain unchanged. The reported distractor/gap failures remain unresolved.
+Prior short-pilot acceptance and three pending motion reviews are unchanged.
+
+The [next reference proposal](../nba_hard_example_reference_plan.md) is
+design-only: 520 new AI-proposed labels over four failure-focused source ranges,
+followed by Ryan's reference-overlay acceptance and scoring of saved frozen
+observations. At most 640 frames would be scored, including 120 existing pilot
+references used as separate longer-context easy controls. The original pilot
+score stays unchanged. Uncertainty and AI origin remain explicit; source/model
+selection prevents an independent or representative accuracy claim. No new
+labels, scoring, inference, training, threshold or motion experiment was run or
+authorized by the review-completion message.
+
 ## 2026-10-19: longer NBA action observation completed and audited
 
 Ryan approved the exact longer plan: “I approve. Move forward chat”. The

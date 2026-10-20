@@ -100,8 +100,13 @@ are availability counts, not accuracy. AI inspection finds spectator/head
 distractors and visible-ball gaps. Independent saved-output verification and
 both complete videos passed transport checks. The
 [results and new review videos](docs/nba_wasb_action_observation_results.md)
-preserve these limitations; their human review remains pending. There is no
-new training or new-label scoring. Existing
+preserve these limitations. After both complete videos were delivered in chat
+for phone viewing, Ryan reported: “Ok reviewed. What’s the next step”. This
+records review completion, without playback telemetry or an explicit quality
+endorsement. The [next proposed reference batch](docs/nba_hard_example_reference_plan.md)
+would label 520 difficult frames and, after label acceptance, score saved
+outputs alongside 120 existing pilot references. This is design-only; no new
+labels, scoring, inference or training are authorized by that review. Existing
 holdouts, the NFHS finish line and the negative motion result remain unchanged.
 
 ## End goal

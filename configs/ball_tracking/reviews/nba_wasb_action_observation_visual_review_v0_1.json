@@ -1,0 +1,97 @@
+{
+  "schema_version": "nba_wasb_action_observation_visual_review/v0.1",
+  "status": "review_completed_user_reported",
+  "reviewer_id": "Ryan",
+  "recorded_at_utc": "2026-10-20T02:16:03.252655+00:00",
+  "review_date_local": "2026-10-19",
+  "timezone": "America/Phoenix",
+  "source_commit": "cb8b5d5ddfab9205450d56ca4d3b46bbe2a36bb5",
+  "user_statement": "Ok reviewed. What’s the next step",
+  "delivery": "Both exact longer MP4 files were embedded directly in this chat after Ryan requested phone-accessible videos.",
+  "review_scope": "User-reported completion of review of both presented longer videos. The presented clips include their held actual final frames.",
+  "playback_telemetry_claimed": false,
+  "quality_judgment": "No explicit favorable localization/trajectory judgment was stated; do not infer correctness or phase acceptance from review completion.",
+  "corrections_reported": [],
+  "result_record": {
+    "path": "configs/ball_tracking/reviews/nba_wasb_action_observation_result_v0_1.json",
+    "bytes": 29946,
+    "sha256": "192a78fa2354165c8a41a25e71d1a5adb4e01069736f0300a1f0ab9a67e13f04"
+  },
+  "packages": [
+    {
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "approved_role": "future_training_candidate_pool",
+      "source_frame_range_inclusive": [
+        540,
+        2010
+      ],
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/review_attempts/15c8e702a51642199f6d453f369679b2/review.mp4",
+        "bytes": 45243049,
+        "sha256": "d1adc39b43c33479c4a7edd29e76db5f82e504d6ffb1bd1645ee1d6bae10cea9"
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/review_attempts/15c8e702a51642199f6d453f369679b2/completion.json",
+        "bytes": 2731,
+        "sha256": "595308f9cf093c8801d28d455f9fe5acf03ccc8ec61ec18b8631fbe1ac259e49"
+      },
+      "actual_final_frame_in_presented_media": 2010,
+      "observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/observations.json",
+        "bytes": 3339134,
+        "sha256": "0cd5a7eb8dd9a28cdaddfe1b072415b75c19a89f26e0842cd1c9bf0c83ddc6b4"
+      },
+      "ai_visual_inspection": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/model_visual_sac_01/inspection.json",
+        "bytes": 53755,
+        "sha256": "7c4db494054636c48f0fb1e08c649d24641bb5b1edb9b53c3ef81dfad91a5d9f"
+      },
+      "model_output_human_review": "review_completed_user_reported"
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "game_id": "0022500828",
+      "approved_role": "target_case_development",
+      "source_frame_range_inclusive": [
+        10668,
+        11898
+      ],
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/review_attempts/f22f738e7379465aa58223d667918219/review.mp4",
+        "bytes": 35900215,
+        "sha256": "d28c3f7c818a76c5585c8478ee02f17ba3fdb432c24e1689c33f7c8f38f8a2f8"
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/review_attempts/f22f738e7379465aa58223d667918219/completion.json",
+        "bytes": 2730,
+        "sha256": "41fd704d7daf3a39758527055ba64e0932f01cd8f007f31dd3073b9c6cf8626d"
+      },
+      "actual_final_frame_in_presented_media": 11898,
+      "observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/observations.json",
+        "bytes": 2750073,
+        "sha256": "a9ef10f9b88361ee7d1f3dde633bc1ff36f506cd5d2d9f562bcb7c3b50991db4"
+      },
+      "ai_visual_inspection": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/model_visual_det_01/review.json",
+        "bytes": 58633,
+        "sha256": "e9fb1b6ac4aefc46a370f0c95f67c7f562b20882f9f064d7c24061f47a4966c4"
+      },
+      "model_output_human_review": "review_completed_user_reported"
+    }
+  ],
+  "history": "Original result/completion/AI receipts/media and pending-era pages remain unchanged. This separate record supplies the later review event.",
+  "limits": {
+    "known_distractors_and_missingness_preserved": true,
+    "original_short_pilot_acceptance_unchanged": true,
+    "reference_labels_created_or_accepted": false,
+    "ball_phase_accepted": false,
+    "nba_identity_or_calibration_accepted": false,
+    "new_labeling_or_evaluation_authorized": false,
+    "training_authorized": false,
+    "negative_motion_result_unchanged": true,
+    "new_motion_human_reviews_pending": 3,
+    "game_roles_and_holdouts_unchanged": true
+  }
+}

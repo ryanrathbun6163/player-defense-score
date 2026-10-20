@@ -1,6 +1,33 @@
 # Current State
 
-## Latest increment: 2026-10-19 longer NBA action pass completed and audited
+## Latest increment: longer NBA videos reviewed; reference batch proposed
+
+After both complete longer videos were delivered in chat for phone viewing,
+Ryan reported: “Ok reviewed. What’s the next step”. The separate
+[visual-review record](../../configs/ball_tracking/reviews/nba_wasb_action_observation_visual_review_v0_1.json)
+records that later user-reported event. No playback telemetry, explicit quality
+endorsement or new experiment authorization is inferred. Distractor selections
+and visible-ball gaps remain unresolved; original result records and media stay
+unchanged. The earlier short-pilot acceptance remains complete, and the three
+motion-comparison reviews remain pending.
+
+**Next concrete action:** decide on the [design-only hard-example reference
+proposal](../nba_hard_example_reference_plan.md). Its four bounded windows cover
+520 new frames: SAC 940–1059 and 1240–1359; DET 11000–11119 and 11420–11579.
+The assistant would propose labels from existing native PNGs, preserving AI
+authorship and uncertainty, then present complete short overlays for Ryan's
+acceptance. Only after acceptance would saved frozen predictions be scored on
+the new references and 120 existing pilot references, at most 640 frames.
+The latter are longer-context easy controls, separate from the unchanged
+original short-window score. Indefensible centers remain unscored.
+
+These source/model-selected windows are a biased development diagnostic, not
+an independent or representative NBA benchmark. No new inference, training,
+threshold or motion change is proposed. SAC remains future-training-eligible,
+DET excluded from fitting, TOR outside scope, and protected holdouts and the
+NFHS finish line unchanged. No new labels or scores have been produced.
+
+## Earlier increment: 2026-10-19 longer NBA action pass completed and audited
 
 Ryan explicitly approved the exact longer plan: “I approve. Move forward chat”.
 The [approval](../../configs/ball_tracking/reviews/nba_wasb_action_observation_approval_v0_1.json)

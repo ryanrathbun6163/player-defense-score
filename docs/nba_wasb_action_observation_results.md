@@ -2,8 +2,11 @@
 
 The approved longer observation pass is complete and its saved outputs passed
 verification. **The videos expose distractor selections and visible-ball gaps;
-this is not a reliable-tracking or ball-phase pass.** Ryan's review of both new
-videos is pending. His accepted short-pilot predictions remain unchanged.
+this is not a reliable-tracking or ball-phase pass.** After both complete videos
+were delivered in chat for phone viewing, Ryan reported: “Ok reviewed. What’s
+the next step”. The separate [visual-review record](../configs/ball_tracking/reviews/nba_wasb_action_observation_visual_review_v0_1.json)
+records review completion, without playback telemetry or an explicit quality
+endorsement. His accepted short-pilot predictions remain unchanged.
 
 Ryan approved the exact [two-core plan](nba_wasb_action_observation_plan.md):
 “I approve. Move forward chat”. The separate
@@ -54,7 +57,7 @@ output. Eight edge frames receive longer context: SAC 660, 661, 718, 719 and
 DET 10788, 10789, 10846, 10847. Their new observations are recorded separately;
 the original accepted 120/120 short-window score was not recomputed or replaced.
 
-## Review both complete videos
+## Completed video review and preserved artifacts
 
 - [Both videos with seekable AI review cues](../data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/review_guide.html)
 - [SAC–MEM: 25.541-second review, through original frame 2010](../data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/review_attempts/15c8e702a51642199f6d453f369679b2/review.mp4)
@@ -63,9 +66,8 @@ the original accepted 120/120 short-window score was not recomputed or replaced.
 
 Pink is the selected point; gold marks candidates. Missing/withheld intervals
 stay explicit. The source timelines are 24.541 and 20.537 seconds; each actual
-final frame receives an additional one-second hold. Watch both complete clips,
-using slower playback for the flagged intervals. Report corrections or
-observations by game and original frame number.
+final frame receives an additional one-second hold. The flagged intervals
+remain navigation aids for the completed review; no repeat review is requested.
 
 The assistant inspected all 1,471 SAC frames, including its actual decoded
 final frame, and preserved [14 review cues](../data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/model_visual_sac_01/inspection.json).
@@ -96,7 +98,8 @@ The other DET cues cover its longest missing run, 11063–11096 (34 frames,
 and the final visible-ball sequence through frame 11898. Blur and occlusion
 leave some near-rim intervals uncertain. Both actual final frames were inspected.
 These qualitative notes do not supply human acceptance or turn observations
-into reference labels. **Ryan's review of both longer videos remains pending.**
+into reference labels. **Ryan reports both longer-video reviews complete; no
+explicit prediction-quality endorsement is inferred.**
 
 ## Saved-output and media verification
 
@@ -157,11 +160,17 @@ Inference and rendering used the committed
 
 ## Limits and next action
 
-Ryan reviews both complete new videos and their flagged intervals next. The
-current model has useful stretches but unresolved distractor and coverage
-failures. Completing this observation does not approve a new experiment, fit
-or method promotion. A later change should target these visible weaknesses
-with an exact scope and retained uncertainty.
+The current model has useful stretches but unresolved distractor and coverage
+failures. Ryan's reported review completion does not approve a new experiment,
+fit or method promotion. The [next proposed reference diagnostic](nba_hard_example_reference_plan.md)
+would label 520 frames in four bounded hard-example windows, with AI authorship
+and uncertainty retained. After Ryan accepts the complete reference overlays,
+score saved frozen observations alongside 120 existing pilot references as
+separate longer-context easy controls, at most 640 frames. Keep the original
+short-pilot score unchanged and indefensible centers unscored. This remains
+design-only: no new labels or scoring occurred, and no inference, training,
+threshold or motion change is proposed. Model-informed selection means the
+diagnostic cannot estimate representative NBA accuracy.
 
 SAC remains future-training-eligible; DET remains target development and
 excluded from fitting; TOR is outside this pass. There is no independent test

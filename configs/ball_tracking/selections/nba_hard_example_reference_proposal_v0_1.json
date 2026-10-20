@@ -1,0 +1,232 @@
+{
+  "schema_version": "nba_hard_example_reference_proposal/v0.1",
+  "proposal_id": "nba_hard_example_reference_v0_1",
+  "status": "design_only_awaiting_scope_approval",
+  "runnable": false,
+  "created_at_utc": "2026-10-20T02:16:03.252655+00:00",
+  "source_commit": "cb8b5d5ddfab9205450d56ca4d3b46bbe2a36bb5",
+  "purpose": "Measure whether the frozen output lacks ball evidence or selects a distractor despite retaining a ball candidate, before choosing a model or selection change.",
+  "authority": {
+    "completed_observation": {
+      "path": "configs/ball_tracking/reviews/nba_wasb_action_observation_result_v0_1.json",
+      "bytes": 29946,
+      "sha256": "192a78fa2354165c8a41a25e71d1a5adb4e01069736f0300a1f0ab9a67e13f04"
+    },
+    "reported_video_review": {
+      "path": "configs/ball_tracking/reviews/nba_wasb_action_observation_visual_review_v0_1.json",
+      "bytes": 4720,
+      "sha256": "00dca94da06d3b1c5e5c27ecd5277f776f205a025b422f3e50a40f5fb7b4a687"
+    },
+    "existing_pilot_reference": {
+      "path": "data/outputs/ball_tracking/nba/reviewed_pilot_v0_1/reference.json",
+      "bytes": 154743,
+      "sha256": "6a2aa2dad7ecd5351c21b8806945f3e9c33ac4d17a295ec67fe1b5dd52b996c4"
+    }
+  },
+  "windows": [
+    {
+      "window_id": "sac_distractor_recovery",
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "approved_game_role": "future_training_candidate_pool",
+      "source_frame_range_inclusive": [
+        940,
+        1059
+      ],
+      "frames": 120,
+      "source_pts_ticks_inclusive": [
+        1416752,
+        1595402
+      ],
+      "source_end_exclusive_pts_ticks": 1596932,
+      "time_base": "1/90000",
+      "native_duration_seconds": 2.002,
+      "input_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/inputs/sac_mem_q1_c01/manifest.json",
+        "bytes": 726844,
+        "sha256": "dfd51f416ca0b1819d6b0d8637d5f686f8389817de1bdef542d4179a0978217d"
+      },
+      "saved_observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/observations.json",
+        "bytes": 3339134,
+        "sha256": "0cd5a7eb8dd9a28cdaddfe1b072415b75c19a89f26e0842cd1c9bf0c83ddc6b4"
+      },
+      "selection_evidence": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/model_visual_sac_01/inspection.json",
+        "bytes": 53755,
+        "sha256": "7c4db494054636c48f0fb1e08c649d24641bb5b1edb9b53c3ef81dfad91a5d9f"
+      },
+      "selection_rationale": "Spectator/body selections, missing runs and apparent recovery around 967–998.",
+      "selection_status": "failure_focused_after_model_output_inspection",
+      "labels_created": false
+    },
+    {
+      "window_id": "sac_held_ball_gaps",
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "approved_game_role": "future_training_candidate_pool",
+      "source_frame_range_inclusive": [
+        1240,
+        1359
+      ],
+      "frames": 120,
+      "source_pts_ticks_inclusive": [
+        1867202,
+        2045852
+      ],
+      "source_end_exclusive_pts_ticks": 2047382,
+      "time_base": "1/90000",
+      "native_duration_seconds": 2.002,
+      "input_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/inputs/sac_mem_q1_c01/manifest.json",
+        "bytes": 726844,
+        "sha256": "dfd51f416ca0b1819d6b0d8637d5f686f8389817de1bdef542d4179a0978217d"
+      },
+      "saved_observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/observations.json",
+        "bytes": 3339134,
+        "sha256": "0cd5a7eb8dd9a28cdaddfe1b072415b75c19a89f26e0842cd1c9bf0c83ddc6b4"
+      },
+      "selection_evidence": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/model_visual_sac_01/inspection.json",
+        "bytes": 53755,
+        "sha256": "7c4db494054636c48f0fb1e08c649d24641bb5b1edb9b53c3ef81dfad91a5d9f"
+      },
+      "selection_rationale": "Repeated held-ball missing outputs around 1259–1324, with surrounding observations.",
+      "selection_status": "failure_focused_after_model_output_inspection",
+      "labels_created": false
+    },
+    {
+      "window_id": "det_distractor_long_gap",
+      "candidate_id": "sas_det_q1_c02",
+      "game_id": "0022500828",
+      "approved_game_role": "target_case_development",
+      "source_frame_range_inclusive": [
+        11000,
+        11119
+      ],
+      "frames": 120,
+      "source_pts_ticks_inclusive": [
+        16520372,
+        16699022
+      ],
+      "source_end_exclusive_pts_ticks": 16700552,
+      "time_base": "1/90000",
+      "native_duration_seconds": 2.002,
+      "input_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/inputs/sas_det_q1_c02/manifest.json",
+        "bytes": 615594,
+        "sha256": "f40c5217cbcaa6f74b1b825b303a1b13572d84c735fc0083ca980dc9768d7b6e"
+      },
+      "saved_observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/observations.json",
+        "bytes": 2750073,
+        "sha256": "a9ef10f9b88361ee7d1f3dde633bc1ff36f506cd5d2d9f562bcb7c3b50991db4"
+      },
+      "selection_evidence": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/model_visual_det_01/review.json",
+        "bytes": 58633,
+        "sha256": "e9fb1b6ac4aefc46a370f0c95f67c7f562b20882f9f064d7c24061f47a4966c4"
+      },
+      "selection_rationale": "Wrong-arm selections at 11023–11029 and 11102–11106; longest missing interval 11063–11096 and recovery.",
+      "selection_status": "failure_focused_after_model_output_inspection",
+      "labels_created": false
+    },
+    {
+      "window_id": "det_drive_rim_overlap",
+      "candidate_id": "sas_det_q1_c02",
+      "game_id": "0022500828",
+      "approved_game_role": "target_case_development",
+      "source_frame_range_inclusive": [
+        11420,
+        11579
+      ],
+      "frames": 160,
+      "source_pts_ticks_inclusive": [
+        17151002,
+        17389682
+      ],
+      "source_end_exclusive_pts_ticks": 17391212,
+      "time_base": "1/90000",
+      "native_duration_seconds": 2.669,
+      "input_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/inputs/sas_det_q1_c02/manifest.json",
+        "bytes": 615594,
+        "sha256": "f40c5217cbcaa6f74b1b825b303a1b13572d84c735fc0083ca980dc9768d7b6e"
+      },
+      "saved_observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/observations.json",
+        "bytes": 2750073,
+        "sha256": "a9ef10f9b88361ee7d1f3dde633bc1ff36f506cd5d2d9f562bcb7c3b50991db4"
+      },
+      "selection_evidence": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/model_visual_det_01/review.json",
+        "bytes": 58633,
+        "sha256": "e9fb1b6ac4aefc46a370f0c95f67c7f562b20882f9f064d7c24061f47a4966c4"
+      },
+      "selection_rationale": "Drive, near-rim overlap, repeated missingness and uncertain localization around 11437–11557.",
+      "selection_status": "failure_focused_after_model_output_inspection",
+      "labels_created": false
+    }
+  ],
+  "totals": {
+    "new_proposed_label_frames": 520,
+    "sac_new_frames": 240,
+    "det_new_frames": 280,
+    "native_source_duration_seconds": 8.675,
+    "existing_accepted_pilot_control_frames": 120,
+    "maximum_saved_observations_scored_after_label_acceptance": 640,
+    "new_model_calls": 0,
+    "training_runs": 0,
+    "raw_game_video_decodes": 0
+  },
+  "label_contract": {
+    "source": "Existing original 1920x1080 native PNGs with source-frame/PTS/RGB bindings; no resized composite as reference source.",
+    "author": "assistant_visual_proposal",
+    "human_acceptance_required_before_reference_publication_or_scoring": true,
+    "target": "Complete game-ball center, visibility, identity certainty and annotation uncertainty in source pixels.",
+    "missing_geometry": "Keep geometry null when current-frame evidence cannot support a defensible full-ball center; never interpolate through hidden intervals.",
+    "prediction_separation": "Inspect original source context and visual evidence; do not copy selected predictions as truth. Prior model exposure and output-guided window selection are disclosed, so this is not blind labeling.",
+    "schema": "Preserve the existing NBA native frame/PTS and annotation semantics. Any wrapper changes keep AI authorship explicit and are checked against actual producer records."
+  },
+  "delivery": {
+    "complete_label_overlays": "One complete short overlay per proposed window, including actual final frame; show source identifiers, proposed center/uncertainty or explicit unknown states.",
+    "mobile": "Embed the four review videos directly in chat because Ryan is reviewing from a phone; do not rely on loopback links.",
+    "review": "Assistant checks every proposed frame and transport first; Ryan reviews complete overlays plus a compact uncertainty/exception list. Batch routine corrections without repeated scope approval.",
+    "publication": "After explicit label acceptance, publish a separate human-accepted AI reference; preserve unaccepted proposals, original drafts and prior media."
+  },
+  "evaluation_after_label_acceptance": {
+    "prediction_source": "Existing longer-context observations and candidate inventories only; no model calls or reaggregation.",
+    "operating_point": "Frozen expanded WASB checkpoint, strict >0.3 mean heatmap components and largest-mass selection remain unchanged.",
+    "localization": "Use the existing inclusive raw source-pixel distance <=10 rule for eligible defensible centers. Report raw distance and annotation uncertainty separately; uncertainty does not loosen matches.",
+    "unknowns": "Uncertain/unsupported geometry remains localization-unscored; eligible hidden-ball labels may support the existing hidden-alarm diagnostic.",
+    "reports": [
+      "matched/wrong/missing counts by window and game",
+      "raw center errors and uncertainty diagnostics",
+      "hidden alarms only where eligible hidden reference frames actually exist",
+      "whether a candidate lies within the fixed radius when selected point is wrong or absent",
+      "source-frame and native-time missing/wrong intervals with qualitative recovery cues"
+    ],
+    "easy_controls": "Use the 120 existing accepted pilot references against the longer-context observations as a separate control report. Do not rerun or overwrite the original short-context score; flag the eight changed-context edges.",
+    "interpretation": "Deliberately difficult model-selected development windows, not representative NBA accuracy, an independent test, or phase acceptance. Correlated adjacent frames do not constitute independent samples."
+  },
+  "boundaries": {
+    "sac": "Future-training-eligible candidate pool remains unchanged; no fitting in this increment.",
+    "det": "Target-case development, excluded from fitting.",
+    "tor": "Outside scope.",
+    "protected_holdouts_unchanged": true,
+    "original_nfhs_finish_line_unchanged": true,
+    "new_motion_human_reviews_pending": 3,
+    "no_new_training_threshold_search_motion_selector_interpolation_or_model_inference": true
+  },
+  "validation_and_resources": "Focused producer/consumer checks and actual saved-frame joins; complete overlay transport and final-frame review. Reuse bounded existing PNGs and observations, stream rendering, preserve attempts and output history. Generated files stay ignored; no arbitrary full-suite rerun or full-game decode.",
+  "approval_scope_requested": "Prepare the 520 AI label proposals and review packages, handle routine corrections, then publish accepted references and score up to 640 saved observations only after Ryan explicitly accepts the new labels. This proposal does not authorize a model change or fit.",
+  "work_done_to_prepare_proposal": {
+    "saved_metadata_and_artifact_hash_checks_only": true,
+    "new_source_images_inspected": 0,
+    "new_labels": 0,
+    "model_calls": 0,
+    "scoring_runs": 0,
+    "media_decodes": 0
+  }
+}

@@ -1,6 +1,30 @@
 # Roadmap
 
-## Current action: review the completed longer NBA action observation
+## Current action: decide on a bounded hard-example reference batch
+
+Ryan reported completion of both longer-video reviews after their delivery in
+chat for phone viewing: “Ok reviewed. What’s the next step”. The separate
+[review record](../../configs/ball_tracking/reviews/nba_wasb_action_observation_visual_review_v0_1.json)
+does not claim playback telemetry, explicit quality endorsement or approval of
+a new experiment. Distractor selections and visible-ball gaps remain.
+
+The [next proposed scope](../nba_hard_example_reference_plan.md) is 520 new
+AI-proposed reference labels in four existing native-frame windows: SAC
+940–1059 and 1240–1359; DET 11000–11119 and 11420–11579. Ryan would review the
+complete short reference overlays before any new reference scoring. Then use
+the saved frozen observations for a targeted diagnostic, with 120 existing
+pilot references as separate longer-context easy controls, at most 640 frames.
+Preserve AI authorship, uncertainty and unscored indefensible centers; preserve
+the original short-pilot score. Selection is source/model-informed and biased
+toward failures, so it cannot establish overall NBA accuracy.
+
+This remains design-only, pending approval. It needs no new model calls,
+training, threshold search or motion rule. SAC remains future-training-eligible;
+DET stays excluded from fitting; TOR and independent testing are outside scope.
+Earlier pilot acceptance, the three pending motion reviews, protected holdouts
+and the NFHS finish line remain unchanged.
+
+## Earlier action: review the completed longer NBA action observation
 
 Ryan approved the exact two-core observation plan, including implementation,
 focused validation and one resumable run. The [approval record](../../configs/ball_tracking/reviews/nba_wasb_action_observation_approval_v0_1.json)
