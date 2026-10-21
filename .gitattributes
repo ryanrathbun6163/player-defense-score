@@ -114,3 +114,7 @@ configs/ball_tracking/reviews/nba_appearance_feature_screen_result_v0_1.json -te
 src/ball_tracking/nba_appearance_feature_screen.py -text
 src/ball_tracking/nba_appearance_feature_screen_review.py -text
 tests/test_nba_appearance_feature_screen.py -text
+
+# Preserve the bounded verifier's proposed scientific contract bytes.
+docs/nba_ball_distractor_verifier_plan.md -text
+configs/ball_tracking/proposals/nba_ball_distractor_verifier_v0_1.json -text

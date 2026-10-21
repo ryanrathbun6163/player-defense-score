@@ -217,8 +217,14 @@ an independent audit of all 500 similarities and complete crop/neighbor review a
 This exact setup is rejected without tuning or trajectory changes. Six unknowns
 remain unscored; 34 old AI-assessed points stay a separate qualitative supplement.
 The [compact result](configs/ball_tracking/reviews/nba_appearance_feature_screen_result_v0_1.json)
-binds the evidence. A later supervised-verifier design would need broader resolved
-NBA/NFHS and distractor coverage; no new fit or data collection is authorized yet.
+binds the evidence. The subsequent [bounded ball-versus-distractor design](docs/nba_ball_distractor_verifier_plan.md)
+now fixes 160 detector-candidate judgments plus 24 fit-only head/hand/clothing
+slots, one trained linear classifier and a complete five-clip veto comparison.
+Success requires actual emitted-distractor removal with no lost verified ball
+positions, followed by human trajectory review. Existing-cache reconstruction
+verified the proposed inventory; no new labels, fit or policy execution has run.
+The [proposal](configs/ball_tracking/proposals/nba_ball_distractor_verifier_v0_1.json)
+is pending execution approval; insufficient label coverage stops before fitting.
 The original baseline remains intact, and the failed NBA continuation stays rejected.
 These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved

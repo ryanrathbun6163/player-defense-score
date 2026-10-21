@@ -1,6 +1,24 @@
 # Roadmap
 
-## Current step: close failed feature screen; design one bounded next experiment
+## Current step: bounded verifier proposal ready; execution pending
+
+The [test design](../nba_ball_distractor_verifier_plan.md) and
+[proposal](../../configs/ball_tracking/proposals/nba_ball_distractor_verifier_v0_1.json)
+specify one finite path: 160 candidate judgments plus 24 fit-only contrast slots,
+human label acceptance and coverage check, one frozen-feature logistic fit,
+and a separate veto comparison over all 3,373 existing emissions in five clips.
+Execution approval would cover that path without another fitting proposal.
+New actual trajectories still require human review before adoption.
+
+The decision is concrete: remove emitted head/non-head distractors in excluded
+blocks while losing no verified ball points. Exact match preservation, the SAC
+head challenge, DET near-head balls, unknowns, all changed episodes and actual
+finals are required. If coverage is insufficient, stop before fitting; if the
+fixed fit fails, close this recipe without tuning. Neither case authorizes a
+larger study. Current completed work is design/cache inventory, not new labels
+or improved tracking. See current state for exact bounds and limitations.
+
+## Earlier step: close failed feature screen; design one bounded next experiment
 
 Ryan approved the fixed screen with “Ok move forward chat”. The
 [results and complete crop review](../nba_appearance_feature_screen_results.md)

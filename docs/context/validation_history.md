@@ -1,5 +1,33 @@
 # Validation History
 
+## Design-only inventory: bounded ball-versus-distractor verifier
+
+The [new plan](../nba_ball_distractor_verifier_plan.md) and
+[proposal](../../configs/ball_tracking/proposals/nba_ball_distractor_verifier_v0_1.json)
+follow Ryan's request to design the next test. Read-only reconstruction of 426
+existing triplet caches (678,226,005 bytes, peak three arrays) completed in
+11.765 seconds; all 142 original means reproduced exactly. The 490 coordinate
+groups support a frozen 160-candidate census and 24 separate unassigned contrast
+slots, across 105 targets/525 context frames. Earlier planning candidates remain
+preserved. No source pixels, new labels, model calls, fitting or policy run.
+
+Distinct coordinates are not independent objects. Semantic adequacy remains
+conditional on future accepted labeling, including new real candidate negatives,
+NFHS coverage and actually emitted excluded head/non-head errors. Design checks
+verify bindings, exact source/block roles, counts, context separation and bounded
+policy semantics; they are not model or trajectory validation. No full suite is
+required for this documentation/proposal increment. The failed feature screen
+and earlier quantitative/visual evidence remain unchanged.
+
+Independent inventory review passed 2,382 checks; 26 affected checks passed
+after the explicit reused-reference grouping clarification. The root's final
+binding/count/source-boundary audit passed 426 checks against the current plan
+and proposal. Receipts are ignored `data/outputs/t/ball_distractor_design_audit_01.json`,
+`ball_distractor_design_audit_02.json` and
+`ball_distractor_verifier_design_audit_01.json`. These are design checks, not
+evidence that the classifier works. Scientific review found no remaining
+material design contradiction. `git diff --check` passed before integration.
+
 ## Completed approved experiment: fixed appearance-feature screen completed and rejected
 
 Ryan approved the fixed screen with “Ok move forward chat”. The

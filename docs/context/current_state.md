@@ -1,6 +1,39 @@
 # Current State
 
-## Latest increment: fixed appearance-feature screen completed and rejected
+## Latest increment: bounded ball-versus-distractor test designed
+
+Ryan requested the [concrete bounded design](../nba_ball_distractor_verifier_plan.md).
+The [proposal](../../configs/ball_tracking/proposals/nba_ball_distractor_verifier_v0_1.json)
+fixes 160 new detector-candidate judgments (96 fit/64 excluded check) plus 24
+fit-only source-selected head/hand/clothing slots. All use 105 targets and 525
+native context frames outside the old 149 context keys. P001 historical training
+blocks explicitly join SAC/P002 fitting; DET/P003 remain excluded. Existing 26
+accepted labels retain their roles, and the old 34 remain qualitative regressions.
+
+Read-only reconstruction used 426 existing retained-checkpoint triplets in
+11.765 seconds; all 142 reconstructed means matched saved originals, yielding
+490 coordinate groups. These are not independent objects or new semantic
+labels. Same-object grouping, class/block coverage and human label acceptance
+must precede the single proposed 385-parameter logistic fit on frozen features.
+
+The proposal covers one complete evaluation of all 3,373 saved emissions in
+the five permitted clips, using a separate veto arm. It must remove actual
+emitted excluded distractors across two blocks, preserve every verified match
+and valid near-head ball, and remove the known SAC head episode. Unknowns stay
+unscored; all changed episodes and actual finals require new human review.
+The candidate-only inventory was too repetitive, hence the explicit 24 contrast
+slots and capped training influence. Their centers/labels are still unassigned.
+
+**Next action:** after explicit scope approval, implement and prepare the single
+new label package. Human acceptance then releases one fit and complete comparison
+if frozen coverage passes; no second fitting proposal is needed. Inadequate
+coverage stops before fitting, with no replacement loop or relaxed gates.
+This turn completed design and metadata/cache inventory only: no source-pixel
+inspection, labels, feature inference, training or trajectory changes. Earlier
+failed setups, accepted references, completed reviews and three older pending
+motion reviews retain their status. Ball tracking is unfinished.
+
+## Earlier increment: fixed appearance-feature screen completed and rejected
 
 Ryan approved the fixed screen with “Ok move forward chat”. The
 [results and complete crop review](../nba_appearance_feature_screen_results.md)
