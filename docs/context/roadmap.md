@@ -1,6 +1,30 @@
 # Roadmap
 
-## Current step: bounded verifier proposal ready; execution pending
+## Current step: close the bounded coverage result; new label review pending
+
+The approved [bounded test](../nba_ball_distractor_reference_results.md) has a
+complete 184-row AI label package: 106 ball, 51 other-object and 27 unresolved.
+All 105 targets / 525 native context frames were inspected; the 26 previously
+accepted classes are unchanged. Same-frame aliases reduce the combined resolved
+census to 90 fit groups (52 ball / 38 other) and 57 excluded check groups
+(39 ball / 18 other). New human label/grouping acceptance remains pending.
+
+Two frozen adequacy conditions fail provisionally: no excluded clothing group,
+and no newly sampled actually emitted head distractor. The two new check heads
+were unselected; the four emitted negatives are hands/arms in two DET blocks.
+No feature extraction, fitting or trajectory change ran. This is an
+insufficient-data result, not classifier performance or improved tracking.
+
+The [complete results and review links](../nba_ball_distractor_reference_results.md)
+and [bound result](../../configs/ball_tracking/reviews/nba_ball_distractor_reference_result_v0_1.json)
+record all unknowns, groups, unchanged evidence, focused validation and the full
+review video through every context final. Ryan may accept/correct the new
+package. If these labels stand, this exact test stops before fitting. The same
+approval covers one fixed fit/comparison only if accepted labels satisfy all
+frozen conditions; no second fit proposal is required, and no replacement
+sampling or relaxed gate is authorized. Prior reviews remain unchanged.
+
+## Earlier step: bounded verifier proposal ready; execution pending
 
 The [test design](../nba_ball_distractor_verifier_plan.md) and
 [proposal](../../configs/ball_tracking/proposals/nba_ball_distractor_verifier_v0_1.json)

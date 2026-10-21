@@ -1,0 +1,53 @@
+{
+  "schema_version": "nba_ball_distractor_verifier_approval/v0.1",
+  "status": "approved",
+  "approved_by": "Ryan",
+  "user_statement": "I approve the bounded test proposal. Move forward chat.",
+  "recorded_at_utc": "2026-10-21T21:12:41.126012+00:00",
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "74053434f26646f1165e1c319a24943eb2c7d11b",
+    "worktree_and_index": "clean"
+  },
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/nba_ball_distractor_verifier_v0_1.json",
+    "sha256": "0cdfbd3ef904c4b711f9458e73a4092c92b202164ee01b64a848bae3de40c422",
+    "bytes": 19022
+  },
+  "plan": {
+    "path": "docs/nba_ball_distractor_verifier_plan.md",
+    "sha256": "07f6900ca40977a150af2c2fb5020041d4a15258b4bd13894b09b1cd96e618cb",
+    "bytes": 18181
+  },
+  "design_evidence": {
+    "grid": {
+      "path": "data/outputs/t/ball_distractor_full_pool_design_2026-10-21/grid.json",
+      "sha256": "cd278029efd438ee097fd884b3385b3b25e56cbe65c30b0bc8d65e4e19f626e9",
+      "bytes": 73210
+    },
+    "full_pool_reconstruction": {
+      "path": "data/outputs/t/ball_distractor_full_pool_design_2026-10-21/completion.json",
+      "sha256": "f4c469579125e66309cfa6667073684753ff774c90a0fff8d526c920187f170b",
+      "bytes": 734759
+    },
+    "candidate_registry": {
+      "path": "data/outputs/t/ball_distractor_full_pool_design_2026-10-21/candidate_registry_160.json",
+      "sha256": "7262c9080c2b2963df19eac0a04d4749d74e54787363c06082aea808947277c2",
+      "bytes": 389108
+    },
+    "contrast_slots": {
+      "path": "data/outputs/t/ball_distractor_full_pool_design_2026-10-21/contrast_slots_24.json",
+      "sha256": "03d7330def7c5631bc79f41fbb9efd732c359e08094b793701e80d2ce49bcab3",
+      "bytes": 44464
+    }
+  },
+  "authorized_scope": "Implement/validate, prepare one184-slot label package, publish afterhumanacceptance, andifadequacy passes runonefixedfit pluscompletefiveclip3373emissioncomparison. No secondfitproposal required.",
+  "label_preparation_authorized": true,
+  "new_fit_and_feature_extraction_authorized_conditionally": "only after human acceptance of new references/grouping and frozen adequacy passes",
+  "original_point_suppression_authorized": "separateexperimentalarmonly; preserve originalbaselinebytes",
+  "human_new_label_acceptance": "pending",
+  "human_new_trajectory_acceptance": "pending_if_trial_runs",
+  "reference_authorship": "AI first-pass proposals; acceptance doesnotmake independenthumanannotations",
+  "prior_review_status": "unchanged",
+  "push_pr_merge_authorized": false
+}

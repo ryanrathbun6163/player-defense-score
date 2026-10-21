@@ -1,5 +1,24 @@
 # Validation History
 
+## Approved bounded reference preparation: provisional insufficient-data result
+
+The [complete result](../nba_ball_distractor_reference_results.md) records one
+successful 104.085-second preparation of all 525 permitted source frames,
+61.359-second source-sheet rendering, and a 1.808-second successful merge of
+184 new proposals plus 26 unchanged accepted controls. New labels are
+106 ball / 51 other / 27 unresolved. Grouped totals are 90 fit and 57 check;
+25/27 provisional adequacy conditions pass. Excluded clothing and a new
+actually emitted excluded head error are absent. No features or fit ran.
+
+All 14 distinct focused tests pass (four preparation, four labels, six review).
+Independent source/PNG, producer/consumer, physical-group/count and complete
+encoded-media audits are bound in the
+[result record](../../configs/ball_tracking/reviews/nba_ball_distractor_reference_result_v0_1.json).
+Human label/grouping acceptance is pending. Every target and context final is
+available; no new trajectory acceptance is claimed. Initial path-guard test,
+prose-comparison audit and origin/role merge failures remain preserved; routine
+corrections changed no scientific judgments or baseline. Full suite not repeated.
+
 ## Design-only inventory: bounded ball-versus-distractor verifier
 
 The [new plan](../nba_ball_distractor_verifier_plan.md) and

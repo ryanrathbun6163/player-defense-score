@@ -118,3 +118,13 @@ tests/test_nba_appearance_feature_screen.py -text
 # Preserve the bounded verifier's proposed scientific contract bytes.
 docs/nba_ball_distractor_verifier_plan.md -text
 configs/ball_tracking/proposals/nba_ball_distractor_verifier_v0_1.json -text
+
+# Preserve approved bounded reference preparation and review evidence bytes.
+configs/ball_tracking/reviews/nba_ball_distractor_verifier_approval_v0_1.json -text
+configs/ball_tracking/reviews/nba_ball_distractor_reference_result_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/nba_ball_distractor_reference.py -text
+src/ball_tracking/nba_ball_distractor_reference_labels.py -text
+src/ball_tracking/nba_ball_distractor_reference_review.py -text
+tests/test_nba_ball_distractor_reference.py -text
+tests/test_nba_ball_distractor_reference_labels.py -text
+tests/test_nba_ball_distractor_reference_review.py -text
