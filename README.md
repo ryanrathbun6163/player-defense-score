@@ -174,9 +174,12 @@ comparisons: “Ok videos reviewed. What’s next chat”. The
 records completion without an explicit quality endorsement or broader-rule
 adoption. The head-fill finding and uncertain NFHS cases remain. Continuous
 tracking and ball-phase completion remain ahead.
-The [next proposal](docs/nba_gap_anchor_reference_plan.md) adds 27 source-first
-frame judgments and reuses seven accepted controls to cover every repaired gap
-and both original anchors. It has not run; no new fit or threshold change is proposed.
+The approved [gap/anchor reference preparation](docs/nba_gap_anchor_reference_results.md)
+is complete: 27 new AI judgments (22 approximate centers and five unknowns),
+seven unchanged accepted controls, and one verified 24.8-second review covering
+all ten contexts. Human reference acceptance is pending; no new scores exist.
+Separate saved-object inspection confirms the SAC head anchors/fill and leaves
+eight NFHS boundary cases unresolved. No new fit or threshold change occurred.
 The original baseline remains intact, and the failed NBA continuation stays rejected.
 These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved

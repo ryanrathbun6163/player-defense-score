@@ -1,5 +1,39 @@
 # Validation History
 
+## Gap/anchor reference preparation and review completed; acceptance pending
+
+Ryan's later “Move forward chat” approved the
+[reference batch](../nba_gap_anchor_reference_results.md). Code/scope integrated
+at `dc4687780af407c1ae6b3a4c7e12376e7f4e5ffb`. Preparation attempt
+`d799a9c5b0e847e8ab97de3dfcef1dcc` completed in 22.016 seconds: 23 existing NBA
+PNG reads and 51 permitted NFHS decoded frames, zero model/array calls. Its
+74 source identities were sealed before new labels. Twenty-seven AI judgments
+comprise 22 partial-ball centers and five indeterminate/null frames; seven
+accepted controls remain exact. No protected bands were decoded by the requested
+segments and no context-only frames were labeled.
+
+Six preparation tests pass; independent actual-source audit passes 792 checks.
+Five renderer tests pass on final code, preserving the first successful set,
+one overly strict codec marker-tolerance failure, and the affected checks'
+successful rerun. Eleven distinct focused checks total; no full-suite repeat.
+The proposal was sealed before separate 34-object inspection: 23 ball, three
+other-object (SAC head anchors/fill), eight unresolved. Those are qualitative AI
+judgments, not new geometric scores or human acceptance.
+
+Render attempt `281e8692da094388aadb39391605f82a` completed in 21.437 seconds,
+without an actual render failure. All 74 encoded frames, exact 24.8-second timeline,
+reference/source/crop keys, both image panels and local reference markers pass.
+Independent media audit passes 1,232 checks without repeating decode. AI still
+inspection covers all 34 targets, ten context finals and actual final P003/366;
+this does not claim continuous manual playback. The
+[compact result](../../configs/ball_tracking/reviews/nba_gap_anchor_reference_result_v0_1.json)
+binds drafts, source/object evidence, audits, test logs and media. Human reference
+acceptance remains pending; prior 790-frame scores and all accepted evidence stand.
+The default staged whitespace check flagged CRLF in the new result JSON.
+Its original bytes and a semantic-equality note are preserved under the ignored
+preparation directory; the unpublished record was normalized to LF without
+changing scientific artifacts, and the default check was repeated.
+
 ## Continuous-context video review completion recorded
 
 Ryan said “Ok videos reviewed. What’s next chat” after all five complete videos

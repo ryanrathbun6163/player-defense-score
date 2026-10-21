@@ -1,6 +1,29 @@
 # Roadmap
 
-## Current step: proposed reference batch for repaired gaps and their anchors
+## Current step: human review of completed gap/anchor references
+
+The later “Move forward chat” approved the reference batch. Its
+[preparation and compact review](../nba_gap_anchor_reference_results.md) are
+complete: 27 new AI judgments (22 approximate centers, five unknowns), seven
+unchanged accepted controls and one verified 24.8-second compilation covering
+all ten contexts and their actual finals. AI drafts remain pending human
+acceptance. The previous five continuous videos have already been reviewed.
+
+The source proposals were fixed before separate inspection of all 34 saved
+objects. SAC 1419–1421 consistently mark a head, establishing a bad-original-
+anchor mechanism for the new fill. Eight NFHS object judgments remain unresolved;
+this is not a numerical accuracy result. Broader unchanged-rule adoption remains
+unsupported. No new model or scoring run has occurred.
+
+After Ryan accepts/corrects the reference proposal, publish a separate accepted
+AI reference and score only the already-saved outputs at the unchanged ten-pixel
+radius. Report 27 new targets and their anchor/fill subsets separately from the
+790-frame baseline, with seven reused controls kept out of the new denominator.
+Use accepted adverse and unresolved cases to choose a concrete detection or
+selection intervention. No generic confidence survey, new fit, threshold grid,
+holdout release or downstream possession/scoring work is approved here.
+
+## Earlier step: proposed reference batch for repaired gaps and their anchors
 
 Ryan said “Ok videos reviewed. What’s next chat”. The
 [later review record](../../configs/ball_tracking/reviews/nba_temporal_gap_continuous_visual_review_v0_1.json)

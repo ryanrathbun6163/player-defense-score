@@ -1,6 +1,45 @@
 # Current State
 
-## Latest increment: continuous videos reviewed; adverse visual evidence retained
+## Latest increment: gap/anchor AI references ready for human review
+
+Ryan's subsequent “Move forward chat” authorized the
+[reference plan](../nba_gap_anchor_reference_plan.md). The
+[completed preparation and review](../nba_gap_anchor_reference_results.md) and
+[compact result](../../configs/ball_tracking/reviews/nba_gap_anchor_reference_result_v0_1.json)
+contain 27 new AI judgments: 22 approximate complete-ball centers and five
+indeterminate/null cases (SAC 1419–1421; P003 333–334). Seven existing accepted
+controls retain their exact rows and provenance. All ten repaired gaps and
+twenty anchors are covered, with 74 permitted source frames; forty neighboring
+frames remain context-only. Preparation was frozen before annotation, and the
+proposal was sealed before separate saved-object inspection. Human acceptance
+of these new references remains pending; no new geometric scores exist.
+
+The separate object judgments are 23 ball, three other-object and eight
+unresolved across 34 targets. All three other-object judgments identify the
+same SAC head: original anchors 1419/1421 and repaired 1420. Unresolved cases
+are P001 18–20/90–92 and P003 333–334. The P001 points touch blurred ball/sleeve
+boundaries; that does not establish a geometric error because a complete-ball
+center can lie behind an occluder. P003 335 remains probable. These are AI
+judgments, not accepted new accuracy measurements.
+
+One 24.8-second compilation shows all ten source contexts, reference-only
+markers and final holds. All 74 encoded keys/timestamps/pixels/markers passed;
+AI inspection covers all 34 target stills, ten context finals and actual final
+P003/366. Eleven distinct focused checks, 792 independent preparation checks
+and 1,232 independent media checks pass. A renderer-test codec-tolerance failure
+and corrected affected checks are retained; actual preparation/render each
+completed on its first attempt. No full suite was repeated.
+
+**Next action:** Ryan accepts or corrects this new reference package. Then
+publish a separate human-accepted AI reference and score already-saved outputs
+at the unchanged ten-pixel radius, keeping 27 new targets separate from the
+original 790 and not duplicating seven controls. Do not alter the sealed AI
+draft or infer acceptance from preparation approval. No model calls, training,
+threshold tuning, holdout access or broader rule adoption occurred. The
+retained checkpoint, rejected continuation, accepted bounded gains, completed
+five-video review and three older pending motion reviews remain unchanged.
+
+## Earlier increment: continuous videos reviewed; adverse visual evidence retained
 
 Ryan separately authorized the [continuous-context plan](../nba_temporal_gap_continuous_validation_plan.md)
 with “Move forward chat”. The earlier resume request did not authorize execution;
