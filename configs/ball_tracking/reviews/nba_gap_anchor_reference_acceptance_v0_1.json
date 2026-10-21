@@ -1,0 +1,86 @@
+{
+  "schema_version": "nba_gap_anchor_reference_acceptance/v0.1",
+  "status": "accepted",
+  "annotation_origin": "assistant_visual_proposal",
+  "review_method": "human_visual_acceptance_of_assisted_proposals",
+  "reviewer_id": "Ryan",
+  "reviewed_at_utc": "2026-10-21T15:11:24.593856+00:00",
+  "user_statement": "ok great chat they have been reviewed. move forward",
+  "scope": "Following the explicit request to accept or correct the displayed reference package, Ryan reports review and directs continuation without corrections. Accept the 27 new AI reference judgments, including centers, uncertainty and five indeterminate locations. Seven previously accepted controls remain unchanged. User-reported review; no playback telemetry or independent human annotation is claimed.",
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "1307d38cc631aa68dd2a3e3f28c59fd89ec325da"
+  },
+  "preparation_result": {
+    "path": "configs/ball_tracking/reviews/nba_gap_anchor_reference_result_v0_1.json",
+    "sha256": "17cc056e53259776b3c7dea73ce38374cf286188812f1e7a46116a80667146c4",
+    "bytes": 14840
+  },
+  "preparation": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/preparation.json",
+    "sha256": "e760444ade64e0d6c2323f2c072d01e6c17749b5054efac44a8e35514c99c759",
+    "bytes": 156573
+  },
+  "proposal": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/annotations/proposal.json",
+    "sha256": "ebb96b0e5a60e3f4352551231b3db3f5da1a6fadf5e17629f28d469de0dd3b94",
+    "bytes": 93750
+  },
+  "proposal_seal": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/annotations/proposal_sealed.json",
+    "sha256": "21185cee435e78cc7abfe322fa275fd987595d5eda3d79fdeff12fff92d8e4ef",
+    "bytes": 2215
+  },
+  "review_completion": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/review/completion.json",
+    "sha256": "28d3ffeed9a96c858c8fa7866c031a699cff97a5b422593e03cf48dbd6f70eaf",
+    "bytes": 27863
+  },
+  "review_video": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/review/attempts/281e8692da094388aadb39391605f82a/reference_compilation.mp4",
+    "bytes": 5047859,
+    "sha256": "e62e4c3a0e96aa4e6f93a8bc803e55f0fc511c135ef37f9404f8ae4cf90be6bd"
+  },
+  "review_guide": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/review/attempts/281e8692da094388aadb39391605f82a/review.html",
+    "bytes": 9235,
+    "sha256": "511c5d85b57e77f7dd753d400dc906af4f4d129d0400bda80053ebbf575b1cca"
+  },
+  "review_manifest": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/review/attempts/281e8692da094388aadb39391605f82a/manifest.json",
+    "bytes": 105618,
+    "sha256": "bced881bd51507fb92952a8044d853c9cbf683281d072ae8c83eca1c2c1bce72"
+  },
+  "review_verification": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/review/attempts/281e8692da094388aadb39391605f82a/verification.json",
+    "bytes": 26154,
+    "sha256": "568678c7c24d507f5d00685559c60c7851126f25a82cf01768fef7a2ff4a1e3f"
+  },
+  "review_actual_final": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/review/attempts/281e8692da094388aadb39391605f82a/final_frame.png",
+    "bytes": 748862,
+    "sha256": "a56b51a543cb1b3da097610e23eae7bb0228d1d0f847d3b9651ad955a0388e30"
+  },
+  "accepted_new_references": 27,
+  "accepted_eligible_centers": 22,
+  "accepted_indeterminate_frames": 5,
+  "reused_controls_unchanged": 7,
+  "independent_human_annotation": false,
+  "semantic_object_adjudication": "not_separately_reported",
+  "model_output_acceptance": "not_inferred_from_reference_acceptance",
+  "evaluation_authorized": true,
+  "evaluation_radius_px": 10,
+  "evaluation_plan": {
+    "path": "docs/nba_gap_anchor_reference_plan.md",
+    "sha256": "8fd1be541ee92e4ec2ea30ca94db037b756de7e5a501fdf8f5f4808c4ad95726",
+    "bytes": 6824
+  },
+  "evaluation_scope": "Publish a separate human-accepted AI reference, then score the already-saved original and repaired coordinates. Keep the 27 new targets separate from the original 790 and seven reused controls. Geometric scores and qualitative object judgments remain distinct.",
+  "original_drafts_and_pending_receipts_preserved": true,
+  "broader_rule_adoption": false,
+  "new_model_calls_authorized": false,
+  "training_authorized": false,
+  "threshold_search_authorized": false,
+  "holdout_release_authorized": false,
+  "push_pr_merge_authorized": false
+}

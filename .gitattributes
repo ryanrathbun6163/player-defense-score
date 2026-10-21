@@ -83,3 +83,9 @@ src/ball_tracking/nba_gap_anchor_reference.py -text
 src/ball_tracking/nba_gap_anchor_reference_review.py -text
 tests/test_nba_gap_anchor_reference.py -text
 tests/test_nba_gap_anchor_reference_review.py -text
+
+# Preserve accepted gap-reference evaluation evidence bytes.
+configs/ball_tracking/reviews/nba_gap_anchor_reference_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/nba_gap_anchor_reference_evaluation_result_v0_1.json -text
+src/ball_tracking/nba_gap_anchor_reference_evaluation.py -text
+tests/test_nba_gap_anchor_reference_evaluation.py -text
