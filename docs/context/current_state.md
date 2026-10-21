@@ -1,6 +1,36 @@
 # Current State
 
-## Latest increment: all 26 appearance references accepted and published
+## Latest increment: fixed appearance-feature screen completed and rejected
+
+Ryan approved the fixed screen with “Ok move forward chat”. The
+[results and complete crop review](../nba_appearance_feature_screen_results.md)
+and [bound result](../../configs/ball_tracking/reviews/nba_appearance_feature_screen_result_v0_1.json)
+record one 12.594-second run: 60 crops from 49 cached frames, 500 similarities,
+no training, no operational failure and no trajectory changes.
+
+The strict gate failed: **8/10 accepted checks**, comprising 4/6 balls and
+4/4 hands. DET11059 and DET11431 balls preferred other objects. All three
+SAC1419–1421 head points still preferred ball; all four valid DET11722–11725
+near-head ball points remained ball-preferred. The six accepted unknowns stay
+unscored. The 34 older points have eleven qualitative disagreements and eight
+unresolved judgments; they are not newly accepted class truth or pooled checks.
+
+Six focused tests passed; the later affected renderer check passed after a
+header-only change. Independent audit verified all 500 similarities, all source
+and crop/input pixels, provenance and unchanged earlier evidence. All 50 query
+rows and the actual final were AI-inspected; all 150 displayed crop panels
+match their saved crops. New human review is not claimed, and no prior review
+must be repeated to close this failed setup.
+
+**Next direction:** close this exact nearest-reference setup. A subsequent
+bounded supervised-verifier proposal must specify necessary NFHS, distinct
+head/clothing and contributor-candidate coverage together with one fixed test.
+It is not yet an execution proposal or approval. No cutoff or crop/encoder sweep
+follows from this failure. The saved trajectories, retained 09da checkpoint,
+rejected continuation, accepted references, protected holdouts and three older
+pending motion reviews retain their status. Ball tracking remains unfinished.
+
+## Earlier increment: all 26 appearance references accepted and published
 
 Ryan explicitly said “I accept the proposals. Move forward chat”. The
 [acceptance results](../nba_appearance_reference_acceptance_results.md),

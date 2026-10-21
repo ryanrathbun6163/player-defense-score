@@ -1,0 +1,49 @@
+{
+  "schema_version": "nba_appearance_feature_screen_approval/v0.1",
+  "status": "approved",
+  "execution_approved": true,
+  "created_at_utc": "2026-10-21T19:03:26.168267+00:00",
+  "user_statement": "Ok move forward chat",
+  "approval_context": "Direct approval of the immediately preceding concrete fixed 60-crop DINOv2 appearance feature feasibility proposal. Earlier label acceptance alone did not authorize this experiment.",
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "969906998ce7d6e8c68008d2fb81ee294257be52",
+    "index_and_worktree": "clean"
+  },
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/nba_appearance_feature_screen_v0_1.json",
+    "sha256": "28c46913e2bf168219470b056560dd2d911d4f8bca75176e52338b209a1520a5",
+    "bytes": 8090
+  },
+  "plan": {
+    "path": "docs/nba_appearance_feature_screen_plan.md",
+    "sha256": "2d4d735e01c34d1597cc1dfdfe3a43637f5e474d5b75698627163ce999e203f2",
+    "bytes": 12982
+  },
+  "case_registry": {
+    "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/feature_screen_scope.json",
+    "sha256": "b4c662d273155ac7dc0dfab8293b3992cfb82657052fab46e2eafc7b58978806",
+    "bytes": 112596
+  },
+  "accepted_reference": {
+    "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/accepted/accepted_reference.json",
+    "sha256": "69d3c046c1653d73453344cd789ad4457083ca2baa53a001437001812e813b41",
+    "bytes": 149371
+  },
+  "authorized": [
+    "Focused implementation and validation of the frozen proposal",
+    "Download and hash-verify the single pinned model.safetensors file",
+    "One fixed encoding for each of the 60 registered crop records, resumable using exact cached encodings",
+    "All 500 prescribed reference similarities and fixed gates",
+    "Complete crop/neighbor review, independent saved-output audit, documentation and local integration"
+  ],
+  "not_authorized": [
+    "Training or parameter search",
+    "Alternative encoder/crop/bank/threshold",
+    "New labels or source frames",
+    "Holdout, buffer or TOR access",
+    "Trajectory or selector changes",
+    "Push, pull request or merge"
+  ],
+  "output_root": "data/outputs/ball_tracking/nba/appearance_feature_screen_v0_1"
+}

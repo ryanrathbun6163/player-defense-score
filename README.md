@@ -208,16 +208,17 @@ Publication took 0.696 seconds; six focused tests and 380 independent audit
 checks pass. The [publication result](configs/ball_tracking/reviews/nba_appearance_reference_publication_result_v0_1.json)
 binds the evidence, and this appearance-label review is complete.
 
-The next [fixed feature-screen plan](docs/nba_appearance_feature_screen_plan.md)
-and [proposal](configs/ball_tracking/proposals/nba_appearance_feature_screen_v0_1.json)
-await approval: DINOv2 ViT-S/14 nearest-reference comparison on 60 crops from
-49 cached target frames, with no training, parameter grid or trajectory changes.
-All ten resolved excluded checks must classify correctly. The resolved reference
-bank is SAC-only; NFHS fit examples remain unknown, and excluded checks contain
-no head or clothing negatives. The 34 previously exposed gap/anchor cases remain
-a separate regression challenge with mixed mean/contributor provenance.
-No feature extraction or screen has run, and a pass would support a later
-bounded proposal rather than broader adoption.
+The approved [fixed appearance-feature screen](docs/nba_appearance_feature_screen_results.md)
+is complete and **failed its feasibility gate**: eight of ten accepted checks
+correct, including only four of six balls. All three points in the known SAC
+head episode still preferred ball; four valid DET near-head balls were retained.
+One 12.594-second run encoded 60 crops from 49 cached frames. Six focused tests,
+an independent audit of all 500 similarities and complete crop/neighbor review are done.
+This exact setup is rejected without tuning or trajectory changes. Six unknowns
+remain unscored; 34 old AI-assessed points stay a separate qualitative supplement.
+The [compact result](configs/ball_tracking/reviews/nba_appearance_feature_screen_result_v0_1.json)
+binds the evidence. A later supervised-verifier design would need broader resolved
+NBA/NFHS and distractor coverage; no new fit or data collection is authorized yet.
 The original baseline remains intact, and the failed NBA continuation stays rejected.
 These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved

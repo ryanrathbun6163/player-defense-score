@@ -107,3 +107,10 @@ src/ball_tracking/nba_appearance_reference_acceptance.py -text
 tests/test_nba_appearance_reference_acceptance.py -text
 configs/ball_tracking/proposals/nba_appearance_feature_screen_v0_1.json -text
 docs/nba_appearance_feature_screen_plan.md -text
+
+# Preserve frozen appearance-feature screen evidence bytes.
+configs/ball_tracking/reviews/nba_appearance_feature_screen_approval_v0_1.json -text
+configs/ball_tracking/reviews/nba_appearance_feature_screen_result_v0_1.json -text
+src/ball_tracking/nba_appearance_feature_screen.py -text
+src/ball_tracking/nba_appearance_feature_screen_review.py -text
+tests/test_nba_appearance_feature_screen.py -text
