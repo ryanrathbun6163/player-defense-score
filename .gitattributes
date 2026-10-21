@@ -74,3 +74,12 @@ src/ball_tracking/nba_temporal_gap_continuous_review.py -text
 tests/test_nba_temporal_gap_continuous.py -text
 tests/test_nba_temporal_gap_continuous_review.py -text
 configs/ball_tracking/reviews/nba_temporal_gap_continuous_visual_review_v0_1.json -text
+
+# Preserve gap-reference preparation and review evidence bytes.
+configs/ball_tracking/reviews/nba_gap_anchor_reference_approval_v0_1.json -text
+configs/ball_tracking/selections/nba_gap_anchor_reference_v0_1.json -text
+configs/ball_tracking/reviews/nba_gap_anchor_reference_result_v0_1.json -text
+src/ball_tracking/nba_gap_anchor_reference.py -text
+src/ball_tracking/nba_gap_anchor_reference_review.py -text
+tests/test_nba_gap_anchor_reference.py -text
+tests/test_nba_gap_anchor_reference_review.py -text
