@@ -1,6 +1,36 @@
 # Current State
 
-## Latest increment: approved bounded reference batch; insufficient check coverage
+## Latest increment: one trained verifier; protection checks fail
+
+Ryan explicitly requested fixing the execution block and training. The
+[execution amendment](../../configs/ball_tracking/reviews/nba_ball_distractor_execution_amendment_v0_1.json)
+records one provisional fit using the unchanged AI-proposed label package;
+new human label/grouping acceptance remains pending. Missing excluded clothing
+and newly emitted excluded head examples still fail the original coverage gates.
+The additional source search found arm errors, not the required categories.
+
+The [trained model and result](../nba_ball_distractor_training_results.md)
+use 90 fit object groups / 109 distinct crops and one fixed 385-parameter
+logistic head over frozen DINOv2 features. The 33.125-second feature/fit run
+converged in 17 iterations with no optimizer warning or retry. Accepted old
+checks are only 5/10 correct (2/6 balls, 3/4 distractors). Proposed combined
+checks are 24/46 ball crops and 19/20 distractor crops, or 19/39 ball and 17/18
+distractor object groups when every member must classify correctly.
+
+This exact recipe is rejected for adoption. The saved fit is real; it is not
+an improved tracker. The full 3,373-point veto comparison retains 1,847 points and loses 207/581
+protected geometric matches; all 14 fills are revoked. Four newly proposed
+emitted distractors are removed, but the ball-loss gate fails. Missingness rises
+from 602 to 2,128 positions. Comparison media belong to this same bounded
+experiment, with no refit or changed cutoff. All five comparison videos are
+complete; the result report links the saved model, media and compact evidence.
+Twenty-six focused tests pass; new human motion review remains pending.
+Unknown reference labels remain unresolved. The experimental arm can remove
+points at unscored or unknown locations; original baseline trajectories,
+protected spans and prior reviews remain intact.
+Ball tracking is unfinished; downstream possession and defensive scoring remain ahead.
+
+## Earlier increment: approved bounded reference batch; insufficient check coverage
 
 The approved [bounded test](../nba_ball_distractor_reference_results.md) has a
 complete 184-row AI label package: 106 ball, 51 other-object and 27 unresolved.

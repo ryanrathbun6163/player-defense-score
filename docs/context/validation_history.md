@@ -1,5 +1,52 @@
 # Validation History
 
+## Provisional fixed verifier: one converged fit; scientific protection failure
+
+The [training result](../nba_ball_distractor_training_results.md) records one
+33.125-second feature/fit run: 177 new encoder calls, 60 original cached crop
+features, 176 cached source PNG decodes, no source video reads, and one optimizer
+call. The 109-crop/90-object fit converged in 17 iterations / 20 function evaluations,
+with no warnings. No retry or threshold tuning followed the failed checks.
+Previously accepted checks are 5/10 correct, including only 2/6 balls.
+
+The full feature pass completed first attempt in 569.860 seconds: 3,225 new
+encodings plus 148 cached features, 2,295 NBA PNG reads and 1,273 NFHS permitted
+frames. Independent audit verified all 3,373 vectors, crop/input transforms,
+source/PTS/provenance joins and scalar logits (57,367 checks; maximum score
+rounding difference 4.44e-16). The 3.266-second policy comparison keeps 1,847
+points and 374/581 protected matches; it loses 207 protected matches and revokes
+all 14 gap fills. This is a completed scientific failure, not an execution failure.
+
+There are 26 distinct focused checks across classifier (7), training transport (3),
+emission extraction (4), policy (6), renderer (3), and completed-phase replay (3).
+They pass on the code versions bound in their receipts;
+only affected checks were rerun after the fixture/output-guard corrections.
+The first policy test run's two invalid synthetic certainty values are preserved;
+changing `uncertain` to the producer's valid `ambiguous` enum corrected the fixture,
+without changing production policy. A post-run CLI replay correction preserves the
+original executed driver and verifies existing results before returning them; its
+three actual-record checks perform no model or policy work and reject changed
+bindings. Original completion receipts are unchanged. Full suite was not repeated.
+
+A separate actual-record synthetic all-positive control reproduces 824 geometric
+reference outcomes and preserves 3,373 emissions, 602 missing positions and all 581
+unique protected matches. This is transport evidence, not model performance.
+Independent initial-fit audits reproduce all weights, objective/gradient and
+206 reference plus 60 old-case logits without a refit. Source/helper path failures
+remain in their original receipts. New AI labels and new motion review remain
+pending; no baseline, holdout, previous review or acceptance gate is promoted.
+
+The complete media package verifies all 4,200 slots / 225 protected blackouts,
+305 changed episodes, eight permitted-segment finals and five actual finals.
+Six source encodes include two preserved P002 failures at 64.078s and 60.000s;
+the duplicate was an unintended overlap between main and independent workers.
+P002 recovery fully decodes the first existing review video and verifies a
+video-bound exception for four exact RGB compression pixels, with <=3 elsewhere,
+intended raw panels exactly zero, and two negative controls. No source reread,
+re-encode, model call or production renderer change was needed. Its original
+failure receipts remain failed. Encoded still layout/transport inspection covers
+all five actual finals and representative suppressed points; human review pending.
+
 ## Approved bounded reference preparation: provisional insufficient-data result
 
 The [complete result](../nba_ball_distractor_reference_results.md) records one

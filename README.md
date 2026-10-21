@@ -218,13 +218,16 @@ This exact setup is rejected without tuning or trajectory changes. Six unknowns
 remain unscored; 34 old AI-assessed points stay a separate qualitative supplement.
 The [compact result](configs/ball_tracking/reviews/nba_appearance_feature_screen_result_v0_1.json)
 binds the evidence. The approved [bounded ball-versus-distractor test](docs/nba_ball_distractor_reference_results.md)
-now has all 184 proposed labels and a complete source review package. After
-same-object grouping, it has 90 fit and 57 excluded check groups, but lacks
-excluded clothing and a newly sampled actually emitted head error. These two
-coverage failures stop the fixed test before feature extraction or fitting.
-New human label/grouping acceptance is pending; no tracking improvement is
-claimed. The [bound result](configs/ball_tracking/reviews/nba_ball_distractor_reference_result_v0_1.json)
-preserves all unknowns, review media, checks and original evidence.
+initially stopped on missing check coverage after completing all 184 proposed
+labels. Ryan then explicitly requested training. The [single fixed-model
+training result](docs/nba_ball_distractor_training_results.md) converged in a
+33.125-second feature/fit run using 90 object groups and 109 distinct crops.
+It fails ball protection: only 5/10 previously accepted checks are correct,
+including 2/6 balls. The full 3,373-point comparison loses 207/581 protected
+matches; all five comparison videos are saved. The recipe is rejected for adoption. The new labels remain
+AI proposals pending human acceptance, and the missing clothing/emitted-head
+coverage remains a limitation. The earlier [coverage result](configs/ball_tracking/reviews/nba_ball_distractor_reference_result_v0_1.json)
+and all original evidence remain intact.
 The original baseline remains intact, and the failed NBA continuation stays rejected.
 These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved

@@ -128,3 +128,19 @@ src/ball_tracking/nba_ball_distractor_reference_review.py -text
 tests/test_nba_ball_distractor_reference.py -text
 tests/test_nba_ball_distractor_reference_labels.py -text
 tests/test_nba_ball_distractor_reference_review.py -text
+
+# Preserve the executed provisional verifier and evidence bindings.
+configs/ball_tracking/reviews/nba_ball_distractor_execution_amendment_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/ball_tracking/reviews/nba_ball_distractor_training_result_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/nba_ball_distractor_classifier.py -text
+src/ball_tracking/nba_ball_distractor_training.py -text
+src/ball_tracking/nba_ball_distractor_emission_features.py -text
+src/ball_tracking/nba_ball_distractor_evaluation.py -text
+src/ball_tracking/nba_ball_distractor_policy.py -text
+src/ball_tracking/nba_ball_distractor_review.py -text
+tests/test_nba_ball_distractor_classifier.py -text
+tests/test_nba_ball_distractor_training.py -text
+tests/test_nba_ball_distractor_emission_features.py -text
+tests/test_nba_ball_distractor_policy.py -text
+tests/test_nba_ball_distractor_review.py -text
+tests/test_nba_ball_distractor_evaluation.py -text

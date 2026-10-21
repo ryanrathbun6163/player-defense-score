@@ -1,0 +1,77 @@
+{
+  "schema_version": "nba_ball_distractor_execution_amendment/v0.1",
+  "recorded_at_utc": "2026-10-21T22:54:51.504262+00:00",
+  "user_statement": "ok chat fixed this and train the model please. I don't like it when you make mistakes",
+  "status": "explicit_training_request_interpreted_for_provisional_experiment",
+  "starting_branch": "codex/ball-detector-baseline",
+  "starting_head": "37098e4baa9543070d3fd59eec573db4859f598e",
+  "bindings": {
+    "original_approval": {
+      "path": "configs/ball_tracking/reviews/nba_ball_distractor_verifier_approval_v0_1.json",
+      "sha256": "dcfa208d3e752bc1c0a184453263924dff7e0dda7adf6a03170a4b38033d1889",
+      "bytes": 2554
+    },
+    "plan": {
+      "path": "docs/nba_ball_distractor_verifier_plan.md",
+      "sha256": "07f6900ca40977a150af2c2fb5020041d4a15258b4bd13894b09b1cd96e618cb",
+      "bytes": 18181
+    },
+    "proposal": {
+      "path": "configs/ball_tracking/proposals/nba_ball_distractor_verifier_v0_1.json",
+      "sha256": "0cdfbd3ef904c4b711f9458e73a4092c92b202164ee01b64a848bae3de40c422",
+      "bytes": 19022
+    },
+    "prior_preparation_result": {
+      "path": "configs/ball_tracking/reviews/nba_ball_distractor_reference_result_v0_1.json",
+      "sha256": "7c940d271969a142a9594f0e39222877625248d1100969ce4f4523d4056057a9",
+      "bytes": 22793
+    },
+    "proposed_labels": {
+      "path": "data/outputs/ball_tracking/nba/ball_distractor_verifier_v0_1/reference/annotations/proposal.json",
+      "sha256": "38d614deb40fc58f37cd37b0f378c8eff9692950857caa1fe58307fccb99bdc4",
+      "bytes": 516744
+    },
+    "old_feature_completion": {
+      "path": "data/outputs/ball_tracking/nba/appearance_feature_screen_v0_1/completion.json",
+      "sha256": "00826b3ec9cfe9d22edcc3e63d0a80c2f8ab627dcd248dadfd49bdc8da2407ca",
+      "bytes": 63589
+    },
+    "det_search": {
+      "path": "data/outputs/t/ball_distractor_det_coverage_repair_2026-10-21/shortlist.json",
+      "sha256": "1f82e8e30bb81d3f484a420776b08ce5c4dc08971ebb63b9baaf982ca442beb6",
+      "bytes": 20219
+    },
+    "p003_search": {
+      "path": "data/outputs/t/ball_distractor_p003_targeted_search_2026-10-21/shortlist.json",
+      "sha256": "86c8c91f5d891741fb5b09b1632cd11f02ed18e40f2f4de50a8d46933b9fdd4e",
+      "bytes": 39609
+    }
+  },
+  "interpretation": "Latest explicit request authorizes one provisional fixed-recipe fit with the existing AI-proposed labels. Separate qualified training-data readiness from incomplete evaluation coverage. This changes execution order, not label truth, original success criteria, or adoption authority.",
+  "training_groups": 90,
+  "training_crops": 109,
+  "original_pre_fit_adequacy_passed": false,
+  "missing_evaluation_coverage": [
+    "excluded clothing group",
+    "new actually emitted excluded head episode"
+  ],
+  "human_new_label_acceptance": "pending",
+  "human_new_trajectory_acceptance": "pending",
+  "allowed": [
+    "freeze label-only weights",
+    "extract frozen DINOv2 features",
+    "one fixed logistic fit",
+    "score original excluded references and exposed regression",
+    "apply separate veto-only arm to the original3373 emissions",
+    "produce complete comparison and review artifacts"
+  ],
+  "forbidden": [
+    "change labels to satisfy quotas",
+    "tune using excluded checks",
+    "retry a failed scientific recipe",
+    "alter accepted baselines",
+    "adopt new trajectories without human review",
+    "push PR or merge"
+  ],
+  "output_root": "data/outputs/ball_tracking/nba/ball_distractor_training_v0_1"
+}

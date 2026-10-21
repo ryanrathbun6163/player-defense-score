@@ -1,6 +1,16 @@
 # Roadmap
 
-## Current step: close the bounded coverage result; new label review pending
+## Latest result: trained fixed verifier rejected
+
+The [single provisional training run](../nba_ball_distractor_training_results.md)
+converged, but fails previously accepted ball checks. The complete 3,373-point comparison loses 207/581 protected matches. Preserve
+the model and failed comparison; do not adopt it or tune the zero cutoff.
+The original evaluation coverage gaps and new human label review remain visible.
+A further scientific approach requires a concrete decision grounded in these
+losses; no additional fit is implicitly authorized. Reliable ball trajectories
+remain the phase finish line before possession or defensive scoring.
+
+## Earlier step: close the bounded coverage result; new label review pending
 
 The approved [bounded test](../nba_ball_distractor_reference_results.md) has a
 complete 184-row AI label package: 106 ball, 51 other-object and 27 unresolved.
