@@ -1,0 +1,22 @@
+{
+  "schema_version": "nba_appearance_reference_preparation_approval/v0.1",
+  "status": "approved",
+  "approved_by": "Ryan",
+  "user_statement": "Move forward chat",
+  "recorded_at_utc": "2026-10-21T16:27:10.120796+00:00",
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "31c84281821d22f66ae3963e88301cc556087218"
+  },
+  "scope": "Authorizes proposed appearance-reference preparation and review delivery. Exact metadata-only census chosen within that scope before new source inspection; does not claim the user individually chose these frames.",
+  "plan": {
+    "path": "docs/nba_appearance_reference_preparation.md",
+    "sha256": "13d53d38f0949c17572835c146d92b5471544c4daaa45946a96e19b628878f4b",
+    "bytes": 5783
+  },
+  "new_training_authorized": false,
+  "new_inference_authorized": false,
+  "new_appearance_rule_trial_authorized": false,
+  "human_label_acceptance": "pending",
+  "push_pr_merge_authorized": false
+}

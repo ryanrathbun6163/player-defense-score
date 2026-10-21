@@ -1,5 +1,56 @@
 # Validation History
 
+## Candidate appearance preparation and complete review; new label acceptance pending
+
+Ryan's later “Move forward chat” approved appearance-reference preparation from
+clean `codex/ball-detector-baseline` at
+`31c84281821d22f66ae3963e88301cc556087218`. The fixed scope contains fifteen
+targets, all 26 original mean candidates and 75 native context frames. Metadata
+and whole-source roles were frozen before new source inspection; all current
+34 gap/anchor targets and their 74 context frames remain separate regression
+evidence. The scope audit passed 86 checks.
+
+One source-preparation attempt completed in 14.968 seconds, reading 55 existing
+hash-verified NBA PNGs and decoding twenty permitted NFHS frames after checking
+both source-video hashes. No model calls, candidate-array reads, new centers,
+geometric scoring or prediction changes occurred. Exact implementation bytes
+are bound in the receipts; code was integrated locally after execution rather
+than claiming a pre-execution commit.
+
+Five preparation tests passed in 2.977 seconds. Five distinct renderer tests
+passed across the last affected runs: three in the second run and the remaining
+two in the third (4.010 seconds). The first renderer test run failed because a
+synthetic producer fixture omitted `time_base`; the second exposed two test-only
+error-string mismatches. These failures remain in their original logs. The
+fixture and regex fixes changed tests only; production implementations match
+the actual source/media receipts. No full suite was repeated.
+
+The sealed AI draft proposes ten ball, ten other-object and six unresolved
+labels. Potential-fit SAC/P002 contributes 4/6/5; excluded-check DET/P003
+contributes 6/4/1. All five P002 objects remain unresolved. DET11499 also remains
+unresolved, preserving disagreement between the first reader and another AI
+reader's upper-arm interpretation. Check negatives are hands, with no new
+excluded-check head example. Counts represent correlated candidate records,
+not independent episodes or unseen validation data.
+
+The first actual render completed in 20.359 seconds and produces a complete
+48-second review. All 75 encoded frames passed source/candidate/class keys,
+timing, paired pixels and local-marker checks. An independent audit passed
+1,649 checks, including all 75 joins/probe times and 31 encoded stills; maximum
+independent paired-pixel mean absolute error was 3.255 RGB levels. An AI reviewer
+individually inspected all fifteen targets, fifteen context finals and the
+actual compilation final (P003430, source PTS1548000), finding no material
+delivery defect. This is encoded-still inspection, not continuous manual
+playback or human acceptance.
+
+The [results and review links](../nba_appearance_reference_results.md) and
+[compact result](../../configs/ball_tracking/reviews/nba_appearance_reference_result_v0_1.json)
+bind the complete evidence. Ryan's acceptance or corrections to these new
+appearance labels remain pending. Earlier center-reference acceptance and
+reviews, the original 790-frame report and accepted 27-reference extension are
+unchanged. No future verifier fit, inference, threshold selection or trial is
+authorized by this preparation.
+
 ## Accepted gap/anchor reference publication and evaluation completed
 
 Ryan accepted the presented package with “ok great chat they have been reviewed.

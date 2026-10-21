@@ -1,6 +1,53 @@
 # Current State
 
-## Latest increment: gap/anchor references accepted; saved-output scoring complete
+## Latest increment: appearance references prepared; new human label review pending
+
+Ryan's later “Move forward chat” authorized the
+[appearance-reference plan](../nba_appearance_reference_preparation.md), recorded
+in the [preparation approval](../../configs/ball_tracking/reviews/nba_appearance_reference_preparation_approval_v0_1.json).
+The [results](../nba_appearance_reference_results.md) and
+[compact result](../../configs/ball_tracking/reviews/nba_appearance_reference_result_v0_1.json)
+cover **15 targets, 26 saved mean candidates and 75 native context frames**.
+All original mean components at each target are retained in their saved order;
+expanded/pruned gap pools are not substituted. The metadata census and source
+roles were fixed before new source inspection.
+
+SAC and P002 supply eight potential-fit targets/fifteen objects. DET and P003
+supply seven excluded-check targets/eleven objects. Roles separate whole sources;
+all supports stay inside the original permitted blocks. SAC was used by the
+rejected continuation, NFHS by the retained detector, and DET was repeatedly
+inspected in development. These checks are excluded from a future appearance
+verifier's fitting, not previously unseen data. All 34 earlier gap/anchor targets
+and their 74 context frames are excluded from this new census and remain linked
+regression evidence. Protected frames and holdouts remain untouched.
+
+Actual source preparation completed in 14.968 seconds, reading 55 existing NBA
+PNGs and decoding exactly twenty approved NFHS frames. AI proposals classify
+candidate objects as ball, other-object or unresolved from unmarked source
+context; ambiguous occlusion boundaries remain unresolved. These are object
+judgments, not new ball centers, geometric scores or automatically inferred
+negatives. The drafts contain ten ball, ten other-object and six unresolved
+judgments: potential-fit objects split 4/6/5 and excluded checks 6/4/1 in that
+order. No new excluded-check candidate supplies a confirmed head negative;
+the known SAC head regression remains a single previously reviewed episode.
+
+The complete 48-second review rendered on its first attempt in 20.359 seconds.
+Transport checks verify all 75 encoded source frames; independent audit passes
+1,649 checks. AI inspection covers 31 encoded stills: fifteen targets, fifteen
+context finals and the actual final frame. This does not claim continuous human
+playback. Ten distinct focused tests pass (five preparation, five review), with
+fixture/regex failures and corrected checks preserved.
+
+**Next action:** Ryan accepts or corrects the completed appearance-label review
+package. Human acceptance remains pending;
+prior center-reference acceptance does not accept this new batch. Then use the
+observed diversity and uncertainty to decide whether one bounded appearance
+rule has enough evidence. No new fitting, inference, evaluation, threshold
+selection or prediction change is authorized or run. The original 790-frame
+report, accepted 27-reference scores, seven exact controls and earlier completed
+reviews remain unchanged.
+
+## Earlier increment: gap/anchor references accepted; saved-output scoring complete
 
 After the explicit request to accept or correct the completed reference review,
 Ryan said “ok great chat they have been reviewed. move forward”. The

@@ -1,0 +1,432 @@
+{
+  "schema_version": "nba_appearance_reference_result/v0.1",
+  "status": "prepared_human_review_pending",
+  "created_at_utc": "2026-10-21T16:57:13.904482+00:00",
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "31c84281821d22f66ae3963e88301cc556087218"
+  },
+  "implementation_history": "New implementations ran as local uncommitted files, bound by exact bytes below. The same production bytes passed focused tests and are integrated with this result. No earlier commit is claimed to contain them.",
+  "plan": {
+    "path": "docs/nba_appearance_reference_preparation.md",
+    "sha256": "13d53d38f0949c17572835c146d92b5471544c4daaa45946a96e19b628878f4b",
+    "bytes": 5783
+  },
+  "approval": {
+    "path": "configs/ball_tracking/reviews/nba_appearance_reference_preparation_approval_v0_1.json",
+    "sha256": "b51a4e0b40b12d8b90132295b77197545ddda37969205c8b09a76d50c1aff847",
+    "bytes": 952
+  },
+  "scope": {
+    "path": "configs/ball_tracking/selections/nba_appearance_reference_v0_1.json",
+    "sha256": "820abea4749112e62f56a7aa46f2396f19b45c6c83e584c957c5169aa1b78139",
+    "bytes": 6583
+  },
+  "inventory": {
+    "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/inventory.json",
+    "sha256": "b141d4a88069a53b102822421ff7fca6c22c55438220be45d31e5e2155dd1ba8",
+    "bytes": 74254
+  },
+  "scope_audit": {
+    "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/scope_audit.json",
+    "sha256": "f605604636220e0eca0872073333da0c4aa4036ab27cdbd8cf532fe4ac911c0b",
+    "bytes": 9187
+  },
+  "fit_authority": {
+    "path": "configs/ball_tracking/wasb_experiments/nba_wasb_adaptation_v0_1.json",
+    "sha256": "04d0b187cc3b515e6a2bf8b9f2c9b827428e75027a09b83a3d67e7b8296bd19a",
+    "bytes": 16483
+  },
+  "implementation": {
+    "preparation": {
+      "path": "src/ball_tracking/nba_appearance_reference.py",
+      "sha256": "acd9d62ddb819a9f8288ba503c971df4e5613efb3d33259cc1807be63456f966",
+      "bytes": 18239
+    },
+    "review_and_dependencies": [
+      {
+        "path": "src/ball_tracking/nba_appearance_reference_review.py",
+        "sha256": "b747b2f8c93c21ad7f5a5d2fc71273321fa07c089253e71c2ed449e26f58d3cb",
+        "bytes": 18822
+      },
+      {
+        "path": "src/ball_tracking/nba_annotations.py",
+        "sha256": "758c7a8b732e84d2428fe186a58d4b43d2b0a7efd751d8879dd1fdac3873329e",
+        "bytes": 32971
+      },
+      {
+        "path": "src/ball_tracking/nba_action_review.py",
+        "sha256": "e56ba977162fbc977af4299adb01f79116751f9dd433e4e6ab5dcadb7c71a69e",
+        "bytes": 19794
+      },
+      {
+        "path": "src/ball_tracking/nba_gap_anchor_reference_review.py",
+        "sha256": "eacc32bb2d660d5da570008f781754ccffd37884463fd506817406d3b3456388",
+        "bytes": 24538
+      }
+    ],
+    "tests": [
+      {
+        "path": "tests/test_nba_appearance_reference.py",
+        "sha256": "2d797fb245ff7c526082194a22b05e839b7f63d15a99751248eb004ac3226f0c",
+        "bytes": 12523
+      },
+      {
+        "path": "tests/test_nba_appearance_reference_review.py",
+        "sha256": "20a0ab26a893df87b77a1d50d7179a380290972789d918ef58e1c3ed14ff24bb",
+        "bytes": 9782
+      }
+    ]
+  },
+  "source_preparation": {
+    "completion": {
+      "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/preparation_completion.json",
+      "sha256": "980acc5837b397667f73ea919238013e28762d812bb32cdbc86f4cbe129614fd",
+      "bytes": 1507
+    },
+    "metadata": {
+      "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/preparation/metadata.json",
+      "sha256": "a51c2d797f38e042efcfed8871ff48c937f04ba42773d9fdaa4082c13cc546b6",
+      "bytes": 100654
+    },
+    "preparation": {
+      "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/preparation/preparation.json",
+      "sha256": "8057127b353d18e2033ff596a38faefa75236940c5008ea1593b81ea385ad894",
+      "bytes": 131574
+    },
+    "ready": {
+      "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/preparation/preparation_ready.json",
+      "sha256": "ef51748ec7ce9df8db1e0cdf600cbd0eaafa8e9b415f1b4543b783762ad10a3a",
+      "bytes": 495
+    },
+    "source_sheets_completion": {
+      "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/source_sheets/completion.json",
+      "sha256": "543708eff2c88bed4e51fa1003f2854093d1d19fa3332f1010e32af966f0d181",
+      "bytes": 8396
+    },
+    "resources": {
+      "model_calls": 0,
+      "candidate_array_reads": 0,
+      "new_labels_created": 0,
+      "existing_png_reads": 55,
+      "nfhs_decoded_frames": 20,
+      "nfhs_requested_segments": [
+        {
+          "continuous_source_id": "possession_002",
+          "range_inclusive": [
+            323,
+            327
+          ]
+        },
+        {
+          "continuous_source_id": "possession_002",
+          "range_inclusive": [
+            339,
+            343
+          ]
+        },
+        {
+          "continuous_source_id": "possession_002",
+          "range_inclusive": [
+            345,
+            349
+          ]
+        },
+        {
+          "continuous_source_id": "possession_003",
+          "range_inclusive": [
+            426,
+            430
+          ]
+        }
+      ]
+    },
+    "elapsed_seconds": 14.967999999999847,
+    "actual_failed_attempts": 0
+  },
+  "census": {
+    "totals": {
+      "targets": 15,
+      "candidates": 26,
+      "context_frames": 75
+    },
+    "roles": {
+      "fit_eligible": {
+        "targets": 8,
+        "objects": 15
+      },
+      "excluded_check": {
+        "targets": 7,
+        "objects": 11
+      }
+    },
+    "source_roles": {
+      "sac_mem_q1_c01": "fit_eligible",
+      "possession_002": "fit_eligible",
+      "sas_det_q1_c02": "excluded_check",
+      "possession_003": "excluded_check"
+    },
+    "candidate_pool": "complete original_observation.candidates in saved order; no semantic selection",
+    "context_radius_frames": 2,
+    "selection_method": "Fixed metadata census using saved candidate counts and temporally separated ordinary examples before new source inspection; all original mean candidates retained in order. Candidate-rich, not random or representative."
+  },
+  "appearance_proposals": {
+    "proposal": {
+      "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/annotations/proposal.json",
+      "sha256": "6a8f0241a0e1503e8f276ef018e1bbf469ccfcff53dd91cd734a729f54bc1832",
+      "bytes": 9758
+    },
+    "seal": {
+      "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/annotations/proposal_sealed.json",
+      "sha256": "75974f2a1f1aea4a8452e7cc8cefebe6fabfa43d7a7b443cbc0c5c6f4611ebe4",
+      "bytes": 2404
+    },
+    "contributors": [
+      {
+        "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/annotations/sac_proposal.json",
+        "sha256": "f304859f5a24eee9e5cfd5820b9a8964f54ba89073e753a0e884dae3655481e1",
+        "bytes": 7439
+      },
+      {
+        "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/annotations/root_initial_proposal.json",
+        "sha256": "2873b02d5e8809ec7c8775164d733b3c6f95aa78219896b76d1769238c1101df",
+        "bytes": 6676
+      }
+    ],
+    "additional_source_check": {
+      "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/annotations/ambiguous_source_check.json",
+      "sha256": "30af1c3f37566840a3d43667d4c001fc2841a8770f388fb88d836724607353ba",
+      "bytes": 21182
+    },
+    "authorship": {
+      "annotator_id": "Codex /root and /root/context_history_a; six-case source check by /root/context_history_b",
+      "method": "source_first_ai",
+      "not_blind": true
+    },
+    "counts": {
+      "other_object": 10,
+      "ball": 10,
+      "unresolved": 6
+    },
+    "by_role": {
+      "fit_eligible": {
+        "other_object": 6,
+        "ball": 4,
+        "unresolved": 5
+      },
+      "excluded_check": {
+        "other_object": 4,
+        "ball": 6,
+        "unresolved": 1
+      }
+    },
+    "by_source": {
+      "sac_mem_q1_c01": {
+        "other_object": 6,
+        "ball": 4
+      },
+      "possession_002": {
+        "unresolved": 5
+      },
+      "sas_det_q1_c02": {
+        "other_object": 4,
+        "ball": 5,
+        "unresolved": 1
+      },
+      "possession_003": {
+        "ball": 1
+      }
+    },
+    "other_object_subtypes_by_role": {
+      "fit_eligible": {
+        "head": 2,
+        "hand": 2,
+        "clothing": 2
+      },
+      "excluded_check": {
+        "hand": 4
+      }
+    },
+    "disagreement": {
+      "candidate_key": "sas_det_q1_c02:11499:mean:0",
+      "root_initial": "unresolved",
+      "second_reader": "other_object / upper_arm",
+      "published": "unresolved",
+      "reason": "Preserve uncertainty about occluded-ball association; no consensus or independent human verdict claimed."
+    },
+    "human_review": "pending",
+    "new_ball_centers": 0,
+    "unresolved_used_as_negatives": false
+  },
+  "media": {
+    "completion": {
+      "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/review/completion.json",
+      "sha256": "91981ba9a8ff496c75a39e926dab981b8ac73c6377d18a583a74936122d2c393",
+      "bytes": 15106
+    },
+    "artifacts": {
+      "video": {
+        "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/review/attempts/e77dd3e85dc44ad9867f48656019b6dd/appearance_review.mp4",
+        "sha256": "b83d18332b688d6913ab89b8127e861290d73f243a99164b884ce97791b2c31a",
+        "bytes": 4974084
+      },
+      "manifest": {
+        "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/review/attempts/e77dd3e85dc44ad9867f48656019b6dd/manifest.json",
+        "sha256": "6ed60cbd7c18c8f8fc5554ee589a2154dc112fe1f671cc998c8351fb2c742631",
+        "bytes": 130608
+      },
+      "verification": {
+        "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/review/attempts/e77dd3e85dc44ad9867f48656019b6dd/verification.json",
+        "sha256": "613cc2dfb3e078deae05ae3ceb7c42ea961b99ea03a583addd963fd9462799bf",
+        "bytes": 1448
+      },
+      "probe": {
+        "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/review/attempts/e77dd3e85dc44ad9867f48656019b6dd/probe.json",
+        "sha256": "0d647fec88f808897b8a4555df9633adaf6e11258b6ffd0a55a36261998be521",
+        "bytes": 6364
+      },
+      "guide": {
+        "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/review/attempts/e77dd3e85dc44ad9867f48656019b6dd/review.html",
+        "sha256": "362e063920a703ee33699c422a1a02b99fad1e32eb38bb580ad0089041bcbf29",
+        "bytes": 12807
+      },
+      "actual_final": {
+        "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/review/attempts/e77dd3e85dc44ad9867f48656019b6dd/final_frame.png",
+        "sha256": "464679f35388114910f379cd13db62725b60191bd3b4624a83e54b86e54143fd",
+        "bytes": 536919
+      }
+    },
+    "duration_seconds": 48,
+    "native_frames": 75,
+    "target_stills": 15,
+    "context_final_stills": 15,
+    "actual_final": {
+      "continuous_source_id": "possession_003",
+      "source_frame_index": 430,
+      "source_pts_ticks": 1548000
+    },
+    "encoded_verification": {
+      "status": "passed",
+      "decoded_frames": 75,
+      "duration_ticks": 4320000,
+      "all_keys_pixels_and_markers_verified": true,
+      "panel_mae_max": [
+        2.217813010620915,
+        1.16574116625817
+      ]
+    },
+    "elapsed_seconds": 20.35900000000038,
+    "actual_failed_attempts": 0,
+    "human_review": "pending"
+  },
+  "validation": {
+    "focused_distinct_tests_passed": 10,
+    "preparation_tests": {
+      "count": 5,
+      "elapsed_seconds": 2.977,
+      "log": {
+        "path": "data/outputs/t/appearance_reference_tests_01.log",
+        "sha256": "336f6e71227defd12ee77e5b43cdc1ba5ab170ac5bc88385443b9f64fa77984c",
+        "bytes": 1138
+      }
+    },
+    "review_tests": {
+      "distinct_count": 5,
+      "first_run": {
+        "status": "failed_fixture_missing_time_base",
+        "elapsed_seconds": 1.236,
+        "log": {
+          "path": "data/outputs/t/appearance_reference_review_tests_01.log",
+          "sha256": "3214ea89f8904039ebed2519e82a689c11a68ab2bbf17cc9c17ead5e10af3ab6",
+          "bytes": 7878
+        }
+      },
+      "second_run": {
+        "status": "three_passed_two_test_error_regex_mismatches",
+        "elapsed_seconds": 8.107,
+        "log": {
+          "path": "data/outputs/t/appearance_reference_review_tests_02.log",
+          "sha256": "5699ab9726376d26ddf05ecde01726780523c656127d526822a7696e6028c58d",
+          "bytes": 3218
+        }
+      },
+      "affected_final_run": {
+        "status": "both_passed",
+        "elapsed_seconds": 4.01,
+        "log": {
+          "path": "data/outputs/t/appearance_reference_review_tests_03.log",
+          "sha256": "50da9a6069c8120173e36828c59f45f7ad7ea1f892b953917e19d42fc4596c2b",
+          "bytes": 563
+        }
+      },
+      "corrections": "Fixture and expected-error regex only; production code unchanged. Failed logs retained. Final five distinct test methods covered across second and affected final runs."
+    },
+    "full_suite_repeated": false,
+    "scope_checks_passed": 86,
+    "independent_media_audit": {
+      "path": "data/outputs/t/appearance_reference_media_audit_01.json",
+      "sha256": "12ee3311aef6edff908e300a6a98c53f266c1e0d03505c9928451f9fe4f91a76",
+      "bytes": 1834
+    },
+    "independent_media_checks_passed": 1649,
+    "independent_paired_pixel_mae_max": 3.2546261207135596,
+    "actual_encoded_still_inspection": {
+      "path": "data/outputs/t/appearance_reference_media_visual_01.json",
+      "sha256": "7d697272bc5c67c82a158b443655b4fb7af102cb0654bf7e803b3962bdba07cd",
+      "bytes": 14359
+    },
+    "encoded_stills_visually_inspected": 31,
+    "continuous_manual_playback_claimed": false,
+    "human_review": "pending"
+  },
+  "preserved": {
+    "previous_evaluation_result": {
+      "path": "configs/ball_tracking/reviews/nba_gap_anchor_reference_evaluation_result_v0_1.json",
+      "sha256": "e1b6b521f63ed92abafcfcb4c98e85343049f492877470052f1d48c3bf9ca126",
+      "bytes": 29076
+    },
+    "accepted_reference": {
+      "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/accepted/accepted_reference.json",
+      "sha256": "9cfc5279ba084017554e8a55ab74e41fb1baa5914469b08de1cd480382fc3096",
+      "bytes": 108375
+    },
+    "accepted_27_reference_report": {
+      "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/evaluation/report.json",
+      "sha256": "fca78b8b389bbf4b1aaa1cf20ed9e9260e5a87e92deea92220786666fa5554d3",
+      "bytes": 340643
+    },
+    "original_790_report": {
+      "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/attempts/c4c9e3e80c5b4beaaa49147f0e0ad3b5/report.json",
+      "sha256": "52416ba8d5455e981f929a3db8b0899f9dd12d08ce898ee5906ee64a8e214e22",
+      "bytes": 7416104
+    },
+    "saved_selection": {
+      "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/attempts/c4c9e3e80c5b4beaaa49147f0e0ad3b5/selection.json",
+      "sha256": "ad6b1dd441197ee6115566c4623151b064a09b82c2ae3fd57fd651495e3bafe4",
+      "bytes": 74417393
+    },
+    "regression_preparation": {
+      "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/preparation.json",
+      "sha256": "e760444ade64e0d6c2323f2c072d01e6c17749b5054efac44a8e35514c99c759",
+      "bytes": 156573
+    },
+    "regression_exclusion": "All current34 gap/anchor targets and their74 source context frames excluded from this new census and remain separate linked evidence.",
+    "retained_checkpoint_sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+    "prior_status": "Rejected NBA continuation remains rejected; broader unchanged gap rule is not adopted; earlier completed reviews and three older pending motion reviews retain their status; holdouts/protected bands/TOR remain untouched."
+  },
+  "interpretation": [
+    "Counts are candidate records, not independent objects, episodes or an estimate of accuracy.",
+    "SAC/P002 are potential-fit sources; DET/P003 are excluded only from a future appearance verifier fit. SAC and NFHS have upstream training exposure, and DET has repeated development inspection; no unseen benchmark claim.",
+    "All five P002 records and DET11499 remain unresolved; unresolved records are not non-ball examples.",
+    "Fit-side other-object subtypes are two head, two hand and two nearby clothing patches. Check-side other-object records are four hands from two action blocks; no new excluded-check head negative.",
+    "Only original mean components are represented; contributor-only gap-candidate appearance is not covered by this batch.",
+    "No inference, training, array reads, geometric scoring, threshold selection, selector change or prediction update occurred."
+  ],
+  "next_step": {
+    "human_action": "Accept or correct all26 new appearance proposals, including six unresolved cases, using complete48-second review, all targets/context finals and actual final frame.",
+    "reason": "The standing human visual-review gate applies to these new object labels; earlier center-reference acceptance does not accept this batch.",
+    "after_acceptance": "Publish a separate accepted appearance artifact preserving pending-era evidence, then assess whether evidence supports one bounded appearance-rule proposal and report coverage gaps.",
+    "future_fit_inference_or_trial_authorized": false,
+    "push_pr_merge_authorized": false
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "schema_version": "nba_appearance_reference_scope/v0.1",
+  "status": "approved",
+  "created_at_utc": "2026-10-21T16:27:10.122797+00:00",
+  "plan": {
+    "path": "docs/nba_appearance_reference_preparation.md",
+    "sha256": "13d53d38f0949c17572835c146d92b5471544c4daaa45946a96e19b628878f4b",
+    "bytes": 5783
+  },
+  "approval": {
+    "path": "configs/ball_tracking/reviews/nba_appearance_reference_preparation_approval_v0_1.json",
+    "sha256": "b51a4e0b40b12d8b90132295b77197545ddda37969205c8b09a76d50c1aff847",
+    "bytes": 952
+  },
+  "selection": {
+    "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/attempts/c4c9e3e80c5b4beaaa49147f0e0ad3b5/selection.json",
+    "sha256": "ad6b1dd441197ee6115566c4623151b064a09b82c2ae3fd57fd651495e3bafe4",
+    "bytes": 74417393
+  },
+  "regression_preparation": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/preparation.json",
+    "sha256": "e760444ade64e0d6c2323f2c072d01e6c17749b5054efac44a8e35514c99c759",
+    "bytes": 156573
+  },
+  "fit_authority": {
+    "path": "configs/ball_tracking/wasb_experiments/nba_wasb_adaptation_v0_1.json",
+    "sha256": "04d0b187cc3b515e6a2bf8b9f2c9b827428e75027a09b83a3d67e7b8296bd19a",
+    "bytes": 16483
+  },
+  "source_roles": {
+    "sac_mem_q1_c01": "fit_eligible",
+    "possession_002": "fit_eligible",
+    "sas_det_q1_c02": "excluded_check",
+    "possession_003": "excluded_check"
+  },
+  "context_radius_frames": 2,
+  "targets": [
+    {
+      "target_id": "sac_mem_q1_c01_000942",
+      "block_id": "sac_distractor_recovery",
+      "continuous_source_id": "sac_mem_q1_c01",
+      "source_frame_index": 942,
+      "role": "fit_eligible",
+      "complete_block_range_inclusive": [
+        940,
+        1059
+      ]
+    },
+    {
+      "target_id": "sac_mem_q1_c01_000961",
+      "block_id": "sac_distractor_recovery",
+      "continuous_source_id": "sac_mem_q1_c01",
+      "source_frame_index": 961,
+      "role": "fit_eligible",
+      "complete_block_range_inclusive": [
+        940,
+        1059
+      ]
+    },
+    {
+      "target_id": "sac_mem_q1_c01_000999",
+      "block_id": "sac_distractor_recovery",
+      "continuous_source_id": "sac_mem_q1_c01",
+      "source_frame_index": 999,
+      "role": "fit_eligible",
+      "complete_block_range_inclusive": [
+        940,
+        1059
+      ]
+    },
+    {
+      "target_id": "sac_mem_q1_c01_001299",
+      "block_id": "sac_held_ball_gaps",
+      "continuous_source_id": "sac_mem_q1_c01",
+      "source_frame_index": 1299,
+      "role": "fit_eligible",
+      "complete_block_range_inclusive": [
+        1240,
+        1359
+      ]
+    },
+    {
+      "target_id": "sac_mem_q1_c01_001346",
+      "block_id": "sac_held_ball_gaps",
+      "continuous_source_id": "sac_mem_q1_c01",
+      "source_frame_index": 1346,
+      "role": "fit_eligible",
+      "complete_block_range_inclusive": [
+        1240,
+        1359
+      ]
+    },
+    {
+      "target_id": "possession_002_000325",
+      "block_id": "p002_training",
+      "continuous_source_id": "possession_002",
+      "source_frame_index": 325,
+      "role": "fit_eligible",
+      "complete_block_range_inclusive": [
+        318,
+        367
+      ]
+    },
+    {
+      "target_id": "possession_002_000341",
+      "block_id": "p002_training",
+      "continuous_source_id": "possession_002",
+      "source_frame_index": 341,
+      "role": "fit_eligible",
+      "complete_block_range_inclusive": [
+        318,
+        367
+      ]
+    },
+    {
+      "target_id": "possession_002_000347",
+      "block_id": "p002_training",
+      "continuous_source_id": "possession_002",
+      "source_frame_index": 347,
+      "role": "fit_eligible",
+      "complete_block_range_inclusive": [
+        318,
+        367
+      ]
+    },
+    {
+      "target_id": "sas_det_q1_c02_011008",
+      "block_id": "det_pass_recovery",
+      "continuous_source_id": "sas_det_q1_c02",
+      "source_frame_index": 11008,
+      "role": "excluded_check",
+      "complete_block_range_inclusive": [
+        11000,
+        11119
+      ]
+    },
+    {
+      "target_id": "sas_det_q1_c02_011059",
+      "block_id": "det_pass_recovery",
+      "continuous_source_id": "sas_det_q1_c02",
+      "source_frame_index": 11059,
+      "role": "excluded_check",
+      "complete_block_range_inclusive": [
+        11000,
+        11119
+      ]
+    },
+    {
+      "target_id": "sas_det_q1_c02_011107",
+      "block_id": "det_pass_recovery",
+      "continuous_source_id": "sas_det_q1_c02",
+      "source_frame_index": 11107,
+      "role": "excluded_check",
+      "complete_block_range_inclusive": [
+        11000,
+        11119
+      ]
+    },
+    {
+      "target_id": "sas_det_q1_c02_011431",
+      "block_id": "det_shot_release",
+      "continuous_source_id": "sas_det_q1_c02",
+      "source_frame_index": 11431,
+      "role": "excluded_check",
+      "complete_block_range_inclusive": [
+        11420,
+        11579
+      ]
+    },
+    {
+      "target_id": "sas_det_q1_c02_011444",
+      "block_id": "det_shot_release",
+      "continuous_source_id": "sas_det_q1_c02",
+      "source_frame_index": 11444,
+      "role": "excluded_check",
+      "complete_block_range_inclusive": [
+        11420,
+        11579
+      ]
+    },
+    {
+      "target_id": "sas_det_q1_c02_011499",
+      "block_id": "det_shot_release",
+      "continuous_source_id": "sas_det_q1_c02",
+      "source_frame_index": 11499,
+      "role": "excluded_check",
+      "complete_block_range_inclusive": [
+        11420,
+        11579
+      ]
+    },
+    {
+      "target_id": "possession_003_000428",
+      "block_id": "p003_training_withheld_verifier",
+      "continuous_source_id": "possession_003",
+      "source_frame_index": 428,
+      "role": "excluded_check",
+      "complete_block_range_inclusive": [
+        416,
+        440
+      ]
+    }
+  ],
+  "expected_totals": {
+    "targets": 15,
+    "candidates": 26,
+    "context_frames": 75
+  },
+  "candidate_pool": "complete original_observation.candidates in saved order; no semantic selection",
+  "regression_role": "current34 targets and74 context frames excluded; linked separately, no repeated labeling",
+  "check_exposure": "DET previously inspected development; P003 used by retained upstream detector. Excluded only from future verifier fitting, not unseen validation.",
+  "label_policy": "ball / other_object / unresolved; no automatic negatives from geometric failures, no invented centers",
+  "inventory": {
+    "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/inventory.json",
+    "sha256": "b141d4a88069a53b102822421ff7fca6c22c55438220be45d31e5e2155dd1ba8",
+    "bytes": 74254
+  }
+}

@@ -188,10 +188,25 @@ The [compact result](configs/ball_tracking/reviews/nba_gap_anchor_reference_eval
 binds the evidence. Geometric matches do not validate object identity: six P001
 points remain visually unresolved, and the three SAC head points remain adverse,
 unscored evidence. Reference acceptance does not separately adjudicate those AI
-object judgments. The recommended next step is bounded appearance verification
-of original anchors and fill candidates, with abstention and distinct evaluation
-roles fixed before choosing a rule. No new trial, fit or threshold change is
-authorized or run; a blanket head-proximity veto would also reject real DET balls.
+object judgments. Ryan then approved the
+[appearance-reference preparation](docs/nba_appearance_reference_preparation.md)
+with “Move forward chat”, preserved in the
+[approval record](configs/ball_tracking/reviews/nba_appearance_reference_preparation_approval_v0_1.json).
+The [completed preparation](docs/nba_appearance_reference_results.md)
+and [compact result](configs/ball_tracking/reviews/nba_appearance_reference_result_v0_1.json)
+cover 26 saved mean candidates at 15 targets with 75 native context frames.
+SAC/P002 supply 15 potential-fit objects; DET/P003 supply eleven excluded checks,
+with prior training and development exposure disclosed. The existing gap/anchor
+regression package stays separate. A complete 48-second review is verified for
+all 75 source frames; independent audit passes 1,649 checks. AI still inspection
+covers all fifteen targets, fifteen context finals and the actual final frame.
+The drafts contain ten ball, ten other-object and six unresolved judgments,
+with no new excluded-check head negative. **The complete package awaits Ryan's
+acceptance or corrections; these appearance labels remain AI drafts.**
+No new fit, inference, evaluation or
+threshold change occurred. After review, assess whether object diversity and
+uncertainty support a bounded appearance rule; a blanket head-proximity veto
+would also reject real DET balls.
 The original baseline remains intact, and the failed NBA continuation stays rejected.
 These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved

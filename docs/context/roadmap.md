@@ -1,6 +1,39 @@
 # Roadmap
 
-## Current step: accepted references scored; prepare bounded appearance verification
+## Current step: human review of newly prepared appearance references
+
+Ryan's “Move forward chat” approved the
+[appearance-reference preparation](../nba_appearance_reference_preparation.md),
+with the exact scope in its
+[approval record](../../configs/ball_tracking/reviews/nba_appearance_reference_preparation_approval_v0_1.json).
+The [results](../nba_appearance_reference_results.md) and
+[compact result](../../configs/ball_tracking/reviews/nba_appearance_reference_result_v0_1.json)
+cover fifteen targets, 26 original mean candidates and 75 native context frames.
+Source preparation and the verified 48-second review are complete; the package
+awaits Ryan's acceptance or corrections. Independent audit passes 1,649 checks;
+AI still inspection covers all fifteen targets, fifteen context finals and the
+actual final frame, without claiming continuous human playback.
+
+Keep SAC/P002's eight targets/fifteen objects on the potential-fit side and
+DET/P003's seven targets/eleven objects excluded from future verifier fitting.
+Historical detector training and development inspection remain explicit; this
+small candidate-rich sample is not an unseen test or prevalence estimate.
+The previous 34 gap/anchor targets and all 74 context frames remain separate
+regression evidence, and protected source bands remain excluded.
+
+The AI drafts contain ten ball, ten other-object and six unresolved judgments.
+Potential-fit objects split 4/6/5 and excluded checks 6/4/1 respectively. There
+is no new excluded-check head negative; keep that coverage limitation explicit.
+Ryan's next action is to accept or correct these new AI object labels,
+retaining unresolved boundaries and source provenance. After acceptance,
+assess distinct wrong-object episodes and ball examples before specifying one
+bounded appearance rule for both anchors and proposed fills. A coverage gap
+should remain a reported limitation; do not infer negatives from geometric misses
+or reject every ball near a head. No new fitting, inference, evaluation or rule
+trial is authorized or run. The original 790-frame scores and accepted 27-frame
+increment remain unchanged; completed earlier reviews need no repetition.
+
+## Earlier step: accepted references scored; prepare bounded appearance verification
 
 Ryan accepted the completed reference package with “ok great chat they have
 been reviewed. move forward”. The
