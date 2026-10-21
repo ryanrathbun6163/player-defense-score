@@ -200,13 +200,24 @@ with prior training and development exposure disclosed. The existing gap/anchor
 regression package stays separate. A complete 48-second review is verified for
 all 75 source frames; independent audit passes 1,649 checks. AI still inspection
 covers all fifteen targets, fifteen context finals and the actual final frame.
-The drafts contain ten ball, ten other-object and six unresolved judgments,
-with no new excluded-check head negative. **The complete package awaits Ryan's
-acceptance or corrections; these appearance labels remain AI drafts.**
-No new fit, inference, evaluation or
-threshold change occurred. After review, assess whether object diversity and
-uncertainty support a bounded appearance rule; a blanket head-proximity veto
-would also reject real DET balls.
+Ryan then explicitly accepted all 26 proposals: “I accept the proposals. Move
+forward chat”. The [separate accepted publication](docs/nba_appearance_reference_acceptance_results.md)
+retains ten ball, ten other-object and six unresolved judgments, AI authorship
+and the recorded reader disagreement. The original draft and media remain intact.
+Publication took 0.696 seconds; six focused tests and 380 independent audit
+checks pass. The [publication result](configs/ball_tracking/reviews/nba_appearance_reference_publication_result_v0_1.json)
+binds the evidence, and this appearance-label review is complete.
+
+The next [fixed feature-screen plan](docs/nba_appearance_feature_screen_plan.md)
+and [proposal](configs/ball_tracking/proposals/nba_appearance_feature_screen_v0_1.json)
+await approval: DINOv2 ViT-S/14 nearest-reference comparison on 60 crops from
+49 cached target frames, with no training, parameter grid or trajectory changes.
+All ten resolved excluded checks must classify correctly. The resolved reference
+bank is SAC-only; NFHS fit examples remain unknown, and excluded checks contain
+no head or clothing negatives. The 34 previously exposed gap/anchor cases remain
+a separate regression challenge with mixed mean/contributor provenance.
+No feature extraction or screen has run, and a pass would support a later
+bounded proposal rather than broader adoption.
 The original baseline remains intact, and the failed NBA continuation stays rejected.
 These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved

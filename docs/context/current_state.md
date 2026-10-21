@@ -1,6 +1,49 @@
 # Current State
 
-## Latest increment: appearance references prepared; new human label review pending
+## Latest increment: all 26 appearance references accepted and published
+
+Ryan explicitly said “I accept the proposals. Move forward chat”. The
+[acceptance results](../nba_appearance_reference_acceptance_results.md),
+[acceptance record](../../configs/ball_tracking/reviews/nba_appearance_reference_acceptance_v0_1.json)
+and [publication result](../../configs/ball_tracking/reviews/nba_appearance_reference_publication_result_v0_1.json)
+record a separate human-accepted AI artifact containing all 26 exact object
+judgments: ten ball, ten other-object and six unresolved. It retains all fifteen
+targets, 75 context frames, candidate provenance, source roles and AI authorship.
+DET11499 stays unresolved with its original reader disagreement preserved.
+The draft, seal, review media and pending-era receipts remain unchanged; this
+appearance-label review is complete and need not be repeated.
+
+One publication attempt completed in 0.696 seconds without decoding source
+pixels, loading candidate arrays, fitting, inference or geometric scoring.
+Six focused tests initially passed in 10.845 seconds and passed again in 10.971
+seconds after correcting only the local-evidence availability guard. The
+publisher and actual publication remained unchanged. An independent standard-library
+audit passed 380 checks on exact labels/candidates, source/PTS joins, roles,
+acceptance, original evidence and unchanged prior artifacts. The original
+790-frame report, accepted 27-reference extension and seven controls are intact.
+
+**Pending approval:** the [fixed feature-screen plan](../nba_appearance_feature_screen_plan.md)
+and [proposal](../../configs/ball_tracking/proposals/nba_appearance_feature_screen_v0_1.json)
+would use pretrained DINOv2 ViT-S/14 features and one nearest-reference comparison.
+Its exact census is 60 crops from 49 existing cached target frames: ten resolved
+SAC reference-bank objects, ten resolved excluded checks, six unknown objects
+and 34 previously exposed gap/anchor regression objects. All ten resolved checks
+must classify correctly; unknowns remain unscored and never become negatives.
+No training, parameter grid, trajectory update or label-driven replacement is
+proposed. The screen has not run and this publication does not authorize it.
+
+The ten bank labels all come from SAC; all five P002 fit-side examples remain
+unknown. Excluded checks contain six balls and four hands, with no head/clothing
+negative. Repeated objects and prior inspection prevent an independent accuracy
+claim. The older 34 objects mix original means and contributor-derived fills;
+they are a separate exposed regression challenge, not evidence of contributor
+generalization or a held-out head test. A successful screen would justify
+considering one later bounded abstention rule, preserving every original point
+and supporting both anchors and every proposed fill. A blanket head-proximity
+veto remains unsuitable. Protected holdouts, earlier completed reviews and the
+three older pending motion reviews retain their existing status.
+
+## Earlier increment: appearance references prepared; new human label review pending
 
 Ryan's later “Move forward chat” authorized the
 [appearance-reference plan](../nba_appearance_reference_preparation.md), recorded

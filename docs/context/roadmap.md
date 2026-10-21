@@ -1,6 +1,34 @@
 # Roadmap
 
-## Current step: human review of newly prepared appearance references
+## Current step: accepted appearance references; fixed feature screen awaits approval
+
+Ryan accepted all 26 appearance proposals with “I accept the proposals. Move
+forward chat”. The [accepted publication](../nba_appearance_reference_acceptance_results.md)
+and [compact result](../../configs/ball_tracking/reviews/nba_appearance_reference_publication_result_v0_1.json)
+preserve ten ball, ten other-object and six unresolved labels, AI authorship,
+the reader disagreement and the original draft/media. Publication completed
+in 0.696 seconds; six focused tests and 380 independent checks pass. This new
+label review is complete; earlier accepted references and reviews remain intact.
+
+The next [plan](../nba_appearance_feature_screen_plan.md) and
+[proposal](../../configs/ball_tracking/proposals/nba_appearance_feature_screen_v0_1.json)
+request one fixed DINOv2 ViT-S/14 nearest-reference feasibility screen, not yet
+approved or run. Extract 60 crops from 49 cached target frames: ten resolved SAC
+bank objects, ten resolved excluded checks, six unknowns and 34 exposed older
+regression objects. Require exactly ten correct resolved-check classifications,
+including the valid near-head DET balls. Do not train, tune a parameter grid,
+replace examples or change trajectories; leave unknowns unscored.
+
+All resolved bank examples are SAC-only; P002 provides no resolved fit label.
+The excluded negatives are hands, with no head or clothing negative. The older
+gap/anchor challenge is already exposed and mixes mean and contributor-derived
+points. Report these limits even if the strict small screen passes. A pass can
+support a later bounded abstention-policy proposal; it cannot establish verifier
+accuracy, unseen head rejection or broad candidate coverage. Any later rule must
+preserve original points and check both anchors and all proposed fills. No new
+fit, inference, threshold search or holdout access is authorized by acceptance.
+
+## Earlier step: human review of newly prepared appearance references
 
 Ryan's “Move forward chat” approved the
 [appearance-reference preparation](../nba_appearance_reference_preparation.md),

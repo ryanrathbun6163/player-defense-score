@@ -1,0 +1,65 @@
+{
+  "schema_version": "nba_appearance_reference_acceptance/v0.1",
+  "status": "accepted",
+  "reviewer_id": "Ryan",
+  "reviewed_at_utc": "2026-10-21T17:39:01.649646+00:00",
+  "user_statement": "I accept the proposals. Move forward chat",
+  "annotation_origin": "assistant_visual_proposal",
+  "review_method": "human_visual_acceptance_of_assisted_proposals",
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "5fa6d77faa401fd58e7b863dd404e21b9565bb4e"
+  },
+  "scope": "Explicit acceptance of all26 appearance proposals presented in the complete48-second review and guide, including six unresolved labels and the published conservative DET11499 judgment. Accept object classes/rationales as human-reviewed AI references; retain recorded reader disagreement. No independent human annotation, measured playback telemetry or model-output acceptance is claimed.",
+  "preparation_result": {
+    "path": "configs/ball_tracking/reviews/nba_appearance_reference_result_v0_1.json",
+    "sha256": "fead501896dbed21ba6acfd2483c0d791698597243dde8afd6a60823de7da683",
+    "bytes": 17406
+  },
+  "preparation": {
+    "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/preparation/preparation.json",
+    "sha256": "8057127b353d18e2033ff596a38faefa75236940c5008ea1593b81ea385ad894",
+    "bytes": 131574
+  },
+  "proposal": {
+    "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/annotations/proposal.json",
+    "sha256": "6a8f0241a0e1503e8f276ef018e1bbf469ccfcff53dd91cd734a729f54bc1832",
+    "bytes": 9758
+  },
+  "proposal_seal": {
+    "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/annotations/proposal_sealed.json",
+    "sha256": "75974f2a1f1aea4a8452e7cc8cefebe6fabfa43d7a7b443cbc0c5c6f4611ebe4",
+    "bytes": 2404
+  },
+  "review_completion": {
+    "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/review/completion.json",
+    "sha256": "91981ba9a8ff496c75a39e926dab981b8ac73c6377d18a583a74936122d2c393",
+    "bytes": 15106
+  },
+  "accepted_counts": {
+    "other_object": 10,
+    "ball": 10,
+    "unresolved": 6
+  },
+  "source_roles": {
+    "sac_mem_q1_c01": "fit_eligible",
+    "possession_002": "fit_eligible",
+    "sas_det_q1_c02": "excluded_check",
+    "possession_003": "excluded_check"
+  },
+  "accepted_candidate_records": 26,
+  "accepted_target_frames": 15,
+  "unresolved_used_as_negatives": false,
+  "independent_human_annotation": false,
+  "original_drafts_and_pending_receipts_preserved": true,
+  "publication_authorized": true,
+  "next_step_authorized": "Publish accepted appearance references and assess evidence adequacy for a concrete bounded next proposal.",
+  "new_training_authorized": false,
+  "new_inference_authorized": false,
+  "new_appearance_rule_trial_authorized": false,
+  "threshold_search_authorized": false,
+  "model_output_acceptance": "not_inferred_from_reference_acceptance",
+  "broader_rule_adoption": false,
+  "holdout_release_authorized": false,
+  "push_pr_merge_authorized": false
+}

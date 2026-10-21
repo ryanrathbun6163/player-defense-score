@@ -1,6 +1,37 @@
 # Validation History
 
-## Candidate appearance preparation and complete review; new label acceptance pending
+## All 26 appearance references accepted; separate publication audited
+
+Ryan explicitly accepted the presented package: “I accept the proposals. Move
+forward chat”. The [acceptance results](../nba_appearance_reference_acceptance_results.md)
+and [compact publication result](../../configs/ball_tracking/reviews/nba_appearance_reference_publication_result_v0_1.json)
+bind the separate accepted artifact. All 26 labels/candidates, fifteen targets
+and 75 context frames remain exact. Counts are ten ball, ten other-object and
+six unresolved; source roles and AI authorship remain intact. DET11499 retains
+the recorded reader disagreement and accepted unresolved judgment. Original
+draft/seal/media/result receipts preserve their historical pending status.
+
+Six focused publication tests initially passed in 10.845 seconds. A final
+test-only correction made the suite skip when ignored captured evidence is
+absent in a fresh checkout; all six passed again in 10.971 seconds. Initial test
+source and log remain preserved, and the production publisher did not change.
+One actual publication
+completed in 0.696 seconds, with zero source-pixel decoding, model/array reads,
+inference, fitting or geometric scoring. The implementation's tested local
+bytes are bound in completion; the run does not claim a pre-execution commit.
+Independent standard-library audit passed 380 checks covering full row/candidate
+transport, native source/PTS joins, exact acceptance, counts/roles, disagreement,
+review-byte preservation and unchanged earlier accepted27/original790 evidence.
+No full suite or prior scientific comparison was repeated.
+
+The separate [feature-screen plan](../nba_appearance_feature_screen_plan.md) and
+[proposal](../../configs/ball_tracking/proposals/nba_appearance_feature_screen_v0_1.json)
+remain unapproved and unexecuted: one fixed DINOv2 ViT-S/14 nearest-reference
+screen, 60 crops/49 cached targets, strict ten-of-ten resolved-check gate,
+unknowns unscored and 34 exposed regression objects reported separately.
+No training, parameter search or prediction change follows from this acceptance.
+
+## Earlier checkpoint: candidate appearance preparation and complete review; new label acceptance pending
 
 Ryan's later “Move forward chat” approved appearance-reference preparation from
 clean `codex/ball-detector-baseline` at

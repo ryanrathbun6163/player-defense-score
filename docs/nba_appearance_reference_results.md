@@ -1,5 +1,16 @@
 # Candidate appearance references ready for review
 
+## Later acceptance
+
+Ryan subsequently said “I accept the proposals. Move forward chat”. All 26
+proposals, including six unresolved cases, are now accepted as assisted
+appearance references. The [publication results](nba_appearance_reference_acceptance_results.md)
+record the separate accepted artifact and next proposed feature screen. The
+preparation-era account below and its bound pending receipts remain historical
+evidence; this appearance review does not need to be repeated.
+
+## Original preparation and pending review record
+
 Ryan's “Move forward chat” authorized the
 [appearance-reference preparation](nba_appearance_reference_preparation.md).
 The fixed batch is complete: 15 native target frames, all 26 original mean
