@@ -1,0 +1,968 @@
+{
+  "schema_version": "nba_gap_anchor_reference_evaluation_result/v0.1",
+  "status": "completed",
+  "created_at_utc": "2026-10-21T15:27:32.682489+00:00",
+  "source_commit": "9ee85aee0d468674efae855bb8da6893e183a2b8",
+  "acceptance": {
+    "path": "configs/ball_tracking/reviews/nba_gap_anchor_reference_acceptance_v0_1.json",
+    "sha256": "6f1328d199662fb6591c1c8746f8e0f3a1f027840b49f2b899af85efed0ae572",
+    "bytes": 4481
+  },
+  "accepted_reference": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/accepted/accepted_reference.json",
+    "sha256": "9cfc5279ba084017554e8a55ab74e41fb1baa5914469b08de1cd480382fc3096",
+    "bytes": 108375
+  },
+  "report": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/evaluation/report.json",
+    "sha256": "fca78b8b389bbf4b1aaa1cf20ed9e9260e5a87e92deea92220786666fa5554d3",
+    "bytes": 340643
+  },
+  "completion": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/evaluation/completion.json",
+    "sha256": "7be8966cbbd5b6a81b4a6090ee5e64dbe9cb1dab456664139d049ee7685066fe",
+    "bytes": 2480
+  },
+  "attempt_receipts": [
+    {
+      "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/evaluation/attempts/6b3774cf4f894a39b78aa19a367f7069/completed.json",
+      "sha256": "7be8966cbbd5b6a81b4a6090ee5e64dbe9cb1dab456664139d049ee7685066fe",
+      "bytes": 2480
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/evaluation/attempts/6b3774cf4f894a39b78aa19a367f7069/publication.json",
+      "sha256": "d92e6a77cc87bf74c62e88d96b78e1aa0bbab837af08a7ca71affe2716bf427e",
+      "bytes": 456
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/evaluation/attempts/6b3774cf4f894a39b78aa19a367f7069/started.json",
+      "sha256": "fb234f73bb626e3f3744ef6c7cd40d13f157f7186dc81fa2bedaa8b83806a0bb",
+      "bytes": 1674
+    }
+  ],
+  "publication_implementation": [
+    {
+      "path": "src/ball_tracking/nba_gap_anchor_reference_evaluation.py",
+      "sha256": "4958a8c00e4b58933e4b5303cfafd7e6acaa0d1e86f3add9427071bf7d31b10f",
+      "bytes": 16011
+    },
+    {
+      "path": "src/ball_tracking/nba_temporal_gap_selection.py",
+      "sha256": "5e0d195e4ce318bb271c6286f68abe31ed1e2c7bd4fd64a8fa7a2408fec69202",
+      "bytes": 31732
+    },
+    {
+      "path": "src/ball_tracking/nba_candidate_preservation.py",
+      "sha256": "818017033b3648d7d63f05534bcecec719e0d6a92d4da200332ab453e2403485",
+      "bytes": 24933
+    },
+    {
+      "path": "src/ball_tracking/annotations.py",
+      "sha256": "f2f775ca12a3780f7f5e6d81c65e595a5d24d1fa334c0dac38258e758bb9203a",
+      "bytes": 36408
+    },
+    {
+      "path": "src/ball_tracking/nba_gap_anchor_reference.py",
+      "sha256": "91213d971c2ba826a9764d2707697a056f445d4bfd363222b9746721510bf8fc",
+      "bytes": 20421
+    },
+    {
+      "path": "src/ball_tracking/nba_wasb_diagnostic.py",
+      "sha256": "b8dcd105e964475e0efc53e45449e47acdc4341e7409f371d5c44172d0e950f3",
+      "bytes": 34275
+    }
+  ],
+  "preparation_result": {
+    "path": "configs/ball_tracking/reviews/nba_gap_anchor_reference_result_v0_1.json",
+    "sha256": "17cc056e53259776b3c7dea73ce38374cf286188812f1e7a46116a80667146c4",
+    "bytes": 14840
+  },
+  "original_proposal": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/annotations/proposal.json",
+    "sha256": "ebb96b0e5a60e3f4352551231b3db3f5da1a6fadf5e17629f28d469de0dd3b94",
+    "bytes": 93750
+  },
+  "proposal_seal": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/annotations/proposal_sealed.json",
+    "sha256": "21185cee435e78cc7abfe322fa275fd987595d5eda3d79fdeff12fff92d8e4ef",
+    "bytes": 2215
+  },
+  "original_790_report": {
+    "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/attempts/c4c9e3e80c5b4beaaa49147f0e0ad3b5/report.json",
+    "sha256": "52416ba8d5455e981f929a3db8b0899f9dd12d08ce898ee5906ee64a8e214e22",
+    "bytes": 7416104
+  },
+  "saved_selection": {
+    "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/attempts/c4c9e3e80c5b4beaaa49147f0e0ad3b5/selection.json",
+    "sha256": "ad6b1dd441197ee6115566c4623151b064a09b82c2ae3fd57fd651495e3bafe4",
+    "bytes": 74417393
+  },
+  "object_assessment": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/object_assessment/summary.json",
+    "sha256": "2abd20273f3a61c1e0d92312bdf5ffc63725ed33074852df93020e486da22107",
+    "bytes": 15251
+  },
+  "new_reference_summary": {
+    "new_references_only": {
+      "frames": 27,
+      "eligibility": {
+        "unknown": 5,
+        "eligible": 22
+      },
+      "baseline": {
+        "matched": 14,
+        "wrong": 0,
+        "missing": 8,
+        "hidden_alarm": 0,
+        "hidden_quiet": 0,
+        "unscored": 5,
+        "raw_error_emitted_eligible_px": {
+          "count": 14,
+          "mean": 4.7082389065158425,
+          "median": 4.533887038072258,
+          "p95": 8.851811360740934,
+          "max": 9.78783275879458
+        },
+        "raw_error_matched_px": {
+          "count": 14,
+          "mean": 4.7082389065158425,
+          "median": 4.533887038072258,
+          "p95": 8.851811360740934,
+          "max": 9.78783275879458
+        },
+        "raw_error_wrong_px": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      },
+      "selected": {
+        "matched": 22,
+        "wrong": 0,
+        "missing": 0,
+        "hidden_alarm": 0,
+        "hidden_quiet": 0,
+        "unscored": 5,
+        "raw_error_emitted_eligible_px": {
+          "count": 22,
+          "mean": 4.881473899596913,
+          "median": 4.938766748270768,
+          "p95": 9.035655263717532,
+          "max": 9.78783275879458
+        },
+        "raw_error_matched_px": {
+          "count": 22,
+          "mean": 4.881473899596913,
+          "median": 4.938766748270768,
+          "p95": 9.035655263717532,
+          "max": 9.78783275879458
+        },
+        "raw_error_wrong_px": {
+          "count": 0,
+          "mean": null,
+          "median": null,
+          "p95": null,
+          "max": null
+        }
+      },
+      "changed_frames": 11,
+      "outcome_transitions": {
+        "unscored -> unscored": 5,
+        "matched -> matched": 14,
+        "missing -> matched": 8
+      },
+      "new_wrong": 0,
+      "new_hidden_alarm": 0
+    },
+    "by_role": {
+      "anchor": {
+        "frames": 16,
+        "eligibility": {
+          "unknown": 2,
+          "eligible": 14
+        },
+        "baseline": {
+          "matched": 14,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 2,
+          "raw_error_emitted_eligible_px": {
+            "count": 14,
+            "mean": 4.7082389065158425,
+            "median": 4.533887038072258,
+            "p95": 8.851811360740934,
+            "max": 9.78783275879458
+          },
+          "raw_error_matched_px": {
+            "count": 14,
+            "mean": 4.7082389065158425,
+            "median": 4.533887038072258,
+            "p95": 8.851811360740934,
+            "max": 9.78783275879458
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "selected": {
+          "matched": 14,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 2,
+          "raw_error_emitted_eligible_px": {
+            "count": 14,
+            "mean": 4.7082389065158425,
+            "median": 4.533887038072258,
+            "p95": 8.851811360740934,
+            "max": 9.78783275879458
+          },
+          "raw_error_matched_px": {
+            "count": 14,
+            "mean": 4.7082389065158425,
+            "median": 4.533887038072258,
+            "p95": 8.851811360740934,
+            "max": 9.78783275879458
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "changed_frames": 0,
+        "outcome_transitions": {
+          "unscored -> unscored": 2,
+          "matched -> matched": 14
+        },
+        "new_wrong": 0,
+        "new_hidden_alarm": 0
+      },
+      "fill": {
+        "frames": 11,
+        "eligibility": {
+          "unknown": 3,
+          "eligible": 8
+        },
+        "baseline": {
+          "matched": 0,
+          "wrong": 0,
+          "missing": 8,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 3,
+          "raw_error_emitted_eligible_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "raw_error_matched_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "selected": {
+          "matched": 8,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 3,
+          "raw_error_emitted_eligible_px": {
+            "count": 8,
+            "mean": 5.184635137488786,
+            "median": 5.61389238237447,
+            "p95": 8.225903201370308,
+            "max": 9.071858180823083
+          },
+          "raw_error_matched_px": {
+            "count": 8,
+            "mean": 5.184635137488786,
+            "median": 5.61389238237447,
+            "p95": 8.225903201370308,
+            "max": 9.071858180823083
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "changed_frames": 11,
+        "outcome_transitions": {
+          "unscored -> unscored": 3,
+          "missing -> matched": 8
+        },
+        "new_wrong": 0,
+        "new_hidden_alarm": 0
+      }
+    },
+    "by_source": {
+      "sac_mem_q1_c01": {
+        "frames": 3,
+        "eligibility": {
+          "unknown": 3
+        },
+        "baseline": {
+          "matched": 0,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 3,
+          "raw_error_emitted_eligible_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "raw_error_matched_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "selected": {
+          "matched": 0,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 3,
+          "raw_error_emitted_eligible_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "raw_error_matched_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "changed_frames": 1,
+        "outcome_transitions": {
+          "unscored -> unscored": 3
+        },
+        "new_wrong": 0,
+        "new_hidden_alarm": 0
+      },
+      "sas_det_q1_c02": {
+        "frames": 4,
+        "eligibility": {
+          "eligible": 4
+        },
+        "baseline": {
+          "matched": 2,
+          "wrong": 0,
+          "missing": 2,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 0,
+          "raw_error_emitted_eligible_px": {
+            "count": 2,
+            "mean": 7.113027732820266,
+            "median": 7.113027732820266,
+            "p95": 8.22432262812287,
+            "max": 8.347799838712048
+          },
+          "raw_error_matched_px": {
+            "count": 2,
+            "mean": 7.113027732820266,
+            "median": 7.113027732820266,
+            "p95": 8.22432262812287,
+            "max": 8.347799838712048
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "selected": {
+          "matched": 4,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 0,
+          "raw_error_emitted_eligible_px": {
+            "count": 4,
+            "mean": 6.533481534958967,
+            "median": 6.219235902574032,
+            "p95": 8.079662289638177,
+            "max": 8.347799838712048
+          },
+          "raw_error_matched_px": {
+            "count": 4,
+            "mean": 6.533481534958967,
+            "median": 6.219235902574032,
+            "p95": 8.079662289638177,
+            "max": 8.347799838712048
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "changed_frames": 2,
+        "outcome_transitions": {
+          "matched -> matched": 2,
+          "missing -> matched": 2
+        },
+        "new_wrong": 0,
+        "new_hidden_alarm": 0
+      },
+      "possession_001": {
+        "frames": 6,
+        "eligibility": {
+          "eligible": 6
+        },
+        "baseline": {
+          "matched": 4,
+          "wrong": 0,
+          "missing": 2,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 0,
+          "raw_error_emitted_eligible_px": {
+            "count": 4,
+            "mean": 6.79912980291318,
+            "median": 7.470832447098475,
+            "p95": 9.456901030947442,
+            "max": 9.78783275879458
+          },
+          "raw_error_matched_px": {
+            "count": 4,
+            "mean": 6.79912980291318,
+            "median": 7.470832447098475,
+            "p95": 9.456901030947442,
+            "max": 9.78783275879458
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "selected": {
+          "matched": 6,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 0,
+          "raw_error_emitted_eligible_px": {
+            "count": 6,
+            "mean": 7.024751276874831,
+            "median": 7.470832447098475,
+            "p95": 9.608839114301706,
+            "max": 9.78783275879458
+          },
+          "raw_error_matched_px": {
+            "count": 6,
+            "mean": 7.024751276874831,
+            "median": 7.470832447098475,
+            "p95": 9.608839114301706,
+            "max": 9.78783275879458
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "changed_frames": 2,
+        "outcome_transitions": {
+          "matched -> matched": 4,
+          "missing -> matched": 2
+        },
+        "new_wrong": 0,
+        "new_hidden_alarm": 0
+      },
+      "possession_003": {
+        "frames": 14,
+        "eligibility": {
+          "eligible": 12,
+          "unknown": 2
+        },
+        "baseline": {
+          "matched": 8,
+          "wrong": 0,
+          "missing": 4,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 2,
+          "raw_error_emitted_eligible_px": {
+            "count": 8,
+            "mean": 3.0615962517410678,
+            "median": 3.075039998059897,
+            "p95": 4.756721489274633,
+            "max": 4.815906122960799
+          },
+          "raw_error_matched_px": {
+            "count": 8,
+            "mean": 3.0615962517410678,
+            "median": 3.075039998059897,
+            "p95": 4.756721489274633,
+            "max": 4.815906122960799
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "selected": {
+          "matched": 12,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 2,
+          "raw_error_emitted_eligible_px": {
+            "count": 12,
+            "mean": 3.259165999170602,
+            "median": 3.075039998059897,
+            "p95": 5.778574834686225,
+            "max": 6.654843953815157
+          },
+          "raw_error_matched_px": {
+            "count": 12,
+            "mean": 3.259165999170602,
+            "median": 3.075039998059897,
+            "p95": 5.778574834686225,
+            "max": 6.654843953815157
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "changed_frames": 6,
+        "outcome_transitions": {
+          "matched -> matched": 8,
+          "missing -> matched": 4,
+          "unscored -> unscored": 2
+        },
+        "new_wrong": 0,
+        "new_hidden_alarm": 0
+      }
+    },
+    "by_analysis_group": {
+      "sac_training_fit": {
+        "frames": 3,
+        "eligibility": {
+          "unknown": 3
+        },
+        "baseline": {
+          "matched": 0,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 3,
+          "raw_error_emitted_eligible_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "raw_error_matched_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "selected": {
+          "matched": 0,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 3,
+          "raw_error_emitted_eligible_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "raw_error_matched_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "changed_frames": 1,
+        "outcome_transitions": {
+          "unscored -> unscored": 3
+        },
+        "new_wrong": 0,
+        "new_hidden_alarm": 0
+      },
+      "det_development": {
+        "frames": 4,
+        "eligibility": {
+          "eligible": 4
+        },
+        "baseline": {
+          "matched": 2,
+          "wrong": 0,
+          "missing": 2,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 0,
+          "raw_error_emitted_eligible_px": {
+            "count": 2,
+            "mean": 7.113027732820266,
+            "median": 7.113027732820266,
+            "p95": 8.22432262812287,
+            "max": 8.347799838712048
+          },
+          "raw_error_matched_px": {
+            "count": 2,
+            "mean": 7.113027732820266,
+            "median": 7.113027732820266,
+            "p95": 8.22432262812287,
+            "max": 8.347799838712048
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "selected": {
+          "matched": 4,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 0,
+          "raw_error_emitted_eligible_px": {
+            "count": 4,
+            "mean": 6.533481534958967,
+            "median": 6.219235902574032,
+            "p95": 8.079662289638177,
+            "max": 8.347799838712048
+          },
+          "raw_error_matched_px": {
+            "count": 4,
+            "mean": 6.533481534958967,
+            "median": 6.219235902574032,
+            "p95": 8.079662289638177,
+            "max": 8.347799838712048
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "changed_frames": 2,
+        "outcome_transitions": {
+          "matched -> matched": 2,
+          "missing -> matched": 2
+        },
+        "new_wrong": 0,
+        "new_hidden_alarm": 0
+      },
+      "nfhs_development": {
+        "frames": 20,
+        "eligibility": {
+          "eligible": 18,
+          "unknown": 2
+        },
+        "baseline": {
+          "matched": 12,
+          "wrong": 0,
+          "missing": 6,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 2,
+          "raw_error_emitted_eligible_px": {
+            "count": 12,
+            "mean": 4.307440768798439,
+            "median": 3.923812559935616,
+            "p95": 8.574416423355075,
+            "max": 9.78783275879458
+          },
+          "raw_error_matched_px": {
+            "count": 12,
+            "mean": 4.307440768798439,
+            "median": 3.923812559935616,
+            "p95": 8.574416423355075,
+            "max": 9.78783275879458
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "selected": {
+          "matched": 18,
+          "wrong": 0,
+          "missing": 0,
+          "hidden_alarm": 0,
+          "hidden_quiet": 0,
+          "unscored": 2,
+          "raw_error_emitted_eligible_px": {
+            "count": 18,
+            "mean": 4.514361091738678,
+            "median": 4.533887038072258,
+            "p95": 9.179254367518807,
+            "max": 9.78783275879458
+          },
+          "raw_error_matched_px": {
+            "count": 18,
+            "mean": 4.514361091738678,
+            "median": 4.533887038072258,
+            "p95": 9.179254367518807,
+            "max": 9.78783275879458
+          },
+          "raw_error_wrong_px": {
+            "count": 0,
+            "mean": null,
+            "median": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "changed_frames": 8,
+        "outcome_transitions": {
+          "matched -> matched": 12,
+          "missing -> matched": 6,
+          "unscored -> unscored": 2
+        },
+        "new_wrong": 0,
+        "new_hidden_alarm": 0
+      }
+    },
+    "unscored_new_frames": [
+      {
+        "continuous_source_id": "sac_mem_q1_c01",
+        "source_frame_index": 1419,
+        "role": "anchor",
+        "visibility": "indeterminate",
+        "emitted_point_present": true
+      },
+      {
+        "continuous_source_id": "sac_mem_q1_c01",
+        "source_frame_index": 1420,
+        "role": "fill",
+        "visibility": "indeterminate",
+        "emitted_point_present": true
+      },
+      {
+        "continuous_source_id": "sac_mem_q1_c01",
+        "source_frame_index": 1421,
+        "role": "anchor",
+        "visibility": "indeterminate",
+        "emitted_point_present": true
+      },
+      {
+        "continuous_source_id": "possession_003",
+        "source_frame_index": 333,
+        "role": "fill",
+        "visibility": "indeterminate",
+        "emitted_point_present": true
+      },
+      {
+        "continuous_source_id": "possession_003",
+        "source_frame_index": 334,
+        "role": "fill",
+        "visibility": "indeterminate",
+        "emitted_point_present": true
+      }
+    ]
+  },
+  "control_reproduction": {
+    "rows": 7,
+    "exact_original_scores_reproduced": true,
+    "included_in_new_summary": false
+  },
+  "geometry_object_cross_counts": {
+    "new_27": {
+      "unscored / other_object": 3,
+      "matched / ball": 16,
+      "matched / unresolved": 6,
+      "unscored / unresolved": 2
+    },
+    "new_anchors_16": {
+      "unscored / other_object": 2,
+      "matched / ball": 10,
+      "matched / unresolved": 4
+    },
+    "new_fills_11": {
+      "unscored / other_object": 1,
+      "matched / ball": 6,
+      "matched / unresolved": 2,
+      "unscored / unresolved": 2
+    },
+    "reused_controls_7": {
+      "matched / ball": 7
+    }
+  },
+  "metric": {
+    "raw_match_radius_px": 10,
+    "boundary": "inclusive",
+    "requires_in_image_point": true,
+    "uncertainty_adjusted_error": "diagnostic_only",
+    "qualitative_object_identity_veto": false,
+    "candidate_availability": "Only the saved pool at each row's candidate_availability_scope; not an exhaustive search."
+  },
+  "validation": {
+    "focused_tests": 4,
+    "focused_elapsed_seconds": 6.428,
+    "focused_command": ".venv/Scripts/python.exe -B -m unittest tests.test_nba_gap_anchor_reference_evaluation -v",
+    "focused_log": {
+      "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/evaluation/preparation/evaluation_focused_01.log",
+      "sha256": "01dbe4c51a839d554e5bc168508ab4bb034640c0fb8e38815521d1eae4a32159",
+      "bytes": 995
+    },
+    "test_source": {
+      "path": "tests/test_nba_gap_anchor_reference_evaluation.py",
+      "sha256": "e18f9011edbe6b79b723973a75dbf54fd31dc6732071c38c19e4ee57873796e3",
+      "bytes": 12983
+    },
+    "independent_audit": {
+      "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/evaluation/independent_audit_01.json",
+      "sha256": "88470e1b9fb91fbe0324b17beed63d372815fde4cce8132f421cb9ba0e61c8f4",
+      "bytes": 3445
+    },
+    "independent_audit_checks": 1901,
+    "independent_audit_status": "passed",
+    "full_suite_repeated": false
+  },
+  "resources": {
+    "publication_evaluation_elapsed_seconds": 2.155999999999949,
+    "model_calls": 0,
+    "candidate_array_reads": 0,
+    "source_video_reads": 0,
+    "source_decodes": 0,
+    "image_pixel_reads": 0,
+    "original_artifacts_modified": false
+  },
+  "interpretation": {
+    "new_geometric_recoveries": 8,
+    "new_geometric_recoveries_with_ai_ball_judgment": 6,
+    "new_geometric_recoveries_with_unresolved_object": 2,
+    "geometric_unknowns": 5,
+    "all_six_p001_targets": "geometric matches; exact object identity unresolved",
+    "sac_1419_1420_1421": "unknown ball centers; separate adverse AI head judgments, including the new fill",
+    "p003_333_334": "unknown ball centers and unresolved object identity",
+    "independent_human_annotation": false,
+    "categorical_objects_separately_human_adjudicated": false,
+    "selected_correlated_development_set": true,
+    "broader_unchanged_rule_supported": false,
+    "ball_phase_complete": false
+  },
+  "preserved": {
+    "original_790_and_seven_control_rows_unchanged": true,
+    "original_pending_draft_and_review_receipts_unchanged": true,
+    "retained_checkpoint_sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+    "nba_continuation_rejected": true,
+    "det_excluded_from_fit": true,
+    "sealed_holdouts_closed": true,
+    "completed_reviews_preserved": true,
+    "older_motion_reviews_pending": 3
+  },
+  "next_step": {
+    "status": "proposed_not_executed",
+    "scope": "Prepare appearance-verification candidate examples and source-block evaluation roles for original anchors and fill candidates before choosing one future rule.",
+    "current_34_role": "already-exposed regression only; SAC head triplet is one correlated episode",
+    "separate_blocks_required": "Fit/development and untouched negative-check episodes must not overlap; freeze permitted context roles before labeling or fitting.",
+    "uncertainty": "Ball, confirmed other object, unresolved. Never infer semantic negatives from geometric misses.",
+    "future_behavior": "Preserve original coordinates; allow or abstain from new fills using supported anchor and candidate identity.",
+    "training_or_inference_authorized": false,
+    "holdout_release_authorized": false,
+    "push_pr_merge_authorized": false
+  }
+}

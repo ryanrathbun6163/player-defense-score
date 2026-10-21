@@ -175,11 +175,23 @@ records completion without an explicit quality endorsement or broader-rule
 adoption. The head-fill finding and uncertain NFHS cases remain. Continuous
 tracking and ball-phase completion remain ahead.
 The approved [gap/anchor reference preparation](docs/nba_gap_anchor_reference_results.md)
-is complete: 27 new AI judgments (22 approximate centers and five unknowns),
-seven unchanged accepted controls, and one verified 24.8-second review covering
-all ten contexts. Human reference acceptance is pending; no new scores exist.
-Separate saved-object inspection confirms the SAC head anchors/fill and leaves
-eight NFHS boundary cases unresolved. No new fit or threshold change occurred.
+is complete, and Ryan accepted its 27 new AI judgments after review:
+“ok great chat they have been reviewed. move forward”. The
+[acceptance record](configs/ball_tracking/reviews/nba_gap_anchor_reference_acceptance_v0_1.json)
+preserves AI authorship and five unknown centers. The separate
+[saved-output evaluation](docs/nba_gap_anchor_reference_evaluation_results.md)
+gives **14→22 geometric matches**, zero wrong outputs and **8→0 missing** among
+22 eligible new references; five remain unscored. Eight of eleven new fills
+match, while three are unscored. Seven accepted controls reproduce exactly and
+are excluded from the new denominator; the original 790-frame report is unchanged.
+The [compact result](configs/ball_tracking/reviews/nba_gap_anchor_reference_evaluation_result_v0_1.json)
+binds the evidence. Geometric matches do not validate object identity: six P001
+points remain visually unresolved, and the three SAC head points remain adverse,
+unscored evidence. Reference acceptance does not separately adjudicate those AI
+object judgments. The recommended next step is bounded appearance verification
+of original anchors and fill candidates, with abstention and distinct evaluation
+roles fixed before choosing a rule. No new trial, fit or threshold change is
+authorized or run; a blanket head-proximity veto would also reject real DET balls.
 The original baseline remains intact, and the failed NBA continuation stays rejected.
 These correlated, failure-selected labels are
 a development diagnostic; slowed label overlays do not demonstrate improved

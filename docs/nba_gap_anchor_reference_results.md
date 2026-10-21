@@ -1,5 +1,10 @@
 # Gap and anchor reference review
 
+**Later status:** Ryan accepted this package with “ok great chat they have been
+reviewed. move forward”. Separate [accepted-reference evaluation results](nba_gap_anchor_reference_evaluation_results.md)
+now supersede the pending acceptance/scoring status below. The historical
+preparation record and sealed draft remain unchanged.
+
 Ryan's later “Move forward chat” authorized the
 [27-frame reference plan](nba_gap_anchor_reference_plan.md). This is separate
 from his completed review of the five continuous comparison videos. The

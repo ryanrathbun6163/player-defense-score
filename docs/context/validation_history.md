@@ -1,5 +1,39 @@
 # Validation History
 
+## Accepted gap/anchor reference publication and evaluation completed
+
+Ryan accepted the presented package with “ok great chat they have been reviewed.
+move forward”. The separate acceptance and evaluator were committed at
+`9ee85aee0d468674efae855bb8da6893e183a2b8`. One publication/evaluation run
+completed in 2.156 seconds, preserving the sealed draft, pending-era receipts,
+seven accepted controls and original 790-frame report. No new inference,
+candidate-array read, source-pixel read, fit or prediction change occurred.
+
+Four focused tests passed in 6.428 seconds, covering actual producer transport,
+metadata-only publication/scoring, exact old controls, unchanged inclusive
+ten-pixel semantics, five unknowns, uncertainty diagnostics, write-once outputs
+and tamper rejection. No full suite was repeated. The
+[compact result](../../configs/ball_tracking/reviews/nba_gap_anchor_reference_evaluation_result_v0_1.json)
+binds the focused log, independent actual-run audit and exact artifacts. The
+audit passes 1,901 checks, independently recomputing all 68 score records and
+every summary with standard-library math, checking all 34 source joins and
+seven controls, and verifying 27 artifact bindings without pixel decoding.
+
+The 27 new references change from 14 matched/8 missing/5 unscored to
+22 matched/0 missing/5 unscored, with zero geometric errors. All seven controls
+reproduce their full prior score records exactly and are excluded from these
+totals. The eight added geometric matches comprise six AI ball judgments and
+two unresolved P001 boundary cases. All six P001 eligible targets remain
+semantically unresolved despite geometric matches. SAC1419–1421 remain unknown
+ball centers and separate adverse head-tracking evidence; P003333–334 remain
+unknown and unresolved. No hidden-ball labels or fabricated error distances
+were added. Full interpretation and the next proposed appearance-verification
+increment are in the [evaluation report](../nba_gap_anchor_reference_evaluation_results.md).
+
+The source-only reference review is complete; the original AI authorship,
+non-blind correlated development scope and lack of separate human object
+adjudication remain explicit. Broader unchanged-rule adoption remains unsupported.
+
 ## Gap/anchor reference preparation and review completed; acceptance pending
 
 Ryan's later “Move forward chat” approved the

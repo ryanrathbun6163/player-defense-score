@@ -1,43 +1,56 @@
 # Current State
 
-## Latest increment: gap/anchor AI references ready for human review
+## Latest increment: gap/anchor references accepted; saved-output scoring complete
 
-Ryan's subsequent “Move forward chat” authorized the
-[reference plan](../nba_gap_anchor_reference_plan.md). The
-[completed preparation and review](../nba_gap_anchor_reference_results.md) and
-[compact result](../../configs/ball_tracking/reviews/nba_gap_anchor_reference_result_v0_1.json)
-contain 27 new AI judgments: 22 approximate complete-ball centers and five
-indeterminate/null cases (SAC 1419–1421; P003 333–334). Seven existing accepted
-controls retain their exact rows and provenance. All ten repaired gaps and
-twenty anchors are covered, with 74 permitted source frames; forty neighboring
-frames remain context-only. Preparation was frozen before annotation, and the
-proposal was sealed before separate saved-object inspection. Human acceptance
-of these new references remains pending; no new geometric scores exist.
+After the explicit request to accept or correct the completed reference review,
+Ryan said “ok great chat they have been reviewed. move forward”. The
+[acceptance record](../../configs/ball_tracking/reviews/nba_gap_anchor_reference_acceptance_v0_1.json)
+accepts all 27 new AI judgments, including 22 approximate centers and five
+indeterminate/null cases (SAC 1419–1421; P003 333–334). This is human acceptance
+of assisted references, not independent human annotation or separate semantic
+object adjudication. A separate accepted artifact preserves AI authorship;
+the sealed pending-era proposal, media and seven accepted controls remain exact.
 
-The separate object judgments are 23 ball, three other-object and eight
-unresolved across 34 targets. All three other-object judgments identify the
-same SAC head: original anchors 1419/1421 and repaired 1420. Unresolved cases
-are P001 18–20/90–92 and P003 333–334. The P001 points touch blurred ball/sleeve
-boundaries; that does not establish a geometric error because a complete-ball
-center can lie behind an occluder. P003 335 remains probable. These are AI
-judgments, not accepted new accuracy measurements.
+The [completed evaluation](../nba_gap_anchor_reference_evaluation_results.md) and
+[compact result](../../configs/ball_tracking/reviews/nba_gap_anchor_reference_evaluation_result_v0_1.json)
+score only saved coordinates at the unchanged inclusive ten-pixel radius.
 
-One 24.8-second compilation shows all ten source contexts, reference-only
-markers and final holds. All 74 encoded keys/timestamps/pixels/markers passed;
-AI inspection covers all 34 target stills, ten context finals and actual final
-P003/366. Eleven distinct focused checks, 792 independent preparation checks
-and 1,232 independent media checks pass. A renderer-test codec-tolerance failure
-and corrected affected checks are retained; actual preparation/render each
-completed on its first attempt. No full suite was repeated.
+| New reference group | Original matched / wrong / missing / unscored | Selected matched / wrong / missing / unscored |
+| --- | --- | --- |
+| All 27 new references | 14 / 0 / 8 / 5 | 22 / 0 / 0 / 5 |
+| Eleven new fills | 0 / 0 / 8 / 3 | 8 / 0 / 0 / 3 |
+| Sixteen new anchors | 14 / 0 / 0 / 2 | 14 / 0 / 0 / 2 |
 
-**Next action:** Ryan accepts or corrects this new reference package. Then
-publish a separate human-accepted AI reference and score already-saved outputs
-at the unchanged ten-pixel radius, keeping 27 new targets separate from the
-original 790 and not duplicating seven controls. Do not alter the sealed AI
-draft or infer acceptance from preparation approval. No model calls, training,
-threshold tuning, holdout access or broader rule adoption occurred. The
-retained checkpoint, rejected continuation, accepted bounded gains, completed
-five-video review and three older pending motion reviews remain unchanged.
+All seven reused controls reproduce their original scores exactly and are not
+included in these new denominators. The original 790-frame report is unchanged.
+Five unknowns remain unscored even when a point is emitted; uncertainty-adjusted
+distance is diagnostic only. These selected, correlated cases are development
+evidence, not an independent estimate of continuous tracking accuracy.
+
+Geometric matches do not settle object identity. All six P001 points at
+18–20/90–92 match their accepted approximate centers but remain unresolved in
+the separate AI object inspection because of blurred ball/sleeve boundaries.
+The SAC head anchors 1419/1421 and fill 1420 remain adverse visual evidence,
+with unknown true centers and no geometric score. P003 333/334 also stay unknown.
+Human reference acceptance does not turn unresolved object judgments into
+confirmed ball recoveries or endorse broader adoption of the unchanged rule.
+
+Publication and evaluation completed in 2.156 seconds without model calls,
+arrays, pixel reads or decoding. Four focused tests and 1,901 independent audit
+checks pass, covering all 34 targets, both arms and exact controls. Earlier
+preparation/media checks, the retained codec-test failure, complete 24.8-second
+review and its 74 permitted native
+context frames remain documented in the
+[preparation result](../nba_gap_anchor_reference_results.md). No full suite was repeated.
+
+**Recommended next work:** prepare a bounded appearance-verification proposal
+for original anchors and fill candidates, able to abstain when identity is
+uncertain. Define distinct source-context candidate examples and excluded
+evaluation roles before selecting one rule. A blanket head-proximity veto is
+unsuitable because real DET ball observations also lie near heads. No new trial,
+fit, threshold tuning, holdout access or broader adoption is authorized or run.
+The retained checkpoint, rejected continuation, three accepted bounded gains,
+completed five-video review and three older pending motion reviews are unchanged.
 
 ## Earlier increment: continuous videos reviewed; adverse visual evidence retained
 

@@ -1,27 +1,36 @@
 # Roadmap
 
-## Current step: human review of completed gap/anchor references
+## Current step: accepted references scored; prepare bounded appearance verification
 
-The later “Move forward chat” approved the reference batch. Its
-[preparation and compact review](../nba_gap_anchor_reference_results.md) are
-complete: 27 new AI judgments (22 approximate centers, five unknowns), seven
-unchanged accepted controls and one verified 24.8-second compilation covering
-all ten contexts and their actual finals. AI drafts remain pending human
-acceptance. The previous five continuous videos have already been reviewed.
+Ryan accepted the completed reference package with “ok great chat they have
+been reviewed. move forward”. The
+[acceptance record](../../configs/ball_tracking/reviews/nba_gap_anchor_reference_acceptance_v0_1.json)
+preserves AI authorship, approximate centers and five unknowns; it does not
+claim independent human annotation or separate object-identity adjudication.
+The separate [saved-output evaluation](../nba_gap_anchor_reference_evaluation_results.md)
+and [compact result](../../configs/ball_tracking/reviews/nba_gap_anchor_reference_evaluation_result_v0_1.json)
+are complete. At the unchanged ten-pixel radius, the 27 new references improve
+from 14 matches/eight missing to 22 matches/zero missing, with zero wrong and
+five unscored in both arms. Eleven new fills give eight matches/three unscored;
+sixteen new anchors remain fourteen matches/two unscored. Seven exact reused
+controls are excluded from the new denominator, and the original 790 is unchanged.
 
-The source proposals were fixed before separate inspection of all 34 saved
-objects. SAC 1419–1421 consistently mark a head, establishing a bad-original-
-anchor mechanism for the new fill. Eight NFHS object judgments remain unresolved;
-this is not a numerical accuracy result. Broader unchanged-rule adoption remains
-unsupported. No new model or scoring run has occurred.
+This selected development batch does not establish continuous accuracy or
+broader-rule quality. Six P001 points are geometric matches with unresolved
+object identity. SAC 1419–1421 remain adverse head-tracking evidence with unknown
+ball centers and no geometric scores. The completed source review and original
+sealed draft remain intact; five unknown centers retain null geometry.
 
-After Ryan accepts/corrects the reference proposal, publish a separate accepted
-AI reference and score only the already-saved outputs at the unchanged ten-pixel
-radius. Report 27 new targets and their anchor/fill subsets separately from the
-790-frame baseline, with seven reused controls kept out of the new denominator.
-Use accepted adverse and unresolved cases to choose a concrete detection or
-selection intervention. No generic confidence survey, new fit, threshold grid,
-holdout release or downstream possession/scoring work is approved here.
+The recommended next bounded work is an appearance-verification proposal for
+original anchors and fill candidates, allowing abstention. Prepare distinct
+source-context candidate examples and explicit excluded evaluation roles before
+choosing one fixed rule. Preserve true DET ball observations near heads: proximity
+to a head alone cannot be a veto. This addresses wrong-object anchors without
+claiming it can recover the 36 earlier development failures with no matching
+candidate. No new trial, fit, threshold grid, holdout release or downstream
+possession/scoring work is authorized or run. Four focused evaluator tests pass;
+the independent actual-result audit passes 1,901 checks. Earlier completed
+reviews and the three older pending motion reviews retain their existing status.
 
 ## Earlier step: proposed reference batch for repaired gaps and their anchors
 
