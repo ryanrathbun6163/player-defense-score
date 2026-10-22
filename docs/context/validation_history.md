@@ -1,5 +1,32 @@
 # Validation History
 
+## Completion reference batch 02: prepared, reviewed and accepted
+
+The [batch-02 result](../../configs/ball_tracking/reviews/ball_completion_reference_batch_02_result_v0_1.json)
+binds 120 new P002 proposals for frames 50–169 and complete native/slow overlays.
+Ten focused reference tests pass, including five additions derived from the
+actual accepted batch-01 producer records. They verify accepted publication and
+receipt bindings, roles, exact annotation/native-frame agreement, duplicate and
+conflict rejection, and historical batch-01 replay. No full suite was repeated.
+
+An independent metadata inventory reproduces all 440 accepted keys and 833
+uncovered positions. All 120 selected frames are uncovered and permitted; the
+batch was chosen before new source inspection. Native times are [2.04,6.84),
+separate from clip-relative [2.00,6.80). A PyAV/Pillow sequential-decode audit
+matches every saved PNG pixel and timestamp, with no output frame requested
+after169. The preparation used OpenCV; both may use FFmpeg internally, and
+codec-internal lookahead was not instrumented.
+
+Every current source frame was visually inspected, with null centers retained
+where not defensible. Original drafts and manual refinements are preserved.
+All 240 encoded overlay frames, localized marker regions and both actual finals
+are checked against their source/label records. Ryan subsequently accepted all
+120 proposals, including uncertainty and null centers. A separate metadata-only
+publication preserves the exact annotations/native records and original
+pending-era artifacts. Accepted coverage is now 560/1,273 with 713 remaining;
+the earlier 440 accepted references remain unchanged. No fitting, inference,
+model scoring or protected evaluation ran.
+
 ## Completion campaign first increment: retained baseline and accepted references
 
 The [first-increment result](../../configs/ball_tracking/reviews/ball_completion_first_increment_result_v0_1.json)

@@ -1,6 +1,27 @@
 # Current State
 
-## Latest increment: retained baseline, fixed sources and first reference batch
+## Latest increment: second reference batch accepted
+
+The [second reference batch](../ball_tracking_completion_reference_batch_02.md)
+contains 120 new P002 judgments for frames 50–169, selected from uncovered
+permitted coverage before source inspection. Complete native and slow overlays
+include every frame through 169, proposed centers and uncertainty, and an
+exception list for null geometry. Ryan explicitly answered “Accept all 120
+proposals” after the complete overlay and exceptions were delivered. A separate
+acceptance publication preserves the original pending-era review artifacts.
+
+The accepted P003 batch remains byte-identical. Current accepted coverage is
+560/1,273, leaving 713 uncovered. The new batch has 98 eligible centers and 22
+null centers; accepted unknown judgments remain unknown. The loader now includes explicitly bound accepted
+campaign publications in duplicate guards while preserving historical replay.
+Ten focused tests pass; all 120 new source PNGs match an independent decode.
+
+Next: continue the fixed reference package with both accepted campaign batches
+included in duplicate guards. No repeat review of either batch is needed. No fitting or inference
+ran. Protected evaluation remains closed pending a frozen method and separate
+explicit authorization. Campaign approval does not need to be repeated.
+
+## Earlier increment: retained baseline, fixed sources and first reference batch
 
 The approved [completion campaign](../ball_tracking_completion_plan.md) has
 started from the exact clean handoff at `b1dbf027ee14`. Its

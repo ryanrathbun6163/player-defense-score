@@ -1,0 +1,43 @@
+{
+  "schema_version": "completion_reference_batch/v0.1",
+  "batch_id": "reference_batch_02_v0_1",
+  "approval": "configs/ball_tracking/reviews/ball_tracking_completion_campaign_approval_v0_1.json",
+  "source_contract": "configs/ball_tracking/wasb_experiments/wasb_expanded_development_observation_v0_1.json",
+  "possession_id": "possession_002",
+  "range_inclusive": [
+    50,
+    169
+  ],
+  "purpose": "complete_missing_permitted_curated_reference_coverage",
+  "selection_reason": "First 120 frames of the earliest uncovered run of at least 120 frames in possession order after batch01; selected from accepted metadata before new source inspection. Five permitted frames remain before protected boundary175. Not selected by model error.",
+  "role": "post_selection_evaluation_only",
+  "training_eligible": false,
+  "checkpoint_selection_eligible": false,
+  "annotation_origin": "assistant_visual_proposal",
+  "human_acceptance": "pending",
+  "output_root": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_02",
+  "accepted_curated_directory": "configs/ball_tracking/annotations",
+  "accepted_gap_reference": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/accepted/accepted_reference.json",
+    "sha256": "9cfc5279ba084017554e8a55ab74e41fb1baa5914469b08de1cd480382fc3096"
+  },
+  "review": {
+    "native_playback_fps": 25,
+    "slow_playback_fps": 5,
+    "source_pixels_only": true,
+    "whole_batch_required": true,
+    "uncertainty_and_actual_final_required": true
+  },
+  "additional_accepted_references": [
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_01/accepted/reference.json",
+      "sha256": "23e59ca90e8b060d19f4f90436c6c68d64722a216f113ddc05dfdd8b5340f5cc",
+      "bytes": 153482,
+      "acceptance_receipt": {
+        "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_01_acceptance_v0_1.json",
+        "sha256": "c78d9b202fd53d75357a9a09e6c53aadca2509f983f31bd7db3c374c30faa14b",
+        "bytes": 12027
+      }
+    }
+  ]
+}

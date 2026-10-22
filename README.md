@@ -15,6 +15,9 @@ delivers the retained-baseline player/ball development package, fixes four NBA
 game roles and 24 episode windows, and publishes 120 new P003 assisted references
 accepted by Ryan. Remaining labels still need review; no new fit or phase pass is
 claimed. The rejected crop verifier and retained WASB baseline remain intact.
+Ryan also accepted the [second reference batch](docs/ball_tracking_completion_reference_batch_02.md):
+120 P002 judgments, including uncertainty and null centers. Accepted curated
+coverage is now 560/1,273 frames; the earlier 440 references remain unchanged.
 
 The repository currently contains a configuration-driven, resumable **21-stage player-coordinate pipeline** covering:
 

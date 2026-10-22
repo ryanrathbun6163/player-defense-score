@@ -80,6 +80,87 @@ def presentation_timeline(probe, expected_count):
     return result
 
 
+def accepted_campaign_reference(root, entry, possessions):
+    """Read one explicitly bound accepted publication and its separate receipt.
+
+    Entries require path/sha256 and an acceptance_receipt with path/sha256;
+    either binding may additionally declare bytes. No source pixels are read.
+    """
+    publication_binding = binding(root, root / entry["path"])
+    receipt_entry = entry.get("acceptance_receipt")
+    if not isinstance(receipt_entry, dict):
+        raise ValueError("Additional accepted reference requires a bound acceptance receipt")
+    receipt_binding = binding(root, root / receipt_entry["path"])
+    for expected, actual in ((entry, publication_binding), (receipt_entry, receipt_binding)):
+        if (actual["sha256"] != expected.get("sha256")
+                or ("bytes" in expected and actual["bytes"] != expected["bytes"])):
+            raise ValueError("Additional accepted reference or receipt binding changed")
+    doc = read_json(root / publication_binding["path"])
+    receipt = read_json(root / receipt_binding["path"])
+    review = doc.get("human_review", {})
+    if (doc.get("schema_version") != "completion_reference_accepted/v0.1"
+            or doc.get("status") != "human_accepted_assisted_reference"
+            or receipt.get("schema_version") != "ball_completion_reference_batch_acceptance/v0.1"
+            or receipt.get("status") != "accepted"
+            or review.get("status") != "accepted"
+            or not isinstance(review.get("reviewer_id"), str)
+            or not review["reviewer_id"].strip()
+            or review.get("review_method") != "human_visual_acceptance_of_assisted_proposals"
+            or not review.get("user_statement")):
+        raise ValueError("Additional campaign reference lacks recorded human acceptance")
+    for record in (doc, receipt):
+        if (record.get("annotation_origin") != "assistant_visual_proposal"
+                or not record.get("annotator_id")
+                or record.get("role") != "post_selection_evaluation_only"
+                or record.get("training_eligible") is not False
+                or record.get("checkpoint_selection_eligible") is not False
+                or record.get("model_output_acceptance") is not False
+                or record.get("protected_evaluation_authorized") is not False):
+            raise ValueError("Accepted campaign authorship or evaluation-only role changed")
+    if (doc.get("acceptance_receipt_path") != receipt_binding["path"]
+            or receipt.get("accepted_reference") != publication_binding
+            or any(doc.get(key) != receipt.get(key) for key in
+                   ("batch_id", "possession_id", "range_inclusive", "human_review",
+                    "annotator_id", "source_video", "proposal", "review_manifest",
+                    "review_index", "review_videos"))):
+        raise ValueError("Accepted campaign publication/receipt links disagree")
+    evidence = []
+    for key in ("proposal", "review_manifest"):
+        expected = doc[key]
+        if binding(root, root / expected["path"]) != expected:
+            raise ValueError("Accepted campaign proposal/review binding changed")
+        evidence.append(read_json(root / expected["path"]))
+    proposal, review_manifest = evidence
+    if (doc["annotations"] != proposal["annotations"]
+            or doc["annotations"] != [frame["annotation"] for frame in review_manifest["frames"]]
+            or doc["frames"] != [{key: value for key, value in frame.items() if key != "annotation"}
+                                 for frame in review_manifest["frames"]]
+            or proposal["batch_id"] != doc["batch_id"]
+            or proposal["possession_id"] != doc["possession_id"]):
+        raise ValueError("Accepted campaign records differ from reviewed proposal/media records")
+    possession = next((p for p in possessions if p["possession_id"] == doc["possession_id"]), None)
+    if possession is None or doc["source_video"] != possession["source_video"]:
+        raise ValueError("Accepted campaign reference source differs from source contract")
+    start, end = doc["range_inclusive"]
+    if (type(start) is not int or type(end) is not int or start < 0 or end < start
+            or end >= doc["source_video"]["frame_count"]
+            or not any(lo <= start <= end <= hi for lo, hi in possession["visible_segments"])
+            or any(max(start, lo) <= min(end, hi) for lo, hi in possession["protected_ranges"])):
+        raise ValueError("Accepted campaign range is outside permitted source coverage")
+    indices = list(range(start, end + 1))
+    rows, frames = doc["annotations"], doc["frames"]
+    if ([row["frame_index"] for row in rows] != indices
+            or [frame["source_frame_index"] for frame in frames] != indices
+            or [frame["source_png"]["frame_index"] for frame in frames] != indices
+            or receipt.get("accepted_references") != len(indices)):
+        raise ValueError("Accepted campaign annotation/native-frame census differs")
+    source = SourceVideo.from_mapping(doc["source_video"])
+    for position, row in enumerate(rows):
+        if FrameAnnotation.from_mapping(row, position, source).annotation_status != "labeled":
+            raise ValueError("Accepted campaign reference contains incomplete labels")
+    return doc, [publication_binding, receipt_binding]
+
+
 def accepted_inventory(root, config):
     accepted = {}
     bindings = []
@@ -108,6 +189,22 @@ def accepted_inventory(root, config):
         if key in accepted and accepted[key] != item["annotation"]:
             raise ValueError("Conflicting accepted gap row")
         accepted[key] = item["annotation"]
+    # Explicit opt-in preserves replay of older pending-era configurations.
+    # Never discover publications by glob: that would retroactively make an old
+    # batch reject its own formerly unaccepted proposal range.
+    additional = config.get("additional_accepted_references", [])
+    if not isinstance(additional, list):
+        raise ValueError("additional_accepted_references must be a list")
+    if additional:
+        possessions = read_json(root / config["source_contract"])["possessions"]
+        for entry in additional:
+            doc, campaign_bindings = accepted_campaign_reference(root, entry, possessions)
+            bindings.extend(campaign_bindings)
+            for row in doc["annotations"]:
+                key = (doc["possession_id"], row["frame_index"])
+                if key in accepted and accepted[key] != row:
+                    raise ValueError("Conflicting accepted campaign row")
+                accepted[key] = row
     return accepted, bindings
 
 

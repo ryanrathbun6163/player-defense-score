@@ -2,6 +2,11 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
+The [second reference batch](../ball_tracking_completion_reference_batch_02.md)
+now supplies complete review overlays for 120 P002 proposals, frames 50–169.
+Ryan accepted all 120, including uncertainty and null centers. Current accepted
+coverage is 560/1,273; 713 curated frames remain, alongside the fixed NBA package.
+
 The [first execution increment](../ball_tracking_completion_first_increment.md)
 is prepared: retained-baseline development delivery, four fixed NBA game roles
 and 24 episode windows, plus 120 P003 assisted references accepted by Ryan.
