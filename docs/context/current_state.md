@@ -1,6 +1,35 @@
 # Current State
 
-## Latest increment: sixth reference batch ready for acceptance
+## Latest increment: seventh reference batch ready for acceptance
+
+The [seventh reference batch](../ball_tracking_completion_reference_batch_07.md)
+contains 29 P001 proposals for frames 21–49: 10 centers with 7–10-source-pixel
+uncertainty and 19 nulls. Complete 1.16-second native and 5.80-second slow overlays
+include every frame through batch final 49, plus all exception crops. The nulls
+preserve 12 certain occlusions, three indeterminate judgments and four partial
+fragments without reliable centers. Possession final remains 498.
+
+Batches 05, 06 and 07 await separate acceptance. All 766 accepted labels and
+683 eligible centers remain unchanged, leaving 507 without accepted labels.
+The three pending batches contain 102 proposals; 405 positions have neither an
+accepted label nor a current proposal. Accepting batch 07 alone would yield
+795 accepted labels and 478 uncovered. These curated references are evaluation-only.
+
+All 29 PNGs match bounded comparison decoding with permitted packet context
+0–52. Every source frame, encoded center crop, exception crop and complete final
+was inspected. Checks cover 58 emitted frames, 20 markers, 1,129 file bindings
+and 1,011 preserved earlier files. Source preparation, labeling and rendering
+succeeded on their first attempts; one pre-execution helper-transformation error
+and a provenance-path correction remain recorded. Production code is unchanged.
+
+Next: record Ryan's separate review decisions and continue the fixed reference
+package. The first fixed NBA training episode is `chi-vs-ind-0022400868_e01`,
+120 frames at timebase 1/60000; its native labeling assets and proposals are
+still ahead. Preserve that timing and its training role when adapting the legacy
+NBA reader. No fitting or protected evaluation ran. The approved plan remains
+in force; protected evaluation requires a frozen method and separate authorization.
+
+## Earlier increment: sixth reference batch ready for acceptance
 
 The [sixth reference batch](../ball_tracking_completion_reference_batch_06.md)
 contains 30 P003 proposals for frames 120–149, all with centers and 5–8-source-pixel

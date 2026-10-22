@@ -2,6 +2,15 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
+The [seventh reference batch](../ball_tracking_completion_reference_batch_07.md)
+is ready for acceptance: 29 P001 judgments for frames 21–49, with 10 centers and
+19 nulls. Batches 05–07 remain separately pending; all 766 accepted references
+are preserved. Their 102 proposals leave 405 permitted positions without any
+current proposal. Complete reference review and the fixed NBA training package
+before fitting. The first NBA episode has 120 native frames and timebase 1/60000;
+its label preparation must retain actual timing and the preassigned training role.
+No fitting or protected evaluation has run.
+
 The [sixth reference batch](../ball_tracking_completion_reference_batch_06.md)
 is ready for human acceptance: 30 P003 judgments for frames 120–149, all with
 centers and 5–8-pixel uncertainty. Complete native/slow overlays are delivered.

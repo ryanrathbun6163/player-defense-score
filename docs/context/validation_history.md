@@ -1,5 +1,40 @@
 # Validation History
 
+## Completion reference batch 07: complete review, acceptance pending
+
+The [batch-07 result](../../configs/ball_tracking/reviews/ball_completion_reference_batch_07_result_v0_1.json)
+binds 29 P001 proposals for frames 21–49: 10 centers with 7–10px uncertainty and
+19 nulls. Visibility counts are 14 partial, three indeterminate and 12 hidden.
+Nulls preserve partial fragments at 24/40–42, indeterminate hand/ball evidence
+at 25–26/39 and body occlusion at 27–38. Original drafts remain final. Complete
+native/slow overlays span 1.16/5.80 seconds through batch final 49. Native time
+[0.88,2.04) differs from relative [0.84,2.00); P001 has a 512-tick native origin.
+
+Selection used coverage and packet metadata before pixels, excluding both
+pending batches 05/06 without promoting their 73 rows. Primary decoding returned
+0–49 from 52 submitted packets through presentation index 52. Alternate decoding
+used 53 copied packets 0–52 after payload and PTS/DTS verification. All 29 native
+RGB arrays match exactly; no protected packet or output frame was used. Both
+decoders may share FFmpeg internals.
+
+All source frames, encoded center crops, unmarked exception crops and the
+complete actual final were inspected. Checks cover 58 emitted frames, 20 markers,
+1,129 file bindings, all native-frame/annotation joins and all review links.
+All 1,011 earlier campaign files and 766 accepted rows remain unchanged.
+Accepted coverage stays 766/1,273 with 683 eligible centers; pending batches
+05–07 now contain 102 proposals, leaving 405 positions without any proposal.
+A separate metadata-only audit passes 35 checks and verifies 133 directly
+relevant files, including all null exceptions, accepted/pending separation and
+actual video counts/timing, without additional pixel decoding.
+
+Source preparation, pixel comparison, labeling and rendering passed first
+attempts. Before execution, helper adaptation hit an absent lowercase-string
+assertion; the failed guard and elapsed time are retained. A stale helper-path
+binding was corrected before rendering. No media or label was changed to pass
+checks. Production code/tests are unchanged, with no repeated suite, fitting,
+inference, scoring, threshold change, player rerun or protected evaluation.
+Human acceptance remains pending; campaign approval is already in force.
+
 ## Completion reference batch 06: complete review, acceptance pending
 
 The [batch-06 result](../../configs/ball_tracking/reviews/ball_completion_reference_batch_06_result_v0_1.json)

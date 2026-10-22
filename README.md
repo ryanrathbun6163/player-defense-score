@@ -40,6 +40,12 @@ and 5–8-pixel uncertainty. Batches 05 and 06 await separate acceptance; their
 overlays are available through each batch's final frame. No fitting or protected
 evaluation has run.
 
+The [seventh reference batch](docs/ball_tracking_completion_reference_batch_07.md)
+is ready: 29 P001 proposals for frames 21–49, with 10 centers and 19 nulls covering
+self-occlusion and ambiguous fragments. Complete overlays and exceptions are
+available. Batches 05–07 contain 102 pending proposals; accepted coverage remains
+766/1,273. The NBA training-label package and model fitting are still ahead.
+
 The repository currently contains a configuration-driven, resumable **21-stage player-coordinate pipeline** covering:
 
 - person detection and multi-object tracking;
