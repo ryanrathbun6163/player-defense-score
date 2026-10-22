@@ -1,5 +1,37 @@
 # Validation History
 
+## Completion reference batch 06: complete review, acceptance pending
+
+The [batch-06 result](../../configs/ball_tracking/reviews/ball_completion_reference_batch_06_result_v0_1.json)
+binds 30 P003 proposals for frames 120–149: 30 centers, no nulls, 27 partially
+visible and three fully visible judgments, with 5–8-source-pixel uncertainty.
+All source and encoded crops plus the complete actual final were inspected.
+Native/slow overlays span 1.20/6.00 seconds. P003's zero-origin PTS gives native
+ticks 61440–76288 at timebase 1/12800; selected time is [4.80,6.00).
+
+Metadata selected this run before pixels and excluded 43 pending batch-05
+proposals without accepting them. Primary decoding returned outputs 0–149 using
+152 packets through presentation index 153. Alternate comparison verified 154
+copied packets 0–153 before decoding; all 30 selected PNGs match exactly. No
+protected packets or output frames were used. Both decoders may share FFmpeg.
+
+Integration checks 1,023 file bindings, all 30 annotation/native-frame joins,
+60 encoded frames, 60 markers and all local review links. All 935 earlier
+campaign files, 766 accepted rows and four acceptance receipts remain unchanged.
+Accepted coverage stays 766/1,273 with 683 eligible centers and 507 uncovered;
+73 pending proposals across batches 05/06 leave 434 with no current proposal.
+A separate metadata-only audit passes 31 checks and rehashes 105 directly
+relevant files, independently reconstructing accepted coverage, pending-batch
+separation and actual video timing/counts without new pixel decoding.
+
+Source preparation, pixel comparison and rendering passed on their first
+attempts. A part-label helper failed on a nonexistent PNG-manifest `source_pts`
+key before writing a proposal; original helper and failure remain preserved.
+Its replacement uses actual packet metadata. Original proposals remain final.
+Implementation and tests are unchanged; no repeated suite, fitting, inference,
+model scoring, threshold change, player rerun or protected evaluation occurred.
+New labels still require Ryan's acceptance; campaign approval remains in force.
+
 ## Completion reference batch 05: complete review, acceptance pending
 
 The [batch-05 result](../../configs/ball_tracking/reviews/ball_completion_reference_batch_05_result_v0_1.json)

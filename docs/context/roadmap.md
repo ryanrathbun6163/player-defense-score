@@ -2,6 +2,15 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
+The [sixth reference batch](../ball_tracking_completion_reference_batch_06.md)
+is ready for human acceptance: 30 P003 judgments for frames 120–149, all with
+centers and 5–8-pixel uncertainty. Complete native/slow overlays are delivered.
+Batch 05 remains separately pending; its proposals were excluded from selection
+without being accepted. Accepted coverage remains 766/1,273, with 507 uncovered:
+73 have pending proposals across these two batches and 434 have none. Continue
+reference preparation while retaining each batch's human acceptance gate.
+No fitting or protected evaluation has run.
+
 The [fifth reference batch](../ball_tracking_completion_reference_batch_05.md)
 is ready for human acceptance: 43 P002 judgments for frames 275–317, comprising
 37 centers and six nulls. Complete native/slow overlays and exceptions are

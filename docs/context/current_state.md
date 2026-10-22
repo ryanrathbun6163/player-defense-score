@@ -1,6 +1,33 @@
 # Current State
 
-## Latest increment: fifth reference batch ready for acceptance
+## Latest increment: sixth reference batch ready for acceptance
+
+The [sixth reference batch](../ball_tracking_completion_reference_batch_06.md)
+contains 30 P003 proposals for frames 120–149, all with centers and 5–8-source-pixel
+uncertainty. Complete 1.20-second native and 6.00-second slow overlays are ready.
+Every source frame and encoded crop, including the complete final 149, was
+inspected. Final 149 is the batch final, not possession final 499.
+
+Batch 05's 43 proposals remain pending; “move forward” was not treated as label
+acceptance. Both batches await separate review decisions. All 766 accepted
+labels and 683 eligible centers remain unchanged, leaving 507 positions without
+accepted labels. Of these, 73 now have pending proposals and 434 have none.
+Accepting batch 06 alone would yield 796 accepted labels and 477 uncovered.
+
+Selection used coverage and packet metadata before source inspection, excluding
+pending batch 05 without accepting it. P003 uses zero-origin native PTS; selected
+native and relative time are both [4.80,6.00). Permitted packet context stayed
+within 0–153; all 30 PNGs matched the bounded alternate decode. Checks cover
+60 encoded frames, 60 markers, 1,023 file bindings and 935 preserved prior files.
+One part-label helper field error and its correction are preserved. Source
+implementation is unchanged; tests were not repeated.
+
+Next: record Ryan's separate decisions on batches 05 and 06 and continue the
+fixed reference package. New labels remain ineligible for fitting or checkpoint
+selection. The approved campaign and ball criteria remain in force; protected
+evaluation still requires a frozen method and separate explicit authorization.
+
+## Earlier increment: fifth reference batch ready for acceptance
 
 The [fifth reference batch](../ball_tracking_completion_reference_batch_05.md)
 contains 43 P002 proposals for frames 275–317: 37 centers with 4–10-source-pixel

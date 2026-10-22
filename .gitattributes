@@ -148,3 +148,7 @@ tests/test_nba_ball_distractor_evaluation.py -text
 # Preserve exact bytes for the hash-bound fifth completion reference batch.
 configs/ball_tracking/completion_campaign/reference_batch_05_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 configs/ball_tracking/reviews/ball_completion_reference_batch_05_result_v0_1.json -text
+
+# Preserve exact bytes for the hash-bound sixth completion reference batch.
+configs/ball_tracking/completion_campaign/reference_batch_06_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_06_result_v0_1.json -text

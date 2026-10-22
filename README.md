@@ -33,6 +33,13 @@ is ready for Ryan's acceptance: 43 P002 proposals for frames 275–317, with
 available. All 766 accepted labels remain unchanged; no fitting or protected
 evaluation has run.
 
+The [sixth reference batch](docs/ball_tracking_completion_reference_batch_06.md)
+is also ready for review: 30 P003 proposals for frames 120–149, all with centers
+and 5–8-pixel uncertainty. Batches 05 and 06 await separate acceptance; their
+73 pending proposals do not change the accepted total of 766/1,273. Complete
+overlays are available through each batch's final frame. No fitting or protected
+evaluation has run.
+
 The repository currently contains a configuration-driven, resumable **21-stage player-coordinate pipeline** covering:
 
 - person detection and multi-object tracking;
