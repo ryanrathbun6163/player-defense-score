@@ -1,5 +1,36 @@
 # Validation History
 
+## Completion campaign first increment: retained baseline and accepted references
+
+The [first-increment result](../../configs/ball_tracking/reviews/ball_completion_first_increment_result_v0_1.json)
+binds four passing baseline tests and five passing reference-delivery tests to
+their exact implementations. Actual-record checks preserve all 1,498 original
+baseline observations; full review-video decoding verifies 225 protected
+blackouts and all three finals. Availability is 979 observed / 294 missing,
+not a new accuracy estimate. No inference or fit ran.
+
+All 120 native P003 source PNGs were independently found pixel-identical to
+sequentially decoded source frames 0–119; decoding stopped before frame 120.
+Both complete overlays were decoded and checked across all 240 encoded frames
+and marker regions. Ryan accepted all 120 assisted proposals, including stated
+uncertainty. A separate publication preserves all annotation/native-frame
+records, AI authorship, original drafts and pending-era review artifacts.
+Current curated coverage is 440/1,273, with 833 frames remaining.
+
+The final integration audit verifies 316 file hashes, exact native PTS/frame
+lists for 3,839 selected NBA reference slots, all 24 episode preview receipts,
+whole-game role isolation and no overlap with the existing 300 SAC training
+rows. These slots await labeling and acceptance. Structural verification and
+human reference acceptance do not accept model trajectories or the ball phase.
+
+Preserved routine failures include a baseline test import indentation error,
+the first reference encode's relative-path binding failure, an acceptance-helper
+import path error, and the integration helper's wrong frame-container lookup
+and stale duplicate P003 count. The final helper derives and checks that count
+from the frame list. No scientific result, failed run, or original evidence was
+replaced. Full suite not repeated; no protected source pixels read or protected
+evaluation authorized. See the [increment report](../ball_tracking_completion_first_increment.md).
+
 ## Provisional fixed verifier: one converged fit; scientific protection failure
 
 The [training result](../nba_ball_distractor_training_results.md) records one

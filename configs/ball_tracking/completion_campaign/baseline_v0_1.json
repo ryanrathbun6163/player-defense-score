@@ -1,0 +1,33 @@
+{
+  "schema_version": "ball_completion_baseline/v0.1",
+  "output_root": "data/outputs/ball_tracking/completion_campaign_v0_1/baseline",
+  "scope": "Saved retained-model observations with exact reviewed player-context videos. No new inference, training, reference labels or protected source-pixel access.",
+  "observation_config": {
+    "path": "configs/ball_tracking/wasb_experiments/wasb_expanded_development_observation_v0_1.json",
+    "sha256": "e5dba1f3eb2f82d5d78b0825650f697df06d9360c8e80d7681158b8085336eda"
+  },
+  "observation_summary": {
+    "path": "data/outputs/ball_tracking/wasb/wasb_expanded_development_observation_v0_1/summary.json",
+    "sha256": "722a60dab8d34aa7acd3cbc5d1fc1635042050fb8a5d0f65fa96a7e380ae1b9f"
+  },
+  "completed_human_review": {
+    "path": "configs/ball_tracking/reviews/wasb_expanded_development_observation_visual_review_v0_1.json",
+    "sha256": "0d437eda1cf35d3e2da910774b5ff58c737ce43ce68d61de14d27a50d64acfdb"
+  },
+  "historical_longer_context_comparison": {
+    "path": "data/outputs/ball_tracking/wasb/wasb_motion_selection_v0_1/comparison.json",
+    "sha256": "00b7363e636626ea4fb67f61348491c912389416753987043d9b90b1111458af"
+  },
+  "campaign_approval": {
+    "path": "configs/ball_tracking/reviews/ball_tracking_completion_campaign_approval_v0_1.json",
+    "sha256": "9ac73e9053aa00b8c7fdff1575771260a1b445f1e756521b5fb404c0977408b5"
+  },
+  "accepted_bounded_gap_review": {
+    "path": "configs/ball_tracking/reviews/nba_temporal_gap_selection_visual_review_v0_1.json",
+    "sha256": "3100a54c47975c409bef804b2202fb29d01c9e0c2d27e15106eb88a4c8eb8d13"
+  },
+  "retained_checkpoint": {
+    "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+    "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98"
+  }
+}

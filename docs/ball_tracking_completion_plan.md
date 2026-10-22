@@ -1,9 +1,12 @@
 # Ball-tracking completion plan
 
-Date: 2026-10-21. **Approved; execution deferred to the next session at Ryan's request.**
+Date: 2026-10-21. **Approved; first execution increment prepared.**
 The [approval record](../configs/ball_tracking/reviews/ball_tracking_completion_campaign_approval_v0_1.json)
 preserves Ryan's statement and binds the exact approved plan at `faa2804`.
-No campaign execution has started. Planning evidence baseline:
+The [first increment](ball_tracking_completion_first_increment.md) now delivers
+the retained baseline, fixed NBA source/episode roles and 120 assisted references
+subsequently accepted by Ryan. No new fit or protected evaluation has run.
+Planning evidence baseline:
 `codex/ball-detector-baseline` at
 `759f43db37ba810ccf6516b2cdfd37a542dc5619`, clean when planning began.
 

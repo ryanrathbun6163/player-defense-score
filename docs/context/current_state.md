@@ -1,6 +1,31 @@
 # Current State
 
-## Latest decision: completion campaign and ball-quality criteria approved
+## Latest increment: retained baseline, fixed sources and first reference batch
+
+The approved [completion campaign](../ball_tracking_completion_plan.md) has
+started from the exact clean handoff at `b1dbf027ee14`. Its
+[first increment](../ball_tracking_completion_first_increment.md) packages
+1,498 retained-baseline records: 979 observations, 294 missing permitted
+frames and 225 protected positions. Three exact previously reviewed player/ball
+videos are reused; all records and encoded frames were checked through finals.
+Availability is not accuracy. No model output or reviewed player decision changed.
+
+Four NBA parent-game roles and 24 source-only episode windows are fixed: existing
+SAC, new CHI–IND and DEN–BOS for training; fresh local HOU–OKC for validation.
+DET remains excluded from fitting/selection and TOR remains exposed development.
+The first new reference batch is P003 frames 0–119, evaluation-only. Ryan
+explicitly accepted all 120 proposals after the complete overlay was delivered.
+The separate accepted publication brings curated coverage to 440/1,273 and
+leaves 833 uncovered. Initial drafts, corrections and AI reader differences
+remain preserved; no repeat review of this batch is needed.
+
+Next: continue the fixed reference package: 833 uncovered curated frames and
+3,839 selected NBA frame judgments. Fitting waits for accepted references and the frozen
+executable recipe. No inference, new fit, protected pixel inspection, push, PR
+or merge occurred. The campaign approval is already supplied; no repeat approval
+is needed. Prior failed experiments and completed reviews retain their status.
+
+## Earlier decision: completion campaign and ball-quality criteria approved
 
 Ryan explicitly approved the completion plan and proposed ball-quality criteria,
 then requested a complete handoff and execution in a new session. The

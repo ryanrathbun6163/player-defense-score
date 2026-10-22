@@ -2,6 +2,12 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
+The [first execution increment](../ball_tracking_completion_first_increment.md)
+is prepared: retained-baseline development delivery, four fixed NBA game roles
+and 24 episode windows, plus 120 P003 assisted references accepted by Ryan.
+Continue reference preparation and review; a new fit has not begun. The older
+planning snapshot below retains its original deferred-execution context.
+
 Ryan approved the [completion plan](../ball_tracking_completion_plan.md) and its
 numerical ball gate; execution starts in the next session at his request.
 The [approval](../../configs/ball_tracking/reviews/ball_tracking_completion_campaign_approval_v0_1.json)

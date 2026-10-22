@@ -9,11 +9,12 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
-Ryan approved the [ball-phase completion plan](docs/ball_tracking_completion_plan.md)
-and its numerical exit criteria for the three curated possessions. The finite
-multi-game campaign will start in the next session at his request; no new model
-or phase pass is claimed. The latest trained crop verifier was rejected, and
-the retained WASB baseline remains intact.
+The approved [ball-phase completion campaign](docs/ball_tracking_completion_plan.md)
+has started. Its [first increment](docs/ball_tracking_completion_first_increment.md)
+delivers the retained-baseline player/ball development package, fixes four NBA
+game roles and 24 episode windows, and publishes 120 new P003 assisted references
+accepted by Ryan. Remaining labels still need review; no new fit or phase pass is
+claimed. The rejected crop verifier and retained WASB baseline remain intact.
 
 The repository currently contains a configuration-driven, resumable **21-stage player-coordinate pipeline** covering:
 
