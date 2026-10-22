@@ -1,5 +1,60 @@
 # Validation History
 
+## NBA01 acceptance and completed NBA02 preparation
+
+Ryan's **“Ok I approve chat. Please move forward”** directly accepts NBA01's
+complete 120-label review, including 96 centers and 24 nulls. The separate
+[receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_01_acceptance_v0_1.json)
+and accepted copy preserve all 286 original files, AI authorship, native timing,
+uncertainty and nulls. The unknown user-event time remains null; publication
+time is separate. No playback telemetry or independent human annotation is
+claimed.
+
+The new acceptance reader validates the actual producer result, config, roles,
+native source hash, reviewed annotation/frame joins and completed 13-test
+delivery receipt. All **eight new acceptance tests pass**, as do actual emitted
+publication/receipt and inventory readers; duplicate native-source frames are
+rejected. An initial successful eight-test run is preserved before compact
+video-evidence serialization was added; the final eight-test run covers it.
+The original review implementation and its 13-test result are unchanged, and
+no full suite was rerun. Reference-label training eligibility is true, while
+package readiness, recipe freeze and fitting/protected authorization are false.
+Accepted NBA coverage is 120/3,839; curated coverage remains 868/1,273.
+
+A later acceptance-reader revision passes **12 focused tests**: the original
+eight plus four scope regressions. Exact pre-revision code/tests and original
+eight-test receipts were preserved first. Reusing the unchanged producer's
+13-test receipt now requires explicit prior-implementation scope and the new
+batch's bound, complete integration audit; default proposal-specific checks
+remain strict. The original accepted publication and receipt still validate
+unchanged. No old test run is claimed to cover the revised acceptance reader.
+
+[NBA02 preparation](../ball_tracking_completion_nba_reference_batch_02.md) uses
+fixed CHI–IND source `17.mp4`, frames 0–119 at timebase 1/60000, source final 358.
+All 120 native PNGs match explicit BT.709 comparison; 253 preexisting files were
+preserved by preparation. Source identity includes the original video hash, so
+its frame 0 does not alias NBA01's frame 0. The sealed 120-label proposal has
+120 centers, no nulls, 68 fully visible and 52 partially visible judgments with
+4–7px uncertainty. Six hand-overlap revisions preserve their initial draft and
+unchanged centers. Two failed pre-output helper invocations are preserved.
+
+The [NBA02 result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_02_result_v0_1.json)
+is ready for human reference acceptance. Its current audit verifies **527
+bindings, 120 source/native annotation joins, 240 encoded frames and 240
+markers**, with all source frames, encoded center crops and native/slow final
+119 inspected. Both complete overlays preserve all 120 frames at 60/10 fps
+(2s/12s). The actual production pending-review reader also passes. Source
+preparation used 121 packets to return 120 frames; alternate conversion reports
+frame 120 as filter context only, outside the labels and review.
+
+The unchanged renderer retains its original 13-test evidence, with zero reruns
+this increment; this batch's actual records and encoded media were checked
+separately. All 120 accepted NBA01 and 868 accepted curated references remain
+unchanged. Source preparation's 253 prior files and acceptance publication's
+286 original files pass preservation checks. NBA02's 120 labels remain pending
+Ryan's acceptance, with 3,599 selected NBA judgments still without proposals
+and 3,719 without accepted references. No fitting or protected evaluation ran.
+
 ## First NBA completion reference batch: complete review, acceptance pending
 
 The [NBA batch-01 report](../ball_tracking_completion_nba_reference_batch_01.md)

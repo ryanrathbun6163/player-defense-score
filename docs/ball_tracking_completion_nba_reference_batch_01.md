@@ -1,5 +1,52 @@
 # Completion campaign: NBA reference batch 01
 
+## Later acceptance: 2026-10-22
+
+Ryan explicitly replied **“Ok I approve chat. Please move forward”** to the
+complete NBA01 review. The separate [acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_01_acceptance_v0_1.json)
+accepts all **120 exact reviewed labels**, including **96 centers, 24 nulls**,
+visibility categories and uncertainty. The unknown human event timestamp is
+recorded as null; the publication timestamp is separate. AI authorship is
+retained without claiming playback telemetry or independent human annotation.
+
+All **286 original files remain unchanged**, including 252 batch-01 artifacts.
+Original pending config, result, proposals, source PNGs and review media remain
+valid historical evidence; the later receipt supplies current acceptance.
+No repeat review of these labels is required.
+
+The new acceptance reader verifies the actual publication and receipt against
+the completed producer records, native frame joins and reviewed annotations.
+It keys frames by game, original source-video hash and native frame index, so
+the same frame number in another event clip is a different reference. **Eight
+focused acceptance tests pass**; the original **13 delivery tests** remain a
+separate completed check on the unchanged review implementation. The successful
+initial acceptance-test run is preserved before a compact video-evidence
+serialization change; the final eight-test run covers that change.
+
+A later reader revision preserves that exact code and eight-test evidence in
+a separate snapshot. **All 12 current acceptance-reader tests pass**, including
+four regressions for reusing unchanged implementation tests across batches.
+Reuse requires an explicit scope and a current audit bound to the new proposal,
+review manifest, native-source records and complete source/encoded counts.
+The original proposal-specific scope stays strict. This revision does not
+change the accepted reference, receipt or original review implementation.
+
+These labels have `training_eligible: true` at **reference-label scope**, matching
+their fixed training game. Checkpoint-selection eligibility remains false.
+The complete package is not ready, the executable recipe is not frozen, and
+this publication does not authorize fitting or protected evaluation. The NBA
+inventory now has **120 accepted of 3,839 selected judgments**, with **3,719
+not yet accepted**. Curated coverage stays **868 accepted**, including 760
+eligible centers and 405 uncovered permitted positions.
+
+The [second NBA batch](ball_tracking_completion_nba_reference_batch_02.md) is
+now ready for separate review: 120 new center proposals from CHI–IND e02.
+NBA01 acceptance does not extend to those labels.
+
+## Original preparation record
+
+The following text retains the pending status and counts at original delivery.
+
 This batch delivers **120 new NBA reference proposals** for
 `chi-vs-ind-0022400868_e01`, frames **0–119** of the fixed CHI–IND training
 episode. It contains **96 proposed whole-ball centers and 24 null centers**.

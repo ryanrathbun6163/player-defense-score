@@ -10,13 +10,21 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 ## Project status
 
 The [first NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_01.md)
-now has 120 proposals from the fixed CHI–IND training episode: 96 centers and
-24 nulls with explicit uncertainty. Human acceptance is pending; no fitting has
-begun. Of 3,839 selected new NBA judgments, 120 are proposed and 3,719 remain.
+is now accepted: **120 labels, 96 centers and 24 nulls**. The separate acceptance
+preserves every original review artifact. Its acceptance reader now passes 12
+focused tests; the original eight-test evidence and 13 delivery tests remain
+distinct. Label-level training eligibility does not make the complete package
+or recipe ready for fitting. The
+[second NBA batch](docs/ball_tracking_completion_nba_reference_batch_02.md) is
+ready for review: **120 more centers, with 4–7px uncertainty and no nulls**,
+from the next fixed CHI–IND episode. Complete two-second native and twelve-second
+slow overlays passed 120 native joins and 240 encoded-frame/marker checks.
+Ryan's acceptance of these new labels is the next step. Of 3,839
+selected NBA judgments, **120 are accepted and 3,719 are not yet accepted**;
+the completed new proposals leave 3,599 still needing proposals.
 Accepted curated coverage stays **868/1,273**, including **760 eligible centers**,
-with **405 uncovered**. The earlier 102-row curated acceptance does not accept
-these NBA labels. Complete two-second native and twelve-second slow overlays
-are ready; 13 focused tests and all source/encoded-frame checks pass.
+with **405 uncovered**. NBA02 labels still need their own acceptance. No fitting
+or protected evaluation has run.
 
 The approved [ball-phase completion campaign](docs/ball_tracking_completion_plan.md)
 has started. Its [first increment](docs/ball_tracking_completion_first_increment.md)

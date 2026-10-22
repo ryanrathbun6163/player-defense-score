@@ -1,0 +1,24 @@
+{
+  "schema_version": "completion_nba_reference_batch/v0.1",
+  "batch_id": "nba_reference_batch_02_v0_1",
+  "source_roles": {
+    "path": "configs/ball_tracking/completion_campaign/source_roles_v0_1.json",
+    "sha256": "3ae5de63eef918fdaafcfbac62c09ca46e14fa1c1fdf069739d731955a573200",
+    "bytes": 71569
+  },
+  "episode_id": "chi-vs-ind-0022400868_e02",
+  "output_root": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_02",
+  "role": "training",
+  "annotation_origin": "assistant_visual_proposal",
+  "human_acceptance": "pending",
+  "training_eligible": false,
+  "checkpoint_selection_eligible": false,
+  "review": {
+    "native_playback_fps": 60,
+    "slow_playback_fps": 10,
+    "source_pixels_only": true,
+    "whole_batch_required": true,
+    "uncertainty_and_actual_final_required": true
+  },
+  "acceptance_boundary": "Fixed training-game role is not label acceptance. These new proposed labels require Ryan's acceptance; the completed source/label package and executable recipe must be frozen before fitting."
+}

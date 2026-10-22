@@ -167,3 +167,10 @@ configs/ball_tracking/completion_campaign/nba_reference_batch_01_v0_1.json -text
 configs/ball_tracking/reviews/nba_completion_reference_batch_01_result_v0_1.json -text
 src/ball_tracking/completion_nba_references.py -text
 tests/test_completion_nba_references.py -text
+
+# Preserve exact bytes for NBA acceptance and the second native reference batch.
+src/ball_tracking/completion_nba_acceptance.py -text
+tests/test_completion_nba_acceptance.py -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_01_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_02_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_02_result_v0_1.json -text

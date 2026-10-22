@@ -2,6 +2,22 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
+Ryan accepted all 120 labels in [NBA01](../ball_tracking_completion_nba_reference_batch_01.md):
+96 centers and 24 nulls. Its label-level training eligibility is enabled, while
+complete-package readiness, executable-recipe freeze and fitting authorization
+remain false. [NBA02](../ball_tracking_completion_nba_reference_batch_02.md)
+has 120 center proposals with 4–7px uncertainty and no nulls. Complete native
+and slow reviews passed current source/media validation; Ryan's acceptance or
+corrections are the immediate next step. The NBA inventory has
+120 accepted of 3,839 selected, with 3,719 not yet accepted; NBA02's completed
+proposals leave 3,599 without proposals.
+Finish the fixed NBA package and 405 uncovered permitted curated positions,
+then freeze accepted source/label/role manifests and the executable recipe.
+Curated coverage stays 868 accepted with 760 eligible centers. No fitting or
+protected evaluation has run.
+
+### Earlier NBA01 preparation
+
 The [first NBA reference batch](../ball_tracking_completion_nba_reference_batch_01.md)
 now proposes 120 native CHI–IND judgments: 96 centers and 24 nulls, pending Ryan's
 acceptance. The fixed training role is preserved; fitting eligibility stays
@@ -12,7 +28,9 @@ curated positions. Curated coverage remains 868 accepted, including 760 eligible
 centers. Freeze accepted source/label/role manifests and the executable recipe
 before the approved fit. Protected evaluation still requires separate authorization.
 
-Earlier completion-campaign milestones are retained below in chronological
+### Earlier completion-campaign milestones
+
+These milestones are retained below in chronological
 context; their pending preparation records are superseded by later receipts.
 
 Ryan accepted all 102 judgments in batches 05–07 together on 2026-10-22,
