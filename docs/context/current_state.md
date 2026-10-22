@@ -1,6 +1,28 @@
 # Current State
 
-## Latest decision: reference batches 05–07 accepted
+## Latest preparation: first NBA reference batch, acceptance pending
+
+The [first NBA reference batch](../ball_tracking_completion_nba_reference_batch_01.md)
+contains 120 proposals for fixed CHI–IND episode e01, frames 0–119: 96 centers
+with 3–7-source-pixel uncertainty and 24 nulls. Its parent game has the fixed
+training role, but all new labels remain pending and ineligible for fitting or
+checkpoint selection. Of 3,839 selected NBA judgments, 120 are proposed and
+3,719 remain. Complete two-second native and twelve-second slow overlays retain
+all frames through batch final 119; source clip final is 662. Native timebase
+remains 1/60000. All source/encoded crops and the complete final were inspected;
+13 focused tests, 317 bindings, 120 source joins and 240 encoded-frame checks pass.
+The initial source-color and render-metadata failures remain preserved alongside
+their successful recovery evidence. The new renderer currently requires constant
+cadence; variable-cadence SAC delivery remains future work.
+
+Curated coverage remains **868/1,273 accepted**, with **760 eligible centers**
+and **405 uncovered**. Ryan's grouped acceptance of 102 curated judgments does
+not accept the new NBA labels. All seven curated campaign publications remain
+explicit inputs to future duplicate guards. No fitting or protected evaluation
+has run. Complete the fixed reference package and label review before fitting;
+protected evaluation still needs a frozen method and separate authorization.
+
+## Earlier decision: reference batches 05–07 accepted
 
 Ryan explicitly said “Hold up I approve and accept. Move forward” after delivery
 of the complete reviews and a summary identifying all 102 pending judgments.

@@ -9,6 +9,15 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
+The [first NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_01.md)
+now has 120 proposals from the fixed CHI–IND training episode: 96 centers and
+24 nulls with explicit uncertainty. Human acceptance is pending; no fitting has
+begun. Of 3,839 selected new NBA judgments, 120 are proposed and 3,719 remain.
+Accepted curated coverage stays **868/1,273**, including **760 eligible centers**,
+with **405 uncovered**. The earlier 102-row curated acceptance does not accept
+these NBA labels. Complete two-second native and twelve-second slow overlays
+are ready; 13 focused tests and all source/encoded-frame checks pass.
+
 The approved [ball-phase completion campaign](docs/ball_tracking_completion_plan.md)
 has started. Its [first increment](docs/ball_tracking_completion_first_increment.md)
 delivers the retained-baseline player/ball development package, fixes four NBA
@@ -25,7 +34,7 @@ P002 frames 368–498 through the actual clip final. Coverage after that batch w
 no fitting or protected evaluation has run.
 The [fourth reference batch](docs/ball_tracking_completion_reference_batch_04.md)
 now contains 75 accepted P001 judgments for frames 125–199, including 58 centers
-and 17 nulls. Current accepted coverage is 766/1,273, with 507 permitted frames
+and 17 nulls. Coverage after that batch was 766/1,273, with 507 permitted frames
 remaining. The earlier 691 references and all reviewed media remain unchanged.
 The [fifth reference batch](docs/ball_tracking_completion_reference_batch_05.md)
 and [sixth](docs/ball_tracking_completion_reference_batch_06.md) and
@@ -35,7 +44,7 @@ accepted. Ryan approved all 102 judgments together, including 77 centers and
 review artifact. Current curated coverage is **868/1,273**, with **760 eligible
 centers** and **405 permitted positions uncovered**. All 766 earlier accepted
 labels remain unchanged. These references remain evaluation-only; the fixed NBA
-training-label package and model fitting are still ahead. Protected evaluation
+training-label package is being prepared and fitting remains ahead. Protected evaluation
 remains closed.
 
 The repository currently contains a configuration-driven, resumable **21-stage player-coordinate pipeline** covering:

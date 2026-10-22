@@ -2,6 +2,19 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
+The [first NBA reference batch](../ball_tracking_completion_nba_reference_batch_01.md)
+now proposes 120 native CHI–IND judgments: 96 centers and 24 nulls, pending Ryan's
+acceptance. The fixed training role is preserved; fitting eligibility stays
+false. Complete native/slow overlays and validated final-frame review are ready.
+Prepare and review the remaining 3,719 of 3,839 selected NBA judgments and finish
+the 405 uncovered permitted
+curated positions. Curated coverage remains 868 accepted, including 760 eligible
+centers. Freeze accepted source/label/role manifests and the executable recipe
+before the approved fit. Protected evaluation still requires separate authorization.
+
+Earlier completion-campaign milestones are retained below in chronological
+context; their pending preparation records are superseded by later receipts.
+
 Ryan accepted all 102 judgments in batches 05–07 together on 2026-10-22,
 including 77 centers and 25 nulls. Current curated coverage is 868/1,273, with
 760 eligible centers and 405 uncovered. No repeat review is needed. The separate

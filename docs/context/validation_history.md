@@ -1,5 +1,35 @@
 # Validation History
 
+## First NBA completion reference batch: complete review, acceptance pending
+
+The [NBA batch-01 report](../ball_tracking_completion_nba_reference_batch_01.md)
+records 120 pending training-episode proposals: 96 centers, 24 nulls and
+3–7-source-pixel uncertainty. All 120 native source PNGs and PTS joins match
+explicit BT.709 comparison. The initial OpenCV conversion used BT.601 and failed
+the exact-pixel check; the failed attempt and original PNGs remain preserved.
+A detail-sheet syntax error before output creation is also recorded.
+
+The new NBA consumer validates fixed episode/game roles, native timing and
+completed source-audit evidence while preserving pending-label eligibility.
+Its rendering path currently requires constant cadence. An independent
+metadata audit verifies 185 bindings, all 120 native joins and both actual
+annotation parts; production accepted-reference readers still return 868 rows,
+760 eligible centers, 20 authorities and seven acceptance receipts. That audit
+predates the render-only color fix; its exact module snapshot is retained.
+
+The first native render failed because emitted primaries/transfer tags were
+absent despite encoder options. Failed `review_v1` media and the executed code
+remain preserved. Explicit color conversion and frame properties resolved the
+metadata loss in `review_v2`; source PNGs and proposals were unchanged. All 13
+focused tests pass with zero failures, errors or skips and bind the final code.
+The [preparation result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_01_result_v0_1.json)
+records 317 verified bindings, 120 native joins, 240 emitted frames and 192
+markers. All source frames, encoded center crops, 24 null-center context crops
+and complete final 119 were visually inspected. Native/slow playback is 2s/12s;
+source clip final remains 662. All 868 accepted curated rows remain preserved,
+and new NBA labels remain pending human acceptance.
+No fitting, model inference or protected evaluation ran for this preparation.
+
 ## Grouped acceptance of reference batches 05–07
 
 Ryan's 2026-10-22 statement “Hold up I approve and accept. Move forward” accepts
