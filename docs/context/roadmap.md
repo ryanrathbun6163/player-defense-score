@@ -2,6 +2,14 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
+The [fifth reference batch](../ball_tracking_completion_reference_batch_05.md)
+is ready for human acceptance: 43 P002 judgments for frames 275–317, comprising
+37 centers and six nulls. Complete native/slow overlays and exceptions are
+delivered. All 766 accepted labels remain unchanged; 507 permitted positions
+remain uncovered until a new decision. Full acceptance would yield 809/1,273
+coverage, with 464 uncovered. Continue after recording Ryan's review decision;
+no fitting or protected evaluation has run.
+
 The [fourth reference batch](../ball_tracking_completion_reference_batch_04.md)
 contains 75 accepted P001 judgments for frames 125–199, including 17 nulls.
 Ryan accepted all proposals after the complete overlay and exceptions were

@@ -1,6 +1,33 @@
 # Current State
 
-## Latest increment: fourth reference batch accepted
+## Latest increment: fifth reference batch ready for acceptance
+
+The [fifth reference batch](../ball_tracking_completion_reference_batch_05.md)
+contains 43 P002 proposals for frames 275–317: 37 centers with 4–10-source-pixel
+uncertainty and six nulls. The complete 1.72-second native and 8.6-second slow
+overlays, frame controls and exception views are delivered. Ryan's acceptance
+is pending. Frame 317 is this batch's final, not possession final 498.
+
+All 766 accepted references, including 683 eligible centers, remain unchanged;
+507 permitted positions are uncovered. Accepting all 43 would produce 809/1,273
+coverage and leave 464 uncovered. No fit or checkpoint selection may use these
+evaluation-only references. New labels still require human acceptance.
+
+The shutdown checkpoint was verified on explicit resumption on 2026-10-22.
+All 829 prior campaign files remain unchanged. Source extraction used only
+permitted packets 250–322 and returned 250–317; all 43 native PNGs matched the
+bounded comparison decode. Complete review checks passed for 86 encoded frames,
+74 localized markers and 944 file bindings. Routine metadata assertion failures
+were corrected against actual records with original attempts preserved. Source
+implementation and tests are unchanged; the earlier focused tests were not
+repeated. No fitting, inference, scoring or protected evaluation occurred.
+
+Next: record Ryan's decision on this complete batch, then continue the fixed
+reference package. All four accepted campaign publications remain in duplicate
+guards. The completion plan and numerical ball gate remain approved. Protected
+evaluation requires a frozen method and separate explicit authorization.
+
+## Earlier increment: fourth reference batch accepted
 
 The [fourth reference batch](../ball_tracking_completion_reference_batch_04.md)
 contains 75 new P001 proposals for frames 125–199: 58 centers and 17 nulls.

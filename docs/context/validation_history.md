@@ -1,5 +1,43 @@
 # Validation History
 
+## Completion reference batch 05: complete review, acceptance pending
+
+The [batch-05 result](../../configs/ball_tracking/reviews/ball_completion_reference_batch_05_result_v0_1.json)
+binds 43 P002 proposals for frames 275–317: 37 centers, six nulls and complete
+native/slow overlays. Visibility counts are seven full, 32 partial, three
+not-visible and one indeterminate. Partial/null293/312, occluded294–296 and
+indeterminate313 retain uncertainty. Localized centers carry 4–10px uncertainty.
+Ryan's human acceptance is pending; these are evaluation-only references.
+
+Metadata selected the range before source pixels. Primary decoding used70
+packets with presentation indices250–322 and returned68 outputs250–317. The
+alternate copy held73 packets250–322, verified payload/PTS/DTS before decoding;
+all43 native PNG arrays matched, including final317. No protected175–249 packets
+or frames were submitted, copied or decoded. Native timebase1/12800 and source
+interval[11.04,12.76) remain distinct from relative[11.00,12.72).
+
+After Ryan's requested shutdown pause and explicit2026-10-22 resumption, all75
+checkpointed files and829 earlier campaign files matched their hashes. The
+completed second part and source pixels were reused; the first22-frame part was
+finished. All43 source/proposed/encoded crops and actualfinal317 were inspected.
+Checks cover86 emitted frames,74 localized markers,944 file bindings, exact
+annotation/native-frame joins and all review-page links. Original drafts remain
+final. Accepted coverage is unchanged at766/1,273, with683 eligible centers and
+507 permitted positions uncovered.
+
+Resume metadata validation initially confused17 reference authorities with the
+returned21 files, which include4 receipts. Finalization initially compared a
+three-field PNG binding with the same binding plus a frame_index. Both assertions
+were corrected against actual producer records, preserving original attempts,
+consumed time and helper. The passing comparison separately verifies file path,
+SHA256, size and source-frame identity. Source preparation and both renderings
+succeeded without reruns. Earlier inspection path/runtime failures are retained.
+
+Source implementation/tests are unchanged; the prior ten focused tests were not
+repeated. No fitting, inference, model scoring, threshold change, player rerun or
+protected evaluation occurred. Human reference acceptance and final-trajectory
+review remain separate gates; the completion plan and ball criteria are approved.
+
 ## Completion reference batch 04: prepared, reviewed and accepted
 
 The [batch-04 result](../../configs/ball_tracking/reviews/ball_completion_reference_batch_04_result_v0_1.json)

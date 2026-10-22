@@ -27,6 +27,11 @@ The [fourth reference batch](docs/ball_tracking_completion_reference_batch_04.md
 now contains 75 accepted P001 judgments for frames 125–199, including 58 centers
 and 17 nulls. Current accepted coverage is 766/1,273, with 507 permitted frames
 remaining. The earlier 691 references and all reviewed media remain unchanged.
+The [fifth reference batch](docs/ball_tracking_completion_reference_batch_05.md)
+is ready for Ryan's acceptance: 43 P002 proposals for frames 275–317, with
+37 centers and six nulls. Complete native/slow overlays and exception views are
+available. All 766 accepted labels remain unchanged; no fitting or protected
+evaluation has run.
 
 The repository currently contains a configuration-driven, resumable **21-stage player-coordinate pipeline** covering:
 
