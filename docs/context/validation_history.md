@@ -1,5 +1,40 @@
 # Validation History
 
+## Completion reference batch 03: prepared, reviewed and accepted
+
+The [batch-03 result](../../configs/ball_tracking/reviews/ball_completion_reference_batch_03_result_v0_1.json)
+binds 131 new P002 proposals for frames 368–498 and both complete overlays,
+including the actual source final. Selection used missing accepted coverage
+before new source inspection. All 560 accepted rows across 15 authorities and
+both campaign acceptance receipts remain unchanged.
+
+Source decoding started at the verified keyframe 250 after the protected band.
+Every submitted packet and emitted frame was guarded. An independent bounded
+copy retained only encoded packets 250–498, with all 249 payload hashes and PTS
+checked before its OpenCV decode. All 131 selected PNGs are pixel-identical;
+native timing remains [14.76,20.00), separate from relative [14.72,19.96).
+Both decoders may share FFmpeg internals, but no protected packet was submitted
+or copied, and no protected output frame was decoded.
+
+The unchanged renderer checks all 262 encoded frames and localized marker
+regions against their actual source/annotation records. AI visual checks cover
+every source frame, final encoded crop and actual final. Original drafts and
+small manual refinements are retained. An independent source-only reader
+disagreed with six first-reader net-overlap center estimates; frames 408–413
+retain null geometry in the final proposal, with visibility indeterminate at
+410–412. Ryan subsequently accepted all 131 proposals, including uncertainty
+and nulls. A separate publication preserves the original reviewed records and
+pending-era artifacts. Human acceptance does not change the AI origin.
+
+No code or tests changed. The prior ten focused tests are recorded only for
+the unchanged implementation; they were not rerun. New validation checks the
+actual batch-03 records. A preservation-reader schema error was corrected and
+the failed attempt preserved separately. No fit, inference, model scoring,
+player rerun or protected evaluation occurred. Acceptance integration confirms
+all 560 previous rows unchanged, 131 exact annotation/native-frame joins and
+duplicate-guard rejection of this accepted batch. Current accepted coverage is
+691/1,273, with 625 eligible centers and 582 permitted frames uncovered.
+
 ## Completion reference batch 02: prepared, reviewed and accepted
 
 The [batch-02 result](../../configs/ball_tracking/reviews/ball_completion_reference_batch_02_result_v0_1.json)

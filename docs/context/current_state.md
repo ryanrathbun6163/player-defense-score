@@ -1,6 +1,33 @@
 # Current State
 
-## Latest increment: second reference batch accepted
+## Latest increment: third reference batch accepted
+
+The [third reference batch](../ball_tracking_completion_reference_batch_03.md)
+contains 131 new P002 proposals, frames 368–498 through the actual clip final.
+Selection used uncovered permitted coverage before inspecting new source pixels.
+The complete native and slow overlays include uncertainty, frame controls and
+unmarked source crops for null-center exceptions. Ryan explicitly answered
+“Accept all 131 proposals.” A separate acceptance publication preserves the
+reviewed annotations, nulls, native-frame records and AI authorship.
+
+All 560 prior accepted rows and both earlier acceptance receipts remain unchanged.
+Current coverage is 691/1,273 with 582 uncovered. The new batch includes 114
+eligible centers and 17 nulls and remains evaluation-only. The original review,
+config and preparation result retain their pending-era status; the later
+acceptance receipt is the current authority. No repeat review is needed.
+Source extraction and its independent comparison use only permitted packets
+250–498, starting at a verified keyframe after the protected band. All 131 PNGs
+match the comparison decode, with native timing and actual final 498 retained.
+
+No implementation changes or repeated test suite were needed. Actual source,
+proposal and emitted-media records were checked. Original AI drafts and reader
+differences remain preserved, including conservative null geometry for severe
+net overlap. No fitting, inference, scoring or protected evaluation ran.
+Next: continue the fixed reference package with all three accepted campaign
+publications in duplicate guards. New labels still need acceptance; campaign
+approval remains in force and protected evaluation remains separately gated.
+
+## Earlier increment: second reference batch accepted
 
 The [second reference batch](../ball_tracking_completion_reference_batch_02.md)
 contains 120 new P002 judgments for frames 50–169, selected from uncovered

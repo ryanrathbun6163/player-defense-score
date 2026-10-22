@@ -17,7 +17,12 @@ accepted by Ryan. Remaining labels still need review; no new fit or phase pass i
 claimed. The rejected crop verifier and retained WASB baseline remain intact.
 Ryan also accepted the [second reference batch](docs/ball_tracking_completion_reference_batch_02.md):
 120 P002 judgments, including uncertainty and null centers. Accepted curated
-coverage is now 560/1,273 frames; the earlier 440 references remain unchanged.
+coverage after that batch was 560/1,273; the earlier 440 references were preserved.
+Ryan accepted all 131 judgments in the
+[third reference batch](docs/ball_tracking_completion_reference_batch_03.md),
+P002 frames 368–498 through the actual clip final. Current accepted coverage is
+691/1,273, with 582 remaining. The earlier 560 references remain unchanged;
+no fitting or protected evaluation has run.
 
 The repository currently contains a configuration-driven, resumable **21-stage player-coordinate pipeline** covering:
 
