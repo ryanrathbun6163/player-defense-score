@@ -1,6 +1,64 @@
 # Validation History
 
-## NBA01 acceptance and completed NBA02 preparation
+## NBA03 accepted; NBA04 complete review ready for acceptance
+
+Ryan's **“Accept all 120 proposals”** answers the complete NBA03 review question,
+accepting its 100 centers, 20 nulls and 4–8px uncertainty. The separate
+[acceptance receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_03_acceptance_v0_1.json)
+and accepted publication preserve **809 original files**, including the prior
+240 NBA labels. Actual publication, inventory and duplicate-guard checks pass.
+Combined coverage is **360/3,839: 316 centers and 44 nulls**, with 3,479 not yet accepted. All 868
+curated references and 760 eligible centers remain unchanged. No tests reran:
+the unchanged code retains prior 12-test acceptance and 13-test renderer evidence.
+
+[NBA04 source preparation](../ball_tracking_completion_nba_reference_batch_04.md)
+passes all **120 selected native PNG/PTS comparisons**, frames 300–419 of
+CHI–IND `81.mp4`, timebase 1/60000, source final 552. All **765 captured prior
+files** are preserved. Primary decoding used 421 packets and returned 0–419;
+alternate conversion emitted 420 RGB frames and reported filter context 0–420.
+Only 300–419 are selected labels/review frames. The sealed proposal contains
+**118 centers and two indeterminate nulls at 300–301**, with **5–7px uncertainty**;
+visibility totals are 78 partial, 40 full and two indeterminate. All source and
+proposed-overlay frames/endpoints were inspected; neither part needed revisions
+or had helper failures.
+
+The [NBA04 result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_04_result_v0_1.json)
+is ready for human reference acceptance. Current validation passes **1,054
+bindings, 120 native joins, 240 encoded frames and 236 markers**. Every encoded
+center crop and both unmarked null-context crops across all ten sheets were
+inspected, along with native source final 419 and both full encoded finals.
+Complete native/slow overlays contain all 120 frames at 60/10 fps (2s/12s),
+and the actual pending-review reader passes. All 360 accepted NBA and 868 curated
+labels remain unchanged; prior acceptance snapshots of 286, 543 and 809 files
+also pass preservation checks. The 120 new labels remain pending separate
+acceptance, with 3,359 selected positions without proposals and 3,479 without
+accepted references. No fitting or protected evaluation ran.
+
+The original [NBA03 preparation result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_03_result_v0_1.json)
+contains **100 centers and 20 nulls**, with 4–8px uncertainty: 100 partially
+visible, four fully visible and 16 hidden judgments. Frames 138–153 remain
+hidden/null; 154–155 and 208–209 remain partial/null. Corrections to centers
+130–131 preserve the initial draft and superseded overlay. A receipt-writer
+keyword failure and pre-output unsorted-tag failure remain recorded with their
+separate corrected helpers.
+
+Its preparation validation passed **808 bindings, 120 native joins, 240 encoded frames
+and 200 markers**. Every source/proposed frame, encoded center crop and null
+source-context crop was inspected, along with native/slow full final 239.
+Complete overlays retain 120 frames at 60/10 fps (2s/12s); the actual pending
+review reader passed. The preparation record and its original pending status
+remain unchanged; the later acceptance receipt supplies the accepted status.
+It preserved all 240 earlier NBA and 868 curated labels, including prior
+acceptance snapshots of 286 and 543 files. No fitting or protected evaluation ran.
+
+Ryan's earlier **“I accept this batch. Let’s move forward”** accepted all 120
+NBA02 centers and their visibility/uncertainty judgments. Its separate
+[acceptance receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_02_acceptance_v0_1.json)
+preserves 543 original files and brought the inventory to 240 accepted NBA
+labels (216 centers, 24 nulls). Actual reader and duplicate checks passed;
+curated coverage stayed unchanged. The later NBA03 event builds on that record.
+
+## Earlier NBA01 acceptance and completed NBA02 preparation
 
 Ryan's **“Ok I approve chat. Please move forward”** directly accepts NBA01's
 complete 120-label review, including 96 centers and 24 nulls. The separate

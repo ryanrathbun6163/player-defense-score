@@ -1,22 +1,36 @@
 # Completion campaign: NBA reference batch 02
 
-This increment delivers **120 new NBA center proposals**, with
-**no null centers**, for fixed episode
+Ryan accepted **all 120 NBA center labels**, with **no null centers**, for fixed episode
 `chi-vs-ind-0022400868_e02`, native frames **0–119** of CHI–IND source clip
-`17.mp4`. Its parent game retains the training role. These new labels require
-Ryan's separate acceptance; neither training nor checkpoint-selection
-eligibility is enabled for the pending proposals. The
+`17.mp4`: **“I accept this batch. Let’s move forward”**. The separate
+[acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_02_acceptance_v0_1.json)
+and accepted publication preserve the exact reviewed centers, visibility,
+uncertainty and AI authorship. Its parent game retains the training role;
+eligibility now applies to accepted reference labels only. Checkpoint selection,
+complete-package readiness, recipe freeze and fitting authorization remain false.
+The original proposals and
 [complete review page](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_02/review_v1/index.html)
-is ready. Ryan's acceptance or corrections for these exact 120 labels is the
-immediate next step.
+retain their preparation-era pending status unchanged.
 
 Ryan has accepted all 120 labels from [NBA batch 01](ball_tracking_completion_nba_reference_batch_01.md),
 including 96 centers and 24 nulls. Its separate receipt and accepted publication
-preserve all original artifacts. Thus **120 of 3,839 selected NBA judgments are
-accepted**, with **3,719 not yet accepted**. This second completed 120-frame
-proposal leaves **3,599 without proposals**. The NBA package remains
+preserve all original artifacts. NBA02's acceptance brought coverage to
+**240 of 3,839 selected NBA judgments: 216 centers and 24 nulls**.
+The later [NBA03 acceptance](ball_tracking_completion_nba_reference_batch_03.md)
+raises coverage to **360 accepted, 316 centers and 44 nulls**, with **3,479 not yet
+accepted**. [NBA04](ball_tracking_completion_nba_reference_batch_04.md) now has a complete
+review ready for separate acceptance.
+The NBA package remains
 separate from curated coverage: **868/1,273 accepted**, 760 eligible centers
 and 405 uncovered permitted positions.
+
+The acceptance audit passes the actual publication/receipt and combined
+inventory readers and rejects duplicate native-source frames. All **543 original
+files** remain byte-identical. The unchanged reader and renderer retain their
+prior **12-test and 13-test receipts**, with no tests rerun for publication.
+User-event time remains null because the exact timestamp is unknown; publication
+time is recorded separately. No playback telemetry or independent human
+annotation is claimed.
 
 ## Fixed source and timing
 
@@ -85,7 +99,7 @@ requires the unchanged producer/test hashes and this batch's current audit.
 These tests do not replace the completed NBA02 media checks.
 
 The [final preparation result](../configs/ball_tracking/reviews/nba_completion_reference_batch_02_result_v0_1.json)
-is `ready_for_human_reference_acceptance`. Its
+retains `ready_for_human_reference_acceptance` as the original preparation status. Its
 [integration audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_02/integration_audit.json)
 passes **527 file bindings, 120 native source/annotation joins, 240 encoded
 frames and 240 markers**. All source frames, final encoded center crops and
@@ -97,7 +111,7 @@ The audit confirms that all **120 accepted NBA01 labels** and **868 accepted
 curated labels** remain unchanged. It preserves the source-preparation snapshot
 of 253 prior files and the NBA01 acceptance snapshot of 286 original files.
 Successful source/media transport checks and AI visual inspection establish
-review integrity; Ryan's label acceptance remains pending.
+review integrity; the later acceptance receipt supplies the current accepted status.
 
 No fitting, model scoring, checkpoint selection or protected evaluation is
 authorized by this batch. Continue the fixed reference package and human label

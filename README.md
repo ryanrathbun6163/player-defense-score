@@ -9,21 +9,23 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
-The [first NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_01.md)
-is now accepted: **120 labels, 96 centers and 24 nulls**. The separate acceptance
-preserves every original review artifact. Its acceptance reader now passes 12
-focused tests; the original eight-test evidence and 13 delivery tests remain
-distinct. Label-level training eligibility does not make the complete package
-or recipe ready for fitting. The
-[second NBA batch](docs/ball_tracking_completion_nba_reference_batch_02.md) is
-ready for review: **120 more centers, with 4–7px uncertainty and no nulls**,
-from the next fixed CHI–IND episode. Complete two-second native and twelve-second
-slow overlays passed 120 native joins and 240 encoded-frame/marker checks.
-Ryan's acceptance of these new labels is the next step. Of 3,839
-selected NBA judgments, **120 are accepted and 3,719 are not yet accepted**;
-the completed new proposals leave 3,599 still needing proposals.
+Ryan accepted all 120 labels in the
+[third NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_03.md),
+including **100 centers, 20 nulls and 4–8px uncertainty**. The separate receipt
+preserves 809 original files and passes the actual publication/inventory readers.
+Combined NBA coverage is now **360 accepted labels: 316 centers and 44 nulls**,
+with **3,479 of 3,839 selected judgments not yet accepted**.
+The [fourth NBA batch](docs/ball_tracking_completion_nba_reference_batch_04.md)
+is ready for separate acceptance: **118 centers and two indeterminate nulls**,
+with **5–7px uncertainty**, for frames 300–419 of fixed CHI–IND source `81.mp4`.
+Complete native/slow review passes 120 native joins, 240 encoded-frame checks
+and 236 marker checks; all crops and full final 419 were inspected. The source
+clip ends at frame 552. The new proposals leave **3,359 without proposals**.
+The unchanged code retains prior 12-test acceptance and 13-test renderer evidence;
+neither suite was rerun for this publication. Label eligibility does not make
+the complete package or executable recipe ready for fitting.
 Accepted curated coverage stays **868/1,273**, including **760 eligible centers**,
-with **405 uncovered**. NBA02 labels still need their own acceptance. No fitting
+with **405 uncovered**. NBA04 labels need their own acceptance. No fitting
 or protected evaluation has run.
 
 The approved [ball-phase completion campaign](docs/ball_tracking_completion_plan.md)

@@ -2,31 +2,21 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
-Ryan accepted all 120 labels in [NBA01](../ball_tracking_completion_nba_reference_batch_01.md):
-96 centers and 24 nulls. Its label-level training eligibility is enabled, while
-complete-package readiness, executable-recipe freeze and fitting authorization
-remain false. [NBA02](../ball_tracking_completion_nba_reference_batch_02.md)
-has 120 center proposals with 4–7px uncertainty and no nulls. Complete native
-and slow reviews passed current source/media validation; Ryan's acceptance or
-corrections are the immediate next step. The NBA inventory has
-120 accepted of 3,839 selected, with 3,719 not yet accepted; NBA02's completed
-proposals leave 3,599 without proposals.
+Ryan accepted all 120 [NBA03 labels](../ball_tracking_completion_nba_reference_batch_03.md),
+including 100 centers, 20 nulls and 4–8px uncertainty. Combined NBA coverage is
+**360/3,839 accepted**, including **316 centers and 44 nulls**, with **3,479
+not yet accepted**. The next increment is
+[NBA04](../ball_tracking_completion_nba_reference_batch_04.md): CHI–IND e04,
+source `81.mp4`, native frames 300–419, source final 552. All 120 selected source
+pixel/timing checks pass. Its sealed proposals contain **118 centers and two
+indeterminate nulls**, with **5–7px uncertainty**. Complete review now passes
+120 native joins, 240 encoded frames and 236 markers, with every crop and full
+final inspected. Obtain Ryan's separate acceptance or corrections. These proposals
+leave **3,359 without proposals**.
 Finish the fixed NBA package and 405 uncovered permitted curated positions,
 then freeze accepted source/label/role manifests and the executable recipe.
 Curated coverage stays 868 accepted with 760 eligible centers. No fitting or
 protected evaluation has run.
-
-### Earlier NBA01 preparation
-
-The [first NBA reference batch](../ball_tracking_completion_nba_reference_batch_01.md)
-now proposes 120 native CHI–IND judgments: 96 centers and 24 nulls, pending Ryan's
-acceptance. The fixed training role is preserved; fitting eligibility stays
-false. Complete native/slow overlays and validated final-frame review are ready.
-Prepare and review the remaining 3,719 of 3,839 selected NBA judgments and finish
-the 405 uncovered permitted
-curated positions. Curated coverage remains 868 accepted, including 760 eligible
-centers. Freeze accepted source/label/role manifests and the executable recipe
-before the approved fit. Protected evaluation still requires separate authorization.
 
 ### Earlier completion-campaign milestones
 
