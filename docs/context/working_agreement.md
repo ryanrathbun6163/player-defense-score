@@ -31,6 +31,21 @@ release machinery or repeated approvals that do not advance that decision.
 Efficiency does not authorize weaker quality criteria or skipped human review
 of actual new trajectories.
 
+## Completion-campaign approval: Ryan's 2026-10-21 instruction
+
+Ryan explicitly approved the [completion plan](../ball_tracking_completion_plan.md)
+and its proposed numerical ball-quality criteria, then requested a handoff so
+execution can start in a new session. The
+[approval record](../../configs/ball_tracking/reviews/ball_tracking_completion_campaign_approval_v0_1.json)
+preserves the statement and exact approved plan revision. Do not ask for the
+same campaign approval again. Prepare and integrate the authorized work in
+batches, including the single conditional higher-resolution fit only when its
+declared trigger holds. New references must be accepted before fitting; final
+trajectories require human review. Protected evaluation still needs a frozen
+method and separate explicit authorization. No campaign execution occurred
+during the requested title/handoff turn. Prior reviews, failed attempts and
+Git publication boundaries remain unchanged.
+
 ## Historical resource policy: Ryan's 2026-10-05 clarification
 
 Ryan is comfortable devoting substantial computer resources to the project,

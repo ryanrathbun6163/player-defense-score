@@ -1,19 +1,36 @@
 # Current State
 
-## Latest planning decision: completion campaign proposed, not executed
+## Latest decision: completion campaign and ball-quality criteria approved
+
+Ryan explicitly approved the completion plan and proposed ball-quality criteria,
+then requested a complete handoff and execution in a new session. The
+[approval record](../../configs/ball_tracking/reviews/ball_tracking_completion_campaign_approval_v0_1.json)
+binds his exact statement and the approved plan at `faa2804`. The campaign is
+authorized; do not request the same approval again. It has not started.
+New reference acceptance and final trajectory review remain human decisions.
+The 225 protected holdout/buffer positions still require a frozen candidate and
+separate explicit evaluation authorization. No push, PR or merge is authorized.
+
+Next session: confirm exact Git state and required reading, then assemble the
+retained-baseline player/ball development package, select fixed source/episode
+roles, and prepare the first 120–240 reference proposals. The approval event
+has already been recorded. No extra diagnostic-only gate is a prerequisite.
+
+## Earlier planning increment: completion campaign designed
 
 Ryan requested a critical review of the full research and a concrete route out
 of the ball phase. The [completion plan](../ball_tracking_completion_plan.md)
 recommends retaining WASB, one broader multi-game training/validation package,
 validation-selected training and at most one conditional higher-resolution fit.
 It proposes an explicit numerical exit contract for the existing three-possession
-finish line. These are new proposals, not accepted gates or improved results.
+finish line. They were new proposals at design time; the approval above now
+accepts them. No improved model result is claimed.
 
 Planning started from clean `codex/ball-detector-baseline` at
 `759f43db37ba810ccf6516b2cdfd37a542dc5619`. No new source acquisition, pixel
 inspection, labels, inference, training or protected evaluation ran. The rejected
-verifier and retained `09da1214` baseline remain unchanged. New campaign/exit-gate
-approval is pending; reference and final-motion reviews remain human decisions,
+verifier and retained `09da1214` baseline remain unchanged. Campaign/exit-gate
+approval was pending at design time; reference and final-motion reviews remain human decisions,
 and protected evaluation requires a frozen candidate and explicit authorization.
 After campaign approval, the first increment is an integrated retained-baseline
 development package plus fixed source/role selection and a first reference batch.

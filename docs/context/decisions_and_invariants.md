@@ -45,6 +45,27 @@ The empirical player-coordinate gate requires:
 
 Possession 003 passed this gate. Do not relax these thresholds retroactively.
 
+## Ball-phase exit contract accepted on 2026-10-21
+
+Ryan approved the [completion plan](../ball_tracking_completion_plan.md) and its
+new numerical criteria in the bound
+[approval record](../../configs/ball_tracking/reviews/ball_tracking_completion_campaign_approval_v0_1.json).
+This is the three-curated-possession finish line: at least 95% correct automatic
+positions within the existing inclusive ten-source-pixel radius; at most 1%
+wrong eligible outputs; zero certain-hidden/out-of-view emissions; no eligible
+missing run over 200 ms or wrong-object run lasting 120 ms or longer; recovery
+within 120 ms with the first correct and next two eligible frames correct;
+complete synchronized review of all 1,498 frames. Apply each criterion per
+possession and retain the plan's exact timing, eligibility, censoring and
+inconclusive-evidence rules. Inferred/manual points count as absent for automatic
+metrics. This does not revise historical player or experiment gates.
+
+The approved campaign allows one primary WASB fit and one conditional resolution
+fit after reference acceptance, with existing NFHS development evidence used
+for checkpoint selection as specified. It does not release the 225 protected
+holdout/buffer positions, replace human final review, or authorize an indefinite
+experiment loop. Execution was deferred to the next session by Ryan.
+
 ## Rejected or superseded approaches
 
 - **Forcing team balance to 5/5 before resolving track contamination:** rejected because it hid raw tracker/identity switches.

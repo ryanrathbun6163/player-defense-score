@@ -1,0 +1,33 @@
+{
+  "schema_version": "ball_tracking_completion_campaign_approval/v0.1",
+  "status": "approved_execution_deferred_to_next_session",
+  "approved_by": "Ryan",
+  "user_statement": "Ok chat, I approve the completion plan and the proposed ball-quality criteria. I want to run this in a new session, so please generate me a title for this session (using the structure of all of the other sessions titles) and give me a handoff so the new session knows exactly where we are at",
+  "recorded_at_utc": "2026-10-22T00:13:15.693298+00:00",
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "faa2804a06ccf6a178e01c0950b9f18c852e5beb",
+    "worktree_and_index": "clean"
+  },
+  "approved_plan_snapshot": {
+    "path": "docs/ball_tracking_completion_plan.md",
+    "commit": "faa2804a06ccf6a178e01c0950b9f18c852e5beb",
+    "git_blob_sha256": "e79a42d775fc516b9f2b27661cf3aa6aa3e73bf2c2bc052e0f9d9101eff2af0e",
+    "git_blob_bytes": 26826,
+    "hash_representation": "exact git show commit:path bytes; excludes subsequent approval-status annotations"
+  },
+  "authorized_scope": [
+    "Accept the plan numerical ball-quality criteria for the three complete curated possessions, without revising historical player or experiment gates.",
+    "Execute the fixed reference preparation, retained-baseline delivery and integration campaign in the next session.",
+    "Prepare up to 3840 new NBA frame judgments across three training games including SAC and one fresh validation game; retain accepted existing training roles and complete permitted curated references.",
+    "After new reference acceptance and recipe freeze, run one primary WASB fit and at most one conditional higher-resolution fit under the exact plan trigger; no repeat fitting proposal required.",
+    "Apply standing authorization for routine implementation, proportionate validation and local integration; preserve prior baselines and failures."
+  ],
+  "human_new_reference_acceptance": "required before fitting; not supplied by campaign approval",
+  "human_final_trajectory_acceptance": "required before adoption; not supplied by campaign approval",
+  "protected_evaluation_authorized": false,
+  "protected_evaluation_boundary": "75 holdout frames plus 150 buffer positions stay closed until candidate/policy freeze and separate explicit authorization.",
+  "new_scientific_execution_this_turn": false,
+  "historical_experiments_and_reviews": "unchanged; failed verifier remains rejected and prior accepted reviews remain accepted",
+  "push_pr_merge_authorized": false
+}

@@ -1,9 +1,11 @@
 # Roadmap
 
-## Proposed next campaign: complete the original ball-phase milestone
+## Approved next campaign: complete the original ball-phase milestone
 
-The [completion plan](../ball_tracking_completion_plan.md) is the current
-recommendation, pending approval. It defines a proposed numerical ball gate,
+Ryan approved the [completion plan](../ball_tracking_completion_plan.md) and its
+numerical ball gate; execution starts in the next session at his request.
+The [approval](../../configs/ball_tracking/reviews/ball_tracking_completion_campaign_approval_v0_1.json)
+records that decision. The plan defines
 complete references and synchronized output for the three curated possessions,
 one broader WASB training campaign and one conditional 768×432 fallback. NBA
 transfer is reported separately from curated phase completion; full-game work
@@ -14,7 +16,7 @@ review one fixed reference package; train and compare; freeze before separately
 authorized protected evaluation; accept complete trajectories or close the
 campaign as failed. There is no indefinite selector/model-search loop. No new
 scientific execution occurred while writing the plan. Older next-step entries
-below preserve history and do not supersede this proposed sequence.
+below preserve history and do not supersede this approved sequence.
 
 ## Latest result: trained fixed verifier rejected
 

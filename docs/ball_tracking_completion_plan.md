@@ -1,6 +1,9 @@
 # Ball-tracking completion plan
 
-Date: 2026-10-21. **Proposed, not approved or executed.** Evidence baseline:
+Date: 2026-10-21. **Approved; execution deferred to the next session at Ryan's request.**
+The [approval record](../configs/ball_tracking/reviews/ball_tracking_completion_campaign_approval_v0_1.json)
+preserves Ryan's statement and binds the exact approved plan at `faa2804`.
+No campaign execution has started. Planning evidence baseline:
 `codex/ball-detector-baseline` at
 `759f43db37ba810ccf6516b2cdfd37a542dc5619`, clean when planning began.
 
@@ -66,10 +69,10 @@ the next work must produce complete reference coverage, stronger training and
 an integrated result. Progress is measured in verified usable trajectories and
 closed decisions, not numbers of reports, tests or experiments.
 
-## Proposed numerical exit contract
+## Accepted numerical exit contract
 
-**These are new proposed ball-phase criteria, requiring Ryan's acceptance.**
-They were not previously adopted and are not the existing 95%/85% player gate.
+**Ryan accepted these new ball-phase criteria on 2026-10-21.**
+They were proposed in this plan and are not the existing 95%/85% player gate.
 They do not revise old experiment gates or turn failed experiments into passes.
 
 Apply the following separately to each complete curated possession. Freeze a
@@ -358,15 +361,17 @@ no new source acquisition, source-pixel inspection, labels, inference, training,
 threshold sweep or holdout access ran to produce it. Read-only research,
 repository/result inspection and machine-resource checks informed the proposal.
 
-Accepting this plan would approve the new numerical exit contract and the single
+Ryan subsequently approved the new numerical exit contract and the single
 data/training/integration campaign, including the conditional second fit under
-its stated trigger. New reference acceptance and final trajectory review remain
+its stated trigger, and requested execution in a new session. That approval is
+already recorded; do not ask for the same campaign approval again.
+New reference acceptance and final trajectory review remain
 human decisions. Protected evaluation needs explicit authorization after the
 freeze; it is not silently included in a generic request to resume. These are
 substantial scientific/evidence decisions under the
 [working agreement](context/working_agreement.md), not routine tooling gates.
 
-First action after campaign approval: record the accepted scope, assemble the
+First execution action in the next session: assemble the
 retained-baseline development package and select the fixed source episodes/roles,
 while preparing the first 120–240 reference proposals to calibrate review effort.
 No additional diagnostic experiment is a prerequisite. Existing accepted reviews
