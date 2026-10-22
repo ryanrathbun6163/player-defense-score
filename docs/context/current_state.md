@@ -1,38 +1,37 @@
 # Current State
 
-## Latest decision: NBA03 accepted; NBA04 ready for reference acceptance
+## Latest decision: NBA04 accepted; NBA05 ready for reference acceptance
 
 Ryan answered **“Accept all 120 proposals”** to the question identifying the
-complete [NBA03 review](../ball_tracking_completion_nba_reference_batch_03.md),
-100 centers, 20 nulls and 4–8px uncertainty. The separate publication and receipt
-preserve **809 original files** and pass the actual readers and duplicate guard.
-Combined coverage is now **360 accepted NBA labels: 316 centers and 44 nulls**,
-out of 3,839 selected judgments. **3,479 remain without accepted references.**
+complete [NBA04 review](../ball_tracking_completion_nba_reference_batch_04.md),
+118 centers, two indeterminate nulls at 300–301 and 5–7px uncertainty. The separate
+publication and [receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_04_acceptance_v0_1.json)
+preserve **1,050 original files** and pass the actual readers and duplicate guard.
+Combined coverage is now **480 accepted NBA labels: 434 centers and 46 nulls**,
+out of 3,839 selected judgments. **3,359 remain without accepted references.**
 
-[NBA04](../ball_tracking_completion_nba_reference_batch_04.md) delivers
-CHI–IND e04, source `81.mp4`, selected frames **300–419** at timebase 1/60000.
-The source final is **552**. All 120 selected pixel/PTS checks pass, with 765
-captured prior files preserved. Primary and alternate RGB decoding cover 0–419;
-filter context extends through 420. Only 300–419 are selected labels/review frames.
-Its sealed 120-frame proposal contains **118 centers and two indeterminate nulls
-at frames 300–301**, with **5–7px uncertainty**. Visibility totals are 78 partial,
-40 full and two indeterminate judgments. Complete two-second native and
-twelve-second slow overlays are ready through batch final **419**. The audit
-passes **1,054 bindings, 120 native joins, 240 encoded frames and 236 markers**.
-Every source/proposed frame, encoded center/null-context crop and both complete
-finals were inspected; the actual pending-review consumer passes. The proposals
-leave **3,359 selected NBA positions without proposals**.
+[NBA05](../ball_tracking_completion_nba_reference_batch_05.md) is ready for separate acceptance
+for fixed CHI–IND e05, source `174.mp4`, selected frames **270–509**. Its **240
+frames** span native **[4.5,8.5) seconds** at timebase 1/60000; source final is
+**756**. It contains **178 centers and 62 nulls**, with **4–9px uncertainty**:
+170 partial, 32 full, 32 not-visible and six indeterminate judgments. Nulls
+preserve 24 partial fragments, 32 occlusions and six ambiguous observations.
+Complete **4s native/24s slow** review passes **1,558 bindings, 240 native joins,
+480 encoded frames and 356 markers**. Every source/proposed frame, all 20
+encoded/source-context sheets and full native/slow final **509** were inspected;
+the actual pending-review consumer passes. There are **3,119 selected positions
+without proposals**. New judgments remain pending separate acceptance.
 
 The unchanged renderer and acceptance reader retain prior **13-test and 12-test
-evidence**; no tests were rerun for this publication. NBA04's actual producer and
+evidence**; no tests were rerun for this increment. NBA05's actual producer and
 encoded-media validation are separate current evidence. Earlier review records,
 failures and acceptance evidence remain in the batch reports and validation history.
 
 Curated coverage remains **868/1,273 accepted**, **760 eligible centers** and
 **405 uncovered**. Accepted NBA training eligibility applies only to reference
 labels; the complete package and executable recipe are not ready for fitting.
-Ryan's acceptance or corrections for NBA04 is the immediate next step.
-NBA03 acceptance does not cover the new batch. No fit or protected evaluation has run;
+Ryan's acceptance or corrections for NBA05 is the immediate next step.
+NBA04 acceptance does not cover the new batch. No fit or protected evaluation has run;
 protected evaluation requires a frozen method and separate authorization.
 
 ## Earlier decision: reference batches 05–07 accepted

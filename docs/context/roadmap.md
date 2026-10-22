@@ -2,17 +2,16 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
-Ryan accepted all 120 [NBA03 labels](../ball_tracking_completion_nba_reference_batch_03.md),
-including 100 centers, 20 nulls and 4–8px uncertainty. Combined NBA coverage is
-**360/3,839 accepted**, including **316 centers and 44 nulls**, with **3,479
+Ryan accepted all 120 [NBA04 labels](../ball_tracking_completion_nba_reference_batch_04.md),
+including 118 centers, two indeterminate nulls and 5–7px uncertainty. Combined NBA coverage is
+**480/3,839 accepted**, including **434 centers and 46 nulls**, with **3,359
 not yet accepted**. The next increment is
-[NBA04](../ball_tracking_completion_nba_reference_batch_04.md): CHI–IND e04,
-source `81.mp4`, native frames 300–419, source final 552. All 120 selected source
-pixel/timing checks pass. Its sealed proposals contain **118 centers and two
-indeterminate nulls**, with **5–7px uncertainty**. Complete review now passes
-120 native joins, 240 encoded frames and 236 markers, with every crop and full
-final inspected. Obtain Ryan's separate acceptance or corrections. These proposals
-leave **3,359 without proposals**.
+[NBA05](../ball_tracking_completion_nba_reference_batch_05.md): fixed CHI–IND e05,
+source `174.mp4`, **240 native frames, 270–509**, source final **756**. Its complete
+review is ready: **178 centers, 62 nulls and 4–9px uncertainty**. All 240 source
+joins, 480 encoded frames and 356 markers pass validation; all crops and complete
+finals were inspected. Obtain Ryan's separate acceptance or corrections; the
+labels remain pending and **3,119 selected NBA positions lack proposals**.
 Finish the fixed NBA package and 405 uncovered permitted curated positions,
 then freeze accepted source/label/role manifests and the executable recipe.
 Curated coverage stays 868 accepted with 760 eligible centers. No fitting or

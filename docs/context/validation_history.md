@@ -1,6 +1,46 @@
 # Validation History
 
-## NBA03 accepted; NBA04 complete review ready for acceptance
+## NBA04 accepted; NBA05 complete review ready for acceptance
+
+Ryan answered **“Accept all 120 proposals”** to the exact NBA04 review question,
+including 118 centers, two unknown centers at 300–301 and 5–7px uncertainty.
+The separate [acceptance receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_04_acceptance_v0_1.json)
+and publication preserve **1,050 original files**. Actual publication/inventory
+readers and the duplicate guard pass. All 360 earlier NBA labels and 868 curated
+references remain unchanged. Combined coverage is **480/3,839 accepted**, with
+**434 centers and 46 nulls** and **3,359 not yet accepted**. The exact user-event
+time remains null; publication time is separate. Prior 12-test acceptance and
+13-test renderer evidence is retained, with no rerun, source decoding, inference
+or fitting for publication.
+
+[NBA05](../ball_tracking_completion_nba_reference_batch_05.md) is ready for separate acceptance
+from fixed CHI–IND e05, `174.mp4`, native frames **270–509**: **240 frames**
+in **[4.5,8.5)s**, at timebase 1/60000. The full source ends at **756**.
+The final proposals contain **178 centers and 62 nulls**, with **4–9px uncertainty**:
+170 partial, 32 full, 32 not-visible and six indeterminate judgments. Nulls
+preserve 24 partial fragments, 32 occlusions and six unresolved observations.
+Every current-frame source/proposal was inspected; all three initial parts remain
+unchanged, with no revisions or failures.
+
+Source preparation passes **240 exact RGB/PTS checks**, preserving **1,009 prior
+files**. Primary decoding submitted 511 packets and returned frames 0–509;
+alternate conversion emitted 510 RGB frames and reported filter frames 0–510.
+Lead-in 0–269 and filter frame 510 are disclosed same-training-source context,
+not additional labels. Only 270–509 are saved and reviewed.
+
+The [NBA05 result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_05_result_v0_1.json)
+passes **1,558 file bindings, 240 native joins, 480 encoded frames and 356
+markers**. Complete 4s/24s overlays retain all 240 frames at 60/10 fps.
+Every encoded center crop and null-source-context crop across 20 sheets was
+inspected, plus native source final 509 and both full encoded finals. The actual
+pending-review reader passes. Source preparation, delivery and finalization
+succeeded on their first attempts; no suite was rerun. All 480 accepted NBA and
+868 curated labels remain unchanged, including prior acceptance snapshots of
+286, 543, 809 and 1,050 files. New labels remain pending; **3,119 selected positions
+have no proposal**, while **3,359 have no accepted reference**. No fitting or
+protected evaluation ran.
+
+## Earlier NBA03 acceptance and completed NBA04 preparation
 
 Ryan's **“Accept all 120 proposals”** answers the complete NBA03 review question,
 accepting its 100 centers, 20 nulls and 4–8px uncertainty. The separate

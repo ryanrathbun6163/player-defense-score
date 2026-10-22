@@ -1,21 +1,33 @@
 # Completion campaign: NBA reference batch 04
 
-This increment delivers **120 frame judgments** for fixed CHI–IND
+Ryan accepted **all 120 frame judgments** for fixed CHI–IND
 episode `chi-vs-ind-0022400868_e04`, native frames **300–419** of `81.mp4`.
 The [complete review page](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_04/review_v1/index.html)
 is ready: **118 centers and two indeterminate nulls**, with **5–7px uncertainty**.
 The [two-second native overlay](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_04/review_v1/review_native.mp4)
 and [twelve-second slow overlay](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_04/review_v1/review_slow.mp4)
 retain every selected frame. All source/proposed frames, encoded center crops,
-null-context crops and full native/slow final 419 were inspected. These new
-labels remain **pending Ryan's separate acceptance**, with training and
-checkpoint-selection eligibility false.
+null-context crops and full native/slow final 419 were inspected. Ryan answered
+**“Accept all 120 proposals”** to the question identifying this exact batch,
+its two unknown centers and 5–7px uncertainty. The separate
+[acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_04_acceptance_v0_1.json)
+preserves every judgment and AI authorship. Training eligibility applies only
+to these accepted reference labels; checkpoint-selection eligibility remains
+false. The original proposal and media retain their preparation-era status.
 
-[NBA03 acceptance](ball_tracking_completion_nba_reference_batch_03.md) brings
-the combined inventory to **360 accepted NBA labels: 316 centers and 44 nulls**.
-Of 3,839 selected judgments, **3,479 are not yet accepted**. The sealed
-120-frame proposal leaves **3,359 without proposals**. Curated coverage
+Following [NBA03](ball_tracking_completion_nba_reference_batch_03.md), the
+combined inventory now contains **480 accepted NBA labels: 434 centers and
+46 nulls**. Of 3,839 selected judgments, **3,359 are not yet accepted**.
+[NBA05](ball_tracking_completion_nba_reference_batch_05.md) has a complete review
+for fixed CHI–IND e05 frames 270–509: 178 centers and 62 nulls. Its new labels need
+separate acceptance. Curated coverage
 remains **868/1,273 accepted**, with **760 eligible centers** and **405 uncovered**.
+
+The acceptance publication preserves **1,050 original files**. Actual publication,
+inventory and duplicate-guard checks pass; no tests, source decoding, inference
+or fitting were repeated for publication. The exact user-event timestamp remains
+null, with publication time recorded separately. No playback telemetry or
+independent human annotation is claimed.
 
 ## Fixed source and native timing
 
@@ -72,7 +84,7 @@ separately under explicit prior-implementation test scope.
 ## Complete review validation
 
 The [final result](../configs/ball_tracking/reviews/nba_completion_reference_batch_04_result_v0_1.json)
-is `ready_for_human_reference_acceptance`. The
+retains `ready_for_human_reference_acceptance` as its original preparation status. The
 [integration audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_04/integration_audit.json)
 passes **1,054 file bindings, 120 native source/annotation joins, 240 encoded
 frames and 236 center markers**. Both videos contain all 120 selected frames
@@ -89,8 +101,9 @@ preservation sets overlap.
 Transport checks and AI visual inspection establish review integrity; they do
 not measure model accuracy or replace Ryan's reference acceptance.
 
-Ryan's acceptance or corrections for these exact 120 new judgments is the next
-step. Prior NBA03 acceptance does not accept NBA04. No fitting or protected
+The later receipt supplies acceptance without rewriting the original review.
+Review the [NBA05 package](ball_tracking_completion_nba_reference_batch_05.md),
+whose 240 new labels require separate acceptance. No fitting or protected
 evaluation has run. Accepted-label training eligibility
 does not make the full source/label/role package or executable recipe ready.
 Freeze that complete package and recipe before the approved fit; protected
