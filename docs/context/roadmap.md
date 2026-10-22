@@ -2,6 +2,14 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
+Ryan accepted all 102 judgments in batches 05–07 together on 2026-10-22,
+including 77 centers and 25 nulls. Current curated coverage is 868/1,273, with
+760 eligible centers and 405 uncovered. No repeat review is needed. The separate
+acceptance receipts supersede the pending status in the historical preparation
+entries below; original artifacts remain unchanged. Continue the fixed NBA
+reference package and remaining permitted curated coverage. New labels still
+require acceptance before fitting; protected evaluation remains separately gated.
+
 The [seventh reference batch](../ball_tracking_completion_reference_batch_07.md)
 is ready for acceptance: 29 P001 judgments for frames 21–49, with 10 centers and
 19 nulls. Batches 05–07 remain separately pending; all 766 accepted references

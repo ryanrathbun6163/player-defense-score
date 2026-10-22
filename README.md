@@ -28,23 +28,15 @@ now contains 75 accepted P001 judgments for frames 125–199, including 58 cente
 and 17 nulls. Current accepted coverage is 766/1,273, with 507 permitted frames
 remaining. The earlier 691 references and all reviewed media remain unchanged.
 The [fifth reference batch](docs/ball_tracking_completion_reference_batch_05.md)
-is ready for Ryan's acceptance: 43 P002 proposals for frames 275–317, with
-37 centers and six nulls. Complete native/slow overlays and exception views are
-available. All 766 accepted labels remain unchanged; no fitting or protected
-evaluation has run.
-
-The [sixth reference batch](docs/ball_tracking_completion_reference_batch_06.md)
-is also ready for review: 30 P003 proposals for frames 120–149, all with centers
-and 5–8-pixel uncertainty. Batches 05 and 06 await separate acceptance; their
-73 pending proposals do not change the accepted total of 766/1,273. Complete
-overlays are available through each batch's final frame. No fitting or protected
-evaluation has run.
-
-The [seventh reference batch](docs/ball_tracking_completion_reference_batch_07.md)
-is ready: 29 P001 proposals for frames 21–49, with 10 centers and 19 nulls covering
-self-occlusion and ambiguous fragments. Complete overlays and exceptions are
-available. Batches 05–07 contain 102 pending proposals; accepted coverage remains
-766/1,273. The NBA training-label package and model fitting are still ahead.
+and [sixth](docs/ball_tracking_completion_reference_batch_06.md) and
+[seventh](docs/ball_tracking_completion_reference_batch_07.md) batches are now
+accepted. Ryan approved all 102 judgments together, including 77 centers and
+25 nulls. Separate acceptance publications preserve every original proposal and
+review artifact. Current curated coverage is **868/1,273**, with **760 eligible
+centers** and **405 permitted positions uncovered**. All 766 earlier accepted
+labels remain unchanged. These references remain evaluation-only; the fixed NBA
+training-label package and model fitting are still ahead. Protected evaluation
+remains closed.
 
 The repository currently contains a configuration-driven, resumable **21-stage player-coordinate pipeline** covering:
 

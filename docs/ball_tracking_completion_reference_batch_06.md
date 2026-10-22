@@ -1,5 +1,20 @@
 # Completion campaign: reference batch 06
 
+## Later acceptance: 2026-10-22
+
+Ryan explicitly replied “Hold up I approve and accept. Move forward” after the
+delivery summary identified batches 05–07 as 102 pending proposals. The grouped
+decision accepts this batch's exact 30 judgments, centers and uncertainty. The
+separate [acceptance receipt](../configs/ball_tracking/reviews/ball_completion_reference_batch_06_acceptance_v0_1.json)
+binds the accepted publication; original proposals, native records, drafts and
+media remain byte-identical. No invented form-option answer, playback telemetry
+or independent human annotation is claimed. No repeat review is needed.
+
+All three acceptances bring curated coverage to 868/1,273, including 760 eligible
+centers, leaving 405 uncovered. Campaign references remain evaluation-only;
+acceptance does not authorize final trajectories or protected evaluation.
+The following preparation record retains its original pending-era context.
+
 Work began on clean `codex/ball-detector-baseline` at
 `e0fe1b87499031332b7b3ef6df520469d244ea34`. All **766 accepted references** and
 four campaign acceptance receipts remain unchanged. Ryan requested continued

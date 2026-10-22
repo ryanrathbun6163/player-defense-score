@@ -1,6 +1,28 @@
 # Current State
 
-## Latest increment: seventh reference batch ready for acceptance
+## Latest decision: reference batches 05–07 accepted
+
+Ryan explicitly said “Hold up I approve and accept. Move forward” after delivery
+of the complete reviews and a summary identifying all 102 pending judgments.
+The grouped acceptance covers batch 05's 43, batch 06's 30 and batch 07's 29
+judgments, including 77 eligible centers and 25 nulls. Separate publications and
+receipts preserve the exact reviewed records, AI origin and original media.
+
+Current curated coverage is **868/1,273 accepted**, with **760 eligible centers**
+and **405 permitted positions uncovered**. All 766 earlier accepted rows and
+330 bound original files remain unchanged. Production consumers and duplicate
+guards passed for each batch and the combined seven-batch inventory. Future
+configs must explicitly include all seven accepted publications and receipts.
+No repeat review of batches 05–07 is needed; pending language in their original
+preparation artifacts and historical entries below is superseded by the receipts.
+
+Continue the fixed NBA reference package, beginning with CHI–IND episode e01
+(120 native frames at 1/60000 timebase). Its new labels require acceptance before
+fitting. Curated references stay evaluation-only. No fitting or protected
+evaluation occurred while recording acceptance; the latter still requires a
+frozen method and separate explicit authorization.
+
+## Earlier preparation: seventh reference batch ready for acceptance
 
 The [seventh reference batch](../ball_tracking_completion_reference_batch_07.md)
 contains 29 P001 proposals for frames 21–49: 10 centers with 7–10-source-pixel

@@ -156,3 +156,8 @@ configs/ball_tracking/reviews/ball_completion_reference_batch_06_result_v0_1.jso
 # Preserve exact bytes for the hash-bound seventh completion reference batch.
 configs/ball_tracking/completion_campaign/reference_batch_07_v0_1.json -text
 configs/ball_tracking/reviews/ball_completion_reference_batch_07_result_v0_1.json -text
+
+# Preserve exact bytes for the grouped acceptance of reference batches 05–07.
+configs/ball_tracking/reviews/ball_completion_reference_batch_05_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_06_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_07_acceptance_v0_1.json -text

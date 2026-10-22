@@ -1,5 +1,24 @@
 # Validation History
 
+## Grouped acceptance of reference batches 05–07
+
+Ryan's 2026-10-22 statement “Hold up I approve and accept. Move forward” accepts
+the 102 judgments identified in the preceding delivery summary. Separate receipts
+for [05](../../configs/ball_tracking/reviews/ball_completion_reference_batch_05_acceptance_v0_1.json),
+[06](../../configs/ball_tracking/reviews/ball_completion_reference_batch_06_acceptance_v0_1.json)
+and [07](../../configs/ball_tracking/reviews/ball_completion_reference_batch_07_acceptance_v0_1.json)
+bind exact accepted copies, preserving 77 centers, 25 nulls, native timing and
+AI authorship. The grouped event is recorded honestly without invented form
+answers, playback telemetry or independent human annotation.
+
+Actual production consumers pass with sequential accepted counts 809, 839 and
+868; eligible centers rise to 720, 750 and 760. Duplicate guards reject all three
+ranges under the final inventory. All 766 prior rows and 330 bound original files
+remain unchanged, including 283 original batch artifacts. The final metadata
+inventory has 20 reference authorities plus seven campaign acceptance receipts,
+868 accepted positions and 405 uncovered. No source pixels, models, scoring or
+fitting ran to record acceptance. Protected evaluation remains unauthorized.
+
 ## Completion reference batch 07: complete review, acceptance pending
 
 The [batch-07 result](../../configs/ball_tracking/reviews/ball_completion_reference_batch_07_result_v0_1.json)
