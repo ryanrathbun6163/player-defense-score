@@ -32,11 +32,20 @@ or temporal interpolation. Uncertainty is an AI point-placement estimate, not a
 calibrated confidence interval. The legacy `human_amodal_estimate` enum describes
 the whole-ball convention; it does not change the recorded AI authorship.
 
-**Human acceptance is pending.** Current accepted coverage remains **691/1,273**,
-with **582** permitted positions uncovered. Acceptance of this whole batch would
-bring coverage to 766 and leave 507. Existing accepted labels need no repeat
-review. Acceptance of these references would not authorize fitting, final
-trajectories or protected evaluation.
+Ryan explicitly answered **“Accept all 75 proposals.”** The
+[later acceptance receipt](../configs/ball_tracking/reviews/ball_completion_reference_batch_04_acceptance_v0_1.json)
+records that response to the complete overlay and exceptions. A separate
+[accepted publication](../data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_04/accepted/reference.json)
+preserves the exact annotations and native-frame records, including all 17 nulls
+and AI authorship. Current coverage is **766/1,273**, with **683 eligible centers**
+and **507** permitted positions uncovered. All 691 earlier accepted rows remain
+unchanged. The [current inventory](../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_reference_inventory_after_batch_04.json)
+records this state. No repeat review is needed.
+
+The original proposal, config, preparation result and review media/page retain
+their historical pending status unchanged; the later receipt is the current
+acceptance authority. Acceptance does not authorize fitting, final trajectories
+or protected evaluation.
 
 ## Validation and preservation
 
@@ -61,6 +70,12 @@ actual emitted records. Source preparation and delivery had no failed attempts.
 The [preparation result](../configs/ball_tracking/reviews/ball_completion_reference_batch_04_result_v0_1.json)
 binds the exact proposals, source and media audits, and inspection receipts.
 Generated labels, source PNGs and videos remain ignored by Git.
+
+The acceptance publication began from clean `4dac2e79cdfb`. Metadata-only checks
+verify all 75 annotation/native-frame joins, retain all previous accepted rows
+and reject future re-proposal of these frames. No source decoding, model calls
+or repeated tests were needed to record the human decision. Future duplicate
+guards must include all four accepted campaign publications.
 
 No fitting, inference, model scoring, threshold changes or player-pipeline
 reruns occurred. Protected evaluation remains closed pending a frozen method

@@ -1,12 +1,13 @@
 # Validation History
 
-## Completion reference batch 04: prepared, acceptance pending
+## Completion reference batch 04: prepared, reviewed and accepted
 
 The [batch-04 result](../../configs/ball_tracking/reviews/ball_completion_reference_batch_04_result_v0_1.json)
 binds 75 P001 proposals for frames 125–199: 58 centers and 17 nulls, with complete
 native/slow overlays through batch-final 199. Selection used uncovered coverage
-and packet metadata before pixels. All 691 accepted rows and three campaign
-acceptance receipts remain unchanged. New references await Ryan's acceptance.
+and packet metadata before pixels. All 691 previous accepted rows and three
+earlier acceptance receipts remain unchanged. Ryan explicitly accepted all 75
+proposals, including uncertainty and nulls, in the later review response.
 
 Guarded PyAV decoding returned 0–199 using 202 packets with maximum presentation
 index 204. Independent OpenCV comparison used a bounded copy of 205 original
@@ -20,6 +21,13 @@ revisions were required. Actual-record validation checks 170 file bindings,
 both video finals. Code/tests are unchanged; earlier ten focused tests were
 not rerun. No source/delivery failures, fitting, inference, model scoring,
 player reruns or protected evaluation occurred.
+
+Acceptance publication from clean `4dac2e79cdfb` preserves all 75 exact
+annotation/native-frame records and original pending-era artifacts. Metadata-only
+integration confirms all 691 prior rows unchanged, all 17 new nulls retained,
+and future duplicate-guard rejection. Current coverage is 766/1,273, including
+683 eligible centers, with 507 permitted frames uncovered. No new source pixels,
+models or tests were run to record the acceptance.
 
 ## Completion reference batch 03: prepared, reviewed and accepted
 

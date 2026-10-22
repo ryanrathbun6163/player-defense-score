@@ -1,13 +1,17 @@
 # Current State
 
-## Latest increment: fourth reference batch prepared
+## Latest increment: fourth reference batch accepted
 
 The [fourth reference batch](../ball_tracking_completion_reference_batch_04.md)
 contains 75 new P001 proposals for frames 125–199: 58 centers and 17 nulls.
-Complete native/slow overlays, uncertainty and exception crops are ready for
-Ryan's acceptance. Frame 199 is the batch final, not the possession final.
-All 691 accepted references remain unchanged; accepting this batch would bring
-coverage to 766/1,273 and leave 507 permitted positions uncovered.
+Ryan explicitly answered “Accept all 75 proposals” after delivery of the complete
+native/slow overlays and exceptions. A separate accepted publication preserves
+all annotations, native-frame records, AI authorship and 17 nulls. Frame 199 is
+the batch final, not the possession final. All 691 earlier accepted references
+remain unchanged. Current coverage is 766/1,273, with 683 eligible centers and
+507 permitted positions uncovered. No repeat review of this batch is needed.
+The original pending-era config, preparation result, proposals and media remain
+unchanged; the later acceptance receipt is the current authority.
 
 No uncovered run of 120 frames remains. This run was selected from metadata
 before source inspection because it can be decoded entirely within permitted
@@ -17,9 +21,11 @@ through 204. All 75 native PNGs matched exactly; all 150 encoded overlay frames
 and 116 marker regions passed checks. No source implementation changed or test
 suite was repeated. No fitting, inference, scoring or protected evaluation ran.
 
-Next: review the complete batch-04 overlay and accept or correct the new
-references; continue the fixed reference package. Existing reviews and campaign
-approval remain in force. Protected evaluation requires separate authorization.
+Acceptance integration verifies exact annotation/native-frame joins and rejects
+future re-proposal of these accepted frames. No additional pixels were decoded.
+Next: continue the fixed reference package, including all four accepted campaign
+publications in duplicate guards. New labels still need acceptance; campaign
+approval remains in force. Protected evaluation requires separate authorization.
 
 ## Earlier increment: third reference batch accepted
 
