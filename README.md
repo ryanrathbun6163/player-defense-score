@@ -23,6 +23,10 @@ Ryan accepted all 131 judgments in the
 P002 frames 368–498 through the actual clip final. Current accepted coverage is
 691/1,273, with 582 remaining. The earlier 560 references remain unchanged;
 no fitting or protected evaluation has run.
+The [fourth reference batch](docs/ball_tracking_completion_reference_batch_04.md)
+prepares 75 P001 proposals for frames 125–199 with complete overlays and
+exceptions. These new references await Ryan's acceptance; the 691 accepted
+references remain unchanged.
 
 The repository currently contains a configuration-driven, resumable **21-stage player-coordinate pipeline** covering:
 

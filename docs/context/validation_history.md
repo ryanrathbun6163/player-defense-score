@@ -1,5 +1,26 @@
 # Validation History
 
+## Completion reference batch 04: prepared, acceptance pending
+
+The [batch-04 result](../../configs/ball_tracking/reviews/ball_completion_reference_batch_04_result_v0_1.json)
+binds 75 P001 proposals for frames 125–199: 58 centers and 17 nulls, with complete
+native/slow overlays through batch-final 199. Selection used uncovered coverage
+and packet metadata before pixels. All 691 accepted rows and three campaign
+acceptance receipts remain unchanged. New references await Ryan's acceptance.
+
+Guarded PyAV decoding returned 0–199 using 202 packets with maximum presentation
+index 204. Independent OpenCV comparison used a bounded copy of 205 original
+packets 0–204, with payload hashes and PTS/DTS verified. All 75 native PNGs match
+exactly; no protected packet or frame was used. Native selected time is
+[5.04,8.04), separately from relative [5.00,8.00). Both decoders may share FFmpeg.
+
+Every source/proposal crop and final encoded crop was inspected. No draft
+revisions were required. Actual-record validation checks 170 file bindings,
+75 source/annotation/timing joins, 150 encoded frames, 116 marker regions and
+both video finals. Code/tests are unchanged; earlier ten focused tests were
+not rerun. No source/delivery failures, fitting, inference, model scoring,
+player reruns or protected evaluation occurred.
+
 ## Completion reference batch 03: prepared, reviewed and accepted
 
 The [batch-03 result](../../configs/ball_tracking/reviews/ball_completion_reference_batch_03_result_v0_1.json)

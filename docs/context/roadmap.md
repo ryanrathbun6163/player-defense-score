@@ -2,6 +2,11 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
+The [fourth reference batch](../ball_tracking_completion_reference_batch_04.md)
+prepares 75 P001 proposals for frames 125–199. Review the complete overlays and
+17 null-center exceptions. Current accepted coverage remains 691/1,273;
+accepting this batch would leave 507 permitted curated frames uncovered.
+
 The [third reference batch](../ball_tracking_completion_reference_batch_03.md)
 adds 131 accepted P002 judgments for frames 368–498 through the actual clip final.
 Ryan accepted the complete overlay, including uncertainty and null centers.

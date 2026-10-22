@@ -1,6 +1,27 @@
 # Current State
 
-## Latest increment: third reference batch accepted
+## Latest increment: fourth reference batch prepared
+
+The [fourth reference batch](../ball_tracking_completion_reference_batch_04.md)
+contains 75 new P001 proposals for frames 125–199: 58 centers and 17 nulls.
+Complete native/slow overlays, uncertainty and exception crops are ready for
+Ryan's acceptance. Frame 199 is the batch final, not the possession final.
+All 691 accepted references remain unchanged; accepting this batch would bring
+coverage to 766/1,273 and leave 507 permitted positions uncovered.
+
+No uncovered run of 120 frames remains. This run was selected from metadata
+before source inspection because it can be decoded entirely within permitted
+context. P001's larger later gap cannot start at a keyframe after the protected
+band. Both current decoders returned only frames 0–199, using permitted packets
+through 204. All 75 native PNGs matched exactly; all 150 encoded overlay frames
+and 116 marker regions passed checks. No source implementation changed or test
+suite was repeated. No fitting, inference, scoring or protected evaluation ran.
+
+Next: review the complete batch-04 overlay and accept or correct the new
+references; continue the fixed reference package. Existing reviews and campaign
+approval remain in force. Protected evaluation requires separate authorization.
+
+## Earlier increment: third reference batch accepted
 
 The [third reference batch](../ball_tracking_completion_reference_batch_03.md)
 contains 131 new P002 proposals, frames 368–498 through the actual clip final.
