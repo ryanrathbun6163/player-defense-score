@@ -9,6 +9,12 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
+The current [ball-phase completion plan](docs/ball_tracking_completion_plan.md)
+proposes a finite multi-game training campaign and explicit exit criteria for
+the three curated possessions. It is pending approval; no new model or phase
+pass is claimed. The latest trained crop verifier was rejected, and the retained
+WASB baseline remains intact.
+
 The repository currently contains a configuration-driven, resumable **21-stage player-coordinate pipeline** covering:
 
 - person detection and multi-object tracking;

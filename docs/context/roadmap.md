@@ -1,5 +1,21 @@
 # Roadmap
 
+## Proposed next campaign: complete the original ball-phase milestone
+
+The [completion plan](../ball_tracking_completion_plan.md) is the current
+recommendation, pending approval. It defines a proposed numerical ball gate,
+complete references and synchronized output for the three curated possessions,
+one broader WASB training campaign and one conditional 768×432 fallback. NBA
+transfer is reported separately from curated phase completion; full-game work
+and defensive scoring remain later phases.
+
+The sequence is: deliver the retained-baseline development package; prepare and
+review one fixed reference package; train and compare; freeze before separately
+authorized protected evaluation; accept complete trajectories or close the
+campaign as failed. There is no indefinite selector/model-search loop. No new
+scientific execution occurred while writing the plan. Older next-step entries
+below preserve history and do not supersede this proposed sequence.
+
 ## Latest result: trained fixed verifier rejected
 
 The [single provisional training run](../nba_ball_distractor_training_results.md)
