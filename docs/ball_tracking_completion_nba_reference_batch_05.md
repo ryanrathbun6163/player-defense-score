@@ -1,21 +1,32 @@
 # Completion campaign: NBA reference batch 05
 
-This increment delivers **240 frame judgments** for fixed CHI–IND episode
+Ryan accepted **all 240 frame judgments** for fixed CHI–IND episode
 `chi-vs-ind-0022400868_e05`, native source frames **270–509** of `174.mp4`.
 The [complete review page](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_05/review_v1/index.html)
 is ready: **178 proposed centers and 62 nulls**, with **4–9px uncertainty**.
 The [four-second native overlay](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_05/review_v1/review_native.mp4)
 and [24-second slow overlay](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_05/review_v1/review_slow.mp4)
 retain every selected frame. Every source/proposed frame, encoded center crop,
-null-context crop and full native/slow final 509 was inspected. The new labels
-remain **pending Ryan's separate acceptance**, with training and
-checkpoint-selection eligibility false.
+null-context crop and full native/slow final 509 was inspected. Ryan answered
+**“Accept all 240 proposals”** to the question identifying this exact batch,
+its 178 centers, 62 unknown centers and 4–9px uncertainty. The separate
+[acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_05_acceptance_v0_1.json)
+preserves every judgment and AI authorship. Training eligibility applies only
+to these accepted reference labels; checkpoint-selection eligibility remains
+false. The original proposal and media retain their preparation-era status.
 
-[NBA04 acceptance](ball_tracking_completion_nba_reference_batch_04.md) brings
-the combined inventory to **480 accepted NBA labels: 434 centers and 46 nulls**.
-Of 3,839 selected judgments, **3,359 are not yet accepted**. The current 240
-proposals leave **3,119 without proposals**. Curated coverage
+Following [NBA04](ball_tracking_completion_nba_reference_batch_04.md), the
+combined inventory now contains **720 accepted NBA labels: 612 centers and
+108 nulls**. Of 3,839 selected judgments, **3,119 are not yet accepted**.
+[NBA06](ball_tracking_completion_nba_reference_batch_06.md) continues with fixed
+CHI–IND e06 frames 240–479; its new labels need separate acceptance. Curated coverage
 remains **868/1,273 accepted**, with **760 eligible centers** and **405 uncovered**.
+
+The acceptance publication preserves **1,549 original files**. Actual publication,
+inventory and duplicate-guard checks pass; no tests, source decoding, inference
+or fitting were repeated for publication. The exact user-event timestamp remains
+null, with publication time recorded separately. No playback telemetry or
+independent human annotation is claimed.
 
 ## Fixed source and native timing
 
@@ -78,7 +89,7 @@ under explicit prior-implementation test scope.
 ## Complete review validation
 
 The [final result](../configs/ball_tracking/reviews/nba_completion_reference_batch_05_result_v0_1.json)
-is `ready_for_human_reference_acceptance`. The
+retains `ready_for_human_reference_acceptance` as its original preparation status. The
 [integration audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_05/integration_audit.json)
 passes **1,558 file bindings, 240 native source/annotation joins, 480 encoded
 frames and 356 center markers**. Both videos contain all 240 selected frames
@@ -95,8 +106,9 @@ These preservation sets overlap. Source preparation, delivery and finalization
 succeeded on their first attempts. Transport checks and AI inspection establish
 review integrity; they do not measure model accuracy or replace Ryan's acceptance.
 
-Ryan's acceptance or corrections for these exact 240 new judgments is next.
-NBA04 acceptance does not accept NBA05. No fitting or protected evaluation has
+The later receipt supplies acceptance without rewriting the original review.
+Continue with [NBA06](ball_tracking_completion_nba_reference_batch_06.md), whose
+new labels require separate acceptance. No fitting or protected evaluation has
 run. Accepted-label training eligibility does not make the full source/label/role
 package or executable recipe ready. Freeze the full accepted
 source/label/role package and executable recipe before the approved fit;

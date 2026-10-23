@@ -1,37 +1,42 @@
 # Current State
 
-## Latest decision: NBA04 accepted; NBA05 ready for reference acceptance
+## Latest decision: NBA05 accepted; NBA06 ready for reference acceptance
 
-Ryan answered **“Accept all 120 proposals”** to the question identifying the
-complete [NBA04 review](../ball_tracking_completion_nba_reference_batch_04.md),
-118 centers, two indeterminate nulls at 300–301 and 5–7px uncertainty. The separate
-publication and [receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_04_acceptance_v0_1.json)
-preserve **1,050 original files** and pass the actual readers and duplicate guard.
-Combined coverage is now **480 accepted NBA labels: 434 centers and 46 nulls**,
-out of 3,839 selected judgments. **3,359 remain without accepted references.**
+Ryan answered **“Accept all 240 proposals”** to the question identifying the
+complete [NBA05 review](../ball_tracking_completion_nba_reference_batch_05.md),
+178 centers, 62 nulls and 4–9px uncertainty. The separate publication and
+[receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_05_acceptance_v0_1.json)
+preserve **1,549 original files** and pass the actual readers and duplicate guard.
+Combined coverage is now **720 accepted NBA labels: 612 centers and 108 nulls**,
+out of 3,839 selected judgments. **3,119 remain without accepted references.**
+NBA05's original pending-era preparation records and review media remain unchanged.
 
-[NBA05](../ball_tracking_completion_nba_reference_batch_05.md) is ready for separate acceptance
-for fixed CHI–IND e05, source `174.mp4`, selected frames **270–509**. Its **240
-frames** span native **[4.5,8.5) seconds** at timebase 1/60000; source final is
-**756**. It contains **178 centers and 62 nulls**, with **4–9px uncertainty**:
-170 partial, 32 full, 32 not-visible and six indeterminate judgments. Nulls
-preserve 24 partial fragments, 32 occlusions and six ambiguous observations.
-Complete **4s native/24s slow** review passes **1,558 bindings, 240 native joins,
-480 encoded frames and 356 markers**. Every source/proposed frame, all 20
-encoded/source-context sheets and full native/slow final **509** were inspected;
-the actual pending-review consumer passes. There are **3,119 selected positions
-without proposals**. New judgments remain pending separate acceptance.
+[NBA06](../ball_tracking_completion_nba_reference_batch_06.md) is ready for separate acceptance
+for fixed CHI–IND e06, source `221.mp4`, selected frames **240–479**. Its **240
+frames** span native **[4,8) seconds** at timebase 1/60000; source final is **718**.
+The final proposals contain **224 centers and 16 nulls**, with **5–8px
+uncertainty**: 134 partial, 100 full, four not-visible and two indeterminate
+judgments. Nulls preserve two unresolved observations at 280–281, four occlusions
+at 282–285 and ten partial fragments at 404–413. Source preparation passes all
+**240 exact PNG/PTS comparisons** and preserves **1,507 earlier files**.
+Complete **4s native/24s slow** review passes **2,014 bindings, 240 native joins,
+480 encoded frames and 448 markers**. Every source/proposed frame, all 20
+encoded/source-context sheets and full native/slow final **479** were inspected;
+the actual pending-review consumer passes. All three initial proposal parts
+remain unchanged, with no corrections or failures. There are **2,879 selected
+positions without proposals**. New judgments remain pending separate acceptance.
 
 The unchanged renderer and acceptance reader retain prior **13-test and 12-test
-evidence**; no tests were rerun for this increment. NBA05's actual producer and
+evidence**; no tests were rerun for this increment. NBA06's actual producer and
 encoded-media validation are separate current evidence. Earlier review records,
 failures and acceptance evidence remain in the batch reports and validation history.
 
 Curated coverage remains **868/1,273 accepted**, **760 eligible centers** and
 **405 uncovered**. Accepted NBA training eligibility applies only to reference
-labels; the complete package and executable recipe are not ready for fitting.
-Ryan's acceptance or corrections for NBA05 is the immediate next step.
-NBA04 acceptance does not cover the new batch. No fit or protected evaluation has run;
+labels; complete the accepted source/label/role package and freeze the executable
+recipe before the already approved fit. Ryan's acceptance or corrections for
+NBA06 is the immediate next step. NBA05 acceptance does not cover the new batch.
+No fit or protected evaluation has run;
 protected evaluation requires a frozen method and separate authorization.
 
 ## Earlier decision: reference batches 05–07 accepted

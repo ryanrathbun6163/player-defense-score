@@ -187,3 +187,8 @@ configs/ball_tracking/reviews/nba_completion_reference_batch_04_result_v0_1.json
 configs/ball_tracking/reviews/nba_completion_reference_batch_04_acceptance_v0_1.json -text
 configs/ball_tracking/completion_campaign/nba_reference_batch_05_v0_1.json -text
 configs/ball_tracking/reviews/nba_completion_reference_batch_05_result_v0_1.json -text
+
+# Preserve exact bytes for NBA05 acceptance and the sixth native reference batch.
+configs/ball_tracking/reviews/nba_completion_reference_batch_05_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_06_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_06_result_v0_1.json -text

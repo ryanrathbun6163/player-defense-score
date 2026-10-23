@@ -2,18 +2,20 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
-Ryan accepted all 120 [NBA04 labels](../ball_tracking_completion_nba_reference_batch_04.md),
-including 118 centers, two indeterminate nulls and 5–7px uncertainty. Combined NBA coverage is
-**480/3,839 accepted**, including **434 centers and 46 nulls**, with **3,359
+Ryan accepted all 240 [NBA05 labels](../ball_tracking_completion_nba_reference_batch_05.md),
+including 178 centers, 62 nulls and 4–9px uncertainty. Combined NBA coverage is
+**720/3,839 accepted**, including **612 centers and 108 nulls**, with **3,119
 not yet accepted**. The next increment is
-[NBA05](../ball_tracking_completion_nba_reference_batch_05.md): fixed CHI–IND e05,
-source `174.mp4`, **240 native frames, 270–509**, source final **756**. Its complete
-review is ready: **178 centers, 62 nulls and 4–9px uncertainty**. All 240 source
-joins, 480 encoded frames and 356 markers pass validation; all crops and complete
-finals were inspected. Obtain Ryan's separate acceptance or corrections; the
-labels remain pending and **3,119 selected NBA positions lack proposals**.
+[NBA06](../ball_tracking_completion_nba_reference_batch_06.md): fixed CHI–IND e06,
+source `221.mp4`, **240 native frames, 240–479**, source final **718**. Its source
+preparation passes all 240 exact PNG/PTS comparisons. Its complete review is
+ready: **224 centers, 16 nulls and 5–8px uncertainty**. All 240 native joins,
+480 encoded frames and 448 markers pass validation; all crops and full finals
+were inspected. Obtain Ryan's separate acceptance or corrections. The labels
+remain pending and **2,879 selected NBA positions lack proposals**.
 Finish the fixed NBA package and 405 uncovered permitted curated positions,
-then freeze accepted source/label/role manifests and the executable recipe.
+then freeze accepted source/label/role manifests and the executable recipe before
+the already approved fit.
 Curated coverage stays 868 accepted with 760 eligible centers. No fitting or
 protected evaluation has run.
 

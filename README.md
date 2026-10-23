@@ -9,23 +9,24 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
-Ryan accepted all 120 labels in the
-[fourth NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_04.md),
-including **118 centers, two indeterminate nulls and 5–7px uncertainty**. The
-separate receipt preserves **1,050 original files** and passes the actual
-publication/inventory readers. Combined NBA coverage is now **480 accepted
-labels: 434 centers and 46 nulls**, with **3,359 of 3,839 selected judgments
+Ryan accepted all 240 labels in the
+[fifth NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_05.md),
+including **178 centers, 62 nulls and 4–9px uncertainty**. The separate
+publication preserves **1,549 original files** and passes the actual
+publication/inventory readers. Combined NBA coverage is now **720 accepted
+labels: 612 centers and 108 nulls**, with **3,119 of 3,839 selected judgments
 not yet accepted**.
-The [fifth NBA batch](docs/ball_tracking_completion_nba_reference_batch_05.md)
-is ready for separate acceptance: **240 native frames, 270–509**, from fixed
-CHI–IND source `174.mp4`, with **178 proposed centers, 62 nulls and 4–9px
-uncertainty**. Complete 4s/24s overlays pass 240 native joins, 480 encoded-frame
-checks and 356 marker checks; all crops and full final 509 were inspected.
-The source ends at frame 756. These proposals leave **3,119 without proposals**.
+The [sixth NBA batch](docs/ball_tracking_completion_nba_reference_batch_06.md)
+is ready for separate acceptance: **240 native frames, 240–479**, from fixed
+CHI–IND source `221.mp4`, with **224 proposed centers, 16 nulls and 5–8px
+uncertainty**. Complete 4s/24s overlays pass **240 native joins, 480 encoded-frame
+checks and 448 marker checks**. All crops and full final **479** were inspected;
+the source ends at frame **718**. Source preparation preserves 1,507 earlier files.
+These new proposals remain pending and leave **2,879 without proposals**.
 The unchanged code retains prior 12-test acceptance and 13-test renderer evidence;
 neither suite was rerun for this increment.
-Label eligibility does not make the complete package or executable recipe ready
-for fitting.
+The approved fit follows completion of the accepted source/label/role package
+and frozen executable recipe; those conditions are not yet met.
 Accepted curated coverage stays **868/1,273**, including **760 eligible centers**,
 with **405 uncovered**. No fitting
 or protected evaluation has run.

@@ -1,6 +1,51 @@
 # Validation History
 
-## NBA04 accepted; NBA05 complete review ready for acceptance
+## NBA05 accepted; NBA06 complete review ready for acceptance
+
+Ryan answered **“Accept all 240 proposals”** to the exact NBA05 review question,
+including 178 centers, 62 nulls and 4–9px uncertainty. The separate
+[acceptance receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_05_acceptance_v0_1.json)
+and publication preserve **1,549 original files**. Actual publication/inventory
+readers and the duplicate guard pass. All 480 earlier NBA labels and 868 curated
+references remain unchanged. Combined coverage is **720/3,839 accepted**, with
+**612 centers and 108 nulls** and **3,119 not yet accepted**. The exact user-event
+time remains null; publication time is separate. Prior 12-test acceptance and
+13-test renderer evidence is retained, with no rerun, source decoding, inference
+or fitting for publication. The original NBA05 preparation result and media
+remain unchanged; the later receipt supplies the accepted status.
+
+[NBA06](../ball_tracking_completion_nba_reference_batch_06.md) uses fixed CHI–IND
+e06, `221.mp4`, native frames **240–479**: **240 frames** in **[4,8)s**, at timebase
+1/60000. The full source ends at **718**. Its final proposals contain
+**224 centers and 16 nulls**, with **5–8px uncertainty**: 134 partial, 100 full,
+four not-visible and two indeterminate judgments. Nulls preserve unresolved
+observations at 280–281, occlusions at 282–285 and partial fragments at 404–413.
+Every current-frame source/proposal was inspected; all three initial parts remain
+unchanged, with no corrections or failures. These new references remain pending
+separate acceptance.
+
+Source preparation passes **240 exact RGB/PTS checks**, preserving **1,507 prior
+files**. Primary decoding submitted 481 packets and returned frames 0–479;
+alternate conversion emitted 480 RGB frames and reported filter frames 0–480.
+Lead-in 0–239 and filter frame 480 are disclosed same-training-source context,
+not additional labels. Only 240–479 are saved for review. Source preparation
+succeeded on its first attempt; both decoder paths use FFmpeg components,
+establishing transport consistency without independent visual ground truth.
+
+The [NBA06 result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_06_result_v0_1.json)
+passes **2,014 file bindings, 240 native joins, 480 encoded frames and 448
+markers**. Complete 4s/24s overlays retain all 240 frames at 60/10 fps; emitted
+color metadata and every encoded-frame comparison pass. All 20 sheets, including
+224 encoded center crops and 16 null-source-context crops, were inspected, plus
+native source frame 479 and both full encoded finals. The actual pending-review
+reader passes. Delivery and finalization succeeded on their first attempts;
+no suite was rerun. All 720 accepted NBA and 868 curated labels remain unchanged,
+including prior acceptance snapshots of 286, 543, 809, 1,050 and 1,549 files.
+These preservation sets overlap. New labels remain pending; **2,879 selected
+positions have no proposal**, while **3,119 have no accepted reference**.
+No fitting or protected evaluation ran.
+
+## Earlier NBA04 acceptance and completed NBA05 preparation
 
 Ryan answered **“Accept all 120 proposals”** to the exact NBA04 review question,
 including 118 centers, two unknown centers at 300–301 and 5–7px uncertainty.
