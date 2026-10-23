@@ -10,19 +10,21 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 ## Project status
 
 Ryan accepted all 240 labels in the
-[fifth NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_05.md),
-including **178 centers, 62 nulls and 4–9px uncertainty**. The separate
-publication preserves **1,549 original files** and passes the actual
-publication/inventory readers. Combined NBA coverage is now **720 accepted
-labels: 612 centers and 108 nulls**, with **3,119 of 3,839 selected judgments
-not yet accepted**.
-The [sixth NBA batch](docs/ball_tracking_completion_nba_reference_batch_06.md)
-is ready for separate acceptance: **240 native frames, 240–479**, from fixed
-CHI–IND source `221.mp4`, with **224 proposed centers, 16 nulls and 5–8px
-uncertainty**. Complete 4s/24s overlays pass **240 native joins, 480 encoded-frame
-checks and 448 marker checks**. All crops and full final **479** were inspected;
-the source ends at frame **718**. Source preparation preserves 1,507 earlier files.
-These new proposals remain pending and leave **2,879 without proposals**.
+[sixth NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_06.md),
+including **224 centers, 16 nulls and 5–8px uncertainty**. The separate
+publication preserves **2,000 original files** and passes the actual
+publication/inventory readers. Combined NBA coverage is now **960 accepted
+labels: 836 centers and 124 nulls**, completing all six fixed CHI–IND episodes.
+**2,879 of 3,839 selected judgments remain unaccepted**. The
+[seventh NBA batch](docs/ball_tracking_completion_nba_reference_batch_07.md)
+is ready for separate acceptance: DEN–BOS e01, source `3.mp4`, **120 native
+frames, 0–119**; source final is **602**. Source preparation passes all 120
+exact PNG/PTS comparisons and
+preserves 1,957 earlier files. Its three inspected proposal parts contain
+**120 partial-visible centers, zero nulls and 5–6px uncertainty**. Complete
+2s/12s overlays pass **120 native joins, 240 encoded-frame checks and 240 marker
+checks**. All crops and full final 119 were inspected. These proposals remain
+pending and leave **2,759 selected positions without proposals**.
 The unchanged code retains prior 12-test acceptance and 13-test renderer evidence;
 neither suite was rerun for this increment.
 The approved fit follows completion of the accepted source/label/role package

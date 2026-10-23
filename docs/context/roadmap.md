@@ -2,17 +2,18 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
-Ryan accepted all 240 [NBA05 labels](../ball_tracking_completion_nba_reference_batch_05.md),
-including 178 centers, 62 nulls and 4–9px uncertainty. Combined NBA coverage is
-**720/3,839 accepted**, including **612 centers and 108 nulls**, with **3,119
-not yet accepted**. The next increment is
-[NBA06](../ball_tracking_completion_nba_reference_batch_06.md): fixed CHI–IND e06,
-source `221.mp4`, **240 native frames, 240–479**, source final **718**. Its source
-preparation passes all 240 exact PNG/PTS comparisons. Its complete review is
-ready: **224 centers, 16 nulls and 5–8px uncertainty**. All 240 native joins,
-480 encoded frames and 448 markers pass validation; all crops and full finals
-were inspected. Obtain Ryan's separate acceptance or corrections. The labels
-remain pending and **2,879 selected NBA positions lack proposals**.
+Ryan accepted all 240 [NBA06 labels](../ball_tracking_completion_nba_reference_batch_06.md),
+including 224 centers, 16 nulls and 5–8px uncertainty. Combined NBA coverage is
+**960/3,839 accepted**, including **836 centers and 124 nulls**, with **2,879
+not yet accepted**. All six fixed CHI–IND episodes are accepted. Continue with
+[NBA07](../ball_tracking_completion_nba_reference_batch_07.md): fixed training-role
+DEN–BOS e01, source `3.mp4`, **120 native frames, 0–119**, source final **602**.
+Its three inspected parts contain **120 partially
+visible centers, zero nulls and 5–6px uncertainty**. Complete 2s/12s review passes
+120 native joins, 240 encoded frames and 240 markers; all crops and full finals
+were inspected. Obtain Ryan's separate acceptance or corrections. These proposals
+leave **2,759 selected NBA positions without proposals**; accepted coverage
+remains unchanged.
 Finish the fixed NBA package and 405 uncovered permitted curated positions,
 then freeze accepted source/label/role manifests and the executable recipe before
 the already approved fit.

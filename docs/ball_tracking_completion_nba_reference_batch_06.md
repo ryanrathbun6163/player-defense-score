@@ -1,21 +1,28 @@
 # Completion campaign: NBA reference batch 06
 
-This increment is ready for reference acceptance for fixed CHI–IND episode
+Ryan accepted this increment for fixed CHI–IND episode
 `chi-vs-ind-0022400868_e06`, native source frames **240–479** of `221.mp4`.
 The fixed window contains **240 frames**, spanning **[4,8) seconds**.
 The [complete review page](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_06/review_v1/index.html)
-contains **224 proposed centers and 16 nulls**, with **5–8px uncertainty**.
+contains **224 centers and 16 nulls**, with **5–8px uncertainty**.
 The [four-second native overlay](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_06/review_v1/review_native.mp4)
 and [24-second slow overlay](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_06/review_v1/review_slow.mp4)
 retain every selected frame. Every source/proposed frame, encoded center crop,
-null-context crop and full native/slow final 479 was inspected. These 240 new
-labels remain pending separate human acceptance. No fitting or protected
-evaluation has run.
+null-context crop and full native/slow final 479 was inspected. Ryan then said
+**“Looks good. Please move forward chat. I approve the batch”** in response to
+the complete NBA06 review and status. The separate
+[acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_06_acceptance_v0_1.json)
+records acceptance of all 240 judgments, including uncertainty and null centers.
+The original preparation records and media retain their pending-era status.
+No fitting or protected evaluation has run.
 
-[NBA05 acceptance](ball_tracking_completion_nba_reference_batch_05.md) brings
-the combined inventory to **720 accepted NBA labels: 612 centers and 108 nulls**.
-Of 3,839 selected judgments, **3,119 are not yet accepted**; the new 240 proposals
-leave **2,879 without proposals**. Curated coverage remains **868/1,273 accepted**,
+NBA06 acceptance brings the combined inventory to **960 accepted NBA labels:
+836 centers and 124 nulls**, completing all six fixed CHI–IND episodes.
+Of 3,839 selected judgments, **2,879 are not yet accepted**. The
+[publication audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_06/acceptance_audit/publication_audit.json)
+preserves **2,000 original files**, all 720 prior NBA labels and all 868 curated
+references. Actual publication/inventory readers pass and the duplicate guard
+rejects repeated native frames. Curated coverage remains **868/1,273 accepted**,
 with **760 eligible centers** and **405 uncovered**.
 
 ## Fixed source and native timing
@@ -65,8 +72,10 @@ inspected current-frame source pixels; no temporal interpolation or model
 coordinates supply these judgments. All three initial parts remain final,
 without annotation corrections or helper failures.
 
-Each proposal remains pending human acceptance, with training and checkpoint
-selection eligibility false. NBA05 acceptance does not cover this new batch.
+The original proposals remain unchanged with pending-era eligibility flags.
+The separate accepted publication makes these fixed-role training references
+eligible for the future frozen package. Acceptance does not approve final
+trajectories, complete the package or open protected evaluation.
 
 The renderer and acceptance reader remain unchanged. Prior **13-test renderer
 and 12-test acceptance-reader evidence** remains historical. No suite was rerun;
@@ -76,7 +85,7 @@ under explicit prior-implementation test scope.
 ## Complete review validation
 
 The [final result](../configs/ball_tracking/reviews/nba_completion_reference_batch_06_result_v0_1.json)
-is `ready_for_human_reference_acceptance`. The
+retains its preparation-time status `ready_for_human_reference_acceptance`. The
 [integration audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_06/integration_audit.json)
 passes **2,014 file bindings, 240 native source/annotation joins, 480 encoded
 frames and 448 center markers**. Both videos contain all 240 selected frames
@@ -88,7 +97,7 @@ native source frame 479 and both full encoded finals were also inspected. The
 binds the inspected assets. The actual pending-review consumer passes without
 accepting any labels.
 
-All **720 accepted NBA labels** and **868 curated references** remain unchanged.
+At preparation, all **720 earlier accepted NBA labels** and **868 curated references** remained unchanged.
 The audit preserves the 1,507-file source-preparation snapshot and all five prior
 acceptance snapshots: **286 NBA01, 543 NBA02, 809 NBA03, 1,050 NBA04 and 1,549
 NBA05 files**. These preservation sets overlap. Source preparation, delivery and
@@ -96,7 +105,7 @@ finalization succeeded on their first attempts. Transport checks and AI
 inspection establish review integrity; they do not measure model accuracy or
 replace Ryan's acceptance.
 
-Ryan's acceptance or corrections for these 240 proposals is the next step.
-New proposals need his acceptance before use as training references. Freeze the
-full accepted source/label/role package and executable recipe before the approved fit;
+Continue with the next fixed NBA episode. Its new proposals need separate
+acceptance before use as training references. Freeze the full accepted
+source/label/role package and executable recipe before the approved fit;
 protected evaluation requires a frozen method and separate explicit authorization.
