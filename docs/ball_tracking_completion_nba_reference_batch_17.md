@@ -3,8 +3,21 @@
 This increment prepares fixed checkpoint-validation HOU–OKC episode
 `hou-vs-okc-0022400879_e05`, source `23.mp4`, native frames **0–239**.
 The 240 selected frames cover **[0,4) seconds**. The complete native/slow review
-is ready for human reference acceptance. All 240 new judgments remain pending;
-preparation and review create no accepted labels.
+was reviewed for human reference acceptance. Ryan accepted all 240 proposals
+on October 23, 2026, with the exact statement **“Accept all 240 proposals”**.
+The original pending proposal and review remain unchanged; acceptance is a
+separate publication.
+
+The [acceptance record](../configs/ball_tracking/reviews/nba_completion_reference_batch_17_acceptance_v0_1.json)
+binds all **212 centers and 28 unknown centers**, retaining **5–9px uncertainty**.
+The actual publication audit preserves **5,406 original files** and passes the
+accepted-reference reader and duplicate-identity guard in **27.810 seconds**.
+The NBA inventory now contains **2,640 accepted judgments**, including
+**2,426 centers and 214 nulls**: **1,920 training** and **720 validation**.
+These fixed validation references remain excluded from gradient fitting.
+Acceptance does not authorize checkpoint scoring, final trajectories, future
+labels, package freezing, or protected evaluation. No playback completion or
+exact acceptance-event UTC time is inferred from the user reply.
 
 ## Fixed role and timing
 
@@ -12,7 +25,8 @@ The [configuration](../configs/ball_tracking/completion_campaign/nba_reference_b
 retains the unchanged [source roles](../configs/ball_tracking/completion_campaign/source_roles_v0_1.json).
 The game was assigned checkpoint validation before new model predictions.
 These references are reserved for later saved-checkpoint selection and excluded
-from gradient fitting. Both pending eligibility flags remain false.
+from gradient fitting. Both eligibility flags in the preserved pending artifacts
+remain false; the separate accepted publication records the accepted role.
 
 The source is 1280×720 at 60 fps, timebase 1/60000, with 559 frames.
 Batch final **239** differs from full-source final **558**. Selected PTS are
@@ -124,7 +138,11 @@ and current **12-test acceptance-reader** receipts cover unchanged source;
 the original eight-test acceptance history remains separate. No tests were
 rerun for this increment. No model inference, fitting or checkpoint scoring ran.
 
-## Campaign status and next decision
+## Campaign status at original delivery
+
+The figures and pending decision below preserve the original review-delivery
+state. Ryan's subsequent NBA17 acceptance above supersedes that pending step.
+The current next review is [NBA18](ball_tracking_completion_nba_reference_batch_18.md).
 
 Ryan's separate NBA16 acceptance publication supplies **2,400 accepted NBA
 judgments, 2,214 centers and 186 nulls**. Accepted roles are **1,920 training
