@@ -1,5 +1,36 @@
 # Completion campaign: NBA reference batch 14
 
+## Accepted references
+
+Ryan accepted all 120 proposals on 2026-10-23 (America/Phoenix), saying
+**“Reviewed. Keep moving forward chat”** in response to the complete review
+and acceptance question. The [separate acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_14_acceptance_v0_1.json)
+accepts 71 partially visible and 49 fully visible centers, zero nulls and
+5–7px uncertainty. Exact user-event UTC time is unknown and remains null;
+publication time is recorded separately. No playback telemetry is claimed.
+
+The [publication audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_14/acceptance_audit/publication_audit.json)
+passes on the first attempt in 22.945 seconds. It preserves **4,401 original
+files**, all 2,040 earlier accepted NBA labels and all 868 curated references.
+Actual publication/inventory readers and the duplicate native-frame guard pass.
+The [combined inventory](../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_nba_reference_inventory_after_batch_14.json)
+has **2,160 accepted NBA rows, 1,996 centers and 164 nulls**, with **1,679
+unaccepted**. Roles remain **1,920 training and 240 checkpoint validation**.
+All 120 accepted NBA14 rows are excluded from gradient fitting and eligible
+only as reference labels for a future frozen checkpoint-selection package.
+Acceptance does not approve checkpoint scoring, freeze the complete package
+or recipe, accept final trajectories, approve future labels or open protected
+evaluation. The remaining selected labels are 959 training and 720 validation.
+
+No fitting or tests ran. The complete [NBA15 review](ball_tracking_completion_nba_reference_batch_15.md)
+is ready for separate reference acceptance.
+
+## Original preparation record
+
+The following preparation-time account remains historical. Its pending status
+and counts are superseded by the acceptance above; original proposals, media,
+inspection receipts and final result remain byte-unchanged.
+
 This increment prepares fixed checkpoint-validation HOU–OKC episode
 `hou-vs-okc-0022400879_e02`, source `43.mp4`, native frames **0–119**.
 The 120 selected frames cover **[0,2) seconds**. The complete native/slow review

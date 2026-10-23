@@ -1,5 +1,68 @@
 # Validation History
 
+## NBA14 accepted; NBA15 complete review ready for acceptance
+
+Ryan's **“Reviewed. Keep moving forward chat”** accepts all 120 NBA14 judgments
+through HOU–OKC e02 frame 119: 71 partial/49 full centers, zero nulls and 5–7px
+uncertainty. The [separate receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_14_acceptance_v0_1.json)
+and [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_14/acceptance_audit/publication_audit.json)
+preserve **4,401 originals**, all 2,040 earlier NBA rows and 868 curated references.
+Publication passes actual readers and duplicate guard in **22.945 seconds**.
+Coverage is **2,160 accepted: 1,996 centers and 164 nulls**, comprising 1,920
+training and 240 validation judgments. **1,679 remain unaccepted: 959 training
+and 720 validation**. Original review artifacts, first-part collective reviewer
+attribution and the earlier helper failure remain unchanged. Validation labels
+are excluded from gradient fitting; no scoring, fit or tests ran in publication.
+
+[NBA15 source preparation](../ball_tracking_completion_nba_reference_batch_15.md)
+passes **120 exact native PNG/PTS checks** for checkpoint-validation HOU–OKC e03
+frames 120–239, native [2,4)s, preserving **4,350 prior files**. First attempt
+takes **23.969 seconds**. Primary decoding returned frames 0–239 after 241
+packets; alternate conversion emitted 240 RGB frames and reported filter
+frames 0–240. Prefix 0–119 and filter frame 240 are disclosed same-role context;
+only selected 120–239 were saved. Source final 472 differs from batch final 239.
+
+All three parts are sealed after actual source/proposed-frame and full-endpoint
+inspection: **98 centers and 22 nulls** at **126–129, 142–145, 184–189 and
+230–237**, with **5–9px center uncertainty**. Visibility is **32 full, 70 partial,
+ten indeterminate and eight not visible**. All initial annotations remain
+unchanged. Complete encoded review and finalization have now passed.
+The middle sealed part keeps six occluded
+nulls at 184–189. The final sealed part keeps four indeterminate/nulls at 230–233
+and four partial/nulls at 234–237; final 239 supports a partial center with broad
+8px uncertainty. Two middle-part read-only schema lookup failures created no
+outputs and changed no annotation geometry. The first receipt separately retains
+a read-only `rg` access denial for unrelated old temporary directories; existing
+named helpers were used without altering outputs, and elapsed time is unknown.
+These lookup incidents are distinct from annotation-helper failures.
+New labels remain pending with both
+eligibility flags false; their 120 proposals leave **1,559 positions without
+proposals** and **1,679 without accepted references**. Historical 13-test
+renderer/current 12-test acceptance
+coverage and separate original eight-test history are retained; no tests, models,
+fitting, checkpoint scoring or protected evaluation ran for this increment.
+
+The [NBA15 final result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_15_result_v0_1.json)
+is ready for human reference acceptance. Its
+[integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_15/integration_audit.json)
+passes **4,732 bindings, 120 native source/annotation joins, 240 encoded frames
+and 196 center markers**, plus all 120 exact source PNG checks. All-frame pixel
+comparisons and emitted color checks pass. Complete overlays run 2s at 60 fps
+and 12s at 10 fps. Root actually inspected all ten encoded/source sheets,
+98 center crops, 22 unmarked null contexts and both actual encoded finals before
+writing the [visual receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_15/inspection/root_visual_review.json).
+Root also inspected full native source 120/159/239 and late source details
+228–239; the three part receipts cover every source/proposed frame collectively.
+Final 239 retains **[420,355] ±8 native pixels**, a partial upper ball arc above
+the head. No coordinate is carried through the late null interval.
+
+Source preparation, delivery (**14.031s**) and finalization (**8.859s**) each
+passed on the first attempt. There were no annotation or media corrections;
+the read-only lookup incidents above remain preserved. The actual pending-review
+reader passes 120 joins and creates zero accepted labels. All **2,160 accepted
+NBA rows**, **868 curated references** and **4,350 preparation-era files** remain
+unchanged. Earlier acceptance preservation snapshots stay bound and overlap.
+
 ## NBA13 accepted; NBA14 complete review ready for acceptance
 
 Ryan's **“Looks good chat. Move forward my brother”** accepts all 120 NBA13

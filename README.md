@@ -9,27 +9,28 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
-Ryan accepted all 120 labels in [NBA13](docs/ball_tracking_completion_nba_reference_batch_13.md): 80 partial and 40 fully
-visible centers, zero nulls and 5–6px uncertainty. Separate publication preserves
-**4,156 original files**, all 1,920 earlier NBA labels and all 868 curated
+Ryan accepted all 120 labels in [NBA14](docs/ball_tracking_completion_nba_reference_batch_14.md): 71 partial and 49 fully
+visible centers, zero nulls and 5–7px uncertainty. Separate publication preserves
+**4,401 original files**, all 2,040 earlier NBA labels and all 868 curated
 references. Actual publication/inventory readers and the duplicate guard pass.
-NBA coverage is **2,040/3,839 accepted labels: 1,876 centers and 164 nulls**,
-leaving **1,799 unaccepted**. Accepted roles are **1,920 training and 120 checkpoint
-validation**; **959 training and 840 validation judgments remain unaccepted**.
-The validation labels are excluded from gradient fitting; acceptance does not
-approve checkpoint scoring or protected evaluation.
+NBA coverage is **2,160/3,839 accepted labels: 1,996 centers and 164 nulls**,
+leaving **1,679 unaccepted**. Accepted roles are **1,920 training and 240 checkpoint
+validation**; **959 training and 720 validation judgments remain unaccepted**.
+The validation labels remain excluded from gradient fitting. Label acceptance
+does not authorize checkpoint scoring or protected evaluation.
 
-The complete [NBA14 review](docs/ball_tracking_completion_nba_reference_batch_14.md) is ready for acceptance:
-fixed checkpoint-validation HOU–OKC e02, `43.mp4`, frames **0–119**, native
-**[0,2)s**. It contains **120 centers, zero nulls, 71 partial and 49 fully visible
-judgments**, with **5–7px uncertainty**. All source/proposal frames, all ten
-encoded sheets and both actual encoded finals have been inspected. The complete
-2s native/12s slow overlays pass **4,456 bindings, 120 native joins and 240
-encoded-frame/marker checks**. Source preparation passes 120 exact PNG/PTS checks
-and preserves **4,106 prior files**. Batch final 119 differs from full-source
-final 596. All new labels remain pending with both eligibility flags false,
-leaving **1,679 selected positions without proposals** and **1,799 without
-accepted references**.
+The complete [NBA15 review](docs/ball_tracking_completion_nba_reference_batch_15.md) is ready for acceptance:
+fixed checkpoint-validation HOU–OKC e03, `88.mp4`, native frames **120–239**,
+covering **[2,4)s**. Its **120 pending judgments** contain **98 centers and 22
+nulls** at **126–129, 142–145, 184–189 and 230–237**, with **5–9px center
+uncertainty**. Visibility is 32 full, 70 partial, ten indeterminate and eight
+not visible. Complete 2s native/12s slow overlays pass **4,732 bindings, 120
+native joins, 240 encoded frames and 196 marker checks**. All ten encoded/source
+sheets and both actual final images were inspected. Source preparation passes
+120 exact PNG/PTS checks and preserves **4,350 prior files**. Batch final 239
+differs from full-source final 472. Both pending eligibility flags remain false,
+leaving **1,559 positions without proposals** and **1,679 without accepted
+references**.
 
 No completion-campaign fit has run. Complete the fixed reference package and
 freeze accepted source/label/role manifests and the executable recipe before
