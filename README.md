@@ -9,35 +9,34 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
-Ryan accepted all 120 labels in the
-[tenth NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_10.md),
-including **100 centers, 20 nulls at frames 270–289 and 5–8px uncertainty**.
-The separate acceptance publication preserves **3,015 original files** and
-passes the actual publication/inventory readers and duplicate guard. Combined
-NBA coverage is **1,440 accepted labels: 1,296 centers and 144 nulls**;
-**2,399 of 3,839 selected judgments remain unaccepted**. Original NBA10 review
-records and media retain their preparation-time pending status; the new
-acceptance receipt supplies the decision.
+Ryan accepted all 240 labels in the
+[eleventh NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_11.md):
+240 centers, zero nulls, 172 partially visible and 68 fully visible judgments,
+with 5–8px uncertainty. Separate publication preserves **3,455 original files**
+and passes the actual publication/inventory readers and duplicate guard. NBA
+coverage is **1,680/3,839 accepted labels: 1,536 centers and 144 nulls**;
+**2,159 judgments remain unaccepted**. Original review records and media retain
+their preparation-time pending status; the new acceptance receipt supplies the
+decision.
 
-The completion campaign is still at **reference preparation**. No
-completion-campaign fit has run: the full accepted source/label/role package
-and executable training recipe are not yet frozen. The
-[eleventh NBA batch](docs/ball_tracking_completion_nba_reference_batch_11.md)
-uses fixed DEN–BOS e05, `84.mp4`, frames **210–449**. Source preparation passes
-all **240 exact PNG/PTS checks** and preserves **2,969 earlier files**;
-all source and proposed frames are inspected. The **240 pending centers** comprise
-**172 partial and 68 fully visible judgments**, with **5–8px uncertainty** and
-zero nulls. These proposals are ready for Ryan's acceptance: complete
-**4s native / 24s slow
-overlays** retain every frame through 449. Validation passes **3,494 bindings,
-240 native joins and 480 encoded-frame/marker checks**; all 240 center crops and
-both full encoded finals are inspected. The batch leaves **2,159 selected
-positions without proposals**; no new labels are accepted.
-Continue the fixed NBA references and remaining permitted curated coverage, then freeze those inputs
-before the already approved fit. Accepted curated coverage stays **868/1,273**,
-including **760 eligible centers**, with **405 uncovered**; these remain
-evaluation-only. Prior 12-test acceptance and 13-test renderer evidence is
-retained without rerunning tests. Protected evaluation remains closed.
+The completion campaign remains at **reference preparation**. The complete
+[NBA12 review](docs/ball_tracking_completion_nba_reference_batch_12.md) is ready
+for acceptance: **240 proposals, 220 centers and 20 nulls** at 182–197 and
+386–389, with 5–8px center uncertainty. Its four-second native and 24-second
+slow overlays cover DEN–BOS e06, `220.mp4`, frames **150–389**. Validation passes
+3,954 bindings, 240 native joins, 480 encoded frames and 440 center markers;
+all 240 source PNG/PTS checks pass and 3,403 prior files remain unchanged.
+These labels are still pending, leaving **1,919 selected positions without
+proposals** and **2,159 without accepted references**.
+
+No completion-campaign fit has run. All 1,680 accepted NBA rows have the training
+role; **1,199 training and all 960 checkpoint-validation judgments remain
+unaccepted**. Complete the fixed references and freeze the accepted
+source/label/role package and executable recipe before the already approved fit.
+Curated coverage remains **868/1,273 accepted**, with **760 eligible centers**
+and **405 uncovered**, evaluation-only. Historical 13-test renderer and 12-test
+acceptance evidence is retained without reruns. Protected evaluation remains
+closed.
 
 The approved [ball-phase completion campaign](docs/ball_tracking_completion_plan.md)
 has started. Its [first increment](docs/ball_tracking_completion_first_increment.md)

@@ -1,5 +1,31 @@
 # Completion campaign: NBA reference batch 11
 
+## Accepted references
+
+Ryan accepted all 240 proposals on 2026-10-23 (America/Phoenix), replying
+**“I approve caht. move forward”** to the complete review and acceptance question.
+The [separate acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_11_acceptance_v0_1.json)
+accepts the 240 centers, including 172 partial and 68 fully visible judgments,
+zero null centers and 5–8px uncertainty. The exact user-event timestamp is
+unknown and stays null; the publication timestamp is separate.
+
+The [publication audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_11/acceptance_audit/publication_audit.json)
+preserves **3,455 original files**, all 1,440 earlier accepted NBA rows and all
+868 curated references. Actual publication/inventory readers and the duplicate
+native-frame guard pass. The [combined inventory](../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_nba_reference_inventory_after_batch_11.json)
+now has **1,680 accepted NBA labels: 1,536 centers and 144 nulls**; **2,159 of
+3,839 selected judgments remain unaccepted**. These are training-role labels
+eligible for a future frozen package; acceptance does not freeze the recipe,
+accept final trajectories, approve future batches or open protected evaluation.
+No fitting or new tests ran. The [next fixed NBA12 episode](ball_tracking_completion_nba_reference_batch_12.md)
+is ready for separate human reference acceptance.
+
+## Original preparation record
+
+The following preparation-time account is retained as history. Its pending
+status and counts are superseded by the separate acceptance above; original
+proposal, media, inspection receipts and final result remain byte-unchanged.
+
 This increment prepares references for fixed training-role DEN–BOS episode
 `den-vs-bos-0022400866_e05`, source `84.mp4`, frames **210–449**. Its 240 selected
 frames span **[3.5,7.5) seconds**. Source preparation and all source/proposal
@@ -119,7 +145,7 @@ human ground truth. No inference or fitting ran.
 | Integration audit | `e1205de06feb84856f006248a4ad33c5ca9649bba428251f94b6cce1bec50bd0` |
 | Confirmed AI visual receipt | `46dca7c0e2cbd669f55bb15e670534967da64a52d7aa055708e7fe83114ad5a2` |
 
-## Next step
+## Preparation-time next step (completed by acceptance above)
 
 Ryan reviews the complete overlays and decides whether to accept the 240
 reference proposals, including their stated uncertainty, or request corrections.

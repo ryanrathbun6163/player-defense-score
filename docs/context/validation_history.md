@@ -1,5 +1,56 @@
 # Validation History
 
+## NBA11 accepted; NBA12 complete review ready for acceptance
+
+Ryan's **“I approve caht. move forward”** accepts all 240 NBA11 judgments through
+DEN–BOS e05 frame 449, including 172 partial/68 full centers, zero nulls and
+5–8px uncertainty. The [separate receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_11_acceptance_v0_1.json)
+and [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_11/acceptance_audit/publication_audit.json)
+preserve 3,455 originals, all 1,440 earlier NBA labels and 868 curated references.
+Actual readers and duplicate guard pass. NBA totals are **1,680 accepted,
+1,536 centers and 144 nulls**, with **2,159 unaccepted**. Original review evidence
+and the preserved receipt-timing correction remain unchanged. No fit or tests ran.
+
+[NBA12 source preparation and complete review](../ball_tracking_completion_nba_reference_batch_12.md)
+passes 240 exact native PNG/PTS checks for DEN–BOS e06 frames 150–389 and preserves
+3,403 earlier files. First attempt elapsed 58.684 seconds; primary returned 390
+frames after 391 packets, alternate emitted 390 RGB frames and reported 391
+filter frames. Prefix 0–149 and filter frame 390 are disclosed same-training-source
+context; only 150–389 were saved. Full-source final 564 is distinct from batch
+final 389. Source preparation, complete delivery and finalization each passed
+on their first attempt.
+
+All three sealed parts provide **240 pending judgments, 220 centers and 20
+nulls at 182–197 and 386–389**, with **5–8px center uncertainty**. Visibility
+is 176 partial, 54 full, four indeterminate (188–191) and six not visible
+(192–197); ten of the partial judgments have null centers. Middle notes/tags
+at 272–273 and 276–277 were corrected without changing geometry, visibility
+or uncertainty. The original proposal is retained. Its receipt also retains
+a system-Python launch failure caused by missing PIL: no outputs were created,
+and the unchanged helper succeeded with the project `.venv`. First and final
+parts remain unchanged from their initial proposals.
+
+The [final result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_12_result_v0_1.json)
+is ready for human reference acceptance. The
+[integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_12/integration_audit.json)
+passes **3,954 bindings, 240 source/annotation native joins, 480 encoded frames
+and 440 center markers**. Complete 4s native/24s slow overlays preserve every
+selected frame. Root actually inspected all twenty encoded/source sheets,
+220 encoded center crops, 20 null contexts, full source 389 and both actual
+encoded finals before recording the
+[visual receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_12/inspection/root_visual_review.json).
+Final frame 389 remains partial/null; no flight position is propagated through
+rim/net overlap. All-frame pixel comparisons and emitted color checks pass.
+
+The actual pending-review reader passes 240 joins and creates zero accepted
+labels. All 1,680 accepted NBA rows and 868 curated references remain unchanged;
+the pending batch leaves **1,919 selected positions without proposals** and
+**2,159 without accepted references**. Earlier acceptance preservation sets
+remain separately bound and overlap. Prior 13-test renderer and current
+12-test acceptance-reader receipts remain unchanged implementation evidence;
+the original eight-test acceptance history stays separate. No tests, model
+calls, fitting or protected evaluation ran for this increment.
+
 ## NBA11 complete review ready for reference acceptance
 
 [NBA11](../ball_tracking_completion_nba_reference_batch_11.md) uses fixed
