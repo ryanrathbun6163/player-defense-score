@@ -1,5 +1,33 @@
 # Completion campaign: NBA reference batch 12
 
+## Accepted references
+
+Ryan accepted all 240 proposals on 2026-10-23 (America/Phoenix), saying
+**“Looks good to me. Move forward chat”** in response to the complete overlay
+and acceptance question. The [separate acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_12_acceptance_v0_1.json)
+accepts **220 centers and 20 nulls at 182–197 and 386–389**, with **5–8px center
+uncertainty**: 176 partial, 54 full, four indeterminate and six not visible.
+Exact user-event time is unknown and remains null; publication time is separate.
+
+The [publication audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_12/acceptance_audit/publication_audit.json)
+passes on the first attempt in 21.228 seconds, preserving **3,911 original
+files**, all 1,680 earlier accepted NBA labels and all 868 curated references.
+Actual publication/inventory readers and the duplicate native-frame guard pass.
+The [combined inventory](../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_nba_reference_inventory_after_batch_12.json)
+has **1,920 accepted NBA rows, 1,756 centers and 164 nulls**, with **1,919
+unaccepted**. All accepted NBA rows have the fixed training role. Acceptance
+is label-scoped and does not approve future labels, freeze the fit package or
+recipe, accept final trajectories, or open protected evaluation.
+
+No fitting or new tests ran. The [next fixed NBA13 episode](ball_tracking_completion_nba_reference_batch_13.md)
+is ready for separate human reference acceptance.
+
+## Original preparation record
+
+The following preparation-time account is retained as history. Its pending
+status and counts are superseded by the separate acceptance above; original
+proposal, media, inspection receipts and result remain byte-unchanged.
+
 This increment prepares the fixed training-role DEN–BOS episode
 `den-vs-bos-0022400866_e06`, source `220.mp4`, native frames **150–389**.
 The 240 selected frames cover **[2.5,6.5) seconds**. The
@@ -122,7 +150,7 @@ consistency, not model accuracy or independent human ground truth.
 | Integration audit | `6b96875b5e092b83fb0b4fcf3a76ca2585024757eb17942a42a52fcebed6085c` |
 | AI visual receipt | `ed23edd4e98a66f9949228fe7d4d5b13f00c82b0f1fbb184823b983eea1cd5d6` |
 
-## Next step
+## Preparation-time next step (completed by acceptance above)
 
 All new labels retain AI authorship, pending human acceptance, and false training
 and checkpoint-selection eligibility. NBA11 acceptance remains separate:

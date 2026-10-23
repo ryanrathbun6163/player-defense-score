@@ -1,5 +1,48 @@
 # Validation History
 
+## NBA12 accepted; NBA13 complete review ready for acceptance
+
+Ryan's **“Looks good to me. Move forward chat”** accepts all 240 NBA12 judgments,
+including 220 centers, 20 nulls and 5–8px uncertainty. The separate acceptance
+publication passes actual readers and the duplicate guard, preserving **3,911
+original files**, all 1,680 earlier NBA labels and 868 curated references.
+Combined NBA coverage is **1,920 accepted: 1,756 centers and 164 nulls**,
+with **1,919 unaccepted**. Original pending review evidence and annotation
+correction/helper failure history remain unchanged. No tests or fit ran.
+
+NBA13 source preparation passes all **120 exact native PNG/PTS checks** for
+fixed checkpoint-validation HOU–OKC e01 frames 120–239, preserving **3,862
+prior files**. First attempt takes 22.518 seconds. Primary decoding returned
+240 frames 0–239 after 241 packets; alternate conversion emitted 240 RGB frames
+and reported 241 filter frames 0–240. Prefix 0–119 and filter 240 are disclosed
+same-role context; only 120–239 were saved. Batch final 239 differs from full-source
+final 502. All three parts are sealed: 120 centers, zero nulls, 80 partial and
+40 fully visible judgments, with 5–6px uncertainty. Every source/proposal frame
+and full part endpoint was actually inspected; all initial drafts are unchanged,
+with no corrections or helper failures. Fully visible frames are 124–135 and
+212–239. No inference, fitting, checkpoint scoring or protected evaluation has run.
+
+The [NBA13 final result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_13_result_v0_1.json)
+is ready for human reference acceptance. Its
+[integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/integration_audit.json)
+passes **4,205 bindings, 120 native source/annotation joins, 240 encoded frames
+and 240 center markers**. The complete 2s native/12s slow overlays retain every
+selected frame. Root actually inspected all ten encoded sheets, all 120 center
+crops, full source 120/160/200/239 and both actual encoded finals before writing
+the [visual receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/inspection/root_visual_review.json).
+Final 239 proposes **[629,152] ±6 native pixels**. All-frame pixel comparisons
+and emitted color checks pass. Source preparation, delivery and finalization
+each passed on the first attempt, without annotation or media corrections.
+
+The actual pending-review reader passes 120 joins and creates zero accepted
+labels. All 1,920 accepted NBA rows, 868 curated references and 3,862 files
+captured before source preparation remain unchanged. Earlier acceptance
+preservation snapshots remain bound and overlap. These 120 pending
+checkpoint-validation proposals leave **1,799 positions without proposals**
+and **1,919 without accepted references**; both eligibility flags remain false.
+Historical 13-test renderer and current 12-test acceptance-reader evidence is
+unchanged, with original eight-test history separately bound. No suite was rerun.
+
 ## NBA11 accepted; NBA12 complete review ready for acceptance
 
 Ryan's **“I approve caht. move forward”** accepts all 240 NBA11 judgments through

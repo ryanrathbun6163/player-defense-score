@@ -2,26 +2,36 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
-Ryan accepted all 240 [NBA11 labels](../ball_tracking_completion_nba_reference_batch_11.md),
-including 240 centers, zero nulls and 5–8px uncertainty. NBA coverage is
-**1,680/3,839 accepted**, with **1,536 centers, 144 nulls and 2,159 unaccepted**.
-All 1,680 accepted rows are training references; **1,199 training and all 960
-checkpoint-validation judgments remain unaccepted**.
+Ryan accepted all 240 labels in [NBA12](../ball_tracking_completion_nba_reference_batch_12.md):
+220 centers and 20 nulls at 182–197 and 386–389, with 5–8px center uncertainty.
+Separate publication preserves **3,911 original files**, all 1,680 earlier NBA
+labels and all 868 curated references. Actual publication/inventory readers
+and the duplicate guard pass. NBA coverage is **1,920/3,839 accepted labels:
+1,756 centers and 164 nulls**, leaving **1,919 unaccepted**. All accepted NBA
+rows have the training role; **959 training and all 960 checkpoint-validation
+judgments remain unaccepted**.
 
 The next decision is acceptance or correction of the complete
-[NBA12 review](../ball_tracking_completion_nba_reference_batch_12.md): **240
-pending judgments, 220 centers and 20 nulls** at 182–197 and 386–389, with
-5–8px center uncertainty. The 4s/24s overlays cover fixed DEN–BOS e06,
-`220.mp4`, frames 150–389. All 240 source PNG/PTS checks and the complete media
-audit pass; 3,403 prior files are preserved. Pending proposals leave **1,919
-selected positions without proposals** and do not change the **2,159
-unaccepted** count. Every new batch still requires Ryan's acceptance.
+[NBA13 review](../ball_tracking_completion_nba_reference_batch_13.md):
+HOU–OKC e01, `4.mp4`, frames **120–239**,
+native **[2,4)s**. Its whole-game role is **checkpoint validation**, fixed before
+new model predictions. These references are reserved for later checkpoint
+selection and excluded from gradient fitting. Source preparation passes all
+**120 exact PNG/PTS checks** and preserves **3,862 prior files**. All source and
+proposal frames are inspected: **120 centers, zero nulls, 80 partial and 40 fully
+visible judgments**, with **5–6px uncertainty**. Complete 2s/12s overlays and the
+current media audit pass; all ten encoded sheets and full finals are inspected.
+These pending proposals leave **1,799 selected positions without proposals**
+and do not change the **1,919 unaccepted** count. Both eligibility flags remain
+false until the required label acceptance; no checkpoint scoring has run.
 
-Finish the fixed NBA references and **405 uncovered permitted curated positions**,
-then freeze the accepted source/label/role package and executable recipe before
-the already approved fit. No completion-campaign fit has run. Curated coverage
-remains 868 accepted with 760 eligible centers, evaluation-only. Protected
-evaluation remains closed pending a frozen method and separate authorization.
+No completion-campaign fit has run. Complete the fixed reference package and
+freeze accepted source/label/role manifests and the executable recipe before
+the already approved fit. Curated coverage remains **868/1,273 accepted**, with
+**760 eligible centers** and **405 uncovered**, evaluation-only. Historical
+13-test renderer and 12-test acceptance evidence remains unchanged; no suite
+was rerun. Protected evaluation remains closed pending a frozen method and
+separate explicit authorization.
 
 ### Earlier completion-campaign milestones
 
