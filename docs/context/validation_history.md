@@ -1,6 +1,51 @@
 # Validation History
 
-## NBA06 accepted; NBA07 complete review ready for acceptance
+## NBA07 accepted; NBA08 complete review ready for acceptance
+
+Ryan answered **“Accept all 120 proposals”** to the exact NBA07 question,
+including 120 partially visible centers, zero nulls and 5–6px uncertainty. The
+[acceptance receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_07_acceptance_v0_1.json)
+and [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_07/acceptance_audit/publication_audit.json)
+preserve **2,245 original files**, all 960 earlier accepted NBA labels and all
+868 curated references. Actual publication/inventory readers and the duplicate
+guard pass. Combined coverage is **1,080/3,839 accepted**, with **956 centers and
+124 nulls**; **2,759 remain unaccepted**. The exact user-event time remains null;
+publication time is separate. Original pending-era review records and media
+remain unchanged. Prior 12-test acceptance and 13-test renderer evidence is
+retained without rerunning tests. No source decoding, inference or fitting
+occurred for acceptance publication.
+
+[NBA08](../ball_tracking_completion_nba_reference_batch_08.md) uses fixed training-role
+DEN–BOS e02, original `19.mp4`, frames **0–119**, native **[0,2)s**; source final
+is **398**. Source preparation passes **120 exact RGB/PTS checks**, preserving
+**2,201 prior files**. The primary decoder submitted 121 packets and returned
+frames 0–119; alternate conversion emitted 120 RGB frames and reported filter
+frames 0–120. Filter frame 120 is disclosed same-training-source context, not an
+additional label or review frame. Only selected 0–119 are saved. Preparation
+succeeded on its first attempt in 22.15 seconds. Both decoder paths use FFmpeg
+components, establishing transport consistency without independent visual ground
+truth. All three parts are now inspected: **120 centers, zero nulls and 4–6px
+uncertainty**, with 92 partial and 28 full judgments. The free-throw shooter
+gathers/lifts the ball, then releases it into flight. Every current-frame
+source/proposed overlay and each part's full endpoints was inspected. All initial
+drafts remain unchanged, with no corrections or helper failures.
+
+The [NBA08 result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_08_result_v0_1.json)
+passes **2,514 file bindings, 120 native joins, 240 encoded frames and 240
+markers**. Complete 2s/12s overlays retain all 120 frames at 60/10 fps; emitted
+color metadata and every encoded-frame comparison pass. All ten sheets and
+120 encoded center crops were inspected, plus full native source frame 119 and
+both full encoded finals. The actual pending-review reader passes. Source
+preparation, delivery and finalization succeeded on their first attempts; no
+suite was rerun. Prior 13-test renderer and current 12-test acceptance-reader
+evidence remains historical; the original eight-test acceptance record is
+separate retained history. All 1,080 accepted NBA and 868 curated labels remain
+unchanged, including prior acceptance snapshots of 286, 543, 809, 1,050, 1,549,
+2,000 and 2,245 files. These preservation sets overlap. The 120 new labels remain
+pending: **2,639 selected positions have no proposals** and **2,759 have no
+accepted reference**. No fitting or protected evaluation ran.
+
+## Earlier NBA06 acceptance and completed NBA07 preparation
 
 Ryan said **“Looks good. Please move forward chat. I approve the batch”** after
 review delivery and the status identifying all 240 NBA06 proposals, including

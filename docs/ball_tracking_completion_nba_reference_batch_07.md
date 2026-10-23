@@ -1,6 +1,6 @@
 # Completion campaign: NBA reference batch 07
 
-This increment is ready for reference acceptance for the first fixed DEN–BOS episode,
+Ryan accepted this increment for the first fixed DEN–BOS episode,
 `den-vs-bos-0022400866_e01`, original source `3.mp4`, native frames **0–119**.
 The selected window contains **120 frames**, spanning **[0,2) seconds**.
 The [complete review page](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_07/review_v1/index.html)
@@ -8,21 +8,26 @@ contains **120 partially visible centers, zero nulls and 5–6px uncertainty**.
 The [two-second native overlay](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_07/review_v1/review_native.mp4)
 and [12-second slow overlay](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_07/review_v1/review_slow.mp4)
 retain every selected frame. Every source/proposed frame, encoded center crop
-and full native/slow final 119 was inspected. All 120 proposals remain pending
-Ryan's separate acceptance. No fitting or protected evaluation has run.
+and full native/slow final 119 was inspected. Ryan answered
+**“Accept all 120 proposals”** to the question identifying these frames, all
+120 partial-visible centers, zero nulls and 5–6px uncertainty. The separate
+[acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_07_acceptance_v0_1.json)
+records that decision. Original preparation records and media retain their
+pending-era status. No fitting or protected evaluation has run.
 
-[NBA06 acceptance](ball_tracking_completion_nba_reference_batch_06.md) brings
-the combined NBA inventory to **960 accepted labels: 836 centers and 124 nulls**,
-completing all six fixed CHI–IND episodes. Of 3,839 selected judgments,
-**2,879 remain unaccepted**; these 120 proposals leave **2,759 without proposals**.
+NBA07 acceptance brings the combined NBA inventory to **1,080 accepted labels:
+956 centers and 124 nulls**, covering all six fixed CHI–IND episodes and the
+first DEN–BOS episode. Of 3,839 selected judgments, **2,759 remain unaccepted**.
+The [publication audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_07/acceptance_audit/publication_audit.json)
+preserves **2,245 original files**, all 960 earlier accepted NBA labels and all
+868 curated references. Actual publication/inventory readers pass and the
+duplicate guard rejects repeated native frames.
 Curated coverage remains **868/1,273 accepted**,
 with **760 eligible centers** and **405 uncovered**.
 
-Ryan said **“Looks good. Please move forward chat. I approve the batch”** in
-response to the complete NBA06 review. Its separate
-[acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_06_acceptance_v0_1.json)
-preserves 2,000 original files and all earlier accepted labels. That decision
-does not accept these new DEN–BOS proposals.
+The earlier [NBA06 acceptance](ball_tracking_completion_nba_reference_batch_06.md)
+remains intact. NBA07's new receipt supplies its separate acceptance authority;
+future batches still require their own acceptance.
 
 ## Fixed source and native timing
 
@@ -75,8 +80,10 @@ Every current-frame source image and proposed overlay was inspected, including
 full native/proposed endpoints for all three parts. Each center was manually
 proposed from that frame's pixels; no model coordinates or temporal interpolation
 supplied positions. All three initial parts remain final, without corrections
-or helper failures. New labels remain pending, with training and checkpoint
-selection eligibility false.
+or helper failures. Original proposals retain pending-era eligibility flags.
+The separate accepted publication makes these fixed-role training references
+eligible for the future frozen package. Acceptance does not approve final
+trajectories, complete the package or open protected evaluation.
 
 The renderer and acceptance reader remain unchanged; their prior
 **13-test and 12-test evidence** is historical, with no new suite run claimed.
@@ -87,7 +94,7 @@ acceptance-reader record remains separate retained history.
 ## Complete review validation
 
 The [final result](../configs/ball_tracking/reviews/nba_completion_reference_batch_07_result_v0_1.json)
-is `ready_for_human_reference_acceptance`. The
+retains its preparation-time status `ready_for_human_reference_acceptance`. The
 [integration audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_07/integration_audit.json)
 passes **2,264 file bindings, 120 native source/annotation joins, 240 encoded
 frames and 240 center markers**. Both videos contain all 120 selected frames
@@ -99,7 +106,7 @@ encoded finals were also inspected. The
 binds the inspected assets. The actual pending-review consumer passes without
 accepting any labels.
 
-All **960 accepted NBA labels** and **868 curated references** remain unchanged.
+At preparation, all **960 earlier accepted NBA labels** and **868 curated references** remained unchanged.
 The audit preserves the 1,957-file source-preparation snapshot and all six prior
 acceptance snapshots: **286 NBA01, 543 NBA02, 809 NBA03, 1,050 NBA04, 1,549 NBA05
 and 2,000 NBA06 files**. These preservation sets overlap. Source preparation,
@@ -107,8 +114,7 @@ delivery and finalization succeeded on their first attempts. Transport checks
 and AI inspection establish review integrity; they do not measure model accuracy
 or replace Ryan's acceptance.
 
-Ryan's acceptance or corrections for these 120 proposals is the next step.
-New proposals need his acceptance before use as training references. Freeze the
-full accepted source/label/role package and executable recipe before the already
-approved fit; protected evaluation requires
-a frozen method and separate explicit authorization.
+Continue with the next fixed DEN–BOS episode. Its new proposals need separate
+acceptance before use as training references. Freeze the full accepted
+source/label/role package and executable recipe before the already approved fit;
+protected evaluation requires a frozen method and separate explicit authorization.

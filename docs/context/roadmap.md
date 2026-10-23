@@ -2,23 +2,23 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
-Ryan accepted all 240 [NBA06 labels](../ball_tracking_completion_nba_reference_batch_06.md),
-including 224 centers, 16 nulls and 5–8px uncertainty. Combined NBA coverage is
-**960/3,839 accepted**, including **836 centers and 124 nulls**, with **2,879
-not yet accepted**. All six fixed CHI–IND episodes are accepted. Continue with
-[NBA07](../ball_tracking_completion_nba_reference_batch_07.md): fixed training-role
-DEN–BOS e01, source `3.mp4`, **120 native frames, 0–119**, source final **602**.
-Its three inspected parts contain **120 partially
-visible centers, zero nulls and 5–6px uncertainty**. Complete 2s/12s review passes
+Ryan accepted all 120 [NBA07 labels](../ball_tracking_completion_nba_reference_batch_07.md),
+including 120 partial-visible centers, zero nulls and 5–6px uncertainty. Combined
+NBA coverage is **1,080/3,839 accepted**, including **956 centers and 124 nulls**,
+with **2,759 not yet accepted**. Continue with
+[NBA08](../ball_tracking_completion_nba_reference_batch_08.md): fixed training-role
+DEN–BOS e02, source `19.mp4`, **120 native frames, 0–119**, source final **398**.
+Source preparation passes all 120 exact PNG/PTS checks and preserves 2,201 prior
+files. Its three inspected parts contain **120 centers, zero nulls and 4–6px
+uncertainty**: 92 partial and 28 full judgments. Complete 2s/12s review passes
 120 native joins, 240 encoded frames and 240 markers; all crops and full finals
 were inspected. Obtain Ryan's separate acceptance or corrections. These proposals
-leave **2,759 selected NBA positions without proposals**; accepted coverage
-remains unchanged.
+leave **2,639 selected NBA positions without proposals**; accepted coverage is
+unchanged.
 Finish the fixed NBA package and 405 uncovered permitted curated positions,
 then freeze accepted source/label/role manifests and the executable recipe before
-the already approved fit.
-Curated coverage stays 868 accepted with 760 eligible centers. No fitting or
-protected evaluation has run.
+the already approved fit. Curated coverage stays 868 accepted with 760 eligible
+centers. No fitting or protected evaluation has run.
 
 ### Earlier completion-campaign milestones
 

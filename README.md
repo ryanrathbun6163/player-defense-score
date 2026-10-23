@@ -9,29 +9,27 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
-Ryan accepted all 240 labels in the
-[sixth NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_06.md),
-including **224 centers, 16 nulls and 5–8px uncertainty**. The separate
-publication preserves **2,000 original files** and passes the actual
-publication/inventory readers. Combined NBA coverage is now **960 accepted
-labels: 836 centers and 124 nulls**, completing all six fixed CHI–IND episodes.
-**2,879 of 3,839 selected judgments remain unaccepted**. The
-[seventh NBA batch](docs/ball_tracking_completion_nba_reference_batch_07.md)
-is ready for separate acceptance: DEN–BOS e01, source `3.mp4`, **120 native
-frames, 0–119**; source final is **602**. Source preparation passes all 120
-exact PNG/PTS comparisons and
-preserves 1,957 earlier files. Its three inspected proposal parts contain
-**120 partial-visible centers, zero nulls and 5–6px uncertainty**. Complete
-2s/12s overlays pass **120 native joins, 240 encoded-frame checks and 240 marker
-checks**. All crops and full final 119 were inspected. These proposals remain
-pending and leave **2,759 selected positions without proposals**.
+Ryan accepted all 120 labels in the
+[seventh NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_07.md),
+including **120 partial-visible centers, zero nulls and 5–6px uncertainty**.
+The separate publication preserves **2,245 original files** and passes the actual
+publication/inventory readers. Combined NBA coverage is now **1,080 accepted
+labels: 956 centers and 124 nulls**. **2,759 of 3,839 selected judgments remain
+unaccepted**. The [eighth NBA batch](docs/ball_tracking_completion_nba_reference_batch_08.md)
+is ready for separate acceptance: DEN–BOS e02, source `19.mp4`, **120 native
+frames, 0–119**; source final is **398**. Source preparation passes all 120 exact PNG/PTS
+comparisons and preserves **2,201 earlier files**. Its three inspected parts
+contain **120 centers, zero nulls and 4–6px uncertainty**: 92 partial-visible
+and 28 fully visible judgments. New labels remain pending and leave **2,639
+selected positions without proposals**. Complete 2s/12s overlays pass **120 native
+joins, 240 encoded-frame checks and 240 marker checks**. All ten crop sheets
+and full final 119 were inspected.
 The unchanged code retains prior 12-test acceptance and 13-test renderer evidence;
-neither suite was rerun for this increment.
-The approved fit follows completion of the accepted source/label/role package
-and frozen executable recipe; those conditions are not yet met.
-Accepted curated coverage stays **868/1,273**, including **760 eligible centers**,
-with **405 uncovered**. No fitting
-or protected evaluation has run.
+neither suite was rerun for this increment. The approved fit follows completion
+of the accepted source/label/role package and frozen executable recipe; those
+conditions are not yet met. Accepted curated coverage stays **868/1,273**,
+including **760 eligible centers**, with **405 uncovered**. No fitting or
+protected evaluation has run.
 
 The approved [ball-phase completion campaign](docs/ball_tracking_completion_plan.md)
 has started. Its [first increment](docs/ball_tracking_completion_first_increment.md)
