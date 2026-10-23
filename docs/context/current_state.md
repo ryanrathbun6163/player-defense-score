@@ -1,34 +1,32 @@
 # Current State
 
-## Latest decision: NBA08 accepted; NBA09 ready for reference acceptance
+## Latest decision: NBA09 accepted; NBA10 ready for reference acceptance
 
-Ryan said **“I approve chat. Move forward”** in response to the complete
-[NBA08 review and question](../ball_tracking_completion_nba_reference_batch_08.md),
-including 120 centers, zero nulls and 4–6px uncertainty. The separate
-[acceptance receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_08_acceptance_v0_1.json)
+Ryan answered **“Accept all 120 proposals”** to the complete
+[NBA09 review question](../ball_tracking_completion_nba_reference_batch_09.md),
+including 112 partial and eight full centers, zero nulls and 5–8px uncertainty.
+The separate [acceptance receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_09_acceptance_v0_1.json)
 records accepted training references. Actual publication/inventory readers and
-the duplicate guard pass; **2,490 original files** are unchanged. Combined
-coverage is **1,200/3,839 NBA labels: 1,076 centers and 124 nulls**;
-**2,639 remain unaccepted**. Original NBA08 preparation records and media retain
-their pending-era status; the new receipt supplies acceptance authority. The
-later [explicit NBA08 confirmation](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/acceptance_audit/explicit_followup_confirmation.json)
-adds zero labels and does not accept NBA09.
+the duplicate guard pass; **2,742 original files** are unchanged. Combined
+coverage is **1,320/3,839 NBA labels: 1,196 centers and 124 nulls**;
+**2,519 remain unaccepted**. Original NBA09 preparation records and media retain
+their pending-era status; the new receipt supplies acceptance authority.
 
-[NBA09](../ball_tracking_completion_nba_reference_batch_09.md) is ready for separate
-acceptance: fixed training-role **DEN–BOS e03**, original `44.mp4`, selected frames **0–119**
-in native **[0,2) seconds**, timebase 1/60000. The full source ends at **474**.
-Source preparation passes **120 exact PNG/PTS comparisons** and preserves
-**2,445 earlier files**. The three inspected parts contain **120 centers, zero
-nulls and 5–8px uncertainty**: 112 partial and eight full judgments. The
-ballhandler dribbles toward a developing screen, with hand, leg and crossing-player
-overlap retained. Every source/proposed frame and each part's full endpoints
-was inspected; no annotation corrections or annotation-helper failures occurred. Complete
-**2s native/12s slow** review passes **2,768 bindings, 120 native joins, 240
-encoded frames and 240 markers**. All ten crop sheets and full native/slow final
-119 were inspected; the actual pending-review consumer passes. These new labels
-require separate acceptance and leave **2,519 selected positions without
-proposals**. Ryan's acceptance or corrections is next; NBA08 acceptance does
-not cover them.
+[NBA10](../ball_tracking_completion_nba_reference_batch_10.md) is ready for separate acceptance:
+fixed training-role **DEN–BOS e04**, original `132.mp4`, selected frames **240–359**
+in native **[4,6) seconds**, timebase 1/60000. Batch final is 359; the full source
+ends at **578**. Source preparation passes **120 exact PNG/PTS comparisons** and
+preserves **2,696 earlier files**. All three current-frame source/proposed parts
+are inspected: **100 centers, 20 nulls and 5–8px uncertainty**. Visibility is
+68 full, 40 partial, two indeterminate and ten not-visible judgments. Nulls
+270–289 preserve edge clipping, ambiguity and the out-of-frame interval; no
+center is interpolated through that gap. Complete **2s native/12s slow** review
+passes **3,049 bindings, 120 native joins, 240 encoded frames and 200 center
+markers**. All ten sheets, 100 encoded center crops and 20 null contexts were
+inspected, plus full source 359 and both actual encoded finals. The actual
+pending-review reader passes. These new labels require separate acceptance and
+leave **2,399 selected positions without proposals**. Ryan's acceptance or
+corrections is next; NBA09 acceptance does not cover NBA10.
 
 Curated coverage remains **868/1,273 accepted**, **760 eligible centers** and
 **405 uncovered**. Complete the accepted source/label/role package and freeze

@@ -2,23 +2,22 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
-Ryan accepted all 120 [NBA08 labels](../ball_tracking_completion_nba_reference_batch_08.md),
-including 120 centers, zero nulls and 4–6px uncertainty. Combined NBA coverage is
-**1,200/3,839 accepted**, including **1,076 centers and 124 nulls**, with **2,639
+Ryan accepted all 120 [NBA09 labels](../ball_tracking_completion_nba_reference_batch_09.md),
+including 120 centers, zero nulls and 5–8px uncertainty. Combined NBA coverage is
+**1,320/3,839 accepted**, including **1,196 centers and 124 nulls**, with **2,519
 not yet accepted**. Continue with
-[NBA09](../ball_tracking_completion_nba_reference_batch_09.md): fixed training-role
-DEN–BOS e03, source `44.mp4`, **120 native frames, 0–119**, source final **474**.
-Source preparation passes all 120 exact PNG/PTS checks and preserves 2,445 prior
-files. Its three inspected parts contain **120 centers, zero nulls and 5–8px
-uncertainty**: 112 partial and eight full judgments. Complete 2s/12s review passes
-120 native joins, 240 encoded frames and 240 markers; all crops and full finals
-were inspected. Obtain Ryan's separate acceptance or corrections. These proposals
-leave **2,519 selected NBA positions without proposals**; accepted coverage is
-unchanged.
-Finish the fixed NBA package and 405 uncovered permitted curated positions,
-then freeze accepted source/label/role manifests and the executable recipe before
-the already approved fit. Curated coverage stays 868 accepted with 760 eligible
-centers. No fitting or protected evaluation has run.
+[NBA10](../ball_tracking_completion_nba_reference_batch_10.md): fixed training-role
+DEN–BOS e04, source `132.mp4`, **120 native frames, 240–359**, native **[4,6)s**;
+source final is **578**. Source preparation passes all 120 exact PNG/PTS checks
+and preserves 2,696 prior files. All source/proposed frames are inspected:
+**100 centers, 20 nulls at 270–289 and 5–8px uncertainty**, leaving **2,399 positions
+without proposals**. Complete 2s/12s review passes 120 native joins, 240 encoded
+frames and 200 markers; all center crops, null contexts and full finals were
+inspected. Obtain Ryan's separate acceptance or corrections. Finish the fixed
+NBA package and 405 uncovered permitted curated
+positions, then freeze accepted source/label/role manifests and the executable
+recipe before the already approved fit. Curated coverage stays 868 accepted with
+760 eligible centers. No fitting or protected evaluation has run.
 
 ### Earlier completion-campaign milestones
 

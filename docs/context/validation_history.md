@@ -1,6 +1,57 @@
 # Validation History
 
-## NBA08 accepted; NBA09 complete review ready for acceptance
+## NBA09 accepted; NBA10 complete review ready for acceptance
+
+Ryan answered **“Accept all 120 proposals”** to the exact NBA09 review question,
+including 112 partial and eight full centers, zero nulls and 5–8px uncertainty.
+The [acceptance receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_09_acceptance_v0_1.json)
+and [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_09/acceptance_audit/publication_audit.json)
+preserve **2,742 original files**, all 1,200 earlier accepted NBA labels and all
+868 curated references. Actual publication/inventory readers and the duplicate
+guard pass. Combined coverage is **1,320/3,839 accepted**, with **1,196 centers and
+124 nulls**; **2,519 remain unaccepted**. The exact user-event time remains null;
+publication time is separate. Original pending-era review records and media
+remain unchanged. Prior 12-test acceptance and 13-test renderer evidence is
+retained without rerunning tests. No source decoding, inference or fitting
+occurred for acceptance publication.
+
+[NBA10](../ball_tracking_completion_nba_reference_batch_10.md) uses fixed training-role
+DEN–BOS e04, original `132.mp4`, frames **240–359**, native **[4,6)s**; source final
+is **578**. Source preparation passes **120 exact RGB/PTS checks**, preserving
+**2,696 prior files**. The primary decoder submitted 361 packets and returned
+frames 0–359; alternate conversion emitted 360 RGB frames and reported filter
+frames 0–360. Frames 0–239 and filter frame 360 are disclosed same-training-source
+context, not additional labels or review frames. Only selected 240–359 were saved.
+Preparation succeeded on its first attempt in **22.086 seconds**. Both decoder
+paths use FFmpeg components, establishing transport consistency without independent
+visual ground truth. All three source/proposed parts are inspected: **100 centers,
+20 nulls and 5–8px uncertainty**, with 68 full, 40 partial, two indeterminate and
+ten not-visible judgments. Nulls span 270–289: clipped fragments at 270–273 and
+286–289, ambiguous fringe at 274–275, and no visible ball at 276–285. Current
+arcs support re-entry centers [391,4] at 290–291 with 7px uncertainty; no center
+was extrapolated or clamped to the image boundary. All first written proposals
+remain unchanged, with no annotation corrections or annotation-helper failures.
+The first-part receipt separately retains a recovered oversized endpoint-image
+response and an initial wrong documentation filename; both were resolved before
+annotation without altering source evidence.
+
+The [NBA10 result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_10_result_v0_1.json)
+and [integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/integration_audit.json)
+pass **3,049 file bindings, 120 native joins, 240 encoded frames and 200 center
+markers**. Complete 2s/12s overlays retain all 120 frames at 60/10 fps; emitted
+color metadata and every encoded-frame comparison pass. All ten sheets,
+100 encoded center crops and 20 null source contexts were inspected, plus full
+native source frame 359 and both full encoded finals. Additional source-edge
+details 264–279 and 280–297 were also inspected. The actual pending-review reader
+passes. Prior 13-test renderer and current 12-test acceptance-reader evidence
+remains historical, with no new suite run; the original eight-test acceptance
+record remains separate retained history. All 1,320 accepted NBA and 868 curated
+labels remain unchanged, including prior acceptance snapshots of 286, 543, 809,
+1,050, 1,549, 2,000, 2,245, 2,490 and 2,742 files. These preservation sets overlap.
+The 120 pending proposals leave **2,399 selected positions without proposals**
+and **2,519 without accepted references**. No fitting or protected evaluation ran.
+
+## Earlier NBA08 acceptance and completed NBA09 preparation
 
 Ryan said **“I approve chat. Move forward”** in response to the complete NBA08
 review and question identifying 120 centers, zero nulls and 4–6px uncertainty.
