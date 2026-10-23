@@ -2,22 +2,22 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
-Ryan accepted all 120 [NBA09 labels](../ball_tracking_completion_nba_reference_batch_09.md),
-including 120 centers, zero nulls and 5–8px uncertainty. Combined NBA coverage is
-**1,320/3,839 accepted**, including **1,196 centers and 124 nulls**, with **2,519
-not yet accepted**. Continue with
-[NBA10](../ball_tracking_completion_nba_reference_batch_10.md): fixed training-role
-DEN–BOS e04, source `132.mp4`, **120 native frames, 240–359**, native **[4,6)s**;
-source final is **578**. Source preparation passes all 120 exact PNG/PTS checks
-and preserves 2,696 prior files. All source/proposed frames are inspected:
-**100 centers, 20 nulls at 270–289 and 5–8px uncertainty**, leaving **2,399 positions
-without proposals**. Complete 2s/12s review passes 120 native joins, 240 encoded
-frames and 200 markers; all center crops, null contexts and full finals were
-inspected. Obtain Ryan's separate acceptance or corrections. Finish the fixed
-NBA package and 405 uncovered permitted curated
-positions, then freeze accepted source/label/role manifests and the executable
-recipe before the already approved fit. Curated coverage stays 868 accepted with
-760 eligible centers. No fitting or protected evaluation has run.
+Ryan accepted all 120 [NBA10 labels](../ball_tracking_completion_nba_reference_batch_10.md),
+including **100 centers, 20 nulls and 5–8px uncertainty**. Combined NBA coverage
+is **1,440/3,839 accepted**, including **1,296 centers and 144 nulls**, with
+**2,399 not yet accepted**. The next work is continued reference preparation
+within the fixed NBA episode package; no next batch is claimed prepared.
+All 1,440 accepted rows have the training role; **1,439 training and all 960
+checkpoint-validation judgments remain unaccepted**. The next fixed episode is
+DEN–BOS e05, `84.mp4`, frames 210–449 (240 positions), still unprepared here.
+New reference proposals still require Ryan's acceptance.
+
+Finish the fixed NBA references and **405 uncovered permitted curated positions**,
+then freeze accepted source/label/role manifests and the executable recipe before
+the already approved fit. No completion-campaign fit has run; the full package
+and recipe are not yet frozen. Curated coverage stays **868 accepted**, with
+**760 eligible centers**, evaluation-only. Protected evaluation remains closed
+pending a frozen method and separate explicit authorization.
 
 ### Earlier completion-campaign milestones
 

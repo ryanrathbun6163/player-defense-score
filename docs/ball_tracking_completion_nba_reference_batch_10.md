@@ -1,6 +1,6 @@
 # Completion campaign: NBA reference batch 10
 
-This increment is ready for reference acceptance for the fourth fixed DEN–BOS episode,
+Ryan accepted this increment for the fourth fixed DEN–BOS episode,
 `den-vs-bos-0022400866_e04`, original source `132.mp4`, native frames **240–359**.
 The selected window contains **120 frames**, spanning **[4,6) seconds**. The
 [complete review page](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/review_v1/index.html)
@@ -8,16 +8,20 @@ contains **100 centers, 20 nulls and 5–8px uncertainty**. The
 [two-second native overlay](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/review_v1/review_native.mp4)
 and [12-second slow overlay](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/review_v1/review_slow.mp4)
 retain every selected frame. Every source/proposed frame, encoded center crop,
-null context and full native/slow final 359 was inspected. New labels remain
-pending Ryan's separate acceptance, with training and checkpoint eligibility false.
+null context and full native/slow final 359 was inspected. Ryan said
+**“I approve chat. Where are we at in the training”** in response to the question
+identifying all 120 proposals, including the nulls and 5–8px uncertainty. The
+separate [acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_10_acceptance_v0_1.json)
+records that decision. Original preparation records and media retain their
+pending-era status. No completion-campaign fit or protected evaluation has run.
 
-Ryan accepted all 120 NBA09 proposals through its separate
-[acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_09_acceptance_v0_1.json).
-Combined NBA coverage is **1,320 accepted labels: 1,196 centers and 124 nulls**;
-**2,519 of 3,839 selected judgments remain unaccepted**. The NBA09
-[publication audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_09/acceptance_audit/publication_audit.json)
-preserves **2,742 original files**. Original NBA09 preparation records and media
-retain their historical pending status. Curated coverage remains **868/1,273
+NBA10 acceptance brings combined NBA coverage to **1,440 accepted labels:
+1,296 centers and 144 nulls**; **2,399 of 3,839 selected judgments remain
+unaccepted**. Its [publication audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/acceptance_audit/publication_audit.json)
+preserves **3,015 original files**, all 1,320 earlier accepted NBA labels and all
+868 curated references. Actual publication/inventory readers pass and the
+duplicate guard rejects repeated native frames. The exact user-event time stays
+null; publication time is separate. Curated coverage remains **868/1,273
 accepted**, with **760 eligible centers** and **405 uncovered**.
 
 ## Fixed source and native timing
@@ -72,8 +76,10 @@ Every current source context/detail and proposed overlay was inspected, includin
 each part's full endpoints. Additional source edge sheets preserve the clipping
 and re-entry judgments; three extra rim/net sheets preserve that overlap judgment.
 The [exception list](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/review_v1/exception_list.json)
-contains all 20 nulls with source context crops. These pending proposals leave
-**2,399 selected positions without proposals**; accepted coverage is unchanged.
+contains all 20 nulls with source context crops. The original proposal retains
+its pending-era status; the separate accepted publication preserves these exact
+judgments and adds acceptance authority. **2,399 selected positions** still lack
+accepted references.
 
 The [first-part receipt](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/inspection/part_240_279_receipt.json)
 retains two routine tooling notes: an oversized endpoint image response was
@@ -84,7 +90,9 @@ retain their first written proposals without corrections or failed helper runs.
 
 Centers are proposed manually from each current image, without model coordinates
 or temporal interpolation. Uncertainty is a non-statistical placement estimate.
-AI authorship remains explicit; fixed training role does not accept labels.
+AI authorship remains explicit. Both eligibility flags stay false in the original
+preparation records. The separate accepted publication now makes these training
+references eligible at label scope; checkpoint-selection eligibility stays false.
 The renderer and acceptance reader are unchanged; their prior **13-test and
 12-test evidence** remains historical, with no new suite run. The original
 eight-test acceptance-reader record remains separate retained history.
@@ -92,7 +100,7 @@ eight-test acceptance-reader record remains separate retained history.
 ## Complete review validation
 
 The [final result](../configs/ball_tracking/reviews/nba_completion_reference_batch_10_result_v0_1.json)
-has status `ready_for_human_reference_acceptance`. The
+retains its preparation-time `ready_for_human_reference_acceptance` status. The
 [integration audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/integration_audit.json)
 passes **3,049 file bindings, 120 native source/annotation joins, 240 encoded
 frames and 200 center markers**. Both videos contain all 120 selected frames
@@ -103,11 +111,12 @@ contexts were inspected through actual batch final 359. Full native source
 center **[279,384] with 6px uncertainty**. The
 [complete AI visual receipt](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/inspection/root_visual_review.json)
 binds these inspections and additional source-edge details for 264–279 and
-280–297. This AI review does not supply Ryan's acceptance.
+280–297. Ryan's separate acceptance receipt supplies the later human decision.
 
-The actual pending-review consumer passes all 120 annotation/native joins and
-creates zero accepted labels. All **1,320 accepted NBA labels** and **868 curated
-references** remain unchanged. The audit also verifies the **2,696 files** saved
+The preparation-time pending-review consumer passed all 120 annotation/native
+joins and created zero accepted labels. All **1,320 previously accepted NBA
+labels** and **868 curated references** remained unchanged. That audit also
+verifies the **2,696 files** saved
 before source preparation and prior acceptance snapshots of **286, 543, 809,
 1,050, 1,549, 2,000, 2,245, 2,490 and 2,742 files**; these preservation sets
 overlap. No new tests, inference or fitting ran. Current source/annotation/media
@@ -119,13 +128,17 @@ or independent human-ground-truth claim.
 | Final result | `ea8497d5e935fb357d6927b0e6a49035028ad22463f9a48792d003aa3bafce3f` |
 | Integration audit | `7124fac091dbe856359d1ade7b832dcbefc10167dc99b7be885f9357d47f03f3` |
 | Complete AI visual receipt | `31666d03f7fa315cd34f8926d12cbe6d095b947b923d606aff335ca40eb60ae5` |
+| Separate acceptance receipt | `f441b62ccb9f93780c8f5d9162c468c8ca33e8971c5a9700c9902054c790eb38` |
+| Acceptance publication audit | `2f1586bc784f601e698517277b4a7ba94c6a27171b14e745be9fe67d2aa2bfbf` |
 
 ## Next step
 
-Record Ryan's separate acceptance or corrections after the complete review.
-Until then all 120 NBA10 proposals remain pending, including uncertainty and
-null centers; NBA09's acceptance does not cover them. Finish the accepted
-source/label/role package and
-freeze the executable recipe before the already approved fit. No fitting or
-protected evaluation has run; protected evaluation still requires a frozen method
-and separate explicit authorization.
+Continue preparing the fixed NBA references; future proposals need their own
+acceptance. The campaign remains at reference preparation, with no new campaign
+fit yet. The complete accepted source/label/role package and executable recipe
+are not yet frozen. Finish and freeze those inputs before the already approved
+fit. NBA10 acceptance does not itself declare package readiness, freeze the
+recipe or supply fitting authorization from this label-acceptance artifact.
+Curated references remain evaluation-only. Protected evaluation stays closed
+pending a frozen method and separate explicit authorization. No next-batch
+preparation is claimed in this acceptance update.

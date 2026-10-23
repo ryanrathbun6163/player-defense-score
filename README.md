@@ -10,27 +10,23 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 ## Project status
 
 Ryan accepted all 120 labels in the
-[ninth NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_09.md),
-including **120 centers, zero nulls and 5–8px uncertainty**. The separate
-publication preserves **2,742 original files** and passes the actual
-publication/inventory readers. Combined NBA coverage is now **1,320 accepted
-labels: 1,196 centers and 124 nulls**; **2,519 of 3,839 selected judgments remain
-unaccepted**. The [tenth NBA batch](docs/ball_tracking_completion_nba_reference_batch_10.md)
-is ready for separate acceptance: DEN–BOS e04, source `132.mp4`, **120 native frames, 240–359**,
-covering **[4,6) seconds**; source final is **578**. Source preparation passes all
-120 exact PNG/PTS comparisons and preserves **2,696 earlier files**. All three
-source/proposed parts are inspected: **100 centers, 20 nulls and 5–8px uncertainty**.
-Nulls at 270–289 preserve the clipped, absent or ambiguous ball near the top edge.
-Complete 2s/12s review passes **120 native joins, 240 encoded frames and 200
-center markers**. All 100 center crops, 20 null contexts and full final 359 were
-inspected. These new labels remain pending and leave **2,399 selected positions
-without proposals**.
-The unchanged code retains prior 12-test acceptance and 13-test renderer evidence;
-neither suite was rerun for this increment. The approved fit follows completion
-of the accepted source/label/role package and frozen executable recipe; those
-conditions are not yet met. Accepted curated coverage stays **868/1,273**,
-including **760 eligible centers**, with **405 uncovered**. No fitting or
-protected evaluation has run.
+[tenth NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_10.md),
+including **100 centers, 20 nulls at frames 270–289 and 5–8px uncertainty**.
+The separate acceptance publication preserves **3,015 original files** and
+passes the actual publication/inventory readers and duplicate guard. Combined
+NBA coverage is **1,440 accepted labels: 1,296 centers and 144 nulls**;
+**2,399 of 3,839 selected judgments remain unaccepted**. Original NBA10 review
+records and media retain their preparation-time pending status; the new
+acceptance receipt supplies the decision.
+
+The completion campaign is still at **reference preparation**. No
+completion-campaign fit has run: the full accepted source/label/role package
+and executable training recipe are not yet frozen. Continue the fixed NBA
+references and remaining permitted curated coverage, then freeze those inputs
+before the already approved fit. Accepted curated coverage stays **868/1,273**,
+including **760 eligible centers**, with **405 uncovered**; these remain
+evaluation-only. Prior 12-test acceptance and 13-test renderer evidence is
+retained without rerunning tests. Protected evaluation remains closed.
 
 The approved [ball-phase completion campaign](docs/ball_tracking_completion_plan.md)
 has started. Its [first increment](docs/ball_tracking_completion_first_increment.md)

@@ -1,39 +1,37 @@
 # Current State
 
-## Latest decision: NBA09 accepted; NBA10 ready for reference acceptance
+## Latest decision: NBA10 accepted; reference preparation continues
 
-Ryan answered **“Accept all 120 proposals”** to the complete
-[NBA09 review question](../ball_tracking_completion_nba_reference_batch_09.md),
-including 112 partial and eight full centers, zero nulls and 5–8px uncertainty.
-The separate [acceptance receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_09_acceptance_v0_1.json)
-records accepted training references. Actual publication/inventory readers and
-the duplicate guard pass; **2,742 original files** are unchanged. Combined
-coverage is **1,320/3,839 NBA labels: 1,196 centers and 124 nulls**;
-**2,519 remain unaccepted**. Original NBA09 preparation records and media retain
-their pending-era status; the new receipt supplies acceptance authority.
+Ryan said **“I approve chat. Where are we at in the training”** in response to
+the complete [NBA10 review and question](../ball_tracking_completion_nba_reference_batch_10.md),
+covering all 120 proposals: **100 centers, 20 nulls at 270–289 and 5–8px
+uncertainty**. The separate
+[acceptance receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_10_acceptance_v0_1.json)
+records that decision. Actual publication/inventory readers and the duplicate
+guard pass; **3,015 original files** are unchanged. Combined coverage is
+**1,440/3,839 NBA labels: 1,296 centers and 144 nulls**; **2,399 remain
+unaccepted**. All 1,440 accepted NBA rows have the fixed training role. The full
+selection contains 2,879 training and 960 checkpoint-validation positions;
+**1,439 training and all 960 validation judgments remain unaccepted**.
+All 1,320 earlier accepted NBA labels and 868 curated references
+are preserved. Original NBA10 preparation records and media retain their
+pending-era status; the new receipt supplies acceptance authority.
 
-[NBA10](../ball_tracking_completion_nba_reference_batch_10.md) is ready for separate acceptance:
-fixed training-role **DEN–BOS e04**, original `132.mp4`, selected frames **240–359**
-in native **[4,6) seconds**, timebase 1/60000. Batch final is 359; the full source
-ends at **578**. Source preparation passes **120 exact PNG/PTS comparisons** and
-preserves **2,696 earlier files**. All three current-frame source/proposed parts
-are inspected: **100 centers, 20 nulls and 5–8px uncertainty**. Visibility is
-68 full, 40 partial, two indeterminate and ten not-visible judgments. Nulls
-270–289 preserve edge clipping, ambiguity and the out-of-frame interval; no
-center is interpolated through that gap. Complete **2s native/12s slow** review
-passes **3,049 bindings, 120 native joins, 240 encoded frames and 200 center
-markers**. All ten sheets, 100 encoded center crops and 20 null contexts were
-inspected, plus full source 359 and both actual encoded finals. The actual
-pending-review reader passes. These new labels require separate acceptance and
-leave **2,399 selected positions without proposals**. Ryan's acceptance or
-corrections is next; NBA09 acceptance does not cover NBA10.
+The completion campaign remains at **reference preparation**. No
+completion-campaign fit has run, and the complete accepted source/label/role
+package and executable recipe are not yet frozen. NBA10's accepted publication
+is training-eligible at label scope; checkpoint-selection eligibility remains
+false. That label acceptance does not itself declare package readiness or freeze
+the recipe. Continue the fixed NBA references, then complete and freeze the
+package and executable recipe before the already approved fit. The next fixed
+episode is DEN–BOS e05, `84.mp4`, frames 210–449 (240 positions); its preparation
+has not started in this update.
 
 Curated coverage remains **868/1,273 accepted**, **760 eligible centers** and
-**405 uncovered**. Complete the accepted source/label/role package and freeze
-the executable recipe before the already approved fit. No fit or protected
-evaluation has run; protected evaluation requires a frozen method and separate
-explicit authorization. Prior 13-test renderer and 12-test acceptance evidence
-remains historical; no suite has been rerun for this increment.
+**405 uncovered**, all evaluation-only. Protected evaluation remains closed and
+requires a frozen method plus separate explicit authorization. Prior 13-test
+renderer and 12-test acceptance evidence remains historical; no suite was rerun
+for acceptance publication.
 
 ## Earlier decision: reference batches 05–07 accepted
 

@@ -1,6 +1,33 @@
 # Validation History
 
-## NBA09 accepted; NBA10 complete review ready for acceptance
+## NBA10 accepted; reference preparation continues
+
+Ryan said **“I approve chat. Where are we at in the training”** after the complete
+NBA10 review and question identifying all 120 proposals, including **100 centers,
+20 nulls at 270–289 and 5–8px uncertainty**. The separate
+[acceptance receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_10_acceptance_v0_1.json)
+and [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/acceptance_audit/publication_audit.json)
+preserve **3,015 original files**, all 1,320 earlier accepted NBA labels and all
+868 curated references. Actual publication/inventory readers and the duplicate
+guard pass. Combined coverage is **1,440/3,839 accepted**, with **1,296 centers and
+144 nulls**; **2,399 remain unaccepted**. The exact user-event time remains null;
+publication time is separate. Original proposals, pending-era result and media
+remain unchanged. Prior 12-test acceptance and 13-test renderer evidence is
+retained without rerunning tests; the original eight-test reader history remains
+separate. No source decoding, inference or fitting occurred for this publication.
+
+The stage remains reference preparation. No completion-campaign fit has run,
+and the full accepted source/label/role package and executable recipe are not
+yet frozen. NBA10 acceptance makes the reviewed labels training-eligible at label
+scope; checkpoint selection stays false. Package readiness, recipe freeze and
+fitting authorization from this label-acceptance artifact remain false. Continue
+the fixed NBA references and remaining 405 permitted curated positions, then
+freeze the full package and recipe before the already approved fit. Curated
+references remain evaluation-only. Protected evaluation stays closed pending
+a frozen method and separate explicit authorization; no next-batch preparation
+is claimed.
+
+## Earlier NBA09 acceptance and completed NBA10 preparation
 
 Ryan answered **“Accept all 120 proposals”** to the exact NBA09 review question,
 including 112 partial and eight full centers, zero nulls and 5–8px uncertainty.
