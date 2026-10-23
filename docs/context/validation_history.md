@@ -1,5 +1,71 @@
 # Validation History
 
+## NBA16 accepted; NBA17 complete review ready for acceptance
+
+Ryan's structured reply **“Accept all 120 proposals”** accepts every NBA16
+judgment through HOU–OKC e04 frame 269: 70 fully visible/50 partial centers,
+zero nulls and 5–8px uncertainty. The
+[separate receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_16_acceptance_v0_1.json)
+and [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_16/acceptance_audit/publication_audit.json)
+preserve **4,936 originals**, all 2,280 earlier NBA rows and 868 curated references.
+Publication passes actual readers and the duplicate guard in **25.370 seconds**.
+Coverage is **2,400 accepted: 2,214 centers and 186 nulls**, comprising 1,920
+training and 480 validation judgments. **1,439 remain unaccepted: 959 training
+and 480 validation**. Original proposals, six center refinements, crop
+adjustments, read-only lookup incident and restart history remain unchanged.
+Validation labels are excluded from gradient fitting; no scoring, fit, source
+pixel decoding or tests ran in publication. Exact user-event UTC is null;
+publication time is recorded separately without claiming playback telemetry.
+
+[NBA17 source preparation](../ball_tracking_completion_nba_reference_batch_17.md)
+passes **240 exact native PNG/PTS checks** for checkpoint-validation HOU–OKC e05,
+frames 0–239, native [0,4)s, preserving **4,883 prior files**. The first attempt
+takes **42.630 seconds**. Primary decoding returned frames 0–239 after 241
+submitted packets; alternate conversion emitted 240 RGB frames and reported
+filter frames 0–240. Filter frame 240 is disclosed same-role context; only
+selected 0–239 were saved. Source final 558 differs from batch final 239.
+
+The three sealed parts provide **212 centers and 28 nulls** at **0–7, 12–13,
+22–29, 162–165 and 214–219**, with **5–9px center uncertainty**. Visibility is
+**200 partial, 20 full, 16 not visible and four indeterminate**. Every current
+source/proposed frame and full part endpoint was inspected. Early partial
+centers at 14–17 retain especially broad 9px uncertainty. A second AI source-only
+review corroborates the early judgments without claiming independent human
+ground truth. Original broad crops clipped the ball at 76–79; wider precision
+crops were inspected before annotation, and the initial assets remain retained.
+
+The first writer failed after **0.5026152 seconds** on an unsupported
+`body_overlap` difficulty tag at its first row, before publishing a proposal or
+running overlays. The original helper and failure remain retained. Its v2
+replacement changes only the tag to `player_overlap`; no coordinate, visibility
+or uncertainty changed. All initial published annotations remain unchanged.
+Neither remaining part had annotation corrections, helper failures or incidents.
+
+The [NBA17 final result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_17_result_v0_1.json)
+is ready for human reference acceptance. Its
+[integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_17/integration_audit.json)
+passes **5,475 bindings, 240 native source/annotation joins, 480 encoded frames
+and 424 center markers**, plus 240 exact source PNG checks. All-frame pixel
+comparisons and emitted color checks pass. Complete overlays run 4s at 60 fps
+and 24s at 10 fps. Root actually inspected all 20 encoded sheets, all 212 center
+crops, 28 unmarked null source contexts and both full actual encoded finals before
+the [visual receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_17/inspection/root_visual_review.json).
+Root personally inspected full native source 0/79/239; the three part receipts
+cover every source/proposed frame and full part endpoint collectively. Final 239
+retains **[439,152] ±8 pixels**, partial with hand/net overlap.
+
+Delivery (**27.750s**) and complete finalization (**10.312s**) pass on their first
+attempts; the integration audit was recorded at **9.875s** before the pending-reader check.
+No annotation geometry or media changed after publication. The pending-review
+reader passes all 240 joins and creates zero accepted labels. All **2,400 accepted
+NBA rows**, **868 curated references** and **4,883 preparation-era files** remain
+unchanged. Earlier acceptance preservation snapshots stay bound and overlap.
+New labels stay pending with both eligibility flags false, leaving **1,199
+positions without proposals** and **1,439 without accepted references**.
+Historical 13-test renderer, current 12-test acceptance-reader and separate
+original eight-test evidence remain retained. No tests, models, fitting,
+checkpoint scoring or protected evaluation ran for this increment.
+
 ## NBA15 accepted; NBA16 complete review ready for acceptance
 
 Ryan's **“I accept chat. Move forward”** accepts all 120 NBA15 judgments:

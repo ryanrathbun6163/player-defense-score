@@ -2,29 +2,31 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
-Ryan accepted all 120 labels in [NBA15](../ball_tracking_completion_nba_reference_batch_15.md): **98 centers and 22 nulls**,
-including visibility and **5–9px uncertainty**. Separate publication preserves
-**4,673 original files**, all 2,160 earlier NBA labels and all 868 curated
-references. Actual publication/inventory readers and the duplicate guard pass.
-NBA coverage is **2,280/3,839 accepted labels: 2,094 centers and 186 nulls**,
-leaving **1,559 unaccepted**. Accepted roles are **1,920 training and 360 checkpoint
-validation**; **959 training and 600 validation judgments remain unaccepted**.
-Validation labels remain excluded from gradient fitting. Label acceptance
-does not authorize checkpoint scoring or protected evaluation.
+Ryan accepted all 120 labels in [NBA16](../ball_tracking_completion_nba_reference_batch_16.md):
+**120 centers, zero nulls, 70 full/50 partial judgments and 5–8px uncertainty**.
+Separate publication preserves **4,936 original files**, all 2,280 earlier NBA
+labels and all 868 curated references. Actual publication/inventory readers and
+the duplicate guard pass. NBA coverage is **2,400/3,839 accepted labels:
+2,214 centers and 186 nulls**, leaving **1,439 unaccepted**. Accepted roles are
+**1,920 training and 480 checkpoint validation**; **959 training and 480 validation
+judgments remain unaccepted**. Validation labels remain excluded from gradient
+fitting. Label acceptance does not authorize checkpoint scoring or protected
+evaluation.
 
-The complete [NBA16 review](../ball_tracking_completion_nba_reference_batch_16.md) is ready for acceptance:
-fixed checkpoint-validation HOU–OKC e04, `140.mp4`, native frames **150–269**,
-covering **[2.5,4.5)s**. Its **120 pending judgments** all have centers:
-**70 fully visible and 50 partial**, with **5–8px uncertainty** and zero nulls.
-Complete 2s native/12s slow overlays pass **5,000 bindings, 120 native joins,
-240 encoded frames and 240 marker checks**. All ten encoded sheets, 120 center
-crops and both actual final images were inspected. Source preparation passes
-120 exact PNG/PTS checks and preserves **4,621 prior files**. Batch final 269
-differs from full-source final 670. Both pending eligibility flags remain false,
-leaving **1,439 positions without proposals** and **1,559 without accepted
-references**.
+The complete [NBA17 review](../ball_tracking_completion_nba_reference_batch_17.md) is ready for acceptance:
+fixed checkpoint-validation HOU–OKC e05, `23.mp4`, native frames **0–239**,
+covering **[0,4)s**. Its **240 pending judgments** contain **212 centers and
+28 nulls**, with **5–9px center uncertainty**. Visibility is **200 partial,
+20 full, 16 not visible and four indeterminate**. Complete 4s native/24s slow
+overlays pass **5,475 bindings, 240 native joins, 480 encoded frames and
+424 marker checks**. All 20 encoded sheets, 212 center crops, 28 unmarked null
+contexts and both actual final images were inspected. Source preparation passes
+240 exact PNG/PTS checks and preserves **4,883 prior files**. Batch final 239
+differs from full-source final 558. Both pending
+eligibility flags remain false, leaving **1,199 positions without proposals**
+and **1,439 without accepted references**.
 
-Next is Ryan's acceptance or correction of NBA16, then continued preparation
+Next is Ryan's acceptance or correction of NBA17, then continued preparation
 of the fixed reference package. Pending review does not authorize checkpoint
 scoring.
 
