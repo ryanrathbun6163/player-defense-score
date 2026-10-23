@@ -1,5 +1,36 @@
 # Completion campaign: NBA reference batch 13
 
+## Accepted references
+
+Ryan accepted all 120 proposals on 2026-10-23 (America/Phoenix), saying
+**“Looks good chat. Move forward my brother”** in response to the complete
+review and acceptance question. The [separate acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_13_acceptance_v0_1.json)
+accepts 80 partially visible and 40 fully visible centers, zero nulls and
+5–6px uncertainty. Exact user-event UTC time is unknown and remains null;
+publication time is recorded separately. No playback telemetry is claimed.
+
+The [publication audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/acceptance_audit/publication_audit.json)
+passes on the first attempt in 21.823 seconds. It preserves **4,156 original
+files**, all 1,920 earlier accepted NBA labels and all 868 curated references.
+Actual publication/inventory readers and the duplicate native-frame guard pass.
+The [combined inventory](../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_nba_reference_inventory_after_batch_13.json)
+has **2,040 accepted NBA rows, 1,876 centers and 164 nulls**, with **1,799
+unaccepted**. Roles remain **1,920 training and 120 checkpoint validation**.
+All 120 accepted NBA13 rows are excluded from gradient fitting and eligible
+only as reference labels for a future frozen checkpoint-selection package.
+Acceptance does not approve checkpoint scoring, freeze the complete package
+or recipe, accept final trajectories, approve future labels or open protected
+evaluation. The remaining selected labels are 959 training and 840 validation.
+
+No fitting or tests ran. The complete [NBA14 review](ball_tracking_completion_nba_reference_batch_14.md)
+is ready for separate reference acceptance.
+
+## Original preparation record
+
+The following preparation-time account remains historical. Its pending status
+and counts are superseded by the acceptance above; original proposals, media,
+inspection receipts and final result remain byte-unchanged.
+
 This increment prepares the fixed **checkpoint-validation** HOU–OKC episode
 `hou-vs-okc-0022400879_e01`, source `4.mp4`, native frames **120–239**.
 The 120 selected frames cover **[2,4) seconds**. Source and proposal inspection
@@ -110,7 +141,7 @@ not model accuracy or independent human ground truth.
 | Integration audit | `85ff663010c2a2863db0e2a170430cbba235c894ab2fa7a4fea0a46eadbe4140` |
 | AI visual receipt | `7321fd25373ad4dd0980ba03b47fa1a27502f4cdaa0f1161160481408b4112a1` |
 
-## Next step
+## Preparation-time next step (completed by acceptance above)
 
 All new labels require Ryan acceptance. NBA12 acceptance is separate:
 **1,920 accepted NBA judgments, 1,756 centers and 164 nulls**, leaving **1,919

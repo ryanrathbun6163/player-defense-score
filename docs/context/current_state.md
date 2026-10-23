@@ -1,48 +1,54 @@
 # Current State
 
-## Latest decision: NBA12 accepted; NBA13 ready for reference acceptance
+## Latest decision: NBA13 accepted; NBA14 ready for reference acceptance
 
-Ryan said **“Looks good to me. Move forward chat”** in response to the complete
-NBA12 overlay and acceptance question through DEN–BOS e06 frame 389.
-The [separate receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_12_acceptance_v0_1.json)
-accepts all 240 judgments, including 220 centers, 20 nulls and 5–8px uncertainty.
-Original pending-era artifacts, source/overlay reviews, retained metadata
-correction and helper failure remain unchanged. Exact user-event UTC time is
-null; local acceptance date is 2026-10-23 America/Phoenix, with publication
-timestamp recorded separately.
+Ryan said **“Looks good chat. Move forward my brother”** in response to the
+complete NBA13 overlay and acceptance question through HOU–OKC e01 frame 239.
+The [separate receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_13_acceptance_v0_1.json)
+accepts all 120 judgments and preserves AI authorship, visibility and uncertainty.
+Original pending-era proposals, review media and results remain unchanged.
+Exact user-event UTC time is null; local acceptance date is 2026-10-23
+America/Phoenix, with publication timestamp recorded separately.
 
-The [NBA12 publication](../ball_tracking_completion_nba_reference_batch_12.md)
-preserves **3,911 original files**, all 1,680 earlier NBA
-labels and all 868 curated references. Actual publication/inventory readers
-and the duplicate guard pass. NBA coverage is **1,920/3,839 accepted labels:
-1,756 centers and 164 nulls**, leaving **1,919 unaccepted**. All accepted NBA
-rows have the training role; **959 training and all 960 checkpoint-validation
-judgments remain unaccepted**.
+Ryan accepted all 120 labels in [NBA13](../ball_tracking_completion_nba_reference_batch_13.md): 80 partial and 40 fully
+visible centers, zero nulls and 5–6px uncertainty. Separate publication preserves
+**4,156 original files**, all 1,920 earlier NBA labels and all 868 curated
+references. Actual publication/inventory readers and the duplicate guard pass.
+NBA coverage is **2,040/3,839 accepted labels: 1,876 centers and 164 nulls**,
+leaving **1,799 unaccepted**. Accepted roles are **1,920 training and 120 checkpoint
+validation**; **959 training and 840 validation judgments remain unaccepted**.
+The validation labels are excluded from gradient fitting; acceptance does not
+approve checkpoint scoring or protected evaluation.
 
-The complete [NBA13 review](../ball_tracking_completion_nba_reference_batch_13.md)
-is ready for acceptance: HOU–OKC e01, `4.mp4`, frames **120–239**,
-native **[2,4)s**. Its whole-game role is **checkpoint validation**, fixed before
-new model predictions. These references are reserved for later checkpoint
-selection and excluded from gradient fitting. Source preparation passes all
-**120 exact PNG/PTS checks** and preserves **3,862 prior files**. All source and
-proposal frames are inspected: **120 centers, zero nulls, 80 partial and 40 fully
-visible judgments**, with **5–6px uncertainty**. Fully visible frames are
-124–135 and 212–239; hand overlap, blur and compression remain explicit.
-All initial proposals are unchanged, with no corrections or helper failures.
-Both eligibility flags remain false pending Ryan's acceptance. These proposals
-leave **1,799 selected positions without proposals** and **1,919 without accepted
-references**. Batch final 239 differs from full-source final 502.
+The complete [NBA14 review](../ball_tracking_completion_nba_reference_batch_14.md) is ready for acceptance:
+fixed checkpoint-validation HOU–OKC e02, `43.mp4`, frames **0–119**, native
+**[0,2)s**. It contains **120 centers, zero nulls, 71 partial and 49 fully visible
+judgments**, with **5–7px uncertainty**. All source/proposal frames, all ten
+encoded sheets and both actual encoded finals have been inspected. The complete
+2s native/12s slow overlays pass **4,456 bindings, 120 native joins and 240
+encoded-frame/marker checks**. Source preparation passes 120 exact PNG/PTS checks
+and preserves **4,106 prior files**. Batch final 119 differs from full-source
+final 596. All new labels remain pending with both eligibility flags false,
+leaving **1,679 selected positions without proposals** and **1,799 without
+accepted references**.
 
-The [final result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_13_result_v0_1.json)
-and [integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/integration_audit.json)
-pass **4,205 bindings, 120 native joins, 240 encoded frames and 240 center
-markers**. The complete overlays run 2s at 60 fps and 12s at 10 fps. Root
-actually inspected all ten encoded sheets, all 120 center crops, full source
-120/160/200/239 and both actual encoded finals before recording the visual
-receipt. Final 239 proposes **[629,152] ±6 native pixels**. The pending-review
-reader passes and creates zero accepted labels. All 1,920 accepted NBA rows,
-868 curated references and 3,862 preparation-era files remain unchanged.
-Source preparation, delivery and finalization each passed on their first attempt.
+The middle part retains a failed helper attempt caused by unsorted difficulty
+tags. Validation stopped before any proposal or overlay was written. The
+corrected helper sorts tags without changing coordinates, visibility or
+uncertainty. The first worker completed source inspection and initial annotation;
+after two worker interruptions, root inspected all first-part overlays and full
+endpoints before sealing its receipt. No unconfirmed worker-overlay review is
+claimed, and no labels changed.
+
+The [final result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_14_result_v0_1.json)
+and [integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_14/integration_audit.json)
+pass current-record checks. Root actually inspected all 120 encoded center crops,
+full source 0/40/80/119 and both actual encoded finals before recording the
+[visual receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_14/inspection/root_visual_review.json).
+Final 119 proposes **[846,568] ±6 native pixels**. The pending-review reader
+passes all 120 joins and creates zero accepted labels. Source preparation,
+delivery and finalization each passed on their first attempt; the separate
+middle annotation-helper failure remains preserved.
 
 No completion-campaign fit has run. Complete the fixed reference package and
 freeze accepted source/label/role manifests and the executable recipe before

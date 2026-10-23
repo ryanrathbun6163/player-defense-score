@@ -229,3 +229,8 @@ configs/ball_tracking/reviews/nba_completion_reference_batch_12_result_v0_1.json
 configs/ball_tracking/reviews/nba_completion_reference_batch_12_acceptance_v0_1.json -text
 configs/ball_tracking/completion_campaign/nba_reference_batch_13_v0_1.json -text
 configs/ball_tracking/reviews/nba_completion_reference_batch_13_result_v0_1.json -text
+
+# Preserve exact bytes for NBA13 acceptance and the fourteenth reference batch.
+configs/ball_tracking/reviews/nba_completion_reference_batch_13_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_14_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_14_result_v0_1.json -text

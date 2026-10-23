@@ -1,5 +1,61 @@
 # Validation History
 
+## NBA13 accepted; NBA14 complete review ready for acceptance
+
+Ryan's **“Looks good chat. Move forward my brother”** accepts all 120 NBA13
+judgments through HOU–OKC e01 frame 239, including 80 partial/40 full centers,
+zero nulls and 5–6px uncertainty. The
+[separate receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_13_acceptance_v0_1.json)
+and [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/acceptance_audit/publication_audit.json)
+preserve **4,156 originals**, all 1,920 earlier NBA rows and 868 curated
+references. Actual publication/inventory readers and duplicate guard pass.
+Coverage is **2,040 accepted: 1,876 centers and 164 nulls**, comprising 1,920
+training and 120 checkpoint-validation judgments. **1,799 remain unaccepted:
+959 training and 840 validation**. Original review evidence is unchanged;
+accepted validation labels remain excluded from gradient fitting. No scoring,
+fit or tests ran during publication.
+
+[NBA14 preparation](../ball_tracking_completion_nba_reference_batch_14.md)
+passes all **120 exact PNG/PTS checks** for checkpoint-validation HOU–OKC e02
+frames 0–119 and preserves **4,106 earlier files**. First attempt elapsed
+22.939 seconds. Primary decoding returned 120 frames after 121 submitted
+packets; alternate conversion emitted 120 RGB frames and reported filter
+frames 0–120. Filter frame 120 is same-role context; only selected 0–119 were
+saved. Full-source final 596 is distinct from batch final 119.
+
+The three proposals contain **120 centers, zero nulls, 71 partial and 49 fully
+visible judgments**, with **5–7px uncertainty**. Fully visible intervals are
+3–7, 42–73 and 108–119. All current source/proposed frames and full part endpoints
+are inspected. The first worker completed source inspection and initial annotation;
+after two worker interruptions, root actually inspected its seven proposed detail
+sheets and full overlays 0/39 before sealing the receipt. It makes no unconfirmed
+worker-overlay claim. The middle helper failed tag-order
+validation after 0.4475467 seconds before creating a proposal or overlay;
+its original code is retained. Sorting tags corrected the helper without
+changing manual geometry, visibility or uncertainty. New labels remain pending
+with both eligibility flags false. Their 120 proposals leave 1,679 selected
+positions without proposals and 1,799 without accepted references. Historical
+13-test renderer and current 12-test acceptance-reader evidence is unchanged;
+the original eight-test history stays separate. No tests, model calls, fit,
+checkpoint scoring or protected evaluation ran for this increment.
+
+The [NBA14 final result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_14_result_v0_1.json)
+is ready for human reference acceptance. Its
+[integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_14/integration_audit.json)
+passes **4,456 bindings, 120 native source/annotation joins, 240 encoded frames
+and 240 center markers**, including all-frame pixel comparisons and emitted
+color checks. Complete overlays run 2s at 60 fps and 12s at 10 fps. Root
+actually inspected all ten encoded sheets, all 120 center crops, full source
+0/40/80/119 and both actual encoded finals before recording the
+[visual receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_14/inspection/root_visual_review.json).
+Final 119 proposes **[846,568] ±6 native pixels**. Initial labels remain unchanged.
+Source preparation, delivery (12.922s) and finalization (8.468s) each passed on
+their first attempt; this does not erase the annotation-helper failure above.
+The actual pending-review reader passes 120 joins and creates zero accepted
+labels. All 2,040 accepted NBA rows, 868 curated references and 4,106 files
+captured before preparation remain unchanged. Earlier acceptance preservation
+snapshots remain bound and overlap.
+
 ## NBA12 accepted; NBA13 complete review ready for acceptance
 
 Ryan's **“Looks good to me. Move forward chat”** accepts all 240 NBA12 judgments,

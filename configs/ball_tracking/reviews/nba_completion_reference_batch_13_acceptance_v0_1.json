@@ -1,0 +1,227 @@
+{
+  "schema_version": "completion_nba_reference_acceptance/v0.1",
+  "status": "accepted",
+  "accepted_reference": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/accepted/reference.json",
+    "sha256": "f4f1a8c50d8ef8206d1896b91fcd5136f2d7c154deb58a406c5dd88c6bb91669",
+    "bytes": 219263
+  },
+  "batch_id": "nba_reference_batch_13_v0_1",
+  "episode_id": "hou-vs-okc-0022400879_e01",
+  "game_id": "0022400879",
+  "role": "checkpoint_validation",
+  "accepted_references": 120,
+  "accepted_eligible_centers": 120,
+  "accepted_null_centers": 0,
+  "accepted_visibility_counts": {
+    "partially_visible": 80,
+    "fully_visible": 40
+  },
+  "range_inclusive": [
+    120,
+    239
+  ],
+  "source_metadata": {
+    "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/4.mp4",
+    "bytes": 5628362,
+    "sha256": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+    "width": 1280,
+    "height": 720,
+    "average_rate": "60",
+    "time_base": "1/60000",
+    "decoded_frames": 503
+  },
+  "annotation_origin": "assistant_visual_proposal",
+  "annotator_id": "Codex assistant",
+  "evidence": {
+    "preparation_result": {
+      "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_13_result_v0_1.json",
+      "sha256": "f114bff874ea92cdd5ef8dced9557b4c174f43a840674af7afda546f2581f84e",
+      "bytes": 52125
+    },
+    "config": {
+      "path": "configs/ball_tracking/completion_campaign/nba_reference_batch_13_v0_1.json",
+      "sha256": "5f44a36939343a12ca6bb8e0549516c445c51ec97e7054a1cf8ec8d01ec97299",
+      "bytes": 1245
+    },
+    "proposal": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/proposal.json",
+      "sha256": "84db32d684d7b6277aec2f4c8034d754a087dfb14c7d4f049ac3b9a15751c278",
+      "bytes": 115654
+    },
+    "review_manifest": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/review_v1/manifest.json",
+      "sha256": "de7400f58b6271d90f9bcc6ca40451a1749c534af5048824e4a3afb2f6911c5a",
+      "bytes": 283478
+    },
+    "review_index": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/review_v1/index.html",
+      "sha256": "e4bc9c81118428e4fcdc5e5422e7e2c85d9afd8efafbc68e94642625a6223457",
+      "bytes": 18949
+    },
+    "exception_list": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/review_v1/exception_list.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    "focused_tests": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/focused_tests_final.json",
+      "sha256": "dbb3fb71fe7a5df50e1a3e97fec08b153b173b857b1a2acb93d2096955351d4d",
+      "bytes": 1354
+    },
+    "ai_visual_inspection": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/inspection/root_visual_review.json",
+      "sha256": "7321fd25373ad4dd0980ba03b47fa1a27502f4cdaa0f1161160481408b4112a1",
+      "bytes": 28560
+    },
+    "integration_audit": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/integration_audit.json",
+      "sha256": "85ff663010c2a2863db0e2a170430cbba235c894ab2fa7a4fea0a46eadbe4140",
+      "bytes": 34317
+    },
+    "source_roles": {
+      "path": "configs/ball_tracking/completion_campaign/source_roles_v0_1.json",
+      "sha256": "3ae5de63eef918fdaafcfbac62c09ca46e14fa1c1fdf069739d731955a573200",
+      "bytes": 71569
+    },
+    "source_video": {
+      "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/4.mp4",
+      "sha256": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+      "bytes": 5628362
+    },
+    "fixed_frame_list": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/hou-vs-okc-0022400879_e01/frames.json",
+      "sha256": "f57a31e10935f3ed81c69be4f5360b40c81addbb9ebf08bca9f69702df67218e",
+      "bytes": 13913
+    },
+    "source_frames": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames.json",
+      "sha256": "447656b457fc91f5d7cd9f5c2f7d4623c1966ed05486eb02b261da57041493c3",
+      "bytes": 53403
+    },
+    "source_timing": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_timing.json",
+      "sha256": "b900f69fca61a87e9a7d8cecf04734f9395933461f5f7d1b38499c73586a3997",
+      "bytes": 41871
+    },
+    "source_packet_timing": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_packet_timing.json",
+      "sha256": "8a8c93c3d5a284000405ef49c6ec964116ee0d6b8291e70723d26a669e63c2e5",
+      "bytes": 74236
+    },
+    "source_preparation": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/preparation.json",
+      "sha256": "84dec56d2071a6829174a6c9e5e20a027de6ea32abb0239bc88683ff4e054bd3",
+      "bytes": 3007
+    },
+    "source_pixel_audit": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_pixel_audit.json",
+      "sha256": "fca99893c9440fb4cb53704302163b9eb8025e7928e00ed46f1e068bf1afec77",
+      "bytes": 96691
+    }
+  },
+  "review_videos": [
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/review_v1/review_native.mp4",
+      "sha256": "f5b93a0f9d5ec70cc7d270ba9b4a9198b43e383b7da5da078d736f3b688c90a9",
+      "bytes": 1413472,
+      "frame_count": 120,
+      "fps": 60.0,
+      "duration_seconds": 2.0,
+      "actual_final": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/review_v1/review_native_actual_final.png",
+        "sha256": "e9d8fc53cc2444bcda1f3b980cbc7fd345279325dab325005e94d04f6e013626",
+        "bytes": 1042052
+      },
+      "encoded_probe": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/review_v1/review_native_encoded_probe.json",
+        "sha256": "8762b9c5190ccd0dec12733c16b0fd27e94eec18be82924b56c7a7bec3854561",
+        "bytes": 303
+      }
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/review_v1/review_slow.mp4",
+      "sha256": "021646eed4309fba8a337a3f5f09e979a33abb1306b3947ad3859eeca1ef73ad",
+      "bytes": 3108134,
+      "frame_count": 120,
+      "fps": 10.0,
+      "duration_seconds": 12.0,
+      "actual_final": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/review_v1/review_slow_actual_final.png",
+        "sha256": "5a5253da8eea48ea2ad82790e145c809bf3c8c50fb1b0cdbedb802c5fe1a1700",
+        "bytes": 1046391
+      },
+      "encoded_probe": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/review_v1/review_slow_encoded_probe.json",
+        "sha256": "d33424f3bd2aad97f9e4751dfea6aa3a3860c145bd7efbdc8accdade8829b892",
+        "bytes": 303
+      }
+    }
+  ],
+  "human_review": {
+    "status": "accepted",
+    "reviewer_id": "Ryan",
+    "review_method": "human_visual_acceptance_of_assisted_proposals",
+    "user_statement": "Looks good chat. Move forward my brother",
+    "response_context": "Direct response to the complete NBA batch-13 overlay and acceptance question through HOU-OKC e01 frame 239, covering all 120 proposals including partial visibility and uncertainty.",
+    "scope": "Accept all 120 fixed checkpoint-validation reference judgments for frames 120-239, including 80 partially visible centers, 40 fully visible centers, zero unknown centers and 5-6px placement uncertainty. These references remain excluded from gradient fitting. Label acceptance does not authorize a fitting run, checkpoint scoring, final trajectories, future labels, or protected evaluation; the complete accepted package and executable recipe must still be frozen.",
+    "human_acceptance_date_local": "2026-10-23",
+    "timezone": "America/Phoenix",
+    "exact_user_event_timestamp_utc": null,
+    "recorded_at_utc": "2026-10-23T17:39:01.798874+00:00",
+    "playback_telemetry_claimed": false,
+    "independent_human_annotation_claimed": false
+  },
+  "training_eligible": false,
+  "checkpoint_selection_eligible": true,
+  "eligibility_scope": "accepted_reference_labels_only",
+  "package_ready_for_fitting": false,
+  "executable_recipe_frozen": false,
+  "fitting_authorized_by_this_artifact": false,
+  "protected_evaluation_authorized": false,
+  "model_output_acceptance": false,
+  "ball_phase_accepted": false,
+  "publication_provenance": {
+    "publisher": {
+      "path": "data/outputs/t/publish_completion_nba_acceptance_v0_2.py",
+      "sha256": "a194976a4116ec08b34bd27c2a135a26998ec61d49fe209a0bbaf69e0de1dff3",
+      "bytes": 12769
+    },
+    "derived_from_nba01_publisher": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/acceptance_audit/publish_acceptance.py",
+      "sha256": "d4a8b51e6a8e814a7aec02ef30445dce0f1866e873dd9cc90a365cdf38c531ef",
+      "bytes": 8528
+    },
+    "acceptance_reader": {
+      "path": "src/ball_tracking/completion_nba_acceptance.py",
+      "sha256": "c3e90ce85186601a5904d8bc963ba212f17eb974644673271356b07da3ecb795",
+      "bytes": 16357
+    },
+    "acceptance_tests": {
+      "path": "tests/test_completion_nba_acceptance.py",
+      "sha256": "8814832f5b13c6f80fc1956ed314d4431e9e808f5d1024d51e1a9a43c6dbd095",
+      "bytes": 12821
+    },
+    "prior_focused_acceptance_tests": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/acceptance_audit/focused_tests_scope_revision.json",
+      "sha256": "19f81e3e692bb5bb1a1e1e9cc08c68c760ab7714a4509b8c200dc6946a03ae47",
+      "bytes": 2380
+    },
+    "tests_rerun_for_publication": 0,
+    "original_snapshot": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/acceptance_audit/original_bindings_before.json",
+      "sha256": "602f0a56d6dbd695ca9611283276847bf0f329296254c215c4d2c335b9b17db7",
+      "bytes": 1034205
+    },
+    "prior_nba_inventory": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/accepted_nba_reference_inventory_after_batch_12.json",
+      "sha256": "1406e529a3c3177673cf6f142485b76bfae7ff736d853a8f99e554cbc7e1c9a3",
+      "bytes": 7983
+    },
+    "git": {
+      "branch": "codex/ball-detector-baseline",
+      "head": "01e0d2f2095843e700e3b0a7633f407c84e067b6",
+      "porcelain": []
+    }
+  }
+}
