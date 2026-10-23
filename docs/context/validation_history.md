@@ -1,5 +1,63 @@
 # Validation History
 
+## NBA15 accepted; NBA16 complete review ready for acceptance
+
+Ryan's **“I accept chat. Move forward”** accepts all 120 NBA15 judgments:
+98 centers and 22 nulls, including visibility and 5–9px uncertainty. The
+[separate receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_15_acceptance_v0_1.json)
+and [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_15/acceptance_audit/publication_audit.json)
+preserve **4,673 originals**, all 2,160 earlier NBA rows and 868 curated references.
+Publication passes actual readers and the duplicate guard in **25.391 seconds**.
+Coverage is **2,280 accepted: 2,094 centers and 186 nulls**, comprising 1,920
+training and 360 validation judgments. **1,559 remain unaccepted: 959 training
+and 600 validation**. Original review evidence and lookup incidents are retained.
+Validation labels are excluded from gradient fitting; no scoring, fit or tests
+ran in publication.
+
+[NBA16 source preparation](../ball_tracking_completion_nba_reference_batch_16.md)
+passes **120 exact native PNG/PTS checks** for checkpoint-validation HOU–OKC e04,
+frames 150–269, native [2.5,4.5)s, preserving **4,621 prior files**. The first
+attempt takes **25.052 seconds**. Primary decoding returned frames 0–269 after
+271 packets; alternate conversion emitted 270 RGB frames and reported filter
+frames 0–270. Prefix 0–149 and filter frame 270 are disclosed same-role context;
+only selected 150–269 were saved. Source final 670 differs from batch final 269.
+All three parts are sealed: **120 centers, zero nulls, 70 fully visible and
+50 partial judgments**, with **5–8px uncertainty**. Every source/proposed frame
+and full part endpoint was inspected. Root retained initial clipped source crops
+at 156–161/166–167, inspected supplemental 156–167 crops before annotation,
+and expanded overlay regions. Six centers at 172–177 were refined after actual
+source/overlay review; visibility and uncertainty are unchanged, and the original
+part and all initial overlays are retained. A read-only `rg` access denial for
+unrelated old temporary directories took 0.2188052s and changed no data/output.
+After Ryan reported a restart, root verified existing critical hashes without
+rerunning acceptance publication or source preparation.
+
+The [NBA16 final result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_16_result_v0_1.json)
+is ready for human reference acceptance. Its
+[integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_16/integration_audit.json)
+passes **5,000 bindings, 120 native source/annotation joins, 240 encoded frames
+and 240 center markers**, plus 120 exact source PNG checks. All-frame pixel
+comparisons and emitted color checks pass. Complete overlays run 2s at 60 fps
+and 12s at 10 fps. Root actually inspected all ten encoded sheets, all 120 center
+crops and both full actual encoded finals before the
+[visual receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_16/inspection/root_visual_review.json).
+Full native source 150/170/189/269 received root inspection; the three sealed
+part receipts cover every source/proposed frame collectively. Final 269 retains
+**[694,60] ±6 pixels**, fully visible against the crowd. An empty null-center
+exception list does not erase hand-overlap, motion-blur or background uncertainty.
+
+Delivery (**15.062s**) and finalization (**18.797s**) pass on their first attempts.
+The retained first-part refinements above are the only annotation corrections;
+there were no media corrections. The pending-review reader passes all 120 joins
+and creates zero accepted labels. All **2,280 accepted NBA rows**, **868 curated
+references** and **4,621 preparation-era files** remain unchanged. Earlier
+acceptance preservation snapshots remain bound and overlap. New labels stay
+pending with both eligibility flags false, leaving **1,439 positions without
+proposals** and **1,559 without accepted references**. Historical 13-test renderer,
+current 12-test acceptance-reader and separate original eight-test evidence are
+retained; no tests, models, fitting, checkpoint scoring or protected evaluation
+ran for this increment.
+
 ## NBA14 accepted; NBA15 complete review ready for acceptance
 
 Ryan's **“Reviewed. Keep moving forward chat”** accepts all 120 NBA14 judgments
