@@ -1,6 +1,6 @@
 # Current State
 
-## Latest decision: NBA10 accepted; reference preparation continues
+## Latest decision: NBA10 accepted; NBA11 ready for reference acceptance
 
 Ryan said **“I approve chat. Where are we at in the training”** in response to
 the complete [NBA10 review and question](../ball_tracking_completion_nba_reference_batch_10.md),
@@ -24,14 +24,29 @@ is training-eligible at label scope; checkpoint-selection eligibility remains
 false. That label acceptance does not itself declare package readiness or freeze
 the recipe. Continue the fixed NBA references, then complete and freeze the
 package and executable recipe before the already approved fit. The next fixed
-episode is DEN–BOS e05, `84.mp4`, frames 210–449 (240 positions); its preparation
-has not started in this update.
+episode is [NBA11: DEN–BOS e05](../ball_tracking_completion_nba_reference_batch_11.md),
+`84.mp4`, frames **210–449** (240 positions), native **[3.5,7.5)s**. Its source
+preparation passes all **240 exact PNG/PTS checks** and preserves **2,969 prior
+files**. All 240 source and proposed frames are inspected: **240 centers,
+zero nulls, 172 partial and 68 fully visible judgments**, with **5–8px
+uncertainty**. The initial proposals are unchanged, with no annotation corrections
+or annotation-helper failures. Complete **4s native / 24s slow overlays** and
+the [final result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_11_result_v0_1.json)
+are ready for Ryan's acceptance. Validation passes **3,494 bindings, 240 native
+joins, 480 encoded frames and 480 markers**. All twenty sheets, 240 encoded
+center crops, full native source 449 and both actual encoded finals are inspected.
+The [confirmed visual receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_11/inspection/root_visual_review_confirmed.json)
+preserves and corrects an earlier receipt written before the final image outputs
+returned; confirmation followed actual inspection, with no label or media changes.
+These pending proposals leave **2,159 selected positions without proposals** and
+**2,399 without accepted references**. Batch final 449 differs from full-source
+final 586. The current pending-review reader passes without creating acceptance.
 
 Curated coverage remains **868/1,273 accepted**, **760 eligible centers** and
 **405 uncovered**, all evaluation-only. Protected evaluation remains closed and
 requires a frozen method plus separate explicit authorization. Prior 13-test
 renderer and 12-test acceptance evidence remains historical; no suite was rerun
-for acceptance publication.
+for this increment.
 
 ## Earlier decision: reference batches 05–07 accepted
 

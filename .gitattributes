@@ -215,3 +215,7 @@ configs/ball_tracking/reviews/nba_completion_reference_batch_10_result_v0_1.json
 
 # Preserve exact bytes for NBA10 acceptance.
 configs/ball_tracking/reviews/nba_completion_reference_batch_10_acceptance_v0_1.json -text
+
+# Preserve exact bytes for the eleventh native reference batch.
+configs/ball_tracking/completion_campaign/nba_reference_batch_11_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_11_result_v0_1.json -text

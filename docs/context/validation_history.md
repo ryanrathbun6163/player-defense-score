@@ -1,5 +1,46 @@
 # Validation History
 
+## NBA11 complete review ready for reference acceptance
+
+[NBA11](../ball_tracking_completion_nba_reference_batch_11.md) uses fixed
+training-role DEN–BOS e05, `84.mp4`, frames **210–449**, native **[3.5,7.5)s**;
+full-source final is **586**. Preparation passed on its first attempt in
+**38.448 seconds**, with **240 exact native PNG/PTS matches** and **2,969 prior
+files unchanged**. The primary decoder returned frames 0–449 after 451 submitted
+packets; alternate conversion emitted 450 RGB frames and reported filter frames
+0–450. Prefix 0–209 and filter frame 450 are disclosed same-training-source
+context; only selected frames 210–449 were saved. All 240 source and proposed
+frames, including full part endpoints, are inspected: **240 centers, zero nulls,
+172 partial and 68 fully visible judgments**, with **5–8px uncertainty**.
+All initial written proposals remain unchanged, with no annotation corrections
+or annotation-helper failures. The source shows a drive, pass, catch and shot,
+followed by rim/net and hand interaction. The fixed selection category
+`recovery` remains provenance, not a measured model recovery or hidden interval.
+The [final result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_11_result_v0_1.json)
+and [integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_11/integration_audit.json)
+pass **3,494 bindings, 240 native joins, 480 encoded frames and 480 center
+markers**. Complete 4s/24s overlays retain every frame at 60/10 fps; emitted
+color metadata and every encoded-frame comparison pass. All twenty sheets,
+240 encoded center crops, full native source 449 and both actual encoded finals
+were inspected. Final 449 retains **[517,190] ±6px**. Delivery and finalization
+passed on their first attempts; the actual pending-review reader also passes.
+
+The first root receipt was written in the same tool call that fetched the final
+images, before those images returned. After actual inspection of both returned
+images, a separate [confirmed receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_11/inspection/root_visual_review_confirmed.json)
+preserved the original and documented the sequence correction. Finalization uses
+that confirmation. No labels or media changed; no source or test rerun followed.
+
+All **1,440 accepted NBA labels** and **868 curated references** are unchanged,
+including prior acceptance snapshots of 286, 543, 809, 1,050, 1,549, 2,000, 2,245,
+2,490, 2,742 and 3,015 files; these preservation sets overlap. Prior 13-test renderer
+and current 12-test acceptance evidence remains historical, with zero reruns;
+the original eight-test acceptance record stays separate. Current record/media
+validation is not model accuracy or independent human ground truth. These pending
+proposals leave **2,159 selected positions without proposals** and **2,399 without
+accepted references**. No new accepted labels, model calls, fitting or protected
+evaluation.
+
 ## NBA10 accepted; reference preparation continues
 
 Ryan said **“I approve chat. Where are we at in the training”** after the complete

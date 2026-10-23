@@ -21,8 +21,19 @@ acceptance receipt supplies the decision.
 
 The completion campaign is still at **reference preparation**. No
 completion-campaign fit has run: the full accepted source/label/role package
-and executable training recipe are not yet frozen. Continue the fixed NBA
-references and remaining permitted curated coverage, then freeze those inputs
+and executable training recipe are not yet frozen. The
+[eleventh NBA batch](docs/ball_tracking_completion_nba_reference_batch_11.md)
+uses fixed DEN–BOS e05, `84.mp4`, frames **210–449**. Source preparation passes
+all **240 exact PNG/PTS checks** and preserves **2,969 earlier files**;
+all source and proposed frames are inspected. The **240 pending centers** comprise
+**172 partial and 68 fully visible judgments**, with **5–8px uncertainty** and
+zero nulls. These proposals are ready for Ryan's acceptance: complete
+**4s native / 24s slow
+overlays** retain every frame through 449. Validation passes **3,494 bindings,
+240 native joins and 480 encoded-frame/marker checks**; all 240 center crops and
+both full encoded finals are inspected. The batch leaves **2,159 selected
+positions without proposals**; no new labels are accepted.
+Continue the fixed NBA references and remaining permitted curated coverage, then freeze those inputs
 before the already approved fit. Accepted curated coverage stays **868/1,273**,
 including **760 eligible centers**, with **405 uncovered**; these remain
 evaluation-only. Prior 12-test acceptance and 13-test renderer evidence is

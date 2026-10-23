@@ -5,11 +5,19 @@
 Ryan accepted all 120 [NBA10 labels](../ball_tracking_completion_nba_reference_batch_10.md),
 including **100 centers, 20 nulls and 5–8px uncertainty**. Combined NBA coverage
 is **1,440/3,839 accepted**, including **1,296 centers and 144 nulls**, with
-**2,399 not yet accepted**. The next work is continued reference preparation
-within the fixed NBA episode package; no next batch is claimed prepared.
+**2,399 not yet accepted**. Reference preparation continues within the fixed NBA
+episode package.
 All 1,440 accepted rows have the training role; **1,439 training and all 960
 checkpoint-validation judgments remain unaccepted**. The next fixed episode is
-DEN–BOS e05, `84.mp4`, frames 210–449 (240 positions), still unprepared here.
+DEN–BOS e05, `84.mp4`, frames 210–449 (240 positions), now
+[NBA11 ready for acceptance](../ball_tracking_completion_nba_reference_batch_11.md).
+All 240 source PNG/PTS checks pass and 2,969 earlier files are preserved;
+all source and proposed frames are inspected. The 240 pending centers include
+172 partial and 68 fully visible judgments, zero nulls and 5–8px uncertainty.
+Complete 4s/24s overlays retain every frame through 449; all twenty encoded
+sheets and full finals are inspected. Validation passes 3,494 bindings, 240 native
+joins and 480 encoded-frame/marker checks. These pending proposals leave 2,159
+selected positions without proposals and 2,399 without accepted references.
 New reference proposals still require Ryan's acceptance.
 
 Finish the fixed NBA references and **405 uncovered permitted curated positions**,
