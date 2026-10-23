@@ -1,31 +1,33 @@
 # Current State
 
-## Latest decision: NBA07 accepted; NBA08 ready for reference acceptance
+## Latest decision: NBA08 accepted; NBA09 ready for reference acceptance
 
-Ryan answered **“Accept all 120 proposals”** to the exact
-[NBA07 review question](../ball_tracking_completion_nba_reference_batch_07.md),
-including 120 partially visible centers, zero nulls and 5–6px uncertainty.
-The separate [acceptance receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_07_acceptance_v0_1.json)
+Ryan said **“I approve chat. Move forward”** in response to the complete
+[NBA08 review and question](../ball_tracking_completion_nba_reference_batch_08.md),
+including 120 centers, zero nulls and 4–6px uncertainty. The separate
+[acceptance receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_08_acceptance_v0_1.json)
 records accepted training references. Actual publication/inventory readers and
-the duplicate guard pass; **2,245 original files** are unchanged. Combined
-coverage is **1,080/3,839 NBA labels: 956 centers and 124 nulls**;
-**2,759 remain unaccepted**. Original NBA07 preparation records and media retain
-their pending-era status; the new receipt supplies acceptance authority.
+the duplicate guard pass; **2,490 original files** are unchanged. Combined
+coverage is **1,200/3,839 NBA labels: 1,076 centers and 124 nulls**;
+**2,639 remain unaccepted**. Original NBA08 preparation records and media retain
+their pending-era status; the new receipt supplies acceptance authority. The
+later [explicit NBA08 confirmation](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/acceptance_audit/explicit_followup_confirmation.json)
+adds zero labels and does not accept NBA09.
 
-[NBA08](../ball_tracking_completion_nba_reference_batch_08.md) is ready for separate
-acceptance: fixed training-role **DEN–BOS e02**, original `19.mp4`, selected frames **0–119**
-in native **[0,2) seconds**, timebase 1/60000. The full source ends at **398**.
+[NBA09](../ball_tracking_completion_nba_reference_batch_09.md) is ready for separate
+acceptance: fixed training-role **DEN–BOS e03**, original `44.mp4`, selected frames **0–119**
+in native **[0,2) seconds**, timebase 1/60000. The full source ends at **474**.
 Source preparation passes **120 exact PNG/PTS comparisons** and preserves
-**2,201 earlier files**. The three inspected parts contain **120 centers, zero
-nulls and 4–6px uncertainty**: 92 partial and 28 full judgments. The shooter
-gathers/lifts the ball, then releases it into visible flight. Every current-frame
-source and proposed overlay, including each part's full endpoints, was inspected;
-all first drafts remain final without corrections or failures. Complete **2s
-native/12s slow** review passes **2,514 bindings, 120 native joins, 240 encoded
-frames and 240 markers**. All ten crop sheets and full native/slow final 119
-were inspected; the actual pending-review consumer passes. These new labels
-require separate acceptance and leave **2,639 selected positions without
-proposals**. Ryan's acceptance or corrections is next; NBA07 acceptance does
+**2,445 earlier files**. The three inspected parts contain **120 centers, zero
+nulls and 5–8px uncertainty**: 112 partial and eight full judgments. The
+ballhandler dribbles toward a developing screen, with hand, leg and crossing-player
+overlap retained. Every source/proposed frame and each part's full endpoints
+was inspected; no annotation corrections or annotation-helper failures occurred. Complete
+**2s native/12s slow** review passes **2,768 bindings, 120 native joins, 240
+encoded frames and 240 markers**. All ten crop sheets and full native/slow final
+119 were inspected; the actual pending-review consumer passes. These new labels
+require separate acceptance and leave **2,519 selected positions without
+proposals**. Ryan's acceptance or corrections is next; NBA08 acceptance does
 not cover them.
 
 Curated coverage remains **868/1,273 accepted**, **760 eligible centers** and

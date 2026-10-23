@@ -1,0 +1,227 @@
+{
+  "schema_version": "completion_nba_reference_acceptance/v0.1",
+  "status": "accepted",
+  "accepted_reference": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/accepted/reference.json",
+    "sha256": "ae4efab693bc4e74384baa5e52a719ff5da338c2ab113ef38cc561e63c697964",
+    "bytes": 216894
+  },
+  "batch_id": "nba_reference_batch_08_v0_1",
+  "episode_id": "den-vs-bos-0022400866_e02",
+  "game_id": "0022400866",
+  "role": "training",
+  "accepted_references": 120,
+  "accepted_eligible_centers": 120,
+  "accepted_null_centers": 0,
+  "accepted_visibility_counts": {
+    "partially_visible": 92,
+    "fully_visible": 28
+  },
+  "range_inclusive": [
+    0,
+    119
+  ],
+  "source_metadata": {
+    "path": "data/raw/nba/bard_completion_v0_1/den-vs-bos-0022400866/19.mp4",
+    "bytes": 5181790,
+    "sha256": "885b127036ac1c458156ff49bcf89e1fde2f5f878ebb1f262101141208075368",
+    "width": 1280,
+    "height": 720,
+    "average_rate": "60",
+    "time_base": "1/60000",
+    "decoded_frames": 399
+  },
+  "annotation_origin": "assistant_visual_proposal",
+  "annotator_id": "Codex assistant",
+  "evidence": {
+    "preparation_result": {
+      "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_08_result_v0_1.json",
+      "sha256": "ff180109e1a8a1e5e0c6b85f2c050702eb900ed25ffe23a46a44f48b929e5788",
+      "bytes": 30900
+    },
+    "config": {
+      "path": "configs/ball_tracking/completion_campaign/nba_reference_batch_08_v0_1.json",
+      "sha256": "17edf041d37873e0a9efb3be8e022381a28e0cab3a34c87868e8be4fc60d4db8",
+      "bytes": 1046
+    },
+    "proposal": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/proposal.json",
+      "sha256": "78866a00acc708e62b66177c97aaf39b8a8ec6c3249f5d822a2f85d7c87cf8dc",
+      "bytes": 113532
+    },
+    "review_manifest": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/review_v1/manifest.json",
+      "sha256": "1351f2c1c5985fef0b52531c6a9e5477bddaca8505439cdbfd3da966c7ecc957",
+      "bytes": 280618
+    },
+    "review_index": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/review_v1/index.html",
+      "sha256": "a737c6619684d910031b64aa2eb33d228c11fb957d49a973b843ee96ab523c28",
+      "bytes": 18435
+    },
+    "exception_list": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/review_v1/exception_list.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    "focused_tests": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/focused_tests_final.json",
+      "sha256": "dbb3fb71fe7a5df50e1a3e97fec08b153b173b857b1a2acb93d2096955351d4d",
+      "bytes": 1354
+    },
+    "ai_visual_inspection": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/inspection/root_visual_review.json",
+      "sha256": "439eb697c39ada3c9bcd22a483166bb9904197624faf7d2237a66bc26801aeb6",
+      "bytes": 27870
+    },
+    "integration_audit": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/integration_audit.json",
+      "sha256": "e064ff1e6efce79d587d75d3d7e404272c7f0d47a6982f132255be12ad298c40",
+      "bytes": 15393
+    },
+    "source_roles": {
+      "path": "configs/ball_tracking/completion_campaign/source_roles_v0_1.json",
+      "sha256": "3ae5de63eef918fdaafcfbac62c09ca46e14fa1c1fdf069739d731955a573200",
+      "bytes": 71569
+    },
+    "source_video": {
+      "path": "data/raw/nba/bard_completion_v0_1/den-vs-bos-0022400866/19.mp4",
+      "sha256": "885b127036ac1c458156ff49bcf89e1fde2f5f878ebb1f262101141208075368",
+      "bytes": 5181790
+    },
+    "fixed_frame_list": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/den-vs-bos-0022400866_e02/frames.json",
+      "sha256": "ab78f5156729f5f73e6b2a640e48407bd7651b8b835fb11728c78bc49ed648ec",
+      "bytes": 13739
+    },
+    "source_frames": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/source_frames.json",
+      "sha256": "a933dfee0de3684e26de2f7dd2ff324fe3a146e61bae302b5dd9486848b1656c",
+      "bytes": 53180
+    },
+    "source_timing": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/source_timing.json",
+      "sha256": "3ae8cd98d98371c4711a5fd8b6001e7a241661972fb018e428c24d4c748dd2db",
+      "bytes": 41697
+    },
+    "source_packet_timing": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/source_packet_timing.json",
+      "sha256": "00591a67d9fb0e314df2c3c93301e2faee40fcc9d206b31a7020563839f86eee",
+      "bytes": 59023
+    },
+    "source_preparation": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/preparation.json",
+      "sha256": "5cc7d43df85660b7f750b952af5006d3e57e57e515630a3d8b972673efbdbc49",
+      "bytes": 2993
+    },
+    "source_pixel_audit": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/source_pixel_audit.json",
+      "sha256": "18afb13523a6e00bb41657546239892833fd703f070d2c8af329f4122967be9d",
+      "bytes": 79173
+    }
+  },
+  "review_videos": [
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/review_v1/review_native.mp4",
+      "sha256": "8b0c7ec8eb025392f9610e3e79ba8c4c7bde4b965bef29358fbf6d728cbedfd8",
+      "bytes": 1363374,
+      "frame_count": 120,
+      "fps": 60.0,
+      "duration_seconds": 2.0,
+      "actual_final": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/review_v1/review_native_actual_final.png",
+        "sha256": "7769e432c637e283ce78eaff696ce84301ba5b47a2f0c5ed26eaac67111ff2db",
+        "bytes": 1160054
+      },
+      "encoded_probe": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/review_v1/review_native_encoded_probe.json",
+        "sha256": "8762b9c5190ccd0dec12733c16b0fd27e94eec18be82924b56c7a7bec3854561",
+        "bytes": 303
+      }
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/review_v1/review_slow.mp4",
+      "sha256": "e92a0927eded4eb709ed45f6e261953097873377f58cfe1e15ff2c4409814782",
+      "bytes": 3145394,
+      "frame_count": 120,
+      "fps": 10.0,
+      "duration_seconds": 12.0,
+      "actual_final": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/review_v1/review_slow_actual_final.png",
+        "sha256": "66151fcd1527c8f0eee12a4dbb08390cbda4f054540a210ce74937b826830623",
+        "bytes": 1170642
+      },
+      "encoded_probe": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/review_v1/review_slow_encoded_probe.json",
+        "sha256": "d33424f3bd2aad97f9e4751dfea6aa3a3860c145bd7efbdc8accdade8829b892",
+        "bytes": 303
+      }
+    }
+  ],
+  "human_review": {
+    "status": "accepted",
+    "reviewer_id": "Ryan",
+    "review_method": "human_visual_acceptance_of_assisted_proposals",
+    "user_statement": "I approve chat. Move forward",
+    "response_context": "Response to the NBA08 complete review and acceptance question: After reviewing the complete NBA batch-08 overlay through DEN\u2013BOS e02 frame 119, do you accept all 120 proposals for frames 0\u2013119, including 92 partially visible centers, 28 fully visible centers, no unknown centers and 4\u20136px uncertainty, or are corrections needed? Your standing requirement keeps new labels pending until acceptance. These are fixed-role training references; the approved fit still requires the complete accepted package and frozen recipe. Protected evaluation remains closed.",
+    "scope": "All 120 NBA08 proposals and stated visibility and uncertainty; fixed-role training reference acceptance only. No final-trajectory acceptance or protected evaluation authorization.",
+    "human_acceptance_date_local": "2026-10-22",
+    "timezone": "America/Phoenix",
+    "exact_user_event_timestamp_utc": null,
+    "recorded_at_utc": "2026-10-23T02:58:45.696876+00:00",
+    "playback_telemetry_claimed": false,
+    "independent_human_annotation_claimed": false
+  },
+  "training_eligible": true,
+  "checkpoint_selection_eligible": false,
+  "eligibility_scope": "accepted_reference_labels_only",
+  "package_ready_for_fitting": false,
+  "executable_recipe_frozen": false,
+  "fitting_authorized_by_this_artifact": false,
+  "protected_evaluation_authorized": false,
+  "model_output_acceptance": false,
+  "ball_phase_accepted": false,
+  "publication_provenance": {
+    "publisher": {
+      "path": "data/outputs/t/publish_completion_nba_acceptance_v0_2.py",
+      "sha256": "a194976a4116ec08b34bd27c2a135a26998ec61d49fe209a0bbaf69e0de1dff3",
+      "bytes": 12769
+    },
+    "derived_from_nba01_publisher": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/acceptance_audit/publish_acceptance.py",
+      "sha256": "d4a8b51e6a8e814a7aec02ef30445dce0f1866e873dd9cc90a365cdf38c531ef",
+      "bytes": 8528
+    },
+    "acceptance_reader": {
+      "path": "src/ball_tracking/completion_nba_acceptance.py",
+      "sha256": "c3e90ce85186601a5904d8bc963ba212f17eb974644673271356b07da3ecb795",
+      "bytes": 16357
+    },
+    "acceptance_tests": {
+      "path": "tests/test_completion_nba_acceptance.py",
+      "sha256": "8814832f5b13c6f80fc1956ed314d4431e9e808f5d1024d51e1a9a43c6dbd095",
+      "bytes": 12821
+    },
+    "prior_focused_acceptance_tests": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/acceptance_audit/focused_tests_scope_revision.json",
+      "sha256": "19f81e3e692bb5bb1a1e1e9cc08c68c760ab7714a4509b8c200dc6946a03ae47",
+      "bytes": 2380
+    },
+    "tests_rerun_for_publication": 0,
+    "original_snapshot": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/acceptance_audit/original_bindings_before.json",
+      "sha256": "3178649aec1bb42bc7083c0f81b7c45c22609eceff3d7c2d149874e3309f967c",
+      "bytes": 618564
+    },
+    "prior_nba_inventory": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/accepted_nba_reference_inventory_after_batch_07.json",
+      "sha256": "89519460a711fb87d4f96e48e0ae5ac1bd9706636f894d6dc57cd59cf1b0bfe2",
+      "bytes": 5382
+    },
+    "git": {
+      "branch": "codex/ball-detector-baseline",
+      "head": "7bb2e4c23c97bc51457a08759a5633c59e9b28d4",
+      "porcelain": []
+    }
+  }
+}

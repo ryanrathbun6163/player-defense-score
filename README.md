@@ -10,20 +10,19 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 ## Project status
 
 Ryan accepted all 120 labels in the
-[seventh NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_07.md),
-including **120 partial-visible centers, zero nulls and 5–6px uncertainty**.
-The separate publication preserves **2,245 original files** and passes the actual
-publication/inventory readers. Combined NBA coverage is now **1,080 accepted
-labels: 956 centers and 124 nulls**. **2,759 of 3,839 selected judgments remain
-unaccepted**. The [eighth NBA batch](docs/ball_tracking_completion_nba_reference_batch_08.md)
-is ready for separate acceptance: DEN–BOS e02, source `19.mp4`, **120 native
-frames, 0–119**; source final is **398**. Source preparation passes all 120 exact PNG/PTS
-comparisons and preserves **2,201 earlier files**. Its three inspected parts
-contain **120 centers, zero nulls and 4–6px uncertainty**: 92 partial-visible
-and 28 fully visible judgments. New labels remain pending and leave **2,639
-selected positions without proposals**. Complete 2s/12s overlays pass **120 native
-joins, 240 encoded-frame checks and 240 marker checks**. All ten crop sheets
-and full final 119 were inspected.
+[eighth NBA reference batch](docs/ball_tracking_completion_nba_reference_batch_08.md),
+including **120 centers, zero nulls and 4–6px uncertainty**. The separate
+publication preserves **2,490 original files** and passes the actual
+publication/inventory readers. Combined NBA coverage is now **1,200 accepted
+labels: 1,076 centers and 124 nulls**; **2,639 of 3,839 selected judgments remain
+unaccepted**. The [ninth NBA batch](docs/ball_tracking_completion_nba_reference_batch_09.md)
+is ready for separate acceptance: DEN–BOS e03, source `44.mp4`, **120 native
+frames, 0–119**; source final is **474**. Source preparation passes all 120 exact PNG/PTS
+comparisons and preserves **2,445 earlier files**. Its three inspected parts
+contain **120 centers, zero nulls and 5–8px uncertainty**: 112 partial and eight
+full judgments. Complete 2s/12s review passes **120 native joins, 240 encoded
+frames and 240 markers**; all crops and full final 119 were inspected. These
+labels remain pending and leave **2,519 selected positions without proposals**.
 The unchanged code retains prior 12-test acceptance and 13-test renderer evidence;
 neither suite was rerun for this increment. The approved fit follows completion
 of the accepted source/label/role package and frozen executable recipe; those

@@ -1,6 +1,62 @@
 # Validation History
 
-## NBA07 accepted; NBA08 complete review ready for acceptance
+## NBA08 accepted; NBA09 complete review ready for acceptance
+
+Ryan said **“I approve chat. Move forward”** in response to the complete NBA08
+review and question identifying 120 centers, zero nulls and 4–6px uncertainty.
+The [acceptance receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_08_acceptance_v0_1.json)
+and [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/acceptance_audit/publication_audit.json)
+preserve **2,490 original files**, all 1,080 earlier accepted NBA labels and all
+868 curated references. Actual publication/inventory readers and the duplicate
+guard pass. Combined coverage is **1,200/3,839 accepted**, with **1,076 centers and
+124 nulls**; **2,639 remain unaccepted**. The exact user-event time remains null;
+publication time is separate. Original pending-era review records and media
+remain unchanged. Prior 12-test acceptance and 13-test renderer evidence is
+retained without rerunning tests. No source decoding, inference or fitting
+occurred for acceptance publication. The later structured response
+**“Accept all 120 proposals”** is preserved as an
+[explicit NBA08 confirmation](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/acceptance_audit/explicit_followup_confirmation.json)
+binding the unchanged original receipt; it adds zero labels and excludes NBA09.
+
+[NBA09](../ball_tracking_completion_nba_reference_batch_09.md) uses fixed training-role
+DEN–BOS e03, original `44.mp4`, frames **0–119**, native **[0,2)s**; source final
+is **474**. Source preparation passes **120 exact RGB/PTS checks**, preserving
+**2,445 prior files**. The primary decoder submitted 121 packets and returned
+frames 0–119; alternate conversion emitted 120 RGB frames and reported filter
+frames 0–120. Filter frame 120 is disclosed same-training-source context, not an
+additional label or review frame. Only selected 0–119 are saved. Preparation
+succeeded on its first attempt in **20.743 seconds**. Both decoder paths use
+FFmpeg components, establishing transport consistency without independent visual
+ground truth. All three parts are inspected: **120 centers, zero nulls and
+5–8px uncertainty**, with 112 partial and eight full judgments. Fully visible
+frames are 12–15 and 80–83. The advancing ballhandler dribbles toward a developing
+screen; hand, leg and crossing-player overlap remain explicit. Every current-frame
+source/proposed overlay and each part's full endpoints was inspected; extra source
+70–79 review confirms centers supported within uncertainty. All initial drafts
+remain unchanged, without annotation corrections or annotation-helper failures.
+
+A routine [config-guard argument error](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_09/config_preflight_correction.json)
+was corrected before the config was written. Two temporary model-capacity
+[agent-dispatch failures](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_09/agent_dispatch_notes.json)
+were retried with the same model and scope. These retained orchestration records
+are separate from successful source preparation and annotation evidence.
+
+The [NBA09 result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_09_result_v0_1.json)
+passes **2,768 file bindings, 120 native joins, 240 encoded frames and 240
+markers**. Complete 2s/12s overlays retain all 120 frames at 60/10 fps; emitted
+color metadata and every encoded-frame comparison pass. All ten sheets and
+120 encoded center crops were inspected, plus full native source frame 119 and
+both full encoded finals. The actual pending-review reader passes. Source
+preparation, delivery and finalization succeeded on their first attempts; no
+suite was rerun. Prior 13-test renderer and current 12-test acceptance-reader
+evidence remains historical; the original eight-test acceptance record is
+separate retained history. All 1,200 accepted NBA and 868 curated labels remain
+unchanged, including prior acceptance snapshots of 286, 543, 809, 1,050, 1,549,
+2,000, 2,245 and 2,490 files. These preservation sets overlap. The 120 new labels
+remain pending: **2,519 selected positions have no proposals** and **2,639 have no
+accepted reference**. No fitting or protected evaluation ran.
+
+## Earlier NBA07 acceptance and completed NBA08 preparation
 
 Ryan answered **“Accept all 120 proposals”** to the exact NBA07 question,
 including 120 partially visible centers, zero nulls and 5–6px uncertainty. The
