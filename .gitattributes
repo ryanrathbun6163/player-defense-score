@@ -265,3 +265,8 @@ src/ball_tracking/completion_sac_references.py -text
 src/ball_tracking/completion_sac_acceptance.py -text
 tests/test_completion_sac_references.py -text
 tests/test_completion_sac_acceptance.py -text
+
+# Preserve NBA19 acceptance and NBA20 evidence bytes.
+configs/ball_tracking/reviews/nba_completion_reference_batch_19_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_20_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_20_result_v0_1.json -text

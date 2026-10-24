@@ -2,31 +2,34 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
-The [NBA19 review](../ball_tracking_completion_nba_reference_batch_19.md) now
-contains the first **120 SAC–MEM training proposals**, frames **5092–5211**:
-**60 centers, 60 nulls and 7–10px uncertainty**. The complete native review
-preserves actual variable timing; the slow review retains every frame through
-final 5211 at 10 fps. Obtain Ryan's acceptance or
-corrections, then continue the other **five fixed episodes totaling 839
-judgments**. Including NBA19, **six SAC–MEM batches and 959 judgments remain
-unaccepted**; the source plan is unchanged.
+Ryan accepted all **120 NBA19 SAC–MEM e01 judgments**, frames **5092–5211**:
+**60 centers, 60 nulls and 7–10px uncertainty**. The
+[separate publication](../ball_tracking_completion_nba_reference_batch_19.md#human-acceptance-published-2026-10-24)
+brings NBA coverage to **3,000/3,839 accepted: 2,698 centers and 302 nulls**,
+comprising **2,040 training and all 960 checkpoint-validation judgments**.
+Validation labels remain excluded from gradient fitting. All prior accepted
+labels, original reviews and incidents remain preserved.
 
-[NBA18 remains accepted](../ball_tracking_completion_nba_reference_batch_18.md);
-the repeated acceptance response needs no duplicate publication. NBA coverage
-stays **2,880/3,839 accepted: 2,638 centers and 242 nulls**, comprising **1,920
-training and all 960 checkpoint-validation judgments**. Validation labels
-remain excluded from gradient fitting. Original reviews, incidents and earlier
-acceptance evidence remain preserved.
+Obtain Ryan's acceptance or corrections for the complete [NBA20 SAC–MEM e02 review](../ball_tracking_completion_nba_reference_batch_20.md),
+native frames **73603–73722**. Its **120 pending judgments** contain **105
+centers, 15 nulls and 6–9px uncertainty**. All source PNG/PTS checks and individual
+source/proposed-frame inspections pass. Root inspected all emitted sheets,
+105 centers, 15 null contexts and both actual encoded finals. Final validation
+passes **6,604 bindings, 120 native joins, 240 encoded frames and 210 markers**.
+**Five fixed SAC–MEM episodes totaling 839 judgments remain
+unaccepted**, including NBA20; the other **four episodes contain 719 judgments**
+without proposals. The source plan is unchanged, and each new review requires
+Ryan's acceptance.
 
 No completion-campaign fit has run. Complete the fixed reference package and
 freeze accepted source/label/role manifests and the executable recipe before
 the already approved fit. Curated coverage remains **868/1,273 accepted**, with
-**760 eligible centers** and **405 uncovered**, evaluation-only. Additive SAC
-timing/rendering and acceptance support passes **ten renderer and eight
-acceptance tests**, with no failures or skips; earlier contract checks and
-historical receipts remain separate. Synthetic test acceptance creates no
-accepted campaign labels. Protected evaluation remains closed pending a frozen
-method and separate explicit authorization.
+**760 eligible centers** and **405 uncovered**, evaluation-only. **Ten renderer
+tests pass on NBA20's actual proposal and media**, with no failures or skips.
+The unchanged acceptance reader reuses NBA19's **eight passed tests**; NBA20's
+actual pending-review consumer separately validates all 120 native joins and
+creates zero accepted labels. No new eight-test execution is claimed. Protected
+evaluation remains closed pending a frozen method and separate authorization.
 
 ### Earlier completion-campaign milestones
 

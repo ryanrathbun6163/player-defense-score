@@ -1,5 +1,9 @@
 # Completion campaign: NBA reference batch 19
 
+**Accepted on 2026-10-24:** Ryan accepted all 120 judgments. The
+[separate acceptance record](#human-acceptance-published-2026-10-24) below
+supersedes the preserved pending-era status and totals in the original report.
+
 This increment prepares fixed training SAC–MEM episode
 `sac-mem-0022500829_e01`, native frames **5092–5211**. Its **120 pending
 judgments** contain **60 centers and 60 nulls**, with **7–10px center
@@ -133,3 +137,37 @@ the frozen executable recipe are still required before the already approved
 fit. No model inference, fitting, checkpoint scoring or protected evaluation
 ran. Protected evaluation remains closed pending a frozen method and separate
 explicit authorization.
+
+## Human acceptance published 2026-10-24
+
+Ryan said **“I accept all 120 proposals chat. Move forward with the next batch.”**
+The [separate acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_19_acceptance_v0_1.json)
+and [accepted reference publication](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_19/accepted/reference.json)
+record all **120 SAC–MEM e01 judgments**, native frames **5092–5211**: **60
+centers, 60 nulls and 7–10px uncertainty**. All visibility judgments, AI
+authorship, null intervals and original annotations remain unchanged. The
+acceptance date is **2026-10-24, America/Phoenix**; exact user-event UTC is null
+and publication time is recorded separately. No playback telemetry or
+independent human annotation is claimed.
+
+The [publication audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_19/acceptance_audit/publication_audit.json)
+passes in **116.036 seconds**. The actual SAC publication reader, mixed
+legacy/SAC inventory reader and duplicate native-frame guard pass, preserving
+**6,231 original files**, all **2,880 prior NBA rows** and all **868 curated
+references**. The completed eight-test acceptance receipt is reused with
+unchanged code; no tests, source decoding, model inference, fitting or scoring
+ran during publication. The original pending result, media, preparation,
+inspection and failed-attempt history remain unchanged.
+
+The [inventory after NBA19](../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_nba_reference_inventory_after_batch_19.json)
+contains **3,000/3,839 accepted NBA judgments: 2,698 centers and 302 nulls**.
+Roles are **2,040 training and all 960 checkpoint validation**; validation
+labels remain excluded from gradient fitting. Five fixed SAC–MEM training
+episodes remain, totaling **839 judgments**. NBA20 proceeds with e02, native
+frames **73603–73722**. Curated coverage remains **868 accepted, 760 eligible
+centers and 405 uncovered**, evaluation-only.
+
+Acceptance grants label-level training eligibility only. Complete accepted
+source/label/role manifests and the executable recipe still need freezing
+before the approved fit. Fitting, checkpoint scoring, protected evaluation,
+model-output acceptance and ball-phase completion remain closed.

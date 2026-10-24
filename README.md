@@ -9,30 +9,29 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
-The [NBA19 review](docs/ball_tracking_completion_nba_reference_batch_19.md)
-contains **120 pending SAC–MEM e01 judgments**, native frames **5092–5211**:
-**60 centers, 60 nulls and 7–10px uncertainty**. The native overlay preserves
-the source's variable 16/17ms timing and lasts **2.002 seconds**. The slow
-overlay presents every frame uniformly over **12 seconds at 10 fps**. The complete
-source/proposal and emitted review inspection is recorded, including actual
-final 5211. Ryan's acceptance is still required.
+Ryan accepted all **120 NBA19 SAC–MEM e01 judgments**, including **60 centers,
+60 nulls and 7–10px uncertainty**. The [separate acceptance publication](docs/ball_tracking_completion_nba_reference_batch_19.md#human-acceptance-published-2026-10-24)
+brings NBA coverage to **3,000/3,839 accepted: 2,698 centers and 302 nulls**.
+Accepted roles are **2,040 training and all 960 checkpoint-validation
+judgments**; validation labels remain excluded from gradient fitting. All
+2,880 prior NBA labels, 868 curated references and 6,231 original files remain
+unchanged. Publication reused the completed eight-test SAC acceptance receipt
+without another test run.
 
-[NBA18 remains accepted](docs/ball_tracking_completion_nba_reference_batch_18.md),
-and its repeated acceptance response needs no duplicate publication. NBA coverage
-is unchanged at **2,880/3,839 accepted: 2,638 centers and 242 nulls**. Accepted
-roles are **1,920 training and all 960 checkpoint-validation judgments**;
-validation labels remain excluded from gradient fitting. **Six SAC–MEM batches
-remain unaccepted**, including NBA19. After its review, the other five fixed
-episodes contain **839 judgments** still to prepare. The
+[NBA20](docs/ball_tracking_completion_nba_reference_batch_20.md) contains **120
+pending SAC–MEM e02 judgments**, native frames **73603–73722**: **105 centers,
+15 nulls and 6–9px uncertainty**. Source preparation passes all 120 PNG/PTS
+checks. Complete source/proposal and encoded inspection includes all 105
+centers, 15 null contexts and both actual encoded finals. The native overlay
+preserves **2.002 seconds** of variable timing; the slow overlay runs **12
+seconds at 10 fps**. Final validation passes **6,604 bindings, 120 native joins,
+240 encoded frames and 210 markers**. NBA20 is ready for Ryan's acceptance or
+corrections. **Five fixed SAC–MEM batches totaling 839 judgments remain
+unaccepted**; after these proposals,
+**719 judgments in four episodes** still need preparation. The
 [source plan](configs/ball_tracking/completion_campaign/source_roles_v0_1.json)
-is unchanged.
-
-The NBA19 source pass preserves **5,828 prior files** and verifies all 120 native
-PNGs. Additive SAC timing/rendering and acceptance support retains the older
-bound implementations. **Ten renderer and eight acceptance tests pass** with
-no failures or skips; the batch report keeps earlier contract checks and
-historical test evidence separate. Test-only acceptance creates no campaign
-accepted labels.
+and earlier reviews remain unchanged. New proposals require Ryan's separate
+acceptance.
 
 No completion-campaign fit has run. Complete the fixed reference package and
 freeze accepted source/label/role manifests and the executable recipe before
