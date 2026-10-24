@@ -1,6 +1,75 @@
 # Current State
 
-## Latest decision: NBA18 accepted; six NBA review episodes remain
+## Latest increment: NBA19 complete review; reference acceptance pending
+
+The [NBA19 review](../ball_tracking_completion_nba_reference_batch_19.md)
+prepares fixed training SAC–MEM e01, native frames **5092–5211**, with **120
+pending judgments: 60 centers and 60 nulls**. Visibility is **70 partial,
+40 not visible and ten indeterminate**, with **7–10px center uncertainty**.
+Null intervals **5108–5144, 5164–5183 and 5193–5195** remain un-interpolated.
+Final 5211 retains **[1708,427] ±8 pixels**, partially visible. Preparation and
+AI inspection create no accepted labels; both eligibility flags remain false.
+
+The 1920×1080 source uses variable **16/17ms presentation intervals** at timebase
+**1/90000**. The native overlay preserves these intervals over **2.002 seconds**;
+the complete slow overlay runs **12 seconds at 10 fps**. Native PTS span
+**7650962–7829702**, with final presentation end **7831142**. Batch final
+**5211** is separate from full-source final **357232**. Additive SAC renderer and
+acceptance modules retain the legacy bound implementations and keep raw packet
+duration separate from presentation duration derived from the next global PTS.
+
+[Source preparation](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_19/preparation.json)
+passed its first execution in **54.340 seconds**: all **120 PNG/PTS checks**,
+178 primary returned frames from 180 submitted packets, and 120 secondary RGB
+and filter frames. All **5,828 prior files** remain unchanged. Delivery passed
+its first attempt in **36.969 seconds**, checking **120 source joins and 240
+emitted frames**. The team inspected every current source/proposed frame. Root
+inspected all ten emitted/source sheets, all 60 centers and 60 null contexts,
+both actual encoded finals and the full unmarked source image 5211. These
+remain AI reviews, not independent human ground truth or Ryan's label acceptance.
+
+The [final result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_19_result_v0_1.json)
+and [integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_19/integration_audit.json)
+pass **6,309 bindings, 120 native joins, 240 encoded frames and 120 markers**.
+Finalization passed its first attempt in **36.828 seconds**, including the
+actual pending-review reader check; the integration audit took **25.656
+seconds**. The reader verifies all 120 joins and creates zero accepted labels.
+The [root visual receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_19/root_visual_review.json)
+records completed inspection separately from the original delivery status.
+
+The initial delegated preparer was interrupted before producing code or decoding
+source pixels; root then implemented the narrow helper. Read-only missing-path
+lookups and old-directory access denials changed no evidence. An initial broad
+inspection crop missed the ball at its right edge; the unused original remains
+retained, and corrected precision crops were viewed before labeling. No
+annotation corrections were required. **Ten renderer and eight acceptance
+tests pass**, with zero failures, errors or skips. The
+[complete acceptance run](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_19/focused_validation/acceptance_complete.json)
+took **22.699 seconds** and covers the actual completed SAC result, native
+timing, uncertainty and mixed legacy/SAC inventory. Its four contract checks
+were also run earlier; they are not four additional distinct tests. Historical
+eight-test and 12-test acceptance receipts and 13-test renderer evidence remain separate.
+Synthetic test-only acceptance creates zero campaign accepted labels.
+
+Ryan's repeated NBA18 acceptance response is a duplicate of the existing
+publication and does not create another receipt. NBA coverage remains **2,880
+accepted: 2,638 centers and 242 nulls**, comprising **1,920 training and all 960
+checkpoint-validation judgments**. **959 NBA judgments remain unaccepted in
+six SAC–MEM batches**, including these 120 proposals; the other five episodes
+contain **839 judgments** without proposals. Curated coverage remains **868
+accepted, 760 eligible centers and 405 uncovered**, evaluation-only.
+
+Next is Ryan's acceptance or correction of the complete NBA19 review, followed
+by the remaining fixed references. No model inference, fitting, checkpoint
+scoring or protected evaluation ran. Complete accepted source/label/role
+manifests and the frozen executable recipe remain prerequisites for the approved
+fit. Protected evaluation remains closed pending a frozen method and separate
+explicit authorization.
+
+## Earlier decision: NBA18 accepted; six NBA review episodes remain
+
+This acceptance-only checkpoint is preserved; the later NBA19 preparation above
+supersedes its statement that no next batch has been prepared.
 
 Ryan said **“I accept these proposals. Do we only have 1 more batch now?”**
 in response to the complete NBA18 review. The

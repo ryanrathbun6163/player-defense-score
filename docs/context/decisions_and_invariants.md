@@ -66,6 +66,27 @@ for checkpoint selection as specified. It does not release the 225 protected
 holdout/buffer positions, replace human final review, or authorize an indefinite
 experiment loop. Execution was deferred to the next session by Ryan.
 
+## Native variable-cadence reference timing
+
+The SAC–MEM completion references retain original presentation timestamps at
+timebase **1/90000**. Derive each presentation interval from the next global
+presentation PTS, including the selected batch's final frame. Preserve raw
+packet duration as separate evidence: reordered packets can carry a duration
+that differs from the presentation interval. Nominal 60 fps is descriptive
+metadata and must not replace the source's actual 16/17ms cadence. Validate
+both emitted packet and decoded-frame timestamps against the requested review
+timeline. Slow 10 fps review is a separately declared playback transform.
+
+Keep the batch final distinct from the full-source final. Additive SAC renderer
+and acceptance support preserves legacy implementations already bound by
+historical evidence. The fixed training role does not accept proposed labels:
+both eligibility flags stay false until Ryan accepts the review. See
+[NBA19](../ball_tracking_completion_nba_reference_batch_19.md).
+Its ten renderer and eight acceptance tests include isolated synthetic
+acceptance for transport validation; those test records are not campaign
+acceptance. Earlier contract checks and historical acceptance-test receipts
+remain distinct evidence.
+
 ## Rejected or superseded approaches
 
 - **Forcing team balance to 5/5 before resolving track contamination:** rejected because it hid raw tracker/identity switches.

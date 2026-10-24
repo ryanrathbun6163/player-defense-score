@@ -9,32 +9,36 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
-Ryan accepted all 240 labels in [NBA18](docs/ball_tracking_completion_nba_reference_batch_18.md):
-**212 centers, 28 nulls, all visibility judgments and 5–9px uncertainty**.
-Separate publication preserves **5,882 original files**, all 2,640 earlier NBA
-labels and all 868 curated references. Actual publication/inventory readers and
-the duplicate guard pass. NBA coverage is **2,880/3,839 accepted labels:
-2,638 centers and 242 nulls**, leaving **959 unaccepted**. Accepted roles are
-**1,920 training and all 960 checkpoint-validation judgments**. The complete
-HOU–OKC validation reference package is accepted. Its labels remain excluded
-from gradient fitting. Label acceptance does not authorize checkpoint scoring
-or protected evaluation.
+The [NBA19 review](docs/ball_tracking_completion_nba_reference_batch_19.md)
+contains **120 pending SAC–MEM e01 judgments**, native frames **5092–5211**:
+**60 centers, 60 nulls and 7–10px uncertainty**. The native overlay preserves
+the source's variable 16/17ms timing and lasts **2.002 seconds**. The slow
+overlay presents every frame uniformly over **12 seconds at 10 fps**. The complete
+source/proposal and emitted review inspection is recorded, including actual
+final 5211. Ryan's acceptance is still required.
 
-One NBA game remains: **SAC–MEM, with six fixed training episodes totaling
-959 judgments** in the [source plan](configs/ball_tracking/completion_campaign/source_roles_v0_1.json).
-Their sizes are **120, 120, 120, 120, 239 and 240**. At the
-current one-episode review pattern, that means **six NBA review batches**.
-The separate curated package still has **405 uncovered positions**. Original
-NBA18 review media and all failure/inspection history remain preserved; no
-repeat review is needed. This acceptance-only increment prepares no next batch.
+[NBA18 remains accepted](docs/ball_tracking_completion_nba_reference_batch_18.md),
+and its repeated acceptance response needs no duplicate publication. NBA coverage
+is unchanged at **2,880/3,839 accepted: 2,638 centers and 242 nulls**. Accepted
+roles are **1,920 training and all 960 checkpoint-validation judgments**;
+validation labels remain excluded from gradient fitting. **Six SAC–MEM batches
+remain unaccepted**, including NBA19. After its review, the other five fixed
+episodes contain **839 judgments** still to prepare. The
+[source plan](configs/ball_tracking/completion_campaign/source_roles_v0_1.json)
+is unchanged.
+
+The NBA19 source pass preserves **5,828 prior files** and verifies all 120 native
+PNGs. Additive SAC timing/rendering and acceptance support retains the older
+bound implementations. **Ten renderer and eight acceptance tests pass** with
+no failures or skips; the batch report keeps earlier contract checks and
+historical test evidence separate. Test-only acceptance creates no campaign
+accepted labels.
 
 No completion-campaign fit has run. Complete the fixed reference package and
 freeze accepted source/label/role manifests and the executable recipe before
 the already approved fit. Curated coverage remains **868/1,273 accepted**, with
-**760 eligible centers** and **405 uncovered**, evaluation-only. Historical
-13-test renderer and 12-test acceptance evidence remains unchanged; no suite
-was rerun. Protected evaluation remains closed pending a frozen method and
-separate explicit authorization.
+**760 eligible centers** and **405 uncovered**, evaluation-only. Protected
+evaluation remains closed pending a frozen method and separate authorization.
 
 The approved [ball-phase completion campaign](docs/ball_tracking_completion_plan.md)
 has started. Its [first increment](docs/ball_tracking_completion_first_increment.md)
