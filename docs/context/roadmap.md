@@ -2,33 +2,24 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
-Ryan accepted all 240 labels in [NBA17](../ball_tracking_completion_nba_reference_batch_17.md):
+Ryan accepted all 240 labels in [NBA18](../ball_tracking_completion_nba_reference_batch_18.md):
 **212 centers, 28 nulls, all visibility judgments and 5–9px uncertainty**.
-Separate publication preserves **5,406 original files**, all 2,400 earlier NBA
+Separate publication preserves **5,882 original files**, all 2,640 earlier NBA
 labels and all 868 curated references. Actual publication/inventory readers and
-the duplicate guard pass. NBA coverage is **2,640/3,839 accepted labels:
-2,426 centers and 214 nulls**, leaving **1,199 unaccepted**. Accepted roles are
-**1,920 training and 720 checkpoint validation**; **959 training and 240 validation
-judgments remain unaccepted**. Validation labels remain excluded from gradient
-fitting. Label acceptance does not authorize checkpoint scoring or protected
-evaluation.
+the duplicate guard pass. NBA coverage is **2,880/3,839 accepted labels:
+2,638 centers and 242 nulls**, leaving **959 unaccepted**. Accepted roles are
+**1,920 training and all 960 checkpoint-validation judgments**. The complete
+HOU–OKC validation reference package is accepted. Its labels remain excluded
+from gradient fitting. Label acceptance does not authorize checkpoint scoring
+or protected evaluation.
 
-The complete [NBA18 review](../ball_tracking_completion_nba_reference_batch_18.md) is ready for acceptance:
-fixed checkpoint-validation HOU–OKC e06, `253.mp4`, native frames **210–449**,
-covering **[3.5,7.5)s**. Its **240 pending judgments** contain **212 centers and
-28 nulls**, with **5–9px center uncertainty**. Visibility is **128 full,
-94 partial and 18 not visible**. Complete 4s native/24s slow overlays pass
-**5,959 bindings, 240 native joins, 480 encoded frames and 424 marker checks**.
-All 20 encoded/source sheets, 212 localized centers, 28 unmarked null contexts
-and both actual final images were inspected. Source preparation passes
-240 exact PNG/PTS checks and preserves **5,352 prior files**. Batch final **449**
-differs from full-source final **510**. Both pending eligibility flags remain
-false, leaving **959 positions without proposals** and **1,199 without accepted
-references**.
-
-Next is Ryan's acceptance or correction of NBA18, then continued preparation
-of the fixed reference package. Pending review does not authorize checkpoint
-scoring.
+One NBA game remains: **SAC–MEM, with six fixed training episodes totaling
+959 judgments**. Their sizes are **120, 120, 120, 120, 239 and 240**; the current
+one-episode review pattern therefore means **six NBA review batches**. The
+separate curated package still has **405 uncovered positions**. Continue the
+fixed SAC–MEM references next and obtain acceptance for each new batch. No next
+batch was prepared in this acceptance-only increment, and NBA18 needs no repeat
+review. Its original review and all failure/inspection history remain preserved.
 
 No completion-campaign fit has run. Complete the fixed reference package and
 freeze accepted source/label/role manifests and the executable recipe before

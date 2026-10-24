@@ -1,6 +1,41 @@
 # Current State
 
-## Latest decision: NBA17 accepted; NBA18 ready for reference acceptance
+## Latest decision: NBA18 accepted; six NBA review episodes remain
+
+Ryan said **“I accept these proposals. Do we only have 1 more batch now?”**
+in response to the complete NBA18 review. The
+[separate acceptance receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_18_acceptance_v0_1.json)
+records all **240 HOU–OKC e06 judgments**, frames **210–449**: **212 centers,
+28 nulls, 128 full/94 partial/18 not-visible judgments and 5–9px uncertainty**.
+Acceptance date is **2026-10-23, America/Phoenix**; exact user-event UTC is null.
+Publication time is separate, with no playback telemetry or independent human
+annotation claim. No repeat NBA18 review is needed.
+
+The [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_18/acceptance_audit/publication_audit.json)
+passes actual readers and the duplicate guard in **31.616 seconds**, preserving
+**5,882 originals**, **2,640 prior NBA labels** and **868 curated references**.
+The original review, failures, corrections and inspection history are unchanged.
+Current NBA coverage is **2,880/3,839 accepted: 2,638 centers and 242 nulls**.
+Accepted roles are **1,920 training and all 960 checkpoint-validation judgments**;
+validation references remain excluded from gradient fitting.
+
+One NBA game remains: **SAC–MEM, with six fixed training episodes** of **120,
+120, 120, 120, 239 and 240 judgments**, totaling **959**. At the current
+one-episode review pattern, that means **six NBA review batches**. The separate
+curated package remains **868 accepted, 760 eligible centers and 405 uncovered**.
+This acceptance-only increment prepared no next batch. Continue the fixed
+SAC–MEM package next; new references still require Ryan's acceptance.
+
+No completion-campaign fit has started. Complete accepted source/label/role
+manifests and the frozen executable recipe remain prerequisites for the already
+approved fit. No source decoding, inference, fitting, scoring or tests ran during
+acceptance publication. Protected evaluation remains closed pending a frozen
+method and separate explicit authorization.
+
+## Earlier decision: NBA17 accepted; NBA18 ready for reference acceptance
+
+This earlier checkpoint retains its original pending-era state. NBA18's later
+acceptance above supersedes its pending language and coverage counts.
 
 Ryan's structured reply **“Accept all 240 proposals”** accepts the complete
 NBA17 reference batch. The

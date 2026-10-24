@@ -1,5 +1,44 @@
 # Completion campaign: NBA reference batch 18
 
+## Acceptance recorded on 2026-10-23
+
+Ryan said **“I accept these proposals. Do we only have 1 more batch now?”**
+in response to the complete NBA18 review. The separate
+[acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_18_acceptance_v0_1.json)
+and [publication audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_18/acceptance_audit/publication_audit.json)
+record acceptance of all **240 judgments** for HOU–OKC e06 frames **210–449**:
+**212 centers, 28 nulls, 128 full/94 partial/18 not-visible judgments and
+5–9px center uncertainty**. The date is October 23, 2026 in America/Phoenix;
+exact user-event UTC is null. Publication time is separate, with no playback
+telemetry or independent human annotation claim.
+
+Publication passes the actual reference/inventory readers and duplicate-native-
+frame guard in **31.616 seconds**, preserving **5,882 original files**, all
+**2,640 earlier NBA rows** and all **868 curated references**. Original proposals,
+review media, failures, corrections and inspection history remain unchanged.
+No source pixel decoding, model inference, fitting, scoring or tests ran during
+acceptance publication. No repeat NBA18 review is needed.
+
+Current NBA coverage is **2,880/3,839 accepted: 2,638 centers and 242 nulls**,
+comprising **1,920 training and all 960 checkpoint-validation judgments**.
+One NBA game remains: **SAC–MEM, with six fixed episodes totaling 959 training
+judgments**. The episode sizes are **120, 120, 120, 120, 239 and 240**; the
+current one-episode review pattern therefore means **six NBA review batches**.
+The separate curated package still has **405 uncovered positions** alongside
+868 accepted judgments and 760 eligible centers. No next NBA batch was prepared
+in this acceptance-only increment.
+
+Accepted validation references remain excluded from gradient fitting. The
+completion-campaign fit has not started: the complete accepted source/label/role
+package and executable recipe must be frozen first. New labels still require
+acceptance. Protected evaluation remains closed pending a frozen method and
+separate explicit authorization.
+
+## Historical preparation and review before acceptance
+
+The original pending-era account below is retained unchanged. Its pending
+language and earlier counts are superseded by the separate acceptance above.
+
 This increment prepares fixed checkpoint-validation HOU–OKC episode
 `hou-vs-okc-0022400879_e06`, source `253.mp4`, native frames **210–449**.
 The 240 selected frames cover **[3.5,7.5) seconds**. The complete native/slow

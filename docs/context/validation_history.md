@@ -1,5 +1,34 @@
 # Validation History
 
+## NBA18 accepted; all fixed NBA validation references accepted
+
+Ryan said **“I accept these proposals. Do we only have 1 more batch now?”**
+after the complete NBA18 review. The
+[separate receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_18_acceptance_v0_1.json)
+and [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_18/acceptance_audit/publication_audit.json)
+record acceptance of all **240 HOU–OKC e06 judgments** for frames **210–449**:
+**212 centers, 28 nulls, 128 full/94 partial/18 not-visible judgments and
+5–9px uncertainty**. Acceptance date is **2026-10-23, America/Phoenix**;
+exact user-event UTC is null and publication time is recorded separately.
+No playback telemetry or independent human annotation is claimed.
+
+Publication passes actual readers and the duplicate guard in **31.616 seconds**,
+preserving **5,882 originals**, all **2,640 earlier NBA rows** and **868 curated
+references**. Original pending-era records, media, both earlier failures,
+inspection corrections and source-only second-AI review remain unchanged.
+No source pixel decoding, model inference, fitting, scoring or tests ran during
+publication. The prior renderer/current acceptance-reader evidence stays
+historical; no repeat review or test run is claimed.
+
+NBA coverage is **2,880 accepted: 2,638 centers and 242 nulls**, comprising
+**1,920 training and all 960 checkpoint-validation judgments**. Remaining NBA
+work is **one game, SAC–MEM, with six fixed training episodes** of **120, 120,
+120, 120, 239 and 240 judgments**, totaling **959**. At the current one-episode
+review pattern, that is six NBA review batches. The separate curated package
+retains **868 accepted/760 centers and 405 uncovered**. This increment prepares
+no next batch. Complete the accepted package and frozen executable recipe before
+the already approved fit; protected evaluation remains closed.
+
 ## NBA17 accepted; NBA18 complete review ready for acceptance
 
 Ryan's structured reply **“Accept all 240 proposals”** accepts every NBA17
