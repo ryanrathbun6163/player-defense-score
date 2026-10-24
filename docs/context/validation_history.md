@@ -1,5 +1,87 @@
 # Validation History
 
+## NBA20 accepted; historical tests and current publication checks separated
+
+Ryan's structured reply **“Accept all 120 proposals”** accepts all **120 NBA20
+SAC–MEM e02 judgments**, frames **73603–73722**: **105 centers, 15 nulls, 104
+partial/six full/seven not-visible/three indeterminate judgments and 6–9px
+uncertainty**. The [separate receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_20_acceptance_v0_1.json)
+records **2026-10-24, America/Phoenix**, with exact user-event UTC null and
+publication time separate. AI authorship and all annotations remain unchanged;
+no playback telemetry or independent human annotation is claimed.
+
+The [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_20/acceptance_audit/publication_audit.json)
+passes its first attempt in **161.274 seconds**, including actual SAC publication
+and mixed-inventory reads and the duplicate guard. All **6,514 original files**,
+**3,000 prior NBA rows** and **868 curated references** remain unchanged. The
+new ignored publisher preserves its predecessor and distinguishes NBA19's
+historical **eight-test receipt** from NBA20's current pending-consumer check,
+accepted publication and inventory reads. The checked candidate result equals
+the final NBA20 result except for the subsequently added consumer-check binding.
+No committed reader/test implementation changed; no tests, source decoding,
+inference, fitting or scoring ran during publication.
+
+The [inventory after NBA20](../../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_nba_reference_inventory_after_batch_20.json)
+contains **3,120 accepted NBA rows: 2,803 centers and 317 nulls**, with **2,160
+training and 960 checkpoint-validation judgments**. **719 judgments in four
+fixed SAC–MEM episodes remain unaccepted**. Curated coverage remains **868
+accepted, 760 centers and 405 uncovered**, evaluation-only. Label acceptance
+does not open fitting, package/recipe readiness, checkpoint scoring, protected
+evaluation, model-output acceptance or ball-phase completion.
+
+## NBA21 complete review ready for reference acceptance
+
+[NBA21](../ball_tracking_completion_nba_reference_batch_21.md) prepares fixed
+training SAC–MEM e03, **120 native frames, 106690–106809**, selected from
+**[1780,1782) seconds**. Source preparation passes **120 exact PNG/PTS checks**
+in **61.298 seconds**, preserving **6,455 preexisting files**. Primary decoding
+returned **357 frames, 106453–106809**, from **359 submitted packets**; the
+**237 decoded prefix frames, 106453–106689**, retain the training role. Secondary
+conversion emitted **120 RGB frames** and reported **120 filter frames**, exactly
+the selected range.
+
+Native PTS span **160200422–160379072**, with final presentation end **160380602**,
+covering **2.002 seconds**. The **1920×1080** source retains variable 16/17ms
+presentation durations at **1/90000**; batch final **106809** differs from
+full-source final **357232**.
+
+The three sealed parts contain **75 centers and 45 nulls**, with **6–10px
+uncertainty** and visibility of **84 partial, 19 indeterminate, 14 not visible
+and three full**. Nulls remain at **106708–106721, 106739–106746 and
+106757–106779**, without interpolation. Source compression limits defensible
+localization. All current source/proposed frames and full part endpoints were
+inspected; final 106809 retains **[700,167] ±9 pixels**, fully visible. The initial
+insufficient root inspection ROI remains retained; proper precision coverage
+was inspected before annotation. No annotation correction or failed
+annotation-helper attempt is recorded.
+
+Delivery passes its first attempt in **37.609 seconds**, producing complete
+**2.002-second native** and **12-second slow overlays at 10 fps**. The
+[completed visual receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_21/root_visual_review.json)
+records all ten emitted/source sheets, all **75 center crops and 45 null
+contexts**, full source final 106809 and both actual encoded finals. The initial
+HTML described a high pass, which the final frame did not substantiate. The
+[prose revision](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_21/scene_text_revision_01/revision.json)
+preserves the original HTML, delivery receipt and completion record and uses
+“raises and releases the ball.” It changes no annotations and reencodes no media.
+
+The [current renderer receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_21/focused_validation/20261024T205753Z_1242cce8/references.json)
+passes **ten tests** on NBA21's actual proposal/media in **26.937 seconds**, with
+no failures, errors or skips. NBA19's eight acceptance tests remain historical
+coverage of unchanged reader/test code; no new eight-test execution is claimed.
+The actual NBA21 pending consumer separately validates **120 annotation/native
+joins**, accepting no new labels.
+
+The first finalizer completes in **61.406 seconds**; its **50.203-second
+[integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_21/integration_audit.json)**
+checks **6,947 bindings, 120 native joins, 240 encoded frames, 150 markers and
+120 exact source PNGs**. It preserves all **3,120 accepted NBA rows, 868 curated
+references and 6,455 preexisting preparation files**. The
+[final result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_21_result_v0_1.json)
+is ready for human reference acceptance; both eligibility flags remain false,
+all fitting/scoring/protected-evaluation gates stay closed and no NBA21 label
+is accepted.
+
 ## NBA19 accepted; mixed legacy/SAC publication verified
 
 Ryan said **“I accept all 120 proposals chat. Move forward with the next batch.”**
@@ -28,6 +110,9 @@ authorize fitting, package/recipe readiness, checkpoint scoring, protected
 evaluation or ball-phase completion.
 
 ## NBA20 complete review ready for reference acceptance
+
+This original preparation record is preserved; NBA20's later separate acceptance
+above supersedes its pending status and campaign totals.
 
 The [NBA20 report](../ball_tracking_completion_nba_reference_batch_20.md)
 records **120 pending SAC–MEM e02 judgments**, native frames **73603–73722**:

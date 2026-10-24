@@ -270,3 +270,8 @@ tests/test_completion_sac_acceptance.py -text
 configs/ball_tracking/reviews/nba_completion_reference_batch_19_acceptance_v0_1.json -text
 configs/ball_tracking/completion_campaign/nba_reference_batch_20_v0_1.json -text
 configs/ball_tracking/reviews/nba_completion_reference_batch_20_result_v0_1.json -text
+
+# Preserve exact hash-bound NBA20 acceptance and NBA21 review evidence.
+configs/ball_tracking/completion_campaign/nba_reference_batch_21_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_20_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_21_result_v0_1.json -text
