@@ -1,5 +1,19 @@
 # Current State
 
+## Critical next-step review; no successor fit started, 2026-10-25
+
+Ryan requested a critical review before further execution. The
+[research and local-evidence review](../research/ball_tracking_next_step_review_2026-10-25.md)
+withdraws the automatic twenty-epoch HLSM/hidden-emphasis follow-up proposed in
+chat. The short epoch-five-to-ten continuation remains a bounded control, with
+a training-only assessment to distinguish fitting from transfer. An automatically
+WASB-seeded TAPNext++ pilot is a credible different comparison before committing
+to another objective or labeling campaign. These are recommendations requiring
+concrete frozen execution scope, not completed experiments or a phase pass.
+No new model calls, training, dependency installations or protected reads ran
+during this review. All accepted labels, quality criteria, completed/failed
+history and the original frozen recipe remain unchanged.
+
 ## Primary fit completed; retained baseline fails permitted screen, 2026-10-25
 
 The [completed result](../ball_tracking_completion_primary_results.md) supersedes
