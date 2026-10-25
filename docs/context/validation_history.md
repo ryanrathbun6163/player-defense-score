@@ -1,5 +1,56 @@
 # Validation History
 
+## Curated group 08–11 accepted; group 12–16 ready for review
+
+Ryan's exact reply **“clips review. please move forward”**, after the complete
+all-65 review question, accepts **65 P001 centers**, with **57 partial/eight
+full visibility judgments and 6–9px uncertainty**. Separate acceptance receipts
+for [08](../../configs/ball_tracking/reviews/ball_completion_reference_batch_08_acceptance_v0_1.json),
+[09](../../configs/ball_tracking/reviews/ball_completion_reference_batch_09_acceptance_v0_1.json),
+[10](../../configs/ball_tracking/reviews/ball_completion_reference_batch_10_acceptance_v0_1.json)
+and [11](../../configs/ball_tracking/reviews/ball_completion_reference_batch_11_acceptance_v0_1.json)
+record **2026-10-25, America/Phoenix**, with exact user-event UTC null. The four
+receipts represent one grouped human decision; publication timestamps are separate.
+
+The [actual-reader audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_batches_08_11_acceptance/publication_audit.json)
+confirms **933 accepted rows, 825 localization-eligible centers, 107 null
+geometries and one unchanged geometry excluded from localization scoring
+(P002 frame 335)**. All **868 previous rows, 65 annotations/native-frame records,
+305 original files and the 3,839-row NBA inventory** remain unchanged.
+All four publication/inventory reads and duplicate guards pass. The first
+publisher attempt failed its aggregate null assertion after **1.559 seconds**,
+after all four publications were already validated. It had incorrectly equated
+ineligible rows with null geometry. A **0.524-second metadata recovery** retains
+the failed helper and original publications, corrects only the audit census and
+rechecks actual records. No test rerun, pixel decode, model, fit or scoring occurred.
+
+[Group 12–16](../ball_tracking_completion_reference_group_12_16.md) has **71 pending
+centers**, **51 partial/20 full visibility judgments and 5–9px uncertainty**.
+Its [source audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_12_16/source_preparation_and_pixel_audit.json)
+passes **71 exact PNG/RGB matches** in **17.516 seconds**, preserving 933 accepted
+rows and recording zero protected packets/outputs. Failed attempts of **0.610
+seconds** and **6.453 seconds**, their helpers and the permitted decoder-drain
+diagnostic remain bound. The first failed before pixels on an incorrect shared
+PTS-offset assumption; the second stopped after normal P002 output 0–172 when
+drained frames lacked a frame-level timebase. The retry uses their valid PTS
+with stream timebase 1/12800 and preserves existing PNGs.
+All five renders pass. The [final visual receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_12_16/final_visual_inspection.json)
+records root inspection of all **nine encoded crop sheets (71 centers)**,
+**ten native/slow encoded finals** and all five selected source finals.
+No further label corrections were needed. The first [integration pass](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_12_16/integration_audit.json)
+takes **4.750 seconds**, checking **71 source/annotation joins, 142 encoded
+frames and their finals, 71 exact encoded crop joins and 288 bindings**.
+All 933 accepted rows are preserved; zero new labels are accepted. Production
+code/tests remain unchanged, and actual records were checked without repeating
+tests or claiming full-playback telemetry.
+
+Current curated coverage leaves **340 unaccepted judgments**, of which **71
+have proposals and 269 have none**. Both eligibility flags for these new curated
+references stay false.
+All fixed NBA references remain accepted; package/recipe readiness, fitting,
+protected evaluation and ball-phase completion remain closed. Earlier pending
+records below are preserved rather than rewritten.
+
 ## NBA24 accepted; fixed NBA reference selection complete
 
 Ryan's reply **“I accept chat. Lets move forward”**, while viewing the complete

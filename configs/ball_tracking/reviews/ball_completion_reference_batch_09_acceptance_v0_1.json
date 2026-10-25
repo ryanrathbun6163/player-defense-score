@@ -1,0 +1,225 @@
+{
+  "schema_version": "ball_completion_reference_batch_acceptance/v0.1",
+  "status": "accepted",
+  "batch_id": "reference_batch_09_v0_1",
+  "human_review": {
+    "status": "accepted",
+    "reviewer_id": "Ryan",
+    "review_method": "human_visual_acceptance_of_assisted_proposals",
+    "user_statement": "clips review. please move forward",
+    "grouped_acceptance": {
+      "batch_ids": [
+        "reference_batch_08_v0_1",
+        "reference_batch_09_v0_1",
+        "reference_batch_10_v0_1",
+        "reference_batch_11_v0_1"
+      ],
+      "accepted_references": 65,
+      "accepted_eligible_centers": 65,
+      "accepted_null_centers": 0,
+      "accepted_visibility_counts": {
+        "partially_visible": 57,
+        "fully_visible": 8
+      },
+      "uncertainty_radius_source_px": [
+        6,
+        9
+      ],
+      "response_context": "Ryan replied while viewing the group 08\u201311 review after the question asking acceptance of all 65 P001 proposals in frames 0\u201317, 75\u201389, 93\u201399 and 225\u2013249, including 65 centers, no nulls, 57 partial/eight full judgments and 6\u20139px uncertainty. The instruction to move forward is recorded as one grouped acceptance event for those exact reviewed proposals, not a form-option answer or independent annotation.",
+      "playback_telemetry_claimed": false,
+      "form_option_response_claimed": false
+    },
+    "recorded_at_utc": "2026-10-25T16:52:58.291391+00:00",
+    "human_acceptance_date_local": "2026-10-25",
+    "timezone": "America/Phoenix",
+    "exact_user_event_timestamp_utc": null,
+    "corrections_requested": false,
+    "fitting_authorized": false,
+    "final_trajectory_acceptance": false,
+    "protected_evaluation_authorized": false,
+    "scope": "All 15 exact reviewed batch 09 proposals for possession_001 frames 75\u201389, including 15 eligible centers, 0 null centers, visibility categories and stated uncertainty, as part of the grouped 65-row acceptance. No playback telemetry or independent human annotation is claimed."
+  },
+  "annotation_origin": "assistant_visual_proposal",
+  "annotator_id": "Codex assistant",
+  "accepted_reference": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_09/accepted/reference.json",
+    "sha256": "c295f3f7ea29d72ed65b4c44ac7bd7a50c2487c784ecdc2a0709139a3df2de82",
+    "bytes": 27693
+  },
+  "accepted_references": 15,
+  "accepted_eligible_centers": 15,
+  "accepted_null_centers": 0,
+  "accepted_visibility_counts": {
+    "partially_visible": 15
+  },
+  "accepted_partially_visible_null_centers": [],
+  "accepted_indeterminate_frames": [],
+  "accepted_certain_occluded_frames": [],
+  "range_inclusive": [
+    75,
+    89
+  ],
+  "possession_id": "possession_001",
+  "source_video": {
+    "path": "data/clips/possession_001.mp4",
+    "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+    "width_px": 1920,
+    "height_px": 1080,
+    "fps": 25.0,
+    "frame_count": 499
+  },
+  "proposal": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_09/proposal.json",
+    "sha256": "f9f5498876a55cb6c0bac89614a0b8f01db4a20b95ad7a334008d05bb002b8d2",
+    "bytes": 14268
+  },
+  "preparation_result": {
+    "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_09_result_v0_1.json",
+    "sha256": "7ecbe73dd1ce7f02122d7630863454f0a8c53de33662c8dc024b2275bf249545",
+    "bytes": 12706
+  },
+  "review_manifest": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_09/review_v1/manifest.json",
+    "sha256": "ebd77b07fffd8bab5435011d45200d74439652e6f8aaee97f224ef2dd4ec2f76",
+    "bytes": 32449
+  },
+  "review_index": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_09/review_v1/index.html",
+    "sha256": "72763e03bcfc945d0ff788a128e4698fd009eea5d7d2fa4a72fe98eca50083ba",
+    "bytes": 4742
+  },
+  "review_videos": [
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_09/review_v1/review_native.mp4",
+      "sha256": "004cae7dd279d1c243ae3bd47ffdb56cc4377d5fefac14363e704859ceaac65c",
+      "bytes": 414308,
+      "frame_count": 15,
+      "fps": 25,
+      "duration_seconds": 0.6,
+      "actual_final": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_09/review_v1/review_native_actual_final.png",
+        "sha256": "334633f996334835c0eca6e977090553a05a0449a6fc377cc72e592cdc712115",
+        "bytes": 1049009
+      },
+      "all_frame_mean_absolute_pixel_errors": [
+        2.2085322627314814,
+        2.333629195601852,
+        2.3399833622685184,
+        2.3462883391203704,
+        2.3142896412037035,
+        2.4053363715277776,
+        2.377991898148148,
+        2.417628399884259,
+        2.3652018229166667,
+        2.460423900462963,
+        2.4140086082175927,
+        2.477086588541667,
+        2.474769965277778,
+        2.5947782841435183,
+        2.625662254050926
+      ],
+      "all_frame_label_marker_pixel_errors": [
+        43.90574712643678,
+        44.839080459770116,
+        45.46436781609195,
+        46.0919540229885,
+        45.65287356321839,
+        45.97241379310345,
+        46.6551724137931,
+        47.43218390804598,
+        48.9080459770115,
+        48.9448275862069,
+        48.83448275862069,
+        49.20919540229885,
+        49.44827586206897,
+        49.262068965517244,
+        48.39770114942529
+      ]
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_09/review_v1/review_slow.mp4",
+      "sha256": "a67c802200e8eff28d8ba4b39f2bd7ab12ea3b9ce63c2dbc94986bf84bf15b21",
+      "bytes": 816732,
+      "frame_count": 15,
+      "fps": 5,
+      "duration_seconds": 3.0,
+      "actual_final": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_09/review_v1/review_slow_actual_final.png",
+        "sha256": "14e6cab9f83b4a9eee83eec1da901b6f7a3dadfe2828e0ef098b05153c67bf10",
+        "bytes": 1061721
+      },
+      "all_frame_mean_absolute_pixel_errors": [
+        1.995544704861111,
+        2.0637449363425926,
+        2.0551501012731483,
+        2.0487738715277777,
+        2.0356134259259258,
+        2.0883246527777777,
+        2.0540628616898147,
+        2.0762170862268516,
+        2.0496184172453704,
+        2.110944733796296,
+        2.0700047019675925,
+        2.116957103587963,
+        2.118463541666667,
+        2.178451244212963,
+        2.205160590277778
+      ],
+      "all_frame_label_marker_pixel_errors": [
+        43.703448275862065,
+        44.317241379310346,
+        44.85057471264368,
+        45.666666666666664,
+        45.45057471264368,
+        45.28735632183908,
+        45.69655172413793,
+        46.95862068965517,
+        48.188505747126435,
+        48.48275862068966,
+        48.197701149425285,
+        48.48275862068966,
+        48.7816091954023,
+        48.657471264367814,
+        47.710344827586205
+      ]
+    }
+  ],
+  "exception_list": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_09/review_v1/exception_list.json",
+    "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "bytes": 3
+  },
+  "ai_visual_inspection": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_08_11/final_visual_inspection.json",
+    "sha256": "16b3a3f7cf01f75c2551369c1cea9299f94e21a050e199ce7baf6cd8a58c8638",
+    "bytes": 11204
+  },
+  "role": "post_selection_evaluation_only",
+  "training_eligible": false,
+  "checkpoint_selection_eligible": false,
+  "human_annotation_independence_claimed": false,
+  "model_output_acceptance": false,
+  "protected_evaluation_authorized": false,
+  "earlier_pending_proposal_config_result_media_preserved": true,
+  "annotation_fields_exactly_unchanged": 15,
+  "native_frame_records_exactly_unchanged": 15,
+  "publication_method": "Metadata-only exact copy of accepted annotations, native frame records and source bindings. Original pending-era configurations, results, proposal notes and media remain unchanged. These separate human acceptance records supply the later status; no image decode, inference, fitting or scoring.",
+  "publisher": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batches_08_11_acceptance/publish_acceptance.py",
+    "sha256": "08594132de8892f3c2a5b87be5167c35b1a1cfe4384cec5b7d8cc55cee7d8538",
+    "bytes": 25305
+  },
+  "derived_from_grouped_publisher": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batches_05_07_acceptance/publish_acceptance.py",
+    "sha256": "d0d89de1c2c6686bc6d3d517ee934b0cd1f926ba0eb6c66219703dd0fab485bb",
+    "bytes": 21987
+  },
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "bff98d30dcbb9c7c943fffc8d3003e421904a017",
+    "worktree_porcelain": "",
+    "publisher_git_mutations": false,
+    "task_start_state": "Clean branch and HEAD verified before publisher creation; concurrent parent work may appear in publisher snapshot."
+  },
+  "recorded_at_utc": "2026-10-25T16:52:58.291391+00:00"
+}

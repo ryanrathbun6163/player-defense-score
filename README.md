@@ -9,31 +9,34 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
-Ryan accepted all **240 NBA24 SAC–MEM e06 judgments** on **2026-10-25**:
-**200 centers, 40 unknown centers and 6–10px uncertainty**. The
-[separate acceptance publication](docs/ball_tracking_completion_nba_reference_batch_24.md#human-acceptance-published-2026-10-25)
-completes the fixed NBA selection: **3,839/3,839 accepted judgments, with 3,423
-centers and 416 nulls**. Roles are **2,879 training and 960 checkpoint
-validation**; validation labels remain excluded from gradient fitting. All
-3,599 prior NBA labels, 868 curated references and 8,226 original files remain
-unchanged. Actual publication and mixed-inventory readers pass; historical
-acceptance tests were reused without a rerun.
+Ryan accepted all **65 P001 judgments in curated batches 08–11** on
+**2026-10-25**, replying **“clips review. please move forward”** after the
+all-65 acceptance question. The
+[separate publications](docs/ball_tracking_completion_reference_group_08_11.md#human-acceptance-published-2026-10-25)
+preserve the original proposals and reviews. Curated coverage is now
+**933/1,273 accepted**, with **825 localization-eligible centers** and
+**340 unaccepted judgments**. All 868 earlier curated rows remain unchanged.
 
-The [next P001 group](docs/ball_tracking_completion_reference_group_08_11.md)
-contains **65 pending centers**, with **57 partial/eight full visibility
-judgments and 6–9px uncertainty**, across frames **0–17, 75–89, 93–99 and
-225–249** in curated batches **08–11**. Source preparation, four complete
-renders and final encoded review pass; the group is ready for Ryan's acceptance
-or corrections. Curated coverage remains
-**868/1,273 accepted**, with **760 eligible centers** and **405 unaccepted**:
-**65 have pending proposals and 340 still lack proposals**, evaluation-only.
-All **405 remaining curated judgments**
-must be completed and accepted under the approved
-[reference-package milestone](docs/ball_tracking_completion_plan.md#delivery-resources-and-sequence)
-before freezing accepted source/label/role manifests and the executable recipe
-for the approved fit. New labels require Ryan's acceptance. No completion-campaign
-fit has run; protected evaluation remains closed pending a frozen method and
-separate authorization.
+The [next group, batches 12–16](docs/ball_tracking_completion_reference_group_12_16.md),
+contains **71 pending centers**, with **51 partial/20 full visibility judgments
+and 5–9px uncertainty**, across P002 frames **0–24 and 170–174** and P003
+frames **175–192, 196–203 and 207–221**. Source preparation, all five
+renders, complete encoded inspection and integration pass. The group is ready
+for Ryan's acceptance or corrections.
+These proposals leave **269 permitted curated judgments without proposals**.
+These completion-campaign curated references remain evaluation-only, with training and checkpoint-selection
+eligibility false.
+
+All fixed NBA references are already accepted:
+[NBA24's publication](docs/ball_tracking_completion_nba_reference_batch_24.md#human-acceptance-published-2026-10-25)
+completes **3,839 judgments: 3,423 centers and 416 nulls**, comprising
+**2,879 training and 960 checkpoint validation**. Validation labels remain
+excluded from gradient fitting. Complete and accept the **340 remaining
+curated judgments** under the approved
+[reference-package milestone](docs/ball_tracking_completion_plan.md#delivery-resources-and-sequence),
+then freeze the source/label/role manifests and executable recipe for the
+approved fit. No completion-campaign fit has run; protected evaluation remains
+closed pending a frozen method and separate authorization.
 
 The approved [ball-phase completion campaign](docs/ball_tracking_completion_plan.md)
 has started. Its [first increment](docs/ball_tracking_completion_first_increment.md)
@@ -58,11 +61,10 @@ and [sixth](docs/ball_tracking_completion_reference_batch_06.md) and
 [seventh](docs/ball_tracking_completion_reference_batch_07.md) batches are now
 accepted. Ryan approved all 102 judgments together, including 77 centers and
 25 nulls. Separate acceptance publications preserve every original proposal and
-review artifact. Current curated coverage is **868/1,273**, with **760 eligible
+review artifact. Coverage after batches 05–07 was **868/1,273**, with **760 eligible
 centers** and **405 permitted positions uncovered**. All 766 earlier accepted
-labels remain unchanged. These references remain evaluation-only; the fixed NBA
-training-label package is being prepared and fitting remains ahead. Protected evaluation
-remains closed.
+labels remained unchanged. These references remain evaluation-only; later
+acceptance totals and the next step are recorded above.
 
 The repository currently contains a configuration-driven, resumable **21-stage player-coordinate pipeline** covering:
 

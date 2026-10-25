@@ -1,6 +1,59 @@
 # Current State
 
-## Latest increment: all fixed NBA references accepted; P001 group ready for review
+## Latest increment: P001 group accepted; next 71 curated judgments ready for review
+
+Ryan's **“clips review. please move forward”** accepts all **65 P001 judgments
+in batches 08–11**, following the all-65 acceptance question. The
+[separate receipts and publications](../ball_tracking_completion_reference_group_08_11.md#human-acceptance-published-2026-10-25)
+record **2026-10-25, America/Phoenix**, with exact user-event UTC null.
+Annotations, uncertainty and AI authorship remain unchanged. No playback
+telemetry or independent human annotation is claimed.
+
+The [inventory after batch 11](../../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_reference_inventory_after_batch_11.json)
+contains **933/1,273 accepted judgments**, including **825 localization-eligible
+centers, 107 null geometries and one existing geometry excluded from
+localization scoring (P002 frame 335)**. That last row remains unchanged;
+localization-ineligible does not necessarily mean null. All **868 prior rows,
+65 newly accepted annotations/native-frame records and 305 original files**
+are preserved. Actual publication and inventory readers pass, and duplicate
+guards reject all four accepted ranges.
+
+The [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_batches_08_11_acceptance/publication_audit.json)
+retains the **1.559-second failed aggregate check**, which incorrectly expected
+108 null geometries after the four publications had already passed their
+readers. A separate **0.524-second metadata recovery** verifies the correct
+census without rewriting publications, receipts, inventories or labels.
+No tests, source decoding, models, fitting or scoring ran for acceptance.
+
+[Group 12–16](../ball_tracking_completion_reference_group_12_16.md) prepares
+**71 pending centers**, **51 partial/20 full visibility judgments and 5–9px
+uncertainty**: P002 **0–24 and 170–174**, P003 **175–192, 196–203 and 207–221**.
+The [source audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_12_16/source_preparation_and_pixel_audit.json)
+passes **71 exact PNG/RGB checks** in **17.516 seconds**, preserves all 933
+accepted rows and records zero protected packets or decoded outputs. Failed
+attempts of **0.610 seconds** (source PTS-offset assumption) and **6.453 seconds**
+(missing timebase on drained frames) remain bound with the successful retry.
+All five renders pass. The [final visual receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_12_16/final_visual_inspection.json)
+records all **nine encoded crop sheets**, covering every center, **ten
+native/slow encoded finals** and source finals **24, 174, 192, 203 and 221**.
+The [integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_12_16/integration_audit.json)
+passes its first execution in **4.750 seconds**, checking **71 source/annotation
+joins, 142 encoded frames, 71 exact encoded crop joins and 288 bindings**.
+All 933 accepted rows remain unchanged; no new labels are accepted. The group
+is ready for Ryan's acceptance or corrections. No further annotation corrections were needed; no full-playback telemetry is
+claimed.
+
+There are **340 unaccepted curated judgments: 71 proposed and 269 without
+proposals**. These completion-campaign curated labels remain evaluation-only, with both eligibility flags
+false. All **3,839 NBA judgments** remain accepted: **3,423 centers/416 nulls**,
+with **2,879 training/960 checkpoint validation**. Complete the remaining
+curated references before freezing the full package and executable recipe under
+[milestone 2](../ball_tracking_completion_plan.md#delivery-resources-and-sequence).
+No completion-campaign fit has run; protected evaluation remains closed.
+The earlier checkpoints below retain their original dates, counts and pending
+status; this entry supersedes them.
+
+## Earlier checkpoint: all fixed NBA references accepted; P001 group ready for review
 
 Ryan's reply **“I accept chat. Lets move forward”** accepts the complete NBA24
 SAC–MEM e06 review, native frames **197799–198038**: **240 judgments, 200 centers,

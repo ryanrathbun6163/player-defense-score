@@ -301,3 +301,19 @@ configs/ball_tracking/reviews/ball_completion_reference_batch_08_result_v0_1.jso
 configs/ball_tracking/reviews/ball_completion_reference_batch_09_result_v0_1.json -text
 configs/ball_tracking/reviews/ball_completion_reference_batch_10_result_v0_1.json -text
 configs/ball_tracking/reviews/ball_completion_reference_batch_11_result_v0_1.json -text
+
+# Preserve exact bytes for grouped curated acceptance and P002/P003 reviews.
+configs/ball_tracking/reviews/ball_completion_reference_batch_08_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_09_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_10_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_11_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_12_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_12_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_13_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_13_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_14_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_14_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_15_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_15_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_16_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_16_result_v0_1.json -text
