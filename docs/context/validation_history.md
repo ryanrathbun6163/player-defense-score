@@ -1,5 +1,66 @@
 # Validation History
 
+## NBA24 accepted; fixed NBA reference selection complete
+
+Ryan's reply **“I accept chat. Lets move forward”**, while viewing the complete
+NBA24 review after the all-240-proposals acceptance question, accepts **240
+SAC–MEM e06 judgments**, native frames **197799–198038**: **200 centers,
+40 nulls, 23 full/181 partial/34 indeterminate/two not-visible judgments and
+6–10px uncertainty**. The [separate receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_24_acceptance_v0_1.json)
+records **2026-10-25, America/Phoenix**, exact user-event UTC null and publication
+time separately. Every annotation, uncertainty and AI-authorship field remains
+unchanged; no playback telemetry or independent human annotation is claimed.
+
+The [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_24/acceptance_audit/publication_audit.json)
+passes its first attempt in **371.355 seconds**, including the actual SAC
+publication and mixed-inventory readers and duplicate native-frame guard.
+All **8,226 original files, 3,599 prior NBA rows and 868 curated references**
+remain unchanged. The unchanged publisher binds NBA19's historical **eight-test
+receipt** separately from NBA24's current pending-consumer check and accepted
+publication. No reader/test changes, test reruns, source decoding, inference,
+fitting or scoring occurred during acceptance publication. All original review
+artifacts and the late-part display incident remain preserved.
+
+The [inventory after NBA24](../../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_nba_reference_inventory_after_batch_24.json)
+contains **3,839/3,839 accepted NBA judgments: 3,423 centers and 416 nulls**,
+with **2,879 training and 960 checkpoint-validation judgments**. No fixed NBA
+judgment remains unaccepted. Curated coverage stays **868 accepted, 760 eligible
+centers and 405 uncovered**, evaluation-only. The historical NBA24 pending
+record below remains evidence of preparation; this acceptance supersedes that
+status without rewriting the original review.
+
+## P001 reference group 08–11 ready for human acceptance
+
+The [P001 group](../ball_tracking_completion_reference_group_08_11.md) covers
+**65 judgments** in frames **0–17, 75–89, 93–99 and 225–249**, using separate
+curated configurations **08–11**. All **65 proposals have centers**, with
+**57 partial/eight full visibility judgments and 6–9px uncertainty**. The
+[source audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_08_11/source_preparation_and_pixel_audit.json)
+passes **65 exact PNG checks** in **16.688 seconds** and preserves all **868
+accepted curated rows**. Four complete renders pass in **3.640, 3.140, 1.843 and
+4.703 seconds**, respectively. The [final visual receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_08_11/final_visual_inspection.json)
+records all **eight encoded crop sheets**, **all eight native/slow actual finals**
+and source finals **17, 89, 99 and 249**. No full-playback telemetry is claimed.
+The first [integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_08_11/integration_audit.json)
+passes in **4.687 seconds**, checking **65 source RGB hashes, 130 encoded frames,
+65 exact encoded crop joins and 242 bindings**. Actual producer/source/media
+records were validated; unchanged production tests were not repeated. No new
+curated acceptance is claimed.
+Of the **405 unaccepted judgments**, **65 have pending proposals** and **340
+still lack proposals**.
+
+The [delivery-helper failure](../../data/outputs/t/curated_group_08_11_delivery_helper_attempt_01.json)
+preserves an unescaped JavaScript brace in a Python HTML f-string, caught by
+syntax validation before execution: no source pixel reads, label changes or
+renders occurred. The failed helper snapshot remains bound. Batches 09–10
+retain initial and refined point-review sheets after small source-supported
+placement adjustments. The final encoded review needed no further corrections.
+All **405 remaining permitted curated judgments** must be completed and accepted
+under [milestone 2](../ball_tracking_completion_plan.md#delivery-resources-and-sequence)
+before freezing the full reference package and executable recipe for the approved
+fit. Package readiness, fitting, protected evaluation, model-output acceptance
+and ball-phase completion remain closed.
+
 ## NBA23 accepted; all original labels, failures and evidence preserved
 
 Ryan's structured reply **“Accept all 239 proposals”** accepts all **239 NBA23

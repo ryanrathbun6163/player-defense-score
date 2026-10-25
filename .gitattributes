@@ -290,3 +290,14 @@ configs/ball_tracking/reviews/nba_completion_reference_batch_23_result_v0_1.json
 configs/ball_tracking/completion_campaign/nba_reference_batch_24_v0_1.json -text
 configs/ball_tracking/reviews/nba_completion_reference_batch_23_acceptance_v0_1.json -text
 configs/ball_tracking/reviews/nba_completion_reference_batch_24_result_v0_1.json -text
+
+# Preserve exact bytes for NBA24 acceptance and grouped P001 review evidence.
+configs/ball_tracking/reviews/nba_completion_reference_batch_24_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_08_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_09_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_10_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_11_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_08_result_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_09_result_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_10_result_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_11_result_v0_1.json -text

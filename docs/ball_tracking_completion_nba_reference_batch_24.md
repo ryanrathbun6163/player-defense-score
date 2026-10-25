@@ -1,5 +1,9 @@
 # Completion campaign: NBA reference batch 24
 
+**Accepted 2026-10-25.** Ryan accepted all 240 judgments. The
+[separate acceptance publication](#human-acceptance-published-2026-10-25) below
+supersedes the pending status in this preserved preparation record.
+
 NBA23 is accepted, bringing NBA coverage to **3,599/3,839 judgments: 3,223
 centers and 376 nulls**. This increment prepares the last fixed NBA episode,
 SAC–MEM training e06, **240 native frames, 197799–198038**. Source preparation
@@ -113,3 +117,45 @@ the **40 unknown centers** and stated uncertainty.
 Complete accepted source/label/role manifests and the executable recipe still
 need freezing before the approved fit. Fitting, checkpoint scoring, protected
 evaluation, model-output acceptance and ball-phase completion remain closed.
+
+## Human acceptance published 2026-10-25
+
+Ryan's reply **“I accept chat. Lets move forward”** accepts the complete NBA24
+review after the question covering all **240 native frames, 197799–198038**.
+The [separate acceptance receipt](../configs/ball_tracking/reviews/nba_completion_reference_batch_24_acceptance_v0_1.json)
+and [accepted reference publication](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_24/accepted/reference.json)
+preserve **200 centers, 40 nulls, 23 fully visible/181 partially visible/34
+indeterminate/two not-visible judgments and 6–10px uncertainty**. Every original
+annotation, uncertainty and AI-authorship field remains unchanged. Acceptance
+date is **2026-10-25, America/Phoenix**; exact user-event UTC remains null and
+publication time is separate. No playback telemetry or independent human
+annotation is claimed.
+
+The [publication audit](../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_24/acceptance_audit/publication_audit.json)
+passes its first attempt in **371.355 seconds**, including the actual SAC
+publication and mixed-inventory readers and duplicate native-frame guard.
+It preserves **8,226 original files, all 3,599 prior NBA rows and all 868 curated
+references**. The unchanged publisher reuses NBA19's eight-test receipt solely
+as historical coverage of unchanged reader/test code, while separately checking
+NBA24's pending-consumer evidence and accepted publication. No tests, source
+decoding, model inference, fitting or scoring ran during publication.
+
+The [inventory after NBA24](../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_nba_reference_inventory_after_batch_24.json)
+completes the fixed NBA selection: **3,839/3,839 accepted judgments, 3,423 centers
+and 416 nulls**. Roles are **2,879 training and 960 checkpoint validation**;
+validation labels remain excluded from gradient fitting. No fixed NBA judgment
+remains unaccepted. Curated coverage remains **868/1,273 accepted, 760 eligible
+centers and 405 uncovered**, evaluation-only.
+
+Acceptance grants label-level training eligibility only. Complete all **405
+remaining curated judgments** and obtain their acceptance before freezing the
+full reference package and executable recipe for the approved fit, as required
+by [milestone 2](ball_tracking_completion_plan.md#delivery-resources-and-sequence).
+The [next group](ball_tracking_completion_reference_group_08_11.md) supplies
+**65 pending P001 centers**, frames **0–17, 75–89, 93–99 and 225–249**, using
+curated configurations **08–11**. Source preparation, four renders, final encoded
+inspection and integration pass; the new labels await Ryan's acceptance. The remaining **340 permitted curated
+judgments** still need proposals. Fitting, checkpoint scoring, protected
+evaluation, model-output acceptance and ball-phase completion remain closed.
+Original proposals, media, review receipts and the display incident remain
+preserved.
