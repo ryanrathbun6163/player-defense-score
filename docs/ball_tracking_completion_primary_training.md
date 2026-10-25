@@ -130,6 +130,256 @@ Protected evaluation remains closed. The same frozen run must resume with
 `--run --resume` once GPU availability and repeated loss are addressed; no
 independent restart, CPU fallback or recipe change is authorized by this failure.
 
+## Black-screen investigation, 2026-10-25
+
+Ryan subsequently reported that the screens turn off, fans spin hard, and the
+keyboard/mouse remain illuminated. He requested investigation of whether our
+work was responsible. The latest system boot was **14:16:05 America/Phoenix**.
+The [read-only diagnostic evidence](../data/outputs/t/gpu_crash_investigation_20261025_142204/summary.json)
+preserves seven days of relevant Windows events, hardware/driver versions and
+post-reboot NVIDIA telemetry. These are local machine diagnostics, not scientific
+evaluation results.
+
+| Time, America/Phoenix | Evidence |
+| --- | --- |
+| October 23, about 14:05-14:07 | Windows recorded `0x116`, with `nvlddmkm.sys` as the suspected driver, plus graphics-timeout dump references. This precedes the primary fit; that earlier workload is unknown. |
+| October 25, 09:04 dump / 09:07 report | Earlier NVIDIA black-screen diagnostic, also before the primary fit. Report time and dump-name time are distinct. |
+| October 25, 13:33:29-13:35:50 | First primary attempt: CPU cache preparation followed by GPU baseline inference, then CUDA device loss; Windows graphics-engine timeout `141` at 13:35:54. |
+| October 25, 13:54:53-13:56:22 | Resumed primary attempt: baseline inference then 522 completed optimizer updates; Windows `117` and black-screen diagnostics at 13:56. |
+| October 25, 14:16:05 | Latest boot; Event 41 records an unclean previous shutdown with zero bugcheck code. It does not establish a power-supply failure or the precise preceding crash time. |
+
+Our GPU workload is a strongly supported trigger for the two primary-attempt
+failures. The earlier graphics failures show the problem predates this fit; they
+do not establish whether earlier project work was running. Microsoft describes
+[116](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/bug-check-0x116---video-tdr-failure),
+[117](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/bug-check-0x117---video-tdr-timeout-detected)
+and [141](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/bug-check-0x141---video-engine-timeout-detected)
+as graphics timeout/recovery failures. Driver/software, power delivery, cooling,
+settings and hardware remain possible underlying causes. A driver module in a
+failure report alone does not prove a driver defect. No WHEA event appeared in
+the queried seven-day System-log selection; that does not rule out hardware.
+
+The runner performs continuous single-process CUDA work with batch two and no
+automatic restart loop. Read-only process and Scheduled Tasks inspection found
+no running training process or project restart action. There is no recorded
+temperature, power, fan-speed or utilization history from the failures. The
+2.49 GB reserved-memory peak and absence of an out-of-memory exception do not
+establish low electrical load. No specific CUDA kernel was identified as causal.
+
+After reboot, the RTX 5070 responded with NVIDIA driver **616.56**, roughly
+**40 C**, **0-1% GPU activity**, and **9-21 W** across two idle samples. The power
+limit read **250 W**, matching the driver-reported default. These present-time
+samples cannot establish temperatures, power transients or stability during the
+crashes. CPU is Ryzen 7 7800X3D; board is MSI MAG B650 TOMAHAWK WIFI, BIOS 1.L0.
+No user overclock/undervolt setting or PSU model has been verified.
+
+Windows denied ordinary read access to the deeper live-kernel dumps and WER
+archive report body. The first collection helper therefore ended after saving
+the event and telemetry files; a separate summary preserves that limitation.
+No permissions were changed or circumvented. No driver/BIOS installation,
+registry edits, power/clock changes, reboot or stress workload was performed.
+The next troubleshooting decision depends on Ryan's crash history outside
+training and PSU/tuning details. Keep GPU fitting stopped during diagnosis;
+preserve the same frozen run and update-500 state for eventual continuation.
+
+### Build archive recovered after Ryan's reply
+
+Ryan confirmed **the same behavior outside training** and pointed to his October
+2025 build history. The original migrated account export contains **PC build
+recommendation**, conversation `68df402f-fbf8-832b-b061-ac2b15334fb4`.
+The [targeted archive evidence](../data/outputs/t/gpu_crash_investigation_20261025_142204/build_archive_evidence.json)
+binds the source JSON and nine active-path messages, preserving user statements
+separately from historical assistant advice. The October 10 cart names the
+**Corsair RM850e (2025), 850 W, ATX 3.1/PCIe 5.1**, and **ASUS TUF Gaming RTX
+5070 OC 12 GB**. Later user messages confirm possession of all build parts and
+assembly, with **Corsair 3500X ARGB** explicitly replacing the earlier case.
+Current OS metadata confirms the CPU, motherboard, RTX 5070/ASUS subsystem and
+Crucial two-by-32-GB DIMMs, each configured at **6000**. The PSU has not been
+physically inspected and Windows cannot verify its health from its nominal rating.
+
+[ASUS specifies](https://www.asus.com/ie/motherboards-components/graphics-cards/tuf-gaming/tuf-rtx5070-o12g-gaming/techspec/)
+750 W recommended system PSU and **one 16-pin** power connector for this card.
+Therefore the archived 850 W choice meets the published capacity recommendation;
+this is not grounds to replace it solely with a higher-wattage unit.
+[Corsair's 2025 manual](https://www.corsair.com/ca/en/explorer/diy-builder/power-supply-units/corsair-rme-series-2025/)
+lists a native 12V-2x6 cable, a separate 12V-2x6-to-dual-6+2 cable, and separate
+PCIe 8-to-6+2 cables. Historical assistant messages repeatedly claimed the card
+had two eight-pin sockets and gave conflicting port/cable descriptions. Those
+claims are incorrect or unreliable, not instructions to replay. Ryan described
+the card's included adapter, but the final installed cable route, seating and
+condition remain unverified. Inspecting that actual connection is the next
+useful hardware check; the archive alone does not demonstrate a wiring defect.
+
+No user-confirmed manual CPU/GPU overclock or undervolt was found in the searched
+export. The card's OC product name is a factory model designation. EXPO was
+recommended in the build chat; a later August 2026 assistant interpreted a BIOS
+photo as EXPO Profile 1, but its pixels were unavailable for independent review.
+Today's 6000 configured-memory value supports a faster RAM setting without
+establishing the exact BIOS profile or attributing the graphics crashes to RAM.
+The August CRITICAL_PROCESS_DIED/SSD-firmware episode remains a separate issue.
+Driver installation metadata reports NVIDIA 616.56 installed September 3, 2026;
+no system changes or GPU workload were performed during this archive follow-up.
+
+### Other diagnostic avenues and previous Codex work
+
+Ryan asked to defer physical cable inspection and check other causes. He
+clarified that this has recurred periodically since the October 2025 build,
+including outside training, and that driver updates help for a while. The
+October 12 chat **Diagnose recurring monitor and input**, ID
+`01a13241-1dbf-71c3-8b3f-45baac4ab9a4`, was retrieved through the app. Its
+[relevant turns](../data/outputs/t/gpu_crash_investigation_20261025_142204/prior_codex_investigation.json)
+confirm the earlier 591.86-to-616.56 update and subsequent failures. Ryan then
+said no other tuning, BIOS or cable changes had been made. He also described an
+earlier no-display startup that recovered after removing power. The proposed
+default-memory test was not recorded as completed; today's two DIMMs still
+report configured speed 6000. These facts widen the investigation beyond a
+specific training kernel or monitor cable.
+
+The [expanded Windows history](../data/outputs/t/gpu_crash_other_avenues_history_20261025/summary_v2.json)
+contains **17 distinct System 0x116 bugcheck receipts**, August 10-October 23,
+plus graphics-memory-manager-associated 0x7e and 0x10e reports. Retained System
+and Application logs start August 9. Graphics report rows span 23 dates but
+include queue/archive duplicates; 265 rows do not mean 265 crashes. Three NVIDIA
+Event 153 records identify GPU errors or TDR bus resets, without a specific Xid.
+No WHEA or resource-exhaustion record was returned in this selection. Four SATA
+controller resets occurred August 13, not near today's incidents. The initial
+derived history summary had a dictionary-sort/group error and is preserved;
+use corrected `summary_v2.json` with the unchanged raw records.
+
+Current Windows is **11 Home 25H2, build 26200.9711**; offline update history
+records October 15 cumulative **KB5127648**. The graphics-failure history
+predates both that update and the September 3 installation of 616.56, so neither
+alone explains original onset. Driver/software defects remain possible.
+NVIDIA's documented CUDA 13.x driver minimum is 580; 616.56 is not below that
+minimum. This is not a blanket compatibility or stability guarantee. Published
+later browser-flicker/RDP fixes do not establish a cure for these local GPU-loss
+incidents. A newer supported WHQL driver is a possible separate diagnostic
+intervention, not an installed fix.
+
+The [read-only machine findings](../data/outputs/t/gpu_crash_investigation_20261025_142204/other_avenues_findings.json)
+show about 50,038,040 KiB free physical memory at sampling, an automatically
+managed pagefile with zero current usage, and both NVMe drives reporting
+Healthy/OK. These lightweight checks do not replace memory, storage or thermal
+testing. NVIDIA Overlay, Lively Wallpaper, MSI True Color, MSI Center and Discord
+were running; background graphics interaction is a testable possibility,
+not an attribution to any of those applications.
+
+[AMD specifies DDR5-5200 for two DIMMs](https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-7-7800x3d.html)
+on this CPU. Configured 6000 is above that rating; an EXPO/default-memory
+comparison remains a meaningful separate test, particularly given the startup
+history, without proving RAM is faulty. BIOS 1.L0 is unchanged. No BIOS flash,
+TDR registry edit, HAGS change, memory test, clean boot, app termination, driver
+installation or stress test was performed. Current execution is not elevated;
+protected crash dumps were not bypassed. Suggested next steps are a reversible
+graphics-background-software isolation test, a separately evaluated clean
+supported NVIDIA installation, and stock-memory testing if failures persist.
+Change one diagnostic variable at a time; a brief crash-free interval is not
+proof of resolution. Training stays stopped while diagnosis continues.
+
+A subsequent [read-only NVIDIA App inspection](../data/outputs/t/gpu_crash_investigation_20261025_142204/nvidia_app_readonly.json)
+visually confirms Automatic Tuning is off, GPU and VRAM tuning offsets are both
++0 MHz, power maximum is 100%, voltage maximum is 0%, and fan target is Automatic.
+These are app settings, not proof of stock CPU/RAM settings or removal of the
+ASUS card's factory overclock. The lightly loaded GPU displayed 43 C and 25 W;
+these are not measurements from a crash. The Drivers page shows installed
+616.56 and offers 621.01, released October 21. Its listed fixes do not establish
+a match for these incidents. The app was opened and navigated only; no download,
+installation, tuning scan or setting change was started. The original evidence
+and prior recommendations remain preserved.
+
+### Authorized background-app isolation, October 25
+
+Ryan then explicitly authorized temporarily disabling the graphics extras and
+keeping training paused. NVIDIA Overlay changed from On to Off in the normal
+NVIDIA App Settings > Features control. The final UI explicitly reports Off,
+and no NVIDIA Overlay processes remain. Game filters were already off.
+
+Lively was running without any configured wallpaper (`WallpaperLayout.json`
+contains `[]`). The normal Store launch opened its control UI, but both direct
+EXE activation and its documented command-line shutdown returned Access is
+denied. The exact verified main/UI process IDs were then stopped successfully;
+subsequent process checks show no Lively processes. Settings and wallpaper layout
+were copied before exit. Startup entries were not changed, so a restart may
+reopen Lively. Restore by launching it from Start; restore NVIDIA Overlay via
+the same Features switch when ending the diagnostic trial.
+
+MSI True Color remains active as PID 19316. Registered MSI Center activation
+exposed no targetable window, and stopping that verified process returned Access
+is denied. No elevation or unrelated MSI service stop was attempted. Thus this
+is a partial isolation test, not a completed clean boot or proof of a cause.
+The 14:50 Phoenix process check found no Python, FFmpeg, Lively or NVIDIA Overlay
+processes, with True Color and MSI's motherboard services still running.
+No driver, BIOS, clock, fan or startup change was made; no training was resumed.
+The [action receipt](../data/outputs/t/gpu_crash_investigation_20261025_142204/background_isolation_01/actions.json)
+and [process snapshot](../data/outputs/t/gpu_crash_investigation_20261025_142204/background_isolation_01/after_processes.json)
+preserve the exact scope and restoration steps. PowerShell serialized the empty
+wallpaper array as null in the process snapshot; the copied raw layout remains
+the authoritative `[]` record. Stability has not yet been established.
+
+At **14:53 Phoenix**, after Ryan reported ending MSI True Color manually, a
+[fresh verification](../data/outputs/t/gpu_crash_investigation_20261025_142204/background_isolation_01/user_completed_verification.json)
+found no True Color, NVIDIA Overlay, Lively, Python or FFmpeg processes. MSI Case,
+Center and Companion services remained running. The requested app isolation is
+now established; training stays paused. This does not establish a stability cure
+or reset display profiles previously applied by True Color. Restore True Color
+through MSI Center when ending the trial. Preserve the earlier denied attempt
+and partial-state records as history.
+
+## Post-selection preparation while the GPU is unavailable
+
+The additive evaluation-package builder prepares the six complete permitted
+curated segments and the original complete SAC/DET action contexts. Its final
+[preparation receipt](../data/outputs/ball_tracking/completion_campaign_v0_1/training_implementation/evaluation_package_preflight_attempt_04.json)
+passes in **39.967 seconds**: **3,975 verified PNG inputs, eight inference blocks,
+16 named reference cohorts and no missing assets**. The curated portion retains
+all 1,498 timing slots, with 225 protected positions carrying only withheld
+metadata. Original references, exposure roles, baseline observations and both
+60-frame pilot controls remain bound to their exact contexts.
+
+The [prepared package](../data/outputs/ball_tracking/completion_campaign_v0_1/training_implementation/evaluation_package_prepared_inputs_v2.json)
+is explicitly **not executable**: no completed checkpoint-selection result
+exists. Seven focused package tests and actual retained-policy/component joins
+pass. An initial metadata check failed because the older source parser expected
+an FPS field for NBA records; the annotation dimension-bounds adapter fixes that
+transport issue. All earlier attempts and producer versions remain preserved in
+the [validation receipt](../data/outputs/ball_tracking/completion_campaign_v0_1/training_implementation/evaluation_package_validation.json).
+No model calls, scientific scoring or source-video decoding ran during preparation.
+
+TOR remains a development-visible excluded game, but there is no existing fixed
+TOR execution window or accepted reference cohort in the current selections.
+No TOR screen was invented. The approved post-selection scope is the permitted
+curated census and existing scored comparison cohorts, including DET and both
+pilot controls. A completed selected-model result still needs its actual
+producer/consumer transport check before any scoring or comparison rendering.
+
+### CPU-only preparation completed before handoff
+
+The package builder, pure scorer and synchronized comparison renderer now pass
+**28 combined focused checks** (7 package, 17 scoring, 4 renderer), in **0.275s**
+unittest time and **2.506s** process time. The
+[combined receipt](../data/outputs/ball_tracking/completion_campaign_v0_1/training_implementation/evaluation_focused_validation.json)
+binds the exact six source/test files and complete log. Actual annotation parsing,
+observation production, scoring, JSON transport and synthetic CPU video encoding/
+decoding are exercised together. Invalid native timestamps, stale source/timing
+joins, failed inference represented as an ordinary miss, and protected prediction
+leakage are rejected. Wrong-object runs touching unknown scope boundaries remain
+inconclusive unless the observed run already establishes failure; actual camera
+cuts still terminate runs.
+
+The initial renderer fixture used a 36-by-64 heatmap and failed four tests at the
+production shape guard. Correcting it to the real 288-by-512 producer format
+resolved that implementation-check failure. The final combined run passed on its
+first execution; earlier package preparation failures remain preserved. No full
+suite repeat was needed for these additive modules.
+
+The [handoff integrity receipt](../data/outputs/ball_tracking/completion_campaign_v0_1/training_implementation/resume_integrity_before_handoff.json)
+passes 32 hash checks, including all 25 frozen training dependencies and the
+update-500 state. No frozen fitting code changed. The prepared package remains
+non-executable: no completed fit exists, so real selected-result transport and
+the scientific inference/comparison orchestration are not yet completed. No real
+model, scoring or comparison-rendering run occurred during this preparation.
+Training remains explicitly paused and protected evaluation closed.
+
 ## Preparation validation before fitting
 
 All **32 focused checks passed** on the final package, policy, runtime and runner

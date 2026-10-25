@@ -1,5 +1,21 @@
 # Validation History
 
+## CPU-only completion comparison preparation finished, 2026-10-25
+
+The [combined validation](../../data/outputs/ball_tracking/completion_campaign_v0_1/training_implementation/evaluation_focused_validation.json)
+passes 28 checks: seven package, seventeen scorer and four renderer, in 2.506s
+process time (0.275s unittest time). Exact final source/test bytes are bound.
+Actual annotation and observation producers feed scoring and a synthetic CPU
+video roundtrip. Native-identity, uncertainty/censoring, failed-inference and
+protected-leakage guards pass. The first renderer fixture's four shape errors
+are preserved in the training report; its corrected fixture uses 288-by-512.
+The final combined execution itself passed first time. The separate
+[integrity receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/training_implementation/resume_integrity_before_handoff.json)
+passes 32 hashes including all 25 frozen code bindings and update-500 state.
+No actual model execution or post-selection/protected evaluation was performed;
+training stays paused for PC stability diagnosis. Completed-fit transport and
+real scientific orchestration remain pending a completed selected checkpoint.
+
 ## Primary fit started; two GPU-loss attempts preserved
 
 The [frozen primary recipe](../ball_tracking_completion_primary_training.md)

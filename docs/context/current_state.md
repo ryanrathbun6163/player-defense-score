@@ -1,5 +1,118 @@
 # Current State
 
+## CPU preparation finished; training stays paused, 2026-10-25
+
+Ryan asked to finish the interrupted preparation before starting a new session.
+The additive completion evaluation-package, scoring and comparison-rendering
+modules now pass **28 combined focused checks** in **2.506 seconds** process time.
+Tests use actual annotation/observation/scoring producers and a synthetic CPU
+video roundtrip. They reject stale native timing/source bindings, failed inference
+disguised as missing predictions and protected candidate leakage; incomplete
+wrong-object evidence at scope boundaries remains inconclusive. An initial
+renderer fixture used the wrong heatmap dimensions and failed four tests before
+being corrected; that attempt remains documented. No real model call, candidate
+scoring, protected evaluation or new trajectory review occurred.
+
+The [combined receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/training_implementation/evaluation_focused_validation.json)
+binds all six final source/test files. A separate
+[32-item integrity check](../../data/outputs/ball_tracking/completion_campaign_v0_1/training_implementation/resume_integrity_before_handoff.json)
+confirms the original frozen recipe, its 25 implementation dependencies, package,
+schedule and update-500 checkpoint are unchanged. The prepared 3,975-frame package
+remains non-executable without completed checkpoint selection. Real completed-fit
+transport and the selected-model evaluation orchestration remain future work;
+these tested helpers are preparation, not a finished scientific comparison.
+
+Keep training paused under Ryan's explicit instruction. Confirm the PC's
+diagnostic state and obtain his direction to resume before another GPU run;
+do not confuse the existing campaign approval with lifting this later pause.
+Protected evaluation still requires separate authorization after method freeze.
+
+## GPU crash investigation takes priority, 2026-10-25
+
+**Latest verification, 14:53 Phoenix:** Ryan ended MSI True Color manually.
+A fresh process query confirms no MSI True Color, NVIDIA Overlay, Lively,
+Python or FFmpeg processes. The three targeted graphics extras are now stopped;
+MSI Case, Center and Companion services remain running. Training stays explicitly
+paused. This establishes the isolation state, not crash resolution; existing
+display color profiles may remain applied after True Color exits. The
+[completion snapshot](../../data/outputs/t/gpu_crash_investigation_20261025_142204/background_isolation_01/user_completed_verification.json)
+supersedes the earlier partial-isolation status below. Restore True Color through
+MSI Center when ending the trial; other restoration steps remain in the receipt.
+
+**Earlier action: partial background-graphics isolation.** Ryan explicitly
+authorized temporarily disabling the graphics extras and keeping training paused.
+NVIDIA Overlay was switched from On to Off in NVIDIA App; the UI confirms Off
+and its processes exited. Lively's verified main/UI processes were stopped after
+the installed CLI was denied execution; no active wallpaper was configured
+(`WallpaperLayout.json` is empty). Its settings/layout were copied before exit,
+and startup configuration remains unchanged, so it may reopen after a restart.
+MSI True Color (PID 19316) remains running: normal MSI Center activation exposed
+no targetable window, and stopping the specific process returned Access is denied.
+No elevation, service stop, driver/BIOS change or training run was attempted.
+This is an incomplete isolation trial with no stability conclusion. The
+[action receipt and restoration steps](../../data/outputs/t/gpu_crash_investigation_20261025_142204/background_isolation_01/actions.json)
+and [final process snapshot](../../data/outputs/t/gpu_crash_investigation_20261025_142204/background_isolation_01/after_processes.json)
+preserve the exact result. Keep fitting paused until Ryan directs otherwise;
+all accepted labels, the frozen recipe and update-500 checkpoint remain preserved.
+
+Ryan reported black screens, rapidly spinning fans and illuminated keyboard/mouse,
+and asked whether our work was causing the crashes. The latest boot was at
+**14:16:05 America/Phoenix**. Read-only Windows history confirms an NVIDIA
+`0x116` graphics-recovery failure on **October 23**, a black-screen diagnostic
+from **09:04 October 25**, and graphics timeouts coincident with both primary-fit
+failures at **13:35 and 13:56 October 25**. Our CUDA workload is a strongly
+supported trigger for the two recent incidents; the underlying driver/software,
+power, thermal or hardware cause is unresolved. Earlier events predate this
+primary fit, but their active workloads have not been established.
+
+The GPU responds after reboot (RTX 5070, driver 616.56, approximately 40 C at
+idle); this does not demonstrate stability under load. No training process or
+project scheduled task was found. Keep GPU fitting stopped during diagnosis;
+do not resume merely because `nvidia-smi` responds. No driver, BIOS, registry,
+clock, power or fan setting was changed, and no stress test was run. The frozen
+recipe, accepted references and update-500 recovery state remain unchanged.
+See the [diagnostic findings](../ball_tracking_completion_primary_training.md#black-screen-investigation-2026-10-25).
+Post-selection utilities were initially deferred for this investigation; the
+later CPU-only completion and combined verification are recorded above.
+
+Ryan confirmed the same black-screen/fan behavior **also happens outside
+training** and directed a search of his October 2025 build chats. The original
+export's **PC build recommendation** conversation identifies **Corsair RM850e
+(2025), 850 W**, **ASUS TUF RTX 5070 OC**, Ryzen 7800X3D, MSI B650 Tomahawk,
+Crucial 64 GB DDR5-6000 CL40 and the later-confirmed Corsair 3500X ARGB case.
+Current memory metadata reports both modules configured at 6000. No manual
+CPU/GPU overclock or undervolt is user-confirmed. Earlier assistant advice
+misidentified the GPU as having two eight-pin sockets; ASUS specifies one
+16-pin connector. Actual current power-cable route/seating needs physical
+verification; archive confusion is not proof of a wiring defect. The 850 W
+rating exceeds ASUS's 750 W recommendation and does not establish PSU health.
+Exact archive messages and source hash are saved in the
+[build evidence](../../data/outputs/t/gpu_crash_investigation_20261025_142204/build_archive_evidence.json).
+
+Ryan subsequently clarified that crashes have occurred periodically since the
+build and driver updates temporarily help. He wants **other diagnostic avenues
+before physical cable inspection**. The October 12 Codex chat **Diagnose recurring
+monitor and input** (`01a13241-1dbf-71c3-8b3f-45baac4ab9a4`) confirms only a driver
+update was completed; the proposed default-memory test has no completion record.
+The expanded [history](../../data/outputs/t/gpu_crash_other_avenues_history_20261025/summary_v2.json)
+contains 17 distinct System 0x116 bugcheck receipts from August 10 through October
+23, preceding both current driver 616.56 (September 3) and October's Windows
+update. Retained logs begin August 9, so this is not the original onset date.
+Current memory/storage checks show no exhaustion or reported SSD fault; graphics
+extras (NVIDIA Overlay, Lively, MSI True Color) are running. Their presence does
+not establish causation. The [other-avenue findings](../../data/outputs/t/gpu_crash_investigation_20261025_142204/other_avenues_findings.json)
+support staged software isolation and a separate stock-memory test if necessary.
+No apps were closed, settings changed, drivers installed, memory/stress tests
+run or reboot initiated. GPU training remains stopped; the diagnosis is unresolved.
+
+Read-only NVIDIA App inspection also confirms Automatic Tuning off, +0 MHz GPU
+and VRAM offsets, 100% power maximum and Automatic fan control. It offers driver
+621.01 (October 21) while 616.56 remains installed; nothing was downloaded or
+installed. This removes an active NVIDIA automatic-tuning offset as a current
+explanation, without ruling out factory GPU clocks, RAM settings or hardware.
+The [UI evidence](../../data/outputs/t/gpu_crash_investigation_20261025_142204/nvidia_app_readonly.json)
+preserves both settings and driver-page text. No diagnostic setting was changed.
+
 ## Primary run interrupted again: update 500 safely saved, 2026-10-25
 
 The approved primary run has started from local commit

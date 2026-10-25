@@ -31,6 +31,13 @@ validated or selected. See the [execution/recovery record](docs/ball_tracking_co
 Protected evaluation remains closed pending a frozen method and separate
 explicit authorization.
 
+**Training is explicitly paused for PC stability diagnosis.** NVIDIA Overlay,
+Lively Wallpaper and MSI True Color were confirmed stopped on October 25; a
+crash-free interval has not yet established a fix. The CPU-only comparison-input,
+scoring and review-rendering preparation is complete with 28 focused checks
+passing. No selected-model comparison has run. See the
+[current state](docs/context/current_state.md) before any training resumption.
+
 The approved [ball-phase completion campaign](docs/ball_tracking_completion_plan.md)
 has started. Its [first increment](docs/ball_tracking_completion_first_increment.md)
 delivers the retained-baseline player/ball development package, fixes four NBA

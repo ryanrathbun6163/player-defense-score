@@ -8,16 +8,18 @@ preserves all original proposals, uncertainty, media and failures. The curated
 census has 1,117 eligible centers, 155 null geometries and one existing geometry
 excluded from localization scoring. New curated labels remain evaluation-only.
 
-Continue the [primary training increment](../ball_tracking_completion_primary_training.md):
-run the already-approved primary fit using the frozen source/label/role package
-and executable recipe. All 32 focused checks and the runner preflight passed.
-No repeat campaign or fit approval is needed. The verified split is **3,329
+The [primary training increment](../ball_tracking_completion_primary_training.md)
+is explicitly paused for PC stability diagnosis. Its original campaign approval
+remains valid, but Ryan must direct lifting the later pause before GPU work resumes.
+All 32 original focused checks and the runner preflight passed. The verified split is **3,329
 training frames** (including retained SAC/NFHS replay), **1,110 selection frames**
 (fresh NBA plus existing NFHS development), and **3,103 usable training triplets**.
 
 The primary fit is interrupted by repeated GPU loss. Its verified recovery state
 preserves 500 updates; 22 unsaved completed updates must replay. Address GPU
-availability/repeated loss, then resume the same frozen run. Checkpoint selection,
+stability and Ryan's pause, then resume the same frozen run. CPU-only comparison
+preparation now passes 28 focused checks; the prepared package stays non-executable
+without completed selection. Checkpoint selection, real evaluation orchestration,
 fixed post-selection comparisons, the conditional resolution decision and actual
 trajectory review remain ahead. Protected evaluation stays closed pending a
 frozen method and separate explicit authorization.

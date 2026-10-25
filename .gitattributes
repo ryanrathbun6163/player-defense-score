@@ -356,3 +356,11 @@ tests/test_completion_training_runner.py -text
 tests/test_completion_training_runtime.py -text
 tests/test_completion_training_package.py -text
 tests/test_completion_training_policy.py -text
+
+# Preserve reviewed post-selection preparation implementation bytes.
+src/ball_tracking/completion_evaluation_package.py -text
+src/ball_tracking/completion_scoring.py -text
+src/ball_tracking/completion_comparison_render.py -text
+tests/test_completion_evaluation_package.py -text
+tests/test_completion_scoring.py -text
+tests/test_completion_comparison_render.py -text
