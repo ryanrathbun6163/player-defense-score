@@ -1,5 +1,57 @@
 # Validation History
 
+## Group 12–16 accepted; final group 17–23 ready for review
+
+Ryan's structured **“Accept all 71 proposals”** accepts all five reviewed
+ranges: P002 **0–24 and 170–174**, P003 **175–192, 196–203 and 207–221**.
+The [acceptance report and five receipts](../ball_tracking_completion_reference_group_12_16.md#human-acceptance-published-2026-10-25)
+retain **71 centers, zero nulls, 51 partial/20 full visibility judgments and
+5–9px uncertainty**. Local acceptance date is **2026-10-25, America/Phoenix**;
+exact user-event UTC remains null. One grouped decision is recorded without
+claiming independent human annotation or playback telemetry.
+
+The [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_batches_12_16_acceptance/publication_audit.json)
+passes its first execution in **2.170 seconds**, with no publication failures.
+Five actual publication/inventory reads, exact native joins and duplicate guards
+pass. It preserves **933 earlier curated rows, all 71 annotation/native-frame
+records, 350 original files and all 3,839 accepted NBA judgments**. The emitted
+inventory is consumed through the production reader with **45 bindings**.
+No tests, source decoding, model inference, fitting or scoring ran. Previous
+preparation failures and the prior group's failed null-count assertion/recovery
+remain bound and unchanged.
+
+The [current curated inventory](../../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_reference_inventory_after_batch_16.json)
+contains **1,004 accepted judgments, 896 localization-eligible centers,
+897 geometries present and 107 nulls**. The single geometry excluded from
+localization scoring, P002 frame 335, is unchanged. **269 permitted judgments
+remain unaccepted**. New completion-campaign curated rows stay evaluation-only,
+with both eligibility flags false; the fixed NBA roles remain **2,879 training
+and 960 checkpoint validation**.
+
+The [final permitted group 17–23](../ball_tracking_completion_reference_group_17_23.md)
+has **269 pending proposals: 221 centers, 48 unknown centers and 5–10px uncertainty**, covering P001 **350–374, 400–498** and P003 **222–224,
+325–331, 336–360, 365–415, 441–499**. Source preparation passes in **60.625s**
+with **269 exact PNG/RGB matches** and eight prior native-PNG controls.
+The first **6.343s** alternate-seek failure remains preserved. Its untrimmed
+raw comparison frame was hashed with identity unknown and could have been
+adjacent protected content; it was never displayed, saved, labeled, scored or
+used as model input. The [clarification](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_17_23/failed_attempt_scope_clarification.json)
+supersedes its unverified initialized zero count. Native-PTS trim establishes
+permitted outputs in the successful retry; internal codec work remains opaque.
+
+All seven renders pass. The final AI inspection covers every delivered crop
+sheet, all 14 native/slow finals and all seven selected full source finals.
+The [integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_17_23/integration_audit.json)
+passes in **18.000s**, with **269 source/annotation joins,
+538 encoded frames/finals, 221 encoded-center crop joins**, exact null-context
+joins and **744 bindings**. Batches 19/20 retain four failed parser
+preflights caused by unsorted tags; the metadata repair changed no visual
+judgments. P003331's earlier point refinement and all original drafts remain.
+No production source/tests changed; actual emitted records were validated
+without repeating tests. All 1,004 accepted curated rows and NBA references
+remain unchanged. These 269 labels await Ryan's acceptance. No fit, protected
+evaluation or ball-phase pass is claimed. Prior dated entries remain unchanged.
+
 ## Curated group 08–11 accepted; group 12–16 ready for review
 
 Ryan's exact reply **“clips review. please move forward”**, after the complete

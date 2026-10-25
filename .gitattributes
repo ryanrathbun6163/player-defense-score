@@ -317,3 +317,24 @@ configs/ball_tracking/completion_campaign/reference_batch_15_v0_1.json -text
 configs/ball_tracking/reviews/ball_completion_reference_batch_15_result_v0_1.json -text
 configs/ball_tracking/completion_campaign/reference_batch_16_v0_1.json -text
 configs/ball_tracking/reviews/ball_completion_reference_batch_16_result_v0_1.json -text
+
+# Preserve exact bytes for final curated reference group and acceptance receipts.
+configs/ball_tracking/reviews/ball_completion_reference_batch_12_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_13_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_14_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_15_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_16_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_17_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_17_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_18_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_18_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_19_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_19_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_20_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_20_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_21_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_21_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_22_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_22_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_23_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_23_result_v0_1.json -text

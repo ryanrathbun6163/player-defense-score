@@ -1,6 +1,65 @@
 # Current State
 
-## Latest increment: P001 group accepted; next 71 curated judgments ready for review
+## Latest increment: group 12–16 accepted; final 269 curated judgments ready for review
+
+Ryan's structured reply **“Accept all 71 proposals”** accepts group 12–16:
+**71 centers, zero nulls, 51 partial/20 full visibility judgments and 5–9px
+uncertainty**. The [separate acceptance publications](../ball_tracking_completion_reference_group_12_16.md#human-acceptance-published-2026-10-25)
+record **2026-10-25, America/Phoenix**, with exact user-event UTC null.
+The five receipts represent one grouped decision; AI authorship, geometry,
+uncertainty and original pending review artifacts remain unchanged.
+
+The [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_batches_12_16_acceptance/publication_audit.json)
+passes its first execution in **2.170 seconds**, with no publication failures.
+Actual accepted-publication and inventory readers, native-frame joins and all
+five duplicate guards pass. All **933 prior rows, 71 new annotation/native-frame
+records and 350 original files** are unchanged. Earlier preparation failures
+and the previous group's audit correction remain preserved. No tests, pixel
+decoding, models, fitting or scoring ran during acceptance publication.
+
+The [inventory after batch 16](../../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_reference_inventory_after_batch_16.json)
+contains **1,004/1,273 accepted judgments**, with **896 localization-eligible
+centers**, **897 geometries present** and **107 null geometries**. The one
+existing geometry excluded from localization scoring, **P002 frame 335**, remains
+unchanged. There are **269 unaccepted permitted judgments**.
+
+The [final group 17–23](../ball_tracking_completion_reference_group_17_23.md)
+is ready for acceptance or corrections: **269 pending proposals: 221 centers, 48 unknown centers and 5–10px uncertainty**. It covers every remaining
+permitted position across P001 **350–374 and 400–498** and P003 **222–224,
+325–331, 336–360, 365–415 and 441–499**. All seven overlays are checked through
+their actual finals; the slow clips total **53.8 seconds**. Acceptance would
+complete 1,273/1,273 permitted curated judgments, without opening the 225
+protected positions.
+
+The [source audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_17_23/source_preparation_and_pixel_audit.json)
+passes **269 exact source PNG/RGB joins** and eight prior native-PNG matches in
+**60.625 seconds**. The established guarded seek reader returns only permitted
+frames; codec-internal dependencies remain uninstrumented. The first **6.343s**
+failed comparison and its [scope clarification](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_17_23/failed_attempt_scope_clarification.json)
+are retained: one untrimmed raw frame was hashed with native identity unknown,
+not displayed, saved, labeled or supplied to a model. The successful retry uses
+preserved native timestamps and explicit PTS trim. A blanket zero-output claim
+does not apply to that failed attempt.
+
+The [integration audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_17_23/integration_audit.json)
+passes in **18.000s**, checking **269 source/annotation joins,
+538 encoded frames/finals, 221 exact encoded-center crop joins**, null-context
+crop joins and **744 bindings**. Root inspected all delivered crop sheets,
+14 encoded finals and seven full-size selected source-final frames. Draft corrections and the
+batches 19/20 sorted-tag parser failures remain preserved. No new labels have
+been accepted. Production code/tests are unchanged; actual records/media were
+validated without repeating tests.
+
+All **3,839 NBA judgments** remain accepted: **3,423 centers/416 nulls**,
+with **2,879 training/960 checkpoint validation**. New completion-campaign
+curated labels remain evaluation-only with both eligibility flags false;
+historical source roles remain unchanged. Complete the remaining curated
+references before freezing the package and executable recipe under
+[milestone 2](../ball_tracking_completion_plan.md#delivery-resources-and-sequence).
+No completion-campaign fit has run; protected evaluation remains closed.
+Earlier dated checkpoints retain their original pending status and totals.
+
+## Earlier checkpoint: P001 group accepted; next 71 curated judgments ready for review
 
 Ryan's **“clips review. please move forward”** accepts all **65 P001 judgments
 in batches 08–11**, following the all-65 acceptance question. The

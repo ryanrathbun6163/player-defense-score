@@ -2,32 +2,30 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
-The fixed NBA selection is complete: **3,839 accepted judgments**, with
+Ryan accepted all **71 curated judgments in batches 12–16** on **2026-10-25**.
+The [separate publications](../ball_tracking_completion_reference_group_12_16.md#human-acceptance-published-2026-10-25)
+bring curated coverage to **1,004/1,273 accepted**, with **896 eligible centers,
+107 null geometries and one unchanged geometry excluded from localization
+scoring**. The [actual-reader audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_batches_12_16_acceptance/publication_audit.json)
+passes; original labels, media and prior failures are preserved. New campaign
+curated references remain evaluation-only. Historical NFHS training and
+checkpoint-selection roles remain as recorded in the approved plan.
+
+Review and accept/correct the [final group 17–23](../ball_tracking_completion_reference_group_17_23.md):
+**269 pending proposals: 221 centers, 48 unknown centers and 5–10px uncertainty**, covering all remaining permitted positions. All seven complete
+overlays and source/media checks pass; slow playback totals **53.8 seconds**.
+Acceptance would complete all 1,273 permitted curated references. Then freeze
+the complete source/label/role package and executable recipe under
+[milestone 2](../ball_tracking_completion_plan.md#delivery-resources-and-sequence)
+before the already-approved fit. The source comparison failure, its unknown
+first-output identity and the corrected native-PTS extraction are documented
+without overwriting earlier evidence.
+
+The fixed NBA selection remains complete: **3,839 accepted judgments**, with
 **3,423 centers/416 nulls**, split into **2,879 training and 960 checkpoint
 validation**. Validation labels remain excluded from gradient fitting.
-Ryan also accepted all **65 P001 judgments in batches 08–11** on **2026-10-25**;
-[separate publications](../ball_tracking_completion_reference_group_08_11.md#human-acceptance-published-2026-10-25)
-preserve the original labels, reviews and failed aggregate-check evidence.
-Curated coverage is now **933/1,273 accepted**, with **825 eligible centers**.
-New completion-campaign curated references remain evaluation-only. Historical
-NFHS training and checkpoint-selection roles remain as recorded in the approved plan.
-
-Complete the **340 remaining curated judgments** before freezing the full
-reference package and executable recipe, as required by
-[milestone 2](../ball_tracking_completion_plan.md#delivery-resources-and-sequence).
-The [next group 12–16](../ball_tracking_completion_reference_group_12_16.md)
-contains **71 pending centers**, **51 partial/20 full visibility judgments and
-5–9px uncertainty**, across P002 **0–24, 170–174** and P003
-**175–192, 196–203, 207–221**. Source preparation, all five renders,
-complete encoded inspection and integration pass. The five slow segments total
-**14.2 seconds**. These proposals
-leave **269 permitted judgments without proposals**. Review and accept the
-new labels, then complete the remaining coverage before the approved fit.
-
-No completion-campaign fit has run. Production code/tests are unchanged;
-actual acceptance readers validated the new publications without repeating
-prior tests. Protected evaluation remains closed pending a frozen method and
-separate authorization.
+No completion-campaign fit has run. Protected evaluation remains closed
+pending a frozen method and separate authorization.
 
 ### Earlier completion-campaign milestones
 

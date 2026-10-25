@@ -112,3 +112,51 @@ manifests and the executable recipe under the approved
 [milestone 2](ball_tracking_completion_plan.md#delivery-resources-and-sequence).
 The fixed NBA selection is complete; completing the curated references remains
 part of the same approved reference-package work.
+
+## Human acceptance published 2026-10-25
+
+Ryan's structured reply **“Accept all 71 proposals”** accepts the complete
+five-batch group: **71 centers, zero nulls, 51 partial/20 full visibility
+judgments and 5–9px uncertainty**. This later acceptance supersedes the pending
+status and prospective totals in the preserved review record above. The local
+date is **2026-10-25, America/Phoenix**; exact user-event UTC is unknown and
+recorded as null. The five receipts record one grouped human decision, with
+publication time separately recorded. Geometry, uncertainty and AI authorship
+remain unchanged; no independent human annotation or playback telemetry is claimed.
+
+| Acceptance receipt | Accepted source range | New judgments | Cumulative accepted / eligible |
+| --- | --- | ---: | ---: |
+| [12](../configs/ball_tracking/reviews/ball_completion_reference_batch_12_acceptance_v0_1.json) | P002 0–24 | 25 | 958 / 850 |
+| [13](../configs/ball_tracking/reviews/ball_completion_reference_batch_13_acceptance_v0_1.json) | P002 170–174 | 5 | 963 / 855 |
+| [14](../configs/ball_tracking/reviews/ball_completion_reference_batch_14_acceptance_v0_1.json) | P003 175–192 | 18 | 981 / 873 |
+| [15](../configs/ball_tracking/reviews/ball_completion_reference_batch_15_acceptance_v0_1.json) | P003 196–203 | 8 | 989 / 881 |
+| [16](../configs/ball_tracking/reviews/ball_completion_reference_batch_16_acceptance_v0_1.json) | P003 207–221 | 15 | 1,004 / 896 |
+
+The [inventory after batch 16](../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_reference_inventory_after_batch_16.json)
+contains **1,004/1,273 accepted judgments**, including **896 localization-eligible
+centers**, with **269 remaining**. Geometry is present on **897 rows**; **107
+rows remain null**. The one existing geometry excluded from localization scoring,
+P002 frame 335, remains unchanged. Acceptance and geometry presence do not alter
+that eligibility decision. All **933 earlier curated rows** and the **3,839
+accepted NBA judgments** remain unchanged.
+
+The [publication audit](../data/outputs/ball_tracking/completion_campaign_v0_1/reference_batches_12_16_acceptance/publication_audit.json)
+passes its first execution in **2.170 seconds**, with **no publication failures**.
+The actual accepted-publication and inventory readers validate all five new
+publications and the emitted cumulative inventory. All five duplicate guards
+reject relabeling; original pending configurations still replay against their
+933-row inventory. All **71 annotations/native-frame records** and **350
+original files** are unchanged, with **45 accepted consumer bindings** checked.
+P002's 512-tick origin and P003's zero origin remain distinct at timebase 1/12800.
+
+The earlier source-preparation failures, diagnostic and successful retry remain
+bound and unchanged. The previous group's failed null-count assertion and its
+separate recovery are also retained; this publisher checks the correct
+107-null/one-ineligible-geometry distinction from the outset. No tests were
+repeated, and no source decoding, model inference, fitting or scoring ran during
+acceptance publication.
+
+All new rows retain `post_selection_evaluation_only`, with training and
+checkpoint-selection eligibility false. Continue the **269 remaining permitted
+curated judgments** before freezing the full package and executable recipe for
+the approved fit. Protected evaluation and ball-phase acceptance remain closed.

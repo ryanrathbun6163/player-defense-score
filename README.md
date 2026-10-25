@@ -9,29 +9,29 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
-Ryan accepted all **65 P001 judgments in curated batches 08–11** on
-**2026-10-25**, replying **“clips review. please move forward”** after the
-all-65 acceptance question. The
-[separate publications](docs/ball_tracking_completion_reference_group_08_11.md#human-acceptance-published-2026-10-25)
-preserve the original proposals and reviews. Curated coverage is now
-**933/1,273 accepted**, with **825 localization-eligible centers** and
-**340 unaccepted judgments**. All 868 earlier curated rows remain unchanged.
+Ryan accepted all **71 judgments in curated batches 12–16** on **2026-10-25**,
+replying **“Accept all 71 proposals”**. The
+[separate publications](docs/ball_tracking_completion_reference_group_12_16.md#human-acceptance-published-2026-10-25)
+preserve all original labels and reviews. Curated coverage is now
+**1,004/1,273 accepted**, with **896 localization-eligible centers, 107 null
+geometries and one unchanged geometry excluded from localization scoring**
+(P002 frame 335). All 933 earlier curated rows remain unchanged.
 
-The [next group, batches 12–16](docs/ball_tracking_completion_reference_group_12_16.md),
-contains **71 pending centers**, with **51 partial/20 full visibility judgments
-and 5–9px uncertainty**, across P002 frames **0–24 and 170–174** and P003
-frames **175–192, 196–203 and 207–221**. Source preparation, all five
-renders, complete encoded inspection and integration pass. The group is ready
-for Ryan's acceptance or corrections.
-These proposals leave **269 permitted curated judgments without proposals**.
-These completion-campaign curated references remain evaluation-only, with training and checkpoint-selection
-eligibility false.
+The [final remaining group, batches 17–23](docs/ball_tracking_completion_reference_group_17_23.md),
+is ready for review with **269 pending proposals: 221 centers, 48 unknown centers and 5–10px uncertainty**.
+The seven complete overlays cover P001 **350–374 and 400–498** and P003
+**222–224, 325–331, 336–360, 365–415 and 441–499**, totaling **53.8 seconds**
+at slow playback. Source preparation, all renders and integration pass;
+failed attempts and their limitations are preserved. Acceptance of this group
+would complete all **1,273 permitted curated references**.
+New completion-campaign curated references remain evaluation-only, with training
+and checkpoint-selection eligibility false.
 
-All fixed NBA references are already accepted:
+All fixed NBA references remain accepted:
 [NBA24's publication](docs/ball_tracking_completion_nba_reference_batch_24.md#human-acceptance-published-2026-10-25)
 completes **3,839 judgments: 3,423 centers and 416 nulls**, comprising
 **2,879 training and 960 checkpoint validation**. Validation labels remain
-excluded from gradient fitting. Complete and accept the **340 remaining
+excluded from gradient fitting. Complete and accept the **269 remaining
 curated judgments** under the approved
 [reference-package milestone](docs/ball_tracking_completion_plan.md#delivery-resources-and-sequence),
 then freeze the source/label/role manifests and executable recipe for the
