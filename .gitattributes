@@ -338,3 +338,21 @@ configs/ball_tracking/completion_campaign/reference_batch_22_v0_1.json -text
 configs/ball_tracking/reviews/ball_completion_reference_batch_22_result_v0_1.json -text
 configs/ball_tracking/completion_campaign/reference_batch_23_v0_1.json -text
 configs/ball_tracking/reviews/ball_completion_reference_batch_23_result_v0_1.json -text
+
+# Preserve final acceptance and the executable completion-training recipe.
+configs/ball_tracking/reviews/ball_completion_reference_batch_17_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_18_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_19_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_20_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_21_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_22_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_23_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/primary_recipe_v0_1.json -text
+src/ball_tracking/completion_training.py -text
+src/ball_tracking/completion_training_runtime.py -text
+src/ball_tracking/completion_training_package.py -text
+src/ball_tracking/completion_training_policy.py -text
+tests/test_completion_training_runner.py -text
+tests/test_completion_training_runtime.py -text
+tests/test_completion_training_package.py -text
+tests/test_completion_training_policy.py -text

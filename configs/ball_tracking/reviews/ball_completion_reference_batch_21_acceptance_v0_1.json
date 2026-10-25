@@ -1,0 +1,263 @@
+{
+  "schema_version": "ball_completion_reference_batch_acceptance/v0.1",
+  "status": "accepted",
+  "batch_id": "reference_batch_21_v0_1",
+  "human_review": {
+    "status": "accepted",
+    "reviewer_id": "Ryan",
+    "review_method": "human_visual_acceptance_of_assisted_proposals",
+    "user_statement": "Accept all 269 proposals",
+    "grouped_acceptance": {
+      "batch_ids": [
+        "reference_batch_17_v0_1",
+        "reference_batch_18_v0_1",
+        "reference_batch_19_v0_1",
+        "reference_batch_20_v0_1",
+        "reference_batch_21_v0_1",
+        "reference_batch_22_v0_1",
+        "reference_batch_23_v0_1"
+      ],
+      "accepted_references": 269,
+      "accepted_eligible_centers": 221,
+      "accepted_null_centers": 48,
+      "accepted_visibility_counts": {
+        "partially_visible": 215,
+        "not_visible": 27,
+        "indeterminate": 8,
+        "fully_visible": 19
+      },
+      "uncertainty_radius_source_px": [
+        5,
+        10
+      ],
+      "response_context": "Ryan selected the structured response Accept all 269 proposals after the complete group17\u201323 review and question covering221 centers,48 unknown centers,5\u201310px uncertainty and all seven selected final frames374,498,224,331,360,415,499. The seven receipts represent one grouped acceptance event. No independent human annotation or playback telemetry is claimed.",
+      "playback_telemetry_claimed": false,
+      "form_option_response_claimed": true,
+      "structured_response": true
+    },
+    "recorded_at_utc": "2026-10-25T19:44:17.417743+00:00",
+    "human_acceptance_date_local": "2026-10-25",
+    "timezone": "America/Phoenix",
+    "exact_user_event_timestamp_utc": null,
+    "corrections_requested": false,
+    "fitting_authorized": false,
+    "final_trajectory_acceptance": false,
+    "protected_evaluation_authorized": false,
+    "scope": "All 25 exact reviewed batch 21 proposals for possession_003 frames 336\u2013360, including 11 eligible centers, 14 null centers, visibility categories and stated uncertainty, as part of the grouped 269-row acceptance. No playback telemetry or independent human annotation is claimed."
+  },
+  "annotation_origin": "assistant_visual_proposal",
+  "annotator_id": "Codex assistant",
+  "accepted_reference": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_21/accepted/reference.json",
+    "sha256": "8614be27bddad3878ca96b8c96e1fe5fe7f65be85f8d786876153e1bf1d31a2c",
+    "bytes": 37366
+  },
+  "accepted_references": 25,
+  "accepted_eligible_centers": 11,
+  "accepted_null_centers": 14,
+  "accepted_visibility_counts": {
+    "partially_visible": 13,
+    "not_visible": 10,
+    "fully_visible": 1,
+    "indeterminate": 1
+  },
+  "accepted_partially_visible_null_centers": [
+    336,
+    337,
+    338
+  ],
+  "accepted_indeterminate_frames": [
+    350
+  ],
+  "accepted_certain_occluded_frames": [
+    339,
+    340,
+    341,
+    342,
+    343,
+    351,
+    352,
+    353,
+    354,
+    355
+  ],
+  "range_inclusive": [
+    336,
+    360
+  ],
+  "possession_id": "possession_003",
+  "source_video": {
+    "path": "data/clips/possession_003.mp4",
+    "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+    "width_px": 1920,
+    "height_px": 1080,
+    "fps": 25.0,
+    "frame_count": 500
+  },
+  "proposal": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_21/proposal.json",
+    "sha256": "801c805dfcbcafde074209d2b345d5d700a36cf37fbc7746c8100ae98f1057d0",
+    "bytes": 19166
+  },
+  "preparation_result": {
+    "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_21_result_v0_1.json",
+    "sha256": "83f8f3c701eae5bec9f9a68a3e78e6836a60a0a3e6d887bc394084fb20994d62",
+    "bytes": 17799
+  },
+  "review_manifest": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_21/review_v1/manifest.json",
+    "sha256": "796c167a406e55a645433317fef6f5c729d42ec6681ad530963d615cf97ba746",
+    "bytes": 46508
+  },
+  "review_index": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_21/review_v1/index.html",
+    "sha256": "f650dd61ae8b5e4714a46663b8e65704fbbe885074863c7f5ef966e932f8ddd2",
+    "bytes": 10060
+  },
+  "review_videos": [
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_21/review_v1/review_native.mp4",
+      "sha256": "59b770247d718432cd538489d4df0806a96e8f25ad474e3ede4c1d11746a5df2",
+      "bytes": 751326,
+      "frame_count": 25,
+      "fps": 25,
+      "duration_seconds": 1.0,
+      "actual_final": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_21/review_v1/review_native_actual_final.png",
+        "sha256": "49219418f1d3e304b4f686bd4336dc56fa3536095bf85865c45e1bcb9c464930",
+        "bytes": 1052431
+      },
+      "all_frame_mean_absolute_pixel_errors": [
+        1.8913899739583333,
+        1.996611328125,
+        2.012814308449074,
+        2.0336827256944443,
+        1.9514753327546297,
+        2.0206995081018517,
+        2.0236859809027776,
+        2.044437210648148,
+        2.283007450810185,
+        2.3501356336805554,
+        2.328392288773148,
+        2.3677249710648147,
+        2.2747858796296296,
+        2.3670457175925925,
+        2.0378425202546295,
+        2.0539637586805557,
+        1.998603515625,
+        2.0453504774305555,
+        2.0396480758101854,
+        2.078558666087963,
+        2.3542003038194443,
+        2.4052061631944444,
+        2.406086154513889,
+        2.4627665653935185,
+        2.54330078125
+      ],
+      "all_frame_label_marker_pixel_errors": [
+        52.16568047337278,
+        44.229885057471265,
+        43.48407643312102,
+        44.15711252653928,
+        45.09655172413793,
+        47.61341222879685,
+        45.83629191321499,
+        45.554140127388536,
+        44.49044585987261,
+        45.73673036093418,
+        46.74946921443737
+      ]
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_21/review_v1/review_slow.mp4",
+      "sha256": "1cdb9eb08d14516dec0ed9fce1f80536a86936c58ad4a9d412059f852c3241de",
+      "bytes": 1429755,
+      "frame_count": 25,
+      "fps": 5,
+      "duration_seconds": 5.0,
+      "actual_final": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_21/review_v1/review_slow_actual_final.png",
+        "sha256": "54eebcf3c8c57e4027dcad305aaebc75c066173fa74158e89f21ee544534037b",
+        "bytes": 1069109
+      },
+      "all_frame_mean_absolute_pixel_errors": [
+        1.682523509837963,
+        1.739621310763889,
+        1.7403291377314816,
+        1.7494458912037036,
+        1.7042411747685184,
+        1.7382320601851853,
+        1.7365534577546295,
+        1.7502737991898147,
+        1.9803436053240742,
+        2.004447699652778,
+        1.9887080439814815,
+        2.011380931712963,
+        1.9692064525462962,
+        2.004816261574074,
+        1.7367494936342593,
+        1.7461100260416667,
+        1.7204951533564814,
+        1.7381372974537037,
+        1.7342632378472222,
+        1.74642578125,
+        2.0104582609953705,
+        2.03375904224537,
+        2.034891131365741,
+        2.0555461516203706,
+        2.1374464699074074
+      ],
+      "all_frame_label_marker_pixel_errors": [
+        51.55818540433925,
+        43.280459770114945,
+        42.48619957537155,
+        43.246284501061574,
+        43.737931034482756,
+        46.57988165680474,
+        45.14792899408284,
+        44.88535031847134,
+        43.955414012738856,
+        44.823779193205944,
+        45.910828025477706
+      ]
+    }
+  ],
+  "exception_list": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_21/review_v1/exception_list.json",
+    "sha256": "a71300bb2c0ccc05b6094dd4f3fef7e63cb44c0e4ac9ea7bf9595523e4f48a7a",
+    "bytes": 9135
+  },
+  "ai_visual_inspection": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_group_17_23/final_visual_inspection.json",
+    "sha256": "c8d0830c4cb8720e7c2cb1e77ca89f2385611036da9612f8f0f50a0c22393c01",
+    "bytes": 27624
+  },
+  "role": "post_selection_evaluation_only",
+  "training_eligible": false,
+  "checkpoint_selection_eligible": false,
+  "human_annotation_independence_claimed": false,
+  "model_output_acceptance": false,
+  "protected_evaluation_authorized": false,
+  "earlier_pending_proposal_config_result_media_preserved": true,
+  "annotation_fields_exactly_unchanged": 25,
+  "native_frame_records_exactly_unchanged": 25,
+  "publication_method": "Metadata-only exact copy of accepted annotations, native frame records and source bindings. Original pending-era configurations, results, proposal notes and media remain unchanged. These separate human acceptance records supply the later status; no image decode, inference, fitting or scoring.",
+  "publisher": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batches_17_23_acceptance/publish_acceptance.py",
+    "sha256": "f655d9fcf1ef6409152aeca13fb5c7299e8b9682a84e853f5c44128ceb75f456",
+    "bytes": 27594
+  },
+  "derived_from_grouped_publisher": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batches_12_16_acceptance/publish_acceptance.py",
+    "sha256": "312b809c499e939725db37f056e0be12609e118d5971827e447228eda7bf92ec",
+    "bytes": 26621
+  },
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "25020da1d5ea3f18d608c46cc8d68b6d5493fd22",
+    "worktree_porcelain": "M .gitattributes\n?? docs/ball_tracking_completion_primary_training.md\n?? src/ball_tracking/completion_training_policy.py\n?? src/ball_tracking/completion_training_runtime.py\n?? tests/test_completion_training_policy.py\n?? tests/test_completion_training_runtime.py",
+    "publisher_git_mutations": false,
+    "task_start_state": "Clean branch and HEAD verified before publisher creation; concurrent parent work may appear in publisher snapshot."
+  },
+  "recorded_at_utc": "2026-10-25T19:44:17.417743+00:00"
+}

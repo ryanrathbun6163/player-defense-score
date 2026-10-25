@@ -1,6 +1,41 @@
 # Current State
 
-## Latest increment: group 12–16 accepted; final 269 curated judgments ready for review
+## Latest increment: every permitted reference accepted; primary recipe frozen
+
+Ryan's structured **“Accept all 269 proposals”** accepts the complete final
+[group 17–23](../ball_tracking_completion_reference_group_17_23.md#human-acceptance-published-2026-10-25):
+**221 centers, 48 nulls and 5–10px uncertainty**. The seven separate receipts
+represent one grouped decision on **2026-10-25, America/Phoenix**; exact user-event
+UTC remains unknown. AI authorship and original pending review artifacts are
+preserved.
+
+The [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_batches_17_23_acceptance/publication_audit.json)
+passes its first execution in **5.101 seconds**. Actual publication/inventory
+readers and all seven duplicate guards pass. All **1,004 prior rows, 269 new
+annotation/native-frame records and 854 original files** remain unchanged.
+The original pending configs still replay the prior 1,004-row state. No pixel
+decoding, model calls, fitting or scoring ran for acceptance publication.
+
+The [final permitted inventory](../../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_reference_inventory_after_batch_23.json)
+contains **1,273/1,273 accepted judgments**, with **1,117 localization-eligible
+centers**, **1,118 geometries present** and **155 null geometries**. The existing
+geometry excluded from localization scoring, **P002 frame 335**, is unchanged.
+All **3,839 NBA judgments** also remain accepted: **3,423 centers/416 nulls**,
+with **2,879 training/960 checkpoint validation**. The 225 protected positions
+remain closed.
+
+The [primary training increment](../ball_tracking_completion_primary_training.md)
+has frozen the package, bounded input loader, deterministic balanced sampler
+and validation-selected resumable runner. All **32 focused checks passed**.
+The final producer rebuild yields **3,329 training and 1,110 selection frames**,
+**3,103 usable training triplets**, 174 all-masked exclusions and no missing images.
+The real runner preflight passes with recipe SHA
+`d8f53baf72412db535e989b4086e8fb23e02f79ef058829539d1bbe9a486e83c`.
+New curated labels never enter fitting or epoch selection. At this pre-fit
+checkpoint, no completion-campaign model inference or optimizer update has run.
+Earlier dated checkpoints retain their historical pending status and counts.
+
+## Earlier checkpoint: group 12–16 accepted; final 269 curated judgments ready for review
 
 Ryan's structured reply **“Accept all 71 proposals”** accepts group 12–16:
 **71 centers, zero nulls, 51 partial/20 full visibility judgments and 5–9px

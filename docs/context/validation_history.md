@@ -1,5 +1,41 @@
 # Validation History
 
+## Final curated group 17–23 accepted; permitted census complete
+
+Ryan's structured **“Accept all 269 proposals”** accepts the complete final
+[group 17–23](../ball_tracking_completion_reference_group_17_23.md#human-acceptance-published-2026-10-25):
+**221 centers, 48 nulls and 5–10px uncertainty**. The seven separate receipts
+represent one grouped decision on **2026-10-25, America/Phoenix**; exact user-event
+UTC remains unknown. AI authorship and original pending review artifacts are
+preserved.
+
+The [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_batches_17_23_acceptance/publication_audit.json)
+passes its first execution in **5.101 seconds**. Actual publication/inventory
+readers and all seven duplicate guards pass. All **1,004 prior rows, 269 new
+annotation/native-frame records and 854 original files** remain unchanged.
+The original pending configs still replay the prior 1,004-row state. No pixel
+decoding, model calls, fitting or scoring ran for acceptance publication.
+
+The [final permitted inventory](../../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_reference_inventory_after_batch_23.json)
+contains **1,273/1,273 accepted judgments**, with **1,117 localization-eligible
+centers**, **1,118 geometries present** and **155 null geometries**. The existing
+geometry excluded from localization scoring, **P002 frame 335**, is unchanged.
+All **3,839 NBA judgments** also remain accepted: **3,423 centers/416 nulls**,
+with **2,879 training/960 checkpoint validation**. The 225 protected positions
+remain closed.
+
+The [primary training increment](../ball_tracking_completion_primary_training.md)
+has passed **32 focused implementation tests** and frozen the complete package
+and recipe. Final producer rebuild: **3,329 training/1,110 selection frames**,
+**3,103 usable triplets/174 all-masked exclusions**, all images available.
+The real runner's read-only preflight passes. The
+[training report](../ball_tracking_completion_primary_training.md) retains the
+initial fixture failures and corrected SAC packet-duration mismatch; no failed
+attempt is recast as successful. New curated labels never enter fitting or epoch
+selection. No completion-campaign model inference or optimizer update had run
+at this pre-fit checkpoint.
+Earlier dated checkpoints retain their historical pending status and counts.
+
 ## Group 12–16 accepted; final group 17–23 ready for review
 
 Ryan's structured **“Accept all 71 proposals”** accepts all five reviewed

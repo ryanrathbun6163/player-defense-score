@@ -109,3 +109,43 @@ No inference, fitting, checkpoint scoring or phase acceptance ran. Following
 Ryan's acceptance or corrections, freeze the full reference/role manifests and
 executable recipe before the already-approved fit. Protected evaluation still
 requires a frozen method and separate explicit authorization.
+
+## Human acceptance published 2026-10-25
+
+Ryan selected **“Accept all 269 proposals”** after the complete group review and
+question covering **221 centers, 48 unknown centers, 5–10px uncertainty** and all
+seven selected finals. The local user-event date is **2026-10-25,
+America/Phoenix**; exact user-event UTC remains unknown. Seven separate
+acceptance receipts record this one grouped decision:
+
+- [Batch 17 acceptance](../configs/ball_tracking/reviews/ball_completion_reference_batch_17_acceptance_v0_1.json)
+- [Batch 18 acceptance](../configs/ball_tracking/reviews/ball_completion_reference_batch_18_acceptance_v0_1.json)
+- [Batch 19 acceptance](../configs/ball_tracking/reviews/ball_completion_reference_batch_19_acceptance_v0_1.json)
+- [Batch 20 acceptance](../configs/ball_tracking/reviews/ball_completion_reference_batch_20_acceptance_v0_1.json)
+- [Batch 21 acceptance](../configs/ball_tracking/reviews/ball_completion_reference_batch_21_acceptance_v0_1.json)
+- [Batch 22 acceptance](../configs/ball_tracking/reviews/ball_completion_reference_batch_22_acceptance_v0_1.json)
+- [Batch 23 acceptance](../configs/ball_tracking/reviews/ball_completion_reference_batch_23_acceptance_v0_1.json)
+
+The [publication audit](../data/outputs/ball_tracking/completion_campaign_v0_1/reference_batches_17_23_acceptance/publication_audit.json)
+passes its first execution in **5.101 seconds**, with no publication failures.
+All seven actual accepted-reference and inventory reads, exact annotation/native
+joins and duplicate guards pass. All **854 original files, 1,004 prior curated
+rows and 3,839 NBA judgments** remain unchanged. The original pending-era
+configs still replay their original 1,004 accepted rows; original proposals,
+media, failure history and the pending report above remain preserved.
+
+The [final curated inventory](../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_reference_inventory_after_batch_23.json)
+contains **1,273/1,273 accepted permitted judgments**, **1,117 localization-eligible
+centers**, **1,118 geometries present** and **155 null geometries**. The one
+existing geometry excluded from localization scoring, **P002 frame 335**, is
+unchanged. No permitted curated references remain unaccepted. The production
+inventory reader checks **59 bindings**, including 23 campaign acceptance
+receipts and 36 reference authorities.
+
+New references remain **post-selection evaluation only**, with training and
+checkpoint-selection eligibility false. Acceptance preserves AI authorship,
+visibility and uncertainty; it does not claim independent human annotation,
+playback telemetry or final-trajectory acceptance. This publication performed
+no source decode, model inference, fitting, scoring or tests. Protected
+evaluation remains closed. Freeze the complete package and executable recipe
+before the already-approved fit; label completion alone does not freeze either.

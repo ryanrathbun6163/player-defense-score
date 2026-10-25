@@ -2,30 +2,23 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
-Ryan accepted all **71 curated judgments in batches 12–16** on **2026-10-25**.
-The [separate publications](../ball_tracking_completion_reference_group_12_16.md#human-acceptance-published-2026-10-25)
-bring curated coverage to **1,004/1,273 accepted**, with **896 eligible centers,
-107 null geometries and one unchanged geometry excluded from localization
-scoring**. The [actual-reader audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/reference_batches_12_16_acceptance/publication_audit.json)
-passes; original labels, media and prior failures are preserved. New campaign
-curated references remain evaluation-only. Historical NFHS training and
-checkpoint-selection roles remain as recorded in the approved plan.
+The reference-labeling milestone is complete: **1,273 permitted curated judgments**
+and **3,839 fixed NBA judgments** are accepted. The [final curated publication](../ball_tracking_completion_reference_group_17_23.md#human-acceptance-published-2026-10-25)
+preserves all original proposals, uncertainty, media and failures. The curated
+census has 1,117 eligible centers, 155 null geometries and one existing geometry
+excluded from localization scoring. New curated labels remain evaluation-only.
 
-Review and accept/correct the [final group 17–23](../ball_tracking_completion_reference_group_17_23.md):
-**269 pending proposals: 221 centers, 48 unknown centers and 5–10px uncertainty**, covering all remaining permitted positions. All seven complete
-overlays and source/media checks pass; slow playback totals **53.8 seconds**.
-Acceptance would complete all 1,273 permitted curated references. Then freeze
-the complete source/label/role package and executable recipe under
-[milestone 2](../ball_tracking_completion_plan.md#delivery-resources-and-sequence)
-before the already-approved fit. The source comparison failure, its unknown
-first-output identity and the corrected native-PTS extraction are documented
-without overwriting earlier evidence.
+Continue the [primary training increment](../ball_tracking_completion_primary_training.md):
+run the already-approved primary fit using the frozen source/label/role package
+and executable recipe. All 32 focused checks and the runner preflight passed.
+No repeat campaign or fit approval is needed. The verified split is **3,329
+training frames** (including retained SAC/NFHS replay), **1,110 selection frames**
+(fresh NBA plus existing NFHS development), and **3,103 usable training triplets**.
 
-The fixed NBA selection remains complete: **3,839 accepted judgments**, with
-**3,423 centers/416 nulls**, split into **2,879 training and 960 checkpoint
-validation**. Validation labels remain excluded from gradient fitting.
-No completion-campaign fit has run. Protected evaluation remains closed
-pending a frozen method and separate authorization.
+No completion-campaign fit has run yet. Checkpoint selection, fixed post-selection
+comparisons, the conditional resolution decision and actual trajectory review
+remain ahead. Protected evaluation stays closed pending a frozen method and
+separate explicit authorization.
 
 ### Earlier completion-campaign milestones
 
