@@ -2,34 +2,33 @@
 
 ## Approved next campaign: complete the original ball-phase milestone
 
-Ryan accepted all **120 NBA22 SAC–MEM e04 judgments**, frames **163873–163992**:
-**106 centers, 14 nulls and 6–10px uncertainty**. The
-[separate publication](../ball_tracking_completion_nba_reference_batch_22.md#human-acceptance-published-2026-10-24)
-brings NBA coverage to **3,360/3,839 accepted: 2,984 centers and 376 nulls**,
-comprising **2,400 training and all 960 checkpoint-validation judgments**.
+Ryan accepted all **239 NBA23 SAC–MEM e05 judgments**, frames **23374–23612**:
+**239 centers, zero nulls and 6–10px uncertainty**. The
+[separate publication](../ball_tracking_completion_nba_reference_batch_23.md#human-acceptance-published-2026-10-24)
+brings NBA coverage to **3,599/3,839 accepted: 3,223 centers and 376 nulls**,
+comprising **2,639 training and all 960 checkpoint-validation judgments**.
 Validation labels remain excluded from gradient fitting. All prior accepted
 labels, original reviews and incidents remain preserved.
 
-Obtain Ryan's acceptance or corrections for [NBA23](../ball_tracking_completion_nba_reference_batch_23.md),
-fixed SAC–MEM training episode e05, **239 native frames, 23374–23612**, selected
-from **[390,394) seconds**. Source preparation passes all **239 exact PNG/PTS
-checks** after the first incomplete attempt was retained and an earlier seek
-restored the two missing leading frames. **Two fixed episodes totaling 479
-judgments remain unaccepted**. NBA23's **239 pending judgments all have centers**,
-with **119 full, 120 partial and 6–10px uncertainty**. Every source/proposed frame,
-full part endpoint and emitted frame has been inspected; final integration
-passes. Both eligibility flags remain false. The other fixed episode contains
-**240 judgments** without proposals. The source plan is unchanged, and each new
-review requires Ryan's acceptance before its labels become eligible.
+Obtain Ryan's acceptance or corrections for [NBA24](../ball_tracking_completion_nba_reference_batch_24.md),
+the last fixed NBA episode: SAC–MEM training e06, **240 native frames,
+197799–198038**, selected from **[3300,3304) seconds**. Source preparation passes
+all **240 exact PNG/PTS checks**. The sealed proposals contain **200 centers,
+40 unknown centers and 6–10px uncertainty**. Complete source/overlay inspection
+and integration pass through actual final **198038**. These **240 judgments**
+are the remaining unaccepted fixed NBA selection; no selected NBA frame remains
+without a proposal. The source plan is unchanged, and this review requires
+Ryan's acceptance before its labels become eligible.
 
 No completion-campaign fit has run. Complete the fixed reference package and
 freeze accepted source/label/role manifests and the executable recipe before
 the already approved fit. Curated coverage remains **868/1,273 accepted**, with
 **760 eligible centers** and **405 uncovered**, evaluation-only. **Ten renderer
-tests pass on NBA23's actual proposal and media**, with no failures or skips.
-The unchanged acceptance reader reuses NBA19's **eight passed tests**; NBA22's
-actual accepted publication and mixed inventory and NBA23's current pending
-consumer were checked separately. No new eight-test execution is claimed. Protected
+tests pass on NBA24's actual proposal and media**, with no failures or skips.
+The unchanged acceptance reader reuses NBA19's **eight passed tests**; NBA23's
+accepted publication/mixed inventory and NBA24's actual pending consumer were
+checked separately. The latter validates **240 native joins** and accepts no
+new labels. No new eight-test execution is claimed. Protected
 evaluation remains closed pending a frozen method and separate authorization.
 
 ### Earlier completion-campaign milestones

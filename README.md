@@ -9,26 +9,24 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
-Ryan accepted all **120 NBA22 SAC–MEM e04 judgments**, including **106 centers,
-14 nulls and 6–10px uncertainty**. The [separate acceptance publication](docs/ball_tracking_completion_nba_reference_batch_22.md#human-acceptance-published-2026-10-24)
-brings NBA coverage to **3,360/3,839 accepted: 2,984 centers and 376 nulls**.
-Accepted roles are **2,400 training and all 960 checkpoint-validation
+Ryan accepted all **239 NBA23 SAC–MEM e05 judgments**, all with centers,
+**119 full/120 partial visibility and 6–10px uncertainty**. The [separate acceptance publication](docs/ball_tracking_completion_nba_reference_batch_23.md#human-acceptance-published-2026-10-24)
+brings NBA coverage to **3,599/3,839 accepted: 3,223 centers and 376 nulls**.
+Accepted roles are **2,639 training and all 960 checkpoint-validation
 judgments**; validation labels remain excluded from gradient fitting. All
-3,240 prior NBA labels, 868 curated references and 7,176 original files remain
+3,360 prior NBA labels, 868 curated references and 7,676 original files remain
 unchanged. Publication reuses the historical eight-test SAC acceptance receipt
-and separately validates the actual NBA22 publication and mixed inventory;
+and separately validates the actual NBA23 publication and mixed inventory;
 no tests were rerun.
 
-[NBA23](docs/ball_tracking_completion_nba_reference_batch_23.md) prepares the
-next fixed SAC–MEM training episode, e05, **239 native frames, 23374–23612**.
-Source preparation passes all **239 exact PNG/PTS checks** after a retained
-failed attempt omitted the first two required frames. Its **239 pending judgments
-all have centers**, with **119 full/120 partial visibility and 6–10px uncertainty**.
-Every current source/proposed frame and full part endpoint has been inspected;
-complete encoded review, ten current renderer tests and final integration pass.
-NBA23 is ready for Ryan's acceptance or corrections. **Two fixed SAC–MEM
-episodes totaling 479 judgments remain unaccepted**; the other episode contains
-**240 judgments** without proposals. The
+[NBA24](docs/ball_tracking_completion_nba_reference_batch_24.md) covers the
+last fixed NBA episode, SAC–MEM training e06, **240 native frames,
+197799–198038**. Source preparation passes all **240 exact PNG/PTS checks**;
+the sealed proposals retain **200 centers, 40 unknown centers and 6–10px
+uncertainty**. Complete source/overlay review and final integration pass through
+frame **198038**, with **ten current renderer tests passed**. These **240
+judgments** are ready for Ryan's acceptance and are the remaining unaccepted
+fixed NBA selection; no selected NBA frame remains without a proposal. The
 [source plan](configs/ball_tracking/completion_campaign/source_roles_v0_1.json)
 and earlier reviews remain unchanged. New proposals require Ryan's separate
 acceptance.

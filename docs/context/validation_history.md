@@ -1,5 +1,83 @@
 # Validation History
 
+## NBA23 accepted; all original labels, failures and evidence preserved
+
+Ryan's structured reply **“Accept all 239 proposals”** accepts all **239 NBA23
+SAC–MEM e05 judgments**, native frames **23374–23612**: **239 centers, zero nulls,
+119 fully visible/120 partially visible judgments and 6–10px uncertainty**. The
+[separate receipt](../../configs/ball_tracking/reviews/nba_completion_reference_batch_23_acceptance_v0_1.json)
+records **2026-10-24, America/Phoenix**, exact user-event UTC null and publication
+time separately. Every annotation, uncertainty and AI-authorship field remains
+unchanged; no playback telemetry or independent human annotation is claimed.
+
+The [publication audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_23/acceptance_audit/publication_audit.json)
+passes its first attempt in **321.790 seconds**, including the actual SAC
+publication and mixed-inventory readers and duplicate native-frame guard. All
+**7,676 original files, 3,360 prior NBA rows and 868 curated references** remain
+unchanged. The unchanged publisher binds NBA19's historical **eight-test receipt**
+separately from NBA23's completed pending-consumer check and accepted publication.
+No reader/test changes, test reruns, source decoding, inference, fitting or
+scoring occurred during acceptance publication. Failed preparation, tag validation,
+crop supplements and path lookup incidents remain preserved.
+
+The [inventory after NBA23](../../data/outputs/ball_tracking/completion_campaign_v0_1/accepted_nba_reference_inventory_after_batch_23.json)
+contains **3,599 NBA rows: 3,223 centers and 376 nulls**, with **2,639 training
+and all 960 checkpoint-validation judgments**. **240 judgments in the last fixed
+NBA episode remain unaccepted**. Curated coverage stays **868 accepted, 760
+centers and 405 uncovered**, evaluation-only. Label acceptance does not open
+fitting, package/recipe readiness, checkpoint scoring, protected evaluation,
+model-output acceptance or ball-phase completion.
+
+## NBA24 complete review ready; uncertainty and display incident preserved
+
+[NBA24](../ball_tracking_completion_nba_reference_batch_24.md) prepares fixed
+training SAC–MEM e06, **240 native frames, 197799–198038**, selected from
+**[3300,3304) seconds**. Its [preparation record](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_24/preparation.json)
+passes **240 exact PNG/PTS checks** in **128.240 seconds**, preserving **7,610
+preexisting files**. Primary decoding returned **597 frames, 197442–198038**,
+from **599 submitted packets**. The **357 decoded prefix frames, 197442–197798**,
+inherit the training role. Secondary conversion emitted **240 RGB frames** and
+reported **240 filter frames**, exactly the selected range.
+
+Native PTS span **297000512–297359432**, with final presentation end **297360872**,
+covering **4.004 seconds**. Presentation timing remains variable 16/17ms at
+**1/90000**; final presentation duration **1440 ticks** stays distinct from raw
+packet duration **1530 ticks**.
+
+The sealed proposals contain **200 centers and 40 nulls**, with **23 fully
+visible, 181 partially visible, 34 indeterminate and two not-visible judgments**,
+and **6–10px uncertainty**. Null ranges are **197846–197861, 197867–197878,
+197993–197998 and 198008–198013**. Every source/proposed frame and full part
+endpoint has been inspected; final 198038 retains **[704,233] ±10 pixels**, fully
+visible. All three initial proposals remain unchanged. The
+[late-part receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_24/inspection/part_197959_198038_receipt.json)
+preserves one read-only image-output truncation; all four affected sheets were
+reopened and inspected before proposal writing. No generation failed and no
+annotation correction was needed.
+
+Delivery passes its first attempt in **62.719 seconds**, producing complete
+**4.004-second native** and **24-second slow overlays at 10 fps**. The
+[root visual receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_24/root_visual_review.json)
+records actual inspection of all **20 emitted/source sheets**, covering **200
+center crops and 40 null contexts**, plus full source final **198038** and both
+actual encoded finals. No corrections followed initial proposal publication.
+
+The [current renderer receipt](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_24/focused_validation/20261025T041908Z_d495eae7/references.json)
+passes **ten tests** against NBA24's actual proposal and emitted media in
+**31.422 seconds**, with no failures, errors or skips. NBA19's eight acceptance
+tests remain historical coverage of unchanged code and were not rerun.
+
+The [final result](../../configs/ball_tracking/reviews/nba_completion_reference_batch_24_result_v0_1.json)
+is ready for human reference acceptance. The first finalizer completes in
+**104.765 seconds**, including the **93.140-second integration audit** of **8,331
+bindings, 240 native joins, 480 encoded frames, 400 markers and 240 exact source
+PNGs**. The [current pending-consumer check](../../data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_24/finalization_attempts/20261025T043540Z_898a1c51/pending_review_reader_check.json)
+passes **240 annotation/native joins** and accepts no new labels. All **3,599
+accepted NBA rows, 868 curated references and 7,610 prior preparation files**
+remain unchanged. All fixed NBA frames now have proposals; **240 remain
+unaccepted**. Both pending eligibility flags, package/recipe/fitting readiness,
+protected evaluation and ball-phase acceptance remain false.
+
 ## NBA22 accepted; all original labels and evidence preserved
 
 Ryan's structured reply **“Accept all 120 proposals”** accepts all **120 NBA22
@@ -28,6 +106,9 @@ does not open fitting, package/recipe readiness, checkpoint scoring, protected
 evaluation, model-output acceptance or ball-phase completion.
 
 ## NBA23 complete review ready; failed attempts preserved
+
+This original preparation record is preserved; NBA23's later separate acceptance
+above supersedes its pending status and campaign totals.
 
 [NBA23](../ball_tracking_completion_nba_reference_batch_23.md) proceeds with
 fixed training SAC–MEM e05, **239 native frames, 23374–23612**, selected from
