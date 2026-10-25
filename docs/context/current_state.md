@@ -1,5 +1,31 @@
 # Current State
 
+## Primary run interrupted again: update 500 safely saved, 2026-10-25
+
+The approved primary run has started from local commit
+`2aa2342e2f43a6a6365f579471971b9ecbd77cf9`, using frozen recipe
+`d8f53baf72412db535e989b4086e8fb23e02f79ef058829539d1bbe9a486e83c`.
+Its [immutable identity](../../data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/identity.json)
+and attempt records are saved. The first attempt verified all 4,439 accepted
+source images in 122.340 seconds, then failed during epoch-zero validation with
+a CUDA unknown error after 141.409 seconds and **zero optimizer updates**.
+`nvidia-smi` reported the GPU lost and requested a reboot; no cause beyond that
+observation is established. The original failed receipt and update-zero state
+remain preserved. Ryan reported a restart and requested continuation. The GPU
+became available; the same frozen run resumed, reused every verified cache block,
+completed epoch zero and entered epoch-one gradient fitting.
+
+The resumed attempt then lost the GPU again after **522 completed updates**, while
+attempting update 523. The **update-500 checkpoint** passes CPU-only recovery,
+finite-tensor and frozen-schedule checks. The 22 unsaved updates are logged and
+will be replayed. `nvidia-smi` again reports GPU loss; no further fit is running.
+See the [recovery audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/gpu_recovery_after_attempt_02.json)
+and [full attempt record](../ball_tracking_completion_primary_training.md#execution-interrupted-by-gpu-loss).
+No trained epoch has completed validation or checkpoint selection. GPU loss has
+no established cause. Protected evaluation remains closed. Address GPU
+availability/repeated loss before resuming the same run with `--run --resume`;
+never restart independently or alter its frozen recipe/code.
+
 ## Latest increment: every permitted reference accepted; primary recipe frozen
 
 Ryan's structured **“Accept all 269 proposals”** accepts the complete final

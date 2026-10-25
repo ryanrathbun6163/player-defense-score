@@ -1,5 +1,21 @@
 # Validation History
 
+## Primary fit started; two GPU-loss attempts preserved
+
+The [frozen primary recipe](../ball_tracking_completion_primary_training.md)
+passed 32 focused tests and real preflight before model execution. Attempt one
+cached all 4,439 images in 122.340s, then failed during baseline validation after
+141.409s with zero updates. After Ryan's reported restart, the same run resumed,
+completed baseline validation in 15.593s, and failed again after 522 completed
+updates while attempting 523, at 88.576s. Both failures are CUDA unknown errors;
+independent `nvidia-smi` checks report GPU lost. No root cause is established.
+
+The [recovery audit](../../data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/gpu_recovery_after_attempt_02.json)
+verifies update 500, its finite tensors and frozen schedule. The 22 unsaved
+completed updates remain logged for replay. No trained epoch has completed
+validation; no post-selection or protected evaluation has run. The source
+package, accepted labels and frozen method remain unchanged.
+
 ## Final curated group 17–23 accepted; permitted census complete
 
 Ryan's structured **“Accept all 269 proposals”** accepts the complete final

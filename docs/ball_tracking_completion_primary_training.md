@@ -87,7 +87,50 @@ have not improved the selected rank. Save the best and final checkpoints plus
 resumable optimizer/RNG state and actual exposure. If epoch zero wins, retain it
 and reject the trained model for adoption. Selection is not a ball-phase pass.
 
-## Current execution state
+## Execution interrupted by GPU loss
+
+The primary run started from local commit
+`2aa2342e2f43a6a6365f579471971b9ecbd77cf9`. Its first attempt prepared and verified
+all 4,439 unique source images in **122.340 seconds**, using **1,963,671,552 bytes**
+of uint8 frame cache and no source-video decode. It failed during epoch-zero
+validation after **141.409 seconds**, with a CUDA unknown error and **zero
+optimizer updates**. Independently, `nvidia-smi` reported “GPU is lost” and
+requested a reboot.
+
+Ryan reported a restart and requested continuation. The same frozen run resumed,
+reused the verified cache, completed baseline validation in **15.593 seconds**,
+and entered epoch one. A second GPU loss occurred after **522 completed updates**
+while attempting update **523**. The second attempt lasted **88.576 seconds**.
+The latest durable state is **update 500**; 22 unsaved completed updates remain
+in the attempt log and must be replayed on resume. No trained epoch has completed
+validation, and no trained checkpoint has been selected.
+
+The [read-only recovery audit](../data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/gpu_recovery_after_attempt_02.json)
+verifies the update-500 state, finite tensors and exact sampling history. Both
+failed attempts, the update-zero state, baseline validation and image cache are
+preserved. Last saved training peaks were approximately **2.01 GB allocated /
+2.49 GB reserved** on the 12 GB GPU. Neither attempt reported an out-of-memory
+error. The cause of device loss remains unestablished; no particular Xid,
+driver defect, thermal problem or hardware failure is asserted.
+
+The later [Windows error-reporting evidence](../data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/windows_gpu_events_after_attempt_02.json)
+contains live-kernel code **141** near the first failure and **117** with
+`nvlddmkm.sys_Blackwell` near the second, plus black-screen diagnostic reports.
+Microsoft defines [141](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/bug-check-0x141---video-engine-timeout-detected)
+and [117](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/bug-check-0x117---video-tdr-timeout-detected)
+as graphics-engine/driver timeouts. This corroborates a graphics-system hang,
+without distinguishing the underlying cause. No driver, registry, clock, power
+or system-restart setting was changed by the agent.
+
+Baseline selection results are **130/145 NFHS matches, one wrong output and
+14 missing**, and **845/882 HOU–OKC matches, 29 wrong and eight missing**, with
+25 emissions on certain-hidden HOU frames. These are the retained model's fixed
+selection-set results, not completed-campaign or full-possession results.
+Protected evaluation remains closed. The same frozen run must resume with
+`--run --resume` once GPU availability and repeated loss are addressed; no
+independent restart, CPU fallback or recipe change is authorized by this failure.
+
+## Preparation validation before fitting
 
 All **32 focused checks passed** on the final package, policy, runtime and runner
 modules: native-frame/annotation joins, role and protected-band exclusion,

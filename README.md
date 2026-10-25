@@ -24,8 +24,12 @@ Including retained replay, the verified split is **3,329 training frames and
 All 32 focused implementation checks and the real runner preflight passed.
 New curated references stay
 evaluation-only; historical training/development roles remain unchanged.
-No completion-campaign fit has run. Protected evaluation remains closed pending
-a frozen method and separate explicit authorization.
+The primary fit started, but two GPU-loss failures interrupted it. The verified
+recovery checkpoint preserves **500 updates**, with 22 later completed updates
+logged for replay. Baseline validation is complete; no trained epoch has been
+validated or selected. See the [execution/recovery record](docs/ball_tracking_completion_primary_training.md#execution-interrupted-by-gpu-loss).
+Protected evaluation remains closed pending a frozen method and separate
+explicit authorization.
 
 The approved [ball-phase completion campaign](docs/ball_tracking_completion_plan.md)
 has started. Its [first increment](docs/ball_tracking_completion_first_increment.md)

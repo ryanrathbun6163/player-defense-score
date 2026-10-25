@@ -15,10 +15,12 @@ No repeat campaign or fit approval is needed. The verified split is **3,329
 training frames** (including retained SAC/NFHS replay), **1,110 selection frames**
 (fresh NBA plus existing NFHS development), and **3,103 usable training triplets**.
 
-No completion-campaign fit has run yet. Checkpoint selection, fixed post-selection
-comparisons, the conditional resolution decision and actual trajectory review
-remain ahead. Protected evaluation stays closed pending a frozen method and
-separate explicit authorization.
+The primary fit is interrupted by repeated GPU loss. Its verified recovery state
+preserves 500 updates; 22 unsaved completed updates must replay. Address GPU
+availability/repeated loss, then resume the same frozen run. Checkpoint selection,
+fixed post-selection comparisons, the conditional resolution decision and actual
+trajectory review remain ahead. Protected evaluation stays closed pending a
+frozen method and separate explicit authorization.
 
 ### Earlier completion-campaign milestones
 
