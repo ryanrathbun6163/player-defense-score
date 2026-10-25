@@ -24,26 +24,33 @@ Including retained replay, the verified split is **3,329 training frames and
 All 32 focused implementation checks and the real runner preflight passed.
 New curated references stay
 evaluation-only; historical training/development roles remain unchanged.
-The primary fit started, but two GPU-loss failures interrupted it. The verified
-recovery checkpoint preserves **500 updates**, with 22 later completed updates
-logged for replay. Baseline validation is complete; no trained epoch has been
-validated or selected. See the [execution/recovery record](docs/ball_tracking_completion_primary_training.md#execution-interrupted-by-gpu-loss).
-Protected evaluation remains closed pending a frozen method and separate
-explicit authorization.
+Ryan explicitly lifted the later training pause on **October 25**. The original
+run resumed from update 500, replayed the 22 unsaved updates, and completed
+**five epochs / 7,760 scheduled updates**. Every trained epoch failed the frozen
+per-possession nonregression rule, so **epoch zero remains selected** and the
+trained model is rejected for adoption. Both GPU-loss attempts and the recovery
+history remain preserved. The monitored attempt completed without recorded GPU
+errors; this does not establish a PC stability cure.
 
-**Training is explicitly paused for PC stability diagnosis.** NVIDIA Overlay,
-Lively Wallpaper and MSI True Color were confirmed stopped on October 25; a
-crash-free interval has not yet established a fix. The CPU-only comparison-input,
-scoring and review-rendering preparation is complete with 28 focused checks
-passing. No selected-model comparison has run. See the
-[current state](docs/context/current_state.md) before any training resumption.
+The [actual completion and comparison report](docs/ball_tracking_completion_primary_results.md)
+covers **3,975 permitted frames and 16 fixed cohorts**, reusing the unchanged
+retained baseline with zero new inference calls. All three permitted curated
+screens fail. P001's five and P002's four certain-hidden emissions independently
+block the approved resolution fallback. The three synchronized curated videos
+cover all **1,498 timeline slots**, including **225 black protected slots**;
+see the report for review artifacts and their current review status. The new
+orchestration and NBA renderer pass **19 focused CPU checks**; the earlier
+28 helper checks remain separate evidence. Protected evaluation remains closed
+pending a frozen method and separate explicit authorization.
 
 The approved [ball-phase completion campaign](docs/ball_tracking_completion_plan.md)
 has started. Its [first increment](docs/ball_tracking_completion_first_increment.md)
 delivers the retained-baseline player/ball development package, fixes four NBA
 game roles and 24 episode windows, and publishes 120 new P003 assisted references
 accepted by Ryan. Later accepted batches now complete the permitted reference
-package; no new fit or phase pass is claimed. The rejected crop verifier and retained WASB baseline remain intact.
+package; the completed fit above does not pass the ball phase. The rejected crop
+verifier and retained WASB baseline remain intact. Earlier increments below
+retain their original execution status and reference counts.
 Ryan also accepted the [second reference batch](docs/ball_tracking_completion_reference_batch_02.md):
 120 P002 judgments, including uncertainty and null centers. Accepted curated
 coverage after that batch was 560/1,273; the earlier 440 references were preserved.

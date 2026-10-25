@@ -1,6 +1,6 @@
 # Roadmap
 
-## Approved next campaign: complete the original ball-phase milestone
+## Current campaign: primary fit completed; retained baseline selected
 
 The reference-labeling milestone is complete: **1,273 permitted curated judgments**
 and **3,839 fixed NBA judgments** are accepted. The [final curated publication](../ball_tracking_completion_reference_group_17_23.md#human-acceptance-published-2026-10-25)
@@ -8,21 +8,30 @@ preserves all original proposals, uncertainty, media and failures. The curated
 census has 1,117 eligible centers, 155 null geometries and one existing geometry
 excluded from localization scoring. New curated labels remain evaluation-only.
 
-The [primary training increment](../ball_tracking_completion_primary_training.md)
-is explicitly paused for PC stability diagnosis. Its original campaign approval
-remains valid, but Ryan must direct lifting the later pause before GPU work resumes.
-All 32 original focused checks and the runner preflight passed. The verified split is **3,329
-training frames** (including retained SAC/NFHS replay), **1,110 selection frames**
-(fresh NBA plus existing NFHS development), and **3,103 usable training triplets**.
+Ryan explicitly lifted the later pause on October 25. The original
+[primary run](../ball_tracking_completion_primary_training.md) resumed from update
+500, replayed 22 unsaved updates and completed **five epochs / 7,760 scheduled
+updates**. The frozen recipe, **3,329 training / 1,110 selection frames** and
+**3,103 usable training triplets** stayed unchanged. Every trained epoch fails
+the per-possession nonregression rule; epoch zero remains selected. Original
+GPU-loss failures and the intervening pause remain part of the record.
 
-The primary fit is interrupted by repeated GPU loss. Its verified recovery state
-preserves 500 updates; 22 unsaved completed updates must replay. Address GPU
-stability and Ryan's pause, then resume the same frozen run. CPU-only comparison
-preparation now passes 28 focused checks; the prepared package stays non-executable
-without completed selection. Checkpoint selection, real evaluation orchestration,
-fixed post-selection comparisons, the conditional resolution decision and actual
-trajectory review remain ahead. Protected evaluation stays closed pending a
-frozen method and separate explicit authorization.
+The [actual result and review delivery](../ball_tracking_completion_primary_results.md)
+now covers **3,975 permitted inputs / 16 cohorts** with unchanged baseline
+predictions and no new inference. All three permitted curated screens fail.
+P001's five and P002's four certain-hidden emissions independently block the
+approved higher-resolution fallback; no second fit or relaxed threshold follows.
+The three curated comparisons retain all 1,498 timeline slots, with 225 protected
+slots black. Human trajectory review remains pending; use the result report for
+the complete artifact status. The 19 new focused CPU checks and independent
+actual-result audit pass; no full-suite repeat was needed.
+
+Next, review the delivered comparisons and decide the next scientific approach
+against the existing quality criteria. A changed campaign needs an evidence-based
+decision; the conditional resolution clause does not authorize it here. Protected
+evaluation remains closed pending a frozen method and separate explicit
+authorization. The monitored completion is evidence of this successful run,
+not an established PC stability cure.
 
 ### Earlier completion-campaign milestones
 

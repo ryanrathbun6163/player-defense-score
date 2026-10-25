@@ -5,6 +5,55 @@ The final curated reference group has Ryan's explicit acceptance: **“Accept al
 campaign approval already authorizes the primary fit after the accepted package
 and executable recipe are frozen. No repeat fit approval is required.
 
+## Latest result: primary fit completed; epoch zero retained, 2026-10-25
+
+Ryan explicitly lifted the later stability pause and requested monitored progress.
+Attempt `b898cdd299724f1b97a492cc77648462` resumed the original frozen run from
+update 500, replayed the 22 unsaved updates and completed **five epochs / 7,760
+scheduled updates**. The attempt took **1,060.663 seconds**; its supervisor took
+**1,065.360 seconds**. Both earlier failures, their consumed work and the original
+recovery state remain preserved.
+
+Only epoch zero satisfies the fixed selection rule. At epoch five, P001 improves
+**41→42** correct development matches and P002 **49→50**, but P003 falls
+**40→38**. NBA validation improves **845→848/882** correct, **29→9** wrong and
+**25→17** certain-hidden emissions. Those improvements do not override the
+per-possession nonregression requirement. The trained model is rejected for
+adoption; retained checkpoint
+`09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98`
+remains selected.
+
+The supervisor collected **518 GPU samples**, spanning **44–60 C**, with maxima
+of **133.27 W** and **4,253 MiB** used. No monitor flags, query errors or matching
+new diagnostic events were recorded. NVIDIA Overlay, Lively Wallpaper and MSI
+True Color remained stopped. This establishes a completed monitored attempt,
+not a stability cure or the underlying cause of the earlier failures.
+
+The [completed result and review report](ball_tracking_completion_primary_results.md)
+records the actual selected-result transport check and fixed comparison:
+**3,975 permitted frames / 16 cohorts**, unchanged baseline outputs and **zero
+new model calls**. Permitted curated results are P001 **300/355** correct,
+**12 wrong / 43 missing / 5 certain-hidden emissions**, worst eligible gap
+**0.48s**; P002 **291/360**, **8 / 61 / 4**, **0.40s**; P003 **333/402**,
+**8 / 61 / 0**, **0.64s**. All three development screens fail. The P001/P002
+certain-hidden emissions independently block the approved resolution fallback.
+No second fit or threshold change follows, and the 225 protected positions stay
+closed.
+
+The [independent actual-result audit](../data/outputs/t/completion_actual_result_audit_20261025_01/audit.json)
+passes **104,212 checks**, re-deriving validation selection, every permitted
+observation comparison, all cohort counts and integer deficits. It verifies
+118 reference/acceptance bindings and both accepted inventory hashes. The new
+orchestration and NBA renderer pass **19 focused CPU checks (12 + 7)**; their
+receipts are distinct from the earlier 28 preparation checks and 32 fitting
+implementation checks. No full-suite repeat was run. Three curated review videos
+cover all 1,498 timeline slots with 225 black protected panels and verified
+actual finals; the result report records the remaining delivery and human review
+status.
+
+The sections below preserve the earlier preparation, interrupted-run and pause
+snapshots. Their statements about then-pending work do not supersede this result.
+
 ## Fixed roles
 
 The complete curated census contains **1,273 permitted judgments**. New campaign

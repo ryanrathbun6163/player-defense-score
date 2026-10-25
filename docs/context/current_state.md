@@ -1,5 +1,47 @@
 # Current State
 
+## Primary fit completed; retained baseline fails permitted screen, 2026-10-25
+
+The [completed result](../ball_tracking_completion_primary_results.md) supersedes
+the active-run and pause snapshots below. The original fit completed five epochs
+and 7,760 scheduled updates; only epoch zero satisfies the frozen per-cohort
+selection rule. The trained model is rejected for adoption. Epoch five improves
+P001/P002 and NBA validation but loses two P003 matches, so aggregate improvement
+does not qualify it. All failures, checkpoints and accepted references remain.
+
+The actual completed-result consumer and independent record audit pass. The
+fixed comparison reuses all 3,975 retained observations without model calls.
+P001/P002/P003 match **300/355, 291/360 and 333/402** eligible permitted frames,
+with **12/8/8 wrong**, **43/61/61 missing**, and **5/4/0 certain-hidden emissions**.
+Worst known eligible gaps are **480/400/640 ms**. Every permitted development
+screen fails. P001/P002 hidden emissions independently block the approved
+resolution fallback; no second fit or threshold change is permitted under that
+trigger. The 225 protected positions remain closed. Further fitting or a changed
+scientific approach needs a new scope decision, not a rerun of this campaign.
+
+The resumed attempt completed in 1,060.663 seconds; its supervisor recorded 518
+GPU samples, 44–60 C, up to 133.27 W and no observed device loss or throttle flag.
+Queried Windows graphics/crash/WHEA records were empty. This is one successful
+workload, not a stability diagnosis. The three graphics extras remain stopped;
+the temporary training-monitor heartbeat was removed. See the result report for
+the synchronized delivery, uncertainty, validation and human-review status.
+
+## Pause lifted; original primary run resumed with telemetry, 2026-10-25
+
+Ryan explicitly directed: **“Ok I lift the pause. Please monitor the GPU as we
+go, and lets move forward.”** The original frozen run resumed from update 500
+as attempt `b898cdd299724f1b97a492cc77648462`; its 22 previously unsaved updates
+are replayed under the unchanged schedule. The two original failed attempts,
+their checkpoints and recovery history remain preserved. No completed model
+or stability cure is claimed by this start record.
+
+The [external supervisor authorization and policy](../../data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/monitoring/20261025T221007Z/authorization.json)
+records two-second GPU telemetry and stops for failed telemetry, temperature at
+80 C or thermal slowdown. A separate owned-descendant guard covers Windows's
+Python launcher. NVIDIA Overlay, Lively and MSI True Color remained stopped.
+The fitting code and recipe are unchanged. Protected evaluation remains closed;
+the later explicit direction supersedes the pause in the historical entries below.
+
 ## CPU preparation finished; training stays paused, 2026-10-25
 
 Ryan asked to finish the interrupted preparation before starting a new session.

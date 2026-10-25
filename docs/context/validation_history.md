@@ -1,5 +1,47 @@
 # Validation History
 
+## Completed primary fit and actual permitted comparison, 2026-10-25
+
+After Ryan explicitly lifted the pause, the same frozen run resumed from update
+500 and completed five epochs / 7,760 scheduled updates. Both failed attempts and
+22 replayed unsaved updates remain recorded. The actual completion producer was
+consumed through `bind_selected_result` and the additive completion audit; only
+epoch zero qualifies. No trained checkpoint is adopted.
+
+The additive evaluator passes **12 focused CPU tests** (0.943s unittest time;
+agent tool output retained, no separate local log). The NBA renderer passes
+**7 focused CPU tests** (0.479s unittest / 3.556s process), with the final
+[log](../../data/outputs/t/completion_nba_render_focused_20261025T222430Z.log).
+Its first six-test fixture execution had seven errors from omitted synthetic
+source SHA metadata; the original log remains preserved. These tests use actual
+annotation/observation/validation/completion producers, JSON transport, bounded
+input handling, recovery, withheld guards and exact native packet/frame timing.
+The earlier 28 helper checks and 32 fitting checks remain distinct, not rerun.
+
+The first actual selected comparison completed in **159.634 seconds**, using
+all **3,975 unchanged baseline observations**, eight contexts and 16 cohorts,
+with **zero new model calls**. Three curated renders verify all **1,498** frames,
+including **225 black protected slots**, and actual finals. The independent
+[actual-record audit](../../data/outputs/t/completion_actual_result_audit_20261025_01/audit.json)
+passes 104,212 checks with zero discrepancies in 1.374s: all six validation
+reports, checkpoint selection, cohort/curated counts, original-output equality,
+integer deficits and 118 reference/acceptance bindings. It does not rerun the
+scientific scorer, load models or read protected pixels. The real trained-model
+inference branch remains unexercised because the retained baseline won selection.
+
+The two NBA renders subsequently completed on their first actual attempt in
+**330.250 seconds**. All 2,702 native frames, packet/decoded PTS, display intervals
+and actual finals pass the emitted-record and media checks. Root inspected all
+five encoded finals. This is transport/layout verification, not a claim of new
+human playback or trajectory acceptance.
+
+All three permitted screens fail; P001/P002 certain-hidden emissions block the
+approved resolution fallback. The [result report](../ball_tracking_completion_primary_results.md)
+records exact counts, synchronized review delivery and uncertainty. No protected
+evaluation, threshold change, second fit or phase acceptance occurred. The GPU
+supervisor logged 518 samples at 44–60 C with no recorded device loss; one
+successful workload does not establish a stability cure.
+
 ## CPU-only completion comparison preparation finished, 2026-10-25
 
 The [combined validation](../../data/outputs/ball_tracking/completion_campaign_v0_1/training_implementation/evaluation_focused_validation.json)
