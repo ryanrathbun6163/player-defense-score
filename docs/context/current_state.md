@@ -1,5 +1,17 @@
 # Current State
 
+## Explicit resolution-training resumption authorized, 2026-10-26
+
+After reviewing the crash-dump findings, Ryan said "ok move forward with the
+training now please". This lifts the operational hold for one monitored resume
+of the same frozen five-epoch experiment, from its verified update-zero state.
+The graphics crash remains unresolved; no driver/hardware setting or scientific
+parameter is changed. Preserve the prior failed attempt and corrupt monitor
+summary. A fresh monitor directory records this attempt. All three graphics
+extras were rechecked stopped after Ryan closed restarted MSI True Color.
+Any further device/telemetry failure stops this attempt without automatic retry.
+Existing labels, numerical/visual criteria and protected boundaries are unchanged.
+
 ## Crash dump analyzed locally; root cause remains unresolved, 2026-10-26
 
 Ryan copied the protected dump, resolving the access blocker. Microsoft WinDbg

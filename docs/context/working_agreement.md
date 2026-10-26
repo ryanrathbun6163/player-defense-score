@@ -1,5 +1,15 @@
 # Working Agreement
 
+## Explicit post-analysis training resume, 2026-10-26
+
+Ryan said "ok move forward with the training now please" after the local dump
+analysis. Proceed with one monitored resume of the unchanged approved 768x432
+experiment; do not re-request campaign, label or quality approval. Resume from
+the valid update-zero state using a fresh attempt/monitor record while retaining
+all failure evidence. This overrides the prior operational hold, without claiming
+that the graphics problem is fixed. No automatic retry follows another device
+failure, and no additional fit or protected evaluation is authorized.
+
 ## Resolution approval and crash interruption, 2026-10-26
 
 Ryan said "ok move forward with the experiment chat", approving the concrete
