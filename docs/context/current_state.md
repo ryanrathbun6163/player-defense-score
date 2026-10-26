@@ -1,5 +1,29 @@
 # Current State
 
+## Spatial pilot complete; no NBA improvement sufficient for extension, 2026-10-26
+
+The [authorized two-epoch experiment](../ball_tracking_wasb_spatial_results.md)
+completed 3,104 new updates and both full NBA comparisons. Frozen preparation
+commit is `297938e0088f71901c8f93c5d3592a97044b763c`; source, recipe, accepted
+labels and criteria are unchanged. Independent fit/NBA audits pass. Neither
+checkpoint qualifies and both retain the 19-frame / 317ms DET gap.
+
+Spatial six regresses HOU versus matched constant six: 814 versus 837 correct,
+47 versus 25 wrong. Spatial seven versus constant seven has identical HOU 842
+correct, wrong 20 to 19 / missing 20 to 21, and unchanged 20 certain-hidden emissions;
+DET remains 218/241 correct but wrong rises one to two. SAC improves 269 to 270,
+secondary NFHS 128 to 135/145. These gains do not offset the NBA failures. Do not extend
+this recipe automatically or describe this result as a successful phase.
+
+Epoch seven versus constant seven is an explicit diagnostic review choice,
+not adoption or an overall winner. Both checkpoints and all control results
+remain preserved. Human trajectory review is pending; nine source-uncertain
+recoveries remain independently inconclusive. Protected evaluation stays closed.
+Fit/comparison total 28.5 minutes, peak 60 C, both exit zero with no owned process
+left. The 20:50 UTC post-run system query finds no matching new errors and all
+three graphics extras absent; the prior crash cause remains unresolved.
+Earlier authorization/preparation entries below describe historical states.
+
 ## Two-epoch spatial experiment authorized and frozen, 2026-10-26
 
 Ryan explicitly approved the [spatial experiment](../ball_tracking_wasb_spatial_execution.md)

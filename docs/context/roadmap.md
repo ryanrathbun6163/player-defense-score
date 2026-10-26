@@ -1,5 +1,18 @@
 # Roadmap
 
+## Current priority: review the completed spatial pilot; justify a different next intervention
+
+The [two-epoch spatial pilot is complete](../ball_tracking_wasb_spatial_results.md).
+Neither checkpoint passes or resolves the DET gap. Spatial seven improves SAC
+and secondary NFHS but trades NBA errors; no matched HOU gate improves and DET
+wrong outputs rise. Complete the synchronized same-epoch review and preserve
+all gains, losses and uncertain evidence. This result does not justify automatic
+extension of the unchanged recipe. Any further training should test a distinct,
+evidence-supported hypothesis with the same quality criteria and accepted labels.
+No new training, labeling or protected evaluation follows automatically. Nine
+source-uncertain recovery events remain a separate acceptance limitation.
+Earlier priorities below retain their historical proposed/prepared states.
+
 ## Current priority: generalization pilot after completed continuation study
 
 Both [five-epoch continuations and diagnostics are complete](../ball_tracking_wasb_continuation_results.md).

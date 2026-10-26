@@ -1,5 +1,25 @@
 # Validation History
 
+## Two-epoch spatial fit and complete comparison verified, 2026-10-26
+
+The [result](../ball_tracking_wasb_spatial_results.md) completes the authorized
+pilot without a passing checkpoint. Twenty focused implementation checks passed
+in 28.733 seconds before preparation commit `297938e0088f71901c8f93c5d3592a97044b763c`.
+Actual geometry preparation checks all 6,206 draws and inspects representative
+triplets separately from human acceptance. The completed-fit audit passes
+1,055,083 checks; the NBA audit passes 425,512, including independent saved-map
+reconstruction and exact HOU/native-control transport. No full-suite repeat is
+claimed or needed for the result documentation.
+
+All 3,104 new updates and both comparisons complete, with unchanged labels and
+quality gates. Both retain the 19-frame DET gap; spatial seven trades DET/HOU
+errors and improves SAC/secondary NFHS without satisfying the pilot criterion.
+The metadata-only review-preparation hash-literal failure and corrected draft
+remain preserved; it involved no inference or rendering. Both GPU workloads
+exit cleanly, peak 60 C. A post-run Windows query reports no matching new errors.
+Human trajectory acceptance remains pending; protected evaluation is closed.
+The result ledger binds actual artifacts and audits separately from preparation.
+
 ## Matched continuation results and targeted diagnostics verified, 2026-10-26
 
 Both completed fits pass independent CPU audits: 385,096 constant-arm checks

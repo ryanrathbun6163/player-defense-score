@@ -2,6 +2,17 @@
 
 ## Authority map
 
+The latest [spatial result](../ball_tracking_wasb_spatial_results.md) records the
+completed two-epoch fit, both NBA comparisons and same-epoch diagnostic review.
+Frozen source/recipe were committed at `297938e0088f71901c8f93c5d3592a97044b763c`;
+the recipe is `configs/ball_tracking/proposals/wasb_spatial_v0_1.json`.
+Generated outputs are under `data/outputs/ball_tracking/wasb_spatial_v0_1/`,
+audits/diagnosis/geometry AI review and preserved preparation failure under
+`data/outputs/t/wasb_spatial_20261026/`. The committed result ledger is
+`configs/ball_tracking/reviews/wasb_spatial_result_v0_1.json`. Neither checkpoint
+passes or is adopted. No automatic extension follows; human review remains
+pending and protected evaluation remains closed.
+
 The latest [continuation result](../ball_tracking_wasb_continuation_results.md)
 records both completed five-epoch arms, ten comparisons, current-model training
 fit and the eight-call temporal probe. The unchanged recipe is

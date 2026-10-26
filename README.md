@@ -9,11 +9,16 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
-Ryan has authorized the [two-epoch spatial-augmentation experiment](docs/ball_tracking_wasb_spatial_execution.md).
-The new recipe is frozen after 20 focused checks and actual transformed-example
-inspection. It reuses the same parent state, existing labels and saved constant
-controls. This preparation is not a training result; all quality criteria and
-protected-evaluation boundaries remain unchanged.
+The [two-epoch spatial experiment is complete](docs/ball_tracking_wasb_spatial_results.md).
+Both checkpoints and their full NBA comparisons are audited; **neither passes**.
+Against matched constant seven, spatial seven keeps HOU at 842/882 correct and
+20 certain-hidden emissions; DET stays 218/241 correct while wrong outputs rise
+from one to two. Both spatial checkpoints retain the 19-frame DET gap. SAC and
+secondary NFHS improve, but the NBA tradeoffs do not support extending this
+recipe automatically. Existing labels and every quality criterion are unchanged.
+The fit/comparison total 28.5 monitored minutes, peaking at 60 C with no new
+matching system errors. Complete paired human review remains pending, no model
+is adopted, and protected evaluation stays closed.
 
 The [matched continuation study is complete](docs/ball_tracking_wasb_continuation_results.md):
 two five-epoch arms add 15,520 optimizer updates in total, with all ten NBA
