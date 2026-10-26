@@ -1,0 +1,144 @@
+{
+  "schema_version": "wasb_resolution_result_evidence/v0.1",
+  "status": "completed_no_qualifying_checkpoint",
+  "recorded_at_utc": "2026-10-26T16:49:47.239555+00:00",
+  "branch": "codex/ball-detector-baseline",
+  "execution_head": "91b80ad87a9445ecb39a606b0336fe39e1d7e4be",
+  "preparation_commit": "3605648f0a4243bc67dcce49e60caa5d0642f873",
+  "evidence": {
+    "recipe": {
+      "path": "configs/ball_tracking/proposals/wasb_resolution_v0_1.json",
+      "sha256": "5f81fce13df1c3dbf54bde48e2a8d79e7af62c77146ef85b7f798fbc2b30c44a",
+      "bytes": 6471
+    },
+    "fit_completion": {
+      "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/fit_v0_1/completed.json",
+      "sha256": "b16723bc9f1ab71b28633ce94a8245a756d2d5e8a16602aaff48f18d75667839",
+      "bytes": 7534
+    },
+    "comparison_completion": {
+      "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/nba_comparison_v0_1/completed.json",
+      "sha256": "e2efe3fcd169403b7aefb6330f253f66e018636eaadd66627b2be5db6170f76a",
+      "bytes": 2565
+    },
+    "fit_audit": {
+      "path": "data/outputs/t/nba_resolution_resume_20261026/completed_resolution_audit_20261026T162412599155Z.json",
+      "sha256": "8fae2e6468ed9a2d3274608d8fc89cf8e509b49159c2d01a7a8e4671ea334424",
+      "bytes": 12542
+    },
+    "NBA_audit": {
+      "path": "data/outputs/t/nba_resolution_resume_20261026/resolution_comparison_audit_20261026T163833143856Z.json",
+      "sha256": "e8ec3dbb3b1208fa4eb1b01c9fc072d32780dc773b62954dbbffc0a087d056a9",
+      "bytes": 48530
+    },
+    "review_completion": {
+      "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/paired_nba_review_v0_1/completed.json",
+      "sha256": "13e9b0d9cf71d854e46a13aeb5f5c6edaeaad69f4f967af04ed37ca4033b3268",
+      "bytes": 2605
+    },
+    "review_AI_inspection": {
+      "path": "data/outputs/t/nba_resolution_resume_20261026/paired_review_ai_observations.json",
+      "sha256": "f185ce8ede41673edd73f80bb43f5e58b10b32c865725087742343d9ca80a87d",
+      "bytes": 17699
+    },
+    "post_run_preservation": {
+      "path": "data/outputs/t/nba_resolution_resume_20261026/post_run_preservation_20261026T164512175576Z.json",
+      "sha256": "6368c51589bd08212c73511919c335cc0560a9fe70f84ed0a82bbeaf91a0e3dd",
+      "bytes": 56893
+    },
+    "post_gpu_system_state": {
+      "path": "data/outputs/t/nba_resolution_resume_20261026/post_gpu_system_state.json",
+      "sha256": "c6d4de6c42dc058179797ed8f95cdd385cee57a1252fa5f36a484bc6f24f8770",
+      "bytes": 381
+    },
+    "resume_preflight": {
+      "path": "data/outputs/t/nba_resolution_resume_20261026/resume_preflight_20261026T153859714686Z.json",
+      "sha256": "501f64184f78a406d7f1c349cc31360a2500e21d8852e936216c3a1b55db286f",
+      "bytes": 87095
+    },
+    "resume_authority": {
+      "path": "data/outputs/t/nba_resolution_resume_20261026/resumption_authority.json",
+      "sha256": "81522a9d8a648b286d7d6132a6e88873d305294a56ddc8c3ecb3474911022f95",
+      "bytes": 1109
+    },
+    "fit_supervisor": {
+      "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/monitoring/fit_attempt_002/finished.json",
+      "sha256": "9914571ae481c240e5a9f032e2301e500e520c15bc0d431a4b80f400267d6bcc",
+      "bytes": 398
+    },
+    "comparison_supervisor": {
+      "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/monitoring/comparison_attempt_001/finished.json",
+      "sha256": "da74bcfa2f273f2104868af67c2ddbb0fca5e7398621b2657423ab88c6191a69",
+      "bytes": 406
+    },
+    "result_page": {
+      "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/index.html",
+      "sha256": "bb2d69ac335df65bbee051749e9e92c0203e1c4ee061ad94360da421ff11fdec",
+      "bytes": 4638
+    },
+    "preserved_status_page": {
+      "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/status_history/index_before_completed_resume_20261026.html",
+      "sha256": "ddb0cda9567027b4d34f207c7dfdab853094dc81d66d97643ab718dc59b8ca9c",
+      "bytes": 2933
+    },
+    "result_report": {
+      "path": "docs/ball_tracking_nba_resolution_results.md",
+      "sha256": "e291b74e4470ffa8e0787452e1cbc33ebf41338e96f77082236db8791621f96b",
+      "bytes": 12977
+    },
+    "compact_comparison": {
+      "path": "data/outputs/t/nba_resolution_resume_20261026/resolution_compact_summary_20261026T163853194303Z.json",
+      "sha256": "1a162a3cad88c7e5d0322351856f53f525db809794f0be2851cda6a0f41c111b",
+      "bytes": 115261
+    },
+    "fit_validation_table": {
+      "path": "data/outputs/t/nba_resolution_resume_20261026/fit_validation_summary_20261026T162412.json",
+      "sha256": "5cf457eaa085cacbd3b8291476a0c52951c6400ecbc3728ba87af5ac772d1c28",
+      "bytes": 9041
+    }
+  },
+  "evaluation": {
+    "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/nba_comparison_v0_1/evaluation.json",
+    "sha256": "921a7996b3da365b006363fadd33f20ee72426dcb0228d7eb9e4b6855ec471f1",
+    "bytes": 8133616
+  },
+  "review_index": {
+    "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/paired_nba_review_v0_1/attempts/71672e99d9c74d14af46fe857b8f02d7/index.html",
+    "sha256": "888d38bd55a692678a06e10544a2fa73b8f51754fb9cd892d907e4a6687b66e4",
+    "bytes": 3607
+  },
+  "review_summary": {
+    "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/paired_nba_review_v0_1/attempts/71672e99d9c74d14af46fe857b8f02d7/summary.json",
+    "sha256": "8bde66247baae300c9cdfeb282f16db9248e15ead27f9295d42a64550fd9194c",
+    "bytes": 149857
+  },
+  "completed_updates": 7760,
+  "completed_epochs": 5,
+  "new_comparison_model_calls": 13490,
+  "reused_HOU_observations": 4800,
+  "comparison_observations": 18310,
+  "new_labels": 0,
+  "protected_evaluation_authorized": false,
+  "model_adopted": false,
+  "human_trajectory_acceptance": null,
+  "ball_phase_accepted": false,
+  "failed_attempts_preserved": true,
+  "helper_failures": [
+    {
+      "path": "data/outputs/t/nba_resolution_resume_20261026/completed_resolution_audit_20261026T162031017847Z.json",
+      "sha256": "419aada2a8903da9cd7ca936227ba6e3df680da8084d7a859873d79eb70a8070",
+      "bytes": 1711
+    },
+    {
+      "path": "data/outputs/t/nba_resolution_resume_20261026/post_run_preservation_20261026T164440967824Z.json",
+      "sha256": "5f9fa60fffbd01dc47c8febc62c56332d744c7b0a7f5e19fa2fc1cc289f28e85",
+      "bytes": 407
+    }
+  ],
+  "next_training_automatically_authorized": false,
+  "publisher": {
+    "path": "data/outputs/t/nba_resolution_resume_20261026/publish_completed_result.py",
+    "sha256": "fec7448dec5efd0ba03035535eeb09fcf5a1e15449806df13bc08c86b38b9460",
+    "bytes": 10246
+  }
+}

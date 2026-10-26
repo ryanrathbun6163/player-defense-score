@@ -1,5 +1,16 @@
 # Working Agreement
 
+## Authorized resolution resume completed, 2026-10-26
+
+The [bounded resume and comparison](../ball_tracking_nba_resolution_results.md)
+are complete. Ryan's instruction authorized this five-epoch experiment and its
+comparison, not an open-ended training loop. No checkpoint qualifies; retain
+all saved models and prior decisions. The fixed diagnostic paired review does
+not adopt epoch five or replace Ryan's visual judgment. Further substantive
+method/training changes require a concrete next decision; no repeat approval is
+needed for the existing labels or unchanged quality criteria. Protected
+evaluation still requires its separate explicit authorization and frozen method.
+
 ## Explicit post-analysis training resume, 2026-10-26
 
 Ryan said "ok move forward with the training now please" after the local dump

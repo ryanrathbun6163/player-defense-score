@@ -9,17 +9,17 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
-The approved 768x432 experiment was [interrupted by a Windows graphics crash](docs/ball_tracking_nba_resolution_restart_2026-10-26.md)
-on October 26 during initial validation, before any training updates. The valid
-update-zero state and failed attempt are preserved. GPU work is withheld pending
-crash investigation; no automatic retry or quality-criteria change is authorized.
-
-The [NBA error diagnosis](docs/ball_tracking_nba_failure_diagnosis.md) separates
-missing heatmap responses, wrong candidate selection and localization errors.
-An additional original-weight control mostly abstains more and still misses the
-shared 19-frame DET gap. The recommended next experiment is a
-[bounded five-epoch 768x432 fit](docs/ball_tracking_nba_resolution_experiment.md)
-using the existing labels and unchanged quality criteria. It has not started.
+The [768x432 resolution experiment is complete](docs/ball_tracking_nba_resolution_results.md)
+after Ryan explicitly authorized resumption following the October 26 graphics
+crash. All five epochs / 7,760 updates and all five NBA comparisons completed
+cleanly; **no checkpoint passes**. Final-epoch Detroit results improve from
+212/241 to **219/241 correct**, with wrong outputs reduced from five to one,
+but the same 19-frame / 317ms gap remains. Houston wrong outputs increase from
+three to twenty. No model is adopted or additional training started. The prior
+failed attempt, accepted labels, original reviews and frozen recipe remain
+preserved; protected evaluation stays closed and human visual review is pending.
+The successful resumed fit took 40.9 minutes and peaked at 61 C; this does not
+establish a fix for the earlier PC graphics crashes.
 
 Ryan has approved **NBA-first ball tracking**, with the high-school work preserved
 and the same quality criteria. The [saved-model comparison](docs/ball_tracking_nba_first_results.md)

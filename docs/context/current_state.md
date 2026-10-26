@@ -1,5 +1,32 @@
 # Current State
 
+## Resolution experiment completed; no checkpoint qualifies, 2026-10-26
+
+The [completed result](../ball_tracking_nba_resolution_results.md) follows Ryan's
+explicit post-analysis resume instruction. All 7,760 updates / five epochs and
+five complete NBA comparisons finished successfully with unchanged code, labels
+and criteria. Epoch five improves DET from 212/241 to 219/241 correct and reduces
+wrong outputs from five to one, but all five epochs still miss the same 19-frame
+/ 317ms gap. HOU epoch five is 841/882 correct, 20 wrong and 18 certain-hidden
+emissions, versus 844/three/17 for the 512 augmentation control. None qualifies;
+no model is adopted. High-school regressions and historical decisions remain.
+
+Independent fit/NBA audits pass 168,396 / 472,085 checks. The successful fit takes
+40.9 minutes, peak 61 C; comparison takes 13.0 minutes, peak 59 C. Both supervisors
+exit cleanly. The post-run system query finds no new matching graphics/WHEA/power
+events and all three graphics extras stopped. This is a clean workload, not a
+root-cause fix. The failed original attempt, corrupt summary, update-zero state
+and audit-helper correction remain preserved. No more GPU work is running.
+
+The fixed epoch-five paired review covers all eight contexts / 3,662 native
+frames, with final presentation intervals verified. AI inspected all eight
+actual finals plus 24 targeted DET frames. The review is diagnostic only;
+complete human trajectory acceptance remains pending. Next work is a method
+decision based on the remaining
+shared gap and HOU false detections, not automatic extra epochs. No new labels,
+protected evaluation or hardware/settings change is authorized by completion.
+Earlier stopped/proposed entries below retain their historical states.
+
 ## Explicit resolution-training resumption authorized, 2026-10-26
 
 After reviewing the crash-dump findings, Ryan said "ok move forward with the

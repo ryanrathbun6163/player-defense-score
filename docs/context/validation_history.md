@@ -1,5 +1,30 @@
 # Validation History
 
+## Resolution resume and full NBA comparison completed, 2026-10-26
+
+The [result](../ball_tracking_nba_resolution_results.md) passes an independent
+168,396-check fit audit and 472,085-check NBA audit. All 7,760 updates, 15,515
+augmentation draws, 6,660 validation rows, five epoch models, optimizer/BN states
+and recovery receipts are verified. All 40 NBA context receipts / 18,310 outputs
+are checked, including reconstruction of 13,510 saved mean heatmaps and exact
+reuse of 4,800 HOU observations. No checkpoint passes the scientific criteria.
+
+The first fit audit's incorrect optimizer inventory assumption is preserved;
+the corrected independent helper derives 215 registered parameters, 176 with
+Adam moments and 39 unused final fusion parameters, all unchanged as expected.
+No trained artifact or frozen source was modified. The earlier 38 focused
+implementation checks remain applicable; no full suite or duplicate training
+run was performed. Successful supervision: fit 2,454.641s / 61 C / 7,242 MiB;
+NBA comparison 779.391s / 59 C / 2,589 MiB, both clean. Prior scientific crash,
+corrupt summary, preparation/helper failures and original reviews are preserved.
+Numerical/transport audits do not constitute human visual acceptance or establish
+a permanent PC stability fix.
+The paired review renders all eight contexts / 3,662 frames in 347.436s, with
+decoded frame identity and final-interval checks passing. AI inspection covers
+all eight actual finals and 24 targeted DET frames; human acceptance is pending.
+Post-run hashing confirms 141 preflight-bound files and 70 accepted-reference
+bindings unchanged, preserving its first status-enum helper failure separately.
+
 ## Resolution preparation passed; scientific run interrupted, 2026-10-26
 
 [Approved preparation](../ball_tracking_nba_resolution_execution.md) passes 38

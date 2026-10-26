@@ -1,5 +1,18 @@
 # Roadmap
 
+## Current priority: review the completed resolution result and choose a method change
+
+The [approved resolution experiment completed](../ball_tracking_nba_resolution_results.md)
+after Ryan authorized resumption. No checkpoint qualifies. Final-epoch DET
+improves to 219/241 correct and one wrong output, but the common 19-frame gap
+remains and HOU false detections worsen. Complete the human review of the saved
+paired trajectories and use the audited outputs to target the unresolved
+missing-response and false-detection mechanisms before proposing another fit.
+Do not extend training automatically. Keep the same quality criteria, accepted
+labels, high-school evidence, original failures and protected boundary. The
+clean resumed workload does not resolve the hardware/driver root cause.
+Earlier priorities below describe their historical checkpoints.
+
 ## Immediate priority: investigate graphics crash before GPU resumption
 
 The approved resolution experiment stopped during epoch-zero validation with

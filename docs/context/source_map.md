@@ -2,6 +2,18 @@
 
 ## Authority map
 
+The latest [resolution result](../ball_tracking_nba_resolution_results.md)
+records the completed five-epoch fit and all-five NBA comparison. The original
+frozen recipe remains `configs/ball_tracking/proposals/wasb_resolution_v0_1.json`;
+completed outputs are under `data/outputs/ball_tracking/wasb_resolution_v0_1/`.
+Independent fit/NBA receipts are under
+`data/outputs/t/nba_resolution_resume_20261026/`, including the preserved first
+audit failure and corrected passed audit. No model qualifies or is adopted.
+This completion supersedes earlier proposed/stopped operating states below,
+without rewriting their evidence, the failed crash attempt or its unresolved
+underlying cause. Protected evaluation and human visual acceptance remain closed
+and pending respectively.
+
 The [local crash-dump analysis](../ball_tracking_crash_dump_analysis_2026-10-26.md)
 resolves the prior access blocker and identifies the NVIDIA 616.56 module in
 the failed reset path, without establishing the underlying cause. Its ignored

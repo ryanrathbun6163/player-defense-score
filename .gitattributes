@@ -406,3 +406,6 @@ src/ball_tracking/nba_resolution_evaluation.py -text
 tests/test_wasb_resolution.py -text
 tests/test_completion_resolution_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/test_nba_resolution_evaluation.py -text
+# Preserve the byte-bound completed resolution report and evidence ledger.
+docs/ball_tracking_nba_resolution_results.md -text
+configs/ball_tracking/reviews/wasb_resolution_result_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
