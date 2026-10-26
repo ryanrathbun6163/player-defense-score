@@ -1,5 +1,25 @@
 # Validation History
 
+## Matched continuation implementation verified, 2026-10-26
+
+The [authorized continuation study](../ball_tracking_wasb_continuation_sequence.md)
+passes 15 focused CPU checks on the final source: eight runner/recovery tests and
+seven NBA producer/consumer tests, combined in 28.279s. They cover exact parent
+model/Adam/RNG handoff, absolute epochs 6-10, paired first-update equality,
+learning-rate endpoints/history, unsaved replay, completed validation reuse,
+immutable cache reuse and rejection of wrong-arm/epoch/model records. Existing
+producer rows and saved 512/768 controls are consumed independently; CPU synthetic
+inference exercises actual 768 geometry and completed publication readback.
+
+Earlier fixture errors (missing synthetic cache-resolution metadata) and an
+incomplete tool-output capture remain preserved separately; the final combined
+run passes. A CPU-only audit verifies the real parent checkpoint/state/schedule
+and all original source bindings. Both actual recipe preflights pass; their
+legacy runtime-version query is not described as guaranteed CUDA-uninitialized.
+No disposable GPU readiness repeat or full-repository test repeat is needed for
+unchanged geometry/batch/precision. This preparation does not establish a new
+scientific result or human trajectory acceptance.
+
 ## Resolution resume and full NBA comparison completed, 2026-10-26
 
 The [result](../ball_tracking_nba_resolution_results.md) passes an independent

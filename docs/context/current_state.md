@@ -1,5 +1,27 @@
 # Current State
 
+## Matched continuation sequence authorized and prepared, 2026-10-26
+
+Ryan approved moving forward with iterative development after discussing why a
+failed adoption gate does not establish that training is exhausted. The
+[first paired study](../ball_tracking_wasb_continuation_sequence.md) continues
+the same saved 768 epoch-five full state independently through absolute epochs
+6-10. Each arm adds 7,760 updates: constant 0.0001 versus cosine reduction to
+0.00001. Same labels, 768 inputs, schedule, augmentation, optimizer history,
+frozen BN and all quality criteria; no protected evaluation or automatic adoption.
+
+Fifteen focused checks pass on the final additive implementation in 28.279s.
+The parent CPU audit verifies exact model/state agreement, 7,760 inherited
+updates, 215 registered / 176 active Adam parameter states and 213 frozen BN
+buffers. Both actual frozen recipe preflights pass without model/forward work.
+Legacy runtime-version queries may initialize CUDA; the separate parent-state
+audit remains verified CPU-only. Source and test files are additive; prior frozen
+code, labels, failed attempts and reviews are unchanged. Outputs are scoped to
+`data/outputs/ball_tracking/wasb_continuation_v0_1/constant/` and `cosine/`.
+Preparation is complete; consult actual supervised attempt/completion records
+for execution progress. Earlier no-follow-on-fit language below describes the
+old authorization boundary, superseded for this approved sequence.
+
 ## Resolution experiment completed; no checkpoint qualifies, 2026-10-26
 
 The [completed result](../ball_tracking_nba_resolution_results.md) follows Ryan's

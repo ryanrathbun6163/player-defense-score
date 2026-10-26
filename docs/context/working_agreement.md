@@ -1,5 +1,20 @@
 # Working Agreement
 
+## Iterative continuation sequence authorized, 2026-10-26
+
+After discussion of iterative training, Ryan instructed: "Okay chat, move forward.
+Let's finish this sequence and phase and let's make some good progress today,
+okay?" Proceed with the [matched continuation study](../ball_tracking_wasb_continuation_sequence.md)
+and evidence-driven follow-through. The first study compares two five-epoch
+continuations of the same 768 epoch-five full state, constant versus reduced
+learning rate. This supersedes the earlier no-follow-on-fit operating boundary
+for this newly authorized work. A failed adoption gate does not by itself end
+research or justify abandoning training. Keep existing criteria/references,
+preserved history, monitored GPU isolation and the separate protected/human
+acceptance boundaries. Do not require renewed approval for routine steps within
+this sequence; bring substantial changes/cost tradeoffs back as standing policy
+requires. Completing this study is not automatically completing the ball phase.
+
 ## Authorized resolution resume completed, 2026-10-26
 
 The [bounded resume and comparison](../ball_tracking_nba_resolution_results.md)

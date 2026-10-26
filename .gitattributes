@@ -409,3 +409,10 @@ tests/test_nba_resolution_evaluation.py -text
 # Preserve the byte-bound completed resolution report and evidence ledger.
 docs/ball_tracking_nba_resolution_results.md -text
 configs/ball_tracking/reviews/wasb_resolution_result_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Freeze the additive matched continuation recipe, implementation and checks.
+docs/ball_tracking_wasb_continuation_sequence.md -text
+configs/ball_tracking/proposals/wasb_continuation_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/wasb_continuation_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/wasb_continuation_evaluation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_wasb_continuation_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_wasb_continuation_evaluation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
