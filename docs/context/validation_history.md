@@ -1,5 +1,39 @@
 # Validation History
 
+## Successor training assessment and fixed TAPNext++ pilot, 2026-10-25
+
+The approved successor scope adds separate assessment, adapter, pilot, scoring,
+rendering and owned-process supervision modules. The
+[validation mapping](../../data/outputs/t/successor_validation_receipt_20261026/validation_v2.json)
+records **38 passing focused checks** (10 assessment, 4 supervision, 11 adapter,
+5 pilot transport and 8 evaluation/rendering). It separates known test-time
+hashes from current hashes and does not retroactively attribute later edits to
+earlier tests. Actual preflight/execution checks cover the later decision guards.
+All 25 frozen primary dependencies still match; the full suite was not rerun.
+
+The training-only assessment completed 3,277 native triplet calls across 3,329
+frames. Its independent audit passes **30,322 checks**, with zero discrepancies:
+2,931/2,941 correct, ten wrong, zero missing, three certain-hidden emissions,
+and all 130 eligible NFHS training frames correct. No validation pixels,
+protected pixels, optimizer updates or model-state mutations occurred.
+The conditional duration continuation was skipped with a bound decision.
+
+The first checkpoint download timed out and remains preserved. A new attempt
+verified all 2,532,283,010 bytes and the pinned digest. Compatibility attempt 001
+failed before weight loading when a package-integrity guard rejected a legitimate
+namespace package. The correction has an actual-import regression check.
+Attempt 002 completed four training-frame model calls and passed an independent
+coordinate/seed/timing audit without scoring or tuning those observations.
+
+The fixed pilot completed 3,947 recurrent model calls plus 28 pre-seed missing
+frames, sealing all 3,975 permitted outputs before scoring. Its independent
+audit passes **124,853 checks**, with zero discrepancies; all original baseline
+counts and frame records reproduce. TAP scores 356/1,117 eligible curated
+frames correctly versus 924/1,117 for WASB and fails 12/13 guarded cohorts.
+This method is rejected. Full results, GPU telemetry, retained failures and
+delivery evidence are in the [successor report](../ball_tracking_successor_results.md).
+No protected evaluation or new human trajectory acceptance occurred.
+
 ## Completed primary fit and actual permitted comparison, 2026-10-25
 
 After Ryan explicitly lifted the pause, the same frozen run resumed from update

@@ -1,5 +1,36 @@
 # Current State
 
+## Approved successor comparison completed; TAP pilot rejected, 2026-10-25
+
+Ryan approved the critical review's concrete execution scope. The
+[successor result report](../ball_tracking_successor_results.md) records a
+training-only epoch-five assessment and the fixed automatically seeded
+TAPNext++ 512 comparison. The training model matches **2,931/2,941** eligible
+training frames, including **130/130 NFHS**; there are ten wrong, zero missing
+and three certain-hidden emissions. The conditional extra five epochs were
+deprioritized on that evidence, with no optimizer updates or parent changes.
+
+TAP completed all **3,975 permitted frames** in eight blocks, using 3,947 model
+calls and 28 pre-seed missing frames. It fails **12/13 guarded cohorts**.
+P001/P002/P003 correct counts are **111/355, 145/360 and 100/402**, versus the
+retained baseline's 300/355, 291/360 and 333/402. It gains 21 matches but loses
+589. Certain-hidden emissions increase from nine to fourteen overall.
+The independent actual-record audit passes 124,853 checks with zero discrepancies.
+This fixed policy is rejected; the retained WASB baseline still fails completion.
+Do not turn this failure into approval for reseeding, fusion, HLSM or another fit.
+
+The pilot's monitored run finished in 539.734 seconds, peaking at **64 C** and
+5,009 MiB, without a stop condition, device error or owned-process cleanup issue.
+The three graphics extras remain stopped; the post-run Windows event query
+returned no matching graphics/WHEA/unexpected-power events. This is evidence
+from these workloads, not a diagnosis that prior blackouts are resolved.
+No GPU job remains. All original frozen files, labels, reviews and recovery
+history are preserved. The 225 protected positions remain closed and no phase
+pass or new human trajectory acceptance is claimed.
+An [optional 126-call training-only seed diagnostic](../ball_tracking_seed_sensitivity_proposal.md)
+is concrete but **not approved or run**. It uses reference centers in a separate
+diagnostic arm and cannot become automatic tracking or phase-acceptance evidence.
+
 ## Critical next-step review; no successor fit started, 2026-10-25
 
 Ryan requested a critical review before further execution. The
