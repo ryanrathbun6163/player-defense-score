@@ -9,14 +9,18 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
-Ryan has authorized an [iterative continuation sequence](docs/ball_tracking_wasb_continuation_sequence.md).
-The first paired study continues the saved 768 epoch-five model for five more
-epochs at either the existing learning rate or a cosine-reduced rate, preserving
-the same parent weights, optimizer history, examples and quality criteria.
-Fifteen focused checks and both actual recipe preflights pass. Existing labels,
-failed attempts, original reviews and protected-evaluation boundaries remain.
-Preparation does not claim new training results; the completed parent result is
-recorded below.
+The [matched continuation study is complete](docs/ball_tracking_wasb_continuation_results.md):
+two five-epoch arms add 15,520 optimizer updates in total, with all ten NBA
+comparisons and both targeted diagnostics finished. **No checkpoint passes.**
+DET remains at best 219/241 correct (90.9%), with the same 19-frame gap; HOU
+false detections remain. The diagnosed current model fits 2,937/2,941 training
+positions (99.86%), pointing toward a controlled generalization experiment
+rather than more unchanged epochs. Nine source-uncertain recovery events also
+remain inconclusive independently of training. Existing labels, quality criteria,
+all original evidence and protected-evaluation boundaries are unchanged.
+Eight paired videos are ready for human review; no model is adopted. Peak
+training temperature was 62 C, with no new matching system errors observed.
+The successful workloads do not establish a cure for the prior graphics crash.
 
 The [768x432 resolution experiment is complete](docs/ball_tracking_nba_resolution_results.md)
 after Ryan explicitly authorized resumption following the October 26 graphics

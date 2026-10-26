@@ -1,5 +1,28 @@
 # Validation History
 
+## Matched continuation results and targeted diagnostics verified, 2026-10-26
+
+Both completed fits pass independent CPU audits: 385,096 constant-arm checks
+and 384,910 cosine-arm checks. Full NBA comparisons pass 521,550 and 521,536
+checks respectively, reconstructing saved components, reused HOU outputs,
+controls and native timing gates. The paired summary passes 92,079 checks.
+All ten checkpoints fail the unchanged adoption criteria; numerical verification
+does not mean scientific success. See the [result](../ball_tracking_wasb_continuation_results.md).
+
+The actual current-model training-fit diagnostic completes 3,277 forwards with
+zero fitting and passes 36,780 independent CPU checks of its emitted records,
+geometry and loss aggregation. Raw loss terms/components remain producer
+evidence because logits/means are not retained. The eight-forward temporal
+sensitivity probe passes 234 recorded CPU checks, independently reconstructing
+inputs and metrics from all 24 saved channels. Neither result changes selection.
+
+The first diagnostic guard rejection occurs before model execution. Additive
+guard code handles the Windows venv redirector; its real CPU process-chain
+probe rejects four mismatched ownership cases. Earlier versions and failures
+are preserved. The prior 15 focused checks cover the frozen continuation code;
+they are not relabeled as tests of later diagnostic helpers. Complete paired
+media timing checks and AI final-frame inspection do not replace human review.
+
 ## Matched continuation implementation verified, 2026-10-26
 
 The [authorized continuation study](../ball_tracking_wasb_continuation_sequence.md)

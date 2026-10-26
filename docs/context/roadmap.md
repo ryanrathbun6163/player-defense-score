@@ -1,5 +1,18 @@
 # Roadmap
 
+## Current priority: generalization pilot after completed continuation study
+
+Both [five-epoch continuations and diagnostics are complete](../ball_tracking_wasb_continuation_results.md).
+None passes. Current training fit is 99.86%, while DET remains 219/241 with a
+19-frame gap. Prepare the [bounded spatial-augmentation proposal](../ball_tracking_wasb_spatial_augmentation_proposal.md):
+two epochs from the same parent, with already completed constant-arm controls,
+existing labels and one new augmentation factor. Geometry and transformed
+examples must be verified before a new recipe is frozen; no such fit has run.
+Complete human review of the paired trajectories and preserve the nine
+source-uncertain recovery events as a separate acceptance limitation. No
+criteria changes or protected evaluation follow from this diagnosis. Earlier
+priorities below are historical; neither training nor all research is exhausted.
+
 ## Current priority: review the completed resolution result and choose a method change
 
 The [approved resolution experiment completed](../ball_tracking_nba_resolution_results.md)

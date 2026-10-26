@@ -1,5 +1,32 @@
 # Current State
 
+## Matched continuations and diagnosis complete; phase not passed, 2026-10-26
+
+The [completed sequence](../ball_tracking_wasb_continuation_results.md) runs both
+five-epoch continuations of the same 768 epoch-five state, adding 7,760 updates
+per arm. All ten NBA comparisons complete and pass independent audits. None
+improves DET correct coverage beyond 219/241; all miss the same 19-frame gap,
+and HOU certain-hidden emissions persist. Cosine epoch nine is an explicit
+post-comparison diagnostic choice, not adoption; its HOU is 842/882 correct,
+19 wrong and 19 certain-hidden emissions, DET 219/241 and SAC 270/270.
+
+Current-model training-fit diagnosis finds 2,937/2,941 correct (99.864%), with
+three wrong, one missing and two certain-hidden emissions. The eight-call
+temporal-input sensitivity probe leaves all three sampled gap responses weak.
+These findings favor a controlled generalization intervention over additional
+unchanged epochs; they do not establish convergence or an architecture ceiling.
+Nine reference-uncertain recovery events are structurally inconclusive under
+the frozen scorer even with correct predictions. Training cannot clear that
+separate evidence limitation. No reference certainty or quality rule changed.
+
+The complete paired eight-video review and actual final frames are preserved;
+AI inspection is recorded separately and human acceptance remains pending.
+All GPU workloads exit cleanly, peak training temperature 62 C. A final Windows
+query finds no new matching graphics/WHEA/power errors; prior crash cause is
+unresolved. The failed pre-model diagnostic guard attempt and its additive
+Windows redirector correction remain preserved. Protected evaluation is closed.
+Earlier preparation and authorization states below are historical.
+
 ## Matched continuation sequence authorized and prepared, 2026-10-26
 
 Ryan approved moving forward with iterative development after discussing why a

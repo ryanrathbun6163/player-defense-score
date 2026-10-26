@@ -2,6 +2,18 @@
 
 ## Authority map
 
+The latest [continuation result](../ball_tracking_wasb_continuation_results.md)
+records both completed five-epoch arms, ten comparisons, current-model training
+fit and the eight-call temporal probe. The unchanged recipe is
+`configs/ball_tracking/proposals/wasb_continuation_v0_1.json`; actual outputs are
+under `data/outputs/ball_tracking/wasb_continuation_v0_1/`. Independent audits,
+paired summary, source-uncertainty recovery audit, AI inspection and preserved
+diagnostic guard failures are under `data/outputs/t/wasb_continuation_20261026/`.
+The committed result ledger is
+`configs/ball_tracking/reviews/wasb_continuation_result_v0_1.json`.
+No model passes or is adopted. Protected evaluation remains closed. Historical
+proposed, paused and prepared states below do not override these completed runs.
+
 The latest [resolution result](../ball_tracking_nba_resolution_results.md)
 records the completed five-epoch fit and all-five NBA comparison. The original
 frozen recipe remains `configs/ball_tracking/proposals/wasb_resolution_v0_1.json`;

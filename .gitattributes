@@ -416,3 +416,25 @@ src/ball_tracking/wasb_continuation_training.py -text whitespace=blank-at-eol,bl
 src/ball_tracking/wasb_continuation_evaluation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/test_wasb_continuation_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/test_wasb_continuation_evaluation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve executed continuation diagnostics, failed source versions and result bindings.
+src/ball_tracking/continuation_owned_guard.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/continuation_owned_guard_probe.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/continuation_temporal_diagnostic.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/continuation_temporal_diagnostic_v02.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/continuation_training_fit_diagnostic.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/continuation_training_fit_diagnostic_v02.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/middle_output_sensitivity_launchable_v0_1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/middle_output_sensitivity_launchable_v02.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/current768_training_fit.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/current768_training_fit_v02.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/saved_det_gap_analysis.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt01/guard_source.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt02/guard_source.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt03/guard_source.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt04/guard_source.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt05/guard_source.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt06/guard_source.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/ball_tracking_wasb_continuation_results.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/ball_tracking_wasb_spatial_augmentation_proposal.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/ball_tracking/reviews/wasb_continuation_result_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
