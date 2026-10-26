@@ -2,6 +2,13 @@
 
 ## Authority map
 
+The [local crash-dump analysis](../ball_tracking_crash_dump_analysis_2026-10-26.md)
+resolves the prior access blocker and identifies the NVIDIA 616.56 module in
+the failed reset path, without establishing the underlying cause. Its ignored
+`crash_dump_analysis_v0_1.json` receipt binds the dump, debugger logs and driver
+metadata under `data/outputs/t/nba_resolution_restart_20261026/`. GPU work remains
+stopped; the original inaccessible-dump observations below are historical.
+
 The latest [resolution crash/interruption record](../ball_tracking_nba_resolution_restart_2026-10-26.md)
 supersedes the proposed-only operating state. The approved preparation and
 frozen recipe are committed at `3605648`; its first fit attempt made zero

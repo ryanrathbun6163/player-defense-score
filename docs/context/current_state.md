@@ -1,5 +1,22 @@
 # Current State
 
+## Crash dump analyzed locally; root cause remains unresolved, 2026-10-26
+
+Ryan copied the protected dump, resolving the access blocker. Microsoft WinDbg
+was installed and its local CPU analysis completed. The
+[dump report](../ball_tracking_crash_dump_analysis_2026-10-26.md) identifies
+`nvlddmkm.sys` / NVIDIA 616.56 in the failed 0x116 graphics-reset path. The local
+driver is validly signed and its PE metadata matches the dump. Snapshot time
+is 08:01:03.311 Phoenix; parameter three is generic insufficient resources,
+not proof of RAM/VRAM exhaustion. Triage/private-symbol limitations remain.
+
+The fresh query corroborates the October 23 event; the earlier retained history
+already documented 17 such receipts before this experiment. It does not prove
+one root cause or a specific driver/hardware defect. The local access/analysis
+step is complete; stability is still unresolved. No driver/hardware settings
+changed, stress test or GPU retry occurred. Keep the zero-update experiment
+stopped pending a concrete stability/recovery decision with Ryan.
+
 ## Approved resolution run interrupted before training, 2026-10-26
 
 Ryan approved the [five-epoch 768x432 execution](../ball_tracking_nba_resolution_execution.md).

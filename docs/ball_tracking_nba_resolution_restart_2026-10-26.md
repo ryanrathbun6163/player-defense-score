@@ -109,3 +109,12 @@ Protected evaluation remains closed.
 All earlier model results, accepted labels, high-school work and historical
 checkpoint-recovery records retain their original status. This interruption
 provides no new evidence that the resolution method passes or fails ball quality.
+
+## Subsequent local dump analysis
+
+Ryan subsequently supplied a local copy through administrator PowerShell.
+The [completed WinDbg analysis](ball_tracking_crash_dump_analysis_2026-10-26.md)
+resolves the access blocker and identifies NVIDIA `nvlddmkm.sys` / version
+616.56 in the failed graphics-reset path. This does not establish the underlying
+cause or permit a GPU retry. The original access-denied observations and failed
+attempt above remain preserved as recorded at that time.
