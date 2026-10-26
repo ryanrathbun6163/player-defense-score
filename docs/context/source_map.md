@@ -2,7 +2,14 @@
 
 ## Authority map
 
-The October 25 P003 diagnosis entry is current. Earlier preparation, recovery
+The October 25 [NBA-first result](../ball_tracking_nba_first_results.md),
+[approved comparison scope](../ball_tracking_nba_first_evaluation.md) and
+[frozen model manifest](../../configs/ball_tracking/proposals/nba_first_saved_models_v0_1.json)
+are current. The comparison evaluates twelve existing models, makes no training
+updates and claims no pass. Its generated evidence is under
+`data/outputs/ball_tracking/nba_first_v0_1/`; the independent audit is
+`data/outputs/t/nba_first_inventory_20261026/final_audit_20261026T023210817446Z.json`.
+Earlier preparation, recovery
 and reference-publication entries retain the states recorded at those checkpoints;
 their pending or paused wording does not supersede the later completion.
 

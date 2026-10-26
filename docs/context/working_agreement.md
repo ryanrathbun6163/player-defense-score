@@ -1,5 +1,17 @@
 # Working Agreement
 
+## NBA-first evaluation instruction, 2026-10-25
+
+Ryan said: "Ok chat, let's move forward with NBA-first. Keep the high school work
+and the same quality criteria, and evaluate our saved models on the existing NBA
+labels before we do more training." Execute the
+[saved-model comparison](../ball_tracking_nba_first_evaluation.md) within that
+scope, reusing existing predictions and labels, monitoring any GPU inference,
+and retaining all original high-school evidence and failed decisions. Do not
+request the same scope or numerical-quality approval again. This instruction
+does not authorize new training, new labels or protected evaluation. Present
+concrete new trajectory reviews for Ryan's visual judgment.
+
 ## Current standing policy: Ryan's 2026-10-08 instruction
 
 Ryan authorized a simpler, practical development workflow going forward. Complete routine path, formatting, report-limit, tooling, and implementation fixes without stopping for a recovery proposal or a new approval ceremony. Read the development data and compute the results needed to answer the current question, including recovery of already computed results after a delivery failure. Use the necessary computer resources safely, and integrate completed increments into the active project.

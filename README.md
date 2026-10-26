@@ -9,6 +9,15 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
+Ryan has approved **NBA-first ball tracking**, with the high-school work preserved
+and the same quality criteria. The [saved-model comparison](docs/ball_tracking_nba_first_results.md)
+evaluates twelve existing WASB models without new training or labels. None passes.
+Augmentation epoch five has the highest target Spurs-Pistons correct count,
+**212/241 (88.0%) versus 209/241**, with five rather than eight wrong outputs,
+but long gaps and visibility errors remain. Its complete NBA comparison is for
+human review, not adoption. Protected evaluation stays closed. The earlier
+high-school and training milestones below retain their historical outcomes.
+
 The latest [five-epoch WASB augmentation experiment](docs/ball_tracking_wasb_augmentation_results.md)
 completed on **2026-10-25** using existing labels and unchanged quality rules.
 All 7,760 updates completed, but no trained checkpoint qualifies. Epoch three

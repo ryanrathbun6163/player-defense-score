@@ -379,3 +379,13 @@ configs/ball_tracking/proposals/wasb_p003_validation_probe_v0_1.json -text
 src/ball_tracking/wasb_validation_probe.py -text
 src/ball_tracking/completion_evaluation.py -text
 tests/test_wasb_validation_probe.py -text
+
+# Preserve the NBA-first comparison's frozen scope and tested implementation bytes.
+configs/ball_tracking/proposals/nba_first_saved_models_v0_1.json -text
+docs/ball_tracking_nba_first_evaluation.md -text
+src/ball_tracking/nba_first_evaluation.py -text
+src/ball_tracking/nba_first_validation.py -text
+src/ball_tracking/nba_first_review.py -text
+tests/test_nba_first_evaluation.py -text
+tests/test_nba_first_validation.py -text
+tests/test_nba_first_review.py -text

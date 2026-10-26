@@ -1,5 +1,29 @@
 # Current State
 
+## NBA-first saved-model comparison completed, 2026-10-25
+
+Ryan explicitly authorized NBA-first, preserving high-school work and unchanged
+quality criteria, and evaluating saved models before more training. The
+[result](../ball_tracking_nba_first_results.md) compares twelve WASB checkpoints
+on six HOU-OKC validation episodes plus the original SAC/DET contexts. None
+passes. Augmentation epoch five has the highest target DET count: 212/241
+correct, five wrong and 24 missing, versus baseline 209/eight/24. Its same 317 ms
+gap remains and probable-hidden emissions increase from 13 to 20; HOU e01 worsens
+to a 267 ms gap. It is chosen for complete eight-context review, not adoption.
+
+The comparison reuses 15,964 saved observations and makes 27,928 monitored
+forward calls with zero optimizer updates/new labels. All 43,944 outputs pass
+an independent 705,822-check audit; 34 focused checks pass. Supervised elapsed
+725.078 s, peak 58 C / 107.94 W / 2,611 MiB, clean owned-process exit. New human visual
+review remains pending. Original frozen code, accepted labels, failed decisions
+and checkpoint history remain intact. High-school results are secondary
+regression evidence prospectively; the old selection outcomes remain unchanged.
+Protected evaluation remains closed. No further training follows automatically.
+The [results/review page](../../data/outputs/ball_tracking/nba_first_v0_1/index.html)
+delivers all eight comparisons: 3,662 native frames/finals verified, 358.031 s
+rendering, AI inspection of all eight final images plus two large-error frames.
+Those delivery checks do not replace Ryan's complete trajectory review.
+
 ## P003 occlusion-exit diagnosis completed, 2026-10-25
 
 Ryan authorized diagnosing the persistent miss. The

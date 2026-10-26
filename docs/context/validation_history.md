@@ -1,5 +1,26 @@
 # Validation History
 
+## NBA-first saved-model comparison, 2026-10-25
+
+The [comparison](../ball_tracking_nba_first_results.md) passes 34 focused checks:
+17 new analyzer/inference/review checks plus 17 existing scoring checks. Actual
+saved producer records are consumed; native transport, 12 distinct weights,
+wrong-model reuse, incomplete PNG identity, failed inference, cache corruption,
+boundary censoring and actual encoded final-frame timing are covered. An initial
+synthetic test's Windows mmap cleanup error was corrected before real execution.
+
+The first scientific attempt completes 27,928 calls with 15,964 observations
+reused, 43,944 total outputs / 96 model-context receipts, no fitting or new labels.
+The independent 705,822-check audit reconstructs all 27,980 new mean maps and
+verifies every reused record, native point/PTS join, geometric/hidden counts,
+full published summaries, receipt links, aggregates and frozen input bindings.
+All pass. GPU supervision lasts 725.078 s, peak 58 C, with 353 samples and clean
+owned-process cleanup. No protected content is opened; no model passes the
+unchanged quality criteria or gains human acceptance from these checks.
+The first real review render completes in 358.031 s. All 3,662 native frames,
+encoded identities and final display intervals pass. AI inspects all eight
+actual finals and two specific geometric regressions; human review stays pending.
+
 ## P003 read-only validation diagnosis, 2026-10-25
 
 Seven focused CPU probe checks pass on frozen source SHA

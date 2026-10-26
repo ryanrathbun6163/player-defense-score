@@ -1,0 +1,1308 @@
+{
+  "schema_version": "nba_first_saved_models/v0.1",
+  "status": "frozen_before_execution",
+  "user_authority": "Ok chat, let's move forward with NBA-first. Keep the high school work and the same quality criteria, and evaluate our saved models on the existing NBA labels before we do more training.",
+  "plan": {
+    "path": "docs/ball_tracking_nba_first_evaluation.md",
+    "sha256": "fa16731c6a7d39f257e07f1db83f680739244ec74a60953a4fb2ac543534b4b4",
+    "bytes": 5492
+  },
+  "primary_recipe": {
+    "path": "configs/ball_tracking/completion_campaign/primary_recipe_v0_1.json",
+    "sha256": "d8f53baf72412db535e989b4086e8fb23e02f79ef058829539d1bbe9a486e83c",
+    "bytes": 9431
+  },
+  "training_package": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/frozen_primary_package_v0_1/package.json",
+    "sha256": "5615933dfbb43728a4c67a6c94665157f349f2562ad50bd2c9be02dc86181c9f",
+    "bytes": 8885398
+  },
+  "comparison_package": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/selected_comparison_v0_1/package.json",
+    "sha256": "82d7e6cf8e43e5a9677995d7283e7990c7e3b538b5f469f2159fecd2c360c3f6",
+    "bytes": 14422474
+  },
+  "models": [
+    {
+      "name": "retained_baseline",
+      "checkpoint": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+        "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+        "bytes": 6084071
+      },
+      "provenance": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/completed.json",
+        "sha256": "9236802ac812c86ddc783bf1f3fbd028f766d2dc4e320008fbd83ed7c3e9bd64",
+        "bytes": 4273
+      },
+      "training_exposure": {
+        "nba_gradient_games": [],
+        "nfhs_replay": true,
+        "hou_okc": "checkpoint_selection_development",
+        "sas_det": "excluded_development",
+        "sac_mem": "excluded_from_this_model_fitting"
+      },
+      "reuse": {
+        "hou-vs-okc-0022400879_e01": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_000.json",
+            "sha256": "da3bbb811687f1a77aafbdff1c8ea32542038866a90c1eb86c0d2a13938540ba",
+            "bytes": 2200846
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+            "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_000.json",
+            "sha256": "da3bbb811687f1a77aafbdff1c8ea32542038866a90c1eb86c0d2a13938540ba",
+            "bytes": 2200846
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+            "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_000.json",
+            "sha256": "da3bbb811687f1a77aafbdff1c8ea32542038866a90c1eb86c0d2a13938540ba",
+            "bytes": 2200846
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+            "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_000.json",
+            "sha256": "da3bbb811687f1a77aafbdff1c8ea32542038866a90c1eb86c0d2a13938540ba",
+            "bytes": 2200846
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+            "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_000.json",
+            "sha256": "da3bbb811687f1a77aafbdff1c8ea32542038866a90c1eb86c0d2a13938540ba",
+            "bytes": 2200846
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+            "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_000.json",
+            "sha256": "da3bbb811687f1a77aafbdff1c8ea32542038866a90c1eb86c0d2a13938540ba",
+            "bytes": 2200846
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+            "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+            "bytes": 6084071
+          }
+        },
+        "sac_mem_q1_c01:540-2010": {
+          "kind": "retained_historical",
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+            "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+            "bytes": 6084071
+          }
+        },
+        "sas_det_q1_c02:10668-11898": {
+          "kind": "retained_historical",
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+            "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+            "bytes": 6084071
+          }
+        }
+      }
+    },
+    {
+      "name": "primary_epoch1",
+      "checkpoint": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_001.pth",
+        "sha256": "bb9b94e92e8f08c6fc49171f3639e1f3956214de3b70a0d5dff4c1fec9f81eb8",
+        "bytes": 6084071
+      },
+      "provenance": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/completed.json",
+        "sha256": "9236802ac812c86ddc783bf1f3fbd028f766d2dc4e320008fbd83ed7c3e9bd64",
+        "bytes": 4273
+      },
+      "training_exposure": {
+        "nba_gradient_games": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "nfhs_replay": true,
+        "hou_okc": "checkpoint_selection_development",
+        "sas_det": "excluded_development",
+        "sac_mem": "historical_training"
+      },
+      "reuse": {
+        "hou-vs-okc-0022400879_e01": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_001.json",
+            "sha256": "1906750183fb6b693e275223967dd701669bc94b4df85991167414897fe4d988",
+            "bytes": 2129551
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_001.pth",
+            "sha256": "bb9b94e92e8f08c6fc49171f3639e1f3956214de3b70a0d5dff4c1fec9f81eb8",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_001.json",
+            "sha256": "1906750183fb6b693e275223967dd701669bc94b4df85991167414897fe4d988",
+            "bytes": 2129551
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_001.pth",
+            "sha256": "bb9b94e92e8f08c6fc49171f3639e1f3956214de3b70a0d5dff4c1fec9f81eb8",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_001.json",
+            "sha256": "1906750183fb6b693e275223967dd701669bc94b4df85991167414897fe4d988",
+            "bytes": 2129551
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_001.pth",
+            "sha256": "bb9b94e92e8f08c6fc49171f3639e1f3956214de3b70a0d5dff4c1fec9f81eb8",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_001.json",
+            "sha256": "1906750183fb6b693e275223967dd701669bc94b4df85991167414897fe4d988",
+            "bytes": 2129551
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_001.pth",
+            "sha256": "bb9b94e92e8f08c6fc49171f3639e1f3956214de3b70a0d5dff4c1fec9f81eb8",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_001.json",
+            "sha256": "1906750183fb6b693e275223967dd701669bc94b4df85991167414897fe4d988",
+            "bytes": 2129551
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_001.pth",
+            "sha256": "bb9b94e92e8f08c6fc49171f3639e1f3956214de3b70a0d5dff4c1fec9f81eb8",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_001.json",
+            "sha256": "1906750183fb6b693e275223967dd701669bc94b4df85991167414897fe4d988",
+            "bytes": 2129551
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_001.pth",
+            "sha256": "bb9b94e92e8f08c6fc49171f3639e1f3956214de3b70a0d5dff4c1fec9f81eb8",
+            "bytes": 6084071
+          }
+        }
+      }
+    },
+    {
+      "name": "primary_epoch2",
+      "checkpoint": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_002.pth",
+        "sha256": "64bc55a895cff8f35fed45f333bed55b9ffe5bf25f783dd9b47b2b040780a5db",
+        "bytes": 6084071
+      },
+      "provenance": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/completed.json",
+        "sha256": "9236802ac812c86ddc783bf1f3fbd028f766d2dc4e320008fbd83ed7c3e9bd64",
+        "bytes": 4273
+      },
+      "training_exposure": {
+        "nba_gradient_games": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "nfhs_replay": true,
+        "hou_okc": "checkpoint_selection_development",
+        "sas_det": "excluded_development",
+        "sac_mem": "historical_training"
+      },
+      "reuse": {
+        "hou-vs-okc-0022400879_e01": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_002.json",
+            "sha256": "550156f0859492e802dd113637d3f5ce6a8c92b7e8eb23f9f13c51aeb17c5a32",
+            "bytes": 2087679
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_002.pth",
+            "sha256": "64bc55a895cff8f35fed45f333bed55b9ffe5bf25f783dd9b47b2b040780a5db",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_002.json",
+            "sha256": "550156f0859492e802dd113637d3f5ce6a8c92b7e8eb23f9f13c51aeb17c5a32",
+            "bytes": 2087679
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_002.pth",
+            "sha256": "64bc55a895cff8f35fed45f333bed55b9ffe5bf25f783dd9b47b2b040780a5db",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_002.json",
+            "sha256": "550156f0859492e802dd113637d3f5ce6a8c92b7e8eb23f9f13c51aeb17c5a32",
+            "bytes": 2087679
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_002.pth",
+            "sha256": "64bc55a895cff8f35fed45f333bed55b9ffe5bf25f783dd9b47b2b040780a5db",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_002.json",
+            "sha256": "550156f0859492e802dd113637d3f5ce6a8c92b7e8eb23f9f13c51aeb17c5a32",
+            "bytes": 2087679
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_002.pth",
+            "sha256": "64bc55a895cff8f35fed45f333bed55b9ffe5bf25f783dd9b47b2b040780a5db",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_002.json",
+            "sha256": "550156f0859492e802dd113637d3f5ce6a8c92b7e8eb23f9f13c51aeb17c5a32",
+            "bytes": 2087679
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_002.pth",
+            "sha256": "64bc55a895cff8f35fed45f333bed55b9ffe5bf25f783dd9b47b2b040780a5db",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_002.json",
+            "sha256": "550156f0859492e802dd113637d3f5ce6a8c92b7e8eb23f9f13c51aeb17c5a32",
+            "bytes": 2087679
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_002.pth",
+            "sha256": "64bc55a895cff8f35fed45f333bed55b9ffe5bf25f783dd9b47b2b040780a5db",
+            "bytes": 6084071
+          }
+        }
+      }
+    },
+    {
+      "name": "primary_epoch3",
+      "checkpoint": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_003.pth",
+        "sha256": "23986e539729b9b75a179c1eb2c2df5daf98331234789c0362acdcdc9d12df14",
+        "bytes": 6084071
+      },
+      "provenance": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/completed.json",
+        "sha256": "9236802ac812c86ddc783bf1f3fbd028f766d2dc4e320008fbd83ed7c3e9bd64",
+        "bytes": 4273
+      },
+      "training_exposure": {
+        "nba_gradient_games": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "nfhs_replay": true,
+        "hou_okc": "checkpoint_selection_development",
+        "sas_det": "excluded_development",
+        "sac_mem": "historical_training"
+      },
+      "reuse": {
+        "hou-vs-okc-0022400879_e01": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_003.json",
+            "sha256": "5e76616fa23c58bf2c3c0c0e929844cff3b616de9196dd31823a4c19c69890e9",
+            "bytes": 2059400
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_003.pth",
+            "sha256": "23986e539729b9b75a179c1eb2c2df5daf98331234789c0362acdcdc9d12df14",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_003.json",
+            "sha256": "5e76616fa23c58bf2c3c0c0e929844cff3b616de9196dd31823a4c19c69890e9",
+            "bytes": 2059400
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_003.pth",
+            "sha256": "23986e539729b9b75a179c1eb2c2df5daf98331234789c0362acdcdc9d12df14",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_003.json",
+            "sha256": "5e76616fa23c58bf2c3c0c0e929844cff3b616de9196dd31823a4c19c69890e9",
+            "bytes": 2059400
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_003.pth",
+            "sha256": "23986e539729b9b75a179c1eb2c2df5daf98331234789c0362acdcdc9d12df14",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_003.json",
+            "sha256": "5e76616fa23c58bf2c3c0c0e929844cff3b616de9196dd31823a4c19c69890e9",
+            "bytes": 2059400
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_003.pth",
+            "sha256": "23986e539729b9b75a179c1eb2c2df5daf98331234789c0362acdcdc9d12df14",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_003.json",
+            "sha256": "5e76616fa23c58bf2c3c0c0e929844cff3b616de9196dd31823a4c19c69890e9",
+            "bytes": 2059400
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_003.pth",
+            "sha256": "23986e539729b9b75a179c1eb2c2df5daf98331234789c0362acdcdc9d12df14",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_003.json",
+            "sha256": "5e76616fa23c58bf2c3c0c0e929844cff3b616de9196dd31823a4c19c69890e9",
+            "bytes": 2059400
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_003.pth",
+            "sha256": "23986e539729b9b75a179c1eb2c2df5daf98331234789c0362acdcdc9d12df14",
+            "bytes": 6084071
+          }
+        }
+      }
+    },
+    {
+      "name": "primary_epoch4",
+      "checkpoint": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_004.pth",
+        "sha256": "5a204a61dfee6560794c505b7c7f7d9e56d559cc0b90dc70a2a4de790f080968",
+        "bytes": 6084071
+      },
+      "provenance": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/completed.json",
+        "sha256": "9236802ac812c86ddc783bf1f3fbd028f766d2dc4e320008fbd83ed7c3e9bd64",
+        "bytes": 4273
+      },
+      "training_exposure": {
+        "nba_gradient_games": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "nfhs_replay": true,
+        "hou_okc": "checkpoint_selection_development",
+        "sas_det": "excluded_development",
+        "sac_mem": "historical_training"
+      },
+      "reuse": {
+        "hou-vs-okc-0022400879_e01": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_004.json",
+            "sha256": "9c5c3e75852abc63a34a64a6070a3cc4dab7733b0944a08bd5766c0c1f5328da",
+            "bytes": 2078519
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_004.pth",
+            "sha256": "5a204a61dfee6560794c505b7c7f7d9e56d559cc0b90dc70a2a4de790f080968",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_004.json",
+            "sha256": "9c5c3e75852abc63a34a64a6070a3cc4dab7733b0944a08bd5766c0c1f5328da",
+            "bytes": 2078519
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_004.pth",
+            "sha256": "5a204a61dfee6560794c505b7c7f7d9e56d559cc0b90dc70a2a4de790f080968",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_004.json",
+            "sha256": "9c5c3e75852abc63a34a64a6070a3cc4dab7733b0944a08bd5766c0c1f5328da",
+            "bytes": 2078519
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_004.pth",
+            "sha256": "5a204a61dfee6560794c505b7c7f7d9e56d559cc0b90dc70a2a4de790f080968",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_004.json",
+            "sha256": "9c5c3e75852abc63a34a64a6070a3cc4dab7733b0944a08bd5766c0c1f5328da",
+            "bytes": 2078519
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_004.pth",
+            "sha256": "5a204a61dfee6560794c505b7c7f7d9e56d559cc0b90dc70a2a4de790f080968",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_004.json",
+            "sha256": "9c5c3e75852abc63a34a64a6070a3cc4dab7733b0944a08bd5766c0c1f5328da",
+            "bytes": 2078519
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_004.pth",
+            "sha256": "5a204a61dfee6560794c505b7c7f7d9e56d559cc0b90dc70a2a4de790f080968",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_004.json",
+            "sha256": "9c5c3e75852abc63a34a64a6070a3cc4dab7733b0944a08bd5766c0c1f5328da",
+            "bytes": 2078519
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_004.pth",
+            "sha256": "5a204a61dfee6560794c505b7c7f7d9e56d559cc0b90dc70a2a4de790f080968",
+            "bytes": 6084071
+          }
+        }
+      }
+    },
+    {
+      "name": "primary_epoch5",
+      "checkpoint": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_005.pth",
+        "sha256": "de3e4c1c3b57b3b7ae21401231db7bd54a66781dda06d38bc1b3e3c63707439c",
+        "bytes": 6084071
+      },
+      "provenance": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/completed.json",
+        "sha256": "9236802ac812c86ddc783bf1f3fbd028f766d2dc4e320008fbd83ed7c3e9bd64",
+        "bytes": 4273
+      },
+      "training_exposure": {
+        "nba_gradient_games": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "nfhs_replay": true,
+        "hou_okc": "checkpoint_selection_development",
+        "sas_det": "excluded_development",
+        "sac_mem": "historical_training"
+      },
+      "reuse": {
+        "hou-vs-okc-0022400879_e01": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_005.json",
+            "sha256": "d58f862be7861cf18142a714f85179b0d1ca65119aaeb5e7509e2ba23c4d75d1",
+            "bytes": 2095816
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_005.pth",
+            "sha256": "de3e4c1c3b57b3b7ae21401231db7bd54a66781dda06d38bc1b3e3c63707439c",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_005.json",
+            "sha256": "d58f862be7861cf18142a714f85179b0d1ca65119aaeb5e7509e2ba23c4d75d1",
+            "bytes": 2095816
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_005.pth",
+            "sha256": "de3e4c1c3b57b3b7ae21401231db7bd54a66781dda06d38bc1b3e3c63707439c",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_005.json",
+            "sha256": "d58f862be7861cf18142a714f85179b0d1ca65119aaeb5e7509e2ba23c4d75d1",
+            "bytes": 2095816
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_005.pth",
+            "sha256": "de3e4c1c3b57b3b7ae21401231db7bd54a66781dda06d38bc1b3e3c63707439c",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_005.json",
+            "sha256": "d58f862be7861cf18142a714f85179b0d1ca65119aaeb5e7509e2ba23c4d75d1",
+            "bytes": 2095816
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_005.pth",
+            "sha256": "de3e4c1c3b57b3b7ae21401231db7bd54a66781dda06d38bc1b3e3c63707439c",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_005.json",
+            "sha256": "d58f862be7861cf18142a714f85179b0d1ca65119aaeb5e7509e2ba23c4d75d1",
+            "bytes": 2095816
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_005.pth",
+            "sha256": "de3e4c1c3b57b3b7ae21401231db7bd54a66781dda06d38bc1b3e3c63707439c",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_005.json",
+            "sha256": "d58f862be7861cf18142a714f85179b0d1ca65119aaeb5e7509e2ba23c4d75d1",
+            "bytes": 2095816
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_005.pth",
+            "sha256": "de3e4c1c3b57b3b7ae21401231db7bd54a66781dda06d38bc1b3e3c63707439c",
+            "bytes": 6084071
+          }
+        }
+      }
+    },
+    {
+      "name": "augmentation_epoch1",
+      "checkpoint": {
+        "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_001.pth",
+        "sha256": "d4cb79d4fb7170a6375145f97219a1769558ef193b58af68eb6293e54d0b6527",
+        "bytes": 6084071
+      },
+      "provenance": {
+        "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/completed.json",
+        "sha256": "062c0630c9d1e87004b16f49008c8bb84edda7281f8c9a2ef74383ff84757941",
+        "bytes": 7058
+      },
+      "training_exposure": {
+        "nba_gradient_games": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "nfhs_replay": true,
+        "hou_okc": "checkpoint_selection_development",
+        "sas_det": "excluded_development",
+        "sac_mem": "historical_training"
+      },
+      "reuse": {
+        "hou-vs-okc-0022400879_e01": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_001.json",
+            "sha256": "69e0cb288ae1c47aec713d3008df36abba596a7187d77a8a5248abdf2d5cbf31",
+            "bytes": 2123138
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_001.pth",
+            "sha256": "d4cb79d4fb7170a6375145f97219a1769558ef193b58af68eb6293e54d0b6527",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_001.json",
+            "sha256": "69e0cb288ae1c47aec713d3008df36abba596a7187d77a8a5248abdf2d5cbf31",
+            "bytes": 2123138
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_001.pth",
+            "sha256": "d4cb79d4fb7170a6375145f97219a1769558ef193b58af68eb6293e54d0b6527",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_001.json",
+            "sha256": "69e0cb288ae1c47aec713d3008df36abba596a7187d77a8a5248abdf2d5cbf31",
+            "bytes": 2123138
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_001.pth",
+            "sha256": "d4cb79d4fb7170a6375145f97219a1769558ef193b58af68eb6293e54d0b6527",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_001.json",
+            "sha256": "69e0cb288ae1c47aec713d3008df36abba596a7187d77a8a5248abdf2d5cbf31",
+            "bytes": 2123138
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_001.pth",
+            "sha256": "d4cb79d4fb7170a6375145f97219a1769558ef193b58af68eb6293e54d0b6527",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_001.json",
+            "sha256": "69e0cb288ae1c47aec713d3008df36abba596a7187d77a8a5248abdf2d5cbf31",
+            "bytes": 2123138
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_001.pth",
+            "sha256": "d4cb79d4fb7170a6375145f97219a1769558ef193b58af68eb6293e54d0b6527",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_001.json",
+            "sha256": "69e0cb288ae1c47aec713d3008df36abba596a7187d77a8a5248abdf2d5cbf31",
+            "bytes": 2123138
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_001.pth",
+            "sha256": "d4cb79d4fb7170a6375145f97219a1769558ef193b58af68eb6293e54d0b6527",
+            "bytes": 6084071
+          }
+        }
+      }
+    },
+    {
+      "name": "augmentation_epoch2",
+      "checkpoint": {
+        "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_002.pth",
+        "sha256": "6a296083f71bdcb6a7c4fe97acb3d2e1a9f745dbd6f1170f73233dc9f9611b18",
+        "bytes": 6084071
+      },
+      "provenance": {
+        "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/completed.json",
+        "sha256": "062c0630c9d1e87004b16f49008c8bb84edda7281f8c9a2ef74383ff84757941",
+        "bytes": 7058
+      },
+      "training_exposure": {
+        "nba_gradient_games": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "nfhs_replay": true,
+        "hou_okc": "checkpoint_selection_development",
+        "sas_det": "excluded_development",
+        "sac_mem": "historical_training"
+      },
+      "reuse": {
+        "hou-vs-okc-0022400879_e01": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_002.json",
+            "sha256": "da9f30dc987a5ed4dcbc000e05681713f8f11f737670d5bfe49527d5b0b9b97d",
+            "bytes": 2070893
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_002.pth",
+            "sha256": "6a296083f71bdcb6a7c4fe97acb3d2e1a9f745dbd6f1170f73233dc9f9611b18",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_002.json",
+            "sha256": "da9f30dc987a5ed4dcbc000e05681713f8f11f737670d5bfe49527d5b0b9b97d",
+            "bytes": 2070893
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_002.pth",
+            "sha256": "6a296083f71bdcb6a7c4fe97acb3d2e1a9f745dbd6f1170f73233dc9f9611b18",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_002.json",
+            "sha256": "da9f30dc987a5ed4dcbc000e05681713f8f11f737670d5bfe49527d5b0b9b97d",
+            "bytes": 2070893
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_002.pth",
+            "sha256": "6a296083f71bdcb6a7c4fe97acb3d2e1a9f745dbd6f1170f73233dc9f9611b18",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_002.json",
+            "sha256": "da9f30dc987a5ed4dcbc000e05681713f8f11f737670d5bfe49527d5b0b9b97d",
+            "bytes": 2070893
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_002.pth",
+            "sha256": "6a296083f71bdcb6a7c4fe97acb3d2e1a9f745dbd6f1170f73233dc9f9611b18",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_002.json",
+            "sha256": "da9f30dc987a5ed4dcbc000e05681713f8f11f737670d5bfe49527d5b0b9b97d",
+            "bytes": 2070893
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_002.pth",
+            "sha256": "6a296083f71bdcb6a7c4fe97acb3d2e1a9f745dbd6f1170f73233dc9f9611b18",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_002.json",
+            "sha256": "da9f30dc987a5ed4dcbc000e05681713f8f11f737670d5bfe49527d5b0b9b97d",
+            "bytes": 2070893
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_002.pth",
+            "sha256": "6a296083f71bdcb6a7c4fe97acb3d2e1a9f745dbd6f1170f73233dc9f9611b18",
+            "bytes": 6084071
+          }
+        }
+      }
+    },
+    {
+      "name": "augmentation_epoch3",
+      "checkpoint": {
+        "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_003.pth",
+        "sha256": "e7090d8b52a02739b365de6a1876aeaa19c5a03ee3dc2c67289d8409b235cf56",
+        "bytes": 6084071
+      },
+      "provenance": {
+        "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/completed.json",
+        "sha256": "062c0630c9d1e87004b16f49008c8bb84edda7281f8c9a2ef74383ff84757941",
+        "bytes": 7058
+      },
+      "training_exposure": {
+        "nba_gradient_games": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "nfhs_replay": true,
+        "hou_okc": "checkpoint_selection_development",
+        "sas_det": "excluded_development",
+        "sac_mem": "historical_training"
+      },
+      "reuse": {
+        "hou-vs-okc-0022400879_e01": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_003.json",
+            "sha256": "7566e0df6048ab710137bec9c8a5cd7b3ddadf83f1691ee0c480de5c03fc3054",
+            "bytes": 2127040
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_003.pth",
+            "sha256": "e7090d8b52a02739b365de6a1876aeaa19c5a03ee3dc2c67289d8409b235cf56",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_003.json",
+            "sha256": "7566e0df6048ab710137bec9c8a5cd7b3ddadf83f1691ee0c480de5c03fc3054",
+            "bytes": 2127040
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_003.pth",
+            "sha256": "e7090d8b52a02739b365de6a1876aeaa19c5a03ee3dc2c67289d8409b235cf56",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_003.json",
+            "sha256": "7566e0df6048ab710137bec9c8a5cd7b3ddadf83f1691ee0c480de5c03fc3054",
+            "bytes": 2127040
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_003.pth",
+            "sha256": "e7090d8b52a02739b365de6a1876aeaa19c5a03ee3dc2c67289d8409b235cf56",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_003.json",
+            "sha256": "7566e0df6048ab710137bec9c8a5cd7b3ddadf83f1691ee0c480de5c03fc3054",
+            "bytes": 2127040
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_003.pth",
+            "sha256": "e7090d8b52a02739b365de6a1876aeaa19c5a03ee3dc2c67289d8409b235cf56",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_003.json",
+            "sha256": "7566e0df6048ab710137bec9c8a5cd7b3ddadf83f1691ee0c480de5c03fc3054",
+            "bytes": 2127040
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_003.pth",
+            "sha256": "e7090d8b52a02739b365de6a1876aeaa19c5a03ee3dc2c67289d8409b235cf56",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_003.json",
+            "sha256": "7566e0df6048ab710137bec9c8a5cd7b3ddadf83f1691ee0c480de5c03fc3054",
+            "bytes": 2127040
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_003.pth",
+            "sha256": "e7090d8b52a02739b365de6a1876aeaa19c5a03ee3dc2c67289d8409b235cf56",
+            "bytes": 6084071
+          }
+        }
+      }
+    },
+    {
+      "name": "augmentation_epoch4",
+      "checkpoint": {
+        "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_004.pth",
+        "sha256": "e8a394bbf50523b970ad5528f1e5b1cda4cc3e6643bb8d737d24b0dc9bdcdbbf",
+        "bytes": 6084071
+      },
+      "provenance": {
+        "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/completed.json",
+        "sha256": "062c0630c9d1e87004b16f49008c8bb84edda7281f8c9a2ef74383ff84757941",
+        "bytes": 7058
+      },
+      "training_exposure": {
+        "nba_gradient_games": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "nfhs_replay": true,
+        "hou_okc": "checkpoint_selection_development",
+        "sas_det": "excluded_development",
+        "sac_mem": "historical_training"
+      },
+      "reuse": {
+        "hou-vs-okc-0022400879_e01": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_004.json",
+            "sha256": "140d2c8aea98b5078be593db889a20d35aa2e6c863e514e08dfd87cd0a6b4b9b",
+            "bytes": 2062535
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_004.pth",
+            "sha256": "e8a394bbf50523b970ad5528f1e5b1cda4cc3e6643bb8d737d24b0dc9bdcdbbf",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_004.json",
+            "sha256": "140d2c8aea98b5078be593db889a20d35aa2e6c863e514e08dfd87cd0a6b4b9b",
+            "bytes": 2062535
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_004.pth",
+            "sha256": "e8a394bbf50523b970ad5528f1e5b1cda4cc3e6643bb8d737d24b0dc9bdcdbbf",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_004.json",
+            "sha256": "140d2c8aea98b5078be593db889a20d35aa2e6c863e514e08dfd87cd0a6b4b9b",
+            "bytes": 2062535
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_004.pth",
+            "sha256": "e8a394bbf50523b970ad5528f1e5b1cda4cc3e6643bb8d737d24b0dc9bdcdbbf",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_004.json",
+            "sha256": "140d2c8aea98b5078be593db889a20d35aa2e6c863e514e08dfd87cd0a6b4b9b",
+            "bytes": 2062535
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_004.pth",
+            "sha256": "e8a394bbf50523b970ad5528f1e5b1cda4cc3e6643bb8d737d24b0dc9bdcdbbf",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_004.json",
+            "sha256": "140d2c8aea98b5078be593db889a20d35aa2e6c863e514e08dfd87cd0a6b4b9b",
+            "bytes": 2062535
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_004.pth",
+            "sha256": "e8a394bbf50523b970ad5528f1e5b1cda4cc3e6643bb8d737d24b0dc9bdcdbbf",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_004.json",
+            "sha256": "140d2c8aea98b5078be593db889a20d35aa2e6c863e514e08dfd87cd0a6b4b9b",
+            "bytes": 2062535
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_004.pth",
+            "sha256": "e8a394bbf50523b970ad5528f1e5b1cda4cc3e6643bb8d737d24b0dc9bdcdbbf",
+            "bytes": 6084071
+          }
+        }
+      }
+    },
+    {
+      "name": "augmentation_epoch5",
+      "checkpoint": {
+        "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_005.pth",
+        "sha256": "066fc0dbc4f37d56162d84291957e261c74a523d16accc51f5c200d4867f37ed",
+        "bytes": 6084071
+      },
+      "provenance": {
+        "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/completed.json",
+        "sha256": "062c0630c9d1e87004b16f49008c8bb84edda7281f8c9a2ef74383ff84757941",
+        "bytes": 7058
+      },
+      "training_exposure": {
+        "nba_gradient_games": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "nfhs_replay": true,
+        "hou_okc": "checkpoint_selection_development",
+        "sas_det": "excluded_development",
+        "sac_mem": "historical_training"
+      },
+      "reuse": {
+        "hou-vs-okc-0022400879_e01": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_005.json",
+            "sha256": "27210bd1cc652cab87109acd4785f0b6eb154ad0a5838d52fc08ac5e38868dab",
+            "bytes": 2068235
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_005.pth",
+            "sha256": "066fc0dbc4f37d56162d84291957e261c74a523d16accc51f5c200d4867f37ed",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_005.json",
+            "sha256": "27210bd1cc652cab87109acd4785f0b6eb154ad0a5838d52fc08ac5e38868dab",
+            "bytes": 2068235
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_005.pth",
+            "sha256": "066fc0dbc4f37d56162d84291957e261c74a523d16accc51f5c200d4867f37ed",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_005.json",
+            "sha256": "27210bd1cc652cab87109acd4785f0b6eb154ad0a5838d52fc08ac5e38868dab",
+            "bytes": 2068235
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_005.pth",
+            "sha256": "066fc0dbc4f37d56162d84291957e261c74a523d16accc51f5c200d4867f37ed",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_005.json",
+            "sha256": "27210bd1cc652cab87109acd4785f0b6eb154ad0a5838d52fc08ac5e38868dab",
+            "bytes": 2068235
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_005.pth",
+            "sha256": "066fc0dbc4f37d56162d84291957e261c74a523d16accc51f5c200d4867f37ed",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_005.json",
+            "sha256": "27210bd1cc652cab87109acd4785f0b6eb154ad0a5838d52fc08ac5e38868dab",
+            "bytes": 2068235
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_005.pth",
+            "sha256": "066fc0dbc4f37d56162d84291957e261c74a523d16accc51f5c200d4867f37ed",
+            "bytes": 6084071
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "kind": "validation",
+          "report": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_005.json",
+            "sha256": "27210bd1cc652cab87109acd4785f0b6eb154ad0a5838d52fc08ac5e38868dab",
+            "bytes": 2068235
+          },
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_005.pth",
+            "sha256": "066fc0dbc4f37d56162d84291957e261c74a523d16accc51f5c200d4867f37ed",
+            "bytes": 6084071
+          }
+        }
+      }
+    },
+    {
+      "name": "nba_200_updates",
+      "checkpoint": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/training/checkpoint.pth",
+        "sha256": "da44ce06cdf7b3bf97468b5780f0f02e435807299cf3d771494c367d9010da26",
+        "bytes": 6084071
+      },
+      "provenance": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/training/completion.json",
+        "sha256": "6535a03686b1148b69b6cf2d705e7611c57ae82ea7209980ee9a5447eabe13d2",
+        "bytes": 5943
+      },
+      "training_exposure": {
+        "nba_gradient_games": [
+          "0022500829"
+        ],
+        "nfhs_replay": true,
+        "hou_okc": "new_development_comparison",
+        "sas_det": "excluded_development",
+        "sac_mem": "historical_training"
+      },
+      "reuse": {
+        "sac_mem_q1_c01:540-2010": {
+          "kind": "historical_adaptation",
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/training/checkpoint.pth",
+            "sha256": "da44ce06cdf7b3bf97468b5780f0f02e435807299cf3d771494c367d9010da26",
+            "bytes": 6084071
+          },
+          "report": {
+            "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sac_mem_q1_c01/observations.json",
+            "sha256": "6515816c7a88425fdfbf89f2266e045cd6142ae342e729b27a86edf04b2c9b44",
+            "bytes": 3115274
+          }
+        },
+        "sas_det_q1_c02:10668-11898": {
+          "kind": "historical_adaptation",
+          "checkpoint": {
+            "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/training/checkpoint.pth",
+            "sha256": "da44ce06cdf7b3bf97468b5780f0f02e435807299cf3d771494c367d9010da26",
+            "bytes": 6084071
+          },
+          "report": {
+            "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/observations.json",
+            "sha256": "654e6879812ee82f57e367eb84a103eb3f3a494ce6adb6a082b0cd00099b9802",
+            "bytes": 2571417
+          }
+        }
+      }
+    }
+  ],
+  "block_ids": [
+    "hou-vs-okc-0022400879_e01",
+    "hou-vs-okc-0022400879_e02",
+    "hou-vs-okc-0022400879_e03",
+    "hou-vs-okc-0022400879_e04",
+    "hou-vs-okc-0022400879_e05",
+    "hou-vs-okc-0022400879_e06",
+    "sac_mem_q1_c01:540-2010",
+    "sas_det_q1_c02:10668-11898"
+  ],
+  "output_root": "data/outputs/ball_tracking/nba_first_v0_1/comparison_v0_1",
+  "new_model_calls": 27928,
+  "reused_observation_frames": 15964,
+  "inference_policy": {
+    "threshold": 0.3,
+    "threshold_operator": ">",
+    "resolution_wh": [
+      512,
+      288
+    ],
+    "aggregation": "ascending_float32_aligned_contributor_mean",
+    "selection": "largest_component_mass_then_stable_index",
+    "triplet_stride": 1,
+    "padding": false,
+    "resampling": false,
+    "interpolation": false
+  },
+  "runtime": {
+    "python": "3.11.15 (main, Aug  7 2026, 02:24:19) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "opencv": "5.0.0",
+    "torch": "2.13.0+cu130",
+    "torch_cuda": "13.0",
+    "cudnn": 92000
+  },
+  "cudnn": {
+    "benchmark": false,
+    "deterministic": true
+  },
+  "code_bindings": [
+    {
+      "path": "src/ball_tracking/nba_first_evaluation.py",
+      "sha256": "fa065d101c60776b868c08a84510e6612344a2311cfee30be8e71ad81893b36f",
+      "bytes": 22441
+    },
+    {
+      "path": "src/ball_tracking/nba_first_validation.py",
+      "sha256": "61954799a06755d4e73d3eb69ed0090da87a37307940138390141f09d4accc67",
+      "bytes": 17227
+    },
+    {
+      "path": "src/ball_tracking/completion_scoring.py",
+      "sha256": "62f6464e94bce09347828da879209e7dd0cdfed28546f8c488c2cb4256c3f917",
+      "bytes": 28375
+    },
+    {
+      "path": "src/ball_tracking/completion_evaluation.py",
+      "sha256": "c4bdf09243238b756937005f878e80e875e8824adc38a50105997b12f8cd3736",
+      "bytes": 29663
+    },
+    {
+      "path": "src/ball_tracking/completion_evaluation_package.py",
+      "sha256": "f21c7a5bfb4dd1811c363023c82a7abed8929d6df7af4345dec1b2fc094737d0",
+      "bytes": 23988
+    },
+    {
+      "path": "src/ball_tracking/gpu_supervision.py",
+      "sha256": "dbc03099c088f6c5b96aa6d1691f5dd11d7abf7c600c97e563344a7541256cd0",
+      "bytes": 15015
+    }
+  ],
+  "protected_evaluation_authorized": false,
+  "training_authorized": false,
+  "new_labeling_authorized": false,
+  "historical_decisions_changed": false
+}

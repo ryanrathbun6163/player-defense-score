@@ -1,5 +1,22 @@
 # Roadmap
 
+## Current priority: NBA-first trajectory review and failure-directed next experiment
+
+Ryan authorized the [NBA-first comparison](../ball_tracking_nba_first_evaluation.md)
+on October 25. The [completed result](../ball_tracking_nba_first_results.md)
+evaluates twelve saved WASB candidates on existing permitted NBA development
+labels without more training. None passes; augmentation epoch five is selected
+for review only, with target DET 212/241 correct and five wrong. Review its
+remaining gaps, partial-ball misses and visibility/distractor errors before
+proposing a specific training change. NBA per-episode quality
+drives the next decision, with all numerical and human-review criteria unchanged.
+Preserve the high-school possessions as secondary regression evidence and keep
+their original results, labels, reviews and checkpoints. NBA player identities
+and court calibration still need their own future validation; the completed
+high-school player-coordinate gate does not certify NBA footage. Protected
+evaluation remains closed. Earlier roadmap entries below describe historical
+milestones and must not override this prospective scope.
+
 ## Latest bounded experiment completed: augmentation did not clear selection
 
 The [approved five-epoch WASB augmentation experiment](../ball_tracking_wasb_augmentation_results.md)

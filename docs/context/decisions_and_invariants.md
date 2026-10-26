@@ -2,6 +2,19 @@
 
 These are durable project decisions, not incidental properties of one possession.
 
+## NBA-first scope authorized, 2026-10-25
+
+Ryan explicitly approved making NBA footage the primary ball-tracking milestone,
+preserving the high-school work and the same quality criteria, and comparing
+saved models on existing NBA labels before more training. The
+[fixed comparison](../ball_tracking_nba_first_evaluation.md) keeps high-school
+results as secondary regression evidence. Earlier selection rejections remain
+historically true; the old high-school nonregression veto does not govern the
+next NBA research candidate. This narrows the supported target domain without
+lowering accuracy, error, hidden-output, continuity, recovery or human-review
+criteria. Removing high-school training examples is not part of this approval.
+Protected evaluation remains closed; new fitting is not part of this comparison.
+
 ## Product and analytical decisions
 
 1. **The output must be interpretable.** The end goal is a transparent possession-level defender score that can be explained in interviews and audited basketball-wise; it is not a black-box ranking exercise.
