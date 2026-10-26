@@ -1,5 +1,25 @@
 # Current State
 
+## Approved resolution run interrupted before training, 2026-10-26
+
+Ryan approved the [five-epoch 768x432 execution](../ball_tracking_nba_resolution_execution.md).
+Preparation is committed at `3605648`: 38 focused checks, 114 real native-triplet
+parity checks, and a successful disposable readiness check. The subsequent first
+scientific attempt [stopped during epoch-zero validation](../ball_tracking_nba_resolution_restart_2026-10-26.md).
+NVIDIA telemetry failed at 08:00:44 Phoenix, causing supervisor STOP; Windows
+then rebooted with bugcheck 0x116. Observed GPU maximum was 50 C. No scientific
+optimizer update occurred and no new epoch result exists.
+
+The initial update-zero state is CPU-loadable and identity/finite/optimizer/BN
+checked. The supervisor finished.json is 493 NUL bytes and must remain preserved
+as corrupt; cleanup success cannot be claimed. No Python job remains. The crash
+dump exists but content access is denied, so no driver/root-cause diagnosis is
+established. No stress test, driver setting change or GPU retry has run.
+GPU execution is operationally withheld pending crash analysis and a concrete
+resumption decision. Do not automatically resume the approved fit. All previous
+labels/models/reviews and the same quality criteria remain; protected evaluation
+is closed. The earlier proposed-only snapshot below is historical.
+
 ## NBA failure diagnosis completed; resolution experiment proposed, 2026-10-25
 
 The [diagnosis](../ball_tracking_nba_failure_diagnosis.md) finds 24 absent

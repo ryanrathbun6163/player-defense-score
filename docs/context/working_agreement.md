@@ -1,5 +1,18 @@
 # Working Agreement
 
+## Resolution approval and crash interruption, 2026-10-26
+
+Ryan said "ok move forward with the experiment chat", approving the concrete
+[resolution experiment](../ball_tracking_nba_resolution_execution.md). He then
+reported a full PC restart distinct in symptoms from the earlier black screens.
+The [incident record](../ball_tracking_nba_resolution_restart_2026-10-26.md)
+confirms graphics bugcheck 0x116 and zero scientific updates. GPU work is
+withheld in response to the observed crash; do not auto-retry or change settings.
+This is an operational stop, not a claim of an explicit user training-pause
+instruction. Preserve the corrupt summary and valid initial state. Continue
+read-only diagnosis; substantial driver/hardware/remediation changes require
+a concrete decision with Ryan. The campaign, labels and criteria stay approved.
+
 ## NBA diagnosis instruction, 2026-10-25
 
 Ryan requested: "Ok chat, diagnose the remaining NBA misses and false detections,

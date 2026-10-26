@@ -9,6 +9,11 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
+The approved 768x432 experiment was [interrupted by a Windows graphics crash](docs/ball_tracking_nba_resolution_restart_2026-10-26.md)
+on October 26 during initial validation, before any training updates. The valid
+update-zero state and failed attempt are preserved. GPU work is withheld pending
+crash investigation; no automatic retry or quality-criteria change is authorized.
+
 The [NBA error diagnosis](docs/ball_tracking_nba_failure_diagnosis.md) separates
 missing heatmap responses, wrong candidate selection and localization errors.
 An additional original-weight control mostly abstains more and still misses the

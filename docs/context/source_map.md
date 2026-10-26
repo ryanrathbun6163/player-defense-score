@@ -2,6 +2,14 @@
 
 ## Authority map
 
+The latest [resolution crash/interruption record](../ball_tracking_nba_resolution_restart_2026-10-26.md)
+supersedes the proposed-only operating state. The approved preparation and
+frozen recipe are committed at `3605648`; its first fit attempt made zero
+updates and no completed epoch. Current evidence is under
+`data/outputs/ball_tracking/wasb_resolution_v0_1/` and
+`data/outputs/t/nba_resolution_restart_20261026/`. Preserve the corrupt monitor
+summary; do not infer completion from its filename or resume GPU work automatically.
+
 The latest [NBA failure diagnosis](../ball_tracking_nba_failure_diagnosis.md)
 and [proposed resolution experiment](../ball_tracking_nba_resolution_experiment.md)
 record the completed read-only diagnosis and unexecuted recommendation.

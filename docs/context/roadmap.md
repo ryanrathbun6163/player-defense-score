@@ -1,5 +1,15 @@
 # Roadmap
 
+## Immediate priority: investigate graphics crash before GPU resumption
+
+The approved resolution experiment stopped during epoch-zero validation with
+zero training updates. See the [restart record](../ball_tracking_nba_resolution_restart_2026-10-26.md).
+Preserve the valid initial state and all failed/corrupt evidence. No automatic
+retry, stress test, settings change or alternate fit follows. Resolve access for
+local dump analysis, establish a concrete stability/recovery decision, then
+consider resuming the same frozen budget. Earlier proposed-only entries below
+retain their historical status; quality criteria and protected boundaries hold.
+
 ## Current priority: bounded NBA resolution experiment, proposed only
 
 The [failure diagnosis](../ball_tracking_nba_failure_diagnosis.md) is complete.

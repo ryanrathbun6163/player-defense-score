@@ -1,5 +1,20 @@
 # Validation History
 
+## Resolution preparation passed; scientific run interrupted, 2026-10-26
+
+[Approved preparation](../ball_tracking_nba_resolution_execution.md) passes 38
+focused tests and 114 actual native-triplet checks across 4,439 cached frames.
+A disposable three-step synthetic check passes at batch two/float32: 8.281
+supervised seconds, maximum 42 C / 6,980 MiB. These checks do not certify stability.
+The first scientific attempt then encounters NVIDIA telemetry failure and a
+Windows 0x116 reboot during initial validation, before any optimizer update.
+The [incident audit](../ball_tracking_nba_resolution_restart_2026-10-26.md)
+confirms a valid initial CPU recovery state but a corrupt all-NUL supervisor
+summary. No completion, new accuracy result or successful cleanup is claimed.
+Preserve original synthetic/audit fixture corrections separately from this
+failed scientific attempt. No changed-code tests were rerun for the incident's
+documentation-only update.
+
 ## NBA failure diagnosis and original-weight control, 2026-10-25
 
 The [diagnosis](../ball_tracking_nba_failure_diagnosis.md) passes seventeen focused
