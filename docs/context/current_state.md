@@ -1,5 +1,25 @@
 # Current State
 
+## P003 occlusion-exit diagnosis completed, 2026-10-25
+
+Ryan authorized diagnosing the persistent miss. The
+[diagnosis](../ball_tracking_p003_reacquisition_diagnosis.md) traces frame 170,
+the first accepted partial-visibility frame after five hidden frames. All ten
+trained checkpoints reacquire at 171, one 40 ms frame later than the baseline.
+A fixed 30-call read-only probe of baseline/original-epoch3/augmented-epoch3
+reproduces all 15 saved target observations and heatmap hashes exactly.
+Training weakens the near-ball mean response (0.3031 baseline to 0.1795 augmented)
+and shifts the surviving raw component; its 21.2 px centroid error prevents a
+strongest-contributor shortcut under the unchanged ten-pixel rule.
+
+Source/affine cache/normalization/alignment, three contributors at 170 and unchanged
+model/BatchNorm state all verify. Seven focused checks and 6,681 independent raw-map
+checks pass. The probe takes 8.3 monitored seconds, peak 48 C, clean exit.
+The 40 ms delay itself is within 120 ms; the selection veto is the separate frozen
+per-cohort nonregression rule. No new labels, fit, threshold/aggregation change,
+method adoption or protected evaluation occurred. A particular training remedy
+has not been established; preserve frame 170's validation role and original evidence.
+
 ## Five-epoch WASB augmentation completed; baseline retained, 2026-10-25
 
 Ryan explicitly approved one five-epoch augmentation experiment using existing

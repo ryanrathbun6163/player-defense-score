@@ -373,3 +373,9 @@ src/ball_tracking/wasb_augmentation.py -text whitespace=blank-at-eol,blank-at-eo
 src/ball_tracking/gpu_supervision.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/test_completion_augmentation_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/test_wasb_augmentation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve the read-only P003 validation probe and its tested bytes.
+configs/ball_tracking/proposals/wasb_p003_validation_probe_v0_1.json -text
+src/ball_tracking/wasb_validation_probe.py -text
+src/ball_tracking/completion_evaluation.py -text
+tests/test_wasb_validation_probe.py -text

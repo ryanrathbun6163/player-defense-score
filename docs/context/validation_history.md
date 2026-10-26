@@ -1,5 +1,21 @@
 # Validation History
 
+## P003 read-only validation diagnosis, 2026-10-25
+
+Seven focused CPU probe checks pass on frozen source SHA
+`de2024af226bfd81e08e53b237f417f4baab017b878aa50497645cb4db0b4b0c`.
+Saved-record diagnosis checks 264 records across 11 arms (1,375 checks). A fixed
+30-call replay on 16 permitted native frames reproduces 15 mean-map hashes and full
+observations exactly. Independent raw-map audit passes 6,681 checks, rederiving
+means/components and verifying three sets of 428 model-tensor digest receipts.
+Models remain unchanged, no optimizer or new labels, no protected content.
+
+The actual probe completes in 5.485 s; supervised 8.297 s, peak 48 C / 42.85 W / 2,426 MiB,
+with clean owned-process exit. Diagnosis: weak/mislocalized response at P003 frame 170
+following occlusion, not a source or contribution-count mismatch. The augmented
+raw component has 21.191 px centroid error; selecting it would not recover a match.
+See the [diagnosis and bound evidence](../ball_tracking_p003_reacquisition_diagnosis.md).
+
 ## Five-epoch WASB augmentation experiment, 2026-10-25
 
 Eight augmentation checks and six additive-runner checks pass. The actual
