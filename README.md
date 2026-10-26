@@ -9,6 +9,15 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
+The latest [five-epoch WASB augmentation experiment](docs/ball_tracking_wasb_augmentation_results.md)
+completed on **2026-10-25** using existing labels and unchanged quality rules.
+All 7,760 updates completed, but no trained checkpoint qualifies. Epoch three
+improves P001/P002/NBA validation while losing one previously correct P003 frame.
+The retained baseline remains selected and ball tracking has not passed.
+The monitored run took 22.3 minutes, peaked at 60 C and passed its result audit.
+No additional fitting, labeling or protected evaluation follows automatically.
+Earlier milestones below retain their original evidence and counts.
+
 Ryan accepted all **269 final curated proposals** on **2026-10-25**, replying
 **“Accept all 269 proposals.”** The [separate acceptance publications](docs/ball_tracking_completion_reference_group_17_23.md#human-acceptance-published-2026-10-25)
 complete **1,273/1,273 permitted curated judgments**: **1,117 localization-eligible

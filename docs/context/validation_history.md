@@ -1,5 +1,24 @@
 # Validation History
 
+## Five-epoch WASB augmentation experiment, 2026-10-25
+
+Eight augmentation checks and six additive-runner checks pass. The actual
+normalization/target producer, three training-only visual triplets, independent
+RNG, recovery and fixed-five-epoch completion contract are covered. The original
+25 frozen dependencies remain unchanged; no full-suite repeat was needed.
+The real completed producer passes its new consumer. A separate standard-library
+audit passes 171,615 checks with zero discrepancies, independently rederiving
+7,760 update / 15,515 augmentation receipts and 13,320 frame records across
+six old and six new validation reports. All 70 reference bindings verify.
+
+Only epoch zero qualifies. Epoch three fails selection solely because P003 loses
+frame 170, despite P001/P002/NBA count improvements; later epochs regress. No rejected checkpoint
+received a full-census evaluation. One successful monitored attempt takes
+1,337.032 seconds, with 650 samples, peak 60 C / 134.36 W / 4,750 MiB and clean
+owned-process exit. No new labels or protected reads occurred. Full evidence,
+audit limits and retained original failures are in the
+[result report](../ball_tracking_wasb_augmentation_results.md).
+
 ## Successor training assessment and fixed TAPNext++ pilot, 2026-10-25
 
 The approved successor scope adds separate assessment, adapter, pilot, scoring,

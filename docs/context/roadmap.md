@@ -1,5 +1,17 @@
 # Roadmap
 
+## Latest bounded experiment completed: augmentation did not clear selection
+
+The [approved five-epoch WASB augmentation experiment](../ball_tracking_wasb_augmentation_results.md)
+completed 7,760 updates on existing labels with unchanged criteria. Only epoch
+zero qualifies. Epoch three improves two curated selection cohorts and NBA
+validation but loses P003 frame 170; the remaining epochs do not resolve it.
+The retained full permitted baseline still fails completion. No additional fit,
+new labeling or protected evaluation follows automatically. Next proposed work
+is a focused diagnosis of persistent misses using existing development evidence
+before choosing another method change. The original primary milestone below
+remains historical evidence; all checkpoints and reviews are preserved.
+
 ## Current campaign: primary fit completed; retained baseline selected
 
 The reference-labeling milestone is complete: **1,273 permitted curated judgments**

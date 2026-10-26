@@ -1,5 +1,27 @@
 # Current State
 
+## Five-epoch WASB augmentation completed; baseline retained, 2026-10-25
+
+Ryan explicitly approved one five-epoch augmentation experiment using existing
+labels, unchanged criteria and GPU monitoring. The [result report](../ball_tracking_wasb_augmentation_results.md)
+records 7,760 updates with synchronized mirror/brightness only, the original
+initialization/fresh optimizer and first-five-epoch schedule. All five trained
+checkpoints fail the unchanged selection rule; epoch zero stays selected.
+Epoch three improves P001/P002/NBA validation counts but fails selection solely
+because P003 loses frame 170 (39 correct versus 40). Later epochs regress further. No extension follows.
+
+The run completed in 22.3 monitored minutes, peaking at 60 C / 4,750 MiB, with
+no device/thermal stop or cleanup error. Fourteen focused CPU checks and the
+independent 171,615-check actual-record audit pass. Original frozen inputs,
+70 accepted-reference bindings, all reviews and recovery history remain intact.
+The original full permitted baseline remains 924/1,117 correct and still fails
+completion. As frozen in the [approved plan](../ball_tracking_wasb_augmentation_experiment.md),
+epoch-zero retention skips a duplicate full census and video rendering.
+No GPU job remains, the three graphics extras are stopped, and protected
+evaluation remains closed. Next proposed work is focused diagnosis of persistent
+misses before another method change; no further fit or new labeling is approved.
+The older successor and primary snapshots below retain their historical status.
+
 ## Approved successor comparison completed; TAP pilot rejected, 2026-10-25
 
 Ryan approved the critical review's concrete execution scope. The

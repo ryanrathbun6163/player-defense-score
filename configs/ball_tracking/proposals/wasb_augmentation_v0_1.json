@@ -1,0 +1,106 @@
+{
+  "schema_version": "wasb_augmentation_recipe/v0.1",
+  "status": "frozen_before_model_execution",
+  "user_authority": {
+    "approval": "Ok chat, let's move forward with the five-epoch WASB augmentation experiment. Keep the quality criteria unchanged, use our existing labels, and monitor the GPU as we go.",
+    "base_head": "7030aa612b8800bf1f9f3efc4d5febc1da9fee99"
+  },
+  "parent_recipe": {
+    "path": "configs/ball_tracking/completion_campaign/primary_recipe_v0_1.json",
+    "sha256": "d8f53baf72412db535e989b4086e8fb23e02f79ef058829539d1bbe9a486e83c",
+    "bytes": 9431
+  },
+  "control_completed": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/completed.json",
+    "sha256": "9236802ac812c86ddc783bf1f3fbd028f766d2dc4e320008fbd83ed7c3e9bd64",
+    "bytes": 4273
+  },
+  "output_root": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1",
+  "cache_root": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_inputs_v0_1",
+  "max_epochs": 5,
+  "total_updates": 7760,
+  "augmentation": {
+    "id": "wasb_synchronized_mirror_brightness_v0_1",
+    "mirror": {
+      "axis": "last_image_and_rasterized_target_x_index",
+      "probability": 0.5
+    },
+    "brightness": {
+      "gain_min": 0.9,
+      "gain_max": 1.1,
+      "space": "recovered_uint8_RGB_as_float32",
+      "clamp": [
+        0.0,
+        255.0
+      ],
+      "post_gain_quantization": false
+    },
+    "synchronization": "one_mirror_and_gain_shared_by_all_three_frames",
+    "rng": {
+      "algorithm": "sha256_canonical_key_first_two_big_endian_uint64_top53_div_2pow53",
+      "key_fields": [
+        "policy_id",
+        "seed",
+        "epoch",
+        "batch_index",
+        "sample_index"
+      ],
+      "epoch_base": 1,
+      "batch_index_base": 1,
+      "sample_index_base": 0,
+      "uniform_interval": "[0,1)",
+      "global_rng_access": false
+    },
+    "normalization": {
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "original_pixel_recovery": "round_inverse_then_verify_exact_normalized_roundtrip"
+    },
+    "mask_policy": "unchanged",
+    "hidden_target_policy": "zero_unchanged",
+    "resize": false,
+    "crop": false,
+    "rotation": false,
+    "blur": false,
+    "new_visibility_labels": false
+  },
+  "runtime": {
+    "python": "3.11.15 (main, Aug  7 2026, 02:24:19) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "opencv": "5.0.0",
+    "torch": "2.13.0+cu130",
+    "torch_cuda": "13.0",
+    "cudnn": 92000
+  },
+  "code_bindings": [
+    {
+      "path": "src/ball_tracking/completion_augmentation_training.py",
+      "sha256": "29b4e452460618b0006b7c12c00099ed601fdfcbe30ba61f589b508f98c00486",
+      "bytes": 22314
+    },
+    {
+      "path": "src/ball_tracking/wasb_augmentation.py",
+      "sha256": "388c042bcd8c78446cf74362ad77d3b9dac81500e2ac542112e06af1abdae2e3",
+      "bytes": 6217
+    },
+    {
+      "path": "src/ball_tracking/gpu_supervision.py",
+      "sha256": "dbc03099c088f6c5b96aa6d1691f5dd11d7abf7c600c97e563344a7541256cd0",
+      "bytes": 15015
+    }
+  ],
+  "protected_evaluation_authorized": false,
+  "execution_plan": {
+    "path": "docs/ball_tracking_wasb_augmentation_experiment.md",
+    "sha256": "27458976e36c11f07a5fc28d8d43dfa4e6063784610fd8d7d54afbf38430f5cb",
+    "bytes": 7088
+  }
+}
