@@ -2,6 +2,16 @@
 
 ## Authority map
 
+The latest [NBA failure diagnosis](../ball_tracking_nba_failure_diagnosis.md)
+and [proposed resolution experiment](../ball_tracking_nba_resolution_experiment.md)
+record the completed read-only diagnosis and unexecuted recommendation.
+The frozen original-weight control is
+`configs/ball_tracking/proposals/nba_original_weight_control_v0_1.json`; generated
+records/review are under `data/outputs/ball_tracking/nba_diagnosis_v0_1/`.
+Its evidence ledger links the error, training, visual and independent audits.
+The next fit is not authorized by the diagnosis request; all quality criteria
+and protected-evaluation boundaries remain unchanged.
+
 The October 25 [NBA-first result](../ball_tracking_nba_first_results.md),
 [approved comparison scope](../ball_tracking_nba_first_evaluation.md) and
 [frozen model manifest](../../configs/ball_tracking/proposals/nba_first_saved_models_v0_1.json)

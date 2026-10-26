@@ -389,3 +389,8 @@ src/ball_tracking/nba_first_review.py -text
 tests/test_nba_first_evaluation.py -text
 tests/test_nba_first_validation.py -text
 tests/test_nba_first_review.py -text
+
+# Preserve the read-only original-weight diagnostic and its frozen manifest.
+configs/ball_tracking/proposals/nba_original_weight_control_v0_1.json -text
+src/ball_tracking/nba_original_control.py -text
+tests/test_nba_original_control.py -text

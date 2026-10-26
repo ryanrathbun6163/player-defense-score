@@ -144,3 +144,12 @@ All new human trajectory judgments remain pending. All original high-school
 labels, reviewed outputs, frozen recipes, failed fits and recovery history are
 preserved. No additional training, holdout opening or model promotion follows
 automatically from this report.
+
+## Subsequent diagnosis and visual clarification, 2026-10-25
+
+The [later diagnosis](ball_tracking_nba_failure_diagnosis.md) preserves this
+comparison and its original AI notes. Full native inspection locates the far
+selected points at DET11476/11514 on a standing sideline official's head,
+clarifying the earlier spectator/bench-area description. Formal human visual
+acceptance is still pending. The later original-weight control and recommended
+resolution experiment do not change these historical results or adopt a model.

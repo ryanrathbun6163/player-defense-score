@@ -1,0 +1,79 @@
+{
+  "schema_version": "nba_original_weight_control/v0.1",
+  "status": "frozen_before_execution",
+  "user_authority": "Ok chat, diagnose the remaining NBA misses and false detections, then recommend our next training experiment. Keep the quality criteria unchanged.",
+  "purpose": "Read-only ancestry control: compare already-downloaded original basketball weights under exactly the same permitted NBA inference/evaluation policy before recommending a new fit. No local model is adopted.",
+  "parent_config": {
+    "path": "configs/ball_tracking/proposals/nba_first_saved_models_v0_1.json",
+    "sha256": "63e82b178b46fd1f5bd20d8d7777b05c594968133d545ff072b0fcd33a6345f9",
+    "bytes": 56835
+  },
+  "comparison": {
+    "path": "data/outputs/ball_tracking/nba_first_v0_1/comparison_v0_1/evaluation.json",
+    "sha256": "c1e1440e03ecd7b7842a6db0ab93f5224e448fedbb2ac28b88fe274a16f8251b",
+    "bytes": 3758304
+  },
+  "checkpoint": {
+    "path": "data/outputs/wasb_assets/wasb_basketball.pth",
+    "sha256": "8d1ba9870d0a6ab37b06ab82bed593c6c09133e713810bac475d0c000bb7e948",
+    "bytes": 6102633
+  },
+  "policy": {
+    "threshold": 0.3,
+    "threshold_operator": ">",
+    "resolution_wh": [
+      512,
+      288
+    ],
+    "aggregation": "ascending_float32_aligned_contributor_mean",
+    "selection": "largest_component_mass_then_stable_index",
+    "triplet_stride": 1,
+    "padding": false,
+    "resampling": false,
+    "interpolation": false
+  },
+  "runtime": {
+    "python": "3.11.15 (main, Aug  7 2026, 02:24:19) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "opencv": "5.0.0",
+    "torch": "2.13.0+cu130",
+    "torch_cuda": "13.0",
+    "cudnn": 92000
+  },
+  "block_ids": [
+    "hou-vs-okc-0022400879_e01",
+    "hou-vs-okc-0022400879_e02",
+    "hou-vs-okc-0022400879_e03",
+    "hou-vs-okc-0022400879_e04",
+    "hou-vs-okc-0022400879_e05",
+    "hou-vs-okc-0022400879_e06",
+    "sac_mem_q1_c01:540-2010",
+    "sas_det_q1_c02:10668-11898"
+  ],
+  "output_root": "data/outputs/ball_tracking/nba_diagnosis_v0_1/original_weight_control_v0_1",
+  "new_model_calls": 3646,
+  "training_authorized": false,
+  "protected_evaluation_authorized": false,
+  "code_bindings": [
+    {
+      "path": "src/ball_tracking/nba_original_control.py",
+      "sha256": "df83d571fda82a8ec69831d1853d20147de7874ce3fd082e15ce9420d331bcf0",
+      "bytes": 5994
+    },
+    {
+      "path": "src/ball_tracking/nba_first_evaluation.py",
+      "sha256": "fa065d101c60776b868c08a84510e6612344a2311cfee30be8e71ad81893b36f",
+      "bytes": 22441
+    },
+    {
+      "path": "src/ball_tracking/nba_first_validation.py",
+      "sha256": "61954799a06755d4e73d3eb69ed0090da87a37307940138390141f09d4accc67",
+      "bytes": 17227
+    },
+    {
+      "path": "src/ball_tracking/gpu_supervision.py",
+      "sha256": "dbc03099c088f6c5b96aa6d1691f5dd11d7abf7c600c97e563344a7541256cd0",
+      "bytes": 15015
+    }
+  ]
+}

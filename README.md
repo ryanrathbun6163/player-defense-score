@@ -9,6 +9,13 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
+The [NBA error diagnosis](docs/ball_tracking_nba_failure_diagnosis.md) separates
+missing heatmap responses, wrong candidate selection and localization errors.
+An additional original-weight control mostly abstains more and still misses the
+shared 19-frame DET gap. The recommended next experiment is a
+[bounded five-epoch 768x432 fit](docs/ball_tracking_nba_resolution_experiment.md)
+using the existing labels and unchanged quality criteria. It has not started.
+
 Ryan has approved **NBA-first ball tracking**, with the high-school work preserved
 and the same quality criteria. The [saved-model comparison](docs/ball_tracking_nba_first_results.md)
 evaluates twelve existing WASB models without new training or labels. None passes.

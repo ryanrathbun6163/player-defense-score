@@ -1,5 +1,29 @@
 # Current State
 
+## NBA failure diagnosis completed; resolution experiment proposed, 2026-10-25
+
+The [diagnosis](../ball_tracking_nba_failure_diagnosis.md) finds 24 absent
+detections, two candidate-ranking failures and three localization failures among
+augmentation-five's 29 DET errors. Its shared 19-frame gap has very weak local
+response, while HOU has 17 certain-hidden emissions. Training negatives and
+partial examples were included correctly; the original epoch-five training
+assessment already fits 99.66% of eligible training positions.
+
+A read-only original-basketball-weight control yields HOU 801/882 with zero
+wrong/hidden outputs, but DET only 167/241. It adds no unique HOU match over
+augmentation five and only one DET match, missing the same whole 19-frame gap.
+The cleaner output mostly reflects abstention. The recommended next fit is
+[five epochs at 768x432](../ball_tracking_nba_resolution_experiment.md), using
+the same adapted initializer and existing labels, with target scaling to retain
+nominal source geometry and unchanged scoring. This is a new proposal, not an
+executed fit or release of the older conditional fallback. No candidate passes.
+
+Control: 3,646 calls, no optimizer updates; 72.25 supervised seconds, peak 56 C,
+clean exit. Four focused guards and a 44,691-check actual-record audit pass.
+The [diagnostic page](../../data/outputs/ball_tracking/nba_diagnosis_v0_1/index.html)
+preserves exact source/input examples. Human review remains pending, protected
+evaluation closed, high-school evidence and all original frozen artifacts intact.
+
 ## NBA-first saved-model comparison completed, 2026-10-25
 
 Ryan explicitly authorized NBA-first, preserving high-school work and unchanged

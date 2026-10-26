@@ -1,6 +1,17 @@
 # Roadmap
 
-## Current priority: NBA-first trajectory review and failure-directed next experiment
+## Current priority: bounded NBA resolution experiment, proposed only
+
+The [failure diagnosis](../ball_tracking_nba_failure_diagnosis.md) is complete.
+It separates weak/absent partial-ball responses from candidate ranking and
+hidden/head false detections. The original-weight control adds almost no unique
+recoveries. Recommend [one five-epoch 768x432 fit](../ball_tracking_nba_resolution_experiment.md)
+against the completed augmentation control, with existing labels and unchanged
+quality gates. Prepare independent resolution-aware code/cache and verify memory
+before any authorized fit. No fitting has started; this new proposal does not
+satisfy the old conditional fallback. Do not extend training automatically.
+
+## Completed NBA-first comparison and continuing trajectory review
 
 Ryan authorized the [NBA-first comparison](../ball_tracking_nba_first_evaluation.md)
 on October 25. The [completed result](../ball_tracking_nba_first_results.md)

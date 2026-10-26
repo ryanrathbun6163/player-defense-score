@@ -1,5 +1,15 @@
 # Working Agreement
 
+## NBA diagnosis instruction, 2026-10-25
+
+Ryan requested: "Ok chat, diagnose the remaining NBA misses and false detections,
+then recommend our next training experiment. Keep the quality criteria unchanged."
+The [completed diagnosis](../ball_tracking_nba_failure_diagnosis.md) includes a
+monitored read-only original-weight control. The [768x432 next-fit proposal](../ball_tracking_nba_resolution_experiment.md)
+is a recommendation, not training authorization. Existing criteria and accepted
+labels need no renewed approval. Human visual acceptance and protected evaluation
+remain separate; no new fit or labeling campaign follows automatically.
+
 ## NBA-first evaluation instruction, 2026-10-25
 
 Ryan said: "Ok chat, let's move forward with NBA-first. Keep the high school work

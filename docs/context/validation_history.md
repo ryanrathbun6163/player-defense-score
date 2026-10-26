@@ -1,5 +1,19 @@
 # Validation History
 
+## NBA failure diagnosis and original-weight control, 2026-10-25
+
+The [diagnosis](../ball_tracking_nba_failure_diagnosis.md) passes seventeen focused
+tests (four new manifest guards and thirteen reused NBA consumer checks),
+45,623 saved-error audit checks and 44,691 independent checks
+of actual original-weight maps/components/geometry/transport/summaries. The
+first real control completes 3,646 forward calls, zero optimizer updates, in
+72.25 supervised seconds; peak 56 C / 118.24 W / 2,530 MiB, clean exit.
+The training-audit timestamp comparison failure and corrected second attempt
+remain preserved. Visual inspection covers 26 distinct source frames, including
+four full native images. These are integrity/AI inspection checks, not human
+acceptance or a model pass. The proposed 768x432 fit has not executed; only its
+static HRNet dimension compatibility has been inspected.
+
 ## NBA-first saved-model comparison, 2026-10-25
 
 The [comparison](../ball_tracking_nba_first_results.md) passes 34 focused checks:
