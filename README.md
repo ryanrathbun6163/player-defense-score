@@ -9,6 +9,12 @@ The long-term goal is to turn a full NBA broadcast into auditable player and bal
 
 ## Project status
 
+Ryan has authorized the [two-epoch spatial-augmentation experiment](docs/ball_tracking_wasb_spatial_execution.md).
+The new recipe is frozen after 20 focused checks and actual transformed-example
+inspection. It reuses the same parent state, existing labels and saved constant
+controls. This preparation is not a training result; all quality criteria and
+protected-evaluation boundaries remain unchanged.
+
 The [matched continuation study is complete](docs/ball_tracking_wasb_continuation_results.md):
 two five-epoch arms add 15,520 optimizer updates in total, with all ten NBA
 comparisons and both targeted diagnostics finished. **No checkpoint passes.**

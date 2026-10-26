@@ -438,3 +438,13 @@ data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt06/guard_sour
 docs/ball_tracking_wasb_continuation_results.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 docs/ball_tracking_wasb_spatial_augmentation_proposal.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 configs/ball_tracking/reviews/wasb_continuation_result_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Freeze authorized two-epoch spatial experiment source, recipe and tests.
+docs/ball_tracking_wasb_spatial_execution.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/ball_tracking/proposals/wasb_spatial_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/wasb_spatial_augmentation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/wasb_spatial_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/wasb_spatial_evaluation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_wasb_spatial_augmentation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_wasb_spatial_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_wasb_spatial_evaluation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

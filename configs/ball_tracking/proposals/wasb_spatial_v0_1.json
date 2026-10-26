@@ -1,0 +1,287 @@
+{
+  "source_recipe": {
+    "path": "configs/ball_tracking/proposals/wasb_resolution_v0_1.json",
+    "sha256": "5f81fce13df1c3dbf54bde48e2a8d79e7af62c77146ef85b7f798fbc2b30c44a",
+    "bytes": 6471
+  },
+  "source_completed": {
+    "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/fit_v0_1/completed.json",
+    "sha256": "b16723bc9f1ab71b28633ce94a8245a756d2d5e8a16602aaff48f18d75667839",
+    "bytes": 7534
+  },
+  "source_state": {
+    "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/fit_v0_1/states/update_007760.pth",
+    "sha256": "dbc942daf16996a4657460a45d7e15cf97234acb5673aa72b907540c0e1cd882",
+    "bytes": 21736067
+  },
+  "source_cache_preparation": {
+    "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/fit_v0_1/cache_preparation.json",
+    "sha256": "ae5ecf1baf3185f8f27cfe6fcb069612e88c8ac9edb5a68223926cb71a10978d",
+    "bytes": 9096
+  },
+  "source_evaluation": {
+    "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/nba_comparison_v0_1/evaluation.json",
+    "sha256": "921a7996b3da365b006363fadd33f20ee72426dcb0228d7eb9e4b6855ec471f1",
+    "bytes": 8133616
+  },
+  "cache_root": "data/outputs/ball_tracking/wasb_resolution_v0_1/cache_v0_1",
+  "runtime": {
+    "python": "3.11.15 (main, Aug  7 2026, 02:24:19) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "opencv": "5.0.0",
+    "torch": "2.13.0+cu130",
+    "torch_cuda": "13.0",
+    "cudnn": 92000
+  },
+  "resolution": {
+    "width": 768,
+    "height": 432,
+    "target_radius": 3.75
+  },
+  "augmentation": {
+    "id": "wasb_synchronized_mirror_brightness_v0_1",
+    "mirror": {
+      "axis": "last_image_and_rasterized_target_x_index",
+      "probability": 0.5
+    },
+    "brightness": {
+      "gain_min": 0.9,
+      "gain_max": 1.1,
+      "space": "recovered_uint8_RGB_as_float32",
+      "clamp": [
+        0.0,
+        255.0
+      ],
+      "post_gain_quantization": false
+    },
+    "synchronization": "one_mirror_and_gain_shared_by_all_three_frames",
+    "rng": {
+      "algorithm": "sha256_canonical_key_first_two_big_endian_uint64_top53_div_2pow53",
+      "key_fields": [
+        "policy_id",
+        "seed",
+        "epoch",
+        "batch_index",
+        "sample_index"
+      ],
+      "epoch_base": 1,
+      "batch_index_base": 1,
+      "sample_index_base": 0,
+      "uniform_interval": "[0,1)",
+      "global_rng_access": false
+    },
+    "normalization": {
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "original_pixel_recovery": "round_inverse_then_verify_exact_normalized_roundtrip"
+    },
+    "mask_policy": "unchanged",
+    "hidden_target_policy": "zero_unchanged",
+    "resize": false,
+    "crop": false,
+    "rotation": false,
+    "blur": false,
+    "new_visibility_labels": false
+  },
+  "evaluation_cache_root": "data/outputs/ball_tracking/wasb_resolution_v0_1/nba_comparison_v0_1/input_cache",
+  "schema_version": "wasb_spatial_recipe/v0.1",
+  "status": "frozen_before_model_execution",
+  "frozen_at_utc": "2026-10-26T20:12:59.192449+00:00",
+  "user_authority": {
+    "date_local": "2026-10-26",
+    "timezone": "America/Phoenix",
+    "approval": "Ok chat, let's move forward with the two-epoch spatial augmentation experiment. Use our existing labels, keep the quality criteria unchanged, and monitor the GPU as we go."
+  },
+  "proposed_plan": {
+    "path": "docs/ball_tracking_wasb_spatial_augmentation_proposal.md",
+    "sha256": "bc9d0178e62fd09123f316f8a6d5c4f94579036caea46766fbcdf3407680e08e",
+    "bytes": 5159
+  },
+  "execution_plan": {
+    "path": "docs/ball_tracking_wasb_spatial_execution.md",
+    "sha256": "0cd17819c0236bab3ddcd6cf14f43d7b461dfa0867d83d7dae68742d4dd9037a",
+    "bytes": 6210
+  },
+  "matched_control_recipe": {
+    "path": "configs/ball_tracking/proposals/wasb_continuation_v0_1.json",
+    "sha256": "46b76b16c12125f5dab1ffbb96fc1521e951997605c6018baece8253250910d4",
+    "bytes": 6005
+  },
+  "matched_control_completed": {
+    "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/constant/fit_v0_1/completed.json",
+    "sha256": "73ab265069390a6d27ad08e3fc134cf93544c9d144ade2681949bf2266ccaa81",
+    "bytes": 10191
+  },
+  "matched_control_evaluation": {
+    "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/constant/nba_comparison_v0_1/evaluation.json",
+    "sha256": "b23f843be78830d80957a016d640b3744023c3bb43018717394a61d61c816002",
+    "bytes": 11384528
+  },
+  "matched_control_comparison_completed": {
+    "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/constant/nba_comparison_v0_1/completed.json",
+    "sha256": "d79e778ebc3ccd5881c968821675872e566b13137161e4a6a9bf84c5bccd7473",
+    "bytes": 6088
+  },
+  "output_root": "data/outputs/ball_tracking/wasb_spatial_v0_1/fit_v0_1",
+  "evaluation_output_root": "data/outputs/ball_tracking/wasb_spatial_v0_1/nba_comparison_v0_1",
+  "start_epoch": 5,
+  "end_epoch": 7,
+  "initial_updates": 7760,
+  "additional_updates": 3104,
+  "total_updates": 10864,
+  "training": {
+    "batch_size": 2,
+    "seed": 1234,
+    "optimizer": "Adam",
+    "learning_rate": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "weight_decay": 0.0,
+    "scheduler": null,
+    "precision": "float32",
+    "device": "cuda",
+    "parameters": "all_trainable",
+    "batch_norm": "affine_trainable_running_buffers_frozen",
+    "loss": "gamma2_weighted_binary_cross_entropy",
+    "sigmoid_clamp": 0.0001,
+    "masked_denominator": "valid_output_channels_times_height_times_width",
+    "checkpoint_interval_updates": 25
+  },
+  "spatial_augmentation": {
+    "id": "wasb_synchronized_spatial_v0_1",
+    "probability": 0.5,
+    "scale": [
+      0.9,
+      1.1
+    ],
+    "translation_fraction": [
+      -0.03,
+      0.03
+    ],
+    "order": "frozen_mirror_brightness_then_spatial",
+    "pixel_centers": "integer_indices",
+    "scale_center_xy": [
+      383.5,
+      215.5
+    ],
+    "image_extent_xyxy": [
+      -0.5,
+      -0.5,
+      767.5,
+      431.5
+    ],
+    "image_interpolation": "torch_grid_sample_bilinear",
+    "target_interpolation": "torch_grid_sample_nearest_original_binary_raster",
+    "align_corners": false,
+    "padding": "constant_normalized_zero_equals_ImageNet_RGB_mean",
+    "target_padding": 0,
+    "clip_check": "union_of_frozen_target_pixel_cells_and_continuous_annotation_uncertainty_circle",
+    "clip_response": "whole_triplet_spatial_identity_preserving_mirror_brightness",
+    "mask_policy": "unchanged",
+    "hidden_target_policy": "zero_unchanged",
+    "synchronization": "same_transform_for_all_three_frames_and_targets",
+    "rng": {
+      "algorithm": "sha256_canonical_key_four_big_endian_uint64_top53_div_2pow53",
+      "key_fields": [
+        "policy_id",
+        "seed",
+        "epoch",
+        "batch_index",
+        "sample_index"
+      ],
+      "uniform_interval": "[0,1)",
+      "global_rng_access": false,
+      "independent_of": "wasb_synchronized_mirror_brightness_v0_1"
+    }
+  },
+  "code_bindings": [
+    {
+      "path": "src/ball_tracking/wasb_spatial_augmentation.py",
+      "sha256": "ac0578a3c8a803d4f509711ab4ec171380705b6b577489b36ed833fa740acd00",
+      "bytes": 14994
+    },
+    {
+      "path": "src/ball_tracking/wasb_spatial_training.py",
+      "sha256": "3850325e3654206504ec6e5238f1d05e3ce80cce57ad50ffb1cfe4b908634acb",
+      "bytes": 22798
+    },
+    {
+      "path": "src/ball_tracking/wasb_spatial_evaluation.py",
+      "sha256": "8a5bcc795a9b368230f859088e808be058e56522e967fc27924d665ecb535b95",
+      "bytes": 27280
+    },
+    {
+      "path": "src/ball_tracking/continuation_owned_guard.py",
+      "sha256": "0520052c4e36e0d2a45a1e9a9bb577ea2185932aa54f9d98b336f5a396c04d42",
+      "bytes": 7537
+    },
+    {
+      "path": "src/ball_tracking/wasb_continuation_training.py",
+      "sha256": "92ffa34074562349e76722f569b7f06ddbcd44dac55c884313c5ce9f8f853089",
+      "bytes": 28707
+    },
+    {
+      "path": "src/ball_tracking/wasb_continuation_evaluation.py",
+      "sha256": "4358df8e1c63ea2fc62f2735f199729f37c6c45805b5875f7ff17e1fd2c1b2aa",
+      "bytes": 22955
+    },
+    {
+      "path": "src/ball_tracking/gpu_supervision.py",
+      "sha256": "dbc03099c088f6c5b96aa6d1691f5dd11d7abf7c600c97e563344a7541256cd0",
+      "bytes": 15015
+    }
+  ],
+  "test_bindings": [
+    {
+      "path": "tests/test_wasb_spatial_augmentation.py",
+      "sha256": "00acdec6d50360a5093bb7ce705f878093a048480b193335fd458c68cfefe6cb",
+      "bytes": 14406
+    },
+    {
+      "path": "tests/test_wasb_spatial_training.py",
+      "sha256": "46266d1c41e089dae106beb8ec014624f4fd993d815129b4fb579f77603b712d",
+      "bytes": 17783
+    },
+    {
+      "path": "tests/test_wasb_spatial_evaluation.py",
+      "sha256": "5c9b14ece71c3ce8f5e157e3bbf53c2e3b6547778c003b0dc63476deb0d1346a",
+      "bytes": 20909
+    }
+  ],
+  "geometry_preparation": {
+    "path": "data/outputs/ball_tracking/wasb_spatial_v0_1/geometry_preparation_v0_1/f42273ed9df44e5187e141cb792d0f3b/completed.json",
+    "sha256": "dc1a47165d458391069423e2b85f86806d4dcb33ae51704807aed5c3a4232c07",
+    "bytes": 92785
+  },
+  "geometry_AI_review": {
+    "path": "data/outputs/t/wasb_spatial_20261026/geometry_ai_review.json",
+    "sha256": "063e74e10c3cfc553bcf4279edcdbeb07c10bbaa0d2dab1cb0766381ebfad5c8",
+    "bytes": 4377
+  },
+  "focused_implementation_checks": {
+    "path": "data/outputs/t/wasb_spatial_20261026/focused_tests_final.log",
+    "sha256": "2a90ac3e7e89fd9a693c7b7cc7e2cc84788c97cfca3d4fa906ca37e59d17352f",
+    "bytes": 13929
+  },
+  "new_labels": 0,
+  "protected_evaluation_authorized": false,
+  "max_training_experiments": 1,
+  "max_additional_epochs": 2,
+  "model_adopted_automatically": false,
+  "publisher": {
+    "path": "data/outputs/t/wasb_spatial_20261026/freeze_spatial_recipe.py",
+    "sha256": "deff2082cd2924ae2b2fab78b8577bd93e7846428f54a7f79b612dca9f735597",
+    "bytes": 4488
+  }
+}

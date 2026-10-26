@@ -1,5 +1,22 @@
 # Current State
 
+## Two-epoch spatial experiment authorized and frozen, 2026-10-26
+
+Ryan explicitly approved the [spatial experiment](../ball_tracking_wasb_spatial_execution.md)
+with existing labels, unchanged quality criteria and GPU monitoring. The additive
+implementation passes 20 focused CPU checks in 28.733 seconds. Actual geometry
+preparation covers all 6,206 scheduled samples: 3,127 applied transforms, 3,067
+probability bypasses and 12 clipping fallbacks. Eight representative actual
+training triplets have separate AI preparation inspection; labels are unchanged.
+
+The frozen recipe `configs/ball_tracking/proposals/wasb_spatial_v0_1.json` passes
+actual parent/control preflight. It starts from the exact 768 epoch-five full
+state and runs only absolute epochs six/seven, 3,104 new updates, constant
+0.0001 learning rate. Existing constant six/seven outputs are matched controls.
+Native evaluation remains unchanged. No old frozen code was edited. Consult
+actual completion/monitor records under `data/outputs/ball_tracking/wasb_spatial_v0_1/`
+for execution status; preparation alone is not a result or phase acceptance.
+
 ## Matched continuations and diagnosis complete; phase not passed, 2026-10-26
 
 The [completed sequence](../ball_tracking_wasb_continuation_results.md) runs both
