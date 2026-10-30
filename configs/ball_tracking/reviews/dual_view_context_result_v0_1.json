@@ -1,0 +1,509 @@
+{
+  "schema": "ball_tracking_dual_view_context_result/v0.1",
+  "status": "completed_audited_ranking_gain_both_acceptance_gates_failed_no_adoption",
+  "utc": "2026-10-30T19:22:50.028687+00:00",
+  "authorization": "Ryan: Ok chat move forward my brother; implementation/run of the reviewed dual-view protocol. Routine supervision repair and exact continuation under the standing working agreement.",
+  "comparison": {
+    "LL": "frozen fold-Q local point plus duplicate-local adapted auxiliary point and CLS",
+    "LC": "same local point plus fixed192px adapted auxiliary point and CLS",
+    "matched_capacity_and_recipe": true,
+    "field_of_view_and_scale_resampling_jointly_changed": true,
+    "fits": 8,
+    "epochs_per_fit": 6,
+    "endpoint_selection": false
+  },
+  "held_NBA_full_pool_diagnostic": {
+    "eligible": 2811,
+    "Q_strict_match_first": 2542,
+    "LL_strict_match_first": 2551,
+    "LC_strict_match_first": 2609,
+    "saved_J_strict_match_first": 2795,
+    "LC_vs_Q_gains": 69,
+    "LC_vs_Q_losses": 2,
+    "LC_vs_LL_gains": 61,
+    "LC_vs_LL_losses": 3,
+    "LC_vs_Q_net_on_already_native_correct": 66,
+    "LC_vs_Q_net_on_native_missing": 1,
+    "sole_native_missing_matching_LC_score_negative": true,
+    "LC_vs_J_gains": 3,
+    "LC_vs_J_losses": 189,
+    "LC_vs_J_all_gains_native_correct": true,
+    "post_outcome_J_overlap_separate_from_frozen_gates": true,
+    "new_emitted_policy": false
+  },
+  "fixed_policy_eligible_accuracy": [
+    {
+      "context": "BKN_diagnostic",
+      "policy": "native",
+      "eligible_frames": 310,
+      "at_zero": {
+        "Q": {
+          "correct_kept": 289,
+          "denominator": 310,
+          "fraction": 0.932258064516129
+        },
+        "LL": {
+          "correct_kept": 286,
+          "denominator": 310,
+          "fraction": 0.9225806451612903
+        },
+        "LC": {
+          "correct_kept": 290,
+          "denominator": 310,
+          "fraction": 0.9354838709677419
+        },
+        "J": {
+          "correct_kept": 298,
+          "denominator": 310,
+          "fraction": 0.9612903225806452
+        }
+      }
+    },
+    {
+      "context": "BKN_diagnostic",
+      "policy": "quality_top",
+      "eligible_frames": 310,
+      "at_zero": {
+        "Q": {
+          "correct_kept": 290,
+          "denominator": 310,
+          "fraction": 0.9354838709677419
+        },
+        "LL": {
+          "correct_kept": 287,
+          "denominator": 310,
+          "fraction": 0.9258064516129032
+        },
+        "LC": {
+          "correct_kept": 291,
+          "denominator": 310,
+          "fraction": 0.9387096774193548
+        },
+        "J": {
+          "correct_kept": 293,
+          "denominator": 310,
+          "fraction": 0.9451612903225807
+        }
+      }
+    },
+    {
+      "context": "HOU_development",
+      "policy": "native",
+      "eligible_frames": 882,
+      "at_zero": {
+        "Q": {
+          "correct_kept": 798,
+          "denominator": 882,
+          "fraction": 0.9047619047619048
+        },
+        "LL": {
+          "correct_kept": 798,
+          "denominator": 882,
+          "fraction": 0.9047619047619048
+        },
+        "LC": {
+          "correct_kept": 804,
+          "denominator": 882,
+          "fraction": 0.9115646258503401
+        },
+        "J": {
+          "correct_kept": 841,
+          "denominator": 882,
+          "fraction": 0.953514739229025
+        }
+      }
+    },
+    {
+      "context": "HOU_development",
+      "policy": "quality_top",
+      "eligible_frames": 882,
+      "at_zero": {
+        "Q": {
+          "correct_kept": 825,
+          "denominator": 882,
+          "fraction": 0.935374149659864
+        },
+        "LL": {
+          "correct_kept": 824,
+          "denominator": 882,
+          "fraction": 0.9342403628117913
+        },
+        "LC": {
+          "correct_kept": 830,
+          "denominator": 882,
+          "fraction": 0.9410430839002267
+        },
+        "J": {
+          "correct_kept": 855,
+          "denominator": 882,
+          "fraction": 0.9693877551020408
+        }
+      }
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "native",
+      "eligible_frames": 2811,
+      "at_zero": {
+        "Q": {
+          "correct_kept": 2309,
+          "denominator": 2811,
+          "fraction": 0.8214158662397724
+        },
+        "LL": {
+          "correct_kept": 2348,
+          "denominator": 2811,
+          "fraction": 0.8352899324083956
+        },
+        "LC": {
+          "correct_kept": 2359,
+          "denominator": 2811,
+          "fraction": 0.8392031305585201
+        },
+        "J": {
+          "correct_kept": 2806,
+          "denominator": 2811,
+          "fraction": 0.9982212735681252
+        }
+      }
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "quality_top",
+      "eligible_frames": 2811,
+      "at_zero": {
+        "Q": {
+          "correct_kept": 2275,
+          "denominator": 2811,
+          "fraction": 0.8093205265030239
+        },
+        "LL": {
+          "correct_kept": 2312,
+          "denominator": 2811,
+          "fraction": 0.8224831020988972
+        },
+        "LC": {
+          "correct_kept": 2317,
+          "denominator": 2811,
+          "fraction": 0.824261828530772
+        },
+        "J": {
+          "correct_kept": 2541,
+          "denominator": 2811,
+          "fraction": 0.9039487726787621
+        }
+      }
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "native",
+      "eligible_frames": 130,
+      "at_zero": {
+        "Q": {
+          "correct_kept": 59,
+          "denominator": 130,
+          "fraction": 0.45384615384615384
+        },
+        "LL": {
+          "correct_kept": 63,
+          "denominator": 130,
+          "fraction": 0.4846153846153846
+        },
+        "LC": {
+          "correct_kept": 65,
+          "denominator": 130,
+          "fraction": 0.5
+        },
+        "J": {
+          "correct_kept": 130,
+          "denominator": 130,
+          "fraction": 1.0
+        }
+      }
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "quality_top",
+      "eligible_frames": 130,
+      "at_zero": {
+        "Q": {
+          "correct_kept": 66,
+          "denominator": 130,
+          "fraction": 0.5076923076923077
+        },
+        "LL": {
+          "correct_kept": 68,
+          "denominator": 130,
+          "fraction": 0.5230769230769231
+        },
+        "LC": {
+          "correct_kept": 69,
+          "denominator": 130,
+          "fraction": 0.5307692307692308
+        },
+        "J": {
+          "correct_kept": 115,
+          "denominator": 130,
+          "fraction": 0.8846153846153846
+        }
+      }
+    }
+  ],
+  "gate_results": {
+    "primary_LC_vs_LL_passed": false,
+    "primary_strict_improving_cells": 6,
+    "lost_LL_correct_policy_identities": 23,
+    "component_LC_vs_Q_passed": false,
+    "component_strict_improving_cells": 8,
+    "protected_losses": {
+      "protected_policy_row_keys": 14,
+      "protected_weak_candidate_row_keys": 1,
+      "protected_HOU_stress_query_row_keys": 0
+    },
+    "protected_sets_overlap": true,
+    "J_correct_policy_identity_losses_all_contexts": 859,
+    "J_error_increase_cells": 7,
+    "J_drop_in_readiness_precluded": true
+  },
+  "fit_health": {
+    "all_LC_known_fitting_targets_strict_sign_correct": true,
+    "LC_final_weighted_BCE_below_LL_all_four_fits": true,
+    "unique_causal_failure_diagnosis": false
+  },
+  "roles": {
+    "NBA": "scorer_source_held_upstream_detector_seen_not_end_to_end_unseen",
+    "HOU": "descriptive_regression_veto_only_no_positive_feature_choice",
+    "BKN": "exposed_diagnostic_nonfitting_not_primary_validation",
+    "NFHS": "secondary_regression_evidence",
+    "DET": "18_metadata_only_queries_no_new_pixel_or_model_access"
+  },
+  "workload": {
+    "logical_counters": {
+      "local_capture_forwards_attempted": 2776,
+      "local_capture_forwards_returned": 2776,
+      "local_capture_candidate_presentations": 88742,
+      "training_forwards_attempted": 19740,
+      "training_forwards_returned": 19740,
+      "training_candidate_presentations": 630864,
+      "scoring_forwards_attempted": 5554,
+      "scoring_forwards_returned": 5554,
+      "scoring_candidate_presentations": 177484,
+      "local_parity_forwards_attempted": 4,
+      "local_parity_forwards_returned": 4,
+      "local_parity_candidate_presentations": 128,
+      "auxiliary_parity_forwards_attempted": 8,
+      "auxiliary_parity_forwards_returned": 8,
+      "auxiliary_parity_candidate_presentations": 256,
+      "optimizer_updates": 19740
+    },
+    "physical_counters": {
+      "local_capture_forwards_attempted": 2776,
+      "local_capture_forwards_returned": 2776,
+      "local_capture_candidate_presentations": 88742,
+      "training_forwards_attempted": 19807,
+      "training_forwards_returned": 19807,
+      "training_candidate_presentations": 633008,
+      "scoring_forwards_attempted": 5554,
+      "scoring_forwards_returned": 5554,
+      "scoring_candidate_presentations": 177484,
+      "local_parity_forwards_attempted": 4,
+      "local_parity_forwards_returned": 4,
+      "local_parity_candidate_presentations": 128,
+      "auxiliary_parity_forwards_attempted": 8,
+      "auxiliary_parity_forwards_returned": 8,
+      "auxiliary_parity_candidate_presentations": 256,
+      "optimizer_updates": 19807
+    },
+    "logical_backbone_calls": 28082,
+    "physical_backbone_calls": 28149,
+    "logical_presentations": 897474,
+    "physical_presentations": 899618,
+    "replayed_discarded_updates": 67,
+    "replayed_presentations": 2144,
+    "all_67_replay_loss_and_gradient_norm_values_exact": true,
+    "charged_execution_seconds_exact_sum": 2883.516,
+    "conservative_cumulative_charge_seconds": 2884.047,
+    "CPU_only_repair_downtime_excluded": true,
+    "original_allowance_seconds": 5400,
+    "fresh_allowance_reset": false
+  },
+  "interruption": {
+    "cause": "copied event watcher retained1770/1800s deadline while launcher/worker used5370/5400; readiness did not compare deadlines",
+    "observed_GPU_fault": false,
+    "original_failure_preserved": true,
+    "five_completed_fits_and_all_local_captures_reused": true,
+    "restored_checkpoint": "leave_sac_out/LC/epoch03",
+    "same_recipe_and_endpoint": true,
+    "first_peak_C": 64,
+    "continuation_peak_C": 63,
+    "final_owned_processes": 0,
+    "settings_changes": 0
+  },
+  "verification": {
+    "initial_focused_tests": 47,
+    "recovery_tests": 19,
+    "auditor_binding_regression_tests": 3,
+    "all_final_head_scores_covered": 177484,
+    "head_replay_sign_changes": 0,
+    "journal_events": 76105,
+    "independent_analysis_audit_passed": true,
+    "independent_combined_numerical_audit_passed": true,
+    "original_test_coverage_missed_watcher_deadline_mismatch": true,
+    "auditor_metadata_only_correction_failure_preserved": true
+  },
+  "adoption": {
+    "model": false,
+    "selector": false,
+    "threshold_chosen": null,
+    "diagnostic_threshold_curves_computed": true,
+    "saved_J_changed": false,
+    "new_labels": 0,
+    "global_95_goal_met": false,
+    "saved_J_original_Q_top_correct": 2541,
+    "eligible": 2811,
+    "fixed_original_Q_top_correct_ceiling": 2542
+  },
+  "next_step": "CPU-only feasibility/design of diverse actual current-detector failure support from additional permitted NBA development sources plus separate evaluation; reuse completed coverage/curves/overlap. No new fit or source role reassignment yet.",
+  "next_step_uncertainty": "Support gap demonstrated, but extra data is not a proven cure for representation, ambiguity or shifted-source generalization. Existing Q+ addition already failed and is not an untested lead.",
+  "research_refreshed": [
+    {
+      "url": "https://arxiv.org/html/1803.06799v3",
+      "read": "hard false positives, context and training/sampling discussion",
+      "limit": "not evidence for this crop geometry, quotas or expected effect size"
+    },
+    {
+      "url": "https://arxiv.org/abs/2202.10054",
+      "read": "abstract",
+      "limit": "fitting/generalization caution, not unique mechanism or automatic LP-FT recommendation"
+    }
+  ],
+  "history_reuse": "Maintained Sessions1-19 reconciliation and all subsequent saved results reused; targeted current protocol, failure/support/producer-transfer evidence and new outputs directly reviewed. No fresh every-chat reread claimed.",
+  "report": {
+    "path": "docs/ball_tracking_dual_view_context_results.md",
+    "bytes": 23829,
+    "sha256": "bf0f2905e178eed3de951bb236991797c70f0cc1e23fb5bf9e19bab3d12635ef"
+  },
+  "bindings": [
+    {
+      "path": "docs/ball_tracking_dual_view_context_protocol.md",
+      "bytes": 21328,
+      "sha256": "63a92ba5700cf0aec2e9128d4b9fbe63977df555fd51bf4533c4f101dd77f889"
+    },
+    {
+      "path": "configs/ball_tracking/proposals/dual_view_context_v0_1.json",
+      "bytes": 23097,
+      "sha256": "d78189654b2070ad11544c8711fa8fa357ed65171a85e9d69f149697e9109fbe"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/launch_v0_1/execution_freeze.json",
+      "bytes": 16579,
+      "sha256": "a0fbcf9343665b81bdaf6e92cf179a79c24a41a35dfc2ea6743299118248aaff"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/launch_v0_2/execution_freeze.json",
+      "bytes": 50125,
+      "sha256": "f969a1f0e515a0dc06d07205388898583eb19f7c2b0444dbb477ae9bb9aef4a3"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/launch_v0_2/execution_authorization.json",
+      "bytes": 2210,
+      "sha256": "0347f475de522e67c3915bb4232b33bffc2e127a15839bceaad176f1130f8cf4"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/attempt_001/failed.json",
+      "bytes": 1571,
+      "sha256": "072c15453e8e87dfeb88f7ae0adf2a89cb4cef533107912ecf547cdc644ff10c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/attempt_002/completed.json",
+      "bytes": 85124,
+      "sha256": "826323d698088a25b159897167ceaff630048dde81544d92a885416d308973e6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/attempt_002/required_replay_diagnostic.json",
+      "bytes": 24145,
+      "sha256": "69284e027edfd8ee40f3684c4979dad20e13d1d1f69f40a0acc9cc1828286a62"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/launch_v0_1/launcher_finished.json",
+      "bytes": 1669,
+      "sha256": "32c271d2550a61570e43989af90a56446689b219e426295515220ec7b6ad37aa"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/launch_v0_2/launcher_finished.json",
+      "bytes": 1875,
+      "sha256": "3640f8feede81079fd98803f2ad8efd6dec238e24659789afa2f77a98297f02d"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/recovery_design/poststop_windows_snapshot.json",
+      "bytes": 2392,
+      "sha256": "044c5b4e6383654e54b3c784c1c57bd1f3d2cdfa4c3bfb34ce7e0d74635e3cc9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/launch_v0_2/postrun_windows_snapshot.json",
+      "bytes": 9846,
+      "sha256": "ac47a3697d2d4f99f5ef349c5eca445dcc7d2706a30e82e0a1343c1adca439de"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/recovery_design/root_recovery_review.json",
+      "bytes": 5487,
+      "sha256": "80de2f1a2ab33e232bd9aef57b49d3f2656801cf76d13b8a748159ea3bb0ed78"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/recovery_design/checkpoint_restore_review.json",
+      "bytes": 9719,
+      "sha256": "a8aaae1b3d327649a59d55ac738e538ecb9f78fc6241aac49173af95384f7951"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/recovery_design/independent_resume_review.json",
+      "bytes": 3261,
+      "sha256": "079a9666882de2e7cd0da7218d0278744deed4b667da886c010e2cd72ca29fa3"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/recovery_design/supervision_review.json",
+      "bytes": 14170,
+      "sha256": "3e0243582460a406fcecb0a2b62166df80d0a6b1b3a61fa5f0151823edb1610d"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/audit/partial_attempt_001/completed.json",
+      "bytes": 12752,
+      "sha256": "def300ac90d71b966eabc268f4bdc4b053aafb5dcb4b630940c2a7d6fd20f44e"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/audit/combined_attempt_001/failed.json",
+      "bytes": 739,
+      "sha256": "3eef21753b4f36f9f1d7383dd9ee52bb17433719c4d8b9991cb8711860ac9431"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/audit/combined_attempt_002/completed.json",
+      "bytes": 9438,
+      "sha256": "98d8074c2f3f5ffd8f306e84385d4197aab27faf82d6fb9ac19b96c4609dffe8"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/audit/independent_analysis_audit_attempt_002.json",
+      "bytes": 5044,
+      "sha256": "e15f7a1bf6cbef878c838a6dc71862cd7018dfebac3a1d1dcf8a9900e43b8241"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/analysis_attempt_002/summary.json",
+      "bytes": 70049,
+      "sha256": "ba555cae4b95f18abe30e1bdc7a70829e5dd248d0da5e284d7affe5f067190ed"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/analysis_attempt_002/decision.json",
+      "bytes": 158123,
+      "sha256": "1722c2ebe61928f14bc6fabbd51668dee518c80821d9f564f291c7ef6b0665a0"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/report_complementarity.json",
+      "bytes": 5961,
+      "sha256": "1dcf2cb1a801102159c230003b7b67ec69794818137a0dc513d1d8eff9958155"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_v0_1/review/report_review.json",
+      "bytes": 4705,
+      "sha256": "98fefcd6b115d14d79b82e8092e2065302950e795b338ee697e443cffb765ab7"
+    }
+  ],
+  "preservation_receipt": "data/outputs/ball_tracking/dual_view_context_v0_1/documentation_update/receipt.json"
+}

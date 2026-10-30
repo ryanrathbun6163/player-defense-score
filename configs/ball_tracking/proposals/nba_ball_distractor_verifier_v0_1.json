@@ -1,0 +1,547 @@
+{
+  "schema_version": "nba_ball_distractor_verifier_proposal/v0.1",
+  "status": "proposed_not_approved",
+  "runnable": false,
+  "created_at_utc": "2026-10-21T21:01:35.745265+00:00",
+  "design_base_commit": "95328126b0f32789c51688ff0746d2cdb7a2e91d",
+  "authorization": "Design requested; no label preparation, feature extraction, fit or new output-policy execution approved by this record.",
+  "plan": {
+    "path": "docs/nba_ball_distractor_verifier_plan.md",
+    "sha256": "07f6900ca40977a150af2c2fb5020041d4a15258b4bd13894b09b1cd96e618cb",
+    "bytes": 18181
+  },
+  "question": "Can one fixed supervised appearance classifier suppress real emitted distractors while retaining every verified useful ball point across the same five clips?",
+  "design_evidence": {
+    "grid": {
+      "path": "data/outputs/t/ball_distractor_full_pool_design_2026-10-21/grid.json",
+      "sha256": "cd278029efd438ee097fd884b3385b3b25e56cbe65c30b0bc8d65e4e19f626e9",
+      "bytes": 73210
+    },
+    "full_pool_reconstruction": {
+      "path": "data/outputs/t/ball_distractor_full_pool_design_2026-10-21/completion.json",
+      "sha256": "f4c469579125e66309cfa6667073684753ff774c90a0fff8d526c920187f170b",
+      "bytes": 734759
+    },
+    "candidate_registry": {
+      "path": "data/outputs/t/ball_distractor_full_pool_design_2026-10-21/candidate_registry_160.json",
+      "sha256": "7262c9080c2b2963df19eac0a04d4749d74e54787363c06082aea808947277c2",
+      "bytes": 389108
+    },
+    "contrast_slots": {
+      "path": "data/outputs/t/ball_distractor_full_pool_design_2026-10-21/contrast_slots_24.json",
+      "sha256": "03d7330def7c5631bc79f41fbb9efd732c359e08094b793701e80d2ce49bcab3",
+      "bytes": 44464
+    }
+  },
+  "authorities": {
+    "selection": {
+      "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/attempts/c4c9e3e80c5b4beaaa49147f0e0ad3b5/selection.json",
+      "sha256": "ad6b1dd441197ee6115566c4623151b064a09b82c2ae3fd57fd651495e3bafe4",
+      "bytes": 74417393
+    },
+    "old_790_report": {
+      "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/attempts/c4c9e3e80c5b4beaaa49147f0e0ad3b5/report.json",
+      "sha256": "52416ba8d5455e981f929a3db8b0899f9dd12d08ce898ee5906ee64a8e214e22",
+      "bytes": 7416104
+    },
+    "accepted_appearance": {
+      "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/accepted/accepted_reference.json",
+      "sha256": "69d3c046c1653d73453344cd789ad4457083ca2baa53a001437001812e813b41",
+      "bytes": 149371
+    },
+    "old_34_regression_preparation": {
+      "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/preparation.json",
+      "sha256": "e760444ade64e0d6c2323f2c072d01e6c17749b5054efac44a8e35514c99c759",
+      "bytes": 156573
+    },
+    "nba_fit_authority": {
+      "path": "configs/ball_tracking/wasb_experiments/nba_wasb_adaptation_v0_1.json",
+      "sha256": "04d0b187cc3b515e6a2bf8b9f2c9b827428e75027a09b83a3d67e7b8296bd19a",
+      "bytes": 16483
+    },
+    "nfhs_fit_authority": {
+      "path": "configs/ball_tracking/wasb_experiments/wasb_basketball_expanded_adaptation_v0_1.json",
+      "sha256": "9c0d7013e36cd350cf02a0e78d17ee4ec3f176ff8154e0f72dc2b4620ea2e926",
+      "bytes": 12901
+    }
+  },
+  "existing_feature_screen": {
+    "proposal": {
+      "path": "configs/ball_tracking/proposals/nba_appearance_feature_screen_v0_1.json",
+      "sha256": "28c46913e2bf168219470b056560dd2d911d4f8bca75176e52338b209a1520a5",
+      "bytes": 8090
+    },
+    "result": {
+      "path": "configs/ball_tracking/reviews/nba_appearance_feature_screen_result_v0_1.json",
+      "sha256": "93f01e5fb3099ba1b82772fb66e6f9da707a6b0018b5271429278804f2bd2513",
+      "bytes": 9747
+    },
+    "case_registry": {
+      "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/feature_screen_scope.json",
+      "sha256": "b4c662d273155ac7dc0dfab8293b3992cfb82657052fab46e2eafc7b58978806",
+      "bytes": 112596
+    },
+    "feature_module": {
+      "path": "src/ball_tracking/nba_appearance_feature_screen.py",
+      "sha256": "74723e73ff682f7721ea4cf3393043723d387ed002fc3ab30316aa3ec7c49da3",
+      "bytes": 25388
+    },
+    "feature_completion": {
+      "path": "data/outputs/ball_tracking/nba/appearance_feature_screen_v0_1/completion.json",
+      "sha256": "00826b3ec9cfe9d22edcc3e63d0a80c2f8ab627dcd248dadfd49bdc8da2407ca",
+      "bytes": 63589
+    },
+    "accepted_appearance_acceptance": {
+      "path": "configs/ball_tracking/reviews/nba_appearance_reference_acceptance_v0_1.json",
+      "sha256": "fc3303c3a8bae18a7873d70ea3dc3930e3b78a31061d0385e28189c66f4c02ed",
+      "bytes": 2996
+    }
+  },
+  "additional_regression_authorities": {
+    "gap_evaluation": {
+      "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/evaluation/report.json",
+      "sha256": "fca78b8b389bbf4b1aaa1cf20ed9e9260e5a87e92deea92220786666fa5554d3",
+      "bytes": 340643
+    },
+    "prior_object_assessment": {
+      "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/object_assessment/summary.json",
+      "sha256": "2abd20273f3a61c1e0d92312bdf5ffc63725ed33074852df93020e486da22107",
+      "bytes": 15251
+    },
+    "continuous_visual_review": {
+      "path": "configs/ball_tracking/reviews/nba_temporal_gap_continuous_visual_review_v0_1.json",
+      "sha256": "0166568d06bae6dbe8005ab017a5c427b7353a620119154feccec1f4b8b20f26",
+      "bytes": 9611
+    }
+  },
+  "new_label_budget": {
+    "candidate_fit": 96,
+    "candidate_excluded_check": 64,
+    "source_authored_fit_contrast_slots": 24,
+    "total_attempted_maximum": 184,
+    "unique_target_frames": 105,
+    "unique_context_frames": 525,
+    "context_radius_frames": 2,
+    "new_candidate_context_overlap_with_prior149": 0,
+    "replacements_allowed": false,
+    "unknowns_excluded_from_fit_and_correctness": true
+  },
+  "source_blocks": {
+    "sac_pilot": {
+      "source": "sac_mem_q1_c01",
+      "role": "fit",
+      "range_inclusive": [
+        660,
+        719
+      ],
+      "candidate_quota": 16
+    },
+    "sac_distractor": {
+      "source": "sac_mem_q1_c01",
+      "role": "fit",
+      "range_inclusive": [
+        940,
+        1059
+      ],
+      "candidate_quota": 16
+    },
+    "sac_held_ball": {
+      "source": "sac_mem_q1_c01",
+      "role": "fit",
+      "range_inclusive": [
+        1240,
+        1359
+      ],
+      "candidate_quota": 16
+    },
+    "p001_train_a": {
+      "source": "possession_001",
+      "role": "fit",
+      "range_inclusive": [
+        100,
+        124
+      ],
+      "candidate_quota": 12
+    },
+    "p001_train_b": {
+      "source": "possession_001",
+      "role": "fit",
+      "range_inclusive": [
+        250,
+        274
+      ],
+      "candidate_quota": 12
+    },
+    "p001_train_c": {
+      "source": "possession_001",
+      "role": "fit",
+      "range_inclusive": [
+        375,
+        399
+      ],
+      "candidate_quota": 12
+    },
+    "p002_train": {
+      "source": "possession_002",
+      "role": "fit",
+      "range_inclusive": [
+        318,
+        367
+      ],
+      "candidate_quota": 12
+    },
+    "det_pilot": {
+      "source": "sas_det_q1_c02",
+      "role": "check",
+      "range_inclusive": [
+        10788,
+        10847
+      ],
+      "candidate_quota": 10
+    },
+    "det_pass": {
+      "source": "sas_det_q1_c02",
+      "role": "check",
+      "range_inclusive": [
+        11000,
+        11119
+      ],
+      "candidate_quota": 13
+    },
+    "det_shot": {
+      "source": "sas_det_q1_c02",
+      "role": "check",
+      "range_inclusive": [
+        11420,
+        11579
+      ],
+      "candidate_quota": 17
+    },
+    "p003_train_excluded": {
+      "source": "possession_003",
+      "role": "check",
+      "range_inclusive": [
+        416,
+        440
+      ],
+      "candidate_quota": 8
+    },
+    "p003_dev_a": {
+      "source": "possession_003",
+      "role": "check",
+      "range_inclusive": [
+        150,
+        174
+      ],
+      "candidate_quota": 8
+    },
+    "p003_dev_b": {
+      "source": "possession_003",
+      "role": "check",
+      "range_inclusive": [
+        300,
+        324
+      ],
+      "candidate_quota": 8
+    }
+  },
+  "fit_source_expansion": "P001 historical detector-training blocks are newly included for this appearance verifier; DET and P003 remain excluded from its fit.",
+  "contrast_allocation": {
+    "subtypes": [
+      "head",
+      "hand",
+      "clothing"
+    ],
+    "slots_per_subtype_per_domain": 4,
+    "domains": [
+      "nba",
+      "nfhs"
+    ],
+    "minimum_blocks_per_subtype_per_domain": 2,
+    "identical_crop_transform": true,
+    "appearance_only_centers": true,
+    "not_detector_errors_or_geometric_truth": true,
+    "duplicate_same_frame_object": "retain receipt, exclude supplemental duplicate from fit/quota; no replacement"
+  },
+  "pre_fit_adequacy": {
+    "count_unit": "human-accepted resolved source/frame/physical-object group; aliases never inflate counts",
+    "training_split_and_weight_unit": "complete historical block; repeated frames remain correlated",
+    "fit_groups_min": 64,
+    "fit_ball_groups_min": 32,
+    "fit_other_groups_min": 32,
+    "nfhs_fit_ball_groups_min": 8,
+    "nfhs_fit_other_groups_min": 8,
+    "nfhs_blocks_per_class_min": 2,
+    "new_detector_fit_other_groups_min": 8,
+    "new_detector_fit_other_blocks_min": 2,
+    "new_nfhs_detector_fit_other_groups_min": 2,
+    "fit_head_blocks_min": 2,
+    "fit_clothing_blocks_min": 2,
+    "check_groups_min": 32,
+    "check_ball_groups_min": 16,
+    "check_other_groups_min": 16,
+    "check_each_domain_classes_required": [
+      "ball",
+      "other_object"
+    ],
+    "check_other_subtypes_required": [
+      "head",
+      "clothing"
+    ],
+    "each_role_contributor_resolved_groups_min": 4,
+    "each_role_contributor_blocks_min": 2,
+    "each_role_contributor_classes_required": [
+      "ball",
+      "other_object"
+    ],
+    "new_excluded_emitted_other_episodes_min": 2,
+    "new_excluded_emitted_other_distinct_blocks_min": 2,
+    "new_excluded_emitted_other_subtypes": [
+      "head",
+      "one_non_head"
+    ],
+    "failure_action": "complete insufficient-data result; no feature extraction, fitting, replacement, quota relaxation or label promotion",
+    "reused26_grouping": "Explicit exact historical-block and source/frame/object-group supplement; preserve accepted labels and completed review. Resolve ambiguous/conflicting grouping before fitting."
+  },
+  "model": {
+    "encoder": {
+      "repository": "facebook/dinov2-small",
+      "revision": "150c8e7bb7cef2d30ec31b13a517af14840ee3f7",
+      "architecture": "Dinov2Model, ViT-S/14 without registers",
+      "weights_filename": "model.safetensors",
+      "expected_bytes": 88249960,
+      "expected_sha256": "ae1e99fcefd534ed978cdeb8326f08030c96e28b7a81ffcbc98a857c84d14be1",
+      "weight_identity_source": "https://huggingface.co/facebook/dinov2-small/commit/150c8e7bb7cef2d30ec31b13a517af14840ee3f7",
+      "config_metadata": {
+        "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/design_sources/config.json",
+        "sha256": "1809f83e3bdb1609a501a610ad4a742f4fd8ae44d72ca4aa0df52d1f2ac8628d",
+        "bytes": 547
+      },
+      "processor_metadata": {
+        "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/design_sources/preprocessor_config.json",
+        "sha256": "14e780d86fa1861f8751f868d7f45425b5feb55c38ca26f152ca5097ab30f828",
+        "bytes": 436
+      },
+      "embedding": "final layer-normalized CLS token exposed as pooler_output",
+      "dimensions": 384,
+      "weights_downloaded_in_this_increment": false,
+      "model_loaded_or_run_in_this_increment": false,
+      "trust_remote_code": false
+    },
+    "existing_weights": {
+      "path": "data/outputs/ball_tracking/nba/appearance_feature_screen_v0_1/model/model.safetensors",
+      "sha256": "ae1e99fcefd534ed978cdeb8326f08030c96e28b7a81ffcbc98a857c84d14be1",
+      "bytes": 88249960
+    },
+    "preprocessing": "exact prior feature module crop_and_preprocess/extract_cls/normalize_feature: native64 floor(center)-32, black padding, bicubic256, centered224, RGB normalization, final-normalized CLS384 float32 saved then float64 L2",
+    "runtime": {
+      "device": "cpu",
+      "encoder_dtype": "float32",
+      "fit_dtype": "float64",
+      "batch_size": 1,
+      "torch_threads": 4,
+      "attention": "eager",
+      "augmentation": false,
+      "backbone_frozen": true
+    },
+    "classifier": "one linear logistic head",
+    "trainable_parameters": 385,
+    "features_forbidden": [
+      "coordinates",
+      "source_id",
+      "detector_score",
+      "candidate_provenance",
+      "temporal_context",
+      "reference_geometry"
+    ],
+    "loss": "sum(q_i * (logaddexp(0, w.T@x_i+b) - y_i*(w.T@x_i+b))) + 0.005*sum(w*w)",
+    "ball_label": 1,
+    "other_label": 0,
+    "initial_parameters": "all_zero",
+    "bias_penalty": 0,
+    "weights": {
+      "positive_mass": 0.5,
+      "authored_negative_mass": "0.5 * min(0.5, G_A/(G_A+G_D))",
+      "detector_negative_mass": "0.5 - authored_negative_mass",
+      "G_A": "resolved nonduplicate authored negative frame/object groups",
+      "G_D": "resolved detector negative frame/object groups, including old accepted fit groups",
+      "within_stratum": "mass / occupied_blocks / frame_object_groups_in_block / eligible_distinct_crops_in_group",
+      "empty_stratum": "zero mass; no division",
+      "total": 1.0,
+      "sealed_before_features": true
+    },
+    "optimizer": {
+      "library": "scipy",
+      "installed_version": "1.17.1",
+      "method": "L-BFGS-B",
+      "analytic_gradient": true,
+      "full_batch": true,
+      "maxiter": 500,
+      "maxfun": 2000,
+      "maxcor": 10,
+      "maxls": 40,
+      "ftol": 1e-12,
+      "gtol": 1e-08,
+      "fit_count": 1,
+      "selection": "final converged solution",
+      "nonconvergence": "preserved invalid-fit result; no new recipe/restart"
+    },
+    "boundary_logit": 0.0,
+    "calibration": null,
+    "scores_are_probabilities": false,
+    "new_backbone_download": false
+  },
+  "tracking_arm": {
+    "baseline": {
+      "path": "data/outputs/ball_tracking/nba/temporal_gap_continuous_v0_1/attempts/c4c9e3e80c5b4beaaa49147f0e0ad3b5/selection.json",
+      "sha256": "ad6b1dd441197ee6115566c4623151b064a09b82c2ae3fd57fd651495e3bafe4",
+      "bytes": 74417393
+    },
+    "experimental_output_root": "data/outputs/ball_tracking/nba/ball_distractor_verifier_v0_1",
+    "permitted_ranges_inclusive": {
+      "sac_mem_q1_c01": [
+        [
+          540,
+          2010
+        ]
+      ],
+      "sas_det_q1_c02": [
+        [
+          10668,
+          11898
+        ]
+      ],
+      "possession_001": [
+        [
+          0,
+          274
+        ],
+        [
+          350,
+          498
+        ]
+      ],
+      "possession_002": [
+        [
+          0,
+          174
+        ],
+        [
+          250,
+          498
+        ]
+      ],
+      "possession_003": [
+        [
+          0,
+          224
+        ],
+        [
+          300,
+          499
+        ]
+      ]
+    },
+    "protected_ranges_inclusive": {
+      "possession_001": [
+        [
+          275,
+          349
+        ]
+      ],
+      "possession_002": [
+        [
+          175,
+          249
+        ]
+      ],
+      "possession_003": [
+        [
+          225,
+          299
+        ]
+      ]
+    },
+    "permitted_positions": 3975,
+    "segments": 8,
+    "protected_positions": 225,
+    "original_emissions": 3359,
+    "filled_emissions": 14,
+    "total_emissions": 3373,
+    "existing_missing": 602,
+    "original_point_policy": "negative logit -> missing; positive or exactly zero -> exact retained point/provenance",
+    "fill_policy": "keep all fills in an original gap iff both original anchors and every proposed fill have strictly positive logits; otherwise revoke all gap fills",
+    "forbidden": [
+      "baseline overwrite",
+      "new candidates",
+      "reranking",
+      "coordinate substitution",
+      "new gaps for filling",
+      "recursive fill anchors",
+      "interpolation",
+      "new detector inference",
+      "holdout/buffer access"
+    ],
+    "feature_records_upper_bound_before_deduplication": 3617
+  },
+  "success_gates": {
+    "pre_fit_adequacy": "all required",
+    "resolved_excluded_ball": "strictly positive for every accepted old/new ball; zero losses",
+    "old_10_checks": "all correct; exact zero fails",
+    "new_emitted_excluded_other": "every resolved one strictly negative and suppressed; two blocks/episodes including head and non-head",
+    "new_unselected_other": "diagnostics only, not tracking benefit",
+    "old790_exact_match_retention": {
+      "sac_mem_q1_c01": 218,
+      "sas_det_q1_c02": 209,
+      "possession_001": 42,
+      "possession_002": 50,
+      "possession_003": 40
+    },
+    "new_eligible_match_retention": 22,
+    "prior_gains_exact": [
+      "sas_det_q1_c02:11437",
+      "sas_det_q1_c02:11438",
+      "possession_001:208"
+    ],
+    "protected_match_inventory": "deduplicated source/frame keys; keep named cohorts separate",
+    "localization_radius_px_inclusive": 10,
+    "nba_easy_controls_match_each": 60,
+    "exposed_head_episode_suppress": [
+      "sac_mem_q1_c01:1419",
+      "sac_mem_q1_c01:1420",
+      "sac_mem_q1_c01:1421"
+    ],
+    "exposed_near_head_ball_retain": [
+      "sas_det_q1_c02:11722",
+      "sas_det_q1_c02:11723",
+      "sas_det_q1_c02:11724",
+      "sas_det_q1_c02:11725"
+    ],
+    "old34_role": "qualitative exposed regression only, never fit or new semantic truth",
+    "unknowns": "six accepted appearance, five additional geometry and eight old semantic unknowns remain unscored; removed unknowns never successes",
+    "new_wrong_outputs": 0,
+    "new_hidden_alarms": 0,
+    "retained_coordinates_and_provenance": "exact",
+    "human_new_trajectory_review": "all five synchronized comparisons, changed episodes with context, missing intervals and actual finals before adoption"
+  },
+  "execution_sequence": [
+    "explicit scope approval",
+    "implementation and focused validation",
+    "one source-first proposed-label package with all184slots",
+    "human acceptance/correction and sealed group/episode/adequacy records",
+    "if adequate: one fixed fit and all3373 saved-emission decisions",
+    "complete comparison/report even if scientific gates fail",
+    "human motion review before any adoption"
+  ],
+  "approval_scope": "If accepted, covers preparation, publication after label acceptance, eligible one-fit execution and complete five-clip comparison without a second fitting proposal; retains separate human label and new-trajectory gates.",
+  "failure_policy": "preserve attempts/resources and complete honest result; routine implementation repairs autonomous; no scientific tuning, data replenishment or promotion",
+  "limits": [
+    "small correlated exposed development dataset",
+    "source-authored negatives differ from detector errors",
+    "candidate identity is not geometric truth",
+    "zero boundary uncalibrated",
+    "veto may remove valid unscored balls",
+    "no recovery of existing missing positions",
+    "no ball-phase or full-game pass"
+  ]
+}

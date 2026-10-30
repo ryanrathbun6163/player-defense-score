@@ -1,0 +1,2021 @@
+{
+  "schema_version": 1,
+  "research_date_local": "2026-10-18",
+  "timezone": "America/Phoenix",
+  "starting_branch": "codex/ball-detector-baseline",
+  "starting_head": "10f3d4cfd0ce2f3fce2be898e8f498fc2cb1d4d6",
+  "target": {
+    "nba_game_id": "0022500828",
+    "game": "San Antonio Spurs at Detroit Pistons",
+    "date": "2026-02-23"
+  },
+  "source_record_count": 134,
+  "distinct_source_url_count": 156,
+  "count_definition": "A record may group several URLs or separately record another inspection of the same URL. These are research sources/observations, not reproduced studies, unique providers, or acquired games. Distinct count uses top-level url and sources fields only.",
+  "evidence_root_ignored": "data/outputs/t/nba_footage_access_research_2026-10-18",
+  "evidence_levels": [
+    "search_lead",
+    "document_or_page_inspected",
+    "public_metadata",
+    "binary_endpoint",
+    "bounded_container_header",
+    "decoded_local_samples",
+    "complete_local_clip",
+    "complete_game_coverage_not_yet_verified"
+  ],
+  "full_target_file_acquired": false,
+  "complete_game_coverage_verified": false,
+  "repeatable_full_game_acquisition_verified": false,
+  "preservation": "Earlier negative scientific result, completed reviews, pending3 new human reviews, holdouts and failed OBS attempt unchanged. New sample-decoding helper failure retained alongside correction. No training/inference/scoring or prior reviews rerun.",
+  "resource_accounting": {
+    "exact_game_sample_payload_bytes_including_playlist": 52881180,
+    "bard_complete_clip_bytes": 5867901,
+    "datasets_probe_bytes_read": 3622525,
+    "datasets_media_archive_prefix_bytes_within_probe_total": 22520,
+    "global_network_bytes": null,
+    "note": "Do not sum saved files as total bandwidth. Documentation/search, response headers, buffering and other lanes were not globally metered. No whole-game download or paid purchase occurred."
+  },
+  "sources": [
+    {
+      "id": "unofficial:exact_basketball_video",
+      "url": "https://basketball-video.com/san-antonio-spurs-vs-detroit-pistons-full-game-replay-february-23-2026-nba",
+      "level": "exact_page_and_embed_mapping_verified",
+      "result": "Three server choices mapped to OK, Dailymotion and Byse. First server uses exact OK ID 12326019402326.",
+      "limits": "Page label alone cannot establish media identity or completeness.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:exact_ok",
+      "url": "https://ok.ru/videoembed/12326019402326",
+      "level": "live_media_endpoint_verified",
+      "result": "Public metadata: status OK, nominal duration 6939 seconds, 1920x1080; six MP4 variants; full MP4 HEAD returned 200 and 6,081,103,430 bytes; HLS 720p/1080p advertised 60 fps.",
+      "evidence": [
+        "unofficial/ok_12326019402326_metadata.json",
+        "unofficial/ok_hls_master.txt",
+        "unofficial/ok_full_variant_head.txt"
+      ],
+      "limits": "This researcher did not decode media. Root independently sampled and identified exact game; full file and continuous coverage unverified.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:exact_dailymotion_1",
+      "url": "https://www.dailymotion.com/video/xa0mx9w",
+      "level": "current_endpoint_failed",
+      "result": "Cached title SAS@DET1; current local HEAD returned 410 Gone.",
+      "limits": "Cached title is stale evidence; geo embed fetch returned 403.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:exact_dailymotion_2",
+      "url": "https://www.dailymotion.com/video/xa0mxja",
+      "level": "current_endpoint_failed",
+      "result": "Cached title SAS@DET2; current local HEAD returned 410 Gone.",
+      "evidence": [
+        "unofficial/alternate_host_heads.json"
+      ],
+      "limits": "Cached title is stale evidence.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:exact_byse",
+      "url": "https://bysesukior.com/e/gdhdjqdk7t5h",
+      "level": "page_shell_only",
+      "result": "HTTP 200 JavaScript shell, 1649 body bytes, title Byse Frontend.",
+      "evidence": [
+        "unofficial/byse_gdhdjqdk7t5h.html",
+        "unofficial/alternate_host_heads.json"
+      ],
+      "limits": "No media endpoint or playback verified.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:exact_basketballreplays",
+      "url": "https://basketballreplays.net/nba/nba_2025_26/san_antonio_spurs_detroit_pistons_23_february_2026_nba_full_game_replay/33-1-0-2275",
+      "level": "exact_page_only",
+      "result": "Web extraction showed exact title and iframe placeholders; local TLS EOF followed by curl 403 from Caddy.",
+      "limits": "No player origin or media verified.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:sportvideo_exact_index",
+      "url": "https://sport-video.org.ua/basketball7.html",
+      "level": "exact_page_to_shared_file_mapping_verified",
+      "result": "Exact San Antonio Spurs at Detroit Pistons 23.02.2026 row links the public MEGA share.",
+      "evidence": [
+        "unofficial/sportvideo_exact_game_fragment.html"
+      ],
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:mega_exact",
+      "url": "https://mega.nz/file/wPsWSADZ#nI4GEuBVNmO_zqn74uZr8ZBcEj1SOaG1QYIv8CIDnCI",
+      "level": "live_encrypted_shared_file_endpoint_verified",
+      "result": "Anonymous metadata decoded filename San Antonio Spurs at Detroit Pistons 23.02.2026.mkv; 5,289,752,196 bytes; binary HEAD returned 200 with correct length.",
+      "evidence": [
+        "unofficial/mega_metadata_request.json",
+        "unofficial/mega_metadata_response.json",
+        "unofficial/mega_public_file_metadata.json",
+        "unofficial/mega_exact_download_head.txt"
+      ],
+      "limits": "No media bytes decoded; codec, cadence, duration, identity, completeness, transfer quota and sustained download unverified.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:basketball_video_season",
+      "url": "https://basketball-video.com/2025-26",
+      "level": "archive_index_verified",
+      "result": "Approximately 141 paginated pages; current home page also lists October 2026 preseason.",
+      "limits": "No complete season audit or guaranteed retention.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:kings_grizzlies",
+      "url": "https://basketball-video.com/sacramento-kings-vs-memphis-grizzlies-full-game-replay-february-23-2026-nba",
+      "player": "https://ok.ru/videoembed/12326430640726",
+      "level": "live_media_endpoint_verified",
+      "result": "Page contains ID; metadata OK, 5960 seconds, 1920x1080; full MP4 HEAD returned 200 video/mp4, 5,112,076,363 bytes.",
+      "evidence": [
+        "unofficial/repeatability_two_game_endpoint_checks_recovery.json"
+      ],
+      "limits": "No actual media decoded or visually identified.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:jazz_rockets",
+      "url": "https://basketball-video.com/utah-jazz-vs-houston-rockets-full-game-replay-february-23-2026-nba",
+      "player": "https://ok.ru/videoembed/12326766774870",
+      "level": "player_metadata_verified",
+      "result": "Metadata OK, 6977 seconds, 1920x1080, six variants and HLS.",
+      "evidence": [
+        "unofficial/repeatability_ok_metadata_sample.json"
+      ],
+      "limits": "No binary endpoint HEAD or media sample.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:spurs_raptors_ok",
+      "url": "https://basketball-video.com/san-antonio-spurs-vs-toronto-raptors-full-game-replay-february-25-2026-nba",
+      "player": "https://ok.ru/videoembed/12310562081452",
+      "level": "live_media_endpoint_verified",
+      "result": "Page contains ID; metadata OK, 7071 seconds, 1920x1080; full MP4 HEAD returned 200 video/mp4, 4,876,137,080 bytes. Another OK ID 12309135755948 has 5536 seconds at 1280x720.",
+      "evidence": [
+        "unofficial/repeatability_two_game_endpoint_checks_recovery.json",
+        "unofficial/repeatability_ok_metadata_sample.json"
+      ],
+      "limits": "Different durations may reflect broadcast or editing differences; neither was decoded.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:spurs_raptors_mega",
+      "url": "https://mega.nz/file/8XF1AKRD#AUQRTkH3nTYpC0ENTiKN19oNsWNkr7vpWfY_VAonjiw",
+      "source_page": "https://sport-video.org.ua/basketball7.html",
+      "level": "public_file_metadata_verified",
+      "result": "Decoded filename San Antonio Spurs at Toronto Raptors 25.02.2026.mkv; 5,062,868,623 bytes; live download URL returned.",
+      "evidence": [
+        "unofficial/mega_repeatability_metadata.json"
+      ],
+      "limits": "No HEAD request, media sample or sustained download.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:spurs_boston_mega",
+      "url": "https://mega.nz/file/tXF0gTjL#9D6zxl9mFkzAotdxMwNSZKAhhZkqU1JrSUQR-9FyT_E",
+      "source_page": "https://sport-video.org.ua/basketbal10.html",
+      "level": "public_file_metadata_verified",
+      "result": "Decoded filename San Antonio Spurs at Boston Celtics 10.01.2026.mkv; 6,246,397,017 bytes; live download URL returned.",
+      "evidence": [
+        "unofficial/mega_repeatability_metadata.json"
+      ],
+      "limits": "No HEAD request, media sample or sustained download.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:sportvideo_current",
+      "url": "https://sport-video.org.ua/basketball.html",
+      "level": "current_index_verified",
+      "result": "Current October 2026 entries and older archives.",
+      "limits": "Selected games; all-game coverage is unverified.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:sportvideo_nba_allgames",
+      "url": "https://sport-video.org.ua/forum/viewtopic.php?t=25234",
+      "level": "blocked",
+      "result": "Web request returned HTTP 429.",
+      "limits": "No forum contents or account tested.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:724zbw_exact",
+      "url": "https://www.724zbw.com/nba/95088.html",
+      "level": "exact_page_and_regional_links_verified",
+      "result": "February 24 China date, exact matchup and final 114-103; ten Tencent full-game/quarter replay links plus highlights.",
+      "evidence": [
+        "unofficial/tencent_exact_game_links.json"
+      ],
+      "limits": "Third-party index; actual Tencent playback unverified.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:tencent_original",
+      "url": "https://v.qq.com/x/cover/mzc00200z9n8cnk/z4101d4cnwo.html",
+      "level": "generic_page_only",
+      "result": "Web internal error; local HEAD/GET returned 200 with generic Tencent Video page; requested video ID absent.",
+      "evidence": [
+        "unofficial/tencent_exact_original_audio_page.html"
+      ],
+      "limits": "No target metadata, player stream, entitlement or download verified.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:tencent_chinese",
+      "url": "https://v.qq.com/x/cover/mzc00200z9n8cnk/u3192rehd0s.html",
+      "level": "linked_candidate",
+      "result": "Exact index labels this as full game with Chinese commentary.",
+      "limits": "Not independently played.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:zhangchu_exact",
+      "url": "https://m.zhangchu.net/lanqiu/nba/video-66672.html",
+      "level": "indexed_exact_page",
+      "result": "Same ten Tencent full-game/quarter categories, February 24 China date.",
+      "limits": "No independent host copy established.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:chinaspurs_fan_clip",
+      "url": "https://chinaspurs.com/t/topic/44941",
+      "player": "https://x.com/BalaPattySZN/status/2026162929217769822",
+      "level": "research_clip_lead_only",
+      "result": "Castle defensive compilation linked.",
+      "limits": "Not a full game; may overlap existing curated source; not downloaded.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:720pier_nba",
+      "url": "https://720pier.ru/viewforum.php?f=34",
+      "level": "archive_index_verified",
+      "result": "Active NBA forum with roughly 14.7k threads and about 590 pages. Cached counts differ.",
+      "limits": "No exact-game thread verified; no entire-season coverage audit.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:720pier_sample",
+      "url": "https://720pier.ru/viewtopic.php?t=76971",
+      "level": "metadata_page_with_attachment_denial",
+      "result": "Uploader claims Spurs at Phoenix October 10, 2026, MKV/H.264, 1280x720 at 59.94 fps, about 6000 kbps, AAC stereo, ESPN2; anonymous attachment access denied.",
+      "limits": "No account created; torrent, peers and media unverified.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:rgfootball",
+      "url": "https://rgfootball.net/viewforum.php?f=50",
+      "level": "index_only",
+      "result": "NBA 2025-26 section including All-Star and finals release claims.",
+      "limits": "No exact game or live torrent verified.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:rutracker",
+      "url": "https://rutracker.org/forum/viewforum.php?f=1997",
+      "level": "web_tool_failed",
+      "result": "Unable to open; searches did not verify exact game.",
+      "limits": "No account, client, plugin or peer activity.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:ext_finals",
+      "url": "https://ext.to/browse/?q=nba+finals",
+      "level": "search_index_metadata",
+      "result": "Purported 2026 five-game finals bundle, 44.35 GB, 1080p60.",
+      "limits": "Not exact target; seed counts unverified; no torrent metadata downloaded.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:ext_denver",
+      "url": "https://ext.to/browse/?q=denver+nuggets",
+      "level": "search_index_metadata",
+      "result": "Selected 2026 regular-season and preseason releases.",
+      "limits": "Not exact target; no peer or file test.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:torlock",
+      "url": "https://www.torlock.com/all/torrents/nba-lal.html",
+      "level": "search_index_metadata",
+      "result": "Selected 2026 NBA files, mostly zero claimed seeds.",
+      "limits": "Not exact target; no peer or file test.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:internet_archive",
+      "url": "https://archive.org/details/nba-regular-season-archive",
+      "metadata_url": "https://archive.org/metadata/nba-regular-season-archive",
+      "level": "public_metadata_verified",
+      "result": "510 files including thumbnails; 16 MP4 filenames for older 2017-2024 games including derivative copies; zero exact-date filename matches.",
+      "evidence": [
+        "unofficial/internet_archive_spurs_pistons_search.json",
+        "unofficial/internet_archive_collection_metadata.json",
+        "unofficial/internet_archive_compact_inventory.json"
+      ],
+      "limits": "No global absence claim; actual videos and licenses unverified.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:watchreplay",
+      "url": "https://watchreplay.net/",
+      "level": "index_no_candidate",
+      "result": "NBA zero events and no videos shown.",
+      "limits": "Point-in-time page only.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:basketlita",
+      "url": "https://www.basketlita.com/",
+      "level": "page_shell_only",
+      "result": "Search UI and StreamPass promotion.",
+      "limits": "No exact game or player verified; no sign-in or paid action.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:fishkernba",
+      "url": "https://fishkernba.com/",
+      "level": "web_tool_failed",
+      "result": "Timeout.",
+      "limits": "Not proof of permanent failure.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:nbareplay",
+      "url": "https://nbareplay.net/",
+      "level": "web_tool_failed",
+      "result": "Inaccessible through web tool.",
+      "limits": "Not proof of permanent failure.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "unofficial:nbafullhd",
+      "url": "https://nbafullhd.com/",
+      "level": "web_tool_failed",
+      "result": "Inaccessible through web tool.",
+      "limits": "Not proof of permanent failure.",
+      "lane": "unofficial"
+    },
+    {
+      "id": "platforms:P001",
+      "title": "Amazon linking help",
+      "url": "https://support.watch.nba.com/hc/en-us/articles/34476165179799-Link-your-Amazon-Prime-and-NBA-ID-League-Pass-Subscription?hidenav=true",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Current direct page updated 2026-10-15; eligible NBA-direct/Prime linking. Exact-game Amazon listing and recorder support not tested.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P002",
+      "title": "offline downloads",
+      "url": "https://support.watch.nba.com/hc/en-us/articles/24939268210455-Download-for-Offline-Viewing",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "NBA mobile/tablet app offline feature; does not document portable Windows export.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P003",
+      "title": "replay availability help",
+      "url": "https://support.watch.nba.com/hc/en-us/articles/360011802673-Full-Game-Replays-and-Condensed-Game-Availability",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Replay timing and streams; playback documentation only.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P004",
+      "title": "blackout guide",
+      "url": "https://support.watch.nba.com/hc/en-us/articles/115002481154-League-Pass-Blackout-Guide",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "National/local playback access distinctions; no export promise.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P005",
+      "title": "February 23 viewing guide",
+      "url": "https://www.peacocktv.com/blog/watch-spurs-pistons-jazz-rockets-on-peacock-nba-monday-feb-23",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Peacock's exact Spurs at Pistons February 23 broadcast announcement; October replay availability unknown.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P006",
+      "title": "NBA hub",
+      "url": "https://www.peacocktv.com/sports/nba",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Public current NBA schedules; historical target catalog not verified.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P007",
+      "title": "Peacock offline downloads",
+      "url": "https://www.peacocktv.com/help/article/can-i-watch-peacock-content-offline",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Selected mobile offline titles; no general MP4 export or target-game eligibility.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P008",
+      "title": "Google League Pass notice",
+      "url": "https://support.google.com/youtubetv/answer/9148808?co=GENIE.Platform%3DDesktop&hl=en",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Current removal of NBA/WNBA League Pass, including recordings; September 30 year not stated.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P009",
+      "title": "YouTube TV DVR help",
+      "url": "https://support.google.com/youtubetv/answer/7129564?hl=en-NE",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Cloud recording; no retrospective target file or portable export established.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P010",
+      "title": "Hulu's current offline help",
+      "url": "https://help.hulu.com/article/hulu-downloads",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Mobile library downloads exclude relevant Live TV/add-on categories; no desktop export.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P011",
+      "title": "Hulu + Live TV",
+      "url": "https://www.hulu.com/live-tv",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Cloud DVR advertised; does not establish ordinary files.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P012",
+      "title": "US TV-provider partners",
+      "url": "https://support.watch.nba.com/hc/en-us/articles/16847553816087-US-TV-Provider-Partners",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Provider authentication roster; not file entitlement.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P013",
+      "title": "PlayOn channel listings",
+      "url": "https://www.playon.tv/whats-on",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Prime and Peacock listed; standalone NBA not listed.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P014",
+      "title": "PlayOn Cloud documentation",
+      "url": "https://www.playon.tv/cloud",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Documented real-time virtual-PC recording to downloadable MP4; NBA item untested.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P015",
+      "title": "PlayOn Home's current features",
+      "url": "https://www.playon.tv/features",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Windows recording and scheduling; NBA episode/catalog behavior unknown.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P016",
+      "title": "The FAQ",
+      "url": "https://www.playon.tv/faq?tab=cloud",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Home/Cloud distinctions, credits and cancellation behavior; old live-sports answer conflicts with current channels.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P017",
+      "title": "Cloud credit store",
+      "url": "https://www.playon.tv/offers/cloud/",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Observed 50 credits for $7.50 and promotional 300 for $34.99; prices may change.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P018",
+      "title": "Home plan page",
+      "url": "https://www.playon.tv/offers/upgrade/",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Current parsed page did not expose a price; no price inferred.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P019",
+      "title": "December 2025 PlayOn user discussion",
+      "url": "https://www.reddit.com/r/PlayOn/comments/1pfie7u/any_idea_where_amazon_channels_went/",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "first_person_community_report_unreplicated",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Anecdotal Amazon channel-navigation and rendering failures; not independently replicated or NBA-specific proof.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P020",
+      "title": "Audials' recorder guide",
+      "url": "https://audials.com/how-to/en/how-to-record-videos-from-any-video-streaming-service/",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "vendor_marketing_or_documentation_unverified_for_nba",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Generic vendor recorder claim; no current NBA success demonstrated.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P021",
+      "title": "video-recording product page",
+      "url": "https://audials.com/en/i-want-to/record-films",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "vendor_marketing_or_documentation_unverified_for_nba",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Vendor formats/frame-rate claims; not a verified NBA route.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P022",
+      "title": "Replay Video Capture",
+      "url": "https://applian.com/replay-video-capture/",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "vendor_marketing_or_documentation_unverified_for_nba",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Vendor screen/tab recording product; NBA protected playback not tested.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P023",
+      "title": "StreamFab Amazon Downloader",
+      "url": "https://streamfab.com/amazon-downloader.htm",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "vendor_marketing_or_documentation_unverified_for_nba",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Vendor Prime/add-on MP4/MKV and trial claims; exact NBA compatibility unknown.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P024",
+      "title": "Peacock product page",
+      "url": "https://streamfab.com/peacock-downloader.htm",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "vendor_marketing_or_documentation_unverified_for_nba",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Vendor local-file claims; inconsistent/stale supporting marketing details observed.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P025",
+      "title": "Peacock limitations article",
+      "url": "https://streamfab.com/peacock-download-options-explained",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "vendor_marketing_or_documentation_unverified_for_nba",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Vendor says on-demand support, not live/linear; replay listing prerequisite.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P026",
+      "title": "a January 19, 2026 DVDFab forum thread",
+      "url": "https://forum.dvdfab.cn/d/470727-cant-download-from-nba-league-pass-by-amazon",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "first_person_community_report_unreplicated",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "First-person NBA-through-Amazon earlier success followed by failure; no retrieved resolution, not replicated.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P027",
+      "title": "Release notes",
+      "url": "https://streamfab.com/downloader-new.htm",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "vendor_marketing_or_documentation_unverified_for_nba",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "General provider fixes; does not establish NBA-specific repair.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P028",
+      "title": "own technical explanation",
+      "url": "https://streamfab.com/user-guide/top-questions.htm",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "vendor_marketing_or_documentation_unverified_for_nba",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Vendor describes DRM decryption mode; public documentation only, not executed.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P029",
+      "title": "KeepStreams Amazon",
+      "url": "https://keepstreams.com/amazon-prime-downloader",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "vendor_marketing_or_documentation_unverified_for_nba",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Vendor local export claim; no current NBA-specific independent evidence.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P030",
+      "title": "FlixPal Peacock",
+      "url": "https://flixpal.us/peacock-downloader",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "vendor_marketing_or_documentation_unverified_for_nba",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Vendor Peacock export claim; no exact-game proof.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P031",
+      "title": "Microsoft's Desktop Duplication structure documentation",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/dxgi1_2/ns-dxgi1_2-dxgi_outdupl_frame_info",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "ProtectedContentMaskedOut explains protected pixels already blacked out; not an OBS test result.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P032",
+      "title": "OBS forum reports",
+      "url": "https://obsproject.com/forum/threads/black-video-drm.150404/",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "first_person_community_report_unreplicated",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Historical browser-dependent anecdotes; no current League Pass guarantee.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P033",
+      "title": "2023 League Pass user report",
+      "url": "https://www.reddit.com/r/nba/comments/10zedko",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "first_person_community_report_unreplicated",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Historical Firefox/OBS success anecdote; not reproduced.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P034",
+      "title": "Elgato's HDCP documentation",
+      "url": "https://help.elgato.com/hc/en-us/articles/360040482032-HDCP-and-Elgato-Game-Capture-devices",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Capture devices cannot record protected HDMI; hardware purchase alone not a solution.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P035",
+      "title": "Its PlayStation guidance",
+      "url": "https://help.elgato.com/hc/en-us/articles/360028236371-Turn-off-HDCP-to-use-PlayStation-4-with-Elgato-Game-Capture-HD60-S",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Unprotected gameplay differs from protected media applications.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P036",
+      "title": "Plex's official DVR FAQ",
+      "url": "https://support.plex.tv/articles/226463767-frequently-asked-questions-dvr-live-tv/",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Tuner/antenna and Plex Pass required for recording; protected channels unsupported.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P037",
+      "title": "Silicondust",
+      "url": "https://www.silicondust.com/hdhomerun/",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Current tuner/storage capabilities and advertised hardware prices; reception and subscriptions extra.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P038",
+      "title": "Its Windows DVR instructions",
+      "url": "https://info.hdhomerun.com/info/dvr%3Awindows",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Local Windows storage workflow and rough HD storage estimate; future broadcast scope only.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P039",
+      "title": "yt-dlp NBA classic-game issue #6042",
+      "url": "https://github.com/yt-dlp/yt-dlp/issues/6042",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_public_repository_or_issue",
+      "inspection_method": "public_repository_metadata_readme_code_or_issue_read_only",
+      "observed_claim_and_limit": "Open DRM-classified NBA classic-game issue; no current full-game success shown.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P040",
+      "title": "youtube-dl NBA extractor code",
+      "url": "https://github.com/ytdl-org/youtube-dl/blob/master/youtube_dl/extractor/nba.py",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_public_repository_or_issue",
+      "inspection_method": "public_repository_metadata_readme_code_or_issue_read_only",
+      "observed_claim_and_limit": "Legacy extractor/highlight cases; extractor existence is not current LP support.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P041",
+      "title": "solyst/NBA-Downloader",
+      "url": "https://github.com/solyst/NBA-Downloader",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_public_repository_or_issue",
+      "inspection_method": "public_repository_metadata_readme_code_or_issue_read_only",
+      "observed_claim_and_limit": "Public API metadata: data/PBP project, last push April 2018; not executed.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P042",
+      "title": "devd-99/nba_downloader",
+      "url": "https://github.com/devd-99/nba_downloader",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_public_repository_or_issue",
+      "inspection_method": "public_repository_metadata_readme_code_or_issue_read_only",
+      "observed_claim_and_limit": "Public API metadata: play/event-oriented clips, last push April 2024; not executed.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P043",
+      "title": "yo1995/Ultimate-NBA-Downloader",
+      "url": "https://github.com/yo1995/Ultimate-NBA-Downloader",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_public_repository_or_issue",
+      "inspection_method": "public_repository_metadata_readme_code_or_issue_read_only",
+      "observed_claim_and_limit": "README/API: archived photo collector, last push September 2018; not a video source.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P044",
+      "title": "maxgalbu/xbmc.plugin.video.nba",
+      "url": "https://github.com/maxgalbu/xbmc.plugin.video.nba",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_public_repository_or_issue",
+      "inspection_method": "public_repository_metadata_readme_code_or_issue_read_only",
+      "observed_claim_and_limit": "Public API metadata: historical Kodi viewing plugin, last push December 2020; untested.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P045",
+      "title": "russholio/kodi-nba-league-pass",
+      "url": "https://github.com/russholio/kodi-nba-league-pass",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_public_repository_or_issue",
+      "inspection_method": "public_repository_metadata_readme_code_or_issue_read_only",
+      "observed_claim_and_limit": "Public API metadata: historical Kodi viewing plugin, last push March 2016; untested.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P046",
+      "title": "ozgurkaplan/nba-league-pass-addons",
+      "url": "https://github.com/ozgurkaplan/nba-league-pass-addons",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_public_repository_or_issue",
+      "inspection_method": "public_repository_metadata_readme_code_or_issue_read_only",
+      "observed_claim_and_limit": "Public API metadata: add-on project, last push November 2022; current support unverified.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P047",
+      "title": "JGJP/nba-dl",
+      "url": "https://github.com/JGJP/nba-dl",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_public_repository_or_issue",
+      "inspection_method": "public_repository_metadata_readme_code_or_issue_read_only",
+      "observed_claim_and_limit": "Public metadata: full-game highlights, last push June 2021; not full games.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P048",
+      "title": "mtthai NBA API client",
+      "url": "https://github.com/mtthai/nba-api-client",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_public_repository_or_issue",
+      "inspection_method": "public_repository_metadata_readme_code_or_issue_read_only",
+      "observed_claim_and_limit": "Legacy event-video API and documented later-season limitation; not continuous full games.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P049",
+      "title": "nba_api VideoEvents",
+      "url": "https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/endpoints/videoevents.md",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_public_repository_or_issue",
+      "inspection_method": "public_repository_metadata_readme_code_or_issue_read_only",
+      "observed_claim_and_limit": "Endpoint documentation for events, not full-game delivery.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P050",
+      "title": "choucisan/nba_games",
+      "url": "https://github.com/choucisan/nba_games",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_public_repository_or_issue",
+      "inspection_method": "public_repository_metadata_readme_code_or_issue_read_only",
+      "observed_claim_and_limit": "Metadata lead assigned to root; root owns actual official-video verification.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P051",
+      "title": "Video Express download documentation",
+      "url": "https://support.synergysports.com/support/solutions/articles/77000570462-downloading-games",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Official raw/Synergy full-game download workflow; NBA account entitlement unknown.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P052",
+      "title": "local-file instructions",
+      "url": "https://support.synergysports.com/support/solutions/articles/77000570464-video-express-for-basketball-how-to-access-downloaded-raw-and-synergy-full-game-video",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Ordinary videos in local Documents folder, usable for editing; exact output codec/container not specified here.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P053",
+      "title": "scheduling instructions",
+      "url": "https://support.synergysports.com/support/solutions/articles/77000570463-scheduling-game-downloads",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Chosen-game scheduled download and interruption resumption; entitlement conditional.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P054",
+      "title": "Installation documentation",
+      "url": "https://support.synergysports.com/support/solutions/articles/77000570453-installation-links-",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Official PC and Mac application support; no installation performed.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P055",
+      "title": "Current high-school packages",
+      "url": "https://sportradar.com/synergy-basketball-for-high-school/?lang=en-us",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "NBA/WNBA library packages and annual non-prorated term; independent researcher eligibility and price unknown.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P056",
+      "title": "Synergy terms",
+      "url": "https://developer.sportradar.com/sportradar-updates/page/synergy-sports-system-and-synergy-sports-portal-terms-of-use",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Section 4.3 requires written permission for specified dataset/analytics/ML uses; standard subscription not sufficient proof.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P057",
+      "title": "sales/contact route",
+      "url": "https://sportradar.com/contact/?lang=en-us",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Public contact page inspected; no inquiry sent.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P058",
+      "title": "public university procurement record",
+      "url": "https://www.procurement.msstate.edu/procurement/bids/245-51.pdf",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "search_index_excerpt_then_direct_http_404",
+      "observed_claim_and_limit": "Search-index price excerpt only; subsequent direct request returned 404. Date and current applicability unverified.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P059",
+      "title": "announced sale of Synergy coaching/scouting to Teamworks",
+      "url": "https://investors.sportradar.com/news-releases/news-release-details/sportradar-announces-agreement-divestiture-coaching-and-scouting",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "2026-10-07 agreement announcement; not evidence of closing.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P060",
+      "title": "Hudl's current Instat FAQ",
+      "url": "https://www.hudl.com/products/instat/faqs",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Global basketball video/scouting coverage; exact NBA entitlement/export not established.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P061",
+      "title": "Sportscode release notes",
+      "url": "https://instat.hudl.com/releases/sportscode",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Game-download integration features; not a target-game license or Windows compatibility confirmation.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P062",
+      "title": "NBA League Pass support",
+      "url": "https://support.watch.nba.com/hc/en-us/requests/new?ticket_form_id=114093964473",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Public support form; no message sent.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P063",
+      "title": "NBA general contact form",
+      "url": "https://contact.nba.com/contact-nba/",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Public general contact route; no research-license guarantee or submission.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P064",
+      "title": "IMG Video Archive",
+      "url": "https://imgvideoarchive.com/solutions",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Licensed sports archive business; NBA full-game coverage not verified.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P065",
+      "title": "Reuters Connect",
+      "url": "https://reutersconnect.com/about-us",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Professional visual licensing platform; no full-game target confirmed.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P066",
+      "title": "sports offering",
+      "url": "https://reutersagency.com/license-sports-visuals-that-move-audiences",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Sports visuals offering; photographs/highlights distinct from full broadcasts.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P067",
+      "title": "2026 event calendar",
+      "url": "https://reutersagency.com/hubfs/Reuters%20Major%20Sports%20Events%20Calendar%20-%20By%20Sport%20-%202026-1.pdf",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Search-index calendar distinguishes highlights/news coverage; not full-game export proof.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P068",
+      "title": "classic-game help",
+      "url": "https://support.watch.nba.com/hc/en-us/articles/28006218859415-Classic-Games-and-Original-NBA-Content?hidenav=true",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Official alternative full-game viewing catalog; no chosen-game or file-export proof.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P069",
+      "title": "Mandarin full-replay page",
+      "url": "https://v.qq.com/x/cover/mzc00200z9n8cnk/u3192rehd0s.html",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "exact_game_page_link_not_playback_verified",
+      "inspection_method": "web_reader_internal_error_sibling_lane_reports_http_200",
+      "observed_claim_and_limit": "Exact-game title link from sibling lane; this web reader returned internal error, playback not tested.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P070",
+      "title": "original-audio full-replay page",
+      "url": "https://v.qq.com/x/cover/mzc00200z9n8cnk/z4101d4cnwo.html",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "exact_game_page_link_not_playback_verified",
+      "inspection_method": "web_reader_internal_error_sibling_lane_reports_http_200",
+      "observed_claim_and_limit": "Exact-game title link from sibling lane; this web reader returned internal error, playback not tested.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P071",
+      "title": "China access help",
+      "url": "https://support.watch.nba.com/hc/en-us/articles/115000586373-Accessing-NBA-League-Pass-in-China",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Current NBA help names Tencent/Migu as China viewing/archive routes; US/export access unknown.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P072",
+      "title": "primary listed-company annual report",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0423/2025042300432_c.pdf",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_documentation_or_product_page",
+      "inspection_method": "public_web_page_or_search_extract_reviewed",
+      "observed_claim_and_limit": "Search-index primary report excerpt records Tencent renewal to 2027; not a US file entitlement.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "id": "platforms:P073",
+      "title": "yt-dlp Tencent extractor",
+      "url": "https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/extractor/tencent.py",
+      "accessed_on_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "source_kind": "primary_public_repository_or_issue",
+      "inspection_method": "public_repository_metadata_readme_code_or_issue_read_only",
+      "observed_claim_and_limit": "Primary repository file exists; no execution or target-media compatibility test. Parsed page mostly source-navigation/line numbers.",
+      "target_media_downloaded_by_this_subtask": false,
+      "product_tested_by_this_subtask": false,
+      "lane": "platforms"
+    },
+    {
+      "name": "Inf-Stream",
+      "sources": [
+        "https://github.com/mit-han-lab/streaming-vlm",
+        "https://arxiv.org/html/2510.09608v1",
+        "https://huggingface.co/datasets/mit-han-lab/Inf-Stream-Train",
+        "https://huggingface.co/datasets/mit-han-lab/Inf-Stream-Eval"
+      ],
+      "released_content": "Historical NBA game-length MP4s; 709 Train NBA-directory MP4s, not necessarily unique complete games",
+      "observed_access": "Two public files HEAD200/Range206; 1280x720 H26424fps; durations6880.0417/7624.4167sec; no full decode",
+      "limitations": [
+        "24fps despite60fps filename",
+        "No exact2026 target demonstrated",
+        "Fixed historical corpus does not provide arbitrary new games",
+        "No ball ground truth established"
+      ],
+      "terms_observed_not_legal_clearance": "Repository MIT covers software/documentation; dataset media license absent in observed cards; original NBA rights unresolved",
+      "access_probe_array_positions_1_based": [
+        31,
+        32,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "id": "datasets:01",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "BARD",
+      "sources": [
+        "https://bodai.unibs.it/basketball-action-recognition/bard/",
+        "https://github.com/GabrieleGiudic/BARD",
+        "https://huggingface.co/datasets/GabrieleGiudici/BARD"
+      ],
+      "released_content": "Individual NBA event clips;2024-25;60games;raw24692/final14676 distinction",
+      "observed_access": "Sample HEAD200/Range206; root separately downloaded/hash-verified/decoded473frames and saw NBA opening tip",
+      "limitations": [
+        "Not fullgame",
+        "Not proven full possession",
+        "No exact2026 game",
+        "No ball-center ground truth established"
+      ],
+      "terms_observed_not_legal_clearance": "CC-BY4.0 provider statement; underlying NBA rights unresolved",
+      "access_probe_array_positions_1_based": [
+        1,
+        9,
+        16,
+        17,
+        25
+      ],
+      "id": "datasets:02",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "PL-NBA",
+      "sources": [
+        "https://github.com/holhouse/PL-NBA-Dataset",
+        "https://arxiv.org/abs/2608.19646",
+        "https://pan.baidu.com/s/1jlB-cpXSjEnyEbv53gsf-w?pwd=pnba"
+      ],
+      "released_content": "1080p NBA possession clips, mean12.11sec;README40games7000+ vs paper60games11000",
+      "observed_access": "Annotation ZIP listed; media link extraction-code page200; no media bytes",
+      "limitations": [
+        "Version counts differ",
+        "Not fullgames",
+        "2022-25 source seasons"
+      ],
+      "terms_observed_not_legal_clearance": "CC-BY-NC4.0/noncommercial scientific use; underlying broadcast rights unverified",
+      "access_probe_array_positions_1_based": [
+        8,
+        23
+      ],
+      "id": "datasets:03",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "FineSports",
+      "sources": [
+        "https://github.com/PKU-ICST-MIPL/FineSports_CVPR2024",
+        "https://openaccess.thecvf.com/content/CVPR2024/papers/Xu_FineSports_A_Multi-person_Hierarchical_Sports_Video_Dataset_for_Fine-grained_Action_CVPR_2024_paper.pdf"
+      ],
+      "released_content": "10000 NBA action clips/frame structure and person action tubes",
+      "observed_access": "Signed agreement/email required; agreement file listed; not submitted",
+      "limitations": [
+        "No raw file access verified",
+        "No ball labels established",
+        "Curated action views not full broadcast"
+      ],
+      "terms_observed_not_legal_clearance": "Release agreement required; no terms accepted",
+      "access_probe_array_positions_1_based": [
+        51
+      ],
+      "id": "datasets:04",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "SAM NUST-NBA181 / WASB NBA_data",
+      "sources": [
+        "https://github.com/nttcom/WASB-SBDT",
+        "https://arxiv.org/html/2311.05237",
+        "https://raw.githubusercontent.com/ruiyan1995/ruiyan1995.github.io/9757967f504b10631144065b568ed2e8bafbcce6/SAM.html",
+        "https://drive.google.com/file/d/1eH3n4uB4d8T-YKLRh46SshD0jYqQbnGF/view"
+      ],
+      "released_content": "Original9172six-second image sequences,1920x1080,12fps declared;WASBannotates3824clips from81games",
+      "observed_access": "Current SAM page404; historical official request route; annotations Drive200 but media absent",
+      "limitations": [
+        "WASB pretraining leakage risk",
+        "Original cadence statement does not establish recovered timestamps",
+        "No full games"
+      ],
+      "terms_observed_not_legal_clearance": "Request-only academic use due copyright; WASB MIT code is not NBA media license",
+      "access_probe_array_positions_1_based": [
+        6,
+        7,
+        10,
+        11,
+        12,
+        21,
+        24
+      ],
+      "id": "datasets:05",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "MultiSports / SportsAction",
+      "sources": [
+        "https://github.com/MCG-NJU/MultiSports",
+        "https://huggingface.co/datasets/MCG-NJU/SportsAction"
+      ],
+      "released_content": "Short action clips;800basketball, mixedNBA/nonNBA;15.546GB basketball archive",
+      "observed_access": "Tree200; actual mediaHEAD401GatedRepo",
+      "limitations": [
+        "Not fullgames",
+        "No ball labels",
+        "Must establish NBA subset"
+      ],
+      "terms_observed_not_legal_clearance": "CC-BY-NC4.0 plus gate; no acceptance",
+      "access_probe_array_positions_1_based": [
+        3,
+        14,
+        47,
+        53
+      ],
+      "id": "datasets:06",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "SportsHHI",
+      "sources": [
+        "https://github.com/MCG-NJU/SportsHHI",
+        "https://huggingface.co/datasets/MCG-NJU/SportsHHI"
+      ],
+      "released_content": "80basketball+80volleyball clips fromMultiSports;avg603frames25fps720p",
+      "observed_access": "Tree200;23.985GBframes.zip HEAD401GatedRepo",
+      "limitations": [
+        "Duplicates MultiSports",
+        "No ball labels",
+        "Mixed basketball provenance"
+      ],
+      "terms_observed_not_legal_clearance": "CC-BY-NC4.0 plus gate; no acceptance",
+      "access_probe_array_positions_1_based": [
+        4,
+        18
+      ],
+      "id": "datasets:07",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "BASKET",
+      "sources": [
+        "https://github.com/yulupan00/BASKET",
+        "https://huggingface.co/datasets/yulupan/BASKET"
+      ],
+      "released_content": "Player highlight reels8-10min;4477h21leagues;2018-19..2022-23;HF1.93TB",
+      "observed_access": "NBA tree379files in18-19;exampleHEAD401GatedRepo",
+      "limitations": [
+        "Highlights not fullgame source",
+        "20skill ratings not ball labels",
+        "No2026 target"
+      ],
+      "terms_observed_not_legal_clearance": "HFApache2.0 tag plus contact-sharing agreement gate; original rights unresolved",
+      "access_probe_array_positions_1_based": [
+        5,
+        15,
+        48,
+        59,
+        62
+      ],
+      "id": "datasets:08",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "F-16-NBA",
+      "sources": [
+        "https://huggingface.co/datasets/tsinghua-ee/F-16-NBA",
+        "https://arxiv.org/abs/2503.13956"
+      ],
+      "released_content": "Caption-train clips55.782GBmultipart;shot-test14.744GBmultipart",
+      "observed_access": "TrainfirstpartHEAD200/64byte206gzip",
+      "limitations": [
+        "Test must stay separate",
+        "Event clips notfullgames",
+        "No ball GT established",
+        "HFviewer multipart error not proof archive corrupt"
+      ],
+      "terms_observed_not_legal_clearance": "Apache2.0 tag; underlying NBA rights unresolved",
+      "access_probe_array_positions_1_based": [
+        2,
+        13,
+        19,
+        20
+      ],
+      "id": "datasets:09",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "NSVA",
+      "sources": [
+        "https://github.com/jackwu502/NSVA",
+        "https://raw.githubusercontent.com/jackwu502/NSVA/main/SportsFormer/data/README.md",
+        "https://www.dropbox.com/sh/x3zpttp7bjevb3r/AAAeFLnIeBMBXa9DNQD4a8TOa?dl=0"
+      ],
+      "released_content": "NBA event clips;features separate;date/game/event/UUID collection metadata",
+      "observed_access": "DropboxlandingHEAD200; scripts inspected not executed; media unverified",
+      "limitations": [
+        "No fullgame coverage guaranteed",
+        "Feature files not footage"
+      ],
+      "terms_observed_not_legal_clearance": "Project says users must ensure permitted use/fair use; no blanket NBA rights clearance",
+      "access_probe_array_positions_1_based": [
+        30,
+        52,
+        58
+      ],
+      "id": "datasets:10",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "NBA-Identity",
+      "sources": [
+        "https://github.com/Zeyu1226-mt/LLM-IAVC",
+        "https://arxiv.org/abs/2507.20163"
+      ],
+      "released_content": "Identity-aware captioning dataset; current release links features/supplements",
+      "observed_access": "Raw RGB release not verified",
+      "limitations": [
+        "Features cannot substitute for video",
+        "No ball labels"
+      ],
+      "terms_observed_not_legal_clearance": "Unresolved raw-media terms",
+      "access_probe_array_positions_1_based": [],
+      "id": "datasets:11",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "BasketEvent",
+      "sources": [
+        "https://github.com/zhangyu2003/BasketEvent",
+        "https://arxiv.org/abs/2607.21267",
+        "https://raw.githubusercontent.com/zhangyu2003/BasketEvent/main/examples/4712c593-1cd3-fc7f-be55-1b967fadac0f_1280x720.mp4"
+      ],
+      "released_content": "One6.277MBofficial MP4 example plusannotations",
+      "observed_access": "HEAD200;64byteRange206MP4",
+      "limitations": [
+        "Full corpus release not established",
+        "Machine trajectories not automaticallyhumanGT",
+        "Not fullgame"
+      ],
+      "terms_observed_not_legal_clearance": "Underlying NBA footage rights unresolved",
+      "access_probe_array_positions_1_based": [
+        33,
+        54,
+        55
+      ],
+      "id": "datasets:12",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "Roboflow tutorial clips",
+      "sources": [
+        "https://roboflow.com/blog/identify-basketball-players",
+        "https://github.com/roboflow-ai/notebooks/blob/main/notebooks/basketball-ai-how-to-detect-track-and-identify-basketball-players.ipynb",
+        "https://drive.google.com/drive/folders/1eDJYqQ77Fytz15tKGdJCMeYSgmoQ-2-H"
+      ],
+      "released_content": "Ten Celtics-Knicks Game1 Q1/Q2 short clips",
+      "observed_access": "Official notebook reference; public folderHTTP200/tenfile names; no media bytes",
+      "limitations": [
+        "Not fullgames",
+        "Deliberatelyshort allplayersvisible clips",
+        "No independent ballGT"
+      ],
+      "terms_observed_not_legal_clearance": "Tutorial assets; underlying NBA rights not established",
+      "access_probe_array_positions_1_based": [
+        60,
+        61,
+        63,
+        64
+      ],
+      "id": "datasets:13",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "SpaceJam",
+      "sources": [
+        "https://github.com/simonefrancia/SpaceJam",
+        "https://drive.google.com/file/d/1hLpbLmLFK2-GIvsmpJelGlEx94yQM2Ts/view"
+      ],
+      "released_content": "32560player examples of16RGBframes plusjoint arrays",
+      "observed_access": "OfficialDrive link404",
+      "limitations": [
+        "Sourcefullgames do not imply releasedfullgames",
+        "Poor fullcourtball suitability"
+      ],
+      "terms_observed_not_legal_clearance": "CodeMIT; media rights unresolved",
+      "access_probe_array_positions_1_based": [
+        22
+      ],
+      "id": "datasets:14",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "Kaggle Gemini NBA Dataset",
+      "sources": [
+        "https://www.kaggle.com/datasets/manjyotsinghkalkat/gemini-nba-dataset"
+      ],
+      "released_content": "One1512465489bytefirsthalfMP4,Cavs-WarriorsDec25,2016 per uploader",
+      "observed_access": "View/listAPI200;attemptedMP4HEAD404",
+      "limitations": [
+        "No successful video bytes",
+        "Not completegame",
+        "Unrelatedcredential-lookingJSONnotopened"
+      ],
+      "terms_observed_not_legal_clearance": "UploaderGPL3 tag; underlying NBA rights unresolved",
+      "access_probe_array_positions_1_based": [
+        34,
+        49,
+        57
+      ],
+      "id": "datasets:15",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "Internet Archive historicalNBA",
+      "sources": [
+        "https://archive.org/details/philadelphia-76ers-vs-memphis-grizzlies-20-11-2002-nba-season-2002-2003-full-game"
+      ],
+      "released_content": "Userupload2002Sixers-Grizzlies;metadata6695.24s540x360423042658bytes",
+      "observed_access": "Metadata200;MP4HEAD200",
+      "limitations": [
+        "Low resolution",
+        "No decode/completeness proof",
+        "No exact2026game identified",
+        "SearchincludesNBA2Ksimulations"
+      ],
+      "terms_observed_not_legal_clearance": "Userupload; no official NBA permission established",
+      "access_probe_array_positions_1_based": [
+        28,
+        29,
+        35,
+        56
+      ],
+      "id": "datasets:16",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "DeepSport / DeepSportRadar (non-NBA)",
+      "sources": [
+        "https://ispgroup.gitlab.io/code/deepsport/",
+        "https://github.com/gabriel-vanzandycke/deepsport",
+        "https://www.kaggle.com/datasets/deepsportradar/basketball-instants-dataset"
+      ],
+      "released_content": "FrenchLNB fixedcamera images/pairs40msapart;ball2D/3Dvisibilitylabels",
+      "observed_access": "Kagglemetadata200;6.600GBlisting",
+      "limitations": [
+        "NotNBA",
+        "Not continuousbroadcast"
+      ],
+      "terms_observed_not_legal_clearance": "DatasetCC-BY-NC-SA4.0;code separate;LNB image rights acknowledged",
+      "access_probe_array_positions_1_based": [
+        50
+      ],
+      "id": "datasets:17",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "name": "Other repositories excluded",
+      "sources": [
+        "https://zenodo.org/records/12698090",
+        "https://zenodo.org/records/20708683"
+      ],
+      "released_content": "PlaybyPlay syntheticcoordinates;MUVS handheldsports video",
+      "observed_access": "No actualNBA media demonstrated",
+      "limitations": [
+        "Do notsubstitute otherbasketball/leagues forNBA",
+        "FigsharesearchdidnotestablishNBArawrelease"
+      ],
+      "terms_observed_not_legal_clearance": "Not evaluated as NBA media",
+      "access_probe_array_positions_1_based": [],
+      "id": "datasets:18",
+      "lane": "datasets",
+      "evidence_base": "datasets/access_probes.json"
+    },
+    {
+      "id": "local:exact_game_samples",
+      "url": "https://ok.ru/videoembed/12326019402326",
+      "level": "eight_local_segments_decoded_and_visually_inspected",
+      "result": {
+        "segment_count": 8,
+        "payload_bytes_including_playlist": 52881180,
+        "width": 1920,
+        "height": 1080,
+        "encoded_frame_rate": "60000/1001",
+        "playlist_segment_count": 694,
+        "playlist_duration_seconds": 6939.513221,
+        "full_file_declared_bytes": 6081103430,
+        "full_file_downloaded": false,
+        "game_coverage_complete": null
+      },
+      "evidence": [
+        "exact_game_samples/receipt.json",
+        "exact_game_samples/still_extraction_recovery.json",
+        "exact_game_samples/final_frame_check.json"
+      ],
+      "limits": "Sparse visible identity evidence, not continuous game coverage. First thumbnail/contact-sheet helper failed; local recovery preserved original failure and reused media. Source images are now development-visible.",
+      "lane": "local_verification"
+    },
+    {
+      "id": "local:official_gamebook",
+      "url": "https://statsdmz.nba.com/pdfs/20260223/20260223_SASDET_book.pdf",
+      "level": "official_gamebook_inspected",
+      "result": "NBA game 0022500828; February23 Spurs114 Pistons103; halftime57-55; event duration2:39. The decoded late-Q2 image is before halftime ended.",
+      "lane": "local_verification"
+    },
+    {
+      "id": "local:bard_complete_clip",
+      "url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/main/bkn-vs-det-0022400861/0.mp4",
+      "level": "complete_local_clip_hash_verified_and_decoded",
+      "result": {
+        "bytes": 5867901,
+        "sha256": "c6dab08b325dc571d88231619a2e3890a9007a36e13e3457df0e322ebf5bdb78",
+        "width": 1280,
+        "height": 720,
+        "fps": 60,
+        "decoded_frames": 473,
+        "final_frame_decoded": true
+      },
+      "evidence": [
+        "root_checks/bard_bkn_det_0022400861_0.mp4.json",
+        "root_checks/bard_decode.json"
+      ],
+      "limits": "Brooklyn-Detroit opening-tip event, not a full possession, complete game, or the chosen 2026 game.",
+      "lane": "local_verification"
+    },
+    {
+      "id": "local:sportsmot_archive",
+      "url": "https://huggingface.co/datasets/MCG-NJU/SportsMOT/resolve/main/dataset/train.tar",
+      "level": "bounded_archive_prefix_verified",
+      "result": "HEAD200 declared6,703,191,552bytes;8192-byte Range206 with valid TAR headers.",
+      "evidence": [
+        "root_checks/sportsmot_train_header.bin.json"
+      ],
+      "limits": "No complete archive acquired and no NBA frames decoded. Player tracking image sequences, not full games.",
+      "lane": "local_verification"
+    },
+    {
+      "id": "local:sportsmot_primary",
+      "url": "https://github.com/MCG-NJU/SportsMOT",
+      "level": "primary_repository_and_basketball_list_inspected",
+      "result": "NBA-containing tracking sequences; publisher720p25fps; CC-BY-NC4 and additional no-redistribution statement.",
+      "evidence": [
+        "root_checks/sportsmot_basketball.txt.json"
+      ],
+      "limits": "Terms describe publisher statements, not independent clearance of broadcast rights.",
+      "lane": "local_verification"
+    },
+    {
+      "id": "local:nba_games_metadata",
+      "url": "https://huggingface.co/datasets/choucsan/NBA_Games",
+      "level": "complete_metadata_file_parsed",
+      "result": {
+        "rows": 189,
+        "date_min": "1970-05-08",
+        "date_max": "2025-02-03",
+        "target_2026_present": false
+      },
+      "evidence": [
+        "root_checks/nba_games.jsonl.json"
+      ],
+      "limits": "Metadata/YouTube links only, no video distributed in this file; example video retrieval unverified.",
+      "lane": "local_verification"
+    },
+    {
+      "id": "local:nba_games_repository",
+      "url": "https://github.com/choucisan/nba_games",
+      "level": "primary_repository_inspected",
+      "result": "Discovery of historical full-game YouTube references, statistics and event data; not video-file release.",
+      "lane": "local_verification"
+    },
+    {
+      "id": "local:boxscore_failed",
+      "url": "https://cdn.nba.com/static/json/liveData/boxscore/boxscore_0022500828.json",
+      "level": "request_failed_403",
+      "result": "HTTP403;443-byte error body retained despite .json filename. Not used as game data.",
+      "evidence": [
+        "root_checks/target_official_boxscore.json.json"
+      ],
+      "lane": "local_verification"
+    },
+    {
+      "id": "local:nfhs_original_source",
+      "url": "https://github.com/playon/basketball-analysis-samples",
+      "level": "original_download_and_user_verification_traced_in_migration_transcript",
+      "result": "Assistant supplied public PlayOn NFHS HLS sample and FFmpeg command; user terminal recorded4,849,555,188bytes/180350frames/about25fps. No PlayOn Home or Cloud recording app was involved.",
+      "archive": "C:/Users/Ryan/Documents/Codex/2026-08-18/he/outputs/player-defense-score-context-migration/transcripts/01-active-transcript.md",
+      "message_ids": [
+        "323b42d1-dde5-48e3-bb1a-e03baf4a9f37",
+        "cdcc47f7-d875-4f63-9cf7-a4aaa6531063"
+      ],
+      "limits": "Historical terminal evidence plus current size match; not a new full-raw hash/decode or certified mapping of all holdout source times.",
+      "lane": "local_verification"
+    }
+  ],
+  "local_evidence_bindings": [
+    {
+      "path": "exact_game_samples/receipt.json",
+      "bytes": 22143,
+      "sha256": "b52e6836d3818cf04a78821d0fbb37771a0e8dd326ed63420c2271c885dc317d"
+    },
+    {
+      "path": "exact_game_samples/still_extraction_recovery.json",
+      "bytes": 4320,
+      "sha256": "55c83e4cc7d99f5fe89c2e90691397ef0030b1bee60d52c05befc6835cba4794"
+    },
+    {
+      "path": "exact_game_samples/final_frame_check.json",
+      "bytes": 429,
+      "sha256": "6f49a3ad0939eb82523bb430aa4a87e017f3ae3f7ee3871e799f150b6448657f"
+    },
+    {
+      "path": "root_checks/bard_decode.json",
+      "bytes": 391,
+      "sha256": "f79bebd40508e4688c82ef4c7cb98582f30379d0a18e037374c30186d84908f9"
+    },
+    {
+      "path": "root_checks/bard_bkn_det_0022400861_0.mp4.json",
+      "bytes": 2559,
+      "sha256": "374cf1555d3abdb00b187bbaed099fe4c7471071e38545c4016df1352502dbae"
+    },
+    {
+      "path": "root_checks/nba_games.jsonl.json",
+      "bytes": 2432,
+      "sha256": "e5d2c54195d69d0a382570682dbd99d9388d0b0d3734832bbecf67df87c1cbce"
+    },
+    {
+      "path": "root_checks/sportsmot_train_header.bin.json",
+      "bytes": 2665,
+      "sha256": "a296243582ff0fba9037414d92fc52d1a38e3df6cd2dee9f3205784c31719433"
+    },
+    {
+      "path": "root_checks/target_official_boxscore.json.json",
+      "bytes": 1190,
+      "sha256": "ed2c578322ca914b322d0fd9081b0d00eba632045ab6854650e06804a5a2fc5a"
+    },
+    {
+      "path": "unofficial/source_ledger.json",
+      "bytes": 15058,
+      "sha256": "47e3abaca69121a3f0aed29c8c95781c79b844c75550437f4619ce7859821f4d"
+    },
+    {
+      "path": "platforms/source_ledger.json",
+      "bytes": 45958,
+      "sha256": "71bf4973bf82c69eaeafc6124f8c0e40f5fce6f6e8720b74fdc925ff1699dbdf"
+    },
+    {
+      "path": "datasets/sources.json",
+      "bytes": 15951,
+      "sha256": "558eda611895e0e6cd73dd26ed22679d604b78a320095e2d885a541e3f1512d4"
+    },
+    {
+      "path": "datasets/access_probes.json",
+      "bytes": 1318308,
+      "sha256": "3099cc3f4a613a11ac7a4e4b3cbb97c29a1c8507a353381fa83e3ecc70bef679"
+    }
+  ],
+  "original_lane_metadata": {
+    "unofficial": {
+      "research_date_local": "2026-10-18",
+      "timezone": "America/Phoenix",
+      "researcher": "history_1",
+      "target": {
+        "game_id": "0022500828",
+        "game": "San Antonio Spurs at Detroit Pistons",
+        "us_date": "2026-02-23"
+      },
+      "classification_note": "A page, metadata response, live binary endpoint, decoded sample and complete local file are different evidence levels. No media payload was downloaded by this researcher. Root separately sampled exact-game OK media.",
+      "failures_preserved": [
+        "Initial iframe parser assumed https and missed protocol-relative OK sources; repeatability_page_sample.json retained.",
+        "First two-game endpoint script re-parsed already-decoded metadata. Null receipt retained; separate recovery receipt corrects the conclusion.",
+        "Internet Archive console filter included thumbnails and truncated output. Raw metadata retained; compact inventory generated without refetch.",
+        "CUA in-app browser unavailable; browser and app inventory empty.",
+        "Dailymotion cached titles contradicted current 410 endpoints; current failure takes precedence.",
+        "BasketballReplays TLS and 403 failures; generic Tencent 200 is not video evidence; SportVideo forum returned 429."
+      ],
+      "repeatability": {
+        "ok_additional_endpoint_chains_attempted": 2,
+        "ok_additional_endpoint_chains_live": 2,
+        "ok_additional_media_downloads": 0,
+        "mega_public_metadata_shares_attempted": 3,
+        "mega_public_metadata_shares_live": 3,
+        "mega_binary_head_attempted": 1,
+        "mega_binary_head_live": 1,
+        "mega_media_downloads": 0,
+        "whole_season_guaranteed": false
+      },
+      "raw_evidence_note": "Signed CDN/download URLs and response details remain only in ignored raw evidence. This source ledger contains stable public URLs and public shared-file keys supplied by archive pages, no cookies or IP addresses."
+    },
+    "platforms": {
+      "schema_version": 1,
+      "report": "platform_access_report.md",
+      "scope": "Subscription platforms, recorders, open-source tools, professional film services, public full-game viewing; target NBA game 0022500828",
+      "authored_by": "history_2",
+      "research_date_local": "2026-10-18",
+      "source_count": 73,
+      "acquisition_status": "No NBA media acquired or recorder tested in this subtask; root owns separate sample verification",
+      "execution": "Public web/search and public GitHub metadata/selected README reads only; no installation, purchase, account changes, messages or DRM decryption attempted",
+      "transferred_bytes": "Not metered for documentation/search/API responses; no invented total",
+      "historical_evidence": "Existing successful browser playback and failed Chrome OBS Window Capture remain separate; no models/tests/reviews repeated",
+      "failed_lookups": [
+        "Initial guessed Peacock blog path failed; corrected official link found",
+        "Initial PlayOn Desktop route failed; current Home page found",
+        "Mississippi State procurement PDF search excerpt retrieved but direct URL returned 404",
+        "Both Tencent exact-game pages returned web-reader internal errors; sibling lane HTTP 200 page observation does not prove playback",
+        "Some broad search outputs truncated; no conclusions drawn from unseen portions"
+      ],
+      "cache_correction": "NBA Amazon-linking direct page updated October 15, 2026 supersedes earlier October 7 search snapshot"
+    },
+    "datasets": {
+      "prepared_utc": "2026-10-19T00:36:52.619578+00:00",
+      "local_research_date": "2026-10-18",
+      "subagent": "/root/history_3",
+      "scope": "academic/open/community NBA media beyond SportsMOT; no model/review/test/holdout runs",
+      "probe_summary": {
+        "probe_count": 64,
+        "application_bytes_read": 3622525,
+        "media_or_archive_prefix_bytes_read": 22520,
+        "complete_media_files_downloaded_by_subagent": 0,
+        "web_tool_and_transport_overhead_not_counted": true
+      },
+      "inf_stream_train_candidate_tree_record": {
+        "type": "file",
+        "oid": "a44b522355aee7abb8bc6ae457bd4dd80af7f80d",
+        "size": 2981260794,
+        "lfs": {
+          "oid": "84f5d87d3a5a74bc2abd1bfd027fbfa96123896b1e7a7a8a43abae62f853b7fd",
+          "size": 2981260794,
+          "pointerSize": 135
+        },
+        "xetHash": "afe0206731edb363030c22f4fec91814fe89b5afb69dc47693b2886a69a7681a",
+        "path": "Baidu_NBA_EN/01.03.13 MEM@MIA.mp4"
+      },
+      "root_reported_bard_verification": {
+        "evidence_origin": "Root message, not independent subagent rerun",
+        "bytes": 5867901,
+        "sha256": "c6dab08b325dc571d88231619a2e3890a9007a36e13e3457df0e322ebf5bdb78",
+        "frames_decoded": 473,
+        "width": 1280,
+        "height": 720,
+        "fps": 60,
+        "video_duration_sec": 7.883333333333334,
+        "final_frame_decoded": true,
+        "visual_observation": "Brooklyn at Detroit opening tip with NBA Advanced Stats watermark",
+        "not_established": [
+          "completepossession",
+          "fullgame",
+          "exact2026target",
+          "generalballtrackingquality"
+        ]
+      },
+      "report_file": "datasets_report.md",
+      "report_sha256": "73afdb875ee6f93cb8e6863d5051ef90c15a5d055bf9fcb7ffd90f812e7a4583"
+    }
+  }
+}

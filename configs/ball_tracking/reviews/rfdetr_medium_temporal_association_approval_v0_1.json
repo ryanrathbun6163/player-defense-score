@@ -1,0 +1,14 @@
+{
+  "schema_version": "ball_temporal_experiment_approval/v0.1",
+  "experiment_spec_sha256": "ef2f7a2a77f334c94d0efc045311c6fd4a3cc86695aec84934bacbfb06605ab5",
+  "design": {
+    "path": "docs/ball_temporal_association_experiment_proposal.md",
+    "sha256": "dea1692fb46607e6c591f21c774a802987acce0803434e5a5c7d81bca4c7b5aa"
+  },
+  "approved_by": "ryan",
+  "statement": "lets move forward",
+  "recorded_at_utc": "2026-09-19T06:08:44Z",
+  "timestamp_semantics": "Receipt creation time; authorization is the user's response to the linked temporal experiment design.",
+  "scope": "saved_six_development_windows_all_declared_variants",
+  "git_mutations_authorized": false
+}

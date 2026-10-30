@@ -1,0 +1,264 @@
+{
+  "schema_version": "completion_reference_batch_result/v0.1",
+  "status": "ready_for_human_reference_acceptance",
+  "batch_id": "reference_batch_03_v0_1",
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "ef4f2668e8f8c10ae6af1cf356baffa8fe155bd0",
+    "worktree": "clean",
+    "index": "empty"
+  },
+  "possession_id": "possession_002",
+  "range_inclusive": [
+    368,
+    498
+  ],
+  "new_proposals": 131,
+  "visibility_counts": {
+    "partially_visible": 84,
+    "fully_visible": 34,
+    "indeterminate": 4,
+    "not_visible": 9
+  },
+  "proposed_centers": 114,
+  "null_centers": 17,
+  "partial_visible_null_centers": [
+    408,
+    409,
+    413,
+    440
+  ],
+  "indeterminate_frames": [
+    410,
+    411,
+    412,
+    439
+  ],
+  "certain_not_visible_frames": [
+    431,
+    432,
+    433,
+    434,
+    435,
+    436,
+    437,
+    438,
+    470
+  ],
+  "uncertainty_radius_source_px": [
+    4,
+    10
+  ],
+  "native_interval_seconds_half_open": [
+    14.76,
+    20.0
+  ],
+  "clip_relative_interval_seconds_half_open": [
+    14.72,
+    19.96
+  ],
+  "native_pts_ticks_first_last": [
+    188928,
+    255488
+  ],
+  "native_time_base": "1/12800",
+  "duration_ticks_per_frame": 512,
+  "annotation_origin": "assistant_visual_proposal",
+  "human_acceptance": null,
+  "role": "post_selection_evaluation_only",
+  "training_eligible": false,
+  "checkpoint_selection_eligible": false,
+  "accepted_existing_curated_rows": 560,
+  "accepted_rows_after_possible_acceptance": 691,
+  "remaining_permitted_uncovered_current": 713,
+  "remaining_permitted_uncovered_after_possible_acceptance": 582,
+  "config": {
+    "path": "configs/ball_tracking/completion_campaign/reference_batch_03_v0_1.json",
+    "sha256": "871c05f1e056c3b08c441487eb0f08b00897eac54c1494c8c04f098e60d6cde2",
+    "bytes": 2609
+  },
+  "proposal": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_03/proposal.json",
+    "sha256": "0f84f41666d74b536bc9e58e77d5b8b0e6874e35b3d10129baacf95ad4ed55f6",
+    "bytes": 99671
+  },
+  "review_manifest": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_03/review_v1/manifest.json",
+    "sha256": "9ebf445d99f77ad489eb8c42a3f725f45d16b7d3c64591b2af14641ef5f64d17",
+    "bytes": 194114
+  },
+  "review_index": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_03/review_v1/index.html",
+    "sha256": "f125b828c48c668cdcc28d0e60f195bba661ffdef36c88d1fae29ec48de31165",
+    "bytes": 26025
+  },
+  "exception_list": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_03/review_v1/exception_list.json",
+    "sha256": "a19dc278b924648262300b9914bd8c6eb1a2f7109d695b76c7ba765c069fa3dd",
+    "bytes": 12085
+  },
+  "source_preparation": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_03/preparation.json",
+    "sha256": "9f2b2c21aff27356e5444aef0a06f2d8180db52c3d7a9106113bc418b3572dc8",
+    "bytes": 6979
+  },
+  "selection": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_03/selection.json",
+    "sha256": "fa7f056e5e2255cc48bd96c7683bdc133f9ab04f0dd0e7526df2ce501739dc41",
+    "bytes": 2504
+  },
+  "source_pixel_audit": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_03/independent_source_pixel_audit.json",
+    "sha256": "9de5943d0254890a19056d0488525822e2765ebcaa91988f311f8a9ef8282ff4",
+    "bytes": 206307
+  },
+  "render_result": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_03/render_result.json",
+    "sha256": "9b3d687eb8efd8092e880fa06f2552758d401cd7934b35a6518f38ae4dcebbdf",
+    "bytes": 1166
+  },
+  "ai_visual_inspection": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_03/inspection/final_review.json",
+    "sha256": "cbdbf42090641a266e250f070456b80ae9a3ae9c2e5a25bf1d6b1ab8d8a6652b",
+    "bytes": 8316
+  },
+  "part_inspections": [
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_03/inspection/part_368_432_receipt.json",
+      "sha256": "feadbd391012c228939463d5e19ffe0d52d2a62e6df5606733b057f182260d38",
+      "bytes": 9933
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_03/inspection/part_433_498_inspection_receipt.json",
+      "sha256": "7fd5abcfdf1a792a62359a2e8d238cbfefec0bca7c0870d6371fe5d8fa5ebaad",
+      "bytes": 34095
+    }
+  ],
+  "integration_audit": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_03/integration_audit.json",
+    "sha256": "6974277613df79da56464e7c46152d8ec3769072fcc1db4bbba4f564f89a9a2f",
+    "bytes": 595
+  },
+  "preservation_audit": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_03/preservation_audit.json",
+    "sha256": "17c922aef057890b2d5cb5e3456c8b703d89e9482604cc9cf7221599332207b6",
+    "bytes": 12021
+  },
+  "accepted_authorities_preserved": [
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0050_0074_representative_evaluation_v0_1.json",
+      "sha256": "3731fa669da12fdcab0748ab92bc7bbb85961a2a0f80518092eaced0e08d5c6c",
+      "bytes": 14057
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0100_0124_training_expansion_v0_1.json",
+      "sha256": "a2a441afb782222b3f2c9bab70c8c4169d0a7bd266da3dbf22657223db6d46e4",
+      "bytes": 14606
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0200_0224_challenge_evaluation_v0_1.json",
+      "sha256": "73ed29bc62e002d86b207a12298b30b27724fe42be5a354ec09bc104211e2def",
+      "bytes": 14022
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0250_0274_training_expansion_v0_1.json",
+      "sha256": "10fbde5c1565754d62755efeb1d6af18d9264ec42fde7dff45e88522da6d2590",
+      "bytes": 14035
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0375_0399_protocol_adjudication_v0_1.json",
+      "sha256": "69aaf19f86f6a47cd507c17eb38186c4c1214979d29558cb5835561e567ba99f",
+      "bytes": 14184
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_002_frames_0025_0049_challenge_evaluation_v0_1.json",
+      "sha256": "c0d1bad8f6879e2d073b6d0becf3df12347b43ef06e9c6ff44c26b6f56d3c1e3",
+      "bytes": 13595
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_002_frames_0250_0274_representative_evaluation_v0_1.json",
+      "sha256": "cccec6a086bf9898197babeb5d785bdd4ba0290b7c6c1ba5c206e8545e67563f",
+      "bytes": 13592
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_002_frames_0318_0342_protocol_adjudication_v0_1.json",
+      "sha256": "db1e07dce5e028e740ee408189d1625a241c1588e0b3221642f19d3e2d598df4",
+      "bytes": 12851
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_002_frames_0343_0367_training_expansion_v0_1.json",
+      "sha256": "ce23c0aeb2f78604d888d97459e962c18bcd1c5129fca4df7e0120fe2da8d3bd",
+      "bytes": 12623
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_003_frames_0150_0174_challenge_evaluation_v0_1.json",
+      "sha256": "ab77e6c8570ee8fc536632e43ee71d978e72cd16188f7564c77ae256873994ee",
+      "bytes": 13170
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_003_frames_0300_0324_representative_evaluation_v0_1.json",
+      "sha256": "2b35475e715e9a4b816ad997b58be3201370695a2f420a35a6947696bbe3637e",
+      "bytes": 13775
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_003_frames_0416_0440_protocol_adjudication_v0_1.json",
+      "sha256": "8e088da8db868e15bd06dd94824d2dcb3412e7772b504d71c286132b4a8149e6",
+      "bytes": 13906
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/accepted/accepted_reference.json",
+      "sha256": "9cfc5279ba084017554e8a55ab74e41fb1baa5914469b08de1cd480382fc3096",
+      "bytes": 108375
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_01/accepted/reference.json",
+      "sha256": "23e59ca90e8b060d19f4f90436c6c68d64722a216f113ddc05dfdd8b5340f5cc",
+      "bytes": 153482
+    },
+    {
+      "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_01_acceptance_v0_1.json",
+      "sha256": "c78d9b202fd53d75357a9a09e6c53aadca2509f983f31bd7db3c374c30faa14b",
+      "bytes": 12027
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_02/accepted/reference.json",
+      "sha256": "3a0c859f594dbdc8570887bb5adda2434c3e57aa6ec96b4da6d56fae2fb0af87",
+      "bytes": 161322
+    },
+    {
+      "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_02_acceptance_v0_1.json",
+      "sha256": "0416ff732cce93f173b6c2a0dfc7df4ec9d7d8385e223dd9a3d7145347ffcc9d",
+      "bytes": 18406
+    }
+  ],
+  "implementation": {
+    "path": "src/ball_tracking/completion_references.py",
+    "sha256": "9315f337f3526e7f16536e00fa7c53778a99be4ed0b9436c3d3f85fb7cfa9ee3",
+    "bytes": 22134
+  },
+  "validation_scope": {
+    "implementation_changed": false,
+    "tests_rerun": false,
+    "full_suite_repeated": false,
+    "prior_focused_test_count": 10,
+    "prior_test_evidence": {
+      "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_02_result_v0_1.json",
+      "sha256": "4c9dd5a685e20b9c7e4eeeda2705a9414b6134524fe90f063d35afae619526d2",
+      "bytes": 9322
+    },
+    "current_validation": "Actual batch-03 source/proposal/manifest/media records and prior accepted authority preservation; prior test result applies only to unchanged implementation."
+  },
+  "preserved_corrections": "Original AI drafts, revised parts and per-part inspection receipts retained. Preservation-audit helper schema-field correction retains the failed attempt; see bound audit.",
+  "inference_calls": 0,
+  "fitting_calls": 0,
+  "model_scoring_calls": 0,
+  "protected_decoded_output_frames": 0,
+  "protected_evaluation_authorized": false,
+  "ball_phase_accepted": false,
+  "limitations": [
+    "One exposed NFHS sequence; not NBA validation.",
+    "AI point estimates and visibility judgments await human acceptance.",
+    "Both decoders may share FFmpeg internals; all submitted/copied packets were bounded to permitted250\u2013498."
+  ],
+  "recorded_at_utc": "2026-10-22T02:43:43.564567+00:00"
+}

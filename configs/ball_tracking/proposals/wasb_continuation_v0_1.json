@@ -1,0 +1,181 @@
+{
+  "schema_version": "wasb_continuation_recipe/v0.1",
+  "status": "frozen_before_model_execution",
+  "frozen_at_utc": "2026-10-26T17:25:51.541032+00:00",
+  "user_authority": {
+    "approval": "Okay chat, move forward. Let's finish this sequence and phase and let's make some good progress today, okay?",
+    "base_head": "11fcc20cf41ef4e17eea5e3d50310009e495e7f3",
+    "scope": "Matched bounded continuation and learning-rate comparison within iterative model development"
+  },
+  "execution_plan": {
+    "path": "docs/ball_tracking_wasb_continuation_sequence.md",
+    "sha256": "00ac35964ba9352d626987d4e0a6fb5ab797ce23b99104bd51c6022264b2a643",
+    "bytes": 7088
+  },
+  "source_recipe": {
+    "path": "configs/ball_tracking/proposals/wasb_resolution_v0_1.json",
+    "sha256": "5f81fce13df1c3dbf54bde48e2a8d79e7af62c77146ef85b7f798fbc2b30c44a",
+    "bytes": 6471
+  },
+  "source_completed": {
+    "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/fit_v0_1/completed.json",
+    "sha256": "b16723bc9f1ab71b28633ce94a8245a756d2d5e8a16602aaff48f18d75667839",
+    "bytes": 7534
+  },
+  "source_state": {
+    "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/fit_v0_1/states/update_007760.pth",
+    "sha256": "dbc942daf16996a4657460a45d7e15cf97234acb5673aa72b907540c0e1cd882",
+    "bytes": 21736067
+  },
+  "source_cache_preparation": {
+    "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/fit_v0_1/cache_preparation.json",
+    "sha256": "ae5ecf1baf3185f8f27cfe6fcb069612e88c8ac9edb5a68223926cb71a10978d",
+    "bytes": 9096
+  },
+  "source_evaluation": {
+    "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/nba_comparison_v0_1/evaluation.json",
+    "sha256": "921a7996b3da365b006363fadd33f20ee72426dcb0228d7eb9e4b6855ec471f1",
+    "bytes": 8133616
+  },
+  "parent_state_verification": {
+    "path": "data/outputs/t/wasb_continuation_20261026/parent_state_20261026T171840607814Z.json",
+    "sha256": "27d20410c5ea90b07f7e93a1ecb2b7a3d0fbe44d695e28cfbfe4e01ebd705cb9",
+    "bytes": 8862
+  },
+  "runtime": {
+    "python": "3.11.15 (main, Aug  7 2026, 02:24:19) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "opencv": "5.0.0",
+    "torch": "2.13.0+cu130",
+    "torch_cuda": "13.0",
+    "cudnn": 92000
+  },
+  "start_epoch": 5,
+  "end_epoch": 10,
+  "initial_updates": 7760,
+  "additional_updates": 7760,
+  "total_updates": 15520,
+  "total_new_updates_two_arms": 15520,
+  "resolution": {
+    "width": 768,
+    "height": 432,
+    "target_radius": 3.75
+  },
+  "training": {
+    "batch_size": 2,
+    "seed": 1234,
+    "optimizer": "Adam",
+    "learning_rate": "per_arm_schedule",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "weight_decay": 0.0,
+    "scheduler": "deterministic_continuation_step_function",
+    "precision": "float32",
+    "device": "cuda",
+    "parameters": "all_trainable",
+    "batch_norm": "affine_trainable_running_buffers_frozen",
+    "loss": "gamma2_weighted_binary_cross_entropy",
+    "sigmoid_clamp": 0.0001,
+    "masked_denominator": "valid_output_channels_times_height_times_width",
+    "checkpoint_interval_updates": 25
+  },
+  "augmentation": {
+    "id": "wasb_synchronized_mirror_brightness_v0_1",
+    "mirror": {
+      "axis": "last_image_and_rasterized_target_x_index",
+      "probability": 0.5
+    },
+    "brightness": {
+      "gain_min": 0.9,
+      "gain_max": 1.1,
+      "space": "recovered_uint8_RGB_as_float32",
+      "clamp": [
+        0.0,
+        255.0
+      ],
+      "post_gain_quantization": false
+    },
+    "synchronization": "one_mirror_and_gain_shared_by_all_three_frames",
+    "rng": {
+      "algorithm": "sha256_canonical_key_first_two_big_endian_uint64_top53_div_2pow53",
+      "key_fields": [
+        "policy_id",
+        "seed",
+        "epoch",
+        "batch_index",
+        "sample_index"
+      ],
+      "epoch_base": 1,
+      "batch_index_base": 1,
+      "sample_index_base": 0,
+      "uniform_interval": "[0,1)",
+      "global_rng_access": false
+    },
+    "normalization": {
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "original_pixel_recovery": "round_inverse_then_verify_exact_normalized_roundtrip"
+    },
+    "mask_policy": "unchanged",
+    "hidden_target_policy": "zero_unchanged",
+    "resize": false,
+    "crop": false,
+    "rotation": false,
+    "blur": false,
+    "new_visibility_labels": false
+  },
+  "cache_root": "data/outputs/ball_tracking/wasb_resolution_v0_1/cache_v0_1",
+  "evaluation_cache_root": "data/outputs/ball_tracking/wasb_resolution_v0_1/nba_comparison_v0_1/input_cache",
+  "arms": {
+    "constant": {
+      "learning_rate": {
+        "kind": "constant",
+        "initial": 0.0001,
+        "final": 0.0001
+      },
+      "output_root": "data/outputs/ball_tracking/wasb_continuation_v0_1/constant/fit_v0_1",
+      "evaluation_output_root": "data/outputs/ball_tracking/wasb_continuation_v0_1/constant/nba_comparison_v0_1"
+    },
+    "cosine": {
+      "learning_rate": {
+        "kind": "cosine",
+        "initial": 0.0001,
+        "final": 1e-05
+      },
+      "output_root": "data/outputs/ball_tracking/wasb_continuation_v0_1/cosine/fit_v0_1",
+      "evaluation_output_root": "data/outputs/ball_tracking/wasb_continuation_v0_1/cosine/nba_comparison_v0_1"
+    }
+  },
+  "code_bindings": [
+    {
+      "path": "src/ball_tracking/wasb_continuation_training.py",
+      "sha256": "92ffa34074562349e76722f569b7f06ddbcd44dac55c884313c5ce9f8f853089",
+      "bytes": 28707
+    },
+    {
+      "path": "src/ball_tracking/wasb_continuation_evaluation.py",
+      "sha256": "4358df8e1c63ea2fc62f2735f199729f37c6c45805b5875f7ff17e1fd2c1b2aa",
+      "bytes": 22955
+    },
+    {
+      "path": "src/ball_tracking/gpu_supervision.py",
+      "sha256": "dbc03099c088f6c5b96aa6d1691f5dd11d7abf7c600c97e563344a7541256cd0",
+      "bytes": 15015
+    }
+  ],
+  "new_labels": 0,
+  "protected_evaluation_authorized": false,
+  "max_training_arms_in_this_comparison": 2,
+  "model_adopted_automatically": false
+}

@@ -1,0 +1,123 @@
+{
+  "schema_version": "candidate_quality_pilot_interruption/v0.1",
+  "status": "authorized_pilot_interrupted_graphics_fault_no_completed_method_comparison",
+  "at_utc": "2026-10-28T21:26:28.880904+00:00",
+  "report": {
+    "path": "docs/ball_tracking_candidate_quality_pilot_interruption.md",
+    "bytes": 7297,
+    "sha256": "785ded8c8f967b1fd166d198c45b28d566bdea27f1de2a8dd09ee9bf8b99d375"
+  },
+  "approval": {
+    "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/execution_approval.json",
+    "bytes": 1031,
+    "sha256": "e0f0d56342d41fbc18fc33e1e0fe08a3064d1ff6b445e57bae4ab74b95a0137c"
+  },
+  "execution_freeze": {
+    "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/execution_freeze.json",
+    "bytes": 10543,
+    "sha256": "b1aaaad44fb039d0814e26f0f94390b77ca8ffd119e672c0f88e7268daf9295b"
+  },
+  "readiness": {
+    "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/launch_readiness.json",
+    "bytes": 533,
+    "sha256": "c2eef9a7ccaffeec8dc7c2a4b82ae5fc18308af386efa2ba6f7acc506d10361f"
+  },
+  "partial_audit": {
+    "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/interruption_v0_1/partial_audit.json",
+    "bytes": 7027,
+    "sha256": "4246d30e44d031b6dbf22e1b99f501517c6a110e1adb0335ecd5e0f3ecbfde51"
+  },
+  "events": {
+    "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/interruption_v0_1/windows_events.json",
+    "bytes": 3584,
+    "sha256": "821c9d06ff5dcd0bfcec5786d6aa4c37ce487d90c39e3a6004679d6bb8c3d8f4"
+  },
+  "drivers": {
+    "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/interruption_v0_1/display_drivers.json",
+    "bytes": 497,
+    "sha256": "16a6b72c57fb70811dace319f12982b650bb5d0c4c22f705200ae7b854cc114e"
+  },
+  "checkpoint": {
+    "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/attempt_001/leave_chi_out/recovery_epoch_01.pth",
+    "bytes": 43272971,
+    "sha256": "fad2666942384ef3131ac946a230564d1ef947f299d21b1c82afd59e9bbcdb84"
+  },
+  "journal": {
+    "rows": 924,
+    "events": {
+      "train_start": 461,
+      "parity_start": 1,
+      "parity_return": 1,
+      "train_return": 461
+    },
+    "durably_recorded_optimizer_updates": 461,
+    "durably_recorded_training_presentations": 14738,
+    "durably_recorded_parity_calls": 1,
+    "durably_recorded_parity_presentations": 32,
+    "scoring_calls_or_scores_recorded": 0,
+    "completed_epochs": 1,
+    "updates_after_last_checkpoint": 87,
+    "limit": "Durable logged lower bounds after an unclean reboot; unflushed work after the last row cannot be excluded."
+  },
+  "budget": {
+    "start_basis": "2026-10-28T21:02:22.172924+00:00",
+    "upper_end_basis_new_boot": "2026-10-28T14:10:15.5-07:00",
+    "conservative_interval_seconds": 473.327076,
+    "rounded_debit_seconds": 474,
+    "remaining_of_3600_seconds_after_debit": 3126,
+    "interpretation": "Conservative expenditure accounting through reboot, not measured active GPU time or authorization to retry."
+  },
+  "supervision": {
+    "valid_telemetry_samples": 83,
+    "last_valid": {
+      "recorded_at_utc": "2026-10-28T21:05:08.754174+00:00",
+      "values": {
+        "uuid": "GPU-f26f32f8-e85b-0d38-651e-d5c54097525b",
+        "temperature.gpu": "57",
+        "temperature.gpu.tlimit": "29",
+        "utilization.gpu": "57",
+        "utilization.memory": "22",
+        "memory.used": "2618",
+        "memory.total": "12227",
+        "power.draw": "150.51",
+        "power.limit": "250.00",
+        "fan.speed": "34",
+        "clocks_event_reasons.sw_thermal_slowdown": "Not Active",
+        "clocks_event_reasons.hw_thermal_slowdown": "Not Active",
+        "clocks_event_reasons.hw_power_brake_slowdown": "Not Active"
+      }
+    },
+    "last_error": {
+      "recorded_at_utc": "2026-10-28T21:05:11.806027+00:00",
+      "supervisor_error": "RuntimeError: NVIDIA telemetry failed: "
+    },
+    "sampled_maximum_temperature_C": 61.0,
+    "sampled_maximum_memory_MiB": 2688.0,
+    "sampled_maximum_power_W": 156.26,
+    "finished_receipt": {
+      "binding": {
+        "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/monitoring/attempt_001/finished.json",
+        "bytes": 441,
+        "sha256": "501a40db31d9bbd6a6ca04043dbb001ee0f0679e3b4b03e4c579f5abfa470514"
+      },
+      "valid_json": false,
+      "all_NUL_bytes": true
+    },
+    "clean_exit_or_job_cleanup_certified": false
+  },
+  "dump_read_attempt": {
+    "path": "C:\\Windows\\Minidump\\102826-18890-01.dmp",
+    "bytes_from_metadata": 6535415,
+    "result": "Access denied; no permission workaround attempted",
+    "local_debugger_available": "C:\\Program Files\\WindowsApps\\Microsoft.WinDbg_1.2610.1001.0_x64__8wekyb3d8bbwe\\amd64\\cdb.exe"
+  },
+  "scientific_result_complete": false,
+  "new_selector_runs": 0,
+  "new_labels": 0,
+  "protected_access": false,
+  "model_adopted": false,
+  "automatic_retry": false,
+  "resume_implemented_or_run": false,
+  "approval_remains_for_same_pilot": true,
+  "next_action": "Obtain permitted local crash-dump copy and inspect it before choosing repair/GPU continuation; keep cumulative one-hour budget."
+}

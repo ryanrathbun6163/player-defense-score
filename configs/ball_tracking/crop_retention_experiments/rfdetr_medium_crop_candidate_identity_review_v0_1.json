@@ -1,0 +1,142 @@
+{
+  "schema_version": "ball_crop_candidate_identity_review_experiment/v0.1",
+  "study_id": "rfdetr_medium_crop_candidate_identity_review_v0_1",
+  "output_root": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1",
+  "output_dir": "review/candidate_identity_review_v0_1",
+  "permitted_stages": [
+    "verify"
+  ],
+  "unit_key": "post-review-candidate-identity:verify:",
+  "maximum_unit_seconds": 120,
+  "maximum_guide_bytes": 65536,
+  "scientific_inputs": [
+    {
+      "frame_index": 300,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000300.png",
+        "sha256": "83f66dd364e17e786bc9332d1a6680dafff755d2d3a000b198c29358fb60885a"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000300.png",
+        "sha256": "dbd73c0a853c125e285d464488318de4058e2fa8e34d564a61cccf6e3313ead1",
+        "size_bytes": 3131375
+      }
+    },
+    {
+      "frame_index": 301,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000301.png",
+        "sha256": "58204cc756cced65d25e50143418ddca5418cb70a431394a303172e98ef2b88b"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000301.png",
+        "sha256": "1f526b2959b4387123a11c62b6654cca918cde68aa825f47686d7b3cfe56017a",
+        "size_bytes": 3045831
+      }
+    },
+    {
+      "frame_index": 302,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000302.png",
+        "sha256": "7f3a3aa7f6968b0fe7bf7d26969f2592554beba868ddd99f756599db6319ff54"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000302.png",
+        "sha256": "a9cda0c820bd2e3ad4d4deb8ba4032007e0c639bf7738ccb30f86bc3ceeec67b",
+        "size_bytes": 3090512
+      }
+    },
+    {
+      "frame_index": 304,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000304.png",
+        "sha256": "4073903b152ef4883ad21e02d6da3cac47bf3827cad08dbf596d90b7a39308d3"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000304.png",
+        "sha256": "4145004f13ed4641f8daeae0d8fbcf9a8d2191b6d8ce9c909f9c0b6bdf8c18a8",
+        "size_bytes": 3059573
+      }
+    },
+    {
+      "frame_index": 308,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000308.png",
+        "sha256": "b20cf1b540e13429fca1fbf2e75642cc8decb4e54bf5811f88ffe6ff637def9e"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000308.png",
+        "sha256": "e5a10f63f7f32b1c39ffbd4de09acc8e708f44136cb185a8e0f80b4760657fa9",
+        "size_bytes": 3074979
+      }
+    },
+    {
+      "frame_index": 319,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000319.png",
+        "sha256": "0fbdb28bafec5b4add46c5712aef20d0c14fe00f3718d0f4fc491bcecd5f79a9"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000319.png",
+        "sha256": "2205ac3773c3ddc056a3a1ceb56e00722a6d2c8ab5d698d04d48f8cbedbc6787",
+        "size_bytes": 3072188
+      }
+    },
+    {
+      "frame_index": 320,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000320.png",
+        "sha256": "674943028e1bdbb5ab340ace5d564c419803c266509cda4735fcf1a6f06a78b1"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000320.png",
+        "sha256": "430488219092c68efe391fc841bc354776e37bccd973528dc784f218782df274",
+        "size_bytes": 3091241
+      }
+    },
+    {
+      "frame_index": 324,
+      "unmarked_source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/review/9a2a78ec54725d766a7179680fd698a2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/unmarked_source/frame_000324.png",
+        "sha256": "b6f9bb4b83a6a3f39ee5963b895226d4d3f9f4578eeac2d9e75b20b9d1d47874"
+      },
+      "native_tt_cap20_overlay": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/view_0/frame_000324.png",
+        "sha256": "45e392c62b972fcaa773c7b99eae00b058afe58b836a2c331b5ba9d5468f385f",
+        "size_bytes": 3120588
+      }
+    }
+  ],
+  "proposal": {
+    "path": "docs/ball_crop_candidate_identity_review_proposal.md",
+    "sha256": "4f3ae4ce372599e10b8768611ccccd8cab61ede09de28a90be20da6251a395da"
+  },
+  "scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_candidate_identity_review_v0_1.json",
+    "sha256": "e767f943291464609c1567439910a0f092d9d63943da5932d4ba53cd8c9a7c49"
+  },
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_identity_review_approval_v0_1.json",
+    "sha256": "70f3329d3bef0d23f61befd1a56188f1f7ed02ca21492bd14f54e391006cea16"
+  },
+  "frozen_history": {
+    "path": "data/outputs/t/ci_impl_efeefd58f680/frozen_history.json",
+    "sha256": "d536ae6f1615c59c89664918c5b983a9e8a01d28237959a6328000c722d96b78"
+  },
+  "predecessor_manifest": {
+    "path": "configs/ball_tracking/crop_retention_experiments/rfdetr_medium_crop_candidate_retention_output_presence_v0_1.json",
+    "sha256": "99d484ce9fc2bb270add3963ed938447847e4e037cd5f6cba1f1759e12d432d9"
+  },
+  "predecessor_completion": {
+    "path": "data/outputs/t/op_impl_de134d942767/output_presence_completion_efeefd58f680.json",
+    "sha256": "c8ab53324a899b28ac79b6a464938030ae6a330e1548766501013d48543554e8"
+  },
+  "implementation_validation": {
+    "path": "data/outputs/t/ci_impl_efeefd58f680/implementation_validation.json",
+    "sha256": "58a54d89bcd887f211c523a76d204ddbd135c57f7b4c4a3f71e630ec1ab3b165"
+  },
+  "post_commit_checkpoint": "data/outputs/t/ci_impl_efeefd58f680/post_commit_execution_checkpoint.json",
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

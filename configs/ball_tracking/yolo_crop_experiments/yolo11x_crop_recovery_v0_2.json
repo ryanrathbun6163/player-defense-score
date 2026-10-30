@@ -1,0 +1,23 @@
+{
+  "schema_version": "ball_yolo_crop_recovery_experiment/v0.2",
+  "experiment_id": "yolo11x_crop_recovery_v0_2",
+  "recovery_proposal": {
+    "path": "configs/ball_tracking/proposals/yolo11x_crop_recovery_v0_2.json",
+    "sha256": "b0a6a6ee81711d59f35b6360ce6c9595fce80c1625d45ff407683958a65612fe"
+  },
+  "original_experiment": {
+    "path": "configs/ball_tracking/yolo_crop_experiments/yolo11x_crop_development_comparison_v0_1.json",
+    "sha256": "147f476ac3b2b8ad5f3f367f45c69acb37f29580f90e7fc861dcd8f6c77a3790"
+  },
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/yolo11x_crop_recovery_approval_v0_2.json",
+    "sha256": "5d9ec4a2d2d7c310ed304f4ce41e5b5aed9c76dd2829fdeb469201478c773782"
+  },
+  "runtime": {
+    "path": "data/outputs/ball_tracking/yolo11x_runtime/ultralytics_8_4_171_py311/runtime_record.json",
+    "sha256": "bd549dff7c4d7810b3154c9a5442cf43516e15bd5c72ab6abe631f819652e7ba"
+  },
+  "output_root": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2",
+  "selected_operating_point": null,
+  "quality_gate": null
+}

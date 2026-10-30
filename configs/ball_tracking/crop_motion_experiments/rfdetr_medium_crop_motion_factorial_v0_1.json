@@ -1,0 +1,15 @@
+{
+  "schema_version": "ball_crop_motion_experiment/v0.1",
+  "experiment_id": "rfdetr_medium_crop_motion_factorial_v0_1",
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_motion_factorial_v0_1.json",
+    "sha256": "66e7c9aae8c66747d62a480d00c256f1e196df3044d5284be501a76a1edd1c64"
+  },
+  "output_root": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1",
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_motion_factorial_approval_v0_1.json",
+    "sha256": "5169aee6b162494bf4650c308728459f499ecd9b280242d6c36a43411e962a5d"
+  },
+  "selected_operating_point": null,
+  "quality_gate": null
+}

@@ -1,0 +1,11 @@
+tapnext_adapter.py contains a support-query grid adaptation from Google LLC's
+TAPNet VOTSp2026 tracker, source commit
+730cda1c730877cfedbe01bf87fb1cadb78a565d:
+https://github.com/google-deepmind/tapnet/blob/730cda1c730877cfedbe01bf87fb1cadb78a565d/tapnet/tapnextpp/votsp2026/tracker.py
+
+The adaptation preserves the upstream grid geometry while exposing it through
+this repository's label-free prediction interface. The upstream source is
+licensed under Apache License 2.0; a copy is in LICENSE.tapnet.
+
+The external source tree, isolated dependency and pretrained weights are obtained
+and verified separately in ignored local artifacts, not included in this code.

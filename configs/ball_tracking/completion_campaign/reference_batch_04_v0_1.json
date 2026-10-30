@@ -1,0 +1,63 @@
+{
+  "schema_version": "completion_reference_batch/v0.1",
+  "batch_id": "reference_batch_04_v0_1",
+  "approval": "configs/ball_tracking/reviews/ball_tracking_completion_campaign_approval_v0_1.json",
+  "source_contract": "configs/ball_tracking/wasb_experiments/wasb_expanded_development_observation_v0_1.json",
+  "possession_id": "possession_001",
+  "range_inclusive": [
+    125,
+    199
+  ],
+  "purpose": "complete_missing_permitted_curated_reference_coverage",
+  "selection_reason": "No remaining uncovered contiguous run has120frames. Select the longest remaining run reachable without protected packets or decoded frames: P001125\u2013199,75frames. P001400\u2013498 is longer but lacks a keyframe after protected275\u2013349. Selection uses accepted inventory and packet metadata before source pixels, not model errors.",
+  "role": "post_selection_evaluation_only",
+  "training_eligible": false,
+  "checkpoint_selection_eligible": false,
+  "annotation_origin": "assistant_visual_proposal",
+  "human_acceptance": "pending",
+  "output_root": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_04",
+  "accepted_curated_directory": "configs/ball_tracking/annotations",
+  "accepted_gap_reference": {
+    "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/accepted/accepted_reference.json",
+    "sha256": "9cfc5279ba084017554e8a55ab74e41fb1baa5914469b08de1cd480382fc3096"
+  },
+  "review": {
+    "native_playback_fps": 25,
+    "slow_playback_fps": 5,
+    "source_pixels_only": true,
+    "whole_batch_required": true,
+    "uncertainty_and_actual_final_required": true
+  },
+  "additional_accepted_references": [
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_01/accepted/reference.json",
+      "sha256": "23e59ca90e8b060d19f4f90436c6c68d64722a216f113ddc05dfdd8b5340f5cc",
+      "bytes": 153482,
+      "acceptance_receipt": {
+        "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_01_acceptance_v0_1.json",
+        "sha256": "c78d9b202fd53d75357a9a09e6c53aadca2509f983f31bd7db3c374c30faa14b",
+        "bytes": 12027
+      }
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_02/accepted/reference.json",
+      "sha256": "3a0c859f594dbdc8570887bb5adda2434c3e57aa6ec96b4da6d56fae2fb0af87",
+      "bytes": 161322,
+      "acceptance_receipt": {
+        "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_02_acceptance_v0_1.json",
+        "sha256": "0416ff732cce93f173b6c2a0dfc7df4ec9d7d8385e223dd9a3d7145347ffcc9d",
+        "bytes": 18406
+      }
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_03/accepted/reference.json",
+      "sha256": "f7b20daad14352915eaa02ae4c70cc3aaf14bdb822bb3ec1cbde83cbfee56c40",
+      "bytes": 184285,
+      "acceptance_receipt": {
+        "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_03_acceptance_v0_1.json",
+        "sha256": "313a27d643707bb5d4a12971c7ef7739b43f7785b363e60b9371f12f9aa3ef76",
+        "bytes": 20008
+      }
+    }
+  ]
+}

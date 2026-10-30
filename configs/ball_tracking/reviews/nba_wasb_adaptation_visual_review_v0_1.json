@@ -1,0 +1,247 @@
+{
+  "schema_version": "nba_wasb_adaptation_visual_review/v0.1",
+  "status": "review_completed_user_reported",
+  "reviewer_id": "Ryan",
+  "recorded_at_utc": "2026-10-20T05:01:53.727571+00:00",
+  "review_date_local": "2026-10-19",
+  "timezone": "America/Phoenix",
+  "source_commit": "f92c0ecefb91e40b399ee20f71eb13c389ab2dea",
+  "user_statement": "Ok I reviewed these chat. What\u2019s the next step?",
+  "delivery": "Three videos embedded in chat: DET comparison, SAC comparison, and the verified six-clip NFHS compilation.",
+  "review_scope": "User-reported review of the three presented videos, covering all eight underlying comparison packages. The compilation preserves all six NFHS clips, their timing, and each actual final-frame hold.",
+  "playback_telemetry_claimed": false,
+  "quality_judgment": "No explicit favorable prediction-quality judgment was stated. Review completion does not imply correctness or promotion of the candidate.",
+  "corrections_reported": [],
+  "result_record": {
+    "path": "configs/ball_tracking/reviews/nba_wasb_adaptation_result_v0_1.json",
+    "bytes": 43569,
+    "sha256": "221e3be4866429ee3ed7fd8f05f386fbf857c83165bde8aef39ee2c69927e47f"
+  },
+  "packages": [
+    {
+      "candidate_id": "sac_mem_q1_c01",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sac_mem_q1_c01/review_attempts/cf1a87c23a3b4968ac64083222c7f251/review.mp4",
+        "sha256": "1789c0896a4cbe8f875c3b94ce95af569b1a068faea5bb1840b90794eb7d173a",
+        "bytes": 67375029
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sac_mem_q1_c01/review_attempts/cf1a87c23a3b4968ac64083222c7f251/completion.json",
+        "sha256": "7c7c006d73defacac2b74d3d0a76c2e0c72dabbf02fbd0e74c3ed0f8b9fc9b5f",
+        "bytes": 2082
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sac_mem_q1_c01/review_attempts/cf1a87c23a3b4968ac64083222c7f251/review_manifest.json",
+        "sha256": "d0496c346df210c27d4735d7edd5aaebf7f105ffa2c3cab262a94674199b0952",
+        "bytes": 847281
+      },
+      "actual_encoded_final": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sac_mem_q1_c01/review_attempts/cf1a87c23a3b4968ac64083222c7f251/final_frame.png",
+        "sha256": "c59bbf93241479cc3a019b26041e5bad9e93c9c5998544a8ee32656a4f2a93b0",
+        "bytes": 927158
+      },
+      "delivered_as": "standalone inline video",
+      "model_output_human_review": "review_completed_user_reported"
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/review_attempts/8e6924462d6441d68cba99e4205cc49d/review.mp4",
+        "sha256": "bd0efb039f05f24a80f0022b62fa86de0d5a2da7656a64372f3c30f000474dd3",
+        "bytes": 53115792
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/review_attempts/8e6924462d6441d68cba99e4205cc49d/completion.json",
+        "sha256": "4deb52b16bb42880b7ce3c5a17e83bfa6f541ee6a9d9797cddd8e1bde09d2ecb",
+        "bytes": 2081
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/review_attempts/8e6924462d6441d68cba99e4205cc49d/review_manifest.json",
+        "sha256": "a62f906d5ec396619d6362a2d63a61978cd4d627559dc00bcc6173c4d59d365c",
+        "bytes": 711126
+      },
+      "actual_encoded_final": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/sas_det_q1_c02/review_attempts/8e6924462d6441d68cba99e4205cc49d/final_frame.png",
+        "sha256": "f7702b466c44878311574512ec0dc7d85479563090b8f38d2d4935cfb8b8c18f",
+        "bytes": 1065017
+      },
+      "delivered_as": "standalone inline video",
+      "model_output_human_review": "review_completed_user_reported"
+    },
+    {
+      "candidate_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/review_attempts/d5ee8130db2840cc849f127d900f410e/review.mp4",
+        "sha256": "7ab794bac26db93e6917661e7eea9a418c9c4a69aceeb62f5fb902cde22412c2",
+        "bytes": 1816449
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/review_attempts/d5ee8130db2840cc849f127d900f410e/completion.json",
+        "sha256": "c8baa1dafc7bf3866c4aa1481eb09d136499c4542ce26f3becd8078aa0e71adc",
+        "bytes": 2378
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/review_attempts/d5ee8130db2840cc849f127d900f410e/review_manifest.json",
+        "sha256": "f74b06edc83cd9292cda9806df53d076bd45ec13d095ceddb46d48394c8c0c12",
+        "bytes": 15956
+      },
+      "actual_encoded_final": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/review_attempts/d5ee8130db2840cc849f127d900f410e/final_frame.png",
+        "sha256": "699ef42b0905965d63e88d9dd0cc8e9a455a61364f8c5684b986ff04be2bf74d",
+        "bytes": 1089304
+      },
+      "delivered_as": "NFHS compilation",
+      "model_output_human_review": "review_completed_user_reported"
+    },
+    {
+      "candidate_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/review_attempts/c30188c460104cd39a3450ff185f3928/review.mp4",
+        "sha256": "06bd75ae90c3384498a7b1396c4f6d16b2ef10340851bd2918bb145892677095",
+        "bytes": 2366826
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/review_attempts/c30188c460104cd39a3450ff185f3928/completion.json",
+        "sha256": "cb7de3c6d985b8ad34258e00dd16a37b3bb55bda741a402c69cd15f06e5d3c9a",
+        "bytes": 2341
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/review_attempts/c30188c460104cd39a3450ff185f3928/review_manifest.json",
+        "sha256": "c79eb42821cb597348969db8253f3a79d0fb8dbb2eebb8230368f51d783c0c41",
+        "bytes": 15856
+      },
+      "actual_encoded_final": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/review_attempts/c30188c460104cd39a3450ff185f3928/final_frame.png",
+        "sha256": "bfadc9b9121ac2806970b964f81c6420c3d4fe732cd672ab664e964c2814ee69",
+        "bytes": 1164776
+      },
+      "delivered_as": "NFHS compilation",
+      "model_output_human_review": "review_completed_user_reported"
+    },
+    {
+      "candidate_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/review_attempts/e4f9483718dc4d7abd4e389cf848b73a/review.mp4",
+        "sha256": "2c29766fabb1d88766270f67ce04943ad39cd42cc9ddb5151fa9a61d24403ef4",
+        "bytes": 1795192
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/review_attempts/e4f9483718dc4d7abd4e389cf848b73a/completion.json",
+        "sha256": "61ebe47d9f9689e917b548273e75899d863304a3caa13696ce039512042db83a",
+        "bytes": 2379
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/review_attempts/e4f9483718dc4d7abd4e389cf848b73a/review_manifest.json",
+        "sha256": "8b0c10becd84b2a9f68afa402fa02b16c425e317e836d5194ebe776e1ae54068",
+        "bytes": 15981
+      },
+      "actual_encoded_final": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/review_attempts/e4f9483718dc4d7abd4e389cf848b73a/final_frame.png",
+        "sha256": "479a0dc1b73f929698644efd5f895901421b7fa4b97706e5bb5e71c272544feb",
+        "bytes": 1053577
+      },
+      "delivered_as": "NFHS compilation",
+      "model_output_human_review": "review_completed_user_reported"
+    },
+    {
+      "candidate_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/review_attempts/29a2c04fa9cb44478db09db6bf93e36d/review.mp4",
+        "sha256": "db7d77efe2195e7086cc330f1bc14fe4448d862bc9afef4f0d1a7e535a2f51c9",
+        "bytes": 1999355
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/review_attempts/29a2c04fa9cb44478db09db6bf93e36d/completion.json",
+        "sha256": "9057bcbc3649856e8dd89814093208941ade8982d8d8132799a05f22bcaadaeb",
+        "bytes": 2353
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/review_attempts/29a2c04fa9cb44478db09db6bf93e36d/review_manifest.json",
+        "sha256": "5060291f3a17d67a9fddfd8e38e72f82b50e253407ba95998cf97804f6c66078",
+        "bytes": 15828
+      },
+      "actual_encoded_final": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/review_attempts/29a2c04fa9cb44478db09db6bf93e36d/final_frame.png",
+        "sha256": "1dda2bcc84b70e36ced6b8ceb34ead1aa825f37bafe260773f408c271838958b",
+        "bytes": 1013916
+      },
+      "delivered_as": "NFHS compilation",
+      "model_output_human_review": "review_completed_user_reported"
+    },
+    {
+      "candidate_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/review_attempts/754eae8e651d4c24842a88bd975aa9bf/review.mp4",
+        "sha256": "ec1880e9fa39224ba17e8f0c7a6559b8575a60dff53517edd1f22fa98c98f2a3",
+        "bytes": 2183110
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/review_attempts/754eae8e651d4c24842a88bd975aa9bf/completion.json",
+        "sha256": "1a2640455335a996ddf86f75de6bc4d71dfd5987921d7064a47c379687272e67",
+        "bytes": 2378
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/review_attempts/754eae8e651d4c24842a88bd975aa9bf/review_manifest.json",
+        "sha256": "ad88dbf0dcb14965dc86a714d197a659e9364e5d2b9e41ab839a3d3ad15f1d8c",
+        "bytes": 16006
+      },
+      "actual_encoded_final": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/review_attempts/754eae8e651d4c24842a88bd975aa9bf/final_frame.png",
+        "sha256": "45c32f4ac2c0b4beda0b71f32a5347c9bfc2128112d657c15778fad894e7653f",
+        "bytes": 1072304
+      },
+      "delivered_as": "NFHS compilation",
+      "model_output_human_review": "review_completed_user_reported"
+    },
+    {
+      "candidate_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "review_video": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/review_attempts/d76e24da5b964ea394a5f683e1d6d1e4/review.mp4",
+        "sha256": "8b1142cdb5510c394ed861c35d5194a3f2c695ba828c0978c69dd37352859ae6",
+        "bytes": 2393239
+      },
+      "render_completion": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/review_attempts/d76e24da5b964ea394a5f683e1d6d1e4/completion.json",
+        "sha256": "b907dbf4ac41cb7073e463f36bce6d2f72021d686c2db7847a5b9467f0a06731",
+        "bytes": 2353
+      },
+      "review_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/review_attempts/d76e24da5b964ea394a5f683e1d6d1e4/review_manifest.json",
+        "sha256": "4d8479f987a82e307ea74eb6d10310a255384af32d8fdf5eb942479539b3acff",
+        "bytes": 15856
+      },
+      "actual_encoded_final": {
+        "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/comparison/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/review_attempts/d76e24da5b964ea394a5f683e1d6d1e4/final_frame.png",
+        "sha256": "77c79884173cea11b704a1151c1f801544344852a7d1634d5f6a0da9bd2c63a5",
+        "bytes": 1094308
+      },
+      "delivered_as": "NFHS compilation",
+      "model_output_human_review": "review_completed_user_reported"
+    }
+  ],
+  "nfhs_compilation": {
+    "receipt": {
+      "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/delivery/nfhs_compilation_receipt.json",
+      "sha256": "9e488ecc0d2cd1ff5e30ec41bd3a9a54df02a2d11106035895abd8b42f1dc415",
+      "bytes": 23207
+    },
+    "video": {
+      "path": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1/delivery/nfhs_all_six_comparison.mp4",
+      "bytes": 12550271,
+      "sha256": "04f16b86fc66084fc3489a0cd39e08549bd59ed34ef984fd51737c4022a1f1fc"
+    },
+    "frames": 150,
+    "seconds": 31
+  },
+  "decision": "The candidate still fails the four frozen numerical conditions. Retain the expanded baseline 09da1214e94f; no candidate or ball-phase promotion.",
+  "history": "Original result, completion, media, audit and AI-inspection records retain their execution-time pending-human snapshots. This later record supplies review completion; do not ask Ryan to repeat this batch.",
+  "limits": {
+    "model_promotion": false,
+    "ball_phase_accepted": false,
+    "new_fit_authorized_by_this_message": false,
+    "threshold_search_authorized_by_this_message": false,
+    "existing_development_read_policy_unchanged": true,
+    "game_roles_and_holdouts_unchanged": true,
+    "new_motion_human_reviews_pending": 3
+  }
+}

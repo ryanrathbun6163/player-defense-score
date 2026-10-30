@@ -1,0 +1,171 @@
+{
+  "schema_version": "wasb_training_expansion_human_visual_review/v0.1",
+  "status": "approved",
+  "approved_by": "Ryan",
+  "reviewer_id": "ryan",
+  "recorded_at_utc": "2026-10-09T01:18:32.874696+00:00",
+  "user_statement_verbatim": "yep these look good. move forward chat",
+  "review_context": "Ryan approved all three completed label-review clips linked in the preceding response, including final frames, and authorized continuation with the already-approved fit.",
+  "review_role": "Single annotator human visual review; no independent second annotator claim.",
+  "render_manifest": {
+    "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/training_expansion_labels_v0_1/visual_review/manifest.json",
+    "sha256": "064219458b9dd92fb98f79148e4a8498c59387844504c5b622e4e869871ba0cb"
+  },
+  "expansion_approval": {
+    "path": "configs/ball_tracking/reviews/wasb_training_data_expansion_approval_v0_1.json",
+    "sha256": "dcb187f9ef504b96b60ca8cd1e67d61c7b66525e6bde3005604157559280425c"
+  },
+  "reviewed_annotations": [
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0100_0124_training_expansion_v0_1.json",
+      "sha256": "a2a441afb782222b3f2c9bab70c8c4169d0a7bd266da3dbf22657223db6d46e4"
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0250_0274_training_expansion_v0_1.json",
+      "sha256": "10fbde5c1565754d62755efeb1d6af18d9264ec42fde7dff45e88522da6d2590"
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_002_frames_0343_0367_training_expansion_v0_1.json",
+      "sha256": "ce23c0aeb2f78604d888d97459e962c18bcd1c5129fca4df7e0120fe2da8d3bd"
+    }
+  ],
+  "clips": [
+    {
+      "annotation_set_id": "possession_001_frames_0100_0124_training_expansion_v0_1",
+      "reviewed_draft_snapshot": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/training_expansion_labels_v0_1/approved_review_snapshots/possession_001_frames_0100_0124_training_expansion_v0_1.json",
+        "sha256": "a237ceecf12afeb4eb0dbd161cfebbe589f45287b02f09268d850c5a1e300649"
+      },
+      "reviewed_annotation": {
+        "path": "configs/ball_tracking/annotations/possession_001_frames_0100_0124_training_expansion_v0_1.json",
+        "sha256": "a2a441afb782222b3f2c9bab70c8c4169d0a7bd266da3dbf22657223db6d46e4"
+      },
+      "video": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/training_expansion_labels_v0_1/visual_review/possession_001_frames_0100_0124_training_expansion_v0_1/label_review_5fps.mp4",
+        "sha256": "e0bcf96635b8f3d773d8310ad550d9b0e44b547af67a851846247d9c6a0bb9ce",
+        "size_bytes": 2344606
+      },
+      "exact_frame_indices": [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124
+      ],
+      "status": "approved_by_Ryan"
+    },
+    {
+      "annotation_set_id": "possession_001_frames_0250_0274_training_expansion_v0_1",
+      "reviewed_draft_snapshot": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/training_expansion_labels_v0_1/approved_review_snapshots/possession_001_frames_0250_0274_training_expansion_v0_1.json",
+        "sha256": "41f43ee7941e2b5696cf70ef7f06b77054f7be86e656e114e9c2ee002c1b3d46"
+      },
+      "reviewed_annotation": {
+        "path": "configs/ball_tracking/annotations/possession_001_frames_0250_0274_training_expansion_v0_1.json",
+        "sha256": "10fbde5c1565754d62755efeb1d6af18d9264ec42fde7dff45e88522da6d2590"
+      },
+      "video": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/training_expansion_labels_v0_1/visual_review/possession_001_frames_0250_0274_training_expansion_v0_1/label_review_5fps.mp4",
+        "sha256": "622c6e2405404c83353ce03b2f82a18df9c8256ce65bb471333f4cb9ba383893",
+        "size_bytes": 2358154
+      },
+      "exact_frame_indices": [
+        250,
+        251,
+        252,
+        253,
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274
+      ],
+      "status": "approved_by_Ryan"
+    },
+    {
+      "annotation_set_id": "possession_002_frames_0343_0367_training_expansion_v0_1",
+      "reviewed_draft_snapshot": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/training_expansion_labels_v0_1/approved_review_snapshots/possession_002_frames_0343_0367_training_expansion_v0_1.json",
+        "sha256": "62c63c3b4e617bc0b9824afdd83c79dc96b89446574e4f88d5f2f8b83a051863"
+      },
+      "reviewed_annotation": {
+        "path": "configs/ball_tracking/annotations/possession_002_frames_0343_0367_training_expansion_v0_1.json",
+        "sha256": "ce23c0aeb2f78604d888d97459e962c18bcd1c5129fca4df7e0120fe2da8d3bd"
+      },
+      "video": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/training_expansion_labels_v0_1/visual_review/possession_002_frames_0343_0367_training_expansion_v0_1/label_review_5fps.mp4",
+        "sha256": "d19f35fdb7fe388d91c91cd18967dfb70b9417719e1754052bc15b81c94b72b0",
+        "size_bytes": 3302391
+      },
+      "exact_frame_indices": [
+        343,
+        344,
+        345,
+        346,
+        347,
+        348,
+        349,
+        350,
+        351,
+        352,
+        353,
+        354,
+        355,
+        356,
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363,
+        364,
+        365,
+        366,
+        367
+      ],
+      "status": "approved_by_Ryan"
+    }
+  ],
+  "annotation_change": "Review status, reviewer_id and reviewed_at_utc only; all per-frame labels and corrected tags unchanged.",
+  "completed_model_output_reviews_unchanged": true,
+  "training_execution_state_at_recording": "not_started",
+  "selected_operating_point": null,
+  "quality_gate": null
+}

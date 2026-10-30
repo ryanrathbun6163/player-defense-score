@@ -1,0 +1,1510 @@
+{
+  "schema_version": "candidate_proposal_coverage_result/v0.1",
+  "status": "completed_audited_coverage_pass_no_training_or_adoption",
+  "at_utc": "2026-10-30T04:22:02.863788+00:00",
+  "report": {
+    "path": "docs/ball_tracking_candidate_proposal_coverage_report.md",
+    "bytes": 12242,
+    "sha256": "30d57668f2f49666d84345ac273731b3134d332a0b15d108b3c83968929d4ee0"
+  },
+  "protocol": {
+    "path": "docs/ball_tracking_candidate_proposal_coverage_protocol.md",
+    "bytes": 10543,
+    "sha256": "fefae33ab1b86ca85ab40c8482a06b3c89b13bb40d9dd591fd82f34479152b5f"
+  },
+  "specification": {
+    "path": "configs/ball_tracking/proposals/candidate_proposal_coverage_v0_1.json",
+    "bytes": 2505,
+    "sha256": "e442ad8284150612901131e782420a4f693f998fae74ce672f33a285a86a0b1f"
+  },
+  "decision": {
+    "joint_transfer_design_eligible": true,
+    "blocking_reasons": [],
+    "raw_producer_relative_coverage": {
+      "passed": true,
+      "conditions": {
+        "chosen_native_known_distant": {
+          "game_ids": [
+            "0022400866",
+            "0022400868",
+            "0022500829"
+          ],
+          "at_least_two_games": true,
+          "outer_training_folds": {
+            "leave_chi_out": {
+              "candidate_rows": 140,
+              "frames": 140
+            },
+            "leave_den_out": {
+              "candidate_rows": 203,
+              "frames": 203
+            },
+            "leave_sac_out": {
+              "candidate_rows": 267,
+              "frames": 267
+            }
+          },
+          "all_outer_folds_nonzero": true,
+          "passed": true
+        },
+        "chosen_native_certain_hidden": {
+          "game_ids": [
+            "0022400866",
+            "0022400868",
+            "0022500829"
+          ],
+          "at_least_two_games": true,
+          "outer_training_folds": {
+            "leave_chi_out": {
+              "candidate_rows": 49,
+              "frames": 49
+            },
+            "leave_den_out": {
+              "candidate_rows": 80,
+              "frames": 80
+            },
+            "leave_sac_out": {
+              "candidate_rows": 33,
+              "frames": 33
+            }
+          },
+          "all_outer_folds_nonzero": true,
+          "passed": true
+        },
+        "weak_positive_native_wrong_or_missing": {
+          "game_ids": [
+            "0022400866",
+            "0022400868",
+            "0022500829"
+          ],
+          "at_least_two_games": true,
+          "outer_training_folds": {
+            "leave_chi_out": {
+              "candidate_rows": 20,
+              "frames": 20
+            },
+            "leave_den_out": {
+              "candidate_rows": 64,
+              "frames": 64
+            },
+            "leave_sac_out": {
+              "candidate_rows": 68,
+              "frames": 68
+            }
+          },
+          "all_outer_folds_nonzero": true,
+          "passed": true
+        }
+      },
+      "meaning": "Prospective engineering coverage screen, not power or generalization evidence."
+    },
+    "conservative_role_screened_coverage": {
+      "passed": true,
+      "conditions": {
+        "chosen_native_known_distant": {
+          "game_ids": [
+            "0022400866",
+            "0022400868",
+            "0022500829"
+          ],
+          "at_least_two_games": true,
+          "outer_training_folds": {
+            "leave_chi_out": {
+              "candidate_rows": 139,
+              "frames": 139
+            },
+            "leave_den_out": {
+              "candidate_rows": 202,
+              "frames": 202
+            },
+            "leave_sac_out": {
+              "candidate_rows": 267,
+              "frames": 267
+            }
+          },
+          "all_outer_folds_nonzero": true,
+          "passed": true
+        },
+        "chosen_native_certain_hidden": {
+          "game_ids": [
+            "0022400866",
+            "0022400868",
+            "0022500829"
+          ],
+          "at_least_two_games": true,
+          "outer_training_folds": {
+            "leave_chi_out": {
+              "candidate_rows": 49,
+              "frames": 49
+            },
+            "leave_den_out": {
+              "candidate_rows": 80,
+              "frames": 80
+            },
+            "leave_sac_out": {
+              "candidate_rows": 33,
+              "frames": 33
+            }
+          },
+          "all_outer_folds_nonzero": true,
+          "passed": true
+        },
+        "weak_positive_native_wrong_or_missing": {
+          "game_ids": [
+            "0022400866",
+            "0022400868",
+            "0022500829"
+          ],
+          "at_least_two_games": true,
+          "outer_training_folds": {
+            "leave_chi_out": {
+              "candidate_rows": 20,
+              "frames": 20
+            },
+            "leave_den_out": {
+              "candidate_rows": 64,
+              "frames": 64
+            },
+            "leave_sac_out": {
+              "candidate_rows": 68,
+              "frames": 68
+            }
+          },
+          "all_outer_folds_nonzero": true,
+          "passed": true
+        }
+      },
+      "meaning": "Prospective engineering coverage screen, not power or generalization evidence."
+    },
+    "useful_new_role_compatible_exact_points": 461,
+    "role_screen_policy": "Conservatively unresolved if any non-training historical role occurs on the same canonical source frame; also require original point-model in-source input eligibility. This does not invalidate any original accepted fit or change any historical role. Report raw coverage independently.",
+    "novelty_policy": "At least one useful canonical exact point absent from both current candidate and historical point registries, outside unresolved historical frames. Floor-crop overlap remains a distinct descriptive measure.",
+    "next_step": "Only a separately specified producer-transfer design is eligible; no training/adoption authorized.",
+    "training_run": false,
+    "model_adopted": false,
+    "threshold_selected": false
+  },
+  "capture_counts": {
+    "blocks": 21,
+    "frames": 3179,
+    "forward_calls": 3137,
+    "imported_frames": 0,
+    "parity_calls": 0,
+    "optimizer_updates": 0
+  },
+  "summary": {
+    "frames": 3179,
+    "new_candidates": 1091879,
+    "old_candidates": 18813,
+    "new_target_counts": {
+      "positive": 3700,
+      "eligible_distant_miss": 966793,
+      "boundary_unknown": 446,
+      "masked_unknown": 80599,
+      "certain_hidden": 40341
+    },
+    "old_target_counts": {
+      "positive": 3433,
+      "eligible_distant_miss": 13776,
+      "boundary_unknown": 65,
+      "masked_unknown": 1224,
+      "certain_hidden": 315
+    },
+    "new_origin_counts": {
+      "native": 6176,
+      "weak": 1085703
+    },
+    "frame_kind_counts": {
+      "positive": 2811,
+      "masked": 240,
+      "hidden": 128
+    },
+    "new_native_outcomes": {
+      "correct": 2425,
+      "missing": 78,
+      "wrong": 308,
+      "masked_observed": 166,
+      "hidden_emission": 81,
+      "hidden_abstention": 47,
+      "masked_missing": 74
+    },
+    "old_native_outcomes": {
+      "correct": 2807,
+      "masked_missing": 134,
+      "hidden_abstention": 126,
+      "wrong": 3,
+      "missing": 1,
+      "masked_observed": 106,
+      "hidden_emission": 2
+    },
+    "paired_native_transitions": {
+      "correct -> correct": 2425,
+      "correct -> missing": 76,
+      "correct -> wrong": 306,
+      "masked_missing -> masked_observed": 71,
+      "hidden_abstention -> hidden_emission": 79,
+      "hidden_abstention -> hidden_abstention": 47,
+      "wrong -> missing": 2,
+      "wrong -> wrong": 1,
+      "missing -> wrong": 1,
+      "masked_observed -> masked_observed": 95,
+      "masked_missing -> masked_missing": 63,
+      "masked_observed -> masked_missing": 11,
+      "hidden_emission -> hidden_emission": 2
+    },
+    "paired_counts": {
+      "current_native_correct_retained": 2425,
+      "current_native_correct_lost": 382,
+      "lost_native_but_new_pool_has_positive": 204,
+      "current_native_wrong_or_missing_recovered": 0,
+      "current_pool_positive_lost": 180,
+      "new_pool_positive_added": 1,
+      "current_weak_positive_frame_retains_any_positive": 491,
+      "current_weak_positive_frame_retains_weak_positive": 153,
+      "both_pools_empty": 0
+    },
+    "per_game": {
+      "0022400868": {
+        "frames": 960,
+        "new_native_outcomes": {
+          "correct": 617,
+          "missing": 54,
+          "wrong": 165,
+          "masked_observed": 55,
+          "hidden_emission": 32,
+          "hidden_abstention": 18,
+          "masked_missing": 19
+        },
+        "old_native_outcomes": {
+          "correct": 832,
+          "masked_missing": 44,
+          "hidden_abstention": 48,
+          "wrong": 3,
+          "missing": 1,
+          "masked_observed": 30,
+          "hidden_emission": 2
+        },
+        "paired_counts": {
+          "current_native_correct_retained": 617,
+          "current_native_correct_lost": 215,
+          "lost_native_but_new_pool_has_positive": 86,
+          "current_native_wrong_or_missing_recovered": 0,
+          "current_pool_positive_lost": 131,
+          "new_pool_positive_added": 1,
+          "current_weak_positive_frame_retains_any_positive": 146,
+          "current_weak_positive_frame_retains_weak_positive": 37,
+          "both_pools_empty": 0
+        }
+      },
+      "0022400866": {
+        "frames": 960,
+        "new_native_outcomes": {
+          "correct": 818,
+          "wrong": 102,
+          "masked_observed": 27,
+          "masked_missing": 3,
+          "hidden_abstention": 9,
+          "hidden_emission": 1
+        },
+        "old_native_outcomes": {
+          "correct": 920,
+          "masked_observed": 11,
+          "masked_missing": 19,
+          "hidden_abstention": 10
+        },
+        "paired_counts": {
+          "current_native_correct_retained": 818,
+          "current_native_correct_lost": 102,
+          "lost_native_but_new_pool_has_positive": 88,
+          "current_native_wrong_or_missing_recovered": 0,
+          "current_pool_positive_lost": 14,
+          "new_pool_positive_added": 0,
+          "current_weak_positive_frame_retains_any_positive": 182,
+          "current_weak_positive_frame_retains_weak_positive": 71,
+          "both_pools_empty": 0
+        }
+      },
+      "0022500829": {
+        "frames": 1259,
+        "new_native_outcomes": {
+          "correct": 990,
+          "wrong": 41,
+          "masked_observed": 84,
+          "hidden_emission": 48,
+          "hidden_abstention": 20,
+          "masked_missing": 52,
+          "missing": 24
+        },
+        "old_native_outcomes": {
+          "correct": 1055,
+          "masked_observed": 65,
+          "masked_missing": 71,
+          "hidden_abstention": 68
+        },
+        "paired_counts": {
+          "current_native_correct_retained": 990,
+          "current_native_correct_lost": 65,
+          "lost_native_but_new_pool_has_positive": 30,
+          "current_native_wrong_or_missing_recovered": 0,
+          "current_pool_positive_lost": 35,
+          "new_pool_positive_added": 0,
+          "current_weak_positive_frame_retains_any_positive": 163,
+          "current_weak_positive_frame_retains_weak_positive": 45,
+          "both_pools_empty": 0
+        }
+      }
+    },
+    "novelty_counts": {
+      "exact_current_candidate_ids": 2,
+      "floor_crop_current_candidate_ids": 359,
+      "exact_historical_row_keys": 0,
+      "floor_crop_historical_row_keys": 0,
+      "historical_source_frame_row_keys": 1516,
+      "unresolved_historical_role_row_keys": 1516,
+      "new_exact_point_vs_current_pool": 1091877,
+      "new_floor_crop_vs_current_pool": 1091520,
+      "role_screen_eligible": 1090363
+    },
+    "historical_rows_preserved": 60,
+    "historical_targets_promoted": 0,
+    "current_cosine_recovery_view": {
+      "wrong_or_missing_frames": {
+        "frames": 4,
+        "frame_ids": [
+          "frame_1f16cb1fea33374f4bd408f365c0b0f1dec53d24a2c39f9da630b2f6ef9754f0",
+          "frame_42335714eb26685cb6c5bbc165c72d01ade770605884fb12f356f821378b9163",
+          "frame_adfe0a18b7df9858ab8814b0864fe7285e3cc2916460d357008c94dc51e012ea",
+          "frame_ddbb495963d828129c1f2c4cf616f13ec4b701de2b6f64b95c7428604797fe99"
+        ],
+        "games": 1,
+        "game_ids": [
+          "0022400868"
+        ],
+        "blocks": 1,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e02"
+        ],
+        "source_videos": 1,
+        "physical_index_runs": 3,
+        "largest_run_frames": 2,
+        "run_length_histogram": {
+          "1": 2,
+          "2": 1
+        },
+        "runs": [
+          {
+            "game_id": "0022400868",
+            "source_video_sha256": "143578e6f82f2814608318896af41309611c2880f6b806cd3967dfb55d2d54af",
+            "first_source_frame": 0,
+            "last_source_frame": 1,
+            "frames": 2,
+            "block_ids": [
+              "chi-vs-ind-0022400868_e02"
+            ],
+            "frame_ids": [
+              "frame_1f16cb1fea33374f4bd408f365c0b0f1dec53d24a2c39f9da630b2f6ef9754f0",
+              "frame_ddbb495963d828129c1f2c4cf616f13ec4b701de2b6f64b95c7428604797fe99"
+            ]
+          },
+          {
+            "game_id": "0022400868",
+            "source_video_sha256": "143578e6f82f2814608318896af41309611c2880f6b806cd3967dfb55d2d54af",
+            "first_source_frame": 70,
+            "last_source_frame": 70,
+            "frames": 1,
+            "block_ids": [
+              "chi-vs-ind-0022400868_e02"
+            ],
+            "frame_ids": [
+              "frame_42335714eb26685cb6c5bbc165c72d01ade770605884fb12f356f821378b9163"
+            ]
+          },
+          {
+            "game_id": "0022400868",
+            "source_video_sha256": "143578e6f82f2814608318896af41309611c2880f6b806cd3967dfb55d2d54af",
+            "first_source_frame": 83,
+            "last_source_frame": 83,
+            "frames": 1,
+            "block_ids": [
+              "chi-vs-ind-0022400868_e02"
+            ],
+            "frame_ids": [
+              "frame_adfe0a18b7df9858ab8814b0864fe7285e3cc2916460d357008c94dc51e012ea"
+            ]
+          }
+        ],
+        "by_game": {
+          "0022400868": {
+            "frames": 4,
+            "blocks": 1,
+            "physical_index_runs": 3
+          }
+        }
+      },
+      "alternate_weak_positive_on_current_wrong_or_missing": {
+        "frames": 1,
+        "frame_ids": [
+          "frame_ddbb495963d828129c1f2c4cf616f13ec4b701de2b6f64b95c7428604797fe99"
+        ],
+        "games": 1,
+        "game_ids": [
+          "0022400868"
+        ],
+        "blocks": 1,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e02"
+        ],
+        "source_videos": 1,
+        "physical_index_runs": 1,
+        "largest_run_frames": 1,
+        "run_length_histogram": {
+          "1": 1
+        },
+        "runs": [
+          {
+            "game_id": "0022400868",
+            "source_video_sha256": "143578e6f82f2814608318896af41309611c2880f6b806cd3967dfb55d2d54af",
+            "first_source_frame": 1,
+            "last_source_frame": 1,
+            "frames": 1,
+            "block_ids": [
+              "chi-vs-ind-0022400868_e02"
+            ],
+            "frame_ids": [
+              "frame_ddbb495963d828129c1f2c4cf616f13ec4b701de2b6f64b95c7428604797fe99"
+            ]
+          }
+        ],
+        "by_game": {
+          "0022400868": {
+            "frames": 1,
+            "blocks": 1,
+            "physical_index_runs": 1,
+            "candidate_rows": 1
+          }
+        },
+        "candidate_rows": 1,
+        "candidate_ids": [
+          "candidate_313229ed569c5a49e3a297bbcb1dfb2de390ce7226b9939cf247660752729051"
+        ],
+        "unique_exact_points": 1,
+        "unique_floor_crops": 1,
+        "target_groups": {
+          "positive": 1
+        }
+      },
+      "alternate_weak_positive_on_current_wrong": {
+        "frames": 1,
+        "frame_ids": [
+          "frame_ddbb495963d828129c1f2c4cf616f13ec4b701de2b6f64b95c7428604797fe99"
+        ],
+        "games": 1,
+        "game_ids": [
+          "0022400868"
+        ],
+        "blocks": 1,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e02"
+        ],
+        "source_videos": 1,
+        "physical_index_runs": 1,
+        "largest_run_frames": 1,
+        "run_length_histogram": {
+          "1": 1
+        },
+        "runs": [
+          {
+            "game_id": "0022400868",
+            "source_video_sha256": "143578e6f82f2814608318896af41309611c2880f6b806cd3967dfb55d2d54af",
+            "first_source_frame": 1,
+            "last_source_frame": 1,
+            "frames": 1,
+            "block_ids": [
+              "chi-vs-ind-0022400868_e02"
+            ],
+            "frame_ids": [
+              "frame_ddbb495963d828129c1f2c4cf616f13ec4b701de2b6f64b95c7428604797fe99"
+            ]
+          }
+        ],
+        "by_game": {
+          "0022400868": {
+            "frames": 1,
+            "blocks": 1,
+            "physical_index_runs": 1,
+            "candidate_rows": 1
+          }
+        },
+        "candidate_rows": 1,
+        "candidate_ids": [
+          "candidate_313229ed569c5a49e3a297bbcb1dfb2de390ce7226b9939cf247660752729051"
+        ],
+        "unique_exact_points": 1,
+        "unique_floor_crops": 1,
+        "target_groups": {
+          "positive": 1
+        }
+      },
+      "alternate_weak_positive_on_current_missing": {
+        "frames": 0,
+        "frame_ids": [],
+        "games": 0,
+        "game_ids": [],
+        "blocks": 0,
+        "block_ids": [],
+        "source_videos": 0,
+        "physical_index_runs": 0,
+        "largest_run_frames": 0,
+        "run_length_histogram": {},
+        "runs": [],
+        "by_game": {},
+        "candidate_rows": 0,
+        "candidate_ids": [],
+        "unique_exact_points": 0,
+        "unique_floor_crops": 0,
+        "target_groups": {}
+      },
+      "cross_game_gate_applied": false,
+      "meaning": "Current-policy failures are fixed by saved cosine choices. Producer-relative recoveries elsewhere do not fill this current-policy coverage gap."
+    }
+  },
+  "required_case_support": {
+    "alternate_producer": {
+      "chosen_native_known_distant": {
+        "frames": 305,
+        "games": 3,
+        "game_ids": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "blocks": 15,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e01",
+          "chi-vs-ind-0022400868_e02",
+          "chi-vs-ind-0022400868_e03",
+          "chi-vs-ind-0022400868_e04",
+          "chi-vs-ind-0022400868_e05",
+          "chi-vs-ind-0022400868_e06",
+          "den-vs-bos-0022400866_e01",
+          "den-vs-bos-0022400866_e02",
+          "den-vs-bos-0022400866_e04",
+          "den-vs-bos-0022400866_e05",
+          "den-vs-bos-0022400866_e06",
+          "sac-mem-0022500829_e01",
+          "sac-mem-0022500829_e03",
+          "sac-mem-0022500829_e05",
+          "sac_held_ball_gaps"
+        ],
+        "source_videos": 12,
+        "physical_index_runs": 56,
+        "largest_run_frames": 73,
+        "run_length_histogram": {
+          "1": 18,
+          "2": 12,
+          "3": 6,
+          "4": 5,
+          "5": 2,
+          "6": 1,
+          "7": 4,
+          "9": 1,
+          "12": 1,
+          "13": 1,
+          "17": 2,
+          "19": 1,
+          "21": 1,
+          "73": 1
+        },
+        "by_game": {
+          "0022400866": {
+            "frames": 102,
+            "blocks": 5,
+            "physical_index_runs": 13,
+            "candidate_rows": 102
+          },
+          "0022400868": {
+            "frames": 165,
+            "blocks": 6,
+            "physical_index_runs": 29,
+            "candidate_rows": 165
+          },
+          "0022500829": {
+            "frames": 38,
+            "blocks": 4,
+            "physical_index_runs": 14,
+            "candidate_rows": 38
+          }
+        },
+        "candidate_rows": 305,
+        "unique_exact_points": 305,
+        "unique_floor_crops": 305,
+        "target_groups": {
+          "eligible_distant_miss": 305
+        }
+      },
+      "chosen_native_certain_hidden": {
+        "frames": 81,
+        "games": 3,
+        "game_ids": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "blocks": 8,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e01",
+          "chi-vs-ind-0022400868_e03",
+          "chi-vs-ind-0022400868_e05",
+          "den-vs-bos-0022400866_e04",
+          "sac-mem-0022500829_e01",
+          "sac-mem-0022500829_e02",
+          "sac-mem-0022500829_e04",
+          "sac_distractor_recovery"
+        ],
+        "source_videos": 5,
+        "physical_index_runs": 12,
+        "largest_run_frames": 28,
+        "run_length_histogram": {
+          "1": 3,
+          "2": 3,
+          "5": 2,
+          "10": 1,
+          "11": 1,
+          "13": 1,
+          "28": 1
+        },
+        "by_game": {
+          "0022400866": {
+            "frames": 1,
+            "blocks": 1,
+            "physical_index_runs": 1,
+            "candidate_rows": 1
+          },
+          "0022400868": {
+            "frames": 32,
+            "blocks": 3,
+            "physical_index_runs": 7,
+            "candidate_rows": 32
+          },
+          "0022500829": {
+            "frames": 48,
+            "blocks": 4,
+            "physical_index_runs": 4,
+            "candidate_rows": 48
+          }
+        },
+        "candidate_rows": 81,
+        "unique_exact_points": 81,
+        "unique_floor_crops": 81,
+        "target_groups": {
+          "certain_hidden": 81
+        }
+      },
+      "weak_positive_native_wrong_or_missing": {
+        "frames": 76,
+        "games": 3,
+        "game_ids": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "blocks": 12,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e01",
+          "chi-vs-ind-0022400868_e02",
+          "chi-vs-ind-0022400868_e03",
+          "chi-vs-ind-0022400868_e04",
+          "chi-vs-ind-0022400868_e06",
+          "den-vs-bos-0022400866_e01",
+          "den-vs-bos-0022400866_e04",
+          "den-vs-bos-0022400866_e05",
+          "den-vs-bos-0022400866_e06",
+          "sac-mem-0022500829_e04",
+          "sac-mem-0022500829_e05",
+          "sac_held_ball_gaps"
+        ],
+        "source_videos": 10,
+        "physical_index_runs": 32,
+        "largest_run_frames": 13,
+        "run_length_histogram": {
+          "1": 18,
+          "2": 5,
+          "3": 2,
+          "4": 4,
+          "6": 1,
+          "7": 1,
+          "13": 1
+        },
+        "by_game": {
+          "0022400866": {
+            "frames": 12,
+            "blocks": 4,
+            "physical_index_runs": 8,
+            "candidate_rows": 12
+          },
+          "0022400868": {
+            "frames": 56,
+            "blocks": 5,
+            "physical_index_runs": 20,
+            "candidate_rows": 56
+          },
+          "0022500829": {
+            "frames": 8,
+            "blocks": 3,
+            "physical_index_runs": 4,
+            "candidate_rows": 8
+          }
+        },
+        "candidate_rows": 76,
+        "unique_exact_points": 76,
+        "unique_floor_crops": 76,
+        "target_groups": {
+          "positive": 76
+        }
+      },
+      "weak_positive_native_wrong": {
+        "frames": 67,
+        "games": 3,
+        "game_ids": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "blocks": 11,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e01",
+          "chi-vs-ind-0022400868_e02",
+          "chi-vs-ind-0022400868_e03",
+          "chi-vs-ind-0022400868_e04",
+          "chi-vs-ind-0022400868_e06",
+          "den-vs-bos-0022400866_e01",
+          "den-vs-bos-0022400866_e04",
+          "den-vs-bos-0022400866_e05",
+          "den-vs-bos-0022400866_e06",
+          "sac-mem-0022500829_e05",
+          "sac_held_ball_gaps"
+        ],
+        "source_videos": 10,
+        "physical_index_runs": 30,
+        "largest_run_frames": 13,
+        "run_length_histogram": {
+          "1": 18,
+          "2": 4,
+          "3": 2,
+          "4": 4,
+          "6": 1,
+          "13": 1
+        },
+        "by_game": {
+          "0022400866": {
+            "frames": 12,
+            "blocks": 4,
+            "physical_index_runs": 8,
+            "candidate_rows": 12
+          },
+          "0022400868": {
+            "frames": 49,
+            "blocks": 5,
+            "physical_index_runs": 19,
+            "candidate_rows": 49
+          },
+          "0022500829": {
+            "frames": 6,
+            "blocks": 2,
+            "physical_index_runs": 3,
+            "candidate_rows": 6
+          }
+        },
+        "candidate_rows": 67,
+        "unique_exact_points": 67,
+        "unique_floor_crops": 67,
+        "target_groups": {
+          "positive": 67
+        }
+      },
+      "weak_positive_native_missing": {
+        "frames": 9,
+        "games": 2,
+        "game_ids": [
+          "0022400868",
+          "0022500829"
+        ],
+        "blocks": 3,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e01",
+          "chi-vs-ind-0022400868_e02",
+          "sac-mem-0022500829_e04"
+        ],
+        "source_videos": 3,
+        "physical_index_runs": 3,
+        "largest_run_frames": 6,
+        "run_length_histogram": {
+          "1": 1,
+          "2": 1,
+          "6": 1
+        },
+        "by_game": {
+          "0022400868": {
+            "frames": 7,
+            "blocks": 2,
+            "physical_index_runs": 2,
+            "candidate_rows": 7
+          },
+          "0022500829": {
+            "frames": 2,
+            "blocks": 1,
+            "physical_index_runs": 1,
+            "candidate_rows": 2
+          }
+        },
+        "candidate_rows": 9,
+        "unique_exact_points": 9,
+        "unique_floor_crops": 9,
+        "target_groups": {
+          "positive": 9
+        }
+      }
+    },
+    "conservative_role_screened": {
+      "chosen_native_known_distant": {
+        "frames": 304,
+        "games": 3,
+        "game_ids": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "blocks": 15,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e01",
+          "chi-vs-ind-0022400868_e02",
+          "chi-vs-ind-0022400868_e03",
+          "chi-vs-ind-0022400868_e04",
+          "chi-vs-ind-0022400868_e05",
+          "chi-vs-ind-0022400868_e06",
+          "den-vs-bos-0022400866_e01",
+          "den-vs-bos-0022400866_e02",
+          "den-vs-bos-0022400866_e04",
+          "den-vs-bos-0022400866_e05",
+          "den-vs-bos-0022400866_e06",
+          "sac-mem-0022500829_e01",
+          "sac-mem-0022500829_e03",
+          "sac-mem-0022500829_e05",
+          "sac_held_ball_gaps"
+        ],
+        "source_videos": 12,
+        "physical_index_runs": 56,
+        "largest_run_frames": 73,
+        "run_length_histogram": {
+          "1": 19,
+          "2": 11,
+          "3": 6,
+          "4": 5,
+          "5": 2,
+          "6": 1,
+          "7": 4,
+          "9": 1,
+          "12": 1,
+          "13": 1,
+          "17": 2,
+          "19": 1,
+          "21": 1,
+          "73": 1
+        },
+        "by_game": {
+          "0022400866": {
+            "frames": 102,
+            "blocks": 5,
+            "physical_index_runs": 13,
+            "candidate_rows": 102
+          },
+          "0022400868": {
+            "frames": 165,
+            "blocks": 6,
+            "physical_index_runs": 29,
+            "candidate_rows": 165
+          },
+          "0022500829": {
+            "frames": 37,
+            "blocks": 4,
+            "physical_index_runs": 14,
+            "candidate_rows": 37
+          }
+        },
+        "candidate_rows": 304,
+        "unique_exact_points": 304,
+        "unique_floor_crops": 304,
+        "target_groups": {
+          "eligible_distant_miss": 304
+        }
+      },
+      "chosen_native_certain_hidden": {
+        "frames": 81,
+        "games": 3,
+        "game_ids": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "blocks": 8,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e01",
+          "chi-vs-ind-0022400868_e03",
+          "chi-vs-ind-0022400868_e05",
+          "den-vs-bos-0022400866_e04",
+          "sac-mem-0022500829_e01",
+          "sac-mem-0022500829_e02",
+          "sac-mem-0022500829_e04",
+          "sac_distractor_recovery"
+        ],
+        "source_videos": 5,
+        "physical_index_runs": 12,
+        "largest_run_frames": 28,
+        "run_length_histogram": {
+          "1": 3,
+          "2": 3,
+          "5": 2,
+          "10": 1,
+          "11": 1,
+          "13": 1,
+          "28": 1
+        },
+        "by_game": {
+          "0022400866": {
+            "frames": 1,
+            "blocks": 1,
+            "physical_index_runs": 1,
+            "candidate_rows": 1
+          },
+          "0022400868": {
+            "frames": 32,
+            "blocks": 3,
+            "physical_index_runs": 7,
+            "candidate_rows": 32
+          },
+          "0022500829": {
+            "frames": 48,
+            "blocks": 4,
+            "physical_index_runs": 4,
+            "candidate_rows": 48
+          }
+        },
+        "candidate_rows": 81,
+        "unique_exact_points": 81,
+        "unique_floor_crops": 81,
+        "target_groups": {
+          "certain_hidden": 81
+        }
+      },
+      "weak_positive_native_wrong_or_missing": {
+        "frames": 76,
+        "games": 3,
+        "game_ids": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "blocks": 12,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e01",
+          "chi-vs-ind-0022400868_e02",
+          "chi-vs-ind-0022400868_e03",
+          "chi-vs-ind-0022400868_e04",
+          "chi-vs-ind-0022400868_e06",
+          "den-vs-bos-0022400866_e01",
+          "den-vs-bos-0022400866_e04",
+          "den-vs-bos-0022400866_e05",
+          "den-vs-bos-0022400866_e06",
+          "sac-mem-0022500829_e04",
+          "sac-mem-0022500829_e05",
+          "sac_held_ball_gaps"
+        ],
+        "source_videos": 10,
+        "physical_index_runs": 32,
+        "largest_run_frames": 13,
+        "run_length_histogram": {
+          "1": 18,
+          "2": 5,
+          "3": 2,
+          "4": 4,
+          "6": 1,
+          "7": 1,
+          "13": 1
+        },
+        "by_game": {
+          "0022400866": {
+            "frames": 12,
+            "blocks": 4,
+            "physical_index_runs": 8,
+            "candidate_rows": 12
+          },
+          "0022400868": {
+            "frames": 56,
+            "blocks": 5,
+            "physical_index_runs": 20,
+            "candidate_rows": 56
+          },
+          "0022500829": {
+            "frames": 8,
+            "blocks": 3,
+            "physical_index_runs": 4,
+            "candidate_rows": 8
+          }
+        },
+        "candidate_rows": 76,
+        "unique_exact_points": 76,
+        "unique_floor_crops": 76,
+        "target_groups": {
+          "positive": 76
+        }
+      },
+      "weak_positive_native_wrong": {
+        "frames": 67,
+        "games": 3,
+        "game_ids": [
+          "0022400866",
+          "0022400868",
+          "0022500829"
+        ],
+        "blocks": 11,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e01",
+          "chi-vs-ind-0022400868_e02",
+          "chi-vs-ind-0022400868_e03",
+          "chi-vs-ind-0022400868_e04",
+          "chi-vs-ind-0022400868_e06",
+          "den-vs-bos-0022400866_e01",
+          "den-vs-bos-0022400866_e04",
+          "den-vs-bos-0022400866_e05",
+          "den-vs-bos-0022400866_e06",
+          "sac-mem-0022500829_e05",
+          "sac_held_ball_gaps"
+        ],
+        "source_videos": 10,
+        "physical_index_runs": 30,
+        "largest_run_frames": 13,
+        "run_length_histogram": {
+          "1": 18,
+          "2": 4,
+          "3": 2,
+          "4": 4,
+          "6": 1,
+          "13": 1
+        },
+        "by_game": {
+          "0022400866": {
+            "frames": 12,
+            "blocks": 4,
+            "physical_index_runs": 8,
+            "candidate_rows": 12
+          },
+          "0022400868": {
+            "frames": 49,
+            "blocks": 5,
+            "physical_index_runs": 19,
+            "candidate_rows": 49
+          },
+          "0022500829": {
+            "frames": 6,
+            "blocks": 2,
+            "physical_index_runs": 3,
+            "candidate_rows": 6
+          }
+        },
+        "candidate_rows": 67,
+        "unique_exact_points": 67,
+        "unique_floor_crops": 67,
+        "target_groups": {
+          "positive": 67
+        }
+      },
+      "weak_positive_native_missing": {
+        "frames": 9,
+        "games": 2,
+        "game_ids": [
+          "0022400868",
+          "0022500829"
+        ],
+        "blocks": 3,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e01",
+          "chi-vs-ind-0022400868_e02",
+          "sac-mem-0022500829_e04"
+        ],
+        "source_videos": 3,
+        "physical_index_runs": 3,
+        "largest_run_frames": 6,
+        "run_length_histogram": {
+          "1": 1,
+          "2": 1,
+          "6": 1
+        },
+        "by_game": {
+          "0022400868": {
+            "frames": 7,
+            "blocks": 2,
+            "physical_index_runs": 2,
+            "candidate_rows": 7
+          },
+          "0022500829": {
+            "frames": 2,
+            "blocks": 1,
+            "physical_index_runs": 1,
+            "candidate_rows": 2
+          }
+        },
+        "candidate_rows": 9,
+        "unique_exact_points": 9,
+        "unique_floor_crops": 9,
+        "target_groups": {
+          "positive": 9
+        }
+      }
+    },
+    "current_cosine": {
+      "chosen_native_known_distant": {
+        "frames": 0,
+        "games": 0,
+        "game_ids": [],
+        "blocks": 0,
+        "block_ids": [],
+        "source_videos": 0,
+        "physical_index_runs": 0,
+        "largest_run_frames": 0,
+        "run_length_histogram": {},
+        "by_game": {},
+        "candidate_rows": 0,
+        "unique_exact_points": 0,
+        "unique_floor_crops": 0,
+        "target_groups": {}
+      },
+      "chosen_native_certain_hidden": {
+        "frames": 2,
+        "games": 1,
+        "game_ids": [
+          "0022400868"
+        ],
+        "blocks": 1,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e05"
+        ],
+        "source_videos": 1,
+        "physical_index_runs": 1,
+        "largest_run_frames": 2,
+        "run_length_histogram": {
+          "2": 1
+        },
+        "by_game": {
+          "0022400868": {
+            "frames": 2,
+            "blocks": 1,
+            "physical_index_runs": 1,
+            "candidate_rows": 2
+          }
+        },
+        "candidate_rows": 2,
+        "unique_exact_points": 2,
+        "unique_floor_crops": 2,
+        "target_groups": {
+          "certain_hidden": 2
+        }
+      },
+      "weak_positive_native_wrong_or_missing": {
+        "frames": 1,
+        "games": 1,
+        "game_ids": [
+          "0022400868"
+        ],
+        "blocks": 1,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e02"
+        ],
+        "source_videos": 1,
+        "physical_index_runs": 1,
+        "largest_run_frames": 1,
+        "run_length_histogram": {
+          "1": 1
+        },
+        "by_game": {
+          "0022400868": {
+            "frames": 1,
+            "blocks": 1,
+            "physical_index_runs": 1,
+            "candidate_rows": 1
+          }
+        },
+        "candidate_rows": 1,
+        "unique_exact_points": 1,
+        "unique_floor_crops": 1,
+        "target_groups": {
+          "positive": 1
+        }
+      },
+      "weak_positive_native_wrong": {
+        "frames": 0,
+        "games": 0,
+        "game_ids": [],
+        "blocks": 0,
+        "block_ids": [],
+        "source_videos": 0,
+        "physical_index_runs": 0,
+        "largest_run_frames": 0,
+        "run_length_histogram": {},
+        "by_game": {},
+        "candidate_rows": 0,
+        "unique_exact_points": 0,
+        "unique_floor_crops": 0,
+        "target_groups": {}
+      },
+      "weak_positive_native_missing": {
+        "frames": 1,
+        "games": 1,
+        "game_ids": [
+          "0022400868"
+        ],
+        "blocks": 1,
+        "block_ids": [
+          "chi-vs-ind-0022400868_e02"
+        ],
+        "source_videos": 1,
+        "physical_index_runs": 1,
+        "largest_run_frames": 1,
+        "run_length_histogram": {
+          "1": 1
+        },
+        "by_game": {
+          "0022400868": {
+            "frames": 1,
+            "blocks": 1,
+            "physical_index_runs": 1,
+            "candidate_rows": 1
+          }
+        },
+        "candidate_rows": 1,
+        "unique_exact_points": 1,
+        "unique_floor_crops": 1,
+        "target_groups": {
+          "positive": 1
+        }
+      }
+    }
+  },
+  "useful_new_compatible": {
+    "frames": 394,
+    "games": 3,
+    "game_ids": [
+      "0022400866",
+      "0022400868",
+      "0022500829"
+    ],
+    "blocks": 18,
+    "block_ids": [
+      "chi-vs-ind-0022400868_e01",
+      "chi-vs-ind-0022400868_e02",
+      "chi-vs-ind-0022400868_e03",
+      "chi-vs-ind-0022400868_e04",
+      "chi-vs-ind-0022400868_e05",
+      "chi-vs-ind-0022400868_e06",
+      "den-vs-bos-0022400866_e01",
+      "den-vs-bos-0022400866_e02",
+      "den-vs-bos-0022400866_e04",
+      "den-vs-bos-0022400866_e05",
+      "den-vs-bos-0022400866_e06",
+      "sac-mem-0022500829_e01",
+      "sac-mem-0022500829_e02",
+      "sac-mem-0022500829_e03",
+      "sac-mem-0022500829_e04",
+      "sac-mem-0022500829_e05",
+      "sac_distractor_recovery",
+      "sac_held_ball_gaps"
+    ],
+    "source_videos": 12,
+    "physical_index_runs": 70,
+    "largest_run_frames": 73,
+    "run_length_histogram": {
+      "1": 23,
+      "2": 15,
+      "3": 6,
+      "4": 5,
+      "5": 4,
+      "6": 1,
+      "7": 4,
+      "9": 1,
+      "10": 1,
+      "11": 1,
+      "12": 1,
+      "13": 2,
+      "17": 2,
+      "21": 1,
+      "25": 1,
+      "28": 1,
+      "73": 1
+    },
+    "by_game": {
+      "0022400866": {
+        "frames": 103,
+        "blocks": 5,
+        "physical_index_runs": 14,
+        "candidate_rows": 115
+      },
+      "0022400868": {
+        "frames": 204,
+        "blocks": 6,
+        "physical_index_runs": 37,
+        "candidate_rows": 253
+      },
+      "0022500829": {
+        "frames": 87,
+        "blocks": 7,
+        "physical_index_runs": 19,
+        "candidate_rows": 93
+      }
+    },
+    "candidate_rows": 461,
+    "unique_exact_points": 461,
+    "unique_floor_crops": 461,
+    "target_groups": {
+      "positive": 76,
+      "eligible_distant_miss": 304,
+      "certain_hidden": 81
+    }
+  },
+  "operational": {
+    "capture_seconds": 236.36000000000058,
+    "charged_launcher_seconds": 288.75,
+    "maximum_temperature_C": 59.0,
+    "settings_changed": false,
+    "qualifying_faults": 0,
+    "remaining_owned_processes": 0
+  },
+  "new_model_fits": 0,
+  "new_labels": 0,
+  "new_selector_runs": 0,
+  "protected_evaluation": false,
+  "model_adopted": false,
+  "tracking_accuracy_improvement_claimed": false,
+  "next_direction": "Design a bounded controlled addition of the newly covered producer-relative examples; preserve baseline controls, objective and representation, current policies and HOU recovery veto. No automatic fit.",
+  "evidence_bindings": [
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/implementation_preparation/baseline138_and_direction.json",
+      "bytes": 26898,
+      "sha256": "210f5a3eb6032868a69640bb9ec505b484a8f102159fe4838cc3f6ebbe3d39e6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/preparation/prepared.json",
+      "bytes": 871001,
+      "sha256": "1e59189f6938859a0b8c711f231b7de27d7ace300685054b0e49eba6ae5eb01e"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/preparation/cpu_compatibility.json",
+      "bytes": 95472,
+      "sha256": "0db878eb29a3a916c1d8b92375231866bc07bb6db0aedc4aa0338083a760cfa9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/implementation_preparation/focused_tests_final.json",
+      "bytes": 1089,
+      "sha256": "7e692afa3d4bd553c27a3d9c1ced821fcbe696e0bfc1612ba779ed80cca526fa"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/launch_v0_1/execution_freeze.json",
+      "bytes": 818282,
+      "sha256": "ac1e13ed88b1341dd52cc8cc0c228bb3bd765138d152b594bc214795a3cf6b53"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/launch_v0_1/execution_authorization.json",
+      "bytes": 1107,
+      "sha256": "58b04a10c1007982700c80d3e0dc1ee2bbf2ba84805eb0563d842b1452de75a7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/launch_v0_1/launch_readiness.json",
+      "bytes": 38354,
+      "sha256": "7faa0cbf2f6669b92cecca85ccea1a35d0b9bfd80084d7f7c02669e850d01f46"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/launch_v0_1/launcher_finished.json",
+      "bytes": 788,
+      "sha256": "d8f196007865d49af0bfeb63b8a1fdc294a7e31f3da90d13bab45d941b58b064"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/launch_v0_1/postrun_windows_snapshot.json",
+      "bytes": 1587,
+      "sha256": "ce2c872cf0386defddbc5f336170a25b10f06ea5d4cf8bf4389f78be5aff9e96"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/attempt_001/capture/completed.json",
+      "bytes": 7703,
+      "sha256": "10a16f29215fbb22e6b2a715f3dfcdeb08d86019e51f66682eaa61e8f51109ba"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/attempt_001/analysis/completed.json",
+      "bytes": 42753,
+      "sha256": "16eda9d3f97fe1b766af667e24aaa4a1ccf8c6903fc6f6f87e2aa19dcf903a23"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/attempt_001/analysis/summary.json",
+      "bytes": 11093,
+      "sha256": "e3b0b4e1bfc66f3e7fc142a258e080a523aeb60067405110c4b24d5048f04bb9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/attempt_001/analysis/decision.json",
+      "bytes": 4865,
+      "sha256": "9d45e58b45f990ef9d8a9c66939d9e2f20b8796d0d6172b8a239eb8f6cf70254"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/attempt_001/analysis/support.json",
+      "bytes": 215277902,
+      "sha256": "c1d36b335a2714dbb14fbb0ad2deca050c086940691c107dd7de4d3a9a000ff8"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/attempt_001/analysis/external_history_references.json",
+      "bytes": 2035,
+      "sha256": "357f45511ff3a1ff62fd9afb7b0ea7e3ebef138d74c838f2408b8fadd434e190"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/review/implementation_review.json",
+      "bytes": 10942,
+      "sha256": "85de30704eb657c739897c9f875e5996448360e997967e948b74aaf091a69843"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/review/capture_output_audit.json",
+      "bytes": 2058,
+      "sha256": "75aeb349e7e2d796a2fdbd7510967071323e91cc86d453193ab796910fde26b1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/review/analysis_audit.json",
+      "bytes": 842985,
+      "sha256": "a2ce44dc9dc304c8ae61d4708cf69f42bfc49aef96e6e139a7b7b66977f5ab47"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/support/interpretation_due_diligence.json",
+      "bytes": 12713,
+      "sha256": "b12b1d04d0a3c6d0592f512b45cb0e35eb494c2a75335a3465e587097bb78873"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/support/interpretation_after_results.json",
+      "bytes": 28675,
+      "sha256": "2bca819b0a83a788522b9eda2983d2732cc8b9866e2b46ea26734bc52d5c4f96"
+    }
+  ],
+  "novelty_detail": {
+    "compatible_new_exact_points": 461,
+    "different_floor_crops_vs_current": 452,
+    "same_current_floor_crop_different_point": 9,
+    "new_scenes": 0
+  },
+  "original_weak_positive_retention": {
+    "original_points_and_frames": 610,
+    "exact_coordinate_carryovers": 0,
+    "frames_retaining_any_positive": 491,
+    "frames_losing_all_positives": 119,
+    "frames_retaining_weak_positive": 153,
+    "frames_with_correct_alternate_native": 455,
+    "counts_overlap_not_additive": true
+  },
+  "producer_recovery_current_policy_status": {
+    "total_frames": 76,
+    "current_native_correct": 75,
+    "current_native_wrong": 1,
+    "current_native_missing": 0
+  }
+}

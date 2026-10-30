@@ -1,0 +1,1655 @@
+{
+  "schema": "player_defense_score_research_sources/v0.1",
+  "chapter": "docs/research/player_tracking_and_geometry.md",
+  "research_date": "2026-10-08",
+  "methodology": {
+    "primary_sources_only": true,
+    "code_inspection": "Selective read-only inspection of official implementation/configuration files; not full code audits.",
+    "execution": "No installs, model runs, tests, or media inspection. No model/data binary downloads.",
+    "availability": "Linked official checkpoints/data locations inspected; download success and artifact integrity not verified.",
+    "dates": "Paper dates use known month/year when precise day was not checked. Null means publication date not established.",
+    "revision_limit": "Resolved nine repository revisions via GitHub API; rate limit prevented resolving every other tip. Other sources are access-date/branch references.",
+    "interpretation": "Recommendations and uncertainty propagation are our synthesis, explicitly separate from reported measurements.",
+    "license_policy": "Code, weights, data and third-party components treated separately; unknowns retained.",
+    "excluded_evidence": "Search snippets from aggregators, social media and unofficial reproductions were not used as factual authority."
+  },
+  "repository_revisions": [
+    {
+      "repository": "FoundationVision/ByteTrack",
+      "revision": "d1bf0191adff59bc8fcfeaa0b33d3d1642552a99",
+      "commit_date": "2022-12-11T07:05:00Z",
+      "commit_url": "https://github.com/FoundationVision/ByteTrack/commit/d1bf0191adff59bc8fcfeaa0b33d3d1642552a99"
+    },
+    {
+      "repository": "NirAharon/BoT-SORT",
+      "revision": "251985436d6712aaf682aaaf5f71edb4987224bd",
+      "commit_date": "2022-10-30T15:12:42Z",
+      "commit_url": "https://github.com/NirAharon/BoT-SORT/commit/251985436d6712aaf682aaaf5f71edb4987224bd"
+    },
+    {
+      "repository": "noahcao/OC_SORT",
+      "revision": "8462e7e729a93ccd3bd995c0a79a890336cb3a0b",
+      "commit_date": "2026-04-21T23:31:31Z",
+      "commit_url": "https://github.com/noahcao/OC_SORT/commit/8462e7e729a93ccd3bd995c0a79a890336cb3a0b"
+    },
+    {
+      "repository": "GerardMaggiolino/Deep-OC-SORT",
+      "revision": "6bb51d027b137233f5c520b6fcc4f2ae387a6ba9",
+      "commit_date": "2023-05-06T23:08:54Z",
+      "commit_url": "https://github.com/GerardMaggiolino/Deep-OC-SORT/commit/6bb51d027b137233f5c520b6fcc4f2ae387a6ba9"
+    },
+    {
+      "repository": "MCG-NJU/MixSort",
+      "revision": "a078f5bf6ae9fbeecbc1384479d5f02ab8b9e7f6",
+      "commit_date": "2023-08-21T02:36:11Z",
+      "commit_url": "https://github.com/MCG-NJU/MixSort/commit/a078f5bf6ae9fbeecbc1384479d5f02ab8b9e7f6"
+    },
+    {
+      "repository": "MCG-NJU/SportsMOT",
+      "revision": "b06cfb4aacb0bb16c5778ac4ddb0d70ec6835444",
+      "commit_date": "2023-07-24T02:13:51Z",
+      "commit_url": "https://github.com/MCG-NJU/SportsMOT/commit/b06cfb4aacb0bb16c5778ac4ddb0d70ec6835444"
+    },
+    {
+      "repository": "open-starlab/TrackID3x3",
+      "revision": "9822a3dde59fc80fbb5eaacd443e79e8b059d94e",
+      "commit_date": "2025-12-07T09:23:10Z",
+      "commit_url": "https://github.com/open-starlab/TrackID3x3/commit/9822a3dde59fc80fbb5eaacd443e79e8b059d94e"
+    },
+    {
+      "repository": "TrackingLaboratory/CAMELTrack",
+      "revision": "46a74bb22a28d2d699b4c5c5e317a26d3b87f1e2",
+      "commit_date": "2025-07-12T13:29:13Z",
+      "commit_url": "https://github.com/TrackingLaboratory/CAMELTrack/commit/46a74bb22a28d2d699b4c5c5e317a26d3b87f1e2"
+    },
+    {
+      "repository": "SoccerNet/sn-gamestate",
+      "revision": "1c958345067218297d221e45e1a6405f975f83e0",
+      "commit_date": "2026-05-02T09:21:47Z",
+      "commit_url": "https://github.com/SoccerNet/sn-gamestate/commit/1c958345067218297d221e45e1a6405f975f83e0"
+    }
+  ],
+  "sources": [
+    {
+      "id": "bytetrack_paper",
+      "url": "https://arxiv.org/abs/2110.06864",
+      "title": "ByteTrack: Multi-Object Tracking by Associating Every Detection Box",
+      "type": "primary_paper",
+      "publication_date": "2021-10",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Two-stage association uses high and lower confidence detections; ECCV2022 publication."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "General MOT evidence does not establish named NBA player identity."
+      ]
+    },
+    {
+      "id": "bytetrack_repo",
+      "url": "https://github.com/FoundationVision/ByteTrack",
+      "title": "ByteTrack official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Official YOLOX checkpoints and reproduction recipes; MOT17 HOTA63.1, IDF177.3, MOTA80.3; roughly30FPS on V100."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Training mixtures, tuning and interpolation appear in evaluation recipes; not a fixed-detector comparison with every other paper."
+      ],
+      "repository_revision": {
+        "sha": "d1bf0191adff59bc8fcfeaa0b33d3d1642552a99",
+        "commit_date": "2022-12-11T07:05:00Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "bytetrack_association",
+      "url": "https://github.com/FoundationVision/ByteTrack/blob/d1bf0191adff59bc8fcfeaa0b33d3d1642552a99/yolox/tracker/byte_tracker.py",
+      "title": "ByteTrack association implementation",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Low-score filter above0.1; second-stage IoU association uses remaining tracked tracks; new-track threshold differs; buffer scales with frame_rate."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [
+        "Thresholds are implementation defaults, not recommendations for this repository."
+      ],
+      "repository_revision": {
+        "sha": "d1bf0191adff59bc8fcfeaa0b33d3d1642552a99",
+        "commit_date": "2022-12-11T07:05:00Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "botsort_paper",
+      "url": "https://arxiv.org/abs/2206.14651",
+      "title": "BoT-SORT: Robust Associations Multi-Pedestrian Tracking",
+      "type": "primary_paper",
+      "publication_date": "2022-06",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Combines motion, appearance and camera-motion compensation."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "Pedestrian benchmarks and local basketball performance are distinct."
+      ]
+    },
+    {
+      "id": "botsort_repo",
+      "url": "https://github.com/NirAharon/BoT-SORT",
+      "title": "BoT-SORT official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Official detector/ReID checkpoint links; MOT17 ReID variant HOTA65.0 IDF180.2 MOTA80.5; older Ubuntu/Python3.7/Torch1.11 environment."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Interpolation and detector configuration affect published numbers."
+      ],
+      "repository_revision": {
+        "sha": "251985436d6712aaf682aaaf5f71edb4987224bd",
+        "commit_date": "2022-10-30T15:12:42Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "botsort_association",
+      "url": "https://github.com/NirAharon/BoT-SORT/blob/251985436d6712aaf682aaaf5f71edb4987224bd/tracker/bot_sort.py",
+      "title": "BoT-SORT association gates",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Spatial proximity and appearance thresholds constrain embedding costs; optional ReID and GMC are explicit."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [],
+      "repository_revision": {
+        "sha": "251985436d6712aaf682aaaf5f71edb4987224bd",
+        "commit_date": "2022-10-30T15:12:42Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "botsort_gmc",
+      "url": "https://github.com/NirAharon/BoT-SORT/blob/251985436d6712aaf682aaaf5f71edb4987224bd/tracker/gmc.py",
+      "title": "BoT-SORT global motion compensation",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Sparse optical flow uses partial affine RANSAC estimation; feature-based modes and sparse-flow masking differ."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [
+        "Image affine compensation is not a metric court homography."
+      ],
+      "repository_revision": {
+        "sha": "251985436d6712aaf682aaaf5f71edb4987224bd",
+        "commit_date": "2022-10-30T15:12:42Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "ocsort_paper",
+      "url": "https://arxiv.org/abs/2203.14360",
+      "title": "Observation-Centric SORT",
+      "type": "primary_paper",
+      "publication_date": "2022-03",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Observation-centric tracking addresses nonlinear motion and occlusion; CVPR2023."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "No roster identity inference."
+      ]
+    },
+    {
+      "id": "ocsort_repo",
+      "url": "https://github.com/noahcao/OC_SORT",
+      "title": "OC-SORT official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "MOT17 private HOTA63.2, DanceTrack HOTA55.1; separate detector-plus-tracker and association-only speed reports; 2026 optimizations."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Current code differs from paper-era runtime; pin the revision."
+      ],
+      "repository_revision": {
+        "sha": "8462e7e729a93ccd3bd995c0a79a890336cb3a0b",
+        "commit_date": "2026-04-21T23:31:31Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "ocsort_association",
+      "url": "https://github.com/noahcao/OC_SORT/blob/8462e7e729a93ccd3bd995c0a79a890336cb3a0b/trackers/ocsort_tracker/ocsort.py",
+      "title": "OC-SORT observation/motion association",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Uses historical observations, direction, delta_t and inertia; optional ByteTrack association stage."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [],
+      "repository_revision": {
+        "sha": "8462e7e729a93ccd3bd995c0a79a890336cb3a0b",
+        "commit_date": "2026-04-21T23:31:31Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "deepocsort_paper",
+      "url": "https://arxiv.org/abs/2302.11813",
+      "title": "Deep OC-SORT: Multi-Pedestrian Tracking by Adaptive Re-Identification",
+      "type": "primary_paper",
+      "publication_date": "2023-02",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Appearance-enhanced OC-SORT with adaptive ReID."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "Benchmark evidence is not basketball identity validation."
+      ]
+    },
+    {
+      "id": "deepocsort_repo",
+      "url": "https://github.com/GerardMaggiolino/Deep-OC-SORT",
+      "title": "Deep OC-SORT official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Official pretrained models; feature/CMC ablation switches; --post interpolation; DanceTrack HOTA61.3."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Several external feature dependencies and historical environment."
+      ],
+      "repository_revision": {
+        "sha": "6bb51d027b137233f5c520b6fcc4f2ae387a6ba9",
+        "commit_date": "2023-05-06T23:08:54Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "deepocsort_appearance",
+      "url": "https://github.com/GerardMaggiolino/Deep-OC-SORT/blob/6bb51d027b137233f5c520b6fcc4f2ae387a6ba9/trackers/ocsort_embedding/ocsort.py",
+      "title": "Deep OC-SORT appearance update",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Low detection confidence increases retention of old appearance embedding; affine CMC and adaptive embedding association are explicit."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [],
+      "repository_revision": {
+        "sha": "6bb51d027b137233f5c520b6fcc4f2ae387a6ba9",
+        "commit_date": "2023-05-06T23:08:54Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "strongsort_paper",
+      "url": "https://arxiv.org/abs/2202.13514",
+      "title": "StrongSORT: Make DeepSORT Great Again",
+      "type": "primary_paper",
+      "publication_date": "2022-02",
+      "access_date": "2026-10-08",
+      "claims": [
+        "StrongSORT upgrades tracking components; StrongSORT++ includes linking and interpolation."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": []
+    },
+    {
+      "id": "strongsort_repo",
+      "url": "https://github.com/dyhBUPT/StrongSORT",
+      "title": "StrongSORT official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "AFLink and Gaussian-smoothed interpolation are separate stages; weights/precomputed features/ECC data linked."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Offline trajectory completion is not causal observation; old dependencies/manual paths."
+      ]
+    },
+    {
+      "id": "sportsmot_paper",
+      "url": "https://openaccess.thecvf.com/content/ICCV2023/html/Cui_SportsMOT_A_Large_Multi-Object_Tracking_Dataset_in_Multiple_Sports_Scenes_ICCV_2023_paper.html",
+      "title": "SportsMOT: A Large Multi-Object Tracking Dataset in Multiple Sports Scenes",
+      "type": "primary_paper",
+      "publication_date": "2023-10",
+      "access_date": "2026-10-08",
+      "claims": [
+        "240 sequences, over150K frames and1.6M boxes across basketball, football and volleyball."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "Dataset-wide statistics do not guarantee NBA broadcast transfer."
+      ]
+    },
+    {
+      "id": "sportsmot_repo",
+      "url": "https://github.com/MCG-NJU/SportsMOT",
+      "title": "SportsMOT dataset release",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "720p25FPS clips explicitly have no shot changes; on-court players annotated; CC BY-NC4.0 declared."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "No cross-cut, roster-identity or court-coordinate ground truth claimed; avoid ambiguous average-sequence statistic in README."
+      ],
+      "repository_revision": {
+        "sha": "b06cfb4aacb0bb16c5778ac4ddb0d70ec6835444",
+        "commit_date": "2023-07-24T02:13:51Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "mixsort_repo",
+      "url": "https://github.com/MCG-NJU/MixSort",
+      "title": "MixSort official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Released weights and Byte/OC association variants; SportsMOT HOTA64.1→65.7 for Byte baseline,73.7→74.1 for OC baseline."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Backend detector accuracy differs; use within-backend comparisons."
+      ],
+      "repository_revision": {
+        "sha": "a078f5bf6ae9fbeecbc1384479d5f02ab8b9e7f6",
+        "commit_date": "2023-08-21T02:36:11Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "camel_paper",
+      "url": "https://arxiv.org/abs/2505.01257",
+      "title": "CAMELTrack: Context-Aware Multi-cue ExpLoitation for Online Multi-Object Tracking",
+      "type": "primary_paper",
+      "publication_date": "2025-05-02",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Learned association module combines multiple cues while retaining tracking-by-detection modularity."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": []
+    },
+    {
+      "id": "camel_repo",
+      "url": "https://github.com/TrackingLaboratory/CAMELTrack",
+      "title": "CAMELTrack official release",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "SportsMOT appearance+keypoints checkpoint and general checkpoint available; reported SportsMOT HOTA80.3; cached states available."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Default whole-pipeline batching is offline; own cues/detectors prevent naive ranking."
+      ],
+      "repository_revision": {
+        "sha": "46a74bb22a28d2d699b4c5c5e317a26d3b87f1e2",
+        "commit_date": "2025-07-12T13:29:13Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "camel_pipeline",
+      "url": "https://github.com/TrackingLaboratory/CAMELTrack/blob/46a74bb22a28d2d699b4c5c5e317a26d3b87f1e2/cameltrack/configs/cameltrack.yaml",
+      "title": "CAMELTrack default pipeline",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Offline engine; pose estimator, KPR ReID and CAMEL tracker; state caching configurable."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [],
+      "repository_revision": {
+        "sha": "46a74bb22a28d2d699b4c5c5e317a26d3b87f1e2",
+        "commit_date": "2025-07-12T13:29:13Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "camel_tracker_config",
+      "url": "https://github.com/TrackingLaboratory/CAMELTrack/blob/46a74bb22a28d2d699b4c5c5e317a26d3b87f1e2/cameltrack/configs/modules/track/camel.yaml",
+      "title": "CAMELTrack tracker configuration",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "General checkpoint default; similarity override0.5 with dataset-specific comments; confidence/lifecycle/gallery settings explicit."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [
+        "Defaults are not necessarily the SportsMOT paper configuration."
+      ],
+      "repository_revision": {
+        "sha": "46a74bb22a28d2d699b4c5c5e317a26d3b87f1e2",
+        "commit_date": "2025-07-12T13:29:13Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "camel_weights",
+      "url": "https://huggingface.co/trackinglaboratory/CAMELTrack",
+      "title": "CAMELTrack official model distribution",
+      "type": "official_model_card",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Official trained checkpoints and cached states; model card declares Apache-2.0."
+      ],
+      "inspection_depth": "Model card and file/commit descriptions inspected; binaries not downloaded.",
+      "caveats": [
+        "External detector/ReID/pose component terms remain separate."
+      ]
+    },
+    {
+      "id": "motr_paper",
+      "url": "https://arxiv.org/abs/2105.03247",
+      "title": "MOTR: End-to-End Multiple-Object Tracking with Transformer",
+      "type": "primary_paper",
+      "publication_date": "2021-05",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Track queries carry temporal object information; ECCV2022."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": []
+    },
+    {
+      "id": "motr_repo",
+      "url": "https://github.com/megvii-research/MOTR",
+      "title": "MOTR official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Released models; historical multi-GPU training and resolution-specific inference timing."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Whole detector/tracker integration change; not real-world named identity."
+      ]
+    },
+    {
+      "id": "motrv2_paper",
+      "url": "https://arxiv.org/abs/2211.09791",
+      "title": "MOTRv2: Bootstrapping End-to-End Multi-Object Tracking by Pretrained Object Detectors",
+      "type": "primary_paper",
+      "publication_date": "2022-11",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Pretrained detector proposals bootstrap end-to-end tracking."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "Watchlist only; no source implementation audit here."
+      ]
+    },
+    {
+      "id": "motip_paper",
+      "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Gao_Multiple_Object_Tracking_as_ID_Prediction_CVPR_2025_paper.pdf",
+      "title": "Multiple Object Tracking as ID Prediction",
+      "type": "primary_paper",
+      "publication_date": "2025-06",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Association formulated as in-context track-ID prediction."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "Track IDs are not roster names."
+      ]
+    },
+    {
+      "id": "motip_repo",
+      "url": "https://github.com/MCG-NJU/MOTIP",
+      "title": "MOTIP official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Code/checkpoints released; newer engine and prior-engine compatibility options; Apache-2.0 declaration."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Only watchlist assessment; no runtime reproduction."
+      ]
+    },
+    {
+      "id": "motip_models",
+      "url": "https://github.com/MCG-NJU/MOTIP/blob/main/docs/MODEL_ZOO.md",
+      "title": "MOTIP model zoo",
+      "type": "official_model_documentation",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Explicit trajectory-augmentation configurations and SportsMOT checkpoints; prior checkpoint bridge needs runtime settings."
+      ],
+      "inspection_depth": "Model tables and compatibility notes read.",
+      "caveats": [
+        "Do not mix new-engine results with older paper recipes."
+      ]
+    },
+    {
+      "id": "deepsportradar_paper",
+      "url": "https://arxiv.org/abs/2208.08190",
+      "title": "DeepSportradar-v1: Computer Vision Dataset for Sports Understanding with High Quality Annotations",
+      "type": "primary_paper",
+      "publication_date": "2022-08-17",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Four basketball tasks: 3D ball localization, calibration, instance segmentation and ReID."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "Distinct tasks use distinct data/protocols."
+      ]
+    },
+    {
+      "id": "deepsport_reid",
+      "url": "https://github.com/DeepSportRadar/player-reidentification-challenge",
+      "title": "DeepSportradar basketball ReID challenge",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "20-frame sequences, first-frame query and later-frame gallery; 2023 challenge differs from2022; test and challenge mAP separately reported."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Same-view short sequences do not prove cross-cut identity; README not sufficient to establish all licensing."
+      ]
+    },
+    {
+      "id": "deepsport_calib",
+      "url": "https://github.com/DeepSportRadar/camera-calibration-challenge",
+      "title": "DeepSportradar basketball camera calibration challenge",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "728 image/parameter pairs; default480/164/84 split; arena-based held-out evaluation; FIBA undistorted generated views; baseline weights linked."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Challenge split differs from default test; NBA court/camera transfer requires validation."
+      ]
+    },
+    {
+      "id": "deepsport_calib_code",
+      "url": "https://github.com/DeepSportRadar/camera-calibration-challenge/blob/main/modeling/example_camera_model.py",
+      "title": "DeepSportradar camera baseline implementation",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Initializes mean camera matrix; calibrates with more than5points; fixes distortion; returns fallback on errors."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [
+        "Silent fallback must not be treated as reviewed geometry in Player Defense Score."
+      ]
+    },
+    {
+      "id": "deepsportlab_paper",
+      "url": "https://arxiv.org/abs/2112.00627",
+      "title": "DeepSportLab: A Unified Framework for Ball Detection, Player Instance Segmentation and Pose Estimation in Team Sports Scenes",
+      "type": "primary_paper",
+      "publication_date": "2021-12",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Unified basketball perception tasks."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "Not full moving-broadcast named-player tracking."
+      ]
+    },
+    {
+      "id": "deepsportlab_repo",
+      "url": "https://github.com/ispgroupucl/DeepSportLab",
+      "title": "DeepSportLab official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Official research code for joint sports perception."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Inspected repository/selected evaluation source only; no full install or model-license audit."
+      ]
+    },
+    {
+      "id": "trackid_paper",
+      "url": "https://arxiv.org/abs/2503.18282",
+      "title": "TrackID3x3 basketball tracking, identification and pose dataset",
+      "type": "primary_paper",
+      "publication_date": "2025-03-24",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Indoor/outdoor fixed-camera and drone subsets; tracking/identity/pose task."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "Initial abstract says forthcoming; current official repository supplies actual artifacts."
+      ]
+    },
+    {
+      "id": "trackid_repo",
+      "url": "https://github.com/open-starlab/TrackID3x3",
+      "title": "TrackID3x3 official dataset and baseline",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Six players; boxes every frame and10keypoints on selected frames; manual court localization; released data/intermediates; CAMELTrack, BoT-SORT and OCR components; code/data terms distinguished."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Fixed-camera3x3 and subset-specific notebooks differ from NBA broadcast."
+      ],
+      "repository_revision": {
+        "sha": "9822a3dde59fc80fbb5eaacd443e79e8b059d94e",
+        "commit_date": "2025-12-07T09:23:10Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "trackid_color",
+      "url": "https://github.com/open-starlab/TrackID3x3/blob/9822a3dde59fc80fbb5eaacd443e79e8b059d94e/script/Outdoor/calculate_color_hist.py",
+      "title": "TrackID3x3 outdoor color aggregation",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "8x8x8 color histogram and per-track median; explicit subset/path assumptions."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [],
+      "repository_revision": {
+        "sha": "9822a3dde59fc80fbb5eaacd443e79e8b059d94e",
+        "commit_date": "2025-12-07T09:23:10Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "teamtrack_paper",
+      "url": "https://arxiv.org/abs/2404.13868",
+      "title": "TeamTrack: A Dataset for Multi-Sport Multi-Object Tracking in Full-pitch Videos",
+      "type": "primary_paper",
+      "publication_date": "2024-04-22",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Basketball, soccer and handball full-pitch tracking benchmark."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "Fisheye/drone/full-view transfer differs from edited broadcast."
+      ]
+    },
+    {
+      "id": "teamtrack_repo",
+      "url": "https://github.com/AtomScott/TeamTrack",
+      "title": "TeamTrack official dataset and code",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "4K–8K videos, over4million boxes; MOT-format and trajectory outputs; fixed-side views only in trajectory subset."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Some scripts/notebooks marked in preparation; data-specific license not established here."
+      ]
+    },
+    {
+      "id": "basketlidar_paper",
+      "url": "https://arxiv.org/abs/2508.15299",
+      "title": "BasketLiDAR: The First LiDAR-Camera Multimodal Dataset for Professional Basketball MOT",
+      "type": "primary_paper",
+      "publication_date": "2025-08",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Synchronized LiDAR and RGB basketball tracking."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "Sensors unavailable in a single broadcast recording."
+      ]
+    },
+    {
+      "id": "basketlidar_repo",
+      "url": "https://github.com/Keio-CSG/BasketLiDAR",
+      "title": "BasketLiDAR official release",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "LiDAR/fusion baseline notebooks; access by request; MIT code; noncommercial research/educational data and no redistribution without permission."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Reproduction guidance still developing; no dataset downloaded."
+      ]
+    },
+    {
+      "id": "soccernet_tracking",
+      "url": "https://www.soccer-net.org/tasks/tracking",
+      "title": "SoccerNet Tracking task",
+      "type": "official_dataset_documentation",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Main-camera1080p clips;2022association with ground-truth detections differs from2023complete tracking; HOTA/DetA/AssA."
+      ],
+      "inspection_depth": "Task and protocol page read.",
+      "caveats": [
+        "Soccer and main-camera selection limit transfer."
+      ]
+    },
+    {
+      "id": "gsr_paper",
+      "url": "https://arxiv.org/abs/2404.11335",
+      "title": "SoccerNet Game State Reconstruction",
+      "type": "primary_paper",
+      "publication_date": "2024-04",
+      "access_date": "2026-10-08",
+      "claims": [
+        "200annotated clips; field positions and role/team/jersey attributes with tracks; GS-HOTA task."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "Soccer attributes are not NBA roster names."
+      ]
+    },
+    {
+      "id": "gsr_repo",
+      "url": "https://github.com/SoccerNet/sn-gamestate",
+      "title": "SoccerNet GSR official framework",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Modular detector/ReID/calibration/OCR/team stack;2026TrackLab1.3.24 GS-HOTA evaluation fix."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "GPL framework with separately licensed components/data; current pipeline differs from original paper."
+      ],
+      "repository_revision": {
+        "sha": "1c958345067218297d221e45e1a6405f975f83e0",
+        "commit_date": "2026-05-02T09:21:47Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "gsr_pipeline",
+      "url": "https://github.com/SoccerNet/sn-gamestate/blob/1c958345067218297d221e45e1a6405f975f83e0/sn_gamestate/configs/soccernet.yaml",
+      "title": "SoccerNet GSR pipeline configuration",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Offline engine; PRTReID, StrongSORT, MMOCR, clustering/voting, NBJW calibration current defaults."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [],
+      "repository_revision": {
+        "sha": "1c958345067218297d221e45e1a6405f975f83e0",
+        "commit_date": "2026-05-02T09:21:47Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "gsr_team",
+      "url": "https://github.com/SoccerNet/sn-gamestate/blob/1c958345067218297d221e45e1a6405f975f83e0/sn_gamestate/team/tracklet_team_clustering_api.py",
+      "title": "GSR team clustering",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Mean player embeddings per track and two-cluster KMeans."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [],
+      "repository_revision": {
+        "sha": "1c958345067218297d221e45e1a6405f975f83e0",
+        "commit_date": "2026-05-02T09:21:47Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "gsr_side",
+      "url": "https://github.com/SoccerNet/sn-gamestate/blob/1c958345067218297d221e45e1a6405f975f83e0/sn_gamestate/team/tracklet_team_side_labeling_api.py",
+      "title": "GSR soccer team-side labeling",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Mean field position and goalkeeper-specific side assignment."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [
+        "Not an appropriate basketball team-identification rule without adaptation."
+      ],
+      "repository_revision": {
+        "sha": "1c958345067218297d221e45e1a6405f975f83e0",
+        "commit_date": "2026-05-02T09:21:47Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "gsr_jersey",
+      "url": "https://github.com/SoccerNet/sn-gamestate/blob/1c958345067218297d221e45e1a6405f975f83e0/sn_gamestate/jersey/voting_tracklet_jn_api.py",
+      "title": "GSR jersey tracklet voting",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Track-level voting consolidates number predictions with confidence."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [
+        "Voting cannot repair an upstream wrong identity merge."
+      ],
+      "repository_revision": {
+        "sha": "1c958345067218297d221e45e1a6405f975f83e0",
+        "commit_date": "2026-05-02T09:21:47Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "gsr_reid_adapter",
+      "url": "https://github.com/SoccerNet/sn-gamestate/blob/1c958345067218297d221e45e1a6405f975f83e0/sn_gamestate/reid/prtreid_api.py",
+      "title": "GSR PRTReID adapter",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Returns embeddings, visibility, masks, role and role confidence; explicit baseline checkpoint download."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [],
+      "repository_revision": {
+        "sha": "1c958345067218297d221e45e1a6405f975f83e0",
+        "commit_date": "2026-05-02T09:21:47Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "sn_reid",
+      "url": "https://github.com/SoccerNet/sn-reid",
+      "title": "SoccerNet ReID challenge",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "340993crops from400games; action-to-replay viewpoints of the same action."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Not arbitrary long-term broadcast identity persistence."
+      ]
+    },
+    {
+      "id": "soccernet_access",
+      "url": "https://www.soccer-net.org/data",
+      "title": "SoccerNet data access",
+      "type": "official_dataset_documentation",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Public data and protected video access distinguished; gated videos may require NDA."
+      ],
+      "inspection_depth": "Access and task-data descriptions read.",
+      "caveats": [
+        "Live distribution mechanism may change; original video rights are separate from code licenses."
+      ]
+    },
+    {
+      "id": "osnet_paper",
+      "url": "https://arxiv.org/abs/1905.00953",
+      "title": "Omni-Scale Feature Learning for Person Re-Identification",
+      "type": "primary_paper",
+      "publication_date": "2019-05",
+      "access_date": "2026-10-08",
+      "claims": [
+        "OSNet appearance features; ICCV2019."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "Pedestrian pretraining does not establish same-uniform NBA discrimination."
+      ]
+    },
+    {
+      "id": "torchreid",
+      "url": "https://github.com/KaiyangZhou/deep-person-reid",
+      "title": "Torchreid / OSNet official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Official model zoo, pretrained models and export examples; MIT software."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Weights/training dataset terms separate; preserve reviewed project baseline."
+      ]
+    },
+    {
+      "id": "bpbreid",
+      "url": "https://github.com/VlSomers/bpbreid",
+      "title": "Body Part-Based Representation Learning for Occluded Person Re-Identification",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Mutually visible part comparisons and visibility scores; pretrained links; Hippocratic HL3-LAW-MEDIA-MIL-SOC-SV declaration."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Custom license; no local basketball benchmark."
+      ]
+    },
+    {
+      "id": "prtreid",
+      "url": "https://github.com/VlSomers/prtreid",
+      "title": "Multi-task Learning for Joint Re-identification, Team Affiliation, and Role Classification",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Sports role/team objectives added to part-based ReID; GSR integration; Hippocratic license declaration."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Soccer-oriented released models; not automatic named NBA identity."
+      ]
+    },
+    {
+      "id": "jersey_paper",
+      "url": "https://arxiv.org/abs/2405.13896",
+      "title": "A General Framework for Jersey Number Recognition in Sports Video",
+      "type": "primary_paper",
+      "publication_date": "2024-05",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Legibility, pose/cropping, text recognition and tracklet consolidation."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "Hockey/SoccerNet evaluation rather than this NBA footage."
+      ]
+    },
+    {
+      "id": "jersey_repo",
+      "url": "https://github.com/mkoshkina/jersey-number-pipeline",
+      "title": "Jersey number framework official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Code, model/data links and multi-stage setup; CC BY-NC3.0; SAM dependency refers to Sharpness-Aware Minimization."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Several dependencies and environment assumptions; unreadable numbers must remain unknown."
+      ]
+    },
+    {
+      "id": "soccermaster",
+      "url": "https://github.com/haolinyang-hlyang/SoccerMaster",
+      "title": "SoccerMaster official CVPR2026 release",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Code/checkpoints linked; SAM2 and external calibration/ReID; Qwen jersey/role variants."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Watchlist only; licenses/hardware/NBA transfer not fully audited."
+      ]
+    },
+    {
+      "id": "sam2_repo",
+      "url": "https://github.com/facebookresearch/sam2",
+      "title": "SAM2 / SAM2.1 official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Prompted video masks; official checkpoints/training; Apache2.0 explicitly includes weights; A100-specific speed table; CPU offload options."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "VOS quality is not named-player MOT; CUDA/Windows integration untested here."
+      ]
+    },
+    {
+      "id": "sam2_predictor",
+      "url": "https://github.com/facebookresearch/sam2/blob/main/sam2/sam2_video_predictor.py",
+      "title": "SAM2 video inference state",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Separate frame/state CPU-offload flags; correction-memory clearing and reset APIs."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [
+        "Memory tradeoffs vary by object count and video length."
+      ]
+    },
+    {
+      "id": "sam3_repo",
+      "url": "https://github.com/facebookresearch/sam3",
+      "title": "SAM3 / SAM3.1 official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Concept/text/exemplar masks and tracking; gated checkpoints;848Mparameter SAM3;3.1release2026-03-27."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Custom SAM license; concept detection does not establish identity."
+      ]
+    },
+    {
+      "id": "sam31_release",
+      "url": "https://github.com/facebookresearch/sam3/blob/main/RELEASE_SAM3p1.md",
+      "title": "SAM3.1 Object Multiplex release notes",
+      "type": "official_release_notes",
+      "publication_date": "2026-03-27",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Shared-memory multi-object tracking; approximately7xspeedup at128objects onH100 againstNovember2025release."
+      ],
+      "inspection_depth": "Release description, checkpoint links and hardware qualifier read.",
+      "caveats": [
+        "Not a ten-player local speed estimate."
+      ]
+    },
+    {
+      "id": "cutie_repo",
+      "url": "https://github.com/hkchengrex/Cutie",
+      "title": "Cutie video object segmentation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "CVPR2024VOS code, interactive GUI, permanent-memory option and pretrained downloader."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Prompted masks not named-player association; third-party GUI terms separate."
+      ]
+    },
+    {
+      "id": "xmem_repo",
+      "url": "https://github.com/hkchengrex/XMem",
+      "title": "XMem long-term video object segmentation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "ECCV2022memory-based VOS; GUI and pretrained model documentation; hardware-dependent speed claims."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Long memory does not establish correct identity after camera cuts."
+      ]
+    },
+    {
+      "id": "cotracker_repo",
+      "url": "https://github.com/facebookresearch/co-tracker",
+      "title": "CoTracker3 official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Online/offline point checkpoints; queries and visibility; majority CC BY-NC4.0;2024CoTracker3release."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Point correspondences are not player detection, named identity or metric geometry."
+      ]
+    },
+    {
+      "id": "cotracker_predictor",
+      "url": "https://github.com/facebookresearch/co-tracker/blob/main/cotracker/predictor.py",
+      "title": "CoTracker point predictor",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Explicit(t,x,y)query format, internal rescaling, visibility and optional backward tracking."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": []
+    },
+    {
+      "id": "tapnet_repo",
+      "url": "https://github.com/google-deepmind/tapnet",
+      "title": "TAPIR / BootsTAPIR official TAP repository",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Causal/offline point tracking; JAX/PyTorch checkpoints; Apache2.0software and weights explicitly declared; TAP-Vid annotation license separated from video terms."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "README evolves with newer families; chapter focuses verified TAPIR/BootsTAPIR functionality."
+      ]
+    },
+    {
+      "id": "tapir_predictor",
+      "url": "https://github.com/google-deepmind/tapnet/blob/main/tapnet/torch/tapir_model.py",
+      "title": "TAPIR PyTorch model",
+      "type": "official_source_code",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Occlusion and expected-distance logits; query chunking and refinement resolution controls."
+      ],
+      "inspection_depth": "Selected implementation branches and parameters read directly from official raw source; not executed.",
+      "caveats": [
+        "Logits are not calibrated court-position uncertainty."
+      ]
+    },
+    {
+      "id": "opencv_homography",
+      "url": "https://docs.opencv.org/4.13.0/d9/dab/tutorial_homography.html",
+      "title": "OpenCV homography tutorial",
+      "type": "official_documentation",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Planar projective mapping; relationship to camera model and coplanar points."
+      ],
+      "inspection_depth": "Basic theory, camera relation and limitations read.",
+      "caveats": [
+        "Repository uncertainty propagation section is our mathematical implication, not a local empirical calibration result."
+      ]
+    },
+    {
+      "id": "tvcalib_project",
+      "url": "https://mm4spa.github.io/tvcalib/",
+      "title": "TVCalib author project page",
+      "type": "primary_project_page",
+      "publication_date": "2023",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Segment reprojection optimization, self-verification and camera calibration; GT-versus-predicted segmentation protocols distinct."
+      ],
+      "inspection_depth": "Method and evaluation tables inspected.",
+      "caveats": [
+        "Soccer field geometry/checkpoints."
+      ]
+    },
+    {
+      "id": "tvcalib_repo",
+      "url": "https://github.com/MM4SPA/tvcalib",
+      "title": "TVCalib official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Inference notebook/configuration, segmentation checkpoint links and MIT code."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "No basketball weight transfer or local runtime established."
+      ]
+    },
+    {
+      "id": "nbjw_repo",
+      "url": "https://github.com/mguti97/No-Bells-Just-Whistles",
+      "title": "No Bells, Just Whistles official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Soccer keypoint/line models; single/multiple-view checkpoints; GPL2.0code."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Camera-view diversity is not sport-domain transfer."
+      ]
+    },
+    {
+      "id": "pnlcalib_repo",
+      "url": "https://github.com/mguti97/PnLCalib",
+      "title": "PnLCalib official implementation",
+      "type": "official_repository",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Point/line refinement, soccer checkpoints; March2026distortion-optimization update; GPL2.0declaration."
+      ],
+      "inspection_depth": "README, availability links, environment or evaluation instructions inspected; no package or model execution.",
+      "caveats": [
+        "Only README and model availability inspected; no full code audit."
+      ]
+    },
+    {
+      "id": "calibration_protocol",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024W/CVsports/papers/Magera_A_Universal_Protocol_to_Benchmark_Camera_Calibration_for_Sports_CVPRW_2024_paper.pdf",
+      "title": "A Universal Protocol to Benchmark Camera Calibration for Sports",
+      "type": "primary_paper",
+      "publication_date": "2024-06",
+      "access_date": "2026-10-08",
+      "claims": [
+        "Calibration/homography metrics and dataset protocols vary; surveyed publicDeepSportradar vs non-public collegebasketball data."
+      ],
+      "inspection_depth": "Primary abstract and/or task/method/evaluation sections inspected; not independently reproduced.",
+      "caveats": [
+        "No universal project-specific error threshold inferred."
+      ]
+    },
+    {
+      "id": "bytetrack_license",
+      "url": "https://github.com/FoundationVision/ByteTrack/blob/main/LICENSE",
+      "title": "FoundationVision/ByteTrack license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared MIT; scope inspected: code."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "MIT",
+      "license_scope": "code",
+      "repository_revision": {
+        "sha": "d1bf0191adff59bc8fcfeaa0b33d3d1642552a99",
+        "commit_date": "2022-12-11T07:05:00Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "botsort_license",
+      "url": "https://github.com/NirAharon/BoT-SORT/blob/main/LICENSE",
+      "title": "NirAharon/BoT-SORT license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared MIT; scope inspected: code."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "MIT",
+      "license_scope": "code",
+      "repository_revision": {
+        "sha": "251985436d6712aaf682aaaf5f71edb4987224bd",
+        "commit_date": "2022-10-30T15:12:42Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "ocsort_license",
+      "url": "https://github.com/noahcao/OC_SORT/blob/master/LICENSE",
+      "title": "noahcao/OC_SORT license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared MIT; scope inspected: code."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "MIT",
+      "license_scope": "code",
+      "repository_revision": {
+        "sha": "8462e7e729a93ccd3bd995c0a79a890336cb3a0b",
+        "commit_date": "2026-04-21T23:31:31Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "deepocsort_license",
+      "url": "https://github.com/GerardMaggiolino/Deep-OC-SORT/blob/main/LICENSE.md",
+      "title": "GerardMaggiolino/Deep-OC-SORT license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared MIT; scope inspected: code."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "MIT",
+      "license_scope": "code",
+      "repository_revision": {
+        "sha": "6bb51d027b137233f5c520b6fcc4f2ae387a6ba9",
+        "commit_date": "2023-05-06T23:08:54Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "strongsort_license",
+      "url": "https://github.com/dyhBUPT/StrongSORT/blob/master/LICENSE",
+      "title": "dyhBUPT/StrongSORT license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared GPL-3.0; scope inspected: code."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "GPL-3.0",
+      "license_scope": "code"
+    },
+    {
+      "id": "mixsort_license",
+      "url": "https://github.com/MCG-NJU/MixSort/blob/main/LICENSE",
+      "title": "MCG-NJU/MixSort license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared MIT; scope inspected: root code; component terms separate."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "MIT",
+      "license_scope": "root code; component terms separate",
+      "repository_revision": {
+        "sha": "a078f5bf6ae9fbeecbc1384479d5f02ab8b9e7f6",
+        "commit_date": "2023-08-21T02:36:11Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "camel_license",
+      "url": "https://github.com/TrackingLaboratory/CAMELTrack/blob/main/LICENSE",
+      "title": "TrackingLaboratory/CAMELTrack license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared Apache-2.0; scope inspected: code."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "Apache-2.0",
+      "license_scope": "code",
+      "repository_revision": {
+        "sha": "46a74bb22a28d2d699b4c5c5e317a26d3b87f1e2",
+        "commit_date": "2025-07-12T13:29:13Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "torchreid_license",
+      "url": "https://github.com/KaiyangZhou/deep-person-reid/blob/master/LICENSE",
+      "title": "KaiyangZhou/deep-person-reid license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared MIT; scope inspected: code."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "MIT",
+      "license_scope": "code"
+    },
+    {
+      "id": "gsr_license",
+      "url": "https://github.com/SoccerNet/sn-gamestate/blob/main/LICENSE",
+      "title": "SoccerNet/sn-gamestate license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared GPL-3.0; scope inspected: code."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "GPL-3.0",
+      "license_scope": "code",
+      "repository_revision": {
+        "sha": "1c958345067218297d221e45e1a6405f975f83e0",
+        "commit_date": "2026-05-02T09:21:47Z",
+        "source": "GitHub commits API queried with until=2026-10-08T23:59:59Z",
+        "scope": "Repository default-branch revision at or before research cutoff; branch URLs remain mutable."
+      }
+    },
+    {
+      "id": "sam2_license",
+      "url": "https://github.com/facebookresearch/sam2/blob/main/LICENSE",
+      "title": "facebookresearch/sam2 license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared Apache-2.0; scope inspected: code; README explicitly extends to model checkpoints."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "Apache-2.0",
+      "license_scope": "code; README explicitly extends to model checkpoints"
+    },
+    {
+      "id": "sam3_license",
+      "url": "https://github.com/facebookresearch/sam3/blob/main/LICENSE",
+      "title": "facebookresearch/sam3 license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared SAM License; scope inspected: SAM Materials include code and trained weights."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "SAM License",
+      "license_scope": "SAM Materials include code and trained weights"
+    },
+    {
+      "id": "cutie_license",
+      "url": "https://github.com/hkchengrex/Cutie/blob/main/LICENSE",
+      "title": "hkchengrex/Cutie license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared MIT; scope inspected: root code; GUI components separate."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "MIT",
+      "license_scope": "root code; GUI components separate"
+    },
+    {
+      "id": "xmem_license",
+      "url": "https://github.com/hkchengrex/XMem/blob/main/LICENSE",
+      "title": "hkchengrex/XMem license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared MIT; scope inspected: root code; components/data separate."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "MIT",
+      "license_scope": "root code; components/data separate"
+    },
+    {
+      "id": "cotracker_license",
+      "url": "https://github.com/facebookresearch/co-tracker/blob/main/LICENSE.md",
+      "title": "facebookresearch/co-tracker license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared CC-BY-NC-4.0; scope inspected: majority of project; third-party exceptions."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "CC-BY-NC-4.0",
+      "license_scope": "majority of project; third-party exceptions"
+    },
+    {
+      "id": "tapnet_license",
+      "url": "https://github.com/google-deepmind/tapnet/blob/main/LICENSE",
+      "title": "google-deepmind/tapnet license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared Apache-2.0; scope inspected: software; README explicitly extends to released checkpoints."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "Apache-2.0",
+      "license_scope": "software; README explicitly extends to released checkpoints"
+    },
+    {
+      "id": "tvcalib_license",
+      "url": "https://github.com/MM4SPA/tvcalib/blob/main/LICENSE",
+      "title": "MM4SPA/tvcalib license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared MIT; scope inspected: code."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "MIT",
+      "license_scope": "code"
+    },
+    {
+      "id": "nbjw_license",
+      "url": "https://github.com/mguti97/No-Bells-Just-Whistles/blob/main/LICENSE",
+      "title": "mguti97/No-Bells-Just-Whistles license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared GPL-2.0; scope inspected: scripts."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "GPL-2.0",
+      "license_scope": "scripts"
+    },
+    {
+      "id": "teamtrack_license",
+      "url": "https://github.com/AtomScott/TeamTrack/blob/main/LICENSE",
+      "title": "AtomScott/TeamTrack license",
+      "type": "official_license",
+      "publication_date": null,
+      "access_date": "2026-10-08",
+      "claims": [
+        "Declared MIT; scope inspected: code; data-specific terms not independently established."
+      ],
+      "inspection_depth": "License heading and relevant scope language read directly; no legal opinion.",
+      "caveats": [
+        "Do not infer rights to unrelated model weights or source videos from a code license."
+      ],
+      "declared_license": "MIT",
+      "license_scope": "code; data-specific terms not independently established"
+    }
+  ]
+}

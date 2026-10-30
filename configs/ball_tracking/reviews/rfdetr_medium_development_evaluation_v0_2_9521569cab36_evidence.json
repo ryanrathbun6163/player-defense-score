@@ -1,0 +1,412 @@
+{
+  "schema_version": "ball_detector_development_release_evidence/v0.1",
+  "evidence_commit": "9521569cab36c8d289c4a341b5f33273062cabb4",
+  "parent_experiment": {
+    "path": "configs/ball_tracking/experiments/rfdetr_medium_image_only_baseline_v0_1.json",
+    "sha256": "7d82faec9f4d0615a0e870372392a9a9d4f2576ada88e700bec2fd8b3b28d3e3"
+  },
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_development_release_proposal_v0_1.json",
+    "sha256": "e64d1671d6a65bc56a546424bf746d22c9c558ce65721c645dad08ee2d5ab125"
+  },
+  "experiment_approval": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_development_experiment_approval_v0_1.json",
+    "sha256": "da74ef8618d7ebb9940ae5a87bef0d89314f6f88db7a475e6a767a16b1f5ca5f"
+  },
+  "execution_spec_sha256": "da43850a41847948043832895d4a3cdf90786d0d072575127800d881d320e549",
+  "development_windows": [
+    {
+      "annotation_set_id": "possession_001_frames_0050_0074_representative_evaluation_v0_1",
+      "possession_id": "possession_001",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 50,
+      "end_frame_index": 74,
+      "selection_purpose": "representative_evaluation"
+    },
+    {
+      "annotation_set_id": "possession_001_frames_0200_0224_challenge_evaluation_v0_1",
+      "possession_id": "possession_001",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 200,
+      "end_frame_index": 224,
+      "selection_purpose": "challenge_evaluation"
+    },
+    {
+      "annotation_set_id": "possession_002_frames_0250_0274_representative_evaluation_v0_1",
+      "possession_id": "possession_002",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 250,
+      "end_frame_index": 274,
+      "selection_purpose": "representative_evaluation"
+    },
+    {
+      "annotation_set_id": "possession_002_frames_0025_0049_challenge_evaluation_v0_1",
+      "possession_id": "possession_002",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 25,
+      "end_frame_index": 49,
+      "selection_purpose": "challenge_evaluation"
+    },
+    {
+      "annotation_set_id": "possession_003_frames_0300_0324_representative_evaluation_v0_1",
+      "possession_id": "possession_003",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "start_frame_index": 300,
+      "end_frame_index": 324,
+      "selection_purpose": "representative_evaluation"
+    },
+    {
+      "annotation_set_id": "possession_003_frames_0150_0174_challenge_evaluation_v0_1",
+      "possession_id": "possession_003",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "start_frame_index": 150,
+      "end_frame_index": 174,
+      "selection_purpose": "challenge_evaluation"
+    }
+  ],
+  "protected_files": [
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0050_0074_representative_evaluation_v0_1.json",
+      "git_blob": "71208880f8427bc63d7e97dc557dabac820a92d5",
+      "sha256": "3731fa669da12fdcab0748ab92bc7bbb85961a2a0f80518092eaced0e08d5c6c"
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0200_0224_challenge_evaluation_v0_1.json",
+      "git_blob": "23318252da88abedf45e03c47fcc89e51b174499",
+      "sha256": "73ed29bc62e002d86b207a12298b30b27724fe42be5a354ec09bc104211e2def"
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_002_frames_0025_0049_challenge_evaluation_v0_1.json",
+      "git_blob": "8308e44846013b127811e378c78d11278cd712c1",
+      "sha256": "c0d1bad8f6879e2d073b6d0becf3df12347b43ef06e9c6ff44c26b6f56d3c1e3"
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_002_frames_0250_0274_representative_evaluation_v0_1.json",
+      "git_blob": "cdd5a22c73afd1cbe3dcde63ffe562882f39fb57",
+      "sha256": "cccec6a086bf9898197babeb5d785bdd4ba0290b7c6c1ba5c206e8545e67563f"
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_003_frames_0150_0174_challenge_evaluation_v0_1.json",
+      "git_blob": "de0193928556fe7f64d16b513d0426451114a443",
+      "sha256": "ab77e6c8570ee8fc536632e43ee71d978e72cd16188f7564c77ae256873994ee"
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_003_frames_0300_0324_representative_evaluation_v0_1.json",
+      "git_blob": "9f1722e019435e9201ae1cb7a28f4ea18791aebb",
+      "sha256": "2b35475e715e9a4b816ad997b58be3201370695a2f420a35a6947696bbe3637e"
+    },
+    {
+      "path": "configs/ball_tracking/experiments/rfdetr_medium_image_only_baseline_v0_1.json",
+      "git_blob": "011115451bbad25e4ea84e5dc8e38d4cc5700571",
+      "sha256": "7d82faec9f4d0615a0e870372392a9a9d4f2576ada88e700bec2fd8b3b28d3e3"
+    },
+    {
+      "path": "configs/ball_tracking/proposals/rfdetr_medium_development_release_proposal_v0_1.json",
+      "git_blob": "26670b78982d6eeba58cd2aee1ed9bee479532f1",
+      "sha256": "e64d1671d6a65bc56a546424bf746d22c9c558ce65721c645dad08ee2d5ab125"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/possession_001_frames_0050_0074_single_annotator_finalization_v0_1.json",
+      "git_blob": "31d9d192c69e45d2142dd6b6262e589a2bc5452d",
+      "sha256": "90fca5442691a6bf57db53baa65209111f131682042d0acf1e3a7b3808282ef6"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/possession_001_frames_0050_0074_visual_review_approval_v0_1.json",
+      "git_blob": "0d70ed9cb04a8f976c1686ae09d95a9881f9bde1",
+      "sha256": "9dfe191ce43ddae811b1ffb747b98875fa524f2dfd84a146335549e4af07b61b"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/possession_001_frames_0200_0224_single_annotator_finalization_v0_1.json",
+      "git_blob": "f889fb89ea61a4e929a1b195fe11427742b435eb",
+      "sha256": "53d89269c25168e56d8efa1da5ed35d7442fa948f09b741bed095aa30664165e"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/possession_001_frames_0200_0224_visual_review_approval_v0_1.json",
+      "git_blob": "6906f670842db2487dd9e6bc5d024259daa50d59",
+      "sha256": "0aab4f3aabe4721b617a424336f3abc0ed3c99827a3de00648c022d774671dc2"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/possession_002_frames_0025_0049_single_annotator_finalization_v0_1.json",
+      "git_blob": "cf6f7f8fbcf07285b0f6f3b991134572c6c541a4",
+      "sha256": "4ede7977f1af70874f8a91eb9a757203f75a8b7e162ca6db4f2828373eb29e07"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/possession_002_frames_0025_0049_visual_review_approval_v0_1.json",
+      "git_blob": "8c960aa8ab6e1c79e9bcfedc000cfb2417a37884",
+      "sha256": "62ff0c615aa40b2e981a8e4d266d57b99913b5195e12b0683933167d0df4b93d"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/possession_002_frames_0250_0274_single_annotator_finalization_v0_1.json",
+      "git_blob": "60e14c98999fb195a8663920a36cc178eb7557b5",
+      "sha256": "9b9ec24c7966510cf0d768d4a586ddc9ae4b1e8d04945f85de6fb5e5b2fbb277"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/possession_002_frames_0250_0274_visual_review_approval_v0_1.json",
+      "git_blob": "636ce62336ae50d91ae618e83ed797282f3f4127",
+      "sha256": "1fa0b29ae7d79804525ccfd60f6fa1c00753b43be459d10408a4e4646a4afe31"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/possession_003_frames_0150_0174_single_annotator_finalization_v0_1.json",
+      "git_blob": "59d33308f6b1820d9ef4708c1c79960910df1416",
+      "sha256": "aa003233cd63a00a6bf6f41ab80ee2a664613cd8195f58ae9455a319c6a03bd9"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/possession_003_frames_0150_0174_visual_review_approval_v0_1.json",
+      "git_blob": "f3897ad75a76063abb3fb30636c0af18621112c2",
+      "sha256": "e0e546c3e1feb7a3709b8c78ed54d582cfdd829a8ff0e4b640d6300cfcf01a50"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/possession_003_frames_0300_0324_single_annotator_finalization_v0_1.json",
+      "git_blob": "a54345f88e094d370d92afa4f327d1f7fb01d7d4",
+      "sha256": "210f35ce2b202ccc440f5b5d6e987e84aecda88ee3ca34dd7f83aea93be18753"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/possession_003_frames_0300_0324_visual_review_approval_v0_1.json",
+      "git_blob": "27c310d791e01289dd1d79c8ad4125d249d446d8",
+      "sha256": "d333bcbdd6f8691bec9fc780b5839bc919752c69168d99c254d53304ba1c495a"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/rfdetr_medium_development_experiment_approval_v0_1.json",
+      "git_blob": "4e90d25ad31d7e4bede6bc8ba01f71799cc85e1e",
+      "sha256": "da74ef8618d7ebb9940ae5a87bef0d89314f6f88db7a475e6a767a16b1f5ca5f"
+    },
+    {
+      "path": "src/ball_tracking/__init__.py",
+      "git_blob": "06e0ed4f4ddc2e1c31f32cb9dcf30344f15d6de4",
+      "sha256": "739183c6887188aad304ea43056933d54a1c98afac2501ba6afb542ccd864209"
+    },
+    {
+      "path": "src/ball_tracking/annotate_frames.py",
+      "git_blob": "205d21fb984eea64431ae31a10b1f8fabc90ae0d",
+      "sha256": "c541fb73c8f1afeaa99183e7349de45bae9f2a1f7bf529071103aa84b17dd5a9"
+    },
+    {
+      "path": "src/ball_tracking/annotations.py",
+      "git_blob": "4a0f3a7d0c10678ecbd685e20275610eeb728c7b",
+      "sha256": "f2f775ca12a3780f7f5e6d81c65e595a5d24d1fa334c0dac38258e758bb9203a"
+    },
+    {
+      "path": "src/ball_tracking/detections.py",
+      "git_blob": "d60f1af763696aadb0ebfce5b1753e0b6ce4f036",
+      "sha256": "954a6f77a57eaabffd02de98f4e14c0e2cde04d3d6ff3ccd394d57c8f6031a13"
+    },
+    {
+      "path": "src/ball_tracking/detector_experiments.py",
+      "git_blob": "455faf1933b3edc63ebd277351309aec5e8e8bf7",
+      "sha256": "159229bc206d6e504e87912a191697f1e0e3dbdafdf7fdfc94f185146dc6cc6e"
+    },
+    {
+      "path": "src/ball_tracking/development_experiments.py",
+      "git_blob": "bb1b8da0f10de68d0c43bd3b765b42fac65b64ee",
+      "sha256": "e448a436c257394b82379a73aa734c6bb6e1b391d438d9118f5d8482c3ac7650"
+    },
+    {
+      "path": "src/ball_tracking/development_release.py",
+      "git_blob": "1be58bd445d594bc78bb9a7e4d6a08bb73946d84",
+      "sha256": "988b765c526aa9a5facf0b43544d3a73d82bd74d64e9b029c85f9959f32d7e0d"
+    },
+    {
+      "path": "src/ball_tracking/development_scoring.py",
+      "git_blob": "facebfc046760d16d02f2807ee59d63ae36988ea",
+      "sha256": "208b3e82887a1cc147692087b9ba7105b6d5388f5ecfb53569b244c95e0e0599"
+    },
+    {
+      "path": "src/ball_tracking/evaluation.py",
+      "git_blob": "e6d8c370b830b97729c85c56f88b9a6392ad8728",
+      "sha256": "d4161d87bdfc0f7ad9c113a815aded62d6516b3fed700968d02b97125a1ec948"
+    },
+    {
+      "path": "src/ball_tracking/initialize_detector_annotation_windows.py",
+      "git_blob": "d5b4a11c2f420f7e924f88ffac096442ff799202",
+      "sha256": "bfe7a5ed310273db6aa5058c79841fe15d3c6c5003a372467549723e676a0b5b"
+    },
+    {
+      "path": "src/ball_tracking/prepare_annotation_review.py",
+      "git_blob": "e8277c0779718def6262bd811f818edddeae8ba8",
+      "sha256": "e84ac908cc5f6c9373f572586a5cd9f56e592558eb19a649b1eb5aa0571eca9e"
+    },
+    {
+      "path": "src/ball_tracking/prepare_annotation_visual_review.py",
+      "git_blob": "2dec42709f6088a05d578aea65c41d215787be9f",
+      "sha256": "d19e119213273fbcf189b1a9d9fe8d9cf316617605882465b191a7a72d685917"
+    },
+    {
+      "path": "src/ball_tracking/prepare_detection_visual_review.py",
+      "git_blob": "da46f993a56d7c1ad7aac36cb8e38e574d901d84",
+      "sha256": "9e4fa78cc3166da0dcce4a810932141f6b40a3d511a31870dfb866dcdff4d199"
+    },
+    {
+      "path": "src/ball_tracking/prepare_independent_review.py",
+      "git_blob": "7a5aaf354463dd0417ac042e70f581ff6269b762",
+      "sha256": "8ec1d7d877f3133c898b03a7de35d33333aa1f8189eb061ccfa03028c5f40a12"
+    },
+    {
+      "path": "src/ball_tracking/rfdetr_adapter.py",
+      "git_blob": "7d4dbec2850e6e9afa69116b9eb702931321fe38",
+      "sha256": "5096327a3c9d886f579afb8f2c4d1732672ffffe7ea89a24a3b3be7c7d149102"
+    },
+    {
+      "path": "src/ball_tracking/run_detector_experiment.py",
+      "git_blob": "bbf2876802f74f4b096dc3a0b8a0f034740ffcd1",
+      "sha256": "4a03ef8388a6699fb51be3e0961cce9f5b19db02ad7081eebae7ce7841f6ee56"
+    },
+    {
+      "path": "src/ball_tracking/score_detector_experiment.py",
+      "git_blob": "0201c4b278bb6afc3560699d88e26f67d154ff19",
+      "sha256": "ff6f94d1dd7eff67d1b6637f6e8e3232e15177ce3f09c8a48ad686b7dddd015c"
+    },
+    {
+      "path": "src/ball_tracking/validate_annotations.py",
+      "git_blob": "c776f17bee1a909017f5a00d07e8138d98259cc9",
+      "sha256": "524e889b3a7059dab77bc0569e689c86dedfa7a59445b90d3f8f40ef768b001e"
+    },
+    {
+      "path": "tests/test_ball_annotation_editor.py",
+      "git_blob": "eab6e7452b5abb650d54ff52d8863937a27f1991",
+      "sha256": "32be071ae366139849bad195e66efb0208d6992c60931fbbc41126505366d9e7"
+    },
+    {
+      "path": "tests/test_ball_annotation_foundation.py",
+      "git_blob": "5f7dfa3aae62b78637bc54aed61a69e986e925df",
+      "sha256": "1b5873d3ae224b8fa791a5d30e9ab5c9b674fa2e9f57f6a30da6a76cb60275dc"
+    },
+    {
+      "path": "tests/test_ball_annotation_review_assets.py",
+      "git_blob": "880af7a193c563856a554477b5babd1d1b29b019",
+      "sha256": "fd7093461e22030516414b508717e9e912f304b5b1ead4e5720132cbce2b2ecf"
+    },
+    {
+      "path": "tests/test_ball_annotation_visual_review.py",
+      "git_blob": "28cb05f569ebef91cd53d7ad0eb3e09880f1cc38",
+      "sha256": "24118b93c481c1427471d4b303a468f9c1d4fcddbb01cdf796f19a294eb60596"
+    },
+    {
+      "path": "tests/test_ball_detection_visual_review.py",
+      "git_blob": "6a8c8c70140b8ec19b8094fe43dddcf37b78b0ba",
+      "sha256": "a4a39e68168ebc4787c094056fbbaf92bbfad7c2cd8b4d6665f68fcbffa7fdbe"
+    },
+    {
+      "path": "tests/test_ball_detector_annotation_initialization.py",
+      "git_blob": "6304a265cbcf99e117fe03f8e1eb770d93c5be96",
+      "sha256": "39b6064aff6a79df837d272aad32776936eb0cec425bb2870b7b1334d9b2faa4"
+    },
+    {
+      "path": "tests/test_ball_detector_experiment_manifest.py",
+      "git_blob": "bd4cc1871a27cf702a1fe3e845428c7de92c3c96",
+      "sha256": "d5832340620a93e9759e7b973347d4423c8f1e78d3b5b520b324619b0a66d26f"
+    },
+    {
+      "path": "tests/test_ball_detector_experiment_runner.py",
+      "git_blob": "1752226aa7a2209cb3283db481bd3f5bb9ef98dc",
+      "sha256": "fa7237cf81645fb4f1a886ebd9a72c3d6c547235e22ac0679d118228b12ef271"
+    },
+    {
+      "path": "tests/test_ball_detector_experiment_scoring.py",
+      "git_blob": "b9fd5531c285f59cee44e5faf7fe21745f807024",
+      "sha256": "e5ab629923c1f9a511cd7305518cdd2c2ee6eff42d89f832e5f65e6518b87167"
+    },
+    {
+      "path": "tests/test_ball_development_experiment.py",
+      "git_blob": "093d641719acabbe7234cbbda06ecd9fba28ba2e",
+      "sha256": "7ad67a8aecec084454071a6378bda4d5c6344af4f5c7178fae63b37de2c7506a"
+    },
+    {
+      "path": "tests/test_ball_independent_review.py",
+      "git_blob": "236cd7d469cfcc5328c6a29f16ce4ce98f2bd6f5",
+      "sha256": "88185775232fcd8c55d456788b1b4da84add7ae657901d760408ccc1c3773308"
+    },
+    {
+      "path": "tests/test_ball_rfdetr_adapter.py",
+      "git_blob": "b9b5d232f914a0c815fa905b9de89ba3cb5d8aeb",
+      "sha256": "ea89d3c1942393b6ac7912c8b3d31d96fce79c44e93fad880383d650c2884b0d"
+    },
+    {
+      "path": "tests/test_camera_motion_geometry_safety.py",
+      "git_blob": "97e9a03bd21f66257a3d6a8ad8fb7c15305c71a2",
+      "sha256": "d1dbba9ac51eb8e1474d1fe059096cabd3efce0f4aea361e272de385cc7366b7"
+    },
+    {
+      "path": "tests/test_cross_track_switch_fallback.py",
+      "git_blob": "b529b832cb07e7057c29a506f6aa2abf413e9e75",
+      "sha256": "962b51df6bc91c8fdbf0fe750dd285f2224ac7b4ac1500338f1750af9382d043"
+    },
+    {
+      "path": "tests/test_front_stage_generalization.py",
+      "git_blob": "447251cec5f2b64d6e8d9b985a8dd9e8dc066f97",
+      "sha256": "d845a3b31dfa038c19a4df2433f33f08ff7a87b43e66dfa314cca4a415ab3811"
+    },
+    {
+      "path": "tests/test_pipeline_execution.py",
+      "git_blob": "d68f464750973ff2e88870ac06d325e76a4737c2",
+      "sha256": "c0c91eba2f7e58d28531de50147df10c7238c1cb328e0c49134b3cb9464db945"
+    },
+    {
+      "path": "tests/test_pipeline_foundation.py",
+      "git_blob": "a2c7856854189a27b64441372a96a6f146473577",
+      "sha256": "ef393ef303f4e9836e9ed706d3346dc2525318f582399d3c20d87863c653a5c9"
+    },
+    {
+      "path": "tests/test_reid_generalization.py",
+      "git_blob": "28d17e9a369a7c885373f45d792c897e3369e80c",
+      "sha256": "374f97e1e0682caaed0183c5abdf16c40dae8993372d4d007659de51f6040799"
+    },
+    {
+      "path": "tests/test_team_balance_video_path.py",
+      "git_blob": "16600c0e8d3c7a76774c5ba6c9d64da9deaf4691",
+      "sha256": "d0827cbf773c977041d22c99f742664f7b013a431c3959103f40536bd453b1dc"
+    },
+    {
+      "path": "tests/test_trajectory_refinement_safety.py",
+      "git_blob": "497a660294faf67e75376690651673f6ab63307b",
+      "sha256": "e1b6c23cfa9e82da1a8a8da735211efb7d9d200fca2f77f245b403cf46d336fd"
+    }
+  ],
+  "validation": {
+    "returncode": 0,
+    "tests_run": 299,
+    "output_sha256": "4062ef2f6d3b9f398937f16b81dcfab18c59e5be8a306dad3028ea6bd4280956"
+  },
+  "prepared_at_utc": "2026-09-19T05:35:46.430895+00:00"
+}

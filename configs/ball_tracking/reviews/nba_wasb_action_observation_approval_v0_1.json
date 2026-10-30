@@ -1,0 +1,162 @@
+{
+  "schema_version": "nba_wasb_action_observation_approval/v0.1",
+  "status": "approved",
+  "approved_by": "Ryan",
+  "approved_at_utc": "2026-10-20T01:10:40.0954863+00:00",
+  "approval_timestamp_basis": "Time the explicit user approval was recorded by the assistant.",
+  "user_statement": "I approve. Move forward chat",
+  "approval_context": "Explicit approval of the exact longer action observation plan: implement, validate and execute one resumable pass over the two fixed cores, importing compatible completed pilot caches and producing two complete new review videos.",
+  "user_timezone": "America/Phoenix",
+  "approval_date_local": "2026-10-19",
+  "proposal": {
+    "path": "configs/ball_tracking/selections/nba_wasb_action_observation_proposal_v0_1.json",
+    "bytes": 12515,
+    "sha256": "c4da3da0506217ea21881cd52f4864aa402f40fbc041852efc0be18c826964de"
+  },
+  "scope": {
+    "proposal_id": "nba_wasb_action_observation_v0_1",
+    "implement": true,
+    "validate": true,
+    "execute_one_resumable_run": true,
+    "windows": [
+      {
+        "candidate_id": "sac_mem_q1_c01",
+        "game_id": "0022500829",
+        "approved_role": "future_training_candidate_pool",
+        "source_frame_range_inclusive": [
+          540,
+          2010
+        ],
+        "source_pts_ticks_inclusive": [
+          816182,
+          3023342
+        ],
+        "source_end_exclusive_pts_ticks": 3024872,
+        "time_base": "1/90000",
+        "frames": 1471,
+        "timeline_duration_seconds": 24.541,
+        "maximum_complete_triplets": 1469,
+        "planned_prior_triplet_imports": 58,
+        "maximum_new_model_calls": 1411
+      },
+      {
+        "candidate_id": "sas_det_q1_c02",
+        "game_id": "0022500828",
+        "approved_role": "target_case_development",
+        "source_frame_range_inclusive": [
+          10668,
+          11898
+        ],
+        "source_pts_ticks_inclusive": [
+          16021862,
+          17868662
+        ],
+        "source_end_exclusive_pts_ticks": 17870192,
+        "time_base": "1/90000",
+        "frames": 1231,
+        "timeline_duration_seconds": 20.537,
+        "maximum_complete_triplets": 1229,
+        "planned_prior_triplet_imports": 58,
+        "maximum_new_model_calls": 1171
+      }
+    ],
+    "totals": {
+      "frames": 2702,
+      "timeline_seconds": 45.078,
+      "maximum_complete_triplets": 2698,
+      "planned_prior_triplet_imports": 116,
+      "maximum_new_model_calls": 2582,
+      "new_native_png_frames": 2582,
+      "prior_native_png_frames_reused": 120
+    },
+    "model_recipe": {
+      "checkpoint_sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+      "prior_diagnostic_config": {
+        "path": "configs/ball_tracking/wasb_experiments/nba_wasb_native_pilot_diagnostic_v0_1.json",
+        "sha256": "bb63377d515203b8c7fc1a89d6cb55acd84102587d9e53226fa10bb4d88f6eca",
+        "bytes": 1500
+      },
+      "native_input_spacing_ms": [
+        16,
+        17
+      ],
+      "strict_heatmap_threshold": 0.3,
+      "selection": "largest_component_mass_then_stable_candidate_index",
+      "aggregation": "mean_aligned_complete_triplets",
+      "triplet_stride": 1,
+      "dtype": "float32",
+      "training": false,
+      "threshold_search": false,
+      "motion_selector": false,
+      "interpolation": false,
+      "padding": false,
+      "resampling": false,
+      "external_model_context": false
+    },
+    "source_and_scene_policy": {
+      "source_pixels": "Original native RGB frames, with the existing 120 PNG records reused unchanged and remaining frames extracted into new ignored paths; lossy source previews are not model inputs.",
+      "raw_reads": "Bounded seeks/decodes covering only the two cores and necessary decoder preroll; no model inputs outside the cores, no full-game decode or full-source rehash.",
+      "verification": "Bind existing full-source audit and unchanged size/mtime, frame maps, exact extracted PTS and source RGB hashes. Separate input manifest contains no fabricated annotations.",
+      "cuts_replays": "Inspect source continuity before inference; explicitly segment any confirmed cut/replay boundary. No triplet crosses a declared boundary. Mark withheld frames if a segment cannot supply a complete triplet; record reduced counts rather than extending scope.",
+      "counts": "Triplet counts are maxima assuming no internal segmentation; reductions retain explicit reasons and do not authorize replacement inputs."
+    },
+    "cache_and_memory_policy": {
+      "prior_imports": "Read-only import of compatible prior triplets (116 planned) with their complete original identities, bytes and attempt receipts; record new-run provenance separately. A newly declared scene boundary can exclude an incompatible old triplet but never triggers its reinference.",
+      "invalid_prior_cache": "Investigate missing/mismatched/corrupt completed evidence; never silently delete, rewrite identities or reinfer completed triplets.",
+      "streaming": "Three-image rolling buffer and unfinished target sums, preserving ascending triplet-start float32 addition order.",
+      "resume": "Atomic completed caches, each actual model-call attempt retained, compatible completions reused; the 116 planned imports do not count as new calls.",
+      "old_pilot_result": "Preserve the original 120/120 short-context score and accepted videos. With no new scene boundary within a pilot's context, its 56 interior means should be identical and four edge means may change with longer context (112 unchanged and eight edge frames across both pilots). Report any boundary-related context difference separately."
+    },
+    "outputs": {
+      "root": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1",
+      "observations": "Every frame has native PTS, original source mapping, candidate list, selected point or explicit missing/withheld state, contribution count, confidence semantics and cache provenance.",
+      "summaries": "Observed/missing/withheld counts and native-time intervals are availability, not accuracy. No new-label scoring or repeat of the original pilot evaluation.",
+      "review": "Two complete source-plus-model videos at source PTS pacing, declared 1-second final holds, and a page with slower-playback controls. No fictitious reference points outside the accepted pilot; no invented ball trail across gaps.",
+      "assistant_review": "Inspect all timeline frames and missing/switch/recovery intervals; give exact source-frame review cues. Human acceptance remains separate.",
+      "storage": "Keep raw frames,caches,videos and detailed audits ignored; commit only source,tests,configuration and compact records."
+    },
+    "validation_before_real_run": [
+      "Producer-derived native input and cache import fixtures; exact old source/model/identity checks.",
+      "Streamed float32 aggregation matches existing producer semantics, including endpoints and segmented boundaries.",
+      "Changed scope/cadence rejection; no old-cache reinference; resume preserves failed attempts and consumed calls.",
+      "Actual synthetic native-PTS extraction/render transport, complete frame inventory and final hold.",
+      "Focused checks proportional to changed components; no automatic full-suite rerun."
+    ],
+    "resource_estimate": {
+      "basis": "Existing 120 PNG sizes, 116 NPZ sizes and observed 2.797 seconds of model-call time; extrapolations, not measured longer-run results.",
+      "new_png_bytes_estimate": 5856000000,
+      "new_compressed_cache_bytes_estimate": 4104000000,
+      "combined_new_png_cache_gib_estimate": 9.28,
+      "additional_video_and_receipt_storage": true,
+      "model_call_seconds_estimate": 62.3,
+      "end_to_end_working_minutes_estimate": [
+        15,
+        30
+      ],
+      "estimate_is_hard_cap": false,
+      "safeguards": "Check current disk/RAM/GPU/process ownership; bounded frame loading, single owned model worker, preserve attempts. Stream review encoding to avoid thousands of retained composite images."
+    }
+  },
+  "limits": {
+    "training": false,
+    "new_label_scoring": false,
+    "threshold_search": false,
+    "motion_selector": false,
+    "interpolation": false,
+    "source_scope_extension": false,
+    "full_game_decode_or_full_source_rehash": false,
+    "old_pilot_reinference": false,
+    "exact_possession_boundaries_accepted": false,
+    "independent_test_game": false,
+    "DET_excluded_from_fitting": true,
+    "TOR_in_scope": false,
+    "holdout_release": false,
+    "nba_identity_or_calibration_accepted": false,
+    "new_model_output_human_review": "pending_actual_outputs",
+    "phase_acceptance": false,
+    "nfhs_finish_line_unchanged": true,
+    "negative_motion_result_unchanged": true,
+    "motion_human_reviews_pending": 3
+  },
+  "preserved_history": "The original proposal remains an immutable proposed/pending snapshot; this later approval authorizes its exact scope. Preserve all original pilot outputs, reviews, failed attempts and consumed resources."
+}

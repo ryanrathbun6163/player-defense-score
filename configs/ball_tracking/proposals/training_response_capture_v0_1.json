@@ -1,0 +1,261 @@
+{
+  "schema_version": "training_response_capture_proposal/v0.1",
+  "status": "CPU_preparation_complete_GPU_capture_proposed_unrun",
+  "created_at_utc": "2026-10-28T16:44:39.415663+00:00",
+  "branch": "codex/ball-detector-baseline",
+  "head": "8c040fca385dd8fffa0d7a13c45c53e79950bae1",
+  "authority": {
+    "latest_user_statement": "Ok figure that out and move forward please chat",
+    "completed_scope": "Evidence reconciliation, source/cache inventory, nine focused tests and extraction/diagnosis of all288 exact saved training imports.",
+    "GPU_capture_approved": false,
+    "training_approved": false,
+    "selector_approved": false,
+    "Git_integration_approved": false
+  },
+  "decision_document": {
+    "path": "docs/ball_tracking_training_response_preparation.md",
+    "bytes": 14238,
+    "sha256": "bd578a2845ad00d3e45c2d251b9d730543cb5877a5e3af588ce4245f99c09711"
+  },
+  "prepared": {
+    "path": "data/outputs/ball_tracking/training_response_preparation_v0_1/prepared.json",
+    "bytes": 85892,
+    "sha256": "353b245c58cd6ab97f1a48830c408c1889d77b280ff6ed0ac3dd203191b41249"
+  },
+  "source_and_tests": [
+    {
+      "path": "src/ball_tracking/training_response_capture.py",
+      "bytes": 20505,
+      "sha256": "9d6be8b276a12b597729a20a71d5df81c243a0d27223a61ad16c89a2c6f0a998"
+    },
+    {
+      "path": "tests/test_training_response_capture.py",
+      "bytes": 7859,
+      "sha256": "bf87e750b2a659ee3b707b5507de74bd9f9034c5fb3a6a03b908543090143384"
+    }
+  ],
+  "focused_validation": {
+    "path": "data/outputs/ball_tracking/training_response_preparation_v0_1/focused_validation_final.log",
+    "bytes": 1799,
+    "sha256": "44bc61b453a9ca4c17a1424a8d1cfa5c3a1f9d52ab26c9a5b5fe8e668d6d3cd1"
+  },
+  "focused_tests_passed": 9,
+  "source_roles": {
+    "path": "configs/ball_tracking/completion_campaign/source_roles_v0_1.json",
+    "sha256": "3ae5de63eef918fdaafcfbac62c09ca46e14fa1c1fdf069739d731955a573200",
+    "bytes": 71569
+  },
+  "checkpoint": {
+    "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/cosine/fit_v0_1/checkpoints/epoch_009.pth",
+    "sha256": "f4b721662ec3d8b546563feffcf5ce0d6319ed8ddc83f398830a0aac5d29c7b9",
+    "bytes": 6084071
+  },
+  "capture_scope": {
+    "training_blocks": 26,
+    "frames": 3329,
+    "eligible": 2941,
+    "certain_hidden": 147,
+    "masked": 241,
+    "exact_imported_frames": 288,
+    "new_forward_calls": 2995,
+    "maximum_full_pass_before_reuse": 3277,
+    "dtype": "float32",
+    "resolution_wh": [
+      768,
+      432
+    ],
+    "original_native_hash_and_observation_parity_required": true,
+    "label_blind_pool_extraction": {
+      "native": ">.3",
+      "additional": ">.01",
+      "duplicate_radius_source_px": 2,
+      "candidate_cap": null
+    },
+    "raw_map_bytes": 4417932544,
+    "protected_access": false,
+    "new_training_updates": 0,
+    "new_selector_runs": 0,
+    "new_labels": 0
+  },
+  "resources": {
+    "planning_GPU_minutes": [
+      3,
+      6
+    ],
+    "basis": "Prior same-model3329-frame3277-forward training assessment185.375s, with extra loss work; new capture adds raw-map I/O and extraction. Estimate, not promised wall cap.",
+    "estimated_raw_storage_GB": 4.417932544,
+    "peak_GPU_memory_historical_MiB": 2718,
+    "fresh_graphics_app_isolation_and_telemetry_required": true,
+    "prior_graphics_crash_resolved": false,
+    "monitor": "Existing pinned gpu_supervision owned job,2s telemetry,80C/thermal/device/telemetry stops, no automatic retry."
+  },
+  "saved_CPU_increment": {
+    "summary": {
+      "frames:positive": 258,
+      "candidates:positive": 1468,
+      "native:eligible_match": 258,
+      "weak:eligible_match": 59,
+      "weak:eligible_localization_miss": 1148,
+      "frames:masked": 13,
+      "candidates:masked": 52,
+      "native:unknown_not_negative": 3,
+      "weak:unknown_not_negative": 49,
+      "frames:hidden": 17,
+      "candidates:hidden": 62,
+      "weak:certain_hidden_emission_opportunity": 62,
+      "native:eligible_localization_miss": 3
+    },
+    "support": {
+      "path": "data/outputs/ball_tracking/training_response_preparation_v0_1/saved_imports_v0_1/support_summary.json",
+      "bytes": 2282,
+      "sha256": "0b8826090451356fdcac74d0cf33b343165dd2930bf35015677f5cdde52ea629"
+    },
+    "seal": {
+      "path": "data/outputs/ball_tracking/training_response_preparation_v0_1/saved_imports_v0_1/sealed_extraction.json",
+      "bytes": 1724,
+      "sha256": "d84814730ce49ab93395ab5cd216b339e90e651334edeb0f410b78567a9efbb8"
+    },
+    "recount": {
+      "path": "data/outputs/ball_tracking/training_response_preparation_v0_1/saved_imports_v0_1/source_recount.json",
+      "bytes": 863,
+      "sha256": "1448c84cf88dad155409cdfb4cdd4542abef1e0170ee0e7d9d83a4253e8a61dd"
+    },
+    "recount_checks": 2165,
+    "new_model_calls": 0,
+    "new_training_updates": 0
+  },
+  "strong_pool_evidence": {
+    "frames:positive": 2941,
+    "candidates:positive": 3049,
+    "eligible:within10": 2953,
+    "eligible:farther_than10_plus_recorded_uncertainty": 70,
+    "frames:masked": 241,
+    "candidates:masked": 111,
+    "frames:hidden": 147,
+    "candidates:hidden": 2,
+    "eligible:outside10": 96
+  },
+  "strong_pool_by_game": {
+    "0022400868": {
+      "frames:positive": 836,
+      "candidates:positive": 930,
+      "eligible:within10": 848,
+      "eligible:farther_than10_plus_recorded_uncertainty": 57,
+      "frames:masked": 74,
+      "candidates:masked": 33,
+      "frames:hidden": 50,
+      "candidates:hidden": 2,
+      "eligible:outside10": 82
+    },
+    "0022400866": {
+      "frames:positive": 920,
+      "candidates:positive": 920,
+      "eligible:within10": 920,
+      "eligible:farther_than10_plus_recorded_uncertainty": 0,
+      "frames:masked": 30,
+      "candidates:masked": 11,
+      "frames:hidden": 10,
+      "candidates:hidden": 0
+    },
+    "0022500829": {
+      "frames:positive": 1055,
+      "candidates:positive": 1068,
+      "eligible:within10": 1055,
+      "eligible:farther_than10_plus_recorded_uncertainty": 13,
+      "frames:masked": 136,
+      "candidates:masked": 66,
+      "frames:hidden": 68,
+      "candidates:hidden": 0,
+      "eligible:outside10": 13
+    },
+    "possession_001": {
+      "frames:positive": 74,
+      "candidates:positive": 75,
+      "eligible:within10": 74,
+      "eligible:farther_than10_plus_recorded_uncertainty": 0,
+      "frames:hidden": 1,
+      "candidates:hidden": 0,
+      "eligible:outside10": 1
+    },
+    "possession_002": {
+      "frames:positive": 31,
+      "candidates:positive": 31,
+      "eligible:within10": 31,
+      "eligible:farther_than10_plus_recorded_uncertainty": 0,
+      "frames:hidden": 18,
+      "candidates:hidden": 0,
+      "frames:masked": 1,
+      "candidates:masked": 1
+    },
+    "possession_003": {
+      "frames:positive": 25,
+      "candidates:positive": 25,
+      "eligible:within10": 25,
+      "eligible:farther_than10_plus_recorded_uncertainty": 0
+    }
+  },
+  "history_and_research": {
+    "reused": "Completed Sessions1-16 review, selected foundation coverage, Session17/18 handoffs, maintained source/validation map and later complete weak/response/point/change results.",
+    "new_primary_reading": "Current training-fit assessment and all26 bound records, training package/caches/supervision code; targeted DeepSport candidate-presence method and SAM3 presence/setup primary sources.",
+    "no_fresh_full_transcript_or_every_paper_claim": true,
+    "primary_sources": [
+      {
+        "url": "https://arxiv.org/html/2204.00003",
+        "sections": [
+          "2.2",
+          "4.4",
+          "4.5"
+        ],
+        "scope": "Candidate-centered learned presence/diameter with different scale/data/metrics; not NBA reproduction."
+      },
+      {
+        "url": "https://github.com/gabriel-vanzandycke/deepsport/blob/main/tasks/ballsize_from_ballseg.py",
+        "git_blob_sha": "09a6cdf365731da173221621ced40b42fd040dd6",
+        "scope": "Candidate crop and target code inspected; no code imported."
+      },
+      {
+        "url": "https://arxiv.org/html/2511.16719v1",
+        "sections": [
+          "Presence Token",
+          "A.1"
+        ],
+        "scope": "Decoupled recognition/localization evidence; no NBA accuracy claim."
+      },
+      {
+        "url": "https://github.com/facebookresearch/sam3",
+        "scope": "Official runtime/checkpoint-access requirements checked; no account/access request, model download or inference."
+      }
+    ],
+    "open_alternatives": [
+      "point-conditioned candidate-quality pixel learning",
+      "separate presence learning",
+      "joint/temporal response evidence",
+      "basketball MonoTrack",
+      "specialist RF-DETR",
+      "learned basketball context",
+      "materially changed temporal/reseeding"
+    ]
+  },
+  "execution_requirements": {
+    "separate_explicit_GPU_approval": "Write a new gpu_approval.json only following actual user authorization; bind this prepared inventory and preserve the exact statement; training_approved remains false.",
+    "worker_module": "src.ball_tracking.training_response_capture",
+    "arguments": [
+      "--run",
+      "--monitor",
+      "data/outputs/ball_tracking/training_response_preparation_v0_1/monitoring/capture_attempt_001"
+    ],
+    "supervisor_module": "src.ball_tracking.gpu_supervision",
+    "supervisor_source": {
+      "path": "src/ball_tracking/gpu_supervision.py",
+      "bytes": 15015,
+      "sha256": "dbc03099c088f6c5b96aa6d1691f5dd11d7abf7c600c97e563344a7541256cd0"
+    },
+    "monitor_path": "data/outputs/ball_tracking/training_response_preparation_v0_1/monitoring/capture_attempt_001",
+    "before_launch": "Verify exactbranch/HEAD,index; frozen bindings; runtime pins; current graphics isolation, process ownership and free space. No current GPU-readiness claim from old snapshots."
+  },
+  "after_capture": "Audit native parity and label-blind pools, then census source/episode rejection and weak-positive support. Specify any later recognition experiment only after that evidence; no automatic fit or label campaign.",
+  "numerical_and_human_gates_unchanged": true,
+  "nine_inconclusive_recoveries_unchanged": true,
+  "model_adopted": false,
+  "editorial_finalization": "Opening status updated to completed CPU preparation before delivery; prior document/proposal/freeze drafts preserved under pre_delivery_draft. No implementation, measurement or scientific scope changed."
+}

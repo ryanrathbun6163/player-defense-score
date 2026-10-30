@@ -1,0 +1,200 @@
+{
+  "schema_version": "wasb_training_data_expansion_proposal/v0.1",
+  "status": "proposed_pending_Ryan_approval",
+  "prepared_date_local": "2026-10-08",
+  "timezone": "America/Phoenix",
+  "proposal_document": {
+    "path": "docs/ball_wasb_training_data_expansion.md",
+    "sha256": "90d7a5cb7926e22e1c12e3fc35af523d193201628cf7cb4f7ccefbb133417ab4"
+  },
+  "previous_experiment": {
+    "path": "configs/ball_tracking/wasb_experiments/wasb_basketball_adaptation_v0_1.json",
+    "sha256": "1a56a4d3bce9f1c85dd2d359e52d3e65d442049c04a2fa45e42bab74016c7cc9"
+  },
+  "completed_human_review": {
+    "path": "configs/ball_tracking/reviews/wasb_basketball_adaptation_visual_review_v0_1.json",
+    "sha256": "ecddd7fdb9261f02315a17266a0695cc38441524db451e242cce1b776af766f5"
+  },
+  "split_metadata": {
+    "path": "configs/ball_tracking/experiments/rfdetr_medium_development_evaluation_v0_2.json",
+    "sha256": "3a78cf26686c0624c1a45dec5c47e7bad182cc7d5cd658b639e11d47c0d75489"
+  },
+  "new_frames_to_annotate": 75,
+  "combined_training_frames": 150,
+  "new_windows": [
+    {
+      "possession_id": "possession_001",
+      "start_frame_index": 100,
+      "end_frame_index": 124,
+      "frame_count": 25,
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "annotation_status": "not_started",
+      "review_status": "not_started",
+      "training_only": true,
+      "source_preview": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/diagnostics/next_training_source_preview_v0_1/possession_001_000100_000124_source_preview.mp4",
+        "sha256": "3a76876affa7323e3c6a0eda0840eb135f868303863ab0613b505c18ab249f60"
+      },
+      "preview_decoded_frames": 25,
+      "separation_from_development_and_holdout": [
+        {
+          "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+          "intervening_frames": 25
+        },
+        {
+          "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+          "intervening_frames": 75
+        },
+        {
+          "window_id": "possession_001_frames_0300_0324_test_holdout_v0_1",
+          "intervening_frames": 175
+        }
+      ]
+    },
+    {
+      "possession_id": "possession_001",
+      "start_frame_index": 250,
+      "end_frame_index": 274,
+      "frame_count": 25,
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "annotation_status": "not_started",
+      "review_status": "not_started",
+      "training_only": true,
+      "source_preview": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/diagnostics/next_training_source_preview_v0_1/possession_001_000250_000274_source_preview.mp4",
+        "sha256": "8b2363c7b607aae7578dfd195ebe7ba7cf3a11a31bfdbe270a47326d493c1955"
+      },
+      "preview_decoded_frames": 25,
+      "separation_from_development_and_holdout": [
+        {
+          "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+          "intervening_frames": 175
+        },
+        {
+          "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+          "intervening_frames": 25
+        },
+        {
+          "window_id": "possession_001_frames_0300_0324_test_holdout_v0_1",
+          "intervening_frames": 25
+        }
+      ]
+    },
+    {
+      "possession_id": "possession_002",
+      "start_frame_index": 343,
+      "end_frame_index": 367,
+      "frame_count": 25,
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "annotation_status": "not_started",
+      "review_status": "not_started",
+      "training_only": true,
+      "source_preview": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/diagnostics/next_training_source_preview_v0_1/possession_002_000343_000367_source_preview.mp4",
+        "sha256": "6f884046631026d5efc314d792e85941071105b008533d92d356907d6859cc9f"
+      },
+      "preview_decoded_frames": 25,
+      "separation_from_development_and_holdout": [
+        {
+          "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+          "intervening_frames": 68
+        },
+        {
+          "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+          "intervening_frames": 293
+        },
+        {
+          "window_id": "possession_002_frames_0200_0224_test_holdout_v0_1",
+          "intervening_frames": 118
+        }
+      ]
+    }
+  ],
+  "combined_training_blocks": [
+    {
+      "possession_id": "possession_001",
+      "start_frame_index": 100,
+      "end_frame_index": 124
+    },
+    {
+      "possession_id": "possession_001",
+      "start_frame_index": 250,
+      "end_frame_index": 274
+    },
+    {
+      "possession_id": "possession_001",
+      "start_frame_index": 375,
+      "end_frame_index": 399
+    },
+    {
+      "possession_id": "possession_002",
+      "start_frame_index": 318,
+      "end_frame_index": 367
+    },
+    {
+      "possession_id": "possession_003",
+      "start_frame_index": 416,
+      "end_frame_index": 440
+    }
+  ],
+  "complete_triplets": 140,
+  "training_recipe": {
+    "initialization": "same_original_pretrained_checkpoint_not_previous_adapted_weights",
+    "updates": 200,
+    "batch_size": 2,
+    "sampled_triplets": 400,
+    "seed": 1234,
+    "optimizer": "Adam",
+    "learning_rate": 0.0001,
+    "remaining_settings": "unchanged from previous experiment; bind reviewed annotations before execution",
+    "checkpoint_selection": "final_update_200_only",
+    "augmentation": false
+  },
+  "evaluation": "same six development windows and primary0.5, existing fixed grid, old adapted checkpoint and RF controls",
+  "source_selection_records": [
+    {
+      "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/diagnostics/next_training_source_preview_v0_1/selection_preview.json",
+      "sha256": "e77d1fafe82518da522b989ad0d3de5cf84e857321ae3fb3e42d58c742d37cc9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/diagnostics/next_training_source_preview_v0_1/selection_followup.json",
+      "sha256": "0ab7eb379c9fde99de34170c790695f1113cb5c397af663ae4ec9b948474daa1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/diagnostics/next_training_source_preview_v0_1/selected_preview_videos.json",
+      "sha256": "fac3b69ad0c470ee527b8dbdd9b3f3f977c415e7ff7932c152c027854cd8a70b"
+    }
+  ],
+  "source_selection_notes": [
+    "Only source images inspected for proposed windows; no model inference or labels generated.",
+    "Four sparse frames from each of seven candidates inspected by AI; this is not human label review.",
+    "P002 continuation intentionally adjoins existing training; no development/holdout temporal context enters training.",
+    "Source byte hashes for the two proposed possessions were checked against their existing manifests.",
+    "Development failures informed selection; these data remain correlated footage from one game."
+  ],
+  "new_annotation_or_training_started": false,
+  "holdout_access": "metadata only",
+  "selected_operating_point": null,
+  "quality_gate": null
+}

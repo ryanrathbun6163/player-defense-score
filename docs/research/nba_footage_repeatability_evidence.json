@@ -1,0 +1,1167 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-19T02:04:32.295678+00:00",
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "7785a7bdbe4a3e75b799606e5754db9dbf824015",
+    "tracked_state": "clean"
+  },
+  "scope": "Two additional complete recording objects: acquisition, full A/V decode and sampled basketball coverage; no model evaluation",
+  "chosen_game_prior_evidence": "docs/research/nba_game_0022500828_acquisition_evidence.json",
+  "games": [
+    {
+      "game_id": "0022500829",
+      "date": "2026-02-23",
+      "away": "Sacramento Kings",
+      "home": "Memphis Grizzlies",
+      "source_page": "https://basketball-video.com/sacramento-kings-vs-memphis-grizzlies-full-game-replay-february-23-2026-nba",
+      "public_embed": "https://ok.ru/videoembed/12326430640726",
+      "source_file": "data/raw/nba/0022500829/0022500829_ok_12326430640726_1080p.mp4",
+      "bytes": 5112076363,
+      "sha256": "420eacca7a05f9eebfab6306fe6d28fe1ee0509362cbcc053fba09cfd61b062b",
+      "acquisition_seconds": 1263.384,
+      "range_count": 153,
+      "failed_transfer_attempts": 0,
+      "recorded_range_payload_bytes": 5112076363,
+      "additional_probe_bytes": 1,
+      "independent_assembly_audit_seconds": 6.203,
+      "video": {
+        "width": 1920,
+        "height": 1080,
+        "codec": "h264",
+        "nominal_fps": "60000/1001",
+        "average_fps": "2044962604/34116847",
+        "decoded_frames": 357233,
+        "container_duration_seconds": 5959.879689,
+        "first_pts": 0.033,
+        "last_pts": 5959.879689
+      },
+      "audio": [
+        {
+          "codec": "aac",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ],
+      "full_av_decode_returncode": 0,
+      "full_decode_runs": 1,
+      "decode_seconds": 170.11,
+      "decode_log_bytes": 0,
+      "decode_log_text": "",
+      "packet_timing_audit": {
+        "packet_count": 357233,
+        "valid_pts_count": 357233,
+        "declared_frame_count": "357233",
+        "missing_fields": {
+          "duration": 1
+        },
+        "missing_field_rows": [
+          {
+            "packet_row": 357233,
+            "missing_field": "duration",
+            "raw": [
+              "5959.863689",
+              "5959.846689",
+              "N/A",
+              "___"
+            ]
+          }
+        ],
+        "nonincreasing_dts_count": 0,
+        "first_pts": 0.033,
+        "last_pts": 5959.879689,
+        "presentation_delta_seconds_histogram": {
+          "0.026689": 1,
+          "0.016000": 113117,
+          "0.017000": 244094,
+          "0.017533": 2,
+          "0.017545": 7,
+          "0.017544": 9,
+          "0.017534": 1,
+          "0.016689": 1
+        },
+        "packet_duration_seconds_histogram": {
+          "0.026689": 1,
+          "0.016000": 113117,
+          "0.017000": 244094,
+          "0.017533": 3,
+          "0.017544": 16,
+          "0.016689": 1
+        },
+        "nonpositive_presentation_steps": 0,
+        "maximum_presentation_step": 0.026688999999999997,
+        "note": "Timestamp quantization and unavailable packet duration are reported separately. No nominal-versus-average rate exact equality is required. Regular timestamps do not establish absence of broadcaster edits."
+      },
+      "overview_images": 597,
+      "bound_image_records_checked": 599,
+      "visual_review": {
+        "created_at_utc": "2026-10-19T02:02:25.510452+00:00",
+        "game_id": "0022500829",
+        "date": "2026-02-23",
+        "away": "Sacramento Kings",
+        "home": "Memphis Grizzlies",
+        "score_order": "SAC-MEM (away-home)",
+        "identity_confirmed": true,
+        "identity_basis": "Fresh exact-game replay page/embed provenance plus visible SAC/MEM teams at FedExForum, opening jump ball, all four quarter-end scores and final123-114 matching the official NBA gamebook. The public player title itself is only a period and does not establish identity.",
+        "all_four_quarters_observed": true,
+        "observed_final_score_away_home": [
+          123,
+          114
+        ],
+        "source_sha256": "420eacca7a05f9eebfab6306fe6d28fe1ee0509362cbcc053fba09cfd61b062b",
+        "source_bytes": 5112076363,
+        "source_page": "https://basketball-video.com/sacramento-kings-vs-memphis-grizzlies-full-game-replay-february-23-2026-nba",
+        "public_player_page": "https://ok.ru/videoembed/12326430640726",
+        "official_gamebook": "https://statsdmz.nba.com/pdfs/20260223/20260223_SACMEM_book.pdf",
+        "official_reference_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\official_reference\\official_reference.json",
+        "broadcast": "NBC Sports California; score graphic at bottom right. Layout was visually inspected; no OCR was applied.",
+        "quarter_end_anchors": [
+          {
+            "image_id": "frame_000121",
+            "source_pts": 1199.257689,
+            "frame_index": 71880,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\full_verification\\overview\\frame_000121.jpg",
+            "image_sha256": "e6c5ce5dd8025b9c46423f10ffd4d0486a11a495c7e54aec9989e497ddb619f9",
+            "quarter": 1,
+            "visibleclock": "END1ST",
+            "score": [
+              33,
+              25
+            ],
+            "literal_zero_clock_observed": null,
+            "note": "End-of-first-quarter score graphic over a replay; literal0.0 was not established in this sampled review."
+          },
+          {
+            "image_id": "frame_000259",
+            "source_pts": 2578.334689,
+            "frame_index": 154542,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\full_verification\\overview\\frame_000259.jpg",
+            "image_sha256": "8077a9f9caf2e1407d8b8d0a1f38540c1b47261f13976b2b3d1236dfdba9748c",
+            "quarter": 2,
+            "visibleclock": "HALFTIME",
+            "score": [
+              63,
+              61
+            ],
+            "literal_zero_clock_observed": null,
+            "note": "Halftime score graphic over replay footage; literal0.0 was not established in this sampled review."
+          },
+          {
+            "image_id": "frame_000431",
+            "source_pts": 4297.185689,
+            "frame_index": 257570,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\full_verification\\overview\\frame_000431.jpg",
+            "image_sha256": "274195d3a1bc778b302981d399e5ac339ea972781bbe7f72122aa626fc30fc3d",
+            "quarter": 3,
+            "visibleclock": "END3RD (scorebug); 0.0 (arena display)",
+            "score": [
+              92,
+              89
+            ],
+            "literal_zero_clock_observed": true,
+            "note": "Players on court at period end with arena clock0.0."
+          },
+          {
+            "image_id": "frame_000597",
+            "source_pts": 5956.075689,
+            "frame_index": 357004,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\full_verification\\overview\\frame_000597.jpg",
+            "image_sha256": "87f0dc5d26ca5f0bd4f105ed80e52c082a551a88b188c446a8646729c448d7d6",
+            "quarter": 4,
+            "visibleclock": "4TH :00.0",
+            "score": [
+              123,
+              114
+            ],
+            "literal_zero_clock_observed": true,
+            "note": "Postgame player greetings; scorebug clock0.0 and final score."
+          }
+        ],
+        "quarter_start_and_early_play_anchors": [
+          {
+            "image_id": "frame_000002",
+            "source_pts": 10.052689,
+            "frame_index": 599,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\full_verification\\overview\\frame_000002.jpg",
+            "image_sha256": "e71097c4567d38385fbd1f6bd2dc0d6b42b3cf15806c6c3d7fef56b9b3ba4e43",
+            "quarter": 1,
+            "visibleclock": null,
+            "score": null,
+            "note": "Opening jump ball at center court, matching the official game opening context. No numeric clock/score overlay in this image."
+          },
+          {
+            "image_id": "frame_000003",
+            "source_pts": 20.045689,
+            "frame_index": 1198,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\full_verification\\overview\\frame_000003.jpg",
+            "image_sha256": "d5dc51d0835e92255394fb2a43cd88b7d11107ddde652a67ccf34ea0e6aa22a0",
+            "quarter": 1,
+            "visibleclock": "1ST 11:50",
+            "score": [
+              0,
+              0
+            ],
+            "note": "Early live court view."
+          },
+          {
+            "image_id": "frame_000124",
+            "source_pts": 1229.237689,
+            "frame_index": 73677,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\full_verification\\overview\\frame_000124.jpg",
+            "image_sha256": "3aa540738f26a9d911747d51b0b0bef41568af0a5b545c86acf29ae369f969be",
+            "quarter": 2,
+            "visibleclock": null,
+            "score": null,
+            "note": "Court action after START2ND transition graphic; no numeric overlay in this image."
+          },
+          {
+            "image_id": "frame_000125",
+            "source_pts": 1239.230689,
+            "frame_index": 74276,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\full_verification\\overview\\frame_000125.jpg",
+            "image_sha256": "60bf0e696745cc4d6cb3eea6fbd7150a46ca5b7a27d3ed1bf7ae2e9593a2832d",
+            "quarter": 2,
+            "visibleclock": "2ND 11:44",
+            "score": [
+              33,
+              25
+            ],
+            "note": "First numeric Q2 clock specifically inspected in this review; not asserted to be the earliest available clock in the file."
+          },
+          {
+            "image_id": "frame_000274",
+            "source_pts": 2728.234689,
+            "frame_index": 163527,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\full_verification\\overview\\frame_000274.jpg",
+            "image_sha256": "d49350eff9779e8a3e7cfcbbf8e4e3e7eb5e50ba72f11d8f12a4b67294aa6db3",
+            "quarter": 3,
+            "visibleclock": null,
+            "score": null,
+            "note": "Memphis baseline inbound sequence at opening of second half; no numeric overlay in this image."
+          },
+          {
+            "image_id": "frame_000275",
+            "source_pts": 2738.227689,
+            "frame_index": 164126,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\full_verification\\overview\\frame_000275.jpg",
+            "image_sha256": "09dd5ca00746759e7bc80c47c17eac95d84f147f15fd3d442d894568a2a53926",
+            "quarter": 3,
+            "visibleclock": "3RD 11:51 (scorebug); 11:50 (arena)",
+            "score": [
+              63,
+              61
+            ],
+            "note": "Early Q3 court action with one-second graphic/arena discrepancy visible."
+          },
+          {
+            "image_id": "frame_000436",
+            "source_pts": 4347.151689,
+            "frame_index": 260565,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\full_verification\\overview\\frame_000436.jpg",
+            "image_sha256": "2a625c3df7b90c2c4f62c80c216995380d195831e543c00899ec2423096b9889",
+            "quarter": 4,
+            "visibleclock": "START4TH (scorebug); 11:49 (arena)",
+            "score": [
+              92,
+              89
+            ],
+            "note": "START4TH label is delayed while live action is already underway; does not establish opening restart visibility."
+          }
+        ],
+        "first_last_frame_notes": {
+          "first": {
+            "image_id": "endpoint_01",
+            "source_pts": 0.033,
+            "frame_index": 0,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\full_verification\\endpoints\\endpoint_01.jpg",
+            "image_sha256": "e13b5f782594a480297450702b008563961c2a4d085325d92b6280572b3dc745",
+            "note": "Exact first decoded frame: pre-tip DeRozan close-up, Kings keys-of-game graphic, Memphis uniform and NBC Sports California logo. Opening jump follows in overview frame000002."
+          },
+          "last": {
+            "image_id": "endpoint_02",
+            "source_pts": 5959.879689,
+            "frame_index": 357232,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\full_verification\\endpoints\\endpoint_02.jpg",
+            "image_sha256": "0683c7e2fb6bdfba810d20e4c968a9cc7ca7f46220e6bd6922f0242744603d71",
+            "note": "Exact last decoded frame: postgame greetings with FINAL KINGS WIN, SAC123-MEM114 graphic.",
+            "visibleclock": "FINAL",
+            "score": [
+              123,
+              114
+            ]
+          }
+        },
+        "technical_result": {
+          "full_decode_passes": 1,
+          "ffmpeg_returncode": 0,
+          "actual_decoded_video_frames": 357233,
+          "frame_count_agrees_with_packet_count": true,
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "nominal_frame_rate": "60000/1001",
+          "average_frame_rate": "2044962604/34116847",
+          "container_duration_seconds": 5959.879689,
+          "video_duration_seconds": 5959.846689,
+          "first_video_pts": 0.033,
+          "last_video_pts": 5959.879689,
+          "overview_images": 597,
+          "overview_stride_decoded_frames": 599,
+          "endpoint_images": 2,
+          "all_audio_streams_decoded": true,
+          "full_decode_stderr_bytes": 0,
+          "note": "Audio was technically decoded, not comprehensively listened to. Timestamp distributions and one absent packet-duration field remain in packet_timing_audit.json."
+        },
+        "visual_sampling": {
+          "coarse_contact_sheets": [
+            "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\visual_review\\coarse\\contact_01.jpg",
+            "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\visual_review\\coarse\\contact_02.jpg",
+            "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\visual_review\\coarse\\contact_03.jpg",
+            "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\visual_review\\coarse\\contact_04.jpg",
+            "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\visual_review\\coarse\\contact_05.jpg"
+          ],
+          "coarse_stills": 100,
+          "boundary_contact_sheets": [
+            "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\visual_review\\q3_end\\contact_01.jpg",
+            "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\visual_review\\q4_start\\contact_01.jpg",
+            "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\visual_review\\ending\\contact_01.jpg"
+          ],
+          "boundary_stills_in_contact_sheets_including_overlap": 31,
+          "additional_individually_inspected_overview_ids": [
+            "frame_000001",
+            "frame_000002",
+            "frame_000003",
+            "frame_000123",
+            "frame_000124",
+            "frame_000125",
+            "frame_000274",
+            "frame_000275",
+            "frame_000431",
+            "frame_000436"
+          ],
+          "exact_endpoint_images_inspected": 2,
+          "new_targeted_media_decode_passes": 0,
+          "ocr_runs": 0
+        },
+        "preserved_failures": [
+          {
+            "kind": "acquisition_receipt_write_failure",
+            "original_receipt": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\acquisition_receipt.json",
+            "recovery_receipt": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\acquisition_recovery_receipt.json",
+            "description": "All153 ranges downloaded without network retry. WinError5 at receipt replacement halted the original helper before assembly. Original failure retained; separate recovery verified each part hash and assembled existing bytes. No redownload."
+          },
+          {
+            "kind": "premature_image_view",
+            "attempts": 2,
+            "path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\full_verification\\endpoints\\endpoint_01.jpg",
+            "description": "view_image was called before the endpoint output existed during the ongoing full decode; both returned file-not-found. After EOF, both endpoint files existed and were viewed. No additional extraction/decode was performed."
+          }
+        ],
+        "coverage_limits": [
+          "All four quarters observed means sampled visual presence, not possession-by-possession or uninterrupted48-minute certification.",
+          "The approximately10-second overview grid and minute-spaced coarse contacts can miss short cuts; no all-game OCR or exhaustive event reconstruction was performed.",
+          "Numeric0.0 for Q1/Q2 was not established; end-of-quarter and halftime graphics provide the observed score anchors instead.",
+          "Quarter-start graphics may appear after action resumes; Q4 START4TH is visible while the arena clock already reads11:49. Every period-opening restart is not certified.",
+          "Broadcast breaks, replays, delayed graphics and at least one dated January16,2026 flashback during the late-game timeout appear in the sampled file. A historical replay date is not treated as the live game date.",
+          "Successful byte acquisition/hash, packet timing and audio/video decode cannot establish that the source uploader retained every live action or every original broadcast frame.",
+          "This one additional game supports repeatability for this checked source only; it does not establish whole-season availability, future link longevity, rights clearance or League Pass capture reliability.",
+          "This assistant access review accepts no player/ball, calibration, identity-reconciliation, trajectory, dataset-split or pending human-review gate."
+        ],
+        "review_status": "assistant_access_review_not_human_pipeline_acceptance"
+      },
+      "original_acquisition_failure": {
+        "path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\acquisition_receipt.json",
+        "sha256": "8a387d8b132726d6789035f64fa6a37b496e57bf96b522d369f9eb7bce84893d",
+        "status": "failed_preserved",
+        "error_type": "PermissionError",
+        "finished_at_utc": "2026-10-19T01:54:05.457537+00:00",
+        "elapsed_seconds": 1204.344,
+        "description": "PermissionError WinError5 at receipt replacement before assembly; the exact reason for the transient access denial is unknown.",
+        "traceback_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\acquisition_failure_traceback.txt",
+        "traceback_capture": "Copied verbatim from exec session37464 terminal output; original helper did not persist stderr separately."
+      },
+      "local_assembly_recovery": {
+        "receipt_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sac_mem\\assembly_recovery_receipt.json",
+        "elapsed_seconds": 7.937,
+        "new_network_download_bytes": 0,
+        "part_hash_checks_passed": 153
+      },
+      "acquisition_seconds_meaning": "Wall time from original acquisition start through completed recovery, including the preserved failed attempt and interruption; recovery active seconds reported separately."
+    },
+    {
+      "game_id": "0022500843",
+      "date": "2026-02-25",
+      "away": "San Antonio Spurs",
+      "home": "Toronto Raptors",
+      "source_page": "https://basketball-video.com/san-antonio-spurs-vs-toronto-raptors-full-game-replay-february-25-2026-nba",
+      "public_embed": "https://ok.ru/videoembed/12310562081452",
+      "source_file": "data/raw/nba/0022500843/0022500843_ok_12310562081452_1080p.mp4",
+      "bytes": 4876137080,
+      "sha256": "714118e131a6bc3c8b24bfb6e4695feb2cd68aec8837bedadea55fa75e64cd9d",
+      "acquisition_seconds": 1180.188,
+      "range_count": 146,
+      "failed_transfer_attempts": 0,
+      "recorded_range_payload_bytes": 4876137080,
+      "additional_probe_bytes": 1,
+      "independent_assembly_audit_seconds": 5.812,
+      "video": {
+        "width": 1920,
+        "height": 1080,
+        "codec": "h264",
+        "nominal_fps": "60000/1001",
+        "average_fps": "1971036257/32883497",
+        "decoded_frames": 423838,
+        "container_duration_seconds": 7071.104021,
+        "first_pts": 0.033,
+        "last_pts": 7071.061689
+      },
+      "audio": [
+        {
+          "codec": "aac",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ],
+      "full_av_decode_returncode": 0,
+      "full_decode_runs": 1,
+      "decode_seconds": 190.25,
+      "decode_log_bytes": 129,
+      "decode_log_text": "[null @ 000001c2380bebc0] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 423840 >= 423840\n",
+      "packet_timing_audit": {
+        "packet_count": 423838,
+        "valid_pts_count": 423838,
+        "malformed_rows": 0,
+        "declared_frame_count": "423838",
+        "missing_fields": {
+          "duration": 1
+        },
+        "missing_field_examples": [
+          {
+            "row": 423838,
+            "field": "duration",
+            "raw": [
+              "7071.056689",
+              "7071.039689",
+              "N/A",
+              "___"
+            ]
+          }
+        ],
+        "nonincreasing_dts_count": 0,
+        "first_pts": 0.033,
+        "last_pts": 7071.061689,
+        "keyframe_count": 1179,
+        "presentation_step_histogram": {
+          "0.026689": 1,
+          "0.016000": 134208,
+          "0.017000": 289607,
+          "0.017533": 2,
+          "0.017545": 7,
+          "0.017544": 9,
+          "0.017534": 1,
+          "0.016689": 1,
+          "0.005000": 1
+        },
+        "duration_histogram": {
+          "0.026689": 1,
+          "0.016000": 134209,
+          "0.017000": 289607,
+          "0.017533": 3,
+          "0.017544": 16,
+          "0.016689": 1
+        },
+        "nonpositive_pts_steps": 0,
+        "minimum_pts_step": 0.005000000000109139,
+        "maximum_pts_step": 0.026688999999999997,
+        "note": "PTS, DTS and duration parsed independently. Missing duration does not discard PTS; nominal and average rates need not match."
+      },
+      "overview_images": 709,
+      "bound_image_records_checked": 709,
+      "visual_review": {
+        "created_utc": "2026-10-19T02:00:33.849445+00:00",
+        "game_id": "0022500843",
+        "away": "SAS",
+        "home": "TOR",
+        "date": "2026-02-25",
+        "review_status": "assistant_access_review_not_human_pipeline_acceptance",
+        "identity_confirmed": true,
+        "identity_basis": "Fresh public replay metadata plus actual Toronto court/team broadcasts, opening tip setup, all four quarter labels, score progression and final 110-107 agreeing with the official NBA gamebook. The date is from the source page and official game identity, not a directly read on-screen date.",
+        "all_four_quarters_observed": true,
+        "observed_final_score_away_home": [
+          110,
+          107
+        ],
+        "source_video_sha256": "714118e131a6bc3c8b24bfb6e4695feb2cd68aec8837bedadea55fa75e64cd9d",
+        "quarter_end_anchors": [
+          {
+            "id": "frame_000178",
+            "source_pts": 1768.876689,
+            "frame_index": 106023,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000178.jpg",
+            "image_sha256": "4bf882736e659e177332ad5080da3a838a2735143c5d983a96163c53b7e42e90",
+            "quarter": 1,
+            "visibleclock": "END 1ST",
+            "score": [
+              30,
+              29
+            ],
+            "anchor_kind": "period_end_graphic",
+            "literal_zero_clock_observed": false
+          },
+          {
+            "id": "frame_000327",
+            "source_pts": 3257.880689,
+            "frame_index": 195274,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000327.jpg",
+            "image_sha256": "4205871082f58db12e5c1c23a4ea37524247d45649f6982768107fa538e5fb5e",
+            "quarter": 2,
+            "visibleclock": "2ND :02.3",
+            "score": [
+              57,
+              59
+            ],
+            "anchor_kind": "late_quarter_score_matching_official_period_end",
+            "literal_zero_clock_observed": false,
+            "limit": "This is a late-quarter anchor, not a directly observed Q2 zero/end graphic. Start-Q3 graphic separately corroborates the same score."
+          },
+          {
+            "id": "frame_000472",
+            "source_pts": 4706.911689,
+            "frame_index": 282129,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000472.jpg",
+            "image_sha256": "c7fce043a1c84ebb26fbe9306b05fa3dfc4d230baf1aaef61e838e66f35650c6",
+            "quarter": 3,
+            "visibleclock": "END 3RD; arena clock 0.0",
+            "score": [
+              78,
+              90
+            ],
+            "anchor_kind": "period_end_graphic_with_arena_zero",
+            "literal_zero_clock_observed": true
+          },
+          {
+            "id": "frame_000690",
+            "source_pts": 6885.454689,
+            "frame_index": 412711,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000690.jpg",
+            "image_sha256": "486b068dca36b59ad6a5a508cf5754ef232c991a373ceb74de947726f65bed83",
+            "quarter": 4,
+            "visibleclock": "FINAL",
+            "score": [
+              110,
+              107
+            ],
+            "anchor_kind": "final_graphic",
+            "literal_zero_clock_observed": false
+          }
+        ],
+        "quarter_end_anchor_note": "Only actual observed images are listed. Q2 is explicitly a late-quarter 2.3-second anchor with next-period corroboration; exact Q2 zero/end graphic remains unobserved in this sparse review. END/FINAL graphics are not silently relabeled literal clock 0:00.",
+        "additional_observed_anchors": [
+          {
+            "id": "frame_000044",
+            "source_pts": 429.771689,
+            "frame_index": 25757,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000044.jpg",
+            "image_sha256": "2a4e8cd37c2881b632af04b36717426488b6c2fdc7d2d52d82cba920ea999648",
+            "visibleclock": null,
+            "score": null,
+            "note": "Toronto center-court jump setup before the tip."
+          },
+          {
+            "id": "frame_000045",
+            "source_pts": 439.765689,
+            "frame_index": 26356,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000045.jpg",
+            "image_sha256": "31d5cef6ebb3ec0e196985b2f7b0748029322f1f4cf19fb0a1a529d808c10cc0",
+            "visibleclock": null,
+            "score": null,
+            "note": "Overhead center-court jump-ball setup."
+          },
+          {
+            "id": "frame_000046",
+            "source_pts": 449.758689,
+            "frame_index": 26955,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000046.jpg",
+            "image_sha256": "c80cfa413ba4cd781c87d9c4f200d822e13144e1064c6eee72c419255249e469",
+            "visibleclock": null,
+            "score": null,
+            "note": "Overhead image shows the opening tip underway."
+          },
+          {
+            "id": "frame_000048",
+            "source_pts": 469.745689,
+            "frame_index": 28153,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000048.jpg",
+            "image_sha256": "cf329f667ce01e21cc4b6486b8cd2f1631321bc5d39c6be126521ea4e4acca9f",
+            "visibleclock": "1ST 11:45",
+            "score": [
+              0,
+              0
+            ],
+            "note": "Early Q1 stopped clock before the first free throws, consistent with the official opening sequence."
+          },
+          {
+            "id": "frame_000060",
+            "source_pts": 589.664689,
+            "frame_index": 35341,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000060.jpg",
+            "image_sha256": "2e0719a479d03a1420cab25065b03677b7ef6e85b2314774c4947374df174143",
+            "visibleclock": "1ST 10:32",
+            "score": [
+              6,
+              2
+            ],
+            "note": "Actual SAS-TOR first-quarter court view."
+          },
+          {
+            "id": "frame_000200",
+            "source_pts": 1988.729689,
+            "frame_index": 119201,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000200.jpg",
+            "image_sha256": "4c4c92e077756316e0e1668db14e8052651f2361f2798a5ca2494ea3e2d669fe",
+            "visibleclock": "2ND 10:27",
+            "score": [
+              35,
+              29
+            ],
+            "note": "Actual SAS-TOR second-quarter free-throw setup."
+          },
+          {
+            "id": "frame_000330",
+            "source_pts": 3287.860689,
+            "frame_index": 197071,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000330.jpg",
+            "image_sha256": "081b21a8a85fb51b898c62c6b4b09159ed7250d8a3354b1326c4ea3fc9f758f0",
+            "visibleclock": "START 3RD; arena12:00",
+            "score": [
+              57,
+              59
+            ],
+            "note": "Next-period opening graphic corroborates Q2 ending score; a full Q2 end sequence was not separately watched."
+          },
+          {
+            "id": "frame_000340",
+            "source_pts": 3387.793689,
+            "frame_index": 203061,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000340.jpg",
+            "image_sha256": "8e86be7261e56aa8f7d4b9517fd5e585fa01cb8258017be6c6042ddcaced1516",
+            "visibleclock": "3RD 11:09",
+            "score": [
+              59,
+              62
+            ],
+            "note": "Actual third-quarter court view."
+          },
+          {
+            "id": "frame_000477",
+            "source_pts": 4756.877689,
+            "frame_index": 285124,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000477.jpg",
+            "image_sha256": "0a35fc2d094e3b14afef5577d59d2c234b4696eeac578275dca3a9f520407b82",
+            "visibleclock": "4TH 11:47",
+            "score": [
+              78,
+              90
+            ],
+            "note": "Fourth-quarter court view before the first Q4 score."
+          },
+          {
+            "id": "frame_000687",
+            "source_pts": 6855.474689,
+            "frame_index": 410914,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000687.jpg",
+            "image_sha256": "08b9b0537a4b86cc97b06743b022a1b6823643d4fe2bb6b20678b66117a70331",
+            "visibleclock": "4TH :08.4",
+            "score": [
+              110,
+              107
+            ],
+            "note": "Late-game dead-ball setup after final official score."
+          },
+          {
+            "id": "frame_000688",
+            "source_pts": 6865.467689,
+            "frame_index": 411513,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000688.jpg",
+            "image_sha256": "2e92c25d47aadcabf43b7e1d8b6512a914d827db7f95eecc55f4e8a685665a2f",
+            "visibleclock": "4TH :08.4",
+            "score": [
+              110,
+              107
+            ],
+            "note": "Toronto inbound setup for the final possession."
+          },
+          {
+            "id": "frame_000689",
+            "source_pts": 6875.460689,
+            "frame_index": 412112,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000689.jpg",
+            "image_sha256": "8d4c9dc139cb114af65521fc0ee303b291b7a815e1116e3a81b8d78ee58bb07e",
+            "visibleclock": "4TH :00.2",
+            "score": [
+              110,
+              107
+            ],
+            "note": "Spurs player controls the ball near the end, after the official final-shot/rebound times. The specific missed three and rebound were not isolated by these sparse images."
+          }
+        ],
+        "first_last_frame_notes": {
+          "first": {
+            "id": "frame_000001",
+            "source_pts": 0.033,
+            "frame_index": 0,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000001.jpg",
+            "image_sha256": "2c6bf7325fbd30e0e38fafc862b1fb2c7f9882c6fe754aa840beb2264812d484",
+            "note": "Actual first decoded video frame is a Spurs broadcast intro graphic, not opening live play."
+          },
+          "last": {
+            "id": "frame_000709",
+            "source_pts": 7071.061689,
+            "frame_index": 423837,
+            "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000709.jpg",
+            "image_sha256": "8ab75aaf5d28bf83b6b3100a433d358dbf445457a0d127eaedfe92275268b01b",
+            "note": "Actual last decoded video frame shows the Toronto arena with FINAL graphic and SAS110-TOR107. Both its frame index and PTS bind to the complete decode."
+          }
+        },
+        "pregame_limit": {
+          "id": "frame_000025",
+          "source_pts": 239.898689,
+          "frame_index": 14376,
+          "image_path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview\\frame_000025.jpg",
+          "image_sha256": "32bffb6dcdd5c945748340838bc9bce4c5db9ebfb1156eb0a9173c15a35cc286",
+          "note": "Pregame contains a Spurs-Pistons highlight with different court and Q3 scoreboard. This is part of this newly acquired broadcast, excluded from SAS-TOR quarter coverage and not a new review of the earlier chosen-game experiment."
+        },
+        "coverage_limits": [
+          "Sparse full-frame overviews approximately 9.993 source seconds apart and a minute-spaced scoreboard index do not prove all live possessions, all 48 game minutes, or absence of editorial cuts.",
+          "Pregame includes highlights from another game; quarter labels there are excluded from actual SAS-TOR coverage.",
+          "Exact Q1 and Q4 zero clocks were not isolated; END 1ST and FINAL graphics were observed. Exact Q2 zero/end graphic was not isolated; late Q2 2.3s and start Q3 12:00 share 57-59.",
+          "The last inbound at 8.4s and later 0.2s are visible in sampled images; every intervening final-possession action was not reconstructed.",
+          "No all-game OCR, ball labeling, training, identity reconciliation, court calibration, accepted dataset split, or human pipeline acceptance occurred.",
+          "Full decode exited 0 with 423,838 frames and validated sample bindings, but one null-output DTS warning remains preserved. Source DTS and presentation-ordered PTS increase; nominal-rate rounding of the final 5ms step is a supported hypothesis, not an independently confirmed muxer diagnosis.",
+          "Technical access on this date does not establish uploader redistribution authority, project-use permission, or future source availability."
+        ],
+        "full_frames_individually_inspected": [
+          "frame_000001",
+          "frame_000002",
+          "frame_000010",
+          "frame_000025",
+          "frame_000040",
+          "frame_000060",
+          "frame_000100",
+          "frame_000140",
+          "frame_000180",
+          "frame_000200",
+          "frame_000340",
+          "frame_000360",
+          "frame_000500",
+          "frame_000530",
+          "frame_000310",
+          "frame_000320",
+          "frame_000325",
+          "frame_000465",
+          "frame_000470",
+          "frame_000475",
+          "frame_000044",
+          "frame_000045",
+          "frame_000046",
+          "frame_000047",
+          "frame_000048",
+          "frame_000327",
+          "frame_000328",
+          "frame_000329",
+          "frame_000471",
+          "frame_000472",
+          "frame_000473",
+          "frame_000477",
+          "frame_000178",
+          "frame_000179",
+          "frame_000330",
+          "frame_000332",
+          "frame_000333",
+          "frame_000687",
+          "frame_000688",
+          "frame_000689",
+          "frame_000690",
+          "frame_000709"
+        ],
+        "sparse_contact_index": {
+          "path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\visual_contacts\\contact_sources.json",
+          "bytes": 64820,
+          "sha256": "b1c95f866f07166259fcc79bd4cb39c94c71eaf3b68653f3c76e92e9df1308c5"
+        },
+        "sparse_contact_images_viewed": [
+          "minute_scoreboards_01.jpg",
+          "minute_scoreboards_02.jpg",
+          "minute_scoreboards_03.jpg"
+        ],
+        "input_bindings": [
+          {
+            "path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\overview_manifest.jsonl",
+            "bytes": 283296,
+            "sha256": "71ed1e551441e05a9643fa4a0348a6601e5af800dd61b9808483468c61dabb14"
+          },
+          {
+            "path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\verification_run_001\\verification_receipt.json",
+            "bytes": 8023,
+            "sha256": "f017ad968d45410dbf73007c06b0ce1dc2bcaa08d8732cc23e6315985834fad1"
+          },
+          {
+            "path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\official_reference\\official_reference.json",
+            "bytes": 25572,
+            "sha256": "350215d81a9130fb419b52207e1cd4e2e4391ee5052f9ddad22e6a7dfc199f63"
+          }
+        ],
+        "official_reference": {
+          "page": "https://www.nba.com/game/sas-vs-tor-0022500843",
+          "book": "https://statsdmz.nba.com/pdfs/20260225/20260225_SASTOR_book.pdf",
+          "cumulative_quarter_ends": [
+            {
+              "quarter": 1,
+              "away_score": 30,
+              "home_score": 29
+            },
+            {
+              "quarter": 2,
+              "away_score": 57,
+              "home_score": 59
+            },
+            {
+              "quarter": 3,
+              "away_score": 78,
+              "home_score": 90
+            },
+            {
+              "quarter": 4,
+              "away_score": 110,
+              "home_score": 107
+            }
+          ]
+        },
+        "resource_scope": {
+          "full_decode_count_this_lane": 1,
+          "extra_targeted_media_decodes": 0,
+          "ocr_runs": 0,
+          "extra_full_source_hash_passes": 0,
+          "training_runs": 0
+        },
+        "detailed_visual_sources": {
+          "path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\data\\outputs\\t\\nba_repeatable_access_2026-10-18\\sas_tor\\visual_access_sources.json",
+          "bytes": 17364,
+          "sha256": "994af38f68dc1820d01b6bed7d6fc72aa0a7c2db1640f79762d28837384957f4"
+        }
+      },
+      "acquisition_seconds_meaning": "Original successful acquisition elapsed wall time."
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/acquire_public_game.py",
+      "bytes": 9917,
+      "sha256": "96a1d103ede5934a8d2cf5323e51a41b3998c5b8cd6b0566c3e3871369ba1a6f"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/audit_assembled_game.py",
+      "bytes": 3582,
+      "sha256": "4bdf93452f24230e1b34086bb0c5e74c32f8e0dadb53b8aaf753b1da490cbfe9"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/audit_sac_mem_recovered.py",
+      "bytes": 3695,
+      "sha256": "bfb3cd6be4b23d0bc566f3c0d5ef9bd150829f68bd2ff46a83e3babec2c9bec4"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/build_repeatability_evidence.failed_preflight.py",
+      "bytes": 11450,
+      "sha256": "e0dbef96149b4e9ca32f2f666fbba65978c75b9bf53c2e1f72383a0dc212a079"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/build_repeatability_evidence.py",
+      "bytes": 11756,
+      "sha256": "31d4a00e8571faeee0a64bc35ab6338c2556ef7652856c2b8da563cc760b05a5"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/cleanup_preflight_failure.json",
+      "bytes": 421,
+      "sha256": "ed81d70baf8c4ac2bc4360400a20b87f94b6aecfee5c52fd98222066c2404bd2"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/cleanup_verified_parts.failed_preflight.ps1",
+      "bytes": 3667,
+      "sha256": "1e821cb74644a61f5461480da9e003236e111643b99292557e75ecd42ac6e487"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/cleanup_verified_parts.ps1",
+      "bytes": 3682,
+      "sha256": "275a245c799ee34384ebddf77e3983e377642b2a2c86196dc7f80a6692bc1a4d"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/evidence_builder_preflight_failure.json",
+      "bytes": 412,
+      "sha256": "89c2304c5c5eef8e4a54d2d54b78750ec021b2f7c0877a750da805645a18683f"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/image_integrity_manifest.json",
+      "bytes": 540093,
+      "sha256": "31bd5a062ad27f8f239bf1e1e6c08f537ac6877da3a8730163d1fa0000ad6e68"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/official_reference/0022500829_official_extract.txt",
+      "bytes": 2412,
+      "sha256": "b104766bc71a362219a592052f9d77c14ef6a75db00b5f6eb44e3157bf310406"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/official_reference/0022500843_official_extract.txt",
+      "bytes": 2831,
+      "sha256": "3c57649f9d1f16f7488f9e702e9d5fdfacd7b3ac543ac16fe7881f61fab71b6e"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/official_reference/helper_review.json",
+      "bytes": 3785,
+      "sha256": "11043c017604c83af09a1c6f4a4a023ec66fa6e29f1eed5bab0ee79adcd97d71"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/official_reference/official_reference.json",
+      "bytes": 25572,
+      "sha256": "350215d81a9130fb419b52207e1cd4e2e4391ee5052f9ddad22e6a7dfc199f63"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/official_reference/provenance_receipt.json",
+      "bytes": 1268,
+      "sha256": "76bd78a072a712075d8b82de1e26b181ceeb0a7d5893e96889929d9f8afd1903"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/acquisition_failure_traceback.txt",
+      "bytes": 1454,
+      "sha256": "2fe9c15e8faa10b002ed2066999c321473e710c2a75770387d9340a58dd0d5f4"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/acquisition_receipt.json",
+      "bytes": 120418,
+      "sha256": "8a387d8b132726d6789035f64fa6a37b496e57bf96b522d369f9eb7bce84893d"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/acquisition_recovery_receipt.json",
+      "bytes": 121956,
+      "sha256": "48d786ab28cf8bb35b4f0da446034d8c2285040b6bac850eb1139c8b245e1621"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/assembly_audit.json",
+      "bytes": 46307,
+      "sha256": "32e190cf04ce6324ba7b4edfc2afe8ba87a5f373949a5bf5e98a06272473776e"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/assembly_recovery_receipt.json",
+      "bytes": 34564,
+      "sha256": "60395fa40f2eead9a9e66d71154945fa5cbaa15aec372a3c92bb6ea4a88274bb"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/assembly_recovery_started.json",
+      "bytes": 881,
+      "sha256": "4da39da3591b74072ec9234f92d46f7b1a2af07e091ac30b8fbd54fc8d4604c4"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/finalize_recovery_receipt.py",
+      "bytes": 2366,
+      "sha256": "f16098d5705a7f3162c76240ab859c88a88a81138ec18b0e3255a28df2b1290b"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/full_verification/endpoint_manifest.jsonl",
+      "bytes": 681,
+      "sha256": "881ff85ece80685bf858c1d85d90bfd9742c4f4204675881d343667f45760755"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/full_verification/ffmpeg_progress.txt",
+      "bytes": 7623,
+      "sha256": "f692549a400d4f1b90b795ccef302747a1fb696687aae8509ca403860c7c72c8"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/full_verification/ffprobe.json",
+      "bytes": 4633,
+      "sha256": "e3a39c842263b06da25bb534862edf27d9b09eedb1834e54d3cf3ab5a1dc58c6"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/full_verification/full_decode.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/full_verification/overview_manifest.jsonl",
+      "bytes": 206855,
+      "sha256": "0e035de187abe2b3f243bdd0e5c65f73baf102ec4aadaefac281efea1d1f34a0"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/full_verification/packet_timing_audit.json",
+      "bytes": 1158,
+      "sha256": "4133e78b3cf82875c87405ecbdd1318c20b7396d858ae4277fda72a36aeb63be"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/full_verification/verification_receipt.json",
+      "bytes": 8071,
+      "sha256": "8a9d1beeb8c5e8417632ebf67e99038d9484be5c1f5733388eeebd32a4ffd96c"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/make_contacts.py",
+      "bytes": 2153,
+      "sha256": "bbe7e345bfa3fb361382b8eca27aa615fd7fc6f99e6ef91187a81e55545efea2"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/recover_assembly.py",
+      "bytes": 3662,
+      "sha256": "080429db06fb4d4223402819b9dc08b4a32d8da74affbb4b56a3ce139c2f08c0"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/report.md",
+      "bytes": 4572,
+      "sha256": "18d66bd49bdba9c0e3ae97805996b857509ff6b5841c09ad1aa9c3f17cae5ee9"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/save_visual_review.py",
+      "bytes": 9754,
+      "sha256": "9b8a5faf6ead2f3ce24dc93a9c3ae94f03ace2879d1aa0128657ece6d8ddb0be"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/verify_recording.py",
+      "bytes": 10029,
+      "sha256": "bf8de93297716695be2a12b42e0a899c7fa5e2dee75e0bd3c711c66da9e02262"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/visual_access_summary.json",
+      "bytes": 14748,
+      "sha256": "7a92b014cd59195d9a73165172fd54bdc6363946fdac4601413150b1446c81a3"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem_config.json",
+      "bytes": 340,
+      "sha256": "8a122f6e34b1086d9e2b64a62dbe92637d9f47d4574825b2dfdd411ac69ef873"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor/acquisition_receipt.json",
+      "bytes": 115128,
+      "sha256": "55aa75b625c462a2e3c0fedf77b386dc372f33e454d3bc3d17690cad5b42e9cb"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor/assembly_audit.json",
+      "bytes": 44235,
+      "sha256": "c162100d57b1e856e43b4ee7583867a36c0a3de52d839f652869e61d616a1041"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor/decode_warning_diagnostic.json",
+      "bytes": 1249,
+      "sha256": "b5cbc9aefcaf27c2fea34ad322c355f8e003de07e6536ba40e387ec88af023f8"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor/make_scoreboard_contacts.py",
+      "bytes": 1874,
+      "sha256": "750b2fc74ab969d47b24ee8037add891413128a4d171828eb85f7405302a94a3"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor/verification_run_001/ffmpeg_progress.txt",
+      "bytes": 8151,
+      "sha256": "605fa66060ffe5f82f9fd050b0eb2236f950bf3300da9c643f1cdfabc50041b3"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor/verification_run_001/ffprobe.json",
+      "bytes": 4633,
+      "sha256": "4c5f09b6f01a28ae44f1a64b7dc5f27560c802b0bf19cc07fd88ce39a0d46e10"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor/verification_run_001/full_decode.stderr.txt",
+      "bytes": 129,
+      "sha256": "a72d6db15dbeb04adcc2af764907666479194b02de86401569c069237c5247f6"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor/verification_run_001/overview_manifest.jsonl",
+      "bytes": 283296,
+      "sha256": "71ed1e551441e05a9643fa4a0348a6601e5af800dd61b9808483468c61dabb14"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor/verification_run_001/packet_timing_audit.json",
+      "bytes": 1141,
+      "sha256": "e95e1704534499c50e94696cf2f2808ac15cbca9944cbde6fa15c4a1bf3d6177"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor/verification_run_001/verification_receipt.json",
+      "bytes": 8023,
+      "sha256": "f017ad968d45410dbf73007c06b0ce1dc2bcaa08d8732cc23e6315985834fad1"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor/verify_recording.py",
+      "bytes": 12838,
+      "sha256": "8538c5ddd431eec6026297e90b92842b023ad411f3bd73b2a8d1ab56481ad9ef"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor/visual_access_sources.json",
+      "bytes": 17364,
+      "sha256": "994af38f68dc1820d01b6bed7d6fc72aa0a7c2db1640f79762d28837384957f4"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor/visual_access_summary.json",
+      "bytes": 16549,
+      "sha256": "b64f549451589eccf1dd9a8aed70e485f15ecca26e4243a9b9300c1576dc1640"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor/visual_contacts/contact_sources.json",
+      "bytes": 64820,
+      "sha256": "b1c95f866f07166259fcc79bd4cb39c94c71eaf3b68653f3c76e92e9df1308c5"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor/write_visual_summary.py",
+      "bytes": 10667,
+      "sha256": "f26cdfaf694b09d30d20a13d75955657199f7df946a231b99e8e3baab1841d76"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sas_tor_config.json",
+      "bytes": 338,
+      "sha256": "798b22806232afc6ff1ce4694b6b153bb7e28b67df78dd689235e49f68d2db65"
+    },
+    {
+      "path": "data/outputs/t/nba_repeatable_access_2026-10-18/verified_parts_cleanup.json",
+      "bytes": 105089,
+      "sha256": "da77ca301fef776a80b3f7f4220e60cf84b9ea021d49fd93a9ceeed1fc720abb"
+    }
+  ],
+  "limits": {
+    "entire_catalog_verified": false,
+    "all_live_possessions_certified": false,
+    "future_uptime_guaranteed": false,
+    "independent_distribution_providers_tested": 1,
+    "underlying_footage_rights_established": false,
+    "chosen_game_q4_opening_limitation_resolved": false
+  },
+  "scientific_scope": {
+    "ball_model_calls": 0,
+    "training_runs": 0,
+    "ball_labels_added": 0,
+    "existing_holdouts_opened": false,
+    "completed_reviews_repeated": false,
+    "new_motion_human_reviews_pending": 3,
+    "new_games_development_visible": true,
+    "independent_game_holdout_designated": false
+  },
+  "successful_duplicate_parts_cleanup": {
+    "status": "complete",
+    "deleted_files": 299,
+    "deleted_bytes": 9988213443,
+    "scope": "Only successful duplicate range .bin files after complete-file audit and full A/V decode. Sidecars, failures, source recordings and all other evidence retained."
+  },
+  "cleanup_preflight_failure": {
+    "status": "preflight_failed_no_deletions",
+    "error": "Cleanup byte total mismatch",
+    "cause": "Measure-Object -Property bytes produced no result for ordered dictionary records; explicit integer summation matches 5112076363 SAC bytes.",
+    "outputs_deleted": 0,
+    "receipt_created": false,
+    "original_script": "cleanup_verified_parts.failed_preflight.ps1",
+    "timestamp_utc": "2026-10-19T02:00:25.4594892Z"
+  },
+  "evidence_builder_preflight_failure": {
+    "status": "preflight_failed_before_final_writes",
+    "error_type": "KeyError",
+    "field": "source_video_sha256",
+    "producer": "sac_mem/visual_access_summary.json",
+    "explanation": "Consumer assumed the SAS visual producer field also existed at SAC top level; inspect actual SAC producer schema and bind its source hash explicitly. No evidence file, image manifest or raw sidecar had been written."
+  },
+  "hashed_saved_images": 1308,
+  "new_complete_recordings_verified": 2,
+  "complete_recordings_verified_including_chosen": 3,
+  "repeatability_statement": "Public-page-to-file acquisition, full decoding and sampled game identity/quarter coverage succeeded on three specified recordings; no all-season or every-possession guarantee."
+}

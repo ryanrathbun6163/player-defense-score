@@ -1,0 +1,80 @@
+{
+  "schema_version": "ball_detection_visual_review_record/v0.1",
+  "record_id": "rfdetr_medium_pilot_candidate_comparison_review_record_v0_1",
+  "experiment_id": "rfdetr_medium_image_only_baseline_v0_1",
+  "review_id": "rfdetr_medium_pilot_candidate_comparison_v0_1",
+  "prepared_at_utc": "2026-08-24T05:03:14Z",
+  "prepared_by": "codex",
+  "preparation_authorization": {
+    "authorized_by": "ryan",
+    "statement": "I authorize you to separately prepare the review record",
+    "recording_method": "explicit_user_statement_in_current_codex_task"
+  },
+  "bound_evidence": {
+    "review_plan_path": "configs/ball_tracking/reviews/rfdetr_medium_pilot_candidate_comparison_v0_1.json",
+    "review_plan_sha256": "8262c47fc3d837a2a8613c71279b4cb8d825b2b1e67cbdf99f4dc70fec9554a6",
+    "scoring_report_path": "data/outputs/ball_tracking/evaluations/rfdetr_medium_image_only_baseline_v0_1/protocol_adjudication_grid_v0_1.json",
+    "scoring_report_sha256": "5ae9050b5a89cd403a619fe062a906a532aafc90bbdc77a9757304687675b1f7",
+    "visual_review_bundle_path": "data/outputs/ball_tracking/detection_review/rfdetr_medium_pilot_candidate_comparison_v0_1/1839c277da12f4b136ebfd651e40b0df",
+    "visual_review_bundle_input_sha256": "1839c277da12f4b136ebfd651e40b0df98e490e19887a31b5e220e87cea28207",
+    "visual_review_manifest_sha256": "3fc2e78d6b58847cbcc287465a5b56c4925379fcbc83110805dbe772f3b7f0c8",
+    "renderer_code_commit": "b7a887f55705623889625edf60028e2e39d38dc4"
+  },
+  "agent_review": {
+    "status": "completed",
+    "scope": "structural_numerical_and_visual_evidence_inspection",
+    "all_three_pilots_present": true,
+    "all_75_source_frames_present": true,
+    "both_descriptive_views_present": true,
+    "p002_reviewed_frame_by_frame": true,
+    "final_frames_directly_inspected": [
+      {
+        "possession_id": "possession_001",
+        "frame_index": 399,
+        "comparison_frame_sha256": "43528b307b648f20f144a7f29b485dc8a14eb958f85b833ea69f0ff207596ed0"
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 342,
+        "comparison_frame_sha256": "5babe6dba5a5154d4b3326d2b2df2bd7f17857b9b44c060bc1179136f34c9a90"
+      },
+      {
+        "possession_id": "possession_003",
+        "frame_index": 440,
+        "comparison_frame_sha256": "c70126f91589b66a554f151d3b13c56ccdb280e8423ad31335e0a636a895a4f3"
+      }
+    ],
+    "p002_observations": {
+      "confidence_035_radius_10": {
+        "true_positive_count": 4,
+        "false_positive_count": 10,
+        "false_negative_count": 12,
+        "precision": 0.2857142857142857,
+        "recall": 0.25
+      },
+      "confidence_020_radius_10": {
+        "true_positive_count": 6,
+        "false_positive_count": 33,
+        "false_negative_count": 10,
+        "precision": 0.15384615384615385,
+        "recall": 0.375
+      },
+      "reviewed_sequence_statement": "Frames 318-320 match in both views; the lower-confidence view additionally recovers frames 321 and 333 while admitting substantially more false candidates. Frames 322-329, 331, and 334 remain misses in both displayed views. Frame 330 has no reviewed truth geometry, frame 335 remains explicitly ambiguous and unscored, and frames 336-342 remain reviewed not-visible negatives with no accepted candidates."
+    }
+  },
+  "human_visual_approval": {
+    "status": "approved",
+    "approved_by": "ryan",
+    "approved_at_utc": "2026-08-24T05:05:09Z",
+    "approval_statement": "I approve the three-pilot candidate-versus-truth visual-review package and all three final frames.",
+    "recording_method": "explicit_user_statement_in_current_codex_task"
+  },
+  "decision_constraints": {
+    "selected_operating_point": null,
+    "quality_gate": null,
+    "model_winner_claimed": false,
+    "generalization_claimed": false,
+    "embargoed_window_predictions_accessed": false,
+    "evaluation_window_embargo_preserved": true
+  }
+}

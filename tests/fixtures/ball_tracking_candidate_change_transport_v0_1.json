@@ -1,0 +1,1774 @@
+{
+  "kind": "exact_captured_producer_transport_not_new_outcome_study",
+  "source_query_registry": {
+    "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_preparation_v0_1/attempt_003/queries.jsonl",
+    "bytes": 30560007,
+    "sha256": "477e42a897dca2989c7f3abcdbb2c2af1e1c94ebaed11dfe9e39a12628a2613e"
+  },
+  "point_analysis": {
+    "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/analysis_v0_1/completed.json",
+    "bytes": 43225860,
+    "sha256": "fac2ed57039564c960f1197594a1c37bc69eb97f0a7776343c3f8d657b2b5a0b"
+  },
+  "cases": [
+    {
+      "label": "120:native",
+      "block": {
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "domain": "nba",
+        "game_id": "0022400879",
+        "role": "checkpoint_validation",
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/4.mp4",
+          "sha256": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 503
+        },
+        "time_base": "1/60000",
+        "reference_bindings": [
+          {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/accepted/reference.json",
+            "sha256": "f4f1a8c50d8ef8206d1896b91fcd5136f2d7c154deb58a406c5dd88c6bb91669",
+            "bytes": 219263
+          },
+          {
+            "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_13_acceptance_v0_1.json",
+            "sha256": "4430439c9022c21a15830985fce8ed2a4b933cd5f6d2e38689f624ddbc377e96",
+            "bytes": 10588
+          }
+        ],
+        "reference_origin": "assistant_visual_proposal",
+        "human_review": {
+          "status": "accepted",
+          "reviewer_id": "Ryan",
+          "review_method": "human_visual_acceptance_of_assisted_proposals",
+          "user_statement": "Looks good chat. Move forward my brother",
+          "response_context": "Direct response to the complete NBA batch-13 overlay and acceptance question through HOU-OKC e01 frame 239, covering all 120 proposals including partial visibility and uncertainty.",
+          "scope": "Accept all 120 fixed checkpoint-validation reference judgments for frames 120-239, including 80 partially visible centers, 40 fully visible centers, zero unknown centers and 5-6px placement uncertainty. These references remain excluded from gradient fitting. Label acceptance does not authorize a fitting run, checkpoint scoring, final trajectories, future labels, or protected evaluation; the complete accepted package and executable recipe must still be frozen.",
+          "human_acceptance_date_local": "2026-10-23",
+          "timezone": "America/Phoenix",
+          "exact_user_event_timestamp_utc": null,
+          "recorded_at_utc": "2026-10-23T17:39:01.798874+00:00",
+          "playback_telemetry_claimed": false,
+          "independent_human_annotation_claimed": false
+        },
+        "selection_category": "held_ball_hands_heads",
+        "observed_source_content": "Q1 11:34; low baseline free throw view, held ball and release",
+        "source_id": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+        "range_inclusive": [
+          120,
+          239
+        ]
+      },
+      "frame": {
+        "source_frame_index": 120,
+        "source_pts_ticks": 120000,
+        "duration_ticks": 1000,
+        "png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000120.png",
+          "sha256": "0aa69b4091eda6fdfc557f3c472405dc71fe5a4d8d22e75dc791c0d3995c169b",
+          "bytes": 1090874,
+          "rgb_sha256": "e984df189518e92dcbce6213cfb5a207802aeaed4e71ebbf7273f276b7f47a96"
+        },
+        "annotation": {
+          "frame_index": 120,
+          "annotation_status": "labeled",
+          "visibility": "partially_visible",
+          "absence_reason": null,
+          "game_ball_identity_certainty": "certain",
+          "geometry": {
+            "center_xy_px": [
+              565,
+              428
+            ],
+            "source": "human_amodal_estimate",
+            "uncertainty_radius_px": 5
+          },
+          "localization_eligible": true,
+          "difficulty_tags": [
+            "compression_artifact",
+            "hand_overlap",
+            "motion_blur"
+          ],
+          "notes": "Assistant current-native-frame 120 proposal, pending Ryan acceptance. The ball is lowered in front of the shooter, with the dribbling hand overlapping the upper-left boundary; the exposed lower and side arcs support the whole-ball estimate."
+        },
+        "kind": "positive",
+        "valid_output_channel": true,
+        "state": "permitted",
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "reference_role": "checkpoint_validation"
+      },
+      "native": {
+        "source_frame_index": 120,
+        "source_pts_ticks": 120000,
+        "time_base": "1/60000",
+        "source_png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000120.png",
+          "sha256": "0aa69b4091eda6fdfc557f3c472405dc71fe5a4d8d22e75dc791c0d3995c169b",
+          "bytes": 1090874,
+          "rgb_sha256": "e984df189518e92dcbce6213cfb5a207802aeaed4e71ebbf7273f276b7f47a96"
+        },
+        "inference_status": "completed",
+        "state": "observed",
+        "withheld_reason": null,
+        "segment_kind": "fixed_checkpoint_validation",
+        "segment_source_frame_range_inclusive": [
+          120,
+          239
+        ],
+        "temporal_contributions": 1,
+        "mean_heatmap_sha256": "f967052ffb26596c47e23768619cbeb409cafab813d870c32d83cccd48e2d888",
+        "candidates": [
+          {
+            "candidate_index": 0,
+            "center_x": 563.9128112792969,
+            "center_y": 426.32588704427087,
+            "heatmap_x": 338.3476731796365,
+            "heatmap_y": 255.79552687326975,
+            "native_score": 38.90316390991211,
+            "component_pixels": 62,
+            "in_source_bounds": true
+          }
+        ],
+        "selected_candidate_index": 0,
+        "center_xy_px": [
+          563.9128112792969,
+          426.32588704427087
+        ],
+        "native_score": 38.90316390991211
+      },
+      "observation": {
+        "source_frame_index": 120,
+        "source_pts_ticks": 120000,
+        "time_base": "1/60000",
+        "source_png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000120.png",
+          "sha256": "0aa69b4091eda6fdfc557f3c472405dc71fe5a4d8d22e75dc791c0d3995c169b",
+          "bytes": 1090874,
+          "rgb_sha256": "e984df189518e92dcbce6213cfb5a207802aeaed4e71ebbf7273f276b7f47a96"
+        },
+        "inference_status": "completed",
+        "state": "observed",
+        "withheld_reason": null,
+        "segment_kind": "fixed_checkpoint_validation",
+        "segment_source_frame_range_inclusive": [
+          120,
+          239
+        ],
+        "temporal_contributions": 1,
+        "mean_heatmap_sha256": "f967052ffb26596c47e23768619cbeb409cafab813d870c32d83cccd48e2d888",
+        "candidates": [
+          {
+            "candidate_index": 0,
+            "center_x": 563.9128112792969,
+            "center_y": 426.32588704427087,
+            "heatmap_x": 338.3476731796365,
+            "heatmap_y": 255.79552687326975,
+            "native_score": 38.90316390991211,
+            "component_pixels": 62,
+            "in_source_bounds": true
+          }
+        ],
+        "selected_candidate_index": 0,
+        "center_xy_px": [
+          563.9128112792969,
+          426.32588704427087
+        ],
+        "native_score": 38.90316390991211
+      },
+      "query": {
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "source_id": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/4.mp4",
+          "sha256": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 503
+        },
+        "source_frame_index": 120,
+        "source_pts_ticks": 120000,
+        "duration_ticks": 1000,
+        "time_base": "1/60000",
+        "source_png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000120.png",
+          "sha256": "0aa69b4091eda6fdfc557f3c472405dc71fe5a4d8d22e75dc791c0d3995c169b",
+          "bytes": 1090874,
+          "rgb_sha256": "e984df189518e92dcbce6213cfb5a207802aeaed4e71ebbf7273f276b7f47a96"
+        },
+        "source_role": "checkpoint_validation",
+        "main_pool": {
+          "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/67eb4e0985d32a496946d9f2/pools.jsonl",
+          "bytes": 378124,
+          "sha256": "20998fd38632b9a01fcf3a099dc993e75081cd438158025b6d33495471d8bfbe"
+        },
+        "stress_choice_source": {
+          "path": "data/outputs/ball_tracking/weak_response_v0_1/comparison_v0_1/67eb4e0985d32a496946d9f2/sequence_weak.json",
+          "bytes": 194003,
+          "sha256": "e38603f946debdf1a3d8ddf23fed63a5570b4a101a92a03ed5a6054f78143d14"
+        },
+        "native_selected_candidate_index": 0,
+        "sheet_frame": true,
+        "query_id": "hou-vs-okc-0022400879_e01:120:main:0",
+        "cohort": "HOU_main",
+        "center_xy_px": [
+          563.9128112792969,
+          426.32588704427087
+        ],
+        "candidate": {
+          "candidate_index": 0,
+          "center_x": 563.9128112792969,
+          "center_y": 426.32588704427087,
+          "heatmap_x": 338.3476731796365,
+          "heatmap_y": 255.79552687326975,
+          "native_score": 38.90316390991211,
+          "component_pixels": 62,
+          "in_source_bounds": true,
+          "component_index": 0,
+          "original_index": 0,
+          "extraction": "native_component",
+          "threshold": 0.3,
+          "extraction_index": 0,
+          "extraction_original_index": 0,
+          "equivalent_extractions": [
+            {
+              "center_x": 563.7360127766927,
+              "center_y": 427.16191609700525,
+              "heatmap_x": 338.2415939257624,
+              "heatmap_y": 256.297159939109,
+              "native_score": 56.169010162353516,
+              "component_pixels": 340,
+              "in_source_bounds": true,
+              "original_index": null,
+              "extraction": "threshold_component",
+              "threshold": 0.01,
+              "extraction_index": 2
+            }
+          ]
+        },
+        "sheet_position": "native",
+        "geometry": {
+          "status": "complete_source_crop",
+          "crop_box": [
+            531,
+            394,
+            595,
+            458
+          ],
+          "padded_native_pixels": 0,
+          "point_input_xy": [
+            117.1512451171875,
+            114.80354817708348
+          ],
+          "point_grid_xy": [
+            7.903660365513393,
+            7.735967726934534
+          ],
+          "tokens": [
+            {
+              "row": 7,
+              "column": 7,
+              "sequence_index": 120,
+              "weight": 0.025436772679794904
+            },
+            {
+              "row": 7,
+              "column": 8,
+              "sequence_index": 121,
+              "weight": 0.2385955003856707
+            },
+            {
+              "row": 8,
+              "column": 7,
+              "sequence_index": 136,
+              "weight": 0.07090286180681185
+            },
+            {
+              "row": 8,
+              "column": 8,
+              "sequence_index": 137,
+              "weight": 0.6650648651277226
+            }
+          ],
+          "point_readout_unusable": false,
+          "padding_is_not_absence_evidence": true
+        },
+        "input_id": "42ee88d69a633417a41c18c2e985e8eb846251457d0d1da064cc69e6aec1a851",
+        "new_features_computed": false
+      },
+      "score": {
+        "query_id": "hou-vs-okc-0022400879_e01:120:main:0",
+        "input_id": "42ee88d69a633417a41c18c2e985e8eb846251457d0d1da064cc69e6aec1a851",
+        "cohort": "HOU_main",
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "frame": 120,
+        "geometry_status": "complete_source_crop",
+        "padded_native_pixels": 0,
+        "readouts": {
+          "cls": {
+            "margin": -0.19178618391585883,
+            "status": "observed",
+            "reason": null,
+            "unknown_bank_ids": [],
+            "best_ball": 0.17240424968880685,
+            "best_other_object": 0.3641904336046657,
+            "best_ball_ids": [
+              "appearance:sac_mem_q1_c01:999:mean:0"
+            ],
+            "best_other_object_ids": [
+              "appearance:sac_mem_q1_c01:1346:mean:1"
+            ]
+          },
+          "point": {
+            "margin": 0.02191827963120535,
+            "status": "observed",
+            "reason": null,
+            "unknown_bank_ids": [],
+            "best_ball": 0.30532255785636425,
+            "best_other_object": 0.2834042782251589,
+            "best_ball_ids": [
+              "appearance:sac_mem_q1_c01:999:mean:0"
+            ],
+            "best_other_object_ids": [
+              "appearance:sac_mem_q1_c01:942:mean:0"
+            ]
+          }
+        }
+      },
+      "descriptor": {
+        "id": 0,
+        "native": true,
+        "mass": 38.90316390991211,
+        "in_bounds": true,
+        "match": true,
+        "is_native_selected": true,
+        "features": {
+          "peak": 0.8622155596903381,
+          "cls": -0.19178618391585883,
+          "point": 0.02191827963120535
+        },
+        "feature_unknown_reasons": {},
+        "query_id": "hou-vs-okc-0022400879_e01:120:main:0",
+        "geometry_status": "complete_source_crop",
+        "localization_distance_px": 1.9961546791178828
+      },
+      "pool": {
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "source_frame_index": 120,
+        "source_pts_ticks": 120000,
+        "time_base": "1/60000",
+        "mean_heatmap_sha256": "f967052ffb26596c47e23768619cbeb409cafab813d870c32d83cccd48e2d888",
+        "width_px": 1280,
+        "height_px": 720,
+        "candidates": [
+          {
+            "candidate_index": 0,
+            "center_x": 563.9128112792969,
+            "center_y": 426.32588704427087,
+            "heatmap_x": 338.3476731796365,
+            "heatmap_y": 255.79552687326975,
+            "native_score": 38.90316390991211,
+            "component_pixels": 62,
+            "in_source_bounds": true,
+            "component_index": 0,
+            "original_index": 0,
+            "extraction": "native_component",
+            "threshold": 0.3,
+            "extraction_index": 0,
+            "extraction_original_index": 0,
+            "equivalent_extractions": [
+              {
+                "center_x": 563.7360127766927,
+                "center_y": 427.16191609700525,
+                "heatmap_x": 338.2415939257624,
+                "heatmap_y": 256.297159939109,
+                "native_score": 56.169010162353516,
+                "component_pixels": 340,
+                "in_source_bounds": true,
+                "original_index": null,
+                "extraction": "threshold_component",
+                "threshold": 0.01,
+                "extraction_index": 2
+              }
+            ]
+          },
+          {
+            "center_x": 1073.2264200846355,
+            "center_y": 364.281972249349,
+            "heatmap_x": 643.9358642717477,
+            "heatmap_y": 218.56918581752083,
+            "native_score": 2.2944352626800537,
+            "component_pixels": 95,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 0,
+            "candidate_index": 1,
+            "component_index": 1,
+            "extraction_original_index": 0,
+            "equivalent_extractions": []
+          },
+          {
+            "center_x": 547.7923583984375,
+            "center_y": 403.69214375813806,
+            "heatmap_x": 328.67540128206923,
+            "heatmap_y": 242.21527881928424,
+            "native_score": 0.09731955081224442,
+            "component_pixels": 9,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 1,
+            "candidate_index": 2,
+            "component_index": 2,
+            "extraction_original_index": 1,
+            "equivalent_extractions": []
+          },
+          {
+            "center_x": 546.6666666666667,
+            "center_y": 420.0,
+            "heatmap_x": 328.0,
+            "heatmap_y": 252.0,
+            "native_score": 0.010071304626762867,
+            "component_pixels": 1,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 3,
+            "candidate_index": 3,
+            "component_index": 3,
+            "extraction_original_index": 3,
+            "equivalent_extractions": []
+          }
+        ],
+        "diagnostic": {
+          "native_parity": true,
+          "native_count": 1,
+          "raw_threshold_0.01_count": 4,
+          "retained_weak_count": 3,
+          "pool_count": 4,
+          "labels_used": false
+        }
+      },
+      "expected_saved_score": {
+        "source_frame_index": 120,
+        "source_pts_ticks": 120000,
+        "duration_ticks": 1000,
+        "time_base": "1/60000",
+        "segment_id": "hou-vs-okc-0022400879_e01",
+        "exposure_role": "checkpoint_validation",
+        "continuity_segment_id": 0,
+        "boundary_before": "exposure_subset_boundary",
+        "boundary_after": null,
+        "reference_category": "eligible",
+        "visibility": "partially_visible",
+        "absence_reason": null,
+        "identity_certainty": "certain",
+        "localization_eligible": true,
+        "automatic_center_xy_px": [
+          563.9128112792969,
+          426.32588704427087
+        ],
+        "inference_status": "completed",
+        "outcome": "matched",
+        "raw_center_error_px": 1.9961546791178828,
+        "uncertainty_adjusted_error_px": 0,
+        "published_points": [
+          {
+            "point_id": "selected",
+            "center_xy_px": [
+              563.9128112792969,
+              426.32588704427087
+            ],
+            "point_origin": "automatic",
+            "wrong_object_decision": "pending",
+            "wrong_object_evidence": null
+          }
+        ],
+        "certain_hidden_emissions": 0,
+        "wrong_object_review_status": "pending"
+      },
+      "producer_series": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/comparison_v0_1/67eb4e0985d32a496946d9f2/native.json",
+        "bytes": 163537,
+        "sha256": "beaa8c11870cf5808718b73c08732d02950e75a49837ab536af2eee12c664da4"
+      },
+      "producer_score": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/comparison_v0_1/67eb4e0985d32a496946d9f2/native_score.json",
+        "bytes": 155337,
+        "sha256": "91424e644a0a355d237e65c3ba95cb284fe51024ef7fe074d40a52aab934be46"
+      }
+    },
+    {
+      "label": "194:sequence_weak",
+      "block": {
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "domain": "nba",
+        "game_id": "0022400879",
+        "role": "checkpoint_validation",
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/4.mp4",
+          "sha256": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 503
+        },
+        "time_base": "1/60000",
+        "reference_bindings": [
+          {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/accepted/reference.json",
+            "sha256": "f4f1a8c50d8ef8206d1896b91fcd5136f2d7c154deb58a406c5dd88c6bb91669",
+            "bytes": 219263
+          },
+          {
+            "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_13_acceptance_v0_1.json",
+            "sha256": "4430439c9022c21a15830985fce8ed2a4b933cd5f6d2e38689f624ddbc377e96",
+            "bytes": 10588
+          }
+        ],
+        "reference_origin": "assistant_visual_proposal",
+        "human_review": {
+          "status": "accepted",
+          "reviewer_id": "Ryan",
+          "review_method": "human_visual_acceptance_of_assisted_proposals",
+          "user_statement": "Looks good chat. Move forward my brother",
+          "response_context": "Direct response to the complete NBA batch-13 overlay and acceptance question through HOU-OKC e01 frame 239, covering all 120 proposals including partial visibility and uncertainty.",
+          "scope": "Accept all 120 fixed checkpoint-validation reference judgments for frames 120-239, including 80 partially visible centers, 40 fully visible centers, zero unknown centers and 5-6px placement uncertainty. These references remain excluded from gradient fitting. Label acceptance does not authorize a fitting run, checkpoint scoring, final trajectories, future labels, or protected evaluation; the complete accepted package and executable recipe must still be frozen.",
+          "human_acceptance_date_local": "2026-10-23",
+          "timezone": "America/Phoenix",
+          "exact_user_event_timestamp_utc": null,
+          "recorded_at_utc": "2026-10-23T17:39:01.798874+00:00",
+          "playback_telemetry_claimed": false,
+          "independent_human_annotation_claimed": false
+        },
+        "selection_category": "held_ball_hands_heads",
+        "observed_source_content": "Q1 11:34; low baseline free throw view, held ball and release",
+        "source_id": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+        "range_inclusive": [
+          120,
+          239
+        ]
+      },
+      "frame": {
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "duration_ticks": 1000,
+        "png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000194.png",
+          "sha256": "5df2ab074d93a525a71f41fb95e1f1f2321c07aa493b7d1d04c0cb549d89d967",
+          "bytes": 1096359,
+          "rgb_sha256": "2cefaf533ee904ff06a716d0b97f0d7e815b283f615ade55a0b02c02db295545"
+        },
+        "annotation": {
+          "frame_index": 194,
+          "annotation_status": "labeled",
+          "visibility": "partially_visible",
+          "absence_reason": null,
+          "game_ball_identity_certainty": "certain",
+          "geometry": {
+            "center_xy_px": [
+              575,
+              349
+            ],
+            "source": "human_amodal_estimate",
+            "uncertainty_radius_px": 6
+          },
+          "localization_eligible": true,
+          "difficulty_tags": [
+            "compression_artifact",
+            "hand_overlap",
+            "motion_blur"
+          ],
+          "notes": "AI current-source-image proposal, pending Ryan acceptance. Visible current-frame ball arcs support this whole-ball center despite hand overlap during the waist hold or shooting lift. Placement uncertainty is 6 native pixels for hand overlap, contour blur and compression. Every current native frame was individually inspected in source context and detail; no interpolation, extrapolation or model coordinates were used. Uncertainty is a non-statistical placement estimate. The legacy geometry source field does not imply human authorship."
+        },
+        "kind": "positive",
+        "valid_output_channel": true,
+        "state": "permitted",
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "reference_role": "checkpoint_validation"
+      },
+      "native": {
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "time_base": "1/60000",
+        "source_png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000194.png",
+          "sha256": "5df2ab074d93a525a71f41fb95e1f1f2321c07aa493b7d1d04c0cb549d89d967",
+          "bytes": 1096359,
+          "rgb_sha256": "2cefaf533ee904ff06a716d0b97f0d7e815b283f615ade55a0b02c02db295545"
+        },
+        "inference_status": "completed",
+        "state": "missing",
+        "withheld_reason": null,
+        "segment_kind": "fixed_checkpoint_validation",
+        "segment_source_frame_range_inclusive": [
+          120,
+          239
+        ],
+        "temporal_contributions": 3,
+        "mean_heatmap_sha256": "05a19092b47157a6967004805f08fe12b23e0ea469751484f30fd5e4aa4f3352",
+        "candidates": [],
+        "selected_candidate_index": null,
+        "center_xy_px": null,
+        "native_score": null
+      },
+      "observation": {
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "time_base": "1/60000",
+        "source_png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000194.png",
+          "sha256": "5df2ab074d93a525a71f41fb95e1f1f2321c07aa493b7d1d04c0cb549d89d967",
+          "bytes": 1096359,
+          "rgb_sha256": "2cefaf533ee904ff06a716d0b97f0d7e815b283f615ade55a0b02c02db295545"
+        },
+        "inference_status": "completed",
+        "state": "observed",
+        "withheld_reason": null,
+        "segment_kind": "fixed_checkpoint_validation",
+        "segment_source_frame_range_inclusive": [
+          120,
+          239
+        ],
+        "temporal_contributions": 3,
+        "mean_heatmap_sha256": "05a19092b47157a6967004805f08fe12b23e0ea469751484f30fd5e4aa4f3352",
+        "selected_candidate_index": 376,
+        "center_xy_px": [
+          575.0121053059896,
+          349.9252065022787
+        ],
+        "native_score": 8.966519355773926,
+        "selection_method": "sequence_weak",
+        "selection_diagnostic": {
+          "selected_pool_position": 376,
+          "admitted_candidates": 3294,
+          "pool_candidates": 3323,
+          "global_alternative_margin": 0.008446199831269041,
+          "margin_semantics": "research objective units, not confidence",
+          "selected_support": {
+            "reason": "two_ended_model_support",
+            "before_position": 73,
+            "after_position": 84
+          }
+        },
+        "original_selected_candidate_index": null,
+        "original_center_xy_px": null,
+        "candidate_pool_count": 3323
+      },
+      "query": {
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "source_id": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/4.mp4",
+          "sha256": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 503
+        },
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "duration_ticks": 1000,
+        "time_base": "1/60000",
+        "source_png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000194.png",
+          "sha256": "5df2ab074d93a525a71f41fb95e1f1f2321c07aa493b7d1d04c0cb549d89d967",
+          "bytes": 1096359,
+          "rgb_sha256": "2cefaf533ee904ff06a716d0b97f0d7e815b283f615ade55a0b02c02db295545"
+        },
+        "source_role": "checkpoint_validation",
+        "main_pool": {
+          "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/67eb4e0985d32a496946d9f2/pools.jsonl",
+          "bytes": 378124,
+          "sha256": "20998fd38632b9a01fcf3a099dc993e75081cd438158025b6d33495471d8bfbe"
+        },
+        "stress_choice_source": {
+          "path": "data/outputs/ball_tracking/weak_response_v0_1/comparison_v0_1/67eb4e0985d32a496946d9f2/sequence_weak.json",
+          "bytes": 194003,
+          "sha256": "e38603f946debdf1a3d8ddf23fed63a5570b4a101a92a03ed5a6054f78143d14"
+        },
+        "native_selected_candidate_index": null,
+        "sheet_frame": false,
+        "query_id": "hou-vs-okc-0022400879_e01:194:stress",
+        "cohort": "HOU_stress",
+        "center_xy_px": [
+          575.0121053059896,
+          349.9252065022787
+        ],
+        "observation": {
+          "source_frame_index": 194,
+          "source_pts_ticks": 194000,
+          "time_base": "1/60000",
+          "source_png": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000194.png",
+            "sha256": "5df2ab074d93a525a71f41fb95e1f1f2321c07aa493b7d1d04c0cb549d89d967",
+            "bytes": 1096359,
+            "rgb_sha256": "2cefaf533ee904ff06a716d0b97f0d7e815b283f615ade55a0b02c02db295545"
+          },
+          "inference_status": "completed",
+          "state": "observed",
+          "withheld_reason": null,
+          "segment_kind": "fixed_checkpoint_validation",
+          "segment_source_frame_range_inclusive": [
+            120,
+            239
+          ],
+          "temporal_contributions": 3,
+          "mean_heatmap_sha256": "05a19092b47157a6967004805f08fe12b23e0ea469751484f30fd5e4aa4f3352",
+          "selected_candidate_index": 376,
+          "center_xy_px": [
+            575.0121053059896,
+            349.9252065022787
+          ],
+          "native_score": 8.966519355773926,
+          "selection_method": "sequence_weak",
+          "selection_diagnostic": {
+            "selected_pool_position": 376,
+            "admitted_candidates": 3294,
+            "pool_candidates": 3323,
+            "global_alternative_margin": 0.008446199831269041,
+            "margin_semantics": "research objective units, not confidence",
+            "selected_support": {
+              "reason": "two_ended_model_support",
+              "before_position": 73,
+              "after_position": 84
+            }
+          },
+          "original_selected_candidate_index": null,
+          "original_center_xy_px": null,
+          "candidate_pool_count": 3323
+        },
+        "sheet_position": "stress",
+        "geometry": {
+          "status": "complete_source_crop",
+          "crop_box": [
+            543,
+            317,
+            607,
+            381
+          ],
+          "padded_native_pixels": 0,
+          "point_input_xy": [
+            113.54842122395848,
+            117.20082600911473
+          ],
+          "point_grid_xy": [
+            7.64631580171132,
+            7.907201857793909
+          ],
+          "tokens": [
+            {
+              "row": 7,
+              "column": 7,
+              "sequence_index": 120,
+              "weight": 0.03282123652884008
+            },
+            {
+              "row": 7,
+              "column": 8,
+              "sequence_index": 121,
+              "weight": 0.05997690567725054
+            },
+            {
+              "row": 8,
+              "column": 7,
+              "sequence_index": 136,
+              "weight": 0.32086296175983997
+            },
+            {
+              "row": 8,
+              "column": 8,
+              "sequence_index": 137,
+              "weight": 0.5863388960340694
+            }
+          ],
+          "point_readout_unusable": false,
+          "padding_is_not_absence_evidence": true
+        },
+        "input_id": "723c86d08b855820754b92d19352513e72355442e879619175df682241a80da4",
+        "new_features_computed": false
+      },
+      "score": {
+        "query_id": "hou-vs-okc-0022400879_e01:194:stress",
+        "input_id": "723c86d08b855820754b92d19352513e72355442e879619175df682241a80da4",
+        "cohort": "HOU_stress",
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "frame": 194,
+        "geometry_status": "complete_source_crop",
+        "padded_native_pixels": 0,
+        "readouts": {
+          "cls": {
+            "margin": -0.029986123977605694,
+            "status": "observed",
+            "reason": null,
+            "unknown_bank_ids": [],
+            "best_ball": 0.2922739104918143,
+            "best_other_object": 0.32226003446942,
+            "best_ball_ids": [
+              "appearance:sac_mem_q1_c01:999:mean:0"
+            ],
+            "best_other_object_ids": [
+              "appearance:sac_mem_q1_c01:1346:mean:1"
+            ]
+          },
+          "point": {
+            "margin": -0.04484293332575934,
+            "status": "observed",
+            "reason": null,
+            "unknown_bank_ids": [],
+            "best_ball": 0.3411311365409691,
+            "best_other_object": 0.38597406986672844,
+            "best_ball_ids": [
+              "appearance:sac_mem_q1_c01:999:mean:0"
+            ],
+            "best_other_object_ids": [
+              "appearance:sac_mem_q1_c01:942:mean:0"
+            ]
+          }
+        }
+      },
+      "descriptor": {
+        "emitted": true,
+        "features": {
+          "peak": 0.1357756055700206,
+          "cls": -0.029986123977605694,
+          "point": -0.04484293332575934
+        },
+        "tags": [
+          "all_emitted",
+          "reference_eligible",
+          "outcome_matched",
+          "native_missing",
+          "correct_gain_from_native_missing",
+          "prior_e01_ten_gain_cohort"
+        ],
+        "outcome": "matched",
+        "source_support": {
+          "reason": "two_ended_model_support",
+          "before_position": 73,
+          "after_position": 84
+        },
+        "query_id": "hou-vs-okc-0022400879_e01:194:stress",
+        "geometry_status": "complete_source_crop",
+        "localization_distance_px": 0.9252856911742764
+      },
+      "pool": {
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "time_base": "1/60000",
+        "mean_heatmap_sha256": "05a19092b47157a6967004805f08fe12b23e0ea469751484f30fd5e4aa4f3352",
+        "width_px": 1280,
+        "height_px": 720,
+        "candidates": [
+          {
+            "center_x": 574.2041524251302,
+            "center_y": 348.2054646809896,
+            "heatmap_x": 344.52248731775785,
+            "heatmap_y": 208.9232854282515,
+            "native_score": 5.954898834228516,
+            "component_pixels": 149,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 0,
+            "candidate_index": 0,
+            "component_index": 0,
+            "extraction_original_index": 0,
+            "equivalent_extractions": []
+          },
+          {
+            "center_x": 1074.1484578450522,
+            "center_y": 358.33333333333337,
+            "heatmap_x": 644.4890535201981,
+            "heatmap_y": 215.0,
+            "native_score": 0.02311018295586109,
+            "component_pixels": 2,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 1,
+            "candidate_index": 1,
+            "component_index": 1,
+            "extraction_original_index": 1,
+            "equivalent_extractions": []
+          },
+          {
+            "center_x": 573.3333333333334,
+            "center_y": 365.0,
+            "heatmap_x": 344.0,
+            "heatmap_y": 219.0,
+            "native_score": 0.010887314565479755,
+            "component_pixels": 1,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 2,
+            "candidate_index": 2,
+            "component_index": 2,
+            "extraction_original_index": 2,
+            "equivalent_extractions": []
+          },
+          {
+            "center_x": 1074.352010091146,
+            "center_y": 368.0619303385417,
+            "heatmap_x": 644.6112158270197,
+            "heatmap_y": 220.8371579547376,
+            "native_score": 0.5414477586746216,
+            "component_pixels": 33,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 3,
+            "candidate_index": 3,
+            "component_index": 3,
+            "extraction_original_index": 3,
+            "equivalent_extractions": []
+          },
+          {
+            "center_x": 878.3333333333334,
+            "center_y": 453.33333333333337,
+            "heatmap_x": 527.0,
+            "heatmap_y": 272.0,
+            "native_score": 0.010387802496552467,
+            "component_pixels": 1,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 4,
+            "candidate_index": 4,
+            "component_index": 4,
+            "extraction_original_index": 4,
+            "equivalent_extractions": []
+          }
+        ],
+        "diagnostic": {
+          "native_parity": true,
+          "native_count": 0,
+          "raw_threshold_0.01_count": 5,
+          "retained_weak_count": 5,
+          "pool_count": 5,
+          "labels_used": false
+        }
+      },
+      "expected_saved_score": {
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "duration_ticks": 1000,
+        "time_base": "1/60000",
+        "segment_id": "hou-vs-okc-0022400879_e01",
+        "exposure_role": "checkpoint_validation",
+        "continuity_segment_id": 0,
+        "boundary_before": null,
+        "boundary_after": null,
+        "reference_category": "eligible",
+        "visibility": "partially_visible",
+        "absence_reason": null,
+        "identity_certainty": "certain",
+        "localization_eligible": true,
+        "automatic_center_xy_px": [
+          575.0121053059896,
+          349.9252065022787
+        ],
+        "inference_status": "completed",
+        "outcome": "matched",
+        "raw_center_error_px": 0.9252856911742764,
+        "uncertainty_adjusted_error_px": 0,
+        "published_points": [
+          {
+            "point_id": "selected",
+            "center_xy_px": [
+              575.0121053059896,
+              349.9252065022787
+            ],
+            "point_origin": "automatic",
+            "wrong_object_decision": "pending",
+            "wrong_object_evidence": null
+          }
+        ],
+        "certain_hidden_emissions": 0,
+        "wrong_object_review_status": "pending"
+      },
+      "producer_series": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/comparison_v0_1/67eb4e0985d32a496946d9f2/sequence_weak.json",
+        "bytes": 194003,
+        "sha256": "e38603f946debdf1a3d8ddf23fed63a5570b4a101a92a03ed5a6054f78143d14"
+      },
+      "producer_score": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/comparison_v0_1/67eb4e0985d32a496946d9f2/sequence_weak_score.json",
+        "bytes": 157374,
+        "sha256": "31b579477e5012acca2cc29963a34bbd3bb60092580e319e745cb6a361d725cb"
+      }
+    },
+    {
+      "label": "194:motion_and_speed_narrow_weak",
+      "block": {
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "domain": "nba",
+        "game_id": "0022400879",
+        "role": "checkpoint_validation",
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/4.mp4",
+          "sha256": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 503
+        },
+        "time_base": "1/60000",
+        "reference_bindings": [
+          {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/accepted/reference.json",
+            "sha256": "f4f1a8c50d8ef8206d1896b91fcd5136f2d7c154deb58a406c5dd88c6bb91669",
+            "bytes": 219263
+          },
+          {
+            "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_13_acceptance_v0_1.json",
+            "sha256": "4430439c9022c21a15830985fce8ed2a4b933cd5f6d2e38689f624ddbc377e96",
+            "bytes": 10588
+          }
+        ],
+        "reference_origin": "assistant_visual_proposal",
+        "human_review": {
+          "status": "accepted",
+          "reviewer_id": "Ryan",
+          "review_method": "human_visual_acceptance_of_assisted_proposals",
+          "user_statement": "Looks good chat. Move forward my brother",
+          "response_context": "Direct response to the complete NBA batch-13 overlay and acceptance question through HOU-OKC e01 frame 239, covering all 120 proposals including partial visibility and uncertainty.",
+          "scope": "Accept all 120 fixed checkpoint-validation reference judgments for frames 120-239, including 80 partially visible centers, 40 fully visible centers, zero unknown centers and 5-6px placement uncertainty. These references remain excluded from gradient fitting. Label acceptance does not authorize a fitting run, checkpoint scoring, final trajectories, future labels, or protected evaluation; the complete accepted package and executable recipe must still be frozen.",
+          "human_acceptance_date_local": "2026-10-23",
+          "timezone": "America/Phoenix",
+          "exact_user_event_timestamp_utc": null,
+          "recorded_at_utc": "2026-10-23T17:39:01.798874+00:00",
+          "playback_telemetry_claimed": false,
+          "independent_human_annotation_claimed": false
+        },
+        "selection_category": "held_ball_hands_heads",
+        "observed_source_content": "Q1 11:34; low baseline free throw view, held ball and release",
+        "source_id": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+        "range_inclusive": [
+          120,
+          239
+        ]
+      },
+      "frame": {
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "duration_ticks": 1000,
+        "png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000194.png",
+          "sha256": "5df2ab074d93a525a71f41fb95e1f1f2321c07aa493b7d1d04c0cb549d89d967",
+          "bytes": 1096359,
+          "rgb_sha256": "2cefaf533ee904ff06a716d0b97f0d7e815b283f615ade55a0b02c02db295545"
+        },
+        "annotation": {
+          "frame_index": 194,
+          "annotation_status": "labeled",
+          "visibility": "partially_visible",
+          "absence_reason": null,
+          "game_ball_identity_certainty": "certain",
+          "geometry": {
+            "center_xy_px": [
+              575,
+              349
+            ],
+            "source": "human_amodal_estimate",
+            "uncertainty_radius_px": 6
+          },
+          "localization_eligible": true,
+          "difficulty_tags": [
+            "compression_artifact",
+            "hand_overlap",
+            "motion_blur"
+          ],
+          "notes": "AI current-source-image proposal, pending Ryan acceptance. Visible current-frame ball arcs support this whole-ball center despite hand overlap during the waist hold or shooting lift. Placement uncertainty is 6 native pixels for hand overlap, contour blur and compression. Every current native frame was individually inspected in source context and detail; no interpolation, extrapolation or model coordinates were used. Uncertainty is a non-statistical placement estimate. The legacy geometry source field does not imply human authorship."
+        },
+        "kind": "positive",
+        "valid_output_channel": true,
+        "state": "permitted",
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "reference_role": "checkpoint_validation"
+      },
+      "native": {
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "time_base": "1/60000",
+        "source_png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000194.png",
+          "sha256": "5df2ab074d93a525a71f41fb95e1f1f2321c07aa493b7d1d04c0cb549d89d967",
+          "bytes": 1096359,
+          "rgb_sha256": "2cefaf533ee904ff06a716d0b97f0d7e815b283f615ade55a0b02c02db295545"
+        },
+        "inference_status": "completed",
+        "state": "missing",
+        "withheld_reason": null,
+        "segment_kind": "fixed_checkpoint_validation",
+        "segment_source_frame_range_inclusive": [
+          120,
+          239
+        ],
+        "temporal_contributions": 3,
+        "mean_heatmap_sha256": "05a19092b47157a6967004805f08fe12b23e0ea469751484f30fd5e4aa4f3352",
+        "candidates": [],
+        "selected_candidate_index": null,
+        "center_xy_px": null,
+        "native_score": null
+      },
+      "observation": {
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "time_base": "1/60000",
+        "source_png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000194.png",
+          "sha256": "5df2ab074d93a525a71f41fb95e1f1f2321c07aa493b7d1d04c0cb549d89d967",
+          "bytes": 1096359,
+          "rgb_sha256": "2cefaf533ee904ff06a716d0b97f0d7e815b283f615ade55a0b02c02db295545"
+        },
+        "inference_status": "completed",
+        "state": "observed",
+        "withheld_reason": null,
+        "segment_kind": "fixed_checkpoint_validation",
+        "segment_source_frame_range_inclusive": [
+          120,
+          239
+        ],
+        "temporal_contributions": 3,
+        "mean_heatmap_sha256": "05a19092b47157a6967004805f08fe12b23e0ea469751484f30fd5e4aa4f3352",
+        "selected_candidate_index": 0,
+        "center_xy_px": [
+          574.2041524251302,
+          348.2054646809896
+        ],
+        "native_score": 5.954898834228516,
+        "selection_method": "motion_and_speed_narrow_weak",
+        "selection_diagnostic": {
+          "selected_pool_position": 0,
+          "admitted_candidates": 5,
+          "pool_candidates": 5,
+          "global_alternative_margin": 0.04495742175753037,
+          "margin_semantics": "research objective units, not confidence",
+          "selected_support": {
+            "reason": "two_ended_model_support",
+            "before_position": 73,
+            "after_position": 84
+          }
+        },
+        "original_selected_candidate_index": null,
+        "original_center_xy_px": null,
+        "candidate_pool_count": 5
+      },
+      "query": {
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "source_id": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/4.mp4",
+          "sha256": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 503
+        },
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "duration_ticks": 1000,
+        "time_base": "1/60000",
+        "source_png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000194.png",
+          "sha256": "5df2ab074d93a525a71f41fb95e1f1f2321c07aa493b7d1d04c0cb549d89d967",
+          "bytes": 1096359,
+          "rgb_sha256": "2cefaf533ee904ff06a716d0b97f0d7e815b283f615ade55a0b02c02db295545"
+        },
+        "source_role": "checkpoint_validation",
+        "main_pool": {
+          "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/67eb4e0985d32a496946d9f2/pools.jsonl",
+          "bytes": 378124,
+          "sha256": "20998fd38632b9a01fcf3a099dc993e75081cd438158025b6d33495471d8bfbe"
+        },
+        "stress_choice_source": {
+          "path": "data/outputs/ball_tracking/weak_response_v0_1/comparison_v0_1/67eb4e0985d32a496946d9f2/sequence_weak.json",
+          "bytes": 194003,
+          "sha256": "e38603f946debdf1a3d8ddf23fed63a5570b4a101a92a03ed5a6054f78143d14"
+        },
+        "native_selected_candidate_index": null,
+        "sheet_frame": false,
+        "query_id": "hou-vs-okc-0022400879_e01:194:main:0",
+        "cohort": "HOU_main",
+        "center_xy_px": [
+          574.2041524251302,
+          348.2054646809896
+        ],
+        "candidate": {
+          "center_x": 574.2041524251302,
+          "center_y": 348.2054646809896,
+          "heatmap_x": 344.52248731775785,
+          "heatmap_y": 208.9232854282515,
+          "native_score": 5.954898834228516,
+          "component_pixels": 149,
+          "in_source_bounds": true,
+          "original_index": null,
+          "extraction": "threshold_component",
+          "threshold": 0.01,
+          "extraction_index": 0,
+          "candidate_index": 0,
+          "component_index": 0,
+          "extraction_original_index": 0,
+          "equivalent_extractions": []
+        },
+        "sheet_position": "first_weak",
+        "geometry": {
+          "status": "complete_source_crop",
+          "crop_box": [
+            542,
+            316,
+            606,
+            380
+          ],
+          "padded_native_pixels": 0,
+          "point_input_xy": [
+            114.31660970052098,
+            114.32185872395848
+          ],
+          "point_grid_xy": [
+            7.70118640718007,
+            7.7015613374256064
+          ],
+          "tokens": [
+            {
+              "row": 7,
+              "column": 7,
+              "sequence_index": 120,
+              "weight": 0.08917752900022932
+            },
+            {
+              "row": 7,
+              "column": 8,
+              "sequence_index": 121,
+              "weight": 0.20926113357416423
+            },
+            {
+              "row": 8,
+              "column": 7,
+              "sequence_index": 136,
+              "weight": 0.2096360638197007
+            },
+            {
+              "row": 8,
+              "column": 8,
+              "sequence_index": 137,
+              "weight": 0.49192527360590577
+            }
+          ],
+          "point_readout_unusable": false,
+          "padding_is_not_absence_evidence": true
+        },
+        "input_id": "b0513d5e6521cd76f3d5a16f1284d79ec7515b054986c765169bf4b878172c4d",
+        "new_features_computed": false
+      },
+      "score": {
+        "query_id": "hou-vs-okc-0022400879_e01:194:main:0",
+        "input_id": "b0513d5e6521cd76f3d5a16f1284d79ec7515b054986c765169bf4b878172c4d",
+        "cohort": "HOU_main",
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "frame": 194,
+        "geometry_status": "complete_source_crop",
+        "padded_native_pixels": 0,
+        "readouts": {
+          "cls": {
+            "margin": -0.039046487114729855,
+            "status": "observed",
+            "reason": null,
+            "unknown_bank_ids": [],
+            "best_ball": 0.2917415485461085,
+            "best_other_object": 0.33078803566083836,
+            "best_ball_ids": [
+              "appearance:sac_mem_q1_c01:999:mean:0"
+            ],
+            "best_other_object_ids": [
+              "appearance:sac_mem_q1_c01:1346:mean:1"
+            ]
+          },
+          "point": {
+            "margin": -0.017265820199715565,
+            "status": "observed",
+            "reason": null,
+            "unknown_bank_ids": [],
+            "best_ball": 0.35035534026414206,
+            "best_other_object": 0.3676211604638576,
+            "best_ball_ids": [
+              "appearance:sac_mem_q1_c01:999:mean:0"
+            ],
+            "best_other_object_ids": [
+              "appearance:sac_mem_q1_c01:942:mean:0"
+            ]
+          }
+        }
+      },
+      "descriptor": {
+        "id": 0,
+        "native": false,
+        "mass": 5.954898834228516,
+        "in_bounds": true,
+        "match": true,
+        "is_native_selected": false,
+        "features": {
+          "peak": 0.13682782357492926,
+          "cls": -0.039046487114729855,
+          "point": -0.017265820199715565
+        },
+        "feature_unknown_reasons": {},
+        "query_id": "hou-vs-okc-0022400879_e01:194:main:0",
+        "geometry_status": "complete_source_crop",
+        "localization_distance_px": 1.1245709117619007
+      },
+      "pool": {
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "time_base": "1/60000",
+        "mean_heatmap_sha256": "05a19092b47157a6967004805f08fe12b23e0ea469751484f30fd5e4aa4f3352",
+        "width_px": 1280,
+        "height_px": 720,
+        "candidates": [
+          {
+            "center_x": 574.2041524251302,
+            "center_y": 348.2054646809896,
+            "heatmap_x": 344.52248731775785,
+            "heatmap_y": 208.9232854282515,
+            "native_score": 5.954898834228516,
+            "component_pixels": 149,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 0,
+            "candidate_index": 0,
+            "component_index": 0,
+            "extraction_original_index": 0,
+            "equivalent_extractions": []
+          },
+          {
+            "center_x": 1074.1484578450522,
+            "center_y": 358.33333333333337,
+            "heatmap_x": 644.4890535201981,
+            "heatmap_y": 215.0,
+            "native_score": 0.02311018295586109,
+            "component_pixels": 2,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 1,
+            "candidate_index": 1,
+            "component_index": 1,
+            "extraction_original_index": 1,
+            "equivalent_extractions": []
+          },
+          {
+            "center_x": 573.3333333333334,
+            "center_y": 365.0,
+            "heatmap_x": 344.0,
+            "heatmap_y": 219.0,
+            "native_score": 0.010887314565479755,
+            "component_pixels": 1,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 2,
+            "candidate_index": 2,
+            "component_index": 2,
+            "extraction_original_index": 2,
+            "equivalent_extractions": []
+          },
+          {
+            "center_x": 1074.352010091146,
+            "center_y": 368.0619303385417,
+            "heatmap_x": 644.6112158270197,
+            "heatmap_y": 220.8371579547376,
+            "native_score": 0.5414477586746216,
+            "component_pixels": 33,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 3,
+            "candidate_index": 3,
+            "component_index": 3,
+            "extraction_original_index": 3,
+            "equivalent_extractions": []
+          },
+          {
+            "center_x": 878.3333333333334,
+            "center_y": 453.33333333333337,
+            "heatmap_x": 527.0,
+            "heatmap_y": 272.0,
+            "native_score": 0.010387802496552467,
+            "component_pixels": 1,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 4,
+            "candidate_index": 4,
+            "component_index": 4,
+            "extraction_original_index": 4,
+            "equivalent_extractions": []
+          }
+        ],
+        "diagnostic": {
+          "native_parity": true,
+          "native_count": 0,
+          "raw_threshold_0.01_count": 5,
+          "retained_weak_count": 5,
+          "pool_count": 5,
+          "labels_used": false
+        }
+      },
+      "expected_saved_score": {
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "duration_ticks": 1000,
+        "time_base": "1/60000",
+        "segment_id": "hou-vs-okc-0022400879_e01",
+        "exposure_role": "checkpoint_validation",
+        "continuity_segment_id": 0,
+        "boundary_before": null,
+        "boundary_after": null,
+        "reference_category": "eligible",
+        "visibility": "partially_visible",
+        "absence_reason": null,
+        "identity_certainty": "certain",
+        "localization_eligible": true,
+        "automatic_center_xy_px": [
+          574.2041524251302,
+          348.2054646809896
+        ],
+        "inference_status": "completed",
+        "outcome": "matched",
+        "raw_center_error_px": 1.1245709117619007,
+        "uncertainty_adjusted_error_px": 0,
+        "published_points": [
+          {
+            "point_id": "selected",
+            "center_xy_px": [
+              574.2041524251302,
+              348.2054646809896
+            ],
+            "point_origin": "automatic",
+            "wrong_object_decision": "pending",
+            "wrong_object_evidence": null
+          }
+        ],
+        "certain_hidden_emissions": 0,
+        "wrong_object_review_status": "pending"
+      },
+      "producer_series": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/67eb4e0985d32a496946d9f2/motion_and_speed_narrow_weak.json",
+        "bytes": 195787,
+        "sha256": "56c1f1f8ab556a3410275b9cd8a5161e0c100ee3a268c1bd2ea6c3677c0161ed"
+      },
+      "producer_score": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/67eb4e0985d32a496946d9f2/motion_and_speed_narrow_weak_score.json",
+        "bytes": 157381,
+        "sha256": "afdb07c3e0f1016b89a1e3b8277b19108ac4fee3a6df777638b8a56c8335a3eb"
+      }
+    },
+    {
+      "label": "194:motion_and_speed",
+      "block": {
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "domain": "nba",
+        "game_id": "0022400879",
+        "role": "checkpoint_validation",
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/4.mp4",
+          "sha256": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 503
+        },
+        "time_base": "1/60000",
+        "reference_bindings": [
+          {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/accepted/reference.json",
+            "sha256": "f4f1a8c50d8ef8206d1896b91fcd5136f2d7c154deb58a406c5dd88c6bb91669",
+            "bytes": 219263
+          },
+          {
+            "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_13_acceptance_v0_1.json",
+            "sha256": "4430439c9022c21a15830985fce8ed2a4b933cd5f6d2e38689f624ddbc377e96",
+            "bytes": 10588
+          }
+        ],
+        "reference_origin": "assistant_visual_proposal",
+        "human_review": {
+          "status": "accepted",
+          "reviewer_id": "Ryan",
+          "review_method": "human_visual_acceptance_of_assisted_proposals",
+          "user_statement": "Looks good chat. Move forward my brother",
+          "response_context": "Direct response to the complete NBA batch-13 overlay and acceptance question through HOU-OKC e01 frame 239, covering all 120 proposals including partial visibility and uncertainty.",
+          "scope": "Accept all 120 fixed checkpoint-validation reference judgments for frames 120-239, including 80 partially visible centers, 40 fully visible centers, zero unknown centers and 5-6px placement uncertainty. These references remain excluded from gradient fitting. Label acceptance does not authorize a fitting run, checkpoint scoring, final trajectories, future labels, or protected evaluation; the complete accepted package and executable recipe must still be frozen.",
+          "human_acceptance_date_local": "2026-10-23",
+          "timezone": "America/Phoenix",
+          "exact_user_event_timestamp_utc": null,
+          "recorded_at_utc": "2026-10-23T17:39:01.798874+00:00",
+          "playback_telemetry_claimed": false,
+          "independent_human_annotation_claimed": false
+        },
+        "selection_category": "held_ball_hands_heads",
+        "observed_source_content": "Q1 11:34; low baseline free throw view, held ball and release",
+        "source_id": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+        "range_inclusive": [
+          120,
+          239
+        ]
+      },
+      "frame": {
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "duration_ticks": 1000,
+        "png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000194.png",
+          "sha256": "5df2ab074d93a525a71f41fb95e1f1f2321c07aa493b7d1d04c0cb549d89d967",
+          "bytes": 1096359,
+          "rgb_sha256": "2cefaf533ee904ff06a716d0b97f0d7e815b283f615ade55a0b02c02db295545"
+        },
+        "annotation": {
+          "frame_index": 194,
+          "annotation_status": "labeled",
+          "visibility": "partially_visible",
+          "absence_reason": null,
+          "game_ball_identity_certainty": "certain",
+          "geometry": {
+            "center_xy_px": [
+              575,
+              349
+            ],
+            "source": "human_amodal_estimate",
+            "uncertainty_radius_px": 6
+          },
+          "localization_eligible": true,
+          "difficulty_tags": [
+            "compression_artifact",
+            "hand_overlap",
+            "motion_blur"
+          ],
+          "notes": "AI current-source-image proposal, pending Ryan acceptance. Visible current-frame ball arcs support this whole-ball center despite hand overlap during the waist hold or shooting lift. Placement uncertainty is 6 native pixels for hand overlap, contour blur and compression. Every current native frame was individually inspected in source context and detail; no interpolation, extrapolation or model coordinates were used. Uncertainty is a non-statistical placement estimate. The legacy geometry source field does not imply human authorship."
+        },
+        "kind": "positive",
+        "valid_output_channel": true,
+        "state": "permitted",
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "reference_role": "checkpoint_validation"
+      },
+      "native": {
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "time_base": "1/60000",
+        "source_png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000194.png",
+          "sha256": "5df2ab074d93a525a71f41fb95e1f1f2321c07aa493b7d1d04c0cb549d89d967",
+          "bytes": 1096359,
+          "rgb_sha256": "2cefaf533ee904ff06a716d0b97f0d7e815b283f615ade55a0b02c02db295545"
+        },
+        "inference_status": "completed",
+        "state": "missing",
+        "withheld_reason": null,
+        "segment_kind": "fixed_checkpoint_validation",
+        "segment_source_frame_range_inclusive": [
+          120,
+          239
+        ],
+        "temporal_contributions": 3,
+        "mean_heatmap_sha256": "05a19092b47157a6967004805f08fe12b23e0ea469751484f30fd5e4aa4f3352",
+        "candidates": [],
+        "selected_candidate_index": null,
+        "center_xy_px": null,
+        "native_score": null
+      },
+      "observation": {
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "time_base": "1/60000",
+        "source_png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_13/source_frames/frame_000194.png",
+          "sha256": "5df2ab074d93a525a71f41fb95e1f1f2321c07aa493b7d1d04c0cb549d89d967",
+          "bytes": 1096359,
+          "rgb_sha256": "2cefaf533ee904ff06a716d0b97f0d7e815b283f615ade55a0b02c02db295545"
+        },
+        "inference_status": "completed",
+        "state": "missing",
+        "withheld_reason": null,
+        "segment_kind": "fixed_checkpoint_validation",
+        "segment_source_frame_range_inclusive": [
+          120,
+          239
+        ],
+        "temporal_contributions": 3,
+        "mean_heatmap_sha256": "05a19092b47157a6967004805f08fe12b23e0ea469751484f30fd5e4aa4f3352",
+        "selected_candidate_index": null,
+        "center_xy_px": null,
+        "native_score": null,
+        "selection_method": "motion_and_speed",
+        "selection_diagnostic": {
+          "selected_pool_position": null,
+          "admitted_candidates": 0,
+          "pool_candidates": 0,
+          "global_alternative_margin": null,
+          "margin_semantics": "research objective units, not confidence",
+          "selected_support": null
+        },
+        "original_selected_candidate_index": null,
+        "original_center_xy_px": null,
+        "candidate_pool_count": 0
+      },
+      "query": null,
+      "score": null,
+      "descriptor": null,
+      "pool": {
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "time_base": "1/60000",
+        "mean_heatmap_sha256": "05a19092b47157a6967004805f08fe12b23e0ea469751484f30fd5e4aa4f3352",
+        "width_px": 1280,
+        "height_px": 720,
+        "candidates": [
+          {
+            "center_x": 574.2041524251302,
+            "center_y": 348.2054646809896,
+            "heatmap_x": 344.52248731775785,
+            "heatmap_y": 208.9232854282515,
+            "native_score": 5.954898834228516,
+            "component_pixels": 149,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 0,
+            "candidate_index": 0,
+            "component_index": 0,
+            "extraction_original_index": 0,
+            "equivalent_extractions": []
+          },
+          {
+            "center_x": 1074.1484578450522,
+            "center_y": 358.33333333333337,
+            "heatmap_x": 644.4890535201981,
+            "heatmap_y": 215.0,
+            "native_score": 0.02311018295586109,
+            "component_pixels": 2,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 1,
+            "candidate_index": 1,
+            "component_index": 1,
+            "extraction_original_index": 1,
+            "equivalent_extractions": []
+          },
+          {
+            "center_x": 573.3333333333334,
+            "center_y": 365.0,
+            "heatmap_x": 344.0,
+            "heatmap_y": 219.0,
+            "native_score": 0.010887314565479755,
+            "component_pixels": 1,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 2,
+            "candidate_index": 2,
+            "component_index": 2,
+            "extraction_original_index": 2,
+            "equivalent_extractions": []
+          },
+          {
+            "center_x": 1074.352010091146,
+            "center_y": 368.0619303385417,
+            "heatmap_x": 644.6112158270197,
+            "heatmap_y": 220.8371579547376,
+            "native_score": 0.5414477586746216,
+            "component_pixels": 33,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 3,
+            "candidate_index": 3,
+            "component_index": 3,
+            "extraction_original_index": 3,
+            "equivalent_extractions": []
+          },
+          {
+            "center_x": 878.3333333333334,
+            "center_y": 453.33333333333337,
+            "heatmap_x": 527.0,
+            "heatmap_y": 272.0,
+            "native_score": 0.010387802496552467,
+            "component_pixels": 1,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 4,
+            "candidate_index": 4,
+            "component_index": 4,
+            "extraction_original_index": 4,
+            "equivalent_extractions": []
+          }
+        ],
+        "diagnostic": {
+          "native_parity": true,
+          "native_count": 0,
+          "raw_threshold_0.01_count": 5,
+          "retained_weak_count": 5,
+          "pool_count": 5,
+          "labels_used": false
+        }
+      },
+      "expected_saved_score": {
+        "source_frame_index": 194,
+        "source_pts_ticks": 194000,
+        "duration_ticks": 1000,
+        "time_base": "1/60000",
+        "segment_id": "hou-vs-okc-0022400879_e01",
+        "exposure_role": "checkpoint_validation",
+        "continuity_segment_id": 0,
+        "boundary_before": null,
+        "boundary_after": null,
+        "reference_category": "eligible",
+        "visibility": "partially_visible",
+        "absence_reason": null,
+        "identity_certainty": "certain",
+        "localization_eligible": true,
+        "automatic_center_xy_px": null,
+        "inference_status": "completed",
+        "outcome": "missing",
+        "raw_center_error_px": null,
+        "uncertainty_adjusted_error_px": null,
+        "published_points": [],
+        "certain_hidden_emissions": 0,
+        "wrong_object_review_status": "not_applicable"
+      },
+      "producer_series": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/67eb4e0985d32a496946d9f2/motion_and_speed.json",
+        "bytes": 192206,
+        "sha256": "8741ed0e5ba6188d3157240c586425625d46a1977420b2acd648be193ce42b6a"
+      },
+      "producer_score": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/67eb4e0985d32a496946d9f2/motion_and_speed_score.json",
+        "bytes": 155337,
+        "sha256": "91424e644a0a355d237e65c3ba95cb284fe51024ef7fe074d40a52aab934be46"
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "ball_crop_candidate_retention_publication_recovery_approval/v0.1",
+  "proposal": {
+    "path": "docs/ball_crop_candidate_retention_publication_recovery_proposal.md",
+    "sha256": "d2280805d52b9b2a5bc3e675f77ca16491793b62f3983987aa5ce7a5110ad8b8"
+  },
+  "original_approved_proposal": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention_render_recovery_implementation/cd51bfc1336b_2026-10-02/publication_diagnosis/proposal.md",
+    "sha256": "d2280805d52b9b2a5bc3e675f77ca16491793b62f3983987aa5ce7a5110ad8b8"
+  },
+  "approved_by": "ryan",
+  "statement": "yes I approve, and what do you mean by 3 hours 12 minnutes remain in the original budget?",
+  "recorded_at_utc": "2026-10-02T23:52:34.764671+00:00",
+  "timestamp_semantics": "Receipt creation time, not an invented message timestamp.",
+  "scope": "bounded_publication_recovery_implementation_and_execution_subject_to_validation_and_clean_separately_authorized_commit",
+  "limited_no_adoption_amendment": {
+    "candidate_window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+    "candidate_directory": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+    "candidate_manifest": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/windows/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/manifest.json",
+      "sha256": "5665beabdbdcf7da2c3ad70f11a90095e14f251bf0c9ffe8bd284fcac2eaa29e"
+    },
+    "original_failed_attempt_id": "e3ea5536e59d4cdc8fea72d45bc53241",
+    "original_rendering_commit": "cd51bfc1336bba76e4b118b6cfe55d7f74a3b5a6",
+    "original_rendering_spec_sha256": "326ba1cec475aa32d172a76a2ea760ceffb3e9188631c16ed2b1af5914fab3cd",
+    "preservation_audit": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/publication_preservation_audit_cd51.json",
+      "sha256": "a400911f83b7408c6f9c5ddabf5eae47f704d9f73fed16f538ac135fc04d2106"
+    },
+    "resource_checkpoint": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention_render_recovery_implementation/cd51bfc1336b_2026-10-02/publication_diagnosis/checkpoint.json",
+      "sha256": "ae72b7d729e342dd5123c49e27d027315cf18e9ccd29280210dfd1d81d74d356"
+    },
+    "acceptance_requires_independent_bundle_validation_and_successful_supervised_completion": true,
+    "historical_failed_attempt_must_remain_failed": true,
+    "other_unreceipted_outputs_may_be_adopted": false,
+    "create_only_output_paths": [
+      "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/publication_acceptance_cd51.json",
+      "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/manifest.json",
+      "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/independent_publication_recovery_audit.json",
+      "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/publication_recovery_review_guide.md"
+    ],
+    "original_cumulative_budget_and_resource_rules_unchanged": true,
+    "stop_on_new_failure_without_retry": true,
+    "rerendering_authorized": false,
+    "resource_monitor_changes_authorized": false
+  },
+  "implementation_authorized": true,
+  "execution_authorized": true,
+  "execution_requires_clean_separately_authorized_commit": true,
+  "training_authorized": false,
+  "git_mutations_authorized": false,
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

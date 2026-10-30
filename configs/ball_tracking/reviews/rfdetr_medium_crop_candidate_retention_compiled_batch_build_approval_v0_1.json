@@ -1,0 +1,31 @@
+{
+  "schema_version": "compiled_batch_build_approval/v0.1",
+  "approved_by": "ryan",
+  "local_date": "2026-10-05",
+  "user_statement": "ok well lets move forward, but I need you to get this figured out chat. We've been using so much usage for this problem, which is fine, this has been like a whole pro's subscriptions worth of usage to get this figured out",
+  "proposal_path": "docs/ball_crop_candidate_retention_compiled_batch_plan.md",
+  "proposal_sha256": "ccc448ce881edb662e3d42c8165762db1f33ace4a503f8f5e8e41e84d525799f",
+  "specified_build_tools_installation_authorized": true,
+  "build_tools_release": "17.14.41",
+  "expected_installed_build": "17.14.37710.0",
+  "component_ids": [
+    "Microsoft.VisualStudio.Workload.VCTools",
+    "Microsoft.VisualStudio.Component.VC.Tools.x86.x64",
+    "Microsoft.VisualStudio.Component.Windows11SDK.26100"
+  ],
+  "isolated_implementation_build_authorized": true,
+  "focused_artificial_validation_authorized": true,
+  "full_suite_after_focused_authorized": true,
+  "production_scanner_replacement_authorized": false,
+  "live_candidate_metadata_series_authorized": false,
+  "benchmark_authorized": false,
+  "scientific_body_access_authorized": false,
+  "real_recovery_authorized": false,
+  "old_budget_reset_authorized": false,
+  "git_mutations_authorized": false,
+  "output_root": "data/outputs/t/ebcb_src_fa730bcb6d2e",
+  "maximum_batch_names": 128,
+  "accounting_deadline_seconds": 0.5,
+  "minimum_free_disk_bytes": 10737418240,
+  "routine_tooling_and_source_corrections": "Authorized under standing working agreement; preserve failed evidence and investigate material correctness, evidence, resource or scope problems."
+}

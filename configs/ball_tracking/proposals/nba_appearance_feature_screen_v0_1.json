@@ -1,0 +1,183 @@
+{
+  "schema_version": "nba_appearance_feature_screen_proposal/v0.1",
+  "status": "proposed_not_approved",
+  "runnable": false,
+  "created_at_utc": "2026-10-21T17:52:50.998544+00:00",
+  "plan": {
+    "path": "docs/nba_appearance_feature_screen_plan.md",
+    "sha256": "2d4d735e01c34d1597cc1dfdfe3a43637f5e474d5b75698627163ce999e203f2",
+    "bytes": 12982
+  },
+  "accepted_reference": {
+    "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/accepted/accepted_reference.json",
+    "sha256": "69d3c046c1653d73453344cd789ad4457083ca2baa53a001437001812e813b41",
+    "bytes": 149371
+  },
+  "acceptance": {
+    "path": "configs/ball_tracking/reviews/nba_appearance_reference_acceptance_v0_1.json",
+    "sha256": "fc3303c3a8bae18a7873d70ea3dc3930e3b78a31061d0385e28189c66f4c02ed",
+    "bytes": 2996
+  },
+  "case_registry": {
+    "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/feature_screen_scope.json",
+    "sha256": "b4c662d273155ac7dc0dfab8293b3992cfb82657052fab46e2eafc7b58978806",
+    "bytes": 112596
+  },
+  "question": "Does one fixed pretrained representation separate ten resolved excluded development checks using only ten resolved SAC references, while preserving unknowns and revealing exposed regression failures?",
+  "totals": {
+    "crop_inputs": 60,
+    "unique_cached_source_frames": 49,
+    "reference_bank": 10,
+    "unresolved_audit": 6,
+    "resolved_check": 10,
+    "exposed_regression": 34
+  },
+  "reference_bank_case_ids": [
+    "appearance:sac_mem_q1_c01:942:mean:0",
+    "appearance:sac_mem_q1_c01:942:mean:1",
+    "appearance:sac_mem_q1_c01:942:mean:2",
+    "appearance:sac_mem_q1_c01:961:mean:0",
+    "appearance:sac_mem_q1_c01:961:mean:1",
+    "appearance:sac_mem_q1_c01:999:mean:0",
+    "appearance:sac_mem_q1_c01:1299:mean:0",
+    "appearance:sac_mem_q1_c01:1346:mean:0",
+    "appearance:sac_mem_q1_c01:1346:mean:1",
+    "appearance:sac_mem_q1_c01:1346:mean:2"
+  ],
+  "resolved_check_case_ids": [
+    "appearance:sas_det_q1_c02:11008:mean:0",
+    "appearance:sas_det_q1_c02:11008:mean:1",
+    "appearance:sas_det_q1_c02:11059:mean:0",
+    "appearance:sas_det_q1_c02:11107:mean:0",
+    "appearance:sas_det_q1_c02:11107:mean:1",
+    "appearance:sas_det_q1_c02:11431:mean:0",
+    "appearance:sas_det_q1_c02:11431:mean:1",
+    "appearance:sas_det_q1_c02:11444:mean:0",
+    "appearance:sas_det_q1_c02:11444:mean:1",
+    "appearance:possession_003:428:mean:0"
+  ],
+  "encoder": {
+    "repository": "facebook/dinov2-small",
+    "revision": "150c8e7bb7cef2d30ec31b13a517af14840ee3f7",
+    "architecture": "Dinov2Model, ViT-S/14 without registers",
+    "weights_filename": "model.safetensors",
+    "expected_bytes": 88249960,
+    "expected_sha256": "ae1e99fcefd534ed978cdeb8326f08030c96e28b7a81ffcbc98a857c84d14be1",
+    "weight_identity_source": "https://huggingface.co/facebook/dinov2-small/commit/150c8e7bb7cef2d30ec31b13a517af14840ee3f7",
+    "config_metadata": {
+      "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/design_sources/config.json",
+      "sha256": "1809f83e3bdb1609a501a610ad4a742f4fd8ae44d72ca4aa0df52d1f2ac8628d",
+      "bytes": 547
+    },
+    "processor_metadata": {
+      "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/design_sources/preprocessor_config.json",
+      "sha256": "14e780d86fa1861f8751f868d7f45425b5feb55c38ca26f152ca5097ab30f828",
+      "bytes": 436
+    },
+    "embedding": "final layer-normalized CLS token exposed as pooler_output",
+    "dimensions": 384,
+    "weights_downloaded_in_this_increment": false,
+    "model_loaded_or_run_in_this_increment": false,
+    "trust_remote_code": false
+  },
+  "input": {
+    "native_crop_size_px": [
+      64,
+      64
+    ],
+    "center_integer_rule": "floor saved x and y",
+    "box_rule": "[floor(x)-32, floor(y)-32, floor(x)+32, floor(y)+32), right/bottom exclusive",
+    "padding_rgb": [
+      0,
+      0,
+      0
+    ],
+    "color_mode": "RGB",
+    "resize": {
+      "size_px": [
+        256,
+        256
+      ],
+      "method": "Pillow bicubic"
+    },
+    "center_crop_px": [
+      224,
+      224
+    ],
+    "effective_native_field_px": [
+      56,
+      56
+    ],
+    "rescale_factor": 0.00392156862745098,
+    "normalize_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalize_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "data_source": "Hash-verified existing raw PNGs and saved selected/candidate points, never accepted center labels or new source video decoding."
+  },
+  "execution": {
+    "device": "cpu",
+    "model_dtype": "float32",
+    "batch_size": 1,
+    "torch_threads": 4,
+    "attention": "eager",
+    "eval": true,
+    "inference_mode": true,
+    "feature_normalization": "Save raw float32 CLS, convert to float64, reject nonfinite or zero norm, then L2-normalize in float64",
+    "similarity": "cosine dot products of the float64-normalized vectors",
+    "model_training": false,
+    "classifier_training": false,
+    "temporal_averaging": false,
+    "augmentation": false,
+    "parameter_search": false,
+    "trajectory_changes": false,
+    "implementation_status": "not_implemented_or_run; approval permits focused implementation validation and one fixed screen"
+  },
+  "decision": {
+    "reference_bank": "All ten resolved SAC examples; four ball and six other_object. No unresolved item or check enters the bank.",
+    "class_rule": "Compare maximum cosine similarity to ball references with maximum similarity to other-object references; larger maximum supplies nearest-reference preference; exact ties abstain.",
+    "similarities_are_probabilities": false,
+    "confidence_threshold": null,
+    "reference_bank_self_match_accuracy_reported": false,
+    "main_gate": {
+      "check_balls_correct_required": 6,
+      "check_other_objects_correct_required": 4,
+      "ties_or_errors_fail": true
+    },
+    "unknowns": "All six accepted unresolved records stay unscored; report similarities/preferences without changing their labels.",
+    "exposed_regression": "All prior34 saved selected points:20 mean provenance,14 contributor provenance. Report exact neighbors and disagreements with prior AI judgments separately, never pool them with ten accepted checks or treat AI judgments as newly accepted ground truth.",
+    "qualitative_challenges": "Flag known SAC1419-1421 head episode if ball-preferred/tied, and valid near-head DET balls if other-preferred/tied. Any adverse or unresolved challenge prevents advancing to a policy without review.",
+    "failure": "Complete and retain the report; reject only this fixed encoder/crop/reference setup. No alternate encoder, crop, threshold, bank resampling or tuning under this proposal.",
+    "success": "Only supports a later bounded conservative policy/data proposal with missing head/clothing/NFHS/contributor coverage addressed; no automatic verifier or trajectory promotion."
+  },
+  "deliverables": [
+    "Immutable source/crop/feature bindings and all60 feature rows",
+    "All neighbor identities and similarities for50 queries, with source/episode roles",
+    "Ten-check outcome table, six unknown audits and34 separate exposed regressions",
+    "Compact crop/neighbor review including all queried cases and rationale for any next step"
+  ],
+  "constraints": [
+    "No source holdout/buffer/TOR access",
+    "No original observation, candidate coordinate, label or checkpoint changes",
+    "Do not convert current or historical unknowns into negative labels",
+    "Existing regression/continuous results and completed reviews remain intact",
+    "No new trajectory video is implied because this screen changes no trajectory"
+  ],
+  "planned_resources": {
+    "weight_download_bytes": 88249960,
+    "image_encodings": 60,
+    "cached_source_pngs": 49,
+    "new_source_video_decodes": 0,
+    "training_updates": 0,
+    "duration_measured": false
+  },
+  "execution_approved": false,
+  "execution_run": false,
+  "approval_reason": "A new representation and scientific experiment requires Ryan approval under docs/context/working_agreement.md; current acceptance covers label publication and evidence adequacy assessment."
+}

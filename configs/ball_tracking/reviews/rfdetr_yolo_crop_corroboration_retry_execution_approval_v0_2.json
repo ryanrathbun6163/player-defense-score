@@ -1,0 +1,102 @@
+{
+  "schema_version": "ball_crop_corroboration_retry_execution_approval/v0.2",
+  "study_id": "rfdetr_yolo_crop_corroboration_v0_1",
+  "approved_by": "Ryan",
+  "user_statement": "Ok move forward with that chat, and the move forward with original correction proposal. We have been doing this detector comparison experiment for a long time at this point, and I am tired of you fucking up and not having an answer for me. Figure out that answer for me after you complete the first two",
+  "scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_release_v0_1.json",
+    "size_bytes": 344753,
+    "sha256": "b81098c3aae5a89438d4c0cd621534abc806b5d9b099a5aa35211ce9be0d8ff2"
+  },
+  "original_execution_approval": {
+    "path": "configs/ball_tracking/reviews/rfdetr_yolo_crop_corroboration_execution_approval_v0_1.json",
+    "size_bytes": 4934,
+    "sha256": "c67d5c1d479584cb2835ba2eae88534fa13918fb0d3d27e69d61ef19d51b4e4b"
+  },
+  "integration_scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_retry_integration_v0_1.json",
+    "size_bytes": 42059,
+    "sha256": "f125ccc0ef2e4d732a0f807436c9d1ec9dab3d47b258f973af5a6e59c74daa80"
+  },
+  "integration_proposal": {
+    "path": "docs/ball_crop_cross_detector_corroboration_retry_integration_proposal.md",
+    "size_bytes": 16553,
+    "sha256": "bd03fd5c262135934802f27f7fe5bbcae3cb262bdc25476af5df7ae0da990863"
+  },
+  "implementation_validation": {
+    "path": "data/outputs/t/corroboration_history_guard_154657c/implementation_validation.json",
+    "size_bytes": 163096,
+    "sha256": "0cfaca54dff66054f0d43fbb6b54702b37ff9228cfe4ee8febd909c3f4466a4c"
+  },
+  "failed_attempt_audit": {
+    "path": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/failed_attempt_audit.json",
+    "size_bytes": 3218,
+    "sha256": "e3bbe1028aedd0fe04dc4aaa13850e9b049d56c20ce0416623a7d27e46f49922"
+  },
+  "predecessor_attempt_id": "ac3a321649414170adf823deaa1b7b9e",
+  "unit_key": "cross-detector-corroboration:study:",
+  "maximum_attempts": 1,
+  "maximum_retry_seconds": 1198.875,
+  "fresh_budget": false,
+  "scientific_execution_authorized": true,
+  "administrative_history_verification_authorized": true,
+  "release_checkpoint_authorized": true,
+  "new_verified_media_presentation_authorized": false,
+  "implementation_approval": {
+    "path": "data/outputs/t/corroboration_history_guard_154657c/approval.json",
+    "size_bytes": 155680,
+    "sha256": "3491252f7fe439f063469bae83118a8eaf808cb39b013469a217aa391780674c"
+  },
+  "condition_satisfied": "Frozen producer regression failed for the exact old defect, then passed unchanged after correction. Focused111/111 and full1260pass+1existing skip passed once; finalizer and independent final evidence audit accepted. Runtime requires the actual clean descendant commit and bound checkpoint.",
+  "presentation_scope": "This record authorizes scientific execution and its bounded numeric result; presentation of new media remains a separate review step.",
+  "git_authorization": {
+    "staging": true,
+    "commit": true,
+    "push": false,
+    "pr": false,
+    "merge": false
+  },
+  "history_guard_scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_history_guard_correction_v0_1.json",
+    "size_bytes": 5689,
+    "sha256": "32b43a6dadcfe8d0c5187288957f56e0d5e3a7eca844193c2c2c25fe6059ed12"
+  },
+  "history_guard_proposal": {
+    "path": "data/outputs/t/corroboration_retry_integration_3233d2c/next_correction_proposal.json",
+    "size_bytes": 3725,
+    "sha256": "8a3e7741e0083831305cd25350a8bd532a5271f30434f2c19d67e5ed480a9ba0"
+  },
+  "parent_certificate": {
+    "path": "data/outputs/t/corroboration_retry_integration_3233d2c/implementation_validation.json",
+    "size_bytes": 162862,
+    "sha256": "c2f86015149bc38ddeaf950c5e9de464bfc6cfe3e6ced0cd73a002f2ef6c3bea"
+  },
+  "original_runtime_manifest": {
+    "path": "configs/ball_tracking/crop_retention_experiments/rfdetr_yolo_crop_corroboration_retry_v0_1.json",
+    "size_bytes": 2202,
+    "sha256": "d6cb4d96107e932e5c32a9cac1654a568563162d9ef2f8b8ff5376a0363e0228"
+  },
+  "original_retry_approval": {
+    "path": "configs/ball_tracking/reviews/rfdetr_yolo_crop_corroboration_retry_execution_approval_v0_1.json",
+    "size_bytes": 2937,
+    "sha256": "10544d710d0d958384fc1548c6a2c0cf0ee6ef70fd319eba3ae46c361afbfc7b"
+  },
+  "conditional_follow_on_authorization": {
+    "separate_versioned_runtime_records": true,
+    "stage_exact_reviewed_scope": true,
+    "commit_exact_reviewed_scope": true,
+    "actual_clean_commit_checkpoint": true,
+    "one_public_entry_point_launch": true,
+    "maximum_new_scientific_reservations": 1,
+    "scientific_retry_ceiling_seconds": 1198.875,
+    "additional_scientific_budget_seconds": 0,
+    "runtime_bounded_administrative_journal_verification": true,
+    "worker_only_scientific_access": true,
+    "parent_numeric_bounded_result_reporting": true,
+    "new_media_presentation": false,
+    "push": false,
+    "pull_request": false,
+    "merge": false,
+    "stop_on_material_failure": true
+  }
+}

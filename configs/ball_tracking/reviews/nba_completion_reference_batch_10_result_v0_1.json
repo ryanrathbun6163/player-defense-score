@@ -1,0 +1,2978 @@
+{
+  "schema_version": "completion_nba_reference_batch_result/v0.1",
+  "status": "ready_for_human_reference_acceptance",
+  "batch_id": "nba_reference_batch_10_v0_1",
+  "episode_id": "den-vs-bos-0022400866_e04",
+  "game_id": "0022400866",
+  "role": "training",
+  "expected_starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "637dd8741516b4f0a62c66b166d332d36b6b1922"
+  },
+  "git_at_finalization": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "637dd8741516b4f0a62c66b166d332d36b6b1922",
+    "porcelain": [
+      " M .gitattributes",
+      " M README.md",
+      " M docs/ball_tracking_completion_nba_reference_batch_09.md",
+      " M docs/context/current_state.md",
+      " M docs/context/roadmap.md",
+      " M docs/context/source_map.md",
+      " M docs/context/validation_history.md",
+      "?? configs/ball_tracking/completion_campaign/nba_reference_batch_10_v0_1.json",
+      "?? configs/ball_tracking/reviews/nba_completion_reference_batch_09_acceptance_v0_1.json",
+      "?? docs/ball_tracking_completion_nba_reference_batch_10.md"
+    ]
+  },
+  "range_inclusive": [
+    240,
+    359
+  ],
+  "new_proposals": 120,
+  "proposed_centers": 100,
+  "null_centers": 20,
+  "visibility_counts": {
+    "partially_visible": 40,
+    "fully_visible": 68,
+    "indeterminate": 2,
+    "not_visible": 10
+  },
+  "partial_visible_null_centers": [
+    270,
+    271,
+    272,
+    273,
+    286,
+    287,
+    288,
+    289
+  ],
+  "indeterminate_frames": [
+    274,
+    275
+  ],
+  "certain_not_visible_frames": [
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    283,
+    284,
+    285
+  ],
+  "uncertainty_radius_source_px": [
+    5,
+    8
+  ],
+  "native_interval_seconds_half_open": [
+    4.0,
+    6.0
+  ],
+  "native_pts_ticks_first_last": [
+    240000,
+    359000
+  ],
+  "native_time_base": "1/60000",
+  "duration_ticks_per_frame": [
+    1000
+  ],
+  "source_dimensions_px": [
+    1280,
+    720
+  ],
+  "source_actual_final_frame": 578,
+  "batch_actual_final_frame": 359,
+  "actual_source_context": {
+    "selected_native_source_frames": [
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      270,
+      271,
+      272,
+      273,
+      274,
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287,
+      288,
+      289,
+      290,
+      291,
+      292,
+      293,
+      294,
+      295,
+      296,
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      310,
+      311,
+      312,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      351,
+      352,
+      353,
+      354,
+      355,
+      356,
+      357,
+      358,
+      359
+    ],
+    "primary_returned_source_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      270,
+      271,
+      272,
+      273,
+      274,
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287,
+      288,
+      289,
+      290,
+      291,
+      292,
+      293,
+      294,
+      295,
+      296,
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      310,
+      311,
+      312,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      351,
+      352,
+      353,
+      354,
+      355,
+      356,
+      357,
+      358,
+      359
+    ],
+    "primary_returned_frames_outside_selected": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239
+    ],
+    "primary_submitted_packet_count": 361,
+    "primary_submitted_packet_source_indices": [
+      0,
+      3,
+      1,
+      2,
+      6,
+      4,
+      5,
+      9,
+      7,
+      8,
+      12,
+      10,
+      11,
+      13,
+      14,
+      17,
+      15,
+      16,
+      20,
+      18,
+      19,
+      23,
+      21,
+      22,
+      26,
+      24,
+      25,
+      29,
+      27,
+      28,
+      32,
+      30,
+      31,
+      35,
+      33,
+      34,
+      38,
+      36,
+      37,
+      41,
+      39,
+      40,
+      44,
+      42,
+      43,
+      47,
+      45,
+      46,
+      50,
+      48,
+      49,
+      53,
+      51,
+      52,
+      56,
+      54,
+      55,
+      59,
+      57,
+      58,
+      62,
+      60,
+      61,
+      65,
+      63,
+      64,
+      68,
+      66,
+      67,
+      71,
+      69,
+      70,
+      74,
+      72,
+      73,
+      77,
+      75,
+      76,
+      80,
+      78,
+      79,
+      83,
+      81,
+      82,
+      86,
+      84,
+      85,
+      89,
+      87,
+      88,
+      90,
+      93,
+      91,
+      92,
+      96,
+      94,
+      95,
+      99,
+      97,
+      98,
+      102,
+      100,
+      101,
+      105,
+      103,
+      104,
+      108,
+      106,
+      107,
+      111,
+      109,
+      110,
+      114,
+      112,
+      113,
+      117,
+      115,
+      116,
+      120,
+      118,
+      119,
+      123,
+      121,
+      122,
+      126,
+      124,
+      125,
+      129,
+      127,
+      128,
+      132,
+      130,
+      131,
+      135,
+      133,
+      134,
+      138,
+      136,
+      137,
+      141,
+      139,
+      140,
+      144,
+      142,
+      143,
+      147,
+      145,
+      146,
+      150,
+      148,
+      149,
+      153,
+      151,
+      152,
+      156,
+      154,
+      155,
+      159,
+      157,
+      158,
+      162,
+      160,
+      161,
+      165,
+      163,
+      164,
+      168,
+      166,
+      167,
+      171,
+      169,
+      170,
+      174,
+      172,
+      173,
+      177,
+      175,
+      176,
+      179,
+      178,
+      180,
+      183,
+      181,
+      182,
+      186,
+      184,
+      185,
+      189,
+      187,
+      188,
+      192,
+      190,
+      191,
+      195,
+      193,
+      194,
+      198,
+      196,
+      197,
+      201,
+      199,
+      200,
+      204,
+      202,
+      203,
+      207,
+      205,
+      206,
+      210,
+      208,
+      209,
+      213,
+      211,
+      212,
+      216,
+      214,
+      215,
+      219,
+      217,
+      218,
+      222,
+      220,
+      221,
+      225,
+      223,
+      224,
+      228,
+      226,
+      227,
+      231,
+      229,
+      230,
+      234,
+      232,
+      233,
+      237,
+      235,
+      236,
+      240,
+      238,
+      239,
+      243,
+      241,
+      242,
+      246,
+      244,
+      245,
+      249,
+      247,
+      248,
+      252,
+      250,
+      251,
+      255,
+      253,
+      254,
+      258,
+      256,
+      257,
+      261,
+      259,
+      260,
+      264,
+      262,
+      263,
+      267,
+      265,
+      266,
+      269,
+      268,
+      270,
+      273,
+      271,
+      272,
+      276,
+      274,
+      275,
+      279,
+      277,
+      278,
+      282,
+      280,
+      281,
+      285,
+      283,
+      284,
+      288,
+      286,
+      287,
+      291,
+      289,
+      290,
+      294,
+      292,
+      293,
+      297,
+      295,
+      296,
+      300,
+      298,
+      299,
+      303,
+      301,
+      302,
+      306,
+      304,
+      305,
+      309,
+      307,
+      308,
+      312,
+      310,
+      311,
+      315,
+      313,
+      314,
+      318,
+      316,
+      317,
+      321,
+      319,
+      320,
+      324,
+      322,
+      323,
+      327,
+      325,
+      326,
+      330,
+      328,
+      329,
+      333,
+      331,
+      332,
+      336,
+      334,
+      335,
+      339,
+      337,
+      338,
+      342,
+      340,
+      341,
+      345,
+      343,
+      344,
+      348,
+      346,
+      347,
+      351,
+      349,
+      350,
+      354,
+      352,
+      353,
+      357,
+      355,
+      356,
+      359,
+      358,
+      360
+    ],
+    "saved_native_png_count": 120,
+    "secondary_rgb_output_frames": 360,
+    "secondary_rgb_source_frames_outside_selected": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239
+    ],
+    "secondary_filter_reported_count": 361,
+    "secondary_filter_frames_outside_selected": [
+      {
+        "output_index": 0,
+        "native_pts_ticks": 0
+      },
+      {
+        "output_index": 1,
+        "native_pts_ticks": 1000
+      },
+      {
+        "output_index": 2,
+        "native_pts_ticks": 2000
+      },
+      {
+        "output_index": 3,
+        "native_pts_ticks": 3000
+      },
+      {
+        "output_index": 4,
+        "native_pts_ticks": 4000
+      },
+      {
+        "output_index": 5,
+        "native_pts_ticks": 5000
+      },
+      {
+        "output_index": 6,
+        "native_pts_ticks": 6000
+      },
+      {
+        "output_index": 7,
+        "native_pts_ticks": 7000
+      },
+      {
+        "output_index": 8,
+        "native_pts_ticks": 8000
+      },
+      {
+        "output_index": 9,
+        "native_pts_ticks": 9000
+      },
+      {
+        "output_index": 10,
+        "native_pts_ticks": 10000
+      },
+      {
+        "output_index": 11,
+        "native_pts_ticks": 11000
+      },
+      {
+        "output_index": 12,
+        "native_pts_ticks": 12000
+      },
+      {
+        "output_index": 13,
+        "native_pts_ticks": 13000
+      },
+      {
+        "output_index": 14,
+        "native_pts_ticks": 14000
+      },
+      {
+        "output_index": 15,
+        "native_pts_ticks": 15000
+      },
+      {
+        "output_index": 16,
+        "native_pts_ticks": 16000
+      },
+      {
+        "output_index": 17,
+        "native_pts_ticks": 17000
+      },
+      {
+        "output_index": 18,
+        "native_pts_ticks": 18000
+      },
+      {
+        "output_index": 19,
+        "native_pts_ticks": 19000
+      },
+      {
+        "output_index": 20,
+        "native_pts_ticks": 20000
+      },
+      {
+        "output_index": 21,
+        "native_pts_ticks": 21000
+      },
+      {
+        "output_index": 22,
+        "native_pts_ticks": 22000
+      },
+      {
+        "output_index": 23,
+        "native_pts_ticks": 23000
+      },
+      {
+        "output_index": 24,
+        "native_pts_ticks": 24000
+      },
+      {
+        "output_index": 25,
+        "native_pts_ticks": 25000
+      },
+      {
+        "output_index": 26,
+        "native_pts_ticks": 26000
+      },
+      {
+        "output_index": 27,
+        "native_pts_ticks": 27000
+      },
+      {
+        "output_index": 28,
+        "native_pts_ticks": 28000
+      },
+      {
+        "output_index": 29,
+        "native_pts_ticks": 29000
+      },
+      {
+        "output_index": 30,
+        "native_pts_ticks": 30000
+      },
+      {
+        "output_index": 31,
+        "native_pts_ticks": 31000
+      },
+      {
+        "output_index": 32,
+        "native_pts_ticks": 32000
+      },
+      {
+        "output_index": 33,
+        "native_pts_ticks": 33000
+      },
+      {
+        "output_index": 34,
+        "native_pts_ticks": 34000
+      },
+      {
+        "output_index": 35,
+        "native_pts_ticks": 35000
+      },
+      {
+        "output_index": 36,
+        "native_pts_ticks": 36000
+      },
+      {
+        "output_index": 37,
+        "native_pts_ticks": 37000
+      },
+      {
+        "output_index": 38,
+        "native_pts_ticks": 38000
+      },
+      {
+        "output_index": 39,
+        "native_pts_ticks": 39000
+      },
+      {
+        "output_index": 40,
+        "native_pts_ticks": 40000
+      },
+      {
+        "output_index": 41,
+        "native_pts_ticks": 41000
+      },
+      {
+        "output_index": 42,
+        "native_pts_ticks": 42000
+      },
+      {
+        "output_index": 43,
+        "native_pts_ticks": 43000
+      },
+      {
+        "output_index": 44,
+        "native_pts_ticks": 44000
+      },
+      {
+        "output_index": 45,
+        "native_pts_ticks": 45000
+      },
+      {
+        "output_index": 46,
+        "native_pts_ticks": 46000
+      },
+      {
+        "output_index": 47,
+        "native_pts_ticks": 47000
+      },
+      {
+        "output_index": 48,
+        "native_pts_ticks": 48000
+      },
+      {
+        "output_index": 49,
+        "native_pts_ticks": 49000
+      },
+      {
+        "output_index": 50,
+        "native_pts_ticks": 50000
+      },
+      {
+        "output_index": 51,
+        "native_pts_ticks": 51000
+      },
+      {
+        "output_index": 52,
+        "native_pts_ticks": 52000
+      },
+      {
+        "output_index": 53,
+        "native_pts_ticks": 53000
+      },
+      {
+        "output_index": 54,
+        "native_pts_ticks": 54000
+      },
+      {
+        "output_index": 55,
+        "native_pts_ticks": 55000
+      },
+      {
+        "output_index": 56,
+        "native_pts_ticks": 56000
+      },
+      {
+        "output_index": 57,
+        "native_pts_ticks": 57000
+      },
+      {
+        "output_index": 58,
+        "native_pts_ticks": 58000
+      },
+      {
+        "output_index": 59,
+        "native_pts_ticks": 59000
+      },
+      {
+        "output_index": 60,
+        "native_pts_ticks": 60000
+      },
+      {
+        "output_index": 61,
+        "native_pts_ticks": 61000
+      },
+      {
+        "output_index": 62,
+        "native_pts_ticks": 62000
+      },
+      {
+        "output_index": 63,
+        "native_pts_ticks": 63000
+      },
+      {
+        "output_index": 64,
+        "native_pts_ticks": 64000
+      },
+      {
+        "output_index": 65,
+        "native_pts_ticks": 65000
+      },
+      {
+        "output_index": 66,
+        "native_pts_ticks": 66000
+      },
+      {
+        "output_index": 67,
+        "native_pts_ticks": 67000
+      },
+      {
+        "output_index": 68,
+        "native_pts_ticks": 68000
+      },
+      {
+        "output_index": 69,
+        "native_pts_ticks": 69000
+      },
+      {
+        "output_index": 70,
+        "native_pts_ticks": 70000
+      },
+      {
+        "output_index": 71,
+        "native_pts_ticks": 71000
+      },
+      {
+        "output_index": 72,
+        "native_pts_ticks": 72000
+      },
+      {
+        "output_index": 73,
+        "native_pts_ticks": 73000
+      },
+      {
+        "output_index": 74,
+        "native_pts_ticks": 74000
+      },
+      {
+        "output_index": 75,
+        "native_pts_ticks": 75000
+      },
+      {
+        "output_index": 76,
+        "native_pts_ticks": 76000
+      },
+      {
+        "output_index": 77,
+        "native_pts_ticks": 77000
+      },
+      {
+        "output_index": 78,
+        "native_pts_ticks": 78000
+      },
+      {
+        "output_index": 79,
+        "native_pts_ticks": 79000
+      },
+      {
+        "output_index": 80,
+        "native_pts_ticks": 80000
+      },
+      {
+        "output_index": 81,
+        "native_pts_ticks": 81000
+      },
+      {
+        "output_index": 82,
+        "native_pts_ticks": 82000
+      },
+      {
+        "output_index": 83,
+        "native_pts_ticks": 83000
+      },
+      {
+        "output_index": 84,
+        "native_pts_ticks": 84000
+      },
+      {
+        "output_index": 85,
+        "native_pts_ticks": 85000
+      },
+      {
+        "output_index": 86,
+        "native_pts_ticks": 86000
+      },
+      {
+        "output_index": 87,
+        "native_pts_ticks": 87000
+      },
+      {
+        "output_index": 88,
+        "native_pts_ticks": 88000
+      },
+      {
+        "output_index": 89,
+        "native_pts_ticks": 89000
+      },
+      {
+        "output_index": 90,
+        "native_pts_ticks": 90000
+      },
+      {
+        "output_index": 91,
+        "native_pts_ticks": 91000
+      },
+      {
+        "output_index": 92,
+        "native_pts_ticks": 92000
+      },
+      {
+        "output_index": 93,
+        "native_pts_ticks": 93000
+      },
+      {
+        "output_index": 94,
+        "native_pts_ticks": 94000
+      },
+      {
+        "output_index": 95,
+        "native_pts_ticks": 95000
+      },
+      {
+        "output_index": 96,
+        "native_pts_ticks": 96000
+      },
+      {
+        "output_index": 97,
+        "native_pts_ticks": 97000
+      },
+      {
+        "output_index": 98,
+        "native_pts_ticks": 98000
+      },
+      {
+        "output_index": 99,
+        "native_pts_ticks": 99000
+      },
+      {
+        "output_index": 100,
+        "native_pts_ticks": 100000
+      },
+      {
+        "output_index": 101,
+        "native_pts_ticks": 101000
+      },
+      {
+        "output_index": 102,
+        "native_pts_ticks": 102000
+      },
+      {
+        "output_index": 103,
+        "native_pts_ticks": 103000
+      },
+      {
+        "output_index": 104,
+        "native_pts_ticks": 104000
+      },
+      {
+        "output_index": 105,
+        "native_pts_ticks": 105000
+      },
+      {
+        "output_index": 106,
+        "native_pts_ticks": 106000
+      },
+      {
+        "output_index": 107,
+        "native_pts_ticks": 107000
+      },
+      {
+        "output_index": 108,
+        "native_pts_ticks": 108000
+      },
+      {
+        "output_index": 109,
+        "native_pts_ticks": 109000
+      },
+      {
+        "output_index": 110,
+        "native_pts_ticks": 110000
+      },
+      {
+        "output_index": 111,
+        "native_pts_ticks": 111000
+      },
+      {
+        "output_index": 112,
+        "native_pts_ticks": 112000
+      },
+      {
+        "output_index": 113,
+        "native_pts_ticks": 113000
+      },
+      {
+        "output_index": 114,
+        "native_pts_ticks": 114000
+      },
+      {
+        "output_index": 115,
+        "native_pts_ticks": 115000
+      },
+      {
+        "output_index": 116,
+        "native_pts_ticks": 116000
+      },
+      {
+        "output_index": 117,
+        "native_pts_ticks": 117000
+      },
+      {
+        "output_index": 118,
+        "native_pts_ticks": 118000
+      },
+      {
+        "output_index": 119,
+        "native_pts_ticks": 119000
+      },
+      {
+        "output_index": 120,
+        "native_pts_ticks": 120000
+      },
+      {
+        "output_index": 121,
+        "native_pts_ticks": 121000
+      },
+      {
+        "output_index": 122,
+        "native_pts_ticks": 122000
+      },
+      {
+        "output_index": 123,
+        "native_pts_ticks": 123000
+      },
+      {
+        "output_index": 124,
+        "native_pts_ticks": 124000
+      },
+      {
+        "output_index": 125,
+        "native_pts_ticks": 125000
+      },
+      {
+        "output_index": 126,
+        "native_pts_ticks": 126000
+      },
+      {
+        "output_index": 127,
+        "native_pts_ticks": 127000
+      },
+      {
+        "output_index": 128,
+        "native_pts_ticks": 128000
+      },
+      {
+        "output_index": 129,
+        "native_pts_ticks": 129000
+      },
+      {
+        "output_index": 130,
+        "native_pts_ticks": 130000
+      },
+      {
+        "output_index": 131,
+        "native_pts_ticks": 131000
+      },
+      {
+        "output_index": 132,
+        "native_pts_ticks": 132000
+      },
+      {
+        "output_index": 133,
+        "native_pts_ticks": 133000
+      },
+      {
+        "output_index": 134,
+        "native_pts_ticks": 134000
+      },
+      {
+        "output_index": 135,
+        "native_pts_ticks": 135000
+      },
+      {
+        "output_index": 136,
+        "native_pts_ticks": 136000
+      },
+      {
+        "output_index": 137,
+        "native_pts_ticks": 137000
+      },
+      {
+        "output_index": 138,
+        "native_pts_ticks": 138000
+      },
+      {
+        "output_index": 139,
+        "native_pts_ticks": 139000
+      },
+      {
+        "output_index": 140,
+        "native_pts_ticks": 140000
+      },
+      {
+        "output_index": 141,
+        "native_pts_ticks": 141000
+      },
+      {
+        "output_index": 142,
+        "native_pts_ticks": 142000
+      },
+      {
+        "output_index": 143,
+        "native_pts_ticks": 143000
+      },
+      {
+        "output_index": 144,
+        "native_pts_ticks": 144000
+      },
+      {
+        "output_index": 145,
+        "native_pts_ticks": 145000
+      },
+      {
+        "output_index": 146,
+        "native_pts_ticks": 146000
+      },
+      {
+        "output_index": 147,
+        "native_pts_ticks": 147000
+      },
+      {
+        "output_index": 148,
+        "native_pts_ticks": 148000
+      },
+      {
+        "output_index": 149,
+        "native_pts_ticks": 149000
+      },
+      {
+        "output_index": 150,
+        "native_pts_ticks": 150000
+      },
+      {
+        "output_index": 151,
+        "native_pts_ticks": 151000
+      },
+      {
+        "output_index": 152,
+        "native_pts_ticks": 152000
+      },
+      {
+        "output_index": 153,
+        "native_pts_ticks": 153000
+      },
+      {
+        "output_index": 154,
+        "native_pts_ticks": 154000
+      },
+      {
+        "output_index": 155,
+        "native_pts_ticks": 155000
+      },
+      {
+        "output_index": 156,
+        "native_pts_ticks": 156000
+      },
+      {
+        "output_index": 157,
+        "native_pts_ticks": 157000
+      },
+      {
+        "output_index": 158,
+        "native_pts_ticks": 158000
+      },
+      {
+        "output_index": 159,
+        "native_pts_ticks": 159000
+      },
+      {
+        "output_index": 160,
+        "native_pts_ticks": 160000
+      },
+      {
+        "output_index": 161,
+        "native_pts_ticks": 161000
+      },
+      {
+        "output_index": 162,
+        "native_pts_ticks": 162000
+      },
+      {
+        "output_index": 163,
+        "native_pts_ticks": 163000
+      },
+      {
+        "output_index": 164,
+        "native_pts_ticks": 164000
+      },
+      {
+        "output_index": 165,
+        "native_pts_ticks": 165000
+      },
+      {
+        "output_index": 166,
+        "native_pts_ticks": 166000
+      },
+      {
+        "output_index": 167,
+        "native_pts_ticks": 167000
+      },
+      {
+        "output_index": 168,
+        "native_pts_ticks": 168000
+      },
+      {
+        "output_index": 169,
+        "native_pts_ticks": 169000
+      },
+      {
+        "output_index": 170,
+        "native_pts_ticks": 170000
+      },
+      {
+        "output_index": 171,
+        "native_pts_ticks": 171000
+      },
+      {
+        "output_index": 172,
+        "native_pts_ticks": 172000
+      },
+      {
+        "output_index": 173,
+        "native_pts_ticks": 173000
+      },
+      {
+        "output_index": 174,
+        "native_pts_ticks": 174000
+      },
+      {
+        "output_index": 175,
+        "native_pts_ticks": 175000
+      },
+      {
+        "output_index": 176,
+        "native_pts_ticks": 176000
+      },
+      {
+        "output_index": 177,
+        "native_pts_ticks": 177000
+      },
+      {
+        "output_index": 178,
+        "native_pts_ticks": 178000
+      },
+      {
+        "output_index": 179,
+        "native_pts_ticks": 179000
+      },
+      {
+        "output_index": 180,
+        "native_pts_ticks": 180000
+      },
+      {
+        "output_index": 181,
+        "native_pts_ticks": 181000
+      },
+      {
+        "output_index": 182,
+        "native_pts_ticks": 182000
+      },
+      {
+        "output_index": 183,
+        "native_pts_ticks": 183000
+      },
+      {
+        "output_index": 184,
+        "native_pts_ticks": 184000
+      },
+      {
+        "output_index": 185,
+        "native_pts_ticks": 185000
+      },
+      {
+        "output_index": 186,
+        "native_pts_ticks": 186000
+      },
+      {
+        "output_index": 187,
+        "native_pts_ticks": 187000
+      },
+      {
+        "output_index": 188,
+        "native_pts_ticks": 188000
+      },
+      {
+        "output_index": 189,
+        "native_pts_ticks": 189000
+      },
+      {
+        "output_index": 190,
+        "native_pts_ticks": 190000
+      },
+      {
+        "output_index": 191,
+        "native_pts_ticks": 191000
+      },
+      {
+        "output_index": 192,
+        "native_pts_ticks": 192000
+      },
+      {
+        "output_index": 193,
+        "native_pts_ticks": 193000
+      },
+      {
+        "output_index": 194,
+        "native_pts_ticks": 194000
+      },
+      {
+        "output_index": 195,
+        "native_pts_ticks": 195000
+      },
+      {
+        "output_index": 196,
+        "native_pts_ticks": 196000
+      },
+      {
+        "output_index": 197,
+        "native_pts_ticks": 197000
+      },
+      {
+        "output_index": 198,
+        "native_pts_ticks": 198000
+      },
+      {
+        "output_index": 199,
+        "native_pts_ticks": 199000
+      },
+      {
+        "output_index": 200,
+        "native_pts_ticks": 200000
+      },
+      {
+        "output_index": 201,
+        "native_pts_ticks": 201000
+      },
+      {
+        "output_index": 202,
+        "native_pts_ticks": 202000
+      },
+      {
+        "output_index": 203,
+        "native_pts_ticks": 203000
+      },
+      {
+        "output_index": 204,
+        "native_pts_ticks": 204000
+      },
+      {
+        "output_index": 205,
+        "native_pts_ticks": 205000
+      },
+      {
+        "output_index": 206,
+        "native_pts_ticks": 206000
+      },
+      {
+        "output_index": 207,
+        "native_pts_ticks": 207000
+      },
+      {
+        "output_index": 208,
+        "native_pts_ticks": 208000
+      },
+      {
+        "output_index": 209,
+        "native_pts_ticks": 209000
+      },
+      {
+        "output_index": 210,
+        "native_pts_ticks": 210000
+      },
+      {
+        "output_index": 211,
+        "native_pts_ticks": 211000
+      },
+      {
+        "output_index": 212,
+        "native_pts_ticks": 212000
+      },
+      {
+        "output_index": 213,
+        "native_pts_ticks": 213000
+      },
+      {
+        "output_index": 214,
+        "native_pts_ticks": 214000
+      },
+      {
+        "output_index": 215,
+        "native_pts_ticks": 215000
+      },
+      {
+        "output_index": 216,
+        "native_pts_ticks": 216000
+      },
+      {
+        "output_index": 217,
+        "native_pts_ticks": 217000
+      },
+      {
+        "output_index": 218,
+        "native_pts_ticks": 218000
+      },
+      {
+        "output_index": 219,
+        "native_pts_ticks": 219000
+      },
+      {
+        "output_index": 220,
+        "native_pts_ticks": 220000
+      },
+      {
+        "output_index": 221,
+        "native_pts_ticks": 221000
+      },
+      {
+        "output_index": 222,
+        "native_pts_ticks": 222000
+      },
+      {
+        "output_index": 223,
+        "native_pts_ticks": 223000
+      },
+      {
+        "output_index": 224,
+        "native_pts_ticks": 224000
+      },
+      {
+        "output_index": 225,
+        "native_pts_ticks": 225000
+      },
+      {
+        "output_index": 226,
+        "native_pts_ticks": 226000
+      },
+      {
+        "output_index": 227,
+        "native_pts_ticks": 227000
+      },
+      {
+        "output_index": 228,
+        "native_pts_ticks": 228000
+      },
+      {
+        "output_index": 229,
+        "native_pts_ticks": 229000
+      },
+      {
+        "output_index": 230,
+        "native_pts_ticks": 230000
+      },
+      {
+        "output_index": 231,
+        "native_pts_ticks": 231000
+      },
+      {
+        "output_index": 232,
+        "native_pts_ticks": 232000
+      },
+      {
+        "output_index": 233,
+        "native_pts_ticks": 233000
+      },
+      {
+        "output_index": 234,
+        "native_pts_ticks": 234000
+      },
+      {
+        "output_index": 235,
+        "native_pts_ticks": 235000
+      },
+      {
+        "output_index": 236,
+        "native_pts_ticks": 236000
+      },
+      {
+        "output_index": 237,
+        "native_pts_ticks": 237000
+      },
+      {
+        "output_index": 238,
+        "native_pts_ticks": 238000
+      },
+      {
+        "output_index": 239,
+        "native_pts_ticks": 239000
+      },
+      {
+        "output_index": 360,
+        "native_pts_ticks": 360000
+      }
+    ],
+    "source_role": "training",
+    "scope": "All context belongs to this fixed source/game role; filter context is not labeled or added to review."
+  },
+  "annotation_origin": "assistant_visual_proposal",
+  "annotator_id": "Codex assistant",
+  "human_acceptance": null,
+  "training_eligible": false,
+  "checkpoint_selection_eligible": false,
+  "accepted_existing_curated_rows": 868,
+  "accepted_existing_eligible_centers": 760,
+  "remaining_permitted_curated_uncovered": 405,
+  "accepted_existing_nba_rows": 1320,
+  "accepted_existing_nba_centers": 1196,
+  "accepted_existing_nba_nulls": 124,
+  "selected_nba_judgments": 3839,
+  "nba_remaining_without_accepted_reference": 2519,
+  "nba_proposed_current": 120,
+  "nba_remaining_without_proposal": 2399,
+  "config": {
+    "path": "configs/ball_tracking/completion_campaign/nba_reference_batch_10_v0_1.json",
+    "sha256": "fec49c173753ff61fba6920c2d081ef0da49f3dbd472e0b6a9c684e8baebef92",
+    "bytes": 1046
+  },
+  "proposal": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/proposal.json",
+    "sha256": "6455ae985e9ed7ca0ce89ab4fa0438d4e2fb70914dc222b4b6616ef5daf7b4ec",
+    "bytes": 112477
+  },
+  "review_manifest": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/review_v1/manifest.json",
+    "sha256": "e7c3acc81fe49c148306874ca2a58dc86b861d279116f6fe6543ef531d8f5899",
+    "bytes": 278439
+  },
+  "review_index": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/review_v1/index.html",
+    "sha256": "36b3cce71343cd5728f7dcee54157a9a20fcbe9d892765054c95d2b1351415ce",
+    "bytes": 29075
+  },
+  "exception_list": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/review_v1/exception_list.json",
+    "sha256": "735793972dd363a6e3359b4f8b2a328e0f59d61c6f67b3e5dbce290a8cddd60b",
+    "bytes": 16702
+  },
+  "encoded_frame_census": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/review_v1/encoded_frame_census.json",
+    "sha256": "48ca7e7287183930968bd146d6f060b1d8dd2582fbeb9b36dc492d085e43661d",
+    "bytes": 63442
+  },
+  "source_preparation": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/preparation.json",
+    "sha256": "48077d8c4f45306cc08591191f1004b6ceaf842a64cb27a37af432e90acd69d6",
+    "bytes": 2996
+  },
+  "source_pixel_audit": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/source_pixel_audit.json",
+    "sha256": "d12000450803531faac584056b5891bccb9fbdb8e180dd11282bf78f5d3490a2",
+    "bytes": 114216
+  },
+  "source_preparation_prior_artifacts_preservation": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/prior_artifacts_preservation.json",
+    "sha256": "239d09617013b3d5a00890b7ad2c670272502fb044c13f8a7d03643e7a263a3d",
+    "bytes": 634
+  },
+  "render_result": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/review_v1/delivery_result.json",
+    "sha256": "d300a05e5872895b40ee1d9572380b223b79384cfb38a046affba9c887931d42",
+    "bytes": 5206
+  },
+  "ai_visual_inspection": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/inspection/root_visual_review.json",
+    "sha256": "31666d03f7fa315cd34f8926d12cbe6d095b947b923d606aff335ca40eb60ae5",
+    "bytes": 30513
+  },
+  "part_inspections": [
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/inspection/part_240_279_receipt.json",
+      "sha256": "b43d3e72d7e3d1e1212ddb5a89030ad26d70b483a2484e233d1b61bfaac1cdfa",
+      "bytes": 34262
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/inspection/part_280_319_receipt.json",
+      "sha256": "6b7de50712d0c3463d1dde594cc8daa017549f85676b0c86aaa681097aca5cb1",
+      "bytes": 34416
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/inspection/part_320_359_receipt.json",
+      "sha256": "4973e6204c1028064d744a64dca14fc72bdfe1a9dee61af0d3388e2fa59e9323",
+      "bytes": 32782
+    }
+  ],
+  "integration_audit": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/integration_audit.json",
+    "sha256": "7124fac091dbe856359d1ade7b832dcbefc10167dc99b7be885f9357d47f03f3",
+    "bytes": 46750
+  },
+  "accepted_curated_inventory": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/accepted_reference_inventory_after_batch_07.json",
+    "sha256": "22e8b37e6bb31bc100e1ab22bd82c02aa5e9fafa5556885fd3ae6185ec9c1ad7",
+    "bytes": 16737
+  },
+  "curated_reader_config": {
+    "path": "configs/ball_tracking/completion_campaign/reference_batch_07_v0_1.json",
+    "sha256": "832a8c33de79335686576db51620a272e9c7aeedf8a1c7fb17ec98f1da1057e2",
+    "bytes": 5201
+  },
+  "accepted_authorities_preserved": [
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0050_0074_representative_evaluation_v0_1.json",
+      "sha256": "3731fa669da12fdcab0748ab92bc7bbb85961a2a0f80518092eaced0e08d5c6c",
+      "bytes": 14057
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0100_0124_training_expansion_v0_1.json",
+      "sha256": "a2a441afb782222b3f2c9bab70c8c4169d0a7bd266da3dbf22657223db6d46e4",
+      "bytes": 14606
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0200_0224_challenge_evaluation_v0_1.json",
+      "sha256": "73ed29bc62e002d86b207a12298b30b27724fe42be5a354ec09bc104211e2def",
+      "bytes": 14022
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0250_0274_training_expansion_v0_1.json",
+      "sha256": "10fbde5c1565754d62755efeb1d6af18d9264ec42fde7dff45e88522da6d2590",
+      "bytes": 14035
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_001_frames_0375_0399_protocol_adjudication_v0_1.json",
+      "sha256": "69aaf19f86f6a47cd507c17eb38186c4c1214979d29558cb5835561e567ba99f",
+      "bytes": 14184
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_002_frames_0025_0049_challenge_evaluation_v0_1.json",
+      "sha256": "c0d1bad8f6879e2d073b6d0becf3df12347b43ef06e9c6ff44c26b6f56d3c1e3",
+      "bytes": 13595
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_002_frames_0250_0274_representative_evaluation_v0_1.json",
+      "sha256": "cccec6a086bf9898197babeb5d785bdd4ba0290b7c6c1ba5c206e8545e67563f",
+      "bytes": 13592
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_002_frames_0318_0342_protocol_adjudication_v0_1.json",
+      "sha256": "db1e07dce5e028e740ee408189d1625a241c1588e0b3221642f19d3e2d598df4",
+      "bytes": 12851
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_002_frames_0343_0367_training_expansion_v0_1.json",
+      "sha256": "ce23c0aeb2f78604d888d97459e962c18bcd1c5129fca4df7e0120fe2da8d3bd",
+      "bytes": 12623
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_003_frames_0150_0174_challenge_evaluation_v0_1.json",
+      "sha256": "ab77e6c8570ee8fc536632e43ee71d978e72cd16188f7564c77ae256873994ee",
+      "bytes": 13170
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_003_frames_0300_0324_representative_evaluation_v0_1.json",
+      "sha256": "2b35475e715e9a4b816ad997b58be3201370695a2f420a35a6947696bbe3637e",
+      "bytes": 13775
+    },
+    {
+      "path": "configs/ball_tracking/annotations/possession_003_frames_0416_0440_protocol_adjudication_v0_1.json",
+      "sha256": "8e088da8db868e15bd06dd94824d2dcb3412e7772b504d71c286132b4a8149e6",
+      "bytes": 13906
+    },
+    {
+      "path": "data/outputs/ball_tracking/nba/gap_anchor_reference_v0_1/accepted/accepted_reference.json",
+      "sha256": "9cfc5279ba084017554e8a55ab74e41fb1baa5914469b08de1cd480382fc3096",
+      "bytes": 108375
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_01/accepted/reference.json",
+      "sha256": "23e59ca90e8b060d19f4f90436c6c68d64722a216f113ddc05dfdd8b5340f5cc",
+      "bytes": 153482
+    },
+    {
+      "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_01_acceptance_v0_1.json",
+      "sha256": "c78d9b202fd53d75357a9a09e6c53aadca2509f983f31bd7db3c374c30faa14b",
+      "bytes": 12027
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_02/accepted/reference.json",
+      "sha256": "3a0c859f594dbdc8570887bb5adda2434c3e57aa6ec96b4da6d56fae2fb0af87",
+      "bytes": 161322
+    },
+    {
+      "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_02_acceptance_v0_1.json",
+      "sha256": "0416ff732cce93f173b6c2a0dfc7df4ec9d7d8385e223dd9a3d7145347ffcc9d",
+      "bytes": 18406
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_03/accepted/reference.json",
+      "sha256": "f7b20daad14352915eaa02ae4c70cc3aaf14bdb822bb3ec1cbde83cbfee56c40",
+      "bytes": 184285
+    },
+    {
+      "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_03_acceptance_v0_1.json",
+      "sha256": "313a27d643707bb5d4a12971c7ef7739b43f7785b363e60b9371f12f9aa3ef76",
+      "bytes": 20008
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_04/accepted/reference.json",
+      "sha256": "a0a1442b59126b5be868fdb0d5dc5f9ffa7c2a2c7a395ec733d1866567ed0760",
+      "bytes": 104220
+    },
+    {
+      "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_04_acceptance_v0_1.json",
+      "sha256": "ac32b75ffe0e4f12e98ec2117e58d1bbe53dc4c0aaefd585dd12e5c77ea9d601",
+      "bytes": 13985
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_05/accepted/reference.json",
+      "sha256": "57a6bea72bf7313db18904628657b6160f37f01e30098e4304ab5269f486b85e",
+      "bytes": 64503
+    },
+    {
+      "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_05_acceptance_v0_1.json",
+      "sha256": "8ce664ed52024c51147a04bf6e2c427905dc392f244295d1124766aa1399cbfe",
+      "bytes": 11317
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_06/accepted/reference.json",
+      "sha256": "8bc3e9016ef1117b358064303a7e712e3cc0acda807f3c46e27734b8a3685c00",
+      "bytes": 48061
+    },
+    {
+      "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_06_acceptance_v0_1.json",
+      "sha256": "25f2fb7b10bf4f65e197beb97f74aaa901fd071137dbac13280ad48e3fa2e4c3",
+      "bytes": 10071
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_07/accepted/reference.json",
+      "sha256": "6012a709cd54f512ccff366a1b094ca472096470b761eccb0c1528684fc9fe73",
+      "bytes": 42472
+    },
+    {
+      "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_07_acceptance_v0_1.json",
+      "sha256": "ed129e994ea37fbac21f3e93e82d194d9cad1e0b7f74b06dcd9eda1cb36b1970",
+      "bytes": 9128
+    }
+  ],
+  "accepted_nba_inventory": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/accepted_nba_reference_inventory_after_batch_09.json",
+    "sha256": "1b59dd4cc9059477f5355de6002a597671d74333500666b12b468b53b5a46974",
+    "bytes": 6423
+  },
+  "accepted_nba_authorities_preserved": [
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/accepted/reference.json",
+      "sha256": "a57fe294e651805d854eed25a63f425e3947c80ab0ab45bf96f3a785de42df26",
+      "bytes": 196880
+    },
+    {
+      "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_01_acceptance_v0_1.json",
+      "sha256": "b91675294fab5cc5f4400e8ae45198abba83482ea204fe4c90766425af031a77",
+      "bytes": 9930
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_02/accepted/reference.json",
+      "sha256": "9585891fdb6d0ae19cdd05d62dde771966b48444f704cc2c67acbf2d1d65fd4a",
+      "bytes": 199602
+    },
+    {
+      "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_02_acceptance_v0_1.json",
+      "sha256": "fd2f1078aac4455a944d52c6c7c0f6afe2aeca6ce61bc6b57ccde8f95f4554da",
+      "bytes": 10550
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_03/accepted/reference.json",
+      "sha256": "872d64d08ed983a157cbcdb8d4994c73fdeefc8abe1940d6c6d71f44c92b78c7",
+      "bytes": 204922
+    },
+    {
+      "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_03_acceptance_v0_1.json",
+      "sha256": "8858e85a92d0257532f3f4cc8f33ef6492eeb83a1f4a1489c0f04ddaa04fe107",
+      "bytes": 11511
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_04/accepted/reference.json",
+      "sha256": "d03989e9520cc49d4b876385845fc2da3d75f29aab043d53cfaf03bdf9bae54a",
+      "bytes": 203584
+    },
+    {
+      "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_04_acceptance_v0_1.json",
+      "sha256": "90896e0b5bd96b0f9533de6b495a7206ee492bcef84bfd343fd82b7d28cb40ff",
+      "bytes": 10948
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_05/accepted/reference.json",
+      "sha256": "e4e54de3f73a0564412a244d2939310cf81e17711026399423a523c2bf80a237",
+      "bytes": 396596
+    },
+    {
+      "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_05_acceptance_v0_1.json",
+      "sha256": "12bea63c0fe48175a4ae08d735668128e7a8bc663de2aa72d624324b3fa18722",
+      "bytes": 10673
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_06/accepted/reference.json",
+      "sha256": "e38152c4713fb0936b5dc91c503bcd71530ee264da29e88fba99aecf27ad20fb",
+      "bytes": 413535
+    },
+    {
+      "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_06_acceptance_v0_1.json",
+      "sha256": "4b8964ddfc22d141ad5d26aaacdb7cf5c752e5f7fed97889455106cfdb062fa5",
+      "bytes": 10562
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_07/accepted/reference.json",
+      "sha256": "0bbb659b99256fb64fb10a9963107ef41fb7b3f1d1c111a4c5adf2c943037468",
+      "bytes": 215667
+    },
+    {
+      "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_07_acceptance_v0_1.json",
+      "sha256": "9e11d4d0f51ccc9bf8ce1052300e5a262336624ed88e203153ef061c794ca997",
+      "bytes": 10564
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/accepted/reference.json",
+      "sha256": "ae4efab693bc4e74384baa5e52a719ff5da338c2ab113ef38cc561e63c697964",
+      "bytes": 216894
+    },
+    {
+      "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_08_acceptance_v0_1.json",
+      "sha256": "6b81d6092b04ff085e8f4cd695dcd6407023490d89d21f7246f2be4e3f5e8455",
+      "bytes": 10670
+    },
+    {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_09/accepted/reference.json",
+      "sha256": "6af143e1ec6eb5315f2c0dbf73519e78e629021e2dbc72dc5e1e4e833bc45918",
+      "bytes": 220545
+    },
+    {
+      "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_09_acceptance_v0_1.json",
+      "sha256": "b8bd3d01c7399738fda4743e59f68a12ca251793b124241614c87016fee03b58",
+      "bytes": 10607
+    }
+  ],
+  "accepted_publication_preservation": [
+    {
+      "publication": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/accepted/reference.json",
+        "sha256": "a57fe294e651805d854eed25a63f425e3947c80ab0ab45bf96f3a785de42df26",
+        "bytes": 196880,
+        "acceptance_receipt": {
+          "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_01_acceptance_v0_1.json",
+          "sha256": "b91675294fab5cc5f4400e8ae45198abba83482ea204fe4c90766425af031a77",
+          "bytes": 9930
+        }
+      },
+      "audit": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/acceptance_audit/publication_audit.json",
+        "sha256": "3de473e8bf673de5e7daf65edab6913337ceb09f076e25c8cf5f35b4ff171527",
+        "bytes": 2580
+      },
+      "original_files_byte_unchanged": 286
+    },
+    {
+      "publication": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_02/accepted/reference.json",
+        "sha256": "9585891fdb6d0ae19cdd05d62dde771966b48444f704cc2c67acbf2d1d65fd4a",
+        "bytes": 199602,
+        "acceptance_receipt": {
+          "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_02_acceptance_v0_1.json",
+          "sha256": "fd2f1078aac4455a944d52c6c7c0f6afe2aeca6ce61bc6b57ccde8f95f4554da",
+          "bytes": 10550
+        }
+      },
+      "audit": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_02/acceptance_audit/publication_audit.json",
+        "sha256": "65075c6234e803d9f97bfcecce171a82c1f3f922ac5af4c33dd1cfd3f2895267",
+        "bytes": 2715
+      },
+      "original_files_byte_unchanged": 543
+    },
+    {
+      "publication": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_03/accepted/reference.json",
+        "sha256": "872d64d08ed983a157cbcdb8d4994c73fdeefc8abe1940d6c6d71f44c92b78c7",
+        "bytes": 204922,
+        "acceptance_receipt": {
+          "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_03_acceptance_v0_1.json",
+          "sha256": "8858e85a92d0257532f3f4cc8f33ef6492eeb83a1f4a1489c0f04ddaa04fe107",
+          "bytes": 11511
+        }
+      },
+      "audit": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_03/acceptance_audit/publication_audit.json",
+        "sha256": "3c88bbe5bd1d12f0187d5e1c20fb5782e55e988ecb66d4c3a99b3bd10201eba5",
+        "bytes": 2715
+      },
+      "original_files_byte_unchanged": 809
+    },
+    {
+      "publication": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_04/accepted/reference.json",
+        "sha256": "d03989e9520cc49d4b876385845fc2da3d75f29aab043d53cfaf03bdf9bae54a",
+        "bytes": 203584,
+        "acceptance_receipt": {
+          "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_04_acceptance_v0_1.json",
+          "sha256": "90896e0b5bd96b0f9533de6b495a7206ee492bcef84bfd343fd82b7d28cb40ff",
+          "bytes": 10948
+        }
+      },
+      "audit": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_04/acceptance_audit/publication_audit.json",
+        "sha256": "828f8b651096f11af59fa786d295f71c8d6a300492cbc00ba98f9870c1c23a04",
+        "bytes": 2715
+      },
+      "original_files_byte_unchanged": 1050
+    },
+    {
+      "publication": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_05/accepted/reference.json",
+        "sha256": "e4e54de3f73a0564412a244d2939310cf81e17711026399423a523c2bf80a237",
+        "bytes": 396596,
+        "acceptance_receipt": {
+          "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_05_acceptance_v0_1.json",
+          "sha256": "12bea63c0fe48175a4ae08d735668128e7a8bc663de2aa72d624324b3fa18722",
+          "bytes": 10673
+        }
+      },
+      "audit": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_05/acceptance_audit/publication_audit.json",
+        "sha256": "8e5e79956dd2a05e6a3c978a8214b65b06d41f29fcd833a862bac801886568e9",
+        "bytes": 2717
+      },
+      "original_files_byte_unchanged": 1549
+    },
+    {
+      "publication": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_06/accepted/reference.json",
+        "sha256": "e38152c4713fb0936b5dc91c503bcd71530ee264da29e88fba99aecf27ad20fb",
+        "bytes": 413535,
+        "acceptance_receipt": {
+          "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_06_acceptance_v0_1.json",
+          "sha256": "4b8964ddfc22d141ad5d26aaacdb7cf5c752e5f7fed97889455106cfdb062fa5",
+          "bytes": 10562
+        }
+      },
+      "audit": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_06/acceptance_audit/publication_audit.json",
+        "sha256": "0a13ecfe3c3308128a66f9ed8aff324e2e92b143f82250ce0e3107925c685526",
+        "bytes": 2718
+      },
+      "original_files_byte_unchanged": 2000
+    },
+    {
+      "publication": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_07/accepted/reference.json",
+        "sha256": "0bbb659b99256fb64fb10a9963107ef41fb7b3f1d1c111a4c5adf2c943037468",
+        "bytes": 215667,
+        "acceptance_receipt": {
+          "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_07_acceptance_v0_1.json",
+          "sha256": "9e11d4d0f51ccc9bf8ce1052300e5a262336624ed88e203153ef061c794ca997",
+          "bytes": 10564
+        }
+      },
+      "audit": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_07/acceptance_audit/publication_audit.json",
+        "sha256": "584ea9f79a81e0468be64a66b2bcd3c884a7a340ac9114d870f5a464a47a65d0",
+        "bytes": 2717
+      },
+      "original_files_byte_unchanged": 2245
+    },
+    {
+      "publication": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/accepted/reference.json",
+        "sha256": "ae4efab693bc4e74384baa5e52a719ff5da338c2ab113ef38cc561e63c697964",
+        "bytes": 216894,
+        "acceptance_receipt": {
+          "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_08_acceptance_v0_1.json",
+          "sha256": "6b81d6092b04ff085e8f4cd695dcd6407023490d89d21f7246f2be4e3f5e8455",
+          "bytes": 10670
+        }
+      },
+      "audit": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_08/acceptance_audit/publication_audit.json",
+        "sha256": "e5cdde99b1d84dec58f7777b5eacdcec301b6f31d66e49e3a7efcf3383096e50",
+        "bytes": 2719
+      },
+      "original_files_byte_unchanged": 2490
+    },
+    {
+      "publication": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_09/accepted/reference.json",
+        "sha256": "6af143e1ec6eb5315f2c0dbf73519e78e629021e2dbc72dc5e1e4e833bc45918",
+        "bytes": 220545,
+        "acceptance_receipt": {
+          "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_09_acceptance_v0_1.json",
+          "sha256": "b8bd3d01c7399738fda4743e59f68a12ca251793b124241614c87016fee03b58",
+          "bytes": 10607
+        }
+      },
+      "audit": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_09/acceptance_audit/publication_audit.json",
+        "sha256": "37fb9f6bfac1f74a8e00e84a6e7b95d78c3e4064c6b910c17efb39451fea5a98",
+        "bytes": 2720
+      },
+      "original_files_byte_unchanged": 2742
+    }
+  ],
+  "prior_nba_result": {
+    "path": "configs/ball_tracking/reviews/nba_completion_reference_batch_01_result_v0_1.json",
+    "sha256": "274443619640ee3e30200dfda780d69030ef4724458d39b5a7a1f5f667489810",
+    "bytes": 14726
+  },
+  "prior_nba_acceptance_publication_audit": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/acceptance_audit/publication_audit.json",
+    "sha256": "3de473e8bf673de5e7daf65edab6913337ceb09f076e25c8cf5f35b4ff171527",
+    "bytes": 2580
+  },
+  "separate_acceptance_focused_tests": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/acceptance_audit/focused_tests_final.json",
+    "sha256": "961960020113e429ce8251794c41acae0091bd07f1f2e76598bdd2c45a6a224e",
+    "bytes": 2505
+  },
+  "historical_acceptance_reader_snapshot": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/acceptance_audit/reader_scope_revision_before/snapshot.json",
+    "sha256": "0328fbf4a677902df7347c55b1f32ed1a344ee4c1d324d008206f83a92f45d75",
+    "bytes": 3615
+  },
+  "current_acceptance_reader_tests": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/acceptance_audit/focused_tests_scope_revision.json",
+    "sha256": "19f81e3e692bb5bb1a1e1e9cc08c68c760ab7714a4509b8c200dc6946a03ae47",
+    "bytes": 2380
+  },
+  "implementation": {
+    "path": "src/ball_tracking/completion_nba_references.py",
+    "sha256": "930e25ae2ddab76ac6f5a0cafd5c826fbaafd7880eed3f81d94c0d8b1685fc42",
+    "bytes": 29827
+  },
+  "reused_reference_implementation": {
+    "path": "src/ball_tracking/completion_references.py",
+    "sha256": "9315f337f3526e7f16536e00fa7c53778a99be4ed0b9436c3d3f85fb7cfa9ee3",
+    "bytes": 22134
+  },
+  "tests": {
+    "path": "tests/test_completion_nba_references.py",
+    "sha256": "a1a1f8c07274430f7ed99f16e21856abbf872e450e920015317702c3edf40da7",
+    "bytes": 13040
+  },
+  "prior_focused_tests": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/focused_tests_final.json",
+    "sha256": "dbb3fb71fe7a5df50e1a3e97fec08b153b173b857b1a2acb93d2096955351d4d",
+    "bytes": 1354
+  },
+  "focused_tests": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/focused_tests_final.json",
+    "sha256": "dbb3fb71fe7a5df50e1a3e97fec08b153b173b857b1a2acb93d2096955351d4d",
+    "bytes": 1354
+  },
+  "focused_tests_scope": "prior_unchanged_implementation",
+  "validation_policy": {
+    "renderer_implementation_and_tests_unchanged": true,
+    "prior_tests_run": 13,
+    "renderer_tests_rerun_this_increment": 0,
+    "prior_test_actual_proposal": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/proposal.json",
+      "sha256": "6406d3c4582e21d80e6e17953fe56c2df6618f7b4ccb5c8eb6897efaf7ca6e70",
+      "bytes": 94033
+    },
+    "current_actual_record_validation": "integration_audit",
+    "note": "Prior renderer tests are not represented as a fresh run against this batch; explicit test scope requires the separate current integration audit."
+  },
+  "inference_calls": 0,
+  "fitting_calls": 0,
+  "model_scoring_calls": 0,
+  "protected_evaluation_authorized": false,
+  "package_ready_for_fitting": false,
+  "executable_recipe_frozen": false,
+  "fitting_authorized_by_this_artifact": false,
+  "ball_phase_accepted": false,
+  "limitations": [
+    "All new labels remain AI proposals pending separate human acceptance.",
+    "Fixed game role and prior label acceptance do not approve fitting or protected evaluation.",
+    "AI inspection and saved source/encoded transport checks are not human acceptance or model accuracy.",
+    "Source batch final and full clip final are distinct; explicit native decode/filter context is retained.",
+    "Renderer tests are prior unchanged-code coverage; this batch has complete current producer/encoded-record validation."
+  ],
+  "recorded_at_utc": "2026-10-23T05:43:00.690976+00:00",
+  "actual_pending_review_reader_check": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_10/finalization_attempts/20261023T054254Z_b95e34b4/pending_review_reader_check.json",
+    "sha256": "669bfc965fad68ac7ba79ead9a37ea91571eef37bc650a65aaede617caa2d3b7",
+    "bytes": 673
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "ball_crop_retention_monitor_revision_approval/v0.1",
+  "approved_on": "2026-10-05",
+  "approved_by": "Ryan",
+  "user_instruction": "ok I like it. Move forward",
+  "preceding_preference": "I am happy to donate a lot of resources on my computer for this project, I just want my computers safety to always be heavily considered",
+  "design": "docs/ball_crop_candidate_retention_monitor_revision.md",
+  "implementation_authorized": true,
+  "focused_artificial_validation_authorized": true,
+  "fresh_large_fixture_design_validation_authorized": true,
+  "full_regression_authorized": true,
+  "compiled_scanner_benchmark_authorized": false,
+  "scientific_execution_authorized_by_this_record": false,
+  "scientific_parent_body_access_authorized": false,
+  "git_staging_authorized": false,
+  "git_commit_authorized": false,
+  "policy": {
+    "poll_seconds": 0.25,
+    "maximum_fast_check_interval_seconds": 1.0,
+    "scan_request_timeout_seconds": 10.0,
+    "scan_interval_after_completion_seconds": 5.0,
+    "maximum_accepted_scan_age_seconds": 30.0,
+    "minimum_free_disk_bytes": 53687091200,
+    "maximum_combined_resident_bytes": 8589934592,
+    "worker_committed_memory_limit_bytes": 8589934592,
+    "scanner_committed_memory_limit_bytes": 536870912,
+    "maximum_whole_root_output_bytes": 34359738368
+  },
+  "historical_limits_journal_and_consumed_budgets_preserved": true,
+  "old_evidence_and_completed_reviews_preserved": true
+}

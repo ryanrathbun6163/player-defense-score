@@ -1,0 +1,23 @@
+{
+  "schema_version": "ball_crop_candidate_retention_approval/v0.1",
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_candidate_retention_v0_1.json",
+    "sha256": "7640784e2a64e81a2064ebb40cd4d1c77366076e5e78a2c19f8f5fc28e29fe1b"
+  },
+  "design": {
+    "path": "docs/ball_crop_candidate_retention_proposal.md",
+    "sha256": "66db56a2338f86998c67c3a04f4850fa039ac7e8716cc982f5e34fb1593aff58"
+  },
+  "approved_by": "ryan",
+  "statement": "I approve. Please move forward chat",
+  "recorded_at_utc": "2026-10-02T17:01:31.423963+00:00",
+  "timestamp_semantics": "Receipt creation time, not an invented message timestamp.",
+  "scope": "implementation_and_execution_of_exact_proposal_subject_to_clean_tested_commit_resource_and_input_preconditions",
+  "implementation_authorized": true,
+  "execution_authorized": true,
+  "training_authorized": false,
+  "git_mutations_authorized": false,
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

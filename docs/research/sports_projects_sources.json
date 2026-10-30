@@ -1,0 +1,1361 @@
+{
+  "schema": "player_defense_score_sports_projects_sources/v0.1",
+  "research_date": "2026-10-08",
+  "chapter": "docs/research/sports_projects_and_analytics.md",
+  "method": {
+    "primary_sources_only": true,
+    "public_text_and_metadata_read": true,
+    "packages_installed": false,
+    "weights_downloaded": false,
+    "dataset_archives_downloaded": false,
+    "media_downloaded": false,
+    "inference_run": false,
+    "tests_run": false,
+    "performance_labels": [
+      "author_reported",
+      "source_inspected",
+      "vendor_claim"
+    ],
+    "limitations": [
+      "A source URL or documented entrypoint does not establish local reproducibility.",
+      "Code, model, annotation and original media rights must be evaluated separately.",
+      "No inspected system has been demonstrated here on Player Defense Score possessions.",
+      "Null publication_date means not verified, not unpublished."
+    ]
+  },
+  "repository_revisions": [
+    {
+      "repository": "roboflow/sports",
+      "ref": "main",
+      "commit_sha": "42c80c06b6b65a7f89455b89fe31cdf4c38ba227",
+      "commit_date_utc": "2025-05-27T08:58:09Z",
+      "inspection_date": "2026-10-08",
+      "retrieval": "GitHub REST repository/commit or branch metadata",
+      "binding_limit": "Resolved revision at inspection; branch URLs were read separately, not locally checked out or byte-hash certified."
+    },
+    {
+      "repository": "roboflow/sports",
+      "ref": "feat/basketball",
+      "commit_sha": "415751384e34f1cb7089a00909e0d7932fe73a75",
+      "commit_date_utc": null,
+      "inspection_date": "2026-10-08",
+      "retrieval": "GitHub REST repository/commit or branch metadata",
+      "binding_limit": "Resolved revision at inspection; branch URLs were read separately, not locally checked out or byte-hash certified."
+    },
+    {
+      "repository": "roboflow/notebooks",
+      "ref": "main",
+      "commit_sha": "9b1a04f0dfea9d08efffa981af590dd3687f1f57",
+      "commit_date_utc": "2026-08-12T15:49:03Z",
+      "inspection_date": "2026-10-08",
+      "retrieval": "GitHub REST repository/commit or branch metadata",
+      "binding_limit": "Resolved revision at inspection; branch URLs were read separately, not locally checked out or byte-hash certified."
+    },
+    {
+      "repository": "SoccerNet/sn-gamestate",
+      "ref": "main",
+      "commit_sha": "1c958345067218297d221e45e1a6405f975f83e0",
+      "commit_date_utc": "2026-05-02T09:21:47Z",
+      "inspection_date": "2026-10-08",
+      "retrieval": "GitHub REST repository/commit or branch metadata",
+      "binding_limit": "Resolved revision at inspection; branch URLs were read separately, not locally checked out or byte-hash certified."
+    },
+    {
+      "repository": "TrackingLaboratory/tracklab",
+      "ref": "main",
+      "commit_sha": "5767e86c32a6d6c68e2fc8ae7311f558fff6c7b2",
+      "commit_date_utc": "2026-05-01T10:15:38Z",
+      "inspection_date": "2026-10-08",
+      "retrieval": "GitHub REST repository/commit or branch metadata",
+      "binding_limit": "Resolved revision at inspection; branch URLs were read separately, not locally checked out or byte-hash certified."
+    },
+    {
+      "repository": "gabriel-vanzandycke/deepsport",
+      "ref": "main",
+      "commit_sha": "eb902209fcbb5c4ea06332b95f71bb8ef0a46b72",
+      "commit_date_utc": "2026-05-11T09:27:02Z",
+      "inspection_date": "2026-10-08",
+      "retrieval": "GitHub REST repository/commit or branch metadata",
+      "binding_limit": "Resolved revision at inspection; branch URLs were read separately, not locally checked out or byte-hash certified."
+    },
+    {
+      "repository": "Nolan-Lo/basketball-computer-vision",
+      "ref": "main",
+      "commit_sha": "f93d8cb7e39363eccedfd7f3db08e85a6b0f6437",
+      "commit_date_utc": "2026-03-12T03:18:31Z",
+      "inspection_date": "2026-10-08",
+      "retrieval": "GitHub REST repository/commit or branch metadata",
+      "binding_limit": "Resolved revision at inspection; branch URLs were read separately, not locally checked out or byte-hash certified."
+    },
+    {
+      "repository": "cyrushadavi1/nba_video_analysis_v2",
+      "ref": "main",
+      "commit_sha": "b7b115c7ace11348512c0ebfb679b48cad35f1fb",
+      "commit_date_utc": "2026-07-21T17:32:27Z",
+      "inspection_date": "2026-10-08",
+      "retrieval": "GitHub REST repository/commit or branch metadata",
+      "binding_limit": "Resolved revision at inspection; branch URLs were read separately, not locally checked out or byte-hash certified."
+    },
+    {
+      "repository": "PySport/kloppy",
+      "ref": "master",
+      "commit_sha": "11822569caa4490e99321be54afc3919ad6b417a",
+      "commit_date_utc": "2026-10-03T13:15:41Z",
+      "inspection_date": "2026-10-08",
+      "retrieval": "GitHub REST repository/commit or branch metadata",
+      "binding_limit": "Resolved revision at inspection; branch URLs were read separately, not locally checked out or byte-hash certified."
+    },
+    {
+      "repository": "ML-KULeuven/socceraction",
+      "ref": "master",
+      "commit_sha": "93a1242d46c104889205753accaabadb00c45c6d",
+      "commit_date_utc": "2026-01-07T08:40:04Z",
+      "inspection_date": "2026-10-08",
+      "retrieval": "GitHub REST repository/commit or branch metadata",
+      "binding_limit": "Resolved revision at inspection; branch URLs were read separately, not locally checked out or byte-hash certified."
+    }
+  ],
+  "sources": [
+    {
+      "id": "sn_repo",
+      "title": "SoccerNet Game State Reconstruction",
+      "url": "https://github.com/SoccerNet/sn-gamestate",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "README and repository metadata",
+      "claims": [
+        "Modular research pipeline and documented uv/tracklab entrypoint."
+      ],
+      "caveats": [
+        "Not run; dependency descriptions need a pinned compatible environment."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "sn_config",
+      "title": "SoccerNet pipeline configuration",
+      "url": "https://raw.githubusercontent.com/SoccerNet/sn-gamestate/main/sn_gamestate/configs/soccernet.yaml",
+      "type": "source_config",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full YAML",
+      "claims": [
+        "Detection, ReID, tracking, NBJW calibration, jersey aggregation and team modules ordered explicitly."
+      ],
+      "caveats": [
+        "Current configuration differs from original paper baseline; no ball/possession/value pipeline evidenced."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "sn_jersey",
+      "title": "SoccerNet tracklet jersey aggregation",
+      "url": "https://raw.githubusercontent.com/SoccerNet/sn-gamestate/main/sn_gamestate/jersey/voting_tracklet_jn_api.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full module",
+      "claims": [
+        "Confidence-weighted jersey vote across a tracklet."
+      ],
+      "caveats": [
+        "Identity-switch contamination is an inferred risk, not measured here."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "sn_team",
+      "title": "SoccerNet team clustering",
+      "url": "https://raw.githubusercontent.com/SoccerNet/sn-gamestate/main/sn_gamestate/team/tracklet_team_clustering_api.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full module",
+      "claims": [
+        "Mean player embeddings and two-cluster KMeans."
+      ],
+      "caveats": [
+        "Clusters do not independently establish named roster identity."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "sn_calib",
+      "title": "SoccerNet NBJW calibration",
+      "url": "https://raw.githubusercontent.com/SoccerNet/sn-gamestate/main/sn_gamestate/calibration/nbjw_calib.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Keypoint/line inference and homography paths",
+      "claims": [
+        "Projects box bottom points; optionally reuses prior homography."
+      ],
+      "caveats": [
+        "Ground-plane athlete projection; no verified ball height or uncertainty calibration."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "sn_paper",
+      "title": "SoccerNet Game State Reconstruction paper",
+      "url": "https://arxiv.org/html/2404.11335v1",
+      "type": "primary_paper",
+      "publication_date": "2024-04-17",
+      "publication_date_basis": "Primary source submission/announcement date",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Dataset, pipeline, metric and experiment sections",
+      "claims": [
+        "Joint position/identity GS-HOTA; original test baseline22.26 versus image HOTA57.64."
+      ],
+      "caveats": [
+        "Author reported; original architecture and soccer tolerance do not establish NBA transfer."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "sn_license",
+      "title": "SoccerNet GSR license",
+      "url": "https://raw.githubusercontent.com/SoccerNet/sn-gamestate/main/LICENSE",
+      "type": "license",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "License text",
+      "claims": [
+        "GPL-3.0 code license."
+      ],
+      "caveats": [
+        "Does not grant footage or checkpoint rights by itself."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "sn_access",
+      "title": "SoccerNet dataset access",
+      "url": "https://www.soccer-net.org/data",
+      "type": "official_data_documentation",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Access and task inventory",
+      "claims": [
+        "Public and gated datasets; protected video requires approval/NDA through Hugging Face."
+      ],
+      "caveats": [
+        "No gated data requested or downloaded."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "tracklab",
+      "title": "TrackLab",
+      "url": "https://github.com/TrackingLaboratory/tracklab",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "README and metadata",
+      "claims": [
+        "Research framework with modular processing, saved states and evaluation integration."
+      ],
+      "caveats": [
+        "No local install; framework and plugin dependency generations differ."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "tracklab_license",
+      "title": "TrackLab MIT license",
+      "url": "https://raw.githubusercontent.com/TrackingLaboratory/tracklab/main/LICENSE",
+      "type": "license",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "License text",
+      "claims": [
+        "MIT license."
+      ],
+      "caveats": [
+        "Plugin/model/data terms remain separate."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "rf_repo",
+      "title": "Roboflow sports",
+      "url": "https://github.com/roboflow/sports",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "README and repository metadata",
+      "claims": [
+        "Source-install sports tooling; MIT repository."
+      ],
+      "caveats": [
+        "Main and basketball feature branch differ."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "rf_soccer",
+      "title": "Roboflow soccer entrypoint",
+      "url": "https://raw.githubusercontent.com/roboflow/sports/main/examples/soccer/main.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Main modes and processing loops",
+      "claims": [
+        "Separate detection, ball, tracking, team and radar modes; sliced ball inference."
+      ],
+      "caveats": [
+        "No reproduced accuracy; radar branch inspected does not plot a full ball trajectory."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "rf_ball",
+      "title": "Roboflow ball selector",
+      "url": "https://raw.githubusercontent.com/roboflow/sports/main/sports/common/ball.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full selector/annotator",
+      "claims": [
+        "Recent-candidate centroid and nearest-current-candidate selection."
+      ],
+      "caveats": [
+        "All candidates influence history; not a calibrated occlusion model."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "rf_team",
+      "title": "Roboflow team classifier",
+      "url": "https://raw.githubusercontent.com/roboflow/sports/main/sports/common/team.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Embedding, dimensionality reduction and clustering",
+      "claims": [
+        "SigLIP, UMAP and KMeans."
+      ],
+      "caveats": [
+        "Team labels do not prove named identity."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "rf_view",
+      "title": "Roboflow view transform",
+      "url": "https://raw.githubusercontent.com/roboflow/sports/main/sports/common/view.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full homography helper",
+      "claims": [
+        "Fits homography and transforms coordinates."
+      ],
+      "caveats": [
+        "No uncertainty propagation in the small helper."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "rf_basketball_notebook",
+      "title": "Roboflow basketball notebook",
+      "url": "https://github.com/roboflow/notebooks/blob/main/notebooks/basketball-ai-how-to-detect-track-and-identify-basketball-players.ipynb",
+      "type": "official_notebook",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Code cells inspected as text; outputs/media not downloaded",
+      "claims": [
+        "RF-DETR, seeded SAM2, team clustering, number OCR, court transform and shot demo."
+      ],
+      "caveats": [
+        "Credentials and feature branch required; no independent end-to-end evaluation found."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "rf_basketball_notebook_raw",
+      "title": "Roboflow basketball notebook raw source",
+      "url": "https://raw.githubusercontent.com/roboflow/notebooks/main/notebooks/basketball-ai-how-to-detect-track-and-identify-basketball-players.ipynb",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Parsed notebook code cells",
+      "claims": [
+        "Coordinate loop appends only when court keypoint condition passes."
+      ],
+      "caveats": [
+        "Preserve explicit time/missingness if adopting; no execution."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "rf_shots",
+      "title": "Roboflow basketball shot state machine",
+      "url": "https://raw.githubusercontent.com/roboflow/sports/feat/basketball/sports/basketball/tools.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "ShotEventTracker implementation",
+      "claims": [
+        "Repeated action and basket detections plus timeout determine events."
+      ],
+      "caveats": [
+        "Timeout is a heuristic outcome, not independent evidence of a miss."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "rf_basketball_branch",
+      "title": "Roboflow basketball branch documentation",
+      "url": "https://raw.githubusercontent.com/roboflow/sports/feat/basketball/README.md",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "README and branch metadata",
+      "claims": [
+        "Separate feature branch consumed by notebook."
+      ],
+      "caveats": [
+        "Branch dependency should be pinned before a reproduction."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "deepsport",
+      "title": "DeepSport research code",
+      "url": "https://raw.githubusercontent.com/gabriel-vanzandycke/deepsport/main/README.md",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "README and training routes",
+      "claims": [
+        "Ball segmentation/localization tasks and preprocessing workflow; declared CC BY-NC-ND4.0."
+      ],
+      "caveats": [
+        "Public code description does not imply permissive reuse; dataset routes vary."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "deepsport_config",
+      "title": "DeepSport ball-size configuration",
+      "url": "https://raw.githubusercontent.com/gabriel-vanzandycke/deepsport/main/configs/ballsize.py",
+      "type": "source_config",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full task configuration",
+      "claims": [
+        "Ball-centered64px crops, diameter/offset losses; public_dataset=False in inspected config."
+      ],
+      "caveats": [
+        "Oracle-position and dataset assumptions must be checked before transfer."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "deepsport_env",
+      "title": "DeepSport environment",
+      "url": "https://raw.githubusercontent.com/gabriel-vanzandycke/deepsport/main/pyproject.toml",
+      "type": "source_config",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Dependencies and Python constraints",
+      "claims": [
+        "Python3.10, TensorFlow2.15-era environment and custom dependencies."
+      ],
+      "caveats": [
+        "Not installed; not drop-in compatible with arbitrary detector environments."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "deepsportradar_paper",
+      "title": "DeepSportradar v1",
+      "url": "https://arxiv.org/html/2208.08190",
+      "type": "primary_paper",
+      "publication_date": "2022-08-17",
+      "publication_date_basis": "Primary source submission/announcement date",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Task/data/calibration and split sections",
+      "claims": [
+        "Basketball task suite; calibrated cameras and arena separation."
+      ],
+      "caveats": [
+        "Ball crop localization differs from detecting the correct candidate."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "deepsportradar_ball",
+      "title": "DeepSportradar 3D ball challenge",
+      "url": "https://raw.githubusercontent.com/DeepSportradar/ball-3d-localization-challenge/main/README.md",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Task assumptions and entrypoints",
+      "claims": [
+        "Oracle-position centered ball crops; preparation and training commands."
+      ],
+      "caveats": [
+        "No detection recall result follows; complete per-artifact licensing unresolved."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "deepsportradar_reid",
+      "title": "DeepSportradar player re-identification",
+      "url": "https://github.com/DeepSportRadar/player-reidentification-challenge/blob/master/README.md",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Splits, evaluation and baseline route",
+      "claims": [
+        "Cropped-person retrieval with query/gallery and challenge-specific scores."
+      ],
+      "caveats": [
+        "Different challenge-year scores are not comparable; not full-game named identity."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "deepsportlab",
+      "title": "DeepSportLab",
+      "url": "https://arxiv.org/abs/2112.00627",
+      "type": "primary_paper",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Abstract",
+      "claims": [
+        "Joint basketball ball detection, player segmentation and pose research."
+      ],
+      "caveats": [
+        "Abstract-level screening; no code reproduction or tracking/value claim."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "nolan_repo",
+      "title": "Nolan-Lo basketball capstone",
+      "url": "https://github.com/Nolan-Lo/basketball-computer-vision",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "README, tree and metadata",
+      "claims": [
+        "Staged pipeline with court projection, teams and ball acquisition."
+      ],
+      "caveats": [
+        "No project license located; no independent downstream benchmark found."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "nolan_main",
+      "title": "Nolan capstone main entrypoint",
+      "url": "https://raw.githubusercontent.com/Nolan-Lo/basketball-computer-vision/main/main.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Entrypoint and settings",
+      "claims": [
+        "Invokes pipeline with configured models and example paths."
+      ],
+      "caveats": [
+        "Default paths require preparation; not run."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "nolan_env",
+      "title": "Nolan capstone dependency file",
+      "url": "https://raw.githubusercontent.com/Nolan-Lo/basketball-computer-vision/main/pyproject.toml",
+      "type": "source_config",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full file",
+      "claims": [
+        "Python>=3.12 and model/computer-vision dependencies."
+      ],
+      "caveats": [
+        "No installation compatibility tested."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "nolan_ball",
+      "title": "Nolan ball tracker",
+      "url": "https://raw.githubusercontent.com/Nolan-Lo/basketball-computer-vision/main/src/trackers/ball_tracker.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full candidate/filter/interpolation path",
+      "claims": [
+        "Highest-confidence selection, displacement filter, interpolation and backward fill."
+      ],
+      "caveats": [
+        "Inspected path lacks explicit observed/imputed distinction and bounded small-gap semantics."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "nolan_possession",
+      "title": "Nolan acquisition detector",
+      "url": "https://raw.githubusercontent.com/Nolan-Lo/basketball-computer-vision/main/src/ball_acquisition_detector.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Geometry/containment/persistence logic",
+      "claims": [
+        "Heuristic acquisition from player boxes and ball."
+      ],
+      "caveats": [
+        "Maximum-distance branch merits interpretation check; no execution or confirmed bug claim."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "nbacv_repo",
+      "title": "nbacv broadcast analysis",
+      "url": "https://raw.githubusercontent.com/cyrushadavi1/nba_video_analysis_v2/main/README.md",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "README, CLI and artifacts",
+      "claims": [
+        "Broad NBA prototype with cached stages and explicit output conventions."
+      ],
+      "caveats": [
+        "Research prototype; project license unresolved; newer features differ from older assessment."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "nbacv_ball",
+      "title": "nbacv ball implementation",
+      "url": "https://raw.githubusercontent.com/cyrushadavi1/nba_video_analysis_v2/main/src/nbacv/ball.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Heatmaps, candidates, Viterbi and interpolation",
+      "claims": [
+        "WASB three-frame inference, explicit missing state, bounded interpolation."
+      ],
+      "caveats": [
+        "Hand-selected penalties; not a calibrated identity probability or new proven fix for this project."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "nbacv_possession",
+      "title": "nbacv possession states",
+      "url": "https://raw.githubusercontent.com/cyrushadavi1/nba_video_analysis_v2/main/src/nbacv/possession.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "State update and confidence logic",
+      "claims": [
+        "Proximity/persistence with unknown and flight states."
+      ],
+      "caveats": [
+        "Heuristic confidence; independent possession accuracy not established."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "nbacv_events",
+      "title": "nbacv event proposals",
+      "url": "https://raw.githubusercontent.com/cyrushadavi1/nba_video_analysis_v2/main/src/nbacv/events.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Pass/turnover/shot/rebound rules",
+      "claims": [
+        "Derived events from possession and geometry."
+      ],
+      "caveats": [
+        "Court-plane projected rim proximity needs separate validation; not elevated-rim geometry."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "nbacv_eval",
+      "title": "nbacv evaluation report",
+      "url": "https://raw.githubusercontent.com/cyrushadavi1/nba_video_analysis_v2/main/reports/evaluation.md",
+      "type": "author_experiment_report",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Metrics, splits and caveats",
+      "claims": [
+        "Author SportsMOT AP50~.968/HOTA50.2/IDF1 52.1; NBA ball coverage qualitative."
+      ],
+      "caveats": [
+        "Not independently reproduced; fitted-point reprojection is not independent court-position accuracy."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "nbacv_assessment",
+      "title": "nbacv final assessment",
+      "url": "https://raw.githubusercontent.com/cyrushadavi1/nba_video_analysis_v2/main/reports/final_assessment.md",
+      "type": "author_assessment",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Limitations and scope",
+      "claims": [
+        "Describes heuristic analytics and earlier missing features."
+      ],
+      "caveats": [
+        "Stale relative to newer README; not one synchronized validated release."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "chonyy_demo",
+      "title": "AI basketball analysis demo",
+      "url": "https://github.com/chonyy/AI-basketball-analysis/blob/master/README.md?plain=1",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "README screening only",
+      "claims": [
+        "Flask/OpenPose shot-analysis example."
+      ],
+      "caveats": [
+        "Not full court/identity pipeline; README flags OpenPose noncommercial limitation."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "sportsmot_repo",
+      "title": "SportsMOT official repository",
+      "url": "https://raw.githubusercontent.com/MCG-NJU/SportsMOT/main/README.md",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Dataset/task/terms and evaluation links",
+      "claims": [
+        "Player-only tracking labels and TrackEval routes; CC BY-NC4.0 plus distribution terms."
+      ],
+      "caveats": [
+        "No ball/roster labels; clips selected without shot changes."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "sportsmot_paper",
+      "title": "SportsMOT paper",
+      "url": "https://arxiv.org/abs/2304.05170",
+      "type": "primary_paper",
+      "publication_date": "2023-04-11",
+      "publication_date_basis": "Primary source submission/announcement date",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Abstract and submission history",
+      "claims": [
+        "240 sequences,150K+frames,1.6M+boxes; association benchmark."
+      ],
+      "caveats": [
+        "Author dataset statistics, not ball performance."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "metrica",
+      "title": "Metrica sample data",
+      "url": "https://raw.githubusercontent.com/metrica-sports/sample-data/master/README.md",
+      "type": "official_data_documentation",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Formats, coordinate conventions and acknowledgement",
+      "claims": [
+        "Synchronized anonymized tracking and event examples."
+      ],
+      "caveats": [
+        "Already tracked data; no pixel-to-track algorithm or broad footage grant."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "kloppy",
+      "title": "kloppy",
+      "url": "https://github.com/PySport/kloppy",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "README and metadata",
+      "claims": [
+        "Vendor-independent tracking/event interfaces and coordinate transforms; BSD3."
+      ],
+      "caveats": [
+        "Parses existing records; not a visual tracker."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "kloppy_schema",
+      "title": "kloppy tracking domain schema",
+      "url": "https://raw.githubusercontent.com/PySport/kloppy/master/kloppy/domain/models/tracking.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Frame/player/ball data classes",
+      "claims": [
+        "Explicit frame and spatial types."
+      ],
+      "caveats": [
+        "Project-specific observation provenance should not be dropped on export."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "sportypy",
+      "title": "sportypy",
+      "url": "https://github.com/sportsdataverse/sportypy/blob/main/README.md",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "README",
+      "claims": [
+        "Rule-based sports surfaces, including basketball, for plotting."
+      ],
+      "caveats": [
+        "Not camera calibration or a coordinate estimator."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "socceraction",
+      "title": "socceraction",
+      "url": "https://github.com/ML-KULeuven/socceraction",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "README and metadata",
+      "claims": [
+        "SPADL and action-value tooling; MIT; README says not actively developed."
+      ],
+      "caveats": [
+        "Requires structured events and pinned environment; not NBA defensive attribution."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "spadl_schema",
+      "title": "SPADL schema",
+      "url": "https://raw.githubusercontent.com/ML-KULeuven/socceraction/master/socceraction/spadl/schema.py",
+      "type": "source_code",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Schema fields/constraints",
+      "claims": [
+        "Explicit action IDs, event provenance, team/player/time/geometry/type/result."
+      ],
+      "caveats": [
+        "Soccer vocabulary requires adaptation."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "vaep",
+      "title": "VAEP documentation",
+      "url": "https://github.com/ml-kuleuven/socceraction/blob/master/docs/documentation/valuing_actions/vaep.rst",
+      "type": "official_documentation",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Model definition",
+      "claims": [
+        "Value as changes in scoring/conceding probabilities over actions."
+      ],
+      "caveats": [
+        "Does not solve off-ball causal responsibility."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "laurie",
+      "title": "LaurieOnTracking",
+      "url": "https://github.com/Friends-of-Tracking-Data-FoTD/LaurieOnTracking",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "README and code inventory",
+      "claims": [
+        "Readable tracking analytics, pitch-control and EPV examples."
+      ],
+      "caveats": [
+        "Starts with tracking data; no basketball transfer demonstrated."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "epv_paper",
+      "title": "A Multiresolution Stochastic Process Model for Predicting NBA Possession Outcomes",
+      "url": "https://arxiv.org/abs/1408.0777",
+      "type": "primary_paper",
+      "publication_date": "2014-08-04",
+      "publication_date_basis": "Primary source submission/announcement date",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Abstract and bibliographic record",
+      "claims": [
+        "Continuous movement and discrete transitions for expected possession value."
+      ],
+      "caveats": [
+        "Modeling precedent, not a reproduced defense score."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "epv_demo",
+      "title": "EPVDemo",
+      "url": "https://raw.githubusercontent.com/dcervone/EPVDemo/master/README.md",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Author README and execution requirements",
+      "claims": [
+        "R demo and STATS-permitted full-game sample."
+      ],
+      "caveats": [
+        "Not run; sample-specific permission does not extend to arbitrary footage."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "defense_paper",
+      "title": "Characterizing the Spatial Structure of Defensive Skill in Professional Basketball",
+      "url": "https://arxiv.org/abs/1405.0231",
+      "type": "primary_paper",
+      "publication_date": "2014-05-01",
+      "publication_date_basis": "Primary source submission/announcement date",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Abstract and bibliographic record",
+      "claims": [
+        "Spatial/statistical treatment of defensive contributions."
+      ],
+      "caveats": [
+        "Not evidence that nearest-defender heuristics identify causal value."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "multisports",
+      "title": "MultiSports",
+      "url": "https://raw.githubusercontent.com/MCG-NJU/MultiSports/main/README.md",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Task, baseline and evaluation documentation",
+      "claims": [
+        "Action tubes, frame/video AP and official baseline integration."
+      ],
+      "caveats": [
+        "Not ball trajectories; noncommercial data terms."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "sportsqa",
+      "title": "Sports-QA",
+      "url": "https://arxiv.org/abs/2401.01505",
+      "type": "primary_paper",
+      "publication_date": "2024-01-03",
+      "publication_date_basis": "Primary source submission/announcement date",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Abstract and submission date",
+      "claims": [
+        "Fine-grained sports video question answering."
+      ],
+      "caveats": [
+        "Not inspected as a metric tracking implementation."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "basketballbench_abs",
+      "title": "BasketballBench: Towards Comprehensive Basketball Understanding",
+      "url": "https://arxiv.org/abs/2608.23435",
+      "type": "primary_preprint",
+      "publication_date": "2026-08-24",
+      "publication_date_basis": "Primary source submission/announcement date",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Abstract and submission date",
+      "claims": [
+        "2501 possession clips and7980 questions as reported."
+      ],
+      "caveats": [
+        "Preprint; author code/data release not confirmed."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "basketballbench_paper",
+      "title": "BasketballBench full text",
+      "url": "https://arxiv.org/html/2608.23435v1",
+      "type": "primary_preprint",
+      "publication_date": "2026-08-24",
+      "publication_date_basis": "Primary source submission/announcement date",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Task/annotation/tooling sections and link search",
+      "claims": [
+        "Structured tools and video models support heterogeneous understanding tasks."
+      ],
+      "caveats": [
+        "Coarse regions/QA are not dense trajectories; annotation review varies by task."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "sportstime",
+      "title": "SportsTime",
+      "url": "https://github.com/ustiniansy/SportsTime",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Dataset, release and access documentation",
+      "claims": [
+        "Temporal evidence-focused sports QA;14326questions1575videos author-reported."
+      ],
+      "caveats": [
+        "Gated/noncommercial video; no metric trajectory target."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "spottheball",
+      "title": "SpotTheBall",
+      "url": "https://arxiv.org/abs/2511.00261",
+      "type": "primary_preprint",
+      "publication_date": "2025-10-31",
+      "publication_date_basis": "Primary source submission/announcement date",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Abstract and task description",
+      "claims": [
+        "Hidden-ball inference on edited static images and coarse grid."
+      ],
+      "caveats": [
+        "Task-specific difficulty does not rank all current visible-ball trackers."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "skillcorner_product",
+      "title": "SkillCorner Data on Demand",
+      "url": "https://www.skillcorner.com/articles/data-on-demand",
+      "type": "official_vendor_claim",
+      "publication_date": "2026-09-30",
+      "publication_date_basis": "Primary source submission/announcement date",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Product announcement",
+      "claims": [
+        "Single-camera tracking service with supporting match information."
+      ],
+      "caveats": [
+        "Closed implementation; no independent accuracy verification here."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "skillcorner_soccer",
+      "title": "SkillCorner open data",
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/master/README.md",
+      "type": "official_data_documentation",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Tracking/events/pose schema and caveats",
+      "claims": [
+        "Detected/extrapolated flags, FOV and separately generated outputs."
+      ],
+      "caveats": [
+        "Vendor estimates are not ground truth; rights require per-artifact check."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "hawkeye",
+      "title": "NBA and Sony Hawk-Eye partnership",
+      "url": "https://pr.nba.com/nba-sony-hawk-eye-innovations-partnership/",
+      "type": "official_league_announcement",
+      "publication_date": "2023-03-09",
+      "publication_date_basis": "Primary source submission/announcement date",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Deployment description",
+      "claims": [
+        "3D player/ball/pose tracking announcement for2023-24."
+      ],
+      "caveats": [
+        "Arena system; closed method and validation data."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "second_spectrum",
+      "title": "NBA and Genius Sports/Second Spectrum partnership",
+      "url": "https://pr.nba.com/nba-genius-sports-second-spectrum-expanded-partnership/",
+      "type": "official_league_announcement",
+      "publication_date": "2023-03-09",
+      "publication_date_basis": "Primary source submission/announcement date",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Analytics/product and R&D description",
+      "claims": [
+        "Analytics and augmented viewing roles distinct from capture."
+      ],
+      "caveats": [
+        "Announced R&D is not a public reproduced pipeline."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "skillcorner_basketball",
+      "title": "SkillCorner basketball open data",
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata-basketball/main/README.md",
+      "type": "official_data_documentation",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full README",
+      "claims": [
+        "Ten ACB tracking/event games;293-game offense aggregates."
+      ],
+      "caveats": [
+        "Proprietary predictions; full-season totals not reproducible from ten samples."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "skillcorner_basketball_tracking",
+      "title": "SkillCorner basketball tracking dictionary",
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata-basketball/main/docs/data_dictionary/tracking_data.md",
+      "type": "official_data_documentation",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full schema",
+      "claims": [
+        "25fps,feet,detected/extrapolated flags,empty dead-time rows and predError."
+      ],
+      "caveats": [
+        "90% player-radius calibration is vendor claimed; ball uncertainty differs; no truth residuals inspected."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "skillcorner_basketball_primer",
+      "title": "SkillCorner basketball primer",
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata-basketball/main/docs/PRIMER.md",
+      "type": "official_data_documentation",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full primer",
+      "claims": [
+        "Tracking/events/aggregates separation; chance versus possession and clocks."
+      ],
+      "caveats": [
+        "Verify raw/event orientation per table; primer height wording simplified versus dictionary."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "skillcorner_basketball_issues",
+      "title": "SkillCorner basketball known issues",
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata-basketball/main/docs/KNOWN_ISSUES.md",
+      "type": "official_data_documentation",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full issues list",
+      "claims": [
+        "Duplicate IDs, event semantics/omissions and aggregation caveats."
+      ],
+      "caveats": [
+        "Vendor-disclosed defects, not independently measured counts."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "skillcorner_basketball_matchups",
+      "title": "SkillCorner basketball matchup intervals",
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata-basketball/main/docs/data_dictionary/matchups.md",
+      "type": "official_data_documentation",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full schema",
+      "claims": [
+        "Time-bounded defender/offender assignments with chance/possession joins."
+      ],
+      "caveats": [
+        "Inferred assignments are not independent labels of intent or responsibility."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "skillcorner_basketball_closeouts",
+      "title": "SkillCorner basketball closeouts",
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata-basketball/main/docs/data_dictionary/closeouts.md",
+      "type": "official_data_documentation",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full schema",
+      "claims": [
+        "Touch/start/end times, distances, participants and following action."
+      ],
+      "caveats": [
+        "Schema does not establish detector precision or causal defensive credit."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "skillcorner_basketball_possessions",
+      "title": "SkillCorner basketball possessions",
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata-basketball/main/docs/data_dictionary/possessions.md",
+      "type": "official_data_documentation",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full schema",
+      "claims": [
+        "Possession intervals and PBP-derived versus inferred fields."
+      ],
+      "caveats": [
+        "Roster list may contain more than five per team across substitutions."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "skillcorner_basketball_license",
+      "title": "SkillCorner basketball license",
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata-basketball/main/LICENSE",
+      "type": "license",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Full license",
+      "claims": [
+        "MIT, copyright2026 SkillCorner."
+      ],
+      "caveats": [
+        "Software/documentation wording; no underlying broadcast-media grant established."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "pl_nba",
+      "title": "PL-NBA possession-level dataset",
+      "url": "https://raw.githubusercontent.com/holhouse/PL-NBA-Dataset/main/README.md",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified; repository commit dates are recorded separately where available",
+      "access_date": "2026-10-08",
+      "inspection_depth": "README and tree metadata",
+      "claims": [
+        "7000+possessions,30000+events,40games;author event evaluation."
+      ],
+      "caveats": [
+        "AnnotationZIP listed not downloaded; sparse baseline protocol; research/noncommercial terms; no tracking labels established."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "sportslabkit",
+      "title": "SportsLabKit",
+      "url": "https://raw.githubusercontent.com/AtomScott/SportsLabKit/main/README.md",
+      "type": "official_repository",
+      "publication_date": null,
+      "publication_date_basis": "Not verified",
+      "access_date": "2026-10-08",
+      "inspection_depth": "README, documented example and roadmap",
+      "claims": [
+        "Swappable tracking components and frame-indexed dataframes."
+      ],
+      "caveats": [
+        "Tracker internals not inspected in this pass; event detection remains a roadmap item; not run."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "sportslabkit_license",
+      "title": "SportsLabKit license",
+      "url": "https://raw.githubusercontent.com/AtomScott/SportsLabKit/main/LICENSE",
+      "type": "license",
+      "publication_date": null,
+      "publication_date_basis": "License version is not repository publication date",
+      "access_date": "2026-10-08",
+      "inspection_depth": "License text",
+      "claims": [
+        "GPL-3.0."
+      ],
+      "caveats": [
+        "Dependencies and data need separate review."
+      ],
+      "local_reproduction": "not_run"
+    },
+    {
+      "id": "action_valuation_survey",
+      "title": "Action Valuation in Sports: A Survey",
+      "url": "https://arxiv.org/html/2504.06163v1",
+      "type": "primary_survey",
+      "publication_date": "2025-04-08",
+      "publication_date_basis": "arXiv initial submission; CVPRW2025 also confirmed on author page",
+      "access_date": "2026-10-08",
+      "inspection_depth": "Taxonomy, evaluation and off-ball valuation sections",
+      "claims": [
+        "Limited explicit value ground truth and off-ball credit-assignment evidence."
+      ],
+      "caveats": [
+        "Research map, not validation of a chosen defensive metric; CVF direct open failed, author arXiv text accessible."
+      ],
+      "local_reproduction": "not_run"
+    }
+  ]
+}

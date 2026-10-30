@@ -1,0 +1,24 @@
+{
+  "schema_version": "ball_candidate_retention_localization_approval/v0.1",
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/saved_candidate_retention_localization_diagnostic_v0_1.json",
+    "sha256": "9a9179306b7c60f5956fc17ea751ad1c597e5941c6638a57869de2022a4091eb"
+  },
+  "design_document": {
+    "path": "docs/ball_candidate_retention_localization_proposal.md",
+    "sha256": "b5ee493e670fc4eb44c9de6ce119d438bac420bba929183e8c794cfe7ed96d60"
+  },
+  "approved_by": "ryan",
+  "statement": "mover forward chat",
+  "interpretation": "Ryan replied to the completed bounded diagnostic proposal and its scope-review request; this authorizes implementing and running that exact saved-evidence diagnostic. It does not approve a new tracking experiment, training, method selection or any Git step.",
+  "recorded_at_utc": "2026-10-02T15:39:58.797833+00:00",
+  "timestamp_semantics": "Receipt creation time; no message event timestamp is invented.",
+  "diagnostic_implementation_authorized": true,
+  "diagnostic_execution_authorized": true,
+  "new_tracking_experiment_authorized": false,
+  "training_authorized": false,
+  "git_mutations_authorized": false,
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

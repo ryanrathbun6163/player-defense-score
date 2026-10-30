@@ -1,0 +1,500 @@
+{
+  "schema_version": "1.0",
+  "research_date": "2026-10-08",
+  "scope": "Root synthesis: evaluation, data, detectors and pipeline engineering",
+  "sources": [
+    {
+      "id": "R01",
+      "title": "A Survey of Deep Learning in Sports Applications: Perception, Comprehension, and Decision",
+      "url": "https://arxiv.org/html/2307.03353v1",
+      "type": "survey",
+      "published_date": "2023-07-07",
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "full-text sections",
+      "claims": [
+        "Perception/comprehension/decision taxonomy; citation discovery."
+      ],
+      "caveats": [
+        "Method results traced to original sources; not all cited papers read."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R02",
+      "title": "HOTA: A Higher Order Metric for Evaluating Multi-Object Tracking",
+      "url": "https://arxiv.org/abs/2009.07736",
+      "type": "paper",
+      "published_date": "2020-09-16",
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "paper metadata/abstract and official evaluator",
+      "claims": [
+        "Detection and association should both be evaluated."
+      ],
+      "caveats": [
+        "Not a complete one-ball visibility/coordinate scorecard."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R03",
+      "title": "TrackEval HOTA implementation",
+      "url": "https://github.com/JonathonLuiten/TrackEval/blob/12c8791b303e0a0b50f753af204249e622d0281a/trackeval/metrics/hota.py",
+      "type": "code",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "implementation",
+      "claims": [
+        "Thresholded matching, DetA/AssA combination, sequence aggregation; old np.float usage."
+      ],
+      "caveats": [
+        "Not executed; current NumPy compatibility requires attention."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R04",
+      "title": "TIDE: A General Toolbox for Identifying Object Detection Errors",
+      "url": "https://dbolya.com/tide/",
+      "type": "author_project",
+      "published_date": "2020",
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "author project and paper abstract",
+      "claims": [
+        "Error decomposition is more diagnostic than one aggregate AP."
+      ],
+      "caveats": [
+        "Box/segmentation implementation is not directly equivalent to our point labels."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R05",
+      "title": "SelectiveNet: A Deep Neural Network with an Integrated Reject Option",
+      "url": "https://proceedings.mlr.press/v97/geifman19a.html",
+      "type": "paper",
+      "published_date": "2019",
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "proceedings page/abstract",
+      "claims": [
+        "Selective prediction evaluates risk together with coverage."
+      ],
+      "caveats": [
+        "Classification results do not transfer as guarantees to basketball sequences."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R06",
+      "title": "Multivariate Confidence Calibration for Object Detection",
+      "url": "https://arxiv.org/abs/2004.13546",
+      "type": "paper",
+      "published_date": "2020-04-28",
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "abstract/method scope",
+      "claims": [
+        "Detection confidence calibration can depend on scale and location."
+      ],
+      "caveats": [
+        "No basketball calibration reproduced."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R07",
+      "title": "scikit-learn cross-validation guide",
+      "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+      "type": "official_documentation",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "relevant sections",
+      "claims": [
+        "Held-out tuning leakage and grouped dependent observations."
+      ],
+      "caveats": [
+        "Game/episode split is our application, not a benchmark supplied by sklearn."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R08",
+      "title": "CVAT native annotation format",
+      "url": "https://github.com/cvat-ai/cvat/blob/b52288c2b7f07184a0ddc6fb9b096ea7cebde9d4/site/content/en/docs/dataset_management/formats/format-cvat.md",
+      "type": "official_documentation",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "format implementation documentation",
+      "claims": [
+        "Video tracked shapes/points, attributes, track states."
+      ],
+      "caveats": [
+        "No existing annotation migration performed."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R09",
+      "title": "FiftyOne uniqueness tutorial",
+      "url": "https://docs.voxel51.com/tutorials/uniqueness.html",
+      "type": "official_documentation",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "search-index excerpt only; direct open failed",
+      "claims": [
+        "Diverse sample and near-duplicate tooling lead."
+      ],
+      "caveats": [
+        "No code inspected or capability exercised."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R10",
+      "title": "Temporal Coherence for Active Learning in Videos",
+      "url": "https://openaccess.thecvf.com/content_ICCVW_2019/html/CVRSUAD/Bengar_Temporal_Coherence_for_Active_Learning_in_Videos_ICCVW_2019_paper.html",
+      "type": "paper",
+      "published_date": "2019",
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "publisher abstract and indexed paper excerpt",
+      "claims": [
+        "Temporal representativeness matters for video labeling."
+      ],
+      "caveats": [
+        "Road scenes; basketball episode sampling is a transfer proposal."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R11",
+      "title": "DVC running pipelines",
+      "url": "https://doc.dvc.org/user-guide/pipelines/running-pipelines",
+      "type": "official_documentation",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "relevant sections",
+      "claims": [
+        "Dependency-aware caching, stage invalidation, output replacement behavior."
+      ],
+      "caveats": [
+        "Optional architecture reference; no migration or commands run."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R12",
+      "title": "MLflow Tracking",
+      "url": "https://www.mlflow.org/docs/latest/tracking/",
+      "type": "official_documentation",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "tracking concepts and local workflow",
+      "claims": [
+        "Run metadata, parameters, metrics and artifacts can be logged separately."
+      ],
+      "caveats": [
+        "Optional tooling; no new service installed."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R13",
+      "title": "Hidden Technical Debt in Machine Learning Systems",
+      "url": "https://papers.nips.cc/paper_files/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf",
+      "type": "paper",
+      "published_date": "2015",
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "primary abstract/indexed paper text",
+      "claims": [
+        "Data dependencies and hidden consumers create system complexity."
+      ],
+      "caveats": [
+        "Our simplification recommendations are engineering judgments."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R14",
+      "title": "PyTorch Profiler recipe",
+      "url": "https://docs.pytorch.org/tutorials/recipes/recipes/profiler_recipe.html",
+      "type": "official_documentation",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "documentation",
+      "claims": [
+        "CPU/CUDA profiling to locate real runtime cost."
+      ],
+      "caveats": [
+        "No local profiling or performance claim made."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R15",
+      "title": "RF-DETR paper v1",
+      "url": "https://arxiv.org/html/2511.09554v1",
+      "type": "paper",
+      "published_date": "2025-11-12",
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "full-text selected methods/experiments",
+      "claims": [
+        "Specialist target-domain training, architecture search and latency measurement conditions."
+      ],
+      "caveats": [
+        "COCO/RF100-VL are not our basketball task; v1 is distinct from live code."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R16",
+      "title": "RF-DETR official repository snapshot",
+      "url": "https://github.com/roboflow/rf-detr/tree/b6814eaba40e30d779562f999e909d785e146738",
+      "type": "repository",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "README, license and official training docs; API revision checked",
+      "claims": [
+        "Model resources and component-specific license statements."
+      ],
+      "caveats": [
+        "Live upstream differs from project rfdetr1.9.1; not executed."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R17",
+      "title": "RF-DETR source license",
+      "url": "https://github.com/roboflow/rf-detr/blob/b6814eaba40e30d779562f999e909d785e146738/LICENSE",
+      "type": "license",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "full license file",
+      "claims": [
+        "Apache-2.0 source license."
+      ],
+      "caveats": [
+        "Does not establish that all Plus components or data have the same terms."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R18",
+      "title": "Ultralytics YOLO26 documentation",
+      "url": "https://docs.ultralytics.com/models/yolo26/",
+      "type": "official_documentation",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "architecture/head/usage/license sections",
+      "claims": [
+        "Current head selection, training changes, model resource links and AGPL/Enterprise terms."
+      ],
+      "caveats": [
+        "No YOLO26 basketball evaluation; our measured negative result is YOLO11x-specific."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R19",
+      "title": "SAHI paper v1",
+      "url": "https://arxiv.org/html/2202.06934v1",
+      "type": "paper",
+      "published_date": "2022-02-14",
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "paper selected methods/scope",
+      "claims": [
+        "Slicing and slicing-assisted fine-tuning for small objects."
+      ],
+      "caveats": [
+        "Aerial benchmarks do not establish basketball selection performance."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R20",
+      "title": "SAHI get_sliced_prediction implementation",
+      "url": "https://github.com/obss/sahi/blob/80ebdb699851facf87def03c0597e1aeb87a9a2d/sahi/predict.py",
+      "type": "code",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "function signature/docstring and related processing",
+      "claims": [
+        "Overlap, optional full-image inference and candidate merging are explicit choices."
+      ],
+      "caveats": [
+        "Not run or substituted for existing crop implementation."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R21",
+      "title": "SAHI license",
+      "url": "https://github.com/obss/sahi/blob/80ebdb699851facf87def03c0597e1aeb87a9a2d/LICENSE",
+      "type": "license",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "full license file",
+      "claims": [
+        "MIT source license."
+      ],
+      "caveats": [
+        "Detector/weights retain separate terms."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R22",
+      "title": "Grounding DINO paper",
+      "url": "https://arxiv.org/abs/2303.05499",
+      "type": "paper",
+      "published_date": "2023-03-09",
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "abstract and official project",
+      "claims": [
+        "Language-conditioned open-set detection."
+      ],
+      "caveats": [
+        "No exact-coordinate or ball-reacquisition guarantee."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R23",
+      "title": "Grounding DINO official implementation",
+      "url": "https://github.com/IDEA-Research/GroundingDINO",
+      "type": "repository",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "README and model links; API revision checked",
+      "claims": [
+        "Open implementation/checkpoint links, Apache-2.0 code declaration."
+      ],
+      "caveats": [
+        "Original release distinct from later APIs; separate weight/data terms not fully resolved."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R24",
+      "title": "Grounding DINO inference implementation",
+      "url": "https://github.com/IDEA-Research/GroundingDINO/blob/856dde20aee659246248e20734ef9ba5214f5e44/groundingdino/util/inference.py",
+      "type": "code",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "preprocess/load/predict functions",
+      "claims": [
+        "Caption normalization, resizing and box/text thresholds."
+      ],
+      "caveats": [
+        "Not executed; no local performance comparison."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R25",
+      "title": "RT-DETR official repository",
+      "url": "https://github.com/lyuwenyu/RT-DETR",
+      "type": "repository",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "README/resource and training sections",
+      "claims": [
+        "Official Paddle/PyTorch implementations and checkpoint/custom-data references."
+      ],
+      "caveats": [
+        "Deferred alternative; full license/dependency/code audit not done."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R26",
+      "title": "D-FINE official repository",
+      "url": "https://github.com/Peterande/D-FINE",
+      "type": "repository",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "repository entry/README scope",
+      "claims": [
+        "ICLR2025 detector regression-refinement implementation lead."
+      ],
+      "caveats": [
+        "Discovery-level alternative; no code reproduction or basketball checkpoint verified."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R27",
+      "title": "DEIM official repository",
+      "url": "https://github.com/Intellindust-AI-Lab/DEIM",
+      "type": "repository",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "repository entry/README scope",
+      "claims": [
+        "CVPR2025 improved matching/training implementation lead."
+      ],
+      "caveats": [
+        "Discovery-level alternative; no code reproduction or basketball result verified."
+      ],
+      "reproduced": false
+    },
+    {
+      "id": "R28",
+      "title": "OpenCV homography tutorial",
+      "url": "https://docs.opencv.org/4.13.0/d9/dab/tutorial_homography.html",
+      "type": "official_documentation",
+      "published_date": null,
+      "accessed_date": "2026-10-08",
+      "inspection_depth": "tutorial scope",
+      "claims": [
+        "Homography is a planar relationship; camera geometry requires its assumptions."
+      ],
+      "caveats": [
+        "Airborne-ball discussion is also covered by specialist chapter; no local geometry changed."
+      ],
+      "reproduced": false
+    }
+  ],
+  "repository_revisions": [
+    {
+      "repository": "roboflow/rf-detr",
+      "branch": "develop",
+      "sha": "b6814eaba40e30d779562f999e909d785e146738",
+      "commit_date": "2026-10-08T19:37:53Z"
+    },
+    {
+      "repository": "obss/sahi",
+      "branch": "main",
+      "sha": "80ebdb699851facf87def03c0597e1aeb87a9a2d",
+      "commit_date": "2026-09-30T16:52:41Z"
+    },
+    {
+      "repository": "JonathonLuiten/TrackEval",
+      "branch": "master",
+      "sha": "12c8791b303e0a0b50f753af204249e622d0281a",
+      "commit_date": "2022-11-29T22:30:54Z"
+    },
+    {
+      "repository": "cvat-ai/cvat",
+      "branch": "develop",
+      "sha": "b52288c2b7f07184a0ddc6fb9b096ea7cebde9d4",
+      "commit_date": "2026-10-08T13:38:33Z"
+    },
+    {
+      "repository": "IDEA-Research/GroundingDINO",
+      "branch": "main",
+      "sha": "856dde20aee659246248e20734ef9ba5214f5e44",
+      "commit_date": "2024-08-12T08:52:02Z"
+    },
+    {
+      "repository": "mlflow/mlflow",
+      "branch": "master",
+      "sha": "9c30f9c57b80b6a0af74a457333e7c12be081f26",
+      "commit_date": "2026-10-08T15:57:07Z"
+    },
+    {
+      "repository": "iterative/dvc",
+      "branch": "main",
+      "sha": "56e59829512ff134aa269099a2099587b810b4dd",
+      "commit_date": "2026-08-06T04:17:40Z"
+    }
+  ],
+  "revision_note": "GitHub API metadata inspected read-only. Repository head is a snapshot anchor, not a claim that every file or release was reviewed. Live documentation may change."
+}

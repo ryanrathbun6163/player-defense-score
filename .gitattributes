@@ -1,0 +1,640 @@
+# Preserve exact bytes for this hash-bound NBA pilot increment.
+configs/ball_tracking/reviews/nba_assisted_label_acceptance_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/ball_tracking/reviews/nba_wasb_native_pilot_preparation_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/ball_tracking/wasb_experiments/nba_wasb_native_pilot_diagnostic_v0_1.json -text
+src/ball_tracking/nba_reviewed_reference.py -text
+src/ball_tracking/nba_wasb_diagnostic.py -text
+tests/test_nba_reviewed_reference.py -text
+tests/test_nba_wasb_diagnostic.py -text
+configs/ball_tracking/reviews/nba_wasb_native_pilot_diagnostic_approval_v0_1.json -text
+configs/ball_tracking/reviews/nba_wasb_native_pilot_diagnostic_result_v0_1.json -text
+configs/ball_tracking/reviews/nba_wasb_native_pilot_visual_review_v0_1.json -text
+configs/ball_tracking/selections/nba_wasb_action_observation_proposal_v0_1.json -text
+configs/ball_tracking/reviews/nba_wasb_action_observation_approval_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/nba_action_inputs.py -text
+src/ball_tracking/nba_action_observation.py -text
+src/ball_tracking/nba_action_review.py -text
+tests/test_nba_action_inputs.py -text
+tests/test_nba_action_observation.py -text
+tests/test_nba_action_review.py -text
+configs/ball_tracking/reviews/nba_wasb_action_observation_result_v0_1.json -text
+configs/ball_tracking/reviews/nba_wasb_action_observation_visual_review_v0_1.json -text
+configs/ball_tracking/selections/nba_hard_example_reference_proposal_v0_1.json -text
+configs/ball_tracking/reviews/nba_hard_example_reference_approval_v0_1.json -text
+configs/ball_tracking/reviews/nba_hard_example_reference_preparation_v0_1.json -text
+src/ball_tracking/nba_annotations.py -text
+tests/test_nba_hard_example_assets.py -text
+# Preserve accepted-reference and saved-only diagnostic evidence bytes.
+configs/ball_tracking/reviews/nba_hard_example_label_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/nba_hard_example_saved_diagnostic_result_v0_1.json -text
+src/ball_tracking/nba_hard_example_reference.py -text
+src/ball_tracking/nba_hard_example_diagnostic.py -text
+tests/test_nba_hard_example_reference.py -text
+tests/test_nba_hard_example_diagnostic.py -text
+# Preserve saved NBA heatmap diagnostic evidence bytes.
+configs/ball_tracking/selections/nba_hard_example_heatmap_inspection_v0_1.json -text
+configs/ball_tracking/reviews/nba_hard_example_heatmap_inspection_result_v0_1.json -text
+src/ball_tracking/nba_saved_heatmap_diagnostic.py -text
+tests/test_nba_saved_heatmap_diagnostic.py -text
+# Preserve the fixed NBA adaptation recipe and recorded implementation bytes.
+configs/ball_tracking/wasb_experiments/nba_wasb_adaptation_v0_1.json -text
+configs/ball_tracking/reviews/nba_wasb_adaptation_approval_v0_1.json -text
+configs/ball_tracking/reviews/nba_wasb_adaptation_result_v0_1.json -text
+configs/ball_tracking/reviews/nba_wasb_adaptation_visual_review_v0_1.json -text
+src/ball_tracking/nba_wasb_adaptation.py -text
+src/ball_tracking/nba_adaptation_comparison.py -text
+tests/test_nba_wasb_adaptation.py -text
+tests/test_nba_adaptation_comparison.py -text
+# Preserve the paired saved-response diagnostic and its recorded implementation.
+configs/ball_tracking/selections/nba_adaptation_regression_diagnostic_v0_1.json -text
+configs/ball_tracking/reviews/nba_adaptation_regression_diagnostic_result_v0_1.json -text
+src/ball_tracking/nba_adaptation_regression_diagnostic.py -text
+tests/test_nba_adaptation_regression_diagnostic.py -text
+# Preserve the saved candidate-pool experiment and its executed implementation.
+configs/ball_tracking/selections/nba_candidate_preservation_v0_1.json -text
+configs/ball_tracking/reviews/nba_candidate_preservation_result_v0_1.json -text
+src/ball_tracking/nba_candidate_preservation.py -text
+tests/test_nba_candidate_preservation.py -text
+# Preserve the fixed temporal gap trial and its executed evidence bindings.
+configs/ball_tracking/selections/nba_temporal_gap_selection_v0_1.json -text
+configs/ball_tracking/reviews/nba_temporal_gap_selection_result_v0_1.json -text
+src/ball_tracking/nba_temporal_gap_selection.py -text
+src/ball_tracking/nba_temporal_gap_review.py -text
+tests/test_nba_temporal_gap_selection.py -text
+tests/test_nba_temporal_gap_review.py -text
+configs/ball_tracking/reviews/nba_temporal_gap_selection_visual_review_v0_1.json -text
+
+# Preserve the approved continuous-context validation and its execution bindings.
+configs/ball_tracking/reviews/nba_temporal_gap_continuous_validation_approval_v0_1.json -text
+configs/ball_tracking/selections/nba_temporal_gap_continuous_v0_1.json -text
+configs/ball_tracking/selections/nba_temporal_gap_continuous_recovery_01_v0_1.json -text
+configs/ball_tracking/reviews/nba_temporal_gap_continuous_validation_result_v0_1.json -text
+src/ball_tracking/nba_temporal_gap_continuous.py -text
+src/ball_tracking/nba_temporal_gap_continuous_review.py -text
+tests/test_nba_temporal_gap_continuous.py -text
+tests/test_nba_temporal_gap_continuous_review.py -text
+configs/ball_tracking/reviews/nba_temporal_gap_continuous_visual_review_v0_1.json -text
+
+# Preserve gap-reference preparation and review evidence bytes.
+configs/ball_tracking/reviews/nba_gap_anchor_reference_approval_v0_1.json -text
+configs/ball_tracking/selections/nba_gap_anchor_reference_v0_1.json -text
+configs/ball_tracking/reviews/nba_gap_anchor_reference_result_v0_1.json -text
+src/ball_tracking/nba_gap_anchor_reference.py -text
+src/ball_tracking/nba_gap_anchor_reference_review.py -text
+tests/test_nba_gap_anchor_reference.py -text
+tests/test_nba_gap_anchor_reference_review.py -text
+
+# Preserve accepted gap-reference evaluation evidence bytes.
+configs/ball_tracking/reviews/nba_gap_anchor_reference_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/nba_gap_anchor_reference_evaluation_result_v0_1.json -text
+src/ball_tracking/nba_gap_anchor_reference_evaluation.py -text
+tests/test_nba_gap_anchor_reference_evaluation.py -text
+
+# Preserve candidate appearance preparation evidence bytes.
+docs/nba_appearance_reference_preparation.md -text
+configs/ball_tracking/selections/nba_appearance_reference_v0_1.json -text
+configs/ball_tracking/reviews/nba_appearance_reference_preparation_approval_v0_1.json -text
+configs/ball_tracking/reviews/nba_appearance_reference_result_v0_1.json -text
+src/ball_tracking/nba_appearance_reference.py -text
+src/ball_tracking/nba_appearance_reference_review.py -text
+tests/test_nba_appearance_reference.py -text
+tests/test_nba_appearance_reference_review.py -text
+
+# Preserve accepted appearance reference publication bytes.
+configs/ball_tracking/reviews/nba_appearance_reference_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/nba_appearance_reference_publication_result_v0_1.json -text
+src/ball_tracking/nba_appearance_reference_acceptance.py -text
+tests/test_nba_appearance_reference_acceptance.py -text
+configs/ball_tracking/proposals/nba_appearance_feature_screen_v0_1.json -text
+docs/nba_appearance_feature_screen_plan.md -text
+
+# Preserve frozen appearance-feature screen evidence bytes.
+configs/ball_tracking/reviews/nba_appearance_feature_screen_approval_v0_1.json -text
+configs/ball_tracking/reviews/nba_appearance_feature_screen_result_v0_1.json -text
+src/ball_tracking/nba_appearance_feature_screen.py -text
+src/ball_tracking/nba_appearance_feature_screen_review.py -text
+tests/test_nba_appearance_feature_screen.py -text
+
+# Preserve the bounded verifier's proposed scientific contract bytes.
+docs/nba_ball_distractor_verifier_plan.md -text
+configs/ball_tracking/proposals/nba_ball_distractor_verifier_v0_1.json -text
+
+# Preserve approved bounded reference preparation and review evidence bytes.
+configs/ball_tracking/reviews/nba_ball_distractor_verifier_approval_v0_1.json -text
+configs/ball_tracking/reviews/nba_ball_distractor_reference_result_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/nba_ball_distractor_reference.py -text
+src/ball_tracking/nba_ball_distractor_reference_labels.py -text
+src/ball_tracking/nba_ball_distractor_reference_review.py -text
+tests/test_nba_ball_distractor_reference.py -text
+tests/test_nba_ball_distractor_reference_labels.py -text
+tests/test_nba_ball_distractor_reference_review.py -text
+
+# Preserve the executed provisional verifier and evidence bindings.
+configs/ball_tracking/reviews/nba_ball_distractor_execution_amendment_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/ball_tracking/reviews/nba_ball_distractor_training_result_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/nba_ball_distractor_classifier.py -text
+src/ball_tracking/nba_ball_distractor_training.py -text
+src/ball_tracking/nba_ball_distractor_emission_features.py -text
+src/ball_tracking/nba_ball_distractor_evaluation.py -text
+src/ball_tracking/nba_ball_distractor_policy.py -text
+src/ball_tracking/nba_ball_distractor_review.py -text
+tests/test_nba_ball_distractor_classifier.py -text
+tests/test_nba_ball_distractor_training.py -text
+tests/test_nba_ball_distractor_emission_features.py -text
+tests/test_nba_ball_distractor_policy.py -text
+tests/test_nba_ball_distractor_review.py -text
+tests/test_nba_ball_distractor_evaluation.py -text
+
+# Preserve exact bytes for the hash-bound fifth completion reference batch.
+configs/ball_tracking/completion_campaign/reference_batch_05_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/ball_tracking/reviews/ball_completion_reference_batch_05_result_v0_1.json -text
+
+# Preserve exact bytes for the hash-bound sixth completion reference batch.
+configs/ball_tracking/completion_campaign/reference_batch_06_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_06_result_v0_1.json -text
+
+# Preserve exact bytes for the hash-bound seventh completion reference batch.
+configs/ball_tracking/completion_campaign/reference_batch_07_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_07_result_v0_1.json -text
+
+# Preserve exact bytes for the grouped acceptance of reference batches 05–07.
+configs/ball_tracking/reviews/ball_completion_reference_batch_05_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_06_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_07_acceptance_v0_1.json -text
+
+# Preserve exact bytes for the first native NBA completion reference batch.
+configs/ball_tracking/completion_campaign/nba_reference_batch_01_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_01_result_v0_1.json -text
+src/ball_tracking/completion_nba_references.py -text
+tests/test_completion_nba_references.py -text
+
+# Preserve exact bytes for NBA acceptance and the second native reference batch.
+src/ball_tracking/completion_nba_acceptance.py -text
+tests/test_completion_nba_acceptance.py -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_01_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_02_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_02_result_v0_1.json -text
+
+# Preserve exact bytes for NBA02/03 acceptance and the third/fourth native batches.
+configs/ball_tracking/reviews/nba_completion_reference_batch_02_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_03_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_03_result_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_03_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_04_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_04_result_v0_1.json -text
+
+# Preserve exact bytes for NBA04 acceptance and the fifth native reference batch.
+configs/ball_tracking/reviews/nba_completion_reference_batch_04_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_05_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_05_result_v0_1.json -text
+
+# Preserve exact bytes for NBA05 acceptance and the sixth native reference batch.
+configs/ball_tracking/reviews/nba_completion_reference_batch_05_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_06_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_06_result_v0_1.json -text
+
+# Preserve exact bytes for NBA06 acceptance and the seventh native reference batch.
+configs/ball_tracking/reviews/nba_completion_reference_batch_06_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_07_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_07_result_v0_1.json -text
+
+# Preserve exact bytes for NBA07 acceptance and the eighth native reference batch.
+configs/ball_tracking/reviews/nba_completion_reference_batch_07_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_08_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_08_result_v0_1.json -text
+
+# Preserve exact bytes for NBA08 acceptance and the ninth native reference batch.
+configs/ball_tracking/reviews/nba_completion_reference_batch_08_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_09_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_09_result_v0_1.json -text
+
+# Preserve exact bytes for NBA09 acceptance and the tenth native reference batch.
+configs/ball_tracking/reviews/nba_completion_reference_batch_09_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_10_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_10_result_v0_1.json -text
+
+# Preserve exact bytes for NBA10 acceptance.
+configs/ball_tracking/reviews/nba_completion_reference_batch_10_acceptance_v0_1.json -text
+
+# Preserve exact bytes for the eleventh native reference batch.
+configs/ball_tracking/completion_campaign/nba_reference_batch_11_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_11_result_v0_1.json -text
+
+# Preserve exact bytes for NBA11 acceptance and the twelfth reference batch.
+configs/ball_tracking/reviews/nba_completion_reference_batch_11_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_12_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_12_result_v0_1.json -text
+
+# Preserve exact bytes for NBA12 acceptance and the thirteenth reference batch.
+configs/ball_tracking/reviews/nba_completion_reference_batch_12_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_13_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_13_result_v0_1.json -text
+
+# Preserve exact bytes for NBA13 acceptance and the fourteenth reference batch.
+configs/ball_tracking/reviews/nba_completion_reference_batch_13_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_14_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_14_result_v0_1.json -text
+
+# Preserve exact bytes for NBA14 acceptance and the fifteenth reference batch.
+configs/ball_tracking/reviews/nba_completion_reference_batch_14_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_15_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_15_result_v0_1.json -text
+
+# Preserve exact bytes for NBA15 acceptance and the sixteenth reference batch.
+configs/ball_tracking/reviews/nba_completion_reference_batch_15_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_16_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_16_result_v0_1.json -text
+
+# Preserve exact bytes for NBA16 acceptance and the seventeenth reference batch.
+configs/ball_tracking/reviews/nba_completion_reference_batch_16_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_17_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_17_result_v0_1.json -text
+
+# Preserve exact bytes for NBA17 acceptance and the eighteenth reference batch.
+configs/ball_tracking/reviews/nba_completion_reference_batch_17_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_18_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_18_result_v0_1.json -text
+
+# Preserve exact bytes for NBA18's separate acceptance publication.
+configs/ball_tracking/reviews/nba_completion_reference_batch_18_acceptance_v0_1.json -text
+
+# Preserve exact bytes for SAC native-timing review and NBA19 evidence.
+configs/ball_tracking/completion_campaign/nba_reference_batch_19_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_19_result_v0_1.json -text
+src/ball_tracking/completion_sac_references.py -text
+src/ball_tracking/completion_sac_acceptance.py -text
+tests/test_completion_sac_references.py -text
+tests/test_completion_sac_acceptance.py -text
+
+# Preserve NBA19 acceptance and NBA20 evidence bytes.
+configs/ball_tracking/reviews/nba_completion_reference_batch_19_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/nba_reference_batch_20_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_20_result_v0_1.json -text
+
+# Preserve exact hash-bound NBA20 acceptance and NBA21 review evidence.
+configs/ball_tracking/completion_campaign/nba_reference_batch_21_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_20_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_21_result_v0_1.json -text
+
+# Preserve exact hash-bound NBA21 acceptance and NBA22 review evidence.
+configs/ball_tracking/completion_campaign/nba_reference_batch_22_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_21_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_22_result_v0_1.json -text
+
+# Preserve exact hash-bound NBA22 acceptance and NBA23 review evidence.
+configs/ball_tracking/completion_campaign/nba_reference_batch_23_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_22_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_23_result_v0_1.json -text
+
+# Preserve exact hash-bound NBA23 acceptance and NBA24 review evidence.
+configs/ball_tracking/completion_campaign/nba_reference_batch_24_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_23_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/nba_completion_reference_batch_24_result_v0_1.json -text
+
+# Preserve exact bytes for NBA24 acceptance and grouped P001 review evidence.
+configs/ball_tracking/reviews/nba_completion_reference_batch_24_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_08_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_09_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_10_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_11_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_08_result_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_09_result_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_10_result_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_11_result_v0_1.json -text
+
+# Preserve exact bytes for grouped curated acceptance and P002/P003 reviews.
+configs/ball_tracking/reviews/ball_completion_reference_batch_08_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_09_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_10_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_11_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_12_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_12_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_13_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_13_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_14_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_14_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_15_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_15_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_16_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_16_result_v0_1.json -text
+
+# Preserve exact bytes for final curated reference group and acceptance receipts.
+configs/ball_tracking/reviews/ball_completion_reference_batch_12_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_13_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_14_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_15_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_16_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_17_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_17_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_18_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_18_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_19_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_19_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_20_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_20_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_21_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_21_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_22_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_22_result_v0_1.json -text
+configs/ball_tracking/completion_campaign/reference_batch_23_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_23_result_v0_1.json -text
+
+# Preserve final acceptance and the executable completion-training recipe.
+configs/ball_tracking/reviews/ball_completion_reference_batch_17_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_18_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_19_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_20_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_21_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_22_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/ball_completion_reference_batch_23_acceptance_v0_1.json -text
+configs/ball_tracking/completion_campaign/primary_recipe_v0_1.json -text
+src/ball_tracking/completion_training.py -text
+src/ball_tracking/completion_training_runtime.py -text
+src/ball_tracking/completion_training_package.py -text
+src/ball_tracking/completion_training_policy.py -text
+tests/test_completion_training_runner.py -text
+tests/test_completion_training_runtime.py -text
+tests/test_completion_training_package.py -text
+tests/test_completion_training_policy.py -text
+
+# Preserve reviewed post-selection preparation implementation bytes.
+src/ball_tracking/completion_evaluation_package.py -text
+src/ball_tracking/completion_scoring.py -text
+src/ball_tracking/completion_comparison_render.py -text
+tests/test_completion_evaluation_package.py -text
+tests/test_completion_scoring.py -text
+tests/test_completion_comparison_render.py -text
+
+# Preserve the five-epoch augmentation recipe, frozen code and tested bytes.
+configs/ball_tracking/proposals/wasb_augmentation_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/ball_tracking_wasb_augmentation_experiment.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/completion_augmentation_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/wasb_augmentation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/gpu_supervision.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_completion_augmentation_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_wasb_augmentation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve the read-only P003 validation probe and its tested bytes.
+configs/ball_tracking/proposals/wasb_p003_validation_probe_v0_1.json -text
+src/ball_tracking/wasb_validation_probe.py -text
+src/ball_tracking/completion_evaluation.py -text
+tests/test_wasb_validation_probe.py -text
+
+# Preserve the NBA-first comparison's frozen scope and tested implementation bytes.
+configs/ball_tracking/proposals/nba_first_saved_models_v0_1.json -text
+docs/ball_tracking_nba_first_evaluation.md -text
+src/ball_tracking/nba_first_evaluation.py -text
+src/ball_tracking/nba_first_validation.py -text
+src/ball_tracking/nba_first_review.py -text
+tests/test_nba_first_evaluation.py -text
+tests/test_nba_first_validation.py -text
+tests/test_nba_first_review.py -text
+
+# Preserve the read-only original-weight diagnostic and its frozen manifest.
+configs/ball_tracking/proposals/nba_original_weight_control_v0_1.json -text
+src/ball_tracking/nba_original_control.py -text
+tests/test_nba_original_control.py -text
+
+# Preserve approved 768px experiment inputs, independent implementation and checks.
+docs/ball_tracking_nba_resolution_execution.md -text
+docs/ball_tracking_nba_resolution_experiment.md -text
+configs/ball_tracking/proposals/wasb_resolution_v0_1.json -text
+src/ball_tracking/wasb_resolution.py -text
+src/ball_tracking/wasb_resolution_readiness.py -text
+src/ball_tracking/completion_resolution_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/nba_resolution_evaluation.py -text
+tests/test_wasb_resolution.py -text
+tests/test_completion_resolution_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_nba_resolution_evaluation.py -text
+# Preserve the byte-bound completed resolution report and evidence ledger.
+docs/ball_tracking_nba_resolution_results.md -text
+configs/ball_tracking/reviews/wasb_resolution_result_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Freeze the additive matched continuation recipe, implementation and checks.
+docs/ball_tracking_wasb_continuation_sequence.md -text
+configs/ball_tracking/proposals/wasb_continuation_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/wasb_continuation_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/wasb_continuation_evaluation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_wasb_continuation_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_wasb_continuation_evaluation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve executed continuation diagnostics, failed source versions and result bindings.
+src/ball_tracking/continuation_owned_guard.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/continuation_owned_guard_probe.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/continuation_temporal_diagnostic.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/continuation_temporal_diagnostic_v02.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/continuation_training_fit_diagnostic.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/continuation_training_fit_diagnostic_v02.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/middle_output_sensitivity_launchable_v0_1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/middle_output_sensitivity_launchable_v02.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/current768_training_fit.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/current768_training_fit_v02.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/saved_det_gap_analysis.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt01/guard_source.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt02/guard_source.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt03/guard_source.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt04/guard_source.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt05/guard_source.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt06/guard_source.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/ball_tracking_wasb_continuation_results.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/ball_tracking_wasb_spatial_augmentation_proposal.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/ball_tracking/reviews/wasb_continuation_result_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Freeze authorized two-epoch spatial experiment source, recipe and tests.
+docs/ball_tracking_wasb_spatial_execution.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/ball_tracking/proposals/wasb_spatial_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/wasb_spatial_augmentation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/wasb_spatial_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/ball_tracking/wasb_spatial_evaluation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_wasb_spatial_augmentation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_wasb_spatial_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_wasb_spatial_evaluation.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve published spatial-result evidence bindings exactly.
+docs/ball_tracking_wasb_spatial_results.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/ball_tracking/reviews/wasb_spatial_result_v0_1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Session 20: preserve frozen scientific bytes, including existing CRLF.
+* whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/ball_tracking/proposals/candidate_acceptance_gate_v0_1.json -text
+configs/ball_tracking/proposals/candidate_acceptance_origin_ablation_v0_1.json -text
+configs/ball_tracking/proposals/candidate_change_comparison_v0_1.json -text
+configs/ball_tracking/proposals/candidate_producer_transfer_v0_1.json -text
+configs/ball_tracking/proposals/candidate_proposal_coverage_v0_1.json -text
+configs/ball_tracking/proposals/candidate_quality_pilot_v0_1.json -text
+configs/ball_tracking/proposals/candidate_response_feasibility_v0_1.json -text
+configs/ball_tracking/proposals/dual_view_context_v0_1.json -text
+configs/ball_tracking/proposals/point_feature_comparison_v0_1.json -text
+configs/ball_tracking/proposals/saved_score_failure_study_v0_1.json -text
+configs/ball_tracking/proposals/training_response_capture_v0_1.json -text
+configs/ball_tracking/proposals/weak_response_followup_v0_1.json -text
+configs/ball_tracking/proposals/weak_response_v0_1.json -text
+configs/ball_tracking/reviews/candidate_acceptance_gate_result_v0_1.json -text
+configs/ball_tracking/reviews/candidate_acceptance_origin_ablation_result_v0_1.json -text
+configs/ball_tracking/reviews/candidate_change_comparison_result_v0_1.json -text
+configs/ball_tracking/reviews/candidate_producer_transfer_result_v0_1.json -text
+configs/ball_tracking/reviews/candidate_proposal_coverage_v0_1.json -text
+configs/ball_tracking/reviews/candidate_quality_pilot_interruption_v0_1.json -text
+configs/ball_tracking/reviews/candidate_response_feasibility_result_v0_1.json -text
+configs/ball_tracking/reviews/candidate_training_coverage_review_v0_1.json -text
+configs/ball_tracking/reviews/dual_view_context_result_v0_1.json -text
+configs/ball_tracking/reviews/fresh_game_diagnostic_result_v0_1.json -text
+configs/ball_tracking/reviews/fresh_game_reference_acceptance_v0_1.json -text
+configs/ball_tracking/reviews/fresh_game_reference_preparation_v0_1.json -text
+configs/ball_tracking/reviews/input_context_screen_result_v0_1.json -text
+configs/ball_tracking/reviews/point_feature_comparison_result_v0_1.json -text
+configs/ball_tracking/reviews/saved_score_failure_study_result_v0_1.json -text
+configs/ball_tracking/reviews/training_response_capture_result_v0_1.json -text
+configs/ball_tracking/reviews/weak_response_result_v0_1.json -text
+docs/ball_tracking_candidate_acceptance_gate_protocol.md -text
+docs/ball_tracking_candidate_acceptance_gate_results.md -text
+docs/ball_tracking_candidate_acceptance_origin_ablation_protocol.md -text
+docs/ball_tracking_candidate_acceptance_origin_ablation_results.md -text
+docs/ball_tracking_candidate_change_comparison_protocol.md -text
+docs/ball_tracking_candidate_change_comparison_results.md -text
+docs/ball_tracking_candidate_producer_transfer_protocol.md -text
+docs/ball_tracking_candidate_producer_transfer_results.md -text
+docs/ball_tracking_candidate_proposal_coverage_protocol.md -text
+docs/ball_tracking_candidate_proposal_coverage_report.md -text
+docs/ball_tracking_candidate_quality_pilot.md -text
+docs/ball_tracking_candidate_quality_pilot_interruption.md -text
+docs/ball_tracking_candidate_quality_pilot_recovery.md -text
+docs/ball_tracking_candidate_quality_pilot_recovery_interruption.md -text
+docs/ball_tracking_candidate_quality_post_driver_interruption.md -text
+docs/ball_tracking_candidate_quality_post_driver_recovery.md -text
+docs/ball_tracking_candidate_response_feasibility.md -text
+docs/ball_tracking_candidate_training_coverage_review.md -text
+docs/ball_tracking_crash_dump_analysis_2026-10-28.md -text
+docs/ball_tracking_crash_dump_post_driver_2026-10-28.md -text
+docs/ball_tracking_dual_view_context_protocol.md -text
+docs/ball_tracking_dual_view_context_results.md -text
+docs/ball_tracking_fresh_game_diagnostic_protocol.md -text
+docs/ball_tracking_fresh_game_diagnostic_results.md -text
+docs/ball_tracking_fresh_game_execution_preparation.md -text
+docs/ball_tracking_fresh_game_reference_preparation.md -text
+docs/ball_tracking_input_context_screen_results.md -text
+docs/ball_tracking_native_cable_diagnostic_2026-10-29.md -text
+docs/ball_tracking_native_cable_diagnostic_results_2026-10-29.md -text
+docs/ball_tracking_native_cable_reference_diagnostic_2026-10-29.md -text
+docs/ball_tracking_native_cable_training_continuation_2026-10-29.md -text
+docs/ball_tracking_native_cable_training_results_2026-10-29.md -text
+docs/ball_tracking_nonphysical_crash_diagnosis_2026-10-28.md -text
+docs/ball_tracking_point_feature_comparison_results.md -text
+docs/ball_tracking_point_feature_feasibility_proposal.md -text
+docs/ball_tracking_saved_score_failure_study_protocol.md -text
+docs/ball_tracking_saved_score_failure_study_results.md -text
+docs/ball_tracking_training_response_capture_results.md -text
+docs/ball_tracking_training_response_preparation.md -text
+docs/ball_tracking_weak_response_experiment.md -text
+docs/ball_tracking_weak_response_results.md -text
+docs/history/README_before_publication_2026-10-30.md -text
+docs/research/ball_tracking_full_history_reassessment_2026-10-26.md -text
+src/ball_tracking/candidate_acceptance_data.py -text
+src/ball_tracking/candidate_acceptance_evaluation.py -text
+src/ball_tracking/candidate_acceptance_experiment.py -text
+src/ball_tracking/candidate_acceptance_features.py -text
+src/ball_tracking/candidate_acceptance_neural.py -text
+src/ball_tracking/candidate_acceptance_origin_ablation.py -text
+src/ball_tracking/candidate_acceptance_origin_data.py -text
+src/ball_tracking/candidate_acceptance_origin_model.py -text
+src/ball_tracking/candidate_change_analysis.py -text
+src/ball_tracking/candidate_producer_transfer_analysis.py -text
+src/ball_tracking/candidate_producer_transfer_data.py -text
+src/ball_tracking/candidate_producer_transfer_experiment.py -text
+src/ball_tracking/candidate_proposal_coverage_analysis.py -text
+src/ball_tracking/candidate_proposal_coverage_capture.py -text
+src/ball_tracking/candidate_quality_cable_diagnostic.py -text
+src/ball_tracking/candidate_quality_cable_reference_diagnostic.py -text
+src/ball_tracking/candidate_quality_clock_diagnostic.py -text
+src/ball_tracking/candidate_quality_data.py -text
+src/ball_tracking/candidate_quality_evaluation.py -text
+src/ball_tracking/candidate_quality_model.py -text
+src/ball_tracking/candidate_quality_native_cable_resume.py -text
+src/ball_tracking/candidate_quality_pilot.py -text
+src/ball_tracking/candidate_quality_post_driver_resume.py -text
+src/ball_tracking/candidate_quality_results.py -text
+src/ball_tracking/candidate_quality_resume.py -text
+src/ball_tracking/candidate_quality_retry_resume.py -text
+src/ball_tracking/candidate_response_analysis.py -text
+src/ball_tracking/candidate_response_features.py -text
+src/ball_tracking/candidate_response_study.py -text
+src/ball_tracking/dual_view_context_analysis.py -text
+src/ball_tracking/dual_view_context_data.py -text
+src/ball_tracking/dual_view_context_experiment.py -text
+src/ball_tracking/dual_view_context_model.py -text
+src/ball_tracking/dual_view_context_recovery_analysis.py -text
+src/ball_tracking/dual_view_context_recovery_deadline.py -text
+src/ball_tracking/dual_view_context_resume.py -text
+src/ball_tracking/fresh_game_analysis.py -text
+src/ball_tracking/fresh_game_inference.py -text
+src/ball_tracking/fresh_game_references.py -text
+src/ball_tracking/input_context_screen.py -text
+src/ball_tracking/point_feature_analysis.py -text
+src/ball_tracking/point_feature_inference.py -text
+src/ball_tracking/saved_score_failure_analysis.py -text
+src/ball_tracking/saved_score_failure_data.py -text
+src/ball_tracking/saved_score_failure_study.py -text
+src/ball_tracking/training_response_capture.py -text
+src/ball_tracking/weak_response_candidates.py -text
+src/ball_tracking/weak_response_capture.py -text
+src/ball_tracking/weak_response_experiment.py -text
+src/ball_tracking/weak_response_followup.py -text
+src/ball_tracking/weak_response_followup_render.py -text
+src/ball_tracking/weak_response_render.py -text
+src/ball_tracking/weak_response_review.py -text
+src/ball_tracking/weak_response_sequence.py -text
+tests/fixtures/ball_tracking_candidate_change_transport_v0_1.json -text
+tests/fixtures/saved_score_failure_data.json -text
+tests/test_candidate_acceptance_data.py -text
+tests/test_candidate_acceptance_evaluation.py -text
+tests/test_candidate_acceptance_experiment.py -text
+tests/test_candidate_acceptance_features.py -text
+tests/test_candidate_acceptance_neural.py -text
+tests/test_candidate_acceptance_origin_ablation.py -text
+tests/test_candidate_acceptance_origin_data.py -text
+tests/test_candidate_acceptance_origin_model.py -text
+tests/test_candidate_change_analysis.py -text
+tests/test_candidate_producer_transfer_analysis.py -text
+tests/test_candidate_producer_transfer_data.py -text
+tests/test_candidate_producer_transfer_experiment.py -text
+tests/test_candidate_proposal_coverage_analysis.py -text
+tests/test_candidate_proposal_coverage_capture.py -text
+tests/test_candidate_quality_cable_diagnostic.py -text
+tests/test_candidate_quality_cable_reference_diagnostic.py -text
+tests/test_candidate_quality_clock_diagnostic.py -text
+tests/test_candidate_quality_data.py -text
+tests/test_candidate_quality_evaluation.py -text
+tests/test_candidate_quality_model.py -text
+tests/test_candidate_quality_native_cable_resume.py -text
+tests/test_candidate_quality_pilot.py -text
+tests/test_candidate_quality_post_driver_resume.py -text
+tests/test_candidate_quality_results.py -text
+tests/test_candidate_quality_resume.py -text
+tests/test_candidate_quality_retry_resume.py -text
+tests/test_candidate_response_analysis.py -text
+tests/test_candidate_response_features.py -text
+tests/test_dual_view_context_analysis.py -text
+tests/test_dual_view_context_data.py -text
+tests/test_dual_view_context_experiment.py -text
+tests/test_dual_view_context_model.py -text
+tests/test_dual_view_context_recovery_analysis.py -text
+tests/test_dual_view_context_recovery_supervision.py -text
+tests/test_dual_view_context_resume.py -text
+tests/test_dual_view_launch.py -text
+tests/test_fresh_game_analysis.py -text
+tests/test_fresh_game_inference.py -text
+tests/test_fresh_game_references.py -text
+tests/test_input_context_screen.py -text
+tests/test_point_feature_analysis.py -text
+tests/test_point_feature_inference.py -text
+tests/test_saved_score_failure_analysis.py -text
+tests/test_saved_score_failure_data.py -text
+tests/test_saved_score_failure_study.py -text
+tests/test_training_response_capture.py -text
+tests/test_weak_response_candidates.py -text
+tests/test_weak_response_capture.py -text
+tests/test_weak_response_experiment.py -text
+tests/test_weak_response_followup.py -text
+tests/test_weak_response_followup_render.py -text
+tests/test_weak_response_review.py -text
+tests/test_weak_response_sequence.py -text
+tests/test_weak_response_sequence_oracle.py -text

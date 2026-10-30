@@ -1,0 +1,256 @@
+{
+  "schema_version": "nba_appearance_feature_screen_result/v0.1",
+  "status": "completed_scientific_gate_failed",
+  "created_at_utc": "2026-10-21T19:19:16.714431+00:00",
+  "approval": {
+    "path": "configs/ball_tracking/reviews/nba_appearance_feature_screen_approval_v0_1.json",
+    "sha256": "54068255707d9500705124747ea7da582a9a969f06611426dcce49d540440f83",
+    "bytes": 2219
+  },
+  "execution_start_head": "969906998ce7d6e8c68008d2fb81ee294257be52",
+  "local_implementation_bound_before_run_and_integrated_after": true,
+  "completion": {
+    "path": "data/outputs/ball_tracking/nba/appearance_feature_screen_v0_1/completion.json",
+    "sha256": "00826b3ec9cfe9d22edcc3e63d0a80c2f8ab627dcd248dadfd49bdc8da2407ca",
+    "bytes": 63589
+  },
+  "protocol": {
+    "path": "data/outputs/ball_tracking/nba/appearance_feature_screen_v0_1/protocol.json",
+    "sha256": "ca7fc21b845013246eacb616e61627fac5687cc3c4c4cf07a4506a1bf5bea7fb",
+    "bytes": 24747
+  },
+  "report": {
+    "path": "data/outputs/ball_tracking/nba/appearance_feature_screen_v0_1/report.json",
+    "sha256": "98f7343a3967025729f407d80092d53f9d51162aaed1738b020a96b14357bd04",
+    "bytes": 277388
+  },
+  "review_completion": {
+    "path": "data/outputs/ball_tracking/nba/appearance_feature_screen_v0_1/review/completion.json",
+    "sha256": "39ebc3243a25d6b542bf79d440fc3a66238d197c3e82027941c5ecaee1e63f9c",
+    "bytes": 8149
+  },
+  "review_guide": {
+    "path": "data/outputs/ball_tracking/nba/appearance_feature_screen_v0_1/review/attempts/f57fda8a29804bb6a6379d447796b681/review.html",
+    "sha256": "aa6efcbd4b57e2e7e38e083bf82fec8d2cf4f61506dad5ddbd9f81356b587887",
+    "bytes": 24164
+  },
+  "independent_audit": {
+    "path": "data/outputs/t/appearance_feature_screen_audit_01.json",
+    "sha256": "dcd733065dc0616cf81587b47bd9348050db3314eb3775b5f7ac77dc20749e96",
+    "bytes": 85886
+  },
+  "audit_implementation": {
+    "path": "data/outputs/t/appearance_feature_screen_audit.py",
+    "sha256": "33fea556bf8c27bcfd962e96353c1fe105dfb9ca9e0701e358b16797d596848a",
+    "bytes": 24074
+  },
+  "review_verification": {
+    "path": "data/outputs/t/appearance_feature_screen_review_verification_01.json",
+    "sha256": "ef8b796d3794dd791f6ee5f5810d1b385c1cfa28a991bde901db5e2ea0551423",
+    "bytes": 4350
+  },
+  "download": {
+    "path": "data/outputs/ball_tracking/nba/appearance_feature_screen_v0_1/model/download_01.json",
+    "sha256": "57e637fb34fec383c652212cc5c7a99a26782703349f8aa5a667f9fd5144af40",
+    "bytes": 746
+  },
+  "summary": {
+    "query_count": 50,
+    "similarity_count": 500,
+    "accepted_checks": {
+      "total": 10,
+      "correct": 8,
+      "incorrect": 2,
+      "ties": 0,
+      "by_class": {
+        "ball": {
+          "correct": 4,
+          "incorrect": 2
+        },
+        "other_object": {
+          "correct": 4
+        }
+      }
+    },
+    "main_gate": {
+      "passed": false,
+      "required_balls": 6,
+      "required_other_objects": 4
+    },
+    "unknowns_unscored": 6,
+    "qualitative_regression": {
+      "total": 34,
+      "disagreements": 11,
+      "ties": 0,
+      "unresolved_unscored": 8,
+      "provenance_populations": {
+        "mean": 20,
+        "contributor": 14
+      }
+    },
+    "challenges": {
+      "sac_wrong_head": {
+        "expected_source_frames": [
+          1419,
+          1420,
+          1421
+        ],
+        "case_ids": [
+          "regression:sac_mem_q1_c01:1419:selected",
+          "regression:sac_mem_q1_c01:1420:selected",
+          "regression:sac_mem_q1_c01:1421:selected"
+        ],
+        "missing_source_frames": [],
+        "adverse_case_ids": [
+          "regression:sac_mem_q1_c01:1419:selected",
+          "regression:sac_mem_q1_c01:1420:selected",
+          "regression:sac_mem_q1_c01:1421:selected"
+        ],
+        "flagged": true,
+        "qualitative_previously_exposed": true,
+        "episodes": 1
+      },
+      "det_near_head_ball": {
+        "expected_source_frames": [
+          11722,
+          11723,
+          11724,
+          11725
+        ],
+        "case_ids": [
+          "regression:sas_det_q1_c02:11722:selected",
+          "regression:sas_det_q1_c02:11723:selected",
+          "regression:sas_det_q1_c02:11724:selected",
+          "regression:sas_det_q1_c02:11725:selected"
+        ],
+        "missing_source_frames": [],
+        "adverse_case_ids": [],
+        "flagged": false,
+        "qualitative_previously_exposed": true,
+        "episodes": 1
+      }
+    },
+    "clean_screen": false
+  },
+  "resources": {
+    "model_load_attempts": 1,
+    "model_loads": 1,
+    "model_calls": 60,
+    "source_png_decodes": 49,
+    "source_video_decodes": 0,
+    "candidate_array_reads": 0,
+    "training_updates": 0,
+    "cached_features_reused": 0,
+    "source_pngs_byte_verified_before_inference": 49
+  },
+  "elapsed_seconds": 12.593999999999141,
+  "scientific_attempts": 1,
+  "fixed_screen_decision": "Reject this fixed DINOv2 CLS / 64px crop / ten SAC reference setup. No policy or trajectory adoption.",
+  "failed_accepted_checks": [
+    {
+      "case_id": "appearance:sas_det_q1_c02:11059:mean:0",
+      "screen_role": "resolved_check",
+      "accepted_appearance": {
+        "candidate_key": "sas_det_q1_c02:11059:mean:0",
+        "classification": "ball",
+        "subtype": null,
+        "rationale": "A distinct rounded basketball moves below the handler's hand beside his leg across the five source frames. The candidate is on the ball in the target frame."
+      },
+      "s_ball": 0.40965943486265527,
+      "s_other": 0.4209572865253197,
+      "margin": -0.011297851662664449,
+      "preference": "other_preferred",
+      "nearest_ball_case_ids": [
+        "appearance:sac_mem_q1_c01:999:mean:0"
+      ],
+      "nearest_other_case_ids": [
+        "appearance:sac_mem_q1_c01:961:mean:0"
+      ]
+    },
+    {
+      "case_id": "appearance:sas_det_q1_c02:11431:mean:0",
+      "screen_role": "resolved_check",
+      "accepted_appearance": {
+        "candidate_key": "sas_det_q1_c02:11431:mean:0",
+        "classification": "ball",
+        "subtype": null,
+        "rationale": "A rounded basketball is visible above the ball handler's hands as he raises it toward his face. The five-frame context preserves the ball outline separately from the head and arms."
+      },
+      "s_ball": 0.4938534187458125,
+      "s_other": 0.5817644921474129,
+      "margin": -0.08791107340160037,
+      "preference": "other_preferred",
+      "nearest_ball_case_ids": [
+        "appearance:sac_mem_q1_c01:999:mean:0"
+      ],
+      "nearest_other_case_ids": [
+        "appearance:sac_mem_q1_c01:1299:mean:0"
+      ]
+    }
+  ],
+  "threshold_implication": "All three SAC head margins exceed every correctly classified accepted ball margin; increasing a positive-margin cutoff cannot reject these heads while retaining those balls. Analytical ordering only, no threshold sweep.",
+  "focused_validation": {
+    "distinct_tests": 6,
+    "initial_six_test_seconds": 4.826,
+    "later_affected_review_test_seconds": 1.942,
+    "reason_for_affected_recheck": "Renderer header clarity only; core scientific implementation unchanged.",
+    "logs": [
+      {
+        "path": "data/outputs/t/appearance_feature_screen_tests_01.log",
+        "sha256": "9e4070cf60adae9fe6c8e808d68565ecefcf4f819ab81ef2cebb7c91a73ef0b9",
+        "bytes": 1359
+      },
+      {
+        "path": "data/outputs/t/appearance_feature_screen_tests_02.log",
+        "sha256": "a75a2044081f0ef4edd2f4557e2143414297297bb1c9234d3e3c2b8388ebcbe5",
+        "bytes": 330
+      }
+    ],
+    "tests": {
+      "path": "tests/test_nba_appearance_feature_screen.py",
+      "sha256": "fa4d143e030e884c78831839463773cf7a223ef8c1e092c2d8f793163eef8c3b",
+      "bytes": 12822
+    },
+    "unexpected_test_failures": 0,
+    "synthetic_interruption_and_tamper_failures": "Intentional test assertions preserved under ignored test fixtures; not production failures.",
+    "full_suite_repeated": false
+  },
+  "actual_run_logs": [
+    {
+      "path": "data/outputs/t/appearance_feature_screen_run_01.log",
+      "sha256": "fe163a950773ca3db6a5a25665664dbd61363bbff0ce000f35ae92781301a816",
+      "bytes": 1856
+    },
+    {
+      "path": "data/outputs/t/appearance_feature_screen_review_01.log",
+      "sha256": "39ebc3243a25d6b542bf79d440fc3a66238d197c3e82027941c5ecaee1e63f9c",
+      "bytes": 8149
+    }
+  ],
+  "review_status": {
+    "all50_queries_and_actual_final_ai_inspected": true,
+    "all150_displayed_crop_panels_exactly_verified": true,
+    "new_human_preference_review": "not_claimed",
+    "new_label_or_trajectory_acceptance_required_for_this_failed_screen": false,
+    "prior_human_reviews": "preserved"
+  },
+  "limits": {
+    "unseen_validation": false,
+    "probabilities": false,
+    "unknowns_scored": false,
+    "prior_ai_judgments_newly_accepted": false,
+    "automatic_policy_adoption": false,
+    "candidate_populations": "Mean-component bank; mixed mean/contributor exposed regression supplement",
+    "coverage": "Small correlated SAC bank; no resolved NFHS bank or excluded head/clothing negatives; no independent head-error episode"
+  },
+  "next_direction": "Design one bounded supervised candidate-verifier study with minimum resolved NFHS, distinct head/clothing episodes and contributor-candidate coverage, and one fixed fit/evaluation together. This recommendation is not an execution proposal or approval.",
+  "unchanged": [
+    "Original 790 report and saved selection",
+    "Accepted 27 geometric reference scores and seven controls",
+    "All 26 accepted appearance labels, including six unknowns",
+    "Retained 09da checkpoint and rejected continuation status",
+    "Protected holdouts, buffers and TOR",
+    "Earlier completed reviews and three older pending motion reviews"
+  ],
+  "operational_run_failures": 0
+}

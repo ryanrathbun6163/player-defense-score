@@ -1,0 +1,1020 @@
+{
+  "provenance": "Exact bounded records captured from frozen package preparation and saved package analysis; no scientific endpoint run.",
+  "package_outcomes": [
+    {
+      "frame": {
+        "frame_id": "frame_78ea25979942b5369418b2868e8a7afd66c27cbfb407d3e8c904368edfdd6593",
+        "block_id": "chi-vs-ind-0022400868_e01",
+        "game_id": "0022400868",
+        "domain": "nba",
+        "source_frame_index": 0,
+        "source_pts_ticks": 0,
+        "time_base": "1/60000",
+        "source_video_sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+        "source_png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/source_frames/frame_000000.png",
+          "sha256": "5c33dc786a7ead60e5267a20e6a72b70f36233d39a0480d4c73f712dc63a7485",
+          "bytes": 1188443,
+          "rgb_sha256": "7a4af054636648a5c531b506bbaf0fa01d73b0ee744d6c82effb4c19b7cacc98"
+        },
+        "duration_ticks": 1000,
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/chi-vs-ind-0022400868/2.mp4",
+          "sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 663
+        },
+        "annotation": {
+          "frame_index": 0,
+          "annotation_status": "labeled",
+          "visibility": "partially_visible",
+          "absence_reason": null,
+          "game_ball_identity_certainty": "certain",
+          "geometry": {
+            "center_xy_px": [
+              741,
+              176
+            ],
+            "source": "human_amodal_estimate",
+            "uncertainty_radius_px": 3
+          },
+          "localization_eligible": true,
+          "difficulty_tags": [
+            "compression_artifact",
+            "hand_overlap"
+          ],
+          "notes": "Assistant visual proposal from current native frame 0, pending Ryan acceptance. The ball is held in front of the passer; exposed round right/top contour supports a center while the hands cover its left/lower surface."
+        },
+        "kind": "positive",
+        "valid_output_channel": true,
+        "pool_binding": {
+          "path": "data/outputs/ball_tracking/training_response_preparation_v0_1/capture_attempt_001/d826d91090ec340c093832d7/pools.jsonl",
+          "bytes": 320994,
+          "sha256": "9d0db870a095d014ba8002d61af306529e2ebadc53136daf7b677bbbf3e2c4bd"
+        },
+        "mean_heatmap_sha256": "73fccac1c49742647321539c863ec81a81770775cd85157320d5c500aa08ac18",
+        "native_selected_candidate_index": 0,
+        "native_center_xy_px": [
+          739.4802347819011,
+          175.3887430826823
+        ],
+        "candidate_ids": [
+          "candidate_e3bcf75ebe09df9abf6bd8c52cdecefeb5cc620aa8ba3a13af8ed08f4f49587d",
+          "candidate_b587c5b10d7e53b0d9c4db4936b791887d52d43f2dcf68a13e9d87c4d463ac30",
+          "candidate_0e6167a0caaabf722aef3cba12b3cd587acfa0c562f4b25358995bf0929aae1a",
+          "candidate_8382c333404e1cb2f922a8a52209e5784b3a1d51e9d1c232ac4693c30c089540",
+          "candidate_36ed89e75d7a9f2d4714cb2b69eb22b5abb0b76005ac72384d3e1a4b13f1cd85"
+        ],
+        "candidate_count": 5,
+        "original_source_role": "training",
+        "pilot_role": "nba_fit_or_scorer_validation"
+      },
+      "scoring_contexts": {
+        "nba_in_sample": {
+          "fit": "all_nba",
+          "counts": {
+            "frames": 1,
+            "frames:positive": 1,
+            "frames:empty_pool": 0,
+            "candidates": 5,
+            "candidates:eligible_match": 1,
+            "candidates:retained_zero": 1,
+            "candidates:eligible_match:retained_zero": 1,
+            "candidates:below_zero": 4,
+            "candidates:eligible_match:below_zero": 0,
+            "candidates:tie_zero": 0,
+            "candidates:eligible_match:tie_zero": 0,
+            "candidates:eligible_miss": 4,
+            "candidates:eligible_miss:retained_zero": 0,
+            "candidates:eligible_miss:below_zero": 4,
+            "candidates:eligible_miss:tie_zero": 0,
+            "frames:any_survivor_zero": 1,
+            "frames:any_tie_zero": 0,
+            "frames:any_pool_match": 1,
+            "frames:any_match_retained_zero": 1,
+            "frames:any_match_tie_zero": 0,
+            "frames:weak_match": 0,
+            "frames:weak_match_retained_zero": 0,
+            "frames:weak_match_tie_zero": 0,
+            "candidates:weak_match": 0,
+            "candidates:weak_match_retained_zero": 0,
+            "candidates:weak_match_tie_zero": 0,
+            "frames:ranking:match_strictly_first": 1,
+            "frames:native_correct": 1,
+            "frames:native_correct:retained_zero": 1,
+            "frames:native_correct:rejected_zero": 0,
+            "frames:native_correct:tie_zero": 0
+          },
+          "ranking": "match_strictly_first",
+          "native_outcome": "correct",
+          "native_selected_logit": 16.887845993041992,
+          "native_correct_logit": 16.887845993041992,
+          "hidden_max_logit": null,
+          "weak_match_max_logit": null,
+          "any_match_max_logit": 16.887845993041992
+        },
+        "nba_out_of_fold": {
+          "fit": "leave_chi_out",
+          "counts": {
+            "frames": 1,
+            "frames:positive": 1,
+            "frames:empty_pool": 0,
+            "candidates": 5,
+            "candidates:eligible_match": 1,
+            "candidates:retained_zero": 1,
+            "candidates:eligible_match:retained_zero": 1,
+            "candidates:below_zero": 4,
+            "candidates:eligible_match:below_zero": 0,
+            "candidates:tie_zero": 0,
+            "candidates:eligible_match:tie_zero": 0,
+            "candidates:eligible_miss": 4,
+            "candidates:eligible_miss:retained_zero": 0,
+            "candidates:eligible_miss:below_zero": 4,
+            "candidates:eligible_miss:tie_zero": 0,
+            "frames:any_survivor_zero": 1,
+            "frames:any_tie_zero": 0,
+            "frames:any_pool_match": 1,
+            "frames:any_match_retained_zero": 1,
+            "frames:any_match_tie_zero": 0,
+            "frames:weak_match": 0,
+            "frames:weak_match_retained_zero": 0,
+            "frames:weak_match_tie_zero": 0,
+            "candidates:weak_match": 0,
+            "candidates:weak_match_retained_zero": 0,
+            "candidates:weak_match_tie_zero": 0,
+            "frames:ranking:match_strictly_first": 1,
+            "frames:native_correct": 1,
+            "frames:native_correct:retained_zero": 1,
+            "frames:native_correct:rejected_zero": 0,
+            "frames:native_correct:tie_zero": 0
+          },
+          "ranking": "match_strictly_first",
+          "native_outcome": "correct",
+          "native_selected_logit": 13.956049919128418,
+          "native_correct_logit": 13.956049919128418,
+          "hidden_max_logit": null,
+          "weak_match_max_logit": null,
+          "any_match_max_logit": 13.956049919128418
+        }
+      },
+      "candidate_scores": [
+        {
+          "candidate_id": "candidate_e3bcf75ebe09df9abf6bd8c52cdecefeb5cc620aa8ba3a13af8ed08f4f49587d",
+          "candidate_index": 0,
+          "native_or_weak": "native",
+          "center_xy_px": [
+            739.4802347819011,
+            175.3887430826823
+          ],
+          "fitting_target": 1,
+          "fitting_target_group": "positive",
+          "distance_px": 1.6380846550504857,
+          "evaluation_category": "eligible_match",
+          "all_nba_logit": 16.887845993041992,
+          "held_out_logit": 13.956049919128418
+        },
+        {
+          "candidate_id": "candidate_b587c5b10d7e53b0d9c4db4936b791887d52d43f2dcf68a13e9d87c4d463ac30",
+          "candidate_index": 1,
+          "native_or_weak": "weak",
+          "center_xy_px": [
+            1127.0297241210938,
+            227.62184143066406
+          ],
+          "fitting_target": 0,
+          "fitting_target_group": "eligible_distant_miss",
+          "distance_px": 389.465996484546,
+          "evaluation_category": "eligible_miss",
+          "all_nba_logit": -13.554712295532227,
+          "held_out_logit": -12.363147735595703
+        },
+        {
+          "candidate_id": "candidate_0e6167a0caaabf722aef3cba12b3cd587acfa0c562f4b25358995bf0929aae1a",
+          "candidate_index": 2,
+          "native_or_weak": "weak",
+          "center_xy_px": [
+            1061.745096842448,
+            331.6666666666667
+          ],
+          "fitting_target": 0,
+          "fitting_target_group": "eligible_distant_miss",
+          "distance_px": 356.5242323595725,
+          "evaluation_category": "eligible_miss",
+          "all_nba_logit": -13.005364418029785,
+          "held_out_logit": -12.092666625976562
+        },
+        {
+          "candidate_id": "candidate_8382c333404e1cb2f922a8a52209e5784b3a1d51e9d1c232ac4693c30c089540",
+          "candidate_index": 3,
+          "native_or_weak": "weak",
+          "center_xy_px": [
+            1061.3535563151042,
+            346.045405069987
+          ],
+          "fitting_target": 0,
+          "fitting_target_group": "eligible_distant_miss",
+          "distance_px": 362.68697361381845,
+          "evaluation_category": "eligible_miss",
+          "all_nba_logit": -13.094828605651855,
+          "held_out_logit": -12.095476150512695
+        },
+        {
+          "candidate_id": "candidate_36ed89e75d7a9f2d4714cb2b69eb22b5abb0b76005ac72384d3e1a4b13f1cd85",
+          "candidate_index": 4,
+          "native_or_weak": "weak",
+          "center_xy_px": [
+            1065.0,
+            336.6666666666667
+          ],
+          "fitting_target": 0,
+          "fitting_target_group": "eligible_distant_miss",
+          "distance_px": 361.6486938698629,
+          "evaluation_category": "eligible_miss",
+          "all_nba_logit": -13.435892105102539,
+          "held_out_logit": -12.134244918823242
+        }
+      ]
+    },
+    {
+      "frame": {
+        "frame_id": "frame_439cf1676c9c0f25ea928ac4f7fb05b0c6a06e31a089edb63a0474dded116d6f",
+        "block_id": "chi-vs-ind-0022400868_e01",
+        "game_id": "0022400868",
+        "domain": "nba",
+        "source_frame_index": 96,
+        "source_pts_ticks": 96000,
+        "time_base": "1/60000",
+        "source_video_sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+        "source_png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/source_frames/frame_000096.png",
+          "sha256": "830b889720ab922c0bcd2e546fb259b873ebf768d73b1c477f31ab02819dffda",
+          "bytes": 1267555,
+          "rgb_sha256": "c493db05ed6146138d1eb7ae198bc3a273946182add8be20ca5c58ed41f15bfb"
+        },
+        "duration_ticks": 1000,
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/chi-vs-ind-0022400868/2.mp4",
+          "sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 663
+        },
+        "annotation": {
+          "frame_index": 96,
+          "annotation_status": "labeled",
+          "visibility": "partially_visible",
+          "absence_reason": null,
+          "game_ball_identity_certainty": "certain",
+          "geometry": null,
+          "localization_eligible": false,
+          "difficulty_tags": [
+            "compression_artifact",
+            "defocus",
+            "hand_overlap",
+            "player_overlap"
+          ],
+          "notes": "AI source-image proposal, pending Ryan acceptance. Only a narrow brown ball fragment is distinguishable beside the receiver head/hand. It is insufficient to support the complete-ball center; no center is inferred from the preceding pass."
+        },
+        "kind": "masked",
+        "valid_output_channel": false,
+        "pool_binding": {
+          "path": "data/outputs/ball_tracking/training_response_preparation_v0_1/capture_attempt_001/d826d91090ec340c093832d7/pools.jsonl",
+          "bytes": 320994,
+          "sha256": "9d0db870a095d014ba8002d61af306529e2ebadc53136daf7b677bbbf3e2c4bd"
+        },
+        "mean_heatmap_sha256": "1e9a59a6da882a71b40bd841927dc5aa2331266d1ae00406e7c3a0b4dac6b94d",
+        "native_selected_candidate_index": null,
+        "native_center_xy_px": null,
+        "candidate_ids": [
+          "candidate_606a3a0c210ec093cc69a9937ace5022181b89de86e1594952029a760af6a2f0",
+          "candidate_8448a7148c1fb5443958d5a9e5565ae08d5c7909515cb6a29571d4b6d334bbc5",
+          "candidate_6fa2e6fc85bff864c5f6342704d727f3bc7308eb80f294a093fd0222e3e147d5"
+        ],
+        "candidate_count": 3,
+        "original_source_role": "training",
+        "pilot_role": "nba_fit_or_scorer_validation"
+      },
+      "scoring_contexts": {
+        "nba_in_sample": {
+          "fit": "all_nba",
+          "counts": {
+            "frames": 1,
+            "frames:masked": 1,
+            "frames:empty_pool": 0,
+            "candidates": 3,
+            "candidates:masked_unknown": 3,
+            "candidates:retained_zero": 0,
+            "candidates:masked_unknown:retained_zero": 0,
+            "candidates:below_zero": 3,
+            "candidates:masked_unknown:below_zero": 3,
+            "candidates:tie_zero": 0,
+            "candidates:masked_unknown:tie_zero": 0,
+            "candidates:fitting_unknown": 3,
+            "candidates:fitting_unknown:retained_zero": 0,
+            "candidates:fitting_unknown:below_zero": 3,
+            "candidates:fitting_unknown:tie_zero": 0,
+            "frames:any_survivor_zero": 0,
+            "frames:any_tie_zero": 0,
+            "frames:any_pool_match": 0,
+            "frames:any_match_retained_zero": 0,
+            "frames:any_match_tie_zero": 0,
+            "frames:weak_match": 0,
+            "frames:weak_match_retained_zero": 0,
+            "frames:weak_match_tie_zero": 0,
+            "candidates:weak_match": 0,
+            "candidates:weak_match_retained_zero": 0,
+            "candidates:weak_match_tie_zero": 0,
+            "frames:masked:native_missing": 1
+          },
+          "ranking": "unscored_reference",
+          "native_outcome": "missing",
+          "native_selected_logit": null,
+          "native_correct_logit": null,
+          "hidden_max_logit": null,
+          "weak_match_max_logit": null,
+          "any_match_max_logit": null
+        },
+        "nba_out_of_fold": {
+          "fit": "leave_chi_out",
+          "counts": {
+            "frames": 1,
+            "frames:masked": 1,
+            "frames:empty_pool": 0,
+            "candidates": 3,
+            "candidates:masked_unknown": 3,
+            "candidates:retained_zero": 0,
+            "candidates:masked_unknown:retained_zero": 0,
+            "candidates:below_zero": 3,
+            "candidates:masked_unknown:below_zero": 3,
+            "candidates:tie_zero": 0,
+            "candidates:masked_unknown:tie_zero": 0,
+            "candidates:fitting_unknown": 3,
+            "candidates:fitting_unknown:retained_zero": 0,
+            "candidates:fitting_unknown:below_zero": 3,
+            "candidates:fitting_unknown:tie_zero": 0,
+            "frames:any_survivor_zero": 0,
+            "frames:any_tie_zero": 0,
+            "frames:any_pool_match": 0,
+            "frames:any_match_retained_zero": 0,
+            "frames:any_match_tie_zero": 0,
+            "frames:weak_match": 0,
+            "frames:weak_match_retained_zero": 0,
+            "frames:weak_match_tie_zero": 0,
+            "candidates:weak_match": 0,
+            "candidates:weak_match_retained_zero": 0,
+            "candidates:weak_match_tie_zero": 0,
+            "frames:masked:native_missing": 1
+          },
+          "ranking": "unscored_reference",
+          "native_outcome": "missing",
+          "native_selected_logit": null,
+          "native_correct_logit": null,
+          "hidden_max_logit": null,
+          "weak_match_max_logit": null,
+          "any_match_max_logit": null
+        }
+      },
+      "candidate_scores": [
+        {
+          "candidate_id": "candidate_606a3a0c210ec093cc69a9937ace5022181b89de86e1594952029a760af6a2f0",
+          "candidate_index": 0,
+          "native_or_weak": "weak",
+          "center_xy_px": [
+            977.7222696940105,
+            335.2366892496745
+          ],
+          "fitting_target": null,
+          "fitting_target_group": "masked_unknown",
+          "distance_px": null,
+          "evaluation_category": "masked_unknown",
+          "all_nba_logit": -10.559627532958984,
+          "held_out_logit": -11.906539916992188
+        },
+        {
+          "candidate_id": "candidate_8448a7148c1fb5443958d5a9e5565ae08d5c7909515cb6a29571d4b6d334bbc5",
+          "candidate_index": 1,
+          "native_or_weak": "weak",
+          "center_xy_px": [
+            984.0826416015625,
+            355.0
+          ],
+          "fitting_target": null,
+          "fitting_target_group": "masked_unknown",
+          "distance_px": null,
+          "evaluation_category": "masked_unknown",
+          "all_nba_logit": -13.132927894592285,
+          "held_out_logit": -12.30092716217041
+        },
+        {
+          "candidate_id": "candidate_6fa2e6fc85bff864c5f6342704d727f3bc7308eb80f294a093fd0222e3e147d5",
+          "candidate_index": 2,
+          "native_or_weak": "weak",
+          "center_xy_px": [
+            997.6141357421875,
+            369.201405843099
+          ],
+          "fitting_target": null,
+          "fitting_target_group": "masked_unknown",
+          "distance_px": null,
+          "evaluation_category": "masked_unknown",
+          "all_nba_logit": -13.5963134765625,
+          "held_out_logit": -12.86686897277832
+        }
+      ]
+    },
+    {
+      "frame": {
+        "frame_id": "frame_8699c648ea1dc0304ec48a2c2ae92c2b7f80e200c4c8911406e39c7c06da66c1",
+        "block_id": "chi-vs-ind-0022400868_e01",
+        "game_id": "0022400868",
+        "domain": "nba",
+        "source_frame_index": 100,
+        "source_pts_ticks": 100000,
+        "time_base": "1/60000",
+        "source_video_sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+        "source_png": {
+          "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/source_frames/frame_000100.png",
+          "sha256": "1520c70f963fb3aac5cc8949f5cceaecd6a7d2e3dade798e445ef34bd226f0f3",
+          "bytes": 1243866,
+          "rgb_sha256": "e8e939f3476cbc1a5991b25d663ef2d77b7552bdae451ef3226d8170ba50667d"
+        },
+        "duration_ticks": 1000,
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/chi-vs-ind-0022400868/2.mp4",
+          "sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 663
+        },
+        "annotation": {
+          "frame_index": 100,
+          "annotation_status": "labeled",
+          "visibility": "not_visible",
+          "absence_reason": "occluded",
+          "game_ball_identity_certainty": "certain",
+          "geometry": null,
+          "localization_eligible": false,
+          "difficulty_tags": [
+            "compression_artifact",
+            "hand_overlap",
+            "player_overlap"
+          ],
+          "notes": "AI source-image proposal, pending Ryan acceptance. No game-ball boundary is visible in this current frame. The source sequence shows its reception into the camera-occluded front side of the receiver; the receiver body and arms hide it. The hidden location remains unknown and no interpolated center is supplied."
+        },
+        "kind": "hidden",
+        "valid_output_channel": true,
+        "pool_binding": {
+          "path": "data/outputs/ball_tracking/training_response_preparation_v0_1/capture_attempt_001/d826d91090ec340c093832d7/pools.jsonl",
+          "bytes": 320994,
+          "sha256": "9d0db870a095d014ba8002d61af306529e2ebadc53136daf7b677bbbf3e2c4bd"
+        },
+        "mean_heatmap_sha256": "26544be1a94e48717ba367df91033ed68198a2c03cb015d0aa2df66fe1bf7858",
+        "native_selected_candidate_index": null,
+        "native_center_xy_px": null,
+        "candidate_ids": [
+          "candidate_f821091bf50d2cdeb3fb6d06307fbb2661cc15800d1e2b8da0ab5b70ef096edb"
+        ],
+        "candidate_count": 1,
+        "original_source_role": "training",
+        "pilot_role": "nba_fit_or_scorer_validation"
+      },
+      "scoring_contexts": {
+        "nba_in_sample": {
+          "fit": "all_nba",
+          "counts": {
+            "frames": 1,
+            "frames:hidden": 1,
+            "frames:empty_pool": 0,
+            "candidates": 1,
+            "candidates:certain_hidden": 1,
+            "candidates:retained_zero": 0,
+            "candidates:certain_hidden:retained_zero": 0,
+            "candidates:below_zero": 1,
+            "candidates:certain_hidden:below_zero": 1,
+            "candidates:tie_zero": 0,
+            "candidates:certain_hidden:tie_zero": 0,
+            "frames:any_survivor_zero": 0,
+            "frames:any_tie_zero": 0,
+            "frames:any_pool_match": 0,
+            "frames:any_match_retained_zero": 0,
+            "frames:any_match_tie_zero": 0,
+            "frames:weak_match": 0,
+            "frames:weak_match_retained_zero": 0,
+            "frames:weak_match_tie_zero": 0,
+            "candidates:weak_match": 0,
+            "candidates:weak_match_retained_zero": 0,
+            "candidates:weak_match_tie_zero": 0,
+            "frames:hidden:native_missing": 1,
+            "frames:hidden:any_survivor_zero": 0,
+            "frames:hidden:any_tie_zero": 0,
+            "frames:hidden:native_survivor_zero": 0,
+            "frames:hidden:native_tie_zero": 0
+          },
+          "ranking": "unscored_reference",
+          "native_outcome": "missing",
+          "native_selected_logit": null,
+          "native_correct_logit": null,
+          "hidden_max_logit": -13.783039093017578,
+          "weak_match_max_logit": null,
+          "any_match_max_logit": null
+        },
+        "nba_out_of_fold": {
+          "fit": "leave_chi_out",
+          "counts": {
+            "frames": 1,
+            "frames:hidden": 1,
+            "frames:empty_pool": 0,
+            "candidates": 1,
+            "candidates:certain_hidden": 1,
+            "candidates:retained_zero": 0,
+            "candidates:certain_hidden:retained_zero": 0,
+            "candidates:below_zero": 1,
+            "candidates:certain_hidden:below_zero": 1,
+            "candidates:tie_zero": 0,
+            "candidates:certain_hidden:tie_zero": 0,
+            "frames:any_survivor_zero": 0,
+            "frames:any_tie_zero": 0,
+            "frames:any_pool_match": 0,
+            "frames:any_match_retained_zero": 0,
+            "frames:any_match_tie_zero": 0,
+            "frames:weak_match": 0,
+            "frames:weak_match_retained_zero": 0,
+            "frames:weak_match_tie_zero": 0,
+            "candidates:weak_match": 0,
+            "candidates:weak_match_retained_zero": 0,
+            "candidates:weak_match_tie_zero": 0,
+            "frames:hidden:native_missing": 1,
+            "frames:hidden:any_survivor_zero": 0,
+            "frames:hidden:any_tie_zero": 0,
+            "frames:hidden:native_survivor_zero": 0,
+            "frames:hidden:native_tie_zero": 0
+          },
+          "ranking": "unscored_reference",
+          "native_outcome": "missing",
+          "native_selected_logit": null,
+          "native_correct_logit": null,
+          "hidden_max_logit": -11.332986831665039,
+          "weak_match_max_logit": null,
+          "any_match_max_logit": null
+        }
+      },
+      "candidate_scores": [
+        {
+          "candidate_id": "candidate_f821091bf50d2cdeb3fb6d06307fbb2661cc15800d1e2b8da0ab5b70ef096edb",
+          "candidate_index": 0,
+          "native_or_weak": "weak",
+          "center_xy_px": [
+            872.7732340494792,
+            216.0009256998698
+          ],
+          "fitting_target": 0,
+          "fitting_target_group": "certain_hidden",
+          "distance_px": null,
+          "evaluation_category": "certain_hidden",
+          "all_nba_logit": -13.783039093017578,
+          "held_out_logit": -11.332986831665039
+        }
+      ]
+    }
+  ],
+  "package_candidates": [
+    {
+      "frame_id": "frame_78ea25979942b5369418b2868e8a7afd66c27cbfb407d3e8c904368edfdd6593",
+      "block_id": "chi-vs-ind-0022400868_e01",
+      "game_id": "0022400868",
+      "domain": "nba",
+      "source_frame_index": 0,
+      "source_pts_ticks": 0,
+      "time_base": "1/60000",
+      "source_video_sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+      "source_png": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/source_frames/frame_000000.png",
+        "sha256": "5c33dc786a7ead60e5267a20e6a72b70f36233d39a0480d4c73f712dc63a7485",
+        "bytes": 1188443,
+        "rgb_sha256": "7a4af054636648a5c531b506bbaf0fa01d73b0ee744d6c82effb4c19b7cacc98"
+      },
+      "candidate_id": "candidate_e3bcf75ebe09df9abf6bd8c52cdecefeb5cc620aa8ba3a13af8ed08f4f49587d",
+      "candidate_index": 0,
+      "native_or_weak": "native",
+      "center_xy_px": [
+        739.4802347819011,
+        175.3887430826823
+      ],
+      "width_px": 1280,
+      "height_px": 720,
+      "producer_candidate": {
+        "candidate_index": 0,
+        "center_x": 739.4802347819011,
+        "center_y": 175.3887430826823,
+        "heatmap_x": 443.6881559997653,
+        "heatmap_y": 105.23324293620117,
+        "native_score": 42.34534454345703,
+        "component_pixels": 66,
+        "in_source_bounds": true,
+        "component_index": 0,
+        "original_index": 0,
+        "extraction": "native_component",
+        "threshold": 0.3,
+        "extraction_index": 0,
+        "extraction_original_index": 0,
+        "equivalent_extractions": [
+          {
+            "center_x": 739.2937215169271,
+            "center_y": 175.2127202351888,
+            "heatmap_x": 443.5762441998109,
+            "heatmap_y": 105.1276351695476,
+            "native_score": 60.06696701049805,
+            "component_pixels": 436,
+            "in_source_bounds": true,
+            "original_index": null,
+            "extraction": "threshold_component",
+            "threshold": 0.01,
+            "extraction_index": 0
+          }
+        ]
+      },
+      "target": 1,
+      "target_group": "positive",
+      "distance_px": 1.6380846550504857,
+      "recorded_uncertainty_radius_px": 3,
+      "in_source_bounds": true
+    },
+    {
+      "frame_id": "frame_78ea25979942b5369418b2868e8a7afd66c27cbfb407d3e8c904368edfdd6593",
+      "block_id": "chi-vs-ind-0022400868_e01",
+      "game_id": "0022400868",
+      "domain": "nba",
+      "source_frame_index": 0,
+      "source_pts_ticks": 0,
+      "time_base": "1/60000",
+      "source_video_sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+      "source_png": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/source_frames/frame_000000.png",
+        "sha256": "5c33dc786a7ead60e5267a20e6a72b70f36233d39a0480d4c73f712dc63a7485",
+        "bytes": 1188443,
+        "rgb_sha256": "7a4af054636648a5c531b506bbaf0fa01d73b0ee744d6c82effb4c19b7cacc98"
+      },
+      "candidate_id": "candidate_b587c5b10d7e53b0d9c4db4936b791887d52d43f2dcf68a13e9d87c4d463ac30",
+      "candidate_index": 1,
+      "native_or_weak": "weak",
+      "center_xy_px": [
+        1127.0297241210938,
+        227.62184143066406
+      ],
+      "width_px": 1280,
+      "height_px": 720,
+      "producer_candidate": {
+        "center_x": 1127.0297241210938,
+        "center_y": 227.62184143066406,
+        "heatmap_x": 676.2178441837673,
+        "heatmap_y": 136.5731114018097,
+        "native_score": 0.05785241723060608,
+        "component_pixels": 5,
+        "in_source_bounds": true,
+        "original_index": null,
+        "extraction": "threshold_component",
+        "threshold": 0.01,
+        "extraction_index": 1,
+        "candidate_index": 1,
+        "component_index": 1,
+        "extraction_original_index": 1,
+        "equivalent_extractions": []
+      },
+      "target": 0,
+      "target_group": "eligible_distant_miss",
+      "distance_px": 389.465996484546,
+      "recorded_uncertainty_radius_px": 3,
+      "in_source_bounds": true
+    },
+    {
+      "frame_id": "frame_78ea25979942b5369418b2868e8a7afd66c27cbfb407d3e8c904368edfdd6593",
+      "block_id": "chi-vs-ind-0022400868_e01",
+      "game_id": "0022400868",
+      "domain": "nba",
+      "source_frame_index": 0,
+      "source_pts_ticks": 0,
+      "time_base": "1/60000",
+      "source_video_sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+      "source_png": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/source_frames/frame_000000.png",
+        "sha256": "5c33dc786a7ead60e5267a20e6a72b70f36233d39a0480d4c73f712dc63a7485",
+        "bytes": 1188443,
+        "rgb_sha256": "7a4af054636648a5c531b506bbaf0fa01d73b0ee744d6c82effb4c19b7cacc98"
+      },
+      "candidate_id": "candidate_0e6167a0caaabf722aef3cba12b3cd587acfa0c562f4b25358995bf0929aae1a",
+      "candidate_index": 2,
+      "native_or_weak": "weak",
+      "center_xy_px": [
+        1061.745096842448,
+        331.6666666666667
+      ],
+      "width_px": 1280,
+      "height_px": 720,
+      "producer_candidate": {
+        "center_x": 1061.745096842448,
+        "center_y": 331.6666666666667,
+        "heatmap_x": 637.0470401982282,
+        "heatmap_y": 198.9999924417146,
+        "native_score": 0.07356160134077072,
+        "component_pixels": 5,
+        "in_source_bounds": true,
+        "original_index": null,
+        "extraction": "threshold_component",
+        "threshold": 0.01,
+        "extraction_index": 2,
+        "candidate_index": 2,
+        "component_index": 2,
+        "extraction_original_index": 2,
+        "equivalent_extractions": []
+      },
+      "target": 0,
+      "target_group": "eligible_distant_miss",
+      "distance_px": 356.5242323595725,
+      "recorded_uncertainty_radius_px": 3,
+      "in_source_bounds": true
+    },
+    {
+      "frame_id": "frame_78ea25979942b5369418b2868e8a7afd66c27cbfb407d3e8c904368edfdd6593",
+      "block_id": "chi-vs-ind-0022400868_e01",
+      "game_id": "0022400868",
+      "domain": "nba",
+      "source_frame_index": 0,
+      "source_pts_ticks": 0,
+      "time_base": "1/60000",
+      "source_video_sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+      "source_png": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/source_frames/frame_000000.png",
+        "sha256": "5c33dc786a7ead60e5267a20e6a72b70f36233d39a0480d4c73f712dc63a7485",
+        "bytes": 1188443,
+        "rgb_sha256": "7a4af054636648a5c531b506bbaf0fa01d73b0ee744d6c82effb4c19b7cacc98"
+      },
+      "candidate_id": "candidate_8382c333404e1cb2f922a8a52209e5784b3a1d51e9d1c232ac4693c30c089540",
+      "candidate_index": 3,
+      "native_or_weak": "weak",
+      "center_xy_px": [
+        1061.3535563151042,
+        346.045405069987
+      ],
+      "width_px": 1280,
+      "height_px": 720,
+      "producer_candidate": {
+        "center_x": 1061.3535563151042,
+        "center_y": 346.045405069987,
+        "heatmap_x": 636.8121075951359,
+        "heatmap_y": 207.62724957126107,
+        "native_score": 1.0074487924575806,
+        "component_pixels": 57,
+        "in_source_bounds": true,
+        "original_index": null,
+        "extraction": "threshold_component",
+        "threshold": 0.01,
+        "extraction_index": 3,
+        "candidate_index": 3,
+        "component_index": 3,
+        "extraction_original_index": 3,
+        "equivalent_extractions": []
+      },
+      "target": 0,
+      "target_group": "eligible_distant_miss",
+      "distance_px": 362.68697361381845,
+      "recorded_uncertainty_radius_px": 3,
+      "in_source_bounds": true
+    },
+    {
+      "frame_id": "frame_78ea25979942b5369418b2868e8a7afd66c27cbfb407d3e8c904368edfdd6593",
+      "block_id": "chi-vs-ind-0022400868_e01",
+      "game_id": "0022400868",
+      "domain": "nba",
+      "source_frame_index": 0,
+      "source_pts_ticks": 0,
+      "time_base": "1/60000",
+      "source_video_sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+      "source_png": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/source_frames/frame_000000.png",
+        "sha256": "5c33dc786a7ead60e5267a20e6a72b70f36233d39a0480d4c73f712dc63a7485",
+        "bytes": 1188443,
+        "rgb_sha256": "7a4af054636648a5c531b506bbaf0fa01d73b0ee744d6c82effb4c19b7cacc98"
+      },
+      "candidate_id": "candidate_36ed89e75d7a9f2d4714cb2b69eb22b5abb0b76005ac72384d3e1a4b13f1cd85",
+      "candidate_index": 4,
+      "native_or_weak": "weak",
+      "center_xy_px": [
+        1065.0,
+        336.6666666666667
+      ],
+      "width_px": 1280,
+      "height_px": 720,
+      "producer_candidate": {
+        "center_x": 1065.0,
+        "center_y": 336.6666666666667,
+        "heatmap_x": 639.0,
+        "heatmap_y": 202.0,
+        "native_score": 0.010278386995196342,
+        "component_pixels": 1,
+        "in_source_bounds": true,
+        "original_index": null,
+        "extraction": "threshold_component",
+        "threshold": 0.01,
+        "extraction_index": 4,
+        "candidate_index": 4,
+        "component_index": 4,
+        "extraction_original_index": 4,
+        "equivalent_extractions": []
+      },
+      "target": 0,
+      "target_group": "eligible_distant_miss",
+      "distance_px": 361.6486938698629,
+      "recorded_uncertainty_radius_px": 3,
+      "in_source_bounds": true
+    },
+    {
+      "frame_id": "frame_439cf1676c9c0f25ea928ac4f7fb05b0c6a06e31a089edb63a0474dded116d6f",
+      "block_id": "chi-vs-ind-0022400868_e01",
+      "game_id": "0022400868",
+      "domain": "nba",
+      "source_frame_index": 96,
+      "source_pts_ticks": 96000,
+      "time_base": "1/60000",
+      "source_video_sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+      "source_png": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/source_frames/frame_000096.png",
+        "sha256": "830b889720ab922c0bcd2e546fb259b873ebf768d73b1c477f31ab02819dffda",
+        "bytes": 1267555,
+        "rgb_sha256": "c493db05ed6146138d1eb7ae198bc3a273946182add8be20ca5c58ed41f15bfb"
+      },
+      "candidate_id": "candidate_606a3a0c210ec093cc69a9937ace5022181b89de86e1594952029a760af6a2f0",
+      "candidate_index": 0,
+      "native_or_weak": "weak",
+      "center_xy_px": [
+        977.7222696940105,
+        335.2366892496745
+      ],
+      "width_px": 1280,
+      "height_px": 720,
+      "producer_candidate": {
+        "center_x": 977.7222696940105,
+        "center_y": 335.2366892496745,
+        "heatmap_x": 586.6333735574607,
+        "heatmap_y": 201.14200952367526,
+        "native_score": 29.359905242919922,
+        "component_pixels": 320,
+        "in_source_bounds": true,
+        "original_index": null,
+        "extraction": "threshold_component",
+        "threshold": 0.01,
+        "extraction_index": 0,
+        "candidate_index": 0,
+        "component_index": 0,
+        "extraction_original_index": 0,
+        "equivalent_extractions": []
+      },
+      "target": null,
+      "target_group": "masked_unknown",
+      "distance_px": null,
+      "recorded_uncertainty_radius_px": null,
+      "in_source_bounds": true
+    },
+    {
+      "frame_id": "frame_439cf1676c9c0f25ea928ac4f7fb05b0c6a06e31a089edb63a0474dded116d6f",
+      "block_id": "chi-vs-ind-0022400868_e01",
+      "game_id": "0022400868",
+      "domain": "nba",
+      "source_frame_index": 96,
+      "source_pts_ticks": 96000,
+      "time_base": "1/60000",
+      "source_video_sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+      "source_png": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/source_frames/frame_000096.png",
+        "sha256": "830b889720ab922c0bcd2e546fb259b873ebf768d73b1c477f31ab02819dffda",
+        "bytes": 1267555,
+        "rgb_sha256": "c493db05ed6146138d1eb7ae198bc3a273946182add8be20ca5c58ed41f15bfb"
+      },
+      "candidate_id": "candidate_8448a7148c1fb5443958d5a9e5565ae08d5c7909515cb6a29571d4b6d334bbc5",
+      "candidate_index": 1,
+      "native_or_weak": "weak",
+      "center_xy_px": [
+        984.0826416015625,
+        355.0
+      ],
+      "width_px": 1280,
+      "height_px": 720,
+      "producer_candidate": {
+        "center_x": 984.0826416015625,
+        "center_y": 355.0,
+        "heatmap_x": 590.4495599708315,
+        "heatmap_y": 213.0,
+        "native_score": 0.02316257357597351,
+        "component_pixels": 2,
+        "in_source_bounds": true,
+        "original_index": null,
+        "extraction": "threshold_component",
+        "threshold": 0.01,
+        "extraction_index": 1,
+        "candidate_index": 1,
+        "component_index": 1,
+        "extraction_original_index": 1,
+        "equivalent_extractions": []
+      },
+      "target": null,
+      "target_group": "masked_unknown",
+      "distance_px": null,
+      "recorded_uncertainty_radius_px": null,
+      "in_source_bounds": true
+    },
+    {
+      "frame_id": "frame_439cf1676c9c0f25ea928ac4f7fb05b0c6a06e31a089edb63a0474dded116d6f",
+      "block_id": "chi-vs-ind-0022400868_e01",
+      "game_id": "0022400868",
+      "domain": "nba",
+      "source_frame_index": 96,
+      "source_pts_ticks": 96000,
+      "time_base": "1/60000",
+      "source_video_sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+      "source_png": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/source_frames/frame_000096.png",
+        "sha256": "830b889720ab922c0bcd2e546fb259b873ebf768d73b1c477f31ab02819dffda",
+        "bytes": 1267555,
+        "rgb_sha256": "c493db05ed6146138d1eb7ae198bc3a273946182add8be20ca5c58ed41f15bfb"
+      },
+      "candidate_id": "candidate_6fa2e6fc85bff864c5f6342704d727f3bc7308eb80f294a093fd0222e3e147d5",
+      "candidate_index": 2,
+      "native_or_weak": "weak",
+      "center_xy_px": [
+        997.6141357421875,
+        369.201405843099
+      ],
+      "width_px": 1280,
+      "height_px": 720,
+      "producer_candidate": {
+        "center_x": 997.6141357421875,
+        "center_y": 369.201405843099,
+        "heatmap_x": 598.5684713779691,
+        "heatmap_y": 221.52084369702973,
+        "native_score": 0.12425187230110168,
+        "component_pixels": 8,
+        "in_source_bounds": true,
+        "original_index": null,
+        "extraction": "threshold_component",
+        "threshold": 0.01,
+        "extraction_index": 2,
+        "candidate_index": 2,
+        "component_index": 2,
+        "extraction_original_index": 2,
+        "equivalent_extractions": []
+      },
+      "target": null,
+      "target_group": "masked_unknown",
+      "distance_px": null,
+      "recorded_uncertainty_radius_px": null,
+      "in_source_bounds": true
+    },
+    {
+      "frame_id": "frame_8699c648ea1dc0304ec48a2c2ae92c2b7f80e200c4c8911406e39c7c06da66c1",
+      "block_id": "chi-vs-ind-0022400868_e01",
+      "game_id": "0022400868",
+      "domain": "nba",
+      "source_frame_index": 100,
+      "source_pts_ticks": 100000,
+      "time_base": "1/60000",
+      "source_video_sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+      "source_png": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/nba_reference_batch_01/source_frames/frame_000100.png",
+        "sha256": "1520c70f963fb3aac5cc8949f5cceaecd6a7d2e3dade798e445ef34bd226f0f3",
+        "bytes": 1243866,
+        "rgb_sha256": "e8e939f3476cbc1a5991b25d663ef2d77b7552bdae451ef3226d8170ba50667d"
+      },
+      "candidate_id": "candidate_f821091bf50d2cdeb3fb6d06307fbb2661cc15800d1e2b8da0ab5b70ef096edb",
+      "candidate_index": 0,
+      "native_or_weak": "weak",
+      "center_xy_px": [
+        872.7732340494792,
+        216.0009256998698
+      ],
+      "width_px": 1280,
+      "height_px": 720,
+      "producer_candidate": {
+        "center_x": 872.7732340494792,
+        "center_y": 216.0009256998698,
+        "heatmap_x": 523.6639461314804,
+        "heatmap_y": 129.60055406965427,
+        "native_score": 1.513344407081604,
+        "component_pixels": 76,
+        "in_source_bounds": true,
+        "original_index": null,
+        "extraction": "threshold_component",
+        "threshold": 0.01,
+        "extraction_index": 0,
+        "candidate_index": 0,
+        "component_index": 0,
+        "extraction_original_index": 0,
+        "equivalent_extractions": []
+      },
+      "target": 0,
+      "target_group": "certain_hidden",
+      "distance_px": null,
+      "recorded_uncertainty_radius_px": null,
+      "in_source_bounds": true
+    }
+  ]
+}

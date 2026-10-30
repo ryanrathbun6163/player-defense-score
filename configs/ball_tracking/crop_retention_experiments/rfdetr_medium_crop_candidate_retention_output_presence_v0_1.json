@@ -1,0 +1,47 @@
+{
+  "schema_version": "ball_crop_retention_output_presence_experiment/v0.1",
+  "study_id": "rfdetr_medium_crop_candidate_retention_output_presence_v0_1",
+  "output_root": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1",
+  "output_dir": "audit/post_review_output_presence_v0_1",
+  "permitted_stages": [
+    "summarize"
+  ],
+  "unit_key": "post-review-output-presence:summary:",
+  "maximum_unit_seconds": 120,
+  "maximum_summary_bytes": 65536,
+  "scientific_inputs": {
+    "breakdown": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/post_review_error_breakdown_recovery_v0_1/breakdown.json",
+      "size_bytes": 744235,
+      "sha256": "05b6ea6091ebeada1857b85016c2510f9d65349596f61cd208514c2a31252b32"
+    }
+  },
+  "proposal": {
+    "path": "docs/ball_crop_candidate_retention_output_presence_proposal.md",
+    "sha256": "355bfcd29d8059737ca4b8449cd1fe0a03b72ba32aefc57b2ed5e71ba2dbdfcb"
+  },
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_output_presence_approval_v0_1.json",
+    "sha256": "af55f0879c1e73725ab605ebae47c84367eec3dac4da187d954ae33bf169a3e1"
+  },
+  "frozen_history": {
+    "path": "data/outputs/t/op_impl_de134d942767/frozen_history.json",
+    "sha256": "def7a7fc4e82466ef057427fa2beb0e017af2a48a809884506f9297a5bd7e106"
+  },
+  "predecessor_manifest": {
+    "path": "configs/ball_tracking/crop_retention_experiments/rfdetr_medium_crop_candidate_retention_error_breakdown_recovery_v0_1.json",
+    "sha256": "681a090a4d9fb33ed249521be390b545e8ab60fe51e4d7431d1215f3e98a864a"
+  },
+  "predecessor_completion": {
+    "path": "data/outputs/t/ebri_fa730bcb6d2e/recovery_completion_de134d942767.json",
+    "sha256": "83a56eacd8e7850d0dc396e4d8aa5ed7d07ed15dfa992f10254d3f217aee60e2"
+  },
+  "implementation_validation": {
+    "path": "data/outputs/t/op_impl_de134d942767/implementation_validation.json",
+    "sha256": "42238cf3558a2a5f1516f970b413e1666af1c3d82289a6091d16e9590c25b15c"
+  },
+  "post_commit_checkpoint": "data/outputs/t/op_impl_de134d942767/post_commit_execution_checkpoint.json",
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

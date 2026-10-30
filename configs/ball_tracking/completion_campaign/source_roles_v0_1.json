@@ -1,0 +1,1477 @@
+{
+  "schema_version": "ball_completion_source_roles/v0.1",
+  "status": "source_roles_and_episode_windows_fixed_references_pending",
+  "created_at_utc": "2026-10-22T00:42:22.810354+00:00",
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "b1dbf027ee140a15b03509a1dfa0ba88e367a6c3"
+  },
+  "authority": "configs/ball_tracking/reviews/ball_tracking_completion_campaign_approval_v0_1.json",
+  "scope": "source-first selection; no new inference, fitting, model ranking or protected pixel access",
+  "role_scope": "Entire parent game, all clips, replays, alternative encodes and temporal context inherit exactly one role. No random frame split.",
+  "game_roles": [
+    {
+      "game_id": "0022500829",
+      "name": "SAC at MEM,2026-02-23",
+      "role": "training",
+      "exposure_before_campaign": "existing_training_and_development",
+      "source_kind": "existing_full_game",
+      "new_frame_judgments": 959,
+      "episode_count": 6,
+      "planned_seconds": 16
+    },
+    {
+      "game_id": "0022400868",
+      "name": "CHI at IND, BARD game0022400868",
+      "role": "training",
+      "exposure_before_campaign": "no_local_project_use_found",
+      "source_kind": "BARD_individual_clips",
+      "new_frame_judgments": 960,
+      "episode_count": 6,
+      "planned_seconds": 16.0
+    },
+    {
+      "game_id": "0022400866",
+      "name": "DEN at BOS, BARD game0022400866",
+      "role": "training",
+      "exposure_before_campaign": "no_local_project_use_found",
+      "source_kind": "BARD_individual_clips",
+      "new_frame_judgments": 960,
+      "episode_count": 6,
+      "planned_seconds": 16.0
+    },
+    {
+      "game_id": "0022400879",
+      "name": "HOU at OKC, BARD game0022400879",
+      "role": "checkpoint_validation",
+      "exposure_before_campaign": "fresh_relative_to_local_project_use",
+      "source_kind": "BARD_individual_clips",
+      "new_frame_judgments": 960,
+      "episode_count": 6,
+      "planned_seconds": 16.0
+    },
+    {
+      "game_id": "0022500828",
+      "name": "SAS at DET,2026-02-23",
+      "role": "excluded_post_selection_development",
+      "training_or_checkpoint_selection": false
+    },
+    {
+      "game_id": "0022500843",
+      "name": "SAS at TOR,2026-02-25",
+      "role": "previously_exposed_development_not_fresh_validation",
+      "training_or_checkpoint_selection": false
+    }
+  ],
+  "new_nba_frame_judgments_selected": 3839,
+  "new_nba_frame_judgments_ceiling": 3840,
+  "new_nba_labels_created_in_this_source_selection": 0,
+  "retained_accepted_training": {
+    "SAC": 300,
+    "NFHS": 150,
+    "deduplicate_by_parent_game_and_native_frame_or_pts": true,
+    "existing_P003_training_416_440_retained": true,
+    "no_new_NFHS_development_or_protected_labels_for_fitting": true
+  },
+  "episodes": [
+    {
+      "episode_id": "chi-vs-ind-0022400868_e01",
+      "game_id": "0022400868",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/chi-vs-ind-0022400868/2.mp4",
+        "bytes": 8505697,
+        "sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 663
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/chi-vs-ind-0022400868/2.mp4",
+      "source_clip_id": "2",
+      "window_seconds_half_open": [
+        0,
+        2
+      ],
+      "window_pts_half_open": [
+        0,
+        120000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 2,
+      "new_frame_judgments": 120,
+      "first_source_frame": 0,
+      "last_source_frame": 119,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/chi-vs-ind-0022400868_e01/frames.json",
+        "bytes": 13739,
+        "sha256": "ab78f5156729f5f73e6b2a640e48407bd7651b8b835fb11728c78bc49ed648ec"
+      },
+      "selection_category": "ordinary_visible_movement",
+      "observed_source_content": "Q1 11:18\u201311:16; perimeter passing and held ball",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/2/contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/chi-vs-ind-0022400868_e01/source_review.mp4"
+    },
+    {
+      "episode_id": "chi-vs-ind-0022400868_e02",
+      "game_id": "0022400868",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/chi-vs-ind-0022400868/17.mp4",
+        "bytes": 5031044,
+        "sha256": "143578e6f82f2814608318896af41309611c2880f6b806cd3967dfb55d2d54af",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 359
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/chi-vs-ind-0022400868/17.mp4",
+      "source_clip_id": "17",
+      "window_seconds_half_open": [
+        0,
+        2
+      ],
+      "window_pts_half_open": [
+        0,
+        120000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 2,
+      "new_frame_judgments": 120,
+      "first_source_frame": 0,
+      "last_source_frame": 119,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/chi-vs-ind-0022400868_e02/frames.json",
+        "bytes": 13739,
+        "sha256": "ab78f5156729f5f73e6b2a640e48407bd7651b8b835fb11728c78bc49ed648ec"
+      },
+      "selection_category": "held_ball_hands_heads",
+      "observed_source_content": "Q1 9:32; overhead free throw camera, release and flight",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/17/contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/chi-vs-ind-0022400868_e02/source_review.mp4"
+    },
+    {
+      "episode_id": "chi-vs-ind-0022400868_e03",
+      "game_id": "0022400868",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/chi-vs-ind-0022400868/38.mp4",
+        "bytes": 6471083,
+        "sha256": "ce82432201fbe0191c91b5c30bdbdba8fececc03af88eae9e18645202b8ecb4a",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 509
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/chi-vs-ind-0022400868/38.mp4",
+      "source_clip_id": "38",
+      "window_seconds_half_open": [
+        2,
+        4
+      ],
+      "window_pts_half_open": [
+        120000,
+        240000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 2,
+      "new_frame_judgments": 120,
+      "first_source_frame": 120,
+      "last_source_frame": 239,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/chi-vs-ind-0022400868_e03/frames.json",
+        "bytes": 13913,
+        "sha256": "f57a31e10935f3ed81c69be4f5360b40c81addbb9ebf08bca9f69702df67218e"
+      },
+      "selection_category": "player_overlap",
+      "observed_source_content": "Q1 7:18\u20137:16; dribble into crowded lane",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/38/contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/chi-vs-ind-0022400868_e03/source_review.mp4"
+    },
+    {
+      "episode_id": "chi-vs-ind-0022400868_e04",
+      "game_id": "0022400868",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/chi-vs-ind-0022400868/81.mp4",
+        "bytes": 6789130,
+        "sha256": "4def0bf85d2dbaee2291fc7bd187e521b4ec270668ab78d41200fa27cec60969",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 553
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/chi-vs-ind-0022400868/81.mp4",
+      "source_clip_id": "81",
+      "window_seconds_half_open": [
+        5,
+        7
+      ],
+      "window_pts_half_open": [
+        300000,
+        420000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 2,
+      "new_frame_judgments": 120,
+      "first_source_frame": 300,
+      "last_source_frame": 419,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/chi-vs-ind-0022400868_e04/frames.json",
+        "bytes": 13865,
+        "sha256": "ca262f12899cad2f861579578a07140f64360051e082c7e472d5e5c4feff7446"
+      },
+      "selection_category": "pass_shot_small_distant_ball",
+      "observed_source_content": "Q1 1:26\u20131:24; long shot release and flight",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/81/contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/chi-vs-ind-0022400868_e04/source_review.mp4"
+    },
+    {
+      "episode_id": "chi-vs-ind-0022400868_e05",
+      "game_id": "0022400868",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/chi-vs-ind-0022400868/174.mp4",
+        "bytes": 9369835,
+        "sha256": "8f257f9794ad25075f76d6cad3bb4ef65b04653779e61b96f11c64b0449a3957",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 757
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/chi-vs-ind-0022400868/174.mp4",
+      "source_clip_id": "174",
+      "window_seconds_half_open": [
+        4.5,
+        8.5
+      ],
+      "window_pts_half_open": [
+        270000,
+        510000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 4.0,
+      "new_frame_judgments": 240,
+      "first_source_frame": 270,
+      "last_source_frame": 509,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/chi-vs-ind-0022400868_e05/frames.json",
+        "bytes": 27725,
+        "sha256": "de0ee14161325f93b646423209bffbc683695f7db40ff9b817c98ed4a01b81e8"
+      },
+      "selection_category": "recovery",
+      "observed_source_content": "Q2 about0:58\u20130:54; handoff, body overlap and reappearance into close shot",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/174/contact.jpg",
+      "dense_recovery_sheets": [
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/174/dense_1.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/174/dense_2.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/174/dense_3.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/174/dense_4.jpg"
+      ],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/chi-vs-ind-0022400868_e05/source_review.mp4"
+    },
+    {
+      "episode_id": "chi-vs-ind-0022400868_e06",
+      "game_id": "0022400868",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/chi-vs-ind-0022400868/221.mp4",
+        "bytes": 8973324,
+        "sha256": "7069f6fe34b07955c84b807a9e027e19fe1f78b92f07700f0810846b0a326243",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 719
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/chi-vs-ind-0022400868/221.mp4",
+      "source_clip_id": "221",
+      "window_seconds_half_open": [
+        4,
+        8
+      ],
+      "window_pts_half_open": [
+        240000,
+        480000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 4,
+      "new_frame_judgments": 240,
+      "first_source_frame": 240,
+      "last_source_frame": 479,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/chi-vs-ind-0022400868_e06/frames.json",
+        "bytes": 27725,
+        "sha256": "586b7aa3d4cb7983b10c1fc48b00065c8696ffcc4145bb23c380cec779c76577"
+      },
+      "selection_category": "recovery",
+      "observed_source_content": "Q3 5:51\u20135:49; drive hidden behind defenders then ball reappears above heads and at rim",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/221/contact.jpg",
+      "dense_recovery_sheets": [
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/221/dense_1.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/221/dense_2.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/221/dense_3.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/221/dense_4.jpg"
+      ],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/chi-vs-ind-0022400868_e06/source_review.mp4"
+    },
+    {
+      "episode_id": "den-vs-bos-0022400866_e01",
+      "game_id": "0022400866",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/den-vs-bos-0022400866/3.mp4",
+        "bytes": 8198677,
+        "sha256": "0099a46a0a21d5d8c30bf44da5213ac035bf70fab8b537919e86d0c5175fd9e9",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 603
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/den-vs-bos-0022400866/3.mp4",
+      "source_clip_id": "3",
+      "window_seconds_half_open": [
+        0,
+        2
+      ],
+      "window_pts_half_open": [
+        0,
+        120000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 2,
+      "new_frame_judgments": 120,
+      "first_source_frame": 0,
+      "last_source_frame": 119,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/den-vs-bos-0022400866_e01/frames.json",
+        "bytes": 13739,
+        "sha256": "ab78f5156729f5f73e6b2a640e48407bd7651b8b835fb11728c78bc49ed648ec"
+      },
+      "selection_category": "ordinary_visible_movement",
+      "observed_source_content": "Q1 11:10\u201311:08; perimeter movement and pass",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/3/contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/den-vs-bos-0022400866_e01/source_review.mp4"
+    },
+    {
+      "episode_id": "den-vs-bos-0022400866_e02",
+      "game_id": "0022400866",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/den-vs-bos-0022400866/19.mp4",
+        "bytes": 5181790,
+        "sha256": "885b127036ac1c458156ff49bcf89e1fde2f5f878ebb1f262101141208075368",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 399
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/den-vs-bos-0022400866/19.mp4",
+      "source_clip_id": "19",
+      "window_seconds_half_open": [
+        0,
+        2
+      ],
+      "window_pts_half_open": [
+        0,
+        120000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 2,
+      "new_frame_judgments": 120,
+      "first_source_frame": 0,
+      "last_source_frame": 119,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/den-vs-bos-0022400866_e02/frames.json",
+        "bytes": 13739,
+        "sha256": "ab78f5156729f5f73e6b2a640e48407bd7651b8b835fb11728c78bc49ed648ec"
+      },
+      "selection_category": "held_ball_hands_heads",
+      "observed_source_content": "Q1 8:41; held free throw, release and flight",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/19/contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/den-vs-bos-0022400866_e02/source_review.mp4"
+    },
+    {
+      "episode_id": "den-vs-bos-0022400866_e03",
+      "game_id": "0022400866",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/den-vs-bos-0022400866/44.mp4",
+        "bytes": 6597314,
+        "sha256": "025aa8bba12fca7e1f9c2864045f272a1244e563ccb42be395d15091e2838081",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 475
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/den-vs-bos-0022400866/44.mp4",
+      "source_clip_id": "44",
+      "window_seconds_half_open": [
+        0,
+        2
+      ],
+      "window_pts_half_open": [
+        0,
+        120000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 2,
+      "new_frame_judgments": 120,
+      "first_source_frame": 0,
+      "last_source_frame": 119,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/den-vs-bos-0022400866_e03/frames.json",
+        "bytes": 13739,
+        "sha256": "ab78f5156729f5f73e6b2a640e48407bd7651b8b835fb11728c78bc49ed648ec"
+      },
+      "selection_category": "ordinary_visible_movement",
+      "observed_source_content": "Q1 6:30\u20136:28; advance into half court",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/44/contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/den-vs-bos-0022400866_e03/source_review.mp4"
+    },
+    {
+      "episode_id": "den-vs-bos-0022400866_e04",
+      "game_id": "0022400866",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/den-vs-bos-0022400866/132.mp4",
+        "bytes": 8014029,
+        "sha256": "00f63afe1311b89129f30bb71e4598868ddc2086d743f0cfcd711af696fec216",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 579
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/den-vs-bos-0022400866/132.mp4",
+      "source_clip_id": "132",
+      "window_seconds_half_open": [
+        4,
+        6
+      ],
+      "window_pts_half_open": [
+        240000,
+        360000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 2,
+      "new_frame_judgments": 120,
+      "first_source_frame": 240,
+      "last_source_frame": 359,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/den-vs-bos-0022400866_e04/frames.json",
+        "bytes": 13865,
+        "sha256": "2e29e3a4cc92ca120617dc5cc447fb3242494af3fedb629cb59e48cb07d6d17c"
+      },
+      "selection_category": "pass_shot_small_distant_ball",
+      "observed_source_content": "Q2 7:25\u20137:23; kickout pass and distant shot",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/132/contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/den-vs-bos-0022400866_e04/source_review.mp4"
+    },
+    {
+      "episode_id": "den-vs-bos-0022400866_e05",
+      "game_id": "0022400866",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/den-vs-bos-0022400866/84.mp4",
+        "bytes": 7733406,
+        "sha256": "81fdd37d37b68317dd1d9e473799d6959e4118c063f0e9461e44173c5dffbb3f",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 587
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/den-vs-bos-0022400866/84.mp4",
+      "source_clip_id": "84",
+      "window_seconds_half_open": [
+        3.5,
+        7.5
+      ],
+      "window_pts_half_open": [
+        210000,
+        450000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 4.0,
+      "new_frame_judgments": 240,
+      "first_source_frame": 210,
+      "last_source_frame": 449,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/den-vs-bos-0022400866_e05/frames.json",
+        "bytes": 27737,
+        "sha256": "ed0cb39f061c24d2622b907686efb62d6c35197cc9d55bd57ab50c247cd6eca5"
+      },
+      "selection_category": "recovery",
+      "observed_source_content": "Q1 1:20\u20131:16; ball through crowded drive, pass and shot with overlapping bodies/hands",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/84/contact.jpg",
+      "dense_recovery_sheets": [
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/84/dense_1.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/84/dense_2.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/84/dense_3.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/84/dense_4.jpg"
+      ],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/den-vs-bos-0022400866_e05/source_review.mp4"
+    },
+    {
+      "episode_id": "den-vs-bos-0022400866_e06",
+      "game_id": "0022400866",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/den-vs-bos-0022400866/220.mp4",
+        "bytes": 7644017,
+        "sha256": "2a381b5bd46e6513530a7d50b9604409347562b0fbb9a3c7bc631ea3646cb083",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 565
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/den-vs-bos-0022400866/220.mp4",
+      "source_clip_id": "220",
+      "window_seconds_half_open": [
+        2.5,
+        6.5
+      ],
+      "window_pts_half_open": [
+        150000,
+        390000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 4.0,
+      "new_frame_judgments": 240,
+      "first_source_frame": 150,
+      "last_source_frame": 389,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/den-vs-bos-0022400866_e06/frames.json",
+        "bytes": 27761,
+        "sha256": "c90adc1ab4b86b732f6abccfc0bdda9740daa2966fd6ed50a0728b0bce1daa1d"
+      },
+      "selection_category": "recovery",
+      "observed_source_content": "Q3 about5:55\u20135:51; ball obscured at close post defense then visible dribble and shot",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/220/contact.jpg",
+      "dense_recovery_sheets": [
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/220/dense_1.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/220/dense_2.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/220/dense_3.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/220/dense_4.jpg"
+      ],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/den-vs-bos-0022400866_e06/source_review.mp4"
+    },
+    {
+      "episode_id": "hou-vs-okc-0022400879_e01",
+      "game_id": "0022400879",
+      "role": "checkpoint_validation",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/4.mp4",
+        "bytes": 5628362,
+        "sha256": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 503
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/hou-vs-okc-0022400879/4.mp4",
+      "source_clip_id": "4",
+      "window_seconds_half_open": [
+        2,
+        4
+      ],
+      "window_pts_half_open": [
+        120000,
+        240000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 2,
+      "new_frame_judgments": 120,
+      "first_source_frame": 120,
+      "last_source_frame": 239,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/hou-vs-okc-0022400879_e01/frames.json",
+        "bytes": 13913,
+        "sha256": "f57a31e10935f3ed81c69be4f5360b40c81addbb9ebf08bca9f69702df67218e"
+      },
+      "selection_category": "held_ball_hands_heads",
+      "observed_source_content": "Q1 11:34; low baseline free throw view, held ball and release",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/4/contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/hou-vs-okc-0022400879_e01/source_review.mp4"
+    },
+    {
+      "episode_id": "hou-vs-okc-0022400879_e02",
+      "game_id": "0022400879",
+      "role": "checkpoint_validation",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/43.mp4",
+        "bytes": 7473866,
+        "sha256": "f6334378aeaa1d1eb7e3b54626f0186812bc106e46bed71370cf79a523f3f0f5",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 597
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/hou-vs-okc-0022400879/43.mp4",
+      "source_clip_id": "43",
+      "window_seconds_half_open": [
+        0,
+        2
+      ],
+      "window_pts_half_open": [
+        0,
+        120000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 2,
+      "new_frame_judgments": 120,
+      "first_source_frame": 0,
+      "last_source_frame": 119,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/hou-vs-okc-0022400879_e02/frames.json",
+        "bytes": 13739,
+        "sha256": "ab78f5156729f5f73e6b2a640e48407bd7651b8b835fb11728c78bc49ed648ec"
+      },
+      "selection_category": "ordinary_visible_movement",
+      "observed_source_content": "Q1 7:24\u20137:22; advancing dribble with camera pan",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/43/contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/hou-vs-okc-0022400879_e02/source_review.mp4"
+    },
+    {
+      "episode_id": "hou-vs-okc-0022400879_e03",
+      "game_id": "0022400879",
+      "role": "checkpoint_validation",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/88.mp4",
+        "bytes": 5554115,
+        "sha256": "1e42fc42fa9eb06728fb5ad679da32788fc00c39f73073a7ff6b903f908b39c8",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 473
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/hou-vs-okc-0022400879/88.mp4",
+      "source_clip_id": "88",
+      "window_seconds_half_open": [
+        2,
+        4
+      ],
+      "window_pts_half_open": [
+        120000,
+        240000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 2,
+      "new_frame_judgments": 120,
+      "first_source_frame": 120,
+      "last_source_frame": 239,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/hou-vs-okc-0022400879_e03/frames.json",
+        "bytes": 13913,
+        "sha256": "f57a31e10935f3ed81c69be4f5360b40c81addbb9ebf08bca9f69702df67218e"
+      },
+      "selection_category": "player_overlap",
+      "observed_source_content": "Q1 2:41\u20132:40; drive and reaching defender",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/88/contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/hou-vs-okc-0022400879_e03/source_review.mp4"
+    },
+    {
+      "episode_id": "hou-vs-okc-0022400879_e04",
+      "game_id": "0022400879",
+      "role": "checkpoint_validation",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/140.mp4",
+        "bytes": 8124908,
+        "sha256": "8ac483c656970c05431468bf8ca7c2685863d7435d30699b91a9ee12d770ecc5",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 671
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/hou-vs-okc-0022400879/140.mp4",
+      "source_clip_id": "140",
+      "window_seconds_half_open": [
+        2.5,
+        4.5
+      ],
+      "window_pts_half_open": [
+        150000,
+        270000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 2.0,
+      "new_frame_judgments": 120,
+      "first_source_frame": 150,
+      "last_source_frame": 269,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/hou-vs-okc-0022400879_e04/frames.json",
+        "bytes": 13901,
+        "sha256": "23209a422afa5d1595c4888f979d6efd9ea550223a41976dc3fe3e2a68796b28"
+      },
+      "selection_category": "pass_shot_small_distant_ball",
+      "observed_source_content": "Q2 9:01\u20138:59; pass to perimeter and shot",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/140/contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/hou-vs-okc-0022400879_e04/source_review.mp4"
+    },
+    {
+      "episode_id": "hou-vs-okc-0022400879_e05",
+      "game_id": "0022400879",
+      "role": "checkpoint_validation",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/23.mp4",
+        "bytes": 7272168,
+        "sha256": "604ac886099ae23d6a9fbef12be065e981ea6bcdb70fea8dd9435eaa5f76a523",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 559
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/hou-vs-okc-0022400879/23.mp4",
+      "source_clip_id": "23",
+      "window_seconds_half_open": [
+        0,
+        4
+      ],
+      "window_pts_half_open": [
+        0,
+        240000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 4,
+      "new_frame_judgments": 240,
+      "first_source_frame": 0,
+      "last_source_frame": 239,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/hou-vs-okc-0022400879_e05/frames.json",
+        "bytes": 27647,
+        "sha256": "1beff7fc3676fab9368586a686a68fdd10a4ddd217a7e1190745af9bd6386892"
+      },
+      "selection_category": "recovery",
+      "observed_source_content": "Q1 9:42\u20139:38; overlap in handoff around2.7\u20133.0s, ball reappears with shooter by3.1s",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/23/contact.jpg",
+      "dense_recovery_sheets": [
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/23/dense_1.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/23/dense_2.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/23/dense_3.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/23/dense_4.jpg"
+      ],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/hou-vs-okc-0022400879_e05/source_review.mp4"
+    },
+    {
+      "episode_id": "hou-vs-okc-0022400879_e06",
+      "game_id": "0022400879",
+      "role": "checkpoint_validation",
+      "source": {
+        "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/253.mp4",
+        "bytes": 6633266,
+        "sha256": "e7a94cfdd2003069e0a2bb7f26f4c808c1db3714cefbfc1d0c1665df0855b618",
+        "width": 1280,
+        "height": 720,
+        "average_rate": "60",
+        "time_base": "1/60000",
+        "decoded_frames": 511
+      },
+      "source_url": "https://huggingface.co/datasets/GabrieleGiudici/BARD/resolve/d98a075d42c46518cf5b3c7255cb4c6d207adeef/hou-vs-okc-0022400879/253.mp4",
+      "source_clip_id": "253",
+      "window_seconds_half_open": [
+        3.5,
+        7.5
+      ],
+      "window_pts_half_open": [
+        210000,
+        450000
+      ],
+      "time_base": "1/60000",
+      "duration_seconds": 4.0,
+      "new_frame_judgments": 240,
+      "first_source_frame": 210,
+      "last_source_frame": 449,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/hou-vs-okc-0022400879_e06/frames.json",
+        "bytes": 27737,
+        "sha256": "ed0cb39f061c24d2622b907686efb62d6c35197cc9d55bd57ab50c247cd6eca5"
+      },
+      "selection_category": "recovery",
+      "observed_source_content": "Q3 8:27\u20138:23; crowded drive, shot and rebound with ball obscured among arms/bodies",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/253/contact.jpg",
+      "dense_recovery_sheets": [
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/253/dense_1.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/253/dense_2.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/253/dense_3.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/253/dense_4.jpg"
+      ],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/hou-vs-okc-0022400879_e06/source_review.mp4"
+    },
+    {
+      "episode_id": "sac-mem-0022500829_e01",
+      "game_id": "0022500829",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/0022500829/0022500829_ok_12326430640726_1080p.mp4",
+        "bytes": 5112076363,
+        "sha256": "420eacca7a05f9eebfab6306fe6d28fe1ee0509362cbcc053fba09cfd61b062b",
+        "width": 1920,
+        "height": 1080,
+        "time_base": "1/90000",
+        "average_rate": "native variable16/17ms cadence",
+        "decoded_frames": 357233
+      },
+      "source_clip_id": "existing_full_game",
+      "window_seconds_half_open": [
+        85,
+        87
+      ],
+      "window_pts_half_open": [
+        7650000,
+        7830000
+      ],
+      "time_base": "1/90000",
+      "duration_seconds": 2,
+      "new_frame_judgments": 120,
+      "first_source_frame": 5092,
+      "last_source_frame": 5211,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/sac-mem-0022500829_e01/frames.json",
+        "bytes": 14619,
+        "sha256": "c130d6050722e2d59ae310075513170b0fb5dddc545348473ebe54469def3019"
+      },
+      "selection_category": "ordinary_visible_movement",
+      "observed_source_content": "Q1 10:45\u201310:43; halfcourt perimeter movement",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/sac_mem/85_contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/sac-mem-0022500829_e01/source_review.mp4"
+    },
+    {
+      "episode_id": "sac-mem-0022500829_e02",
+      "game_id": "0022500829",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/0022500829/0022500829_ok_12326430640726_1080p.mp4",
+        "bytes": 5112076363,
+        "sha256": "420eacca7a05f9eebfab6306fe6d28fe1ee0509362cbcc053fba09cfd61b062b",
+        "width": 1920,
+        "height": 1080,
+        "time_base": "1/90000",
+        "average_rate": "native variable16/17ms cadence",
+        "decoded_frames": 357233
+      },
+      "source_clip_id": "existing_full_game",
+      "window_seconds_half_open": [
+        1228,
+        1230
+      ],
+      "window_pts_half_open": [
+        110520000,
+        110700000
+      ],
+      "time_base": "1/90000",
+      "duration_seconds": 2,
+      "new_frame_judgments": 120,
+      "first_source_frame": 73603,
+      "last_source_frame": 73722,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/sac-mem-0022500829_e02/frames.json",
+        "bytes": 15062,
+        "sha256": "890ba031d1a5e4b9e80a2c3e344b52c7e0f8121b569a2f81bf5a5630bb14d424"
+      },
+      "selection_category": "player_overlap",
+      "observed_source_content": "Q2 about11:55\u201311:53; advance beside defender",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/sac_mem/1228_contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/sac-mem-0022500829_e02/source_review.mp4"
+    },
+    {
+      "episode_id": "sac-mem-0022500829_e03",
+      "game_id": "0022500829",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/0022500829/0022500829_ok_12326430640726_1080p.mp4",
+        "bytes": 5112076363,
+        "sha256": "420eacca7a05f9eebfab6306fe6d28fe1ee0509362cbcc053fba09cfd61b062b",
+        "width": 1920,
+        "height": 1080,
+        "time_base": "1/90000",
+        "average_rate": "native variable16/17ms cadence",
+        "decoded_frames": 357233
+      },
+      "source_clip_id": "existing_full_game",
+      "window_seconds_half_open": [
+        1780,
+        1782
+      ],
+      "window_pts_half_open": [
+        160200000,
+        160380000
+      ],
+      "time_base": "1/90000",
+      "duration_seconds": 2,
+      "new_frame_judgments": 120,
+      "first_source_frame": 106690,
+      "last_source_frame": 106809,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/sac-mem-0022500829_e03/frames.json",
+        "bytes": 15183,
+        "sha256": "07b431649620a9b21830ea59d0b086769e0e7f1ce86e763c9a887c7d1680424b"
+      },
+      "selection_category": "pass_shot_small_distant_ball",
+      "observed_source_content": "Q2 7:00\u20136:58; live halfcourt passing after timeout",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/sac_mem/1780_contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/sac-mem-0022500829_e03/source_review.mp4"
+    },
+    {
+      "episode_id": "sac-mem-0022500829_e04",
+      "game_id": "0022500829",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/0022500829/0022500829_ok_12326430640726_1080p.mp4",
+        "bytes": 5112076363,
+        "sha256": "420eacca7a05f9eebfab6306fe6d28fe1ee0509362cbcc053fba09cfd61b062b",
+        "width": 1920,
+        "height": 1080,
+        "time_base": "1/90000",
+        "average_rate": "native variable16/17ms cadence",
+        "decoded_frames": 357233
+      },
+      "source_clip_id": "existing_full_game",
+      "window_seconds_half_open": [
+        2734,
+        2736
+      ],
+      "window_pts_half_open": [
+        246060000,
+        246240000
+      ],
+      "time_base": "1/90000",
+      "duration_seconds": 2,
+      "new_frame_judgments": 120,
+      "first_source_frame": 163873,
+      "last_source_frame": 163992,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/sac-mem-0022500829_e04/frames.json",
+        "bytes": 15147,
+        "sha256": "6894465e5e03d1303bc52a5be7a46369e05d9a7c86b58d4d31812162cce9f2c1"
+      },
+      "selection_category": "held_ball_hands_heads",
+      "observed_source_content": "Q3 11:55\u201311:53; held/dribbled ball beside defender during halfcourt action",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/sac_mem/2728_contact.jpg",
+      "dense_recovery_sheets": [],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/sac-mem-0022500829_e04/source_review.mp4"
+    },
+    {
+      "episode_id": "sac-mem-0022500829_e05",
+      "game_id": "0022500829",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/0022500829/0022500829_ok_12326430640726_1080p.mp4",
+        "bytes": 5112076363,
+        "sha256": "420eacca7a05f9eebfab6306fe6d28fe1ee0509362cbcc053fba09cfd61b062b",
+        "width": 1920,
+        "height": 1080,
+        "time_base": "1/90000",
+        "average_rate": "native variable16/17ms cadence",
+        "decoded_frames": 357233
+      },
+      "source_clip_id": "existing_full_game",
+      "window_seconds_half_open": [
+        390,
+        394
+      ],
+      "window_pts_half_open": [
+        35100000,
+        35460000
+      ],
+      "time_base": "1/90000",
+      "duration_seconds": 4,
+      "new_frame_judgments": 239,
+      "first_source_frame": 23374,
+      "last_source_frame": 23612,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/sac-mem-0022500829_e05/frames.json",
+        "bytes": 29688,
+        "sha256": "5a63f09e668c010fe8a692d56a8b9214617f7de079e11b81a5bc044737c3e055"
+      },
+      "selection_category": "recovery",
+      "observed_source_content": "Q1 8:19\u20138:15; shot/rebound in crowd, temporary ball occlusion and outlet reappearance",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/sac_mem/390_contact.jpg",
+      "dense_recovery_sheets": [
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/sac_mem/390_dense_1.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/sac_mem/390_dense_2.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/sac_mem/390_dense_3.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/sac_mem/390_dense_4.jpg"
+      ],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/sac-mem-0022500829_e05/source_review.mp4"
+    },
+    {
+      "episode_id": "sac-mem-0022500829_e06",
+      "game_id": "0022500829",
+      "role": "training",
+      "source": {
+        "path": "data/raw/nba/0022500829/0022500829_ok_12326430640726_1080p.mp4",
+        "bytes": 5112076363,
+        "sha256": "420eacca7a05f9eebfab6306fe6d28fe1ee0509362cbcc053fba09cfd61b062b",
+        "width": 1920,
+        "height": 1080,
+        "time_base": "1/90000",
+        "average_rate": "native variable16/17ms cadence",
+        "decoded_frames": 357233
+      },
+      "source_clip_id": "existing_full_game",
+      "window_seconds_half_open": [
+        3300,
+        3304
+      ],
+      "window_pts_half_open": [
+        297000000,
+        297360000
+      ],
+      "time_base": "1/90000",
+      "duration_seconds": 4,
+      "new_frame_judgments": 240,
+      "first_source_frame": 197799,
+      "last_source_frame": 198038,
+      "frame_list": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/sac-mem-0022500829_e06/frames.json",
+        "bytes": 30300,
+        "sha256": "95f4bf6c1b608ad6bef79362c90dbb3be4e39bbb68e5944b0bb40039118bbe26"
+      },
+      "selection_category": "recovery",
+      "observed_source_content": "Q3 6:01\u20135:57; screening bodies obscure dribble, then ball reappears on drive",
+      "source_contact_sheet": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/sac_mem/3300_contact.jpg",
+      "dense_recovery_sheets": [
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/sac_mem/3300_dense_1.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/sac_mem/3300_dense_2.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/sac_mem/3300_dense_3.jpg",
+        "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/sac_mem/3300_dense_4.jpg"
+      ],
+      "source_selection_status": "fixed_before_new_model_predictions",
+      "reference_status": "not_yet_proposed_or_accepted",
+      "review_video": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/episodes/sac-mem-0022500829_e06/source_review.mp4"
+    }
+  ],
+  "source_selection_method": {
+    "roles_assigned_before_source_pixel_inspection": true,
+    "role_assignment_evidence": "parent-agent message before acquisition; no prior new-game ID found in configs or docs",
+    "model_predictions_used": false,
+    "visual_evidence": "All18 original BARD clips fully decoded; half-second source contact sheets viewed. Recovery regions inspected at0.1s spacing; source-only per-frame reference work remains pending. SAC original-source bounded windows viewed similarly.",
+    "not_claimed": "This is source suitability screening, not every-frame label acceptance or model-output visual acceptance.",
+    "reference_source": "Use original source pixels or verified lossless derivatives; lossy previews/contact sheets are navigation evidence only.",
+    "recovery": "Observed body/hand occlusion and subsequent visible ball in all selected4s recovery episodes. Exact certain-hidden versus partial/unknown categories and recovery endpoints require full-resolution reference proposals and human acceptance; no recovery performance is claimed.",
+    "category_coverage": [
+      "ordinary_visible_movement",
+      "small_or_distant_ball",
+      "held_ball_near_hands_or_heads",
+      "pass_or_shot_motion",
+      "motion_blur",
+      "player_overlap",
+      "occlusion_and_reappearance"
+    ],
+    "unavailable_required_categories": [],
+    "pending_category_details": "Per-frame eligibility, exact occlusion duration, blur severity and uncertain centers remain for reference preparation; do not manufacture labels from coarse source tags.",
+    "game_identity_evidence": "BARD pinned game directory IDs and matching visible team/court/scoreboard; SAC existing verified game source receipt.",
+    "nonoverlap": "Six distinct BARD event plays per game with different scoreboard clocks; SAC six disjoint live-play windows away from existing opening-play accepted frames. Entire game role prevents replay/alternate-encode leakage."
+  },
+  "limitations": [
+    "Fresh validation means no prior local project fitting/selection or pixel exposure found before this source selection; it is not a sealed final test.",
+    "Retained WASB upstream pretraining game inventory is incomplete; independent-from-all-pretraining status is not claimed.",
+    "Event-clip convenience sample is not a full-game benchmark.",
+    "Encoded60fps BARD cadence is verified by PTS; original camera cadence or unique images on every frame is not certified.",
+    "BARD action metadata is provenance/selection context, not ball-center labels.",
+    "Copyrighted footage and generated outputs remain ignored."
+  ],
+  "screened_not_selected": [
+    {
+      "source": "SAC original",
+      "window_seconds_half_open": [
+        1700,
+        1712
+      ],
+      "reason": "timeout closeup, transition and replay rather than the desired distinct live-play episode; replaced by1780\u20131782"
+    },
+    {
+      "source": "SAC original",
+      "window_seconds_half_open": [
+        88,
+        92
+      ],
+      "reason": "dense inspection favored390\u2013394 for clearer crowd occlusion/reappearance;85\u201387 retained as separate ordinary episode only"
+    }
+  ],
+  "source_dataset": {
+    "name": "BARD",
+    "url": "https://huggingface.co/datasets/GabrieleGiudici/BARD",
+    "revision": "d98a075d42c46518cf5b3c7255cb4c6d207adeef",
+    "individual_clips_downloaded": 18,
+    "downloaded_media_bytes": 129196031,
+    "acquisition_receipts": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/acquisition_receipts.json",
+      "bytes": 13010,
+      "sha256": "be1d5de7dfdb68b481981c4b8d91c9348785c639750c21641ac89c4baa7b3182"
+    },
+    "provider_metadata": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/dataset_paths.csv",
+      "bytes": 3158221,
+      "sha256": "978f3fb34d3c206514de6e811a401472bdc622fc7ec140d92803c7db908b0a0e"
+    }
+  },
+  "protected_evaluation_authorized": false,
+  "ready_for_fitting": false,
+  "source_review_receipt": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/source_review_receipt.json",
+    "bytes": 26946,
+    "sha256": "9d9a55f731ddb026790b49bdc4f9e0bda6a5b53b9d6e3fb11a7ca292314f415e"
+  },
+  "source_review_rendering": {
+    "every_selected_source_frame_once": true,
+    "display_fps": 30,
+    "source_cadence_preserved_in_frame_lists": true,
+    "lossy_preview_not_annotation_truth": true,
+    "actual_finals_decoded_and_saved": true
+  },
+  "source_timing_provenance": {
+    "SAC": {
+      "packet_inventory": {
+        "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/full_verification/video_packets.csv",
+        "bytes": 13441795,
+        "sha256": "0d46ede861a84f04381531d2ffda1689bc1a3b57d04bc2b50acbabc8c5b0dca6"
+      },
+      "packet_inventory_audit": {
+        "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/full_verification/packet_timing_audit.json",
+        "bytes": 1158,
+        "sha256": "4133e78b3cf82875c87405ecbdd1318c20b7396d858ae4277fda72a36aeb63be"
+      },
+      "join_rule": "Parse first CSV column as presentation seconds, convert to nearest integer1/90000 ticks, sort unique PTS; zero-based sorted index is source_frame. Every selected decoded native PTS was found exactly once. This is the same presentation ordering used by existing source selection.",
+      "prior_source_receipt": {
+        "path": "data/raw/nba/0022500829/0022500829_ok_12326430640726_1080p.source.json",
+        "bytes": 652,
+        "sha256": "3eb8520cc46ff52a28e0177fe2a2d6d5550628d82a5b0fd2cde8bd30c6cd1f92"
+      }
+    },
+    "BARD": {
+      "join_rule": "Zero-based source_frame is full native decode presentation order; pts and time_base read directly from decoded PyAV frame. Individual full clip maps bind acquisition and episode subsets.",
+      "complete_clip_frame_maps": [
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/chi-vs-ind-0022400868/2.mp4",
+          "source_sha256": "0761d718b9ad8586ae6da1a37f0de6d23467bc52a79923f66e8581dcd02fa6d4",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/2/frame_map.json",
+            "bytes": 76566,
+            "sha256": "514aea2b22822b0c219a4742c32d81964efd7bb9e8b809f2f4be64a7b309d0cd"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/2/acquisition.json",
+            "bytes": 680,
+            "sha256": "81a7e3430d96ce0f086dddd219838ad4e7d45048bce2f32d7323e2f230ede51c"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/chi-vs-ind-0022400868/17.mp4",
+          "source_sha256": "143578e6f82f2814608318896af41309611c2880f6b806cd3967dfb55d2d54af",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/17/frame_map.json",
+            "bytes": 41387,
+            "sha256": "8c3e457a1f94d394d4fdd8c8f3c8969cbc667bf82ca127ec3169ff5a933cacc3"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/17/acquisition.json",
+            "bytes": 683,
+            "sha256": "0de0e56d0679d4658f881b372b59f5de3bebb7c4ae7969ef547371f338c3e44e"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/chi-vs-ind-0022400868/38.mp4",
+          "source_sha256": "ce82432201fbe0191c91b5c30bdbdba8fececc03af88eae9e18645202b8ecb4a",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/38/frame_map.json",
+            "bytes": 58712,
+            "sha256": "b52b4a2667b91012aba3ead84837afdcea1a421b4cad767e7d089baa6771be0f"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/38/acquisition.json",
+            "bytes": 683,
+            "sha256": "e957228f7375b108ca2a1329c02c0e72da55227964e71e4258057137c6452a53"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/chi-vs-ind-0022400868/81.mp4",
+          "source_sha256": "4def0bf85d2dbaee2291fc7bd187e521b4ec270668ab78d41200fa27cec60969",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/81/frame_map.json",
+            "bytes": 63789,
+            "sha256": "86c64958fd672051a092b32e08dd422a447082bae8b411f61e5e863320444c83"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/81/acquisition.json",
+            "bytes": 683,
+            "sha256": "444b1df91c36135d6bf664f1da3f5f74d86e27d2d5c0ad92b16915606edd712c"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/chi-vs-ind-0022400868/174.mp4",
+          "source_sha256": "8f257f9794ad25075f76d6cad3bb4ef65b04653779e61b96f11c64b0449a3957",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/174/frame_map.json",
+            "bytes": 87508,
+            "sha256": "4e364ef88daef112de8696dfa15fb196a5908d4f53b56dd13f118e729780fa80"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/174/acquisition.json",
+            "bytes": 686,
+            "sha256": "877aa51d5c7eacda179cebe0ea44b91ac446c240d5f71fc5fdab0d8cdd47327c"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/chi-vs-ind-0022400868/221.mp4",
+          "source_sha256": "7069f6fe34b07955c84b807a9e027e19fe1f78b92f07700f0810846b0a326243",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/221/frame_map.json",
+            "bytes": 83086,
+            "sha256": "3960f724168e5dd69977741a1f4e80a93b782ab05e0149ccfbd44e08a1ce0712"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/chi-vs-ind-0022400868/221/acquisition.json",
+            "bytes": 686,
+            "sha256": "bfe08d631ef8fd79fef9983caf3ef9191758cc8d930091bc3566a4c769c7f224"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/den-vs-bos-0022400866/3.mp4",
+          "source_sha256": "0099a46a0a21d5d8c30bf44da5213ac035bf70fab8b537919e86d0c5175fd9e9",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/3/frame_map.json",
+            "bytes": 69576,
+            "sha256": "f17844633f4c2b40cbfa95b3f657407f4a1df15f8cea987e93e19e72754e2d56"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/3/acquisition.json",
+            "bytes": 680,
+            "sha256": "67fbc3a5639bd6a5bb2df9249df32eddbf2ec7fcc5a7468e5eb7980dca149ec4"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/den-vs-bos-0022400866/19.mp4",
+          "source_sha256": "885b127036ac1c458156ff49bcf89e1fde2f5f878ebb1f262101141208075368",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/19/frame_map.json",
+            "bytes": 46011,
+            "sha256": "2bb8187edc22857f0e78ac24f4e11edf1f4c8ef9848f8ed45de261154909a451"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/19/acquisition.json",
+            "bytes": 683,
+            "sha256": "b4133c659e55a6355ad355f2f418578de189c63674f26be6eb9cd4582aca0b53"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/den-vs-bos-0022400866/44.mp4",
+          "source_sha256": "025aa8bba12fca7e1f9c2864045f272a1244e563ccb42be395d15091e2838081",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/44/frame_map.json",
+            "bytes": 54780,
+            "sha256": "3f8ab33a056d6e797d0916096d90e8735af11ca0f3f2685fcb02872b1bf1bb76"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/44/acquisition.json",
+            "bytes": 683,
+            "sha256": "4a73d967c05af51896d6b9568da860c6b5b08a9d14f79400fdf8cadcbe74f5bd"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/den-vs-bos-0022400866/84.mp4",
+          "source_sha256": "81fdd37d37b68317dd1d9e473799d6959e4118c063f0e9461e44173c5dffbb3f",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/84/frame_map.json",
+            "bytes": 67721,
+            "sha256": "cb693885a9e639f91e2ea5f325e485fcb85c0261c0cedcf4fefe79c16152c41d"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/84/acquisition.json",
+            "bytes": 683,
+            "sha256": "e6eb4e3b81446c97726c670fadae9a0899cad81bb81309d28fdae1c8dcd0d975"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/den-vs-bos-0022400866/132.mp4",
+          "source_sha256": "00f63afe1311b89129f30bb71e4598868ddc2086d743f0cfcd711af696fec216",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/132/frame_map.json",
+            "bytes": 66801,
+            "sha256": "aba05be842e8f7c1031610f61613f312e94ba9c5279c607e87324736c94da28b"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/132/acquisition.json",
+            "bytes": 686,
+            "sha256": "6bd56b4fc36dbb7b8a028a04a5f5802907f11a9cf6a49be0e2652e2bebdb2581"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/den-vs-bos-0022400866/220.mp4",
+          "source_sha256": "2a381b5bd46e6513530a7d50b9604409347562b0fbb9a3c7bc631ea3646cb083",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/220/frame_map.json",
+            "bytes": 65175,
+            "sha256": "a55356d8a8a92167e8d7d66a79a09d8249f7d9d399c9435d026b0a1f98630cc4"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/den-vs-bos-0022400866/220/acquisition.json",
+            "bytes": 686,
+            "sha256": "959e71774ba82e0c14cb354f56f75bbc89f00d6a346c443fcf75689f19115939"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/4.mp4",
+          "source_sha256": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/4/frame_map.json",
+            "bytes": 58019,
+            "sha256": "887760fdc0190dcc70631c2282d18a6c52af7c1c0b63b23f34290a601b06103a"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/4/acquisition.json",
+            "bytes": 680,
+            "sha256": "7784037b44edbebeb2916f367b85c0b41ea135ad886aaa46067fb70efe49c279"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/23.mp4",
+          "source_sha256": "604ac886099ae23d6a9fbef12be065e981ea6bcdb70fea8dd9435eaa5f76a523",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/23/frame_map.json",
+            "bytes": 64482,
+            "sha256": "9651afef14fbafe311e09b3f106c1f3106ad664338f58ed68f304f8d61e8d19b"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/23/acquisition.json",
+            "bytes": 683,
+            "sha256": "098de42e6f03b427eba5aa3085e35b914ef54801d0f3d11a79bb4761afa713e2"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/43.mp4",
+          "source_sha256": "f6334378aeaa1d1eb7e3b54626f0186812bc106e46bed71370cf79a523f3f0f5",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/43/frame_map.json",
+            "bytes": 68880,
+            "sha256": "1602521abc0c709e02f1b3f698738bc0e2dbf9cf887c7f36145758e599b0f15f"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/43/acquisition.json",
+            "bytes": 683,
+            "sha256": "df878182b4fa3887931cf65231f6b2bd0313c8372f2bb209cbfdd0f0b75f0be4"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/88.mp4",
+          "source_sha256": "1e42fc42fa9eb06728fb5ad679da32788fc00c39f73073a7ff6b903f908b39c8",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/88/frame_map.json",
+            "bytes": 54554,
+            "sha256": "23556731ff71fec3e47a718c6c0db51ed006344619f57340fcd23b3d9a33f93a"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/88/acquisition.json",
+            "bytes": 683,
+            "sha256": "767080b36d476d55c67f778ab8dd6975dd82e60648e19d5cf1cabf6ec5826861"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/140.mp4",
+          "source_sha256": "8ac483c656970c05431468bf8ca7c2685863d7435d30699b91a9ee12d770ecc5",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/140/frame_map.json",
+            "bytes": 77494,
+            "sha256": "ec1d0ba03167850704bfedeca4bdb34ce605de242bbc6f722e44e64d23806c47"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/140/acquisition.json",
+            "bytes": 686,
+            "sha256": "4f99edca04faf420c006299ddd804400c4f5f446a6ac3f2fae8e39b170eb210a"
+          }
+        },
+        {
+          "source_path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/253.mp4",
+          "source_sha256": "e7a94cfdd2003069e0a2bb7f26f4c808c1db3714cefbfc1d0c1665df0855b618",
+          "frame_map": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/253/frame_map.json",
+            "bytes": 58938,
+            "sha256": "7531f8bddda9387b3e176d0bd117d8e1eb50f2a7e542e7ee4584aeb7471f6121"
+          },
+          "acquisition_receipt": {
+            "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/hou-vs-okc-0022400879/253/acquisition.json",
+            "bytes": 686,
+            "sha256": "37d1a7dfccb933988003b8884ea1765f31f82309531e96bcdb02f0f63e22b037"
+          }
+        }
+      ]
+    }
+  },
+  "source_review_index": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/index.html"
+}

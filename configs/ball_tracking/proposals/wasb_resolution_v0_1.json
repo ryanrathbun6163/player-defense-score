@@ -1,0 +1,197 @@
+{
+  "schema_version": "wasb_resolution_recipe/v0.1",
+  "status": "frozen_before_model_execution",
+  "frozen_at_utc": "2026-10-26T14:59:01.527322+00:00",
+  "user_authority": {
+    "approval": "ok move forward with the experiment chat",
+    "base_head": "70409dd35cbea3cfedfc94287acf005cb2e2c42a",
+    "approval_date_America_Phoenix": "2026-10-26"
+  },
+  "parent_recipe": {
+    "path": "configs/ball_tracking/completion_campaign/primary_recipe_v0_1.json",
+    "sha256": "d8f53baf72412db535e989b4086e8fb23e02f79ef058829539d1bbe9a486e83c",
+    "bytes": 9431
+  },
+  "control_completed": {
+    "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/completed.json",
+    "sha256": "062c0630c9d1e87004b16f49008c8bb84edda7281f8c9a2ef74383ff84757941",
+    "bytes": 7058
+  },
+  "execution_plan": {
+    "path": "docs/ball_tracking_nba_resolution_execution.md",
+    "sha256": "453efc45219b68cc70811ddde3ccdcac8cf65be632ba795655a17eec1576ed77",
+    "bytes": 4895
+  },
+  "proposed_plan": {
+    "path": "docs/ball_tracking_nba_resolution_experiment.md",
+    "sha256": "701401081c8fef1ec5136b00897df3d250363d448034d1c51d4e407647556153",
+    "bytes": 7900
+  },
+  "output_root": "data/outputs/ball_tracking/wasb_resolution_v0_1/fit_v0_1",
+  "cache_root": "data/outputs/ball_tracking/wasb_resolution_v0_1/cache_v0_1",
+  "max_epochs": 5,
+  "total_updates": 7760,
+  "resolution": {
+    "width": 768,
+    "height": 432,
+    "target_radius": 3.75
+  },
+  "training": {
+    "batch_size": 2,
+    "seed": 1234,
+    "optimizer": "Adam",
+    "learning_rate": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "weight_decay": 0.0,
+    "scheduler": null,
+    "precision": "float32",
+    "device": "cuda",
+    "parameters": "all_trainable",
+    "batch_norm": "affine_trainable_running_buffers_frozen",
+    "loss": "gamma2_weighted_binary_cross_entropy",
+    "sigmoid_clamp": 0.0001,
+    "masked_denominator": "valid_output_channels_times_height_times_width",
+    "checkpoint_interval_updates": 25
+  },
+  "augmentation": {
+    "id": "wasb_synchronized_mirror_brightness_v0_1",
+    "mirror": {
+      "axis": "last_image_and_rasterized_target_x_index",
+      "probability": 0.5
+    },
+    "brightness": {
+      "gain_min": 0.9,
+      "gain_max": 1.1,
+      "space": "recovered_uint8_RGB_as_float32",
+      "clamp": [
+        0.0,
+        255.0
+      ],
+      "post_gain_quantization": false
+    },
+    "synchronization": "one_mirror_and_gain_shared_by_all_three_frames",
+    "rng": {
+      "algorithm": "sha256_canonical_key_first_two_big_endian_uint64_top53_div_2pow53",
+      "key_fields": [
+        "policy_id",
+        "seed",
+        "epoch",
+        "batch_index",
+        "sample_index"
+      ],
+      "epoch_base": 1,
+      "batch_index_base": 1,
+      "sample_index_base": 0,
+      "uniform_interval": "[0,1)",
+      "global_rng_access": false
+    },
+    "normalization": {
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "original_pixel_recovery": "round_inverse_then_verify_exact_normalized_roundtrip"
+    },
+    "mask_policy": "unchanged",
+    "hidden_target_policy": "zero_unchanged",
+    "resize": false,
+    "crop": false,
+    "rotation": false,
+    "blur": false,
+    "new_visibility_labels": false
+  },
+  "runtime": {
+    "python": "3.11.15 (main, Aug  7 2026, 02:24:19) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "opencv": "5.0.0",
+    "torch": "2.13.0+cu130",
+    "torch_cuda": "13.0",
+    "cudnn": 92000
+  },
+  "code_bindings": [
+    {
+      "path": "src/ball_tracking/wasb_resolution.py",
+      "sha256": "b89e28d1694720d39c7d6af8e7815174652530811f4cca4ed92a623aa97bbd30",
+      "bytes": 23321
+    },
+    {
+      "path": "src/ball_tracking/wasb_resolution_readiness.py",
+      "sha256": "2e1cdb1239ad985b564385485acafb93f3708f843327bf60801af36bc248ae3c",
+      "bytes": 4818
+    },
+    {
+      "path": "src/ball_tracking/completion_resolution_training.py",
+      "sha256": "29c16e97299e7382b679114b077693339de18f58c93d62b8c565f16c66e3c7da",
+      "bytes": 22210
+    },
+    {
+      "path": "src/ball_tracking/nba_resolution_evaluation.py",
+      "sha256": "1fc563a05370c346559b37b1cfe23e79f0cb1556949abcdf1f7540282366e076",
+      "bytes": 23486
+    },
+    {
+      "path": "src/ball_tracking/wasb_augmentation.py",
+      "sha256": "388c042bcd8c78446cf74362ad77d3b9dac81500e2ac542112e06af1abdae2e3",
+      "bytes": 6217
+    },
+    {
+      "path": "src/ball_tracking/gpu_supervision.py",
+      "sha256": "dbc03099c088f6c5b96aa6d1691f5dd11d7abf7c600c97e563344a7541256cd0",
+      "bytes": 15015
+    },
+    {
+      "path": "src/ball_tracking/nba_first_evaluation.py",
+      "sha256": "fa065d101c60776b868c08a84510e6612344a2311cfee30be8e71ad81893b36f",
+      "bytes": 22441
+    },
+    {
+      "path": "src/ball_tracking/nba_first_validation.py",
+      "sha256": "61954799a06755d4e73d3eb69ed0090da87a37307940138390141f09d4accc67",
+      "bytes": 17227
+    },
+    {
+      "path": "src/ball_tracking/completion_scoring.py",
+      "sha256": "62f6464e94bce09347828da879209e7dd0cdfed28546f8c488c2cb4256c3f917",
+      "bytes": 28375
+    }
+  ],
+  "nba_first_config": {
+    "path": "configs/ball_tracking/proposals/nba_first_saved_models_v0_1.json",
+    "sha256": "63e82b178b46fd1f5bd20d8d7777b05c594968133d545ff072b0fcd33a6345f9",
+    "bytes": 56835
+  },
+  "nba_control_evaluation": {
+    "path": "data/outputs/ball_tracking/nba_first_v0_1/comparison_v0_1/evaluation.json",
+    "sha256": "c1e1440e03ecd7b7842a6db0ab93f5224e448fedbb2ac28b88fe274a16f8251b",
+    "bytes": 3758304
+  },
+  "evaluation_output_root": "data/outputs/ball_tracking/wasb_resolution_v0_1/nba_comparison_v0_1",
+  "readiness": {
+    "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/readiness/attempt_001/completed.json",
+    "sha256": "b8ada688b8cab07eff9e5af0787f8362948effdf7bc62d1a0cd8158287e43ec6",
+    "bytes": 1847
+  },
+  "readiness_monitor": {
+    "path": "data/outputs/ball_tracking/wasb_resolution_v0_1/monitoring/readiness_attempt_001/finished.json",
+    "sha256": "16154771fbe5d11a6f6ac7ef2f881ea3a7cfcc710d2da4d038a665208f2a6685",
+    "bytes": 403
+  },
+  "native_input_parity": {
+    "path": "data/outputs/t/nba_resolution_prepare_20261026/input_parity.json",
+    "sha256": "112a72951a5aa9a9255433ad534a4bb06b16abb86737e40c952b158f465b220f",
+    "bytes": 36055
+  },
+  "protected_evaluation_authorized": false,
+  "new_labels": 0,
+  "max_training_experiments": 1
+}

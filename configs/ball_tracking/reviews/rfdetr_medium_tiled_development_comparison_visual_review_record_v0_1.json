@@ -1,0 +1,271 @@
+{
+  "schema_version": "ball_tiled_visual_review_record/v0.1",
+  "record_id": "rfdetr_medium_tiled_development_comparison_visual_review_record_v0_1",
+  "record_role": "human_inspection_audit_only_not_new_experiment_execution_permit",
+  "recorded_at_utc": "2026-10-01T02:02:26.862435+00:00",
+  "timestamp_semantics": "Receipt creation time; the user message supplies no independent event timestamp.",
+  "bound_evidence": {
+    "execution_commit": "1a9479f83a1766d8979fad07c604bc686d3c52c6",
+    "experiment_manifest": {
+      "path": "configs/ball_tracking/tiled_experiments/rfdetr_medium_tiled_development_comparison_v0_1.json",
+      "sha256": "87716bd68417f57987ce88fd2b7b16a2f243f488a1f29e3d25b8680798ae7b00"
+    },
+    "experiment_approval": {
+      "path": "configs/ball_tracking/reviews/rfdetr_medium_tiled_development_comparison_approval_v0_1.json",
+      "sha256": "4775f3bb605773dfe35d9b0a1202b3fce81095a70e4d31d06d3aa891b850c2b5"
+    },
+    "execution_record": {
+      "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/execution_record.json",
+      "sha256": "4d7977be4e08c9e70df438a007cbe92de4be60bed14eccc4d75a581aff137b52"
+    },
+    "score_audit": {
+      "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/score_audit.json",
+      "sha256": "6b31c758975a10b944dad61e989eb0f3e3844fcca05c5fda54ca8dd742f6656a"
+    },
+    "scoring_reports": [
+      {
+        "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/evaluation/representative_evaluation.json",
+        "sha256": "34fff92386a64a9d1f51f4dfd79c68d5fd21b5126f2d9358e61bd4143a867d7b"
+      },
+      {
+        "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/evaluation/challenge_evaluation.json",
+        "sha256": "9fd8960dabfcc605a92b136d247d731d600e09e0d7348da3b32cd8c68405c4a3"
+      }
+    ],
+    "review_guide": {
+      "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/review_guide.md",
+      "sha256": "75df6bd2a40363d7201f3ef3667474633f61b074359d03485aed0a14023d23cf"
+    },
+    "review_manifest": {
+      "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/manifest.json",
+      "sha256": "1586c7805d7d716d88d5a3c91ce1e25f8b1a7ba0406a422c2639b25806235764"
+    },
+    "playback_manifest": {
+      "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/playback_copies.json",
+      "sha256": "9d4ad29450876a9499cf336d98e2b3771f2b64c4fcb5d7360d66bb1237ba4061"
+    },
+    "clips": [
+      {
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+        "confidence": 0.2,
+        "source": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.2/comparison_slow.mp4",
+          "sha256": "8dabb75fadb3d06d46fc0e9bf400dd6a48a3cfcbc3900018d9eed6e6fbb6314c"
+        },
+        "playback": {
+          "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/playback/possession_001_representative_evaluation_frames_0050_0074_confidence_020.mp4",
+          "sha256": "b0fd9b1313bb9ccbc9eb1f45f4ff4bc6d0cd8a88fce25ca431ab36f64c4e03bc"
+        },
+        "final_frame_closeups": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.2/closeups/frame_000074.png",
+          "sha256": "de734408b07e40b10502f27f5e8944a9437f6d3ac1797f8434cf42cafe43d2c0"
+        }
+      },
+      {
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+        "confidence": 0.35,
+        "source": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.35/comparison_slow.mp4",
+          "sha256": "bf4b570925957564d58a7c8c0e2020075f3507320a0b858469ce10ecea6d3077"
+        },
+        "playback": {
+          "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/playback/possession_001_representative_evaluation_frames_0050_0074_confidence_035.mp4",
+          "sha256": "ad9cc0816eeb0ed262595e2332d5185672919208a2afdce01d3644ac7223394a"
+        },
+        "final_frame_closeups": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.35/closeups/frame_000074.png",
+          "sha256": "97b8f536a2b382e3ddbb3e52d84526c1ba339e34059725f1ec2786d4f1081985"
+        }
+      },
+      {
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+        "confidence": 0.2,
+        "source": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.2/comparison_slow.mp4",
+          "sha256": "230b723674c4cc4153a91e9f635e6a081a05da15b5f3978dc997d7ae08c80688"
+        },
+        "playback": {
+          "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/playback/possession_001_challenge_evaluation_frames_0200_0224_confidence_020.mp4",
+          "sha256": "7f06765fcde8b2ec21edcae3b8db5f126e66eefeaa6e425ffa53725ff53e5475"
+        },
+        "final_frame_closeups": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.2/closeups/frame_000224.png",
+          "sha256": "3829aa8255ba910ee67ba3f45b2ff492a0b089f8a4b9901f3b02182fda4acb47"
+        }
+      },
+      {
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+        "confidence": 0.35,
+        "source": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.35/comparison_slow.mp4",
+          "sha256": "0268cdc2a7a53564ee6b9a3e5cd5e19670ecec12b87bf3b76ce0d33f889c55db"
+        },
+        "playback": {
+          "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/playback/possession_001_challenge_evaluation_frames_0200_0224_confidence_035.mp4",
+          "sha256": "1eec88730628efa6c13e9bcce358cc4813781934885c255156f20964187cef3b"
+        },
+        "final_frame_closeups": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.35/closeups/frame_000224.png",
+          "sha256": "3829aa8255ba910ee67ba3f45b2ff492a0b089f8a4b9901f3b02182fda4acb47"
+        }
+      },
+      {
+        "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+        "confidence": 0.2,
+        "source": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.2/comparison_slow.mp4",
+          "sha256": "dee8cb717fa5f302e44e9bb9f389bf58cecaf4bfc6c167ebfa7dbcae718174db"
+        },
+        "playback": {
+          "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/playback/possession_002_representative_evaluation_frames_0250_0274_confidence_020.mp4",
+          "sha256": "5cb517fdb30d8b2a7c836151c50aa8d851c194aef1dbcd28c4eb7e8cf662cbb9"
+        },
+        "final_frame_closeups": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.2/closeups/frame_000274.png",
+          "sha256": "c3b598eb59931d96856d2ddf15da22a99ac9d3e88a735c71be4a37e6e8ebd671"
+        }
+      },
+      {
+        "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+        "confidence": 0.35,
+        "source": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.35/comparison_slow.mp4",
+          "sha256": "fa820dd1529ce4322f98add467e34d9514f0aeca9496fc2fc9eb4f38fe367a16"
+        },
+        "playback": {
+          "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/playback/possession_002_representative_evaluation_frames_0250_0274_confidence_035.mp4",
+          "sha256": "7361e24106532b111851750cf54044bb435a4eab0a8bb2db078d090997044d56"
+        },
+        "final_frame_closeups": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.35/closeups/frame_000274.png",
+          "sha256": "c3b598eb59931d96856d2ddf15da22a99ac9d3e88a735c71be4a37e6e8ebd671"
+        }
+      },
+      {
+        "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+        "confidence": 0.2,
+        "source": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.2/comparison_slow.mp4",
+          "sha256": "27351865705a56b9d48dccaaac9bae12dfa997f01dbe90b384d1fde47a51749e"
+        },
+        "playback": {
+          "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/playback/possession_002_challenge_evaluation_frames_0025_0049_confidence_020.mp4",
+          "sha256": "bcdef200c144c92afa53489202e8dc2df12c3b530791b6f9e51344c7396f42de"
+        },
+        "final_frame_closeups": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.2/closeups/frame_000049.png",
+          "sha256": "cff0b4efa2b7d0f7e447e57a99697b6fb0fbd317a163e56053a3fad909f938df"
+        }
+      },
+      {
+        "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+        "confidence": 0.35,
+        "source": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.35/comparison_slow.mp4",
+          "sha256": "eb96504219d26ac4378722ae79b6f03763ce19975014ac7075f32d8df35515fb"
+        },
+        "playback": {
+          "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/playback/possession_002_challenge_evaluation_frames_0025_0049_confidence_035.mp4",
+          "sha256": "ab9720dd3ca7244fa9ad8a4f737bb5244485628d6f36d519ad012e75fea0347c"
+        },
+        "final_frame_closeups": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.35/closeups/frame_000049.png",
+          "sha256": "cff0b4efa2b7d0f7e447e57a99697b6fb0fbd317a163e56053a3fad909f938df"
+        }
+      },
+      {
+        "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+        "confidence": 0.2,
+        "source": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/comparison_slow.mp4",
+          "sha256": "a7df8e15c10d3660569480ac9d3aeba8e864a24bcadfd7aee64c924b34460970"
+        },
+        "playback": {
+          "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/playback/possession_003_representative_evaluation_frames_0300_0324_confidence_020.mp4",
+          "sha256": "a2d347ce877d59aa38724b118d90a01febc49ba64027f01335c002d3d9aefcd5"
+        },
+        "final_frame_closeups": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/closeups/frame_000324.png",
+          "sha256": "bb45c9c1730d3554671aca513f65b0f6faf037b6cb843412cde29ef8963bb8b8"
+        }
+      },
+      {
+        "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+        "confidence": 0.35,
+        "source": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.35/comparison_slow.mp4",
+          "sha256": "865df90270e3e3055060d68a1f9def0ab5280bbc7da32fd7edc182e6531816e8"
+        },
+        "playback": {
+          "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/playback/possession_003_representative_evaluation_frames_0300_0324_confidence_035.mp4",
+          "sha256": "51dd699470120957194c8caa750dfe42ea2c2e079f6385a7fba6a639d25db5ed"
+        },
+        "final_frame_closeups": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.35/closeups/frame_000324.png",
+          "sha256": "bb45c9c1730d3554671aca513f65b0f6faf037b6cb843412cde29ef8963bb8b8"
+        }
+      },
+      {
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+        "confidence": 0.2,
+        "source": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.2/comparison_slow.mp4",
+          "sha256": "22f0288756dc19762fab19b82e21455c6fdee24209ce1fd52352fa733835eaed"
+        },
+        "playback": {
+          "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/playback/possession_003_challenge_evaluation_frames_0150_0174_confidence_020.mp4",
+          "sha256": "55e7cde7cf59f3a8b84e7223a437ab0b9a00f70d19a27cef5f53a5a7d06b1dec"
+        },
+        "final_frame_closeups": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.2/closeups/frame_000174.png",
+          "sha256": "beaa2c331847d7b35d9b54dda19bee20388cf84c5055b2026757a49e12f53a51"
+        }
+      },
+      {
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+        "confidence": 0.35,
+        "source": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.35/comparison_slow.mp4",
+          "sha256": "9001cce504620781f4d1e1d75e92005eb9905fe67f13e8d3e46024c9f5679440"
+        },
+        "playback": {
+          "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/playback/possession_003_challenge_evaluation_frames_0150_0174_confidence_035.mp4",
+          "sha256": "88889b5efd0daf1573fe071141cf0950db4f97ca5a0a42e5a9080ce0e88da2c2"
+        },
+        "final_frame_closeups": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/review/a007aa4b358587789f7ef1f28b1c66b5/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.35/closeups/frame_000174.png",
+          "sha256": "beaa2c331847d7b35d9b54dda19bee20388cf84c5055b2026757a49e12f53a51"
+        }
+      }
+    ]
+  },
+  "human_visual_review": {
+    "status": "completed",
+    "reviewer_id": "ryan",
+    "statement": "all of them look pretty good to me. even P002 challenge",
+    "recording_method": "explicit_user_statement_in_current_codex_task",
+    "requested_scope": "All 12 linked crop-comparison clips at display confidences 0.20 and 0.35 through their final frames, with highlighted closeups.",
+    "scope_interpretation": "Review completion acknowledged in response to the full 12-clip package; Ryan explicitly included P002 challenge. No additional claim of frame-by-frame native-resolution inspection, exact per-frame correctness, or quantitative quality approval.",
+    "quality_gate_approved": false
+  },
+  "preserved_snapshots": "Execution record, review manifest, handoff, and saved guide retain their historical pending-review state; this separate later receipt records completion.",
+  "verification": {
+    "bound_assets_rehashed": 1962,
+    "playback_clips_rehashed": 12,
+    "final_frame_closeups_rehashed": 12,
+    "crop_candidate_files_rehashed": 6,
+    "saved_detection_files_rehashed": 6,
+    "scoring_pool_reports_rehashed": 2,
+    "original_nine_embargo_paths_absent": true,
+    "holdout_media_or_predictions_inspected": false
+  },
+  "decision_constraints": {
+    "selected_operating_point": null,
+    "quality_gate": null,
+    "winner_selected": false,
+    "generalization_claimed": false,
+    "holdout_release_authorized": false,
+    "new_detector_inference_authorized_by_this_receipt": false,
+    "git_mutations_authorized_by_this_receipt": false
+  }
+}

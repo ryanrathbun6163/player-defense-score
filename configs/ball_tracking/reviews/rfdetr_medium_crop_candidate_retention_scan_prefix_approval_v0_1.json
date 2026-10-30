@@ -1,0 +1,21 @@
+{
+  "schema_version": "crop_retention_scan_prefix_approval/v0.1",
+  "approved_by": "ryan",
+  "user_statement": "Yes you may chat move forward",
+  "proposal_path": "docs/ball_crop_candidate_retention_scan_prefix_proposal.md",
+  "proposal_sha256": "d192a659c150789766fcfd00e2a3eb624d4270efaae1e5a671dbe6ef5ed76cc2",
+  "baseline_scanner_path": "src/ball_tracking/crop_retention_scan_recovery.py",
+  "baseline_scanner_sha256": "fe0806db8d9958400a13bde0ce2c861b06ea7c96a4102081cb13aec447135a3a",
+  "new_scanner_path": "src/ball_tracking/crop_retention_scan_prefix.py",
+  "new_tests_path": "tests/test_ball_crop_retention_scan_prefix.py",
+  "implementation_authorized": true,
+  "new_focused_correctness_checks_authorized": true,
+  "automatic_repair_or_retry_authorized": false,
+  "benchmark_authorized": false,
+  "profiling_authorized": false,
+  "full_suite_authorized_in_this_stage": false,
+  "new_runtime_budget_authorized": false,
+  "real_recovery_authorized_in_this_stage": false,
+  "parent_scientific_body_access_authorized": false,
+  "git_mutations_authorized": false
+}

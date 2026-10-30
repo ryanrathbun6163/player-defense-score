@@ -1,0 +1,129 @@
+{
+  "schema_version": "nba_development_selection_approval/v0.1",
+  "status": "approved",
+  "recorded_at_utc": "2026-10-19T02:49:48.712069+00:00",
+  "approval_date_local": "2026-10-18",
+  "timezone": "America/Phoenix",
+  "approved_by": "Ryan",
+  "approval_statement": "Yes I approve. Move forward chat",
+  "approval_context": "Direct reply to the concrete proposed game allocation and two-clip,120-frame annotation pilot. Authorizes native-timestamp annotation workflow and pilot preparation; no fit or model evaluation.",
+  "proposal": {
+    "path": "configs/ball_tracking/selections/nba_development_selection_proposal_v0_1.json",
+    "sha256": "3c863928202739add097b19e15c7dd2d33ca6cc03648dce62860d33f81d2cc06"
+  },
+  "game_roles": [
+    {
+      "game_id": "0022500828",
+      "approved_role": "target_case_development",
+      "development_visible": true,
+      "training_authorized": false
+    },
+    {
+      "game_id": "0022500829",
+      "approved_role": "future_training_candidate_pool",
+      "development_visible": true,
+      "training_authorized": false
+    },
+    {
+      "game_id": "0022500843",
+      "approved_role": "additional_development_no_current_label_selection",
+      "development_visible": true,
+      "training_authorized": false
+    }
+  ],
+  "annotation_pilots": [
+    {
+      "annotation_set_id": "sac_mem_q1_c01_native_pilot_v0_1",
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "approved_role": "future_training_candidate_pool",
+      "source_video": {
+        "path": "data/raw/nba/0022500829/0022500829_ok_12326430640726_1080p.mp4",
+        "sha256": "420eacca7a05f9eebfab6306fe6d28fe1ee0509362cbcc053fba09cfd61b062b",
+        "width_px": 1920,
+        "height_px": 1080,
+        "frame_count": 357233
+      },
+      "source_frame_range_inclusive": [
+        660,
+        719
+      ],
+      "source_pts_ticks_inclusive": [
+        996362,
+        1084922
+      ],
+      "time_base": "1/90000",
+      "frame_map": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q1_c01/frame_map.jsonl",
+        "bytes": 362691,
+        "sha256": "c8d77812f35fae8a0dc5f70f4413a5b7ba1c527875cfc9cb8dadb29a40f93e6d"
+      },
+      "source_verification": {
+        "audit": {
+          "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/assembly_audit.json",
+          "sha256": "32e190cf04ce6324ba7b4edfc2afe8ba87a5f373949a5bf5e98a06272473776e"
+        },
+        "hash_field": "sha256",
+        "stat_field": "source_stat_after",
+        "source_stat": {
+          "bytes": 5112076363,
+          "mtime_ns": 1792374903554377200
+        }
+      },
+      "limitation": "Opening live-action episode; source use for the 60-frame pilot is approved. Exact complete-possession boundaries are not certified."
+    },
+    {
+      "annotation_set_id": "sas_det_q1_c02_native_pilot_v0_1",
+      "candidate_id": "sas_det_q1_c02",
+      "game_id": "0022500828",
+      "approved_role": "target_case_development",
+      "source_video": {
+        "path": "data/raw/nba/0022500828/0022500828_ok_12326019402326_1080p.mp4",
+        "sha256": "27b5143105f5bf3276a2cc51945133c9fdcd2b82d4247d8365110428062ec21f",
+        "width_px": 1920,
+        "height_px": 1080,
+        "frame_count": 415953
+      },
+      "source_frame_range_inclusive": [
+        10788,
+        10847
+      ],
+      "source_pts_ticks_inclusive": [
+        16202042,
+        16290602
+      ],
+      "time_base": "1/90000",
+      "frame_map": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c02/frame_map.jsonl",
+        "bytes": 312338,
+        "sha256": "b9f15dc7b3443882aa7fb34954a18d2e70bb0dc6bfc6d2fff97e4985efac38b2"
+      },
+      "source_verification": {
+        "audit": {
+          "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/independent_audit/assembly_audit.json",
+          "sha256": "0c1b1b41d86c30fd8248662b39efee2123fc3c133e1b625fb0ccbe406f0ee302"
+        },
+        "hash_field": "full_file_sha256",
+        "stat_field": "target_stat_after",
+        "source_stat": {
+          "bytes": 6081103430,
+          "mtime_ns": 1792372192611261400
+        }
+      },
+      "limitation": "Partial possession: inbound/start hidden by closeup; sampled wide court action and ending are visible."
+    }
+  ],
+  "review_boundaries": {
+    "source_use_for_selected_pilot": "approved",
+    "exact_complete_possession_boundaries_accepted": false,
+    "roster_identity_or_matchup_accepted": false,
+    "court_calibration_accepted": false,
+    "ball_labels_or_trajectories_reviewed": false,
+    "motion_comparison_human_reviews_pending": 3
+  },
+  "independent_test_game": null,
+  "approved_annotation_frames": 120,
+  "training_runs_authorized": 0,
+  "evaluation_runs_authorized": 0,
+  "old_nfhs_holdouts_and_completed_reviews": "unchanged"
+}

@@ -1,0 +1,295 @@
+{
+  "schema_version": "candidate_producer_transfer/v0.1",
+  "status": "designed_metadata_prepared_not_implemented_or_run",
+  "at_utc": "2026-10-30T05:15:58.314078+00:00",
+  "protocol": {
+    "path": "docs/ball_tracking_candidate_producer_transfer_protocol.md",
+    "bytes": 19682,
+    "sha256": "716ce6f7784a7f5b214e579cf94f8d8879227ea68f091698aaaf6831fde66cd5"
+  },
+  "branch": "codex/ball-detector-baseline",
+  "head": "8c040fca385dd8fffa0d7a13c45c53e79950bae1",
+  "training_authorized_by_this_design": false,
+  "execution_freeze_created": false,
+  "comparison": {
+    "control": "saved original Q; zero control refits",
+    "treatment": "Q+ with461 eligible alternate-producer points under original weighted objective function and exact matched original training budget",
+    "J": "saved context only; no substitution or refit",
+    "fixed_policies": [
+      "saved native identity",
+      "saved original-Q-top identity"
+    ],
+    "candidate_inference_pools": "original unchanged pools only; no added-point insertion"
+  },
+  "population": {
+    "original_rows": 18813,
+    "added_rows": 461,
+    "union_rows": 19274,
+    "known_fit_rows_all_nba": 17985,
+    "unknown_rows_preserved": 1289,
+    "frames": 3179,
+    "added_known_distant": 304,
+    "added_certain_hidden": 81,
+    "added_weak_positive": 76,
+    "new_source_frames": 0,
+    "full_alternate_pool_used_for_fitting": false,
+    "manifest": {
+      "path": "data/outputs/ball_tracking/candidate_producer_transfer_design_v0_1/population/population_manifest.json",
+      "bytes": 65597,
+      "sha256": "647aacaa362ff50ad2fc2a1aed66fdd47fb18d0bdec87639d6f34e22e7976390"
+    }
+  },
+  "counts": {
+    "new_quality_fits": 4,
+    "old_control_fits_rerun": 0,
+    "optimizer_updates": 9870,
+    "training_presentations": 315432,
+    "scoring_forwards": 1014,
+    "scoring_presentations": 32341,
+    "producer_parity_forwards": 4,
+    "producer_parity_presentations": 128,
+    "CPU_gate_fits": 0,
+    "total_neural_forwards": 10888,
+    "total_candidate_presentations": 347901
+  },
+  "schedule": {
+    "rule": "six fixed seed+cycle shuffles of eligible union, each prefix length equals original known fit count",
+    "seed": 20261028,
+    "cycles": 6,
+    "batch_size": 32,
+    "same_original_partial_batch_sequence": true,
+    "same_original_update_and_presentation_budget": true,
+    "require_every_eligible_old_and_new_row_seen_at_least_once": true,
+    "automatic_reseed": false,
+    "endpoint": "end of sampled cycle6 only",
+    "metadata_workload": {
+      "path": "data/outputs/ball_tracking/candidate_producer_transfer_design_v0_1/feasibility/workload_semantic_view.json",
+      "bytes": 88857,
+      "sha256": "d2eebce3892bf62238219d2d91f4a12c0483ae8dfb4ce71b8e6b3a922ceac229"
+    }
+  },
+  "loss": {
+    "type": "weighted BCEWithLogits",
+    "stratum_mass": {
+      "positive": 0.5,
+      "eligible_distant_miss": 0.25,
+      "certain_hidden": 0.25
+    },
+    "hierarchy": [
+      "stratum",
+      "available_game",
+      "block",
+      "frame",
+      "nonempty_native_or_weak",
+      "candidate"
+    ],
+    "multiplier": "N_union*objective_weight",
+    "numerical_weights_recomputed_on_eligible_fit_union": true,
+    "producer_or_run_reweighting": false,
+    "added_all_nba_objective_mass": 0.084692398309
+  },
+  "model_and_optimizer": {
+    "unchanged_recipe_source": {
+      "path": "configs/ball_tracking/proposals/candidate_quality_pilot_v0_1.json",
+      "bytes": 8108,
+      "sha256": "448b5bc3c3f57acd164b9acfbf8806a40cff64b2b00e1608c408de582407d22b"
+    },
+    "original_training_recipe_for_reference": {
+      "fits": [
+        "leave_chi_out",
+        "leave_den_out",
+        "leave_sac_out",
+        "all_nba"
+      ],
+      "epochs": 6,
+      "batch_size": 32,
+      "seed": 20261028,
+      "permutation": "Python random.Random(seed+epoch), shuffle each eligible fitting candidate once per epoch.",
+      "optimizer": "AdamW",
+      "backbone_learning_rate": 1e-05,
+      "head_learning_rate": 0.001,
+      "weight_decay": 0.01,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "epsilon": 1e-08,
+      "gradient_norm_clip": 1.0,
+      "head_initialization": "PyTorch Linear defaults after the fixed seed and deterministic backbone construction.",
+      "loss": "Mean BCEWithLogits timesN*objective_weight per minibatch.",
+      "stratum_weight": {
+        "positive": 0.5,
+        "eligible_distant_miss": 0.25,
+        "certain_hidden": 0.25
+      },
+      "weight_hierarchy": [
+        "stratum",
+        "game",
+        "block",
+        "frame",
+        "nonempty_native_or_weak",
+        "candidate"
+      ],
+      "checkpoint": "Fixed final epoch6 only; no validation-based selection. Every completed epoch also saves trainable parameters, optimizer and RNG state for later explicit recovery, never epoch selection or automatic resume.",
+      "scheduler": null,
+      "augmentation": null,
+      "automatic_extension": false,
+      "automatic_retry": false
+    },
+    "future_treatment_epochs_field_override": "sampled_cycles6, not six full union epochs",
+    "inputs": [
+      "original64pxRGBcrop",
+      "fractional_point_weights"
+    ],
+    "fresh_initialization": true,
+    "same_seed": true,
+    "new_features": [],
+    "new_architecture": false
+  },
+  "evaluation": {
+    "manifest": {
+      "path": "data/outputs/ball_tracking/candidate_producer_transfer_design_v0_1/review/evaluation_manifest.json",
+      "bytes": 2826945,
+      "sha256": "65d54bb053565accee6afc62333297781c99a95c37022e991413eca76c76b623"
+    },
+    "original_slots": 31430,
+    "observed_original_scores": 31419,
+    "missing_image_slots": 11,
+    "context_frames": 4289,
+    "fixed_policy_rows": 8578,
+    "source_choice_slots": 6720,
+    "protected_Q_positive_correct_policy_rows": 6207,
+    "strict_weak_veto_rows": 547,
+    "known_correct_positive_HOU_stress_probes": 745,
+    "protection_views_overlap": true,
+    "added_challenge_points": 461,
+    "primary": {
+      "context": "nba_out_of_fold",
+      "every_game_every_policy": {
+        "correct_kept": ">= old Q",
+        "wrong_eligible_kept": "<= old Q",
+        "hidden_candidates": "<= old Q"
+      },
+      "zero_lost_protected_policy_row_keys": true,
+      "strict_gain_required": "at least one correct/wrong/hidden metric in one NBA primary game-policy cell"
+    },
+    "external_veto": {
+      "context": "HOU_development",
+      "every_policy": {
+        "correct_kept": ">= old Q",
+        "wrong_eligible_kept": "<= old Q",
+        "hidden_candidates": "<= old Q"
+      },
+      "zero_lost_protected_policy_row_keys": true,
+      "zero_lost_protected_HOU_stress_query_row_keys": true,
+      "role": "fixed external nonregression veto; not hyperparameter selection or an independent untouched holdout"
+    },
+    "strict_weak_point_veto": {
+      "zero_lost_protected_weak_candidate_row_keys": true,
+      "scope": "All known-match old-Q-positive weak points in NBA and HOU, including unchosen main-pool points and stress queries.",
+      "novelty": "Newly declared stricter than selected-policy preservation. Can veto an arm even when its emitted fixed-policy outcomes are unchanged.",
+      "not_required": "Old-Q-nonpositive weak matches are not misclassified as preserved successes; report their outcomes descriptively."
+    },
+    "fixed_zero": "strict >0; equality rejects",
+    "full_curves": "descriptive only; no selected threshold can rescue primary failure",
+    "historical_roles": "unchanged separate semantic diagnostics",
+    "no_reranking_fallback_or_trajectory": true
+  },
+  "future_execution": {
+    "new_model_fits": 4,
+    "saved_Q_models_scored_on_new_points": 3,
+    "new_detector_calls": 0,
+    "CPU_gate_fits": 0,
+    "protected_access": false,
+    "new_labels": 0,
+    "automatic_retry": false,
+    "automatic_extension": false,
+    "new_settings": false,
+    "fresh_Debug_ON_and_device_process_UI_readiness_required": true,
+    "watchdog_seconds": 5400,
+    "soft_stop_seconds": 5370,
+    "cleanup_seconds": 30,
+    "runtime_estimate_claimed": false,
+    "model_adoption": false
+  },
+  "completed_this_design": {
+    "new_neural_calls": 0,
+    "optimizer_updates": 0,
+    "CPU_gate_fits": 0,
+    "images_decoded": 0,
+    "GPU_queries": 0,
+    "new_labels": 0,
+    "old_results_reexecuted": false
+  },
+  "input_bindings": [
+    {
+      "path": "data/outputs/ball_tracking/candidate_producer_transfer_design_v0_1/baseline145_and_direction.json",
+      "bytes": 28173,
+      "sha256": "4420242c4d788fd2098f3d3e5161418066e3e7c9e3d1715c03c59fcff69e5c05"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_producer_transfer_design_v0_1/population/population_manifest.json",
+      "bytes": 65597,
+      "sha256": "647aacaa362ff50ad2fc2a1aed66fdd47fb18d0bdec87639d6f34e22e7976390"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_producer_transfer_design_v0_1/population/weight_assessment.json",
+      "bytes": 441986,
+      "sha256": "b9da044ec3792489ec7e215d3c840e6b0e9bbc568139eae449233fffc1eaf56d"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_producer_transfer_design_v0_1/feasibility/workload_semantic_view.json",
+      "bytes": 88857,
+      "sha256": "d2eebce3892bf62238219d2d91f4a12c0483ae8dfb4ce71b8e6b3a922ceac229"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_producer_transfer_design_v0_1/feasibility/workload.json",
+      "bytes": 88148,
+      "sha256": "0bcb372ee92aa7fa4e754880dc4a7ba9e8275358950caa90abca4025b2df8f8f"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_producer_transfer_design_v0_1/feasibility/scoring_plan.json",
+      "bytes": 2272264,
+      "sha256": "4f790925cde2c5e643124e72edc5152124ea70c8371fb30fb5087e00833eef5a"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_producer_transfer_design_v0_1/feasibility/population_integration_check.json",
+      "bytes": 11207,
+      "sha256": "3769111cd8245599956172ce896da45167e14fef4af2d0ff10dc1f6fd4d0c20a"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_producer_transfer_design_v0_1/review/evaluation_manifest.json",
+      "bytes": 2826945,
+      "sha256": "65d54bb053565accee6afc62333297781c99a95c37022e991413eca76c76b623"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_producer_transfer_design_v0_1/review/finite_design_audit.json",
+      "bytes": 26045,
+      "sha256": "f4a07c390d0c8216904da40faabc52a14cc80889a0afccee51d8a05e66c755f7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_producer_transfer_design_v0_1/review/independent_design_challenge.json",
+      "bytes": 8053,
+      "sha256": "84c43bc6f64ebbce8a5263e500559f9ff532be59696262f7bae6103e47626fa1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_producer_transfer_design_v0_1/research/independent_primary_review.json",
+      "bytes": 5260,
+      "sha256": "e0c2dd416d47a07cdd4b3c70a8d7eb83819f33c01d8814374d5ef98a90be539a"
+    },
+    {
+      "path": "configs/ball_tracking/proposals/candidate_quality_pilot_v0_1.json",
+      "bytes": 8108,
+      "sha256": "448b5bc3c3f57acd164b9acfbf8806a40cff64b2b00e1608c408de582407d22b"
+    }
+  ],
+  "interpretation_limits": [
+    "one seed, four purposes rather than four alternative settings",
+    "sampled-cycle objective mass and partial-batch weights are not exact full-union epochs",
+    "old numeric weights/exposures change under fixed formula/budget",
+    "no new scenes; producer-relative support does not fill current-policy fresh-scene gap",
+    "source-held scorer is not end-to-end unseen-game evaluation",
+    "component pass does not establish improvement over J or finish95% goal"
+  ],
+  "next_step": "Implement exactly this bounded design, focused checks and independent implementation/launch review; no neural work has run."
+}

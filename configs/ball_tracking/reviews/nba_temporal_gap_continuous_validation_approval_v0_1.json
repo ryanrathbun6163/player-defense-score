@@ -1,0 +1,47 @@
+{
+  "schema_version": "nba_temporal_gap_continuous_validation_approval/v0.1",
+  "status": "approved",
+  "approved_by": "Ryan",
+  "user_statement": "Move forward chat",
+  "recorded_at_utc": "2026-10-20T21:12:13.029529+00:00",
+  "authorization_context": "Explicit follow-up to the confirmed five-clip continuous validation proposal; prior resume alone did not approve execution.",
+  "source_head": "bb108409e9b22cca44c587b3b2f413ead5e2c3ff",
+  "proposal": {
+    "path": "docs/nba_temporal_gap_continuous_validation_plan.md",
+    "sha256": "f50638d23a99b5eeb12051705da3bb4e0c8cbed67f90937aa55e563c94826fa4",
+    "bytes": 5535
+  },
+  "accepted_bounded_review": {
+    "path": "configs/ball_tracking/reviews/nba_temporal_gap_selection_visual_review_v0_1.json",
+    "sha256": "3100a54c47975c409bef804b2202fb29d01c9e0c2d27e15106eb88a4c8eb8d13",
+    "bytes": 5944
+  },
+  "scope": {
+    "implement": true,
+    "focused_validation": true,
+    "one_resumable_saved_evidence_execution": true,
+    "independent_emitted_record_checks": true,
+    "five_complete_comparisons": true,
+    "assistant_visual_inspection": true,
+    "local_integration": true,
+    "processed_frames": 3975,
+    "continuous_segments": 8,
+    "protected_timeline_positions": 225,
+    "existing_label_frames": 790,
+    "new_model_inference": false,
+    "training": false,
+    "parameter_search": false,
+    "label_changes": false,
+    "holdout_release": false,
+    "full_game_processing": false
+  },
+  "boundaries": [
+    "Frozen accepted selector policy and retained checkpoint are unchanged.",
+    "Choices must be persisted before reference labels enter scoring.",
+    "Use each source same-context original selection; keep short-window accepted results separate.",
+    "All three accepted additions need explicit retention checks.",
+    "Original predictions and reviewed records remain unchanged.",
+    "Human trajectory review is pending for the new outputs.",
+    "Pushing, PR creation and merging have no new authorization."
+  ]
+}

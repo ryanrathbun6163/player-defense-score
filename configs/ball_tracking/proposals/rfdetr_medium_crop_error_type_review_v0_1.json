@@ -1,0 +1,1254 @@
+{
+  "schema_version": "ball_crop_error_type_review_scope/v0.1",
+  "review_id": "rfdetr_medium_crop_error_type_review_v0_1",
+  "status": "proposed_not_authorized",
+  "prepared_at_commit": "b71c64d3fd46bb27072efa8644e90c1c222bb65c",
+  "branch": "codex/ball-detector-baseline",
+  "new_diagnostic_review_accepted": false,
+  "new_scientific_execution_authorized": false,
+  "proposal": {
+    "path": "docs/ball_crop_error_type_review_proposal.md",
+    "sha256": "e392f5af6b05e39d4ccb99ba25a7c3dbf073af8f9c16b1b613bb5b262820340d",
+    "size_bytes": 9497
+  },
+  "question": "Distinguish wrong-object selection, ball-center displacement, absent output and hidden-boundary behavior using existing native overlays.",
+  "study_design": {
+    "type": "posthoc_unblinded_diagnostic_human_review",
+    "independent_accuracy_study": false,
+    "gold_annotation_changes_authorized": false,
+    "method_selection_authorized": false,
+    "worst_window_selection": "unique minimum mean-minus-TT matched count across all six completed windows; include every TT matched to mean wrong/missing transition",
+    "matched_count_deltas_by_window": {
+      "possession_001_frames_0050_0074_representative_evaluation_development_v0_2": -2,
+      "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2": -7,
+      "possession_002_frames_0250_0274_representative_evaluation_development_v0_2": 10,
+      "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2": 6,
+      "possession_003_frames_0300_0324_representative_evaluation_development_v0_2": 9,
+      "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2": 5
+    },
+    "hidden_selection": "complete sole saved hidden run plus two immediately adjacent source frames on each side",
+    "ordered_groups": [
+      {
+        "id": "worst_window_regressions",
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+        "frames": [
+          204,
+          210,
+          211,
+          215,
+          216,
+          217,
+          219
+        ]
+      },
+      {
+        "id": "hidden_interval_boundaries",
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+        "frames": [
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171
+        ],
+        "saved_hidden_frames": [
+          165,
+          166,
+          167,
+          168,
+          169
+        ]
+      }
+    ],
+    "p003_representative_impression_discrepancy_remains_unresolved": true,
+    "completed_identity_frames_not_repeated": [
+      300,
+      301,
+      302,
+      304,
+      308,
+      319,
+      320,
+      324
+    ],
+    "whole_clip_reviews_not_repeated": 6
+  },
+  "administrative_authorities": [
+    {
+      "path": "configs/ball_tracking/crop_retention_experiments/rfdetr_medium_crop_path_confidence_mean_v0_1.json",
+      "sha256": "6efd0ad4a004b456bb6b9b4fee23d18d2d54cac469bc8f9327ef51df5ff3f445",
+      "size_bytes": 2369
+    },
+    {
+      "path": "data/outputs/t/mean_impl_10e5fcb90f51/path_confidence_mean_completion_06d3bb96ebb2.json",
+      "sha256": "0a83fbcd35079b57738ce32c05c8d31d5c979b8384d84c17a60d20eabc4e2071",
+      "size_bytes": 177971
+    },
+    {
+      "path": "data/outputs/t/mean_impl_10e5fcb90f51/study_stdout.json",
+      "sha256": "477f0ce0cd68e9c860ff9f567b493045980297ac76a5634d4bdc3bd39a78cb2d",
+      "size_bytes": 127959
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/attempts/b36133afc62a4c9fb34547ab6ad2c4ac.result.json",
+      "sha256": "6eafd9ca0195ab8c08568d9a0a9d8d82c899facf27be5a7f16dd8a6f83876cf5",
+      "size_bytes": 555527
+    },
+    {
+      "path": "data/outputs/t/mean_impl_10e5fcb90f51/human_review_0001.json",
+      "sha256": "3fcc37bc7969e99cc294c6a3bd3b56d4d3322e4baec309bac8a22f1494cd8589",
+      "size_bytes": 12939
+    },
+    {
+      "path": "data/outputs/t/mean_impl_10e5fcb90f51/human_review_receipt_0001.json",
+      "sha256": "47faf088a3057903d3f8888f9a2b82f8fa7172a6a51543b1100f64d7bbc9e6b9",
+      "size_bytes": 1297
+    },
+    {
+      "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_path_confidence_mean_approval_v0_1.json",
+      "sha256": "071e21ae651d28067e1ad5d8de3378d38bcf5615cf491f97c106af9914fc81e8",
+      "size_bytes": 1931
+    }
+  ],
+  "maximum_existing_administrative_bytes": 2097152,
+  "media_presentation_authority": {
+    "approval_path": "configs/ball_tracking/reviews/rfdetr_medium_crop_path_confidence_mean_approval_v0_1.json",
+    "condition": "new_verified_review_media_presentation_authorized_after_success",
+    "condition_satisfied_by": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/attempts/b36133afc62a4c9fb34547ab6ad2c4ac.result.json",
+      "sha256": "6eafd9ca0195ab8c08568d9a0a9d8d82c899facf27be5a7f16dd8a6f83876cf5"
+    },
+    "new_per_image_approval_required": false
+  },
+  "review_index_metadata_only": [
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/review_index.json",
+      "sha256": "96bc7d24baa45954f3c67d126854e105da237bd6e50da986c60efd90b7106012",
+      "body_access_authorized": false,
+      "metadata": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/review_index.json",
+        "size_bytes": 59739,
+        "mtime_ns": 1791334532995203800,
+        "device": 986718957,
+        "inode": 65865144550382636
+      }
+    },
+    {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/review_index.json",
+      "sha256": "7cc7ee33ac68aaa2ddff96331b74fd30db72d0a636a87cd2ab491bb8358797bf",
+      "body_access_authorized": false,
+      "metadata": {
+        "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/review_index.json",
+        "size_bytes": 59790,
+        "mtime_ns": 1791334560548820200,
+        "device": 986718957,
+        "inode": 36310271995765019
+      }
+    }
+  ],
+  "frames": [
+    {
+      "group": "worst_window_regressions",
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 204,
+      "saved_evaluation_stratum": "localization_eligible",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "matched",
+        "history_mean_edge_tight_cost_tight": "wrong_present",
+        "crop_top_one": "wrong_present"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": true,
+        "history_mean_edge_tight_cost_tight": true,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    },
+    {
+      "group": "worst_window_regressions",
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 210,
+      "saved_evaluation_stratum": "localization_eligible",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "matched",
+        "history_mean_edge_tight_cost_tight": "wrong_present",
+        "crop_top_one": "wrong_present"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": true,
+        "history_mean_edge_tight_cost_tight": true,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    },
+    {
+      "group": "worst_window_regressions",
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 211,
+      "saved_evaluation_stratum": "localization_eligible",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "matched",
+        "history_mean_edge_tight_cost_tight": "missing",
+        "crop_top_one": "matched"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": true,
+        "history_mean_edge_tight_cost_tight": false,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    },
+    {
+      "group": "worst_window_regressions",
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 215,
+      "saved_evaluation_stratum": "localization_eligible",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "matched",
+        "history_mean_edge_tight_cost_tight": "missing",
+        "crop_top_one": "matched"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": true,
+        "history_mean_edge_tight_cost_tight": false,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    },
+    {
+      "group": "worst_window_regressions",
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 216,
+      "saved_evaluation_stratum": "localization_eligible",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "matched",
+        "history_mean_edge_tight_cost_tight": "wrong_present",
+        "crop_top_one": "wrong_present"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": true,
+        "history_mean_edge_tight_cost_tight": true,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    },
+    {
+      "group": "worst_window_regressions",
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 217,
+      "saved_evaluation_stratum": "localization_eligible",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "matched",
+        "history_mean_edge_tight_cost_tight": "wrong_present",
+        "crop_top_one": "wrong_present"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": true,
+        "history_mean_edge_tight_cost_tight": true,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    },
+    {
+      "group": "worst_window_regressions",
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 219,
+      "saved_evaluation_stratum": "localization_eligible",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "matched",
+        "history_mean_edge_tight_cost_tight": "wrong_present",
+        "crop_top_one": "wrong_present"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": true,
+        "history_mean_edge_tight_cost_tight": true,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    },
+    {
+      "group": "hidden_interval_boundaries",
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 163,
+      "saved_evaluation_stratum": "localization_eligible",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "missing",
+        "history_mean_edge_tight_cost_tight": "matched",
+        "crop_top_one": "matched"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": false,
+        "history_mean_edge_tight_cost_tight": true,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    },
+    {
+      "group": "hidden_interval_boundaries",
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 164,
+      "saved_evaluation_stratum": "localization_eligible",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "wrong_present",
+        "history_mean_edge_tight_cost_tight": "wrong_present",
+        "crop_top_one": "wrong_present"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": true,
+        "history_mean_edge_tight_cost_tight": true,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    },
+    {
+      "group": "hidden_interval_boundaries",
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 165,
+      "saved_evaluation_stratum": "hidden_negative",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "alarm",
+        "history_mean_edge_tight_cost_tight": "no_current_output",
+        "crop_top_one": "alarm"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": true,
+        "history_mean_edge_tight_cost_tight": false,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    },
+    {
+      "group": "hidden_interval_boundaries",
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 166,
+      "saved_evaluation_stratum": "hidden_negative",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "alarm",
+        "history_mean_edge_tight_cost_tight": "no_current_output",
+        "crop_top_one": "alarm"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": true,
+        "history_mean_edge_tight_cost_tight": false,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    },
+    {
+      "group": "hidden_interval_boundaries",
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 167,
+      "saved_evaluation_stratum": "hidden_negative",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "alarm",
+        "history_mean_edge_tight_cost_tight": "alarm",
+        "crop_top_one": "alarm"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": true,
+        "history_mean_edge_tight_cost_tight": true,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    },
+    {
+      "group": "hidden_interval_boundaries",
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 168,
+      "saved_evaluation_stratum": "hidden_negative",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "alarm",
+        "history_mean_edge_tight_cost_tight": "alarm",
+        "crop_top_one": "alarm"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": true,
+        "history_mean_edge_tight_cost_tight": true,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    },
+    {
+      "group": "hidden_interval_boundaries",
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 169,
+      "saved_evaluation_stratum": "hidden_negative",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "no_current_output",
+        "history_mean_edge_tight_cost_tight": "alarm",
+        "crop_top_one": "alarm"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": false,
+        "history_mean_edge_tight_cost_tight": true,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    },
+    {
+      "group": "hidden_interval_boundaries",
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 170,
+      "saved_evaluation_stratum": "localization_eligible",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "wrong_present",
+        "history_mean_edge_tight_cost_tight": "wrong_present",
+        "crop_top_one": "wrong_present"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": true,
+        "history_mean_edge_tight_cost_tight": true,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    },
+    {
+      "group": "hidden_interval_boundaries",
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 171,
+      "saved_evaluation_stratum": "localization_eligible",
+      "saved_states": {
+        "history_edge_tight_cost_tight": "wrong_present",
+        "history_mean_edge_tight_cost_tight": "matched",
+        "crop_top_one": "matched"
+      },
+      "saved_current_output_present": {
+        "history_edge_tight_cost_tight": true,
+        "history_mean_edge_tight_cost_tight": true,
+        "crop_top_one": true
+      },
+      "new_human_judgment": null
+    }
+  ],
+  "existing_native_media": [
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 204,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/saved_tt/frame_000204.png",
+      "sha256": "b0e50c3db3fe028504e4fdb680741d4291fb338f2f2dd4b299e79cc2692e3151",
+      "metadata": {
+        "size_bytes": 3036503,
+        "mtime_ns": 1791334527316152400,
+        "device": 986718957,
+        "inode": 65583669573672003
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 204,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/new_mean/frame_000204.png",
+      "sha256": "2058791d6772fd4552e95372ddebee73b9e3b628abfc20e363d15189cd02db60",
+      "metadata": {
+        "size_bytes": 3039756,
+        "mtime_ns": 1791334527400813500,
+        "device": 986718957,
+        "inode": 50665495808007240
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 204,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000204.png",
+      "sha256": "4bd37da6007be4b23e44aaaeccab45f5dbe60e14b7d726ceade9935b7541966e",
+      "metadata": {
+        "size_bytes": 3032778,
+        "mtime_ns": 1791334527467875900,
+        "device": 986718957,
+        "inode": 62487444829854801
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 210,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/saved_tt/frame_000210.png",
+      "sha256": "0aeafafb64ea19ec6ae0327d8f6d7998645b945eda4ca192911974dd240a32fe",
+      "metadata": {
+        "size_bytes": 2905317,
+        "mtime_ns": 1791334528906589100,
+        "device": 986718957,
+        "inode": 47850746040900721
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 210,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/new_mean/frame_000210.png",
+      "sha256": "244160fa8c3ae6124bddb01d1f7cfe9cea6efce5ce4ac89672d480774869805f",
+      "metadata": {
+        "size_bytes": 2906675,
+        "mtime_ns": 1791334528971159200,
+        "device": 986718957,
+        "inode": 47569271064190067
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 210,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000210.png",
+      "sha256": "292bc580c92087a3dcea8bcafea6b4916b6808b063ba1e7b1f22046a2eb23958",
+      "metadata": {
+        "size_bytes": 2900849,
+        "mtime_ns": 1791334529036726000,
+        "device": 986718957,
+        "inode": 10977524091722001
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 211,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/saved_tt/frame_000211.png",
+      "sha256": "077c5b6a121671e3565b20952d75e4c43dc70a7dabe7b536cecb3eb01d78f5a3",
+      "metadata": {
+        "size_bytes": 2890076,
+        "mtime_ns": 1791334529160322700,
+        "device": 986718957,
+        "inode": 48132221017611383
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 211,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/new_mean/frame_000211.png",
+      "sha256": "db1454effc40011e272de702323065bd052f000e532241c1436d72600707a5dd",
+      "metadata": {
+        "size_bytes": 2887798,
+        "mtime_ns": 1791334529228889600,
+        "device": 986718957,
+        "inode": 45317471250504824
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 211,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000211.png",
+      "sha256": "46fb82c81702a42a06988415d178ccba060ec9747f75e865800f3c18f2943368",
+      "metadata": {
+        "size_bytes": 2884444,
+        "mtime_ns": 1791334529295775400,
+        "device": 986718957,
+        "inode": 60798594969590905
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 215,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/saved_tt/frame_000215.png",
+      "sha256": "f40e9690557ca19edddf6acc51774c4e672da4eb66a29e635fbf05f76177546c",
+      "metadata": {
+        "size_bytes": 2909215,
+        "mtime_ns": 1791334530195474300,
+        "device": 986718957,
+        "inode": 49258120924454044
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 215,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/new_mean/frame_000215.png",
+      "sha256": "231794faf4fd90d3c80aaf3243da7f442767b901f2ff0c8d366969739b2ed473",
+      "metadata": {
+        "size_bytes": 2907012,
+        "mtime_ns": 1791334530271590800,
+        "device": 986718957,
+        "inode": 41939771529976990
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 215,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000215.png",
+      "sha256": "62b219c132d850e76b92696ce1129dc9b78a2f3e4eeca0ffc704e286d3509539",
+      "metadata": {
+        "size_bytes": 2903899,
+        "mtime_ns": 1791334530338159600,
+        "device": 986718957,
+        "inode": 47287796087479455
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 216,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/saved_tt/frame_000216.png",
+      "sha256": "b249066c302f85d6cc7638654ed57673d052db90839f1e198c567d75a2959e13",
+      "metadata": {
+        "size_bytes": 2970317,
+        "mtime_ns": 1791334530468641400,
+        "device": 986718957,
+        "inode": 72339069014727840
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 216,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/new_mean/frame_000216.png",
+      "sha256": "6035b169cc9684ffa2b5ca732e9f10dcab1266a66fe12fce0cf400706da0621a",
+      "metadata": {
+        "size_bytes": 2971811,
+        "mtime_ns": 1791334530537234100,
+        "device": 986718957,
+        "inode": 41939771529976995
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 216,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000216.png",
+      "sha256": "78e8e0d72de3df705e555b68ee006cbc09f7990b521a06c26028414181073551",
+      "metadata": {
+        "size_bytes": 2965985,
+        "mtime_ns": 1791334530602806000,
+        "device": 986718957,
+        "inode": 43628621390240942
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 217,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/saved_tt/frame_000217.png",
+      "sha256": "0871395fda893b3cff9a63488be92bfa5b8ad87c795245c0d4f762463a9ef8a2",
+      "metadata": {
+        "size_bytes": 2920409,
+        "mtime_ns": 1791334530730730500,
+        "device": 986718957,
+        "inode": 42502721483398329
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 217,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/new_mean/frame_000217.png",
+      "sha256": "911bf20ffd7745b50a5a0d547e5f1546739e83c287290350ed4443d9a5e31d13",
+      "metadata": {
+        "size_bytes": 2922878,
+        "mtime_ns": 1791334530794019100,
+        "device": 986718957,
+        "inode": 42502721483398330
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 217,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000217.png",
+      "sha256": "61e210d24af79145d9c021c4b4024e611f8010734fcfbcffb1122bbde5f12473",
+      "metadata": {
+        "size_bytes": 2916596,
+        "mtime_ns": 1791334530859602200,
+        "device": 986718957,
+        "inode": 42784196460108988
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 219,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/saved_tt/frame_000219.png",
+      "sha256": "24dfd28c40cb2145ece0888b2a0f75500096e002a4d126035b3ed2accbffc09e",
+      "metadata": {
+        "size_bytes": 2910977,
+        "mtime_ns": 1791334531253540900,
+        "device": 986718957,
+        "inode": 41939771529977025
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 219,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/new_mean/frame_000219.png",
+      "sha256": "d76c728ba7fedf474e9c00cce5acf0fc21b88ddec95bb0c1cee723475baaef8f",
+      "metadata": {
+        "size_bytes": 2913266,
+        "mtime_ns": 1791334531321733200,
+        "device": 986718957,
+        "inode": 41939771529977026
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "frame_index": 219,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000219.png",
+      "sha256": "cf9c784ebad119584e9ae07ddbffe046381ff6b63556222489278766e2497cbb",
+      "metadata": {
+        "size_bytes": 2906735,
+        "mtime_ns": 1791334531384440300,
+        "device": 986718957,
+        "inode": 41939771529977027
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 163,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_tt/frame_000163.png",
+      "sha256": "88b8ab0ae7bdf3ef9c2cc0666cd3bdb8201b433056a54fc352f626ebafdddd0b",
+      "metadata": {
+        "size_bytes": 3038573,
+        "mtime_ns": 1791334557224511000,
+        "device": 986718957,
+        "inode": 31806672368395289
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 163,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/new_mean/frame_000163.png",
+      "sha256": "f2fcd1ce352add5e3fd531062cf1a7224898ea75fea088263a2ceb09155ac861",
+      "metadata": {
+        "size_bytes": 3041788,
+        "mtime_ns": 1791334557292606100,
+        "device": 986718957,
+        "inode": 31243722414973981
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 163,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000163.png",
+      "sha256": "76e9ec66431fd4468af14594a8612202efa20024b6b0c6b91a8e275b59f86891",
+      "metadata": {
+        "size_bytes": 3035568,
+        "mtime_ns": 1791334557358681100,
+        "device": 986718957,
+        "inode": 30680772461552674
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 164,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_tt/frame_000164.png",
+      "sha256": "b53f554b0d547c1c747eec1a5e6fd593a929aef90fc364f45195a8b571bb7b1e",
+      "metadata": {
+        "size_bytes": 3011254,
+        "mtime_ns": 1791334557488686200,
+        "device": 986718957,
+        "inode": 54324670505247786
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 164,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/new_mean/frame_000164.png",
+      "sha256": "d8b1ab5d7e7d93fb6dda6399a9d9b679e3c38f74ee169d94e0b711ad0793798a",
+      "metadata": {
+        "size_bytes": 3012366,
+        "mtime_ns": 1791334557557367700,
+        "device": 986718957,
+        "inode": 29273397577999408
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 164,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000164.png",
+      "sha256": "35ebb762921aa4ca1020e5a0c58802370b7caa34b691f890b0b11ce0b063466a",
+      "metadata": {
+        "size_bytes": 3005850,
+        "mtime_ns": 1791334557623933600,
+        "device": 986718957,
+        "inode": 33214047251948594
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 165,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_tt/frame_000165.png",
+      "sha256": "851c03be3aec5d3bb16bac21b1a64220f55fc6a71e71830aac6ec98de603e6ff",
+      "metadata": {
+        "size_bytes": 3068300,
+        "mtime_ns": 1791334557752416500,
+        "device": 986718957,
+        "inode": 30680772461552692
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 165,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/new_mean/frame_000165.png",
+      "sha256": "ad6877dba21446d14c5d3f81194a562e627d828105dd122dda370b986212f1d4",
+      "metadata": {
+        "size_bytes": 3068475,
+        "mtime_ns": 1791334557819003200,
+        "device": 986718957,
+        "inode": 30117822508131384
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 165,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000165.png",
+      "sha256": "f9cf88a6325effdad4eec0d955d81d1d0345a0d345144cb91b51882e5feca65f",
+      "metadata": {
+        "size_bytes": 3062540,
+        "mtime_ns": 1791334557892091600,
+        "device": 986718957,
+        "inode": 30399297484842043
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 166,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_tt/frame_000166.png",
+      "sha256": "b15063dd760d807000f480ddc37aa6dded05a82db2c8d0d9310d365dbb9d36f2",
+      "metadata": {
+        "size_bytes": 3025255,
+        "mtime_ns": 1791334558020469100,
+        "device": 986718957,
+        "inode": 30117822508131390
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 166,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/new_mean/frame_000166.png",
+      "sha256": "933246961e9482d4c16510223f017543b51d045564ceca9ae246941312c5def7",
+      "metadata": {
+        "size_bytes": 3025725,
+        "mtime_ns": 1791334558086012100,
+        "device": 986718957,
+        "inode": 26177172834182208
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 166,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000166.png",
+      "sha256": "01747bc5ee73ded9397f07372c4eefd0b42bf7e8ca5be010edb93d2b3c94faf9",
+      "metadata": {
+        "size_bytes": 3018865,
+        "mtime_ns": 1791334558153626000,
+        "device": 986718957,
+        "inode": 29836347531420738
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 167,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_tt/frame_000167.png",
+      "sha256": "060004aac03bcbdde48bdc3b367ce31737689d13279f17a1bfd3df623e57cc23",
+      "metadata": {
+        "size_bytes": 3022860,
+        "mtime_ns": 1791334558282010100,
+        "device": 986718957,
+        "inode": 30117822508131397
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 167,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/new_mean/frame_000167.png",
+      "sha256": "70795b9e8496e06c9907a335d3b974155eda49bb21ae660654745edbd54c0a73",
+      "metadata": {
+        "size_bytes": 3023824,
+        "mtime_ns": 1791334558348775800,
+        "device": 986718957,
+        "inode": 29836347531420748
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 167,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000167.png",
+      "sha256": "9d8afcd853719640aa9e8b4e91b037fb9d8ca7b51a243a8879e7ec0b72690545",
+      "metadata": {
+        "size_bytes": 3017476,
+        "mtime_ns": 1791334558419446400,
+        "device": 986718957,
+        "inode": 29836347531420750
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 168,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_tt/frame_000168.png",
+      "sha256": "2d73a9d1e7731e7c6780fd598b385ec0bd51059f58892bffdefb6ff5a413a3da",
+      "metadata": {
+        "size_bytes": 3005415,
+        "mtime_ns": 1791334558550719100,
+        "device": 986718957,
+        "inode": 29836347531420764
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 168,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/new_mean/frame_000168.png",
+      "sha256": "7ef1b6e1ba04df842fb3bf898221a0e8c218264dfeddd2bb3fa9421b5e84f22f",
+      "metadata": {
+        "size_bytes": 3005401,
+        "mtime_ns": 1791334558616836000,
+        "device": 986718957,
+        "inode": 29836347531420770
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 168,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000168.png",
+      "sha256": "7b7abba04234718e04652ee5b7e2750ad2f8f10990730ac4e06c0ce926393a40",
+      "metadata": {
+        "size_bytes": 2999270,
+        "mtime_ns": 1791334558685658600,
+        "device": 986718957,
+        "inode": 25895697857471587
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 169,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_tt/frame_000169.png",
+      "sha256": "96a806d0e247864ae91ff108767b5fa8ada8fb7a25302687b37f1e7a3f993eb8",
+      "metadata": {
+        "size_bytes": 3061187,
+        "mtime_ns": 1791334558814635200,
+        "device": 986718957,
+        "inode": 29836347531420773
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 169,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/new_mean/frame_000169.png",
+      "sha256": "d7f7bf3c7362085c4f95e671a7844e3a8d109ff7407c9074626c16f60649645e",
+      "metadata": {
+        "size_bytes": 3062371,
+        "mtime_ns": 1791334558882351500,
+        "device": 986718957,
+        "inode": 30117822508131432
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 169,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000169.png",
+      "sha256": "f0eca4ecc5689711a11bde53aa9f66d3cf81806a2b148376be5a1e602f711638",
+      "metadata": {
+        "size_bytes": 3055756,
+        "mtime_ns": 1791334558950177400,
+        "device": 986718957,
+        "inode": 30117822508131435
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 170,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_tt/frame_000170.png",
+      "sha256": "83017ca903f7d43a013e6d0d00f0b567abe77faecab6506cc3ab0a4976133d73",
+      "metadata": {
+        "size_bytes": 3011173,
+        "mtime_ns": 1791334559081126700,
+        "device": 986718957,
+        "inode": 29836347531420783
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 170,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/new_mean/frame_000170.png",
+      "sha256": "f85ebc7022dcbae7165b66429849a7d08962705a39d96924de4c2efd3dbf760b",
+      "metadata": {
+        "size_bytes": 3012164,
+        "mtime_ns": 1791334559147782000,
+        "device": 986718957,
+        "inode": 25895697857471602
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 170,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000170.png",
+      "sha256": "0dc0f1f8fe8fd1f952b837fcefc29ffe647438403496ed9f1304c94b7b2fd91a",
+      "metadata": {
+        "size_bytes": 3005920,
+        "mtime_ns": 1791334559223327200,
+        "device": 986718957,
+        "inode": 29836347531420788
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 171,
+      "arm": "history_edge_tight_cost_tight",
+      "view": "saved_tt",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_tt/frame_000171.png",
+      "sha256": "32122f3264e47de5461bdc0b8ef83073c48b4753ad34c1a80f004df1346bc38f",
+      "metadata": {
+        "size_bytes": 3008037,
+        "mtime_ns": 1791334559350890000,
+        "device": 986718957,
+        "inode": 30117822508131446
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 171,
+      "arm": "history_mean_edge_tight_cost_tight",
+      "view": "new_mean",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/new_mean/frame_000171.png",
+      "sha256": "4720363e7021afa879f558e59cf277c5102a918d1670d81607fe96432fb224ab",
+      "metadata": {
+        "size_bytes": 3008835,
+        "mtime_ns": 1791334559422886600,
+        "device": 986718957,
+        "inode": 30680772461552761
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "frame_index": 171,
+      "arm": "crop_top_one",
+      "view": "saved_top_one",
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/path_confidence_mean_v0_1/review/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/native/saved_top_one/frame_000171.png",
+      "sha256": "03207a549bffd26138e6113c7614667bc7a38271f6a4915b546f62a1c18292bf",
+      "metadata": {
+        "size_bytes": 3002755,
+        "mtime_ns": 1791334559492101100,
+        "device": 986718957,
+        "inode": 25895697857471617
+      },
+      "hash_origin": "copied_from_verified_worker_receipt_no_parent_media_hash"
+    }
+  ],
+  "media_count": 48,
+  "total_existing_media_bytes": 143320299,
+  "permitted_new_human_fields": {
+    "ball_visibility": [
+      "visible",
+      "partly_visible",
+      "hidden",
+      "uncertain",
+      null
+    ],
+    "marker_identity": [
+      "ball",
+      "another_object",
+      "uncertain",
+      null
+    ],
+    "ball_center_alignment": [
+      "centered",
+      "clearly_displaced",
+      "uncertain",
+      null
+    ],
+    "exact_candidate_index": "null unless Ryan explicitly identifies the index",
+    "response": "verbatim, attributed to Ryan",
+    "skipped_or_uncertain_allowed": true
+  },
+  "limits": {
+    "new_scientific_attempts": 0,
+    "new_scientific_charged_seconds": 0,
+    "new_model_calls": 0,
+    "new_selector_runs": 0,
+    "new_evaluator_runs": 0,
+    "new_renders": 0,
+    "new_tests": 0,
+    "new_release_checkpoints": 0,
+    "new_frames": 0,
+    "unique_existing_media_allowed": 48,
+    "original_source_image_reads": false,
+    "scientific_json_body_reads_or_hashes": false,
+    "parent_media_hashes": false,
+    "new_pixel_artifacts": false,
+    "application_code_changes": false
+  },
+  "new_administrative_output": {
+    "directory": "data/outputs/t/error_type_review_b71c64d3fd46",
+    "create_only": true,
+    "maximum_aggregate_bytes": 1048576,
+    "submissions": {
+      "filename_pattern": "submission_NNNN.json",
+      "first": 1,
+      "last": 32,
+      "maximum_file_bytes": 16384
+    },
+    "completion.json": {
+      "maximum_file_bytes": 65536
+    },
+    "summary.md": {
+      "maximum_file_bytes": 65536
+    },
+    "no_response_truncation": true,
+    "preserve_old_submissions": true
+  },
+  "preservation": {
+    "resource_event_count": 3330,
+    "closed_attempts": 63,
+    "successes": 59,
+    "historic_failure_ids": [
+      "158f51be5ab34cdface57f4e0036b7d2",
+      "4adfb390f1f74a1baaec7fb178092218",
+      "e1ba648def3f4e1f887332e850396e4c",
+      "e3ea5536e59d4cdc8fea72d45bc53241"
+    ],
+    "resource_tip": "4dd2b89f3fea67f3be9e3f409e7b937fc6da8a2a622c9b2a98505041c2a31fd6",
+    "consumed_seconds": 3547.523999999985,
+    "remaining_seconds": 10852.476000000015,
+    "maximum_cumulative_seconds": 14400,
+    "new_journal_events_permitted": false,
+    "mean_artifacts_unchanged": 636,
+    "prior_human_identity_judgments_unchanged": 8,
+    "prior_clip_review_responses_unchanged": 6,
+    "embargoes_unchanged": 9,
+    "sealed_holdouts_unchanged": 3
+  },
+  "completion": {
+    "all_16_frames_have_response_or_explicit_unknown_or_skipped": true,
+    "three_method_records_per_frame": true,
+    "absent_marker_identity_and_alignment_null": true,
+    "raw_quantitative_counts_unchanged": true,
+    "no_generalized_accuracy_or_quality_gate_claim": true,
+    "next_scientific_step_requires_separate_proposal": true
+  },
+  "git_authorization": {
+    "staging": false,
+    "committing": false,
+    "pushing": false,
+    "pull_request": false,
+    "merging": false
+  },
+  "preparation": {
+    "administrative_and_metadata_only": true,
+    "media_pixels_opened": false,
+    "scientific_bodies_read_or_hashed": false,
+    "tests_or_experiments_run": false,
+    "human_reviews_repeated": false
+  }
+}

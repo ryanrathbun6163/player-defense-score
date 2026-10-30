@@ -1,0 +1,140 @@
+{
+  "schema_version": "fresh_game_reference_preparation_result/v0.1",
+  "date_local": "2026-10-30",
+  "timezone": "America/Phoenix",
+  "status": "reference_review_ready_human_acceptance_and_inference_pending",
+  "user_authority": "ok chat move forward after fresh-game diagnostic recommendation",
+  "game_id": "0022400861",
+  "role": "diagnostic_development",
+  "frames": 360,
+  "proposed_centers": 310,
+  "null_centers": 50,
+  "visibility_counts": {
+    "fully_visible": 40,
+    "partially_visible": 282,
+    "indeterminate": 6,
+    "not_visible": 32
+  },
+  "human_accepted_references": 0,
+  "new_model_calls": 0,
+  "new_training_updates": 0,
+  "old_results_reexecuted": false,
+  "model_adopted": false,
+  "source_pixel_matches": 360,
+  "emitted_review_frames_checked": 720,
+  "focused_tests_passed": 12,
+  "training_eligible": false,
+  "checkpoint_selection_eligible": false,
+  "pending": [
+    "human review of complete new AI reference proposals",
+    "separate accepted publication if approved",
+    "implement diagnostic capture/scoring wrapper and run frozen controls under prior authorization"
+  ],
+  "bindings": [
+    {
+      "path": "docs/ball_tracking_fresh_game_diagnostic_protocol.md",
+      "bytes": 9208,
+      "sha256": "1498fcbb83aecff1bf111c4f9d16187597ff5c32b02f191ae3eb7e430cb35f75"
+    },
+    {
+      "path": "docs/ball_tracking_fresh_game_reference_preparation.md",
+      "bytes": 6073,
+      "sha256": "ae2d731aa9b54511312bccc37e3ca169bb301d66fc7d8118e2edca6843f9aed7"
+    },
+    {
+      "path": "src/ball_tracking/fresh_game_references.py",
+      "bytes": 25428,
+      "sha256": "8ce34af23326bfabcad859dc546861090a6c96d4d869038454eda8369de2f4ff"
+    },
+    {
+      "path": "tests/test_fresh_game_references.py",
+      "bytes": 13343,
+      "sha256": "7e4feef8faec3e3864cc912eeea043f78e89eaf2376d296f945a542fed8dc61c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/baseline155.json",
+      "bytes": 30190,
+      "sha256": "2901b778b7b449023c034f554f519083e51393766da577ed83568846ac66eb35"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/source_selection/selection.json",
+      "bytes": 6009,
+      "sha256": "3df60390500b27607ab6ee7706e08a1995edc70c9afcc921afa4b644725f2d64"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/source_preparation.json",
+      "bytes": 5170,
+      "sha256": "d46e37966d2de04a83bd1d90deee4382abb43cc60d1a804d9ead23b71d194e94"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/source_pixel_audit.json",
+      "bytes": 114144,
+      "sha256": "29c05781e065a3874e697333876c1a50e058d74bb5194714ec96a1ab5a2d2f2c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/reference_package.json",
+      "bytes": 2769,
+      "sha256": "a56d0c6b50019b9138161a6fa95063428c1a1fb53b99930156263e7b17587a9e"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/reference_render_recipe.json",
+      "bytes": 4468,
+      "sha256": "755739d738975e9591755215c68fc40e8f72b61547e9babc28578947de610738"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/review/index.html",
+      "bytes": 3729,
+      "sha256": "137ad3d138a625188e184125d33d539c4426c4de93b9d956c2f855bc39d4105d"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/review_http_check.json",
+      "bytes": 2561,
+      "sha256": "77158fee741bcd6a488f80f049f3c158ea3350759c1c094c4d460810d9ecacb4"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/review/122_visual_audit.json",
+      "bytes": 3666,
+      "sha256": "2874cff7556f55a19eb492d674cc50572fbc580b7124622783dbf001a8fb6903"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/review/237_visual_audit/receipt.json",
+      "bytes": 5294,
+      "sha256": "02ac1a9c1e45dea198dc08010d75fdcbe1ddea7d2f8aae9506bf7cb39bffb880"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/review/365_visual_audit/receipt.json",
+      "bytes": 8408,
+      "sha256": "3d8ded3a84c5b714687e00eee8ff94dcf905bff6b3d1f14ad286600576c07681"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/sources/122/proposal.json",
+      "bytes": 81992,
+      "sha256": "f879133036a6dd728903c1e40cf6e1c9236f57d55e6f28dc8ca114c56218e4f6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/sources/237/proposal.json",
+      "bytes": 77411,
+      "sha256": "427d71906c4cf02f97967658e7680d3d9e7beabe2313c79afaf86e1f0effa09b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/sources/365/proposal.json",
+      "bytes": 83100,
+      "sha256": "3de49146659b7a9d8dbc39e8c60afd424787c1354f44498d25fb96677d6720d1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/review/122/manifest.json",
+      "bytes": 360787,
+      "sha256": "ddda97ebbaa7a91a68efd7588518cf65a269ed2d575aaf8ffaf8145f42da2875"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/review/237/manifest.json",
+      "bytes": 353771,
+      "sha256": "df4081c23220c3bf70866f8143aeb5aca4bf232b4e5b64bbb903dece6c35da47"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/review/365/manifest.json",
+      "bytes": 363199,
+      "sha256": "c23fc472162ad88233660b54db81c8ae35ea399593f92f739a3014fe1da81dd6"
+    }
+  ]
+}

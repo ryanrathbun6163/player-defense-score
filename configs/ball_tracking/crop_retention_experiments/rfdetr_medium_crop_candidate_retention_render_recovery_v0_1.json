@@ -1,0 +1,37 @@
+{
+  "schema_version": "ball_crop_candidate_retention_render_recovery/v0.1",
+  "recovery_id": "rfdetr_medium_crop_candidate_retention_render_recovery_v0_1",
+  "scoring_manifest": {
+    "path": "configs/ball_tracking/crop_retention_experiments/rfdetr_medium_crop_candidate_retention_recovery_v0_1.json",
+    "sha256": "2e1a57cfdacfa0359f328d467fd75b513b81fde192f69e4bd2a9919dbb7a6e1f",
+    "content_sha256": "4b1f9f3c75ee53eb1358bcb49981118269694ec39adb5a312ae325f8ee273bbf"
+  },
+  "render_proposal": {
+    "path": "docs/ball_crop_candidate_retention_render_recovery_proposal.md",
+    "sha256": "2d9ea51ca4f93fbc77d902266dcbf1ef496edcb8c320c7a0dbbe6d86bf884b48"
+  },
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_render_recovery_approval_v0_1.json",
+    "sha256": "133981a85b191e931e739ad0c3030659072282665db0dd5cb234716fb52f71f6"
+  },
+  "interruption_receipt": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/render_interruption_f362.json",
+    "sha256": "f2bece32af228b0f525b07eb060b1671194812b26af7787283c8ecca2aabea8b"
+  },
+  "resource_checkpoint": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/render_interruption_checkpoint_f362.json",
+    "sha256": "8dce571305282e59dc61e3ceb610e2ea0e5dbd86ce1896beb9e035c8ee12dcac"
+  },
+  "implementation_validation": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention_render_recovery_implementation/f36237247191_2026-10-02/implementation_validation.json",
+    "sha256": "652a8bb8926ea21be2e1863e34105b1c737986e46c5615a342e682be497644dc"
+  },
+  "output_root": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1",
+  "permitted_stages": [
+    "verify",
+    "render"
+  ],
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

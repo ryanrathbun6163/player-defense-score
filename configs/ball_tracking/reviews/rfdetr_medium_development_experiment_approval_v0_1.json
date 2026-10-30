@@ -1,0 +1,12 @@
+{
+  "schema_version": "ball_detector_development_experiment_approval/v0.1",
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_development_release_proposal_v0_1.json",
+    "sha256": "e64d1671d6a65bc56a546424bf746d22c9c558ce65721c645dad08ee2d5ab125"
+  },
+  "approved_by": "ryan",
+  "approved_at_utc": "2026-09-19T05:21:22Z",
+  "statement": "lets move forward I approve of this experiment",
+  "scope": "six_development_windows_only",
+  "git_mutations_authorized": false
+}

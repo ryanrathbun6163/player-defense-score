@@ -1,0 +1,636 @@
+{
+  "schema_version": "nba_wasb_action_observation_result/v0.1",
+  "status": "completed_audited_model_output_human_review_pending",
+  "recorded_at_utc": "2026-10-20T01:59:45.232129+00:00",
+  "event_date_local": "2026-10-19",
+  "timezone": "America/Phoenix",
+  "execution_source_commit": "4b67d0850897d539ab2994afc6349c0b6af11667",
+  "proposal": {
+    "path": "configs/ball_tracking/selections/nba_wasb_action_observation_proposal_v0_1.json",
+    "bytes": 12515,
+    "sha256": "c4da3da0506217ea21881cd52f4864aa402f40fbc041852efc0be18c826964de"
+  },
+  "approval": {
+    "path": "configs/ball_tracking/reviews/nba_wasb_action_observation_approval_v0_1.json",
+    "bytes": 9159,
+    "sha256": "eeeb80122753c6416332b94615c96fae5cceac40d867931ca65a503a3e08da43"
+  },
+  "run_identity": {
+    "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/run_identity.json",
+    "bytes": 1580,
+    "sha256": "e2c112a4e1c0aca700387b9cfc4c60126831a2593d1822f97f7be36efdcb4d1f"
+  },
+  "checkpoint_sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+  "recipe": {
+    "native_input_spacing_ms": [
+      16,
+      17
+    ],
+    "stride": 1,
+    "complete_chronological_triplets": 2698,
+    "strict_final_mean_heatmap_threshold": 0.3,
+    "selection": "largest component mass, stable component index tie break",
+    "averaging": "aligned float32 means in ascending complete-triplet start order",
+    "source_frames": 2702,
+    "original_pilot_pngs_reused": 120,
+    "new_native_pngs": 2582,
+    "original_pilot_triplets_imported_without_reinference": 116,
+    "new_model_calls": 2582,
+    "training": false,
+    "threshold_search": false,
+    "motion_selector": false,
+    "interpolation": false,
+    "padding": false,
+    "resampling": false,
+    "new_labels": false,
+    "accuracy_scoring": false,
+    "confidence_semantics": "native component heatmap mass, not calibrated ball probability",
+    "adapter_metadata_note": {
+      "preserved_adapter_default_component_threshold": 0.5,
+      "audited_final_component_threshold": 0.3,
+      "operator": ">",
+      "explanation": "The inherited adapter's >0.5 metadata describes unused per-triplet candidate output. The action runner consumes heatmaps, averages aligned contributions, then selects strict >0.3 components; this audit independently reconstructs that final path. Original adapter metadata remains unchanged."
+    }
+  },
+  "source_continuity": {
+    "executed_review": {
+      "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/source_continuity_review.json",
+      "bytes": 3299,
+      "sha256": "55f412c6eb042ba5034b2c64e02bab5988609865f4126127f7578d2c96dfc3ef"
+    },
+    "sac_detailed_ai_inspection": {
+      "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/source_continuity_sac_01/inspection.json",
+      "bytes": 31413,
+      "sha256": "08747d0cf3a6ed9476c9a4b212242cf0f88f7fb9ca56f346ab1b0db5b9fa9937"
+    },
+    "det_detailed_ai_inspection": {
+      "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/source_continuity_det_01/review.json",
+      "bytes": 34241,
+      "sha256": "e03d6cf6f2c27ef52093125c2f939b173937908b2c43e1cfff61d38c891dc62f"
+    },
+    "segments_per_core": 1,
+    "cuts_or_replays_identified": false,
+    "interpretation": "Continuous broadcast view includes stoppage; not live-ball-state or possession certification.",
+    "sac_record_sequence": "Completed all-frame AI inspection was reported before inference and bound to preparation evidence; its detailed receipt followed separately. Original executed review remains unchanged."
+  },
+  "execution": {
+    "run_id": "538ba17c8ebf474587473dbcc7eb425a",
+    "completion": {
+      "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/completion.json",
+      "bytes": 41361,
+      "sha256": "5dfbc201738b715bc931d93d25a15cdd96a682a6cde631cc98fc86ad2d442b57"
+    },
+    "attempt_started": {
+      "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/run_attempts/538ba17c8ebf474587473dbcc7eb425a/started.json",
+      "bytes": 623,
+      "sha256": "4a4722ac17b06958eaaf9923f3ebe131dbd38e6c3d7ca720b8cd768bfbb86589"
+    },
+    "model_loaded": {
+      "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/run_attempts/538ba17c8ebf474587473dbcc7eb425a/model_loaded.json",
+      "bytes": 3069,
+      "sha256": "e9c6424395bc321edae379e78a0df4434467e3c9636c942f7720a5f71e505ef5"
+    },
+    "attempt_completed": {
+      "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/run_attempts/538ba17c8ebf474587473dbcc7eb425a/completed.json",
+      "bytes": 332,
+      "sha256": "207106bcc68406989aeba9349c93edf2df26c6365e8e805eda6420aae7253b2a"
+    },
+    "elapsed_seconds": 1237.234000000004,
+    "new_model_call_elapsed_seconds_sum": 54.70500000051106,
+    "call_accounting": {
+      "model_call_starts": 2582,
+      "completed_unique_triplets": 2582,
+      "failed_attempts": 0,
+      "started_without_completed_or_failed_record": [],
+      "all_attempt_evidence_retained": true
+    },
+    "prepare_exit": {
+      "path": "data/outputs/t/nba_action_implementation_2026-10-19/prepare_001_exit.json",
+      "bytes": 163,
+      "sha256": "927a9d3290952266bf0342988ac82b709fd0f07b4637371fe4f4c20c16a9a210"
+    },
+    "prepare_attempt_started": {
+      "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/run_attempts/25fbaf5211b347e0901a4359134ccc19/started.json",
+      "bytes": 622,
+      "sha256": "1778bbf95a7bfab84a315e9be0cba024d2d2432a946c020a8142636b89f3ca09"
+    },
+    "prepare_runner_sha256": "0abc7b825459ba59558619510a75f7d011e354007c9c3d4aadba7014b93a100f",
+    "run_exit": {
+      "path": "data/outputs/t/nba_action_implementation_2026-10-19/run_001_exit.json",
+      "bytes": 164,
+      "sha256": "d346d3bb88bf0b469061b65a2739c05d0460f05e68ab8698dff6f9ea6224f854"
+    },
+    "run_stdout": {
+      "path": "data/outputs/t/nba_action_implementation_2026-10-19/run_001.stdout.txt",
+      "bytes": 42409,
+      "sha256": "1d7a9c534feadcef3a73afc94fc379eae5e7a0377d4cff052117c3bb70bebc1e"
+    },
+    "run_stderr": {
+      "path": "data/outputs/t/nba_action_implementation_2026-10-19/run_001.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "preflight_resources": {
+      "path": "data/outputs/t/nba_action_implementation_2026-10-19/resource_preflight.json",
+      "bytes": 966,
+      "sha256": "232b0eeeba65bd5d266b4ba0750b3eceb883179759e3c7b2c0ceb85ad2d3a0fe"
+    },
+    "sampled_run_resources": [
+      {
+        "path": "data/outputs/t/nba_action_implementation_2026-10-19/resource_during_run_01.json",
+        "bytes": 1432,
+        "sha256": "dae42df1733c8b223189a29cab3cb32257f068ba390c8aff6c292c5134bfc891"
+      },
+      {
+        "path": "data/outputs/t/nba_action_implementation_2026-10-19/resource_during_run_02.json",
+        "bytes": 566,
+        "sha256": "da0c0a0ff8df24adec1c489010589a31e88930cf64f8b4a457597f0f88dd0cc6"
+      }
+    ],
+    "output_storage_snapshot": {
+      "path": "data/outputs/t/nba_action_implementation_2026-10-19/output_storage_snapshot.json",
+      "bytes": 317,
+      "sha256": "8e633eccee362ed665a8990da7f402b260a3eadc16fe62df694f5c8f1c85d348"
+    },
+    "resource_limits": "Snapshot, not continuous peak telemetry; run time includes inference and render verification but excludes earlier preparation and later AI/audit work.",
+    "preparation_loaded_code_provenance": {
+      "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/helper_loaded_provenance_01/provenance.json",
+      "bytes": 2281,
+      "sha256": "7bfa78f3f1a7558de911f3989af0f8232dd0528d9d96dd1d5c797bb39d0dfb10"
+    },
+    "preparation_note": "Preparation began with an earlier development runner; its started-record hash is retained separately from the later committed runner. Subsequent runner changes concerned post-prepare/inference handling. The exact initial loaded input-helper snapshot is preserved. Recovery/predecode-stat changes occurred on disk during preparation; original start records remain unchanged. Actual fresh extraction commands/PTS/RGB checks did not change. Inference/rendering used the committed implementation."
+  },
+  "candidates": [
+    {
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "approved_role": "future_training_candidate_pool",
+      "source_frame_range_inclusive": [
+        540,
+        2010
+      ],
+      "input_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/inputs/sac_mem_q1_c01/manifest.json",
+        "bytes": 726844,
+        "sha256": "dfd51f416ca0b1819d6b0d8637d5f686f8389817de1bdef542d4179a0978217d"
+      },
+      "observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/observations.json",
+        "bytes": 3339134,
+        "sha256": "0cd5a7eb8dd9a28cdaddfe1b072415b75c19a89f26e0842cd1c9bf0c83ddc6b4"
+      },
+      "availability_report": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/summary.json",
+        "bytes": 16849,
+        "sha256": "cfedb8a2c17709e08c571a0e0e9bde64e48a0d8d9a0421b4f47b1683b41c2928"
+      },
+      "availability": {
+        "frames": 1471,
+        "observed": 1310,
+        "missing": 161,
+        "withheld": 0,
+        "semantics": "unlabeled availability, not accuracy",
+        "imported_prior_triplets": 58,
+        "action_triplets": 1411
+      },
+      "missing_intervals": 21,
+      "longest_missing_interval": {
+        "state": "missing",
+        "segment_kind": "live_action",
+        "segment_source_frame_range_inclusive": [
+          540,
+          2010
+        ],
+        "first_source_frame_index": 1463,
+        "first_source_pts_ticks": 2202002,
+        "frames": 26,
+        "last_source_frame_index": 1488,
+        "end_exclusive_pts_ticks": 2241062,
+        "duration_seconds": 0.434
+      },
+      "pilot_preservation": {
+        "unchanged_context_observations_verified_identical": 56,
+        "changed_context_frames": [
+          {
+            "source_frame_index": 660,
+            "prior_center_xy_px": [
+              1591.9470977783203,
+              500.6093215942383
+            ],
+            "new_center_xy_px": [
+              1592.116584777832,
+              500.80204010009766
+            ],
+            "prior_contributions": 1,
+            "new_contributions": 3
+          },
+          {
+            "source_frame_index": 661,
+            "prior_center_xy_px": [
+              1601.4047241210938,
+              515.8186340332031
+            ],
+            "new_center_xy_px": [
+              1601.1543273925781,
+              515.6386184692383
+            ],
+            "prior_contributions": 2,
+            "new_contributions": 3
+          },
+          {
+            "source_frame_index": 718,
+            "prior_center_xy_px": [
+              1574.0174102783203,
+              454.0287494659424
+            ],
+            "new_center_xy_px": [
+              1574.2287826538086,
+              454.26034927368164
+            ],
+            "prior_contributions": 2,
+            "new_contributions": 3
+          },
+          {
+            "source_frame_index": 719,
+            "prior_center_xy_px": [
+              1570.9760284423828,
+              456.5843868255615
+            ],
+            "new_center_xy_px": [
+              1571.861572265625,
+              456.73187255859375
+            ],
+            "prior_contributions": 1,
+            "new_contributions": 3
+          }
+        ],
+        "original_score_recomputed": false,
+        "separate_old_mean_byte_comparison_performed": false
+      },
+      "media": {
+        "review_video": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/review_attempts/15c8e702a51642199f6d453f369679b2/review.mp4",
+          "bytes": 45243049,
+          "sha256": "d1adc39b43c33479c4a7edd29e76db5f82e504d6ffb1bd1645ee1d6bae10cea9"
+        },
+        "review_manifest": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/review_attempts/15c8e702a51642199f6d453f369679b2/review_manifest.json",
+          "bytes": 1224971,
+          "sha256": "32458162416c0df53d43db21827690a83e0489742d48d166311f8a8ff129e118"
+        },
+        "verification": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/review_attempts/15c8e702a51642199f6d453f369679b2/verification.json",
+          "bytes": 1967,
+          "sha256": "98f809018434ccb0f9ed2a0a9e7ec850af7aaaf8502c97c343a65425b5f35f27"
+        },
+        "final_frame": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/review_attempts/15c8e702a51642199f6d453f369679b2/final_frame.png",
+          "bytes": 1060280,
+          "sha256": "e8fba04d4680ff2f870e36da56193301729f3c4474e5b27b447e19175a0c9afe"
+        },
+        "ffprobe": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/review_attempts/15c8e702a51642199f6d453f369679b2/ffprobe.json",
+          "bytes": 117223,
+          "sha256": "4b0d4a992880141e368a0e8eb42fb6997668fd9a7289a8ac1ea8941fd29095b1"
+        },
+        "probe_log": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/review_attempts/15c8e702a51642199f6d453f369679b2/ffprobe.stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "decode_log": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/review_attempts/15c8e702a51642199f6d453f369679b2/decode.stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "completion": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/review_attempts/15c8e702a51642199f6d453f369679b2/completion.json",
+          "bytes": 2731,
+          "sha256": "595308f9cf093c8801d28d455f9fe5acf03ccc8ec61ec18b8631fbe1ac259e49"
+        }
+      },
+      "media_verification": {
+        "decoded_frames": 1471,
+        "native_pts_all_frames_verified": true,
+        "decoded_source_frame_keys_all_verified": true,
+        "overlay_mae_max": 3.32370525684232,
+        "overlay_mae_mean": 2.792120154490426,
+        "actual_final_frame_mae": 2.794446040134804,
+        "actual_final_source_frame_index": 2010,
+        "timeline_duration_ticks": 2298690,
+        "time_base": "1/90000",
+        "additional_final_hold_ticks": 90000
+      },
+      "ai_visual_inspection": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/model_visual_sac_01/inspection.json",
+        "bytes": 53755,
+        "sha256": "7c4db494054636c48f0fb1e08c649d24641bb5b1edb9b53c3ef81dfad91a5d9f"
+      },
+      "ai_review_cue_count": 14,
+      "ai_visual_findings": [
+        "The all-frame inspection shows long stretches in which the selected marker follows the apparent ball, including the opening tip and initial advance, several passes/dribbles, much of the shot path, and the final advance. It also reveals recurrent short selections on spectators, player heads, shoulders, arms or legs, plus repeated missing intervals.",
+        "The held-ball sequence around 1259-1323 includes visibly present ball examples despite missing output. Missing states cannot be equated with true source invisibility.",
+        "The first rendered overlay at source frame 540 places the selected marker on the apparent ball held by the referee. The actual decoded final frame 2010 places the marker on the apparent ball held by the advancing light-blue player; footer, frame/PTS label and final image are intact.",
+        "These findings describe this frozen output. No threshold, selection rule, model, cache or reference label was changed during inspection."
+      ],
+      "model_output_human_review": "pending"
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "game_id": "0022500828",
+      "approved_role": "target_case_development",
+      "source_frame_range_inclusive": [
+        10668,
+        11898
+      ],
+      "input_manifest": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/inputs/sas_det_q1_c02/manifest.json",
+        "bytes": 615594,
+        "sha256": "f40c5217cbcaa6f74b1b825b303a1b13572d84c735fc0083ca980dc9768d7b6e"
+      },
+      "observations": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/observations.json",
+        "bytes": 2750073,
+        "sha256": "a9ef10f9b88361ee7d1f3dde633bc1ff36f506cd5d2d9f562bcb7c3b50991db4"
+      },
+      "availability_report": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/summary.json",
+        "bytes": 11266,
+        "sha256": "9351e33717b154483e016503a66ea0f5b20a2016540b01727875f262c5f20103"
+      },
+      "availability": {
+        "frames": 1231,
+        "observed": 1070,
+        "missing": 161,
+        "withheld": 0,
+        "semantics": "unlabeled availability, not accuracy",
+        "imported_prior_triplets": 58,
+        "action_triplets": 1171
+      },
+      "missing_intervals": 14,
+      "longest_missing_interval": {
+        "state": "missing",
+        "segment_kind": "live_action",
+        "segment_source_frame_range_inclusive": [
+          10668,
+          11898
+        ],
+        "first_source_frame_index": 11063,
+        "first_source_pts_ticks": 16614962,
+        "frames": 34,
+        "last_source_frame_index": 11096,
+        "end_exclusive_pts_ticks": 16665992,
+        "duration_seconds": 0.567
+      },
+      "pilot_preservation": {
+        "unchanged_context_observations_verified_identical": 56,
+        "changed_context_frames": [
+          {
+            "source_frame_index": 10788,
+            "prior_center_xy_px": [
+              1575.981559753418,
+              612.7187347412109
+            ],
+            "new_center_xy_px": [
+              1576.2968444824219,
+              612.6310157775879
+            ],
+            "prior_contributions": 1,
+            "new_contributions": 3
+          },
+          {
+            "source_frame_index": 10789,
+            "prior_center_xy_px": [
+              1577.3065567016602,
+              604.4814491271973
+            ],
+            "new_center_xy_px": [
+              1577.3154830932617,
+              604.2765426635742
+            ],
+            "prior_contributions": 2,
+            "new_contributions": 3
+          },
+          {
+            "source_frame_index": 10846,
+            "prior_center_xy_px": [
+              1579.5977783203125,
+              582.1168327331543
+            ],
+            "new_center_xy_px": [
+              1579.793357849121,
+              581.6928291320801
+            ],
+            "prior_contributions": 2,
+            "new_contributions": 3
+          },
+          {
+            "source_frame_index": 10847,
+            "prior_center_xy_px": [
+              1580.5377960205078,
+              572.2017288208008
+            ],
+            "new_center_xy_px": [
+              1580.5424880981445,
+              571.9021797180176
+            ],
+            "prior_contributions": 1,
+            "new_contributions": 3
+          }
+        ],
+        "original_score_recomputed": false,
+        "separate_old_mean_byte_comparison_performed": false
+      },
+      "media": {
+        "review_video": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/review_attempts/f22f738e7379465aa58223d667918219/review.mp4",
+          "bytes": 35900215,
+          "sha256": "d28c3f7c818a76c5585c8478ee02f17ba3fdb432c24e1689c33f7c8f38f8a2f8"
+        },
+        "review_manifest": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/review_attempts/f22f738e7379465aa58223d667918219/review_manifest.json",
+          "bytes": 1025674,
+          "sha256": "ca8f6bf5ff78c149b9790351238679b5324aaadb521e80a0a3ff6932896ce8b3"
+        },
+        "verification": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/review_attempts/f22f738e7379465aa58223d667918219/verification.json",
+          "bytes": 1971,
+          "sha256": "bc732387fc351e0952787ee7d98c9448810b9c39fcd2ef6ab92fba26ede4bc65"
+        },
+        "final_frame": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/review_attempts/f22f738e7379465aa58223d667918219/final_frame.png",
+          "bytes": 1275025,
+          "sha256": "ec23909f8faec032a7907c887e2a9fca6ca2b868f8ea64f8c226444d12a086a1"
+        },
+        "ffprobe": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/review_attempts/f22f738e7379465aa58223d667918219/ffprobe.json",
+          "bytes": 98023,
+          "sha256": "edce77189dba055f67ba63afff3205e791bb78fa7fecf3a9d52f384d4d1b6cfd"
+        },
+        "probe_log": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/review_attempts/f22f738e7379465aa58223d667918219/ffprobe.stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "decode_log": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/review_attempts/f22f738e7379465aa58223d667918219/decode.stderr.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "completion": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/review_attempts/f22f738e7379465aa58223d667918219/completion.json",
+          "bytes": 2730,
+          "sha256": "41fd704d7daf3a39758527055ba64e0932f01cd8f007f31dd3073b9c6cf8626d"
+        }
+      },
+      "media_verification": {
+        "decoded_frames": 1231,
+        "native_pts_all_frames_verified": true,
+        "decoded_source_frame_keys_all_verified": true,
+        "overlay_mae_max": 3.5438980800653597,
+        "overlay_mae_mean": 2.870819084635068,
+        "actual_final_frame_mae": 3.4513604856004902,
+        "actual_final_source_frame_index": 11898,
+        "timeline_duration_ticks": 1938330,
+        "time_base": "1/90000",
+        "additional_final_hold_ticks": 90000
+      },
+      "ai_visual_inspection": {
+        "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/model_visual_det_01/review.json",
+        "bytes": 58633,
+        "sha256": "e9fb1b6ac4aefc46a370f0c95f67c7f562b20882f9f064d7c24061f47a4966c4"
+      },
+      "ai_review_cue_count": 7,
+      "ai_visual_findings": [
+        "Long stretches of dribbling, passing, and the final bouncing ball have selected points visually aligned with the visible ball in the inspected crops. This is qualitative evidence, not a measured accuracy claim.",
+        "Four discrete distractor episodes were visible and confirmed in larger context: 10951-10953, 11023-11029, 11102-11106, and 11829-11834. They remain unmodified in observations and video.",
+        "161 frames are explicitly missing across the producer intervals. The longest gap is 11063-11096, 34 frames or 0.567 seconds. A resumed observed state is not by itself proof of correct recovery.",
+        "Near-rim and player-overlap frames include blur and partial occlusion, with repeated gaps and uncertain intermediate localization. This review does not adjudicate every overlap as correct or incorrect.",
+        "The actual decoded final frame is 11898 and visibly shows the selected point on the basketball near the near-side referee. The renderer separately verified full-video frame mapping, pacing, and final hold.",
+        "The prior 120-frame accepted pilot result remains separate. This full-window review is AI-only, unlabeled, and pending Ryan visual acceptance; it is not a phase pass or an NBA generalization score."
+      ],
+      "model_output_human_review": "pending"
+    }
+  ],
+  "validation": {
+    "focused_distinct_tests_passed": 23,
+    "groups": {
+      "native_inputs": 7,
+      "observations": 12,
+      "native_review": 4
+    },
+    "full_suite_repeated": false,
+    "initial_receipt": {
+      "path": "data/outputs/t/nba_action_implementation_2026-10-19/validation_receipt.json",
+      "bytes": 3306,
+      "sha256": "1d2788bf3b4a8ca463ce5e06cd5e514596183a5ffe847da9653c6ee43c514bf3"
+    },
+    "final_addendum": {
+      "path": "data/outputs/t/nba_action_implementation_2026-10-19/validation_addendum.json",
+      "bytes": 1795,
+      "sha256": "0157ba7874886c1ee8394954e4b8534061aa55d744d23241e95ddf56783a1867"
+    },
+    "observation_test_logs": [
+      {
+        "path": "data/outputs/t/nba_action_implementation_2026-10-19/observation_tests_01.log",
+        "bytes": 904,
+        "sha256": "45bc0ded81dc28b72e17e82a21a41ceef6766b61c5bc8f67e8a4c267fe2dec3b"
+      },
+      {
+        "path": "data/outputs/t/nba_action_implementation_2026-10-19/observation_tests_02.log",
+        "bytes": 8083,
+        "sha256": "134513504e8a9a255f9657aecfebb55fa41d103161eedcb4282acb2bf1930e69"
+      },
+      {
+        "path": "data/outputs/t/nba_action_implementation_2026-10-19/observation_tests_03.log",
+        "bytes": 1371,
+        "sha256": "e09b102abc65f43f828166d85ec2c68e2487c69c1d27440157cc1a759381bdc1"
+      },
+      {
+        "path": "data/outputs/t/nba_action_implementation_2026-10-19/observation_tests_04.log",
+        "bytes": 323,
+        "sha256": "fd8eca904989ec18c2296db9b9f5dd8031ee0820bd5f4e94835a46137c343b9e"
+      },
+      {
+        "path": "data/outputs/t/nba_action_implementation_2026-10-19/observation_tests_05.log",
+        "bytes": 736,
+        "sha256": "a2654ee7745ec47d81c36a0614a283e399a0546892fd3cb426c69457822d4fa7"
+      },
+      {
+        "path": "data/outputs/t/nba_action_implementation_2026-10-19/observation_tests_06.log",
+        "bytes": 339,
+        "sha256": "ce73845b4fa1fd7933a77bbc88b027fc1715d120ac7f63f7a0a5f6f452ebe7ae"
+      }
+    ],
+    "source_inspection_preparation_failure": {
+      "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/source_continuity_det_01/preparation_launch_failure_001.json",
+      "bytes": 390,
+      "sha256": "f0fd40e5420cfad3feacacfa80e50111f40ead520f443a8757ebddd1e1cf6feb"
+    },
+    "independent_actual_output_audit": {
+      "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/diagnostics/independent_audit_01/audit.json",
+      "bytes": 3133,
+      "sha256": "aa92b9883532b42d9f399a807f523e37828dcf45e888600b1491c28d56d1c6eb"
+    },
+    "independent_audit_counts": {
+      "new_triplets_completed": 2582,
+      "reconstructed_mean_heatmaps": 2702,
+      "joined_observation_frames": 2702,
+      "reconstructed_components": 2711,
+      "observed": 2380,
+      "triplet_caches_reconstructed": 2698,
+      "prior_triplets_imported": 116,
+      "missing": 322,
+      "unchanged_pilot_frames_verified": 112,
+      "changed_pilot_context_frames_verified": 8,
+      "review_frames_joined": 2702,
+      "review_packages_verified": 2
+    },
+    "independent_audit_checks": 687915,
+    "independent_audit_elapsed_seconds": 27.17199999999866,
+    "independent_audit_limits": {
+      "model_calls": 0,
+      "media_decodes": 0,
+      "source_png_decodes": 0,
+      "annotation_scoring": false,
+      "independent_ball_accuracy_measured": false,
+      "new_media_pixel_verification": "Bound renderer receipt only; no duplicate full decode",
+      "human_review": "pending",
+      "maximum_live_heatmap_sums": 3
+    },
+    "preserved_failures": [
+      "Initial approval-window consumer comparison rejected projected windows before outputs/models; corrected.",
+      "First observation test used system Python without NumPy; corrected to project venv.",
+      "Initial synthetic publication fixture path was outside data/outputs; corrected fixture only.",
+      "DET source-inspection preparation helper import failed before image reads; failure receipt retained."
+    ]
+  },
+  "review_page": {
+    "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/review.html",
+    "bytes": 1779,
+    "sha256": "90fe02839f6d923e02d9ae84fa9fc003ea2bfce909c3bc439936f5bcee1767b1"
+  },
+  "companion_review_guide": {
+    "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/review_guide.html",
+    "bytes": 10886,
+    "sha256": "948572c3171d73d2171cccea3996282e543243c4f832e5cf386ff08dd2afb7c5"
+  },
+  "human_review": {
+    "new_longer_videos": "pending",
+    "original_short_pilots": "accepted_by_Ryan_before_this_run",
+    "accepted_pilot_record": {
+      "path": "configs/ball_tracking/reviews/nba_wasb_native_pilot_visual_review_v0_1.json",
+      "bytes": 4976,
+      "sha256": "c169ca062a5fe0fcd411cd9053b7759c52072c2be71de6f00e9517533c1385d7"
+    },
+    "review_scope": "Both actual new timelines through their held final frames; AI contact-sheet inspection does not substitute for Ryan acceptance."
+  },
+  "limits": [
+    "Observed/missing counts measure availability, not localization accuracy. No new reference labels exist for the longer cores.",
+    "AI inspection found distractor switches and gaps; apparent ball cues remain uncertain until human review.",
+    "SAC remains future-training candidate pool; DET target-case development excluded from fitting; TOR outside scope; no independent test claim.",
+    "No possession ownership, player identity, court calibration, matchup inference or defensive scoring is certified.",
+    "The NFHS finish line, protected holdouts, negative motion-selection result and its three pending human reviews remain unchanged.",
+    "No training or additional experimental scope is authorized by completing this observation pass."
+  ]
+}

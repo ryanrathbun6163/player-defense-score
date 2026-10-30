@@ -1,0 +1,143 @@
+{
+  "schema_version": "wasb_training_annotation_tag_correction/v0.1",
+  "recorded_at_utc": "2026-10-09T01:04:31.834675+00:00",
+  "user_instruction": "all frames annotated now, I just realized though every time I said camera motion in the difficulty tags, I meant motion blur",
+  "scope": "three newly completed approved training-expansion annotation sets",
+  "operation": "replace camera_motion with motion_blur, preserving any existing motion_blur and sorted unique tags",
+  "changes": [
+    {
+      "before_snapshot": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/training_expansion_labels_v0_1/tag_correction/possession_001_frames_0100_0124_training_expansion_v0_1.json",
+        "sha256": "a237ceecf12afeb4eb0dbd161cfebbe589f45287b02f09268d850c5a1e300649"
+      },
+      "after_annotation": {
+        "path": "configs/ball_tracking/annotations/possession_001_frames_0100_0124_training_expansion_v0_1.json",
+        "sha256": "a237ceecf12afeb4eb0dbd161cfebbe589f45287b02f09268d850c5a1e300649"
+      },
+      "changed_frames": []
+    },
+    {
+      "before_snapshot": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/training_expansion_labels_v0_1/tag_correction/possession_001_frames_0250_0274_training_expansion_v0_1.json",
+        "sha256": "4f6a35298ad874640c422927468aa430cf323281746186e004f8ab76cb16c890"
+      },
+      "after_annotation": {
+        "path": "configs/ball_tracking/annotations/possession_001_frames_0250_0274_training_expansion_v0_1.json",
+        "sha256": "41f43ee7941e2b5696cf70ef7f06b77054f7be86e656e114e9c2ee002c1b3d46"
+      },
+      "changed_frames": [
+        {
+          "frame_index": 258,
+          "before": [
+            "camera_motion",
+            "hand_overlap",
+            "player_overlap"
+          ],
+          "after": [
+            "hand_overlap",
+            "motion_blur",
+            "player_overlap"
+          ]
+        },
+        {
+          "frame_index": 259,
+          "before": [
+            "camera_motion",
+            "hand_overlap",
+            "player_overlap"
+          ],
+          "after": [
+            "hand_overlap",
+            "motion_blur",
+            "player_overlap"
+          ]
+        },
+        {
+          "frame_index": 260,
+          "before": [
+            "camera_motion",
+            "hand_overlap",
+            "player_overlap"
+          ],
+          "after": [
+            "hand_overlap",
+            "motion_blur",
+            "player_overlap"
+          ]
+        },
+        {
+          "frame_index": 261,
+          "before": [
+            "camera_motion",
+            "hand_overlap",
+            "player_overlap"
+          ],
+          "after": [
+            "hand_overlap",
+            "motion_blur",
+            "player_overlap"
+          ]
+        },
+        {
+          "frame_index": 274,
+          "before": [
+            "camera_motion"
+          ],
+          "after": [
+            "motion_blur"
+          ]
+        }
+      ]
+    },
+    {
+      "before_snapshot": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/training_expansion_labels_v0_1/tag_correction/possession_002_frames_0343_0367_training_expansion_v0_1.json",
+        "sha256": "0c816351e89d4d84d78adeea2ca6ae7573731fd819f3c65b8f8364c4643d1563"
+      },
+      "after_annotation": {
+        "path": "configs/ball_tracking/annotations/possession_002_frames_0343_0367_training_expansion_v0_1.json",
+        "sha256": "62c63c3b4e617bc0b9824afdd83c79dc96b89446574e4f88d5f2f8b83a051863"
+      },
+      "changed_frames": [
+        {
+          "frame_index": 347,
+          "before": [
+            "camera_motion",
+            "player_overlap"
+          ],
+          "after": [
+            "motion_blur",
+            "player_overlap"
+          ]
+        },
+        {
+          "frame_index": 360,
+          "before": [
+            "camera_motion",
+            "hand_overlap"
+          ],
+          "after": [
+            "hand_overlap",
+            "motion_blur"
+          ]
+        },
+        {
+          "frame_index": 361,
+          "before": [
+            "camera_motion",
+            "compression_artifact",
+            "hand_overlap"
+          ],
+          "after": [
+            "compression_artifact",
+            "hand_overlap",
+            "motion_blur"
+          ]
+        }
+      ]
+    }
+  ],
+  "changed_frame_count": 8,
+  "geometry_visibility_identity_eligibility_notes_and_review_unchanged": true,
+  "human_visual_review_status": "pending"
+}

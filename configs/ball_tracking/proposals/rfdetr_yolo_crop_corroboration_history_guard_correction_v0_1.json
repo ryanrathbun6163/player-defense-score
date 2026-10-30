@@ -1,0 +1,104 @@
+{
+  "schema_version": "ball_crop_corroboration_history_guard_correction_scope/v0.1",
+  "study_id": "rfdetr_yolo_crop_corroboration_v0_1",
+  "base_commit": "154657cd42c9db7573ab0e2d6cab3bea8fa48ff3",
+  "approved_by": "Ryan",
+  "user_statement": "Ok move forward with that chat, and the move forward with original correction proposal. We have been doing this detector comparison experiment for a long time at this point, and I am tired of you fucking up and not having an answer for me. Figure out that answer for me after you complete the first two",
+  "proposal": {
+    "path": "data/outputs/t/corroboration_retry_integration_3233d2c/next_correction_proposal.json",
+    "size_bytes": 3725,
+    "sha256": "8a3e7741e0083831305cd25350a8bd532a5271f30434f2c19d67e5ed480a9ba0"
+  },
+  "parent_certificate": {
+    "path": "data/outputs/t/corroboration_retry_integration_3233d2c/implementation_validation.json",
+    "size_bytes": 162862,
+    "sha256": "c2f86015149bc38ddeaf950c5e9de464bfc6cfe3e6ced0cd73a002f2ef6c3bea"
+  },
+  "runtime_refusal_audit": {
+    "path": "data/outputs/t/corroboration_retry_integration_3233d2c/runtime_refusal_audit.json",
+    "size_bytes": 5141,
+    "sha256": "e2dbb05f2919ca1a786b718fdb2518d307739f84edce74cdc3ea7bed730f94b8"
+  },
+  "original_runtime_manifest": {
+    "path": "configs/ball_tracking/crop_retention_experiments/rfdetr_yolo_crop_corroboration_retry_v0_1.json",
+    "size_bytes": 2202,
+    "sha256": "d6cb4d96107e932e5c32a9cac1654a568563162d9ef2f8b8ff5376a0363e0228"
+  },
+  "original_retry_approval": {
+    "path": "configs/ball_tracking/reviews/rfdetr_yolo_crop_corroboration_retry_execution_approval_v0_1.json",
+    "size_bytes": 2937,
+    "sha256": "10544d710d0d958384fc1548c6a2c0cf0ee6ef70fd319eba3ae46c361afbfc7b"
+  },
+  "scientific_scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_release_v0_1.json",
+    "size_bytes": 344753,
+    "sha256": "b81098c3aae5a89438d4c0cd621534abc806b5d9b099a5aa35211ce9be0d8ff2"
+  },
+  "integration_scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_retry_integration_v0_1.json",
+    "size_bytes": 42059,
+    "sha256": "f125ccc0ef2e4d732a0f807436c9d1ec9dab3d47b258f973af5a6e59c74daa80"
+  },
+  "frozen_history": {
+    "path": "data/outputs/t/corroboration_retry_integration_3233d2c/runtime_frozen_history.json",
+    "size_bytes": 2330229,
+    "sha256": "d528458ef3a8db916fabac2cb560aefb875b4367df0da6aee9f2758521a36f01"
+  },
+  "repository_rule": {
+    "path": "AGENTS.md",
+    "size_bytes": 5058,
+    "sha256": "f14781b77fc80d559a634def112d63874d5ca64699afa9b16cf83834e82db7b9"
+  },
+  "implementation_files": [
+    "src/ball_tracking/crop_cross_detector_corroboration_release.py",
+    "tests/test_ball_crop_cross_detector_corroboration_release.py"
+  ],
+  "contract": "The producer monitor records its wrapper exit-status message; the separate audit retains the underlying worker diagnosis. Validate exact monitor wrapper, exit_code1, expected log_path and null worker_result without changing any historical record.",
+  "regression_gate": {
+    "producer": "src/ball_tracking/crop_retention_monitor.py",
+    "consumer": "src/ball_tracking/crop_cross_detector_corroboration_release.py:verify_retry_history",
+    "isolated_actual_producer_required": true,
+    "red_on_original_source_required": true,
+    "same_contract_test_passes_corrected_source_required": true,
+    "full_suite_requires_red_green_and_independent_contract_review": true,
+    "all_runs_count_within_focused_allowance": true,
+    "real_scientific_inputs_or_journal_for_tests": false
+  },
+  "preserve": "All old authorities,17validationreceipts,failedattempts,consumedbudgets,scientificscope,sharedmonitor/resources,embargoes,holdouts and completed reviews remain unchanged.",
+  "artificial_validation": {
+    "current_phase_closed": true,
+    "prior_validation_receipts_to_retain": 17,
+    "previously_consumed_seconds": 11709.157999999989,
+    "previous_cap_seconds": 13000,
+    "requested_additional_seconds": 2800,
+    "proposed_cumulative_cap_seconds": 15800,
+    "maximum_new_phase_seconds": 2800,
+    "closed_remainder_cannot_extend_new_phase": true,
+    "maximum_focused_invocations": 3,
+    "maximum_focused_seconds_cumulative": 300,
+    "maximum_full_invocations": 1,
+    "maximum_full_seconds": 2500,
+    "exact_test_counts": "Freeze by static inventory after approved regression edits; preserve existing tests and the sole existing skip.",
+    "maximum_sampled_memory_bytes": 8589934592,
+    "maximum_measured_new_output_bytes": 4294967296,
+    "minimum_free_disk_bytes": 53687091200,
+    "lifecycle_behavior": "Preserve accepted1-second natural drain,1-second forced cleanup and existing observation limits; create new ignored helpers/records only.",
+    "real_data_tests_or_dry_run": false
+  },
+  "runtime": {
+    "manifest": "configs/ball_tracking/crop_retention_experiments/rfdetr_yolo_crop_corroboration_retry_v0_2.json",
+    "approval": "configs/ball_tracking/reviews/rfdetr_yolo_crop_corroboration_retry_execution_approval_v0_2.json",
+    "certificate": "data/outputs/t/corroboration_history_guard_154657c/implementation_validation.json",
+    "checkpoint": "data/outputs/t/corroboration_history_guard_154657c/post_commit_execution_checkpoint.json",
+    "predecessor_attempt_id": "ac3a321649414170adf823deaa1b7b9e",
+    "unit_key": "cross-detector-corroboration:study:",
+    "maximum_retry_seconds": 1198.875,
+    "new_scientific_budget": 0,
+    "maximum_new_scientific_attempts": 1,
+    "parent_scientific_body_access": false,
+    "new_media_presentation_authorized": false
+  },
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

@@ -1,0 +1,132 @@
+{
+  "schema_version": "wasb_validation_probe/v0.1",
+  "status": "frozen_before_model_execution",
+  "user_authority": {
+    "instruction": "ok diagnose it",
+    "context": "Diagnose persistent P003 miss after the completed five-epoch augmentation experiment; read-only model replay, no optimization or policy changes"
+  },
+  "parent_recipe": {
+    "path": "configs/ball_tracking/completion_campaign/primary_recipe_v0_1.json",
+    "sha256": "d8f53baf72412db535e989b4086e8fb23e02f79ef058829539d1bbe9a486e83c",
+    "bytes": 9431
+  },
+  "augmentation_recipe": {
+    "path": "configs/ball_tracking/proposals/wasb_augmentation_v0_1.json",
+    "sha256": "f89b547f14d9de7e4304d530d6116f024babdc15ce660f03d37157640b8a572a",
+    "bytes": 3356
+  },
+  "package": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/frozen_primary_package_v0_1/package.json",
+    "sha256": "5615933dfbb43728a4c67a6c94665157f349f2562ad50bd2c9be02dc86181c9f",
+    "bytes": 8885398
+  },
+  "output_root": "data/outputs/ball_tracking/wasb_p003_diagnosis_v0_1/attempt_001",
+  "models": [
+    {
+      "name": "baseline",
+      "checkpoint": {
+        "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+        "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+        "bytes": 6084071
+      },
+      "validation_report": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_000.json",
+        "sha256": "da3bbb811687f1a77aafbdff1c8ea32542038866a90c1eb86c0d2a13938540ba",
+        "bytes": 2200846
+      }
+    },
+    {
+      "name": "control_epoch3",
+      "checkpoint": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_003.pth",
+        "sha256": "23986e539729b9b75a179c1eb2c2df5daf98331234789c0362acdcdc9d12df14",
+        "bytes": 6084071
+      },
+      "validation_report": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/validation/epoch_003.json",
+        "sha256": "5e76616fa23c58bf2c3c0c0e929844cff3b616de9196dd31823a4c19c69890e9",
+        "bytes": 2059400
+      }
+    },
+    {
+      "name": "augmentation_epoch3",
+      "checkpoint": {
+        "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/checkpoints/epoch_003.pth",
+        "sha256": "e7090d8b52a02739b365de6a1876aeaa19c5a03ee3dc2c67289d8409b235cf56",
+        "bytes": 6084071
+      },
+      "validation_report": {
+        "path": "data/outputs/ball_tracking/wasb_augmentation_v0_1/fit_v0_1/validation/epoch_003.json",
+        "sha256": "7566e0df6048ab710137bec9c8a5cd7b3ddadf83f1691ee0c480de5c03fc3054",
+        "bytes": 2127040
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "block_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+      "cache_receipt": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_inputs_v0_1/8efb7f7693260e63bafd4561/receipt.json",
+        "sha256": "ce0cdf47cdd7dfe57210e200aec6b9da55f59bb7eef218a8561858e8bb847baa",
+        "bytes": 15775
+      },
+      "triplet_starts": [
+        302,
+        303,
+        304,
+        321,
+        322
+      ],
+      "target_frames": [
+        304,
+        323
+      ]
+    },
+    {
+      "block_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "cache_receipt": {
+        "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_inputs_v0_1/465dfdd07de7b59bf072d601/receipt.json",
+        "sha256": "ab1fe399621689f0e84fc41e9c4143f233070a27c132c6b47026387259af6fac",
+        "bytes": 15645
+      },
+      "triplet_starts": [
+        168,
+        169,
+        170,
+        171,
+        172
+      ],
+      "target_frames": [
+        170,
+        171,
+        172
+      ]
+    }
+  ],
+  "code_bindings": [
+    {
+      "path": "src/ball_tracking/wasb_validation_probe.py",
+      "sha256": "de2024af226bfd81e08e53b237f417f4baab017b878aa50497645cb4db0b4b0c",
+      "bytes": 24712
+    },
+    {
+      "path": "src/ball_tracking/completion_evaluation.py",
+      "sha256": "c4bdf09243238b756937005f878e80e875e8824adc38a50105997b12f8cd3736",
+      "bytes": 29663
+    },
+    {
+      "path": "src/ball_tracking/gpu_supervision.py",
+      "sha256": "dbc03099c088f6c5b96aa6d1691f5dd11d7abf7c600c97e563344a7541256cd0",
+      "bytes": 15015
+    }
+  ],
+  "runtime": {
+    "python": "3.11.15 (main, Aug  7 2026, 02:24:19) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "opencv": "5.0.0",
+    "torch": "2.13.0+cu130",
+    "torch_cuda": "13.0",
+    "cudnn": 92000
+  },
+  "protected_evaluation_authorized": false
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "ball_crop_candidate_retention_error_breakdown_recovery_integration_approval/v0.1",
+  "approved_by": "Ryan",
+  "approved_on": "2026-10-05",
+  "user_instruction": "move forward chat",
+  "implementation_authorized": true,
+  "focused_validation_authorized": true,
+  "full_regression_authorized": true,
+  "operational_amendment_approved": true,
+  "scientific_scope_unchanged": true,
+  "clean_commit_required": true,
+  "scientific_execution_authorized_by_this_record": false,
+  "git_mutations_authorized": false,
+  "training_authorized": false,
+  "automatic_retry_authorized": false,
+  "maximum_new_recovery_attempts": 1,
+  "design": {
+    "path": "docs/ball_crop_candidate_retention_error_breakdown_recovery_integration.md",
+    "sha256": "d9b34f7f7842c1f9edbdb821ebc48ba2d870bfb705815f6579ed8253818301b6"
+  },
+  "recovery_authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_error_breakdown_recovery_approval_v0_1.json",
+    "sha256": "4b82583e1bbd54ab489f9ea67432d9af61acb8397ee382284ae8298a5f0cd1af"
+  },
+  "monitor_authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_monitor_revision_approval_v0_1.json",
+    "sha256": "f4a400b743453036eeadc528f0f1492ef3b728d648023233e780e8d105d8a9a6"
+  },
+  "superseded_operational_requirements": [
+    "half-second scanner target and corresponding 30-call timing benchmark",
+    "global scanner substitution in the original supervisor",
+    "old free-disk floor; new policy requires at least 50 GiB"
+  ],
+  "preserved_requirements": [
+    "original scientific scope, three exact worker-only inputs and unchanged formatter",
+    "failed prefix, evidence, holdouts, embargoes and completed reviews",
+    "one recovery attempt sharing the original 300-second allowance",
+    "separately authorized staging and commit before conditional execution"
+  ]
+}

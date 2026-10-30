@@ -1,0 +1,1253 @@
+{
+  "schema_version": "ball_yolo_crop_recovery_visual_review_record/v0.2",
+  "record_id": "yolo11x_crop_recovery_visual_review_record_v0_2",
+  "record_role": "human_inspection_audit_only_not_new_experiment_execution_permit",
+  "recorded_at_utc": "2026-10-02T05:33:17.262813+00:00",
+  "timestamp_semantics": "Receipt creation time; the user response supplies no independent review-event timestamp.",
+  "bound_evidence": {
+    "assembly_execution_commit": "3326482e6f7e05527d146f3110c8ec39171cf08d",
+    "actual_inference_commit_counts": {
+      "116e3ed9cb4113521fa8c93adf4a100fea4dc0ec": 175,
+      "3326482e6f7e05527d146f3110c8ec39171cf08d": 425
+    },
+    "experiment_manifest": {
+      "path": "configs/ball_tracking/yolo_crop_experiments/yolo11x_crop_recovery_v0_2.json",
+      "sha256": "eceb3f8cfc363c5c3b06240309565dd58cfb05dc77e9c60e1c5f1962306b7aa5"
+    },
+    "recovery_approval": {
+      "path": "configs/ball_tracking/reviews/yolo11x_crop_recovery_approval_v0_2.json",
+      "sha256": "5d9ec4a2d2d7c310ed304f4ce41e5b5aed9c76dd2829fdeb469201478c773782"
+    },
+    "execution_checkpoint": {
+      "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/execution_checkpoint.json",
+      "sha256": "df74bfd6f46070fa9b36866c4663b72fc7c89ff0addc2bc45c9f1c2dcc2849ca"
+    },
+    "saved_evidence_audit": {
+      "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/saved_recovery_audit.json",
+      "sha256": "0aeb970b6b550a7a6ce18840d9e88ebbf3cf6ea0f01155c40bcd0ef1522ea3a4"
+    },
+    "review_manifest": {
+      "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/manifest.json",
+      "sha256": "4855b72ef7e673cbd5148cd893c7493218c2f786f5ec573a717eab2a798af4d7"
+    },
+    "review_guide": {
+      "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/review_guide.md",
+      "sha256": "7713c88fbc36144f607245c1854bbb5b15d08282a2923e4a80a4c4f473480a49"
+    },
+    "review_preparation": {
+      "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/review_preparation_record.json",
+      "sha256": "86fe9d748990c0edff1acc4b66aca2be974386006876f9aecbbf51af9a6048e9"
+    },
+    "saved_comparison_audit": {
+      "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/saved_comparison_audit.json",
+      "sha256": "5f2069c72411b2873b70ba5727df7d0315ff3e3c8d1d70bfcacb3ae3a6737679"
+    },
+    "scoring_reports": [
+      {
+        "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/evaluation/representative_evaluation.json",
+        "sha256": "7078fa6b3130a4cdf99361b4329ad8aececd0ec5a14545012268f52e024bc6c4"
+      },
+      {
+        "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/evaluation/challenge_evaluation.json",
+        "sha256": "cc27c2216f41cea9ca63807c4eeeed06d88726cb90bcde177c94f5686e590e7e"
+      }
+    ],
+    "clips": [
+      {
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+        "purpose": "representative_evaluation",
+        "confidence_threshold": 0.2,
+        "start_frame_index": 50,
+        "end_frame_index": 74,
+        "frame_count": 25,
+        "fps": 5.0,
+        "clip_and_final_frame_assets": [
+          {
+            "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "clip",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.2/comparison_slow.mp4",
+              "sha256": "cc72675eb87e878749bd50a425002b7d153ef43b5c123423c4184a2a8ddf4d72"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_rep_c020.mp4",
+              "sha256": "cc72675eb87e878749bd50a425002b7d153ef43b5c123423c4184a2a8ddf4d72"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_comparison",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.2/comparison/frame_000074.png",
+              "sha256": "9a6eb7296e64fc4ecce3f5fbcf1ac9cdc666333f684a82bd2e8416c21e65b4ab"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_rep_c020_final.png",
+              "sha256": "9a6eb7296e64fc4ecce3f5fbcf1ac9cdc666333f684a82bd2e8416c21e65b4ab"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_closeups",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.2/closeups/frame_000074.png",
+              "sha256": "10b8eb919e7a8c985d8512f712f882a9f2e073130941e19fc95bbe3711894815"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_rep_c020_closeups.png",
+              "sha256": "10b8eb919e7a8c985d8512f712f882a9f2e073130941e19fc95bbe3711894815"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_0",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.2/yolo_view_0/frame_000074.png",
+              "sha256": "243928c549e4a2ea6a9ec37507f2c2a9ff547bfda421b836367a7c71b5ab4f05"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_rep_c020_native_0.png",
+              "sha256": "243928c549e4a2ea6a9ec37507f2c2a9ff547bfda421b836367a7c71b5ab4f05"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_1",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.2/yolo_view_1/frame_000074.png",
+              "sha256": "c23881565d5b293feb15cdd0455f1c1c877d1032cfaaac3de7e8087f9cdac82a"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_rep_c020_native_1.png",
+              "sha256": "c23881565d5b293feb15cdd0455f1c1c877d1032cfaaac3de7e8087f9cdac82a"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_2",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.2/yolo_view_2/frame_000074.png",
+              "sha256": "875678686d6be24d1d1a2af2ee9306a5026ad27664721e3dd1d1fe823f92a466"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_rep_c020_native_2.png",
+              "sha256": "875678686d6be24d1d1a2af2ee9306a5026ad27664721e3dd1d1fe823f92a466"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          }
+        ]
+      },
+      {
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+        "purpose": "representative_evaluation",
+        "confidence_threshold": 0.35,
+        "start_frame_index": 50,
+        "end_frame_index": 74,
+        "frame_count": 25,
+        "fps": 5.0,
+        "clip_and_final_frame_assets": [
+          {
+            "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "clip",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.35/comparison_slow.mp4",
+              "sha256": "560dd1b8c7873df96aa94a1bc2fdddacc40129bc7529884e1abf6c9718091c1a"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_rep_c035.mp4",
+              "sha256": "560dd1b8c7873df96aa94a1bc2fdddacc40129bc7529884e1abf6c9718091c1a"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_comparison",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.35/comparison/frame_000074.png",
+              "sha256": "afcd8c19802437af65d27005ed262f94754e9310259d5fd56b777f3c5eee6503"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_rep_c035_final.png",
+              "sha256": "afcd8c19802437af65d27005ed262f94754e9310259d5fd56b777f3c5eee6503"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_closeups",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.35/closeups/frame_000074.png",
+              "sha256": "b837051272e1c4bc0ac1789e39f8a00580b906501532863950a83bd3e2e239c6"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_rep_c035_closeups.png",
+              "sha256": "b837051272e1c4bc0ac1789e39f8a00580b906501532863950a83bd3e2e239c6"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_0",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.35/yolo_view_0/frame_000074.png",
+              "sha256": "334d3108e2ecc286200f91c8a58fa44a71eb5c31225365bae6ee8ccf7f28f36a"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_rep_c035_native_0.png",
+              "sha256": "334d3108e2ecc286200f91c8a58fa44a71eb5c31225365bae6ee8ccf7f28f36a"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_1",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.35/yolo_view_1/frame_000074.png",
+              "sha256": "c83cf79c1ce7871fdc75915f1870b8aa29ebbbc328665af60eb87e060f08a053"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_rep_c035_native_1.png",
+              "sha256": "c83cf79c1ce7871fdc75915f1870b8aa29ebbbc328665af60eb87e060f08a053"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_2",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/confidence_0.35/yolo_view_2/frame_000074.png",
+              "sha256": "a5f5ec00961662dedc4e0de6ec2e90f701c90f77dc72c36a891afe35dbec2783"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_rep_c035_native_2.png",
+              "sha256": "a5f5ec00961662dedc4e0de6ec2e90f701c90f77dc72c36a891afe35dbec2783"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          }
+        ]
+      },
+      {
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+        "purpose": "challenge_evaluation",
+        "confidence_threshold": 0.2,
+        "start_frame_index": 200,
+        "end_frame_index": 224,
+        "frame_count": 25,
+        "fps": 5.0,
+        "clip_and_final_frame_assets": [
+          {
+            "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "clip",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.2/comparison_slow.mp4",
+              "sha256": "e3706ce9b3ae6e4944b5da4da41fc7a634fdb0d3405b829cf40459b7fe340498"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_cha_c020.mp4",
+              "sha256": "e3706ce9b3ae6e4944b5da4da41fc7a634fdb0d3405b829cf40459b7fe340498"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_comparison",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.2/comparison/frame_000224.png",
+              "sha256": "66be5f8328cd0d5c92f48c706883f044648e9e027ba30a019d240809752f44c0"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_cha_c020_final.png",
+              "sha256": "66be5f8328cd0d5c92f48c706883f044648e9e027ba30a019d240809752f44c0"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_closeups",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.2/closeups/frame_000224.png",
+              "sha256": "3186324c45808d647e21b7a073ff29fa8448567893078e74cb19a816a8dd9461"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_cha_c020_closeups.png",
+              "sha256": "3186324c45808d647e21b7a073ff29fa8448567893078e74cb19a816a8dd9461"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_0",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.2/yolo_view_0/frame_000224.png",
+              "sha256": "adea0b9187a581736c7cb3060bcee9c26e4996272d700e5a37ded395dec4e98b"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_cha_c020_native_0.png",
+              "sha256": "adea0b9187a581736c7cb3060bcee9c26e4996272d700e5a37ded395dec4e98b"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_1",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.2/yolo_view_1/frame_000224.png",
+              "sha256": "9ac62ebe611c052a6d5faa46b7f4c5a660a95d304316b9376ea514d37a64a0ab"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_cha_c020_native_1.png",
+              "sha256": "9ac62ebe611c052a6d5faa46b7f4c5a660a95d304316b9376ea514d37a64a0ab"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_2",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.2/yolo_view_2/frame_000224.png",
+              "sha256": "3351a266c03fc3b894c63220517e9cfb20bff49a84e6dd88ffed8a02b3ccec58"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_cha_c020_native_2.png",
+              "sha256": "3351a266c03fc3b894c63220517e9cfb20bff49a84e6dd88ffed8a02b3ccec58"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          }
+        ]
+      },
+      {
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+        "purpose": "challenge_evaluation",
+        "confidence_threshold": 0.35,
+        "start_frame_index": 200,
+        "end_frame_index": 224,
+        "frame_count": 25,
+        "fps": 5.0,
+        "clip_and_final_frame_assets": [
+          {
+            "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "clip",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.35/comparison_slow.mp4",
+              "sha256": "f51ceb86e82a0417fbed1a9ce1422acee83a846b5680cdd9141f23208376bb2b"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_cha_c035.mp4",
+              "sha256": "f51ceb86e82a0417fbed1a9ce1422acee83a846b5680cdd9141f23208376bb2b"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_comparison",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.35/comparison/frame_000224.png",
+              "sha256": "78b99221d0abf426bc64580da8cc0682703611356c6c7a32e1209974f1b0317b"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_cha_c035_final.png",
+              "sha256": "78b99221d0abf426bc64580da8cc0682703611356c6c7a32e1209974f1b0317b"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_closeups",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.35/closeups/frame_000224.png",
+              "sha256": "3186324c45808d647e21b7a073ff29fa8448567893078e74cb19a816a8dd9461"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_cha_c035_closeups.png",
+              "sha256": "3186324c45808d647e21b7a073ff29fa8448567893078e74cb19a816a8dd9461"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_0",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.35/yolo_view_0/frame_000224.png",
+              "sha256": "4061e7af8ff1699250949bbd86f2a243880babb6bc37b800fa50b0fe0979098d"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_cha_c035_native_0.png",
+              "sha256": "4061e7af8ff1699250949bbd86f2a243880babb6bc37b800fa50b0fe0979098d"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_1",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.35/yolo_view_1/frame_000224.png",
+              "sha256": "73888975c4557829fdc256206b0390aa1206422c686e1afb80261a4a5efecbb2"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_cha_c035_native_1.png",
+              "sha256": "73888975c4557829fdc256206b0390aa1206422c686e1afb80261a4a5efecbb2"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_2",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/confidence_0.35/yolo_view_2/frame_000224.png",
+              "sha256": "a4321ef25d3345b320d86de027452636b419c19f7396ee450c175d41f5c706c3"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p001_cha_c035_native_2.png",
+              "sha256": "a4321ef25d3345b320d86de027452636b419c19f7396ee450c175d41f5c706c3"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          }
+        ]
+      },
+      {
+        "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+        "purpose": "representative_evaluation",
+        "confidence_threshold": 0.2,
+        "start_frame_index": 250,
+        "end_frame_index": 274,
+        "frame_count": 25,
+        "fps": 5.0,
+        "clip_and_final_frame_assets": [
+          {
+            "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "clip",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.2/comparison_slow.mp4",
+              "sha256": "d7fd2bc9bff6ce296aa35e69787ad9c63191ee1d856f3cf64f90ca97462a17cf"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_rep_c020.mp4",
+              "sha256": "d7fd2bc9bff6ce296aa35e69787ad9c63191ee1d856f3cf64f90ca97462a17cf"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_comparison",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.2/comparison/frame_000274.png",
+              "sha256": "0d1e96be46d3d4b103888cf204d9791c44f700f3a005706ea3fca23d95c21d31"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_rep_c020_final.png",
+              "sha256": "0d1e96be46d3d4b103888cf204d9791c44f700f3a005706ea3fca23d95c21d31"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_closeups",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.2/closeups/frame_000274.png",
+              "sha256": "4af4f68115439f1834cb3a1909980ebf0f0a2177ea66f38bec88d6a84400b647"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_rep_c020_closeups.png",
+              "sha256": "4af4f68115439f1834cb3a1909980ebf0f0a2177ea66f38bec88d6a84400b647"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_0",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.2/yolo_view_0/frame_000274.png",
+              "sha256": "2f0871764a53f78db28f4a9c1c7a0827ee17c298a80d5a4c085070d1acee7257"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_rep_c020_native_0.png",
+              "sha256": "2f0871764a53f78db28f4a9c1c7a0827ee17c298a80d5a4c085070d1acee7257"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_1",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.2/yolo_view_1/frame_000274.png",
+              "sha256": "e03937dd05cee829a48e3140d039c78167ebd21f828449269ffdce907fd5a5a7"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_rep_c020_native_1.png",
+              "sha256": "e03937dd05cee829a48e3140d039c78167ebd21f828449269ffdce907fd5a5a7"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_2",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.2/yolo_view_2/frame_000274.png",
+              "sha256": "f9f27386b6e1a89670a0043868995f02ec68c8a7381650275a28256f1269bc29"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_rep_c020_native_2.png",
+              "sha256": "f9f27386b6e1a89670a0043868995f02ec68c8a7381650275a28256f1269bc29"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          }
+        ]
+      },
+      {
+        "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+        "purpose": "representative_evaluation",
+        "confidence_threshold": 0.35,
+        "start_frame_index": 250,
+        "end_frame_index": 274,
+        "frame_count": 25,
+        "fps": 5.0,
+        "clip_and_final_frame_assets": [
+          {
+            "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "clip",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.35/comparison_slow.mp4",
+              "sha256": "cb51240ac6a35f6957059d0c662cc4583461764876e0bc2ccfba9ca4322bcd6f"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_rep_c035.mp4",
+              "sha256": "cb51240ac6a35f6957059d0c662cc4583461764876e0bc2ccfba9ca4322bcd6f"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_comparison",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.35/comparison/frame_000274.png",
+              "sha256": "b1ebe90663986e1f64e7756a70008e52195fd6975de7f8674cee270bef3b4902"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_rep_c035_final.png",
+              "sha256": "b1ebe90663986e1f64e7756a70008e52195fd6975de7f8674cee270bef3b4902"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_closeups",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.35/closeups/frame_000274.png",
+              "sha256": "4af4f68115439f1834cb3a1909980ebf0f0a2177ea66f38bec88d6a84400b647"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_rep_c035_closeups.png",
+              "sha256": "4af4f68115439f1834cb3a1909980ebf0f0a2177ea66f38bec88d6a84400b647"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_0",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.35/yolo_view_0/frame_000274.png",
+              "sha256": "59aa59eab63bae3c3f18a402ebff352d60f4f1719e14a5fb35eceb5a36df8e87"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_rep_c035_native_0.png",
+              "sha256": "59aa59eab63bae3c3f18a402ebff352d60f4f1719e14a5fb35eceb5a36df8e87"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_1",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.35/yolo_view_1/frame_000274.png",
+              "sha256": "a19f62a9987484d2380ad63e1ae49e36686f20ea84b9c1a30e0ec0bd4068d5d1"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_rep_c035_native_1.png",
+              "sha256": "a19f62a9987484d2380ad63e1ae49e36686f20ea84b9c1a30e0ec0bd4068d5d1"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_2",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/confidence_0.35/yolo_view_2/frame_000274.png",
+              "sha256": "7c1fc1e275df7c5170d844fb2e8546439b78d8432337f245eaf1268ff97d1499"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_rep_c035_native_2.png",
+              "sha256": "7c1fc1e275df7c5170d844fb2e8546439b78d8432337f245eaf1268ff97d1499"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          }
+        ]
+      },
+      {
+        "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+        "purpose": "challenge_evaluation",
+        "confidence_threshold": 0.2,
+        "start_frame_index": 25,
+        "end_frame_index": 49,
+        "frame_count": 25,
+        "fps": 5.0,
+        "clip_and_final_frame_assets": [
+          {
+            "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "clip",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.2/comparison_slow.mp4",
+              "sha256": "7727912c23d165b09f087e386856dc371ccaed71a0f3f54f13b585fbebac9241"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_cha_c020.mp4",
+              "sha256": "7727912c23d165b09f087e386856dc371ccaed71a0f3f54f13b585fbebac9241"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_comparison",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.2/comparison/frame_000049.png",
+              "sha256": "1e5bb46dc500367bc814a06f10369093630bfbcf57b0664f7a4b165c61e0384c"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_cha_c020_final.png",
+              "sha256": "1e5bb46dc500367bc814a06f10369093630bfbcf57b0664f7a4b165c61e0384c"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_closeups",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.2/closeups/frame_000049.png",
+              "sha256": "014fc037ea51e76a4e9fe7c0dc292946bda2c4c5983e37f5a15458b2fd1a9a34"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_cha_c020_closeups.png",
+              "sha256": "014fc037ea51e76a4e9fe7c0dc292946bda2c4c5983e37f5a15458b2fd1a9a34"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_0",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.2/yolo_view_0/frame_000049.png",
+              "sha256": "0e353e063ae6a013cc8e2fb386ac919698991116ac889788139dced2a14f69db"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_cha_c020_native_0.png",
+              "sha256": "0e353e063ae6a013cc8e2fb386ac919698991116ac889788139dced2a14f69db"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_1",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.2/yolo_view_1/frame_000049.png",
+              "sha256": "65e1473fad734097e102269c948d9693aa02934ecab8918ed648440209ab6468"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_cha_c020_native_1.png",
+              "sha256": "65e1473fad734097e102269c948d9693aa02934ecab8918ed648440209ab6468"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_2",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.2/yolo_view_2/frame_000049.png",
+              "sha256": "f954abe5171eed2b8dbfae4e3ba8ba248c7d6030fc65eec42e203ae872dad12a"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_cha_c020_native_2.png",
+              "sha256": "f954abe5171eed2b8dbfae4e3ba8ba248c7d6030fc65eec42e203ae872dad12a"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          }
+        ]
+      },
+      {
+        "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+        "purpose": "challenge_evaluation",
+        "confidence_threshold": 0.35,
+        "start_frame_index": 25,
+        "end_frame_index": 49,
+        "frame_count": 25,
+        "fps": 5.0,
+        "clip_and_final_frame_assets": [
+          {
+            "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "clip",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.35/comparison_slow.mp4",
+              "sha256": "2ad78240cec07871e533463fd7d59f0b0d3b6146855277645ce6eb19bc8c8d02"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_cha_c035.mp4",
+              "sha256": "2ad78240cec07871e533463fd7d59f0b0d3b6146855277645ce6eb19bc8c8d02"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_comparison",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.35/comparison/frame_000049.png",
+              "sha256": "052e8856ac10e23e9b4b25c3996e1557095019844f11d7adfb1fc8e22b0f6b63"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_cha_c035_final.png",
+              "sha256": "052e8856ac10e23e9b4b25c3996e1557095019844f11d7adfb1fc8e22b0f6b63"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_closeups",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.35/closeups/frame_000049.png",
+              "sha256": "014fc037ea51e76a4e9fe7c0dc292946bda2c4c5983e37f5a15458b2fd1a9a34"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_cha_c035_closeups.png",
+              "sha256": "014fc037ea51e76a4e9fe7c0dc292946bda2c4c5983e37f5a15458b2fd1a9a34"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_0",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.35/yolo_view_0/frame_000049.png",
+              "sha256": "05389d754738263aae113d88837813bff9509a158e2274845f3506a3a2843e9b"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_cha_c035_native_0.png",
+              "sha256": "05389d754738263aae113d88837813bff9509a158e2274845f3506a3a2843e9b"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_1",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.35/yolo_view_1/frame_000049.png",
+              "sha256": "781eaecdef564daf28695a266fa28fe2eb09bacc4bb23622d58356f0431557c5"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_cha_c035_native_1.png",
+              "sha256": "781eaecdef564daf28695a266fa28fe2eb09bacc4bb23622d58356f0431557c5"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_2",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/confidence_0.35/yolo_view_2/frame_000049.png",
+              "sha256": "fafa45c86daa51ac27399901bd7d53872a86b9a44d5056ef13a1261efc642bf9"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p002_cha_c035_native_2.png",
+              "sha256": "fafa45c86daa51ac27399901bd7d53872a86b9a44d5056ef13a1261efc642bf9"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          }
+        ]
+      },
+      {
+        "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+        "purpose": "representative_evaluation",
+        "confidence_threshold": 0.2,
+        "start_frame_index": 300,
+        "end_frame_index": 324,
+        "frame_count": 25,
+        "fps": 5.0,
+        "clip_and_final_frame_assets": [
+          {
+            "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "clip",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/comparison_slow.mp4",
+              "sha256": "6f527ede5356a275d322c46a4d0e95ee05c3ff66dcf94f261fcb75ccb12ab4a4"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_rep_c020.mp4",
+              "sha256": "6f527ede5356a275d322c46a4d0e95ee05c3ff66dcf94f261fcb75ccb12ab4a4"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_comparison",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/comparison/frame_000324.png",
+              "sha256": "079825ed033f5f82bdf3d6340cceeefba29063129fe57230193dc6b21e945de9"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_rep_c020_final.png",
+              "sha256": "079825ed033f5f82bdf3d6340cceeefba29063129fe57230193dc6b21e945de9"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_closeups",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/closeups/frame_000324.png",
+              "sha256": "70ce088628b792fa414c5315fd75d75ecf0c200385e39bca02c414ee6eb8dbcb"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_rep_c020_closeups.png",
+              "sha256": "70ce088628b792fa414c5315fd75d75ecf0c200385e39bca02c414ee6eb8dbcb"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_0",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/yolo_view_0/frame_000324.png",
+              "sha256": "6b3c2ec4d195b21aa68cab4d22af6d7be9e8f4d1c759b62cf043066057ab49e4"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_rep_c020_native_0.png",
+              "sha256": "6b3c2ec4d195b21aa68cab4d22af6d7be9e8f4d1c759b62cf043066057ab49e4"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_1",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/yolo_view_1/frame_000324.png",
+              "sha256": "54ae7f7badd67ea1c34cf82e14233650f9ed4ed7c9d8aadfdf96f975d4893791"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_rep_c020_native_1.png",
+              "sha256": "54ae7f7badd67ea1c34cf82e14233650f9ed4ed7c9d8aadfdf96f975d4893791"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_2",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.2/yolo_view_2/frame_000324.png",
+              "sha256": "4f025ffc4a4a3f87ae1965419a184cf75e6ff1fe564cb60e1c037802bde0272a"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_rep_c020_native_2.png",
+              "sha256": "4f025ffc4a4a3f87ae1965419a184cf75e6ff1fe564cb60e1c037802bde0272a"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          }
+        ]
+      },
+      {
+        "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+        "purpose": "representative_evaluation",
+        "confidence_threshold": 0.35,
+        "start_frame_index": 300,
+        "end_frame_index": 324,
+        "frame_count": 25,
+        "fps": 5.0,
+        "clip_and_final_frame_assets": [
+          {
+            "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "clip",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.35/comparison_slow.mp4",
+              "sha256": "660daeebec6197c4c5c6802ab9c0757178a9b118f89c78bd4d90901614ce59e1"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_rep_c035.mp4",
+              "sha256": "660daeebec6197c4c5c6802ab9c0757178a9b118f89c78bd4d90901614ce59e1"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_comparison",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.35/comparison/frame_000324.png",
+              "sha256": "9b5feac64b06f9ef179ab7caa969b1c1ee443535ede2d8acb0a16dc919a99d46"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_rep_c035_final.png",
+              "sha256": "9b5feac64b06f9ef179ab7caa969b1c1ee443535ede2d8acb0a16dc919a99d46"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_closeups",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.35/closeups/frame_000324.png",
+              "sha256": "70ce088628b792fa414c5315fd75d75ecf0c200385e39bca02c414ee6eb8dbcb"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_rep_c035_closeups.png",
+              "sha256": "70ce088628b792fa414c5315fd75d75ecf0c200385e39bca02c414ee6eb8dbcb"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_0",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.35/yolo_view_0/frame_000324.png",
+              "sha256": "a1d938cdecd48081721054b26beb1daca1201dd3517629bbeba1d189dca02b22"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_rep_c035_native_0.png",
+              "sha256": "a1d938cdecd48081721054b26beb1daca1201dd3517629bbeba1d189dca02b22"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_1",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.35/yolo_view_1/frame_000324.png",
+              "sha256": "c24a96723a4fe9de9c87535b44d6b729b5e357c05bf867088704c8fcfb19edc1"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_rep_c035_native_1.png",
+              "sha256": "c24a96723a4fe9de9c87535b44d6b729b5e357c05bf867088704c8fcfb19edc1"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_2",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/confidence_0.35/yolo_view_2/frame_000324.png",
+              "sha256": "2962fa62240fff1051c91bed3c30541cd6724d6ad03dfc9c9b1fa86c622a0d9e"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_rep_c035_native_2.png",
+              "sha256": "2962fa62240fff1051c91bed3c30541cd6724d6ad03dfc9c9b1fa86c622a0d9e"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          }
+        ]
+      },
+      {
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+        "purpose": "challenge_evaluation",
+        "confidence_threshold": 0.2,
+        "start_frame_index": 150,
+        "end_frame_index": 174,
+        "frame_count": 25,
+        "fps": 5.0,
+        "clip_and_final_frame_assets": [
+          {
+            "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "clip",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.2/comparison_slow.mp4",
+              "sha256": "66749c45fcabd4ed1068679443f9085f89e8275b5fa13d6fc99d57fa286d75be"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_cha_c020.mp4",
+              "sha256": "66749c45fcabd4ed1068679443f9085f89e8275b5fa13d6fc99d57fa286d75be"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_comparison",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.2/comparison/frame_000174.png",
+              "sha256": "27840d13e58330ce738c551e6e19a94c61d9579c1c788cb122a96cf8f87f5bf5"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_cha_c020_final.png",
+              "sha256": "27840d13e58330ce738c551e6e19a94c61d9579c1c788cb122a96cf8f87f5bf5"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_closeups",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.2/closeups/frame_000174.png",
+              "sha256": "6c8c3b4242da02e123ae0b26697b153c9fca225c01e0a22693930334b4948e95"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_cha_c020_closeups.png",
+              "sha256": "6c8c3b4242da02e123ae0b26697b153c9fca225c01e0a22693930334b4948e95"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_0",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.2/yolo_view_0/frame_000174.png",
+              "sha256": "dda9ade7429a663528f10fdc850e252889e14a3a8de9780b024f9735c5806ec8"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_cha_c020_native_0.png",
+              "sha256": "dda9ade7429a663528f10fdc850e252889e14a3a8de9780b024f9735c5806ec8"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_1",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.2/yolo_view_1/frame_000174.png",
+              "sha256": "89f9e76168a393e66fa1ef17f33986c251aba5e514e45da24fec08b33e4c8073"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_cha_c020_native_1.png",
+              "sha256": "89f9e76168a393e66fa1ef17f33986c251aba5e514e45da24fec08b33e4c8073"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.2,
+            "kind": "final_yolo_view_2",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.2/yolo_view_2/frame_000174.png",
+              "sha256": "b720758157428bbb870198633d807e42d9f47d81801e36cf275e3b5f949e41a1"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_cha_c020_native_2.png",
+              "sha256": "b720758157428bbb870198633d807e42d9f47d81801e36cf275e3b5f949e41a1"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          }
+        ]
+      },
+      {
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+        "purpose": "challenge_evaluation",
+        "confidence_threshold": 0.35,
+        "start_frame_index": 150,
+        "end_frame_index": 174,
+        "frame_count": 25,
+        "fps": 5.0,
+        "clip_and_final_frame_assets": [
+          {
+            "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "clip",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.35/comparison_slow.mp4",
+              "sha256": "846d6a8acb244bed02b68e133e455aa0827c4e3f2c8192177ed5d50919f9bb75"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_cha_c035.mp4",
+              "sha256": "846d6a8acb244bed02b68e133e455aa0827c4e3f2c8192177ed5d50919f9bb75"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_comparison",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.35/comparison/frame_000174.png",
+              "sha256": "c99f5fb271c5a017b1893212c39a836132ee5f93281542965f71a3b79c90cf71"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_cha_c035_final.png",
+              "sha256": "c99f5fb271c5a017b1893212c39a836132ee5f93281542965f71a3b79c90cf71"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_closeups",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.35/closeups/frame_000174.png",
+              "sha256": "6c8c3b4242da02e123ae0b26697b153c9fca225c01e0a22693930334b4948e95"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_cha_c035_closeups.png",
+              "sha256": "6c8c3b4242da02e123ae0b26697b153c9fca225c01e0a22693930334b4948e95"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_0",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.35/yolo_view_0/frame_000174.png",
+              "sha256": "8244d33c00ada987a3fa4a3f0a275e67f0e8e479c914781e066fd45f71db0260"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_cha_c035_native_0.png",
+              "sha256": "8244d33c00ada987a3fa4a3f0a275e67f0e8e479c914781e066fd45f71db0260"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_1",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.35/yolo_view_1/frame_000174.png",
+              "sha256": "bd268e064a9c13071b5304b0c776cbf47454cfd7775eccdd79502ac833cfb80f"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_cha_c035_native_1.png",
+              "sha256": "bd268e064a9c13071b5304b0c776cbf47454cfd7775eccdd79502ac833cfb80f"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          },
+          {
+            "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+            "confidence_threshold": 0.35,
+            "kind": "final_yolo_view_2",
+            "source": {
+              "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/review/91df27b3a33260a111b9bdf164fdc12e/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/confidence_0.35/yolo_view_2/frame_000174.png",
+              "sha256": "5991c90826319a84a34d2a38ad50156fa374a581d442a451a2570d8b47dd63e4"
+            },
+            "copy": {
+              "path": "data/outputs/ball_tracking/yolo11x_recovery_execution/3326482e6f7e/review_support_v1/playback/p003_cha_c035_native_2.png",
+              "sha256": "5991c90826319a84a34d2a38ad50156fa374a581d442a451a2570d8b47dd63e4"
+            },
+            "copy_policy": "byte-identical short-path copy; no reencoding or image editing"
+          }
+        ]
+      }
+    ]
+  },
+  "human_visual_review": {
+    "reviewer": "Ryan",
+    "status": "completed_and_approved",
+    "exact_user_statement": "I approve these clips. They have been reviewed and you are good to move forward",
+    "requested_scope": "All twelve new YOLO comparison clips through their final frames, using the linked review guide.",
+    "requested_scope_completed": true,
+    "scope_interpretation": "Direct approval in response to the twelve-clip final-frame review request. This records completion of that package review; it does not invent individual-frame verdicts or claim every emitted detection is correct.",
+    "frame_specific_verdicts_provided": false,
+    "native_image_inspection_separately_attested": false,
+    "quality_gate_approved": false
+  },
+  "preserved_snapshots": "The earlier execution, audit, guide, manifest and preparation retain their historical pending states. This separate later record establishes Ryan's completed review.",
+  "verification": {
+    "frozen_evidence_files_rehashed": 4750,
+    "frozen_evidence_inventory_sha256": "5b97d4e7cc984c4c2aef6536bebd8e45ec13989f8664eae78c0fc54da9bae41e",
+    "before_closeout": {
+      "path": "data/outputs/ball_tracking/yolo11x_crop_closeout/3326482e6f7e/before_closeout.json",
+      "sha256": "8d30331bf0804740536f9a54c8bd51fdff538b0ccfe0409cd01cf27565f20659"
+    },
+    "protected_non_context_files_rehashed": 248,
+    "original_partial_run_files_preserved": 561,
+    "review_assets_rehashed": 1512,
+    "reused_native_and_source_references": 1200,
+    "byte_identical_short_path_copies": 72,
+    "original_nine_embargo_paths_absent": true,
+    "sealed_holdouts": [
+      [
+        "possession_001",
+        300,
+        324
+      ],
+      [
+        "possession_002",
+        200,
+        224
+      ],
+      [
+        "possession_003",
+        250,
+        274
+      ]
+    ],
+    "holdout_media_or_predictions_inspected": false,
+    "experiment_or_media_decode_rerun": false,
+    "agent_layout_scope": "Historical spot check of two stills only; separate machine audit decoded twelve clips and sixty final PNGs."
+  },
+  "decision_constraints": {
+    "selected_method": null,
+    "selected_operating_point": null,
+    "quality_gate": null,
+    "generalization_claimed": false,
+    "holdout_release_authorized": false,
+    "new_experiment_authorized_by_this_receipt": false,
+    "git_mutations_authorized_by_this_receipt": false
+  }
+}

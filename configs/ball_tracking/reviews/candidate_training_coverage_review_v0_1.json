@@ -1,0 +1,126 @@
+{
+  "schema": "candidate_training_coverage_review/v0.1",
+  "at_utc": "2026-10-30T03:30:17.838171+00:00",
+  "status": "completed_independently_reviewed_metadata_only_no_new_fit",
+  "report": {
+    "path": "docs/ball_tracking_candidate_training_coverage_review.md",
+    "bytes": 13636,
+    "sha256": "918ae40346478f47c2ffeb4df697ac9ab790073c4719b671340ad33b0bb53a1f"
+  },
+  "next_protocol": {
+    "path": "docs/ball_tracking_candidate_proposal_coverage_protocol.md",
+    "bytes": 10543,
+    "sha256": "fefae33ab1b86ca85ab40c8482a06b3c89b13bb40d9dd591fd82f34479152b5f"
+  },
+  "evidence": [
+    {
+      "path": "data/outputs/ball_tracking/candidate_training_coverage_review_v0_1/support/support_review.json",
+      "bytes": 4787595,
+      "sha256": "7593894d6f2340bb4741f8971469d597d53100905b0888a824288789dbeffe59"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_training_coverage_review_v0_1/support/external_stress_supplement.json",
+      "bytes": 9220,
+      "sha256": "fd69234988d29b0046f643e731ea2a5aec1b9e36def3c17447fc30ad5aa31d12"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_training_coverage_review_v0_1/support/bindings.json",
+      "bytes": 3941,
+      "sha256": "1a184db038403e0128f2317373a8d179b62cfd29db3e9d0b75eb65a528c8ad45"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_training_coverage_review_v0_1/support/validation.json",
+      "bytes": 188,
+      "sha256": "248be0d71a2e3f62ac4a386fd773b70fac48bf74956e42b500d7c08b27a9e11d"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_training_coverage_review_v0_1/asset_inventory/inventory.json",
+      "bytes": 46152,
+      "sha256": "577af044c0f991673e741a57620a49f47af4fcd4b79024b4c6508fc79dbcc920"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_training_coverage_review_v0_1/asset_inventory/receipt.json",
+      "bytes": 2416,
+      "sha256": "e1c36d93bf1438a712f9673dd3a2b0545e434c682869d8b2856e1672e4c0f61e"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_training_coverage_review_v0_1/support/proposal_capture_feasibility.json",
+      "bytes": 84658,
+      "sha256": "0ef2e2dedd225c14d4aa2d97c3e53e5ec02f397e110b49002ecb6bc137253d91"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_training_coverage_review_v0_1/support/proposal_capture_feasibility_bindings.json",
+      "bytes": 1892,
+      "sha256": "8f9a288007dc89bddfff9d9c86d3502d0a2e07edde8e48b8b9739ed61023fc8b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_training_coverage_review_v0_1/review/support_audit.json",
+      "bytes": 903,
+      "sha256": "ad3419d7ef89d715a26f15ff1dfdba432acdf0c406ab97b71c1966d7c122d851"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_training_coverage_review_v0_1/review/asset_audit.json",
+      "bytes": 1445,
+      "sha256": "c35c2d0c23155d30fe52e3eeb8fdf37f395e2e96eef0ccbaa0a6ca96f2a0e715"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_training_coverage_review_v0_1/review/design_red_team.md",
+      "bytes": 16458,
+      "sha256": "d5df644ba5a279d0b48458f43f1570e691922addb3cddbaf016847fa521cc0db"
+    }
+  ],
+  "baseline": {
+    "path": "data/outputs/ball_tracking/candidate_training_coverage_review_v0_1/baseline135_and_direction.json",
+    "bytes": 26742,
+    "sha256": "275095eb16b57d48e587d8c96e5eb7c27adb4a46ec7ef4ab3c8a09efd42ad28d"
+  },
+  "findings": {
+    "accepted_NBA_frames": 3179,
+    "unused_accepted_NBA_training_frames": 0,
+    "known_native_distant_candidates": 70,
+    "known_native_distant_candidates_all_unchosen": true,
+    "chosen_native_wrong_known_for_fitting": 0,
+    "chosen_native_wrong_boundary_unknown": 3,
+    "native_hidden_candidates": 2,
+    "native_hidden_games": 1,
+    "native_hidden_contiguous_intervals": 1,
+    "NBA_weak_positive_candidates": 610,
+    "weak_positive_on_native_missing": 1,
+    "weak_positive_on_native_wrong": 0,
+    "weak_hidden_candidates": 313,
+    "old_locally_NBA_untrained_selected_known_negative": 0,
+    "old_locally_NBA_untrained_selected_hidden": 0,
+    "old_locally_NBA_untrained_unchosen_distant_coordinates": 23,
+    "old_unchosen_negative_coordinates_outside_compared_current_and_historical_crop_registries": 17
+  },
+  "interpretation": "Conditional proposal/choice/target support gap is verified; missing visual evidence and a causal repair are unproven.",
+  "next_work": {
+    "status": "proposed_unimplemented_unrun",
+    "question": "Fixed alternate-producer coverage feasibility before any scorer fit",
+    "checkpoint_sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+    "input_width": 768,
+    "input_height": 432,
+    "NBA_blocks": 21,
+    "frames": 3179,
+    "new_neural_forwards": 3137,
+    "assumed_imports": 0,
+    "extra_neural_parity_calls": 0,
+    "optimizer_steps": 0,
+    "runtime_claim": null,
+    "passing_coverage_is_training_authorization": false,
+    "current_cosine_recovery_diversity_cannot_be_created_on_fixed_frames": true
+  },
+  "standing_instruction": "Every recommendation reconciles relevant history/research, specifies genuine novelty and alternatives, states uncertainty/counterevidence and proportionate stop/continue criteria; reuse completed work.",
+  "actual_execution": {
+    "model_loads": 0,
+    "neural_calls": 0,
+    "optimizer_steps": 0,
+    "GPU_queries": 0,
+    "image_decodes": 0,
+    "new_labels": 0,
+    "protected_access": false,
+    "old_experiments_rerun": false,
+    "model_threshold_or_selector_adopted": false
+  },
+  "final_preservation_receipt_path": "data/outputs/ball_tracking/candidate_training_coverage_review_v0_1/documentation_update/receipt.json"
+}

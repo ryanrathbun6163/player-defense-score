@@ -1,0 +1,105 @@
+{
+  "schema_version": "ball_annotation_finalization/v0.1",
+  "finalization_id": "possession_002_frames_0318_0342_single_annotator_finalization_v0_1",
+  "annotation_set_id": "possession_002_frames_0318_0342_protocol_adjudication_v0_1",
+  "possession_id": "possession_002",
+  "window": {
+    "start_frame_index": 318,
+    "end_frame_index": 342,
+    "frame_count": 25
+  },
+  "review_policy": {
+    "method": "single_annotator_visual_self_review",
+    "annotator_and_final_reviewer_may_be_the_same_human": true,
+    "independent_reannotation_required": false,
+    "inter_annotator_agreement_measured": false,
+    "intra_annotator_repeatability_measured": false,
+    "reviewer_identity_is_factual": true,
+    "rationale": "For this point-labeling pilot, small reasonable center-placement differences do not justify duplicating the full annotation task. Visual review, explicit uncertainty, source verification, and later scoring tolerances address the relevant quality risks."
+  },
+  "authorization": {
+    "authorized_by": "ryan",
+    "authorized_at_utc": "2026-08-24T00:30:19Z",
+    "statement": "I approve the P002 visual-review package",
+    "scope": "single_annotator_visual_review_finalization",
+    "recording_method": "explicit_user_statement_in_current_codex_task"
+  },
+  "approved_visual_review": {
+    "approval_receipt_path": "configs/ball_tracking/reviews/possession_002_visual_review_approval_v0_1.json",
+    "approval_receipt_file_sha256": "2f4869bb9ceb3774c4c69038cf0a27174d918f5e262bb070f62633d21cb20656",
+    "approval_receipt_canonical_sha256": "61391aa4622fd24a3b71d8d70cb4022465efaa66cfa50b5a2aba3d0139d0971d",
+    "visual_bundle_path": "data/outputs/ball_tracking/annotation_visual_review/possession_002/frames_0318_0342/3e4a5d014d19be3de224fe11ef0614b717b380ae88746ced05f65b4223c86e4d",
+    "visual_bundle_manifest_sha256": "02117cd209533567b06dbd3d81e399afe2ff9120672b3b0546f10abf58554787",
+    "approved_by": "ryan",
+    "approved_at_utc": "2026-08-24T00:30:19Z"
+  },
+  "transition": {
+    "mode": "review_metadata_only",
+    "allowed_changed_json_pointers": [
+      "/review/status",
+      "/review/reviewer_id",
+      "/review/reviewed_at_utc"
+    ],
+    "actual_changed_json_pointers": [
+      "/review/status",
+      "/review/reviewer_id",
+      "/review/reviewed_at_utc"
+    ],
+    "before_review": {
+      "status": "draft",
+      "annotator_id": "ryan_codex_joint",
+      "reviewer_id": null,
+      "created_at_utc": "2026-08-23T19:11:13Z",
+      "reviewed_at_utc": null
+    },
+    "after_review": {
+      "status": "reviewed",
+      "annotator_id": "ryan_codex_joint",
+      "reviewer_id": "ryan",
+      "created_at_utc": "2026-08-23T19:11:13Z",
+      "reviewed_at_utc": "2026-08-24T00:30:19Z"
+    },
+    "approved_draft_annotation_file_sha256": "9f4185d7deb7351379bcd2a6511801d02eff05f6112bf3c5de34657d774cd871",
+    "approved_draft_canonical_sha256": "45ff8718acc2598a71ff8ef6ae5cb37341beac456556c68810126eda52126992",
+    "approved_decision_payload_sha256": "15026070476715ab90b03a1af7682e50ddd552536535dfd4b12f4074d40b48e2",
+    "final_decision_payload_sha256": "15026070476715ab90b03a1af7682e50ddd552536535dfd4b12f4074d40b48e2",
+    "annotation_rows_sha256": "70ed6c0a9c4e7a6e13373b1eef29449c41852843c09867ac789a856489c3e0ec"
+  },
+  "final_annotation": {
+    "path": "configs/ball_tracking/annotations/possession_002_frames_0318_0342_protocol_adjudication_v0_1.json",
+    "annotation_file_sha256": "db1e07dce5e028e740ee408189d1625a241c1588e0b3221642f19d3e2d598df4",
+    "canonical_annotation_sha256": "7107c45c9df05d4d38f76047452f92e470d40fae09c7a092320100429059b1f8",
+    "review_status": "reviewed",
+    "reviewer_id": "ryan",
+    "reviewed_at_utc": "2026-08-24T00:30:19Z"
+  },
+  "validation": {
+    "validated_at_utc": "2026-08-24T00:31:19Z",
+    "strict_schema_passed": true,
+    "source_verification_passed": true,
+    "frame_count": 25,
+    "labeled_count": 25,
+    "unlabeled_count": 0,
+    "excluded_count": 0,
+    "localization_eligible_count": 16,
+    "fully_visible_count": 0,
+    "partially_visible_count": 17,
+    "not_visible_count": 8,
+    "source_video_sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+    "no_frame_annotation_changed_during_finalization": true
+  },
+  "optional_reannotation": {
+    "used_for_this_finalization": false,
+    "independent_draft_used": false,
+    "future_use": "Only for an explicitly declared inter-rater or intra-rater reproducibility study."
+  },
+  "limitations": {
+    "single_annotator_reference_set": true,
+    "suitable_for_protocol_pilot": true,
+    "suitable_for_initial_detector_experiments": true,
+    "claims_inter_annotator_reproducibility": false,
+    "claims_unbiased_benchmark_sampling": false,
+    "claims_cross_game_generalization": false,
+    "claims_completed_ball_tracking_quality_gate": false
+  }
+}

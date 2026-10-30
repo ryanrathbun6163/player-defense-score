@@ -1,0 +1,979 @@
+{
+  "schema_version": "wasb_continuation_result/v0.1",
+  "status": "completed_sequence_no_checkpoint_qualifies",
+  "recorded_at_utc": "2026-10-26T19:58:31.981180+00:00",
+  "branch": "codex/ball-detector-baseline",
+  "execution_head": "3678ba172fb1ec200d4330862fa6d40d8493d7a2",
+  "preparation_commit": "3678ba172fb1ec200d4330862fa6d40d8493d7a2",
+  "evidence": [
+    {
+      "path": "configs/ball_tracking/proposals/wasb_continuation_v0_1.json",
+      "sha256": "46b76b16c12125f5dab1ffbb96fc1521e951997605c6018baece8253250910d4",
+      "bytes": 6005
+    },
+    {
+      "path": "docs/ball_tracking_wasb_continuation_sequence.md",
+      "sha256": "00ac35964ba9352d626987d4e0a6fb5ab797ce23b99104bd51c6022264b2a643",
+      "bytes": 7088
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/parent_state_20261026T171840607814Z.json",
+      "sha256": "27d20410c5ea90b07f7e93a1ecb2b7a3d0fbe44d695e28cfbfe4e01ebd705cb9",
+      "bytes": 8862
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/focused_tests_final.log",
+      "sha256": "b7f120a693a3d537355493ff3b42baf703c133a3cf7a32a14492de957e239d8d",
+      "bytes": 27226
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/constant_preflight.json",
+      "sha256": "8fd9f61aa2abbf52ecfcb367561b05a42e6a7ee85795e3aac9fa005a3a7ff354",
+      "bytes": 2766
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/cosine_preflight.json",
+      "sha256": "2bdcb878d53c5ba98ddb28a75b672e21c78dfd48f7eec58c5f8f1eb3fea39636",
+      "bytes": 2761
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/continuation_constant_fit_completed_fit_20261026T181548164590Z.json",
+      "sha256": "095bf575ba3e47be29004747cadfd9a06178cbd29d665024249eeb36f8cd2133",
+      "bytes": 10487
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/continuation_cosine_fit_completed_fit_20261026T191445361200Z.json",
+      "sha256": "b374bfb19d09a00720cbd60f5455eb846963f5c5bba0c860683f8759972cade8",
+      "bytes": 10475
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/continuation_constant_nba_comparison_20261026T182856572482Z.json",
+      "sha256": "d95094b3721a8d1d106cd110f51e6943d9bcbb2dfffebf81ed360fd8b2347924",
+      "bytes": 49892
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/continuation_cosine_nba_comparison_20261026T192724591273Z.json",
+      "sha256": "d5adc0bfe0fc4f5d5f87f73953f2e0b0cda1e7d2c6fa4f437645eddedee403b9",
+      "bytes": 49707
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/paired_summary_completed_001.json",
+      "sha256": "9fba9259df94be4e58871f34677f835dce695f5f2465fba683569d18a3436e91",
+      "bytes": 565224
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/saved_det_gap_parent_20261026T174359497669Z.json",
+      "sha256": "ee6cb5749eddfb502aa32a762bd0670cbf5b17a38407c64de8a5f58584f886aa",
+      "bytes": 173399
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/saved_det_gap_both_continuations_20261026T192713431016Z.json",
+      "sha256": "cddba000fb34435b4f2c4a8185ea54df2b02927e7a210de81dce52ea6aa3d7a0",
+      "bytes": 334329
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/structural_gate_evidence_20261026T174939286422Z.json",
+      "sha256": "a369c28f997df5405b7540fcb2159213cdc7c5a6552f58fa9bb4a68f10dd785f",
+      "bytes": 62483
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/recovery_evidence_review_v0_1/index.html",
+      "sha256": "2db24163a0e77e88fd64f1965a853325808081234f2b7c40708834d3cb6fafb8",
+      "bytes": 27327
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/recovery_evidence_review_v0_1/verification.json",
+      "sha256": "6f7d98e96260a6b56c6ee182e6d5ecd4dbc6041b9d90860ef525fabc34b04448",
+      "bytes": 5782
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/paired_review_v0_1/completed.json",
+      "sha256": "60a98e2ecc9db58a355f2221fa37ea4c4f483f9a2300b1321f860b21cde6c11a",
+      "bytes": 2626
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/paired_review_v0_1/attempts/617eac4110ca45e881207576b3a9bb70/index.html",
+      "sha256": "9ab884f3d7b2f83d98370637331fc02f7375af1fd10ab348d5e90f31f5998e97",
+      "bytes": 3628
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/paired_plot_v0_2/paired_training_curves.png",
+      "sha256": "f1a6b95a1e4824ac9a0da41dd9df2dc863379c5c2dedcf45f7176ca125476b54",
+      "bytes": 302601
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/paired_review_ai_observations.json",
+      "sha256": "0467ee51c2c21a1abcb53c75316d898be06e2124ddd4028931935282aba192dc",
+      "bytes": 6185
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/current_training_fit_v0_1/completed.json",
+      "sha256": "1cc4b476da19d248ab329c8d507af08b147dfa43d5d03518136b6a42c2c02e46",
+      "bytes": 4561
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/current_training_fit_v0_1/assessment.json",
+      "sha256": "d5ece4d720cd96295dcbb48db5f363544f4ca21a588a03b26fbfc71445d32b11",
+      "bytes": 34170
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/current_training_fit_independent_audit_20261026T195023281235Z.json",
+      "sha256": "6d434547238856e6175fa3234733224e620518fc109b41d06f08eaff977f7de2",
+      "bytes": 21648
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/middle_output_sensitivity_v0_1/completed.json",
+      "sha256": "055ca1ce8a1f66d532f186f39445de6c05d417a086bb5082fddd72a868225a30",
+      "bytes": 41867
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/middle_probe_independent_audit_20261026T195109813989Z.json",
+      "sha256": "d81f83b4216b6e2ce7c27bb9fc2e90dfa56171dc77879463f879b1e8520d9f13",
+      "bytes": 13444
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/current768_training_fit_failure_20261026T193015738553Z.json",
+      "sha256": "d23f82f5844357dc8a8dec4c4b57b7ceb0a56c437cbf16b9b175673e1e4dd923",
+      "bytes": 1253
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt07/worker_guard_probe.json",
+      "sha256": "fe1118e0818719641d1ae26ac12de85194a0e9e3dba352487b96b9cee93dea55",
+      "bytes": 1674
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/diagnostic_source_closure_20261026T195029600884Z.json",
+      "sha256": "543d50bcfe8d0067dcaa771a7a9b59cd34ffdb4a767387b0e777551b187db13c",
+      "bytes": 7596
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/post_sequence_system_state.json",
+      "sha256": "28480075a5238cab4f06bb07a4431c10eebdb0334b04650e92c38e5018bacf55",
+      "bytes": 245
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/post_sequence_preservation.json",
+      "sha256": "0c933fcdcced5a44bb43ffd0a883a0ce95b762e8dce495811f849ce2f14385d7",
+      "bytes": 159304
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/final_report_receipt.json",
+      "sha256": "41b729337e0d21aba62ab1dd30a894ca0cadcafe5d80d56e685a0075f6952f09",
+      "bytes": 10073
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/final_report_data_v0_2.json",
+      "sha256": "c83d8bea54117b00be3223a27216d9f48dea34d72ec0b8b434b559b4c503714b",
+      "bytes": 5352
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/final_report_static_verification_20261026T195754042548Z.json",
+      "sha256": "dd8635673617e0f3eff9da1638dd6a176b33fc284fa08a91e70cf4ef849fed8c",
+      "bytes": 19131
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/constant/fit_v0_1/completed.json",
+      "sha256": "73ab265069390a6d27ad08e3fc134cf93544c9d144ade2681949bf2266ccaa81",
+      "bytes": 10191
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/constant/nba_comparison_v0_1/completed.json",
+      "sha256": "d79e778ebc3ccd5881c968821675872e566b13137161e4a6a9bf84c5bccd7473",
+      "bytes": 6088
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/cosine/fit_v0_1/completed.json",
+      "sha256": "2ba154c753686d8bcdb50c9d64fd31f4710fd59b72dc0f6cb69d45de3defc1c8",
+      "bytes": 10153
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/cosine/nba_comparison_v0_1/completed.json",
+      "sha256": "f2e7350fe3053a0b366e1116b67920690592b5ec77b1916290bb1ec297593410",
+      "bytes": 6069
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/constant_fit_attempt_001/policy.json",
+      "sha256": "d0ac341911d47a7216457d7ad4293f7c8e03b1b51f57819ff11065a82f974036",
+      "bytes": 1688
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/constant_fit_attempt_001/owned_process.json",
+      "sha256": "bfdf0eaf5e131da81a44637f3f9688b369040f25faf40714371b382e95ad11c2",
+      "bytes": 136
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/constant_fit_attempt_001/finished.json",
+      "sha256": "78c8e174b111b80ccfd4b63fd80a04ad4eda3b90514f70f7386fc7c14f59f664",
+      "bytes": 407
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/constant_fit_attempt_001/telemetry.jsonl",
+      "sha256": "dbf839d606a7709716f03a5b6cf1b392c3510b7366ebb4c086bafbefc79a7001",
+      "bytes": 698163
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/constant_fit_attempt_001/console.log",
+      "sha256": "70c2a1aef2627e876766511f9bf2f42348ce6b6ec45f3bd38e55a803e5e46534",
+      "bytes": 30613
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/constant_comparison_attempt_001/policy.json",
+      "sha256": "8ff88d6970e93f7dd9f0f949e76a7ecabc31f3ae3f086b47150712c086e6fd31",
+      "bytes": 1701
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/constant_comparison_attempt_001/owned_process.json",
+      "sha256": "dd4bacf583d0bc9bd16a7baa8b3eeea6f2595df66ade85be63dbc9dd2c48ffd6",
+      "bytes": 137
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/constant_comparison_attempt_001/finished.json",
+      "sha256": "c46965edc4ca4c14687603ba2947ef8fe7ae61b0ba8be816b3aad3b02628f0fe",
+      "bytes": 406
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/constant_comparison_attempt_001/telemetry.jsonl",
+      "sha256": "28c15d970f066a3dcbe7eb54792981bf7706160b5d1d9a194ea8d3a4963cd995",
+      "bytes": 174564
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/constant_comparison_attempt_001/console.log",
+      "sha256": "10653f52a8d0b3217af9aeb7da5184f6afddd707af10fb9c0cb7c4703a9539db",
+      "bytes": 20738
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/cosine_fit_attempt_001/policy.json",
+      "sha256": "ffbda67f29c3c315888a2863c762697a19473c0a6313cbd992e5682b9dc57342",
+      "bytes": 1682
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/cosine_fit_attempt_001/owned_process.json",
+      "sha256": "1ddde64de79ed085eb6483cc6afc969cef89e6d607dd00d63c46baff878c2450",
+      "bytes": 138
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/cosine_fit_attempt_001/finished.json",
+      "sha256": "056fe20aed18d5cbe39972f3877c860443217c98ae0cf79bf20367126d61c117",
+      "bytes": 408
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/cosine_fit_attempt_001/telemetry.jsonl",
+      "sha256": "f6a741bdc34111c82ba8f6bbca2bd9a6d3b074034c64c3ea7874b8e2cbee9963",
+      "bytes": 705504
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/cosine_fit_attempt_001/console.log",
+      "sha256": "662a247e5185e980d2c5f05d432fe6114be4a8703a398bc3576bc97951b31c93",
+      "bytes": 32446
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/cosine_comparison_attempt_001/policy.json",
+      "sha256": "58ae3d617d10e5f2d592cfb31feeeed1605f2910df0728165ff037ff2821ee3b",
+      "bytes": 1695
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/cosine_comparison_attempt_001/owned_process.json",
+      "sha256": "b5ad9dad5c7dac7febd23b04025af3a87bd29866376edce984a6a2c134c59b96",
+      "bytes": 138
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/cosine_comparison_attempt_001/finished.json",
+      "sha256": "661fc15e8c06c82475b447440ef71524245021a97e5594faae9d53d941b2753c",
+      "bytes": 406
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/cosine_comparison_attempt_001/telemetry.jsonl",
+      "sha256": "2fedd9c587eb7b85e6e6610970efc7ad7c267c2a77f0bd5eb0d62fd3aeda465a",
+      "bytes": 169468
+    },
+    {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/cosine_comparison_attempt_001/console.log",
+      "sha256": "14793affef24785c8d3da22fb56657b8298e720bceafec7ff9bfec264b66cd13",
+      "bytes": 20465
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/current_training_fit_attempt01/policy.json",
+      "sha256": "f080439b80c23ce39b7ab268911a7c22765e4ce2a2386bc5788220b9a734dd61",
+      "bytes": 3226
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/current_training_fit_attempt01/owned_process.json",
+      "sha256": "2d9687aca4933cbc5c2ae0385187c2613c3d79b4bbe97e817fa4f90349894b23",
+      "bytes": 138
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/current_training_fit_attempt01/finished.json",
+      "sha256": "4ad5e1fb3e3c6a2f1645ada3bfbe86d084ac183e62db93f8e82d589a27e03241",
+      "bytes": 392
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/current_training_fit_attempt01/telemetry.jsonl",
+      "sha256": "533771759e5c7e525b586557c65dd977b8f7afed79a28cc70e406230d78f2c19",
+      "bytes": 3121
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/current_training_fit_attempt01/console.log",
+      "sha256": "48f2171c860ae0f07bc494b4668adb134b35029eb969ce6ce855c7e2d2dca313",
+      "bytes": 1652
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/current_training_fit_attempt02/policy.json",
+      "sha256": "4afafec8a8da6975d7a98c3b8faabb496ecc926fcdcd1c38335368217bb5e959",
+      "bytes": 3238
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/current_training_fit_attempt02/owned_process.json",
+      "sha256": "9b49bea2ef7e12886f70257d3db9d807b0eb86f9ac1772019f6639077df1d60a",
+      "bytes": 138
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/current_training_fit_attempt02/finished.json",
+      "sha256": "b03b882e4bd48fd8bc9f951e03ca34f2658b0417807d3f9ab3a024c49e404985",
+      "bytes": 395
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/current_training_fit_attempt02/telemetry.jsonl",
+      "sha256": "2f07766b695ffd491d26cf3469489101ee0b119fb2ad6fc84e66644ecfee96da",
+      "bytes": 47619
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/current_training_fit_attempt02/console.log",
+      "sha256": "d61304cae372363c1d465bc40ba706fd1386c3711e43636a2fb8b836b882562a",
+      "bytes": 4144
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/middle_output_probe_attempt01/policy.json",
+      "sha256": "60a24a1d733e87de3af11833875bd338013b58b07d98cfe3990b65728cdcab76",
+      "bytes": 2877
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/middle_output_probe_attempt01/owned_process.json",
+      "sha256": "f0c3bbaabe3d7be67d11258d76c4d5f4ff1f48aeb907b3e04fd0ea3d3bb651e0",
+      "bytes": 138
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/middle_output_probe_attempt01/finished.json",
+      "sha256": "6082580b14ff32cf220b38c4f82073394cc650e4d53c083b2b5de8799f7d1360",
+      "bytes": 403
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/middle_output_probe_attempt01/telemetry.jsonl",
+      "sha256": "d2222d9240fd0a586c00cb47c1107d3a2607f66abb84eb3a04db129750df3ead",
+      "bytes": 2081
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/middle_output_probe_attempt01/console.log",
+      "sha256": "16e7350d9fe10e4afc9d6edd4a11e95e41677b6f9c3d6949b0d2dfe1bd64f008",
+      "bytes": 1106
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt01/policy.json",
+      "sha256": "252a0c07e54599b18e9d1825667cdf37d317a6c7b33f8e33ec974119b6ba6889",
+      "bytes": 1651
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt01/owned_process.json",
+      "sha256": "bd6a247d1deb90b1bfa88cb4e0ed0c26430555db4d5fec03a191f35da366eb5a",
+      "bytes": 138
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt01/finished.json",
+      "sha256": "917dba9c1320ae774c4ebf8d1b5e35f4357ba0087ed6f54d3e04f62d65b4b638",
+      "bytes": 389
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt01/telemetry.jsonl",
+      "sha256": "400313b922ecdd7b05e6a0e8dcce59e93fb95bbd34dd98bb36005bdb3e4a651b",
+      "bytes": 1040
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt01/console.log",
+      "sha256": "6a03b15dd063374b1465d8216de0d24e3b5ffa04067998e971586a0219174cfe",
+      "bytes": 1356
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt02/policy.json",
+      "sha256": "bcc2af8a5159bf9b750b1705d87d312fdbf1aaa0e85d0ea5cb855e127ec2cd16",
+      "bytes": 1651
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt02/owned_process.json",
+      "sha256": "0a1fe85c2abf687c9b07f4c0673a23048d231a778f3e23c8584b742fe4297a3f",
+      "bytes": 137
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt02/finished.json",
+      "sha256": "d8380b71f68d23d7049ec342b1d2a18966d74f5f2d18c28454472e96ef56c546",
+      "bytes": 390
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt02/telemetry.jsonl",
+      "sha256": "5ca804abbe04585306d85d54f125f698200d1dcd6ecb6742807d4f339b1e74b8",
+      "bytes": 1040
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt02/console.log",
+      "sha256": "4805cfa7c34429d3bb5bb013c86b929a49f87c04fd5d9da6ae6c19979ec26d09",
+      "bytes": 1356
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt03/policy.json",
+      "sha256": "90fc66a20855129caaa472f564b935424318cda0f13592ba3b0f6c781aba5a0e",
+      "bytes": 1651
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt03/owned_process.json",
+      "sha256": "b020425a26c61ee43f0a467f9ae72d9fd0276bf5a9021aac59abf104fd03e372",
+      "bytes": 138
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt03/finished.json",
+      "sha256": "4c5acc1b3bfe77e8bd859705c96d635fcb76ba8f0aac9c327cc3722cb5abfd5a",
+      "bytes": 403
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt03/telemetry.jsonl",
+      "sha256": "8d0bd40da49a530ad5ea11d284e20b9dfbe300dca48c97d665c4a157e28e515b",
+      "bytes": 1040
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt03/console.log",
+      "sha256": "d86d0be91ba0c6a0c6b5048cef47b0ff85e81a79164910c439a5868e86a02b7e",
+      "bytes": 1391
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt04/policy.json",
+      "sha256": "050d1cefad50e26423b425a6156bab97ce1a1ad02212350db206078a2ed5ebd5",
+      "bytes": 1651
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt04/owned_process.json",
+      "sha256": "e93a2701f7d55447d30e14c45bcce7fcb50824266536a22a399e0e5cae8cb580",
+      "bytes": 138
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt04/finished.json",
+      "sha256": "4ede345d18d41e412d9261152430c7604acd6ca323500df947d6236331e18164",
+      "bytes": 390
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt04/telemetry.jsonl",
+      "sha256": "b1c30012f97fbf5fbaaba1719d24d7ae623b1832b4215fbb0654ae005738f8c6",
+      "bytes": 1040
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt04/console.log",
+      "sha256": "6a65af90242df4511ccfe5bb5f7b8f6043ea91a92d260cec6c1adf0ee9eda62a",
+      "bytes": 1475
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt05/policy.json",
+      "sha256": "1eef9f264166088dfb0633e511abf371ced35a7fd2dcc8465c593046f17a7afc",
+      "bytes": 1651
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt05/owned_process.json",
+      "sha256": "417961bc72d82774a8f2f988606b830ea8b718dade00e57c7a3fce673eca292f",
+      "bytes": 138
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt05/finished.json",
+      "sha256": "ac3cecd14328174c230332cbee508cd7a61e32c474aee5cc7c756c99801f13d6",
+      "bytes": 402
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt05/telemetry.jsonl",
+      "sha256": "a7858c7c08af77a539b5e68f55181493880a794cc4543f2f6f671f0d12b754d7",
+      "bytes": 1040
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt05/console.log",
+      "sha256": "216c7c0068bfafb40561e31ab425e2626883c44c3c29f02016712543fa29fd96",
+      "bytes": 1454
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt06/policy.json",
+      "sha256": "15e10a802cfb32670517859d4ec2800b4950d595ba760288deabd7eec5210bc8",
+      "bytes": 1651
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt06/owned_process.json",
+      "sha256": "cc223304fcb6574b372f9a658ed90c1d4a4a512b7ca7870e98cb608b9c62e114",
+      "bytes": 138
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt06/finished.json",
+      "sha256": "1364f6245e4111945b0f2f54420233d145090c0c191c85f447d5ee7cf38285dd",
+      "bytes": 403
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt06/telemetry.jsonl",
+      "sha256": "2dac27b6e1eb02d1c50f1beabebcf7edbdc04a705abd69be1e772608e9b029cf",
+      "bytes": 1040
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt06/console.log",
+      "sha256": "39508fb4344808f2aef8b88ade0f71a7245207ed6ce2ad9a67d0767b34f4b7e7",
+      "bytes": 1450
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt07/policy.json",
+      "sha256": "314133c0d34b1b6f615b9b44f1e351ccde436cfc8feabc1b9d4953b773f3eb07",
+      "bytes": 1651
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt07/owned_process.json",
+      "sha256": "8960942a34bb5c2a13559bfa0c86891e8c7abddf6cd2e8e0cfc08f39739f6622",
+      "bytes": 137
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt07/finished.json",
+      "sha256": "cc1fbb6f08bf93bc8e8d10af0dc8d7e538d79e15edad13376eb9ebe28fa736c3",
+      "bytes": 390
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt07/telemetry.jsonl",
+      "sha256": "c5e91b6604e1739a71829747b8def05d737492e1aca72a884be0e42d2244b575",
+      "bytes": 1040
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt07/console.log",
+      "sha256": "ed67a72b456ccbd08d3ea2db1e57d65897ec4bfddc6dac17e0875e6998dcc4d4",
+      "bytes": 1491
+    }
+  ],
+  "diagnostic_sources": [
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/middle_output_sensitivity_launchable_v0_1.py",
+      "sha256": "acb2c91a971aba9f171669792fdca70e48bbde9fb02ce7785061e34ae8494504",
+      "bytes": 20702
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/middle_output_sensitivity_launchable_v02.py",
+      "sha256": "c0a91a0314c0eba0a10b46bbff81da27a861f779db2294a99dc6e7fca5c8814d",
+      "bytes": 20745
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/current768_training_fit.py",
+      "sha256": "4bcf01843d910ce04d5c2f9bb650d2c98b36f6a15f3da808d910e776c4d845ef",
+      "bytes": 26324
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/current768_training_fit_v02.py",
+      "sha256": "9b391df90c2b4b7acf03f7bd84d0700941d281e541ceb5960d03442380e950ab",
+      "bytes": 26381
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/saved_det_gap_analysis.py",
+      "sha256": "f1d08d0a6ac90d147f0aa3885be98369140842e36264b932b617bb0dbc55cf6e",
+      "bytes": 19507
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt01/guard_source.py",
+      "sha256": "992443965ee3ca7e1a76346e7de85137f8039e926cfe628afc4c497eb1f9cbc1",
+      "bytes": 8606
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt02/guard_source.py",
+      "sha256": "009dd0d7da83c159e016297d9cbf694c70c1d1594ac20db320cef94942cb5d74",
+      "bytes": 9150
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt03/guard_source.py",
+      "sha256": "ac945b4c44818226fab9f606ea6a9e2351047a9592ae8d55ac2675a9aee31fa7",
+      "bytes": 9224
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt04/guard_source.py",
+      "sha256": "40ec37fba0102d6649a068921a40d7c6e8be6fa0470e7dc50ae6c71372cf4aae",
+      "bytes": 9196
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt05/guard_source.py",
+      "sha256": "8346db23323dd3fa7c9dfc49768bb64666382a817639e5c793d92fcf2592a4dc",
+      "bytes": 13567
+    },
+    {
+      "path": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt06/guard_source.py",
+      "sha256": "95fc039e5af478d0b7bdd6db04dbb7a9122951ec6dd7e67b1e2ef9f9eb7dda93",
+      "bytes": 13567
+    },
+    {
+      "path": "src/ball_tracking/continuation_owned_guard.py",
+      "sha256": "0520052c4e36e0d2a45a1e9a9bb577ea2185932aa54f9d98b336f5a396c04d42",
+      "bytes": 7537
+    },
+    {
+      "path": "src/ball_tracking/continuation_owned_guard_probe.py",
+      "sha256": "e6ab651f37ef56dc08af8459fb7fa1782755e72c77cf116ba5452b0ed3f394b8",
+      "bytes": 2188
+    },
+    {
+      "path": "src/ball_tracking/continuation_temporal_diagnostic.py",
+      "sha256": "f1cc5131c23def2097f1833458ea37da65e11397881f8e85ef932417e99685ee",
+      "bytes": 961
+    },
+    {
+      "path": "src/ball_tracking/continuation_temporal_diagnostic_v02.py",
+      "sha256": "6e7885b9c2da563244bf136f119bba1156c5dfecc1cac6897039e2636d7cd937",
+      "bytes": 686
+    },
+    {
+      "path": "src/ball_tracking/continuation_training_fit_diagnostic.py",
+      "sha256": "ee98ea07f14b59ba6118ee055e53cdb832c70fdc9dbf4db4562b2cd756902011",
+      "bytes": 701
+    },
+    {
+      "path": "src/ball_tracking/continuation_training_fit_diagnostic_v02.py",
+      "sha256": "44952c5bc8f66aa439078d1c1f84713e8e85cd1496248ca6016d8237b2203aea",
+      "bytes": 673
+    }
+  ],
+  "arms": {
+    "constant": {
+      "completed_new_epochs": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "new_optimizer_updates": 7760,
+      "cumulative_updates": 15520,
+      "automatic_qualifying_epoch": null
+    },
+    "cosine": {
+      "completed_new_epochs": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "new_optimizer_updates": 7760,
+      "cumulative_updates": 15520,
+      "automatic_qualifying_epoch": null
+    }
+  },
+  "total_new_optimizer_updates_two_independent_arms": 15520,
+  "completed_new_checkpoints": 10,
+  "new_comparison_forward_calls": 26980,
+  "reused_HOU_observations": 9600,
+  "total_comparison_observations": 36620,
+  "best_DET_correct": 219,
+  "DET_eligible": 241,
+  "shared_missing_gap_frames": [
+    11075,
+    11076,
+    11077,
+    11078,
+    11079,
+    11080,
+    11081,
+    11082,
+    11083,
+    11084,
+    11085,
+    11086,
+    11087,
+    11088,
+    11089,
+    11090,
+    11091,
+    11092,
+    11093
+  ],
+  "diagnostic_selection": {
+    "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/cosine/fit_v0_1/checkpoints/epoch_009.pth",
+    "sha256": "f4b721662ec3d8b546563feffcf5ce0d6319ed8ddc83f398830a0aac5d29c7b9",
+    "bytes": 6084071
+  },
+  "diagnostic_arm": "cosine",
+  "diagnostic_epoch": 9,
+  "diagnostic_selection_reason": "Post-comparison diagnostic choice: cosine epoch9 ties best new DET coverage at219/241 and best new HOU count842/882 with19 wrong, and scores270/270 SAC. Its19 HOU certain-hidden emissions exceed the parent18; no model is adopted. This is inspected development selection.",
+  "current_model_training_fit": {
+    "matched": 2937,
+    "wrong": 3,
+    "missing": 1,
+    "eligible_frames": 2941,
+    "certain_hidden_emissions": 2,
+    "all_hidden_emissions": 9
+  },
+  "training_fit_forward_calls": 3277,
+  "temporal_probe_forward_calls": 8,
+  "diagnostic_optimizer_updates": 0,
+  "source_uncertain_recovery_events": 9,
+  "source_uncertainty_can_be_cleared_by_training": false,
+  "workloads": [
+    {
+      "monitor": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/constant_fit_attempt_001/",
+      "result": {
+        "finished_at_utc": "2026-10-26T18:15:25.057225+00:00",
+        "elapsed_seconds": 2736.843999999999,
+        "returncode": 0,
+        "stop_reason": null,
+        "force_stopped_owned_job": false,
+        "job_cleanup_error": null,
+        "remaining_owned_processes_before_close": 0,
+        "samples": 1332,
+        "maximum_temperature_C": 61.0,
+        "maximum_power_W": 135.17,
+        "maximum_memory_MiB": 7118.0,
+        "automatic_retry": false
+      }
+    },
+    {
+      "monitor": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/constant_comparison_attempt_001/",
+      "result": {
+        "finished_at_utc": "2026-10-26T18:27:47.502512+00:00",
+        "elapsed_seconds": 683.5319999999992,
+        "returncode": 0,
+        "stop_reason": null,
+        "force_stopped_owned_job": false,
+        "job_cleanup_error": null,
+        "remaining_owned_processes_before_close": 0,
+        "samples": 333,
+        "maximum_temperature_C": 59.0,
+        "maximum_power_W": 106.25,
+        "maximum_memory_MiB": 2879.0,
+        "automatic_retry": false
+      }
+    },
+    {
+      "monitor": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/cosine_fit_attempt_001/",
+      "result": {
+        "finished_at_utc": "2026-10-26T19:14:19.635839+00:00",
+        "elapsed_seconds": 2766.5159999999996,
+        "returncode": 0,
+        "stop_reason": null,
+        "force_stopped_owned_job": false,
+        "job_cleanup_error": null,
+        "remaining_owned_processes_before_close": 0,
+        "samples": 1346,
+        "maximum_temperature_C": 62.0,
+        "maximum_power_W": 135.07,
+        "maximum_memory_MiB": 7416.0,
+        "automatic_retry": false
+      }
+    },
+    {
+      "monitor": "data/outputs/ball_tracking/wasb_continuation_v0_1/monitoring/cosine_comparison_attempt_001/",
+      "result": {
+        "finished_at_utc": "2026-10-26T19:26:29.236156+00:00",
+        "elapsed_seconds": 663.3909999999996,
+        "returncode": 0,
+        "stop_reason": null,
+        "force_stopped_owned_job": false,
+        "job_cleanup_error": null,
+        "remaining_owned_processes_before_close": 0,
+        "samples": 323,
+        "maximum_temperature_C": 60.0,
+        "maximum_power_W": 108.19,
+        "maximum_memory_MiB": 2714.0,
+        "automatic_retry": false
+      }
+    },
+    {
+      "monitor": "data/outputs/t/wasb_continuation_20261026/current_training_fit_attempt01/",
+      "result": {
+        "finished_at_utc": "2026-10-26T19:30:17.398795+00:00",
+        "elapsed_seconds": 10.375,
+        "returncode": 1,
+        "stop_reason": null,
+        "force_stopped_owned_job": false,
+        "job_cleanup_error": null,
+        "remaining_owned_processes_before_close": 0,
+        "samples": 6,
+        "maximum_temperature_C": 43.0,
+        "maximum_power_W": 14.83,
+        "maximum_memory_MiB": 1608.0,
+        "automatic_retry": false
+      }
+    },
+    {
+      "monitor": "data/outputs/t/wasb_continuation_20261026/current_training_fit_attempt02/",
+      "result": {
+        "finished_at_utc": "2026-10-26T19:46:21.732815+00:00",
+        "elapsed_seconds": 185.375,
+        "returncode": 0,
+        "stop_reason": null,
+        "force_stopped_owned_job": false,
+        "job_cleanup_error": null,
+        "remaining_owned_processes_before_close": 0,
+        "samples": 91,
+        "maximum_temperature_C": 59.0,
+        "maximum_power_W": 105.08,
+        "maximum_memory_MiB": 2718.0,
+        "automatic_retry": false
+      }
+    },
+    {
+      "monitor": "data/outputs/t/wasb_continuation_20261026/middle_output_probe_attempt01/",
+      "result": {
+        "finished_at_utc": "2026-10-26T19:48:32.393262+00:00",
+        "elapsed_seconds": 6.218000000000757,
+        "returncode": 0,
+        "stop_reason": null,
+        "force_stopped_owned_job": false,
+        "job_cleanup_error": null,
+        "remaining_owned_processes_before_close": 0,
+        "samples": 4,
+        "maximum_temperature_C": 43.0,
+        "maximum_power_W": 11.13,
+        "maximum_memory_MiB": 2084.0,
+        "automatic_retry": false
+      }
+    },
+    {
+      "monitor": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt01/",
+      "result": {
+        "finished_at_utc": "2026-10-26T19:36:08.395510+00:00",
+        "elapsed_seconds": 2.125,
+        "returncode": 1,
+        "stop_reason": null,
+        "force_stopped_owned_job": false,
+        "job_cleanup_error": null,
+        "remaining_owned_processes_before_close": 0,
+        "samples": 2,
+        "maximum_temperature_C": 43.0,
+        "maximum_power_W": 9.6,
+        "maximum_memory_MiB": 1628.0,
+        "automatic_retry": false
+      }
+    },
+    {
+      "monitor": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt02/",
+      "result": {
+        "finished_at_utc": "2026-10-26T19:36:57.987315+00:00",
+        "elapsed_seconds": 2.125,
+        "returncode": 1,
+        "stop_reason": null,
+        "force_stopped_owned_job": false,
+        "job_cleanup_error": null,
+        "remaining_owned_processes_before_close": 0,
+        "samples": 2,
+        "maximum_temperature_C": 43.0,
+        "maximum_power_W": 9.38,
+        "maximum_memory_MiB": 1698.0,
+        "automatic_retry": false
+      }
+    },
+    {
+      "monitor": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt03/",
+      "result": {
+        "finished_at_utc": "2026-10-26T19:37:21.743029+00:00",
+        "elapsed_seconds": 2.1410000000032596,
+        "returncode": 1,
+        "stop_reason": null,
+        "force_stopped_owned_job": false,
+        "job_cleanup_error": null,
+        "remaining_owned_processes_before_close": 0,
+        "samples": 2,
+        "maximum_temperature_C": 43.0,
+        "maximum_power_W": 8.83,
+        "maximum_memory_MiB": 1681.0,
+        "automatic_retry": false
+      }
+    },
+    {
+      "monitor": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt04/",
+      "result": {
+        "finished_at_utc": "2026-10-26T19:37:54.790535+00:00",
+        "elapsed_seconds": 2.125,
+        "returncode": 1,
+        "stop_reason": null,
+        "force_stopped_owned_job": false,
+        "job_cleanup_error": null,
+        "remaining_owned_processes_before_close": 0,
+        "samples": 2,
+        "maximum_temperature_C": 43.0,
+        "maximum_power_W": 8.56,
+        "maximum_memory_MiB": 1615.0,
+        "automatic_retry": false
+      }
+    },
+    {
+      "monitor": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt05/",
+      "result": {
+        "finished_at_utc": "2026-10-26T19:39:43.636631+00:00",
+        "elapsed_seconds": 2.110000000000582,
+        "returncode": 0,
+        "stop_reason": null,
+        "force_stopped_owned_job": false,
+        "job_cleanup_error": null,
+        "remaining_owned_processes_before_close": 0,
+        "samples": 2,
+        "maximum_temperature_C": 43.0,
+        "maximum_power_W": 7.86,
+        "maximum_memory_MiB": 1573.0,
+        "automatic_retry": false
+      }
+    },
+    {
+      "monitor": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt06/",
+      "result": {
+        "finished_at_utc": "2026-10-26T19:40:28.228900+00:00",
+        "elapsed_seconds": 2.1089999999967404,
+        "returncode": 0,
+        "stop_reason": null,
+        "force_stopped_owned_job": false,
+        "job_cleanup_error": null,
+        "remaining_owned_processes_before_close": 0,
+        "samples": 2,
+        "maximum_temperature_C": 43.0,
+        "maximum_power_W": 8.35,
+        "maximum_memory_MiB": 1593.0,
+        "automatic_retry": false
+      }
+    },
+    {
+      "monitor": "data/outputs/t/wasb_continuation_20261026/owned_guard_probe_attempt07/",
+      "result": {
+        "finished_at_utc": "2026-10-26T19:41:54.362966+00:00",
+        "elapsed_seconds": 2.125,
+        "returncode": 0,
+        "stop_reason": null,
+        "force_stopped_owned_job": false,
+        "job_cleanup_error": null,
+        "remaining_owned_processes_before_close": 0,
+        "samples": 2,
+        "maximum_temperature_C": 43.0,
+        "maximum_power_W": 8.51,
+        "maximum_memory_MiB": 1594.0,
+        "automatic_retry": false
+      }
+    }
+  ],
+  "failed_attempts_preserved": true,
+  "preserved_probe_history_note": "Attempts01-04 rejected guard variants;05-06 passed intermediate prototypes but were superseded by the simpler final07 contract. Preserve every version and resource record.",
+  "review_index": {
+    "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/index.html",
+    "sha256": "0511b71cc7ca2ccfa751f6bcd73a9a43d3008b21db0d0424c10af474e1ce7d51",
+    "bytes": 17538
+  },
+  "result_document": {
+    "path": "docs/ball_tracking_wasb_continuation_results.md",
+    "sha256": "88041300d488504c2ef06020fae3cbc66c8ce7afca0997957e67a0f3425b8adb",
+    "bytes": 16444
+  },
+  "next_proposal": {
+    "path": "docs/ball_tracking_wasb_spatial_augmentation_proposal.md",
+    "sha256": "bc9d0178e62fd09123f316f8a6d5c4f94579036caea46766fbcdf3407680e08e",
+    "bytes": 5159
+  },
+  "next_proposal_frozen": false,
+  "next_proposal_executed": false,
+  "new_labels": 0,
+  "accepted_reference_changes": 0,
+  "protected_evaluation_authorized": false,
+  "model_adopted": false,
+  "human_trajectory_acceptance": null,
+  "ball_phase_accepted": false,
+  "browser_interactive_preview_verified": false,
+  "browser_limitation": "Local file navigation rejected by browser URL security policy; no alternate route used. Static links and exported media checked independently.",
+  "publisher": {
+    "path": "data/outputs/t/wasb_continuation_20261026/publish_continuation_result_ledger.py",
+    "sha256": "982e14cc22074bcac80ba895005f16e6342926500dcc15777829209aedcc64b9",
+    "bytes": 7401
+  }
+}

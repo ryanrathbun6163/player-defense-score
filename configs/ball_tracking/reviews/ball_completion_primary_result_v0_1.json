@@ -1,0 +1,257 @@
+{
+  "schema_version": "ball_completion_primary_result/v0.1",
+  "recorded_at_utc": "2026-10-25T22:41:18.012142+00:00",
+  "status": "primary_completed_not_adopted_retained_baseline_failed_permitted_screen",
+  "starting_branch": "codex/ball-detector-baseline",
+  "starting_head": "009654c8f80dc8ecb3292c37130c5ba054180635",
+  "campaign_approval": {
+    "path": "configs/ball_tracking/reviews/ball_tracking_completion_campaign_approval_v0_1.json",
+    "sha256": "9ac73e9053aa00b8c7fdff1575771260a1b445f1e756521b5fb404c0977408b5",
+    "bytes": 2547
+  },
+  "recipe": {
+    "path": "configs/ball_tracking/completion_campaign/primary_recipe_v0_1.json",
+    "sha256": "d8f53baf72412db535e989b4086e8fb23e02f79ef058829539d1bbe9a486e83c",
+    "bytes": 9431
+  },
+  "training_result": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/completed.json",
+    "sha256": "9236802ac812c86ddc783bf1f3fbd028f766d2dc4e320008fbd83ed7c3e9bd64",
+    "bytes": 4273
+  },
+  "training_selection": {
+    "selected_epoch": 0,
+    "epoch_zero_selected": true,
+    "eligible_epochs": [
+      0
+    ],
+    "rejected": [
+      {
+        "epoch": 1,
+        "reasons": [
+          "possession_003: matched below epoch zero",
+          "nba_validation: matched below epoch zero",
+          "nba_validation: wrong above epoch zero"
+        ]
+      },
+      {
+        "epoch": 2,
+        "reasons": [
+          "possession_001: matched below epoch zero",
+          "possession_003: matched below epoch zero"
+        ]
+      },
+      {
+        "epoch": 3,
+        "reasons": [
+          "possession_001: matched below epoch zero",
+          "possession_003: matched below epoch zero",
+          "nba_validation: matched below epoch zero"
+        ]
+      },
+      {
+        "epoch": 4,
+        "reasons": [
+          "possession_001: matched below epoch zero",
+          "possession_003: matched below epoch zero"
+        ]
+      },
+      {
+        "epoch": 5,
+        "reasons": [
+          "possession_003: matched below epoch zero"
+        ]
+      }
+    ],
+    "rank": [
+      130,
+      845,
+      -0.32,
+      0
+    ]
+  },
+  "selected_checkpoint": {
+    "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+    "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+    "bytes": 6084071
+  },
+  "final_trained_checkpoint": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/checkpoints/epoch_005.pth",
+    "sha256": "de3e4c1c3b57b3b7ae21401231db7bd54a66781dda06d38bc1b3e3c63707439c",
+    "bytes": 6084071
+  },
+  "completed_epochs": 5,
+  "scheduled_completed_updates": 7760,
+  "replayed_unsaved_updates": 22,
+  "new_model_calls_in_comparison": 0,
+  "permitted_comparison_frames": 3975,
+  "curated_scores": [
+    {
+      "possession_id": "possession_001",
+      "frames": 499,
+      "eligible_frames": 355,
+      "matched": 300,
+      "wrong": 12,
+      "missing": 43,
+      "unscored": 69,
+      "withheld": 75,
+      "certain_hidden_emitted_frames": 5,
+      "resolution_trigger_deficits": {
+        "eligible_errors": 55,
+        "required_matches": 338,
+        "maximum_wrong": 3,
+        "additional_matches_needed": 38,
+        "wrong_to_correct_needed": 9,
+        "minimum_recoverable_errors_for_strict_majority": 28,
+        "trigger_status": "not_assessed",
+        "fit_authorized_by_this_report": false
+      },
+      "worst_known_missing_seconds": 0.48,
+      "gates": {
+        "correct_fraction": "fail",
+        "wrong_fraction": "fail",
+        "certain_hidden_emissions": "fail",
+        "missing_continuity": "fail",
+        "recovery": "inconclusive",
+        "wrong_object_runs": "inconclusive"
+      },
+      "status": "fail"
+    },
+    {
+      "possession_id": "possession_002",
+      "frames": 499,
+      "eligible_frames": 360,
+      "matched": 291,
+      "wrong": 8,
+      "missing": 61,
+      "unscored": 64,
+      "withheld": 75,
+      "certain_hidden_emitted_frames": 4,
+      "resolution_trigger_deficits": {
+        "eligible_errors": 69,
+        "required_matches": 342,
+        "maximum_wrong": 3,
+        "additional_matches_needed": 51,
+        "wrong_to_correct_needed": 5,
+        "minimum_recoverable_errors_for_strict_majority": 35,
+        "trigger_status": "not_assessed",
+        "fit_authorized_by_this_report": false
+      },
+      "worst_known_missing_seconds": 0.4,
+      "gates": {
+        "correct_fraction": "fail",
+        "wrong_fraction": "fail",
+        "certain_hidden_emissions": "fail",
+        "missing_continuity": "fail",
+        "recovery": "inconclusive",
+        "wrong_object_runs": "inconclusive"
+      },
+      "status": "fail"
+    },
+    {
+      "possession_id": "possession_003",
+      "frames": 500,
+      "eligible_frames": 402,
+      "matched": 333,
+      "wrong": 8,
+      "missing": 61,
+      "unscored": 23,
+      "withheld": 75,
+      "certain_hidden_emitted_frames": 0,
+      "resolution_trigger_deficits": {
+        "eligible_errors": 69,
+        "required_matches": 382,
+        "maximum_wrong": 4,
+        "additional_matches_needed": 49,
+        "wrong_to_correct_needed": 4,
+        "minimum_recoverable_errors_for_strict_majority": 35,
+        "trigger_status": "not_assessed",
+        "fit_authorized_by_this_report": false
+      },
+      "worst_known_missing_seconds": 0.64,
+      "gates": {
+        "correct_fraction": "fail",
+        "wrong_fraction": "fail",
+        "certain_hidden_emissions": "pass",
+        "missing_continuity": "fail",
+        "recovery": "pass",
+        "wrong_object_runs": "inconclusive"
+      },
+      "status": "fail"
+    }
+  ],
+  "cohort_count": 16,
+  "prospective_regression_status": "pass",
+  "comparison": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/selected_comparison_v0_1/evaluation.json",
+    "sha256": "dfe3fb80642cc68d4266a7e4b01bdd54b7a5483618b88e0285136fcc070c76d3",
+    "bytes": 11789432
+  },
+  "curated_review": {
+    "summary": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/selected_comparison_v0_1/attempts/42d80059dbfd44cd845fcf31b9bf6db0/review/summary.json",
+      "sha256": "d509904a7de1c8481ea654efdafc81cdfc706ff4d4ae2d19f9c24934d98f1d29",
+      "bytes": 48221
+    },
+    "index": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/selected_comparison_v0_1/attempts/42d80059dbfd44cd845fcf31b9bf6db0/review/index.html",
+      "sha256": "72c6fc92f7db73cd6cf9d6e72dc21f81fe46e81a7eda33fc8f5eebe36f48e775",
+      "bytes": 1467
+    }
+  },
+  "nba_review": {
+    "summary": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/selected_nba_comparison_review_v0_1/attempts/6429fb38c01d43649062cc143fb2b452/summary.json",
+      "sha256": "05c693d067abb4c0f274d3b827959c1fa8ac0d8f61c6440fb6d76aeb21ea10a6",
+      "bytes": 85630
+    },
+    "index": {
+      "path": "data/outputs/ball_tracking/completion_campaign_v0_1/selected_nba_comparison_review_v0_1/attempts/6429fb38c01d43649062cc143fb2b452/index.html",
+      "sha256": "618f7bf42f0a212e89abc2b7ba8db29cbe72dee44123f2aa2c7b0a2916c36bd2",
+      "bytes": 1242
+    }
+  },
+  "monitoring_summary": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_fit_v0_1/monitoring/20261025T221007Z/summary.json",
+    "sha256": "0163dcb2ba97bc6f7cad59f05e4e4f1cb91e25c6cbec96d11126536b14a8ac90",
+    "bytes": 2038
+  },
+  "validation": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/primary_result_review_v0_1/validation.json",
+    "sha256": "3a4301e3469d4f093c197a8fb90f6685cf1b0525fda43b50a343f74d05215056",
+    "bytes": 4860
+  },
+  "independent_audit": {
+    "path": "data/outputs/t/completion_actual_result_audit_20261025_01/audit.json",
+    "sha256": "92208f91cc681dba1a34378fe4533777cec9d5104755e176f56a8086eec29772",
+    "bytes": 15806
+  },
+  "resolution_fallback": {
+    "status": "blocked_by_approved_trigger",
+    "fit_started": false,
+    "reason": "P001 and P002 certain-hidden emissions independently block acceptance.",
+    "blocking_frames": {
+      "possession_001": [
+        185,
+        424,
+        425,
+        426,
+        427
+      ],
+      "possession_002": [
+        340,
+        341,
+        342,
+        438
+      ]
+    },
+    "small_ball_error_classification_performed": false,
+    "interpretation": "A failed necessary condition decides this branch; deficits alone do not authorize fitting."
+  },
+  "protected_positions_withheld": 225,
+  "protected_evaluation_authorized": false,
+  "human_trajectory_acceptance": null,
+  "ball_phase_accepted": false,
+  "accepted_references_and_original_reviews": "preserved; no repeat acceptance requested",
+  "next_boundary": "A different scientific approach or further fitting needs a new scope decision."
+}

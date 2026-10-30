@@ -1,0 +1,15 @@
+{
+  "schema_version": "ball_crop_player_context_experiment/v0.1",
+  "experiment_id": "rfdetr_medium_crop_player_context_v0_1",
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_player_context_v0_1.json",
+    "sha256": "b41dd0094755de726db6de196c28376cdfc2bceb40b645b1ce91fa56a6be80e7"
+  },
+  "output_root": "data/outputs/ball_tracking/crop_player_context/rfdetr_medium_crop_player_context_v0_1",
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_player_context_approval_v0_1.json",
+    "sha256": "6e6f0fa4016c2b187593a11af55e45ef5a0d3f87ad26783af05136d9d80c84c1"
+  },
+  "selected_operating_point": null,
+  "quality_gate": null
+}

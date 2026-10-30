@@ -1,0 +1,33 @@
+{
+  "schema_version": "ball_crop_corroboration_release_manifest/v0.1",
+  "study_id": "rfdetr_yolo_crop_corroboration_v0_1",
+  "scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_release_v0_1.json",
+    "size_bytes": 344753,
+    "sha256": "b81098c3aae5a89438d4c0cd621534abc806b5d9b099a5aa35211ce9be0d8ff2"
+  },
+  "proposal": {
+    "path": "docs/ball_crop_cross_detector_corroboration_release_proposal.md",
+    "size_bytes": 11764,
+    "sha256": "ae28ca67f9464747d11cfb5c2d7b0f5883d3d776e2a1dc48be786bca570abf2e"
+  },
+  "execution_approval": {
+    "path": "configs/ball_tracking/reviews/rfdetr_yolo_crop_corroboration_execution_approval_v0_1.json",
+    "size_bytes": 4934,
+    "sha256": "c67d5c1d479584cb2835ba2eae88534fa13918fb0d3d27e69d61ef19d51b4e4b"
+  },
+  "implementation_validation": {
+    "path": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/implementation_validation.json",
+    "size_bytes": 46188,
+    "sha256": "38e4ff8b81b971ba2f3b12ac2a033c02f6903bd75359e4e6772ce4a38bea59a6"
+  },
+  "frozen_history": {
+    "path": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/frozen_history.json",
+    "size_bytes": 2325883,
+    "sha256": "54bd6cbf3223a16f6f51afe923fc3de046f2f81c4e80634607f8fa75dd68d2e2"
+  },
+  "post_commit_checkpoint": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/post_commit_execution_checkpoint.json",
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

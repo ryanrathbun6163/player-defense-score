@@ -1,0 +1,350 @@
+{
+  "schema_version": "ball_crop_saved_decision_contrast_scope/v0.1",
+  "study_id": "rfdetr_medium_crop_saved_decision_contrast_v0_1",
+  "status": "proposed_not_authorized",
+  "executable": false,
+  "prepared_at_commit": "7a2e660a38877e2000fa997e675c86b97d55e9ac",
+  "prepared_at_utc": "2026-10-06T22:16:21.263454+00:00",
+  "proposal": {
+    "path": "docs/ball_crop_saved_decision_contrast_proposal.md",
+    "sha256": "aefe7d8619d85ed82a228e76e6fcdaa8ae95f16f6c6243217aca4697a1bf5119",
+    "size_bytes": 10281
+  },
+  "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+  "possession_id": "possession_003",
+  "purpose": "representative_evaluation",
+  "frame_indices": [
+    300,
+    301,
+    302,
+    304,
+    308,
+    319,
+    320,
+    324
+  ],
+  "setting": {
+    "arm": "history_edge_tight_cost_tight",
+    "policy": "cap20",
+    "confidence_threshold": 0.01,
+    "candidate_cap": 20,
+    "edge_step": 0.01,
+    "cost_step": 0.01,
+    "localization_radius_source_px": 10.0
+  },
+  "scientific_inputs": {
+    "representative_pool": {
+      "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/evaluation/representative_evaluation.json",
+      "sha256": "d70e2c4abafdd943a5f1add2e4f15748f04f5f2c2a240c2a5f867c81f03c7c9b",
+      "size_bytes": 22583132
+    },
+    "tt_observations_wrapper": {
+      "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/history_edge_tight_cost_tight_6faf84c6b3f6ca9d.json",
+      "sha256": "731eb6e538e43d4412762b5aab276ed250f57cc8f1ea19a34ee4e62b722fe26f",
+      "size_bytes": 5522898
+    }
+  },
+  "binding_authority": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_candidate_retention_v0_1.json",
+    "sha256": "7640784e2a64e81a2064ebb40cd4d1c77366076e5e78a2c19f8f5fc28e29fe1b",
+    "size_bytes": 2301903
+  },
+  "frozen_report_references": {
+    "crop_top_twenty": {
+      "authority_pointer": "/saved_report_references/221",
+      "source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/evaluation/representative_evaluation.json",
+        "sha256": "d70e2c4abafdd943a5f1add2e4f15748f04f5f2c2a240c2a5f867c81f03c7c9b",
+        "json_pointer": "/evaluation_reports/641"
+      },
+      "report_content_sha256": "572705ccbbf17aa00ab82202631692e734bcec0d909c561d1b9444941c7a3055",
+      "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+      "purpose": "representative_evaluation",
+      "config": {
+        "arm": "crop_top_twenty",
+        "confidence_threshold": 0.01,
+        "candidate_cap": 20,
+        "edge_step": null,
+        "cost_step": null
+      },
+      "localization_radius_px": 10.0,
+      "observations_file": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/crop_top_twenty_bbbe3fb731cce6f7.json",
+        "sha256": "e379d64bd3b56a5821088f7816304fb5e0991c748a951e0fd58024e819310e47"
+      },
+      "observations_content_sha256": "6f9009787037b855e2434abef2a34e1693a5eedcb97b573ea2d7b3e4da943668",
+      "original_selection_commit": "2274ab6097cd841421e2b606f723b047cd7dc62b",
+      "original_evaluation_commit": "2274ab6097cd841421e2b606f723b047cd7dc62b"
+    },
+    "history_edge_tight_cost_tight": {
+      "authority_pointer": "/saved_report_references/226",
+      "source": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/evaluation/representative_evaluation.json",
+        "sha256": "d70e2c4abafdd943a5f1add2e4f15748f04f5f2c2a240c2a5f867c81f03c7c9b",
+        "json_pointer": "/evaluation_reports/646"
+      },
+      "report_content_sha256": "5b34d39d3689a096704c01b1f8539458de89eb7ebbd6c202b5a1272db0e196cc",
+      "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+      "purpose": "representative_evaluation",
+      "config": {
+        "arm": "history_edge_tight_cost_tight",
+        "confidence_threshold": 0.01,
+        "candidate_cap": 20,
+        "edge_step": 0.01,
+        "cost_step": 0.01
+      },
+      "localization_radius_px": 10.0,
+      "observations_file": {
+        "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/history_edge_tight_cost_tight_6faf84c6b3f6ca9d.json",
+        "sha256": "731eb6e538e43d4412762b5aab276ed250f57cc8f1ea19a34ee4e62b722fe26f"
+      },
+      "observations_content_sha256": "de92f0a12cd57f7f1e827447ee23e851bb7b9e6a563367fd4d3e395ab0f1fcb5",
+      "original_selection_commit": "2274ab6097cd841421e2b606f723b047cd7dc62b",
+      "original_evaluation_commit": "2274ab6097cd841421e2b606f723b047cd7dc62b"
+    }
+  },
+  "frozen_control_reference": {
+    "authority_pointer": "/saved_control_outputs/87",
+    "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+    "purpose": "representative_evaluation",
+    "possession_id": "possession_003",
+    "file": {
+      "path": "data/outputs/ball_tracking/crop_motion_factorial/rfdetr_medium_crop_motion_factorial_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/history_edge_tight_cost_tight_6faf84c6b3f6ca9d.json",
+      "sha256": "731eb6e538e43d4412762b5aab276ed250f57cc8f1ea19a34ee4e62b722fe26f"
+    },
+    "config": {
+      "arm": "history_edge_tight_cost_tight",
+      "confidence_threshold": 0.01,
+      "candidate_cap": 20,
+      "edge_step": 0.01,
+      "cost_step": 0.01
+    },
+    "variant_id": "history_edge_tight_cost_tight_6faf84c6b3f6ca9d",
+    "observations_content_sha256": "de92f0a12cd57f7f1e827447ee23e851bb7b9e6a563367fd4d3e395ab0f1fcb5",
+    "input_candidate_content_sha256": "727dc3a9f1401f218001db3fe759ec6f20d78640c261cc4c84ea1d6417afccbc",
+    "original_selection_commit": "2274ab6097cd841421e2b606f723b047cd7dc62b",
+    "original_detector_commit": "1a9479f83a1766d8979fad07c604bc686d3c52c6",
+    "frame_count": 25
+  },
+  "administrative_authorities": {
+    "human_review_completion": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/candidate_identity_review_v0_1/human_review_completion_v0_1.json",
+      "sha256": "b7958873abdc31c8bd8b409f6238090ebfd7ed19c130f6ab1fa6b44de805d857",
+      "size_bytes": 9016
+    },
+    "human_review_ledger": {
+      "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/candidate_identity_review_v0_1/human_review_0008.json",
+      "sha256": "bdd9179f0982646fea2ede5686187bab6f26c51ee61b89f1139ab088b1192665",
+      "size_bytes": 15191
+    },
+    "verification_completion": {
+      "path": "data/outputs/t/ci_impl_efeefd58f680/identity_review_completion_7a2e660a3887.json",
+      "sha256": "bfd72f86bfba0bfd8250f3480382ae7f530e89fda278413ca5de59cc14a68087",
+      "size_bytes": 7441
+    },
+    "selection_scope": {
+      "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_candidate_identity_review_v0_1.json",
+      "sha256": "e767f943291464609c1567439910a0f092d9d63943da5932d4ba53cd8c9a7c49",
+      "size_bytes": 10504
+    }
+  },
+  "semantic_sources": [
+    {
+      "path": "src/ball_tracking/crop_motion_factorial.py",
+      "sha256": "90d3f08f29678ab063ed6b6f9ae2ebe9e060115a977df29bdf66d4328f96a9cb",
+      "size_bytes": 11159
+    },
+    {
+      "path": "src/ball_tracking/crop_motion_evaluation.py",
+      "sha256": "f7f75cbdf3b4d17e41c6e27f3506993772d4ce301882b2f3319c212d8a7c8aff",
+      "size_bytes": 19887
+    },
+    {
+      "path": "src/ball_tracking/evaluation.py",
+      "sha256": "d4161d87bdfc0f7ad9c113a815aded62d6516b3fed700968d02b97125a1ec948",
+      "size_bytes": 43216
+    },
+    {
+      "path": "src/ball_tracking/crop_retention_evaluation.py",
+      "sha256": "27ade8b099c1cb0387d008b1c622ea12a5ac8bb311aaa83d372e10b9740c57d6",
+      "size_bytes": 36608
+    }
+  ],
+  "source_parity": {
+    "ranking_and_matching_commit": "2274ab6097cd841421e2b606f723b047cd7dc62b",
+    "ranking_and_matching_source_git_blobs_match": true,
+    "loss_partition_commit": "f36237247191e726ad7e81bdc6651f9340a9063d",
+    "loss_partition_source_git_blob_matches": true
+  },
+  "comparison_rule": {
+    "index_source": "saved crop_top_twenty/.01/raw10 frame_results.matched_candidate_index",
+    "meaning": "Highest-confidence raw-radius-qualified retained candidate; ties by lower original index.",
+    "not_established": [
+      "visually_confirmed_ball",
+      "nearest_candidate",
+      "highest_objective_compatible_endpoint",
+      "all_compatible_candidates"
+    ],
+    "emitted_endpoint_source": "saved TT current-frame emitted_candidate_indices and ranking.winner",
+    "historical_path_bounds": {
+      "300": {
+        "start": 300,
+        "end": 300
+      },
+      "301": {
+        "start": 300,
+        "end": 301
+      },
+      "302": {
+        "start": 300,
+        "end": 302
+      },
+      "304": {
+        "start": 300,
+        "end": 304
+      },
+      "308": {
+        "start": 304,
+        "end": 308
+      },
+      "319": {
+        "start": 315,
+        "end": 319
+      },
+      "320": {
+        "start": 316,
+        "end": 320
+      },
+      "324": {
+        "start": 320,
+        "end": 324
+      }
+    },
+    "human_semantics_apply_only_to_emitted_candidate": true,
+    "existing_null_human_indices_remain_null": true
+  },
+  "permitted_operations": [
+    "verify_two_expected_file_byte_hashes_inside_owned_worker",
+    "validate_fixed_headers_content_digests_and_shared_candidate_namespace",
+    "extract_only_two_fixed_reports_and_eight_target_frame_rows",
+    "join_fixed_saved_match_index_to_current_endpoint_in_eight_saved_TT_rankings",
+    "copy_two_endpoint_confidences_paths_scores_and_saved_component_totals",
+    "copy_comparison_saved_raw_center_error_and_separate_global_score_margin",
+    "derive_current_and_past_confidence_contributions_and_fixed_gap_motion_contributions",
+    "derive_signed_winner_minus_comparison_score_and_term_differences",
+    "validate_stored_score_arithmetic_without_selector_or_evaluator_execution",
+    "record_exact_source_pointers_for_copies_and_operands",
+    "join_existing_human_judgments_without_new_semantic_labels"
+  ],
+  "arithmetic": {
+    "gap_penalty": 0.25,
+    "motion_penalty": 0.25,
+    "current_confidence": "c",
+    "past_confidence": "C-c",
+    "internal_gap": "-0.25*G",
+    "motion": "-0.25*N",
+    "pair_score_gap": "winner.saved_score-comparison.saved_score",
+    "term_contrast": "winner.term-comparison.term",
+    "relative_tolerance": 1e-09,
+    "absolute_tolerance": 1e-09,
+    "tolerance_purpose": "floating_point_integrity_only",
+    "tie_definition": "exact_stored_score_equality",
+    "current_endpoint_trailing_skips": 0,
+    "frame300_has_no_prior_history": true,
+    "saved_global_margin_is_not_pair_gap": true
+  },
+  "outputs": {
+    "directory": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/post_review_saved_decision_contrast_v0_1",
+    "files": {
+      "contrast.json": 131072,
+      "summary.md": 65536,
+      "provenance.json": 131072
+    },
+    "create_only": true,
+    "parent_receives_verified_bounded_transport_only": true,
+    "fail_instead_of_truncate": true
+  },
+  "proposed_unit": {
+    "key": "post-review-saved-decision-contrast:summary:",
+    "maximum_attempts": 1,
+    "maximum_charged_seconds": 120,
+    "cumulative_remaining_seconds_at_preparation": 10993.273000000017,
+    "automatic_scientific_retry": false,
+    "old_attempts_renewed": false
+  },
+  "monitor_policy": {
+    "reuse_validated_responsive_monitor": true,
+    "requested_poll_interval_seconds": 0.25,
+    "maximum_completed_safety_interval_seconds": 1,
+    "scan_request_deadline_seconds": 10,
+    "next_request_after_completion_seconds": 5,
+    "maximum_measurement_age_seconds": 30,
+    "maximum_helpers": 1,
+    "maximum_sampled_memory_bytes": 8589934592,
+    "worker_committed_memory_bytes": 8589934592,
+    "helper_committed_memory_bytes": 536870912,
+    "minimum_free_disk_bytes": 53687091200,
+    "maximum_whole_output_root_bytes": 34359738368,
+    "maximum_scan_record_bytes": 8192,
+    "maximum_worker_receipt_bytes": 1048576,
+    "publication_reserve_bytes": 65536,
+    "initial_and_distinct_final_scan_required": true,
+    "owned_cleanup_required": true
+  },
+  "preserved_history": {
+    "event_count": 3172,
+    "closed_attempts": 61,
+    "successful_attempts": 57,
+    "failed_attempts": 4,
+    "tip_sha256": "10ce622caf54c06526fa2b0b259889157711adeb35d4185d793e74cf845dad13",
+    "new_frozen_metadata_must_include_completed_human_records": true,
+    "prediction_embargo_count": 9,
+    "sealed_holdout_count": 3
+  },
+  "prohibited": [
+    "parent_scientific_body_reads_or_hashes",
+    "image_or_video_access",
+    "annotation_or_raw_candidate_body_access",
+    "pointer_following_to_other_files",
+    "eligible_edge_list_analysis",
+    "selector_or_dynamic_programming_rerun",
+    "evaluator_or_matching_rerun",
+    "new_inference",
+    "new_visual_review",
+    "alternative_comparator_search",
+    "new_semantic_or_training_labels",
+    "numerical_distance_recalculation",
+    "parameter_tuning",
+    "method_ranking_or_selection",
+    "overall_performance_rates_or_generalization",
+    "causal_or_counterfactual_claims",
+    "renewing_consumed_attempts",
+    "overwriting_existing_artifacts",
+    "git_mutations_without_separate_approval"
+  ],
+  "release_requirements": [
+    "explicit_exact_scope_approval",
+    "minimal_implementation_and_artificial_focused_then_full_validation",
+    "independent_source_review",
+    "new_exact_implementation_certificate",
+    "separate_staging_approval",
+    "separate_commit_approval",
+    "verified_clean_descendant_commit",
+    "create_only_post_commit_execution_checkpoint",
+    "fresh_preservation_metadata_including_human_review_records"
+  ],
+  "preparation_access": {
+    "scientific_bodies_read_or_hashed": false,
+    "scientific_path_sizes_from_lstat_only": true,
+    "expected_scientific_hashes_copied_from_committed_metadata": true,
+    "pixels_inspected": false,
+    "tests_or_experiments_run": false
+  },
+  "implementation_authorized": false,
+  "execution_authorized": false,
+  "stage_authorized": false,
+  "commit_authorized": false,
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

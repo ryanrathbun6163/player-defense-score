@@ -1,0 +1,385 @@
+{
+  "schema_version": "ball_crop_candidate_ranking_proposal/v0.1",
+  "proposal_id": "rfdetr_medium_crop_candidate_ranking_v0_1",
+  "status": "proposal_not_authorized_not_executable",
+  "prepared_at_utc": "2026-10-01T02:18:55.485434+00:00",
+  "design": {
+    "path": "docs/ball_crop_candidate_ranking_proposal.md",
+    "sha256": "b7e7f9c9f3a7a150a6a165b2b42fa29d60b1f8b15068bddb88eac95f30dd37f7"
+  },
+  "rationale": {
+    "path": "docs/ball_detector_tiled_comparison_results.md",
+    "sha256": "9ce1ebb5b2deb9f3118f858b50074320ad649a4dc7b06db213f058df91569201"
+  },
+  "diagnostic": {
+    "path": "data/outputs/ball_tracking/tiled_closeout/1a9479f83a17/diagnostic.json",
+    "sha256": "87a2e57e147da2907d42286bc6d81d333c011eb5609ba3f71c09291265c0cc3d"
+  },
+  "crop_review_receipt": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_tiled_development_comparison_visual_review_record_v0_1.json",
+    "sha256": "6e108189b792d505c97adbcfcce5aa635a6e140893a6306e0c08bfe910218adb"
+  },
+  "crop_execution_record": {
+    "path": "data/outputs/ball_tracking/tiled_execution/1a9479f83a17/execution_record.json",
+    "sha256": "4d7977be4e08c9e70df438a007cbe92de4be60bed14eccc4d75a581aff137b52"
+  },
+  "crop_execution_commit": "1a9479f83a1766d8979fad07c604bc686d3c52c6",
+  "crop_experiment_manifest": {
+    "path": "configs/ball_tracking/tiled_experiments/rfdetr_medium_tiled_development_comparison_v0_1.json",
+    "sha256": "87716bd68417f57987ce88fd2b7b16a2f243f488a1f29e3d25b8680798ae7b00"
+  },
+  "saved_crop_scoring_reports": [
+    {
+      "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/evaluation/representative_evaluation.json",
+      "sha256": "34fff92386a64a9d1f51f4dfd79c68d5fd21b5126f2d9358e61bd4143a867d7b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/evaluation/challenge_evaluation.json",
+      "sha256": "9fd8960dabfcc605a92b136d247d731d600e09e0d7348da3b32cd8c68405c4a3"
+    }
+  ],
+  "frozen_detector_contract_source": {
+    "path": "configs/ball_tracking/experiments/rfdetr_medium_development_evaluation_v0_2.json",
+    "sha256": "3a78cf26686c0624c1a45dec5c47e7bad182cc7d5cd658b639e11d47c0d75489"
+  },
+  "windows": [
+    {
+      "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+      "purpose": "representative_evaluation",
+      "possession_id": "possession_001",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 50,
+      "end_frame_index": 74,
+      "detection_run_id": "possession_001_frames_0050_0074_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_001_frames_0050_0074_representative_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_001_frames_0050_0074_rfdetr_medium_development_v0_2.json",
+        "sha256": "c7a9963c6d0d33ca9faede512bbdced48f744f40ff803b68d55d1f97bae043c8"
+      },
+      "crop_candidates": {
+        "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/candidates.json",
+        "sha256": "68ec89f2a527a6643bc443e1ec7533bd3971015f681260a9d222681ebfb6989b"
+      }
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "purpose": "challenge_evaluation",
+      "possession_id": "possession_001",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 200,
+      "end_frame_index": 224,
+      "detection_run_id": "possession_001_frames_0200_0224_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_001_frames_0200_0224_challenge_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_001_frames_0200_0224_rfdetr_medium_development_v0_2.json",
+        "sha256": "4101f8b890138e25f2301b03f06791a9de3bdec66a84ab32c8dda16ffa22c656"
+      },
+      "crop_candidates": {
+        "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/candidates.json",
+        "sha256": "96b64d53938523536cfd6374bb3a33c93bc30d4bc0ffb66f0ced310a2b80bfc2"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+      "purpose": "representative_evaluation",
+      "possession_id": "possession_002",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 250,
+      "end_frame_index": 274,
+      "detection_run_id": "possession_002_frames_0250_0274_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_002_frames_0250_0274_representative_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_002_frames_0250_0274_rfdetr_medium_development_v0_2.json",
+        "sha256": "8159041a0ffd707f5823081f52cf8012ba10a8af9fbc26809426310f5d9dceec"
+      },
+      "crop_candidates": {
+        "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/candidates.json",
+        "sha256": "d9d8da77d604499765bb2a94f02a012a2713b5a1fed879c75f64d041d2e6734c"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+      "purpose": "challenge_evaluation",
+      "possession_id": "possession_002",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "start_frame_index": 25,
+      "end_frame_index": 49,
+      "detection_run_id": "possession_002_frames_0025_0049_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_002_frames_0025_0049_challenge_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_002_frames_0025_0049_rfdetr_medium_development_v0_2.json",
+        "sha256": "dcbb1c88ab70c7ee938944e890e3e22773b8e01cd792a32591ce91fc8cf3bee6"
+      },
+      "crop_candidates": {
+        "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/candidates.json",
+        "sha256": "ca1eba2c25ddcea655e8f3230a83fdbe419dfa057218fe2d569ce1de5c55eb2f"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+      "purpose": "representative_evaluation",
+      "possession_id": "possession_003",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "start_frame_index": 300,
+      "end_frame_index": 324,
+      "detection_run_id": "possession_003_frames_0300_0324_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_003_frames_0300_0324_representative_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_003_frames_0300_0324_rfdetr_medium_development_v0_2.json",
+        "sha256": "dc621477e8c3c907cb3f7d74b2c56a22075af858cbe027ab1ef7afe3893f1d0c"
+      },
+      "crop_candidates": {
+        "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/candidates.json",
+        "sha256": "7fa6a6d4b0ec153e30ffed53149cf4f00ffb11b9439138b8a0751f96d77b4cfa"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "purpose": "challenge_evaluation",
+      "possession_id": "possession_003",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "start_frame_index": 150,
+      "end_frame_index": 174,
+      "detection_run_id": "possession_003_frames_0150_0174_rfdetr_medium_development_v0_2",
+      "annotation_set_id": "possession_003_frames_0150_0174_challenge_evaluation_v0_1",
+      "detection": {
+        "path": "data/outputs/ball_tracking/detections/rfdetr_medium_development_evaluation_v0_2/possession_003_frames_0150_0174_rfdetr_medium_development_v0_2.json",
+        "sha256": "c28ab58e8a40e49018954d8327a178b268ad1b4b6fc7929a80f5ea8d8d344802"
+      },
+      "crop_candidates": {
+        "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/candidates.json",
+        "sha256": "5a231da10c3cd8eb0b221124a6dcef1bec2d7e1cf12f4375d7d0f943f8d1d47e"
+      }
+    }
+  ],
+  "scoring_labels": [
+    {
+      "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_001_frames_0050_0074_representative_evaluation_v0_1.json",
+        "sha256": "3731fa669da12fdcab0748ab92bc7bbb85961a2a0f80518092eaced0e08d5c6c"
+      }
+    },
+    {
+      "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_001_frames_0200_0224_challenge_evaluation_v0_1.json",
+        "sha256": "73ed29bc62e002d86b207a12298b30b27724fe42be5a354ec09bc104211e2def"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_002_frames_0250_0274_representative_evaluation_v0_1.json",
+        "sha256": "cccec6a086bf9898197babeb5d785bdd4ba0290b7c6c1ba5c206e8545e67563f"
+      }
+    },
+    {
+      "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_002_frames_0025_0049_challenge_evaluation_v0_1.json",
+        "sha256": "c0d1bad8f6879e2d073b6d0becf3df12347b43ef06e9c6ff44c26b6f56d3c1e3"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_003_frames_0300_0324_representative_evaluation_v0_1.json",
+        "sha256": "2b35475e715e9a4b816ad997b58be3201370695a2f420a35a6947696bbe3637e"
+      }
+    },
+    {
+      "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+      "annotation": {
+        "path": "configs/ball_tracking/annotations/possession_003_frames_0150_0174_challenge_evaluation_v0_1.json",
+        "sha256": "ab77e6c8570ee8fc536632e43ee71d978e72cd16188f7564c77ae256873994ee"
+      }
+    }
+  ],
+  "confidence_thresholds": [
+    0.01,
+    0.03,
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.35,
+    0.5
+  ],
+  "localization_radii_px": [
+    5.0,
+    10.0,
+    15.0,
+    20.0,
+    30.0
+  ],
+  "pool_separation": [
+    "representative_evaluation",
+    "challenge_evaluation"
+  ],
+  "selectors": [
+    {
+      "arm": "crop_raw"
+    },
+    {
+      "arm": "crop_top_one"
+    },
+    {
+      "arm": "crop_top_twenty",
+      "candidate_cap": 20
+    },
+    {
+      "arm": "recent_history_tight",
+      "candidate_cap": 20,
+      "step_limit": 0.01
+    },
+    {
+      "arm": "recent_history_wide",
+      "candidate_cap": 20,
+      "step_limit": 0.03
+    }
+  ],
+  "ranking_contract": {
+    "input_order": "original_global_candidate_order_after_inclusive_confidence_filter",
+    "history_frames": 5,
+    "max_missing_frames_between_nodes": 2,
+    "max_trailing_missing_frames": 2,
+    "missing_frame_penalty": 0.25,
+    "squared_normalized_step_penalty": 0.25,
+    "edge_limit": "distance_px <= step_limit * source_diagonal_px * elapsed_frames; elapsed_frames in [1,3]",
+    "score": "sum(original_confidences) - 0.25*(internal_skipped_frames + trailing_skipped_frames) - 0.25*sum(normalized_step**2)",
+    "leading_missing_penalty": 0.0,
+    "empty_hypothesis_score": 0.0,
+    "solver": "exact_dynamic_programming_over_last_five_frame_acyclic_graph",
+    "path_ties": "lexicographically_smallest_sequence_of_original_frame_candidate_pairs",
+    "endpoint_ties": "latest_endpoint_frame_then_higher_endpoint_confidence_then_lower_global_candidate_index_then_lexicographic_path",
+    "empty_tie_rule": "empty_wins_any_score_zero_tie",
+    "output_rule": "emit_original_candidate_only_if_winning_endpoint_is_current_frame; otherwise_null",
+    "probability_interpretation": false,
+    "hypothesis_alternatives_and_score_margins_required": true,
+    "ambiguity_margin_acceptance_threshold": null,
+    "state_reset": "each_window",
+    "future_access_allowed": false,
+    "past_output_revisions_allowed": false,
+    "singleton_start_allowed": true
+  },
+  "matching_rule": "raw center distance; uncertainty diagnostic only",
+  "review": {
+    "confidence_thresholds": [
+      0.2,
+      0.35
+    ],
+    "radius_px": 10.0,
+    "panels": [
+      "crop_raw",
+      "crop_top_one",
+      "crop_top_twenty",
+      "recent_history_tight",
+      "recent_history_wide",
+      "saved_whole_frame_top_one_context"
+    ],
+    "clips": 12,
+    "frames_per_clip": 25,
+    "fps": 5.0,
+    "all_frames_and_final_frame_required": true,
+    "highlighted_context": {
+      "possession_002_challenge": [
+        48,
+        49
+      ],
+      "possession_002_representative": [
+        258,
+        259
+      ],
+      "possession_001_challenge": [
+        219
+      ],
+      "possession_003_hidden": [
+        165,
+        166,
+        167,
+        168,
+        169
+      ],
+      "possession_003_boundaries": [
+        164,
+        170,
+        174
+      ]
+    }
+  },
+  "expected_counts": {
+    "source_frames": 150,
+    "new_model_calls": 0,
+    "variants": 45,
+    "per_window_derived_outputs": 270,
+    "total_per_window_scoring_reports": 1350,
+    "aggregate_cells_per_pool": 225,
+    "crop_raw_top_one_parity_cells": 540
+  },
+  "proposed_output_root": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1",
+  "selection_labels_access_allowed": false,
+  "new_detector_inference_allowed": false,
+  "training_allowed": false,
+  "window_expansion_allowed": false,
+  "deduplication_allowed": false,
+  "candidate_center_or_confidence_modification_allowed": false,
+  "smoothing_interpolation_extrapolation_allowed": false,
+  "player_or_court_input_allowed": false,
+  "holdout_release_authorized": false,
+  "original_v0_1_embargoes_preserved": true,
+  "selected_operating_point": null,
+  "quality_gate": null,
+  "authorization": null,
+  "execution_preconditions": [
+    "explicit_approval_bound_to_this_design_and_versioned_specification",
+    "separate_derived_schema_and_strict_input_window_validation",
+    "focused_synthetic_and_full_repository_tests_pass",
+    "separately_authorized_clean_implementation_commit",
+    "validated_executable_manifest_bound_to_approval_and_input_hashes",
+    "preservation_of_all_original_embargo_paths_and_three_holdouts"
+  ]
+}

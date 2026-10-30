@@ -1,0 +1,39 @@
+{
+  "schema_version": "ball_crop_path_confidence_mean_approval/v0.1",
+  "approved_by": "Ryan",
+  "recorded_at_utc": "2026-10-07T00:03:27.476361+00:00",
+  "statement": "yes I do an you are approved to stage and commit if nothing is broken after",
+  "timestamp_semantics": "Receipt creation time, not an invented user-message timestamp.",
+  "proposal": {
+    "path": "docs/ball_crop_path_confidence_mean_proposal.md",
+    "sha256": "e93d9df6b22946820754b59f99117991c6afad1c40dc3a8543fda588e4d7e3f2"
+  },
+  "scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_path_confidence_mean_v0_1.json",
+    "sha256": "48577fb837806b3bf96eb9bacc613167bfcde5807706571fa63cd0a76cb61737"
+  },
+  "implementation_authorized": true,
+  "focused_validation_authorized": true,
+  "full_regression_authorized": true,
+  "conditional_execution_authorized": true,
+  "clean_commit_required": true,
+  "maximum_new_attempts": 1,
+  "maximum_unit_seconds": 1200,
+  "approved_operations": [
+    "one_new_mean_confidence_selector_on_six_fixed_development_windows",
+    "new_arm_raw10_evaluation_with_saved_controls",
+    "six_new_synchronized_review_packages",
+    "owned_worker_only_declared_scientific_input_reads"
+  ],
+  "responsive_monitor_policy_adopted": true,
+  "parent_scientific_body_access_authorized": false,
+  "parent_pixel_inspection_authorized": false,
+  "new_verified_review_media_presentation_authorized_after_success": true,
+  "new_inference_authorized": false,
+  "historical_selector_or_evaluator_rerun_authorized": false,
+  "automatic_scientific_retry_authorized": false,
+  "staging_authorized_if_validation_passes": true,
+  "committing_authorized_if_validation_passes": true,
+  "git_authorization_scope": "This exact implementation and associated proposal, scope and continuity documentation, conditional on passing checks. Report exact state and file scope before each Git mutation.",
+  "push_pr_merge_authorized": false
+}

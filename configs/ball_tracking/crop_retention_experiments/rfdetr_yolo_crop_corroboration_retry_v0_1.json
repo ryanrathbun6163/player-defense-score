@@ -1,0 +1,48 @@
+{
+  "schema_version": "ball_crop_corroboration_retry_release_manifest/v0.1",
+  "study_id": "rfdetr_yolo_crop_corroboration_v0_1",
+  "scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_release_v0_1.json",
+    "size_bytes": 344753,
+    "sha256": "b81098c3aae5a89438d4c0cd621534abc806b5d9b099a5aa35211ce9be0d8ff2"
+  },
+  "proposal": {
+    "path": "docs/ball_crop_cross_detector_corroboration_release_proposal.md",
+    "size_bytes": 11764,
+    "sha256": "ae28ca67f9464747d11cfb5c2d7b0f5883d3d776e2a1dc48be786bca570abf2e"
+  },
+  "execution_approval": {
+    "path": "configs/ball_tracking/reviews/rfdetr_yolo_crop_corroboration_execution_approval_v0_1.json",
+    "size_bytes": 4934,
+    "sha256": "c67d5c1d479584cb2835ba2eae88534fa13918fb0d3d27e69d61ef19d51b4e4b"
+  },
+  "integration_scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_retry_integration_v0_1.json",
+    "size_bytes": 42059,
+    "sha256": "f125ccc0ef2e4d732a0f807436c9d1ec9dab3d47b258f973af5a6e59c74daa80"
+  },
+  "integration_proposal": {
+    "path": "docs/ball_crop_cross_detector_corroboration_retry_integration_proposal.md",
+    "size_bytes": 16553,
+    "sha256": "bd03fd5c262135934802f27f7fe5bbcae3cb262bdc25476af5df7ae0da990863"
+  },
+  "retry_approval": {
+    "path": "configs/ball_tracking/reviews/rfdetr_yolo_crop_corroboration_retry_execution_approval_v0_1.json",
+    "size_bytes": 2937,
+    "sha256": "10544d710d0d958384fc1548c6a2c0cf0ee6ef70fd319eba3ae46c361afbfc7b"
+  },
+  "implementation_validation": {
+    "path": "data/outputs/t/corroboration_retry_integration_3233d2c/implementation_validation.json",
+    "size_bytes": 162862,
+    "sha256": "c2f86015149bc38ddeaf950c5e9de464bfc6cfe3e6ced0cd73a002f2ef6c3bea"
+  },
+  "frozen_history": {
+    "path": "data/outputs/t/corroboration_retry_integration_3233d2c/runtime_frozen_history.json",
+    "size_bytes": 2330229,
+    "sha256": "d528458ef3a8db916fabac2cb560aefb875b4367df0da6aee9f2758521a36f01"
+  },
+  "post_commit_checkpoint": "data/outputs/t/corroboration_retry_integration_3233d2c/post_commit_execution_checkpoint.json",
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

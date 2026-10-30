@@ -1,0 +1,47 @@
+{
+  "schema_version": "ball_crop_path_confidence_mean_experiment/v0.1",
+  "study_id": "rfdetr_medium_crop_path_confidence_mean_v0_1",
+  "output_root": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1",
+  "output_dir": "audit/path_confidence_mean_v0_1",
+  "permitted_stages": [
+    "study"
+  ],
+  "unit_key": "path-confidence-mean:study:",
+  "maximum_unit_seconds": 1200,
+  "proposal": {
+    "path": "docs/ball_crop_path_confidence_mean_proposal.md",
+    "sha256": "e93d9df6b22946820754b59f99117991c6afad1c40dc3a8543fda588e4d7e3f2"
+  },
+  "scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_path_confidence_mean_v0_1.json",
+    "sha256": "48577fb837806b3bf96eb9bacc613167bfcde5807706571fa63cd0a76cb61737"
+  },
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_path_confidence_mean_approval_v0_1.json",
+    "sha256": "071e21ae651d28067e1ad5d8de3378d38bcf5615cf491f97c106af9914fc81e8"
+  },
+  "frozen_history": {
+    "path": "data/outputs/t/mean_impl_10e5fcb90f51/frozen_history.json",
+    "sha256": "010f3c3f31df54becd664e3c30938eb82413cd703add939874c4f8ef63d9ad52"
+  },
+  "predecessor_completion": {
+    "path": "data/outputs/t/sdc_impl_7a2e660a3887/saved_decision_contrast_completion_26242d13a5a9.json",
+    "sha256": "9cedb98e3d46160ac6cfc7f2ea47408f8ef355befeb380de911be7cbf32aa503"
+  },
+  "human_ledger": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/candidate_identity_review_v0_1/human_review_0008.json",
+    "sha256": "bdd9179f0982646fea2ede5686187bab6f26c51ee61b89f1139ab088b1192665"
+  },
+  "human_review_completion": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/review/candidate_identity_review_v0_1/human_review_completion_v0_1.json",
+    "sha256": "b7958873abdc31c8bd8b409f6238090ebfd7ed19c130f6ab1fa6b44de805d857"
+  },
+  "implementation_validation": {
+    "path": "data/outputs/t/mean_impl_10e5fcb90f51/implementation_validation.json",
+    "sha256": "51384f02cf27f56bd5bfb0b2281fcc62cecd30c2726f528c9671fccb2fc92093"
+  },
+  "post_commit_checkpoint": "data/outputs/t/mean_impl_10e5fcb90f51/post_commit_execution_checkpoint.json",
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

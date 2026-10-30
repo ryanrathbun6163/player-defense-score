@@ -1,0 +1,29 @@
+{
+  "schema_version": "nba_gap_anchor_reference_approval/v0.1",
+  "status": "approved",
+  "approved_by": "Ryan",
+  "user_statement": "Move forward chat",
+  "recorded_at_utc": "2026-10-21T03:11:12.323216+00:00",
+  "source_commit": "c30567a98a556755e2d794b1581909fe95e06818",
+  "plan": {
+    "path": "docs/nba_gap_anchor_reference_plan.md",
+    "sha256": "8fd1be541ee92e4ec2ea30ca94db037b756de7e5a501fdf8f5f4808c4ad95726",
+    "bytes": 6824
+  },
+  "scope": "Prepare 27 source-first AI frame judgments, preserve seven accepted controls, assess saved objects only after proposals are fixed, and deliver one ten-context reference review.",
+  "conditional_followup": "Only after Ryan accepts/corrects the new references: publish a separate human-accepted AI reference and evaluate already-saved outputs without changing the original790-frame report.",
+  "totals": {
+    "groups": 10,
+    "target_frames": 34,
+    "context_frames": 74,
+    "new_references": 27,
+    "reused_references": 7
+  },
+  "new_model_calls": false,
+  "training": false,
+  "parameter_search": false,
+  "holdout_release": false,
+  "local_integration": true,
+  "human_reference_acceptance": "pending",
+  "broader_rule_adoption": false
+}

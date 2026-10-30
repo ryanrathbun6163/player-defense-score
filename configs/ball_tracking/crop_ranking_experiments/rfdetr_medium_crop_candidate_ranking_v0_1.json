@@ -1,0 +1,15 @@
+{
+  "schema_version": "ball_crop_candidate_ranking_experiment/v0.1",
+  "experiment_id": "rfdetr_medium_crop_candidate_ranking_v0_1",
+  "proposal": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_candidate_ranking_v0_1.json",
+    "sha256": "f9a3ae162d2227ddffab9a9da68811ea629cf7dfa6ffa48625546ac1ab5ad2ca"
+  },
+  "output_root": "data/outputs/ball_tracking/crop_candidate_ranking/rfdetr_medium_crop_candidate_ranking_v0_1",
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_ranking_approval_v0_1.json",
+    "sha256": "a08f5c9db995facb37e9e008aa1e1b928b92b55be89556889a05583dc20c0eab"
+  },
+  "selected_operating_point": null,
+  "quality_gate": null
+}

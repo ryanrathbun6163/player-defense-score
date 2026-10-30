@@ -1,0 +1,36 @@
+{
+  "schema_version": "ball_crop_saved_decision_contrast_approval/v0.1",
+  "approved_by": "Ryan",
+  "recorded_at_utc": "2026-10-06T22:23:56.479266+00:00",
+  "statement": "Yes you may, and you also have my permission to stage and commit if nothing is broken after you implement this",
+  "timestamp_semantics": "Receipt creation time, not an invented user-message timestamp.",
+  "proposal": {
+    "path": "docs/ball_crop_saved_decision_contrast_proposal.md",
+    "sha256": "aefe7d8619d85ed82a228e76e6fcdaa8ae95f16f6c6243217aca4697a1bf5119"
+  },
+  "scope": {
+    "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_saved_decision_contrast_v0_1.json",
+    "sha256": "2e67565cc7fbedfe24eb04b7743e24d4904a44d5425470abecf90f35fe4ca2da"
+  },
+  "implementation_authorized": true,
+  "focused_validation_authorized": true,
+  "full_regression_authorized": true,
+  "conditional_execution_authorized": true,
+  "clean_commit_required": true,
+  "maximum_new_attempts": 1,
+  "maximum_unit_seconds": 120,
+  "approved_operations": [
+    "read_two_fixed_saved_records",
+    "derive_eight_fixed_saved_decision_contrasts"
+  ],
+  "responsive_monitor_policy_adopted": true,
+  "parent_scientific_body_access_authorized": false,
+  "parent_pixel_inspection_authorized": false,
+  "new_inference_authorized": false,
+  "selector_or_evaluator_rerun_authorized": false,
+  "automatic_scientific_retry_authorized": false,
+  "staging_authorized_if_validation_passes": true,
+  "committing_authorized_if_validation_passes": true,
+  "git_authorization_scope": "This implementation and its associated proposal, scope and continuity documentation, conditional on passing checks. Report exact state and file scope before each Git mutation.",
+  "push_pr_merge_authorized": false
+}

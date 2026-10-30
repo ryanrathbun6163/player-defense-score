@@ -1,0 +1,86 @@
+{
+  "schema_version": "nba_weak_response_experiment/v0.1",
+  "status": "prospective_parameters",
+  "created_date_phoenix": "2026-10-26",
+  "branch": "codex/ball-detector-baseline",
+  "starting_head": "8c040fca385dd8fffa0d7a13c45c53e79950bae1",
+  "authority": "Ryan's session18 instruction to proceed with revised NBA weak-response feasibility and small paired candidate-selection comparison, including necessary scoped monitored inference; new training conditional on findings and a subsequent concrete decision.",
+  "input_package": "data/outputs/ball_tracking/wasb_continuation_v0_1/paired_review_inputs_v0_1.json",
+  "source_roles": "configs/ball_tracking/completion_campaign/source_roles_v0_1.json",
+  "research_control": {
+    "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/cosine/fit_v0_1/checkpoints/epoch_009.pth",
+    "bytes": 6084071,
+    "sha256": "f4b721662ec3d8b546563feffcf5ce0d6319ed8ddc83f398830a0aac5d29c7b9"
+  },
+  "scope": {
+    "contexts": 8,
+    "native_frames": 3662,
+    "new_HOU_forward_calls": 948,
+    "new_training_updates": 0,
+    "new_labels": 0,
+    "protected_evaluation_authorized": false,
+    "model_adopted": false,
+    "human_trajectory_acceptance": null
+  },
+  "data_usage": {
+    "HOU": "Previously repeated checkpoint validation; current fixed feasibility/selector development comparison. No parameter sweep or choice using HOU outcomes in v0.1.",
+    "DET": "Previously inspected excluded post-selection development. Label-assisted feasibility diagnosis only; fixed selector applied without fitting, reference seeds or parameter selection. Not an independent test.",
+    "SAC": "Training-exposed descriptive context and distractor regression, not independent validation.",
+    "selector_inputs": "Only complete model candidate pools, model response/provenance, source dimensions and native timestamps. Reference geometry, visibility, eligibility and outcomes never enter selection.",
+    "prospective_followups": "Any further variant must state its causal reason, parameter change and development selection role before execution. Do not retune v0.1 after viewing DET outcomes. Preserve every run."
+  },
+  "extraction": {
+    "component_thresholds": [0.3, 0.1, 0.03, 0.01, 0.003, 0.001, 0.0003, 0.0001, 0.00003, 0.00001],
+    "strict_threshold": true,
+    "connectivity": 8,
+    "local_peak_floor": 0.00001,
+    "local_peak_window": 5,
+    "local_peak_centroid_fraction": 0.5,
+    "dedup_source_pixels": 2.0,
+    "candidate_cap": null,
+    "retain_native_candidates_exactly": true,
+    "native_score_semantics": "Actual component or local-patch sigmoid mass, not probability; never compare mass across thresholds as confidence."
+  },
+  "sequence": {
+    "algorithm": "Offline first-order maximum-score sequence with explicit missing state; all original choices revisable; no interpolated coordinates.",
+    "strong_reward": 1.0,
+    "strong_relative_mass_weight": 0.25,
+    "minimum_strong_reward": 0.2,
+    "weak_reward": 0.35,
+    "missing_reward": 0.0,
+    "switch_missing_cost": 0.5,
+    "motion_scale_widths_per_second": 0.75,
+    "motion_cost_weight": 0.25,
+    "maximum_speed_widths_per_second": 1.5,
+    "weak_anchor_horizon_seconds": 0.4,
+    "weak_requires_strong_before_and_after": true,
+    "anchor_choices": "All original >.3 candidates, not the original selected point. Each weak candidate must be reachable from a strong candidate before and after within the time horizon and speed bound. This is geometric evidence, not proof of ball identity.",
+    "selection_variants": ["native", "sequence_strong", "sequence_weak"]
+  },
+  "quality": {
+    "radius_source_pixels_inclusive": 10,
+    "correct_fraction_minimum": 0.95,
+    "wrong_fraction_maximum": 0.01,
+    "certain_hidden_emissions_maximum": 0,
+    "eligible_missing_run_maximum_ms": 200,
+    "confirmed_wrong_object_run_fail_at_ms": 120,
+    "recovery_maximum_ms": 120,
+    "recovery_requires_next_two_eligible_correct": true,
+    "per_context_gates": true,
+    "preserve_uncertainty_censoring_and_nine_inconclusive_recoveries": true,
+    "complete_synchronized_human_review_required": true
+  },
+  "decision": "First measure actual weak components, localization ceilings, clutter/hidden responses and path ambiguity. Execute the three fixed arms if useful candidate support exists. A positive bounded increment can justify a reasoned refinement without passing the phase. If signal is unavailable or indistinguishable from distractors, use that evidence for a recognition/preprocessing proposal; do not start training automatically.",
+  "historical_basis": [
+    "docs/research/ball_tracking_full_history_reassessment_2026-10-26.md",
+    "docs/ball_wasb_remaining_gap_diagnosis.md",
+    "docs/ball_wasb_motion_selection.md",
+    "docs/nba_candidate_preservation_experiment.md",
+    "docs/nba_temporal_gap_selection_experiment.md",
+    "docs/nba_temporal_gap_continuous_validation_results.md",
+    "docs/nba_gap_anchor_reference_evaluation_results.md",
+    "docs/nba_ball_distractor_training_results.md",
+    "docs/ball_tracking_wasb_continuation_results.md",
+    "docs/ball_tracking_wasb_spatial_results.md"
+  ]
+}

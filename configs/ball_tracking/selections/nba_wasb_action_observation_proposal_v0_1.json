@@ -1,0 +1,253 @@
+{
+  "schema_version": "nba_wasb_action_observation_proposal/v0.1",
+  "proposal_id": "nba_wasb_action_observation_v0_1",
+  "status": "proposed_pending_scope_approval",
+  "runnable_experiment": false,
+  "implementation_status": "design_only_not_implemented",
+  "created_at_utc": "2026-10-20T01:00:54.528521+00:00",
+  "date_local": "2026-10-19",
+  "timezone": "America/Phoenix",
+  "starting_head": "2c196fd2002f2c136a341350ce5c61dd6ba20044",
+  "purpose": "Observe frozen ball predictions across the two existing action cores, expose missing/distractor/recovery intervals, and prepare complete human review without new fitting or accuracy claims.",
+  "approval_requested": "Implement, validate and execute one resumable frozen observation pass over the exact two cores, including bounded original-frame extraction, verified prior cache imports and two new complete source-synchronized review videos.",
+  "authority": {
+    "prior_source_selection": {
+      "path": "configs/ball_tracking/selections/nba_development_selection_proposal_v0_1.json",
+      "bytes": 30540,
+      "sha256": "3c863928202739add097b19e15c7dd2d33ca6cc03648dce62860d33f81d2cc06"
+    },
+    "approved_game_roles": {
+      "path": "configs/ball_tracking/reviews/nba_development_selection_approval_v0_1.json",
+      "bytes": 4950,
+      "sha256": "ec758838bae5d613c7a67bef0a8560d6cb7805141fe2511120469615240cf122"
+    },
+    "completed_pilot_result": {
+      "path": "configs/ball_tracking/reviews/nba_wasb_native_pilot_diagnostic_result_v0_1.json",
+      "bytes": 14878,
+      "sha256": "60a97794654d3d561f9e8e9ddda4767e48429baa9bfa65a47a0bdf851b7e4abf"
+    },
+    "accepted_pilot_model_outputs": {
+      "path": "configs/ball_tracking/reviews/nba_wasb_native_pilot_visual_review_v0_1.json",
+      "bytes": 4976,
+      "sha256": "c169ca062a5fe0fcd411cd9053b7759c52072c2be71de6f00e9517533c1385d7"
+    }
+  },
+  "windows": [
+    {
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "approved_role": "future_training_candidate_pool",
+      "source_video": {
+        "path": "data/raw/nba/0022500829/0022500829_ok_12326430640726_1080p.mp4",
+        "sha256": "420eacca7a05f9eebfab6306fe6d28fe1ee0509362cbcc053fba09cfd61b062b",
+        "width_px": 1920,
+        "height_px": 1080,
+        "frame_count": 357233
+      },
+      "source_verification": {
+        "audit": {
+          "path": "data/outputs/t/nba_repeatable_access_2026-10-18/sac_mem/assembly_audit.json",
+          "sha256": "32e190cf04ce6324ba7b4edfc2afe8ba87a5f373949a5bf5e98a06272473776e"
+        },
+        "hash_field": "sha256",
+        "stat_field": "source_stat_after",
+        "source_stat": {
+          "bytes": 5112076363,
+          "mtime_ns": 1792374903554377200
+        }
+      },
+      "source_frame_range_inclusive": [
+        540,
+        2010
+      ],
+      "source_pts_ticks_inclusive": [
+        816182,
+        3023342
+      ],
+      "source_end_exclusive_pts_ticks": 3024872,
+      "time_base": "1/90000",
+      "first_to_last_span_seconds": 24.524,
+      "timeline_duration_seconds": 24.541,
+      "frames": 1471,
+      "maximum_complete_triplets": 1469,
+      "planned_prior_triplet_imports": 58,
+      "maximum_new_model_calls": 1411,
+      "reused_native_png_frames": 60,
+      "new_native_png_frames": 1411,
+      "frame_map": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sac_mem_q1_c01/frame_map.jsonl",
+        "bytes": 362691,
+        "sha256": "c8d77812f35fae8a0dc5f70f4413a5b7ba1c527875cfc9cb8dadb29a40f93e6d"
+      },
+      "pilot_context_changed_frames": [
+        660,
+        661,
+        718,
+        719
+      ],
+      "unchanged_pilot_interior_frames": 56,
+      "source_limit": "Opening live-action episode; source use for the 60-frame pilot is approved. Exact complete-possession boundaries are not certified.",
+      "exact_possession_boundaries_accepted": false
+    },
+    {
+      "candidate_id": "sas_det_q1_c02",
+      "game_id": "0022500828",
+      "approved_role": "target_case_development",
+      "source_video": {
+        "path": "data/raw/nba/0022500828/0022500828_ok_12326019402326_1080p.mp4",
+        "sha256": "27b5143105f5bf3276a2cc51945133c9fdcd2b82d4247d8365110428062ec21f",
+        "width_px": 1920,
+        "height_px": 1080,
+        "frame_count": 415953
+      },
+      "source_verification": {
+        "audit": {
+          "path": "data/outputs/t/nba_full_game_acquisition_2026-10-18/independent_audit/assembly_audit.json",
+          "sha256": "0c1b1b41d86c30fd8248662b39efee2123fc3c133e1b625fb0ccbe406f0ee302"
+        },
+        "hash_field": "full_file_sha256",
+        "stat_field": "target_stat_after",
+        "source_stat": {
+          "bytes": 6081103430,
+          "mtime_ns": 1792372192611261400
+        }
+      },
+      "source_frame_range_inclusive": [
+        10668,
+        11898
+      ],
+      "source_pts_ticks_inclusive": [
+        16021862,
+        17868662
+      ],
+      "source_end_exclusive_pts_ticks": 17870192,
+      "time_base": "1/90000",
+      "first_to_last_span_seconds": 20.52,
+      "timeline_duration_seconds": 20.537,
+      "frames": 1231,
+      "maximum_complete_triplets": 1229,
+      "planned_prior_triplet_imports": 58,
+      "maximum_new_model_calls": 1171,
+      "reused_native_png_frames": 60,
+      "new_native_png_frames": 1171,
+      "frame_map": {
+        "path": "data/outputs/t/nba_possession_selection_2026-10-18/sas_det_q1_c02/frame_map.jsonl",
+        "bytes": 312338,
+        "sha256": "b9f15dc7b3443882aa7fb34954a18d2e70bb0dc6bfc6d2fff97e4985efac38b2"
+      },
+      "pilot_context_changed_frames": [
+        10788,
+        10789,
+        10846,
+        10847
+      ],
+      "unchanged_pilot_interior_frames": 56,
+      "source_limit": "Partial possession: inbound/start hidden by closeup; sampled wide court action and ending are visible.",
+      "exact_possession_boundaries_accepted": false
+    }
+  ],
+  "totals": {
+    "frames": 2702,
+    "timeline_seconds": 45.078,
+    "maximum_complete_triplets": 2698,
+    "planned_prior_triplet_imports": 116,
+    "maximum_new_model_calls": 2582,
+    "new_native_png_frames": 2582,
+    "prior_native_png_frames_reused": 120
+  },
+  "model_recipe": {
+    "checkpoint_sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+    "prior_diagnostic_config": {
+      "path": "configs/ball_tracking/wasb_experiments/nba_wasb_native_pilot_diagnostic_v0_1.json",
+      "sha256": "bb63377d515203b8c7fc1a89d6cb55acd84102587d9e53226fa10bb4d88f6eca",
+      "bytes": 1500
+    },
+    "native_input_spacing_ms": [
+      16,
+      17
+    ],
+    "strict_heatmap_threshold": 0.3,
+    "selection": "largest_component_mass_then_stable_candidate_index",
+    "aggregation": "mean_aligned_complete_triplets",
+    "triplet_stride": 1,
+    "dtype": "float32",
+    "training": false,
+    "threshold_search": false,
+    "motion_selector": false,
+    "interpolation": false,
+    "padding": false,
+    "resampling": false,
+    "external_model_context": false
+  },
+  "source_and_scene_policy": {
+    "source_pixels": "Original native RGB frames, with the existing 120 PNG records reused unchanged and remaining frames extracted into new ignored paths; lossy source previews are not model inputs.",
+    "raw_reads": "Bounded seeks/decodes covering only the two cores and necessary decoder preroll; no model inputs outside the cores, no full-game decode or full-source rehash.",
+    "verification": "Bind existing full-source audit and unchanged size/mtime, frame maps, exact extracted PTS and source RGB hashes. Separate input manifest contains no fabricated annotations.",
+    "cuts_replays": "Inspect source continuity before inference; explicitly segment any confirmed cut/replay boundary. No triplet crosses a declared boundary. Mark withheld frames if a segment cannot supply a complete triplet; record reduced counts rather than extending scope.",
+    "counts": "Triplet counts are maxima assuming no internal segmentation; reductions retain explicit reasons and do not authorize replacement inputs."
+  },
+  "cache_and_memory_policy": {
+    "prior_imports": "Read-only import of compatible prior triplets (116 planned) with their complete original identities, bytes and attempt receipts; record new-run provenance separately. A newly declared scene boundary can exclude an incompatible old triplet but never triggers its reinference.",
+    "invalid_prior_cache": "Investigate missing/mismatched/corrupt completed evidence; never silently delete, rewrite identities or reinfer completed triplets.",
+    "streaming": "Three-image rolling buffer and unfinished target sums, preserving ascending triplet-start float32 addition order.",
+    "resume": "Atomic completed caches, each actual model-call attempt retained, compatible completions reused; the 116 planned imports do not count as new calls.",
+    "old_pilot_result": "Preserve the original 120/120 short-context score and accepted videos. With no new scene boundary within a pilot's context, its 56 interior means should be identical and four edge means may change with longer context (112 unchanged and eight edge frames across both pilots). Report any boundary-related context difference separately."
+  },
+  "outputs": {
+    "root": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1",
+    "observations": "Every frame has native PTS, original source mapping, candidate list, selected point or explicit missing/withheld state, contribution count, confidence semantics and cache provenance.",
+    "summaries": "Observed/missing/withheld counts and native-time intervals are availability, not accuracy. No new-label scoring or repeat of the original pilot evaluation.",
+    "review": "Two complete source-plus-model videos at source PTS pacing, declared 1-second final holds, and a page with slower-playback controls. No fictitious reference points outside the accepted pilot; no invented ball trail across gaps.",
+    "assistant_review": "Inspect all timeline frames and missing/switch/recovery intervals; give exact source-frame review cues. Human acceptance remains separate.",
+    "storage": "Keep raw frames,caches,videos and detailed audits ignored; commit only source,tests,configuration and compact records."
+  },
+  "validation_before_real_run": [
+    "Producer-derived native input and cache import fixtures; exact old source/model/identity checks.",
+    "Streamed float32 aggregation matches existing producer semantics, including endpoints and segmented boundaries.",
+    "Changed scope/cadence rejection; no old-cache reinference; resume preserves failed attempts and consumed calls.",
+    "Actual synthetic native-PTS extraction/render transport, complete frame inventory and final hold.",
+    "Focused checks proportional to changed components; no automatic full-suite rerun."
+  ],
+  "resource_estimate": {
+    "basis": "Existing 120 PNG sizes, 116 NPZ sizes and observed 2.797 seconds of model-call time; extrapolations, not measured longer-run results.",
+    "new_png_bytes_estimate": 5856000000,
+    "new_compressed_cache_bytes_estimate": 4104000000,
+    "combined_new_png_cache_gib_estimate": 9.28,
+    "additional_video_and_receipt_storage": true,
+    "model_call_seconds_estimate": 62.3,
+    "end_to_end_working_minutes_estimate": [
+      15,
+      30
+    ],
+    "estimate_is_hard_cap": false,
+    "safeguards": "Check current disk/RAM/GPU/process ownership; bounded frame loading, single owned model worker, preserve attempts. Stream review encoding to avoid thousands of retained composite images."
+  },
+  "limits": {
+    "no_independent_test_game": true,
+    "DET_excluded_from_fitting": true,
+    "TOR_not_in_scope": true,
+    "new_training_approved": false,
+    "new_accuracy_benchmark": false,
+    "full_possession_certification": false,
+    "nba_identity_calibration_acceptance": false,
+    "ball_phase_acceptance": false,
+    "nfhs_finish_line_unchanged": true,
+    "protected_holdouts_unchanged": true,
+    "negative_motion_result_unchanged": true,
+    "motion_human_reviews_pending": 3
+  },
+  "preparation_actions": {
+    "new_model_calls": 0,
+    "raw_video_decodes": 0,
+    "new_labels": 0,
+    "tests_run": 0,
+    "additional_read_only_cache_feasibility_check": {
+      "completed": true,
+      "cached_npz_records_checked": 116,
+      "issues": 0,
+      "scope": "Repeated checks of already audited cache hashes/metadata/array validity for import feasibility; no new model or media decode; original audit unchanged.",
+      "elapsed_seconds": null,
+      "elapsed_time_measured": false
+    }
+  }
+}

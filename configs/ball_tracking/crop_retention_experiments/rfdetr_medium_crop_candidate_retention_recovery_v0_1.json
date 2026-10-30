@@ -1,0 +1,34 @@
+{
+  "schema_version": "ball_crop_candidate_retention_recovery/v0.1",
+  "recovery_id": "rfdetr_medium_crop_candidate_retention_recovery_v0_1",
+  "original_manifest": {
+    "path": "configs/ball_tracking/crop_retention_experiments/rfdetr_medium_crop_candidate_retention_v0_1.json",
+    "sha256": "f2b8834722ddf9f1ce4dcfdf1441a12cc0d52591b57bb66ca726c3aef2ca15ff",
+    "content_sha256": "e481d645e946f285c655d721563172c4cb8c2f124214840b8c8d8ae5cfb752fd"
+  },
+  "recovery_proposal": {
+    "path": "docs/ball_crop_candidate_retention_recovery_proposal.md",
+    "sha256": "c066bc43b204a09a05e2912589cbc173614cecbe563431ebbeed75c42db3de48"
+  },
+  "authorization": {
+    "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_candidate_retention_recovery_approval_v0_1.json",
+    "sha256": "29ba7f01ff0a2bd149d341d064673460f8be87bedd024442015a7a222a6090ae"
+  },
+  "preserved_inventory": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/recovery_preparation/preserved_inventory.json",
+    "sha256": "5a05c6644196f7fd0dfb731c538f68077039f74265d62e7b95f3dbbe00b92739"
+  },
+  "implementation_validation": {
+    "path": "data/outputs/ball_tracking/crop_candidate_retention_recovery_implementation/0a7f5bc69be9_2026-10-02/implementation_validation.json",
+    "sha256": "71f75c979c5c754c7387df859e885b4a48be1b43fcfc62f683d76a7bc14fc8bc"
+  },
+  "output_root": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1",
+  "permitted_stages": [
+    "verify",
+    "score",
+    "render"
+  ],
+  "selected_method": null,
+  "selected_operating_point": null,
+  "quality_gate": null
+}

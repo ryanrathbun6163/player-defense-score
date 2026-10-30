@@ -1,0 +1,55 @@
+{
+  "schema_version": "candidate_proposal_coverage/v0.1",
+  "status": "frozen_design_pending_execution_evidence",
+  "protocol": {
+    "path": "docs/ball_tracking_candidate_proposal_coverage_protocol.md",
+    "bytes": 10543,
+    "sha256": "fefae33ab1b86ca85ab40c8482a06b3c89b13bb40d9dd591fd82f34479152b5f"
+  },
+  "baseline": {
+    "path": "data/outputs/ball_tracking/candidate_proposal_coverage_v0_1/implementation_preparation/baseline138_and_direction.json",
+    "bytes": 26898,
+    "sha256": "210f5a3eb6032868a69640bb9ec505b484a8f102159fe4838cc3f6ebbe3d39e6"
+  },
+  "counts": {
+    "blocks": 21,
+    "frames": 3179,
+    "forward_calls": 3137,
+    "imported_frames": 0,
+    "parity_calls": 0,
+    "optimizer_updates": 0
+  },
+  "input_resolution": [
+    768,
+    432
+  ],
+  "mean_dtype": "float32",
+  "weak_strict_threshold": 0.01,
+  "native_strict_threshold": 0.3,
+  "checkpoint_sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+  "implementation_clarification_before_outcomes": {
+    "historical_role_rule": "Conservatively treat any historical non-training-role source-frame overlap as unresolved, with exact-point and floor64px-crop subsets reported separately.",
+    "coverage_reporting": "Report raw producer-relative and historical-role-screened three-category coverage separately.",
+    "future_design_eligibility": "Both raw and role-screened coverage gates must pass, plus at least one useful new exact point outside unresolved historical source frames.",
+    "failure_interpretation": "Role failure blocks transfer design pending role resolution; it is not evidence that raw scientific coverage is absent or that earlier accepted fitting was improper."
+  },
+  "audit_limit": "Saved means/extraction, channel digests and contributor identities are audited. Discarded raw forward channel values cannot be numerically averaged again postrun; unchanged reduction is validated by meaningful float32/order synthetic tests.",
+  "operational_watchdog": {
+    "hard_seconds": 1800,
+    "soft_seconds": 1770,
+    "cleanup_seconds": 30,
+    "runtime_estimate": false
+  },
+  "no_training": true,
+  "no_new_labels": true,
+  "protected_evaluation_authorized": false,
+  "no_automatic_retry": true,
+  "no_automatic_extension": true,
+  "no_model_adoption": true,
+  "post_capture_analysis_requires": [
+    "successful_supervisor_and_event_cleanup",
+    "independent_capture_audit",
+    "fresh_match_of_frozen_analysis_input_bindings"
+  ],
+  "standing_due_diligence_instruction": true
+}

@@ -1,0 +1,141 @@
+{
+  "schema_version": "ball_completion_first_increment_result/v0.1",
+  "status": "first_increment_completed",
+  "starting_git": {
+    "branch": "codex/ball-detector-baseline",
+    "head": "b1dbf027ee140a15b03509a1dfa0ba88e367a6c3",
+    "worktree": "clean",
+    "index": "empty"
+  },
+  "campaign_approval": {
+    "path": "configs/ball_tracking/reviews/ball_tracking_completion_campaign_approval_v0_1.json",
+    "sha256": "9ac73e9053aa00b8c7fdff1575771260a1b445f1e756521b5fb404c0977408b5",
+    "bytes": 2547
+  },
+  "approved_plan_blob": {
+    "git_object": "faa2804a06ccf6a178e01c0950b9f18c852e5beb:docs/ball_tracking_completion_plan.md",
+    "sha256": "e79a42d775fc516b9f2b27661cf3aa6aa3e73bf2c2bc052e0f9d9101eff2af0e",
+    "bytes": 26826
+  },
+  "index": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/index.html",
+    "sha256": "9da5667c7f54e6f2d3ff8701505861c556ade16a4c20506180bfcbc540fc0044",
+    "bytes": 2816
+  },
+  "baseline_summary": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/baseline/summary.json",
+    "sha256": "40c48c642f3a227931effcf7977669de7c63753852dfa842525fb23ce0da07a3",
+    "bytes": 11585
+  },
+  "source_roles": {
+    "path": "configs/ball_tracking/completion_campaign/source_roles_v0_1.json",
+    "sha256": "3ae5de63eef918fdaafcfbac62c09ca46e14fa1c1fdf069739d731955a573200",
+    "bytes": 71569
+  },
+  "source_review_index": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/index.html",
+    "sha256": "7568c87ae641ddf839765eaa827d2c9157412c0d6e630f554f22e33cf8c0e21e",
+    "bytes": 14487
+  },
+  "source_review_receipts": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/source_selection/source_review_receipt.json",
+    "sha256": "9d9a55f731ddb026790b49bdc4f9e0bda6a5b53b9d6e3fb11a7ca292314f415e",
+    "bytes": 26946
+  },
+  "reference_preparation": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_01/result.json",
+    "sha256": "a052403e43c51cb810a692b17953a3bb980f02c90252979fb6da59425049bb93",
+    "bytes": 4950
+  },
+  "human_acceptance": {
+    "path": "configs/ball_tracking/reviews/ball_completion_reference_batch_01_acceptance_v0_1.json",
+    "sha256": "c78d9b202fd53d75357a9a09e6c53aadca2509f983f31bd7db3c374c30faa14b",
+    "bytes": 12027
+  },
+  "accepted_reference": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_01/accepted/reference.json",
+    "sha256": "23e59ca90e8b060d19f4f90436c6c68d64722a216f113ddc05dfdd8b5340f5cc",
+    "bytes": 153482
+  },
+  "acceptance_verification": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_01/accepted/publication_verification.json",
+    "sha256": "bbf60f22ffe5a0cf62e76dd025749c87429b15f6bb61cd06fa365aed87a66f08",
+    "bytes": 946
+  },
+  "acceptance_publication_attempts": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/reference_batch_01/accepted/publication_attempts.json",
+    "sha256": "b12268dc76ad27b154b0e03e4cd40425b1e47e7d0c8851a36626d784b9733bc2",
+    "bytes": 899
+  },
+  "prior_coverage": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/accepted_reference_inventory.json",
+    "sha256": "e4fb0ca964056631cc7f70834bab4c410f6a29e2df397b04cc2d8b38b7faab5e",
+    "bytes": 18485
+  },
+  "current_coverage": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/accepted_reference_inventory_after_batch_01.json",
+    "sha256": "262a082acdb9f436794f3c8b8ebc220e81609ed8a4593ccd881acc80cbd3da52",
+    "bytes": 17559
+  },
+  "integration_audit": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/integration_audit.json",
+    "sha256": "7a198c73244ff3e1779102055210a8d1d19408935478ce5d4866af83d85a290d",
+    "bytes": 1260
+  },
+  "integration_attempts": {
+    "path": "data/outputs/ball_tracking/completion_campaign_v0_1/integration_attempts.json",
+    "sha256": "460b11bc87fca43d53c787df3b58fdbe9acc2b38990f712506c011c65f4e19d0",
+    "bytes": 2356
+  },
+  "focused_tests": [
+    {
+      "command": ".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_ball_completion_baseline.py -v",
+      "passed": 4,
+      "implementation": {
+        "path": "src/ball_tracking/completion_baseline.py",
+        "sha256": "32312398e92f3611e85dbc9b10a8704fce8ada6875a7e724b916d12e35a0022e",
+        "bytes": 21826
+      },
+      "tests": {
+        "path": "tests/test_ball_completion_baseline.py",
+        "sha256": "9d613e544d0c0d192e56334a4fd968291f9df4a2ff1442b5b86f8782e20ef291",
+        "bytes": 5928
+      }
+    },
+    {
+      "command": ".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_completion_references.py -v",
+      "passed": 5,
+      "implementation": {
+        "path": "src/ball_tracking/completion_references.py",
+        "sha256": "b64b3282ed3afa6fc2b0db731d9cbf3b5e1d80b31de23fd937be6a792d7ad3b2",
+        "bytes": 15852
+      },
+      "tests": {
+        "path": "tests/test_completion_references.py",
+        "sha256": "8b6d96ad162f5302469c55a253dbd32875605f03444fd127c979e08c376007d2",
+        "bytes": 3557
+      }
+    }
+  ],
+  "full_suite_repeated": false,
+  "baseline": {
+    "observed": 979,
+    "missing": 294,
+    "protected": 225,
+    "accuracy_claimed_from_availability": false
+  },
+  "new_curated_references_accepted": 120,
+  "current_curated_accepted": 440,
+  "remaining_curated_reference_frames": 833,
+  "new_nba_reference_slots": 3839,
+  "new_nba_labels_created": 0,
+  "inference_calls": 0,
+  "fitting_calls": 0,
+  "protected_source_pixels_read": 0,
+  "new_reference_role": "post_selection_evaluation_only",
+  "model_output_acceptance": false,
+  "ball_phase_accepted": false,
+  "protected_evaluation_authorized": false,
+  "next_work": "Finish and obtain acceptance of remaining curated and fixed NBA references; include the new accepted batch in future duplicate guards. Freeze the executable recipe before approved fitting. Protected evaluation requires separate explicit authorization.",
+  "recorded_at_utc": "2026-10-22T00:55:48.360584+00:00"
+}

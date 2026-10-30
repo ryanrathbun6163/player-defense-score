@@ -1,0 +1,905 @@
+{
+  "schema_version": "ball_crop_corroboration_retry_integration_proposal/v0.1",
+  "status": "proposed_not_approved",
+  "executable": false,
+  "prepared_local_date": "2026-10-08",
+  "timezone": "America/Phoenix",
+  "branch": "codex/ball-detector-baseline",
+  "head": "3233d2cb1c2d3773bd109ac81ed8474a63c4d2c4",
+  "preparation_authority": {
+    "user_statement": "Move forward chat",
+    "interpretation": "Prepare the separately bounded release/retry integration proposal after read-only resumption; no implementation or execution permission"
+  },
+  "proposal": {
+    "path": "docs/ball_crop_cross_detector_corroboration_retry_integration_proposal.md",
+    "size_bytes": 16553,
+    "sha256": "bd03fd5c262135934802f27f7fe5bbcae3cb262bdc25476af5df7ae0da990863"
+  },
+  "continuity_snapshot": {
+    "path": "data/outputs/t/handoff_2026-10-08_3233d2cb1c2d/handoff_2026-10-08_verification.json",
+    "size_bytes": 114810,
+    "sha256": "231bd3cd347a44d493fcd49bf51e6cb61c9df2f13ea6a9aa284fad552d478bed"
+  },
+  "current_authorization": {
+    "proposal_preparation": true,
+    "source_test_edits": false,
+    "artificial_validation": false,
+    "scientific_body_access": false,
+    "scientific_body_hashing": false,
+    "real_journal_replay": false,
+    "runtime_authority_creation_or_replacement": false,
+    "checkpoint_creation": false,
+    "scientific_retry": false,
+    "media_presentation": false,
+    "stage": false,
+    "commit": false,
+    "push": false,
+    "pr": false,
+    "merge": false
+  },
+  "preparation_write_scope": [
+    "docs/ball_crop_cross_detector_corroboration_retry_integration_proposal.md",
+    "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_retry_integration_v0_1.json",
+    "data/outputs/t/corroboration_retry_proposal_3233d2c/preparation_verification.json"
+  ],
+  "starting_ownership_repair_bindings": [
+    {
+      "path": "src/ball_tracking/crop_cross_detector_corroboration_release.py",
+      "size_bytes": 84769,
+      "sha256": "5e7761bc7ee289ec41aa7f24b3a8ed25a187eb110fc5ad7c7a8ee052d305ce86"
+    },
+    {
+      "path": "tests/test_ball_crop_cross_detector_corroboration_release.py",
+      "size_bytes": 89128,
+      "sha256": "81414d5d50224aef0c524e931c1dfffa00439f33054eea2f0ccf31e006715ffe"
+    }
+  ],
+  "original_six_preserved_bindings": [
+    {
+      "path": "docs/context/current_state.md",
+      "size_bytes": 245243,
+      "sha256": "247eb3f692462bae9857c74b8b9527b30ff23d28b92a99bda874bf5412996c77"
+    },
+    {
+      "path": "docs/context/roadmap.md",
+      "size_bytes": 76489,
+      "sha256": "1777368956568ae814381e820fec419b30aa3095218b9a68299a39a0d914e5a3"
+    },
+    {
+      "path": "docs/context/validation_history.md",
+      "size_bytes": 204430,
+      "sha256": "9a6f933199fa25c9af9519466468235d24211dd1dac78327ed1d3f2600a119aa"
+    },
+    {
+      "path": "configs/ball_tracking/proposals/rfdetr_medium_crop_error_type_review_v0_1.json",
+      "size_bytes": 57566,
+      "sha256": "37eb7b5b0a79d3a2dec6352c6fc5728b1dcf775a9a9cfaa47bad135de54980d6"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/rfdetr_medium_crop_error_type_review_approval_v0_1.json",
+      "size_bytes": 2959,
+      "sha256": "ea04de33574ecab244d063fc3f9262ac0d2ce73ed6c0e6318dbae4d51d38a65c"
+    },
+    {
+      "path": "docs/ball_crop_error_type_review_proposal.md",
+      "size_bytes": 9497,
+      "sha256": "e392f5af6b05e39d4ccb99ba25a7c3dbf073af8f9c16b1b613bb5b262820340d"
+    }
+  ],
+  "requested_next_phase": {
+    "status": "requires_separate_explicit_approval",
+    "implementation_files": [
+      "src/ball_tracking/crop_cross_detector_corroboration_release.py",
+      "tests/test_ball_crop_cross_detector_corroboration_release.py"
+    ],
+    "retain_existing_repair": true,
+    "independent_review": true,
+    "bounded_artificial_validation": true,
+    "other_source_changes_allowed": false,
+    "old_context_documents_changed": false,
+    "old_runtime_package_changed": false,
+    "shared_monitor_or_resources_changed": false,
+    "scientific_algorithms_changed": false,
+    "player_pipeline_rerun_from_stage": null
+  },
+  "evidence_reuse": {
+    "accepted_shutdown_certificate": {
+      "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/implementation_validation.json",
+      "size_bytes": 113435,
+      "sha256": "e71d9a70fa2e683a90a14443994c1ffa445a34dffb818df9ddc18cfff7c644c1"
+    },
+    "completion_status": {
+      "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/completion_status.json",
+      "size_bytes": 4563,
+      "sha256": "e89b70f4e93825d7502a59acb7c181bd2078fa2d1143dcada8ed5a98685140a0"
+    },
+    "completion_review": {
+      "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/completion_review.json",
+      "size_bytes": 1870,
+      "sha256": "863894dbff04be9e70ecef370cdf985e5b886167e9ed0b9db7f5799935821158"
+    },
+    "original_runtime_package": [
+      {
+        "path": "configs/ball_tracking/crop_retention_experiments/rfdetr_yolo_crop_corroboration_v0_1.json",
+        "size_bytes": 1492,
+        "sha256": "e8ccf4576f50b41b29ea0323116d824f17d4f861eafdcc65453912d230f7f5a7"
+      },
+      {
+        "path": "configs/ball_tracking/reviews/rfdetr_yolo_crop_corroboration_execution_approval_v0_1.json",
+        "size_bytes": 4934,
+        "sha256": "c67d5c1d479584cb2835ba2eae88534fa13918fb0d3d27e69d61ef19d51b4e4b"
+      },
+      {
+        "path": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/implementation_validation.json",
+        "size_bytes": 46188,
+        "sha256": "38e4ff8b81b971ba2f3b12ac2a033c02f6903bd75359e4e6772ce4a38bea59a6"
+      },
+      {
+        "path": "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_release_v0_1.json",
+        "size_bytes": 344753,
+        "sha256": "b81098c3aae5a89438d4c0cd621534abc806b5d9b099a5aa35211ce9be0d8ff2"
+      }
+    ],
+    "original_checkpoint": {
+      "path": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/post_commit_execution_checkpoint.json",
+      "size_bytes": 1095,
+      "sha256": "e2a49805657acdbd3072c86b0d02d7ff30f45fce889c2b9d11494fc708762602"
+    },
+    "stage1_certificate": {
+      "path": "data/outputs/t/corroboration_validation_b71c64d3fd46/implementation_validation.json",
+      "size_bytes": 14741,
+      "sha256": "487a3db09e32bac6d95cd954c53b020414098f404173356633d59fb9532c86bc"
+    },
+    "failed_attempt_audit": {
+      "path": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/failed_attempt_audit.json",
+      "size_bytes": 3218,
+      "sha256": "e3bbe1028aedd0fe04dc4aaa13850e9b049d56c20ce0416623a7d27e46f49922"
+    },
+    "accepted_focused_counts": {
+      "test_count": 71,
+      "passed_count": 71,
+      "skipped_count": 0,
+      "failed_count": 0,
+      "error_count": 0
+    },
+    "accepted_full_counts": {
+      "test_count": 1221,
+      "passed_count": 1220,
+      "skipped_count": 1,
+      "failed_count": 0,
+      "error_count": 0
+    },
+    "accepted_focus_composition": {
+      "repository_release_tests": 54,
+      "ignored_lifecycle_tests": 17
+    },
+    "accepted_full_composition": {
+      "other_repository_tests": 1167,
+      "repository_release_tests": 54,
+      "ignored_lifecycle_tests": 0
+    },
+    "consumption_records": [
+      {
+        "binding": {
+          "path": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/focused_01_result.json",
+          "size_bytes": 100665,
+          "sha256": "ce178e32372b2bfd209f99b5dcb869f2a97b63c734ea2ed8cf405f448fed1bed"
+        },
+        "success": false,
+        "failure": "unexpected_unittest_counts",
+        "phase": "focused",
+        "elapsed_seconds": 25.84400000000096,
+        "previously_consumed_seconds": 0,
+        "cumulative_seconds": 25.84400000000096
+      },
+      {
+        "binding": {
+          "path": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/focused_02_result.json",
+          "size_bytes": 100749,
+          "sha256": "4b87c284595ec0d16f6d16b09c8d25060d696cf8363fdbc9552a101d76ba1d48"
+        },
+        "success": true,
+        "failure": null,
+        "phase": "focused",
+        "elapsed_seconds": 24.312000000001717,
+        "previously_consumed_seconds": 25.84400000000096,
+        "cumulative_seconds": 50.15600000000268
+      },
+      {
+        "binding": {
+          "path": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/full_01_result.json",
+          "size_bytes": 100896,
+          "sha256": "0ecf0082a861d36fc095db466bef1b81fc81a132f54c9e8999708c4e432dbf38"
+        },
+        "success": false,
+        "failure": "surviving_descendants",
+        "phase": "full",
+        "elapsed_seconds": 2069.0790000000015,
+        "previously_consumed_seconds": 50.15600000000268,
+        "cumulative_seconds": 2119.235000000004
+      },
+      {
+        "binding": {
+          "path": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/focused_03_result.json",
+          "size_bytes": 100961,
+          "sha256": "8db5d22544f49edfbe47184a0e53d6e40628a805a7c2d95fe33a0faab5a7d6f7"
+        },
+        "success": true,
+        "failure": null,
+        "phase": "focused",
+        "elapsed_seconds": 26.35899999999674,
+        "previously_consumed_seconds": 2119.235000000004,
+        "cumulative_seconds": 2145.594000000001
+      },
+      {
+        "binding": {
+          "path": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/focused_04_result.json",
+          "size_bytes": 101666,
+          "sha256": "56766fc3c642626fd0c1354d8c65beaaee7fa743eb74e54791e1654d4164fb12"
+        },
+        "success": true,
+        "failure": null,
+        "phase": "focused",
+        "elapsed_seconds": 26.75,
+        "previously_consumed_seconds": 2145.594000000001,
+        "cumulative_seconds": 2172.344000000001
+      },
+      {
+        "binding": {
+          "path": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/full_02_result.json",
+          "size_bytes": 101788,
+          "sha256": "b6b908d1181dc0838c7c441dfd0509399d08ed2991619c5a421a3ba4d7ec54ec"
+        },
+        "success": true,
+        "failure": null,
+        "phase": "full",
+        "elapsed_seconds": 2038.375,
+        "previously_consumed_seconds": 2172.344000000001,
+        "cumulative_seconds": 4210.719000000001
+      },
+      {
+        "binding": {
+          "path": "data/outputs/t/corroboration_ownership_repair_3233d2c/focused_01_result.json",
+          "size_bytes": 187559,
+          "sha256": "00c0e1bdc8690baa94162c962472dd9672afe4612b50e1a9298468e6d983d71a"
+        },
+        "success": true,
+        "failure": null,
+        "phase": "focused",
+        "elapsed_seconds": 31.03099999999904,
+        "previously_consumed_seconds": 4210.719000000001,
+        "cumulative_seconds": 4241.75
+      },
+      {
+        "binding": {
+          "path": "data/outputs/t/corroboration_ownership_repair_3233d2c/full_01_result.json",
+          "size_bytes": 187691,
+          "sha256": "5d5a850d6ecab8c3dd017fe1e3d6c9716570968810ce00a06c93c60901c35b5c"
+        },
+        "success": false,
+        "failure": "surviving_descendants",
+        "phase": "full",
+        "elapsed_seconds": 2063.530999999999,
+        "previously_consumed_seconds": 4241.75,
+        "cumulative_seconds": 6305.280999999999
+      },
+      {
+        "binding": {
+          "path": "data/outputs/t/corroboration_ownership_repair_3233d2c/shutdown_diagnostic_01_receipt.json",
+          "size_bytes": 5126,
+          "sha256": "20ba986d75f53f47fb353d116e840ded35280d1c5df44ab186479d3b5698707d"
+        },
+        "success": null,
+        "failure": null,
+        "phase": null,
+        "elapsed_seconds": 1.2190000000009604,
+        "previously_consumed_seconds": 6305.280999999999,
+        "cumulative_seconds": 6306.5
+      },
+      {
+        "binding": {
+          "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/focused_01_result.json",
+          "size_bytes": 191661,
+          "sha256": "8ddee7839a11f7fee6e318aa51a91ce24bfe581721b38983b4317e960c038469"
+        },
+        "success": false,
+        "failure": "unexpected_unittest_counts",
+        "phase": "focused",
+        "elapsed_seconds": 31.125,
+        "previously_consumed_seconds": 6306.5,
+        "cumulative_seconds": 6337.625
+      },
+      {
+        "binding": {
+          "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/focused_02_result.json",
+          "size_bytes": 191743,
+          "sha256": "4d1a6db32fa0914ae2eb5f4f6f753e6c45d76c399be1e1e4dd62ee929deed038"
+        },
+        "success": true,
+        "failure": null,
+        "phase": "focused",
+        "elapsed_seconds": 29.390999999995984,
+        "previously_consumed_seconds": 6337.625,
+        "cumulative_seconds": 6367.015999999996
+      },
+      {
+        "binding": {
+          "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/full_01_result.json",
+          "size_bytes": 193426,
+          "sha256": "dce3424a2873c45ee59b4effc65b347359c561579a44d0e1f2c0994129f9eef3"
+        },
+        "success": false,
+        "failure": "validation_driver_exception",
+        "phase": "full",
+        "elapsed_seconds": 1042.328999999998,
+        "previously_consumed_seconds": 6367.015999999996,
+        "cumulative_seconds": 7409.344999999994
+      },
+      {
+        "binding": {
+          "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/focused_03_result.json",
+          "size_bytes": 192209,
+          "sha256": "3437c5d33a08b1da5c18407f483de82196638596658379d4f05aac566989b0ff"
+        },
+        "success": true,
+        "failure": null,
+        "phase": "focused",
+        "elapsed_seconds": 30.92199999999866,
+        "previously_consumed_seconds": 7409.344999999994,
+        "cumulative_seconds": 7440.266999999993
+      },
+      {
+        "binding": {
+          "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/focused_04_result.json",
+          "size_bytes": 194897,
+          "sha256": "fd2871cd52404435bf4e302d07edfecde355490c5a75e676f67203841cc41327"
+        },
+        "success": true,
+        "failure": null,
+        "phase": "focused",
+        "elapsed_seconds": 29.485000000000582,
+        "previously_consumed_seconds": 7440.266999999993,
+        "cumulative_seconds": 7469.751999999993
+      },
+      {
+        "binding": {
+          "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/full_02_result.json",
+          "size_bytes": 195260,
+          "sha256": "e4b0dacaca8b38847c4862f0c19cbbbddecabd2974daace99caaaf319accb2aa"
+        },
+        "success": true,
+        "failure": null,
+        "phase": "full",
+        "elapsed_seconds": 2119.2969999999987,
+        "previously_consumed_seconds": 7469.751999999993,
+        "cumulative_seconds": 9589.048999999992
+      }
+    ],
+    "old_helper_bindings": [
+      {
+        "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/validate.py",
+        "size_bytes": 38662,
+        "sha256": "3e502582e6be472b7b878372c247170045ce8830f9ffba5edbaeca3cfec16334"
+      },
+      {
+        "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/lifecycle.py",
+        "size_bytes": 23754,
+        "sha256": "ebbc6d6be2b26186a73c73ddc2cc3d89324f590a8a2f87edeca0afc072d52f39"
+      },
+      {
+        "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/test_lifecycle.py",
+        "size_bytes": 31407,
+        "sha256": "3a2348fa6ad22cc8a4efc670e03bc02e99ec53ed0b6b8d21e3271149b891cbbe"
+      },
+      {
+        "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/finalize_validation.py",
+        "size_bytes": 17017,
+        "sha256": "82a4e300945c45972c0224a7531339edac74ef8d62b84a0db1a29030caa1923f"
+      }
+    ],
+    "original_source_inventory_ref": {
+      "record": {
+        "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/implementation_validation.json",
+        "size_bytes": 113435,
+        "sha256": "e71d9a70fa2e683a90a14443994c1ffa445a34dffb818df9ddc18cfff7c644c1"
+      },
+      "json_pointer": "/source_bindings",
+      "count": 187,
+      "embedded_paths_not_followed_for_proposal": true
+    },
+    "original_protected_inventory_ref": {
+      "record": {
+        "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/implementation_validation.json",
+        "size_bytes": 113435,
+        "sha256": "e71d9a70fa2e683a90a14443994c1ffa445a34dffb818df9ddc18cfff7c644c1"
+      },
+      "json_pointer": "/preserved_worktree_bindings",
+      "count": 199
+    },
+    "no_historical_rerun": true,
+    "old_failed_pid_causes_remain_unresolved": true
+  },
+  "certificate_design": {
+    "future_schema": "ball_crop_corroboration_retry_integration_validation/v0.1",
+    "preserve_original_verifier_and_schema": true,
+    "exact_schema_and_manifest_dispatch": true,
+    "permissive_fallback": false,
+    "ancestor_evidence_is_not_current_byte_evidence": true,
+    "complete_source_inventory_count": 187,
+    "ancestor_source_change_allowlist": [
+      "src/ball_tracking/crop_cross_detector_corroboration_release.py",
+      "tests/test_ball_crop_cross_detector_corroboration_release.py"
+    ],
+    "new_focused_and_full_receipts_for_final_bytes_required": true,
+    "frozen_test_id_inventory_required": true,
+    "separate_repository_and_ignored_counts": true,
+    "no_runtime_import_or_execution_of_ignored_helpers": true,
+    "old_fifteen_receipts_and_all_charges_preserved": true,
+    "expected_new_test_counts": null,
+    "future_certificate_sha256": null
+  },
+  "retry_design": {
+    "scientific_study_id": "rfdetr_yolo_crop_corroboration_v0_1",
+    "logical_unit_key": "cross-detector-corroboration:study:",
+    "selection_unit": false,
+    "predecessor_attempt_id": "ac3a321649414170adf823deaa1b7b9e",
+    "predecessor_failure": "Worker has no live owning supervisor",
+    "predecessor_status": "failed_before_worker_scientific_access_no_retry",
+    "predecessor_charged_seconds": 1.125,
+    "new_attempts_requested_for_later_separate_approval": 1,
+    "future_attempt_id": null,
+    "new_reservation_binds": [
+      "predecessor_attempt_id",
+      "exact_retry_approval_binding",
+      "unchanged_unit_key",
+      "original_scientific_scope",
+      "reserved_seconds"
+    ],
+    "exact_starting_history": {
+      "events": 3334,
+      "closed_attempts": 64,
+      "successes": 59,
+      "failures": 5,
+      "failed_attempt_ids": [
+        "158f51be5ab34cdface57f4e0036b7d2",
+        "4adfb390f1f74a1baaec7fb178092218",
+        "e1ba648def3f4e1f887332e850396e4c",
+        "e3ea5536e59d4cdc8fea72d45bc53241",
+        "ac3a321649414170adf823deaa1b7b9e"
+      ],
+      "tip": "828394ce0efd82a6665e1bb919593d7208a231ee3ce5b584505fd0abd73d5847",
+      "consumed_seconds": 3548.648999999985,
+      "remaining_seconds": 10851.351000000015,
+      "cumulative_cap_seconds": 14400,
+      "source": "copied from bound failed-attempt audit, no real journal replay"
+    },
+    "checks_before_reservation_and_under_monitor_lock": [
+      "exact prefix/count/tip/failure set/charge and predecessor seals",
+      "no extra suffix or open attempts",
+      "no prior retry or successful predecessor",
+      "same unit and explicit exact retry authority",
+      "absent original study output directory"
+    ],
+    "worker_and_completion": "Exactly one contiguous suffix belonging only to the allocated retry attempt, correct authority and phase; reject all unexplained additions",
+    "automatic_retry_or_fallback": false,
+    "unit_renaming": false,
+    "generic_force_switch": false,
+    "partial_output_adoption": false,
+    "original_v0_1_consumed_guard_unchanged": true,
+    "original_role_seconds": 1200,
+    "maximum_retry_seconds": 1198.875,
+    "reservation_formula": "min(1200 - verified predecessor charge, verified remaining cumulative scientific seconds)",
+    "additional_scientific_time_budget": 0,
+    "preserve_original_limits_digest": true,
+    "preserve_open_attempt_reservation_charge": true,
+    "output_accounting": {
+      "original_frozen_history": {
+        "path": "data/outputs/t/corroboration_release_validation_b71c64d3fd46/frozen_history.json",
+        "size_bytes": 2325883,
+        "sha256": "54bd6cbf3223a16f6f51afe923fc3de046f2f81c4e80634607f8fa75dd68d2e2"
+      },
+      "original_file_count": 6903,
+      "original_baseline_bytes": 8875168842,
+      "derivation": "sum of size_bytes in bound original administrative preserved_files; no scientific-body reads",
+      "current_preservation_file_count": 6917,
+      "failed_startup_files": 14,
+      "maximum_additional_bytes": 4294967296,
+      "rebase_to_current_preservation_bytes": false,
+      "maximum_whole_root_bytes": 34359738368,
+      "existing_startup_files_remain_charged": true
+    }
+  },
+  "immutable_scientific_scope": {
+    "inventory_binding": {
+      "path": "configs/ball_tracking/proposals/rfdetr_yolo_crop_corroboration_release_v0_1.json",
+      "size_bytes": 344753,
+      "sha256": "b81098c3aae5a89438d4c0cd621534abc806b5d9b099a5aa35211ce9be0d8ff2"
+    },
+    "inherited_sections": [
+      "fixed_rule",
+      "evaluation",
+      "windows",
+      "existing_scientific_files",
+      "input_role_counts",
+      "input_phase_counts",
+      "saved_controls",
+      "saved_reports",
+      "saved_mean_references",
+      "mean_pointer_derivation",
+      "phase_access",
+      "outputs",
+      "review",
+      "monitor_policy",
+      "prediction_embargoes",
+      "sealed_holdouts"
+    ],
+    "inherited_operational_permission_flags_are_not_authority": true,
+    "new_integration_authority_is_separate_from_original_scientific_scope": true,
+    "scientific_inputs": 190,
+    "selection_inputs": 12,
+    "evaluation_inputs": 28,
+    "source_png_inputs": 150,
+    "output_files": 342,
+    "output_directory": "data/outputs/ball_tracking/crop_candidate_retention/rfdetr_medium_crop_candidate_retention_v0_1/audit/cross_detector_corroboration_v0_1",
+    "windows": [
+      {
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+        "purpose": "representative_evaluation",
+        "possession_id": "possession_001",
+        "source_video": {
+          "path": "data/clips/possession_001.mp4",
+          "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+          "width_px": 1920,
+          "height_px": 1080,
+          "fps": 25.0,
+          "frame_count": 499
+        },
+        "start_frame_index": 50,
+        "end_frame_index": 74,
+        "annotation_set_id": "possession_001_frames_0050_0074_representative_evaluation_v0_1",
+        "crop_candidates": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/candidates.json",
+          "sha256": "68ec89f2a527a6643bc443e1ec7533bd3971015f681260a9d222681ebfb6989b"
+        },
+        "yolo_candidates": {
+          "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/candidates.json",
+          "sha256": "75d7234292cccf449002d586c2dd8a32f253e6d53ac1e49a0b62a3b27d4982aa",
+          "size_bytes": 3299742
+        }
+      },
+      {
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+        "purpose": "challenge_evaluation",
+        "possession_id": "possession_001",
+        "source_video": {
+          "path": "data/clips/possession_001.mp4",
+          "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+          "width_px": 1920,
+          "height_px": 1080,
+          "fps": 25.0,
+          "frame_count": 499
+        },
+        "start_frame_index": 200,
+        "end_frame_index": 224,
+        "annotation_set_id": "possession_001_frames_0200_0224_challenge_evaluation_v0_1",
+        "crop_candidates": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/candidates.json",
+          "sha256": "96b64d53938523536cfd6374bb3a33c93bc30d4bc0ffb66f0ced310a2b80bfc2"
+        },
+        "yolo_candidates": {
+          "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/candidates.json",
+          "sha256": "9fe20bdb4decc39b8390dfc07459e722f03561d8735195123730d382cc24000a",
+          "size_bytes": 3683670
+        }
+      },
+      {
+        "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+        "purpose": "representative_evaluation",
+        "possession_id": "possession_002",
+        "source_video": {
+          "path": "data/clips/possession_002.mp4",
+          "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+          "width_px": 1920,
+          "height_px": 1080,
+          "fps": 25.0,
+          "frame_count": 499
+        },
+        "start_frame_index": 250,
+        "end_frame_index": 274,
+        "annotation_set_id": "possession_002_frames_0250_0274_representative_evaluation_v0_1",
+        "crop_candidates": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/candidates.json",
+          "sha256": "d9d8da77d604499765bb2a94f02a012a2713b5a1fed879c75f64d041d2e6734c"
+        },
+        "yolo_candidates": {
+          "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/candidates.json",
+          "sha256": "be4228a79a75244e9d3f40646e66d26546177e7e366d91458df5dbe72a30b33a",
+          "size_bytes": 4719359
+        }
+      },
+      {
+        "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+        "purpose": "challenge_evaluation",
+        "possession_id": "possession_002",
+        "source_video": {
+          "path": "data/clips/possession_002.mp4",
+          "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+          "width_px": 1920,
+          "height_px": 1080,
+          "fps": 25.0,
+          "frame_count": 499
+        },
+        "start_frame_index": 25,
+        "end_frame_index": 49,
+        "annotation_set_id": "possession_002_frames_0025_0049_challenge_evaluation_v0_1",
+        "crop_candidates": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/candidates.json",
+          "sha256": "ca1eba2c25ddcea655e8f3230a83fdbe419dfa057218fe2d569ce1de5c55eb2f"
+        },
+        "yolo_candidates": {
+          "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/candidates.json",
+          "sha256": "0d8a347b99eb04256043f7a63642eb822b32b151eb8f877bed9506e822a51b97",
+          "size_bytes": 5232644
+        }
+      },
+      {
+        "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+        "purpose": "representative_evaluation",
+        "possession_id": "possession_003",
+        "source_video": {
+          "path": "data/clips/possession_003.mp4",
+          "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+          "width_px": 1920,
+          "height_px": 1080,
+          "fps": 25.0,
+          "frame_count": 500
+        },
+        "start_frame_index": 300,
+        "end_frame_index": 324,
+        "annotation_set_id": "possession_003_frames_0300_0324_representative_evaluation_v0_1",
+        "crop_candidates": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/candidates.json",
+          "sha256": "7fa6a6d4b0ec153e30ffed53149cf4f00ffb11b9439138b8a0751f96d77b4cfa"
+        },
+        "yolo_candidates": {
+          "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/candidates.json",
+          "sha256": "34592351eae412bc193dcaa19f5062ec544ec328ac257c8a07fd5a727f6c86c4",
+          "size_bytes": 3833065
+        }
+      },
+      {
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+        "purpose": "challenge_evaluation",
+        "possession_id": "possession_003",
+        "source_video": {
+          "path": "data/clips/possession_003.mp4",
+          "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+          "width_px": 1920,
+          "height_px": 1080,
+          "fps": 25.0,
+          "frame_count": 500
+        },
+        "start_frame_index": 150,
+        "end_frame_index": 174,
+        "annotation_set_id": "possession_003_frames_0150_0174_challenge_evaluation_v0_1",
+        "crop_candidates": {
+          "path": "data/outputs/ball_tracking/tiled_development/rfdetr_medium_tiled_development_comparison_v0_1/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/candidates.json",
+          "sha256": "5a231da10c3cd8eb0b221124a6dcef1bec2d7e1cf12f4375d7d0f943f8d1d47e"
+        },
+        "yolo_candidates": {
+          "path": "data/outputs/ball_tracking/detector_challenger/yolo11x_crop_development_comparison_v0_1/recovery_v0_2/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/candidates.json",
+          "sha256": "280c539b57178a76d48ca79172482976aaa9c6d4b262d6e8219505c221b81139",
+          "size_bytes": 3069273
+        }
+      }
+    ],
+    "eligible_frames": 145,
+    "hidden_frames": 5,
+    "model_calls": 0,
+    "parameter_tuning": false,
+    "all_six_selections_sealed_before_evaluation": true,
+    "all_evaluations_complete_before_pixels": true,
+    "source_video_access": false,
+    "parent_scientific_json_or_review_index_reads": false,
+    "parent_media_hashes": false,
+    "new_selection_evaluation_only_in_future_owned_worker": true,
+    "maximum_parent_return_bytes": 524288,
+    "maximum_worker_receipt_bytes": 1048576,
+    "monitor_policy": {
+      "reuse_validated_responsive_monitor": true,
+      "requested_poll_interval_seconds": 0.25,
+      "maximum_completed_safety_interval_seconds": 1,
+      "scan_request_deadline_seconds": 10,
+      "next_request_after_completion_seconds": 5,
+      "maximum_measurement_age_seconds": 30,
+      "maximum_helpers": 1,
+      "maximum_sampled_memory_bytes": 8589934592,
+      "worker_committed_memory_bytes": 8589934592,
+      "helper_committed_memory_bytes": 536870912,
+      "minimum_free_disk_bytes": 53687091200,
+      "maximum_whole_output_root_bytes": 34359738368,
+      "maximum_scan_record_bytes": 8192,
+      "maximum_worker_receipt_bytes": 1048576,
+      "publication_reserve_bytes": 65536,
+      "initial_and_distinct_final_scan_required": true,
+      "owned_cleanup_required": true
+    },
+    "prediction_embargoes": [
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_001_frames_0050_0074_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_001_frames_0200_0224_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_001_frames_0300_0324_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_002_frames_0250_0274_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_002_frames_0025_0049_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_002_frames_0200_0224_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_003_frames_0300_0324_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_003_frames_0150_0174_rfdetr_medium_image_only_v0_1.json",
+      "data/outputs/ball_tracking/detections/rfdetr_medium_image_only_baseline_v0_1/possession_003_frames_0250_0274_rfdetr_medium_image_only_v0_1.json"
+    ],
+    "sealed_holdouts": [
+      [
+        "possession_001",
+        300,
+        324
+      ],
+      [
+        "possession_002",
+        200,
+        224
+      ],
+      [
+        "possession_003",
+        250,
+        274
+      ]
+    ],
+    "mean_artifacts_preserved": 636,
+    "completed_identity_judgments_preserved": 8,
+    "completed_mean_clip_responses_preserved": 6,
+    "completed_joint_review_frames_preserved": 16,
+    "completed_joint_review_submissions_preserved": 20,
+    "completed_review_replay": false,
+    "future_six_clip_presentation_requires_separate_approval": true,
+    "human_final_authority": "Ryan",
+    "selected_method": null,
+    "selected_operating_point": null,
+    "quality_gate": null
+  },
+  "proposed_validation": {
+    "authorized_now": false,
+    "reason": "Future source changes to runtime authority and retry accounting require new evidence; no validation for resumption",
+    "predecessor_consumed_seconds": 9589.048999999992,
+    "predecessor_cap_seconds": 10200,
+    "predecessor_unused_arithmetic_seconds": 610.9510000000082,
+    "predecessor_receipts": 15,
+    "additive_cap_seconds": 2800,
+    "proposed_cumulative_cap_seconds": 13000,
+    "maximum_new_phase_seconds": 2800,
+    "predecessor_unused_time_available_to_new_phase": false,
+    "maximum_focused_invocations": 3,
+    "maximum_cumulative_new_focused_seconds": 300,
+    "maximum_full_invocations": 1,
+    "maximum_full_seconds": 2500,
+    "accepted_observed_full_seconds": 2119.2969999999987,
+    "every_launched_invocation_charged": true,
+    "corrections_require_actual_change_and_remaining_focused_slot": true,
+    "new_full_after_any_full_result": false,
+    "further_validation_after_completion_certificate": false,
+    "prior_independent_phase_consumption_strings": [
+      "2164.2970000000005",
+      "2295.467999999999"
+    ],
+    "project_interpreter": ".venv/Scripts/python.exe",
+    "bytecode_writes": false,
+    "full_test_command": "python -m unittest discover -s tests -v (inside proposed owned artificial supervisor only)",
+    "exact_existing_skip": "test_ball_detector_experiment_runner.PreflightTests.test_output_escape_and_symlink_traversal_are_rejected: Directory symlinks are unavailable",
+    "artificial_fixtures_only": true,
+    "real_journal_or_scientific_body_access": false,
+    "maximum_sampled_combined_memory_bytes": 8589934592,
+    "maximum_total_measured_validation_output_bytes": 4294967296,
+    "minimum_free_disk_bytes": 53687091200,
+    "measurement_roots": "All carried validation measurement roots plus fresh integration root and all owned external fixture roots; preserve publication reserves",
+    "natural_drain_seconds": 1,
+    "forced_cleanup_seconds": 1,
+    "per_incident_same_handle_observation_seconds": 0.05,
+    "total_same_handle_observation_seconds": 0.25,
+    "requested_observation_sleep_max_seconds": 0.005,
+    "exact_lifecycle_behavior_preserved": true,
+    "frozen_source_and_helpers_for_focused_and_full": true,
+    "no_invented_counts": true,
+    "expected_new_counts": null,
+    "artificial_test_requirements": [
+      "exact versioned manifest/certificate dispatch and worker propagation",
+      "ancestor/current inventories and explicit changed-file allowlist",
+      "all fifteen prior receipts and immutable historical helper evidence",
+      "separate repository/ignored counts and frozen test IDs",
+      "bounded additive accounting including failures and interrupted checks",
+      "one same-unit retry with exact failed predecessor and seal links",
+      "reject wrong prefix, tip, charge, failures, suffix, key or authority",
+      "reject successful predecessor, orphan, previous retry and third attempt",
+      "unit and global remaining time plus failed-startup output-byte preservation",
+      "same ownership checks with actual virtualenv redirector fixture",
+      "selection before evaluation before pixels and no real path access",
+      "dirty/untracked/stale actual-commit checkpoint refusal",
+      "create-only outputs, preservation, embargo and holdout guards",
+      "complete bounded result transport and unsuccessful completion refusal"
+    ]
+  },
+  "future_artifacts": {
+    "validation_root": "data/outputs/t/corroboration_retry_integration_3233d2c",
+    "create_only": true,
+    "helpers": {
+      "new_wiring": [
+        "validate.py",
+        "finalize_validation.py"
+      ],
+      "exact_unchanged_copies": [
+        "lifecycle.py",
+        "test_lifecycle.py"
+      ],
+      "ancestor_bindings": [
+        {
+          "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/validate.py",
+          "size_bytes": 38662,
+          "sha256": "3e502582e6be472b7b878372c247170045ce8830f9ffba5edbaeca3cfec16334"
+        },
+        {
+          "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/lifecycle.py",
+          "size_bytes": 23754,
+          "sha256": "ebbc6d6be2b26186a73c73ddc2cc3d89324f590a8a2f87edeca0afc072d52f39"
+        },
+        {
+          "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/test_lifecycle.py",
+          "size_bytes": 31407,
+          "sha256": "3a2348fa6ad22cc8a4efc670e03bc02e99ec53ed0b6b8d21e3271149b891cbbe"
+        },
+        {
+          "path": "data/outputs/t/corroboration_shutdown_validation_3233d2c/finalize_validation.py",
+          "size_bytes": 17017,
+          "sha256": "82a4e300945c45972c0224a7531339edac74ef8d62b84a0db1a29030caa1923f"
+        }
+      ]
+    },
+    "implementation_approval": "data/outputs/t/corroboration_retry_integration_3233d2c/approval.json",
+    "preservation": "data/outputs/t/corroboration_retry_integration_3233d2c/preservation.json",
+    "frozen_test_inventory": "data/outputs/t/corroboration_retry_integration_3233d2c/test_inventory.json",
+    "implementation_review": "data/outputs/t/corroboration_retry_integration_3233d2c/implementation_review.json",
+    "run_stems": [
+      "focused_01",
+      "focused_02",
+      "focused_03",
+      "full_01"
+    ],
+    "run_files": "Per used stem: create-only _started.json, _result.json, .gate, exact source/test snapshots and four _helper_ snapshots; .log, _lifecycle.jsonl and _active_test.jsonl append only during that invocation; bounded _status.json and _status.pending.json may update only for that live invocation. Completed evidence is immutable. Unused stems not created; owned fixtures stay inside measured roots.",
+    "certificate": "data/outputs/t/corroboration_retry_integration_3233d2c/implementation_validation.json",
+    "completion_status": "data/outputs/t/corroboration_retry_integration_3233d2c/completion_status.json",
+    "completion_review": "data/outputs/t/corroboration_retry_integration_3233d2c/completion_review.json",
+    "maximum_individual_administrative_record_bytes": 4194304,
+    "maximum_frozen_preservation_record_bytes": 16777216,
+    "runtime_manifest": "configs/ball_tracking/crop_retention_experiments/rfdetr_yolo_crop_corroboration_retry_v0_1.json",
+    "runtime_manifest_schema": "ball_crop_corroboration_retry_release_manifest/v0.1",
+    "retry_execution_approval": "configs/ball_tracking/reviews/rfdetr_yolo_crop_corroboration_retry_execution_approval_v0_1.json",
+    "runtime_frozen_history": "data/outputs/t/corroboration_retry_integration_3233d2c/runtime_frozen_history.json",
+    "post_commit_checkpoint": "data/outputs/t/corroboration_retry_integration_3233d2c/post_commit_execution_checkpoint.json",
+    "later_runtime_artifact_creation_requires_separate_approval": true,
+    "execution_commit": null,
+    "future_runtime_hashes": null
+  },
+  "later_boundaries": [
+    "Explicit integration implementation and bounded artificial validation approval",
+    "After passing result: explicit creation of new runtime manifest, retry approval and frozen history; preserve old package",
+    "Explicit staging approval for actual reviewed file list",
+    "Explicit commit approval; verify exact descendant and clean worktree",
+    "Explicit new checkpoint creation binding actual clean commit and exact authority/evidence",
+    "Explicit one-time scientific retry and bounded actual journal verification authorization",
+    "Explicit successful new-media presentation authorization; preserve completed reviews"
+  ],
+  "preparation_prohibitions": [
+    "source/test implementation",
+    "tests, experiments, diagnostics or model calls",
+    "scientific body/media reads or hashes",
+    "real journal replay or production dry-run",
+    "runtime authority or release checkpoint creation",
+    "Git mutations",
+    "budget resets or old evidence edits"
+  ]
+}

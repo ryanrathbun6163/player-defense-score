@@ -1,0 +1,367 @@
+{
+  "schema_version": "nba_wasb_adaptation/v0.1",
+  "experiment_id": "nba_wasb_adaptation_v0_1",
+  "output_root": "data/outputs/ball_tracking/nba/wasb_adaptation_v0_1",
+  "initialization": {
+    "checkpoint": {
+      "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/checkpoint.pth",
+      "sha256": "09da1214e94fc2eb8f36dbf46089eb117d9bbde4d5cb85d3a1d127c3fb61de98",
+      "bytes": 6084071
+    },
+    "training_completion": {
+      "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/training/completion.json",
+      "sha256": "0d81bf6b8b876ad3dbddc9e826a8881b1aac92bd64bb0df915b873a2a7fd1ef1",
+      "bytes": 4196
+    }
+  },
+  "nfhs_training_config": {
+    "path": "configs/ball_tracking/wasb_experiments/wasb_basketball_expanded_adaptation_v0_1.json",
+    "sha256": "9c0d7013e36cd350cf02a0e78d17ee4ec3f176ff8154e0f72dc2b4620ea2e926",
+    "bytes": 12901
+  },
+  "nba_references": {
+    "pilot": {
+      "path": "data/outputs/ball_tracking/nba/reviewed_pilot_v0_1/reference.json",
+      "sha256": "6a2aa2dad7ecd5351c21b8806945f3e9c33ac4d17a295ec67fe1b5dd52b996c4",
+      "bytes": 154743
+    },
+    "hard_example": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/accepted/reference.json",
+      "sha256": "91bd79c73e47193c4344b630205efee34c1636bec4bcb7bc4985846a1c6ad3a3",
+      "bytes": 688436
+    }
+  },
+  "nba_training_windows": [
+    {
+      "window_id": "sac_mem_q1_c01_pilot_control",
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "reference_kind": "pilot",
+      "source_frame_range_inclusive": [
+        660,
+        719
+      ]
+    },
+    {
+      "window_id": "sac_distractor_recovery",
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "reference_kind": "hard_example",
+      "source_frame_range_inclusive": [
+        940,
+        1059
+      ]
+    },
+    {
+      "window_id": "sac_held_ball_gaps",
+      "candidate_id": "sac_mem_q1_c01",
+      "game_id": "0022500829",
+      "reference_kind": "hard_example",
+      "source_frame_range_inclusive": [
+        1240,
+        1359
+      ]
+    }
+  ],
+  "excluded_nba_game_ids": [
+    "0022500828",
+    "0022500843"
+  ],
+  "training": {
+    "updates": 200,
+    "batch_size": 2,
+    "seed": 1234,
+    "optimizer": "Adam",
+    "learning_rate": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "weight_decay": 0.0,
+    "precision": "float32",
+    "device": "cuda",
+    "parameters": "all_trainable",
+    "batch_norm": "affine_trainable_running_buffers_frozen",
+    "target_disk_radius": 2.5,
+    "target_center_conversion": "official_affine_then_astype_int32_truncate_toward_zero",
+    "loss": "gamma2_weighted_binary_cross_entropy",
+    "sigmoid_clamp": 0.0001,
+    "masked_denominator": "valid_output_channels_times_height_times_width",
+    "sampling": "shuffle_all_usable_triplets_seed1234_take400",
+    "checkpoint_interval_updates": 25,
+    "augmentation": false,
+    "mining": false,
+    "checkpoint_selection": "final_update200_only",
+    "initialization": "expanded_checkpoint_fresh_adam",
+    "exclude_all_masked_triplets": true
+  },
+  "expected_split": {
+    "reviewed_frames": 450,
+    "positive_frames": 400,
+    "hidden_frames": 36,
+    "masked_frames": 14,
+    "all_triplets": 434,
+    "excluded_all_masked_triplets": 10,
+    "usable_triplets": 424,
+    "nba_frames": 300,
+    "nfhs_frames": 150
+  },
+  "inference": {
+    "heatmap_threshold": 0.3,
+    "strict_threshold": true,
+    "selection": "largest_component_mass_then_stable_candidate_index",
+    "aggregation": "mean_aligned_complete_triplets",
+    "triplet_stride": 1,
+    "dtype": "float32",
+    "device": "cuda",
+    "padding": false,
+    "resampling": false,
+    "interpolation": false,
+    "motion_selector": false,
+    "threshold_search": false
+  },
+  "scoring": {
+    "localization_radius_source_px": 10,
+    "inclusive": true,
+    "unsupported_reference_geometry": "unscored"
+  },
+  "gates": {
+    "role": "Analyst-specified conservative screening rules fixed before training; not a ball-phase acceptance gate or a claim of statistical significance.",
+    "detroit": {
+      "eligible_frames": 237,
+      "hidden_frames": 69,
+      "matched_min": 208,
+      "missing_max": 21,
+      "wrong_max": 8,
+      "hidden_alarm_max": 13,
+      "pilot_control_matched_min": 60
+    },
+    "nfhs": {
+      "eligible_frames": 145,
+      "hidden_frames": 5,
+      "matched_min": 130,
+      "missing_max": 14,
+      "wrong_max": 1,
+      "hidden_alarm_max": 0
+    },
+    "all_required": true,
+    "human_visual_review_required": true,
+    "automatic_promotion": false,
+    "sacramento": "Training-fit description only; no out-of-fit claim or success gate."
+  },
+  "rendering": {
+    "nba_fps": 30,
+    "nfhs_fps": 6,
+    "final_hold_seconds": 1,
+    "paired_old_new": true,
+    "frame_policy": "Every source frame once, followed by an explicit final-frame hold; playback slowdown does not change model cadence."
+  },
+  "limits": [
+    "One final-update200 continuation fit, fresh optimizer; no checkpoint search or further fit.",
+    "SAC labels become consumed training data; all DET labels remain excluded from fitting but already development-visible.",
+    "NFHS released six25-frame evaluation contexts only; sealed holdouts and buffers untouched; TOR outside scope.",
+    "Native NBA16/17ms and NFHS40ms training inputs remain in separate contiguous blocks; no cross-gap context.",
+    "Only certain-hidden labels are negatives; unsupported geometry is loss-masked.",
+    "Mixed training and extra optimization both change; this does not isolate the causal contribution of NBA data.",
+    "Original artifacts, uncertainty, AI reference authorship and completed/pending reviews remain unchanged.",
+    "Synchronized complete old/new model outputs require Ryan's new review; no automatic acceptance."
+  ],
+  "evaluation": {
+    "nba_sources": [
+      {
+        "input_manifest": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/inputs/sac_mem_q1_c01/manifest.json",
+          "sha256": "dfd51f416ca0b1819d6b0d8637d5f686f8389817de1bdef542d4179a0978217d",
+          "bytes": 726844
+        },
+        "baseline_observations": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sac_mem_q1_c01/observations.json",
+          "sha256": "0cd5a7eb8dd9a28cdaddfe1b072415b75c19a89f26e0842cd1c9bf0c83ddc6b4",
+          "bytes": 3339134
+        }
+      },
+      {
+        "input_manifest": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/inputs/sas_det_q1_c02/manifest.json",
+          "sha256": "f40c5217cbcaa6f74b1b825b303a1b13572d84c735fc0083ca980dc9768d7b6e",
+          "bytes": 615594
+        },
+        "baseline_observations": {
+          "path": "data/outputs/ball_tracking/nba/wasb_action_observation_v0_1/sas_det_q1_c02/observations.json",
+          "sha256": "a9ef10f9b88361ee7d1f3dde633bc1ff36f506cd5d2d9f562bcb7c3b50991db4",
+          "bytes": 2750073
+        }
+      }
+    ],
+    "nba_saved_score_report": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/diagnostics/saved_score_v0_1/attempts/9e8067a522fb4e5d8edaf1b8f4e525e6/report.json",
+      "sha256": "779199c4ffbaf50d3c6d062aa570cbba00675fb29c70a138af77ddf3f115bc2c",
+      "bytes": 1228596
+    },
+    "nba_hard_reference": {
+      "path": "data/outputs/ball_tracking/nba/hard_example_reference_v0_1/accepted/reference.json",
+      "sha256": "91bd79c73e47193c4344b630205efee34c1636bec4bcb7bc4985846a1c6ad3a3",
+      "bytes": 688436
+    },
+    "nba_pilot_reference": {
+      "path": "data/outputs/ball_tracking/nba/reviewed_pilot_v0_1/reference.json",
+      "sha256": "6a2aa2dad7ecd5351c21b8806945f3e9c33ac4d17a295ec67fe1b5dd52b996c4",
+      "bytes": 154743
+    },
+    "nfhs_transfer_config": {
+      "path": "configs/ball_tracking/wasb_experiments/wasb_basketball_transfer_v0_1.json",
+      "sha256": "3f9582662c9b8fde4edd7c0096eb4b2888d1b6a9f24e8b970add130be6e91d90",
+      "bytes": 9713
+    },
+    "nfhs_baseline_calibration_config": {
+      "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration_config.json",
+      "sha256": "236979e3d6f5971fce7cc8d705dced577ddd1d40e19d3dd080ba41684777e955",
+      "bytes": 18112
+    },
+    "nfhs_baselines": [
+      {
+        "window_id": "possession_001_frames_0050_0074_representative_evaluation_development_v0_2",
+        "components": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/threshold_0.3/components.json",
+          "sha256": "edd793b103b17b154afce18694eba4200176238328a6a69986794d13458f971f",
+          "bytes": 9518
+        },
+        "points": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/threshold_0.3/points.json",
+          "sha256": "3c558189f3cf20622d31c12d9395b8c48afcb6a94cf7f50e33d3dfd441826809",
+          "bytes": 12247
+        },
+        "evaluation": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_001_frames_0050_0074_representative_evaluation_development_v0_2/threshold_0.3/evaluation.json",
+          "sha256": "c56c2e642e4754297c7e6a8773fb05bc873684afeb3e5647174bcdb8616c0574",
+          "bytes": 37511
+        }
+      },
+      {
+        "window_id": "possession_001_frames_0200_0224_challenge_evaluation_development_v0_2",
+        "components": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/threshold_0.3/components.json",
+          "sha256": "1bbe0ad289a422fdc99bb7b7826c865387ae749bc2e8b02ebeb15ab8638458c0",
+          "bytes": 5468
+        },
+        "points": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/threshold_0.3/points.json",
+          "sha256": "3a33119e562e41ee88a2ff6815e686ad718817423140c789d856a1f7ef079a7d",
+          "bytes": 9135
+        },
+        "evaluation": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_001_frames_0200_0224_challenge_evaluation_development_v0_2/threshold_0.3/evaluation.json",
+          "sha256": "d83e869bd14db5af1dcf60c87545c9fb58962cc949d58dd1296ad751b1649e71",
+          "bytes": 36917
+        }
+      },
+      {
+        "window_id": "possession_002_frames_0250_0274_representative_evaluation_development_v0_2",
+        "components": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/threshold_0.3/components.json",
+          "sha256": "3508efeec0e5efaaf8311496bea0be5c99b31865108f1b0255d5e98428e399a1",
+          "bytes": 7157
+        },
+        "points": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/threshold_0.3/points.json",
+          "sha256": "8dcd944aa4357decc5d5ed1503681a9f3caec83bf9f811b43d8520263fb7fe19",
+          "bytes": 10465
+        },
+        "evaluation": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_002_frames_0250_0274_representative_evaluation_development_v0_2/threshold_0.3/evaluation.json",
+          "sha256": "844d67e501dfa734771ad96bbc19676d6d79b3ebd2f252f64b6ea2c0071cdc3a",
+          "bytes": 37254
+        }
+      },
+      {
+        "window_id": "possession_002_frames_0025_0049_challenge_evaluation_development_v0_2",
+        "components": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/threshold_0.3/components.json",
+          "sha256": "e36bc222ea1d97748664ea8159d4455f940de251a4449dbe5bc78f12a6fa78ce",
+          "bytes": 9541
+        },
+        "points": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/threshold_0.3/points.json",
+          "sha256": "743cbe60b7c30d01d5bb4d45dbb91810da1e2ab14a46ece454399588c1647182",
+          "bytes": 12236
+        },
+        "evaluation": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_002_frames_0025_0049_challenge_evaluation_development_v0_2/threshold_0.3/evaluation.json",
+          "sha256": "be518fa3096765872fe12866525b61bfd09c3095840e5417d7d5e001feb6bba8",
+          "bytes": 37388
+        }
+      },
+      {
+        "window_id": "possession_003_frames_0300_0324_representative_evaluation_development_v0_2",
+        "components": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/threshold_0.3/components.json",
+          "sha256": "29ff4b2d84f7398fb747aca5365869ef4d860a6f13f973cb7a7579100ba8054b",
+          "bytes": 8189
+        },
+        "points": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/threshold_0.3/points.json",
+          "sha256": "7e61a2a184987b2278c5d7681eaff0b7838a95ed97912919e602b908ce4f9c8b",
+          "bytes": 11223
+        },
+        "evaluation": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_003_frames_0300_0324_representative_evaluation_development_v0_2/threshold_0.3/evaluation.json",
+          "sha256": "7d52de65f54be2c4859b8bb7e650077377865c47dfeb57f2621ade36e5ed65ec",
+          "bytes": 37333
+        }
+      },
+      {
+        "window_id": "possession_003_frames_0150_0174_challenge_evaluation_development_v0_2",
+        "components": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/threshold_0.3/components.json",
+          "sha256": "85976bde4e60744c25f5f5ec6db25d7b4e0fcbee8cc1a4d9868f5a8c4e0e0b25",
+          "bytes": 5933
+        },
+        "points": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/threshold_0.3/points.json",
+          "sha256": "fa0ee784dc3b1729134c577400f7f00e77511cb83f3a82f6ac668d518e9b74e7",
+          "bytes": 9519
+        },
+        "evaluation": {
+          "path": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1/calibration/possession_003_frames_0150_0174_challenge_evaluation_development_v0_2/threshold_0.3/evaluation.json",
+          "sha256": "438c06e0f87794410cbb4d81d604bcb280a8db6bb48a8c6f78f21fdcb72b109a",
+          "bytes": 37106
+        }
+      }
+    ],
+    "policy": {
+      "heatmap_threshold": 0.3,
+      "triplet_stride": 1,
+      "aggregation": "mean_aligned_complete_native_triplets",
+      "padding": "none",
+      "resampling": "none",
+      "selection": "largest_component_mass",
+      "device": "cuda"
+    },
+    "nba_frames": 2702,
+    "nba_triplets": 2698,
+    "nfhs_frames": 150,
+    "nfhs_triplets": 138,
+    "comparison_gates": {
+      "det": {
+        "matched_min": 208,
+        "missing_max": 21,
+        "wrong_max": 8,
+        "hidden_alarm_max": 13,
+        "easy_control_matched": 60
+      },
+      "nfhs": {
+        "matched_min": 130,
+        "missing_max": 14,
+        "wrong_max": 1,
+        "hidden_alarm_max": 0
+      }
+    },
+    "ffmpeg": "C:/Users/Ryan/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-9.0-full_build/bin/ffmpeg.exe"
+  },
+  "approval": {
+    "path": "configs/ball_tracking/reviews/nba_wasb_adaptation_approval_v0_1.json",
+    "sha256": "55e9bb4dc32d0d14d05ce1d2eca4aa8bdf47b2a8bd8fab10047ab4d9b46e2710",
+    "bytes": 17943
+  }
+}

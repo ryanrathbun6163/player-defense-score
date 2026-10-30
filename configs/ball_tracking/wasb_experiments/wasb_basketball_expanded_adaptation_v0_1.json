@@ -1,0 +1,337 @@
+{
+  "schema_version": "wasb_adaptation_experiment/v0.2",
+  "experiment_id": "wasb_basketball_expanded_adaptation_v0_1",
+  "authorization_context": "Ryan approved 75 additional training frames and one original-initialized 200-update fit; on 2026-10-08 he approved all three completed label-review clips and directed continuation.",
+  "approved_plan": {
+    "path": "docs/ball_wasb_training_data_expansion.md",
+    "sha256": "90d7a5cb7926e22e1c12e3fc35af523d193201628cf7cb4f7ccefbb133417ab4"
+  },
+  "output_root": "data/outputs/ball_tracking/wasb/wasb_basketball_expanded_adaptation_v0_1",
+  "upstream_source": "data/outputs/wasb_assets/WASB-SBDT-923462cacdeb3353b84ddebdedb3f4b7a8553b0f",
+  "upstream_commit": "923462cacdeb3353b84ddebdedb3f4b7a8553b0f",
+  "pretrained_checkpoint": {
+    "path": "data/outputs/wasb_assets/wasb_basketball.pth",
+    "sha256": "8d1ba9870d0a6ab37b06ab82bed593c6c09133e713810bac475d0c000bb7e948"
+  },
+  "transfer_config": {
+    "path": "configs/ball_tracking/wasb_experiments/wasb_basketball_transfer_v0_1.json",
+    "sha256": "3f9582662c9b8fde4edd7c0096eb4b2888d1b6a9f24e8b970add130be6e91d90"
+  },
+  "original_calibration_config": {
+    "path": "configs/ball_tracking/wasb_experiments/wasb_basketball_calibration_v0_1.json",
+    "sha256": "24961ca05fdd8c8ac925843b77f59fa87ee8db959ff63f8ef4e9d502f35c5cb6"
+  },
+  "split_metadata": {
+    "path": "configs/ball_tracking/experiments/rfdetr_medium_development_evaluation_v0_2.json",
+    "sha256": "3a78cf26686c0624c1a45dec5c47e7bad182cc7d5cd658b639e11d47c0d75489"
+  },
+  "expected_split": {
+    "reviewed_frames": 150,
+    "positive_frames": 130,
+    "hidden_frames": 19,
+    "masked_frames": 1,
+    "fully_visible_positive": 16,
+    "partially_visible_positive": 114,
+    "triplets": 140,
+    "masked_frame_ids": [
+      {
+        "possession_id": "possession_002",
+        "frame_index": 335
+      }
+    ],
+    "hidden_frame_ids": [
+      {
+        "possession_id": "possession_001",
+        "frame_index": 253
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 330
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 336
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 337
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 338
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 339
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 340
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 341
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 342
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 343
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 344
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 345
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 346
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 349
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 350
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 351
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 352
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 353
+      },
+      {
+        "possession_id": "possession_002",
+        "frame_index": 354
+      }
+    ]
+  },
+  "training": {
+    "updates": 200,
+    "batch_size": 2,
+    "seed": 1234,
+    "optimizer": "Adam",
+    "learning_rate": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "weight_decay": 0.0,
+    "precision": "float32",
+    "device": "cuda",
+    "parameters": "all_trainable",
+    "batch_norm": "affine_trainable_running_buffers_frozen",
+    "target_disk_radius": 2.5,
+    "target_center_conversion": "official_affine_then_astype_int32_truncate_toward_zero",
+    "loss": "gamma2_weighted_binary_cross_entropy",
+    "sigmoid_clamp": 0.0001,
+    "masked_denominator": "valid_output_channels_times_height_times_width",
+    "sampling": "random.Random(seed).shuffle independent copies of sorted140tripletIDs; concatenate cycles; take400; consecutive pairs",
+    "checkpoint_interval_updates": 25,
+    "augmentation": false,
+    "mining": false,
+    "checkpoint_selection": "final_update200_only"
+  },
+  "upstream_training_sources": [
+    {
+      "path": "data/outputs/wasb_assets/WASB-SBDT-923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/utils/heatmap.py",
+      "sha256": "8b4bd6b6a63b3074c8dc0f9b8819ee925e7904a9755f64cdd7bfa06d876714c9"
+    },
+    {
+      "path": "data/outputs/wasb_assets/WASB-SBDT-923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/losses/wbce.py",
+      "sha256": "5c4f7c576f2097993bc7d46690178a5cd2eb636287d3db21e0816c5edd662170"
+    },
+    {
+      "path": "data/outputs/wasb_assets/WASB-SBDT-923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/utils/utils.py",
+      "sha256": "0e061c54bab92f19953f61ea0f0af7e0dfeb2c06d8d697d808a45df8426d6de1"
+    },
+    {
+      "path": "data/outputs/wasb_assets/WASB-SBDT-923462cacdeb3353b84ddebdedb3f4b7a8553b0f/src/dataloaders/dataset_loader.py",
+      "sha256": "4a13c802eb4ea0c074c8f1ddfe1edf5a705d1a8f7fb86d746e4b1d0808e86cd0"
+    }
+  ],
+  "selected_operating_point": null,
+  "quality_gate": null,
+  "limits": [
+    "Training reads only the original three reviewed annotation sets and three newly reviewed additions; development and holdout exclusion uses metadata only.",
+    "Five complete training blocks; P002318-367 composes two preserved annotation authorities, with no external temporal context.",
+    "Same original pretrained checkpoint and training recipe; final update200 only, no checkpoint or threshold search.",
+    "All prior weights, annotations, evidence, failed attempts and completed reviews remain preserved.",
+    "Fixed compute does not fix per-scene exposure: 400 triplets sampled from140 instead of69; same-game development comparison only."
+  ],
+  "original_training_config": {
+    "path": "configs/ball_tracking/wasb_experiments/wasb_basketball_adaptation_v0_1.json",
+    "sha256": "1a56a4d3bce9f1c85dd2d359e52d3e65d442049c04a2fa45e42bab74016c7cc9"
+  },
+  "expansion_proposal": {
+    "path": "configs/ball_tracking/proposals/wasb_training_data_expansion_v0_1.json",
+    "sha256": "8851c8fe93bf5f185b04569827c10660bb1eb36ab1efa8f76bed18ff24785b54"
+  },
+  "expansion_approval": {
+    "path": "configs/ball_tracking/reviews/wasb_training_data_expansion_approval_v0_1.json",
+    "sha256": "dcb187f9ef504b96b60ca8cd1e67d61c7b66525e6bde3005604157559280425c"
+  },
+  "expansion_label_review": {
+    "path": "configs/ball_tracking/reviews/wasb_training_expansion_label_review_v0_1.json",
+    "sha256": "64ed65dc02bd7fed3104147ce083b06a75996004b4bf0e22092fc6a86369d432"
+  },
+  "prior_adapted_calibration_config": {
+    "path": "data/outputs/ball_tracking/wasb/wasb_basketball_adaptation_v0_1/calibration_config.json",
+    "sha256": "bcc3568054f91f4306e195ca5206698737a6cc4cc65974bc96ab1a9634104eef"
+  },
+  "training_blocks": [
+    {
+      "possession_id": "possession_001",
+      "start_frame_index": 100,
+      "end_frame_index": 124,
+      "window_id": "possession_001_frames_0100_0124_expanded_training_v0_1",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "annotation_segments": [
+        {
+          "annotation_set_id": "possession_001_frames_0100_0124_training_expansion_v0_1",
+          "annotation": {
+            "path": "configs/ball_tracking/annotations/possession_001_frames_0100_0124_training_expansion_v0_1.json",
+            "sha256": "a2a441afb782222b3f2c9bab70c8c4169d0a7bd266da3dbf22657223db6d46e4"
+          },
+          "selection_purpose": "training",
+          "start_frame_index": 100,
+          "end_frame_index": 124
+        }
+      ]
+    },
+    {
+      "possession_id": "possession_001",
+      "start_frame_index": 250,
+      "end_frame_index": 274,
+      "window_id": "possession_001_frames_0250_0274_expanded_training_v0_1",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "annotation_segments": [
+        {
+          "annotation_set_id": "possession_001_frames_0250_0274_training_expansion_v0_1",
+          "annotation": {
+            "path": "configs/ball_tracking/annotations/possession_001_frames_0250_0274_training_expansion_v0_1.json",
+            "sha256": "10fbde5c1565754d62755efeb1d6af18d9264ec42fde7dff45e88522da6d2590"
+          },
+          "selection_purpose": "training",
+          "start_frame_index": 250,
+          "end_frame_index": 274
+        }
+      ]
+    },
+    {
+      "possession_id": "possession_001",
+      "start_frame_index": 375,
+      "end_frame_index": 399,
+      "window_id": "possession_001_frames_0375_0399_expanded_training_v0_1",
+      "source_video": {
+        "path": "data/clips/possession_001.mp4",
+        "sha256": "5c42dad097a27873852d1555a71de36b890eb7bf287cf53ee1cdc693c31fcae6",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "annotation_segments": [
+        {
+          "annotation_set_id": "possession_001_frames_0375_0399_protocol_adjudication_v0_1",
+          "annotation": {
+            "path": "configs/ball_tracking/annotations/possession_001_frames_0375_0399_protocol_adjudication_v0_1.json",
+            "sha256": "69aaf19f86f6a47cd507c17eb38186c4c1214979d29558cb5835561e567ba99f"
+          },
+          "selection_purpose": "protocol_adjudication",
+          "start_frame_index": 375,
+          "end_frame_index": 399
+        }
+      ]
+    },
+    {
+      "possession_id": "possession_002",
+      "start_frame_index": 318,
+      "end_frame_index": 367,
+      "window_id": "possession_002_frames_0318_0367_expanded_training_v0_1",
+      "source_video": {
+        "path": "data/clips/possession_002.mp4",
+        "sha256": "e76e9805c390054d7fda9ca4413612d1f22cdb2f64bc58526a193bd8fdecb224",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 499
+      },
+      "annotation_segments": [
+        {
+          "annotation_set_id": "possession_002_frames_0318_0342_protocol_adjudication_v0_1",
+          "annotation": {
+            "path": "configs/ball_tracking/annotations/possession_002_frames_0318_0342_protocol_adjudication_v0_1.json",
+            "sha256": "db1e07dce5e028e740ee408189d1625a241c1588e0b3221642f19d3e2d598df4"
+          },
+          "selection_purpose": "protocol_adjudication",
+          "start_frame_index": 318,
+          "end_frame_index": 342
+        },
+        {
+          "annotation_set_id": "possession_002_frames_0343_0367_training_expansion_v0_1",
+          "annotation": {
+            "path": "configs/ball_tracking/annotations/possession_002_frames_0343_0367_training_expansion_v0_1.json",
+            "sha256": "ce23c0aeb2f78604d888d97459e962c18bcd1c5129fca4df7e0120fe2da8d3bd"
+          },
+          "selection_purpose": "training",
+          "start_frame_index": 343,
+          "end_frame_index": 367
+        }
+      ]
+    },
+    {
+      "possession_id": "possession_003",
+      "start_frame_index": 416,
+      "end_frame_index": 440,
+      "window_id": "possession_003_frames_0416_0440_expanded_training_v0_1",
+      "source_video": {
+        "path": "data/clips/possession_003.mp4",
+        "sha256": "6b0088df4434ebcd9de84997f871f26698544ebdd237f46d1f4a39937cf40531",
+        "width_px": 1920,
+        "height_px": 1080,
+        "fps": 25.0,
+        "frame_count": 500
+      },
+      "annotation_segments": [
+        {
+          "annotation_set_id": "possession_003_frames_0416_0440_protocol_adjudication_v0_1",
+          "annotation": {
+            "path": "configs/ball_tracking/annotations/possession_003_frames_0416_0440_protocol_adjudication_v0_1.json",
+            "sha256": "8e088da8db868e15bd06dd94824d2dcb3412e7772b504d71c286132b4a8149e6"
+          },
+          "selection_purpose": "protocol_adjudication",
+          "start_frame_index": 416,
+          "end_frame_index": 440
+        }
+      ]
+    }
+  ]
+}

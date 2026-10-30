@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NBA ball annotation pilot</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#10151d;color:#eaf0f7;font:15px system-ui,sans-serif}header,main{padding:16px 22px}header{border-bottom:1px solid #344052}h1{font-size:23px;margin:0 0 8px}p{line-height:1.5;margin:6px 0}.muted{color:#b1bed0}.toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:end;margin:12px 0}label{display:flex;flex-direction:column;gap:5px}input,select,textarea,button{font:inherit;color:#edf4ff;background:#202b3a;border:1px solid #63758c;border-radius:5px;padding:8px}button{cursor:pointer}button.primary{background:#136b90}button:disabled,input:disabled,select:disabled,textarea:disabled{opacity:.5;cursor:not-allowed}input[type=checkbox]{width:18px;height:18px;flex-shrink:0}.check{flex-direction:row;align-items:center}#message{min-height:28px;white-space:pre-wrap;color:#9de6be}#message.error{color:#ffb8aa}#dirty{font-weight:700;color:#ffdc8c}.layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px}#viewer{background:#05080d;border:1px solid #46556a;overflow:auto;max-height:74vh;min-height:280px;padding:0}canvas{display:block;cursor:crosshair}#frameInfo{font-family:ui-monospace,monospace;font-size:13px;white-space:pre-wrap;line-height:1.6}.form{display:grid;gap:12px}fieldset{border:1px solid #46556a;border-radius:5px;min-width:0;padding:10px}legend{padding:0 6px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pair input{width:100%}#tags{display:grid;gap:6px;font-size:13px}textarea{resize:vertical;min-height:76px}details{margin-top:12px;line-height:1.5}summary{cursor:pointer}#frameSelect{min-width:220px}#annotator{width:180px}@media(max-width:980px){.layout{grid-template-columns:1fr}.form{grid-template-columns:repeat(2,minmax(0,1fr))}#viewer{max-height:60vh}}@media(max-width:600px){.form{grid-template-columns:1fr}header,main{padding:12px}}
+</style>
+</head>
+<body>
+<header>
+<h1>NBA ball annotation pilot</h1>
+<p class="muted">Original RGB frames · No model predictions · Draft labels only</p>
+<div class="toolbar">
+<label>Pilot<select id="pilot"></select></label>
+<label>Your annotator name<input id="annotator" autocomplete="off" placeholder="Enter your actual name"></label>
+<span id="progress"></span><span id="dirty">Loading…</span>
+</div>
+</header>
+<main>
+<div class="toolbar">
+<button id="previous" disabled>Previous</button>
+<label>Frame<select id="frameSelect" disabled></select></label>
+<button id="next" disabled>Next</button>
+<button id="save" class="primary" disabled>Save frame</button>
+<button id="saveNext" disabled>Save &amp; next</button>
+<button id="reload" disabled>Reload saved draft</button>
+<label>Zoom<select id="zoom"><option value="fit">Fit width</option><option value="0.5">50%</option><option value="1">100%</option><option value="2">200%</option><option value="4">400%</option><option value="8">800%</option></select></label>
+</div>
+<div id="message" role="status" aria-live="polite"></div>
+<div class="layout">
+<section>
+<div id="frameInfo"></div>
+<p class="muted">Choose visibility before placing a point. Click the complete-ball center; Shift-click its uncertainty boundary. Zoom and scroll for small balls.</p>
+<div id="viewer"><canvas id="canvas" aria-label="Original source frame; click to place complete-ball center"></canvas></div>
+<details><summary>Annotation rules</summary><p>A point must be defensible in this frame. A partial ball uses an estimate of the whole ball’s center, not the visible fragment. Fully hidden or indeterminate frames have no point. Uncertainty is a source-pixel radius, not confidence. Exclusion requires a protocol/source reason; difficulty alone is not a reason to exclude. Saving labels never marks human review complete.</p></details>
+</section>
+<section class="form" id="form">
+<label>Annotation status<select id="status"></select></label>
+<label>Ball visibility<select id="visibility"></select></label>
+<label>Absence reason<select id="absence"></select></label>
+<label>Game-ball identity certainty<select id="identity"></select></label>
+<fieldset id="geometryFields"><legend>Complete-ball center</legend>
+<label class="check"><input type="checkbox" id="hasGeometry">Record a defensible point</label>
+<div class="pair"><label>Source X<input id="centerX" type="number" step="any" min="0"></label><label>Source Y<input id="centerY" type="number" step="any" min="0"></label></div>
+<label>Uncertainty radius (source pixels)<input id="radius" type="number" min="0" step="any"></label>
+<button id="clearPoint" type="button">Clear point</button>
+</fieldset>
+<label class="check"><input id="eligible" type="checkbox">Eligible for localization scoring</label>
+<label>Notes / exclusion reason<textarea id="notes" placeholder="Required for exclusions, indeterminate frames, or visible but unscored/missing points"></textarea></label>
+<fieldset><legend>Visual difficulty tags</legend><div id="tags"></div></fieldset>
+</section>
+</div>
+</main>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const token=new URLSearchParams(location.hash.slice(1)).get("token")||"";
+// Keep the token in the fragment: it never travels in image URLs or HTTP logs.
+let session=null, doc=null, digest=null, pilotId=0, framePosition=0;
+let dirty=false, busy=false, imageReady=false, currentImage=null, objectURL=null;
+let imageAbort=null, imageGeneration=0;
+const canvas=$("canvas"), context=canvas.getContext("2d");
+const editable=["status","visibility","absence","identity","hasGeometry","centerX","centerY","radius","eligible","notes"];
+function message(text,error=false){$("message").textContent=text;$("message").className=error?"error":"";}
+function setDirty(value){dirty=value;$("dirty").textContent=value?"Unsaved changes":"Saved draft";controls();}
+function controls(){
+ const ready=!!doc&&!busy;
+ $("pilot").disabled=busy;
+ $("frameSelect").disabled=!ready;$("previous").disabled=!ready||framePosition===0;
+ $("next").disabled=!ready||framePosition===doc.frames.length-1;
+ $("save").disabled=!ready||!imageReady||!dirty;
+ $("saveNext").disabled=!ready||!imageReady||!dirty;
+ $("reload").disabled=!ready;
+ $("clearPoint").disabled=!ready||!imageReady;
+ $("annotator").disabled=busy||!!doc?.review.annotator_id;
+ for(const id of editable)$(id).disabled=!ready||!imageReady;
+ for(const input of $("tags").querySelectorAll("input"))input.disabled=!ready||!imageReady;
+ if(ready&&imageReady)semanticControls();
+}
+async function request(path,options={}){
+ const response=await fetch(path,{cache:"no-store",...options,headers:{"X-NBA-Session-Token":token,...options.headers}});
+ if(!response.ok){let error;try{error=(await response.json()).error;}catch{error=`HTTP ${response.status}`;}throw new Error(error);}
+ return response;
+}
+function fillSelect(id,values,blank=false){const el=$(id);el.replaceChildren();if(blank)el.add(new Option("Choose…",""));for(const value of values)el.add(new Option(value.replaceAll("_"," "),value));}
+function guardDiscard(){return !dirty||window.confirm("Discard unsaved changes to this frame? Cancel keeps your work.");}
+function semanticControls(){
+ const labeled=$("status").value==="labeled", visible=["fully_visible","partially_visible"].includes($("visibility").value);
+ $("visibility").disabled=!labeled;
+ $("absence").disabled=!labeled||$("visibility").value!=="not_visible";
+ $("identity").disabled=!labeled||$("visibility").value==="indeterminate";
+ $("hasGeometry").disabled=!labeled||!visible;
+ for(const id of ["centerX","centerY","radius"])$(id).disabled=!labeled||!visible||!$("hasGeometry").checked;
+ $("clearPoint").disabled=!labeled||!visible||!$("hasGeometry").checked;
+ $("eligible").disabled=!labeled||!visible||!$("hasGeometry").checked||$("identity").value==="ambiguous";
+ for(const input of $("tags").querySelectorAll("input"))input.disabled=!labeled;
+}
+function clearGeometry(){for(const id of ["centerX","centerY","radius"])$(id).value="";$("hasGeometry").checked=false;$("eligible").checked=false;}
+function normalizeTransition(){
+ if($("status").value!=="labeled"){
+  for(const id of ["visibility","absence","identity"])$(id).value="";
+  clearGeometry();for(const input of $("tags").querySelectorAll("input"))input.checked=false;
+ }else{
+  const visibility=$("visibility").value;
+  if(visibility!=="not_visible")$("absence").value="";
+  if(!["fully_visible","partially_visible"].includes(visibility))clearGeometry();
+  if(visibility==="indeterminate")$("identity").value="ambiguous";
+  if(!$("hasGeometry").checked)clearGeometry();
+  if($("identity").value==="ambiguous")$("eligible").checked=false;
+ }
+ semanticControls();draw();
+}
+function rowFromForm(){
+ const geometry=$("hasGeometry").checked?{
+  center_xy_px:[number("centerX"),number("centerY")],
+  source:$("visibility").value==="fully_visible"?"observed_complete_ball_center":"human_amodal_estimate",
+  uncertainty_radius_px:number("radius")
+ }:null;
+ return {frame_index:doc.frames[framePosition].source_frame_index,
+  annotation_status:$("status").value,visibility:$("visibility").value||null,
+  absence_reason:$("absence").value||null,game_ball_identity_certainty:$("identity").value||null,
+  geometry,localization_eligible:$("eligible").checked,
+  difficulty_tags:[...$("tags").querySelectorAll("input:checked")].map(x=>x.value).sort(),notes:$("notes").value.trim()||null};
+}
+function number(id){const raw=$(id).value;if(!raw.trim()||!Number.isFinite(Number(raw)))throw new Error(`${id}: enter a finite number`);return Number(raw);}
+function populateRow(row){
+ $("status").value=row.annotation_status;$("visibility").value=row.visibility||"";
+ $("absence").value=row.absence_reason||"";$("identity").value=row.game_ball_identity_certainty||"";
+ clearGeometry();
+ if(row.geometry){$("hasGeometry").checked=true;$("centerX").value=row.geometry.center_xy_px[0];$("centerY").value=row.geometry.center_xy_px[1];$("radius").value=row.geometry.uncertainty_radius_px;}
+ $("eligible").checked=row.localization_eligible;$("notes").value=row.notes||"";
+ for(const input of $("tags").querySelectorAll("input"))input.checked=row.difficulty_tags.includes(input.value);
+}
+function zoom(){if(!currentImage)return;const scale=$("zoom").value==="fit"?Math.min(1,Math.max(1,$("viewer").clientWidth)/currentImage.width):Number($("zoom").value);canvas.style.width=`${currentImage.width*scale}px`;canvas.style.height=`${currentImage.height*scale}px`;}
+function draw(){
+ if(!imageReady||!currentImage)return;
+ context.clearRect(0,0,canvas.width,canvas.height);context.drawImage(currentImage,0,0);
+ if($("hasGeometry").checked&&$("centerX").value!==""&&$("centerY").value!==""){
+  const x=Number($("centerX").value),y=Number($("centerY").value),radius=Number($("radius").value);
+  if(Number.isFinite(x)&&Number.isFinite(y)){
+   context.strokeStyle="#00ffff";context.lineWidth=1;context.beginPath();
+   context.moveTo(x-5,y);context.lineTo(x+5,y);context.moveTo(x,y-5);context.lineTo(x,y+5);context.stroke();
+   if(Number.isFinite(radius)&&radius>0){context.beginPath();context.arc(x,y,radius,0,Math.PI*2);context.stroke();}
+  }
+ }
+}
+// Mapping uses the actual displayed canvas rectangle, including zoom and scroll.
+function mapImagePoint(clientX,clientY,rect,width,height){
+ if(!(rect.width>0&&rect.height>0))throw new Error("Image has no display area");
+ const x=(clientX-rect.left)*width/rect.width,y=(clientY-rect.top)*height/rect.height;
+ if(!Number.isFinite(x)||!Number.isFinite(y)||x<0||y<0||x>=width||y>=height)throw new Error("Click is outside the source image");
+ return [x,y];
+}
+canvas.addEventListener("click",event=>{
+ if(busy||!imageReady)return;
+ if($("status").value!=="labeled"||!["fully_visible","partially_visible"].includes($("visibility").value)){message("Choose labeled and fully/partially visible before placing a point.",true);return;}
+ try{
+  const [x,y]=mapImagePoint(event.clientX,event.clientY,canvas.getBoundingClientRect(),currentImage.width,currentImage.height);
+  if(event.shiftKey){
+   if(!$("hasGeometry").checked)throw new Error("Place the center before setting uncertainty.");
+   const radius=Math.hypot(x-number("centerX"),y-number("centerY"));if(radius<=0)throw new Error("Uncertainty boundary must differ from the center.");$("radius").value=radius.toFixed(3);
+  }else{$("hasGeometry").checked=true;$("centerX").value=x.toFixed(3);$("centerY").value=y.toFixed(3);}
+  normalizeTransition();setDirty(true);message("Point changed. Set uncertainty and scoring eligibility, then save explicitly.");
+ }catch(error){message(error.message,true);}
+});
+async function showFrame(position){
+ framePosition=position;imageReady=false;currentImage=null;imageGeneration++;const generation=imageGeneration;
+ if(imageAbort)imageAbort.abort();imageAbort=new AbortController();
+ if(objectURL){URL.revokeObjectURL(objectURL);objectURL=null;}
+ context.clearRect(0,0,canvas.width,canvas.height);$("viewer").scrollTop=0;$("viewer").scrollLeft=0;
+ const frame=doc.frames[position],row=doc.annotations.find(x=>x.frame_index===frame.source_frame_index);
+ populateRow(row);$("frameSelect").value=String(position);setDirty(false);
+ message("Loading original frame…");
+ $("frameInfo").textContent=`${doc.game_id} · ${doc.candidate_id}\nOriginal source frame ${frame.source_frame_index} · PTS ${frame.source_pts_ticks} ticks × ${doc.time_base}\nSource time ${(frame.source_pts_ticks/90000).toFixed(9)} s · ${doc.source_video.width_px} × ${doc.source_video.height_px} pixels · revision ${doc.revision}`;
+ try{
+  const response=await request(`/api/pilots/${pilotId}/images/${frame.source_frame_index}`,{signal:imageAbort.signal});
+  const blob=await response.blob();if(generation!==imageGeneration)return;
+  objectURL=URL.createObjectURL(blob);const image=new Image();image.src=objectURL;await image.decode();
+  if(generation!==imageGeneration)return;
+  if(image.width!==doc.source_video.width_px||image.height!==doc.source_video.height_px)throw new Error("Image dimensions do not match the source contract");
+  currentImage=image;canvas.width=image.width;canvas.height=image.height;imageReady=true;zoom();draw();controls();message("Original frame loaded. No point carried from another frame.");
+ }catch(error){if(generation===imageGeneration&&error.name!=="AbortError")message(`Frame unavailable: ${error.message}`,true);}
+}
+function updateSummary(){
+ const counts={unlabeled:0,labeled:0,excluded:0};for(const row of doc.annotations)counts[row.annotation_status]++;
+ $("progress").textContent=`${counts.labeled} labeled · ${counts.excluded} excluded · ${counts.unlabeled} unlabeled`;
+ $("frameSelect").replaceChildren();doc.frames.forEach((frame,index)=>{
+  const row=doc.annotations[index];$("frameSelect").add(new Option(`${index+1}/${doc.frames.length} · source ${frame.source_frame_index} · ${row.annotation_status}`,String(index)));
+ });
+ if(doc.review.annotator_id)$("annotator").value=doc.review.annotator_id;
+}
+async function loadPilot(id,position=0){
+ busy=true;controls();message("Loading verified draft…");
+ try{const result=await (await request(`/api/pilots/${id}`)).json();doc=result.document;digest=result.sha256;pilotId=id;$("pilot").value=String(id);updateSummary();busy=false;await showFrame(Math.min(position,doc.frames.length-1));if(imageReady)message("Frame loaded. Labels and points are never carried from another frame.");}
+ catch(error){$("pilot").value=String(pilotId);message(error.message,true);}finally{busy=false;controls();}
+}
+async function save(advance=false){
+ if(busy||!imageReady||!dirty)return;
+ try{
+  const annotator=$("annotator").value.trim();if(!annotator)throw new Error("Enter the actual annotator’s name before saving.");
+  const row=rowFromForm();busy=true;controls();message("Validating and saving…");
+  const result=await(await request(`/api/pilots/${pilotId}/save`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({expected_revision:doc.revision,expected_sha256:digest,annotator_id:annotator,frame_annotation:row})})).json();
+  doc=result.document;digest=result.sha256;updateSummary();setDirty(false);busy=false;
+  await showFrame(advance?Math.min(framePosition+1,doc.frames.length-1):framePosition);
+  message("Saved as a draft with prior revision retained. Human review remains pending.");
+ }catch(error){message(`Not saved: ${error.message}`,true);}finally{busy=false;controls();}
+}
+for(const id of editable)$(id).addEventListener("input",()=>{normalizeTransition();setDirty(true);});
+$("clearPoint").addEventListener("click",()=>{if(busy||!imageReady)return;clearGeometry();normalizeTransition();setDirty(true);});
+$("zoom").addEventListener("change",zoom);window.addEventListener("resize",zoom);
+$("previous").addEventListener("click",()=>{if(guardDiscard())showFrame(framePosition-1);});
+$("next").addEventListener("click",()=>{if(guardDiscard())showFrame(framePosition+1);});
+$("frameSelect").addEventListener("change",event=>{const next=Number(event.target.value);if(guardDiscard())showFrame(next);else event.target.value=String(framePosition);});
+$("pilot").addEventListener("change",event=>{const next=Number(event.target.value);if(guardDiscard())loadPilot(next);else event.target.value=String(pilotId);});
+$("reload").addEventListener("click",()=>{if(guardDiscard())loadPilot(pilotId,framePosition);});
+$("save").addEventListener("click",()=>save(false));$("saveNext").addEventListener("click",()=>save(true));
+window.addEventListener("beforeunload",event=>{if(dirty){event.preventDefault();event.returnValue="";}});
+window.addEventListener("keydown",event=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==="s"){event.preventDefault();save(false);}});
+async function start(){
+ try{
+  session=await(await request("/api/session")).json();
+  for(const pilot of session.pilots)$("pilot").add(new Option(`${pilot.game_id} · ${pilot.candidate_id}`,String(pilot.id)));
+  fillSelect("status",session.choices.annotation_status);fillSelect("visibility",session.choices.visibility,true);fillSelect("absence",session.choices.absence_reason,true);fillSelect("identity",session.choices.identity,true);
+  for(const tag of session.choices.difficulty_tags){const label=document.createElement("label");label.className="check";const input=document.createElement("input");input.type="checkbox";input.value=tag;input.addEventListener("change",()=>setDirty(true));label.append(input,document.createTextNode(tag.replaceAll("_"," ")));$("tags").append(label);}
+  await loadPilot(0);
+ }catch(error){message(`Editor unavailable: ${error.message}. Use the complete URL printed by the local server.`,true);}
+}
+start();
+</script>
+</body>
+</html>
