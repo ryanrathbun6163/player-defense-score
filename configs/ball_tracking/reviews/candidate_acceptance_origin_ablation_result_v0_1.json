@@ -1,0 +1,1118 @@
+{
+  "schema": "candidate_acceptance_origin_ablation_result/v0.1",
+  "at_utc": "2026-10-30T02:35:52.796413+00:00",
+  "status": "completed_independently_audited_no_adoption",
+  "report": {
+    "path": "docs/ball_tracking_candidate_acceptance_origin_ablation_results.md",
+    "bytes": 16128,
+    "sha256": "4bf82d0166e7bc913bf6bd58328048a40164ca1e521b9d1af0cd6bd8a6a84daf"
+  },
+  "protocol": {
+    "path": "docs/ball_tracking_candidate_acceptance_origin_ablation_protocol.md",
+    "bytes": 11084,
+    "sha256": "1a1535eb6ae8db098b83fe9c2c0013bdc802a05004d57cec0fa62d3b86021699"
+  },
+  "specification": {
+    "path": "configs/ball_tracking/proposals/candidate_acceptance_origin_ablation_v0_1.json",
+    "bytes": 11308,
+    "sha256": "f93edebc207525e9f3adcc7ffc9ac35c0a5f355d6eebfcd44236dd1e3df9e053"
+  },
+  "execution_freeze": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_origin_ablation_v0_1/preparation/execution_freeze.json",
+    "bytes": 4304,
+    "sha256": "5df885e242a3b848ec9d7e5ab4a509d3ee9b01a7e9bf39f3d3422579e4aa8c87"
+  },
+  "completion": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_origin_ablation_v0_1/attempt_001/completed.json",
+    "bytes": 5416,
+    "sha256": "df69b18594a1f6b1c64dab14cc5db99b662737f61b28df3d9eac2a4a190579cc"
+  },
+  "summary": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_origin_ablation_v0_1/attempt_001/summary.json",
+    "bytes": 28304,
+    "sha256": "a3ece2cecabab0bdc866cd62d5d2486d614c5663759b35db66eb43414a74dd57"
+  },
+  "decision": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_origin_ablation_v0_1/attempt_001/decision.json",
+    "bytes": 23654,
+    "sha256": "00b3868998a63001a1844eb4acf167afe77a75224382fdc0b99754e71fd21bbd"
+  },
+  "scientific_interpretation": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_origin_ablation_v0_1/review/interpretation.json",
+    "bytes": 292953,
+    "sha256": "8fd024b1c394fd874f77dc7550ff0ce6448e9c72206bf0a00bde0fc03f5ab2d7"
+  },
+  "independent_audits": [
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_origin_ablation_v0_1/review/output_audit.json",
+      "bytes": 1625,
+      "sha256": "29bd41ba7fc48693af1f981b1a9d4dc4e6ed3b9ebde4d5d9df13050aa37151ac"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_origin_ablation_v0_1/review/model_audit/receipt.json",
+      "bytes": 7988,
+      "sha256": "67031534f92b880bfab5fffe7ffca60978add1585823dd06a07ff7010bb3ee92"
+    }
+  ],
+  "focused_tests": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_origin_ablation_v0_1/preparation/focused_tests.json",
+    "bytes": 1291,
+    "sha256": "f408f39494d6abf20798b2e3b9708696007db38b8da55d357e08bfe712321134"
+  },
+  "focused_test_count": 25,
+  "independent_output_checks": 3072793,
+  "independent_model_checks": 2773690,
+  "elapsed_seconds": 19.735000000000582,
+  "CPU_fits": 4,
+  "new_neural_calls": 0,
+  "GPU_queries": 0,
+  "removed_features": [
+    "native_indicator",
+    "origin_unavailable"
+  ],
+  "retained_features": 14,
+  "same_targets_weights_splits_scaler_recipe_solver": true,
+  "counts": {
+    "candidate_scores": 31430,
+    "fixed_policy_rows": 8578,
+    "paired_candidate_rows": 31430,
+    "paired_policy_rows": 8578,
+    "candidate_zero_tables": 1294,
+    "policy_zero_tables": 1976,
+    "candidate_curves": 59,
+    "policy_curves": 84,
+    "source_choices": 6720,
+    "contrast_views": 6720,
+    "historical_rows": 60
+  },
+  "missing_scores": {
+    "Q": 11,
+    "S": 11,
+    "J": 11,
+    "M": 11,
+    "A": 11
+  },
+  "fixed_zero_results": [
+    {
+      "context": "HOU_development",
+      "policy": "native",
+      "arm": "Q",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 842,
+        "missing_choice": 45,
+        "eligible_miss": 19,
+        "masked_unknown": 35,
+        "certain_hidden": 19
+      },
+      "score_states": {
+        "negative": 112,
+        "positive": 803,
+        "missing": 45
+      },
+      "correct_rejected": 44,
+      "counts": {
+        "accepted": 803,
+        "correct_kept": 798,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 798,
+        "unknown_kept": 5,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "native",
+      "arm": "S",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 842,
+        "missing_choice": 45,
+        "eligible_miss": 19,
+        "masked_unknown": 35,
+        "certain_hidden": 19
+      },
+      "score_states": {
+        "negative": 102,
+        "positive": 813,
+        "missing": 45
+      },
+      "correct_rejected": 35,
+      "counts": {
+        "accepted": 813,
+        "correct_kept": 807,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 807,
+        "unknown_kept": 6,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "native",
+      "arm": "J",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 842,
+        "missing_choice": 45,
+        "eligible_miss": 19,
+        "masked_unknown": 35,
+        "certain_hidden": 19
+      },
+      "score_states": {
+        "positive": 908,
+        "missing": 45,
+        "negative": 7
+      },
+      "correct_rejected": 1,
+      "counts": {
+        "accepted": 908,
+        "correct_kept": 841,
+        "wrong_eligible_kept": 18,
+        "hidden_candidates": 18,
+        "hidden_emission_frames": 18,
+        "match_survival_frames": 841,
+        "unknown_kept": 31,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "native",
+      "arm": "M",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 842,
+        "missing_choice": 45,
+        "eligible_miss": 19,
+        "masked_unknown": 35,
+        "certain_hidden": 19
+      },
+      "score_states": {
+        "positive": 855,
+        "missing": 45,
+        "negative": 60
+      },
+      "correct_rejected": 12,
+      "counts": {
+        "accepted": 855,
+        "correct_kept": 830,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 13,
+        "hidden_emission_frames": 13,
+        "match_survival_frames": 830,
+        "unknown_kept": 12,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "native",
+      "arm": "A",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 842,
+        "missing_choice": 45,
+        "eligible_miss": 19,
+        "masked_unknown": 35,
+        "certain_hidden": 19
+      },
+      "score_states": {
+        "positive": 903,
+        "missing": 45,
+        "negative": 12
+      },
+      "correct_rejected": 2,
+      "counts": {
+        "accepted": 903,
+        "correct_kept": 840,
+        "wrong_eligible_kept": 17,
+        "hidden_candidates": 16,
+        "hidden_emission_frames": 16,
+        "match_survival_frames": 840,
+        "unknown_kept": 30,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "quality_top",
+      "arm": "Q",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 862,
+        "masked_unknown": 44,
+        "eligible_miss": 20,
+        "certain_hidden": 34
+      },
+      "score_states": {
+        "negative": 118,
+        "positive": 842
+      },
+      "correct_rejected": 37,
+      "counts": {
+        "accepted": 842,
+        "correct_kept": 825,
+        "wrong_eligible_kept": 6,
+        "hidden_candidates": 3,
+        "hidden_emission_frames": 3,
+        "match_survival_frames": 825,
+        "unknown_kept": 8,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "quality_top",
+      "arm": "S",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 862,
+        "masked_unknown": 44,
+        "eligible_miss": 20,
+        "certain_hidden": 34
+      },
+      "score_states": {
+        "negative": 107,
+        "positive": 853
+      },
+      "correct_rejected": 28,
+      "counts": {
+        "accepted": 853,
+        "correct_kept": 834,
+        "wrong_eligible_kept": 7,
+        "hidden_candidates": 4,
+        "hidden_emission_frames": 4,
+        "match_survival_frames": 834,
+        "unknown_kept": 8,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "quality_top",
+      "arm": "J",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 862,
+        "masked_unknown": 44,
+        "eligible_miss": 20,
+        "certain_hidden": 34
+      },
+      "score_states": {
+        "positive": 890,
+        "negative": 70
+      },
+      "correct_rejected": 7,
+      "counts": {
+        "accepted": 890,
+        "correct_kept": 855,
+        "wrong_eligible_kept": 4,
+        "hidden_candidates": 14,
+        "hidden_emission_frames": 14,
+        "match_survival_frames": 855,
+        "unknown_kept": 17,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "quality_top",
+      "arm": "M",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 862,
+        "masked_unknown": 44,
+        "eligible_miss": 20,
+        "certain_hidden": 34
+      },
+      "score_states": {
+        "positive": 960
+      },
+      "correct_rejected": 0,
+      "counts": {
+        "accepted": 960,
+        "correct_kept": 862,
+        "wrong_eligible_kept": 20,
+        "hidden_candidates": 34,
+        "hidden_emission_frames": 34,
+        "match_survival_frames": 862,
+        "unknown_kept": 44,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "quality_top",
+      "arm": "A",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 862,
+        "masked_unknown": 44,
+        "eligible_miss": 20,
+        "certain_hidden": 34
+      },
+      "score_states": {
+        "positive": 898,
+        "negative": 62
+      },
+      "correct_rejected": 4,
+      "counts": {
+        "accepted": 898,
+        "correct_kept": 858,
+        "wrong_eligible_kept": 5,
+        "hidden_candidates": 16,
+        "hidden_emission_frames": 16,
+        "match_survival_frames": 858,
+        "unknown_kept": 19,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "native",
+      "arm": "Q",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2807,
+        "missing_choice": 261,
+        "eligible_miss": 3,
+        "masked_unknown": 106,
+        "certain_hidden": 2
+      },
+      "score_states": {
+        "positive": 2328,
+        "negative": 590,
+        "missing": 261
+      },
+      "correct_rejected": 498,
+      "counts": {
+        "accepted": 2328,
+        "correct_kept": 2309,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 2309,
+        "unknown_kept": 19,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "native",
+      "arm": "S",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2807,
+        "missing_choice": 261,
+        "eligible_miss": 3,
+        "masked_unknown": 106,
+        "certain_hidden": 2
+      },
+      "score_states": {
+        "positive": 2428,
+        "negative": 490,
+        "missing": 261
+      },
+      "correct_rejected": 404,
+      "counts": {
+        "accepted": 2428,
+        "correct_kept": 2403,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 2403,
+        "unknown_kept": 25,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "native",
+      "arm": "J",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2807,
+        "missing_choice": 261,
+        "eligible_miss": 3,
+        "masked_unknown": 106,
+        "certain_hidden": 2
+      },
+      "score_states": {
+        "positive": 2888,
+        "missing": 261,
+        "negative": 30
+      },
+      "correct_rejected": 1,
+      "counts": {
+        "accepted": 2888,
+        "correct_kept": 2806,
+        "wrong_eligible_kept": 3,
+        "hidden_candidates": 2,
+        "hidden_emission_frames": 2,
+        "match_survival_frames": 2806,
+        "unknown_kept": 77,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "native",
+      "arm": "M",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2807,
+        "missing_choice": 261,
+        "eligible_miss": 3,
+        "masked_unknown": 106,
+        "certain_hidden": 2
+      },
+      "score_states": {
+        "positive": 2582,
+        "missing": 261,
+        "negative": 336
+      },
+      "correct_rejected": 276,
+      "counts": {
+        "accepted": 2582,
+        "correct_kept": 2531,
+        "wrong_eligible_kept": 1,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 2531,
+        "unknown_kept": 50,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "native",
+      "arm": "A",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2807,
+        "missing_choice": 261,
+        "eligible_miss": 3,
+        "masked_unknown": 106,
+        "certain_hidden": 2
+      },
+      "score_states": {
+        "positive": 2866,
+        "missing": 261,
+        "negative": 52
+      },
+      "correct_rejected": 9,
+      "counts": {
+        "accepted": 2866,
+        "correct_kept": 2798,
+        "wrong_eligible_kept": 3,
+        "hidden_candidates": 2,
+        "hidden_emission_frames": 2,
+        "match_survival_frames": 2798,
+        "unknown_kept": 63,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "quality_top",
+      "arm": "Q",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2542,
+        "masked_unknown": 236,
+        "missing_choice": 19,
+        "certain_hidden": 113,
+        "eligible_miss": 269
+      },
+      "score_states": {
+        "positive": 2472,
+        "negative": 688,
+        "missing": 19
+      },
+      "correct_rejected": 267,
+      "counts": {
+        "accepted": 2472,
+        "correct_kept": 2275,
+        "wrong_eligible_kept": 99,
+        "hidden_candidates": 28,
+        "hidden_emission_frames": 28,
+        "match_survival_frames": 2275,
+        "unknown_kept": 70,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "quality_top",
+      "arm": "S",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2542,
+        "masked_unknown": 236,
+        "missing_choice": 19,
+        "certain_hidden": 113,
+        "eligible_miss": 269
+      },
+      "score_states": {
+        "positive": 2588,
+        "negative": 572,
+        "missing": 19
+      },
+      "correct_rejected": 190,
+      "counts": {
+        "accepted": 2588,
+        "correct_kept": 2352,
+        "wrong_eligible_kept": 125,
+        "hidden_candidates": 30,
+        "hidden_emission_frames": 30,
+        "match_survival_frames": 2352,
+        "unknown_kept": 81,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "quality_top",
+      "arm": "J",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2542,
+        "masked_unknown": 236,
+        "missing_choice": 19,
+        "certain_hidden": 113,
+        "eligible_miss": 269
+      },
+      "score_states": {
+        "positive": 2649,
+        "negative": 511,
+        "missing": 19
+      },
+      "correct_rejected": 1,
+      "counts": {
+        "accepted": 2649,
+        "correct_kept": 2541,
+        "wrong_eligible_kept": 34,
+        "hidden_candidates": 8,
+        "hidden_emission_frames": 8,
+        "match_survival_frames": 2541,
+        "unknown_kept": 66,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "quality_top",
+      "arm": "M",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2542,
+        "masked_unknown": 236,
+        "missing_choice": 19,
+        "certain_hidden": 113,
+        "eligible_miss": 269
+      },
+      "score_states": {
+        "positive": 3094,
+        "missing": 19,
+        "negative": 66
+      },
+      "correct_rejected": 10,
+      "counts": {
+        "accepted": 3094,
+        "correct_kept": 2532,
+        "wrong_eligible_kept": 266,
+        "hidden_candidates": 80,
+        "hidden_emission_frames": 80,
+        "match_survival_frames": 2532,
+        "unknown_kept": 216,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "quality_top",
+      "arm": "A",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2542,
+        "masked_unknown": 236,
+        "missing_choice": 19,
+        "certain_hidden": 113,
+        "eligible_miss": 269
+      },
+      "score_states": {
+        "positive": 2673,
+        "negative": 487,
+        "missing": 19
+      },
+      "correct_rejected": 3,
+      "counts": {
+        "accepted": 2673,
+        "correct_kept": 2539,
+        "wrong_eligible_kept": 48,
+        "hidden_candidates": 9,
+        "hidden_emission_frames": 9,
+        "match_survival_frames": 2539,
+        "unknown_kept": 77,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "native",
+      "arm": "Q",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_match": 130,
+        "missing_choice": 19,
+        "masked_unknown": 1
+      },
+      "score_states": {
+        "negative": 72,
+        "positive": 59,
+        "missing": 19
+      },
+      "correct_rejected": 71,
+      "counts": {
+        "accepted": 59,
+        "correct_kept": 59,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 59,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "native",
+      "arm": "S",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_match": 130,
+        "missing_choice": 19,
+        "masked_unknown": 1
+      },
+      "score_states": {
+        "negative": 65,
+        "positive": 66,
+        "missing": 19
+      },
+      "correct_rejected": 64,
+      "counts": {
+        "accepted": 66,
+        "correct_kept": 66,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 66,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "native",
+      "arm": "J",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_match": 130,
+        "missing_choice": 19,
+        "masked_unknown": 1
+      },
+      "score_states": {
+        "positive": 130,
+        "missing": 19,
+        "negative": 1
+      },
+      "correct_rejected": 0,
+      "counts": {
+        "accepted": 130,
+        "correct_kept": 130,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 130,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "native",
+      "arm": "M",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_match": 130,
+        "missing_choice": 19,
+        "masked_unknown": 1
+      },
+      "score_states": {
+        "negative": 35,
+        "positive": 96,
+        "missing": 19
+      },
+      "correct_rejected": 34,
+      "counts": {
+        "accepted": 96,
+        "correct_kept": 96,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 96,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "native",
+      "arm": "A",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_match": 130,
+        "missing_choice": 19,
+        "masked_unknown": 1
+      },
+      "score_states": {
+        "positive": 130,
+        "missing": 19,
+        "negative": 1
+      },
+      "correct_rejected": 0,
+      "counts": {
+        "accepted": 130,
+        "correct_kept": 130,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 130,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "quality_top",
+      "arm": "Q",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_miss": 15,
+        "eligible_match": 115,
+        "certain_hidden": 17,
+        "masked_unknown": 1,
+        "missing_choice": 2
+      },
+      "score_states": {
+        "negative": 82,
+        "positive": 66,
+        "missing": 2
+      },
+      "correct_rejected": 49,
+      "counts": {
+        "accepted": 66,
+        "correct_kept": 66,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 66,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "quality_top",
+      "arm": "S",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_miss": 15,
+        "eligible_match": 115,
+        "certain_hidden": 17,
+        "masked_unknown": 1,
+        "missing_choice": 2
+      },
+      "score_states": {
+        "negative": 79,
+        "positive": 69,
+        "missing": 2
+      },
+      "correct_rejected": 46,
+      "counts": {
+        "accepted": 69,
+        "correct_kept": 69,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 69,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "quality_top",
+      "arm": "J",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_miss": 15,
+        "eligible_match": 115,
+        "certain_hidden": 17,
+        "masked_unknown": 1,
+        "missing_choice": 2
+      },
+      "score_states": {
+        "negative": 31,
+        "positive": 117,
+        "missing": 2
+      },
+      "correct_rejected": 0,
+      "counts": {
+        "accepted": 117,
+        "correct_kept": 115,
+        "wrong_eligible_kept": 2,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 115,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "quality_top",
+      "arm": "M",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_miss": 15,
+        "eligible_match": 115,
+        "certain_hidden": 17,
+        "masked_unknown": 1,
+        "missing_choice": 2
+      },
+      "score_states": {
+        "positive": 129,
+        "negative": 19,
+        "missing": 2
+      },
+      "correct_rejected": 17,
+      "counts": {
+        "accepted": 129,
+        "correct_kept": 98,
+        "wrong_eligible_kept": 15,
+        "hidden_candidates": 15,
+        "hidden_emission_frames": 15,
+        "match_survival_frames": 98,
+        "unknown_kept": 1,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "quality_top",
+      "arm": "A",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_miss": 15,
+        "eligible_match": 115,
+        "certain_hidden": 17,
+        "masked_unknown": 1,
+        "missing_choice": 2
+      },
+      "score_states": {
+        "negative": 30,
+        "positive": 118,
+        "missing": 2
+      },
+      "correct_rejected": 0,
+      "counts": {
+        "accepted": 118,
+        "correct_kept": 115,
+        "wrong_eligible_kept": 2,
+        "hidden_candidates": 1,
+        "hidden_emission_frames": 1,
+        "match_survival_frames": 115,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    }
+  ],
+  "A_nonregression_vs_J_passed": false,
+  "original_component_criterion_for_A_passed": false,
+  "strict_NBA_fixed_zero_improvement": false,
+  "protected_losses": {
+    "NBA_J_kept_correct_policy_ids": [
+      "native|nba_out_of_fold|frame_32da311457a09be80702362955ee8261bddbd20b409b0bd0b0615f3b88dca26b",
+      "native|nba_out_of_fold|frame_3ff60affa66149bded0c1bb5a8a291aad90a592db952d9772c89e6e52a8875d4",
+      "native|nba_out_of_fold|frame_75cba326da11ae77562835847d8523220cf9ef7ca893d5a918d9b261781cea5f",
+      "native|nba_out_of_fold|frame_84164d556f6a037ff438997b3a5e05f9c2777556bb7a5924d4e71b2c3710f001",
+      "native|nba_out_of_fold|frame_846876321d04309ba2616883c932aebff2021f9e7e7d88a3039867f7d11751cf",
+      "native|nba_out_of_fold|frame_85eb1c6113f20d600f97a192ad7278754c7c435a850e4aa892d8dabe79665817",
+      "native|nba_out_of_fold|frame_c15c6162ba66180f5a7ba54c5e4357c1d14795c1fe0d312b1c73bb222795e45f",
+      "native|nba_out_of_fold|frame_cb0d2e671ac1f2a612b0d4d5d98699932925c7518dd6f4dcc7620b530dcbcfd7",
+      "quality_top|nba_out_of_fold|frame_75cba326da11ae77562835847d8523220cf9ef7ca893d5a918d9b261781cea5f",
+      "quality_top|nba_out_of_fold|frame_85eb1c6113f20d600f97a192ad7278754c7c435a850e4aa892d8dabe79665817"
+    ],
+    "HOU_Q_or_J_kept_correct_named_policy_ids": [
+      "native|HOU_development|hou-vs-okc-0022400879_e05:212",
+      "quality_top|HOU_development|hou-vs-okc-0022400879_e01:201",
+      "quality_top|HOU_development|hou-vs-okc-0022400879_e05:21"
+    ],
+    "HOU_Q_or_J_kept_correct_named_stress_ids": [
+      "HOU_development|hou-vs-okc-0022400879_e01:197:stress",
+      "HOU_development|hou-vs-okc-0022400879_e01:198:stress",
+      "HOU_development|hou-vs-okc-0022400879_e05:14:stress",
+      "HOU_development|hou-vs-okc-0022400879_e05:15:stress",
+      "HOU_development|hou-vs-okc-0022400879_e05:21:stress",
+      "HOU_development|hou-vs-okc-0022400879_e05:220:stress"
+    ]
+  },
+  "no_model_threshold_or_selector_adopted": true,
+  "old_experiments_rerun": false,
+  "interpretation": "Removing the two explicit origin indicators does not improve this fixed acceptance recipe; HOU recovery gains coexist with NBA and hidden-emission regressions.",
+  "limits": [
+    "Refitted feature-ablation evidence, not causal identification",
+    "Origin-correlated proxies remain",
+    "Repeatedly inspected development games",
+    "No repaired ranking or new candidate",
+    "No semantic-presence claim"
+  ],
+  "quality_top_ranking_ceiling": {
+    "correct": 2542,
+    "eligible": 2811,
+    "unchanged": true
+  },
+  "next_step": "Separate bounded design addressing native-negative support and objective balance using NBA fitting evidence; preserve explicit-origin J as comparison. No later experiment executed or adopted.",
+  "preservation_baseline": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_origin_ablation_v0_1/preparation/baseline125_and_direction.json",
+    "bytes": 24034,
+    "sha256": "6e7981e6f26df9811b6a64b637f815ab48d49b285e8baad2e2f6502d57d86e92"
+  },
+  "final_preservation_receipt_path": "data/outputs/ball_tracking/candidate_acceptance_origin_ablation_v0_1/preparation/documentation_update/receipt.json"
+}

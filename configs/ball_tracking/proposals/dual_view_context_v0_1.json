@@ -1,0 +1,532 @@
+{
+  "schema": "dual_view_context_proposal/v0.1",
+  "status": "designed_CPU_metadata_prepared_neural_execution_not_run",
+  "utc": "2026-10-30T17:45:49.651046+00:00",
+  "authorization_scope": "Ryan requested critical thorough design; this artifact does not record GPU execution approval.",
+  "question": "Does fixed192px context improve candidate-point quality over a capacity/update-matched duplicate-local arm?",
+  "estimand_limit": "Auxiliary field of view and object scale/resampling change together; not isolation of outside pixels alone.",
+  "arms": {
+    "LL": "frozen foldQ local point + generic trainable auxiliary on exact duplicate local pixels",
+    "LC": "same frozen local point + identical auxiliary on fixed192crop->224 pixels"
+  },
+  "reference_controls": [
+    "saved originalQ",
+    "saved originalJ at fixed original choices; no newQ substitution"
+  ],
+  "model": {
+    "local": "corresponding originalQ fold checkpoint frozen; float64 normalized point384 cache cast float32",
+    "auxiliary_revision": "150c8e7bb7cef2d30ec31b13a517af14840ee3f7",
+    "auxiliary_initialization": "generic pinned DINOv2 ViT-S/14 no registers, identical in all arms/fits",
+    "auxiliary_trainable": [
+      "encoder.layer.10",
+      "encoder.layer.11",
+      "layernorm"
+    ],
+    "auxiliary_frozen": "embeddings and blocks0-9, eval mode, no gradients",
+    "readout_order": [
+      "frozen_Q_local_point_384",
+      "auxiliary_point_384",
+      "auxiliary_CLS_384"
+    ],
+    "normalization": "Each vector independentlyL2 normalized in float64 then castfloat32; no joint normalization",
+    "point_readout": "bilinear4 final-normalized patch tokens in float64 BEFORE oneL2normalize",
+    "CLS_readout": "final-normalized token0 then oneL2normalize in float64",
+    "head": {
+      "dimensions": [
+        1152,
+        128,
+        1
+      ],
+      "activation": "GELU",
+      "initialization": "ordinary pinned PyTorch Linear with explicit initialization_seed20261030 afterencoderload"
+    },
+    "auxiliary_trainable_parameters": 3551232,
+    "head_trainable_parameters": 147713,
+    "total_trainable_parameters": 3698945,
+    "no_input_features": [
+      "oldQ/J logits",
+      "candidate origin",
+      "detector responses",
+      "source identity",
+      "reference values",
+      "trajectory"
+    ],
+    "prediction_preservation_guaranteed": false
+  },
+  "geometry": {
+    "local": "floor-centered64 blackpad -> bicubic256 ->center224, originalnormalization/pointweights",
+    "aux_LL": "exact original local pixels and fractionalpointweights",
+    "aux_LC": "floor-centered192 blackpad -> directbicubic224, no additionalcentercrop",
+    "LC_box": "[floor(x)-96,floor(y)-96,floor(x)+96,floor(y)+96]",
+    "LC_input_point": "u=(x-left+0.5)*224/192-0.5;v analog",
+    "token_grid": "(u-6.5)/14,(v-6.5)/14",
+    "central_token_indices": [
+      120,
+      121,
+      136,
+      137
+    ],
+    "reference_centered": false,
+    "same_current_frame": true
+  },
+  "training": {
+    "fits": [
+      {
+        "name": "leave_chi_out",
+        "fit_game_ids": [
+          "0022400866",
+          "0022500829"
+        ],
+        "held_out_game_ids": [
+          "0022400868"
+        ],
+        "fit_candidates": 11954,
+        "fit_frames": 2045,
+        "target_counts": {
+          "certain_hidden": 186,
+          "eligible_distant_miss": 9433,
+          "positive": 2335
+        },
+        "steps_six_epochs": 2244,
+        "presentations_six_epochs": 71724,
+        "package_score_candidates": 5935,
+        "package_score_batches32": 186,
+        "weights": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/preparation/fits/leave_chi_out/weights.jsonl",
+          "bytes": 2171741,
+          "sha256": "cc6ab2e387cd4e3bd29eab0bf2c6dead164f3078146fa968ae8856115284b8be"
+        },
+        "manifest": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/preparation/fits/leave_chi_out/manifest.json",
+          "bytes": 262086,
+          "sha256": "d684140c7282b5d099b3b8b7440106e4aa805aa0980fe2b30487e10e7811b269"
+        },
+        "saved_Q_checkpoint": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/attempt_005/leave_chi_out/final_trainable.pth",
+          "bytes": 14416037,
+          "sha256": "e5f1b883e78abbdf5c07c1e8447b8a9ab5802b53ce9c4a45fa52dba607af2f13"
+        },
+        "saved_Q_scores": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/attempt_005/leave_chi_out/package_scores.jsonl",
+          "bytes": 1059901,
+          "sha256": "ce5c55fe28fbbf8a1b197e18025ef630634c1dc1d9de813a3a8fa09b456fc86f"
+        },
+        "needed_local_frozen_feature_rows_fit_union_package_score": 17889,
+        "context192_padding_fit_candidates": 437,
+        "local64_padding_fit_candidates": 98
+      },
+      {
+        "name": "leave_den_out",
+        "fit_game_ids": [
+          "0022400868",
+          "0022500829"
+        ],
+        "held_out_game_ids": [
+          "0022400866"
+        ],
+        "fit_candidates": 11912,
+        "fit_frames": 1995,
+        "target_counts": {
+          "certain_hidden": 303,
+          "eligible_distant_miss": 9279,
+          "positive": 2330
+        },
+        "steps_six_epochs": 2238,
+        "presentations_six_epochs": 71472,
+        "package_score_candidates": 5790,
+        "package_score_batches32": 181,
+        "weights": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/preparation/fits/leave_den_out/weights.jsonl",
+          "bytes": 2163570,
+          "sha256": "d5ff9d2ba811cd88c47537eee9a68bad253b6983bf4c0cd5b1e92b7cbad38738"
+        },
+        "manifest": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/preparation/fits/leave_den_out/manifest.json",
+          "bytes": 262102,
+          "sha256": "14f42e297a00d8476368161b676573748c98ac71e03fbca21486e59f7d0d5856"
+        },
+        "saved_Q_checkpoint": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/attempt_005/leave_den_out/final_trainable.pth",
+          "bytes": 14416037,
+          "sha256": "56881ac2ec3626784fc28eb2c925cfd5389583e376afaeaa200173ac6b9492c8"
+        },
+        "saved_Q_scores": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/attempt_005/leave_den_out/package_scores.jsonl",
+          "bytes": 1033885,
+          "sha256": "63a5e4c2f665dcb509513052cbe85ed65e5ace738e6b44d324efbe6382a7ca04"
+        },
+        "needed_local_frozen_feature_rows_fit_union_package_score": 17702,
+        "context192_padding_fit_candidates": 537,
+        "local64_padding_fit_candidates": 139
+      },
+      {
+        "name": "leave_sac_out",
+        "fit_game_ids": [
+          "0022400868",
+          "0022400866"
+        ],
+        "held_out_game_ids": [
+          "0022500829"
+        ],
+        "fit_candidates": 11182,
+        "fit_frames": 1806,
+        "target_counts": {
+          "certain_hidden": 141,
+          "eligible_distant_miss": 8840,
+          "positive": 2201
+        },
+        "steps_six_epochs": 2100,
+        "presentations_six_epochs": 67092,
+        "package_score_candidates": 7088,
+        "package_score_batches32": 222,
+        "weights": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/preparation/fits/leave_sac_out/weights.jsonl",
+          "bytes": 2030857,
+          "sha256": "e357d10d276ec3783b83bab0433d6f2945e8c2adb007c1a2a07e2524aeff8901"
+        },
+        "manifest": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/preparation/fits/leave_sac_out/manifest.json",
+          "bytes": 262087,
+          "sha256": "fb0a1645bfed88f28614f75c967d12454883159c136c92aec86fa49e9aa0c3f0"
+        },
+        "saved_Q_checkpoint": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/attempt_005/leave_sac_out/final_trainable.pth",
+          "bytes": 14416037,
+          "sha256": "7032ba397da2976f85dc25b3b2d6bb36dc1d65c63bbed07aa460a55c6c889b57"
+        },
+        "saved_Q_scores": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/attempt_005/leave_sac_out/package_scores.jsonl",
+          "bytes": 1264205,
+          "sha256": "4de12e506a95845711bb22cdf4468936cf0436076253dcf8aa82e75d4b03c123"
+        },
+        "needed_local_frozen_feature_rows_fit_union_package_score": 18270,
+        "context192_padding_fit_candidates": 648,
+        "local64_padding_fit_candidates": 139
+      },
+      {
+        "name": "all_nba",
+        "fit_game_ids": [
+          "0022400868",
+          "0022400866",
+          "0022500829"
+        ],
+        "held_out_game_ids": [],
+        "fit_candidates": 17524,
+        "fit_frames": 2923,
+        "target_counts": {
+          "certain_hidden": 315,
+          "eligible_distant_miss": 13776,
+          "positive": 3433
+        },
+        "steps_six_epochs": 3288,
+        "presentations_six_epochs": 105144,
+        "package_score_candidates": 19632,
+        "package_score_batches32": 614,
+        "weights": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/preparation/fits/all_nba/weights.jsonl",
+          "bytes": 3188262,
+          "sha256": "4d3adbcfb691fe748885d6c186faa006383d1261e928ddae7dd735db51795a5a"
+        },
+        "manifest": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/preparation/fits/all_nba/manifest.json",
+          "bytes": 262331,
+          "sha256": "27297a7c4ed9fe9128b005475e4eea4d178db75471bd14ccc93024220caa0a93"
+        },
+        "saved_Q_checkpoint": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/attempt_005/all_nba/final_trainable.pth",
+          "bytes": 14416037,
+          "sha256": "1bb7b3b5046652fbd7160d69bba5e3ab9e2fb3ebdd15b348ecf9db001bb98bb4"
+        },
+        "saved_Q_scores": {
+          "path": "data/outputs/ball_tracking/candidate_quality_pilot_v0_1/attempt_005/all_nba/package_scores.jsonl",
+          "bytes": 3505849,
+          "sha256": "088341043d8d90290c40b77cb808d99f7e2fc1dcae762f4cfbdc2ffd7171ff15"
+        },
+        "needed_local_frozen_feature_rows_fit_union_package_score": 19632,
+        "context192_padding_fit_candidates": 811,
+        "local64_padding_fit_candidates": 188
+      }
+    ],
+    "arms_per_fit": 2,
+    "epochs": 6,
+    "batch_size": 32,
+    "initialization_seed": 20261030,
+    "shuffle_seed_base": 20261028,
+    "initial_states": "single identical genericaux/head state reused across all8fits; no copiedoptimizerstate",
+    "fit_order": [
+      "leave_chi_out/LL",
+      "leave_chi_out/LC",
+      "leave_den_out/LL",
+      "leave_den_out/LC",
+      "leave_sac_out/LL",
+      "leave_sac_out/LC",
+      "all_nba/LL",
+      "all_nba/LC"
+    ],
+    "objective": "mean(binary_cross_entropy_with_logits*originaltraining_multiplier)",
+    "optimizer": {
+      "name": "AdamW",
+      "auxiliary_lr": 1e-05,
+      "head_lr": 0.001,
+      "weight_decay": 0.01,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "clip_norm": 1.0
+    },
+    "precision": "float32model/optimizer;float64normalizedreadouts;eagerdeterministic;noAMP/TF32",
+    "augmentation": false,
+    "scheduler": false,
+    "early_stopping": false,
+    "warmup": false,
+    "sweeps": false,
+    "automatic_extension": false,
+    "only_comparison_epoch": 6,
+    "Qplus_additions": 0,
+    "known_NBA_targets": 17524,
+    "originalNBAinventory": 18813,
+    "boundary_unknown_candidates": 65,
+    "masked_unknown_candidates": 1224
+  },
+  "roles": {
+    "CHI_DEN_SAC": "originalfittingmemberships;outerheldonlyfornewQ/fusionnotdetectorunseen",
+    "HOU": "descriptive/preservationveto only;nofitting/positivefeaturechoice/thresholdselection",
+    "BKN": "exposeddiagnosticmaymotivatehypothesis;nofitting/checkpoint/thresholdoptimization;notprimarytest",
+    "NFHS": "secondaryregressionnofitting",
+    "nonDET_historical": "42fixedqueriesoriginalrolesunmodified",
+    "DET": "18oldhistoricalmetadataonlyno treatmentscore;no newpixels/evaluation"
+  },
+  "measurements": {
+    "fixed_choices": [
+      "originalnative",
+      "originalQtop"
+    ],
+    "acceptance": "logit>0;zero rejected;missing staysmissing",
+    "evaluation_radius_px": 10,
+    "preserve_training_boundary_masks": true,
+    "primary_context_gate": "LCvsLL:eachheldNBAgame/policy correct>=,wrong<=,hidden<=;no lostLLkeptcorrectpolicyidentity;atleastonestrictprimarycellgain",
+    "component_gate": "LCvsQ:samepergame/policyandstrictgain;all6207protectedNBA/HOUQpolicyrows,547Qpositiveweakrows,745HOUstressqueries retained;HOUeach episode/policy no correctloss or wrong/hiddenincrease/newerroridentity",
+    "protections_overlap": true,
+    "recovery_queries_retained": 21,
+    "below_001_recovery_queries_retained": 6,
+    "J_comparison": "all8578oldfixedpolicyrows+720BKNrows;gains beyondJ,errorsJkeepsrejected,allJcorrectlosses. Never substitute a newQ into savedJ. No drop-inreadiness claim with Jcorrectloss/errorincrease.",
+    "full_pool": "completeuncappedstrictmatchfirst/ranks/ties/margins versusLL/Q,all empty/missing/hidden/unknown retained;no newargmaxtracker",
+    "fixed_Qtop_correct_ceiling": {
+      "correct": 2542,
+      "eligible": 2811
+    },
+    "fit_health": "finalknowntrainingrowpredictions for eachfit withfinalweightedBCE/margins;oldQlogitsrecordedduringfeaturecapture;notcheckpointselection",
+    "required_slices": [
+      "game/block",
+      "native/weak",
+      "visibility/target",
+      "native success/failure",
+      "padding",
+      "boundaryuncertainty",
+      "named recovery/hidden",
+      "known distantnegative referencecenter inside/outside192crop"
+    ],
+    "diagnostic_curves": "completebreakpointsdescriptiveonlyno thresholdchosen",
+    "image_masking_or_feature_swap_arms": false,
+    "unknown_references": "not counted as negatives/errors;originalrole/display preserved"
+  },
+  "budget": {
+    "status": "architecture_specific_proposed_budget_not_executed",
+    "utc": "2026-10-30T17:37:51.629491+00:00",
+    "architecture": "Perfit frozenQlocal384feature reused across twoarms; one independent auxiliaryDINO forward obtains point384+CLS384; fusionhead1152input. Auxiliarybackboneprefix frozen,last2blocks+LNtrainable.",
+    "budget": {
+      "frozen_local_Q_feature_capture": {
+        "calls": 2776,
+        "presentations": 88742
+      },
+      "two_arm_training_auxiliary_backbone": {
+        "calls": 19740,
+        "presentations": 630864
+      },
+      "two_arm_final_scoring_existing_groups_plus_BKN": {
+        "calls": 3360,
+        "presentations": 107388
+      },
+      "two_arm_final_outer_fit_training_health": {
+        "calls": 2194,
+        "presentations": 70096
+      },
+      "extra_local_producer_parity_four_x32": {
+        "calls": 4,
+        "presentations": 128
+      },
+      "extra_auxiliary_producer_parity_eight_x32": {
+        "calls": 8,
+        "presentations": 256
+      }
+    },
+    "total_backbone_calls": 28082,
+    "total_backbone_presentations": 897474,
+    "fit_health_groups_per_arm": [
+      {
+        "fit": "leave_chi_out",
+        "known_fitting_candidates": 11954,
+        "batches32": 374
+      },
+      {
+        "fit": "leave_den_out",
+        "known_fitting_candidates": 11912,
+        "batches32": 373
+      },
+      {
+        "fit": "leave_sac_out",
+        "known_fitting_candidates": 11182,
+        "batches32": 350
+      }
+    ],
+    "total_final_scores_two_arms": 177484,
+    "total_final_scoring_batches_two_arms": 5554,
+    "feature_capture_unchanged": true,
+    "frozen_base_feature_rows": 88742,
+    "frozen_base_feature_batches": 2776,
+    "capture_layout_per_fit": [
+      {
+        "fit": "leave_chi_out",
+        "fit_union_package_scores": 17889,
+        "batches32": 560
+      },
+      {
+        "fit": "leave_den_out",
+        "fit_union_package_scores": 17702,
+        "batches32": 554
+      },
+      {
+        "fit": "leave_sac_out",
+        "fit_union_package_scores": 18270,
+        "batches32": 571
+      },
+      {
+        "fit": "all_nba",
+        "fit_union_package_scores": 19632,
+        "batches32": 614
+      }
+    ],
+    "extra_capture_streams_allNBA": [
+      {
+        "name": "external_original_order_without_DET",
+        "rows": 11769,
+        "batches": 368
+      },
+      {
+        "name": "BKN_original_order",
+        "rows": 3480,
+        "batches": 109
+      }
+    ],
+    "stream_contract": "Percheckpoint form stable original-package-order union of known fitting IDs and required package scoring IDs. This yields17889/17702/18270/19632. Append distinctexternal and BKN streams for allNBA only. No crossstream/partialbatch fusion assumed. Outerfit finaltraininghealth groups scored separately from heldgame groups. AllNBA traininghealth reuses its19632-package scores.",
+    "parity_accounting": "Eachparity calls a separate reference backbone once on32points; actual first extraction/trainingforward is already in basecapture/training counts. No extra uncountedwarmup,dryrun,ablation,zero-initforwardor retry. Cachedhead-only checks do not invoke a backbone.",
+    "saved_base_logit_health": "Apply originalQhead to exact capturedlocalfeature in same captureforward; new in-sample Qfit logits for outerfits need no extra backbone. Preserve original scalar controls; verify overlaps separately rather than overwrite.",
+    "compute_limit": "Counts are physicalbackbonepresentations under declaredgraph, not rawcandidateunique counts. Backprop cost/memory/elapsedtime unbenchmarked. CPU-onlymetadata today.",
+    "feature_exposure_limit": "Residual/fusiontraining sees originalQ in-samplefeatures on its fittingdata; heldgame distribution differs. Measure baseQ training saturation and weightedBCE gradient health. Runtime health alone cannot show enoughlearning signal.",
+    "source_census": {
+      "path": "data/outputs/ball_tracking/dual_view_context_design_v0_1/population_review/population_workload.json",
+      "bytes": 20426,
+      "sha256": "6e46444728f5c7c2eb857f3e343491c399e0796695e7570a8c4eb95a75c6ae43"
+    }
+  },
+  "runtime": {
+    "operational_watchdog_seconds": 5400,
+    "cleanup_reserve_seconds": 30,
+    "minimum_available_RAM_GiB": 16,
+    "minimum_free_disk_GiB": 20,
+    "local_feature_cache_bytes_before_headers": 272615424,
+    "local_feature_dtype": "float64",
+    "GPU_readiness": "fresh existing supervisorchecks;DebugModeON;TrueColor narrow permittedpolicy retained;driverRAMpower unchanged",
+    "benchmark": "not performed;count budget is not completiontimeprediction",
+    "automatic_retry": false
+  },
+  "verification": {
+    "captured_Q_score_atol": 1e-05,
+    "captured_Q_score_rtol": 1e-06,
+    "zero_signs_and_fixed_choice_ids": "mustmatch saved controls;do notreplaceoriginalscores",
+    "beforefit": "verify all source/checkpoint/fold/input bindings, local andauxpixel/point geometry, identicalinitialweights,gradientgrouphealth and frozenfingerprints",
+    "parity_extra_calls": 12,
+    "independent_final_audit": true,
+    "no_tolerance_relaxation_or_replay_automatic": true
+  },
+  "outcome_limits": [
+    "A failure cannot uniquely identify coverageversusrepresentationversusoptimization.",
+    "ContextgainwithoutQprotection is evidence notcomponentreplacement.",
+    "QcomponentgainwithoutusefulJincrement is not pipelineprogress.",
+    "Fixedchoiceacceptancecannotreach95percent;ranking/coverageareseparate.",
+    "Single seed,three correlatedgames,exposeddetectorpretrainingandBKNmotivationlimitgeneralization."
+  ],
+  "design_evidence": [
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_design_v0_1/architecture_review/architecture_review.json",
+      "bytes": 9401,
+      "sha256": "4680e51ac40f8c594984a083321a8d11a774e53931887e48a4543abd51d5c821"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_design_v0_1/critical_review/review.json",
+      "bytes": 4245,
+      "sha256": "be136893edd66364adeb080d4fc0fb98e5a01eecd00d80e90133734a32a766c0"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_design_v0_1/population_review/existing_protected_identity_sets.json",
+      "bytes": 2229915,
+      "sha256": "d4dc621d34725e78ff9e74f65088e1f2e11e982e473ae6aa7efb1cace340a2f6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_design_v0_1/population_review/feature_storage_clarification.json",
+      "bytes": 990,
+      "sha256": "9c80bb98f3ce70fcb636e5a27fc5b1fd65bd101349dbbe66d16a3fdc3cb47c96"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_design_v0_1/population_review/final_budget.json",
+      "bytes": 4032,
+      "sha256": "22514709938d9cf216228c86e57ca26316172dd1d60db680949ce62a6cd9daca"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_design_v0_1/population_review/population_workload.json",
+      "bytes": 20426,
+      "sha256": "6e46444728f5c7c2eb857f3e343491c399e0796695e7570a8c4eb95a75c6ae43"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_design_v0_1/population_review/reference_in_crop_rows.json",
+      "bytes": 7615474,
+      "sha256": "f2e9bcc537e5af49a55ba4786082de660067472fae8f9e5758c45f70daad2559"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_design_v0_1/population_review/reference_in_crop_summary.json",
+      "bytes": 9235,
+      "sha256": "594105438094bda0692830ca49adf6db538a59231d3617a84598a71a6bc45936"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_design_v0_1/population_review/role_clarification.json",
+      "bytes": 844,
+      "sha256": "cf94ae498fc81c415cb47dd88af89f93539dbe121df412ef442bb9d9f1e66148"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_design_v0_1/population_review/saved_J_comparator_inventory.json",
+      "bytes": 1474543,
+      "sha256": "71a0cfc1753175d48186f9cd43ebbf5f96050f780759abe361b787f2b4665a2b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/dual_view_context_design_v0_1/population_review/score_registry_ids.json",
+      "bytes": 2449051,
+      "sha256": "6c4f1c807056e619a64cafcf61c4c551cb00aee5eafe9a6607c74205657c2ec5"
+    }
+  ],
+  "protocol": {
+    "path": "docs/ball_tracking_dual_view_context_protocol.md",
+    "bytes": 21328,
+    "sha256": "63a92ba5700cf0aec2e9128d4b9fbe63977df555fd51bf4533c4f101dd77f889"
+  },
+  "design_workload": {
+    "model_loads": 0,
+    "GPU_queries": 0,
+    "neural_forwards": 0,
+    "optimizer_updates": 0,
+    "decoded_new_images": 0,
+    "reference_changes": 0
+  },
+  "editorial_revision": "Clarified82BKNscreenpoints within100total and fullHOU/BKNframeinventories; preservedfirstdraft"
+}

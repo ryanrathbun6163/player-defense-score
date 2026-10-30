@@ -1,0 +1,158 @@
+{
+  "schema_version": "nba_weak_response_followup/v0.1",
+  "status": "prospective_bounded_development_correction",
+  "created_date_phoenix": "2026-10-26",
+  "authority": "Ryan authorized the weak-response experiment and evidence-driven bounded follow-through. This fixed CPU correction responds to diagnosed HOU motion-cost/speed errors and excessive weak-pool clutter; it starts no new training or model inference.",
+  "starting_head": "8c040fca385dd8fffa0d7a13c45c53e79950bae1",
+  "branch": "codex/ball-detector-baseline",
+  "original_config": {
+    "path": "configs/ball_tracking/proposals/weak_response_v0_1.json",
+    "bytes": 5134,
+    "sha256": "b13b2e1764f6157b78a4ba664bbc09d0389e217e09b90cf1897bab935165c6e6"
+  },
+  "original_comparison": {
+    "path": "data/outputs/ball_tracking/weak_response_v0_1/comparison_v0_1/completed.json",
+    "bytes": 874756,
+    "sha256": "11be58de7ce60ec8cbec75da645a354870638f5cfa01c81698fe4a16305c1966"
+  },
+  "original_freeze": {
+    "path": "data/outputs/ball_tracking/weak_response_v0_1/prospective_freeze_v0_2.json",
+    "bytes": 2065,
+    "sha256": "b07cc842f1c1da60a5f2653763045b3240ea57541a421ad6a344ebc3c585da00"
+  },
+  "research_control": {
+    "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/cosine/fit_v0_1/checkpoints/epoch_009.pth",
+    "bytes": 6084071,
+    "sha256": "f4b721662ec3d8b546563feffcf5ce0d6319ed8ddc83f398830a0aac5d29c7b9"
+  },
+  "quality": {
+    "radius_source_pixels_inclusive": 10,
+    "correct_fraction_minimum": 0.95,
+    "wrong_fraction_maximum": 0.01,
+    "certain_hidden_emissions_maximum": 0,
+    "eligible_missing_run_maximum_ms": 200,
+    "confirmed_wrong_object_run_fail_at_ms": 120,
+    "recovery_maximum_ms": 120,
+    "recovery_requires_next_two_eligible_correct": true,
+    "per_context_gates": true,
+    "preserve_uncertainty_censoring_and_nine_inconclusive_recoveries": true,
+    "complete_synchronized_human_review_required": true
+  },
+  "base_sequence": {
+    "algorithm": "Offline first-order maximum-score sequence with explicit missing state; all original choices revisable; no interpolated coordinates.",
+    "strong_reward": 1.0,
+    "strong_relative_mass_weight": 0.25,
+    "minimum_strong_reward": 0.2,
+    "weak_reward": 0.35,
+    "missing_reward": 0.0,
+    "switch_missing_cost": 0.5,
+    "motion_scale_widths_per_second": 0.75,
+    "motion_cost_weight": 0.25,
+    "maximum_speed_widths_per_second": 1.5,
+    "weak_anchor_horizon_seconds": 0.4,
+    "weak_requires_strong_before_and_after": true,
+    "anchor_choices": "All original >.3 candidates, not the original selected point. Each weak candidate must be reachable from a strong candidate before and after within the time horizon and speed bound. This is geometric evidence, not proof of ball identity.",
+    "selection_variants": [
+      "native",
+      "sequence_strong",
+      "sequence_weak"
+    ]
+  },
+  "diagnostic_evidence": {
+    "hou_losses": {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/diagnostics/hou_v1_losses.json",
+      "bytes": 156801,
+      "sha256": "7c9350fbc65e4ecefdd78f74ff4bb6ebd78386495765ff9c116172d9bf492ec9"
+    },
+    "hou_reference_path_objectives": {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/diagnostics/hou_v1_reference_run_objectives.json",
+      "bytes": 4513,
+      "sha256": "dddd13fb2764ef7fc55064a63e93f5600a5e74b3fc3cf43763b49acbe3cdd609"
+    },
+    "hou_threshold_unions": {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/feasibility_hou_v0_1/native_union_ceilings.json",
+      "bytes": 22369,
+      "sha256": "262dd890602329eb4cc447d14ff914061e7dd5a3b0adb5a57061cadadb0ef111"
+    },
+    "hou_v1_weak_selected_sources": {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/diagnostics/hou_v1_weak_selected_sources.json",
+      "bytes": 15252,
+      "sha256": "2ffb170e70d95126b5abc6f6ac3a2961c7222620b24ea0af628fd4f9c57d22a9"
+    },
+    "preserved_pre_execution_003_draft": {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/preparation_history/threshold_003_draft/preparation_receipt.json",
+      "bytes": 2463,
+      "sha256": "3ed019f3d0f8b047c4f379f8db6bd3fc817b4ed52cc5f197b8a030382993fb4a"
+    }
+  },
+  "diagnosis": "17 of 78 v1 strong HOU losses touch correct native edges above the 1.5 widths/second cutoff; largest correct edge is 2.143530296405197. HOU e03/e06 contribute 58 losses without that violation. Reference-assisted fixed path objectives support testing lower motion penalty separately from the speed bound; these diagnostics are not operational selector results.",
+  "data_usage": {
+    "HOU": "Prior completed label-assisted diagnosis is now explicitly used for fixed development parameter choice. This is not fresh validation; no further tuning inside this study.",
+    "DET": "Previously inspected development, excluded from fitting/checkpoint selection. All followup parameters locked before application; no DET reference seeds, parameter choice or training.",
+    "SAC": "Training-exposed descriptive regression context.",
+    "selection_inputs": "Only actual model candidate pools, native timestamps, source width and fixed parameters. No reference geometry, visibility, eligibility or outcome labels enter choose_sequence."
+  },
+  "arms": {
+    "motion_only": {
+      "changes": {
+        "motion_cost_weight": 0.025,
+        "maximum_speed_widths_per_second": 1.5
+      },
+      "pool": "native_only"
+    },
+    "speed_only": {
+      "changes": {
+        "motion_cost_weight": 0.25,
+        "maximum_speed_widths_per_second": 3.0
+      },
+      "pool": "native_only"
+    },
+    "motion_and_speed": {
+      "changes": {
+        "motion_cost_weight": 0.025,
+        "maximum_speed_widths_per_second": 3.0
+      },
+      "pool": "native_only"
+    },
+    "motion_and_speed_narrow_weak": {
+      "changes": {
+        "motion_cost_weight": 0.025,
+        "maximum_speed_widths_per_second": 3.0
+      },
+      "pool": "native_plus_0.01"
+    }
+  },
+  "main_research_arm": "motion_and_speed",
+  "main_research_arm_chosen_before_results": true,
+  "selection_rule": "The main corrected research arm is motion_and_speed prospectively, regardless of rank. All four arms and all adverse effects are reported. This does not adopt a model or choose a production method.",
+  "extraction": {
+    "native_threshold": 0.3,
+    "additional_threshold": 0.01,
+    "strict_threshold": true,
+    "connectivity": 8,
+    "dedup_source_pixels": 2.0,
+    "retain_native_candidates_exactly": true,
+    "local_maxima": false,
+    "candidate_cap": null
+  },
+  "threshold_selection_rule": "Explicit HOU label-assisted development choice, revised before freeze or study selection: native plus >0.01 components preserve availability for all ten demonstrated e01 recoveries (native+.03 covers118/120 and loses frames200-201; native+.01 covers120/120). The .01 pool also excludes the exact twelve newly emitted e05 certain-hidden v1 choices because their component peaks are below.01. This does not guarantee zero hidden emissions: other .01 candidates remain. Every HOU episode retains a >=95% native-union availability ceiling. The earlier draft highest-threshold >=95% rule validly gave.03; this new recovery-preservation rationale explicitly replaces it before any run. No DET outcomes choose this threshold. Availability is not automatic selection accuracy.",
+  "controls": [
+    "native",
+    "v1_sequence_strong",
+    "v1_sequence_weak_broad"
+  ],
+  "scope": {
+    "contexts": 8,
+    "native_frames": 3662,
+    "new_arms": 4,
+    "retained_v1_strong_factorial_control": true
+  },
+  "new_model_calls": 0,
+  "new_training_updates": 0,
+  "new_labels": 0,
+  "protected_evaluation_authorized": false,
+  "human_trajectory_acceptance": null,
+  "model_adopted": false,
+  "followup_limit": "Only the four declared arms. No full selector grid, unreported parameter search, label change or training. Subsequent changes need a concrete evidence-based decision.",
+  "known_adverse_threshold_evidence": "Six real v1 e05 correct recoveries at frames14-19 have peaks below.01 and no nearby .01 component; this narrow arm knowingly removes those useful exact weak candidates. All adverse outcomes will be reported. No threshold extension or new candidate family is authorized in this study."
+}

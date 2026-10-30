@@ -1,0 +1,187 @@
+{
+  "schema_version": "candidate_response_feasibility/v0.1",
+  "status": "prospective_CPU_diagnostic_no_tracking_or_fitting",
+  "output_root": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1",
+  "study_subdirectory": "study_v0_1",
+  "branch": "codex/ball-detector-baseline",
+  "head": "8c040fca385dd8fffa0d7a13c45c53e79950bae1",
+  "authority": "Ryan: move forward and be extremely thorough choosing our next step. Execute bounded saved-output CPU diagnosis; no new training, model inference, labels or protected evaluation.",
+  "question": "Does previously unused response shape add candidate-localization ordering and visibility/absence separation beyond peak/native mass, without sacrificing valid weak or native-correct points?",
+  "research_control": {
+    "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/cosine/fit_v0_1/checkpoints/epoch_009.pth",
+    "bytes": 6084071,
+    "sha256": "f4b721662ec3d8b546563feffcf5ce0d6319ed8ddc83f398830a0aac5d29c7b9"
+  },
+  "quality_criteria_unchanged": {
+    "radius_source_pixels_inclusive": 10,
+    "correct_fraction_minimum": 0.95,
+    "wrong_fraction_maximum": 0.01,
+    "certain_hidden_emissions_maximum": 0,
+    "eligible_missing_run_maximum_ms": 200,
+    "confirmed_wrong_object_run_fail_at_ms": 120,
+    "recovery_maximum_ms": 120,
+    "recovery_requires_next_two_eligible_correct": true,
+    "per_context_gates": true,
+    "preserve_uncertainty_censoring_and_nine_inconclusive_recoveries": true,
+    "complete_synchronized_human_review_required": true
+  },
+  "paired_inputs": {
+    "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/paired_review_inputs_v0_1.json",
+    "bytes": 21655329,
+    "sha256": "35cc9e05209cc6b161c42ae8687879f0219768faa14e97d863cdd32019d76c9e"
+  },
+  "original_comparison": {
+    "path": "data/outputs/ball_tracking/weak_response_v0_1/comparison_v0_1/completed.json",
+    "bytes": 874756,
+    "sha256": "11be58de7ce60ec8cbec75da645a354870638f5cfa01c81698fe4a16305c1966"
+  },
+  "followup_comparison": {
+    "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/completed.json",
+    "bytes": 2096214,
+    "sha256": "08b9442be5ff2793f573200c22f673870815db22bf656727e032aa9adf4e3ba6"
+  },
+  "inventory": {
+    "path": "data/outputs/ball_tracking/weak_response_v0_1/inventory.json",
+    "bytes": 20193,
+    "sha256": "5938eb069d794049c831385b040d7aecd4ce3e5064bc8af1d1bfc2ad35505893"
+  },
+  "captured_HOU_means": {
+    "path": "data/outputs/ball_tracking/weak_response_v0_1/capture_v0_1/completed.json",
+    "bytes": 5598,
+    "sha256": "4c641d86ffe5420557ab84f47a8ae122db9f31b63cba70a0d64c529ae7b41d1c"
+  },
+  "original_comparison_audit": {
+    "path": "data/outputs/ball_tracking/weak_response_v0_1/independent_comparison_audit.json",
+    "bytes": 21078,
+    "sha256": "902d72305a76cc8219f0058484acfccf2a20d3dc10dcac0133cd06969c5bb729"
+  },
+  "followup_audit": {
+    "path": "data/outputs/ball_tracking/weak_response_v0_1/diagnostics/followup_independent_audit.json",
+    "bytes": 299317,
+    "sha256": "d1aac6ad6ec456a9b277b414108c32e9a022a02ac457ffc02943418856188254"
+  },
+  "source_roles": {
+    "path": "configs/ball_tracking/completion_campaign/source_roles_v0_1.json",
+    "bytes": 71569,
+    "sha256": "3ae5de63eef918fdaafcfbac62c09ca46e14fa1c1fdf069739d731955a573200"
+  },
+  "feature_block_ids": [
+    "hou-vs-okc-0022400879_e01",
+    "hou-vs-okc-0022400879_e02",
+    "hou-vs-okc-0022400879_e03",
+    "hou-vs-okc-0022400879_e04",
+    "hou-vs-okc-0022400879_e05",
+    "hou-vs-okc-0022400879_e06"
+  ],
+  "feature_main_cohort": "Every retained native-plus-strict-.01 candidate in all six complete HOU contexts; expected960 frames and10778 candidates; no cap or label-dependent sampling.",
+  "feature_stress_cohort": "Every emitted or missing original expanded-weak choice in the same960 HOU frames; all rows retained, not just successful or below-.01 points. Exact old chosen coordinates and source audit retained.",
+  "feature_schema": "One frame JSONL row with main_candidates descriptors and expanded_weak_selection descriptor; exact frame/PTS/timebase/meanhash/native selection/pool identity; labels absent from feature calculation.",
+  "descriptors": {
+    "source_disk_radius_px": 10,
+    "source_core_radius_px": 5,
+    "source_grid_spacing_px": 1,
+    "sampling": "Bilinear float64 interpolation of bound float32 mean map, using inverse of frozen heatmap-to-source affine. No source-image or new-model features.",
+    "support": "Integer offsets[-10,10] in eachaxis; disk dx*dx+dy*dy<=100 (317samples); core<=25 (81), ring25<r2<=100 (236).",
+    "features": [
+      "peak",
+      "core_ring_contrast",
+      "entropy_concentration",
+      "isotropy",
+      "negative_centroid_distance",
+      "negative_spread"
+    ],
+    "orientation": "Higher is favorable for every descriptor; no learned weights, chosen composite, threshold tuning or calibrated probability claim.",
+    "core_ring_contrast": "(mean_core-mean_ring)/(mean_core+mean_ring+1e-12)",
+    "entropy_concentration": "1 - Shannon_entropy(normalized_nonzero_disk_weights)/log(317)",
+    "isotropy": "Smallest/largest eigenvalue of response-weighted source-offset covariance; zero spatial variance gives null for this descriptor only.",
+    "negative_centroid_distance": "Negative Euclidean distance of response-weighted centroid from emitted candidate center, in source pixels.",
+    "negative_spread": "Negative square root of covariance trace, in source pixels.",
+    "missing_evidence": "Incomplete source/map boundary patch, nonfinite input, all-zero support or missing chosen point stays explicitly unknown; never zero-filled or silently removed from denominators.",
+    "baselines": "Peak is the amplitude baseline. Original mass and component area remain metadata and can be ranked only within native candidates, never across extraction thresholds.",
+    "not_independent_features": "Descriptors share a response map and correlated shape information; agreement is not independent corroboration."
+  },
+  "analysis": {
+    "reference_radius_source_px_inclusive": 10,
+    "reference_roles": "Existing frozen reference classification only; geometry-outside10 means localization mismatch, not a semantic non-ball label. Certain-hidden is negative emission evidence; uncertain/unscored frames stay separate.",
+    "all_feature_rows_sealed_before_reference_analysis": true,
+    "within_frame": "Per episode, report availability, number of geometric-outside10 competitors strictly above/tied with best matching candidate for each descriptor, with all feature-unknown counts. Native mass baseline restricted to native candidates.",
+    "visibility_bounds": [
+      "Strict cutoff at maximum observed certain-hidden score: report best-case surviving matching-candidate coverage and retention of each original native-correct point.",
+      "Inclusive cutoff at minimum observed native-correct score: report certain-hidden rejection and retained selected-output gains."
+    ],
+    "bounds_are_diagnostic": "Reference-assisted feasibility limits, not operational thresholds or fresh validation. Do not select a winner from this table or produce new trajectories.",
+    "stress": "Report original expanded weak choices by old native correctness, missing gains, wrongs, certain/uncertain hidden and original extraction identity where available; explicitly retain e01 gains194-203 and e05 gains14-19 below.01.",
+    "counts": "Per episode primary; pooled numbers descriptive. No frame independence, p-values, semantic label campaign or fitted classifier."
+  },
+  "coverage": {
+    "radius_source_px": 10,
+    "offsets_source_px": [
+      [
+        64,
+        0
+      ],
+      [
+        -64,
+        0
+      ],
+      [
+        0,
+        64
+      ],
+      [
+        0,
+        -64
+      ],
+      [
+        128,
+        0
+      ],
+      [
+        -128,
+        0
+      ],
+      [
+        0,
+        128
+      ],
+      [
+        0,
+        -128
+      ]
+    ],
+    "scopes": [
+      "HOU",
+      "DET"
+    ],
+    "pools": [
+      "native",
+      "expanded_union",
+      "native_plus_0.01"
+    ],
+    "controls": "Same-frame translated accepted-reference locations; drop and count out-of-source controls. These are local spatial-density controls, not semantic negatives or independent samples.",
+    "outputs": "Per context actual/control coverage, paired frame average control coverage, nearest-distance summaries; original native-missing HOU and all19 DETgap frames separately.",
+    "DET_rule": "Fixed diagnostic only after this protocol is locked; no DET feature/parameter/threshold selection or model fitting."
+  },
+  "decision_rules": {
+    "useful_increment": "Consistent paired shape/contrast separation beyond amplitude/native mass, together with meaningful hidden rejection that protects native-correct and known weak gains, can justify one separately frozen evidence-conditioned scoring/abstention comparison. Final acceptance need not already pass.",
+    "adverse": "If descriptors fail ordering, overlap on certain-hidden/valid points, or gain mainly by losing valid partial/weak balls, reject only these descriptor rules; do not conclude all postprocessing/appearance is exhausted.",
+    "next_information": "An adverse result motivates a concrete native-pixel, point-conditioned representation feasibility design; no automatic generic DINO veto, crop inference or training.",
+    "density": "High translated-location coverage limits how much identity evidence can be inferred from broad-pool oracle availability alone. It does not erase actual e01 recovery or prove absent ball signal."
+  },
+  "new_model_calls": 0,
+  "new_training_updates": 0,
+  "new_labels": 0,
+  "new_tracking_outputs": 0,
+  "protected_evaluation_authorized": false,
+  "human_visual_acceptance": null,
+  "preparation": "Synthetic-only descriptor tests before freeze. Prior HOU labels/outcomes informed the hypothesis and cohorts; this is explicitly repeatedly inspected development. New descriptor results not examined before protocol freeze.",
+  "historical_basis": [
+    "docs/research/ball_tracking_full_history_reassessment_2026-10-26.md",
+    "docs/ball_tracking_weak_response_results.md",
+    "docs/ball_candidate_identity_diagnosis.md",
+    "docs/ball_crop_player_context_results.md",
+    "docs/nba_ball_distractor_training_results.md",
+    "docs/ball_tracking_wasb_continuation_results.md",
+    "docs/ball_tracking_nba_resolution_results.md"
+  ]
+}

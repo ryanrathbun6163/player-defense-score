@@ -1,0 +1,309 @@
+{
+  "schema_version": "fresh_game_diagnostic_result/v0.1",
+  "status": "completed_frozen_diagnostic_no_adoption",
+  "at_utc": "2026-10-30T16:24:32.741385+00:00",
+  "game_id": "0022400861",
+  "role": "diagnostic_development",
+  "training_eligible": false,
+  "checkpoint_selection_eligible": false,
+  "population": {
+    "frames": 360,
+    "eligible": 310,
+    "certain_hidden": 32,
+    "unknown": 18
+  },
+  "fixed_policy_counts": {
+    "native": {
+      "before": {
+        "frames": 360,
+        "eligible": 310,
+        "certain_hidden": 32,
+        "unknown": 18,
+        "emitted": 309,
+        "correct": 298,
+        "wrong_eligible": 6,
+        "hidden_emissions": 2,
+        "unknown_emissions": 3,
+        "missing_choices": 51,
+        "out_of_bounds_choices": 0,
+        "out_of_bounds_emissions": 0,
+        "correct_rejected": 0,
+        "wrong_rejected": 0,
+        "hidden_rejected": 0,
+        "unknown_rejected": 0,
+        "no_emission": 51
+      },
+      "Q": {
+        "frames": 360,
+        "eligible": 310,
+        "certain_hidden": 32,
+        "unknown": 18,
+        "emitted": 291,
+        "correct": 289,
+        "wrong_eligible": 1,
+        "hidden_emissions": 1,
+        "unknown_emissions": 0,
+        "missing_choices": 51,
+        "out_of_bounds_choices": 0,
+        "out_of_bounds_emissions": 0,
+        "correct_rejected": 9,
+        "wrong_rejected": 5,
+        "hidden_rejected": 1,
+        "unknown_rejected": 3,
+        "no_emission": 69
+      },
+      "J": {
+        "frames": 360,
+        "eligible": 310,
+        "certain_hidden": 32,
+        "unknown": 18,
+        "emitted": 307,
+        "correct": 298,
+        "wrong_eligible": 4,
+        "hidden_emissions": 2,
+        "unknown_emissions": 3,
+        "missing_choices": 51,
+        "out_of_bounds_choices": 0,
+        "out_of_bounds_emissions": 0,
+        "correct_rejected": 0,
+        "wrong_rejected": 2,
+        "hidden_rejected": 0,
+        "unknown_rejected": 0,
+        "no_emission": 53
+      }
+    },
+    "quality_top": {
+      "before": {
+        "frames": 360,
+        "eligible": 310,
+        "certain_hidden": 32,
+        "unknown": 18,
+        "emitted": 360,
+        "correct": 294,
+        "wrong_eligible": 16,
+        "hidden_emissions": 32,
+        "unknown_emissions": 18,
+        "missing_choices": 0,
+        "out_of_bounds_choices": 0,
+        "out_of_bounds_emissions": 0,
+        "correct_rejected": 0,
+        "wrong_rejected": 0,
+        "hidden_rejected": 0,
+        "unknown_rejected": 0,
+        "no_emission": 0
+      },
+      "Q": {
+        "frames": 360,
+        "eligible": 310,
+        "certain_hidden": 32,
+        "unknown": 18,
+        "emitted": 304,
+        "correct": 290,
+        "wrong_eligible": 10,
+        "hidden_emissions": 2,
+        "unknown_emissions": 2,
+        "missing_choices": 0,
+        "out_of_bounds_choices": 0,
+        "out_of_bounds_emissions": 0,
+        "correct_rejected": 4,
+        "wrong_rejected": 6,
+        "hidden_rejected": 30,
+        "unknown_rejected": 16,
+        "no_emission": 56
+      },
+      "J": {
+        "frames": 360,
+        "eligible": 310,
+        "certain_hidden": 32,
+        "unknown": 18,
+        "emitted": 301,
+        "correct": 293,
+        "wrong_eligible": 2,
+        "hidden_emissions": 2,
+        "unknown_emissions": 4,
+        "missing_choices": 0,
+        "out_of_bounds_choices": 0,
+        "out_of_bounds_emissions": 0,
+        "correct_rejected": 1,
+        "wrong_rejected": 14,
+        "hidden_rejected": 30,
+        "unknown_rejected": 14,
+        "no_emission": 59
+      }
+    }
+  },
+  "pool_coverage": {
+    "frames": 360,
+    "eligible_frames": 310,
+    "frames_with_any_candidate": 360,
+    "empty_pool_frames": 0,
+    "eligible_with_matching_candidate": 305,
+    "eligible_without_matching_candidate": 5,
+    "eligible_with_matching_native_candidate": 299,
+    "eligible_with_matching_weak_candidate": 36,
+    "eligible_weak_only_matching_pool": 6,
+    "weak_match_available_on_native_failure": 7,
+    "matching_candidate_survives_Q": 291,
+    "matching_candidate_survives_J": 303
+  },
+  "execution_counters": {
+    "detector_attempted": 354,
+    "detector_returned": 354,
+    "means": 360,
+    "Q_attempted": 109,
+    "Q_returned": 109,
+    "Q_presentations": 3480,
+    "J_predictions": 3480,
+    "optimizer_updates": 0
+  },
+  "charged_elapsed_seconds": 67.84299999999985,
+  "supervision": {
+    "finished_at_utc": "2026-10-30T16:16:11.607792+00:00",
+    "elapsed_seconds": 63.8130000000001,
+    "returncode": 0,
+    "stop_reason": null,
+    "force_stopped_owned_job": false,
+    "job_cleanup_error": null,
+    "remaining_owned_processes_before_close": 0,
+    "samples": 32,
+    "maximum_temperature_C": 54.0,
+    "maximum_power_W": 98.28,
+    "maximum_memory_MiB": 2166.0,
+    "automatic_retry": false
+  },
+  "truecolor_observed_before_and_after": true,
+  "truecolor_process_ids": [
+    20968
+  ],
+  "truecolor_executable_verified": false,
+  "temporary_TrueColor_absence_rule_retired": true,
+  "model_adopted": false,
+  "threshold_selected": null,
+  "new_selector": false,
+  "protected_access": false,
+  "global_95_percent_goal_established": false,
+  "model_reruns": 0,
+  "auditor_only_cache_shape_correction_preserved": true,
+  "report": {
+    "path": "docs/ball_tracking_fresh_game_diagnostic_results.md",
+    "bytes": 11400,
+    "sha256": "701c0e589901468a66486bcef68a72360df5b9ef9617073230f669fcf41d6f5c"
+  },
+  "artifacts": [
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/accepted/receipt.json",
+      "bytes": 4157,
+      "sha256": "bfc94ec0fe2d28997b373c9136fdb1003fea2e3e141ae78cb408293c4d38c3a9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/accepted/reference.json",
+      "bytes": 588205,
+      "sha256": "a0f37f0a6651ea18d3d09d0be0dd87d3a6f2f390033e1c4367355e6591fee645"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/inference_preparation/prepared.json",
+      "bytes": 94757,
+      "sha256": "9dbf4a29ce6ce97122e3aab53619e94608370aceaa08384a464a341e60bf92c1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/focused_checks.json",
+      "bytes": 655,
+      "sha256": "78382ccb247e0865e78b97b964f100ce73468692b023ee311a2ba280e471268c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/attempt_001/completed.json",
+      "bytes": 9996,
+      "sha256": "0a37c172d4298c28fdb0321d0386e6e14581d270a4fdbdcbb218d22c4d1727ef"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/attempt_001/Q_budget.json",
+      "bytes": 286499,
+      "sha256": "0ef872c450c8e2248fec4384438338d630fc5ffe70807449faa39b0fa20f96a3"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/analysis/completed.json",
+      "bytes": 2925,
+      "sha256": "7dde0427e869ca4ab129e5a9a38a18168aa9cb37e054ec69783192dad770a425"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/analysis/summary.json",
+      "bytes": 4841,
+      "sha256": "bc63cf60e8c63c87356f4d5308098f7b8dc051a4cd3d884b46ff508b4976497a"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/diagnostic_review/receipt.json",
+      "bytes": 235348,
+      "sha256": "d02a81e2fbabd62e90c0c8d994af2790ec8f52ada2ae9a99ac2d212bfe19320e"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/diagnostic_review/index.html",
+      "bytes": 95348,
+      "sha256": "17985dfd6d2e26d9ace9dc3025e7cdc2e2a099a9a71a8dea1bc18e8826d372b1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/review/analysis_audit.json",
+      "bytes": 3727,
+      "sha256": "1ab7cada3d7cfb3bce1136f07526da96f98a550e10dd50b56352881bc44045f0"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/review/neural_output_audit.json",
+      "bytes": 4266,
+      "sha256": "f0fd24f669231e40075a2e63bca2365385c8315907b3c2a242c20855614a9696"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/review/visual_inspection.json",
+      "bytes": 3170,
+      "sha256": "735c41d6581f121592679d6be87d09d15644964f48841b604df9e335496be79d"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/review/truecolor_history_review.json",
+      "bytes": 8543,
+      "sha256": "8c5257af8d22804505777419e002e1b05a97656295d3d9ae88df64277c204702"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/launch_v0_1/readiness_v5_review.json",
+      "bytes": 7913,
+      "sha256": "62bffe57834768756d01ceb43df57132ef2b6609113ba7cd1ab856572d6e87e9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/launch_v0_1/truecolor_operating_policy.json",
+      "bytes": 3296,
+      "sha256": "d94040a42fc56062157e7ce370bb92a8819b9b1d9dbfb2ed49e766d027adfa8b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/launch_v0_1/truecolor_policy_amendment_completed.json",
+      "bytes": 791,
+      "sha256": "a75aa3bca916736e22707b198ca394f63e389c6420b0598b7a5e9fcd7c14ea19"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/launch_v0_1/execution_freeze.json",
+      "bytes": 96067,
+      "sha256": "a976deebffc1b9da2df603eb1e1ba74a4b2821440fee33f551990d49e3c8e1ae"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/launch_v0_1/execution_authorization.json",
+      "bytes": 1964,
+      "sha256": "db23f62c53f0224f17a3c5b1fd7872ff2673f4a20af26c644bda666a52498899"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/launch_v0_1/launch_readiness.json",
+      "bytes": 35523,
+      "sha256": "d31a36e2460effa9d0ee0897cfa9b0d6726f963d99fd62fe66def2fbcb540466"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/launch_v0_1/launcher_finished.json",
+      "bytes": 794,
+      "sha256": "548ed598147a9265d24ab201189c473ef38eff516f85716becf543842afedfdd"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/launch_v0_1/events_attempt_001/finished.json",
+      "bytes": 403,
+      "sha256": "cd971fe52332388520830613a0c64c8eecfb78d0cc3a4cd6968d21355ee1f3d7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/launch_v0_1/postrun_windows_snapshot.json",
+      "bytes": 1717,
+      "sha256": "fe8687c8a6cb7143f229249632f6f50f09b37b4c2ab228332b08daf0a655478a"
+    }
+  ]
+}

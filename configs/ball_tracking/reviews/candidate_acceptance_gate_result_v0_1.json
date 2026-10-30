@@ -1,0 +1,1533 @@
+{
+  "schema": "candidate_acceptance_gate_result/v0.1",
+  "at_utc": "2026-10-30T01:48:02.650536+00:00",
+  "status": "completed_independently_audited_no_adoption",
+  "report": {
+    "path": "docs/ball_tracking_candidate_acceptance_gate_results.md",
+    "bytes": 19055,
+    "sha256": "f3f57a408b6714456dd8bb57676bc5c88c95939736a97662df1f0038fd714fe8"
+  },
+  "specification": {
+    "path": "configs/ball_tracking/proposals/candidate_acceptance_gate_v0_1.json",
+    "bytes": 34105,
+    "sha256": "42bf1ff4571dba80f9845852e54cacd0f9a6021e9e19b1490fee24883deafb15"
+  },
+  "protocol": {
+    "path": "docs/ball_tracking_candidate_acceptance_gate_protocol.md",
+    "bytes": 25636,
+    "sha256": "ed0b7aa3ada57313eed561b0e36861d687dcc121d04f0b8f7c19c01d169297db"
+  },
+  "execution_freeze": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/launch_v0_1/execution_freeze.json",
+    "bytes": 27670,
+    "sha256": "79af539a895199b9ea2a7b487a55eca7fe3d6375593298a00c402a870c208d61"
+  },
+  "execution_authorization": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/launch_v0_1/execution_authorization.json",
+    "bytes": 1859,
+    "sha256": "250067a7e8c4ea30be62a49c48d58b97b29049dbdd09b30e0ab5a145cd8a1f1e"
+  },
+  "neural_completion": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/neural/completed.json",
+    "bytes": 15393,
+    "sha256": "e37b514d37a7f3427fbd6365e03cee841bebdccce794dbe666dfbd50d6ce36ee"
+  },
+  "analysis_completion": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/completed.json",
+    "bytes": 7553,
+    "sha256": "c9879fb9a8f4a66b5a6f806ffcd73816ee11be7685ac2c8f6864dbb3793cf633"
+  },
+  "independent_audits": [
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/implementation_review/neural_output_audit.json",
+      "bytes": 1892,
+      "sha256": "ba7dd6d57a5726d100c63f05b9e67186b9b499939f86e2ade4205feba8a9efef"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/postrun_tensor_audit/attempt_001.json",
+      "bytes": 24156,
+      "sha256": "910824c1c1ea5421b44fd8b67da2c74e628c3d548d97dd19677261ad61a005a9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/implementation_review/analysis_output_audit.json",
+      "bytes": 1147,
+      "sha256": "7b0522b078abe7362fb47f480cded649968f393ac7f8f74a01d00c97b67ad244"
+    }
+  ],
+  "scientific_interpretation": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/implementation_review/scientific_interpretation_receipt.json",
+    "bytes": 154065,
+    "sha256": "2c3c338c4e147e9fbffef97c2ddecaefb0dab92a915b067327f1931ed0685fd1"
+  },
+  "scientific_result": "Held-NBA quality-top acceptance improves beyond score-only adjustment; native/HOU wrong and hidden emissions and protected recovery losses prevent the predeclared component pass",
+  "fixed_reference_component_criterion_passed": false,
+  "fixed_reference": "score > 0; no threshold selected from evaluation",
+  "at_zero_by_context_and_policy": [
+    {
+      "context": "HOU_development",
+      "policy": "native",
+      "arm": "Q",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 842,
+        "missing_choice": 45,
+        "eligible_miss": 19,
+        "masked_unknown": 35,
+        "certain_hidden": 19
+      },
+      "score_states": {
+        "negative": 112,
+        "positive": 803,
+        "missing": 45
+      },
+      "correct_rejected": 44,
+      "counts": {
+        "accepted": 803,
+        "correct_kept": 798,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 798,
+        "unknown_kept": 5,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "native",
+      "arm": "S",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 842,
+        "missing_choice": 45,
+        "eligible_miss": 19,
+        "masked_unknown": 35,
+        "certain_hidden": 19
+      },
+      "score_states": {
+        "negative": 102,
+        "positive": 813,
+        "missing": 45
+      },
+      "correct_rejected": 35,
+      "counts": {
+        "accepted": 813,
+        "correct_kept": 807,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 807,
+        "unknown_kept": 6,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "native",
+      "arm": "J",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 842,
+        "missing_choice": 45,
+        "eligible_miss": 19,
+        "masked_unknown": 35,
+        "certain_hidden": 19
+      },
+      "score_states": {
+        "positive": 908,
+        "missing": 45,
+        "negative": 7
+      },
+      "correct_rejected": 1,
+      "counts": {
+        "accepted": 908,
+        "correct_kept": 841,
+        "wrong_eligible_kept": 18,
+        "hidden_candidates": 18,
+        "hidden_emission_frames": 18,
+        "match_survival_frames": 841,
+        "unknown_kept": 31,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "native",
+      "arm": "M",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 842,
+        "missing_choice": 45,
+        "eligible_miss": 19,
+        "masked_unknown": 35,
+        "certain_hidden": 19
+      },
+      "score_states": {
+        "positive": 855,
+        "missing": 45,
+        "negative": 60
+      },
+      "correct_rejected": 12,
+      "counts": {
+        "accepted": 855,
+        "correct_kept": 830,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 13,
+        "hidden_emission_frames": 13,
+        "match_survival_frames": 830,
+        "unknown_kept": 12,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "quality_top",
+      "arm": "Q",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 862,
+        "masked_unknown": 44,
+        "eligible_miss": 20,
+        "certain_hidden": 34
+      },
+      "score_states": {
+        "negative": 118,
+        "positive": 842
+      },
+      "correct_rejected": 37,
+      "counts": {
+        "accepted": 842,
+        "correct_kept": 825,
+        "wrong_eligible_kept": 6,
+        "hidden_candidates": 3,
+        "hidden_emission_frames": 3,
+        "match_survival_frames": 825,
+        "unknown_kept": 8,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "quality_top",
+      "arm": "S",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 862,
+        "masked_unknown": 44,
+        "eligible_miss": 20,
+        "certain_hidden": 34
+      },
+      "score_states": {
+        "negative": 107,
+        "positive": 853
+      },
+      "correct_rejected": 28,
+      "counts": {
+        "accepted": 853,
+        "correct_kept": 834,
+        "wrong_eligible_kept": 7,
+        "hidden_candidates": 4,
+        "hidden_emission_frames": 4,
+        "match_survival_frames": 834,
+        "unknown_kept": 8,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "quality_top",
+      "arm": "J",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 862,
+        "masked_unknown": 44,
+        "eligible_miss": 20,
+        "certain_hidden": 34
+      },
+      "score_states": {
+        "positive": 890,
+        "negative": 70
+      },
+      "correct_rejected": 7,
+      "counts": {
+        "accepted": 890,
+        "correct_kept": 855,
+        "wrong_eligible_kept": 4,
+        "hidden_candidates": 14,
+        "hidden_emission_frames": 14,
+        "match_survival_frames": 855,
+        "unknown_kept": 17,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "HOU_development",
+      "policy": "quality_top",
+      "arm": "M",
+      "denominator": 960,
+      "distinct_context_frames": 960,
+      "original_categories": {
+        "eligible_match": 862,
+        "masked_unknown": 44,
+        "eligible_miss": 20,
+        "certain_hidden": 34
+      },
+      "score_states": {
+        "positive": 960
+      },
+      "correct_rejected": 0,
+      "counts": {
+        "accepted": 960,
+        "correct_kept": 862,
+        "wrong_eligible_kept": 20,
+        "hidden_candidates": 34,
+        "hidden_emission_frames": 34,
+        "match_survival_frames": 862,
+        "unknown_kept": 44,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "native",
+      "arm": "Q",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2807,
+        "missing_choice": 261,
+        "eligible_miss": 3,
+        "masked_unknown": 106,
+        "certain_hidden": 2
+      },
+      "score_states": {
+        "positive": 2328,
+        "negative": 590,
+        "missing": 261
+      },
+      "correct_rejected": 498,
+      "counts": {
+        "accepted": 2328,
+        "correct_kept": 2309,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 2309,
+        "unknown_kept": 19,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "native",
+      "arm": "S",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2807,
+        "missing_choice": 261,
+        "eligible_miss": 3,
+        "masked_unknown": 106,
+        "certain_hidden": 2
+      },
+      "score_states": {
+        "positive": 2428,
+        "negative": 490,
+        "missing": 261
+      },
+      "correct_rejected": 404,
+      "counts": {
+        "accepted": 2428,
+        "correct_kept": 2403,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 2403,
+        "unknown_kept": 25,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "native",
+      "arm": "J",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2807,
+        "missing_choice": 261,
+        "eligible_miss": 3,
+        "masked_unknown": 106,
+        "certain_hidden": 2
+      },
+      "score_states": {
+        "positive": 2888,
+        "missing": 261,
+        "negative": 30
+      },
+      "correct_rejected": 1,
+      "counts": {
+        "accepted": 2888,
+        "correct_kept": 2806,
+        "wrong_eligible_kept": 3,
+        "hidden_candidates": 2,
+        "hidden_emission_frames": 2,
+        "match_survival_frames": 2806,
+        "unknown_kept": 77,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "native",
+      "arm": "M",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2807,
+        "missing_choice": 261,
+        "eligible_miss": 3,
+        "masked_unknown": 106,
+        "certain_hidden": 2
+      },
+      "score_states": {
+        "positive": 2582,
+        "missing": 261,
+        "negative": 336
+      },
+      "correct_rejected": 276,
+      "counts": {
+        "accepted": 2582,
+        "correct_kept": 2531,
+        "wrong_eligible_kept": 1,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 2531,
+        "unknown_kept": 50,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "quality_top",
+      "arm": "Q",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2542,
+        "masked_unknown": 236,
+        "missing_choice": 19,
+        "certain_hidden": 113,
+        "eligible_miss": 269
+      },
+      "score_states": {
+        "positive": 2472,
+        "negative": 688,
+        "missing": 19
+      },
+      "correct_rejected": 267,
+      "counts": {
+        "accepted": 2472,
+        "correct_kept": 2275,
+        "wrong_eligible_kept": 99,
+        "hidden_candidates": 28,
+        "hidden_emission_frames": 28,
+        "match_survival_frames": 2275,
+        "unknown_kept": 70,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "quality_top",
+      "arm": "S",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2542,
+        "masked_unknown": 236,
+        "missing_choice": 19,
+        "certain_hidden": 113,
+        "eligible_miss": 269
+      },
+      "score_states": {
+        "positive": 2588,
+        "negative": 572,
+        "missing": 19
+      },
+      "correct_rejected": 190,
+      "counts": {
+        "accepted": 2588,
+        "correct_kept": 2352,
+        "wrong_eligible_kept": 125,
+        "hidden_candidates": 30,
+        "hidden_emission_frames": 30,
+        "match_survival_frames": 2352,
+        "unknown_kept": 81,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "quality_top",
+      "arm": "J",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2542,
+        "masked_unknown": 236,
+        "missing_choice": 19,
+        "certain_hidden": 113,
+        "eligible_miss": 269
+      },
+      "score_states": {
+        "positive": 2649,
+        "negative": 511,
+        "missing": 19
+      },
+      "correct_rejected": 1,
+      "counts": {
+        "accepted": 2649,
+        "correct_kept": 2541,
+        "wrong_eligible_kept": 34,
+        "hidden_candidates": 8,
+        "hidden_emission_frames": 8,
+        "match_survival_frames": 2541,
+        "unknown_kept": 66,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nba_out_of_fold",
+      "policy": "quality_top",
+      "arm": "M",
+      "denominator": 3179,
+      "distinct_context_frames": 3179,
+      "original_categories": {
+        "eligible_match": 2542,
+        "masked_unknown": 236,
+        "missing_choice": 19,
+        "certain_hidden": 113,
+        "eligible_miss": 269
+      },
+      "score_states": {
+        "positive": 3094,
+        "missing": 19,
+        "negative": 66
+      },
+      "correct_rejected": 10,
+      "counts": {
+        "accepted": 3094,
+        "correct_kept": 2532,
+        "wrong_eligible_kept": 266,
+        "hidden_candidates": 80,
+        "hidden_emission_frames": 80,
+        "match_survival_frames": 2532,
+        "unknown_kept": 216,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "native",
+      "arm": "Q",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_match": 130,
+        "missing_choice": 19,
+        "masked_unknown": 1
+      },
+      "score_states": {
+        "negative": 72,
+        "positive": 59,
+        "missing": 19
+      },
+      "correct_rejected": 71,
+      "counts": {
+        "accepted": 59,
+        "correct_kept": 59,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 59,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "native",
+      "arm": "S",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_match": 130,
+        "missing_choice": 19,
+        "masked_unknown": 1
+      },
+      "score_states": {
+        "negative": 65,
+        "positive": 66,
+        "missing": 19
+      },
+      "correct_rejected": 64,
+      "counts": {
+        "accepted": 66,
+        "correct_kept": 66,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 66,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "native",
+      "arm": "J",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_match": 130,
+        "missing_choice": 19,
+        "masked_unknown": 1
+      },
+      "score_states": {
+        "positive": 130,
+        "missing": 19,
+        "negative": 1
+      },
+      "correct_rejected": 0,
+      "counts": {
+        "accepted": 130,
+        "correct_kept": 130,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 130,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "native",
+      "arm": "M",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_match": 130,
+        "missing_choice": 19,
+        "masked_unknown": 1
+      },
+      "score_states": {
+        "negative": 35,
+        "positive": 96,
+        "missing": 19
+      },
+      "correct_rejected": 34,
+      "counts": {
+        "accepted": 96,
+        "correct_kept": 96,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 96,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "quality_top",
+      "arm": "Q",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_miss": 15,
+        "eligible_match": 115,
+        "certain_hidden": 17,
+        "masked_unknown": 1,
+        "missing_choice": 2
+      },
+      "score_states": {
+        "negative": 82,
+        "positive": 66,
+        "missing": 2
+      },
+      "correct_rejected": 49,
+      "counts": {
+        "accepted": 66,
+        "correct_kept": 66,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 66,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "quality_top",
+      "arm": "S",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_miss": 15,
+        "eligible_match": 115,
+        "certain_hidden": 17,
+        "masked_unknown": 1,
+        "missing_choice": 2
+      },
+      "score_states": {
+        "negative": 79,
+        "positive": 69,
+        "missing": 2
+      },
+      "correct_rejected": 46,
+      "counts": {
+        "accepted": 69,
+        "correct_kept": 69,
+        "wrong_eligible_kept": 0,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 69,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "quality_top",
+      "arm": "J",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_miss": 15,
+        "eligible_match": 115,
+        "certain_hidden": 17,
+        "masked_unknown": 1,
+        "missing_choice": 2
+      },
+      "score_states": {
+        "negative": 31,
+        "positive": 117,
+        "missing": 2
+      },
+      "correct_rejected": 0,
+      "counts": {
+        "accepted": 117,
+        "correct_kept": 115,
+        "wrong_eligible_kept": 2,
+        "hidden_candidates": 0,
+        "hidden_emission_frames": 0,
+        "match_survival_frames": 115,
+        "unknown_kept": 0,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    },
+    {
+      "context": "nfhs_secondary",
+      "policy": "quality_top",
+      "arm": "M",
+      "denominator": 150,
+      "distinct_context_frames": 150,
+      "original_categories": {
+        "eligible_miss": 15,
+        "eligible_match": 115,
+        "certain_hidden": 17,
+        "masked_unknown": 1,
+        "missing_choice": 2
+      },
+      "score_states": {
+        "positive": 129,
+        "negative": 19,
+        "missing": 2
+      },
+      "correct_rejected": 17,
+      "counts": {
+        "accepted": 129,
+        "correct_kept": 98,
+        "wrong_eligible_kept": 15,
+        "hidden_candidates": 15,
+        "hidden_emission_frames": 15,
+        "match_survival_frames": 98,
+        "unknown_kept": 1,
+        "historical_kept": 0
+      },
+      "threshold": 0.0,
+      "acceptance_rule": "strictly_greater",
+      "unknown_not_counted_as_errors": true
+    }
+  ],
+  "decision": {
+    "fixed_reference_component_criterion_passed": false,
+    "NBA_checks": [
+      {
+        "game_id": "0022400866",
+        "policy": "native",
+        "comparator": "Q",
+        "metric": "correct_kept",
+        "J": 920,
+        "baseline": 808,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400866",
+        "policy": "native",
+        "comparator": "Q",
+        "metric": "wrong_eligible_kept",
+        "J": 0,
+        "baseline": 0,
+        "passed": true,
+        "strict_improvement": false
+      },
+      {
+        "game_id": "0022400866",
+        "policy": "native",
+        "comparator": "Q",
+        "metric": "hidden_emission_frames",
+        "J": 0,
+        "baseline": 0,
+        "passed": true,
+        "strict_improvement": false
+      },
+      {
+        "game_id": "0022400866",
+        "policy": "native",
+        "comparator": "S",
+        "metric": "correct_kept",
+        "J": 920,
+        "baseline": 855,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400866",
+        "policy": "native",
+        "comparator": "S",
+        "metric": "wrong_eligible_kept",
+        "J": 0,
+        "baseline": 0,
+        "passed": true,
+        "strict_improvement": false
+      },
+      {
+        "game_id": "0022400866",
+        "policy": "native",
+        "comparator": "S",
+        "metric": "hidden_emission_frames",
+        "J": 0,
+        "baseline": 0,
+        "passed": true,
+        "strict_improvement": false
+      },
+      {
+        "game_id": "0022400866",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "correct_kept",
+        "J": 899,
+        "baseline": 811,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400866",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "wrong_eligible_kept",
+        "J": 0,
+        "baseline": 0,
+        "passed": true,
+        "strict_improvement": false
+      },
+      {
+        "game_id": "0022400866",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "hidden_emission_frames",
+        "J": 0,
+        "baseline": 0,
+        "passed": true,
+        "strict_improvement": false
+      },
+      {
+        "game_id": "0022400866",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "correct_kept",
+        "J": 899,
+        "baseline": 856,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400866",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "wrong_eligible_kept",
+        "J": 0,
+        "baseline": 2,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400866",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "hidden_emission_frames",
+        "J": 0,
+        "baseline": 0,
+        "passed": true,
+        "strict_improvement": false
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "native",
+        "comparator": "Q",
+        "metric": "correct_kept",
+        "J": 831,
+        "baseline": 637,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "native",
+        "comparator": "Q",
+        "metric": "wrong_eligible_kept",
+        "J": 3,
+        "baseline": 0,
+        "passed": false,
+        "strict_improvement": false
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "native",
+        "comparator": "Q",
+        "metric": "hidden_emission_frames",
+        "J": 2,
+        "baseline": 0,
+        "passed": false,
+        "strict_improvement": false
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "native",
+        "comparator": "S",
+        "metric": "correct_kept",
+        "J": 831,
+        "baseline": 656,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "native",
+        "comparator": "S",
+        "metric": "wrong_eligible_kept",
+        "J": 3,
+        "baseline": 0,
+        "passed": false,
+        "strict_improvement": false
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "native",
+        "comparator": "S",
+        "metric": "hidden_emission_frames",
+        "J": 2,
+        "baseline": 0,
+        "passed": false,
+        "strict_improvement": false
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "correct_kept",
+        "J": 729,
+        "baseline": 636,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "wrong_eligible_kept",
+        "J": 9,
+        "baseline": 17,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "hidden_emission_frames",
+        "J": 1,
+        "baseline": 2,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "correct_kept",
+        "J": 729,
+        "baseline": 653,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "wrong_eligible_kept",
+        "J": 9,
+        "baseline": 27,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "hidden_emission_frames",
+        "J": 1,
+        "baseline": 2,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "native",
+        "comparator": "Q",
+        "metric": "correct_kept",
+        "J": 1055,
+        "baseline": 864,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "native",
+        "comparator": "Q",
+        "metric": "wrong_eligible_kept",
+        "J": 0,
+        "baseline": 0,
+        "passed": true,
+        "strict_improvement": false
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "native",
+        "comparator": "Q",
+        "metric": "hidden_emission_frames",
+        "J": 0,
+        "baseline": 0,
+        "passed": true,
+        "strict_improvement": false
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "native",
+        "comparator": "S",
+        "metric": "correct_kept",
+        "J": 1055,
+        "baseline": 892,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "native",
+        "comparator": "S",
+        "metric": "wrong_eligible_kept",
+        "J": 0,
+        "baseline": 0,
+        "passed": true,
+        "strict_improvement": false
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "native",
+        "comparator": "S",
+        "metric": "hidden_emission_frames",
+        "J": 0,
+        "baseline": 0,
+        "passed": true,
+        "strict_improvement": false
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "correct_kept",
+        "J": 913,
+        "baseline": 828,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "wrong_eligible_kept",
+        "J": 25,
+        "baseline": 82,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "hidden_emission_frames",
+        "J": 7,
+        "baseline": 26,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "correct_kept",
+        "J": 913,
+        "baseline": 843,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "wrong_eligible_kept",
+        "J": 25,
+        "baseline": 96,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "hidden_emission_frames",
+        "J": 7,
+        "baseline": 28,
+        "passed": true,
+        "strict_improvement": true
+      }
+    ],
+    "strict_improvements": [
+      {
+        "game_id": "0022400866",
+        "policy": "native",
+        "comparator": "Q",
+        "metric": "correct_kept",
+        "J": 920,
+        "baseline": 808,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400866",
+        "policy": "native",
+        "comparator": "S",
+        "metric": "correct_kept",
+        "J": 920,
+        "baseline": 855,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400866",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "correct_kept",
+        "J": 899,
+        "baseline": 811,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400866",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "correct_kept",
+        "J": 899,
+        "baseline": 856,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400866",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "wrong_eligible_kept",
+        "J": 0,
+        "baseline": 2,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "native",
+        "comparator": "Q",
+        "metric": "correct_kept",
+        "J": 831,
+        "baseline": 637,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "native",
+        "comparator": "S",
+        "metric": "correct_kept",
+        "J": 831,
+        "baseline": 656,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "correct_kept",
+        "J": 729,
+        "baseline": 636,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "wrong_eligible_kept",
+        "J": 9,
+        "baseline": 17,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "hidden_emission_frames",
+        "J": 1,
+        "baseline": 2,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "correct_kept",
+        "J": 729,
+        "baseline": 653,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "wrong_eligible_kept",
+        "J": 9,
+        "baseline": 27,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022400868",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "hidden_emission_frames",
+        "J": 1,
+        "baseline": 2,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "native",
+        "comparator": "Q",
+        "metric": "correct_kept",
+        "J": 1055,
+        "baseline": 864,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "native",
+        "comparator": "S",
+        "metric": "correct_kept",
+        "J": 1055,
+        "baseline": 892,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "correct_kept",
+        "J": 913,
+        "baseline": 828,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "wrong_eligible_kept",
+        "J": 25,
+        "baseline": 82,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "quality_top",
+        "comparator": "Q",
+        "metric": "hidden_emission_frames",
+        "J": 7,
+        "baseline": 26,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "correct_kept",
+        "J": 913,
+        "baseline": 843,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "wrong_eligible_kept",
+        "J": 25,
+        "baseline": 96,
+        "passed": true,
+        "strict_improvement": true
+      },
+      {
+        "game_id": "0022500829",
+        "policy": "quality_top",
+        "comparator": "S",
+        "metric": "hidden_emission_frames",
+        "J": 7,
+        "baseline": 28,
+        "passed": true,
+        "strict_improvement": true
+      }
+    ],
+    "HOU_protected_policy_losses": [
+      "quality_top|HOU_development|hou-vs-okc-0022400879_e01:198",
+      "quality_top|HOU_development|hou-vs-okc-0022400879_e01:199",
+      "quality_top|HOU_development|hou-vs-okc-0022400879_e01:200",
+      "quality_top|HOU_development|hou-vs-okc-0022400879_e01:201",
+      "quality_top|HOU_development|hou-vs-okc-0022400879_e05:21"
+    ],
+    "HOU_protected_stress_count": 745,
+    "HOU_protected_stress_losses": [
+      "HOU_development|hou-vs-okc-0022400879_e01:196:stress",
+      "HOU_development|hou-vs-okc-0022400879_e01:197:stress",
+      "HOU_development|hou-vs-okc-0022400879_e01:198:stress",
+      "HOU_development|hou-vs-okc-0022400879_e01:200:stress",
+      "HOU_development|hou-vs-okc-0022400879_e05:14:stress",
+      "HOU_development|hou-vs-okc-0022400879_e05:15:stress",
+      "HOU_development|hou-vs-okc-0022400879_e05:21:stress"
+    ],
+    "HOU_hidden_checks": [
+      {
+        "policy": "native",
+        "comparator": "Q",
+        "J": 18,
+        "baseline": 0,
+        "passed": false
+      },
+      {
+        "policy": "native",
+        "comparator": "S",
+        "J": 18,
+        "baseline": 0,
+        "passed": false
+      },
+      {
+        "policy": "quality_top",
+        "comparator": "Q",
+        "J": 14,
+        "baseline": 3,
+        "passed": false
+      },
+      {
+        "policy": "quality_top",
+        "comparator": "S",
+        "J": 14,
+        "baseline": 4,
+        "passed": false
+      }
+    ],
+    "curve_interpretation": "Requires descriptive per-source review; no automated curve pass",
+    "selected_threshold": null,
+    "model_adopted": false,
+    "tracker_complete": false,
+    "limits": [
+      "Fixed ranking ceiling unchanged",
+      "Exposed HOU veto is not independent validation",
+      "Base training size changes across nesting",
+      "No semantic crop-presence target"
+    ]
+  },
+  "counts": {
+    "candidate_scores": 31430,
+    "frame_registry": 4289,
+    "fixed_policy_rows": 8578,
+    "paired_policy_rows": 8578,
+    "source_choices": 6720,
+    "contrast_views": 6720,
+    "candidate_zero_tables": 5176,
+    "policy_zero_tables": 7904,
+    "candidate_curves": 239,
+    "policy_curves": 339,
+    "historical_rows": 60
+  },
+  "workload": {
+    "quality_fits": 3,
+    "epochs_each": 6,
+    "batch_size": 32,
+    "optimizer_updates": 3300,
+    "training_presentations": 105144,
+    "cross_game_score_presentations": 37626,
+    "cross_game_score_forwards_game_batched": 1178,
+    "parity_forwards": 3,
+    "parity_presentations": 96,
+    "total_neural_forwards": 4481,
+    "total_neural_presentations": 142866,
+    "CPU_gate_fits": 8
+  },
+  "neural_inclusive_seconds": 448.90600000000086,
+  "CPU_analysis_seconds": 28.29700000000048,
+  "maximum_GPU_temperature_C": 63.0,
+  "focused_tests": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/implementation_preparation/focused_tests_final.json",
+    "bytes": 1761,
+    "sha256": "7a8da8b5fbdfbb3b5aa29f946e909ca65ac18dff4456cc3ed98554cdd6b3c509"
+  },
+  "readiness_correction": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/implementation_review/readiness_correction_review.json",
+    "bytes": 6583,
+    "sha256": "488a8ef1be929531e310ea1ab750f9b0ca7faff173fe0df9ee93485bceb226e0"
+  },
+  "old_work_preservation_baseline": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/implementation_preparation/baseline113_and_direction.json",
+    "bytes": 22198,
+    "sha256": "f9316ca7354c981891f8accffe0c7ac7bbde26b96138d440f9c81e3edfdc7f72"
+  },
+  "preservation_receipt_path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/implementation_preparation/documentation_update/receipt.json",
+  "next_scope": "Design a controlled follow-up addressing incorrect/hidden native points and protected recovery loss while retaining demonstrated separation; no new fit, feature, cutoff, label or selector is authorized by this result record",
+  "chosen_threshold": null,
+  "model_adopted": false,
+  "selector_adopted": false,
+  "tracker_complete": false,
+  "new_labels": 0,
+  "protected_access": false,
+  "settings_changes": false,
+  "completed_old_experiments_rerun": false,
+  "automatic_neural_retry": false,
+  "history": "Reused the completed cross-session reconciliation, Session17-19 handoffs, prior research and accepted CPU-study attempt003; no exhaustive fresh reread claimed"
+}

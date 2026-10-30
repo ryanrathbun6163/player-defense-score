@@ -31,3 +31,6 @@ Thumbs.db
 
 # Local diagnostic and correction bundles
 /*.zip
+
+# Personal planning retained locally; technical findings are published separately
+/docs/ball_tracking_program_review_2026-10-30.md

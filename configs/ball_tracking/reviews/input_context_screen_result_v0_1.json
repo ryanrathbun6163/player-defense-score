@@ -1,0 +1,176 @@
+{
+  "schema": "ball_tracking_input_context_screen_result/v0.1",
+  "status": "completed_information_screen_limited_positive_not_model_performance",
+  "utc": "2026-10-30T17:21:19.174864+00:00",
+  "authorization": "Ryan: Ok chat move forward; approved bounded CPU screen described in preceding recommendation.",
+  "population": {
+    "candidate_points": 100,
+    "distinct_frames": 69,
+    "fresh_points": 82,
+    "fresh_frames": 53,
+    "fresh_failure_frames": 24,
+    "fresh_source_time_controls": 30,
+    "overlap_frames": 1,
+    "legacy_points": 18,
+    "legacy_frames": 16,
+    "fresh_missing_choice_slots": 10,
+    "legacy_missing_native_slots": 10,
+    "fresh_matching": 52,
+    "fresh_geometric_misses": 21,
+    "fresh_certain_hidden": 6,
+    "fresh_unknown": 3,
+    "legacy_matching": 12,
+    "legacy_wrong": 2,
+    "legacy_hidden_unscored": 1,
+    "legacy_AI_only_SAC": 3
+  },
+  "comparison": {
+    "local": "Exact original64 -> bicubic256 -> center224, preserved unchanged",
+    "treatment": "Same local plus fixed192-source-pixel current-frame candidate-centered context -> bicubic224",
+    "reference_centered_crops": false,
+    "reviewers": 2,
+    "phases": 2,
+    "ratings": 400,
+    "qualitative_AI_only": true
+  },
+  "findings": {
+    "strict_qualifying_candidate_ids": [
+      "C006",
+      "C016",
+      "C052",
+      "C065"
+    ],
+    "strict_qualifying_frames": [
+      "bkn_det_0022400861_c122:7",
+      "bkn_det_0022400861_c122:71",
+      "bkn_det_0022400861_c122:72"
+    ],
+    "strict_qualifying_frozen_intervals": [
+      "bkn_det_0022400861_c122:7-9",
+      "bkn_det_0022400861_c122:71-72"
+    ],
+    "qualifying_clips": 1,
+    "qualifying_games": 1,
+    "both_local_ball_supported_and_retained": 46,
+    "categorical_previously_supported_match_losses": 0,
+    "local_identity_agreement": 93,
+    "paired_identity_agreement": 97,
+    "paired_both_unresolved": 11,
+    "paired_identity_disagreements": 3,
+    "confidence_decrease_ids": [
+      "C016",
+      "C085",
+      "C094"
+    ],
+    "supporting_control_excluded_from_positive_go": "C014",
+    "HOU_still_unresolved": [
+      "C085",
+      "C094"
+    ]
+  },
+  "decision": "limited_positive_information_screen_supports_designing_one_bounded_representation_pilot",
+  "scientific_limits": [
+    "Four candidate points are only three frames; two points on frame72 are not independent gains.",
+    "Two frozen intervals lie in one two-second clip, not independent plays or cross-game validation.",
+    "C014 is a supporting source-time control, not a positive-go failure episode.",
+    "HOU C085/C094 remain unresolved; confidence reversal is not recovery and not positive feature-choice evidence.",
+    "C045/C081 remain blurred; C010 already clear locally; C067 geometric miss is not a nonball label.",
+    "Same-model-family sequential visual judgments are subjective/correlated, not human acceptance or trained-model accuracy."
+  ],
+  "next_step": "Design one close-up-plus-context representation pilot with current model control, permitted fitting sources, unchanged local input, exact-success and hidden/recovery vetoes. Architecture/recipe/budget not frozen or run.",
+  "roles": {
+    "BKN": "diagnostic_development_nonfitting",
+    "HOU": "descriptive_regression_veto_only_nonfitting_no_positive_feature_choice",
+    "SAC_legacy": "unaccepted_AI_semantics_nondecision",
+    "DET": "not_opened"
+  },
+  "workload": {
+    "detector_Q_J_forwards": 0,
+    "optimizer_updates": 0,
+    "new_labels": 0,
+    "protected_access": 0,
+    "GPU_settings_changes": 0
+  },
+  "validation": {
+    "focused_unittest_passes": 2,
+    "renderer_audit_checks": 3243,
+    "analysis_audit_checks": 5464,
+    "initial_pytest_command": "No tests ran: pytest unavailable; project unittest runner then passed both checks."
+  },
+  "history_reuse": "Reused full-history/research reconciliation and prior context-screen recommendation; targeted original code/reports/role rules and actual saved inputs freshly inspected. No fresh full-chat reread claimed.",
+  "research": [
+    {
+      "url": "https://arxiv.org/html/1803.06799v3",
+      "read": "Refreshed relevant context/receptive-field and hard-false-positive sections; not validation of this192px treatment."
+    }
+  ],
+  "unchanged_benchmarks": {
+    "broader_Qtop_J": {
+      "correct": 2541,
+      "eligible": 2811
+    },
+    "separate_fresh_native": {
+      "correct": 298,
+      "eligible": 310
+    }
+  },
+  "report": {
+    "path": "docs/ball_tracking_input_context_screen_results.md",
+    "bytes": 10200,
+    "sha256": "0604b0ccdf20883d734df1a1deedc7b681f6ef1cd42067b1a4f940c515452fea"
+  },
+  "bindings": [
+    {
+      "path": "data/outputs/ball_tracking/input_context_screen_v0_1/frozen_manifest.json",
+      "bytes": 279984,
+      "sha256": "5878a1fff028054e2a7de357889e3c0608a24a6cb8dd4c329bb7bd184a8f412c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/input_context_screen_v0_1/render_receipt.json",
+      "bytes": 161966,
+      "sha256": "151c58fae5b4aa83edf2ea5080b46a240b991d83ca4fd20edb3128c2c2757aa4"
+    },
+    {
+      "path": "data/outputs/ball_tracking/input_context_screen_v0_1/analysis/summary.json",
+      "bytes": 5518,
+      "sha256": "f909d2c4efc79dcaafa5b0496d378e11e3e2c0263c2b057461552d1d02e991ba"
+    },
+    {
+      "path": "data/outputs/ball_tracking/input_context_screen_v0_1/analysis/joined_reviews.json",
+      "bytes": 537826,
+      "sha256": "53a43e4213af0f0711c41994508c7dbfb1369e761b2389d3fafbe1572f2f66ec"
+    },
+    {
+      "path": "data/outputs/ball_tracking/input_context_screen_v0_1/review_audit/role_clarification.json",
+      "bytes": 50652,
+      "sha256": "aadbc897d5db23c80fe5e46cf0d9255b8e91debd885d103a566389302afaadd8"
+    },
+    {
+      "path": "data/outputs/ball_tracking/input_context_screen_v0_1/review_audit/independent_render_audit.json",
+      "bytes": 3009,
+      "sha256": "40b7865e85555e5ba3942e7f21f2582dd830a8871ebc93b1615680b76dba9da0"
+    },
+    {
+      "path": "data/outputs/ball_tracking/input_context_screen_v0_1/review_audit/independent_analysis_review.json",
+      "bytes": 6639,
+      "sha256": "2622d8e1ff9a08575941eec8d956e3093e72e04846521539700de77444278847"
+    },
+    {
+      "path": "data/outputs/ball_tracking/input_context_screen_v0_1/review_audit/primary_reconciliation.json",
+      "bytes": 1707,
+      "sha256": "af8c6feade3d83d0de737eaad18a15f21447ba3e4e5d27a104ed81ad8048447b"
+    },
+    {
+      "path": "src/ball_tracking/input_context_screen.py",
+      "bytes": 11984,
+      "sha256": "527de3cf9f0ebbbb601c89a44e72a7353e64d30f20e93418ba1c9e1b5de60274"
+    },
+    {
+      "path": "tests/test_input_context_screen.py",
+      "bytes": 1755,
+      "sha256": "c388c1a05b0cc981fa4d75461ab47c26c88643eed85d8fa2fe170ca358fe53c9"
+    }
+  ],
+  "preservation_receipt": "data/outputs/ball_tracking/input_context_screen_v0_1/documentation_update/receipt.json",
+  "viewer": "data/outputs/ball_tracking/input_context_screen_v0_1/index.html"
+}

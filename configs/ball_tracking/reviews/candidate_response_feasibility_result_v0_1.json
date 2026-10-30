@@ -1,0 +1,2549 @@
+{
+  "schema_version": "candidate_response_feasibility_result/v0.1",
+  "status": "completed_CPU_diagnostic_no_method_adopted",
+  "created_at_utc": "2026-10-27T00:46:18.693407+00:00",
+  "branch": "codex/ball-detector-baseline",
+  "head": "8c040fca385dd8fffa0d7a13c45c53e79950bae1",
+  "index_empty": true,
+  "research_control": {
+    "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/cosine/fit_v0_1/checkpoints/epoch_009.pth",
+    "bytes": 6084071,
+    "sha256": "f4b721662ec3d8b546563feffcf5ce0d6319ed8ddc83f398830a0aac5d29c7b9"
+  },
+  "artifacts": [
+    {
+      "path": "configs/ball_tracking/proposals/candidate_response_feasibility_v0_1.json",
+      "bytes": 10610,
+      "sha256": "2707d6b48184237791468ae84d352b97821626299f5b43f179f29c9b3eb4f946"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/study_v0_1/prepared.json",
+      "bytes": 12709,
+      "sha256": "de734c38b59c72e7c5f931070840dc873e2136d6f2f5ed1457c825d45035d650"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/study_v0_1/prospective_freeze.json",
+      "bytes": 4451,
+      "sha256": "e4a26989f2c6e3e0f9f334cc30d6cff1ea4a1017c2ce93823ec63291b41eb8b1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/study_v0_1/extraction_complete.json",
+      "bytes": 14330,
+      "sha256": "d2f764fba9119bfcdc9337dd3c5fab9af82413aa60e390e753ed72c259fe65e2"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/study_v0_1/analysis_v0_1/completed.json",
+      "bytes": 16030204,
+      "sha256": "e5e51a064dffcfcc3692e54a8d9fe3b9da8dffd6de5564565a50fb65560b7035"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/study_v0_1/spatial_coverage_v0_1/summary.json",
+      "bytes": 1081021,
+      "sha256": "c32e121e04501cd72d9f38e94f568d54431d13f2b180646ae5172fceea40a286"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/study_v0_1/independent_feature_math_audit.json",
+      "bytes": 62259,
+      "sha256": "e8d620d5d61ffbb81fa57abf5ef6c6ae03e6b62f704a14f3cff7654c83c45861"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/study_v0_1/independent_spatial_summary_audit.json",
+      "bytes": 2103,
+      "sha256": "b7750c4160d35a514098c3f9e4475032f84aaa437b8007db2b0fcdfb699c6163"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/design_review/saved_hou_objective_accounting.json",
+      "bytes": 7268764,
+      "sha256": "7145c65d26dacae50fe79edc73973cfced8431799e6bf54c2fa1cca854ebcf40"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/design_review/independent_design_review.json",
+      "bytes": 3444,
+      "sha256": "cc1903d5eb1c5a04bf88a158fff9b7ecccb8448819e1cfdf388aa1083ec48d6c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/design_review/completed_response_independent_review.json",
+      "bytes": 11193,
+      "sha256": "3f8734f912e5f3d3af7780ecbdb2be09910ef93486f1a25c832bda698a15af14"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/history/saved_dino_diagnosis_v02.json",
+      "bytes": 17038,
+      "sha256": "79bb17f8c63f6e6d92f3502027fbdcd1c44bc9e81597bf098ab25769f67d70de"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/history/sealed_findings_addendum.txt",
+      "bytes": 6952,
+      "sha256": "4b25015144d32b68e091945ad3c99dcddbc8952e8cbee1c6236f2630c855ab59"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/inventory/saved_availability.json",
+      "bytes": 33912,
+      "sha256": "1bc21a73e5a9476d7f894e0ffd085eedf5d84dc089be4ff1e37555c000ad8445"
+    }
+  ],
+  "frames": 960,
+  "main_candidates": 10778,
+  "stress_rows": 960,
+  "reference_categories": {
+    "eligible": 882,
+    "indeterminate": 14,
+    "uncertain_hidden": 8,
+    "visible_unlocalizable": 22,
+    "certain_hidden": 34
+  },
+  "features_pooled_descriptive_only": {
+    "peak": {
+      "scope": "all_in_source_main_candidates",
+      "rank_counts_among_available_features": {
+        "strict_first": 837,
+        "beaten": 39,
+        "no_matching_candidate": 6
+      },
+      "complete_feature_rank_frames": 865,
+      "incomplete_feature_rank_frames": 17,
+      "unknown_features_by_reference_category": {
+        "eligible": 22,
+        "certain_hidden": 2,
+        "visible_unlocalizable": 1
+      },
+      "paired_rank_frames_vs_peak": {
+        "same_strictly_higher_misses": 859,
+        "not_comparable_incomplete_features": 17,
+        "not_comparable_no_matching_candidate": 6
+      },
+      "paired_native_only_rank_frames_vs_native_mass": {
+        "same_strictly_higher_misses": 845,
+        "not_comparable_no_matching_candidate": 25,
+        "more_strictly_higher_misses": 11,
+        "strict_first_loss_vs_baseline": 11,
+        "fewer_strictly_higher_misses": 1
+      },
+      "reject_all_observed_hidden_bound": {
+        "cutoff": 0.8614318538103312,
+        "comparison": ">",
+        "available_features_only": true,
+        "matching_candidate_coverage": {
+          "eligible_frames": 882,
+          "geometric_candidate_available": 876,
+          "matching_candidate_survives": 701,
+          "no_known_survivor_with_unknown_matching_feature": 0
+        },
+        "original_native_correct_points": {
+          "retained": 701,
+          "rejected": 141
+        },
+        "certain_hidden": {
+          "reference_frames": 34,
+          "candidates_unknown": 2,
+          "candidates_rejected": 408,
+          "frames_with_known_surviving_candidate": 0,
+          "frames_with_unknown_candidate_feature": 2
+        },
+        "original_expanded_weak_stress": {
+          "correct_gain_from_native_missing:rejected": 21,
+          "prior_e01_ten_gain_cohort:rejected": 10,
+          "reference_certain_hidden:rejected": 31,
+          "prior_e05_six_below_001_gain_cohort:rejected": 6
+        },
+        "complete_visibility_claim": false,
+        "new_tracking_outputs": 0
+      },
+      "retain_all_observed_native_correct_bound": {
+        "cutoff": 0.3140781216519829,
+        "comparison": ">=",
+        "available_features_only": true,
+        "matching_candidate_coverage": {
+          "eligible_frames": 882,
+          "geometric_candidate_available": 876,
+          "matching_candidate_survives": 857,
+          "no_known_survivor_with_unknown_matching_feature": 0
+        },
+        "original_native_correct_points": {
+          "retained": 842
+        },
+        "certain_hidden": {
+          "reference_frames": 34,
+          "candidates_unknown": 2,
+          "candidates_rejected": 385,
+          "frames_with_known_surviving_candidate": 19,
+          "frames_with_unknown_candidate_feature": 2,
+          "candidates_retained": 23
+        },
+        "original_expanded_weak_stress": {
+          "correct_gain_from_native_missing:rejected": 21,
+          "prior_e01_ten_gain_cohort:rejected": 10,
+          "reference_certain_hidden:retained": 19,
+          "reference_certain_hidden:rejected": 12,
+          "prior_e05_six_below_001_gain_cohort:rejected": 6
+        },
+        "complete_visibility_claim": false,
+        "new_tracking_outputs": 0
+      }
+    },
+    "core_ring_contrast": {
+      "scope": "all_in_source_main_candidates",
+      "rank_counts_among_available_features": {
+        "strict_first": 294,
+        "beaten": 582,
+        "no_matching_candidate": 6
+      },
+      "complete_feature_rank_frames": 865,
+      "incomplete_feature_rank_frames": 17,
+      "unknown_features_by_reference_category": {
+        "eligible": 22,
+        "certain_hidden": 2,
+        "visible_unlocalizable": 1
+      },
+      "paired_rank_frames_vs_peak": {
+        "same_strictly_higher_misses": 294,
+        "more_strictly_higher_misses": 560,
+        "strict_first_loss_vs_baseline": 533,
+        "fewer_strictly_higher_misses": 5,
+        "strict_first_gain_over_baseline": 2,
+        "not_comparable_incomplete_features": 17,
+        "not_comparable_no_matching_candidate": 6
+      },
+      "paired_native_only_rank_frames_vs_native_mass": {
+        "same_strictly_higher_misses": 740,
+        "not_comparable_no_matching_candidate": 25,
+        "more_strictly_higher_misses": 116,
+        "strict_first_loss_vs_baseline": 114,
+        "fewer_strictly_higher_misses": 1
+      },
+      "reject_all_observed_hidden_bound": {
+        "cutoff": 0.6531302946617785,
+        "comparison": ">",
+        "available_features_only": true,
+        "matching_candidate_coverage": {
+          "eligible_frames": 882,
+          "geometric_candidate_available": 876,
+          "matching_candidate_survives": 0,
+          "no_known_survivor_with_unknown_matching_feature": 0
+        },
+        "original_native_correct_points": {
+          "rejected": 842
+        },
+        "certain_hidden": {
+          "reference_frames": 34,
+          "candidates_unknown": 2,
+          "candidates_rejected": 408,
+          "frames_with_known_surviving_candidate": 0,
+          "frames_with_unknown_candidate_feature": 2
+        },
+        "original_expanded_weak_stress": {
+          "correct_gain_from_native_missing:rejected": 21,
+          "prior_e01_ten_gain_cohort:rejected": 10,
+          "reference_certain_hidden:rejected": 31,
+          "prior_e05_six_below_001_gain_cohort:rejected": 6
+        },
+        "complete_visibility_claim": false,
+        "new_tracking_outputs": 0
+      },
+      "retain_all_observed_native_correct_bound": {
+        "cutoff": 0.2721531809373918,
+        "comparison": ">=",
+        "available_features_only": true,
+        "matching_candidate_coverage": {
+          "eligible_frames": 882,
+          "geometric_candidate_available": 876,
+          "matching_candidate_survives": 874,
+          "no_known_survivor_with_unknown_matching_feature": 0
+        },
+        "original_native_correct_points": {
+          "retained": 842
+        },
+        "certain_hidden": {
+          "reference_frames": 34,
+          "candidates_unknown": 2,
+          "candidates_retained": 212,
+          "candidates_rejected": 196,
+          "frames_with_known_surviving_candidate": 34,
+          "frames_with_unknown_candidate_feature": 2
+        },
+        "original_expanded_weak_stress": {
+          "correct_gain_from_native_missing:retained": 16,
+          "prior_e01_ten_gain_cohort:retained": 10,
+          "reference_certain_hidden:retained": 19,
+          "reference_certain_hidden:rejected": 12,
+          "prior_e05_six_below_001_gain_cohort:retained": 2,
+          "correct_gain_from_native_missing:rejected": 5,
+          "prior_e05_six_below_001_gain_cohort:rejected": 4
+        },
+        "complete_visibility_claim": false,
+        "new_tracking_outputs": 0
+      }
+    },
+    "entropy_concentration": {
+      "scope": "all_in_source_main_candidates",
+      "rank_counts_among_available_features": {
+        "beaten": 796,
+        "strict_first": 80,
+        "no_matching_candidate": 6
+      },
+      "complete_feature_rank_frames": 865,
+      "incomplete_feature_rank_frames": 17,
+      "unknown_features_by_reference_category": {
+        "eligible": 22,
+        "certain_hidden": 2,
+        "visible_unlocalizable": 1
+      },
+      "paired_rank_frames_vs_peak": {
+        "more_strictly_higher_misses": 779,
+        "strict_first_loss_vs_baseline": 748,
+        "same_strictly_higher_misses": 73,
+        "fewer_strictly_higher_misses": 7,
+        "strict_first_gain_over_baseline": 6,
+        "not_comparable_incomplete_features": 17,
+        "not_comparable_no_matching_candidate": 6
+      },
+      "paired_native_only_rank_frames_vs_native_mass": {
+        "same_strictly_higher_misses": 733,
+        "not_comparable_no_matching_candidate": 25,
+        "more_strictly_higher_misses": 123,
+        "strict_first_loss_vs_baseline": 121,
+        "fewer_strictly_higher_misses": 1
+      },
+      "reject_all_observed_hidden_bound": {
+        "cutoff": 0.12156442129184208,
+        "comparison": ">",
+        "available_features_only": true,
+        "matching_candidate_coverage": {
+          "eligible_frames": 882,
+          "geometric_candidate_available": 876,
+          "matching_candidate_survives": 0,
+          "no_known_survivor_with_unknown_matching_feature": 0
+        },
+        "original_native_correct_points": {
+          "rejected": 842
+        },
+        "certain_hidden": {
+          "reference_frames": 34,
+          "candidates_unknown": 2,
+          "candidates_rejected": 408,
+          "frames_with_known_surviving_candidate": 0,
+          "frames_with_unknown_candidate_feature": 2
+        },
+        "original_expanded_weak_stress": {
+          "correct_gain_from_native_missing:rejected": 21,
+          "prior_e01_ten_gain_cohort:rejected": 10,
+          "reference_certain_hidden:rejected": 31,
+          "prior_e05_six_below_001_gain_cohort:rejected": 6
+        },
+        "complete_visibility_claim": false,
+        "new_tracking_outputs": 0
+      },
+      "retain_all_observed_native_correct_bound": {
+        "cutoff": 0.012491276681714125,
+        "comparison": ">=",
+        "available_features_only": true,
+        "matching_candidate_coverage": {
+          "eligible_frames": 882,
+          "geometric_candidate_available": 876,
+          "matching_candidate_survives": 876,
+          "no_known_survivor_with_unknown_matching_feature": 0
+        },
+        "original_native_correct_points": {
+          "retained": 842
+        },
+        "certain_hidden": {
+          "reference_frames": 34,
+          "candidates_unknown": 2,
+          "candidates_retained": 380,
+          "frames_with_known_surviving_candidate": 34,
+          "frames_with_unknown_candidate_feature": 2,
+          "candidates_rejected": 28
+        },
+        "original_expanded_weak_stress": {
+          "correct_gain_from_native_missing:retained": 21,
+          "prior_e01_ten_gain_cohort:retained": 10,
+          "reference_certain_hidden:retained": 28,
+          "prior_e05_six_below_001_gain_cohort:retained": 6,
+          "reference_certain_hidden:rejected": 3
+        },
+        "complete_visibility_claim": false,
+        "new_tracking_outputs": 0
+      }
+    },
+    "isotropy": {
+      "scope": "all_in_source_main_candidates",
+      "rank_counts_among_available_features": {
+        "strict_first": 317,
+        "beaten": 559,
+        "no_matching_candidate": 6
+      },
+      "complete_feature_rank_frames": 865,
+      "incomplete_feature_rank_frames": 17,
+      "unknown_features_by_reference_category": {
+        "eligible": 22,
+        "certain_hidden": 2,
+        "visible_unlocalizable": 1
+      },
+      "paired_rank_frames_vs_peak": {
+        "same_strictly_higher_misses": 311,
+        "more_strictly_higher_misses": 542,
+        "strict_first_loss_vs_baseline": 511,
+        "not_comparable_incomplete_features": 17,
+        "fewer_strictly_higher_misses": 6,
+        "strict_first_gain_over_baseline": 3,
+        "not_comparable_no_matching_candidate": 6
+      },
+      "paired_native_only_rank_frames_vs_native_mass": {
+        "same_strictly_higher_misses": 771,
+        "not_comparable_no_matching_candidate": 25,
+        "more_strictly_higher_misses": 81,
+        "strict_first_loss_vs_baseline": 80,
+        "fewer_strictly_higher_misses": 5,
+        "strict_first_gain_over_baseline": 3
+      },
+      "reject_all_observed_hidden_bound": {
+        "cutoff": 0.9877826759074243,
+        "comparison": ">",
+        "available_features_only": true,
+        "matching_candidate_coverage": {
+          "eligible_frames": 882,
+          "geometric_candidate_available": 876,
+          "matching_candidate_survives": 13,
+          "no_known_survivor_with_unknown_matching_feature": 0
+        },
+        "original_native_correct_points": {
+          "rejected": 830,
+          "retained": 12
+        },
+        "certain_hidden": {
+          "reference_frames": 34,
+          "candidates_unknown": 2,
+          "candidates_rejected": 408,
+          "frames_with_known_surviving_candidate": 0,
+          "frames_with_unknown_candidate_feature": 2
+        },
+        "original_expanded_weak_stress": {
+          "correct_gain_from_native_missing:rejected": 21,
+          "prior_e01_ten_gain_cohort:rejected": 10,
+          "reference_certain_hidden:rejected": 31,
+          "prior_e05_six_below_001_gain_cohort:rejected": 6
+        },
+        "complete_visibility_claim": false,
+        "new_tracking_outputs": 0
+      },
+      "retain_all_observed_native_correct_bound": {
+        "cutoff": 0.6734927720627573,
+        "comparison": ">=",
+        "available_features_only": true,
+        "matching_candidate_coverage": {
+          "eligible_frames": 882,
+          "geometric_candidate_available": 876,
+          "matching_candidate_survives": 874,
+          "no_known_survivor_with_unknown_matching_feature": 0
+        },
+        "original_native_correct_points": {
+          "retained": 842
+        },
+        "certain_hidden": {
+          "reference_frames": 34,
+          "candidates_unknown": 2,
+          "candidates_retained": 339,
+          "candidates_rejected": 69,
+          "frames_with_known_surviving_candidate": 34,
+          "frames_with_unknown_candidate_feature": 2
+        },
+        "original_expanded_weak_stress": {
+          "correct_gain_from_native_missing:retained": 17,
+          "prior_e01_ten_gain_cohort:retained": 8,
+          "correct_gain_from_native_missing:rejected": 4,
+          "prior_e01_ten_gain_cohort:rejected": 2,
+          "reference_certain_hidden:retained": 28,
+          "prior_e05_six_below_001_gain_cohort:retained": 5,
+          "prior_e05_six_below_001_gain_cohort:rejected": 1,
+          "reference_certain_hidden:rejected": 3
+        },
+        "complete_visibility_claim": false,
+        "new_tracking_outputs": 0
+      }
+    },
+    "negative_centroid_distance": {
+      "scope": "all_in_source_main_candidates",
+      "rank_counts_among_available_features": {
+        "strict_first": 625,
+        "beaten": 251,
+        "no_matching_candidate": 6
+      },
+      "complete_feature_rank_frames": 865,
+      "incomplete_feature_rank_frames": 17,
+      "unknown_features_by_reference_category": {
+        "eligible": 22,
+        "certain_hidden": 2,
+        "visible_unlocalizable": 1
+      },
+      "paired_rank_frames_vs_peak": {
+        "same_strictly_higher_misses": 608,
+        "more_strictly_higher_misses": 236,
+        "strict_first_loss_vs_baseline": 220,
+        "fewer_strictly_higher_misses": 15,
+        "strict_first_gain_over_baseline": 13,
+        "not_comparable_incomplete_features": 17,
+        "not_comparable_no_matching_candidate": 6
+      },
+      "paired_native_only_rank_frames_vs_native_mass": {
+        "same_strictly_higher_misses": 803,
+        "not_comparable_no_matching_candidate": 25,
+        "fewer_strictly_higher_misses": 7,
+        "strict_first_gain_over_baseline": 7,
+        "more_strictly_higher_misses": 47,
+        "strict_first_loss_vs_baseline": 46
+      },
+      "reject_all_observed_hidden_bound": {
+        "cutoff": -0.028906286556720374,
+        "comparison": ">",
+        "available_features_only": true,
+        "matching_candidate_coverage": {
+          "eligible_frames": 882,
+          "geometric_candidate_available": 876,
+          "matching_candidate_survives": 62,
+          "no_known_survivor_with_unknown_matching_feature": 0
+        },
+        "original_native_correct_points": {
+          "rejected": 780,
+          "retained": 62
+        },
+        "certain_hidden": {
+          "reference_frames": 34,
+          "candidates_unknown": 2,
+          "candidates_rejected": 408,
+          "frames_with_known_surviving_candidate": 0,
+          "frames_with_unknown_candidate_feature": 2
+        },
+        "original_expanded_weak_stress": {
+          "correct_gain_from_native_missing:rejected": 21,
+          "prior_e01_ten_gain_cohort:rejected": 10,
+          "reference_certain_hidden:rejected": 31,
+          "prior_e05_six_below_001_gain_cohort:rejected": 6
+        },
+        "complete_visibility_claim": false,
+        "new_tracking_outputs": 0
+      },
+      "retain_all_observed_native_correct_bound": {
+        "cutoff": -0.7539325327004752,
+        "comparison": ">=",
+        "available_features_only": true,
+        "matching_candidate_coverage": {
+          "eligible_frames": 882,
+          "geometric_candidate_available": 876,
+          "matching_candidate_survives": 869,
+          "no_known_survivor_with_unknown_matching_feature": 0
+        },
+        "original_native_correct_points": {
+          "retained": 842
+        },
+        "certain_hidden": {
+          "reference_frames": 34,
+          "candidates_unknown": 2,
+          "candidates_retained": 174,
+          "candidates_rejected": 234,
+          "frames_with_known_surviving_candidate": 34,
+          "frames_with_unknown_candidate_feature": 2
+        },
+        "original_expanded_weak_stress": {
+          "correct_gain_from_native_missing:rejected": 15,
+          "prior_e01_ten_gain_cohort:rejected": 6,
+          "correct_gain_from_native_missing:retained": 6,
+          "prior_e01_ten_gain_cohort:retained": 4,
+          "reference_certain_hidden:retained": 19,
+          "reference_certain_hidden:rejected": 12,
+          "prior_e05_six_below_001_gain_cohort:rejected": 6
+        },
+        "complete_visibility_claim": false,
+        "new_tracking_outputs": 0
+      }
+    },
+    "negative_spread": {
+      "scope": "all_in_source_main_candidates",
+      "rank_counts_among_available_features": {
+        "strict_first": 281,
+        "beaten": 595,
+        "no_matching_candidate": 6
+      },
+      "complete_feature_rank_frames": 865,
+      "incomplete_feature_rank_frames": 17,
+      "unknown_features_by_reference_category": {
+        "eligible": 22,
+        "certain_hidden": 2,
+        "visible_unlocalizable": 1
+      },
+      "paired_rank_frames_vs_peak": {
+        "same_strictly_higher_misses": 276,
+        "more_strictly_higher_misses": 578,
+        "strict_first_loss_vs_baseline": 548,
+        "fewer_strictly_higher_misses": 5,
+        "strict_first_gain_over_baseline": 4,
+        "not_comparable_incomplete_features": 17,
+        "not_comparable_no_matching_candidate": 6
+      },
+      "paired_native_only_rank_frames_vs_native_mass": {
+        "same_strictly_higher_misses": 741,
+        "not_comparable_no_matching_candidate": 25,
+        "more_strictly_higher_misses": 116,
+        "strict_first_loss_vs_baseline": 114
+      },
+      "reject_all_observed_hidden_bound": {
+        "cutoff": -4.7343757740391,
+        "comparison": ">",
+        "available_features_only": true,
+        "matching_candidate_coverage": {
+          "eligible_frames": 882,
+          "geometric_candidate_available": 876,
+          "matching_candidate_survives": 0,
+          "no_known_survivor_with_unknown_matching_feature": 0
+        },
+        "original_native_correct_points": {
+          "rejected": 842
+        },
+        "certain_hidden": {
+          "reference_frames": 34,
+          "candidates_unknown": 2,
+          "candidates_rejected": 408,
+          "frames_with_known_surviving_candidate": 0,
+          "frames_with_unknown_candidate_feature": 2
+        },
+        "original_expanded_weak_stress": {
+          "correct_gain_from_native_missing:rejected": 21,
+          "prior_e01_ten_gain_cohort:rejected": 10,
+          "reference_certain_hidden:rejected": 31,
+          "prior_e05_six_below_001_gain_cohort:rejected": 6
+        },
+        "complete_visibility_claim": false,
+        "new_tracking_outputs": 0
+      },
+      "retain_all_observed_native_correct_bound": {
+        "cutoff": -6.3773805567820085,
+        "comparison": ">=",
+        "available_features_only": true,
+        "matching_candidate_coverage": {
+          "eligible_frames": 882,
+          "geometric_candidate_available": 876,
+          "matching_candidate_survives": 875,
+          "no_known_survivor_with_unknown_matching_feature": 0
+        },
+        "original_native_correct_points": {
+          "retained": 842
+        },
+        "certain_hidden": {
+          "reference_frames": 34,
+          "candidates_unknown": 2,
+          "candidates_retained": 268,
+          "candidates_rejected": 140,
+          "frames_with_known_surviving_candidate": 34,
+          "frames_with_unknown_candidate_feature": 2
+        },
+        "original_expanded_weak_stress": {
+          "correct_gain_from_native_missing:retained": 18,
+          "prior_e01_ten_gain_cohort:retained": 10,
+          "reference_certain_hidden:retained": 22,
+          "reference_certain_hidden:rejected": 9,
+          "prior_e05_six_below_001_gain_cohort:retained": 4,
+          "correct_gain_from_native_missing:rejected": 3,
+          "prior_e05_six_below_001_gain_cohort:rejected": 2
+        },
+        "complete_visibility_claim": false,
+        "new_tracking_outputs": 0
+      }
+    },
+    "native_mass": {
+      "scope": "native_only",
+      "rank_counts_among_available_features": {
+        "strict_first": 842,
+        "no_matching_candidate": 25,
+        "beaten": 15
+      },
+      "complete_feature_rank_frames": 882,
+      "incomplete_feature_rank_frames": 0,
+      "unknown_features_by_reference_category": {},
+      "reject_all_observed_hidden_bound": {
+        "cutoff": 37.59572219848633,
+        "comparison": ">",
+        "available_features_only": true,
+        "matching_candidate_coverage": {
+          "eligible_frames": 882,
+          "geometric_candidate_available": 857,
+          "matching_candidate_survives": 735,
+          "no_known_survivor_with_unknown_matching_feature": 0
+        },
+        "original_native_correct_points": {
+          "retained": 735,
+          "rejected": 107
+        },
+        "certain_hidden": {
+          "reference_frames": 34,
+          "frames_with_known_surviving_candidate": 0,
+          "frames_with_unknown_candidate_feature": 0,
+          "candidates_rejected": 22
+        },
+        "original_expanded_weak_stress": {},
+        "complete_visibility_claim": false,
+        "new_tracking_outputs": 0
+      },
+      "retain_all_observed_native_correct_bound": {
+        "cutoff": 0.9406242966651917,
+        "comparison": ">=",
+        "available_features_only": true,
+        "matching_candidate_coverage": {
+          "eligible_frames": 882,
+          "geometric_candidate_available": 857,
+          "matching_candidate_survives": 857,
+          "no_known_survivor_with_unknown_matching_feature": 0
+        },
+        "original_native_correct_points": {
+          "retained": 842
+        },
+        "certain_hidden": {
+          "reference_frames": 34,
+          "frames_with_known_surviving_candidate": 19,
+          "frames_with_unknown_candidate_feature": 0,
+          "candidates_retained": 21,
+          "candidates_rejected": 1
+        },
+        "original_expanded_weak_stress": {},
+        "complete_visibility_claim": false,
+        "new_tracking_outputs": 0
+      }
+    }
+  },
+  "episodes": [
+    {
+      "block_id": "hou-vs-okc-0022400879_e01",
+      "frames": 120,
+      "reference_categories": {
+        "eligible": 120
+      },
+      "features": {
+        "peak": {
+          "rank_counts_among_available_features": {
+            "strict_first": 115,
+            "beaten": 5
+          },
+          "complete_feature_rank_frames": 120,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 120
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 110,
+            "not_comparable_no_matching_candidate": 10
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "retained": 86,
+              "rejected": 24
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 110
+            },
+            "certain_hidden": {}
+          }
+        },
+        "core_ring_contrast": {
+          "rank_counts_among_available_features": {
+            "strict_first": 101,
+            "beaten": 19
+          },
+          "complete_feature_rank_frames": 120,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 103,
+            "more_strictly_higher_misses": 15,
+            "strict_first_loss_vs_baseline": 15,
+            "fewer_strictly_higher_misses": 2,
+            "strict_first_gain_over_baseline": 1
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 110,
+            "not_comparable_no_matching_candidate": 10
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 110
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 110
+            },
+            "certain_hidden": {}
+          }
+        },
+        "entropy_concentration": {
+          "rank_counts_among_available_features": {
+            "beaten": 96,
+            "strict_first": 24
+          },
+          "complete_feature_rank_frames": 120,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 95,
+            "strict_first_loss_vs_baseline": 94,
+            "same_strictly_higher_misses": 21,
+            "fewer_strictly_higher_misses": 4,
+            "strict_first_gain_over_baseline": 3
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 110,
+            "not_comparable_no_matching_candidate": 10
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 110
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 110
+            },
+            "certain_hidden": {}
+          }
+        },
+        "isotropy": {
+          "rank_counts_among_available_features": {
+            "strict_first": 68,
+            "beaten": 52
+          },
+          "complete_feature_rank_frames": 120,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 69,
+            "more_strictly_higher_misses": 51,
+            "strict_first_loss_vs_baseline": 47
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 110,
+            "not_comparable_no_matching_candidate": 10
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 109,
+              "retained": 1
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 110
+            },
+            "certain_hidden": {}
+          }
+        },
+        "negative_centroid_distance": {
+          "rank_counts_among_available_features": {
+            "strict_first": 109,
+            "beaten": 11
+          },
+          "complete_feature_rank_frames": 120,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 107,
+            "more_strictly_higher_misses": 10,
+            "strict_first_loss_vs_baseline": 9,
+            "fewer_strictly_higher_misses": 3,
+            "strict_first_gain_over_baseline": 3
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 110,
+            "not_comparable_no_matching_candidate": 10
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 99,
+              "retained": 11
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 110
+            },
+            "certain_hidden": {}
+          }
+        },
+        "negative_spread": {
+          "rank_counts_among_available_features": {
+            "strict_first": 86,
+            "beaten": 34
+          },
+          "complete_feature_rank_frames": 120,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 86,
+            "more_strictly_higher_misses": 32,
+            "strict_first_loss_vs_baseline": 31,
+            "fewer_strictly_higher_misses": 2,
+            "strict_first_gain_over_baseline": 2
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 110,
+            "not_comparable_no_matching_candidate": 10
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 110
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 110
+            },
+            "certain_hidden": {}
+          }
+        },
+        "native_mass": {
+          "rank_counts_among_available_features": {
+            "strict_first": 110,
+            "no_matching_candidate": 10
+          },
+          "complete_feature_rank_frames": 120,
+          "incomplete_feature_rank_frames": 0,
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "retained": 91,
+              "rejected": 19
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 110
+            },
+            "certain_hidden": {}
+          }
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e02",
+      "frames": 120,
+      "reference_categories": {
+        "eligible": 120
+      },
+      "features": {
+        "peak": {
+          "rank_counts_among_available_features": {
+            "strict_first": 120
+          },
+          "complete_feature_rank_frames": 112,
+          "incomplete_feature_rank_frames": 8,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 112,
+            "not_comparable_incomplete_features": 8
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 120
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "retained": 117,
+              "rejected": 3
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {}
+          }
+        },
+        "core_ring_contrast": {
+          "rank_counts_among_available_features": {
+            "strict_first": 39,
+            "beaten": 81
+          },
+          "complete_feature_rank_frames": 112,
+          "incomplete_feature_rank_frames": 8,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 35,
+            "more_strictly_higher_misses": 77,
+            "strict_first_loss_vs_baseline": 77,
+            "not_comparable_incomplete_features": 8
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 117,
+            "more_strictly_higher_misses": 3,
+            "strict_first_loss_vs_baseline": 3
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 120
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {}
+          }
+        },
+        "entropy_concentration": {
+          "rank_counts_among_available_features": {
+            "strict_first": 16,
+            "beaten": 104
+          },
+          "complete_feature_rank_frames": 112,
+          "incomplete_feature_rank_frames": 8,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 15,
+            "more_strictly_higher_misses": 97,
+            "strict_first_loss_vs_baseline": 97,
+            "not_comparable_incomplete_features": 8
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 115,
+            "more_strictly_higher_misses": 5,
+            "strict_first_loss_vs_baseline": 5
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 120
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {}
+          }
+        },
+        "isotropy": {
+          "rank_counts_among_available_features": {
+            "strict_first": 45,
+            "beaten": 75
+          },
+          "complete_feature_rank_frames": 112,
+          "incomplete_feature_rank_frames": 8,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 42,
+            "more_strictly_higher_misses": 70,
+            "strict_first_loss_vs_baseline": 70,
+            "not_comparable_incomplete_features": 8
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 119,
+            "more_strictly_higher_misses": 1,
+            "strict_first_loss_vs_baseline": 1
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 117,
+              "retained": 3
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {}
+          }
+        },
+        "negative_centroid_distance": {
+          "rank_counts_among_available_features": {
+            "strict_first": 82,
+            "beaten": 38
+          },
+          "complete_feature_rank_frames": 112,
+          "incomplete_feature_rank_frames": 8,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 77,
+            "more_strictly_higher_misses": 35,
+            "strict_first_loss_vs_baseline": 35,
+            "not_comparable_incomplete_features": 8
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 120
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 111,
+              "retained": 9
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {}
+          }
+        },
+        "negative_spread": {
+          "rank_counts_among_available_features": {
+            "strict_first": 47,
+            "beaten": 73
+          },
+          "complete_feature_rank_frames": 112,
+          "incomplete_feature_rank_frames": 8,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 44,
+            "more_strictly_higher_misses": 68,
+            "strict_first_loss_vs_baseline": 68,
+            "not_comparable_incomplete_features": 8
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 115,
+            "more_strictly_higher_misses": 5,
+            "strict_first_loss_vs_baseline": 5
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 120
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {}
+          }
+        },
+        "native_mass": {
+          "rank_counts_among_available_features": {
+            "strict_first": 120
+          },
+          "complete_feature_rank_frames": 120,
+          "incomplete_feature_rank_frames": 0,
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "retained": 108,
+              "rejected": 12
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {}
+          }
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e03",
+      "frames": 120,
+      "reference_categories": {
+        "eligible": 98,
+        "indeterminate": 10,
+        "uncertain_hidden": 8,
+        "visible_unlocalizable": 4
+      },
+      "features": {
+        "peak": {
+          "rank_counts_among_available_features": {
+            "beaten": 10,
+            "strict_first": 88
+          },
+          "complete_feature_rank_frames": 96,
+          "incomplete_feature_rank_frames": 2,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 96,
+            "not_comparable_incomplete_features": 2
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "not_comparable_no_matching_candidate": 3,
+            "same_strictly_higher_misses": 93,
+            "more_strictly_higher_misses": 2,
+            "strict_first_loss_vs_baseline": 2
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "retained": 84,
+              "rejected": 6
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 90
+            },
+            "certain_hidden": {}
+          }
+        },
+        "core_ring_contrast": {
+          "rank_counts_among_available_features": {
+            "beaten": 80,
+            "strict_first": 18
+          },
+          "complete_feature_rank_frames": 96,
+          "incomplete_feature_rank_frames": 2,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 78,
+            "strict_first_loss_vs_baseline": 68,
+            "same_strictly_higher_misses": 18,
+            "not_comparable_incomplete_features": 2
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "not_comparable_no_matching_candidate": 3,
+            "same_strictly_higher_misses": 49,
+            "more_strictly_higher_misses": 46,
+            "strict_first_loss_vs_baseline": 45
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 90
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 90
+            },
+            "certain_hidden": {}
+          }
+        },
+        "entropy_concentration": {
+          "rank_counts_among_available_features": {
+            "beaten": 91,
+            "strict_first": 7
+          },
+          "complete_feature_rank_frames": 96,
+          "incomplete_feature_rank_frames": 2,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 90,
+            "strict_first_loss_vs_baseline": 80,
+            "not_comparable_incomplete_features": 2,
+            "same_strictly_higher_misses": 6
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "not_comparable_no_matching_candidate": 3,
+            "same_strictly_higher_misses": 53,
+            "more_strictly_higher_misses": 42,
+            "strict_first_loss_vs_baseline": 41
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 90
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 90
+            },
+            "certain_hidden": {}
+          }
+        },
+        "isotropy": {
+          "rank_counts_among_available_features": {
+            "beaten": 62,
+            "strict_first": 36
+          },
+          "complete_feature_rank_frames": 96,
+          "incomplete_feature_rank_frames": 2,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 59,
+            "strict_first_loss_vs_baseline": 52,
+            "fewer_strictly_higher_misses": 2,
+            "same_strictly_higher_misses": 35,
+            "strict_first_gain_over_baseline": 1,
+            "not_comparable_incomplete_features": 2
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "not_comparable_no_matching_candidate": 3,
+            "same_strictly_higher_misses": 73,
+            "more_strictly_higher_misses": 20,
+            "strict_first_loss_vs_baseline": 20,
+            "fewer_strictly_higher_misses": 2,
+            "strict_first_gain_over_baseline": 1
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 88,
+              "retained": 2
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 90
+            },
+            "certain_hidden": {}
+          }
+        },
+        "negative_centroid_distance": {
+          "rank_counts_among_available_features": {
+            "beaten": 41,
+            "strict_first": 57
+          },
+          "complete_feature_rank_frames": 96,
+          "incomplete_feature_rank_frames": 2,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 37,
+            "strict_first_loss_vs_baseline": 32,
+            "same_strictly_higher_misses": 57,
+            "fewer_strictly_higher_misses": 2,
+            "strict_first_gain_over_baseline": 2,
+            "not_comparable_incomplete_features": 2
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "not_comparable_no_matching_candidate": 3,
+            "same_strictly_higher_misses": 77,
+            "fewer_strictly_higher_misses": 3,
+            "strict_first_gain_over_baseline": 3,
+            "more_strictly_higher_misses": 15,
+            "strict_first_loss_vs_baseline": 15
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 87,
+              "retained": 3
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 90
+            },
+            "certain_hidden": {}
+          }
+        },
+        "negative_spread": {
+          "rank_counts_among_available_features": {
+            "beaten": 76,
+            "strict_first": 22
+          },
+          "complete_feature_rank_frames": 96,
+          "incomplete_feature_rank_frames": 2,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 75,
+            "strict_first_loss_vs_baseline": 65,
+            "same_strictly_higher_misses": 21,
+            "not_comparable_incomplete_features": 2
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "not_comparable_no_matching_candidate": 3,
+            "same_strictly_higher_misses": 53,
+            "more_strictly_higher_misses": 42,
+            "strict_first_loss_vs_baseline": 41
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 90
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 90
+            },
+            "certain_hidden": {}
+          }
+        },
+        "native_mass": {
+          "rank_counts_among_available_features": {
+            "no_matching_candidate": 3,
+            "beaten": 5,
+            "strict_first": 90
+          },
+          "complete_feature_rank_frames": 98,
+          "incomplete_feature_rank_frames": 0,
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 22,
+              "retained": 68
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 90
+            },
+            "certain_hidden": {}
+          }
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e04",
+      "frames": 120,
+      "reference_categories": {
+        "eligible": 120
+      },
+      "features": {
+        "peak": {
+          "rank_counts_among_available_features": {
+            "strict_first": 120
+          },
+          "complete_feature_rank_frames": 120,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 120
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 120
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "retained": 104,
+              "rejected": 16
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {}
+          }
+        },
+        "core_ring_contrast": {
+          "rank_counts_among_available_features": {
+            "beaten": 102,
+            "strict_first": 18
+          },
+          "complete_feature_rank_frames": 120,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 102,
+            "strict_first_loss_vs_baseline": 102,
+            "same_strictly_higher_misses": 18
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 113,
+            "more_strictly_higher_misses": 7,
+            "strict_first_loss_vs_baseline": 7
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 120
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {}
+          }
+        },
+        "entropy_concentration": {
+          "rank_counts_among_available_features": {
+            "beaten": 111,
+            "strict_first": 9
+          },
+          "complete_feature_rank_frames": 120,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 111,
+            "strict_first_loss_vs_baseline": 111,
+            "same_strictly_higher_misses": 9
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 112,
+            "more_strictly_higher_misses": 8,
+            "strict_first_loss_vs_baseline": 8
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 120
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {}
+          }
+        },
+        "isotropy": {
+          "rank_counts_among_available_features": {
+            "beaten": 79,
+            "strict_first": 41
+          },
+          "complete_feature_rank_frames": 120,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 79,
+            "strict_first_loss_vs_baseline": 79,
+            "same_strictly_higher_misses": 41
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 114,
+            "more_strictly_higher_misses": 6,
+            "strict_first_loss_vs_baseline": 6
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 118,
+              "retained": 2
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {}
+          }
+        },
+        "negative_centroid_distance": {
+          "rank_counts_among_available_features": {
+            "beaten": 43,
+            "strict_first": 77
+          },
+          "complete_feature_rank_frames": 120,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 43,
+            "strict_first_loss_vs_baseline": 43,
+            "same_strictly_higher_misses": 77
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 120
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 113,
+              "retained": 7
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {}
+          }
+        },
+        "negative_spread": {
+          "rank_counts_among_available_features": {
+            "beaten": 98,
+            "strict_first": 22
+          },
+          "complete_feature_rank_frames": 120,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 98,
+            "strict_first_loss_vs_baseline": 98,
+            "same_strictly_higher_misses": 22
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 114,
+            "more_strictly_higher_misses": 6,
+            "strict_first_loss_vs_baseline": 6
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 120
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {}
+          }
+        },
+        "native_mass": {
+          "rank_counts_among_available_features": {
+            "strict_first": 120
+          },
+          "complete_feature_rank_frames": 120,
+          "incomplete_feature_rank_frames": 0,
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "retained": 115,
+              "rejected": 5
+            },
+            "certain_hidden": {}
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {}
+          }
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e05",
+      "frames": 240,
+      "reference_categories": {
+        "certain_hidden": 16,
+        "visible_unlocalizable": 8,
+        "eligible": 212,
+        "indeterminate": 4
+      },
+      "features": {
+        "peak": {
+          "rank_counts_among_available_features": {
+            "strict_first": 196,
+            "beaten": 10,
+            "no_matching_candidate": 6
+          },
+          "complete_feature_rank_frames": 205,
+          "incomplete_feature_rank_frames": 7,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 199,
+            "not_comparable_no_matching_candidate": 6,
+            "not_comparable_incomplete_features": 7
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 200,
+            "not_comparable_no_matching_candidate": 12
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 73,
+              "retained": 122
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_unknown": 2,
+              "candidates_rejected": 167,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 2
+            }
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 195
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_unknown": 2,
+              "candidates_rejected": 166,
+              "frames_with_known_surviving_candidate": 1,
+              "frames_with_unknown_candidate_feature": 2,
+              "candidates_retained": 1
+            }
+          }
+        },
+        "core_ring_contrast": {
+          "rank_counts_among_available_features": {
+            "beaten": 166,
+            "no_matching_candidate": 6,
+            "strict_first": 40
+          },
+          "complete_feature_rank_frames": 205,
+          "incomplete_feature_rank_frames": 7,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 155,
+            "strict_first_loss_vs_baseline": 151,
+            "same_strictly_higher_misses": 41,
+            "fewer_strictly_higher_misses": 3,
+            "not_comparable_no_matching_candidate": 6,
+            "strict_first_gain_over_baseline": 1,
+            "not_comparable_incomplete_features": 7
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 185,
+            "not_comparable_no_matching_candidate": 12,
+            "more_strictly_higher_misses": 15,
+            "strict_first_loss_vs_baseline": 15
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 195
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_unknown": 2,
+              "candidates_rejected": 167,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 2
+            }
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 195
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_unknown": 2,
+              "candidates_retained": 97,
+              "candidates_rejected": 70,
+              "frames_with_known_surviving_candidate": 16,
+              "frames_with_unknown_candidate_feature": 2
+            }
+          }
+        },
+        "entropy_concentration": {
+          "rank_counts_among_available_features": {
+            "beaten": 196,
+            "no_matching_candidate": 6,
+            "strict_first": 10
+          },
+          "complete_feature_rank_frames": 205,
+          "incomplete_feature_rank_frames": 7,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 189,
+            "strict_first_loss_vs_baseline": 182,
+            "not_comparable_no_matching_candidate": 6,
+            "fewer_strictly_higher_misses": 3,
+            "strict_first_gain_over_baseline": 3,
+            "not_comparable_incomplete_features": 7,
+            "same_strictly_higher_misses": 7
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 180,
+            "not_comparable_no_matching_candidate": 12,
+            "more_strictly_higher_misses": 20,
+            "strict_first_loss_vs_baseline": 20
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 195
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_unknown": 2,
+              "candidates_rejected": 167,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 2
+            }
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 195
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_unknown": 2,
+              "candidates_retained": 161,
+              "frames_with_known_surviving_candidate": 16,
+              "frames_with_unknown_candidate_feature": 2,
+              "candidates_rejected": 6
+            }
+          }
+        },
+        "isotropy": {
+          "rank_counts_among_available_features": {
+            "beaten": 174,
+            "no_matching_candidate": 6,
+            "strict_first": 32
+          },
+          "complete_feature_rank_frames": 205,
+          "incomplete_feature_rank_frames": 7,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 166,
+            "strict_first_loss_vs_baseline": 158,
+            "fewer_strictly_higher_misses": 2,
+            "not_comparable_no_matching_candidate": 6,
+            "same_strictly_higher_misses": 31,
+            "not_comparable_incomplete_features": 7
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 176,
+            "not_comparable_no_matching_candidate": 12,
+            "more_strictly_higher_misses": 23,
+            "strict_first_loss_vs_baseline": 23,
+            "fewer_strictly_higher_misses": 1,
+            "strict_first_gain_over_baseline": 1
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 194,
+              "retained": 1
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_unknown": 2,
+              "candidates_rejected": 167,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 2
+            }
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 195
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_unknown": 2,
+              "candidates_retained": 134,
+              "candidates_rejected": 33,
+              "frames_with_known_surviving_candidate": 16,
+              "frames_with_unknown_candidate_feature": 2
+            }
+          }
+        },
+        "negative_centroid_distance": {
+          "rank_counts_among_available_features": {
+            "beaten": 67,
+            "no_matching_candidate": 6,
+            "strict_first": 139
+          },
+          "complete_feature_rank_frames": 205,
+          "incomplete_feature_rank_frames": 7,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 62,
+            "strict_first_loss_vs_baseline": 56,
+            "fewer_strictly_higher_misses": 2,
+            "not_comparable_no_matching_candidate": 6,
+            "same_strictly_higher_misses": 135,
+            "not_comparable_incomplete_features": 7
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 192,
+            "not_comparable_no_matching_candidate": 12,
+            "more_strictly_higher_misses": 7,
+            "strict_first_loss_vs_baseline": 7,
+            "fewer_strictly_higher_misses": 1,
+            "strict_first_gain_over_baseline": 1
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 177,
+              "retained": 18
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_unknown": 2,
+              "candidates_rejected": 167,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 2
+            }
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 195
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_unknown": 2,
+              "candidates_retained": 76,
+              "candidates_rejected": 91,
+              "frames_with_known_surviving_candidate": 16,
+              "frames_with_unknown_candidate_feature": 2
+            }
+          }
+        },
+        "negative_spread": {
+          "rank_counts_among_available_features": {
+            "beaten": 160,
+            "no_matching_candidate": 6,
+            "strict_first": 46
+          },
+          "complete_feature_rank_frames": 205,
+          "incomplete_feature_rank_frames": 7,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 152,
+            "strict_first_loss_vs_baseline": 145,
+            "same_strictly_higher_misses": 45,
+            "not_comparable_no_matching_candidate": 6,
+            "fewer_strictly_higher_misses": 2,
+            "strict_first_gain_over_baseline": 1,
+            "not_comparable_incomplete_features": 7
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 182,
+            "not_comparable_no_matching_candidate": 12,
+            "more_strictly_higher_misses": 18,
+            "strict_first_loss_vs_baseline": 18
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 195
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_unknown": 2,
+              "candidates_rejected": 167,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 2
+            }
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 195
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_unknown": 2,
+              "candidates_retained": 124,
+              "candidates_rejected": 43,
+              "frames_with_known_surviving_candidate": 16,
+              "frames_with_unknown_candidate_feature": 2
+            }
+          }
+        },
+        "native_mass": {
+          "rank_counts_among_available_features": {
+            "strict_first": 195,
+            "no_matching_candidate": 12,
+            "beaten": 5
+          },
+          "complete_feature_rank_frames": 212,
+          "incomplete_feature_rank_frames": 0,
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 28,
+              "retained": 167
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 0,
+              "candidates_rejected": 1
+            }
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 195
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "frames_with_known_surviving_candidate": 1,
+              "frames_with_unknown_candidate_feature": 0,
+              "candidates_retained": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e06",
+      "frames": 240,
+      "reference_categories": {
+        "certain_hidden": 18,
+        "eligible": 212,
+        "visible_unlocalizable": 10
+      },
+      "features": {
+        "peak": {
+          "rank_counts_among_available_features": {
+            "beaten": 14,
+            "strict_first": 198
+          },
+          "complete_feature_rank_frames": 212,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 212
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 202,
+            "fewer_strictly_higher_misses": 1,
+            "more_strictly_higher_misses": 9,
+            "strict_first_loss_vs_baseline": 9
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "retained": 188,
+              "rejected": 19
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_rejected": 241,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 0
+            }
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 207
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_retained": 22,
+              "candidates_rejected": 219,
+              "frames_with_known_surviving_candidate": 18,
+              "frames_with_unknown_candidate_feature": 0
+            }
+          }
+        },
+        "core_ring_contrast": {
+          "rank_counts_among_available_features": {
+            "beaten": 134,
+            "strict_first": 78
+          },
+          "complete_feature_rank_frames": 212,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 79,
+            "more_strictly_higher_misses": 133,
+            "strict_first_loss_vs_baseline": 120
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 166,
+            "more_strictly_higher_misses": 45,
+            "strict_first_loss_vs_baseline": 44,
+            "fewer_strictly_higher_misses": 1
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 207
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_rejected": 241,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 0
+            }
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 207
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_retained": 115,
+              "candidates_rejected": 126,
+              "frames_with_known_surviving_candidate": 18,
+              "frames_with_unknown_candidate_feature": 0
+            }
+          }
+        },
+        "entropy_concentration": {
+          "rank_counts_among_available_features": {
+            "beaten": 198,
+            "strict_first": 14
+          },
+          "complete_feature_rank_frames": 212,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "same_strictly_higher_misses": 15,
+            "more_strictly_higher_misses": 197,
+            "strict_first_loss_vs_baseline": 184
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 163,
+            "more_strictly_higher_misses": 48,
+            "strict_first_loss_vs_baseline": 47,
+            "fewer_strictly_higher_misses": 1
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 207
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_rejected": 241,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 0
+            }
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 207
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_retained": 219,
+              "candidates_rejected": 22,
+              "frames_with_known_surviving_candidate": 18,
+              "frames_with_unknown_candidate_feature": 0
+            }
+          }
+        },
+        "isotropy": {
+          "rank_counts_among_available_features": {
+            "beaten": 117,
+            "strict_first": 95
+          },
+          "complete_feature_rank_frames": 212,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "more_strictly_higher_misses": 117,
+            "strict_first_loss_vs_baseline": 105,
+            "same_strictly_higher_misses": 93,
+            "fewer_strictly_higher_misses": 2,
+            "strict_first_gain_over_baseline": 2
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 179,
+            "more_strictly_higher_misses": 31,
+            "fewer_strictly_higher_misses": 2,
+            "strict_first_loss_vs_baseline": 30,
+            "strict_first_gain_over_baseline": 1
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 204,
+              "retained": 3
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_rejected": 241,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 0
+            }
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 207
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_retained": 205,
+              "candidates_rejected": 36,
+              "frames_with_known_surviving_candidate": 18,
+              "frames_with_unknown_candidate_feature": 0
+            }
+          }
+        },
+        "negative_centroid_distance": {
+          "rank_counts_among_available_features": {
+            "strict_first": 161,
+            "beaten": 51
+          },
+          "complete_feature_rank_frames": 212,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "fewer_strictly_higher_misses": 8,
+            "strict_first_gain_over_baseline": 8,
+            "more_strictly_higher_misses": 49,
+            "strict_first_loss_vs_baseline": 45,
+            "same_strictly_higher_misses": 155
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "fewer_strictly_higher_misses": 3,
+            "strict_first_gain_over_baseline": 3,
+            "more_strictly_higher_misses": 25,
+            "strict_first_loss_vs_baseline": 24,
+            "same_strictly_higher_misses": 184
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 193,
+              "retained": 14
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_rejected": 241,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 0
+            }
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 207
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_retained": 98,
+              "candidates_rejected": 143,
+              "frames_with_known_surviving_candidate": 18,
+              "frames_with_unknown_candidate_feature": 0
+            }
+          }
+        },
+        "negative_spread": {
+          "rank_counts_among_available_features": {
+            "strict_first": 58,
+            "beaten": 154
+          },
+          "complete_feature_rank_frames": 212,
+          "incomplete_feature_rank_frames": 0,
+          "paired_rank_frames_vs_peak": {
+            "fewer_strictly_higher_misses": 1,
+            "strict_first_gain_over_baseline": 1,
+            "same_strictly_higher_misses": 58,
+            "more_strictly_higher_misses": 153,
+            "strict_first_loss_vs_baseline": 141
+          },
+          "paired_native_only_rank_frames_vs_native_mass": {
+            "same_strictly_higher_misses": 167,
+            "more_strictly_higher_misses": 45,
+            "strict_first_loss_vs_baseline": 44
+          },
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "rejected": 207
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_rejected": 241,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 0
+            }
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 207
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_retained": 144,
+              "candidates_rejected": 97,
+              "frames_with_known_surviving_candidate": 18,
+              "frames_with_unknown_candidate_feature": 0
+            }
+          }
+        },
+        "native_mass": {
+          "rank_counts_among_available_features": {
+            "beaten": 5,
+            "strict_first": 207
+          },
+          "complete_feature_rank_frames": 212,
+          "incomplete_feature_rank_frames": 0,
+          "reject_all_observed_hidden_bound": {
+            "original_native_correct_points": {
+              "retained": 186,
+              "rejected": 21
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_rejected": 21,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 0
+            }
+          },
+          "retain_all_observed_native_correct_bound": {
+            "original_native_correct_points": {
+              "retained": 207
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_retained": 20,
+              "frames_with_known_surviving_candidate": 18,
+              "frames_with_unknown_candidate_feature": 0,
+              "candidates_rejected": 1
+            }
+          }
+        }
+      }
+    }
+  ],
+  "density": {
+    "HOU_descriptive": {
+      "all_eligible": {
+        "native": {
+          "frames": 882,
+          "actual_available": 857,
+          "actual_fraction": 0.971655328798186,
+          "valid_control_locations": 6982,
+          "control_available": 0,
+          "pooled_control_fraction": 0.0,
+          "dropped_out_of_source_controls": 74,
+          "paired_frame_mean_control_fraction": 0.0,
+          "paired_frame_mean_actual_minus_control": 0.971655328798186
+        },
+        "expanded_union": {
+          "frames": 882,
+          "actual_available": 882,
+          "actual_fraction": 1.0,
+          "valid_control_locations": 6982,
+          "control_available": 5522,
+          "pooled_control_fraction": 0.7908908622171298,
+          "dropped_out_of_source_controls": 74,
+          "paired_frame_mean_control_fraction": 0.7911875067487313,
+          "paired_frame_mean_actual_minus_control": 0.20881249325126874
+        },
+        "native_plus_0.01": {
+          "frames": 882,
+          "actual_available": 876,
+          "actual_fraction": 0.9931972789115646,
+          "valid_control_locations": 6982,
+          "control_available": 37,
+          "pooled_control_fraction": 0.005299341162990547,
+          "dropped_out_of_source_controls": 74,
+          "paired_frame_mean_control_fraction": 0.005243764172335601,
+          "paired_frame_mean_actual_minus_control": 0.987953514739229
+        }
+      },
+      "original_native_selected_missing": {
+        "native": {
+          "frames": 21,
+          "actual_available": 0,
+          "actual_fraction": 0.0,
+          "valid_control_locations": 168,
+          "control_available": 0,
+          "pooled_control_fraction": 0.0,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.0,
+          "paired_frame_mean_actual_minus_control": 0.0
+        },
+        "expanded_union": {
+          "frames": 21,
+          "actual_available": 21,
+          "actual_fraction": 1.0,
+          "valid_control_locations": 168,
+          "control_available": 111,
+          "pooled_control_fraction": 0.6607142857142857,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.6607142857142857,
+          "paired_frame_mean_actual_minus_control": 0.3392857142857143
+        },
+        "native_plus_0.01": {
+          "frames": 21,
+          "actual_available": 15,
+          "actual_fraction": 0.7142857142857143,
+          "valid_control_locations": 168,
+          "control_available": 0,
+          "pooled_control_fraction": 0.0,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.0,
+          "paired_frame_mean_actual_minus_control": 0.7142857142857143
+        }
+      },
+      "native_pool_unavailable_within_10": {
+        "native": {
+          "frames": 25,
+          "actual_available": 0,
+          "actual_fraction": 0.0,
+          "valid_control_locations": 200,
+          "control_available": 0,
+          "pooled_control_fraction": 0.0,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.0,
+          "paired_frame_mean_actual_minus_control": 0.0
+        },
+        "expanded_union": {
+          "frames": 25,
+          "actual_available": 25,
+          "actual_fraction": 1.0,
+          "valid_control_locations": 200,
+          "control_available": 137,
+          "pooled_control_fraction": 0.685,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.685,
+          "paired_frame_mean_actual_minus_control": 0.315
+        },
+        "native_plus_0.01": {
+          "frames": 25,
+          "actual_available": 19,
+          "actual_fraction": 0.76,
+          "valid_control_locations": 200,
+          "control_available": 0,
+          "pooled_control_fraction": 0.0,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.0,
+          "paired_frame_mean_actual_minus_control": 0.76
+        }
+      },
+      "DET_gap_11075_11093": {
+        "native": {
+          "frames": 0,
+          "actual_available": 0,
+          "actual_fraction": null,
+          "valid_control_locations": 0,
+          "control_available": 0,
+          "pooled_control_fraction": null,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": null,
+          "paired_frame_mean_actual_minus_control": null
+        },
+        "expanded_union": {
+          "frames": 0,
+          "actual_available": 0,
+          "actual_fraction": null,
+          "valid_control_locations": 0,
+          "control_available": 0,
+          "pooled_control_fraction": null,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": null,
+          "paired_frame_mean_actual_minus_control": null
+        },
+        "native_plus_0.01": {
+          "frames": 0,
+          "actual_available": 0,
+          "actual_fraction": null,
+          "valid_control_locations": 0,
+          "control_available": 0,
+          "pooled_control_fraction": null,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": null,
+          "paired_frame_mean_actual_minus_control": null
+        }
+      }
+    },
+    "DET_locked_descriptive": {
+      "all_eligible": {
+        "native": {
+          "frames": 241,
+          "actual_available": 219,
+          "actual_fraction": 0.9087136929460581,
+          "valid_control_locations": 1928,
+          "control_available": 0,
+          "pooled_control_fraction": 0.0,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.0,
+          "paired_frame_mean_actual_minus_control": 0.9087136929460581
+        },
+        "expanded_union": {
+          "frames": 241,
+          "actual_available": 240,
+          "actual_fraction": 0.995850622406639,
+          "valid_control_locations": 1928,
+          "control_available": 1139,
+          "pooled_control_fraction": 0.5907676348547718,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.5907676348547718,
+          "paired_frame_mean_actual_minus_control": 0.4050829875518672
+        },
+        "native_plus_0.01": {
+          "frames": 241,
+          "actual_available": 221,
+          "actual_fraction": 0.91701244813278,
+          "valid_control_locations": 1928,
+          "control_available": 20,
+          "pooled_control_fraction": 0.01037344398340249,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.01037344398340249,
+          "paired_frame_mean_actual_minus_control": 0.9066390041493776
+        }
+      },
+      "original_native_selected_missing": {
+        "native": {
+          "frames": 21,
+          "actual_available": 0,
+          "actual_fraction": 0.0,
+          "valid_control_locations": 168,
+          "control_available": 0,
+          "pooled_control_fraction": 0.0,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.0,
+          "paired_frame_mean_actual_minus_control": 0.0
+        },
+        "expanded_union": {
+          "frames": 21,
+          "actual_available": 21,
+          "actual_fraction": 1.0,
+          "valid_control_locations": 168,
+          "control_available": 99,
+          "pooled_control_fraction": 0.5892857142857143,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.5892857142857143,
+          "paired_frame_mean_actual_minus_control": 0.4107142857142857
+        },
+        "native_plus_0.01": {
+          "frames": 21,
+          "actual_available": 2,
+          "actual_fraction": 0.09523809523809523,
+          "valid_control_locations": 168,
+          "control_available": 0,
+          "pooled_control_fraction": 0.0,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.0,
+          "paired_frame_mean_actual_minus_control": 0.09523809523809523
+        }
+      },
+      "native_pool_unavailable_within_10": {
+        "native": {
+          "frames": 22,
+          "actual_available": 0,
+          "actual_fraction": 0.0,
+          "valid_control_locations": 176,
+          "control_available": 0,
+          "pooled_control_fraction": 0.0,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.0,
+          "paired_frame_mean_actual_minus_control": 0.0
+        },
+        "expanded_union": {
+          "frames": 22,
+          "actual_available": 21,
+          "actual_fraction": 0.9545454545454546,
+          "valid_control_locations": 176,
+          "control_available": 104,
+          "pooled_control_fraction": 0.5909090909090909,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.5909090909090909,
+          "paired_frame_mean_actual_minus_control": 0.36363636363636365
+        },
+        "native_plus_0.01": {
+          "frames": 22,
+          "actual_available": 2,
+          "actual_fraction": 0.09090909090909091,
+          "valid_control_locations": 176,
+          "control_available": 0,
+          "pooled_control_fraction": 0.0,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.0,
+          "paired_frame_mean_actual_minus_control": 0.09090909090909091
+        }
+      },
+      "DET_gap_11075_11093": {
+        "native": {
+          "frames": 19,
+          "actual_available": 0,
+          "actual_fraction": 0.0,
+          "valid_control_locations": 152,
+          "control_available": 0,
+          "pooled_control_fraction": 0.0,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.0,
+          "paired_frame_mean_actual_minus_control": 0.0
+        },
+        "expanded_union": {
+          "frames": 19,
+          "actual_available": 19,
+          "actual_fraction": 1.0,
+          "valid_control_locations": 152,
+          "control_available": 91,
+          "pooled_control_fraction": 0.5986842105263158,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.5986842105263158,
+          "paired_frame_mean_actual_minus_control": 0.40131578947368424
+        },
+        "native_plus_0.01": {
+          "frames": 19,
+          "actual_available": 2,
+          "actual_fraction": 0.10526315789473684,
+          "valid_control_locations": 152,
+          "control_available": 0,
+          "pooled_control_fraction": 0.0,
+          "dropped_out_of_source_controls": 0,
+          "paired_frame_mean_control_fraction": 0.0,
+          "paired_frame_mean_actual_minus_control": 0.10526315789473684
+        }
+      }
+    }
+  },
+  "validation": {
+    "focused_pre_freeze_synthetic_tests_passed": 22,
+    "independent_math_synthetic_checks_passed": 7,
+    "all_mean_hashes_and_candidate_stress_transport_checked": true,
+    "independent_sampled_descriptor_vectors": 53,
+    "boundary_unknown_vectors_checked": 25,
+    "independent_spatial_summary_checks_passed": 100068,
+    "full_suite_repeated": false,
+    "limitations": [
+      "Reference category kernel reused explicitly.",
+      "Independent arithmetic recomputes53 fixed descriptor vectors, not every vector.",
+      "Coverage audit checks emitted distances and aggregates, not an independent nearest-neighbor search."
+    ]
+  },
+  "decision": {
+    "tested_scalars_adopted": false,
+    "reason": "Each added shape feature ranks worse than peak in every HOU episode; cutoffs that preserve all842 native-correct points leave all34 hidden frames with known shape survivors.",
+    "successful_increment_preserved": "Narrow pool retains ten e01 recoveries with0/80 translated-location coverage; broad weak gains remain separate stress evidence.",
+    "next": "Prepare a controlled same-backbone same-crop global-CLS versus candidate-local-token image information feasibility comparison; proposed, not run.",
+    "not_established": [
+      "All joint/temporal response methods fail.",
+      "Point-local image features will succeed.",
+      "New training is necessary."
+    ],
+    "objective_limit": "Positive emission/restart incentives remain diagnosed; tested scalar visibility evidence does not justify another standalone objective sweep."
+  },
+  "quality_criteria_unchanged": true,
+  "HOU_role": "repeatedly_inspected_development_no_fitting",
+  "DET_role": "locked_descriptive_density_only_no_method_or_parameter_selection",
+  "new_model_calls": 0,
+  "new_selector_runs": 0,
+  "new_training_updates": 0,
+  "new_tracking_outputs": 0,
+  "new_labels": 0,
+  "protected_evaluation_access": false,
+  "human_trajectory_acceptance": null,
+  "nine_source_uncertain_recoveries_unchanged": true,
+  "git_staging_commit_push_PR_merge_performed": false,
+  "limitations": [
+    "Repeatedly inspected HOU development; no fresh validation or frame-independence claim.",
+    "Geometric misses are not semantic non-ball labels; unknown reference categories remain separate.",
+    "Feature rankings and two shared-cutoff bounds are diagnostic only; no new coordinates or tracks emitted.",
+    "Unknown descriptors are counted, never successful rejections or retentions; shape descriptors are correlated.",
+    "Native mass is evaluated only on native candidates; broad selected-output mass is excluded.",
+    "Spatial-density controls, not semantic negative labels or independent samples. No p-values, model choice, coordinates or labels changed. HOU development; DET parameters locked before computation."
+  ]
+}

@@ -1,0 +1,471 @@
+{
+  "schema_version": "candidate_change_comparison/v0.1",
+  "status": "specified_design_not_implemented_or_run",
+  "created_at_utc": "2026-10-28T15:36:04.491712+00:00",
+  "user_facing_date": "2026-10-28",
+  "timezone": "America/Phoenix",
+  "branch": "codex/ball-detector-baseline",
+  "head": "8c040fca385dd8fffa0d7a13c45c53e79950bae1",
+  "authority": {
+    "scope": "Specify bounded CPU saved-output candidate-change comparison and ordinary cache preparation. Comparison endpoint execution is not inferred from this specification.",
+    "user_statement": "I am ready to move forward with the recommended next step: specify the bounded CPU saved-output comparison of changes between existing candidates before any training decision.",
+    "history_rule": "Reconcile maintained full history, relevant research and material primary evidence before every new direction; reuse completed reviews and disclose depth."
+  },
+  "question": "Does saved relative point evidence favor beneficial existing candidate changes and oppose harmful changes beyond response-strength preference across the complete declared population?",
+  "protocol": {
+    "path": "docs/ball_tracking_candidate_change_comparison_protocol.md",
+    "bytes": 20707,
+    "sha256": "9bfa0bb7f6d381ba9e09ae06bd699dba3db98c26262e450a4e79f854c4ae8c52"
+  },
+  "inventory": {
+    "path": "data/outputs/ball_tracking/candidate_change_comparison_v0_1/inventory.json",
+    "bytes": 3320118,
+    "sha256": "44ac1d1bfff8be9244927d70e830ce3bbdc3046b19247d2a8b085583f3e97d44"
+  },
+  "choice_cache_joins": {
+    "path": "data/outputs/ball_tracking/candidate_change_comparison_v0_1/choice_cache_joins.jsonl",
+    "bytes": 2011481,
+    "sha256": "f4249f5fda4dfc6cbc315c084e8017e32bd1d1ecdf3888fc6132480a76e0c3d6"
+  },
+  "output_root": "data/outputs/ball_tracking/candidate_change_comparison_v0_1",
+  "future_analysis_subdirectory": "analysis_v0_1",
+  "inputs": {
+    "point_analysis": {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/analysis_v0_1/completed.json",
+      "bytes": 43225860,
+      "sha256": "fac2ed57039564c960f1197594a1c37bc69eb97f0a7776343c3f8d657b2b5a0b"
+    },
+    "point_inference": {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/completed.json",
+      "bytes": 3393519,
+      "sha256": "a266119caf56a4d9756d565e35a61aa3f1cc5ab5b102b0a03fef1ff7494ef9a2"
+    },
+    "point_freeze": {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/prospective_freeze.json",
+      "bytes": 36323,
+      "sha256": "230cb88fc1277b5a4d39679cbe6c4d8f1d5a4e9e28fdd09f3f8a1973b447f9be"
+    },
+    "point_witness_audit": {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/validation/independent_witness_audit.json",
+      "bytes": 3086,
+      "sha256": "50eda607cbe04201c634705f942451a4249e8916bbd22d45a5122c99439ebc7d"
+    },
+    "point_analysis_audit": {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/validation/independent_analysis_audit.json",
+      "bytes": 1929,
+      "sha256": "a363e6afd590d2521909d6d19c01a5b1a46705516b45a9e1db03ce07beb21f7e"
+    },
+    "original_comparison": {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/comparison_v0_1/completed.json",
+      "bytes": 874756,
+      "sha256": "11be58de7ce60ec8cbec75da645a354870638f5cfa01c81698fe4a16305c1966"
+    },
+    "followup_comparison": {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/completed.json",
+      "bytes": 2096214,
+      "sha256": "08b9442be5ff2793f573200c22f673870815db22bf656727e032aa9adf4e3ba6"
+    },
+    "source_roles": {
+      "path": "configs/ball_tracking/completion_campaign/source_roles_v0_1.json",
+      "bytes": 71569,
+      "sha256": "3ae5de63eef918fdaafcfbac62c09ca46e14fa1c1fdf069739d731955a573200"
+    },
+    "research_control": {
+      "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/cosine/fit_v0_1/checkpoints/epoch_009.pth",
+      "bytes": 6084071,
+      "sha256": "f4b721662ec3d8b546563feffcf5ce0d6319ed8ddc83f398830a0aac5d29c7b9"
+    },
+    "objective_accounting": {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/design_review/saved_hou_objective_accounting.json",
+      "bytes": 7268764,
+      "sha256": "7145c65d26dacae50fe79edc73973cfced8431799e6bf54c2fa1cca854ebcf40"
+    }
+  },
+  "population": {
+    "domain": "NBA",
+    "analysis_role": "repeatedly_inspected_HOU_development_no_fitting",
+    "blocks": [
+      {
+        "block_id": "hou-vs-okc-0022400879_e01",
+        "range_inclusive": [
+          120,
+          239
+        ],
+        "frames": 120,
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/4.mp4",
+          "sha256": "aa5a0a31eb87b01a548beb92cacb783b8b7d00028020162cd2d814ffe91ec559",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 503
+        },
+        "time_base": "1/60000"
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e02",
+        "range_inclusive": [
+          0,
+          119
+        ],
+        "frames": 120,
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/43.mp4",
+          "sha256": "f6334378aeaa1d1eb7e3b54626f0186812bc106e46bed71370cf79a523f3f0f5",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 597
+        },
+        "time_base": "1/60000"
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e03",
+        "range_inclusive": [
+          120,
+          239
+        ],
+        "frames": 120,
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/88.mp4",
+          "sha256": "1e42fc42fa9eb06728fb5ad679da32788fc00c39f73073a7ff6b903f908b39c8",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 473
+        },
+        "time_base": "1/60000"
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e04",
+        "range_inclusive": [
+          150,
+          269
+        ],
+        "frames": 120,
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/140.mp4",
+          "sha256": "8ac483c656970c05431468bf8ca7c2685863d7435d30699b91a9ee12d770ecc5",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 671
+        },
+        "time_base": "1/60000"
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e05",
+        "range_inclusive": [
+          0,
+          239
+        ],
+        "frames": 240,
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/23.mp4",
+          "sha256": "604ac886099ae23d6a9fbef12be065e981ea6bcdb70fea8dd9435eaa5f76a523",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 559
+        },
+        "time_base": "1/60000"
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "range_inclusive": [
+          210,
+          449
+        ],
+        "frames": 240,
+        "source_video": {
+          "path": "data/raw/nba/bard_completion_v0_1/hou-vs-okc-0022400879/253.mp4",
+          "sha256": "e7a94cfdd2003069e0a2bb7f26f4c808c1db3714cefbfc1d0c1665df0855b618",
+          "width_px": 1280,
+          "height_px": 720,
+          "frame_count": 511
+        },
+        "time_base": "1/60000"
+      }
+    ],
+    "frames": 960,
+    "arms": [
+      "native",
+      "sequence_strong",
+      "sequence_weak",
+      "motion_only",
+      "speed_only",
+      "motion_and_speed",
+      "motion_and_speed_narrow_weak"
+    ],
+    "choice_slots": 6720,
+    "cached_emitted_choice_slots": 6421,
+    "missing_choice_slots": 299,
+    "cache_gaps": 0,
+    "reference_categories": {
+      "eligible": 882,
+      "certain_hidden": 34,
+      "indeterminate": 14,
+      "uncertain_hidden": 8,
+      "visible_unlocalizable": 22
+    },
+    "per_arm_cache_census": {
+      "native": {
+        "exact_cached_emission": 915,
+        "missing": 45
+      },
+      "sequence_strong": {
+        "exact_cached_emission": 899,
+        "missing": 61
+      },
+      "sequence_weak": {
+        "exact_cached_emission": 949,
+        "missing": 11
+      },
+      "motion_only": {
+        "exact_cached_emission": 899,
+        "missing": 61
+      },
+      "speed_only": {
+        "exact_cached_emission": 903,
+        "missing": 57
+      },
+      "motion_and_speed": {
+        "exact_cached_emission": 909,
+        "missing": 51
+      },
+      "motion_and_speed_narrow_weak": {
+        "exact_cached_emission": 947,
+        "missing": 13
+      }
+    },
+    "contrast_frame_rows": 6720,
+    "contrasts": [
+      {
+        "source": "native",
+        "target": "motion_and_speed",
+        "role": "primary"
+      },
+      {
+        "source": "native",
+        "target": "motion_and_speed_narrow_weak",
+        "role": "primary"
+      },
+      {
+        "source": "motion_and_speed",
+        "target": "motion_and_speed_narrow_weak",
+        "role": "primary"
+      },
+      {
+        "source": "native",
+        "target": "sequence_strong",
+        "role": "historical_context"
+      },
+      {
+        "source": "native",
+        "target": "sequence_weak",
+        "role": "historical_context"
+      },
+      {
+        "source": "native",
+        "target": "motion_only",
+        "role": "historical_context"
+      },
+      {
+        "source": "native",
+        "target": "speed_only",
+        "role": "historical_context"
+      }
+    ],
+    "all_frames_in_every_contrast": true,
+    "other_cross_arm_pairings": "outside_v0.1_no_automatic_expansion"
+  },
+  "join": {
+    "exact_fields": [
+      "source_video.sha256",
+      "block_id",
+      "source_frame_index",
+      "source_pts_ticks",
+      "time_base",
+      "duration_ticks",
+      "source_png.sha256",
+      "source_png.rgb_sha256",
+      "mean_heatmap_sha256",
+      "producing_pool_binding",
+      "selected_candidate_index",
+      "center_xy_px"
+    ],
+    "main_arms": [
+      "native",
+      "sequence_strong",
+      "motion_only",
+      "speed_only",
+      "motion_and_speed",
+      "motion_and_speed_narrow_weak"
+    ],
+    "stress_arm": "sequence_weak",
+    "native_prefix_membership_verified_against_actual_producer": true,
+    "no_nearest_crop_or_coordinate_substitution": true,
+    "missing_choice": "Explicit missing_selection with null coordinate/input/score; not zero or synthetic image evidence.",
+    "unexpected_unavailable": "Keep row and reason; integrity mismatch blocks affected analysis pending diagnosis; no silent exclusion or new inference.",
+    "same_coordinate_different_identity": "Record both provenance identities and coordinate agreement separately."
+  },
+  "measurements": {
+    "state_partition": [
+      "both_observed_same_coordinate",
+      "both_observed_different_coordinate",
+      "source_observed_target_missing",
+      "source_missing_target_observed",
+      "both_missing"
+    ],
+    "eligible_outcome_partition": [
+      "matched",
+      "wrong",
+      "missing"
+    ],
+    "full_3_by_3_eligible_transitions": true,
+    "features": [
+      "point_margin",
+      "cls_margin",
+      "saved_peak",
+      "native_mass_only_when_both_same_native_extraction"
+    ],
+    "delta": "target minus source; positive favors target; negative favors source; exact zero tie using saved float64, no tolerance or rounding change",
+    "exactly_one_correct": "Observed distinct-coordinate match/wrong pairs only; favorable/adverse/tie/unavailable; keep wrong-to-match separate from match-to-wrong.",
+    "both_correct_or_both_wrong": "Separate descriptive strata, not discrimination successes.",
+    "point_vs_controls": "Common-complete-pair correct-side cross-tables versus CLS/peak/comparable native mass; all favorable/adverse/ties/unavailable.",
+    "no_learned_combination_or_selected_sign_pattern": true,
+    "one_sided_missing": "State/outcome accounting only; individual emitted-score availability, never image comparison to null.",
+    "certain_hidden": "Emission/missing accounting; two-point ordering explicitly neither emission valid.",
+    "uncertain_categories": "Separate states/availability/descriptive ordering only; no correct-side success or semantic-negative claim.",
+    "denominators": [
+      "declared_rows",
+      "two_observed",
+      "distinct_coordinates",
+      "exactly_one_correct",
+      "feature_complete",
+      "ties",
+      "missing_choices",
+      "unscored_references",
+      "unavailable_features"
+    ],
+    "report_by": [
+      "contrast",
+      "episode",
+      "reference_category",
+      "choice_states",
+      "eligible_outcome_transition",
+      "extraction",
+      "padding",
+      "named_diagnostic_tag"
+    ],
+    "pooled": "descriptive only; overlapping arms/contrasts/tags not independent observations",
+    "no_significance_tests": true,
+    "exceptions": "All harmful preferences, hidden-emission agreements, missing/cache exclusions and beneficial cases by exact frame/query.",
+    "motion_context": "Retain existing mass/extraction/support/global_alternative_margin and saved objective-accounting provenance; no new optimization or confidence calibration."
+  },
+  "named_overlapping_tags": [
+    "all842_native_correct",
+    "all19_native_wrong",
+    "all21_native_missing_eligible",
+    "e01_frames194_203_ten_recoveries",
+    "e05_frames14_19_six_below_.01_broad_gains",
+    "all21_old_broad_gains_from_native_missing",
+    "six_corrected_strong_gains",
+    "27_corrected_strong_losses_including_two_missing",
+    "all_certain_hidden",
+    "all_uncertain_hidden",
+    "all_indeterminate",
+    "all_visible_unlocalizable",
+    "complete_source_crop",
+    "padded_source_crop",
+    "native_extraction",
+    "weak_extraction"
+  ],
+  "historical_appendix": {
+    "source": "point_analysis.historical_separate",
+    "bank": 10,
+    "accepted_checks": 10,
+    "unresolved": 6,
+    "exposed": 34,
+    "reuse_existing_only": true,
+    "bank_excluded_from_query_metrics": true,
+    "DET_no_method_parameter_selection": true,
+    "SAC_training_exposure_explicit": true,
+    "no_full_DET_SAC_point_inference_or_NFHS_extension": true
+  },
+  "known_adverse_evidence_must_accompany_results": {
+    "e01_ten_recoveries_strict_first": {
+      "point": 3,
+      "cls": 6,
+      "peak": 5
+    },
+    "HOU_strict_first": {
+      "point": 527,
+      "cls": 259,
+      "peak": 837,
+      "eligible": 882
+    },
+    "point_all_hidden_rejection_native_correct_retained": 47,
+    "native_correct_total": 842,
+    "native_preserving_bound_hidden_frames_remaining": 34,
+    "point_historical_accepted_preference": 7,
+    "cls_historical_accepted_preference": 8,
+    "two_missing_strong_losses_unpaired": true
+  },
+  "execution_boundary": {
+    "current_work": "Design specification and metadata/cache join inventory only; no endpoint preferences newly calculated.",
+    "implementation": "New additive source/test names; preserve187 bound point-study files.",
+    "before_endpoint_analysis": "Concrete execution decision and one receipt binding final new implementation/tests, this protocol/config and exact inventory/input bytes.",
+    "implementation_frozen": false,
+    "endpoint_analysis_run": false,
+    "new_model_calls_allowed": 0,
+    "new_selector_runs_allowed": 0,
+    "new_training_updates_allowed": 0,
+    "new_labels_allowed": 0,
+    "GPU_work_allowed": false,
+    "protected_access_allowed": false,
+    "Torch_or_model_import_required": false,
+    "new_source_pixel_decode_required": false
+  },
+  "decision": {
+    "useful": "Recurring complementary correct-side preferences beyond peak/native mass across full primary contrasts and relevant episodes, with all harmful preferences and weak/native preservation explicit, may justify specifying one later selective-change test.",
+    "insufficient": "Only old six gains, one pooled episode, or preservation repeating mass/native; do not fit or sweep to rescue.",
+    "mixed": "Retain increments and adverse strata; no episode-specific exception chosen here.",
+    "limits": "Observed-pair discrimination cannot resolve missing/visibility/no-candidate deficits or justify training/adoption by itself.",
+    "alternatives_open": [
+      "basketball MonoTrack",
+      "basketball-specialized RF-DETR",
+      "learned basketball context",
+      "materially changed temporal/reseeding approaches",
+      "joint or temporal response evidence"
+    ],
+    "new_direction_requires_history_research_reconciliation": true
+  },
+  "quality_criteria_unchanged": {
+    "radius_source_pixels_inclusive": 10,
+    "correct_fraction_minimum": 0.95,
+    "wrong_fraction_maximum": 0.01,
+    "certain_hidden_emissions_maximum": 0,
+    "eligible_missing_run_maximum_ms": 200,
+    "confirmed_wrong_object_run_fail_at_ms": 120,
+    "recovery_maximum_ms": 120,
+    "recovery_requires_next_two_eligible_correct": true,
+    "per_context_gates": true,
+    "preserve_uncertainty_censoring_and_nine_inconclusive_recoveries": true,
+    "complete_synchronized_human_review_required": true
+  },
+  "nine_source_uncertain_recoveries_unchanged": {
+    "HOU_e03": [
+      146,
+      190
+    ],
+    "DET": [
+      11047,
+      11075,
+      11098,
+      11107,
+      11476,
+      11497,
+      11557
+    ]
+  },
+  "human_trajectory_acceptance": null,
+  "protected_evaluation_authorized": false,
+  "model_adopted": false,
+  "git_integration_authorized": false
+}

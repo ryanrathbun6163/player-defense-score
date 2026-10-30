@@ -1,0 +1,269 @@
+{
+  "schema": "candidate_acceptance_origin_ablation/v0.1",
+  "at_utc": "2026-10-30T02:22:10.858949+00:00",
+  "status": "fixed_before_new_CPU_fits",
+  "protocol": {
+    "path": "docs/ball_tracking_candidate_acceptance_origin_ablation_protocol.md",
+    "bytes": 11084,
+    "sha256": "1a1535eb6ae8db098b83fe9c2c0013bdc802a05004d57cec0fa62d3b86021699"
+  },
+  "branch": "codex/ball-detector-baseline",
+  "head": "8c040fca385dd8fffa0d7a13c45c53e79950bae1",
+  "counts": {
+    "CPU_fits": 4,
+    "features": 14,
+    "evaluation_slots": 31430,
+    "observed_scores": 31419,
+    "missing_scores": 11,
+    "context_frames": 4289,
+    "fixed_policy_rows": 8578,
+    "cross_features_reused": 37626,
+    "final_features_reused": 18813,
+    "fit_membership_reused": 56439,
+    "known_fit_row_presentations": 52572,
+    "neural_calls": 0,
+    "GPU_queries": 0
+  },
+  "removed_features": [
+    "native_indicator",
+    "origin_unavailable"
+  ],
+  "retained_feature_indices": [
+    0,
+    1,
+    2,
+    3,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "fit_rows": {
+    "outer_CHI": 11954,
+    "outer_DEN": 11912,
+    "outer_SAC": 11182,
+    "final_all_NBA": 17524
+  },
+  "solver": {
+    "method": "L-BFGS-B",
+    "dtype": "float64",
+    "zero_initialization": true,
+    "ridge": 0.01,
+    "intercept_penalized": false,
+    "maxiter": 10000,
+    "ftol": 1e-12,
+    "gtol": 1e-09
+  },
+  "inputs": [
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/candidate_curves.jsonl",
+      "bytes": 45844999,
+      "sha256": "72dee22fc3db0c5b2c3721022d658a7035b8a45824d2a1ef6e7202cd7ece21f2"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/candidate_scores.jsonl",
+      "bytes": 160897322,
+      "sha256": "a88a0b55c070040db4521bd42b6f4b760804b94b2fe16e35c989c22920c08405"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/candidate_zero_tables.jsonl",
+      "bytes": 3740468,
+      "sha256": "8db5fbc0148737526cecaed5e7f7634054ce8cb93bbc6db8136eb3b989887f7b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/contrast_views.jsonl",
+      "bytes": 7951868,
+      "sha256": "38e63f798cb5052c3e59b17c56aca9d5db5747ee7ef0e8f520074e6b60b76315"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/cross_training_features.jsonl",
+      "bytes": 62712255,
+      "sha256": "26f80abef1e66bf6c1cc81849828282b7cbd5e394ae261e7e2026a74b9d436b0"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/decision.json",
+      "bytes": 14820,
+      "sha256": "c78e2cc1966d2608ad85f614214a3ae90aef765f2f63859d4ef987d992dfdaf5"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/evaluation_features.jsonl",
+      "bytes": 51779664,
+      "sha256": "552c4979d3abbdd60a433711b416ee09ab7375a2e5d519ce142fe9d51241a8e5"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/final_training_features.jsonl",
+      "bytes": 31871577,
+      "sha256": "8035c7ff7d65f782921a8d935a119fe0dfeafc6e5462a341750dcad9b907bbd0"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/fit_membership.jsonl",
+      "bytes": 19297820,
+      "sha256": "f1c03b5bbf5bc55dd8cd1a2d54f16f66fd4b27e2f9c9d10c6dcc05aa86a5430a"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/fits/final_all_NBA_J.json",
+      "bytes": 1724809,
+      "sha256": "f98eaeb271d4960daf03bcdd09da65440e2fab43759b8e338677578f17330c77"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/fits/final_all_NBA_S.json",
+      "bytes": 1719449,
+      "sha256": "ade9975f0e700f97de04d42b383720fed76a4d2f7c8b1b790d0f38cc27bdc2fe"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/fits/outer_CHI_J.json",
+      "bytes": 1095483,
+      "sha256": "5a98d82eb587a6b8bbc43272b070be5603767e0125d720dacdf9cdd5d92aecb5"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/fits/outer_CHI_S.json",
+      "bytes": 1089929,
+      "sha256": "d2f298fc39262c27b17f8c8a70b39a43f6cd2b3dc262ee7961c6066cb9b4d4f7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/fits/outer_DEN_J.json",
+      "bytes": 1091452,
+      "sha256": "606b0d202385fc3dfeed10f4a0e149ae5e0c9ef25a5505aa9bd474605f7d4e41"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/fits/outer_DEN_S.json",
+      "bytes": 1086093,
+      "sha256": "629418153e16510a0d1469dd4fc136c56187c4735b43467003712bea798865d4"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/fits/outer_SAC_J.json",
+      "bytes": 1025023,
+      "sha256": "2e3f4855d88f637403ee54bb846619a198d6cf1081eb65c23b56378dffbd3d91"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/fits/outer_SAC_S.json",
+      "bytes": 1019660,
+      "sha256": "75e06afc4a0980d3ec2000825af64fa3049834b69f6cb5aff84002fffc4634ac"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/fixed_policy_rows.jsonl",
+      "bytes": 10162110,
+      "sha256": "91a162dc7e33340ad91429afbf1a876e52ba835a31ab21f6f9c09d06755cfbca"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/frame_registry.jsonl",
+      "bytes": 20066106,
+      "sha256": "42023b3d36103233d524536e984564f0ba5e1c200cc89c47d69635abbf7bec7e"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/historical_rows.jsonl",
+      "bytes": 245217,
+      "sha256": "cd19340c298320d87c9fa4cd8b9db7dfcfb0bf0ad843716dc9890537d6c0af58"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/missingness.json",
+      "bytes": 1924,
+      "sha256": "2a8eaa07995c68339168507497e4baf737d68921a91bf5154827020fc52233eb"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/paired_policy_rows.jsonl",
+      "bytes": 11019372,
+      "sha256": "e5b48475d6fb00f4659d59dfc17f17dfce93071c3391799bd52f053634f343b1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/policy_curves.jsonl",
+      "bytes": 11116741,
+      "sha256": "8e65733b37612f494cbdde806dbb593f0b73636d7edd486e48d0dd9e7e14cf02"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/policy_zero_tables.jsonl",
+      "bytes": 5756974,
+      "sha256": "a4c7c86b4141ea71a161bcf083984f6eaa381cb081de3436a302b0bcece57180"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/preserved_controls_and_cases.json",
+      "bytes": 11799827,
+      "sha256": "45b0a3152872b57f1b3a4c67c5cd07dd9c00313c6730ff671acbda63026ab4cb"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/source_choices.jsonl",
+      "bytes": 27455658,
+      "sha256": "830def9ae57cd0f138100e9bbe900c692e40b8e0d923bd3b4b7e321c43313ae1"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/started.json",
+      "bytes": 1039,
+      "sha256": "64f2f6ce07e75d8693d21b4cc243b33c16f698af4e5aed551ca8839365a4a82b"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/summary.json",
+      "bytes": 21352,
+      "sha256": "84ea4015d69bffdcd20565186f892130095c1ce2299f8e2d78d1826f3d7df7f7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/attempt_001/analysis/completed.json",
+      "bytes": 7553,
+      "sha256": "c9879fb9a8f4a66b5a6f806ffcd73816ee11be7685ac2c8f6864dbb3793cf633"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/implementation_review/analysis_output_audit.json",
+      "bytes": 1147,
+      "sha256": "7b0522b078abe7362fb47f480cded649968f393ac7f8f74a01d00c97b67ad244"
+    },
+    {
+      "path": "docs/ball_tracking_candidate_acceptance_gate_protocol.md",
+      "bytes": 25636,
+      "sha256": "ed0b7aa3ada57313eed561b0e36861d687dcc121d04f0b8f7c19c01d169297db"
+    },
+    {
+      "path": "docs/ball_tracking_candidate_acceptance_gate_results.md",
+      "bytes": 19055,
+      "sha256": "f3f57a408b6714456dd8bb57676bc5c88c95939736a97662df1f0038fd714fe8"
+    },
+    {
+      "path": "configs/ball_tracking/proposals/candidate_acceptance_gate_v0_1.json",
+      "bytes": 34105,
+      "sha256": "42bf1ff4571dba80f9845852e54cacd0f9a6021e9e19b1490fee24883deafb15"
+    },
+    {
+      "path": "configs/ball_tracking/reviews/candidate_acceptance_gate_result_v0_1.json",
+      "bytes": 42290,
+      "sha256": "9d528da8d7b5f66b53cb6662045c32d2c1ad6dcd1e636c347f79976859680c34"
+    },
+    {
+      "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/implementation_review/final_preservation_and_report_review.json",
+      "bytes": 2722,
+      "sha256": "6446e33c716c7ed232ca6e10a7c32feda73add87537623bff1349d6b37a85ae8"
+    }
+  ],
+  "accepted_output_audit": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_gate_v0_1/implementation_review/analysis_output_audit.json",
+    "bytes": 1147,
+    "sha256": "7b0522b078abe7362fb47f480cded649968f393ac7f8f74a01d00c97b67ad244"
+  },
+  "protection": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_origin_ablation_v0_1/preparation/protection.json",
+    "bytes": 705178,
+    "sha256": "e9e693bd02a3ebf4101b1dcccd2db855bddbce08498ce915912f6c5757ea8ca4"
+  },
+  "baseline": {
+    "path": "data/outputs/ball_tracking/candidate_acceptance_origin_ablation_v0_1/preparation/baseline125_and_direction.json",
+    "bytes": 24034,
+    "sha256": "6e7981e6f26df9811b6a64b637f815ab48d49b285e8baad2e2f6502d57d86e92"
+  },
+  "execution_authorization": {
+    "user_statement": "Ok chat move forward",
+    "scope": "Implement and run the specifically recommended CPU-only ablation removing the two explicit origin indicators, four fits, reusing all completed scores/features/controls. Weighting/schema/routing changes remain later questions; no new image training, threshold selection, labels, protected access, settings changes or Git integration.",
+    "CPU_fits": 4,
+    "neural_calls": 0,
+    "GPU_queries": 0
+  },
+  "output": "data/outputs/ball_tracking/candidate_acceptance_origin_ablation_v0_1/attempt_001",
+  "fixed_reference": ">0",
+  "threshold_selection": false,
+  "preservation": "NBA exact J-kept correct IDs; HOU named Q-or-J-kept known-correct policy/stress union",
+  "interpretation": "Separate A-vs-J conservative nonregression and original Q/S component criterion; no automatic curve pass",
+  "automatic_new_experiment": false,
+  "adoption": false
+}

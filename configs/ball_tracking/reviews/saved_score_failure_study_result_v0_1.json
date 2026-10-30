@@ -1,0 +1,114 @@
+{
+  "schema": "saved_score_failure_study_result/v0.1",
+  "at_utc": "2026-10-30T00:19:11.230410+00:00",
+  "status": "completed_and_independently_audited",
+  "accepted_attempt": "data/outputs/ball_tracking/saved_score_failure_study_v0_1/attempt_003",
+  "report": "docs/ball_tracking_saved_score_failure_study_results.md",
+  "evidence": [
+    {
+      "path": "configs/ball_tracking/proposals/saved_score_failure_study_v0_1.json",
+      "bytes": 15812,
+      "sha256": "c8629cafbd14c6873612e6c85fd7c612e706e1978d269a0c02754118f5c8ab4a"
+    },
+    {
+      "path": "data/outputs/ball_tracking/saved_score_failure_study_v0_1/implementation_preparation/baseline_and_authorization.json",
+      "bytes": 20485,
+      "sha256": "a01bb2bf5ee38b9608393e0eed092e5bc31a3f1a0853c9c4f45316f862c1f831"
+    },
+    {
+      "path": "data/outputs/ball_tracking/saved_score_failure_study_v0_1/implementation_preparation/execution_freeze_003.json",
+      "bytes": 6432,
+      "sha256": "ff3def6486848e8c083277897756e764500d4e16779986c75b0e8569c6b5d0d3"
+    },
+    {
+      "path": "data/outputs/ball_tracking/saved_score_failure_study_v0_1/implementation_preparation/focused_tests_003.json",
+      "bytes": 1868,
+      "sha256": "42aefbadc27f064e7f7aeb83233c131488304b0eb9a6ab7596c36d2e09dcedde"
+    },
+    {
+      "path": "data/outputs/ball_tracking/saved_score_failure_study_v0_1/attempt_003/completed.json",
+      "bytes": 5660,
+      "sha256": "c97643c5a4532df0bdd8c321bab61a2f51459f1ee81d1e827b037dd008b376ba"
+    },
+    {
+      "path": "data/outputs/ball_tracking/saved_score_failure_study_v0_1/implementation_review/implementation_review_003.json",
+      "bytes": 3800,
+      "sha256": "4c48442eebb53329b97e1781e970c86a90ad3b40bd85c46fb71077ad5214db02"
+    },
+    {
+      "path": "data/outputs/ball_tracking/saved_score_failure_study_v0_1/implementation_review/output_audit_003.json",
+      "bytes": 4707,
+      "sha256": "c17fde46948ee0cd958f31e6c6861eaabe1767a14ae89e4a54deb8eb5a40d895"
+    },
+    {
+      "path": "data/outputs/ball_tracking/saved_score_failure_study_v0_1/implementation_review/numeric_tables_audit_003.json",
+      "bytes": 1694,
+      "sha256": "b3c2af7ac162cfe301b95e6243b3f75ec8bc46e3fc59eab5fb80aa6dd95ff8e0"
+    },
+    {
+      "path": "data/outputs/ball_tracking/saved_score_failure_study_v0_1/implementation_review/analysis_interpretation.json",
+      "bytes": 307405,
+      "sha256": "d5a24e1635a12d2409eba07d8dc518659487e7334b8fc4e217c1328c44a37a43"
+    }
+  ],
+  "focused_tests": 25,
+  "independent_checks": {
+    "source_and_aggregates": 1571724,
+    "numeric_and_missingness": 43432,
+    "total": 1615156
+  },
+  "consumer_runtime_seconds": 47.722310000001016,
+  "counts": {
+    "frames": 7468,
+    "candidate_contexts": 50243,
+    "paired_candidates": 18813,
+    "paired_frames": 3179,
+    "contrasts": 6720,
+    "historical": 60
+  },
+  "nonaccepted_preserved_attempts": [
+    {
+      "attempt": "attempt_001",
+      "reason": "Duplicate native_correct_positive aggregate counter",
+      "note": "data\\outputs\\ball_tracking\\saved_score_failure_study_v0_1\\implementation_preparation\\attempt_001_nonacceptance.json"
+    },
+    {
+      "attempt": "attempt_002",
+      "reason": "Numeric category type split and unavailable stress threshold misclassified as zero support",
+      "note": "data\\outputs\\ball_tracking\\saved_score_failure_study_v0_1\\implementation_preparation\\attempt_002_nonacceptance.json"
+    }
+  ],
+  "new_findings": {
+    "held_match_first_without_positive_match_frames": 267,
+    "HOU_match_first_without_positive_match_frames": 37,
+    "paired_rank_regressions": 264,
+    "paired_rank_gains": 1,
+    "native_matching_candidate_median_logit_delta": -4.528571128845215,
+    "weak_matching_candidate_median_logit_delta": -6.750779151916504,
+    "fullpool_margin_median_delta": -8.309807300567627,
+    "fullpool_margin_observed_pairs": 2694,
+    "fullpool_margin_null_pairs": 485,
+    "support_cells": 794,
+    "support_associations": 6054,
+    "all_NBA_weak_positive_fit_candidates": 610,
+    "all_NBA_native_hidden_fit_candidates": 2
+  },
+  "interpretation": "Both rejection and ordering/coverage remain; metadata support associations include successful counterexamples and do not isolate causes.",
+  "recommended_next_question": "Design a bounded comparison of explicit presence/rejection evidence and cross-source score comparability, preserving ranking and proposal-coverage checks and all useful native/weak recoveries.",
+  "reading_scope": "Reused current-session full-history/research reconciliation and Session17/18/19 handoffs; newly reviewed saved schemas, original producers, implementation and actual new outputs. No fresh every-transcript/paper claim.",
+  "limits": [
+    "Exposed correlated data; no independent validation",
+    "Fitting composition and amount confounded",
+    "Marginal support is not joint visual similarity",
+    "Zero is a fixed diagnostic reference, not calibrated probability"
+  ],
+  "new_model_calls": 0,
+  "GPU_queries": 0,
+  "new_labels": 0,
+  "new_choices": 0,
+  "selected_threshold": null,
+  "adopted_model": null,
+  "protected_access": false,
+  "old_consumers_reexecuted": false,
+  "git_integration": false
+}

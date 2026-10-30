@@ -1,0 +1,224 @@
+{
+  "schema_version": "point_feature_comparison/v0.1",
+  "status": "approved_CPU_inference_no_fit",
+  "created_at_utc": "2026-10-27T01:52:53.755563+00:00",
+  "branch": "codex/ball-detector-baseline",
+  "head": "8c040fca385dd8fffa0d7a13c45c53e79950bae1",
+  "authority": {
+    "user_statement": "Ok chat move forward. Please make sure you do this every time you propose a new direction for our work (experiment, pivot, etc.)",
+    "scope": "Implement and run the proposed fixed single CPU global-CLS versus point-token comparison after explicit session-history/research reconciliation. No fitting, GPU execution, labels, selector or protected evaluation.",
+    "standing_rule": "Before every new direction, reconcile accumulated sessions and relevant research with primary evidence, explain coverage/limits and remaining alternatives."
+  },
+  "output_root": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1",
+  "proposal": {
+    "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/approved_proposal_snapshot.md",
+    "bytes": 21025,
+    "sha256": "a4ba8a40039fbb4167759df52f38061ab088b4c7d68556feeca8ed3b33330a17"
+  },
+  "history_research_reconciliation": {
+    "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/history/research_reconciliation/review.txt",
+    "bytes": 5176,
+    "sha256": "52a6e44c949ea033e52a1240aff4518216e3729493d560ecafcf0ac33c1b8ed6"
+  },
+  "preparation": {
+    "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_preparation_v0_1/completed.json",
+    "bytes": 5005,
+    "sha256": "e6e86d402ba22c43404c17861035a88bcbe7dea32c5e302f4761882329bd6850"
+  },
+  "preparation_audit": {
+    "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_preparation_v0_1/independent_source_transport_audit.json",
+    "bytes": 12882,
+    "sha256": "13dc14fee44c9f301da93db055b4e0d182fcd0ed1ef72334a0ccbcc18048c311"
+  },
+  "geometry_freeze": {
+    "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_preparation_v0_1/geometry_freeze_003.json",
+    "bytes": 6642,
+    "sha256": "2d22ded9ea8de32c8e500098973024c3daaba22fb06d68b5a3e58beb515e7143"
+  },
+  "execution": {
+    "device": "cpu",
+    "dtype": "float32",
+    "batch_size": 1,
+    "torch_threads": 4,
+    "attention": "eager",
+    "model_mode": "eval",
+    "gradient_mode": "inference_mode",
+    "input_order": "historical unique inputs first, then remaining stable prepared registry order",
+    "heartbeat_seconds": 30,
+    "resume": "explicit; validate immutable successes; retain every failed attempt and forward start/return journal",
+    "historical_time_estimate_seconds": [
+      1923.0345364341085,
+      2284.3417
+    ],
+    "time_estimate_limit": "Historical extrapolation, not a wall-clock cap or guaranteed duration."
+  },
+  "model": {
+    "repository": "facebook/dinov2-small",
+    "revision": "150c8e7bb7cef2d30ec31b13a517af14840ee3f7",
+    "weights": {
+      "path": "data/outputs/ball_tracking/nba/appearance_feature_screen_v0_1/model/model.safetensors",
+      "sha256": "ae1e99fcefd534ed978cdeb8326f08030c96e28b7a81ffcbc98a857c84d14be1",
+      "bytes": 88249960
+    },
+    "config": {
+      "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/design_sources/config.json",
+      "sha256": "1809f83e3bdb1609a501a610ad4a742f4fd8ae44d72ca4aa0df52d1f2ac8628d",
+      "bytes": 547
+    },
+    "processor": {
+      "path": "data/outputs/ball_tracking/nba/appearance_reference_v0_1/design_sources/preprocessor_config.json",
+      "sha256": "14e780d86fa1861f8751f868d7f45425b5feb55c38ca26f152ca5097ab30f828",
+      "bytes": 436
+    },
+    "library": {
+      "path": "C:\\Users\\Ryan\\Projects\\player-defense-score\\.venv\\Lib\\site-packages\\transformers\\models\\dinov2\\modeling_dinov2.py",
+      "sha256": "9c7e028bdadef16e4fe6c59833ac916fe0a7987d1ac968a6f19aca40359ea9f8",
+      "bytes": 25000
+    },
+    "versions": {
+      "torch": "2.13.0+cu130",
+      "transformers": "5.14.1",
+      "safetensors": "0.8.0",
+      "numpy": "2.4.6",
+      "Pillow": "12.3.0"
+    }
+  },
+  "CLS_parity": {
+    "atol": 1e-05,
+    "rtol": 1e-05,
+    "cases": 60,
+    "inside_same_pass": true,
+    "before_HOU_inference": true,
+    "before_outcome_analysis": true,
+    "mismatch_policy": "Preserve attempt and diagnose preprocessing/environment drift; never redefine control or use mismatched output as a scientific result."
+  },
+  "readouts": {
+    "names": [
+      "cls",
+      "point"
+    ],
+    "sequence_shape": [
+      1,
+      257,
+      384
+    ],
+    "global": "Final normalized sequence token0, equal to pooler_output.",
+    "point_sequence_indices": [
+      120,
+      121,
+      136,
+      137
+    ],
+    "point": "Float64 weighted sum of four raw final-LayerNorm patch-token vectors using each exact prepared query weight; then one L2 normalization. Never normalize each patch before interpolation.",
+    "normalization": "Float64 L2 for each query/bank vector separately.",
+    "geometry": {
+      "crop": "floor center minus32;64native;black padding;Pillow bicubic256;crop16:240",
+      "point_transform": "u=4*(cx-left+0.5)-0.5-16;v analogous",
+      "token_transform": "gx=(u-6.5)/14;gy analogous;row-major16x16;sequence starts at1",
+      "point_query_deduplication": false,
+      "padding_policy": "record exact pixels; no absence inference"
+    },
+    "invalid_vector": "Explicit unavailable descriptor/margin with reason; unknown is neither correct retention nor successful rejection.",
+    "padding": "Retain finite scores with explicit complete-source/padded strata. Padding never implies absence or semantic class. No outcome-selected exclusion."
+  },
+  "expected_census": {
+    "queries": 11798,
+    "main_HOU_candidates": 10778,
+    "HOU_stress_rows": 960,
+    "historical_cases": 60,
+    "emitted_point_queries": 11787,
+    "missing_stress_rows": 11,
+    "unique_inputs": 10883,
+    "source_PNGs": 1009
+  },
+  "reference_bank": {
+    "case_ids": [
+      "appearance:sac_mem_q1_c01:942:mean:0",
+      "appearance:sac_mem_q1_c01:942:mean:1",
+      "appearance:sac_mem_q1_c01:942:mean:2",
+      "appearance:sac_mem_q1_c01:961:mean:0",
+      "appearance:sac_mem_q1_c01:961:mean:1",
+      "appearance:sac_mem_q1_c01:999:mean:0",
+      "appearance:sac_mem_q1_c01:1299:mean:0",
+      "appearance:sac_mem_q1_c01:1346:mean:0",
+      "appearance:sac_mem_q1_c01:1346:mean:1",
+      "appearance:sac_mem_q1_c01:1346:mean:2"
+    ],
+    "classes": {
+      "appearance:sac_mem_q1_c01:942:mean:0": "other_object",
+      "appearance:sac_mem_q1_c01:942:mean:1": "other_object",
+      "appearance:sac_mem_q1_c01:942:mean:2": "ball",
+      "appearance:sac_mem_q1_c01:961:mean:0": "other_object",
+      "appearance:sac_mem_q1_c01:961:mean:1": "ball",
+      "appearance:sac_mem_q1_c01:999:mean:0": "ball",
+      "appearance:sac_mem_q1_c01:1299:mean:0": "other_object",
+      "appearance:sac_mem_q1_c01:1346:mean:0": "ball",
+      "appearance:sac_mem_q1_c01:1346:mean:1": "other_object",
+      "appearance:sac_mem_q1_c01:1346:mean:2": "other_object"
+    },
+    "rule": "Maximum cosine to the4ball bank references minus maximum cosine to the6other-object bank references.",
+    "matching": "CLS query to CLS bank; point query to point bank; same10 accepted SAC identities.",
+    "no_bank_self_match_check_metrics": true,
+    "unknown_bank": "Never drop an unknown bank member. Mark that representation margin unavailable with a reason."
+  },
+  "analysis": {
+    "seal_all_descriptors_before_reference_outcomes": true,
+    "HOU": "All6 complete contexts; per-episode and explicitly descriptive pooled results. Repeatedly inspected development, no fitting.",
+    "ranks": "Within-frame best <=10px eligible match against all geometric localization misses; strict/tie counts; complete-feature paired comparisons only.",
+    "paired": "Point versus CLS on same candidates; compare fixed peak and native-only mass as separate existing comparators.",
+    "bounds": [
+      "score>maximum certain-hidden margin",
+      "score>=minimum margin of842 original native-correct points"
+    ],
+    "bound_scope": "One shared HOU diagnostic cutoff per representation; unchanged per-episode reporting; no production threshold.",
+    "stress": "All960 old expanded-weak rows; separately preserve21 correct gains from native missing, ten e01 gains, six sub-.01e05 gains, original hidden and all unknown cases.",
+    "correction_subsets": "Report six gains over native and27 native-correct losses of prior corrected strong arm if joined exactly from original records; diagnostic subsets only.",
+    "padding": "Count and report complete-source/padded strata at the same shared thresholds and paired rankings; no separately chosen thresholds.",
+    "historical": "Keep10 bank,10 accepted checks,6unresolved and34exposed cases separate. Accepted DET diagnostic-only; no parameter/model choice from DET. Preserve nearest-bank versus fitted-logistic failure provenance.",
+    "no_new_coordinates": true,
+    "no_new_selector": true,
+    "no_frame_independence_claim": true,
+    "limits": "This is representation feasibility, not achieved tracking accuracy or proof that every alternative fails."
+  },
+  "quality_criteria_unchanged": {
+    "radius_source_pixels_inclusive": 10,
+    "correct_fraction_minimum": 0.95,
+    "wrong_fraction_maximum": 0.01,
+    "certain_hidden_emissions_maximum": 0,
+    "eligible_missing_run_maximum_ms": 200,
+    "confirmed_wrong_object_run_fail_at_ms": 120,
+    "recovery_maximum_ms": 120,
+    "recovery_requires_next_two_eligible_correct": true,
+    "per_context_gates": true,
+    "preserve_uncertainty_censoring_and_nine_inconclusive_recoveries": true,
+    "complete_synchronized_human_review_required": true
+  },
+  "WASB_research_control": {
+    "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/cosine/fit_v0_1/checkpoints/epoch_009.pth",
+    "bytes": 6084071,
+    "sha256": "f4b721662ec3d8b546563feffcf5ce0d6319ed8ddc83f398830a0aac5d29c7b9"
+  },
+  "source_roles": {
+    "path": "configs/ball_tracking/completion_campaign/source_roles_v0_1.json",
+    "bytes": 71569,
+    "sha256": "3ae5de63eef918fdaafcfbac62c09ca46e14fa1c1fdf069739d731955a573200"
+  },
+  "decision": {
+    "continue": "Meaningful recurring paired ordering and hidden-separation gains while protecting native-correct and useful weak points can justify a separately specified selection/abstention test; final acceptance need not already pass.",
+    "mixed_or_negative": "Preserve all gains/losses and diagnose representation, bank coverage, calibration and candidate-offset limitations. Reject only the tested setting, not all appearance or temporal methods.",
+    "alternatives_open": [
+      "basketball MonoTrack",
+      "basketball-specialized RF-DETR",
+      "learned basketball context",
+      "materially changed temporal/reseeding approaches",
+      "joint or temporal response evidence"
+    ],
+    "next_direction_requires_explicit_history_research_reconciliation": true
+  },
+  "inference_authorized": true,
+  "new_training_updates": 0,
+  "new_selector_runs": 0,
+  "new_labels": 0,
+  "protected_evaluation_authorized": false,
+  "human_trajectory_acceptance": null
+}

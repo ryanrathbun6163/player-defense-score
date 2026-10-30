@@ -1,0 +1,1866 @@
+{
+  "schema_version": "candidate_change_comparison_result/v0.1",
+  "status": "completed_reference_assisted_diagnosis_no_adoption",
+  "created_at_utc": "2026-10-28T16:15:46.685801+00:00",
+  "branch": "codex/ball-detector-baseline",
+  "head": "8c040fca385dd8fffa0d7a13c45c53e79950bae1",
+  "authority": "Ryan instructed moving forward after the fixed protocol was delivered; one CPU saved-output analysis and recount, no new model or selector.",
+  "report": {
+    "path": "docs/ball_tracking_candidate_change_comparison_results.md",
+    "bytes": 15510,
+    "sha256": "b1189614c2457ad5b60c0c0c3222b3bc0cbdc79f71cf65551ebbc1953ed28c22"
+  },
+  "protocol": {
+    "path": "docs/ball_tracking_candidate_change_comparison_protocol.md",
+    "bytes": 20707,
+    "sha256": "9bfa0bb7f6d381ba9e09ae06bd699dba3db98c26262e450a4e79f854c4ae8c52"
+  },
+  "recipe": {
+    "path": "configs/ball_tracking/proposals/candidate_change_comparison_v0_1.json",
+    "bytes": 17457,
+    "sha256": "2663083416a014b87fe16474a04238524a0508ad8eaf7a6415111aaf08c59052"
+  },
+  "execution_freeze": {
+    "path": "data/outputs/ball_tracking/candidate_change_comparison_v0_1/execution_freeze.json",
+    "bytes": 4199,
+    "sha256": "d32eb0696b902a9f5bbd135716d0e88f82d10c3d17a15f18f3fb2a03dace02f3"
+  },
+  "analysis": {
+    "path": "data/outputs/ball_tracking/candidate_change_comparison_v0_1/analysis_v0_1/completed.json",
+    "bytes": 2069154,
+    "sha256": "5a6817c7f5e8779db67defa264d22af995315d6472ec16e50158b381f4ba56a9"
+  },
+  "comparisons": {
+    "path": "data/outputs/ball_tracking/candidate_change_comparison_v0_1/analysis_v0_1/comparisons.jsonl",
+    "bytes": 30735005,
+    "sha256": "05cd287782ca3b2b2cc08647d6761feaa6a777db21f8dc330a3135108f7d1ea4"
+  },
+  "choices": {
+    "path": "data/outputs/ball_tracking/candidate_change_comparison_v0_1/analysis_v0_1/choices.jsonl",
+    "bytes": 11508059,
+    "sha256": "19b3b54ab8139205cc4bd92ae2624a46c76d87d9edc60a79771e38bc10c74510"
+  },
+  "independent_recount": {
+    "path": "data/outputs/ball_tracking/candidate_change_comparison_v0_1/analysis_v0_1/independent_recount.json",
+    "bytes": 1119,
+    "sha256": "1cd474aeb623de689a336740a748a011000036007c6b2cd448a8513327990954"
+  },
+  "research_control": {
+    "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/cosine/fit_v0_1/checkpoints/epoch_009.pth",
+    "bytes": 6084071,
+    "sha256": "f4b721662ec3d8b546563feffcf5ce0d6319ed8ddc83f398830a0aac5d29c7b9"
+  },
+  "source_roles": {
+    "path": "configs/ball_tracking/completion_campaign/source_roles_v0_1.json",
+    "bytes": 71569,
+    "sha256": "3ae5de63eef918fdaafcfbac62c09ca46e14fa1c1fdf069739d731955a573200"
+  },
+  "population": {
+    "frames": 960,
+    "choice_slots": 6720,
+    "contrast_frame_rows": 6720,
+    "cached_emitted_choice_slots": 6421,
+    "explicit_missing_choice_slots": 299,
+    "reference_categories": {
+      "eligible": 882,
+      "certain_hidden": 34,
+      "indeterminate": 14,
+      "uncertain_hidden": 8,
+      "visible_unlocalizable": 22
+    }
+  },
+  "execution": {
+    "analysis_seconds": 1.8170711000002484,
+    "resource_snapshot": {
+      "process_cpu_seconds": 1.75,
+      "peak_process_working_set_bytes": 294924288,
+      "current_process_working_set_bytes": 246464512
+    },
+    "recount_seconds": 1.4633187999997972,
+    "recount_checks": 136510,
+    "focused_tests_passed": 11,
+    "analysis_attempts": 1,
+    "retries": 0,
+    "preparation_disclosure": "Four captured producer-record fixtures exercised before freeze, plus synthetic comparisons; no full-population outcome analysis before freeze. Earlier exposed results reused."
+  },
+  "contrasts": {
+    "native__to__motion_and_speed": {
+      "all": {
+        "declared_rows": 960,
+        "choice_states": {
+          "both_observed_same_coordinate": 874,
+          "both_observed_different_coordinate": 35,
+          "source_observed_target_missing": 6,
+          "source_missing_target_observed": 0,
+          "both_missing": 45
+        },
+        "reference_categories": {
+          "eligible": 882,
+          "indeterminate": 14,
+          "uncertain_hidden": 8,
+          "visible_unlocalizable": 22,
+          "certain_hidden": 34
+        },
+        "eligible_transition_matrix": {
+          "matched->matched": 815,
+          "matched->wrong": 25,
+          "matched->missing": 2,
+          "wrong->matched": 6,
+          "wrong->wrong": 11,
+          "wrong->missing": 2,
+          "missing->matched": 0,
+          "missing->wrong": 0,
+          "missing->missing": 21
+        },
+        "two_observed": 909,
+        "distinct_coordinates": 35,
+        "exactly_one_correct_pairs": 31,
+        "candidate_identity_agreements": 874,
+        "features": {
+          "point": {
+            "all_rows_preference": {
+              "tie": 874,
+              "unavailable": 51,
+              "source": 22,
+              "target": 13
+            },
+            "complete_observed_pairs": 909,
+            "unavailable_rows_including_missing": 51,
+            "distinct_coordinate_complete_pairs": 35,
+            "exactly_one_correct": {
+              "correct_side": 26,
+              "wrong_side": 5
+            },
+            "exactly_one_correct_total": 31,
+            "eligible_rows_outside_discrimination_pairs": 851,
+            "unscored_reference_rows": 78
+          },
+          "cls": {
+            "all_rows_preference": {
+              "tie": 874,
+              "unavailable": 51,
+              "target": 17,
+              "source": 18
+            },
+            "complete_observed_pairs": 909,
+            "unavailable_rows_including_missing": 51,
+            "distinct_coordinate_complete_pairs": 35,
+            "exactly_one_correct": {
+              "wrong_side": 17,
+              "correct_side": 14
+            },
+            "exactly_one_correct_total": 31,
+            "eligible_rows_outside_discrimination_pairs": 851,
+            "unscored_reference_rows": 78
+          },
+          "peak": {
+            "all_rows_preference": {
+              "tie": 874,
+              "unavailable": 51,
+              "source": 33,
+              "target": 2
+            },
+            "complete_observed_pairs": 909,
+            "unavailable_rows_including_missing": 51,
+            "distinct_coordinate_complete_pairs": 35,
+            "exactly_one_correct": {
+              "correct_side": 23,
+              "wrong_side": 8
+            },
+            "exactly_one_correct_total": 31,
+            "eligible_rows_outside_discrimination_pairs": 851,
+            "unscored_reference_rows": 78
+          },
+          "native_mass": {
+            "all_rows_preference": {
+              "tie": 874,
+              "unavailable": 51,
+              "source": 35
+            },
+            "complete_observed_pairs": 909,
+            "unavailable_rows_including_missing": 51,
+            "distinct_coordinate_complete_pairs": 35,
+            "exactly_one_correct": {
+              "correct_side": 25,
+              "wrong_side": 6
+            },
+            "exactly_one_correct_total": 31,
+            "eligible_rows_outside_discrimination_pairs": 851,
+            "unscored_reference_rows": 78
+          }
+        },
+        "joint_preference_signs": {
+          "tie|tie|tie|tie": 874,
+          "unavailable|unavailable|unavailable|unavailable": 51,
+          "source|target|source|source": 9,
+          "target|target|source|source": 6,
+          "source|source|source|source": 12,
+          "target|target|target|source": 1,
+          "source|target|target|source": 1,
+          "target|source|source|source": 6
+        },
+        "point_vs_control_correct_side": {
+          "cls": {
+            "correct_side|wrong_side": 12,
+            "wrong_side|wrong_side": 5,
+            "correct_side|correct_side": 14
+          },
+          "peak": {
+            "correct_side|correct_side": 20,
+            "wrong_side|correct_side": 3,
+            "wrong_side|wrong_side": 2,
+            "correct_side|wrong_side": 6
+          },
+          "native_mass": {
+            "correct_side|correct_side": 21,
+            "wrong_side|correct_side": 4,
+            "correct_side|wrong_side": 5,
+            "wrong_side|wrong_side": 1
+          }
+        }
+      },
+      "episodes": {
+        "hou-vs-okc-0022400879_e01": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "informative_pairs": 11,
+          "correct_side": {
+            "point": {
+              "correct_side": 7,
+              "wrong_side": 4
+            },
+            "cls": {
+              "wrong_side": 9,
+              "correct_side": 2
+            },
+            "peak": {
+              "correct_side": 9,
+              "wrong_side": 2
+            },
+            "native_mass": {
+              "correct_side": 11
+            }
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "informative_pairs": 5,
+          "correct_side": {
+            "point": {
+              "correct_side": 4,
+              "wrong_side": 1
+            },
+            "cls": {
+              "correct_side": 3,
+              "wrong_side": 2
+            },
+            "peak": {
+              "wrong_side": 5
+            },
+            "native_mass": {
+              "wrong_side": 5
+            }
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "informative_pairs": 15,
+          "correct_side": {
+            "point": {
+              "correct_side": 15
+            },
+            "cls": {
+              "correct_side": 9,
+              "wrong_side": 6
+            },
+            "peak": {
+              "correct_side": 14,
+              "wrong_side": 1
+            },
+            "native_mass": {
+              "correct_side": 14,
+              "wrong_side": 1
+            }
+          }
+        }
+      }
+    },
+    "native__to__motion_and_speed_narrow_weak": {
+      "all": {
+        "declared_rows": 960,
+        "choice_states": {
+          "both_observed_same_coordinate": 871,
+          "both_observed_different_coordinate": 39,
+          "source_observed_target_missing": 5,
+          "source_missing_target_observed": 37,
+          "both_missing": 8
+        },
+        "reference_categories": {
+          "eligible": 882,
+          "indeterminate": 14,
+          "uncertain_hidden": 8,
+          "visible_unlocalizable": 22,
+          "certain_hidden": 34
+        },
+        "eligible_transition_matrix": {
+          "matched->matched": 813,
+          "matched->wrong": 27,
+          "matched->missing": 2,
+          "wrong->matched": 7,
+          "wrong->wrong": 11,
+          "wrong->missing": 1,
+          "missing->matched": 11,
+          "missing->wrong": 9,
+          "missing->missing": 1
+        },
+        "two_observed": 910,
+        "distinct_coordinates": 39,
+        "exactly_one_correct_pairs": 34,
+        "candidate_identity_agreements": 871,
+        "features": {
+          "point": {
+            "all_rows_preference": {
+              "tie": 871,
+              "unavailable": 50,
+              "source": 22,
+              "target": 17
+            },
+            "complete_observed_pairs": 910,
+            "unavailable_rows_including_missing": 50,
+            "distinct_coordinate_complete_pairs": 39,
+            "exactly_one_correct": {
+              "correct_side": 27,
+              "wrong_side": 7
+            },
+            "exactly_one_correct_total": 34,
+            "eligible_rows_outside_discrimination_pairs": 848,
+            "unscored_reference_rows": 78
+          },
+          "cls": {
+            "all_rows_preference": {
+              "tie": 871,
+              "unavailable": 50,
+              "target": 18,
+              "source": 21
+            },
+            "complete_observed_pairs": 910,
+            "unavailable_rows_including_missing": 50,
+            "distinct_coordinate_complete_pairs": 39,
+            "exactly_one_correct": {
+              "wrong_side": 17,
+              "correct_side": 17
+            },
+            "exactly_one_correct_total": 34,
+            "eligible_rows_outside_discrimination_pairs": 848,
+            "unscored_reference_rows": 78
+          },
+          "peak": {
+            "all_rows_preference": {
+              "tie": 871,
+              "unavailable": 50,
+              "source": 37,
+              "target": 2
+            },
+            "complete_observed_pairs": 910,
+            "unavailable_rows_including_missing": 50,
+            "distinct_coordinate_complete_pairs": 39,
+            "exactly_one_correct": {
+              "correct_side": 25,
+              "wrong_side": 9
+            },
+            "exactly_one_correct_total": 34,
+            "eligible_rows_outside_discrimination_pairs": 848,
+            "unscored_reference_rows": 78
+          },
+          "native_mass": {
+            "all_rows_preference": {
+              "tie": 871,
+              "unavailable": 54,
+              "source": 35
+            },
+            "complete_observed_pairs": 906,
+            "unavailable_rows_including_missing": 54,
+            "distinct_coordinate_complete_pairs": 35,
+            "exactly_one_correct": {
+              "correct_side": 25,
+              "unavailable": 3,
+              "wrong_side": 6
+            },
+            "exactly_one_correct_total": 34,
+            "eligible_rows_outside_discrimination_pairs": 848,
+            "unscored_reference_rows": 78
+          }
+        },
+        "joint_preference_signs": {
+          "tie|tie|tie|tie": 871,
+          "unavailable|unavailable|unavailable|unavailable": 50,
+          "source|target|source|source": 9,
+          "target|target|source|source": 6,
+          "source|source|source|source": 12,
+          "target|target|target|source": 1,
+          "source|target|target|source": 1,
+          "target|source|source|unavailable": 3,
+          "target|source|source|source": 6,
+          "target|target|source|unavailable": 1
+        },
+        "point_vs_control_correct_side": {
+          "cls": {
+            "correct_side|wrong_side": 12,
+            "wrong_side|wrong_side": 5,
+            "correct_side|correct_side": 15,
+            "wrong_side|correct_side": 2
+          },
+          "peak": {
+            "correct_side|correct_side": 20,
+            "wrong_side|correct_side": 5,
+            "wrong_side|wrong_side": 2,
+            "correct_side|wrong_side": 7
+          },
+          "native_mass": {
+            "correct_side|correct_side": 21,
+            "wrong_side|correct_side": 4,
+            "wrong_side|unavailable": 2,
+            "correct_side|wrong_side": 5,
+            "wrong_side|wrong_side": 1,
+            "correct_side|unavailable": 1
+          }
+        }
+      },
+      "episodes": {
+        "hou-vs-okc-0022400879_e01": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "informative_pairs": 11,
+          "correct_side": {
+            "point": {
+              "correct_side": 7,
+              "wrong_side": 4
+            },
+            "cls": {
+              "wrong_side": 9,
+              "correct_side": 2
+            },
+            "peak": {
+              "correct_side": 9,
+              "wrong_side": 2
+            },
+            "native_mass": {
+              "correct_side": 11
+            }
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "informative_pairs": 8,
+          "correct_side": {
+            "point": {
+              "wrong_side": 3,
+              "correct_side": 5
+            },
+            "cls": {
+              "correct_side": 6,
+              "wrong_side": 2
+            },
+            "peak": {
+              "correct_side": 2,
+              "wrong_side": 6
+            },
+            "native_mass": {
+              "unavailable": 3,
+              "wrong_side": 5
+            }
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "informative_pairs": 15,
+          "correct_side": {
+            "point": {
+              "correct_side": 15
+            },
+            "cls": {
+              "correct_side": 9,
+              "wrong_side": 6
+            },
+            "peak": {
+              "correct_side": 14,
+              "wrong_side": 1
+            },
+            "native_mass": {
+              "correct_side": 14,
+              "wrong_side": 1
+            }
+          }
+        }
+      }
+    },
+    "motion_and_speed__to__motion_and_speed_narrow_weak": {
+      "all": {
+        "declared_rows": 960,
+        "choice_states": {
+          "both_observed_same_coordinate": 906,
+          "both_observed_different_coordinate": 2,
+          "source_observed_target_missing": 1,
+          "source_missing_target_observed": 39,
+          "both_missing": 12
+        },
+        "reference_categories": {
+          "eligible": 882,
+          "indeterminate": 14,
+          "uncertain_hidden": 8,
+          "visible_unlocalizable": 22,
+          "certain_hidden": 34
+        },
+        "eligible_transition_matrix": {
+          "matched->matched": 819,
+          "matched->wrong": 2,
+          "matched->missing": 0,
+          "wrong->matched": 0,
+          "wrong->wrong": 36,
+          "wrong->missing": 0,
+          "missing->matched": 12,
+          "missing->wrong": 9,
+          "missing->missing": 4
+        },
+        "two_observed": 908,
+        "distinct_coordinates": 2,
+        "exactly_one_correct_pairs": 2,
+        "candidate_identity_agreements": 906,
+        "features": {
+          "point": {
+            "all_rows_preference": {
+              "tie": 906,
+              "unavailable": 52,
+              "target": 2
+            },
+            "complete_observed_pairs": 908,
+            "unavailable_rows_including_missing": 52,
+            "distinct_coordinate_complete_pairs": 2,
+            "exactly_one_correct": {
+              "wrong_side": 2
+            },
+            "exactly_one_correct_total": 2,
+            "eligible_rows_outside_discrimination_pairs": 880,
+            "unscored_reference_rows": 78
+          },
+          "cls": {
+            "all_rows_preference": {
+              "tie": 906,
+              "unavailable": 52,
+              "source": 2
+            },
+            "complete_observed_pairs": 908,
+            "unavailable_rows_including_missing": 52,
+            "distinct_coordinate_complete_pairs": 2,
+            "exactly_one_correct": {
+              "correct_side": 2
+            },
+            "exactly_one_correct_total": 2,
+            "eligible_rows_outside_discrimination_pairs": 880,
+            "unscored_reference_rows": 78
+          },
+          "peak": {
+            "all_rows_preference": {
+              "tie": 906,
+              "unavailable": 52,
+              "source": 2
+            },
+            "complete_observed_pairs": 908,
+            "unavailable_rows_including_missing": 52,
+            "distinct_coordinate_complete_pairs": 2,
+            "exactly_one_correct": {
+              "correct_side": 2
+            },
+            "exactly_one_correct_total": 2,
+            "eligible_rows_outside_discrimination_pairs": 880,
+            "unscored_reference_rows": 78
+          },
+          "native_mass": {
+            "all_rows_preference": {
+              "tie": 906,
+              "unavailable": 54
+            },
+            "complete_observed_pairs": 906,
+            "unavailable_rows_including_missing": 54,
+            "distinct_coordinate_complete_pairs": 0,
+            "exactly_one_correct": {
+              "unavailable": 2
+            },
+            "exactly_one_correct_total": 2,
+            "eligible_rows_outside_discrimination_pairs": 880,
+            "unscored_reference_rows": 78
+          }
+        },
+        "joint_preference_signs": {
+          "tie|tie|tie|tie": 906,
+          "unavailable|unavailable|unavailable|unavailable": 52,
+          "target|source|source|unavailable": 2
+        },
+        "point_vs_control_correct_side": {
+          "cls": {
+            "wrong_side|correct_side": 2
+          },
+          "peak": {
+            "wrong_side|correct_side": 2
+          },
+          "native_mass": {
+            "wrong_side|unavailable": 2
+          }
+        }
+      },
+      "episodes": {
+        "hou-vs-okc-0022400879_e01": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "informative_pairs": 2,
+          "correct_side": {
+            "point": {
+              "wrong_side": 2
+            },
+            "cls": {
+              "correct_side": 2
+            },
+            "peak": {
+              "correct_side": 2
+            },
+            "native_mass": {
+              "unavailable": 2
+            }
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        }
+      }
+    },
+    "native__to__sequence_strong": {
+      "all": {
+        "declared_rows": 960,
+        "choice_states": {
+          "both_observed_same_coordinate": 829,
+          "both_observed_different_coordinate": 70,
+          "source_observed_target_missing": 16,
+          "source_missing_target_observed": 0,
+          "both_missing": 45
+        },
+        "reference_categories": {
+          "eligible": 882,
+          "indeterminate": 14,
+          "uncertain_hidden": 8,
+          "visible_unlocalizable": 22,
+          "certain_hidden": 34
+        },
+        "eligible_transition_matrix": {
+          "matched->matched": 764,
+          "matched->wrong": 65,
+          "matched->missing": 13,
+          "wrong->matched": 0,
+          "wrong->wrong": 19,
+          "wrong->missing": 0,
+          "missing->matched": 0,
+          "missing->wrong": 0,
+          "missing->missing": 21
+        },
+        "two_observed": 899,
+        "distinct_coordinates": 70,
+        "exactly_one_correct_pairs": 65,
+        "candidate_identity_agreements": 829,
+        "features": {
+          "point": {
+            "all_rows_preference": {
+              "tie": 829,
+              "unavailable": 61,
+              "source": 61,
+              "target": 9
+            },
+            "complete_observed_pairs": 899,
+            "unavailable_rows_including_missing": 61,
+            "distinct_coordinate_complete_pairs": 70,
+            "exactly_one_correct": {
+              "correct_side": 58,
+              "wrong_side": 7
+            },
+            "exactly_one_correct_total": 65,
+            "eligible_rows_outside_discrimination_pairs": 817,
+            "unscored_reference_rows": 78
+          },
+          "cls": {
+            "all_rows_preference": {
+              "tie": 829,
+              "unavailable": 61,
+              "target": 36,
+              "source": 34
+            },
+            "complete_observed_pairs": 899,
+            "unavailable_rows_including_missing": 61,
+            "distinct_coordinate_complete_pairs": 70,
+            "exactly_one_correct": {
+              "wrong_side": 32,
+              "correct_side": 33
+            },
+            "exactly_one_correct_total": 65,
+            "eligible_rows_outside_discrimination_pairs": 817,
+            "unscored_reference_rows": 78
+          },
+          "peak": {
+            "all_rows_preference": {
+              "tie": 829,
+              "unavailable": 61,
+              "source": 56,
+              "target": 14
+            },
+            "complete_observed_pairs": 899,
+            "unavailable_rows_including_missing": 61,
+            "distinct_coordinate_complete_pairs": 70,
+            "exactly_one_correct": {
+              "correct_side": 54,
+              "wrong_side": 11
+            },
+            "exactly_one_correct_total": 65,
+            "eligible_rows_outside_discrimination_pairs": 817,
+            "unscored_reference_rows": 78
+          },
+          "native_mass": {
+            "all_rows_preference": {
+              "tie": 829,
+              "unavailable": 61,
+              "source": 70
+            },
+            "complete_observed_pairs": 899,
+            "unavailable_rows_including_missing": 61,
+            "distinct_coordinate_complete_pairs": 70,
+            "exactly_one_correct": {
+              "correct_side": 65
+            },
+            "exactly_one_correct_total": 65,
+            "eligible_rows_outside_discrimination_pairs": 817,
+            "unscored_reference_rows": 78
+          }
+        },
+        "joint_preference_signs": {
+          "tie|tie|tie|tie": 829,
+          "unavailable|unavailable|unavailable|unavailable": 61,
+          "source|target|source|source": 20,
+          "target|target|source|source": 4,
+          "source|source|source|source": 30,
+          "target|target|target|source": 3,
+          "source|target|target|source": 9,
+          "target|source|source|source": 2,
+          "source|source|target|source": 2
+        },
+        "point_vs_control_correct_side": {
+          "cls": {
+            "correct_side|wrong_side": 26,
+            "wrong_side|wrong_side": 6,
+            "correct_side|correct_side": 32,
+            "wrong_side|correct_side": 1
+          },
+          "peak": {
+            "correct_side|correct_side": 49,
+            "wrong_side|correct_side": 5,
+            "wrong_side|wrong_side": 2,
+            "correct_side|wrong_side": 9
+          },
+          "native_mass": {
+            "correct_side|correct_side": 58,
+            "wrong_side|correct_side": 7
+          }
+        }
+      },
+      "episodes": {
+        "hou-vs-okc-0022400879_e01": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "informative_pairs": 21,
+          "correct_side": {
+            "point": {
+              "correct_side": 17,
+              "wrong_side": 4
+            },
+            "cls": {
+              "wrong_side": 13,
+              "correct_side": 8
+            },
+            "peak": {
+              "correct_side": 19,
+              "wrong_side": 2
+            },
+            "native_mass": {
+              "correct_side": 21
+            }
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "informative_pairs": 9,
+          "correct_side": {
+            "point": {
+              "correct_side": 9
+            },
+            "cls": {
+              "correct_side": 6,
+              "wrong_side": 3
+            },
+            "peak": {
+              "correct_side": 9
+            },
+            "native_mass": {
+              "correct_side": 9
+            }
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "informative_pairs": 35,
+          "correct_side": {
+            "point": {
+              "correct_side": 32,
+              "wrong_side": 3
+            },
+            "cls": {
+              "correct_side": 19,
+              "wrong_side": 16
+            },
+            "peak": {
+              "correct_side": 26,
+              "wrong_side": 9
+            },
+            "native_mass": {
+              "correct_side": 35
+            }
+          }
+        }
+      }
+    },
+    "native__to__sequence_weak": {
+      "all": {
+        "declared_rows": 960,
+        "choice_states": {
+          "both_observed_same_coordinate": 823,
+          "both_observed_different_coordinate": 85,
+          "source_observed_target_missing": 7,
+          "source_missing_target_observed": 41,
+          "both_missing": 4
+        },
+        "reference_categories": {
+          "eligible": 882,
+          "indeterminate": 14,
+          "uncertain_hidden": 8,
+          "visible_unlocalizable": 22,
+          "certain_hidden": 34
+        },
+        "eligible_transition_matrix": {
+          "matched->matched": 759,
+          "matched->wrong": 78,
+          "matched->missing": 5,
+          "wrong->matched": 0,
+          "wrong->wrong": 19,
+          "wrong->missing": 0,
+          "missing->matched": 21,
+          "missing->wrong": 0,
+          "missing->missing": 0
+        },
+        "two_observed": 908,
+        "distinct_coordinates": 85,
+        "exactly_one_correct_pairs": 78,
+        "candidate_identity_agreements": 823,
+        "features": {
+          "point": {
+            "all_rows_preference": {
+              "tie": 823,
+              "unavailable": 52,
+              "source": 73,
+              "target": 12
+            },
+            "complete_observed_pairs": 908,
+            "unavailable_rows_including_missing": 52,
+            "distinct_coordinate_complete_pairs": 85,
+            "exactly_one_correct": {
+              "correct_side": 70,
+              "wrong_side": 8
+            },
+            "exactly_one_correct_total": 78,
+            "eligible_rows_outside_discrimination_pairs": 804,
+            "unscored_reference_rows": 78
+          },
+          "cls": {
+            "all_rows_preference": {
+              "tie": 823,
+              "unavailable": 52,
+              "source": 44,
+              "target": 41
+            },
+            "complete_observed_pairs": 908,
+            "unavailable_rows_including_missing": 52,
+            "distinct_coordinate_complete_pairs": 85,
+            "exactly_one_correct": {
+              "correct_side": 42,
+              "wrong_side": 36
+            },
+            "exactly_one_correct_total": 78,
+            "eligible_rows_outside_discrimination_pairs": 804,
+            "unscored_reference_rows": 78
+          },
+          "peak": {
+            "all_rows_preference": {
+              "tie": 823,
+              "unavailable": 52,
+              "source": 71,
+              "target": 14
+            },
+            "complete_observed_pairs": 908,
+            "unavailable_rows_including_missing": 52,
+            "distinct_coordinate_complete_pairs": 85,
+            "exactly_one_correct": {
+              "correct_side": 67,
+              "wrong_side": 11
+            },
+            "exactly_one_correct_total": 78,
+            "eligible_rows_outside_discrimination_pairs": 804,
+            "unscored_reference_rows": 78
+          },
+          "native_mass": {
+            "all_rows_preference": {
+              "tie": 823,
+              "unavailable": 69,
+              "source": 68
+            },
+            "complete_observed_pairs": 891,
+            "unavailable_rows_including_missing": 69,
+            "distinct_coordinate_complete_pairs": 68,
+            "exactly_one_correct": {
+              "unavailable": 15,
+              "correct_side": 63
+            },
+            "exactly_one_correct_total": 78,
+            "eligible_rows_outside_discrimination_pairs": 804,
+            "unscored_reference_rows": 78
+          }
+        },
+        "joint_preference_signs": {
+          "tie|tie|tie|tie": 823,
+          "unavailable|unavailable|unavailable|unavailable": 52,
+          "source|source|source|unavailable": 11,
+          "source|target|source|source": 20,
+          "target|target|source|source": 4,
+          "source|source|source|source": 28,
+          "target|target|target|source": 3,
+          "source|target|target|source": 9,
+          "source|target|source|unavailable": 3,
+          "target|target|source|unavailable": 2,
+          "target|source|source|source": 2,
+          "target|source|source|unavailable": 1,
+          "source|source|target|source": 2
+        },
+        "point_vs_control_correct_side": {
+          "cls": {
+            "correct_side|correct_side": 41,
+            "correct_side|wrong_side": 29,
+            "wrong_side|wrong_side": 7,
+            "wrong_side|correct_side": 1
+          },
+          "peak": {
+            "correct_side|correct_side": 61,
+            "wrong_side|correct_side": 6,
+            "wrong_side|wrong_side": 2,
+            "correct_side|wrong_side": 9
+          },
+          "native_mass": {
+            "correct_side|unavailable": 14,
+            "correct_side|correct_side": 56,
+            "wrong_side|correct_side": 7,
+            "wrong_side|unavailable": 1
+          }
+        }
+      },
+      "episodes": {
+        "hou-vs-okc-0022400879_e01": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "informative_pairs": 1,
+          "correct_side": {
+            "point": {
+              "correct_side": 1
+            },
+            "cls": {
+              "correct_side": 1
+            },
+            "peak": {
+              "correct_side": 1
+            },
+            "native_mass": {
+              "unavailable": 1
+            }
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "informative_pairs": 21,
+          "correct_side": {
+            "point": {
+              "correct_side": 17,
+              "wrong_side": 4
+            },
+            "cls": {
+              "wrong_side": 13,
+              "correct_side": 8
+            },
+            "peak": {
+              "correct_side": 19,
+              "wrong_side": 2
+            },
+            "native_mass": {
+              "correct_side": 21
+            }
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "informative_pairs": 3,
+          "correct_side": {
+            "point": {
+              "correct_side": 2,
+              "wrong_side": 1
+            },
+            "cls": {
+              "wrong_side": 3
+            },
+            "peak": {
+              "correct_side": 3
+            },
+            "native_mass": {
+              "unavailable": 3
+            }
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "informative_pairs": 18,
+          "correct_side": {
+            "point": {
+              "correct_side": 18
+            },
+            "cls": {
+              "wrong_side": 4,
+              "correct_side": 14
+            },
+            "peak": {
+              "correct_side": 18
+            },
+            "native_mass": {
+              "unavailable": 11,
+              "correct_side": 7
+            }
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "informative_pairs": 35,
+          "correct_side": {
+            "point": {
+              "correct_side": 32,
+              "wrong_side": 3
+            },
+            "cls": {
+              "correct_side": 19,
+              "wrong_side": 16
+            },
+            "peak": {
+              "correct_side": 26,
+              "wrong_side": 9
+            },
+            "native_mass": {
+              "correct_side": 35
+            }
+          }
+        }
+      }
+    },
+    "native__to__motion_only": {
+      "all": {
+        "declared_rows": 960,
+        "choice_states": {
+          "both_observed_same_coordinate": 860,
+          "both_observed_different_coordinate": 39,
+          "source_observed_target_missing": 16,
+          "source_missing_target_observed": 0,
+          "both_missing": 45
+        },
+        "reference_categories": {
+          "eligible": 882,
+          "indeterminate": 14,
+          "uncertain_hidden": 8,
+          "visible_unlocalizable": 22,
+          "certain_hidden": 34
+        },
+        "eligible_transition_matrix": {
+          "matched->matched": 795,
+          "matched->wrong": 34,
+          "matched->missing": 13,
+          "wrong->matched": 1,
+          "wrong->wrong": 17,
+          "wrong->missing": 1,
+          "missing->matched": 0,
+          "missing->wrong": 0,
+          "missing->missing": 21
+        },
+        "two_observed": 899,
+        "distinct_coordinates": 39,
+        "exactly_one_correct_pairs": 35,
+        "candidate_identity_agreements": 860,
+        "features": {
+          "point": {
+            "all_rows_preference": {
+              "tie": 860,
+              "unavailable": 61,
+              "source": 30,
+              "target": 9
+            },
+            "complete_observed_pairs": 899,
+            "unavailable_rows_including_missing": 61,
+            "distinct_coordinate_complete_pairs": 39,
+            "exactly_one_correct": {
+              "correct_side": 31,
+              "wrong_side": 4
+            },
+            "exactly_one_correct_total": 35,
+            "eligible_rows_outside_discrimination_pairs": 847,
+            "unscored_reference_rows": 78
+          },
+          "cls": {
+            "all_rows_preference": {
+              "tie": 860,
+              "unavailable": 61,
+              "target": 17,
+              "source": 22
+            },
+            "complete_observed_pairs": 899,
+            "unavailable_rows_including_missing": 61,
+            "distinct_coordinate_complete_pairs": 39,
+            "exactly_one_correct": {
+              "wrong_side": 18,
+              "correct_side": 17
+            },
+            "exactly_one_correct_total": 35,
+            "eligible_rows_outside_discrimination_pairs": 847,
+            "unscored_reference_rows": 78
+          },
+          "peak": {
+            "all_rows_preference": {
+              "tie": 860,
+              "unavailable": 61,
+              "source": 37,
+              "target": 2
+            },
+            "complete_observed_pairs": 899,
+            "unavailable_rows_including_missing": 61,
+            "distinct_coordinate_complete_pairs": 39,
+            "exactly_one_correct": {
+              "correct_side": 32,
+              "wrong_side": 3
+            },
+            "exactly_one_correct_total": 35,
+            "eligible_rows_outside_discrimination_pairs": 847,
+            "unscored_reference_rows": 78
+          },
+          "native_mass": {
+            "all_rows_preference": {
+              "tie": 860,
+              "unavailable": 61,
+              "source": 39
+            },
+            "complete_observed_pairs": 899,
+            "unavailable_rows_including_missing": 61,
+            "distinct_coordinate_complete_pairs": 39,
+            "exactly_one_correct": {
+              "correct_side": 34,
+              "wrong_side": 1
+            },
+            "exactly_one_correct_total": 35,
+            "eligible_rows_outside_discrimination_pairs": 847,
+            "unscored_reference_rows": 78
+          }
+        },
+        "joint_preference_signs": {
+          "tie|tie|tie|tie": 860,
+          "unavailable|unavailable|unavailable|unavailable": 61,
+          "source|target|source|source": 12,
+          "target|target|source|source": 3,
+          "source|source|source|source": 17,
+          "target|target|target|source": 1,
+          "source|target|target|source": 1,
+          "target|source|source|source": 5
+        },
+        "point_vs_control_correct_side": {
+          "cls": {
+            "correct_side|wrong_side": 14,
+            "wrong_side|wrong_side": 4,
+            "correct_side|correct_side": 17
+          },
+          "peak": {
+            "correct_side|correct_side": 29,
+            "wrong_side|correct_side": 3,
+            "wrong_side|wrong_side": 1,
+            "correct_side|wrong_side": 2
+          },
+          "native_mass": {
+            "correct_side|correct_side": 30,
+            "wrong_side|correct_side": 4,
+            "correct_side|wrong_side": 1
+          }
+        }
+      },
+      "episodes": {
+        "hou-vs-okc-0022400879_e01": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "informative_pairs": 11,
+          "correct_side": {
+            "point": {
+              "correct_side": 7,
+              "wrong_side": 4
+            },
+            "cls": {
+              "wrong_side": 9,
+              "correct_side": 2
+            },
+            "peak": {
+              "correct_side": 9,
+              "wrong_side": 2
+            },
+            "native_mass": {
+              "correct_side": 11
+            }
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "informative_pairs": 9,
+          "correct_side": {
+            "point": {
+              "correct_side": 9
+            },
+            "cls": {
+              "correct_side": 6,
+              "wrong_side": 3
+            },
+            "peak": {
+              "correct_side": 9
+            },
+            "native_mass": {
+              "correct_side": 9
+            }
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "informative_pairs": 15,
+          "correct_side": {
+            "point": {
+              "correct_side": 15
+            },
+            "cls": {
+              "correct_side": 9,
+              "wrong_side": 6
+            },
+            "peak": {
+              "correct_side": 14,
+              "wrong_side": 1
+            },
+            "native_mass": {
+              "correct_side": 14,
+              "wrong_side": 1
+            }
+          }
+        }
+      }
+    },
+    "native__to__speed_only": {
+      "all": {
+        "declared_rows": 960,
+        "choice_states": {
+          "both_observed_same_coordinate": 835,
+          "both_observed_different_coordinate": 68,
+          "source_observed_target_missing": 12,
+          "source_missing_target_observed": 0,
+          "both_missing": 45
+        },
+        "reference_categories": {
+          "eligible": 882,
+          "indeterminate": 14,
+          "uncertain_hidden": 8,
+          "visible_unlocalizable": 22,
+          "certain_hidden": 34
+        },
+        "eligible_transition_matrix": {
+          "matched->matched": 770,
+          "matched->wrong": 63,
+          "matched->missing": 9,
+          "wrong->matched": 0,
+          "wrong->wrong": 19,
+          "wrong->missing": 0,
+          "missing->matched": 0,
+          "missing->wrong": 0,
+          "missing->missing": 21
+        },
+        "two_observed": 903,
+        "distinct_coordinates": 68,
+        "exactly_one_correct_pairs": 63,
+        "candidate_identity_agreements": 835,
+        "features": {
+          "point": {
+            "all_rows_preference": {
+              "tie": 835,
+              "unavailable": 57,
+              "source": 59,
+              "target": 9
+            },
+            "complete_observed_pairs": 903,
+            "unavailable_rows_including_missing": 57,
+            "distinct_coordinate_complete_pairs": 68,
+            "exactly_one_correct": {
+              "correct_side": 56,
+              "wrong_side": 7
+            },
+            "exactly_one_correct_total": 63,
+            "eligible_rows_outside_discrimination_pairs": 819,
+            "unscored_reference_rows": 78
+          },
+          "cls": {
+            "all_rows_preference": {
+              "tie": 835,
+              "unavailable": 57,
+              "target": 36,
+              "source": 32
+            },
+            "complete_observed_pairs": 903,
+            "unavailable_rows_including_missing": 57,
+            "distinct_coordinate_complete_pairs": 68,
+            "exactly_one_correct": {
+              "wrong_side": 32,
+              "correct_side": 31
+            },
+            "exactly_one_correct_total": 63,
+            "eligible_rows_outside_discrimination_pairs": 819,
+            "unscored_reference_rows": 78
+          },
+          "peak": {
+            "all_rows_preference": {
+              "tie": 835,
+              "unavailable": 57,
+              "source": 54,
+              "target": 14
+            },
+            "complete_observed_pairs": 903,
+            "unavailable_rows_including_missing": 57,
+            "distinct_coordinate_complete_pairs": 68,
+            "exactly_one_correct": {
+              "correct_side": 52,
+              "wrong_side": 11
+            },
+            "exactly_one_correct_total": 63,
+            "eligible_rows_outside_discrimination_pairs": 819,
+            "unscored_reference_rows": 78
+          },
+          "native_mass": {
+            "all_rows_preference": {
+              "tie": 835,
+              "unavailable": 57,
+              "source": 68
+            },
+            "complete_observed_pairs": 903,
+            "unavailable_rows_including_missing": 57,
+            "distinct_coordinate_complete_pairs": 68,
+            "exactly_one_correct": {
+              "correct_side": 63
+            },
+            "exactly_one_correct_total": 63,
+            "eligible_rows_outside_discrimination_pairs": 819,
+            "unscored_reference_rows": 78
+          }
+        },
+        "joint_preference_signs": {
+          "tie|tie|tie|tie": 835,
+          "unavailable|unavailable|unavailable|unavailable": 57,
+          "source|target|source|source": 20,
+          "target|target|source|source": 4,
+          "source|source|source|source": 28,
+          "target|target|target|source": 3,
+          "source|target|target|source": 9,
+          "target|source|source|source": 2,
+          "source|source|target|source": 2
+        },
+        "point_vs_control_correct_side": {
+          "cls": {
+            "correct_side|wrong_side": 26,
+            "wrong_side|wrong_side": 6,
+            "correct_side|correct_side": 30,
+            "wrong_side|correct_side": 1
+          },
+          "peak": {
+            "correct_side|correct_side": 47,
+            "wrong_side|correct_side": 5,
+            "wrong_side|wrong_side": 2,
+            "correct_side|wrong_side": 9
+          },
+          "native_mass": {
+            "correct_side|correct_side": 56,
+            "wrong_side|correct_side": 7
+          }
+        }
+      },
+      "episodes": {
+        "hou-vs-okc-0022400879_e01": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e02": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e03": {
+          "informative_pairs": 21,
+          "correct_side": {
+            "point": {
+              "correct_side": 17,
+              "wrong_side": 4
+            },
+            "cls": {
+              "wrong_side": 13,
+              "correct_side": 8
+            },
+            "peak": {
+              "correct_side": 19,
+              "wrong_side": 2
+            },
+            "native_mass": {
+              "correct_side": 21
+            }
+          }
+        },
+        "hou-vs-okc-0022400879_e04": {
+          "informative_pairs": 0,
+          "correct_side": {
+            "point": {},
+            "cls": {},
+            "peak": {},
+            "native_mass": {}
+          }
+        },
+        "hou-vs-okc-0022400879_e05": {
+          "informative_pairs": 7,
+          "correct_side": {
+            "point": {
+              "correct_side": 7
+            },
+            "cls": {
+              "correct_side": 4,
+              "wrong_side": 3
+            },
+            "peak": {
+              "correct_side": 7
+            },
+            "native_mass": {
+              "correct_side": 7
+            }
+          }
+        },
+        "hou-vs-okc-0022400879_e06": {
+          "informative_pairs": 35,
+          "correct_side": {
+            "point": {
+              "correct_side": 32,
+              "wrong_side": 3
+            },
+            "cls": {
+              "correct_side": 19,
+              "wrong_side": 16
+            },
+            "peak": {
+              "correct_side": 26,
+              "wrong_side": 9
+            },
+            "native_mass": {
+              "correct_side": 35
+            }
+          }
+        }
+      }
+    }
+  },
+  "unchanged_arm_census": {
+    "native": {
+      "states": {
+        "observed": 915,
+        "missing": 45
+      },
+      "eligible_outcomes": {
+        "matched": 842,
+        "missing": 21,
+        "wrong": 19
+      },
+      "certain_hidden_emissions": 19,
+      "uncertain_hidden_emissions": 8
+    },
+    "sequence_strong": {
+      "states": {
+        "observed": 899,
+        "missing": 61
+      },
+      "eligible_outcomes": {
+        "matched": 764,
+        "missing": 34,
+        "wrong": 84
+      },
+      "certain_hidden_emissions": 19,
+      "uncertain_hidden_emissions": 7
+    },
+    "sequence_weak": {
+      "states": {
+        "observed": 949,
+        "missing": 11
+      },
+      "eligible_outcomes": {
+        "matched": 780,
+        "wrong": 97,
+        "missing": 5
+      },
+      "certain_hidden_emissions": 31,
+      "uncertain_hidden_emissions": 7
+    },
+    "motion_only": {
+      "states": {
+        "observed": 899,
+        "missing": 61
+      },
+      "eligible_outcomes": {
+        "matched": 796,
+        "missing": 35,
+        "wrong": 51
+      },
+      "certain_hidden_emissions": 19,
+      "uncertain_hidden_emissions": 7
+    },
+    "speed_only": {
+      "states": {
+        "observed": 903,
+        "missing": 57
+      },
+      "eligible_outcomes": {
+        "matched": 770,
+        "missing": 30,
+        "wrong": 82
+      },
+      "certain_hidden_emissions": 19,
+      "uncertain_hidden_emissions": 7
+    },
+    "motion_and_speed": {
+      "states": {
+        "observed": 909,
+        "missing": 51
+      },
+      "eligible_outcomes": {
+        "matched": 821,
+        "missing": 25,
+        "wrong": 36
+      },
+      "certain_hidden_emissions": 19,
+      "uncertain_hidden_emissions": 7
+    },
+    "motion_and_speed_narrow_weak": {
+      "states": {
+        "observed": 947,
+        "missing": 13
+      },
+      "eligible_outcomes": {
+        "matched": 831,
+        "wrong": 47,
+        "missing": 4
+      },
+      "certain_hidden_emissions": 27,
+      "uncertain_hidden_emissions": 7
+    }
+  },
+  "historical_roles_unchanged": {
+    "reference_bank": {
+      "cases": 10,
+      "readouts": {
+        "cls": {
+          "excluded_bank_query": 10
+        },
+        "point": {
+          "excluded_bank_query": 10
+        }
+      },
+      "semantic_accuracy_claim": false,
+      "independent_validation": false
+    },
+    "unresolved_audit": {
+      "cases": 6,
+      "readouts": {
+        "cls": {
+          "other_preference": 4,
+          "ball_preference": 2
+        },
+        "point": {
+          "ball_preference": 3,
+          "other_preference": 3
+        }
+      },
+      "semantic_accuracy_claim": false,
+      "independent_validation": false
+    },
+    "resolved_check": {
+      "cases": 10,
+      "readouts": {
+        "cls": {
+          "accepted_class_preferred": 8,
+          "other_class_preferred": 2
+        },
+        "point": {
+          "other_class_preferred": 3,
+          "accepted_class_preferred": 7
+        }
+      },
+      "semantic_accuracy_claim": true,
+      "independent_validation": false
+    },
+    "exposed_regression": {
+      "cases": 34,
+      "readouts": {
+        "cls": {
+          "ball_preference": 18,
+          "other_preference": 16
+        },
+        "point": {
+          "ball_preference": 20,
+          "other_preference": 14
+        }
+      },
+      "semantic_accuracy_claim": false,
+      "independent_validation": false
+    }
+  },
+  "adverse_evidence_unchanged": {
+    "e01_ten_recoveries_strict_first": {
+      "point": 3,
+      "cls": 6,
+      "peak": 5
+    },
+    "HOU_strict_first": {
+      "point": 527,
+      "cls": 259,
+      "peak": 837,
+      "eligible": 882
+    },
+    "point_all_hidden_rejection_native_correct_retained": 47,
+    "native_correct_total": 842,
+    "native_preserving_bound_hidden_frames_remaining": 34,
+    "point_historical_accepted_preference": 7,
+    "cls_historical_accepted_preference": 8,
+    "two_missing_strong_losses_unpaired": true
+  },
+  "decision": {
+    "increment": "Useful but concentrated complementary point information; complete accounting does not establish a safe relative-change policy or visibility mechanism.",
+    "beyond_old_strong_subset": "Narrow weak adds useful point preference e05/206 and harmful point preferences e05/8-9.",
+    "no_image_comparison_to_missing": true,
+    "hidden_limit": "19 native hidden emissions shared; narrow adds8 from missing. Pair scores resolve neither.",
+    "training_justified_by_this_result_alone": false,
+    "new_policy_adopted": false,
+    "next_experiment_frozen": false,
+    "next_decision": "Explicit missing/visibility and weak/native preservation evidence; reconcile live alternatives and primary evidence before choosing the next method.",
+    "history_research_basis": "Protocol reconciliation and inherited Sessions1-16 available-timeline review, both handoffs and material primary evidence; no fresh every-transcript/paper/external-release claim."
+  },
+  "quality_criteria_unchanged": {
+    "radius_source_pixels_inclusive": 10,
+    "correct_fraction_minimum": 0.95,
+    "wrong_fraction_maximum": 0.01,
+    "certain_hidden_emissions_maximum": 0,
+    "eligible_missing_run_maximum_ms": 200,
+    "confirmed_wrong_object_run_fail_at_ms": 120,
+    "recovery_maximum_ms": 120,
+    "recovery_requires_next_two_eligible_correct": true,
+    "per_context_gates": true,
+    "preserve_uncertainty_censoring_and_nine_inconclusive_recoveries": true,
+    "complete_synchronized_human_review_required": true
+  },
+  "nine_source_uncertain_recoveries_unchanged": {
+    "HOU_e03": [
+      146,
+      190
+    ],
+    "DET": [
+      11047,
+      11075,
+      11098,
+      11107,
+      11476,
+      11497,
+      11557
+    ]
+  },
+  "new_model_calls": 0,
+  "new_GPU_calls": 0,
+  "new_training_updates": 0,
+  "new_selector_runs": 0,
+  "new_tracking_outputs": 0,
+  "new_labels": 0,
+  "protected_access": false,
+  "human_trajectory_acceptance": null,
+  "git_staging_commit_push_PR_merge_performed": false,
+  "limitations": [
+    "Exposed HOU development; overlapping contrasts/tags and neighboring frames are not independent.",
+    "Parser/category kernel reused; outcomes checked against original saved scores.",
+    "Cached margins reused; no model/token/cosine recomputation or new semantic labels.",
+    "Relative ordering cannot establish visibility or compare image evidence against missing.",
+    "No trajectory, policy, thresholds, fitting or automatic acceptance follows.",
+    "No neural-network/token/cosine rerun; saved score arithmetic reused.",
+    "Reference flags interpreted from accepted records; no independent semantic relabeling.",
+    "All named tag membership and arm censuses are source-checked; no independent human visual acceptance."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "status": "human_accepted_AI_reference",
+  "user_statement": "ok I've reviewed them. Move forweard chat",
+  "accepted_frames": 360,
+  "accepted_centers": 310,
+  "null_centers": 50,
+  "training_eligible": false,
+  "checkpoint_selection_eligible": false,
+  "reference": {
+    "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/accepted/reference.json",
+    "bytes": 588205,
+    "sha256": "a0f37f0a6651ea18d3d09d0be0dd87d3a6f2f390033e1c4367355e6591fee645"
+  },
+  "receipt": {
+    "path": "data/outputs/ball_tracking/fresh_game_diagnostic_v0_1/accepted/receipt.json",
+    "bytes": 4157,
+    "sha256": "bfc94ec0fe2d28997b373c9136fdb1003fea2e3e141ae78cb408293c4d38c3a9"
+  }
+}

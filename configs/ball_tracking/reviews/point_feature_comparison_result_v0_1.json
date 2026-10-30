@@ -1,0 +1,4126 @@
+{
+  "schema_version": "point_feature_comparison_result/v0.1",
+  "status": "completed_reference_assisted_diagnosis_no_adoption",
+  "created_at_utc": "2026-10-27T02:17:33.532485+00:00",
+  "authority": "Approved single CPU CLS-versus-point comparison; all implementation and analysis frozen before first forward.",
+  "report": {
+    "path": "docs/ball_tracking_point_feature_comparison_results.md",
+    "bytes": 14342,
+    "sha256": "f5cc79228804385eefcb8a3b8237582c807e7485a9bd04dca6005ffe87bb30f7"
+  },
+  "recipe": {
+    "path": "configs/ball_tracking/proposals/point_feature_comparison_v0_1.json",
+    "bytes": 11426,
+    "sha256": "5d600f68aa8a75a0217fd007949f9a32865599ab3b6fe51dffd76fdc10b0d891"
+  },
+  "freeze": {
+    "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/prospective_freeze.json",
+    "bytes": 36323,
+    "sha256": "230cb88fc1277b5a4d39679cbe6c4d8f1d5a4e9e28fdd09f3f8a1973b447f9be"
+  },
+  "inference": {
+    "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/completed.json",
+    "bytes": 3393519,
+    "sha256": "a266119caf56a4d9756d565e35a61aa3f1cc5ab5b102b0a03fef1ff7494ef9a2"
+  },
+  "analysis": {
+    "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/analysis_v0_1/completed.json",
+    "bytes": 43225860,
+    "sha256": "fac2ed57039564c960f1197594a1c37bc69eb97f0a7776343c3f8d657b2b5a0b"
+  },
+  "independent_witness_audit": {
+    "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/validation/independent_witness_audit.json",
+    "bytes": 3086,
+    "sha256": "50eda607cbe04201c634705f942451a4249e8916bbd22d45a5122c99439ebc7d"
+  },
+  "independent_analysis_audit": {
+    "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/validation/independent_analysis_audit.json",
+    "bytes": 1929,
+    "sha256": "a363e6afd590d2521909d6d19c01a5b1a46705516b45a9e1db03ce07beb21f7e"
+  },
+  "validation": {
+    "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/joint_focused_validation.json",
+    "bytes": 686,
+    "sha256": "ff8fb367c837e1e998bdad45a7d4748171a45ebae3f67735c86291c94cc470f4"
+  },
+  "resource_samples": {
+    "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/resource_samples.jsonl",
+    "bytes": 457,
+    "sha256": "fea68e62308da501d6f3986345d36311f21255b9c0605587fcf45a1db80daef8"
+  },
+  "execution": {
+    "device": "cpu",
+    "elapsed_seconds": 754.4818847999995,
+    "inputs": 10883,
+    "queries": 11798,
+    "missing_queries": 11,
+    "attempt_resources": {
+      "model_load_attempts": 1,
+      "model_loads_completed": 1,
+      "source_PNG_decodes": 1009,
+      "forward_calls_attempted": 10883,
+      "forward_calls_returned": 10883,
+      "inputs_completed_new": 10883
+    },
+    "all_attempts_resources": {
+      "model_load_start": 1,
+      "model_load_complete": 1,
+      "forward_calls_attempted": 10883,
+      "forward_calls_returned": 10883,
+      "input_sealed": 10883,
+      "forward_starts_without_recorded_return": 0,
+      "journal_files": 1
+    }
+  },
+  "historical_CLS_byte_identical": 60,
+  "census": {
+    "main_candidates": 10778,
+    "stress_rows": 960,
+    "stress_emitted": 949,
+    "stress_missing": 11,
+    "historical": 60,
+    "bank_excluded": 10,
+    "padded_main_crops": 41,
+    "descriptor_unknowns": 0
+  },
+  "shared_HOU_bounds": {
+    "cls": {
+      "scope": "one HOU-wide reference-assisted bound; per-episode evaluation uses the same cutoff",
+      "maximum_observed_certain_hidden": 0.1259579502551295,
+      "minimum_observed_native_correct": -0.325797180761281,
+      "hidden_candidates": 410,
+      "hidden_feature_unknown": 0,
+      "native_correct_points": 842,
+      "native_correct_feature_unknown": 0,
+      "zero_hidden_claim_possible_from_available_features": true,
+      "all_native_correct_retention_claim_possible": true,
+      "production_threshold": false
+    },
+    "point": {
+      "scope": "one HOU-wide reference-assisted bound; per-episode evaluation uses the same cutoff",
+      "maximum_observed_certain_hidden": 0.18937830466606315,
+      "minimum_observed_native_correct": -0.19871419016656533,
+      "hidden_candidates": 410,
+      "hidden_feature_unknown": 0,
+      "native_correct_points": 842,
+      "native_correct_feature_unknown": 0,
+      "zero_hidden_claim_possible_from_available_features": true,
+      "all_native_correct_retention_claim_possible": true,
+      "production_threshold": false
+    },
+    "peak": {
+      "scope": "one HOU-wide reference-assisted bound; per-episode evaluation uses the same cutoff",
+      "maximum_observed_certain_hidden": 0.8614318538103312,
+      "minimum_observed_native_correct": 0.3140781216519829,
+      "hidden_candidates": 410,
+      "hidden_feature_unknown": 2,
+      "native_correct_points": 842,
+      "native_correct_feature_unknown": 0,
+      "zero_hidden_claim_possible_from_available_features": false,
+      "all_native_correct_retention_claim_possible": true,
+      "production_threshold": false
+    },
+    "native_mass": {
+      "scope": "one HOU-wide reference-assisted bound; per-episode evaluation uses the same cutoff",
+      "maximum_observed_certain_hidden": 37.59572219848633,
+      "minimum_observed_native_correct": 0.9406242966651917,
+      "hidden_candidates": 22,
+      "hidden_feature_unknown": 0,
+      "native_correct_points": 842,
+      "native_correct_feature_unknown": 0,
+      "zero_hidden_claim_possible_from_available_features": true,
+      "all_native_correct_retention_claim_possible": true,
+      "production_threshold": false
+    }
+  },
+  "episodes": [
+    {
+      "block_id": "hou-vs-okc-0022400879_e01",
+      "frames": 120,
+      "reference_categories": {
+        "eligible": 120
+      },
+      "features": {
+        "cls": {
+          "ranks": {
+            "beaten": 66,
+            "strict_first": 54
+          },
+          "complete_rankings": 120,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "strict_first": 110,
+            "no_matching_candidate": 10
+          },
+          "paired_complete_ranks_vs_peak": {
+            "more_strictly_higher_misses": 65,
+            "strict_first_loss_vs_baseline": 65,
+            "same_strictly_higher_misses": 51,
+            "fewer_strictly_higher_misses": 4,
+            "strict_first_gain_over_baseline": 4
+          },
+          "paired_complete_native_only_vs_mass": {
+            "same_strictly_higher_misses": 110,
+            "not_comparable_no_matching_candidate": 10
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.1259579502551295,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 10,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "rejected": 100,
+              "retained": 10
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:rejected": 110,
+              "reference_eligible:rejected": 110,
+              "outcome_matched:rejected": 110,
+              "native_matched:rejected": 100,
+              "native_missing:rejected": 10,
+              "correct_gain_from_native_missing:rejected": 10,
+              "prior_e01_ten_gain_cohort:rejected": 10,
+              "all_emitted:retained": 10,
+              "reference_eligible:retained": 10,
+              "outcome_matched:retained": 10,
+              "native_matched:retained": 10
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": -0.325797180761281,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 120,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 110
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 120,
+              "reference_eligible:retained": 120,
+              "outcome_matched:retained": 120,
+              "native_matched:retained": 110,
+              "native_missing:retained": 10,
+              "correct_gain_from_native_missing:retained": 10,
+              "prior_e01_ten_gain_cohort:retained": 10
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "point": {
+          "ranks": {
+            "strict_first": 90,
+            "beaten": 30
+          },
+          "complete_rankings": 120,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "strict_first": 110,
+            "no_matching_candidate": 10
+          },
+          "paired_complete_ranks_vs_cls": {
+            "fewer_strictly_higher_misses": 56,
+            "strict_first_gain_over_baseline": 45,
+            "same_strictly_higher_misses": 54,
+            "more_strictly_higher_misses": 10,
+            "strict_first_loss_vs_baseline": 9
+          },
+          "paired_complete_ranks_vs_peak": {
+            "same_strictly_higher_misses": 91,
+            "more_strictly_higher_misses": 28,
+            "strict_first_loss_vs_baseline": 26,
+            "fewer_strictly_higher_misses": 1,
+            "strict_first_gain_over_baseline": 1
+          },
+          "paired_complete_native_only_vs_mass": {
+            "same_strictly_higher_misses": 110,
+            "not_comparable_no_matching_candidate": 10
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.18937830466606315,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 3,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "rejected": 107,
+              "retained": 3
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:rejected": 117,
+              "reference_eligible:rejected": 117,
+              "outcome_matched:rejected": 117,
+              "native_matched:rejected": 107,
+              "native_missing:rejected": 10,
+              "correct_gain_from_native_missing:rejected": 10,
+              "prior_e01_ten_gain_cohort:rejected": 10,
+              "all_emitted:retained": 3,
+              "reference_eligible:retained": 3,
+              "outcome_matched:retained": 3,
+              "native_matched:retained": 3
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": -0.19871419016656533,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 120,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 110
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 120,
+              "reference_eligible:retained": 120,
+              "outcome_matched:retained": 120,
+              "native_matched:retained": 110,
+              "native_missing:retained": 10,
+              "correct_gain_from_native_missing:retained": 10,
+              "prior_e01_ten_gain_cohort:retained": 10
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "peak": {
+          "ranks": {
+            "strict_first": 115,
+            "beaten": 5
+          },
+          "complete_rankings": 120,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "strict_first": 110,
+            "no_matching_candidate": 10
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.8614318538103312,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 86,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 86,
+              "rejected": 24
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 86,
+              "reference_eligible:retained": 86,
+              "outcome_matched:retained": 86,
+              "native_matched:retained": 86,
+              "all_emitted:rejected": 34,
+              "reference_eligible:rejected": 34,
+              "outcome_matched:rejected": 34,
+              "native_matched:rejected": 24,
+              "native_missing:rejected": 10,
+              "correct_gain_from_native_missing:rejected": 10,
+              "prior_e01_ten_gain_cohort:rejected": 10
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": 0.3140781216519829,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 110,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 110
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 110,
+              "reference_eligible:retained": 110,
+              "outcome_matched:retained": 110,
+              "native_matched:retained": 110,
+              "all_emitted:rejected": 10,
+              "reference_eligible:rejected": 10,
+              "outcome_matched:rejected": 10,
+              "native_missing:rejected": 10,
+              "correct_gain_from_native_missing:rejected": 10,
+              "prior_e01_ten_gain_cohort:rejected": 10
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "native_mass": {
+          "ranks": {
+            "strict_first": 110,
+            "no_matching_candidate": 10
+          },
+          "complete_rankings": 120,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "strict_first": 110,
+            "no_matching_candidate": 10
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 37.59572219848633,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 110,
+              "matching_candidate_survives": 91,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 91,
+              "rejected": 19
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "excluded_mass_not_comparable_across_extractions": 120
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": 0.9406242966651917,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 110,
+              "matching_candidate_survives": 110,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 110
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "excluded_mass_not_comparable_across_extractions": 120
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e02",
+      "frames": 120,
+      "reference_categories": {
+        "eligible": 120
+      },
+      "features": {
+        "cls": {
+          "ranks": {
+            "beaten": 86,
+            "strict_first": 34
+          },
+          "complete_rankings": 120,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "strict_first": 118,
+            "beaten": 2
+          },
+          "paired_complete_ranks_vs_peak": {
+            "more_strictly_higher_misses": 79,
+            "strict_first_loss_vs_baseline": 79,
+            "same_strictly_higher_misses": 33,
+            "not_comparable_incomplete_features": 8
+          },
+          "paired_complete_native_only_vs_mass": {
+            "same_strictly_higher_misses": 118,
+            "more_strictly_higher_misses": 2,
+            "strict_first_loss_vs_baseline": 2
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.1259579502551295,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 15,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "rejected": 106,
+              "retained": 14
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:rejected": 106,
+              "reference_eligible:rejected": 106,
+              "outcome_matched:rejected": 105,
+              "native_matched:rejected": 106,
+              "outcome_wrong:rejected": 1,
+              "native_correct_regression:rejected": 1,
+              "all_emitted:retained": 14,
+              "reference_eligible:retained": 14,
+              "outcome_matched:retained": 14,
+              "native_matched:retained": 14
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": -0.325797180761281,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 120,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 120,
+              "reference_eligible:retained": 120,
+              "outcome_matched:retained": 119,
+              "native_matched:retained": 120,
+              "outcome_wrong:retained": 1,
+              "native_correct_regression:retained": 1
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "point": {
+          "ranks": {
+            "strict_first": 77,
+            "beaten": 43
+          },
+          "complete_rankings": 120,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "strict_first": 120
+          },
+          "paired_complete_ranks_vs_cls": {
+            "fewer_strictly_higher_misses": 76,
+            "strict_first_gain_over_baseline": 49,
+            "same_strictly_higher_misses": 32,
+            "more_strictly_higher_misses": 12,
+            "strict_first_loss_vs_baseline": 6
+          },
+          "paired_complete_ranks_vs_peak": {
+            "same_strictly_higher_misses": 74,
+            "more_strictly_higher_misses": 38,
+            "strict_first_loss_vs_baseline": 38,
+            "not_comparable_incomplete_features": 8
+          },
+          "paired_complete_native_only_vs_mass": {
+            "same_strictly_higher_misses": 120
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.18937830466606315,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 13,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "rejected": 109,
+              "retained": 11
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:rejected": 109,
+              "reference_eligible:rejected": 109,
+              "outcome_matched:rejected": 108,
+              "native_matched:rejected": 109,
+              "outcome_wrong:rejected": 1,
+              "native_correct_regression:rejected": 1,
+              "all_emitted:retained": 11,
+              "reference_eligible:retained": 11,
+              "outcome_matched:retained": 11,
+              "native_matched:retained": 11
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": -0.19871419016656533,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 120,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 120,
+              "reference_eligible:retained": 120,
+              "outcome_matched:retained": 119,
+              "native_matched:retained": 120,
+              "outcome_wrong:retained": 1,
+              "native_correct_regression:retained": 1
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "peak": {
+          "ranks": {
+            "strict_first": 120
+          },
+          "complete_rankings": 112,
+          "incomplete_rankings": 8,
+          "native_ranks": {
+            "strict_first": 120
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.8614318538103312,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 117,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 117,
+              "rejected": 3
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 116,
+              "reference_eligible:retained": 116,
+              "outcome_matched:retained": 116,
+              "native_matched:retained": 116,
+              "all_emitted:rejected": 4,
+              "reference_eligible:rejected": 4,
+              "outcome_wrong:rejected": 1,
+              "native_matched:rejected": 4,
+              "native_correct_regression:rejected": 1,
+              "outcome_matched:rejected": 3
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": 0.3140781216519829,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 120,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 119,
+              "reference_eligible:retained": 119,
+              "outcome_matched:retained": 119,
+              "native_matched:retained": 119,
+              "all_emitted:rejected": 1,
+              "reference_eligible:rejected": 1,
+              "outcome_wrong:rejected": 1,
+              "native_matched:rejected": 1,
+              "native_correct_regression:rejected": 1
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "native_mass": {
+          "ranks": {
+            "strict_first": 120
+          },
+          "complete_rankings": 120,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "strict_first": 120
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 37.59572219848633,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 108,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 108,
+              "rejected": 12
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "excluded_mass_not_comparable_across_extractions": 120
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": 0.9406242966651917,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 120,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "excluded_mass_not_comparable_across_extractions": 120
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e03",
+      "frames": 120,
+      "reference_categories": {
+        "eligible": 98,
+        "indeterminate": 10,
+        "uncertain_hidden": 8,
+        "visible_unlocalizable": 4
+      },
+      "features": {
+        "cls": {
+          "ranks": {
+            "beaten": 85,
+            "strict_first": 13
+          },
+          "complete_rankings": 98,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "no_matching_candidate": 3,
+            "beaten": 44,
+            "strict_first": 51
+          },
+          "paired_complete_ranks_vs_peak": {
+            "more_strictly_higher_misses": 83,
+            "strict_first_loss_vs_baseline": 73,
+            "same_strictly_higher_misses": 13,
+            "not_comparable_incomplete_features": 2
+          },
+          "paired_complete_native_only_vs_mass": {
+            "not_comparable_no_matching_candidate": 3,
+            "same_strictly_higher_misses": 55,
+            "more_strictly_higher_misses": 39,
+            "strict_first_loss_vs_baseline": 39,
+            "fewer_strictly_higher_misses": 1
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.1259579502551295,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 98,
+              "geometric_candidate_available": 98,
+              "matching_candidate_survives": 2,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "rejected": 88,
+              "retained": 2
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:rejected": 115,
+              "reference_eligible:rejected": 94,
+              "outcome_wrong:rejected": 29,
+              "native_wrong:rejected": 8,
+              "native_matched:rejected": 86,
+              "native_correct_regression:rejected": 21,
+              "reference_indeterminate:rejected": 10,
+              "outcome_unscored:rejected": 21,
+              "reference_uncertain_hidden:rejected": 7,
+              "missing_selection": 3,
+              "outcome_matched:rejected": 65,
+              "all_emitted:retained": 2,
+              "reference_eligible:retained": 2,
+              "outcome_matched:retained": 2,
+              "native_matched:retained": 2,
+              "reference_visible_unlocalizable:rejected": 4
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": -0.325797180761281,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 98,
+              "geometric_candidate_available": 98,
+              "matching_candidate_survives": 98,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 90
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 117,
+              "reference_eligible:retained": 96,
+              "outcome_wrong:retained": 29,
+              "native_wrong:retained": 8,
+              "native_matched:retained": 88,
+              "native_correct_regression:retained": 21,
+              "reference_indeterminate:retained": 10,
+              "outcome_unscored:retained": 21,
+              "reference_uncertain_hidden:retained": 7,
+              "missing_selection": 3,
+              "outcome_matched:retained": 67,
+              "reference_visible_unlocalizable:retained": 4
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "point": {
+          "ranks": {
+            "strict_first": 52,
+            "beaten": 46
+          },
+          "complete_rankings": 98,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "no_matching_candidate": 3,
+            "beaten": 17,
+            "strict_first": 78
+          },
+          "paired_complete_ranks_vs_cls": {
+            "fewer_strictly_higher_misses": 71,
+            "strict_first_gain_over_baseline": 40,
+            "more_strictly_higher_misses": 9,
+            "same_strictly_higher_misses": 18,
+            "strict_first_loss_vs_baseline": 1
+          },
+          "paired_complete_ranks_vs_peak": {
+            "fewer_strictly_higher_misses": 2,
+            "strict_first_gain_over_baseline": 2,
+            "more_strictly_higher_misses": 46,
+            "same_strictly_higher_misses": 48,
+            "strict_first_loss_vs_baseline": 38,
+            "not_comparable_incomplete_features": 2
+          },
+          "paired_complete_native_only_vs_mass": {
+            "not_comparable_no_matching_candidate": 3,
+            "same_strictly_higher_misses": 83,
+            "more_strictly_higher_misses": 12,
+            "strict_first_loss_vs_baseline": 12
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.18937830466606315,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 98,
+              "geometric_candidate_available": 98,
+              "matching_candidate_survives": 5,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "rejected": 86,
+              "retained": 4
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:rejected": 115,
+              "reference_eligible:rejected": 94,
+              "outcome_wrong:rejected": 29,
+              "native_wrong:rejected": 8,
+              "native_matched:rejected": 86,
+              "native_correct_regression:rejected": 21,
+              "reference_indeterminate:rejected": 10,
+              "outcome_unscored:rejected": 21,
+              "reference_uncertain_hidden:rejected": 7,
+              "missing_selection": 3,
+              "outcome_matched:rejected": 65,
+              "all_emitted:retained": 2,
+              "reference_eligible:retained": 2,
+              "outcome_matched:retained": 2,
+              "native_matched:retained": 2,
+              "reference_visible_unlocalizable:rejected": 4
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": -0.19871419016656533,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 98,
+              "geometric_candidate_available": 98,
+              "matching_candidate_survives": 97,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 90
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 117,
+              "reference_eligible:retained": 96,
+              "outcome_wrong:retained": 29,
+              "native_wrong:retained": 8,
+              "native_matched:retained": 88,
+              "native_correct_regression:retained": 21,
+              "reference_indeterminate:retained": 10,
+              "outcome_unscored:retained": 21,
+              "reference_uncertain_hidden:retained": 7,
+              "missing_selection": 3,
+              "outcome_matched:retained": 67,
+              "reference_visible_unlocalizable:retained": 4
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "peak": {
+          "ranks": {
+            "beaten": 10,
+            "strict_first": 88
+          },
+          "complete_rankings": 96,
+          "incomplete_rankings": 2,
+          "native_ranks": {
+            "no_matching_candidate": 3,
+            "beaten": 7,
+            "strict_first": 88
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.8614318538103312,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 98,
+              "geometric_candidate_available": 98,
+              "matching_candidate_survives": 84,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 84,
+              "rejected": 6
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:rejected": 36,
+              "reference_eligible:rejected": 21,
+              "outcome_wrong:rejected": 18,
+              "native_wrong:rejected": 6,
+              "native_matched:rejected": 15,
+              "native_correct_regression:rejected": 12,
+              "reference_indeterminate:rejected": 6,
+              "outcome_unscored:rejected": 15,
+              "all_emitted:retained": 81,
+              "reference_eligible:retained": 75,
+              "outcome_wrong:retained": 11,
+              "native_matched:retained": 73,
+              "native_correct_regression:retained": 9,
+              "native_wrong:retained": 2,
+              "reference_indeterminate:retained": 4,
+              "outcome_unscored:retained": 6,
+              "reference_uncertain_hidden:retained": 2,
+              "missing_selection": 3,
+              "outcome_matched:retained": 64,
+              "reference_uncertain_hidden:rejected": 5,
+              "outcome_matched:rejected": 3,
+              "reference_visible_unlocalizable:rejected": 4
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": 0.3140781216519829,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 98,
+              "geometric_candidate_available": 98,
+              "matching_candidate_survives": 95,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 90
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 117,
+              "reference_eligible:retained": 96,
+              "outcome_wrong:retained": 29,
+              "native_wrong:retained": 8,
+              "native_matched:retained": 88,
+              "native_correct_regression:retained": 21,
+              "reference_indeterminate:retained": 10,
+              "outcome_unscored:retained": 21,
+              "reference_uncertain_hidden:retained": 7,
+              "missing_selection": 3,
+              "outcome_matched:retained": 67,
+              "reference_visible_unlocalizable:retained": 4
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "native_mass": {
+          "ranks": {
+            "no_matching_candidate": 3,
+            "beaten": 5,
+            "strict_first": 90
+          },
+          "complete_rankings": 98,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "no_matching_candidate": 3,
+            "beaten": 5,
+            "strict_first": 90
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 37.59572219848633,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 98,
+              "geometric_candidate_available": 95,
+              "matching_candidate_survives": 68,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "rejected": 22,
+              "retained": 68
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "excluded_mass_not_comparable_across_extractions": 120
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": 0.9406242966651917,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 98,
+              "geometric_candidate_available": 95,
+              "matching_candidate_survives": 95,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 90
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "excluded_mass_not_comparable_across_extractions": 120
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e04",
+      "frames": 120,
+      "reference_categories": {
+        "eligible": 120
+      },
+      "features": {
+        "cls": {
+          "ranks": {
+            "beaten": 71,
+            "strict_first": 49
+          },
+          "complete_rankings": 120,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "strict_first": 120
+          },
+          "paired_complete_ranks_vs_peak": {
+            "more_strictly_higher_misses": 71,
+            "strict_first_loss_vs_baseline": 71,
+            "same_strictly_higher_misses": 49
+          },
+          "paired_complete_native_only_vs_mass": {
+            "same_strictly_higher_misses": 120
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.1259579502551295,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 14,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "rejected": 108,
+              "retained": 12
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:rejected": 107,
+              "reference_eligible:rejected": 107,
+              "outcome_matched:rejected": 104,
+              "native_matched:rejected": 107,
+              "missing_selection": 1,
+              "outcome_wrong:rejected": 3,
+              "native_correct_regression:rejected": 3,
+              "all_emitted:retained": 12,
+              "reference_eligible:retained": 12,
+              "outcome_matched:retained": 12,
+              "native_matched:retained": 12
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": -0.325797180761281,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 120,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 119,
+              "reference_eligible:retained": 119,
+              "outcome_matched:retained": 116,
+              "native_matched:retained": 119,
+              "missing_selection": 1,
+              "outcome_wrong:retained": 3,
+              "native_correct_regression:retained": 3
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "point": {
+          "ranks": {
+            "beaten": 36,
+            "strict_first": 84
+          },
+          "complete_rankings": 120,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "strict_first": 118,
+            "beaten": 2
+          },
+          "paired_complete_ranks_vs_cls": {
+            "more_strictly_higher_misses": 19,
+            "fewer_strictly_higher_misses": 61,
+            "strict_first_gain_over_baseline": 46,
+            "same_strictly_higher_misses": 40,
+            "strict_first_loss_vs_baseline": 11
+          },
+          "paired_complete_ranks_vs_peak": {
+            "more_strictly_higher_misses": 36,
+            "strict_first_loss_vs_baseline": 36,
+            "same_strictly_higher_misses": 84
+          },
+          "paired_complete_native_only_vs_mass": {
+            "same_strictly_higher_misses": 118,
+            "more_strictly_higher_misses": 2,
+            "strict_first_loss_vs_baseline": 2
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.18937830466606315,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 15,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "rejected": 105,
+              "retained": 15
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:rejected": 104,
+              "reference_eligible:rejected": 104,
+              "outcome_matched:rejected": 101,
+              "native_matched:rejected": 104,
+              "missing_selection": 1,
+              "outcome_wrong:rejected": 3,
+              "native_correct_regression:rejected": 3,
+              "all_emitted:retained": 15,
+              "reference_eligible:retained": 15,
+              "outcome_matched:retained": 15,
+              "native_matched:retained": 15
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": -0.19871419016656533,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 120,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 119,
+              "reference_eligible:retained": 119,
+              "outcome_matched:retained": 116,
+              "native_matched:retained": 119,
+              "missing_selection": 1,
+              "outcome_wrong:retained": 3,
+              "native_correct_regression:retained": 3
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "peak": {
+          "ranks": {
+            "strict_first": 120
+          },
+          "complete_rankings": 120,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "strict_first": 120
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.8614318538103312,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 104,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 104,
+              "rejected": 16
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 100,
+              "reference_eligible:retained": 100,
+              "outcome_matched:retained": 100,
+              "native_matched:retained": 100,
+              "missing_selection": 1,
+              "all_emitted:rejected": 19,
+              "reference_eligible:rejected": 19,
+              "outcome_wrong:rejected": 3,
+              "native_matched:rejected": 19,
+              "native_correct_regression:rejected": 3,
+              "outcome_matched:rejected": 16
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": 0.3140781216519829,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 120,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 116,
+              "reference_eligible:retained": 116,
+              "outcome_matched:retained": 116,
+              "native_matched:retained": 116,
+              "missing_selection": 1,
+              "all_emitted:rejected": 3,
+              "reference_eligible:rejected": 3,
+              "outcome_wrong:rejected": 3,
+              "native_matched:rejected": 3,
+              "native_correct_regression:rejected": 3
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "native_mass": {
+          "ranks": {
+            "strict_first": 120
+          },
+          "complete_rankings": 120,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "strict_first": 120
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 37.59572219848633,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 115,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 115,
+              "rejected": 5
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "excluded_mass_not_comparable_across_extractions": 120
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": 0.9406242966651917,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 120,
+              "geometric_candidate_available": 120,
+              "matching_candidate_survives": 120,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 120
+            },
+            "certain_hidden": {},
+            "original_expanded_weak_stress": {
+              "excluded_mass_not_comparable_across_extractions": 120
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e05",
+      "frames": 240,
+      "reference_categories": {
+        "certain_hidden": 16,
+        "visible_unlocalizable": 8,
+        "eligible": 212,
+        "indeterminate": 4
+      },
+      "features": {
+        "cls": {
+          "ranks": {
+            "beaten": 158,
+            "strict_first": 48,
+            "no_matching_candidate": 6
+          },
+          "complete_rankings": 212,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "strict_first": 169,
+            "no_matching_candidate": 12,
+            "beaten": 31
+          },
+          "paired_complete_ranks_vs_peak": {
+            "more_strictly_higher_misses": 150,
+            "strict_first_loss_vs_baseline": 146,
+            "fewer_strictly_higher_misses": 4,
+            "strict_first_gain_over_baseline": 3,
+            "not_comparable_no_matching_candidate": 6,
+            "same_strictly_higher_misses": 45,
+            "not_comparable_incomplete_features": 7
+          },
+          "paired_complete_native_only_vs_mass": {
+            "same_strictly_higher_misses": 168,
+            "not_comparable_no_matching_candidate": 12,
+            "more_strictly_higher_misses": 29,
+            "strict_first_loss_vs_baseline": 29,
+            "fewer_strictly_higher_misses": 3,
+            "strict_first_gain_over_baseline": 3
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.1259579502551295,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 206,
+              "matching_candidate_survives": 7,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "rejected": 188,
+              "retained": 7
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_rejected": 169,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 0
+            },
+            "original_expanded_weak_stress": {
+              "missing_selection": 6,
+              "all_emitted:rejected": 228,
+              "reference_certain_hidden:rejected": 13,
+              "outcome_unscored:rejected": 24,
+              "reference_visible_unlocalizable:rejected": 7,
+              "reference_eligible:rejected": 204,
+              "outcome_matched:rejected": 180,
+              "native_matched:rejected": 187,
+              "native_missing:rejected": 11,
+              "correct_gain_from_native_missing:rejected": 11,
+              "prior_e05_six_below_001_gain_cohort:rejected": 6,
+              "all_emitted:retained": 6,
+              "reference_eligible:retained": 6,
+              "outcome_matched:retained": 6,
+              "native_matched:retained": 6,
+              "reference_indeterminate:rejected": 4,
+              "outcome_wrong:rejected": 24,
+              "native_correct_regression:rejected": 18,
+              "native_wrong:rejected": 6
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": -0.325797180761281,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 206,
+              "matching_candidate_survives": 205,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 195
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_retained": 162,
+              "candidates_rejected": 7,
+              "frames_with_known_surviving_candidate": 16,
+              "frames_with_unknown_candidate_feature": 0
+            },
+            "original_expanded_weak_stress": {
+              "missing_selection": 6,
+              "all_emitted:retained": 234,
+              "reference_certain_hidden:retained": 13,
+              "outcome_unscored:retained": 24,
+              "reference_visible_unlocalizable:retained": 7,
+              "reference_eligible:retained": 210,
+              "outcome_matched:retained": 186,
+              "native_matched:retained": 193,
+              "native_missing:retained": 11,
+              "correct_gain_from_native_missing:retained": 11,
+              "prior_e05_six_below_001_gain_cohort:retained": 6,
+              "reference_indeterminate:retained": 4,
+              "outcome_wrong:retained": 24,
+              "native_correct_regression:retained": 18,
+              "native_wrong:retained": 6
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "point": {
+          "ranks": {
+            "beaten": 118,
+            "no_matching_candidate": 6,
+            "strict_first": 88
+          },
+          "complete_rankings": 212,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "strict_first": 186,
+            "no_matching_candidate": 12,
+            "beaten": 14
+          },
+          "paired_complete_ranks_vs_cls": {
+            "more_strictly_higher_misses": 45,
+            "strict_first_loss_vs_baseline": 23,
+            "not_comparable_no_matching_candidate": 6,
+            "same_strictly_higher_misses": 37,
+            "fewer_strictly_higher_misses": 124,
+            "strict_first_gain_over_baseline": 63
+          },
+          "paired_complete_ranks_vs_peak": {
+            "more_strictly_higher_misses": 108,
+            "strict_first_loss_vs_baseline": 103,
+            "not_comparable_no_matching_candidate": 6,
+            "fewer_strictly_higher_misses": 1,
+            "same_strictly_higher_misses": 90,
+            "not_comparable_incomplete_features": 7
+          },
+          "paired_complete_native_only_vs_mass": {
+            "same_strictly_higher_misses": 183,
+            "not_comparable_no_matching_candidate": 12,
+            "more_strictly_higher_misses": 13,
+            "strict_first_loss_vs_baseline": 13,
+            "fewer_strictly_higher_misses": 4,
+            "strict_first_gain_over_baseline": 4
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.18937830466606315,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 206,
+              "matching_candidate_survives": 12,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "rejected": 183,
+              "retained": 12
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_rejected": 169,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 0
+            },
+            "original_expanded_weak_stress": {
+              "missing_selection": 6,
+              "all_emitted:rejected": 224,
+              "reference_certain_hidden:rejected": 13,
+              "outcome_unscored:rejected": 24,
+              "reference_visible_unlocalizable:rejected": 7,
+              "reference_eligible:rejected": 200,
+              "outcome_matched:rejected": 176,
+              "native_matched:rejected": 183,
+              "native_missing:rejected": 11,
+              "correct_gain_from_native_missing:rejected": 11,
+              "prior_e05_six_below_001_gain_cohort:rejected": 6,
+              "all_emitted:retained": 10,
+              "reference_eligible:retained": 10,
+              "outcome_matched:retained": 10,
+              "native_matched:retained": 10,
+              "reference_indeterminate:rejected": 4,
+              "outcome_wrong:rejected": 24,
+              "native_correct_regression:rejected": 18,
+              "native_wrong:rejected": 6
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": -0.19871419016656533,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 206,
+              "matching_candidate_survives": 206,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 195
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_retained": 134,
+              "candidates_rejected": 35,
+              "frames_with_known_surviving_candidate": 16,
+              "frames_with_unknown_candidate_feature": 0
+            },
+            "original_expanded_weak_stress": {
+              "missing_selection": 6,
+              "all_emitted:retained": 227,
+              "reference_certain_hidden:retained": 13,
+              "outcome_unscored:retained": 23,
+              "reference_visible_unlocalizable:retained": 6,
+              "reference_eligible:retained": 204,
+              "outcome_matched:retained": 186,
+              "native_matched:retained": 188,
+              "native_missing:retained": 11,
+              "correct_gain_from_native_missing:retained": 11,
+              "prior_e05_six_below_001_gain_cohort:retained": 6,
+              "reference_indeterminate:retained": 4,
+              "outcome_wrong:retained": 18,
+              "native_correct_regression:retained": 13,
+              "native_wrong:retained": 5,
+              "all_emitted:rejected": 7,
+              "reference_eligible:rejected": 6,
+              "outcome_wrong:rejected": 6,
+              "native_matched:rejected": 5,
+              "native_correct_regression:rejected": 5,
+              "native_wrong:rejected": 1,
+              "reference_visible_unlocalizable:rejected": 1,
+              "outcome_unscored:rejected": 1
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "peak": {
+          "ranks": {
+            "strict_first": 196,
+            "beaten": 10,
+            "no_matching_candidate": 6
+          },
+          "complete_rankings": 205,
+          "incomplete_rankings": 7,
+          "native_ranks": {
+            "strict_first": 195,
+            "no_matching_candidate": 12,
+            "beaten": 5
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.8614318538103312,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 206,
+              "matching_candidate_survives": 122,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "rejected": 73,
+              "retained": 122
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_unknown": 2,
+              "candidates_rejected": 167,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 2
+            },
+            "original_expanded_weak_stress": {
+              "missing_selection": 6,
+              "all_emitted:rejected": 124,
+              "reference_certain_hidden:rejected": 13,
+              "outcome_unscored:rejected": 24,
+              "reference_visible_unlocalizable:rejected": 7,
+              "reference_eligible:rejected": 100,
+              "outcome_matched:rejected": 76,
+              "native_matched:rejected": 83,
+              "native_missing:rejected": 11,
+              "correct_gain_from_native_missing:rejected": 11,
+              "prior_e05_six_below_001_gain_cohort:rejected": 6,
+              "all_emitted:retained": 110,
+              "reference_eligible:retained": 110,
+              "outcome_matched:retained": 110,
+              "native_matched:retained": 110,
+              "reference_indeterminate:rejected": 4,
+              "outcome_wrong:rejected": 24,
+              "native_correct_regression:rejected": 18,
+              "native_wrong:rejected": 6
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": 0.3140781216519829,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 206,
+              "matching_candidate_survives": 200,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 195
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "candidates_unknown": 2,
+              "candidates_rejected": 166,
+              "frames_with_known_surviving_candidate": 1,
+              "frames_with_unknown_candidate_feature": 2,
+              "candidates_retained": 1
+            },
+            "original_expanded_weak_stress": {
+              "missing_selection": 6,
+              "all_emitted:retained": 190,
+              "reference_certain_hidden:retained": 1,
+              "outcome_unscored:retained": 2,
+              "all_emitted:rejected": 44,
+              "reference_certain_hidden:rejected": 12,
+              "outcome_unscored:rejected": 22,
+              "reference_visible_unlocalizable:rejected": 7,
+              "reference_eligible:retained": 188,
+              "outcome_matched:retained": 175,
+              "native_matched:retained": 182,
+              "reference_eligible:rejected": 22,
+              "outcome_matched:rejected": 11,
+              "native_missing:rejected": 11,
+              "correct_gain_from_native_missing:rejected": 11,
+              "prior_e05_six_below_001_gain_cohort:rejected": 6,
+              "reference_indeterminate:retained": 1,
+              "reference_indeterminate:rejected": 3,
+              "outcome_wrong:rejected": 11,
+              "native_matched:rejected": 11,
+              "native_correct_regression:rejected": 11,
+              "outcome_wrong:retained": 13,
+              "native_wrong:retained": 6,
+              "native_correct_regression:retained": 7
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "native_mass": {
+          "ranks": {
+            "strict_first": 195,
+            "no_matching_candidate": 12,
+            "beaten": 5
+          },
+          "complete_rankings": 212,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "strict_first": 195,
+            "no_matching_candidate": 12,
+            "beaten": 5
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 37.59572219848633,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 200,
+              "matching_candidate_survives": 167,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "rejected": 28,
+              "retained": 167
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 0,
+              "candidates_rejected": 1
+            },
+            "original_expanded_weak_stress": {
+              "excluded_mass_not_comparable_across_extractions": 240
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": 0.9406242966651917,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 200,
+              "matching_candidate_survives": 200,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 195
+            },
+            "certain_hidden": {
+              "reference_frames": 16,
+              "frames_with_known_surviving_candidate": 1,
+              "frames_with_unknown_candidate_feature": 0,
+              "candidates_retained": 1
+            },
+            "original_expanded_weak_stress": {
+              "excluded_mass_not_comparable_across_extractions": 240
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e06",
+      "frames": 240,
+      "reference_categories": {
+        "certain_hidden": 18,
+        "eligible": 212,
+        "visible_unlocalizable": 10
+      },
+      "features": {
+        "cls": {
+          "ranks": {
+            "beaten": 151,
+            "strict_first": 61
+          },
+          "complete_rankings": 212,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "beaten": 25,
+            "strict_first": 187
+          },
+          "paired_complete_ranks_vs_peak": {
+            "more_strictly_higher_misses": 150,
+            "strict_first_loss_vs_baseline": 138,
+            "same_strictly_higher_misses": 61,
+            "fewer_strictly_higher_misses": 1,
+            "strict_first_gain_over_baseline": 1
+          },
+          "paired_complete_native_only_vs_mass": {
+            "more_strictly_higher_misses": 24,
+            "strict_first_loss_vs_baseline": 22,
+            "same_strictly_higher_misses": 186,
+            "fewer_strictly_higher_misses": 2,
+            "strict_first_gain_over_baseline": 2
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.1259579502551295,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 212,
+              "matching_candidate_survives": 3,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "rejected": 204,
+              "retained": 3
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_rejected": 241,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 0
+            },
+            "original_expanded_weak_stress": {
+              "all_emitted:rejected": 236,
+              "reference_certain_hidden:rejected": 18,
+              "outcome_unscored:rejected": 27,
+              "reference_eligible:rejected": 209,
+              "outcome_wrong:rejected": 40,
+              "native_wrong:rejected": 5,
+              "native_matched:rejected": 204,
+              "native_correct_regression:rejected": 35,
+              "reference_visible_unlocalizable:rejected": 9,
+              "missing_selection": 1,
+              "outcome_matched:rejected": 169,
+              "all_emitted:retained": 3,
+              "reference_eligible:retained": 3,
+              "outcome_matched:retained": 3,
+              "native_matched:retained": 3
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": -0.325797180761281,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 212,
+              "matching_candidate_survives": 212,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 207
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_retained": 241,
+              "frames_with_known_surviving_candidate": 18,
+              "frames_with_unknown_candidate_feature": 0
+            },
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 239,
+              "reference_certain_hidden:retained": 18,
+              "outcome_unscored:retained": 27,
+              "reference_eligible:retained": 212,
+              "outcome_wrong:retained": 40,
+              "native_wrong:retained": 5,
+              "native_matched:retained": 207,
+              "native_correct_regression:retained": 35,
+              "reference_visible_unlocalizable:retained": 9,
+              "missing_selection": 1,
+              "outcome_matched:retained": 172
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "point": {
+          "ranks": {
+            "beaten": 76,
+            "strict_first": 136
+          },
+          "complete_rankings": 212,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "strict_first": 206,
+            "beaten": 6
+          },
+          "paired_complete_ranks_vs_cls": {
+            "fewer_strictly_higher_misses": 125,
+            "strict_first_gain_over_baseline": 90,
+            "same_strictly_higher_misses": 59,
+            "more_strictly_higher_misses": 28,
+            "strict_first_loss_vs_baseline": 15
+          },
+          "paired_complete_ranks_vs_peak": {
+            "more_strictly_higher_misses": 72,
+            "same_strictly_higher_misses": 137,
+            "strict_first_loss_vs_baseline": 65,
+            "fewer_strictly_higher_misses": 3,
+            "strict_first_gain_over_baseline": 3
+          },
+          "paired_complete_native_only_vs_mass": {
+            "fewer_strictly_higher_misses": 5,
+            "strict_first_gain_over_baseline": 5,
+            "same_strictly_higher_misses": 201,
+            "more_strictly_higher_misses": 6,
+            "strict_first_loss_vs_baseline": 6
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.18937830466606315,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 212,
+              "matching_candidate_survives": 2,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "rejected": 205,
+              "retained": 2
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_rejected": 241,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 0
+            },
+            "original_expanded_weak_stress": {
+              "all_emitted:rejected": 239,
+              "reference_certain_hidden:rejected": 18,
+              "outcome_unscored:rejected": 27,
+              "reference_eligible:rejected": 212,
+              "outcome_wrong:rejected": 40,
+              "native_wrong:rejected": 5,
+              "native_matched:rejected": 207,
+              "native_correct_regression:rejected": 35,
+              "reference_visible_unlocalizable:rejected": 9,
+              "missing_selection": 1,
+              "outcome_matched:rejected": 172
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": -0.19871419016656533,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 212,
+              "matching_candidate_survives": 212,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 207
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_retained": 203,
+              "candidates_rejected": 38,
+              "frames_with_known_surviving_candidate": 18,
+              "frames_with_unknown_candidate_feature": 0
+            },
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 239,
+              "reference_certain_hidden:retained": 18,
+              "outcome_unscored:retained": 27,
+              "reference_eligible:retained": 212,
+              "outcome_wrong:retained": 40,
+              "native_wrong:retained": 5,
+              "native_matched:retained": 207,
+              "native_correct_regression:retained": 35,
+              "reference_visible_unlocalizable:retained": 9,
+              "missing_selection": 1,
+              "outcome_matched:retained": 172
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "peak": {
+          "ranks": {
+            "beaten": 14,
+            "strict_first": 198
+          },
+          "complete_rankings": 212,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "beaten": 14,
+            "strict_first": 198
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 0.8614318538103312,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 212,
+              "matching_candidate_survives": 188,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 188,
+              "rejected": 19
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_rejected": 241,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 0
+            },
+            "original_expanded_weak_stress": {
+              "all_emitted:rejected": 66,
+              "reference_certain_hidden:rejected": 18,
+              "outcome_unscored:rejected": 26,
+              "reference_eligible:rejected": 40,
+              "outcome_wrong:rejected": 35,
+              "native_wrong:rejected": 5,
+              "native_matched:rejected": 35,
+              "native_correct_regression:rejected": 30,
+              "reference_visible_unlocalizable:rejected": 8,
+              "all_emitted:retained": 173,
+              "reference_visible_unlocalizable:retained": 1,
+              "outcome_unscored:retained": 1,
+              "reference_eligible:retained": 172,
+              "outcome_wrong:retained": 5,
+              "native_matched:retained": 172,
+              "native_correct_regression:retained": 5,
+              "missing_selection": 1,
+              "outcome_matched:retained": 167,
+              "outcome_matched:rejected": 5
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": 0.3140781216519829,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 212,
+              "matching_candidate_survives": 212,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 207
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_retained": 22,
+              "candidates_rejected": 219,
+              "frames_with_known_surviving_candidate": 18,
+              "frames_with_unknown_candidate_feature": 0
+            },
+            "original_expanded_weak_stress": {
+              "all_emitted:retained": 239,
+              "reference_certain_hidden:retained": 18,
+              "outcome_unscored:retained": 27,
+              "reference_eligible:retained": 212,
+              "outcome_wrong:retained": 40,
+              "native_wrong:retained": 5,
+              "native_matched:retained": 207,
+              "native_correct_regression:retained": 35,
+              "reference_visible_unlocalizable:retained": 9,
+              "missing_selection": 1,
+              "outcome_matched:retained": 172
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        },
+        "native_mass": {
+          "ranks": {
+            "beaten": 5,
+            "strict_first": 207
+          },
+          "complete_rankings": 212,
+          "incomplete_rankings": 0,
+          "native_ranks": {
+            "beaten": 5,
+            "strict_first": 207
+          },
+          "reject_all_observed_hidden_bound": {
+            "cutoff": 37.59572219848633,
+            "comparison": ">",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 212,
+              "matching_candidate_survives": 186,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 186,
+              "rejected": 21
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_rejected": 21,
+              "frames_with_known_surviving_candidate": 0,
+              "frames_with_unknown_candidate_feature": 0
+            },
+            "original_expanded_weak_stress": {
+              "excluded_mass_not_comparable_across_extractions": 240
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          },
+          "retain_all_observed_native_correct_bound": {
+            "cutoff": 0.9406242966651917,
+            "comparison": ">=",
+            "available_features_only": true,
+            "matching_candidate_coverage": {
+              "eligible_frames": 212,
+              "geometric_candidate_available": 212,
+              "matching_candidate_survives": 212,
+              "no_known_survivor_with_unknown_matching_feature": 0
+            },
+            "original_native_correct_points": {
+              "retained": 207
+            },
+            "certain_hidden": {
+              "reference_frames": 18,
+              "candidates_retained": 20,
+              "frames_with_known_surviving_candidate": 18,
+              "frames_with_unknown_candidate_feature": 0,
+              "candidates_rejected": 1
+            },
+            "original_expanded_weak_stress": {
+              "excluded_mass_not_comparable_across_extractions": 240
+            },
+            "complete_visibility_claim": false,
+            "new_tracking_outputs": 0
+          }
+        }
+      }
+    }
+  ],
+  "pooled": {
+    "block_id": "pooled_descriptive_only",
+    "frames": 960,
+    "reference_categories": {
+      "eligible": 882,
+      "indeterminate": 14,
+      "uncertain_hidden": 8,
+      "visible_unlocalizable": 22,
+      "certain_hidden": 34
+    },
+    "features": {
+      "cls": {
+        "ranks": {
+          "beaten": 617,
+          "strict_first": 259,
+          "no_matching_candidate": 6
+        },
+        "complete_rankings": 882,
+        "incomplete_rankings": 0,
+        "native_ranks": {
+          "strict_first": 755,
+          "no_matching_candidate": 25,
+          "beaten": 102
+        },
+        "paired_complete_ranks_vs_peak": {
+          "more_strictly_higher_misses": 598,
+          "strict_first_loss_vs_baseline": 572,
+          "same_strictly_higher_misses": 252,
+          "fewer_strictly_higher_misses": 9,
+          "strict_first_gain_over_baseline": 8,
+          "not_comparable_incomplete_features": 17,
+          "not_comparable_no_matching_candidate": 6
+        },
+        "paired_complete_native_only_vs_mass": {
+          "same_strictly_higher_misses": 757,
+          "not_comparable_no_matching_candidate": 25,
+          "more_strictly_higher_misses": 94,
+          "strict_first_loss_vs_baseline": 92,
+          "fewer_strictly_higher_misses": 6,
+          "strict_first_gain_over_baseline": 5
+        },
+        "reject_all_observed_hidden_bound": {
+          "cutoff": 0.1259579502551295,
+          "comparison": ">",
+          "available_features_only": true,
+          "matching_candidate_coverage": {
+            "eligible_frames": 882,
+            "geometric_candidate_available": 876,
+            "matching_candidate_survives": 51,
+            "no_known_survivor_with_unknown_matching_feature": 0
+          },
+          "original_native_correct_points": {
+            "rejected": 794,
+            "retained": 48
+          },
+          "certain_hidden": {
+            "reference_frames": 34,
+            "candidates_rejected": 410,
+            "frames_with_known_surviving_candidate": 0,
+            "frames_with_unknown_candidate_feature": 0
+          },
+          "original_expanded_weak_stress": {
+            "all_emitted:rejected": 902,
+            "reference_eligible:rejected": 830,
+            "outcome_matched:rejected": 733,
+            "native_matched:rejected": 790,
+            "native_missing:rejected": 21,
+            "correct_gain_from_native_missing:rejected": 21,
+            "prior_e01_ten_gain_cohort:rejected": 10,
+            "all_emitted:retained": 47,
+            "reference_eligible:retained": 47,
+            "outcome_matched:retained": 47,
+            "native_matched:retained": 47,
+            "outcome_wrong:rejected": 97,
+            "native_correct_regression:rejected": 78,
+            "native_wrong:rejected": 19,
+            "reference_indeterminate:rejected": 14,
+            "outcome_unscored:rejected": 72,
+            "reference_uncertain_hidden:rejected": 7,
+            "missing_selection": 11,
+            "reference_visible_unlocalizable:rejected": 20,
+            "reference_certain_hidden:rejected": 31,
+            "prior_e05_six_below_001_gain_cohort:rejected": 6
+          },
+          "complete_visibility_claim": false,
+          "new_tracking_outputs": 0
+        },
+        "retain_all_observed_native_correct_bound": {
+          "cutoff": -0.325797180761281,
+          "comparison": ">=",
+          "available_features_only": true,
+          "matching_candidate_coverage": {
+            "eligible_frames": 882,
+            "geometric_candidate_available": 876,
+            "matching_candidate_survives": 875,
+            "no_known_survivor_with_unknown_matching_feature": 0
+          },
+          "original_native_correct_points": {
+            "retained": 842
+          },
+          "certain_hidden": {
+            "reference_frames": 34,
+            "candidates_retained": 403,
+            "candidates_rejected": 7,
+            "frames_with_known_surviving_candidate": 34,
+            "frames_with_unknown_candidate_feature": 0
+          },
+          "original_expanded_weak_stress": {
+            "all_emitted:retained": 949,
+            "reference_eligible:retained": 877,
+            "outcome_matched:retained": 780,
+            "native_matched:retained": 837,
+            "native_missing:retained": 21,
+            "correct_gain_from_native_missing:retained": 21,
+            "prior_e01_ten_gain_cohort:retained": 10,
+            "outcome_wrong:retained": 97,
+            "native_correct_regression:retained": 78,
+            "native_wrong:retained": 19,
+            "reference_indeterminate:retained": 14,
+            "outcome_unscored:retained": 72,
+            "reference_uncertain_hidden:retained": 7,
+            "missing_selection": 11,
+            "reference_visible_unlocalizable:retained": 20,
+            "reference_certain_hidden:retained": 31,
+            "prior_e05_six_below_001_gain_cohort:retained": 6
+          },
+          "complete_visibility_claim": false,
+          "new_tracking_outputs": 0
+        }
+      },
+      "point": {
+        "ranks": {
+          "strict_first": 527,
+          "beaten": 349,
+          "no_matching_candidate": 6
+        },
+        "complete_rankings": 882,
+        "incomplete_rankings": 0,
+        "native_ranks": {
+          "strict_first": 818,
+          "no_matching_candidate": 25,
+          "beaten": 39
+        },
+        "paired_complete_ranks_vs_cls": {
+          "fewer_strictly_higher_misses": 513,
+          "strict_first_gain_over_baseline": 333,
+          "same_strictly_higher_misses": 240,
+          "more_strictly_higher_misses": 123,
+          "strict_first_loss_vs_baseline": 65,
+          "not_comparable_no_matching_candidate": 6
+        },
+        "paired_complete_ranks_vs_peak": {
+          "same_strictly_higher_misses": 524,
+          "more_strictly_higher_misses": 328,
+          "strict_first_loss_vs_baseline": 306,
+          "fewer_strictly_higher_misses": 7,
+          "strict_first_gain_over_baseline": 6,
+          "not_comparable_incomplete_features": 17,
+          "not_comparable_no_matching_candidate": 6
+        },
+        "paired_complete_native_only_vs_mass": {
+          "same_strictly_higher_misses": 815,
+          "not_comparable_no_matching_candidate": 25,
+          "more_strictly_higher_misses": 33,
+          "strict_first_loss_vs_baseline": 33,
+          "fewer_strictly_higher_misses": 9,
+          "strict_first_gain_over_baseline": 9
+        },
+        "reject_all_observed_hidden_bound": {
+          "cutoff": 0.18937830466606315,
+          "comparison": ">",
+          "available_features_only": true,
+          "matching_candidate_coverage": {
+            "eligible_frames": 882,
+            "geometric_candidate_available": 876,
+            "matching_candidate_survives": 50,
+            "no_known_survivor_with_unknown_matching_feature": 0
+          },
+          "original_native_correct_points": {
+            "rejected": 795,
+            "retained": 47
+          },
+          "certain_hidden": {
+            "reference_frames": 34,
+            "candidates_rejected": 410,
+            "frames_with_known_surviving_candidate": 0,
+            "frames_with_unknown_candidate_feature": 0
+          },
+          "original_expanded_weak_stress": {
+            "all_emitted:rejected": 908,
+            "reference_eligible:rejected": 836,
+            "outcome_matched:rejected": 739,
+            "native_matched:rejected": 796,
+            "native_missing:rejected": 21,
+            "correct_gain_from_native_missing:rejected": 21,
+            "prior_e01_ten_gain_cohort:rejected": 10,
+            "all_emitted:retained": 41,
+            "reference_eligible:retained": 41,
+            "outcome_matched:retained": 41,
+            "native_matched:retained": 41,
+            "outcome_wrong:rejected": 97,
+            "native_correct_regression:rejected": 78,
+            "native_wrong:rejected": 19,
+            "reference_indeterminate:rejected": 14,
+            "outcome_unscored:rejected": 72,
+            "reference_uncertain_hidden:rejected": 7,
+            "missing_selection": 11,
+            "reference_visible_unlocalizable:rejected": 20,
+            "reference_certain_hidden:rejected": 31,
+            "prior_e05_six_below_001_gain_cohort:rejected": 6
+          },
+          "complete_visibility_claim": false,
+          "new_tracking_outputs": 0
+        },
+        "retain_all_observed_native_correct_bound": {
+          "cutoff": -0.19871419016656533,
+          "comparison": ">=",
+          "available_features_only": true,
+          "matching_candidate_coverage": {
+            "eligible_frames": 882,
+            "geometric_candidate_available": 876,
+            "matching_candidate_survives": 875,
+            "no_known_survivor_with_unknown_matching_feature": 0
+          },
+          "original_native_correct_points": {
+            "retained": 842
+          },
+          "certain_hidden": {
+            "reference_frames": 34,
+            "candidates_retained": 337,
+            "candidates_rejected": 73,
+            "frames_with_known_surviving_candidate": 34,
+            "frames_with_unknown_candidate_feature": 0
+          },
+          "original_expanded_weak_stress": {
+            "all_emitted:retained": 942,
+            "reference_eligible:retained": 871,
+            "outcome_matched:retained": 780,
+            "native_matched:retained": 832,
+            "native_missing:retained": 21,
+            "correct_gain_from_native_missing:retained": 21,
+            "prior_e01_ten_gain_cohort:retained": 10,
+            "outcome_wrong:retained": 91,
+            "native_correct_regression:retained": 73,
+            "native_wrong:retained": 18,
+            "reference_indeterminate:retained": 14,
+            "outcome_unscored:retained": 71,
+            "reference_uncertain_hidden:retained": 7,
+            "missing_selection": 11,
+            "reference_visible_unlocalizable:retained": 19,
+            "reference_certain_hidden:retained": 31,
+            "prior_e05_six_below_001_gain_cohort:retained": 6,
+            "all_emitted:rejected": 7,
+            "reference_eligible:rejected": 6,
+            "outcome_wrong:rejected": 6,
+            "native_matched:rejected": 5,
+            "native_correct_regression:rejected": 5,
+            "native_wrong:rejected": 1,
+            "reference_visible_unlocalizable:rejected": 1,
+            "outcome_unscored:rejected": 1
+          },
+          "complete_visibility_claim": false,
+          "new_tracking_outputs": 0
+        }
+      },
+      "peak": {
+        "ranks": {
+          "strict_first": 837,
+          "beaten": 39,
+          "no_matching_candidate": 6
+        },
+        "complete_rankings": 865,
+        "incomplete_rankings": 17,
+        "native_ranks": {
+          "strict_first": 831,
+          "no_matching_candidate": 25,
+          "beaten": 26
+        },
+        "reject_all_observed_hidden_bound": {
+          "cutoff": 0.8614318538103312,
+          "comparison": ">",
+          "available_features_only": true,
+          "matching_candidate_coverage": {
+            "eligible_frames": 882,
+            "geometric_candidate_available": 876,
+            "matching_candidate_survives": 701,
+            "no_known_survivor_with_unknown_matching_feature": 0
+          },
+          "original_native_correct_points": {
+            "retained": 701,
+            "rejected": 141
+          },
+          "certain_hidden": {
+            "reference_frames": 34,
+            "candidates_unknown": 2,
+            "candidates_rejected": 408,
+            "frames_with_known_surviving_candidate": 0,
+            "frames_with_unknown_candidate_feature": 2
+          },
+          "original_expanded_weak_stress": {
+            "all_emitted:retained": 666,
+            "reference_eligible:retained": 659,
+            "outcome_matched:retained": 643,
+            "native_matched:retained": 657,
+            "all_emitted:rejected": 283,
+            "reference_eligible:rejected": 218,
+            "outcome_matched:rejected": 137,
+            "native_matched:rejected": 180,
+            "native_missing:rejected": 21,
+            "correct_gain_from_native_missing:rejected": 21,
+            "prior_e01_ten_gain_cohort:rejected": 10,
+            "outcome_wrong:rejected": 81,
+            "native_correct_regression:rejected": 64,
+            "native_wrong:rejected": 17,
+            "reference_indeterminate:rejected": 10,
+            "outcome_unscored:rejected": 65,
+            "outcome_wrong:retained": 16,
+            "native_correct_regression:retained": 14,
+            "native_wrong:retained": 2,
+            "reference_indeterminate:retained": 4,
+            "outcome_unscored:retained": 7,
+            "reference_uncertain_hidden:retained": 2,
+            "missing_selection": 11,
+            "reference_uncertain_hidden:rejected": 5,
+            "reference_visible_unlocalizable:rejected": 19,
+            "reference_certain_hidden:rejected": 31,
+            "prior_e05_six_below_001_gain_cohort:rejected": 6,
+            "reference_visible_unlocalizable:retained": 1
+          },
+          "complete_visibility_claim": false,
+          "new_tracking_outputs": 0
+        },
+        "retain_all_observed_native_correct_bound": {
+          "cutoff": 0.3140781216519829,
+          "comparison": ">=",
+          "available_features_only": true,
+          "matching_candidate_coverage": {
+            "eligible_frames": 882,
+            "geometric_candidate_available": 876,
+            "matching_candidate_survives": 857,
+            "no_known_survivor_with_unknown_matching_feature": 0
+          },
+          "original_native_correct_points": {
+            "retained": 842
+          },
+          "certain_hidden": {
+            "reference_frames": 34,
+            "candidates_unknown": 2,
+            "candidates_rejected": 385,
+            "frames_with_known_surviving_candidate": 19,
+            "frames_with_unknown_candidate_feature": 2,
+            "candidates_retained": 23
+          },
+          "original_expanded_weak_stress": {
+            "all_emitted:retained": 891,
+            "reference_eligible:retained": 841,
+            "outcome_matched:retained": 759,
+            "native_matched:retained": 822,
+            "all_emitted:rejected": 58,
+            "reference_eligible:rejected": 36,
+            "outcome_matched:rejected": 21,
+            "native_missing:rejected": 21,
+            "correct_gain_from_native_missing:rejected": 21,
+            "prior_e01_ten_gain_cohort:rejected": 10,
+            "outcome_wrong:rejected": 15,
+            "native_matched:rejected": 15,
+            "native_correct_regression:rejected": 15,
+            "outcome_wrong:retained": 82,
+            "native_wrong:retained": 19,
+            "native_correct_regression:retained": 63,
+            "reference_indeterminate:retained": 11,
+            "outcome_unscored:retained": 50,
+            "reference_uncertain_hidden:retained": 7,
+            "missing_selection": 11,
+            "reference_visible_unlocalizable:retained": 13,
+            "reference_certain_hidden:retained": 19,
+            "reference_certain_hidden:rejected": 12,
+            "outcome_unscored:rejected": 22,
+            "reference_visible_unlocalizable:rejected": 7,
+            "prior_e05_six_below_001_gain_cohort:rejected": 6,
+            "reference_indeterminate:rejected": 3
+          },
+          "complete_visibility_claim": false,
+          "new_tracking_outputs": 0
+        }
+      },
+      "native_mass": {
+        "ranks": {
+          "strict_first": 842,
+          "no_matching_candidate": 25,
+          "beaten": 15
+        },
+        "complete_rankings": 882,
+        "incomplete_rankings": 0,
+        "native_ranks": {
+          "strict_first": 842,
+          "no_matching_candidate": 25,
+          "beaten": 15
+        },
+        "reject_all_observed_hidden_bound": {
+          "cutoff": 37.59572219848633,
+          "comparison": ">",
+          "available_features_only": true,
+          "matching_candidate_coverage": {
+            "eligible_frames": 882,
+            "geometric_candidate_available": 857,
+            "matching_candidate_survives": 735,
+            "no_known_survivor_with_unknown_matching_feature": 0
+          },
+          "original_native_correct_points": {
+            "retained": 735,
+            "rejected": 107
+          },
+          "certain_hidden": {
+            "reference_frames": 34,
+            "frames_with_known_surviving_candidate": 0,
+            "frames_with_unknown_candidate_feature": 0,
+            "candidates_rejected": 22
+          },
+          "original_expanded_weak_stress": {
+            "excluded_mass_not_comparable_across_extractions": 960
+          },
+          "complete_visibility_claim": false,
+          "new_tracking_outputs": 0
+        },
+        "retain_all_observed_native_correct_bound": {
+          "cutoff": 0.9406242966651917,
+          "comparison": ">=",
+          "available_features_only": true,
+          "matching_candidate_coverage": {
+            "eligible_frames": 882,
+            "geometric_candidate_available": 857,
+            "matching_candidate_survives": 857,
+            "no_known_survivor_with_unknown_matching_feature": 0
+          },
+          "original_native_correct_points": {
+            "retained": 842
+          },
+          "certain_hidden": {
+            "reference_frames": 34,
+            "frames_with_known_surviving_candidate": 19,
+            "frames_with_unknown_candidate_feature": 0,
+            "candidates_retained": 21,
+            "candidates_rejected": 1
+          },
+          "original_expanded_weak_stress": {
+            "excluded_mass_not_comparable_across_extractions": 960
+          },
+          "complete_visibility_claim": false,
+          "new_tracking_outputs": 0
+        }
+      }
+    }
+  },
+  "prior_strong_subsets": {
+    "rows": [
+      {
+        "block_id": "hou-vs-okc-0022400879_e03",
+        "frame": 124,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.06216452355703961,
+            "prior_strong": -0.048421006414758494,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.17830211619358338,
+            "prior_strong": -0.0905141974350252,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.9594842703253385,
+            "prior_strong": 0.7417456741593726,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 36.94319152832031,
+            "prior_strong": 19.3184814453125,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e03",
+        "frame": 125,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.05627959190206255,
+            "prior_strong": -0.04253576547103344,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.19132334927416983,
+            "prior_strong": -0.0787942734713668,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.9473666986891445,
+            "prior_strong": 0.7255958742434854,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 37.69587326049805,
+            "prior_strong": 14.567553520202637,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e03",
+        "frame": 132,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.1397802613669023,
+            "prior_strong": -0.045888947381593215,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": -0.10368887285019457,
+            "prior_strong": -0.08026765033420008,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.8044001874187194,
+            "prior_strong": 0.7661354187671805,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 37.20143508911133,
+            "prior_strong": 28.998889923095703,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e03",
+        "frame": 133,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.1397802613669023,
+            "prior_strong": -0.045888947381593215,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": -0.10991416823456768,
+            "prior_strong": -0.07944484002174507,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.8458629705521463,
+            "prior_strong": 0.6416909741376333,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 38.17426300048828,
+            "prior_strong": 19.18897819519043,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e03",
+        "frame": 134,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.07525120341474584,
+            "prior_strong": -0.08047543508681271,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.0027433458397931876,
+            "prior_strong": -0.06827679349082577,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.8971384830450926,
+            "prior_strong": 0.7007405408223966,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 40.90376281738281,
+            "prior_strong": 24.91967010498047,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e03",
+        "frame": 135,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.06678452431097665,
+            "prior_strong": -0.07726031908054765,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.03210706479889375,
+            "prior_strong": -0.059594192486782216,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.9062071727601366,
+            "prior_strong": 0.7113067865302051,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 39.782405853271484,
+            "prior_strong": 22.623600006103516,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e03",
+        "frame": 136,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.11510270831852382,
+            "prior_strong": -0.05547158712192013,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": -0.07822508354996704,
+            "prior_strong": -0.08283943686793671,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.8920651835470509,
+            "prior_strong": 0.8653778487191207,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 42.072505950927734,
+            "prior_strong": 35.50013732910156,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e03",
+        "frame": 137,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.13920704216025293,
+            "prior_strong": -0.055433580204772626,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.0043265079434683384,
+            "prior_strong": -0.08201278194093664,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.889787446547932,
+            "prior_strong": 0.85000387621667,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 44.075313568115234,
+            "prior_strong": 31.169784545898438,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e03",
+        "frame": 138,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.1983371250755574,
+            "prior_strong": -0.02858002938368054,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": -0.10661656141354842,
+            "prior_strong": -0.07890565914620334,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.8675465481472983,
+            "prior_strong": 0.8608003175448212,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 42.521949768066406,
+            "prior_strong": 35.82213592529297,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e03",
+        "frame": 139,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.20149059945290526,
+            "prior_strong": -0.04439638932111367,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": -0.09200628246913445,
+            "prior_strong": -0.08911653114742143,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.8223323919023375,
+            "prior_strong": 0.8461027647767541,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 41.23817443847656,
+            "prior_strong": 32.149818420410156,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e03",
+        "frame": 146,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.24582926919000775,
+            "prior_strong": -0.05938175557915859,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.015644236284982238,
+            "prior_strong": -0.07346559767590921,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.9108652042418607,
+            "prior_strong": 0.9234942279440759,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 39.64399719238281,
+            "prior_strong": 37.59379959106445,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e03",
+        "frame": 147,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": null,
+          "outcome": "missing"
+        },
+        "features": {
+          "cls": {
+            "native": -0.24781410650525965,
+            "prior_strong": null,
+            "ordering": "unavailable_or_missing",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "unknown"
+          },
+          "point": {
+            "native": 0.024288226519267486,
+            "prior_strong": null,
+            "ordering": "unavailable_or_missing",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "unknown"
+          },
+          "peak": {
+            "native": 0.898373847228837,
+            "prior_strong": null,
+            "ordering": "unavailable_or_missing",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "unknown"
+          },
+          "native_mass": {
+            "native": 37.10020446777344,
+            "prior_strong": null,
+            "ordering": "unavailable_or_missing",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "unknown"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e03",
+        "frame": 183,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": null,
+          "outcome": "missing"
+        },
+        "features": {
+          "cls": {
+            "native": -0.020278693780927615,
+            "prior_strong": null,
+            "ordering": "unavailable_or_missing",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "unknown"
+          },
+          "point": {
+            "native": 0.08794860805853233,
+            "prior_strong": null,
+            "ordering": "unavailable_or_missing",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "unknown"
+          },
+          "peak": {
+            "native": 0.8884960562894908,
+            "prior_strong": null,
+            "ordering": "unavailable_or_missing",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "unknown"
+          },
+          "native_mass": {
+            "native": 35.721561431884766,
+            "prior_strong": null,
+            "ordering": "unavailable_or_missing",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "unknown"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e05",
+        "frame": 184,
+        "subset": "six_prior_strong_gains",
+        "native_outcome": "wrong",
+        "prior_strong": {
+          "candidate_index": 0,
+          "outcome": "matched"
+        },
+        "features": {
+          "cls": {
+            "native": -0.05067502649531758,
+            "prior_strong": -0.04634597482775815,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.0164888468273911,
+            "prior_strong": 0.058670080275736725,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.5815956141068275,
+            "prior_strong": 0.5030003356492981,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 18.78304100036621,
+            "prior_strong": 13.53337574005127,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e05",
+        "frame": 185,
+        "subset": "six_prior_strong_gains",
+        "native_outcome": "wrong",
+        "prior_strong": {
+          "candidate_index": 0,
+          "outcome": "matched"
+        },
+        "features": {
+          "cls": {
+            "native": -0.03104842019638676,
+            "prior_strong": -0.11538226125175188,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.026957304040917396,
+            "prior_strong": 0.009754450692127326,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.7585236305287603,
+            "prior_strong": 0.5353405969183234,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 29.36585235595703,
+            "prior_strong": 11.740324974060059,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e05",
+        "frame": 186,
+        "subset": "six_prior_strong_gains",
+        "native_outcome": "wrong",
+        "prior_strong": {
+          "candidate_index": 0,
+          "outcome": "matched"
+        },
+        "features": {
+          "cls": {
+            "native": -0.16053598549173065,
+            "prior_strong": 0.03186961628234666,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.031140614991396975,
+            "prior_strong": 0.0796528657642182,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.7885770358214339,
+            "prior_strong": 0.5907395987274028,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 33.75686264038086,
+            "prior_strong": 20.570587158203125,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e05",
+        "frame": 187,
+        "subset": "six_prior_strong_gains",
+        "native_outcome": "wrong",
+        "prior_strong": {
+          "candidate_index": 0,
+          "outcome": "matched"
+        },
+        "features": {
+          "cls": {
+            "native": -0.16053598549173065,
+            "prior_strong": 0.02203680822132742,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.036150005141912245,
+            "prior_strong": 0.06829390021571108,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.6466918148945298,
+            "prior_strong": 0.5138979962469759,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 25.203569412231445,
+            "prior_strong": 10.269139289855957,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e05",
+        "frame": 205,
+        "subset": "six_prior_strong_gains",
+        "native_outcome": "wrong",
+        "prior_strong": {
+          "candidate_index": 0,
+          "outcome": "matched"
+        },
+        "features": {
+          "cls": {
+            "native": -0.08054000684494661,
+            "prior_strong": -0.34738830557769135,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "rejected"
+          },
+          "point": {
+            "native": -0.20603503211638824,
+            "prior_strong": -0.19561747578073108,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.539914665642797,
+            "prior_strong": 0.42128224794256586,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 20.053096771240234,
+            "prior_strong": 10.490509033203125,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "frame": 224,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 2,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": 0.0012139698676044697,
+            "prior_strong": -0.07197200831253142,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.07893507735481564,
+            "prior_strong": -0.07286076702305083,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.910230594320729,
+            "prior_strong": 0.8184603152035625,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 39.266632080078125,
+            "prior_strong": 36.86534118652344,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "frame": 225,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 2,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": 0.0012139698676044697,
+            "prior_strong": -0.07197200831253142,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.08106869645366299,
+            "prior_strong": -0.07406339497189018,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.9201963707508427,
+            "prior_strong": 0.8011737818999943,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 43.61527633666992,
+            "prior_strong": 35.522857666015625,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "frame": 226,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.023285884881201535,
+            "prior_strong": -0.07946189067923068,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.08300607980276337,
+            "prior_strong": -0.0808451727298437,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.9659808594230637,
+            "prior_strong": 0.8501912538290051,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 37.30537414550781,
+            "prior_strong": 35.50079345703125,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "frame": 227,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.02101688571756799,
+            "prior_strong": -0.06812533060435949,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.06424066576627213,
+            "prior_strong": -0.08124976643928966,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.9602084321155566,
+            "prior_strong": 0.8241617367349654,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 37.27312469482422,
+            "prior_strong": 34.09682846069336,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "frame": 228,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.0587504007445645,
+            "prior_strong": -0.05353726789478219,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.23036761128863698,
+            "prior_strong": -0.06577778324113462,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.9553862148071488,
+            "prior_strong": 0.83935388708727,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 38.80254364013672,
+            "prior_strong": 35.99468231201172,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "frame": 229,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.018857721279165962,
+            "prior_strong": -0.06856460937529893,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.2727483018949588,
+            "prior_strong": -0.07057636777894227,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.950806909664418,
+            "prior_strong": 0.8564969273145168,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 39.55379104614258,
+            "prior_strong": 36.83794021606445,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "frame": 230,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.06548661296187919,
+            "prior_strong": -0.04327455942278349,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.09621726893264082,
+            "prior_strong": -0.05948867341493702,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.9310668563644293,
+            "prior_strong": 0.8501706408685368,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 39.8133544921875,
+            "prior_strong": 36.92012023925781,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "frame": 231,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.05263170366256481,
+            "prior_strong": -0.04327455942278349,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.08601414786552875,
+            "prior_strong": -0.060684478611707504,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.925561902420958,
+            "prior_strong": 0.8525321995074283,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 40.323753356933594,
+            "prior_strong": 36.34368896484375,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "frame": 232,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": 0.053456679972725685,
+            "prior_strong": -0.03693873610114434,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.07878776176452773,
+            "prior_strong": -0.07119318217261006,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.9550645285193404,
+            "prior_strong": 0.8322408589178629,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 38.91828536987305,
+            "prior_strong": 35.810970306396484,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "frame": 233,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": 0.043042280411698775,
+            "prior_strong": -0.07858287082004006,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.08199027211050147,
+            "prior_strong": -0.051495244210665925,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.9483174372594203,
+            "prior_strong": 0.7873625455110552,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 39.868534088134766,
+            "prior_strong": 30.009843826293945,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "frame": 234,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": 0.09608152141335824,
+            "prior_strong": -0.02063137926934,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.10789783334807257,
+            "prior_strong": -0.0513591395624049,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.9434546018601622,
+            "prior_strong": 0.6459343682944775,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 37.52029037475586,
+            "prior_strong": 23.16555404663086,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "frame": 235,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": 0.06252665199655949,
+            "prior_strong": -0.03356797680291018,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.10476637034681158,
+            "prior_strong": -0.042694945830049735,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.9436112514658757,
+            "prior_strong": 0.5890889226137696,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 38.80373001098633,
+            "prior_strong": 20.620824813842773,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "frame": 236,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.05146629971125616,
+            "prior_strong": -0.035489841377046,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.06888168905523834,
+            "prior_strong": -0.04350293312175263,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.8848766035912464,
+            "prior_strong": 0.6316784444712491,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 38.90113830566406,
+            "prior_strong": 24.160625457763672,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "frame": 237,
+        "subset": "27_prior_native_correct_losses",
+        "native_outcome": "matched",
+        "prior_strong": {
+          "candidate_index": 1,
+          "outcome": "wrong"
+        },
+        "features": {
+          "cls": {
+            "native": -0.04498785429916563,
+            "prior_strong": -0.030881893485171646,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": 0.07732154943766228,
+            "prior_strong": -0.061394483536322986,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.8671245942197591,
+            "prior_strong": 0.7366851773468395,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 39.938167572021484,
+            "prior_strong": 29.357725143432617,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "retained",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      },
+      {
+        "block_id": "hou-vs-okc-0022400879_e06",
+        "frame": 263,
+        "subset": "six_prior_strong_gains",
+        "native_outcome": "wrong",
+        "prior_strong": {
+          "candidate_index": 0,
+          "outcome": "matched"
+        },
+        "features": {
+          "cls": {
+            "native": 0.01604663600008205,
+            "prior_strong": -0.002236595583673784,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "point": {
+            "native": -0.020568733134702755,
+            "prior_strong": 0.013169292345312611,
+            "ordering": "strong_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "peak": {
+            "native": 0.8185261549068463,
+            "prior_strong": 0.7129381722113521,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          },
+          "native_mass": {
+            "native": 30.984729766845703,
+            "prior_strong": 30.136911392211914,
+            "ordering": "native_above",
+            "native_at_reject_hidden_bound": "rejected",
+            "strong_at_retain_native_bound": "retained"
+          }
+        }
+      }
+    ],
+    "counts": {
+      "27_prior_native_correct_losses": 27,
+      "six_prior_strong_gains": 6
+    },
+    "subset_inputs_not_selected_for_new_inference": true
+  },
+  "historical_roles": {
+    "reference_bank": {
+      "cases": 10,
+      "readouts": {
+        "cls": {
+          "excluded_bank_query": 10
+        },
+        "point": {
+          "excluded_bank_query": 10
+        }
+      },
+      "semantic_accuracy_claim": false,
+      "independent_validation": false
+    },
+    "unresolved_audit": {
+      "cases": 6,
+      "readouts": {
+        "cls": {
+          "other_preference": 4,
+          "ball_preference": 2
+        },
+        "point": {
+          "ball_preference": 3,
+          "other_preference": 3
+        }
+      },
+      "semantic_accuracy_claim": false,
+      "independent_validation": false
+    },
+    "resolved_check": {
+      "cases": 10,
+      "readouts": {
+        "cls": {
+          "accepted_class_preferred": 8,
+          "other_class_preferred": 2
+        },
+        "point": {
+          "other_class_preferred": 3,
+          "accepted_class_preferred": 7
+        }
+      },
+      "semantic_accuracy_claim": true,
+      "independent_validation": false
+    },
+    "exposed_regression": {
+      "cases": 34,
+      "readouts": {
+        "cls": {
+          "ball_preference": 18,
+          "other_preference": 16
+        },
+        "point": {
+          "ball_preference": 20,
+          "other_preference": 14
+        }
+      },
+      "semantic_accuracy_claim": false,
+      "independent_validation": false
+    }
+  },
+  "accepted_same_frame_pairs": [
+    {
+      "source_id": "sas_det_q1_c02",
+      "frame": 11008,
+      "screen_role": "resolved_check",
+      "ball_id": "appearance:sas_det_q1_c02:11008:mean:1",
+      "other_id": "appearance:sas_det_q1_c02:11008:mean:0",
+      "readouts": {
+        "cls": {
+          "ball_minus_other_margin": 0.11837166237099916,
+          "ordering": "ball_above"
+        },
+        "point": {
+          "ball_minus_other_margin": -0.13037806219051606,
+          "ordering": "other_above"
+        }
+      }
+    },
+    {
+      "source_id": "sas_det_q1_c02",
+      "frame": 11107,
+      "screen_role": "resolved_check",
+      "ball_id": "appearance:sas_det_q1_c02:11107:mean:1",
+      "other_id": "appearance:sas_det_q1_c02:11107:mean:0",
+      "readouts": {
+        "cls": {
+          "ball_minus_other_margin": 0.08831346410314278,
+          "ordering": "ball_above"
+        },
+        "point": {
+          "ball_minus_other_margin": 0.19718219862795994,
+          "ordering": "ball_above"
+        }
+      }
+    },
+    {
+      "source_id": "sas_det_q1_c02",
+      "frame": 11431,
+      "screen_role": "resolved_check",
+      "ball_id": "appearance:sas_det_q1_c02:11431:mean:0",
+      "other_id": "appearance:sas_det_q1_c02:11431:mean:1",
+      "readouts": {
+        "cls": {
+          "ball_minus_other_margin": -0.022217041958284722,
+          "ordering": "other_above"
+        },
+        "point": {
+          "ball_minus_other_margin": 0.19359263624609568,
+          "ordering": "ball_above"
+        }
+      }
+    },
+    {
+      "source_id": "sas_det_q1_c02",
+      "frame": 11444,
+      "screen_role": "resolved_check",
+      "ball_id": "appearance:sas_det_q1_c02:11444:mean:0",
+      "other_id": "appearance:sas_det_q1_c02:11444:mean:1",
+      "readouts": {
+        "cls": {
+          "ball_minus_other_margin": 0.23178199150466072,
+          "ordering": "ball_above"
+        },
+        "point": {
+          "ball_minus_other_margin": 0.3133729116350498,
+          "ordering": "ball_above"
+        }
+      }
+    }
+  ],
+  "decision": {
+    "point_adds_ordering_information": true,
+    "standalone_image_selector_or_veto_adopted": false,
+    "new_training_justified_by_this_test_alone": false,
+    "new_experiment_implemented": false,
+    "next_question": "Whether complementary point evidence can help assess proposed candidate changes without discarding strong detections or erasing explicit missing states; any follow-up requires a prospective protocol and decision.",
+    "scope_of_failure": "This fixed single-image representation and ten-reference cosine rule, not all point, image, joint or temporal methods."
+  },
+  "research_control": {
+    "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/cosine/fit_v0_1/checkpoints/epoch_009.pth",
+    "bytes": 6084071,
+    "sha256": "f4b721662ec3d8b546563feffcf5ce0d6319ed8ddc83f398830a0aac5d29c7b9"
+  },
+  "human_visual_acceptance": null,
+  "new_training_updates": 0,
+  "new_selector_runs": 0,
+  "new_labels": 0,
+  "new_GPU_calls": 0,
+  "protected_evaluation_access": false,
+  "history_coverage": "Reuse completed Sessions1-16 available-timeline review, Session17 complete handoff and relevant primary results, and stated foundation coverage; no fresh full-transcript or all-external-URL claim.",
+  "limitations": [
+    "Repeatedly inspected HOU development, not independent validation or frame-independent samples.",
+    "Within10px is a localization criterion, not proof that the point lies on physical ball pixels; misses are not semantic negatives.",
+    "Unknown bank members invalidate the representation margin; unknown queries never count as successful absence or retention.",
+    "Padded crops remain scored and reported separately under identical HOU-wide bounds; padding is not absence evidence.",
+    "Patch tokens mix global context through attention; this isolates spatial readout, not crop scale, backbone or supervision.",
+    "Historical nearest-bank control and fitted-logistic veto have distinct failure provenance; no fitted head is applied here.",
+    "All coordinates remain the prior observed candidates; no trajectory or operational threshold is produced."
+  ],
+  "quality_criteria_unchanged": true,
+  "editorial_correction": {
+    "reason": "Clarify lower pair ranking of one useful strong revision, not an actual rejection; no selector was run. Two missing choices are unpaired. No scientific count or frozen output changed.",
+    "prior_report": {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/editorial_correction_before/docs/ball_tracking_point_feature_comparison_results.md",
+      "bytes": 14310,
+      "sha256": "a24c3022045fa6bf7a554e7b3dd1b0a1781a35bd78bc36e8c7ade621929acd1e"
+    },
+    "prior_ledger": {
+      "path": "data/outputs/ball_tracking/candidate_identity_feasibility_v0_1/point_comparison_v0_1/editorial_correction_before/configs/ball_tracking/reviews/point_feature_comparison_result_v0_1.json",
+      "bytes": 154599,
+      "sha256": "a9a14b231b20579ae8faf2e60bec22878b4b95d4b1115ce5637bc92de381312e"
+    }
+  }
+}

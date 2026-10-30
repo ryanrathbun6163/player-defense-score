@@ -1,0 +1,917 @@
+{
+  "schema_version": "nba_weak_response_result/v0.1",
+  "status": "completed_research_no_selector_qualifies",
+  "recorded_at_utc": "2026-10-26T23:50:23.740766+00:00",
+  "branch": "codex/ball-detector-baseline",
+  "execution_head": "8c040fca385dd8fffa0d7a13c45c53e79950bae1",
+  "execution_worktree": "Intentional Session17 six-document changes plus additive uncommitted implementation; no clean-checkout claim.",
+  "authorization": "Ryan requested revised NBA weak-response feasibility and small paired candidate selection; evidence-driven bounded CPU correction stayed within that work. Training conditional on a subsequent decision.",
+  "research_control": {
+    "path": "data/outputs/ball_tracking/wasb_continuation_v0_1/cosine/fit_v0_1/checkpoints/epoch_009.pth",
+    "bytes": 6084071,
+    "sha256": "f4b721662ec3d8b546563feffcf5ce0d6319ed8ddc83f398830a0aac5d29c7b9"
+  },
+  "source_roles": {
+    "path": "configs/ball_tracking/completion_campaign/source_roles_v0_1.json",
+    "bytes": 71569,
+    "sha256": "3ae5de63eef918fdaafcfbac62c09ca46e14fa1c1fdf069739d731955a573200"
+  },
+  "new_model_forwards": 948,
+  "new_mean_frames_reconstructed": 960,
+  "new_training_updates": 0,
+  "new_labels": 0,
+  "gpu_capture": {
+    "supervised_seconds": 53.593,
+    "peak_temperature_c": 57,
+    "peak_power_w": 104.19,
+    "peak_memory_mib": 2684,
+    "exit_code": 0,
+    "owned_processes_remaining": 0,
+    "graphics_extras_absent_before_run": true,
+    "earlier_crash_cause_resolved": false
+  },
+  "data_roles": {
+    "HOU": "Repeatedly inspected checkpoint-validation development; explicitly used for follow-up parameter choice.",
+    "DET": "Previously inspected excluded development, not fitting/checkpoint selection; receives locked follow-up, no DET tuning.",
+    "SAC": "Training-exposed descriptive context."
+  },
+  "availability_not_accuracy": {
+    "DET": {
+      "eligible": 241,
+      "native": 219,
+      "expanded_pool": 240,
+      "raw_extractions": 241,
+      "all_19_gap_frames_have_matching_candidates": true
+    },
+    "HOU": {
+      "eligible": 882,
+      "native": 857,
+      "expanded_pool": 882
+    },
+    "SAC": {
+      "eligible": 270,
+      "native": 270,
+      "expanded_pool": 270
+    }
+  },
+  "first_fixed_comparison": [
+    {
+      "block_id": "sas_det_q1_c02:10668-11898",
+      "role": "post_selection_evaluation_only",
+      "variants": {
+        "native": {
+          "eligible_frames": 241,
+          "matched": 219,
+          "wrong": 1,
+          "missing": 21,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 2,
+          "quantitative_status": "fail"
+        },
+        "sequence_strong": {
+          "eligible_frames": 241,
+          "matched": 219,
+          "wrong": 1,
+          "missing": 21,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 2,
+          "quantitative_status": "fail"
+        },
+        "sequence_weak": {
+          "eligible_frames": 241,
+          "matched": 219,
+          "wrong": 16,
+          "missing": 6,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 49,
+          "quantitative_status": "fail"
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e01",
+      "role": "checkpoint_validation",
+      "variants": {
+        "native": {
+          "eligible_frames": 120,
+          "matched": 110,
+          "wrong": 0,
+          "missing": 10,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        },
+        "sequence_strong": {
+          "eligible_frames": 120,
+          "matched": 110,
+          "wrong": 0,
+          "missing": 10,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        },
+        "sequence_weak": {
+          "eligible_frames": 120,
+          "matched": 120,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e02",
+      "role": "checkpoint_validation",
+      "variants": {
+        "native": {
+          "eligible_frames": 120,
+          "matched": 120,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        },
+        "sequence_strong": {
+          "eligible_frames": 120,
+          "matched": 119,
+          "wrong": 0,
+          "missing": 1,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        },
+        "sequence_weak": {
+          "eligible_frames": 120,
+          "matched": 119,
+          "wrong": 1,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e03",
+      "role": "checkpoint_validation",
+      "variants": {
+        "native": {
+          "eligible_frames": 98,
+          "matched": 90,
+          "wrong": 8,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 8,
+          "quantitative_status": "fail"
+        },
+        "sequence_strong": {
+          "eligible_frames": 98,
+          "matched": 67,
+          "wrong": 29,
+          "missing": 2,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 7,
+          "quantitative_status": "fail"
+        },
+        "sequence_weak": {
+          "eligible_frames": 98,
+          "matched": 67,
+          "wrong": 29,
+          "missing": 2,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 7,
+          "quantitative_status": "fail"
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e04",
+      "role": "checkpoint_validation",
+      "variants": {
+        "native": {
+          "eligible_frames": 120,
+          "matched": 120,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        },
+        "sequence_strong": {
+          "eligible_frames": 120,
+          "matched": 116,
+          "wrong": 0,
+          "missing": 4,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        },
+        "sequence_weak": {
+          "eligible_frames": 120,
+          "matched": 116,
+          "wrong": 3,
+          "missing": 1,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e05",
+      "role": "checkpoint_validation",
+      "variants": {
+        "native": {
+          "eligible_frames": 212,
+          "matched": 195,
+          "wrong": 6,
+          "missing": 11,
+          "certain_hidden_emitted_points": 1,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        },
+        "sequence_strong": {
+          "eligible_frames": 212,
+          "matched": 180,
+          "wrong": 15,
+          "missing": 17,
+          "certain_hidden_emitted_points": 1,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        },
+        "sequence_weak": {
+          "eligible_frames": 212,
+          "matched": 186,
+          "wrong": 24,
+          "missing": 2,
+          "certain_hidden_emitted_points": 13,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e06",
+      "role": "checkpoint_validation",
+      "variants": {
+        "native": {
+          "eligible_frames": 212,
+          "matched": 207,
+          "wrong": 5,
+          "missing": 0,
+          "certain_hidden_emitted_points": 18,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        },
+        "sequence_strong": {
+          "eligible_frames": 212,
+          "matched": 172,
+          "wrong": 40,
+          "missing": 0,
+          "certain_hidden_emitted_points": 18,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        },
+        "sequence_weak": {
+          "eligible_frames": 212,
+          "matched": 172,
+          "wrong": 40,
+          "missing": 0,
+          "certain_hidden_emitted_points": 18,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        }
+      }
+    },
+    {
+      "block_id": "sac_mem_q1_c01:540-2010",
+      "role": "post_selection_evaluation_only",
+      "variants": {
+        "native": {
+          "eligible_frames": 270,
+          "matched": 270,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        },
+        "sequence_strong": {
+          "eligible_frames": 270,
+          "matched": 270,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        },
+        "sequence_weak": {
+          "eligible_frames": 270,
+          "matched": 270,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 14,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        }
+      }
+    }
+  ],
+  "bounded_followup": [
+    {
+      "block_id": "sas_det_q1_c02:10668-11898",
+      "role": "post_selection_evaluation_only",
+      "variants": {
+        "motion_only": {
+          "eligible_frames": 241,
+          "matched": 219,
+          "wrong": 1,
+          "missing": 21,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 2,
+          "quantitative_status": "fail"
+        },
+        "speed_only": {
+          "eligible_frames": 241,
+          "matched": 219,
+          "wrong": 1,
+          "missing": 21,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 2,
+          "quantitative_status": "fail"
+        },
+        "motion_and_speed": {
+          "eligible_frames": 241,
+          "matched": 219,
+          "wrong": 1,
+          "missing": 21,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 2,
+          "quantitative_status": "fail"
+        },
+        "motion_and_speed_narrow_weak": {
+          "eligible_frames": 241,
+          "matched": 219,
+          "wrong": 9,
+          "missing": 13,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 46,
+          "quantitative_status": "fail"
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e01",
+      "role": "checkpoint_validation",
+      "variants": {
+        "motion_only": {
+          "eligible_frames": 120,
+          "matched": 110,
+          "wrong": 0,
+          "missing": 10,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        },
+        "speed_only": {
+          "eligible_frames": 120,
+          "matched": 110,
+          "wrong": 0,
+          "missing": 10,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        },
+        "motion_and_speed": {
+          "eligible_frames": 120,
+          "matched": 110,
+          "wrong": 0,
+          "missing": 10,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        },
+        "motion_and_speed_narrow_weak": {
+          "eligible_frames": 120,
+          "matched": 120,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e02",
+      "role": "checkpoint_validation",
+      "variants": {
+        "motion_only": {
+          "eligible_frames": 120,
+          "matched": 119,
+          "wrong": 0,
+          "missing": 1,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        },
+        "speed_only": {
+          "eligible_frames": 120,
+          "matched": 119,
+          "wrong": 0,
+          "missing": 1,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        },
+        "motion_and_speed": {
+          "eligible_frames": 120,
+          "matched": 120,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        },
+        "motion_and_speed_narrow_weak": {
+          "eligible_frames": 120,
+          "matched": 120,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e03",
+      "role": "checkpoint_validation",
+      "variants": {
+        "motion_only": {
+          "eligible_frames": 98,
+          "matched": 77,
+          "wrong": 19,
+          "missing": 2,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 7,
+          "quantitative_status": "fail"
+        },
+        "speed_only": {
+          "eligible_frames": 98,
+          "matched": 67,
+          "wrong": 29,
+          "missing": 2,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 7,
+          "quantitative_status": "fail"
+        },
+        "motion_and_speed": {
+          "eligible_frames": 98,
+          "matched": 77,
+          "wrong": 19,
+          "missing": 2,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 7,
+          "quantitative_status": "fail"
+        },
+        "motion_and_speed_narrow_weak": {
+          "eligible_frames": 98,
+          "matched": 77,
+          "wrong": 19,
+          "missing": 2,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 7,
+          "quantitative_status": "fail"
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e04",
+      "role": "checkpoint_validation",
+      "variants": {
+        "motion_only": {
+          "eligible_frames": 120,
+          "matched": 116,
+          "wrong": 0,
+          "missing": 4,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        },
+        "speed_only": {
+          "eligible_frames": 120,
+          "matched": 120,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        },
+        "motion_and_speed": {
+          "eligible_frames": 120,
+          "matched": 120,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        },
+        "motion_and_speed_narrow_weak": {
+          "eligible_frames": 120,
+          "matched": 120,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e05",
+      "role": "checkpoint_validation",
+      "variants": {
+        "motion_only": {
+          "eligible_frames": 212,
+          "matched": 180,
+          "wrong": 15,
+          "missing": 17,
+          "certain_hidden_emitted_points": 1,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        },
+        "speed_only": {
+          "eligible_frames": 212,
+          "matched": 182,
+          "wrong": 13,
+          "missing": 17,
+          "certain_hidden_emitted_points": 1,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        },
+        "motion_and_speed": {
+          "eligible_frames": 212,
+          "matched": 200,
+          "wrong": 0,
+          "missing": 12,
+          "certain_hidden_emitted_points": 1,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        },
+        "motion_and_speed_narrow_weak": {
+          "eligible_frames": 212,
+          "matched": 200,
+          "wrong": 11,
+          "missing": 1,
+          "certain_hidden_emitted_points": 9,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        }
+      }
+    },
+    {
+      "block_id": "hou-vs-okc-0022400879_e06",
+      "role": "checkpoint_validation",
+      "variants": {
+        "motion_only": {
+          "eligible_frames": 212,
+          "matched": 194,
+          "wrong": 17,
+          "missing": 1,
+          "certain_hidden_emitted_points": 18,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        },
+        "speed_only": {
+          "eligible_frames": 212,
+          "matched": 172,
+          "wrong": 40,
+          "missing": 0,
+          "certain_hidden_emitted_points": 18,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        },
+        "motion_and_speed": {
+          "eligible_frames": 212,
+          "matched": 194,
+          "wrong": 17,
+          "missing": 1,
+          "certain_hidden_emitted_points": 18,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        },
+        "motion_and_speed_narrow_weak": {
+          "eligible_frames": 212,
+          "matched": 194,
+          "wrong": 17,
+          "missing": 1,
+          "certain_hidden_emitted_points": 18,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        }
+      }
+    },
+    {
+      "block_id": "sac_mem_q1_c01:540-2010",
+      "role": "post_selection_evaluation_only",
+      "variants": {
+        "motion_only": {
+          "eligible_frames": 270,
+          "matched": 270,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        },
+        "speed_only": {
+          "eligible_frames": 270,
+          "matched": 270,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        },
+        "motion_and_speed": {
+          "eligible_frames": 270,
+          "matched": 270,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 0,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "inconclusive"
+        },
+        "motion_and_speed_narrow_weak": {
+          "eligible_frames": 270,
+          "matched": 270,
+          "wrong": 0,
+          "missing": 0,
+          "certain_hidden_emitted_points": 8,
+          "uncertain_hidden_emitted_points": 0,
+          "quantitative_status": "fail"
+        }
+      }
+    }
+  ],
+  "prospective_main_followup_arm": "motion_and_speed",
+  "preparation_qualification": "Four HOUe01 main-arm selector/scorer transport probes and saved-map extraction probes preceded full-study freeze; no comparative accuracy used for tuning. All full-study choices precede study scores. Unexecuted .03 draft and failed preparation tests preserved.",
+  "independent_audits": {
+    "capture_checks": 11544,
+    "initial_comparison_checks": 96340,
+    "followup_checks": 388845,
+    "limit": "Follow-up full-report equality reuses frozen scoring kernel; coordinate categories, gains/losses, hidden counts, native missing intervals, membership, chosen costs and support independently checked."
+  },
+  "tests": {
+    "original_distinct_focused_cases_passed_across_component_runs": 51,
+    "full_suite_rerun": false,
+    "post_study_portability": {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/post_study_test_portability_v0_1/completed.json",
+      "bytes": 3154,
+      "sha256": "5065b056e079d6f074d22890e382237170565bcfefe025312515ab3cabec3455"
+    },
+    "frozen_preparation_test_binding": {
+      "path": "tests/test_weak_response_followup.py",
+      "bytes": 11166,
+      "sha256": "d582c3adeea65e3cdbff2c51b55c5d6001d39d5f242050c7f32f4f6618f13328"
+    },
+    "exact_preserved_original_test": {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/post_study_test_portability_v0_1/original/test_weak_response_followup.py",
+      "bytes": 11166,
+      "sha256": "d582c3adeea65e3cdbff2c51b55c5d6001d39d5f242050c7f32f4f6618f13328"
+    },
+    "current_test_version": {
+      "path": "tests/test_weak_response_followup.py",
+      "bytes": 12029,
+      "sha256": "0618d31a9af8b7eb7b148c95f1b818fd0f3e2e32b39963d1322f7ecd1d7d0ba4"
+    },
+    "historical_preflight_limit": "Historical renderer requires original frozen test bytes; current active preparation test has missing-data guards. Original test/audit/render history remains intact."
+  },
+  "protected_evaluation_authorized": false,
+  "human_trajectory_acceptance": null,
+  "model_adopted": false,
+  "ball_phase_accepted": false,
+  "original_source_uncertain_recoveries_still_inconclusive": 9,
+  "additional_candidate_effect": "Narrow weak creates another inconclusive HOUe05 recovery; corrected strong has HOUe05/e06 recovery failures.",
+  "next_decision": "Bounded candidate identity/visibility feasibility with abstention and protection of correct points; no automatic new training or further threshold/motion sweep.",
+  "artifacts": [
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/inventory.json",
+      "bytes": 20193,
+      "sha256": "5938eb069d794049c831385b040d7aecd4ce3e5064bc8af1d1bfc2ad35505893"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/capture_v0_1/completed.json",
+      "bytes": 5598,
+      "sha256": "4c641d86ffe5420557ab84f47a8ae122db9f31b63cba70a0d64c529ae7b41d1c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/pre_capture_isolation.json",
+      "bytes": 195,
+      "sha256": "61da5ce23e476ec927a2f8cd03670c1d75f4540bf3ae8059c2e0a2fafbdba7e7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/post_capture_system_check.json",
+      "bytes": 147,
+      "sha256": "3951fa8c47c71997f1f23dfb709cb5b8666e62b805cc62de849de549b7c7baf5"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/independent_capture_audit.json",
+      "bytes": 7586,
+      "sha256": "7fe4b3e0e1628a7e7e0cd56edc6707bb5e35c8b9d2ce4532c83fa1ee03f9feed"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/feasibility_saved_v0_1/failed_1793055582411458400.json",
+      "bytes": 666,
+      "sha256": "59642194c30ef9f67b8df4f56ed7e1ecf1520027026fdf6c94ad1a33b3143ee7"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/feasibility_saved_recovery_v0_2/summary.json",
+      "bytes": 189117,
+      "sha256": "7288e9895e726cbe87c9677cbd94a9d501e2c4a63fd04901a897910399ef4614"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/feasibility_hou_v0_1/summary.json",
+      "bytes": 46662,
+      "sha256": "ee9c65a7c851c16d204738721403b38ac87c53f810b745e53094be5e066ef1dd"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/feasibility_saved_recovery_v0_2/native_union_ceilings.json",
+      "bytes": 9275,
+      "sha256": "69298e00830235e7e2102aa3f4e01dde129d5cbe66debab11e5922306a3b1e9c"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/feasibility_hou_v0_1/native_union_ceilings.json",
+      "bytes": 22369,
+      "sha256": "262dd890602329eb4cc447d14ff914061e7dd5a3b0adb5a57061cadadb0ef111"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/prospective_freeze_v0_2.json",
+      "bytes": 2065,
+      "sha256": "b07cc842f1c1da60a5f2653763045b3240ea57541a421ad6a344ebc3c585da00"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/comparison_v0_1/completed.json",
+      "bytes": 874756,
+      "sha256": "11be58de7ce60ec8cbec75da645a354870638f5cfa01c81698fe4a16305c1966"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/independent_comparison_audit.json",
+      "bytes": 21078,
+      "sha256": "902d72305a76cc8219f0058484acfccf2a20d3dc10dcac0133cd06969c5bb729"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/diagnostics/hou_v1_losses.json",
+      "bytes": 156801,
+      "sha256": "7c9350fbc65e4ecefdd78f74ff4bb6ebd78386495765ff9c116172d9bf492ec9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/diagnostics/hou_v1_reference_run_objectives.json",
+      "bytes": 4513,
+      "sha256": "dddd13fb2764ef7fc55064a63e93f5600a5e74b3fc3cf43763b49acbe3cdd609"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/diagnostics/hou_v1_weak_selected_sources.json",
+      "bytes": 15252,
+      "sha256": "2ffb170e70d95126b5abc6f6ac3a2961c7222620b24ea0af628fd4f9c57d22a9"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/preparation_history/threshold_003_draft/preparation_receipt.json",
+      "bytes": 2463,
+      "sha256": "3ed019f3d0f8b047c4f379f8db6bd3fc817b4ed52cc5f197b8a030382993fb4a"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/prospective_freeze.json",
+      "bytes": 12035,
+      "sha256": "0f431f5cb5114d304975eb6d9bc8f1b1ffdd347310325a63c97a1b30c632d038"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/prospective_freeze_clarification.json",
+      "bytes": 2904,
+      "sha256": "6669cce06bd36676e22d003a40da25286fe1217fbe42535829a4eecd076839fb"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/completed.json",
+      "bytes": 2096214,
+      "sha256": "08b9442be5ff2793f573200c22f673870815db22bf656727e032aa9adf4e3ba6"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/diagnostics/followup_independent_audit.json",
+      "bytes": 299317,
+      "sha256": "d1aac6ad6ec456a9b277b414108c32e9a022a02ac457ffc02943418856188254"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/diagnostics/followup_anchor_diagnostic.json",
+      "bytes": 25053,
+      "sha256": "2e97411235809c1e36aaca773a89bfdc803c28474c0ff8cf05d1cbf21cc41eff"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/ai_review_v0_1/ai_observations.json",
+      "bytes": 1216,
+      "sha256": "289e9b0f269716ecae33cd9d0ab432144239ae8d28ed604c096c3513b809a281"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/ai_review_followup_v0_1/ai_observations.json",
+      "bytes": 2443,
+      "sha256": "9c27f8ff67adaf7685d123ef57745899f5a0ce37c2e8b9be2f9e72660e1a6885"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/validation/render_v1_final_still_inspection_20261026_001.json",
+      "bytes": 13057,
+      "sha256": "00a38faac8f562f1d78cce1a466f154183bc6573a617f9d42f871ea51387aa43"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/validation/render_followup_final_still_inspection_20261026_001.json",
+      "bytes": 13172,
+      "sha256": "7b9359d627f16fccecf9326b1e2d9e4c45bafb0a74876a3e5670dfa9499349e3"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/validation/render_followup_process_completion_20261026_001.json",
+      "bytes": 175,
+      "sha256": "f6d4b7c0dfa82f0c2d20fece33d3ed6503161f5cf3e4c6da59fc3623c49c2b66"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/post_study_test_portability_v0_1/completed.json",
+      "bytes": 3154,
+      "sha256": "5065b056e079d6f074d22890e382237170565bcfefe025312515ab3cabec3455"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/documentation_update_v0_1/receipt.json",
+      "bytes": 3495,
+      "sha256": "d3a789c33069f5e5af2ce126377ef5ee3b1869395704b636595a4011dcd7e452"
+    },
+    {
+      "path": "data/outputs/ball_tracking/weak_response_v0_1/validation/publish_result_ledger_attempt_001.json",
+      "bytes": 559,
+      "sha256": "11dc0fed525b890bbd71d7444ceb7987761afd9d79c5076c7e278b0ba7a22d67"
+    }
+  ],
+  "reviews": [
+    {
+      "completion": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/review_sequence_strong_v0_1/completed.json",
+        "bytes": 149043,
+        "sha256": "7c57051456898ac1960775bd88000043dee74908c2eceb9dfeacfb8fdb1c3cd1"
+      },
+      "index": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/review_sequence_strong_v0_1/index.html",
+        "bytes": 4682,
+        "sha256": "9c8e13cb52c47be68d9497dadb736133f8add0564bfeb58c19a01f1070e4de7a"
+      },
+      "contexts": 8,
+      "decoded_native_frames": 3662,
+      "human_visual_acceptance": null
+    },
+    {
+      "completion": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/review_sequence_weak_v0_1/completed.json",
+        "bytes": 148938,
+        "sha256": "3749b8f6b5c5a6e4f62d9242a85cf895cfc93822ad878658817a28d665529feb"
+      },
+      "index": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/review_sequence_weak_v0_1/index.html",
+        "bytes": 4680,
+        "sha256": "8e4c3402e0c57d8501d5bf35bf8e2b46bef6686a7cbb01637a84352182cc29ba"
+      },
+      "contexts": 8,
+      "decoded_native_frames": 3662,
+      "human_visual_acceptance": null
+    },
+    {
+      "completion": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/review_motion_and_speed_v0_1/completed.json",
+        "bytes": 151373,
+        "sha256": "057a852579ffa9f58efd2208e3b668286071b2713effd5be3950e99ecd11abc7"
+      },
+      "index": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/review_motion_and_speed_v0_1/index.html",
+        "bytes": 5041,
+        "sha256": "eab9cf3e5840aa53831a7fb1ecf3750214e83de6a69a4c9e0cf4379cc559959d"
+      },
+      "contexts": 8,
+      "decoded_native_frames": 3662,
+      "human_visual_acceptance": null
+    },
+    {
+      "completion": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/review_motion_and_speed_narrow_weak_v0_1/completed.json",
+        "bytes": 151867,
+        "sha256": "2e76209aaa7b691439a0d0300c7f5efda03e4eb1591fba92cc3646fbc35dec3c"
+      },
+      "index": {
+        "path": "data/outputs/ball_tracking/weak_response_v0_1/followup_v0_1/review_motion_and_speed_narrow_weak_v0_1/index.html",
+        "bytes": 5166,
+        "sha256": "693bbd5a9585983f1750d6c6bacb453a0e4138b14428e0e6b96a60b855bd4580"
+      },
+      "contexts": 8,
+      "decoded_native_frames": 3662,
+      "human_visual_acceptance": null
+    }
+  ],
+  "result_document": "docs/ball_tracking_weak_response_results.md",
+  "staging_committing_pushing_pr_merging_performed": false
+}
